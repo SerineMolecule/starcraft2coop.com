@@ -1,9 +1,11 @@
 # starcraft2coop.com
 
-This is a everything aommaster sent me, unchanged.
+Here is the new starcraft2coop.com!
 
-I'll be changing it soon enough, but it's nice to have one commit that just has his stuff, exactly.
+Written by Aommaster, hosted by Serine. Hopefully accepting community contributions one day!
 
 ## License
 
 [CC-BY-SA-NC 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+Ads are NOT allowed
