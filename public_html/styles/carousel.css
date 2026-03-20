@@ -1,0 +1,24 @@
+#carousel-container{
+    position:relative;
+}
+
+#carousel{
+    display:block;
+    margin:auto;
+}
+
+#carousel-nav{
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    letter-spacing:0.5em;
+}
+
+#carousel-nav span{
+    cursor: pointer;
+}
+
+.carSelected{
+    color: steelblue;
+}

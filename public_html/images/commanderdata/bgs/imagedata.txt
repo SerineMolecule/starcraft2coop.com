@@ -1,0 +1,3 @@
+500px x 586px
+15% opacity
+ui_loading_coop_hero_nova.dds

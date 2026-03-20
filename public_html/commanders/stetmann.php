@@ -1,0 +1,1346 @@
+<?php
+include("../header.php");
+?>
+  <title>Starcraft 2 Co-op - Commander Guide - Stetmann</title>
+  <meta name="description" content="Starcraft 2 Co-op Commander Guide Stetmann">
+  <meta name="keywords" content="Starcraft co-op guides stetmann commander mastery prestige build">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.1">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link rel="canonical" href="https://starcraft2coop.com/commanders/stetmann">
+  <style>
+        #content{
+            background: url(/images/commanderdata/bgs/stetmann.png);
+            background-repeat: no-repeat;
+        }
+        #tooltip{
+            position:absolute;
+            background-color:khaki;
+            color:black;
+            font-size:0.8em;
+            display:none;
+            z-index:1;
+            padding:5px;
+            border-radius:5px;
+        }
+  </style>
+  </head>
+<body>
+<div id="header"><img src="/images/mainpageheader.png" alt="Starcraft II Co-op Logo">
+</div>
+<div id="menu"><?php include("../menu.php"); ?></div>
+<div id="content">
+    <div id="tooltip">tooltip</div>
+    <h1>Co-op Commander Guide: Stetmann</h1>
+    <p id="commanderMotto">Hero Genius (Henius)</p>
+    <?php include("../scripts/reporterror.php");?>
+    <h2>Sections on this Page</h2>
+    <div id="links">
+        <p><a href="#comSum">Commander Summary</a></p>
+        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#achievements">Achievements</a></p>
+        <p><a href="#stetzones">Stetzones</a></p>
+        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p><a href="#masteries">Masteries</a></p>
+        <p><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#hero">Hero Unit</a></p>
+        <p><a href="#army">Recommended Army Composition</a></p>
+        <p><a href="#units">Combat Units</a></p>
+        <p><a href="#buildOrder">Build Order</a></p>
+        <p><a href="#guide">Gameplay Guide</a></p>
+    </div>
+    <a id="comSum"></a><h2>Commander Summary</h2>
+    <p>Stetmann uses his army of mecha zerg units powered by Egonergy while providing additional buffs through Stetzones to defeat enemy forces.</p>
+    <?php
+    include("../ad1.php");
+    ?>
+    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <table class="progressionTable">
+        <thead>
+            <tr>
+                <th>Level/Icon</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_01.png" alt = "Stetisfaction Guaranteed"></td>
+                <td>Stetisfaction Guaranteed</td>
+                <td>
+                    Stetmann can deploy Stetellites, which grant passive Stetzone enhancements. Structures that unlock units are limited to 1. Mecha Larvae spawn at an increased rate. Stetmann's Mecha units utilize Egonergy, which does not regenerate on its own.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_02.png" alt = "The J.U.I.C.E. is Loose"></td>
+                <td>The J.U.I.C.E. is Loose</td>
+                <td>
+                    Unlocks the J.U.I.C.E. Configuration, which regenerates Egonergy for Stetmann's units and energy for allied units.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_03.png" alt = "Gary: Stetellite Overcharge"></td>
+                <td>Gary: Stetellite Overcharge</td>
+                <td>
+                   Gary gains the ability to overcharge a Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetellite configuration.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_04.png" alt = "Mecha Zergling & Mecha Baneling Upgrade Cache"></td>
+                <td>Mecha Zergling & Mecha Baneling Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Mecha Spawning Pool and the Mecha Baneling Nest:
+                    <ul>
+                        <li>Mecha Zerglings gain 100% increased attack speed at the cost of Egonergy.</li>
+                        <li>Mecha Banelings gain increased attack damage for each point of Egonergy remaining when they explode.</li>
+                        <li>Improves the Mecha Baneling's Egonergy Impact Barrier to absorb more damage per point of Egonergy.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_05.png" alt = "Mechnum Opus"></td>
+                <td>Mechnum Opus</td>
+                <td>
+                    Gary gains the ability to transform into Super Gary. Super Gary can hold twice the number of ability charges. He can also temporarily generate his own Stetzone and gains attack speed and health regeneration when he collects Mecha Remnants.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_06.png" alt = "New Unit: Mecha Lurker"></td>
+                <td>New Unit: Mecha Lurker</td>
+                <td>
+                    Area damage ambusher. Must burrow to attack. Can use Tunnel of TERROR Algorithm and Focused Strike Algorithm. Morphed from Mecha Hydralisks.<br><br>Can attack ground units.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_07.png" alt = "Stetmannopoly"></td>
+                <td>Stetmannopoly</td>
+                <td>
+                    Upgrading to Mecha Lair and Mecha Hive reduces the cooldown and increases the maximum charges of Deploy Stetellite.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_08.png" alt = "Mecha Hydralisk & Mecha Lurker Upgrade Cache"></td>
+                <td>Mecha Hydralisk & Mecha Lurker Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Mecha Hydralisk Den and the Mecha Lurker Den:
+                    <ul>
+                        <li>Increases the Mecha Hydralisk's anti-air range by 3.</li>
+                        <li>Unlock the Mecha Lurker's Focused Strike Algorithm ability, which allows it to concentrate fire in a small area around a target enemy unit for 10 seconds.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_09.png" alt = "Friends Forever"></td>
+                <td>Friends Forever</td>
+                <td>
+                    Allows Gary and Stetellites to pick up the Remnants of destroyed Mecha units. When enough Remnants are picked up, Mecha units will be rebuilt at no cost at their respective unlock structures.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_10.png" alt = "Mecha Infestor Upgrade Cache"></td>
+                <td>Mecha Infestor Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Mecha Infestation Pit:
+                    <ul>
+                        <li>Unlock the Mecha Infestor's UMI-C Charging Protocol ability, which allows it to restore health, Egonergy, and energy over time to a target friendly unit. The unit's ability cooldown rate is also increased.</li>
+                        <li>Allow the Mecha Infestor's Roaches Away! and Deconstructive Roach-nite abilities to spawn an additional Mecha Ravager.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_11.png" alt = "New Unit: Mecha Battlecarrier Lord"></td>
+                <td>New Unit: Mecha Battlecarrier Lord</td>
+                <td>
+                    Flying heavy-assault unit. Shoots Mecha Broodlings at its target. Builds and launches Mecha Locusceptors that attack enemy ground targets. Can use Stetmato Cannon.<br><br>Can attack ground units.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_12.png" alt = "Mecha Ultralisk Upgrade Cache"></td>
+                <td>Mecha Ultralisk Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Mecha Ultralisk Cavern:
+                    <ul>
+                        <li>Unlock the Mecha Ultralisk's ability to absorb 25 life from nearby friendly or enemy mechanical units, healing for that amount.</li>
+                        <li>Reduces the damage taken by Mecha Ultralisks by 25%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_13.png" alt = "Lovable Little Rascals"></td>
+                <td>Lovable Little Rascals</td>
+                <td>
+                    Mecha Zerglings and Mecha Banelings drop double the amount of Mecha Zergling Remnant.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_14.png" alt = "Mecha Spire Upgrade Cache"></td>
+                <td>Mecha Spire Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Mecha Spire and the Mecha Greater Spire:
+                    <ul>
+                        <li>Unlock the Mecha Corruptor's Terraclean Solvent ability, which allows it to deal damage over time to an enemy ground unit.</li>
+                        <li>Unlock the Mecha Battlecarrier Lord's ability to build and deploy Mecha Locusceptors, which can attack enemy ground units.</li>
+                        <li>Unlock the Mecha Battlecarrier Lord's Stetmato Cannon ability, which allows it to fire a blast of energy, dealing 300 damage to an enemy unit.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/stetmann/stetmann_15.png" alt = "Pushing the Egonvolope"></td>
+                <td>Pushing the Egonvolope</td>
+                <td>
+                    Allows Stetmann's structures to research two upgrades simultaneously.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="achievements"></a><h2>Achievements</h2>
+    <p>The commander-specific achievements for Stetmann are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/beepbeeplittlesatellite.jpg" alt="Beep Beep Little Stetellite"></td>
+                <td>Beep Beep Little Stetellite</td>
+                <td>Deploy 30 Stetellites by 10 minutes on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/notafillerepisode.jpg" alt="Not A Filler Episode"></td>
+                <td>Not A Filler Episode</td>
+                <td>Complete the Super Gary Transformation Sequence within 5 minutes.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/recyclereducereuse.jpg" alt="Recycle, Reduce, Reuse"></td>
+                <td>Recycle, Reduce, Reuse</td>
+                <td>Collect 500 Mecha Remnants in a single mission.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/xoxo.jpg" alt="X.O.X.O."></td>
+                <td>X.O.X.O.</td>
+                <td>Use Gary's Stetellite Overcharge to overload 2,500 allied units.</td>
+            </tr>
+        </tbody>
+    </table>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="stetzones"></a><h2>Stetzones</h2>
+    <p>Stetzones provide bonuses for any of Stetmann or his ally's units that stand in them. Each Stetellite will spread a Stetzone within 8 range from itself. A Stetellite can only be deployed within a Stetzone. The Deploy Stetellite Ability is shown below:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Ability</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/deploystetellite.png" alt = "Deploy Stetellite"></td>
+                <td>Deploy Stetellite</td>
+                <td>Deploys a Stetellite at the target location. Stetellites must be placed within a Stetzone.</td>
+                <td>
+                    <ul>
+                        <li>Use Stetellites to cover the battlefield and provide you and your ally with vision and buffs.</li>
+                        <li>Stetellites can be placed in Super Gary's Stetzone.</li>
+                        <li>Teching up to a Lair and Hive will provide you with more max charges and a reduced charge cooldown.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 25/20/15 seconds</li>
+                        <li>Max Charges: 3/5/7</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Stetzones can be operated in three different configurations. Configurations can be switched every 1 second, so changing configurations frequently is a key element of Stetmann's gameplay. These modes are listed below:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Ability</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/fastconfig.png" alt = "Fun Accelerator for Speedy Transportation Configuration"></td>
+                <td>Fun Accelerator for Speedy Transportation Configuration (FAST)</td>
+                <td>Stetzones grant Stetmann's units 100% increased movement speed. Allied units gain 50% increased movement speed.</td>
+                <td>
+                    <ul>
+                        <li>Useful to reach <a href="/guides/buildordertheory#theory">maximum mining rate</a> in the early game, despite not having worker saturation on resources (2 per resource patch).</li>
+                        <li>Switch to this mode to to get into position to handle attack waves before switching to another mode.</li>
+                        <li>Great to use for moving high-value army units out of harm's way.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 1 second</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/healthconfig.png" alt = "Health Uptick Generating System Configuration"></td>
+                <td>Health Uptick Generating System Configuration (HUGS)</td>
+                <td>Stetzones grant Stetmann's units 10 life regeneration per second. Allied units gain 5 life regeneration per second.</td>
+                <td>
+                    <ul>
+                        <li>Use this to heal units after engaging attack waves and pushing into bases.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 1 second</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/energyconfig.png" alt = "Just-in-time Uninterruptable Input for Charging Egonergy Configuration"></td>
+                <td>Just-in-time Uninterruptable Input for Charging Egonergy Configuration (JUICE)</td>
+                <td>Stetzones grant Stetmann's units 5 Egonergy regeneration per second. Allied units gain 2.5 energy regeneration per second.</td>
+                <td>
+                    <ul>
+                        <li>Use this to regenerate energy before taking large engagements.</li>
+                        <li>Toggle between this and HUGS to keep your units alive and fully energized.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 1 second</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <p>Difficulty: Moderate</p>
+    <p>Once Stetmann unlocks Super Gary, it is best to rely on that Hero unit to clear enemy encampments and bases before sending your army in to clear the objectives. Before Super Gary, it is best to use a Hydralisk/Zergling composition as the main backbone of your army, using the Zerglings to tank for the more fragile Hydralisks.</p>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="masteries"></a><h2>Masteries</h2>
+    <p>Below are the three Power Sets for Stetmann with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
+    <p>Power Set 1:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Upgrade Resource Cost</td>
+                <td>-2% per point<br>-60% maximum</td>
+                <td>0</td>
+                <td rowspan="2">The upgrade resource mastery only affects attack and armor upgrades, and not upgrades that improve individual units. Players will need to take into consideration whether this mastery is needed.</td>
+            </tr>
+            <tr>
+                <td>Gary Ability Cooldown</td>
+                <td>-1% per point<br>-30% maximum</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">Super Gary can be an extremely powerful unit when used correctly, providing Stetmann's army with instant mobility, buffs and a strong AoE attack to deal with attack waves. Having access to these abilities more often is a better choice.</p>
+    <p>Power Set 2:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Stetzone Bonuses</td>
+                <td>2% per point<br>60% maximum</td>
+                <td>30</td>
+                <td rowspan="2">Players will need to look at how they are using the energy on their units in order to determine the appropriate split. Players that prefer to spam abilities in short, infrequent bursts (like Infestor play) may decide to put more points into the Energy pool.</td>
+            </tr>
+            <tr>
+                <td>Maximum Egonergy Pool</td>
+                <td>2% per point<br>60% maximum</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">The points recommended here are a starting point for players. A player's playstyle will determine what split they prefer to use. A 8/22 split is optimized for Roach-style play. A 30/0 split can be used to keep all options viable.</p>
+    <p>Power Set 3:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Deploy Stetellite Cooldown</td>
+                <td>-0.17 sec per point<br>-5 sec maximum</td>
+                <td>0</td>
+                <td rowspan="2">A minimum of 12 points into the Structure Morph Rate mastery will allow players to get Super Gary out as soon as he spawns, which compensates for Stetmann's lack of early game power. However, players that prefer to not rely on Super Gary may find more benefit in the Deploy Stetellite mastery, which will allow them to spawn more Stetellites more frequently.</td>
+            </tr>
+            <tr>
+                <td>Structure Morph Rate</td>
+                <td>2% per point<br>60% maximum</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">Stetmann naturally floats many minerals which can be used to place Hatcheries around the map to spread Stetellites from, reducing the need for allocating points into the Stetellite mastery. Therefore, the Structure Morph mastery is the better choice here.</p>
+    <?php
+    include("../ad2.php");
+    ?>
+    <a id="prestiges"></a><h2>Prestiges</h2>
+    <p>Below are the prestiges for Stetmann. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
+    <table class="prestigeTable">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Effective Level</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Signal Savant</td>
+                <td>
+		            <ul>
+                        <li>Advantages:
+                            <ul>
+                                <li>Stetellites are invulnerable once they are online.</li>
+                                <li>Stetellites generate a 50% larger Stetzone.</li>
+                            </ul>
+                        </li>
+                        <li>Disadvantages:
+                            <ul>
+                                <li>Super Gary is unavailable.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>1</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td class="forceleft" colspan="5">The disadvantage for this Prestige only takes effect at level 5, which means below Stetmann level 5, this prestige provides purely a positive benefit to the player. However, the loss of Super Gary can be a huge disadvantage, as Super Gary is responsible for Stetmann's overall strength as a commander. This prestige works well against <a href="/resources/mutators">mutators</a> like Propagators, as Stetellites can no longer be converted by Propagators. Additionally, this prestige also favours mass Infestor-style play, as that style of play does not rely much on Super Gary as a hero unit.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Effective Level</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>Best Buddy</td>
+                <td>
+		            <ul>
+                        <li>Advantages:
+                            <ul>
+                                <li>Gary's health and damage increased by 100%.</li>
+                            </ul>
+                        </li>
+                        <li>Disadvantages:
+                            <ul>
+                                <li>Gary's movement speed is reduced by 90% outside of Stetzones.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>5</td>
+                <td>
+                    <ul>
+                        <li>Applies to Super Gary</li>
+                        <li>Applies to E-Gorbs used by both units</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="forceleft" colspan="5">This prestige doubles up on the Hero unit and provides it with a large set of buffs that makes the unit even more powerful. When played well, Super Gary can be used to severely weaken enemy bases and wipe attack waves. The disadvantage may appear to be a big one, and for a unit like Gary, it is true. However, Super Gary has access to the Gary Zone ability which allows him to not only move outside Stetzones at regular speed, but also place Stetellites. When used efficiently, the player should have all the mobility around the map they require, without being hindered by this prestige's disadvantage.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Effective Level</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3</td>
+                <td>Oil Baron</td>
+                <td>
+		            <ul>
+                        <li>Advantages:
+                            <ul>
+                                <li>Combat units gain a stack of The Best Oil when they kill an enemy unit.</li>
+                            </ul>
+                        </li>
+                        <li>Disadvantages:
+                            <ul>
+                                <li>Combat units cost 40% more minerals.</li>
+                                <li>Mecha Infestors are unavailable.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>1</td>
+                <td>
+                    <ul>
+                        <li>The Best Oil buff gives +10% Attack Speed and +1HP/second regeneration for 30 seconds per stack.</li>
+                        <li>A maximum of 20 Best Oil stacks can be collected per unit.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="forceleft" colspan="5">While this prestige might appear to be useful, The Best Oil is only useful when provided in several stacks, such as those given to Super Gary. Since these stacks are only given out on a kill, it is highly unlikely that a unit can accumulate enough stacks such that they would get a signficant advantage from this prestige. Combined with the fact that these stacks are temporary and wear off after 30 seconds, this prestige is not very useful for most units. However, units that deal splash damage, or have cleave attacks (such as Lurkers and Ultralisks) can benefit from this prestige, especially on missions like Dead of Night, where there is a constant stream of enemy units to keep the stacks refreshed.</td>            
+            </tr>
+        </tbody>
+    </table>
+    <p>Best Buddy is the prestige that outshines the rest here, by providing a huge power level increase to Super Gary, with very minimal downsides. Pre-level 5, Stetmann should be using Signal Savant, as it offers no downsides. However, past level 5, Best Buddy should be used if it is unlocked, with a big focus on the hero unit, to reap the power of the prestige.</p>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="hero"></a><h2>Hero Unit</h2>
+    <img id="heroPic" src="/images/commanderdata/hero/stetmann/gary.jpg" alt="Gary">
+    <p>Spawn time: 4:00</p>
+    <p>Respawn time: 1:00</p>
+    <p>The abilities for Gary are:</p>
+    <table class="abilityTable">
+        <thead>
+            <tr>
+                <th>Ability</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Cooldown</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/hero/stetmann/egorb.png" alt = "E-Gorb"></td>
+                <td>E-Gorb</td>
+                <td>Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.</td>
+                <td>30 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/hero/stetmann/so1.png" alt = "Stetellite Overcharge"><img src="/images/commanderdata/hero/stetmann/so2.png" alt = "Stetellite Overcharge"><img src="/images/commanderdata/hero/stetmann/so3.png" alt = "Stetellite Overcharge"></td>
+                <td>Stetellite Overcharge</td>
+                <td>Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds.<br>- F.A.S.T. Overload grants 20% increased attack speed for 45 seconds.<br>- H.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.<br>- J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.</td>
+                <td>45 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/hero/stetmann/ssmt.png" alt = "Semi-Stable Mass Transportation"></td>
+                <td>Semi-Stable Mass Transportation</td>
+                <td>Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)</td>
+                <td>180 seconds</td>
+            </tr>
+        </tbody>
+    </table>
+    <img id="heroPic1" src="/images/commanderdata/hero/stetmann/supergary.jpg" alt="Super Gary">
+    <p>For a cost of 450 Minerals/300 Gas, Gary may be upgraded to Super Gary, with an extra ability charge (except for Gary-Zone) and a new ability. The abilities for Super Gary are:</p>
+    <table class="abilityTable">
+        <thead>
+            <tr>
+                <th>Ability</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Cooldown</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/hero/stetmann/egorb.png" alt = "E-Gorb"></td>
+                <td>E-Gorb</td>
+                <td>Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.</td>
+                <td>30 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/hero/stetmann/so1.png" alt = "Stetellite Overcharge"><img src="/images/commanderdata/hero/stetmann/so2.png" alt = "Stetellite Overcharge"><img src="/images/commanderdata/hero/stetmann/so3.png" alt = "Stetellite Overcharge"></td>
+                <td>Stetellite Overcharge</td>
+                <td>Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds.<br>- F.A.S.T. Overload grants 20% increased attack speed for 45 seconds.<br>- H.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.<br>- J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.</td>
+                <td>45 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/hero/stetmann/ssmt.png" alt = "Semi-Stable Mass Transportation"></td>
+                <td>Semi-Stable Mass Transportation</td>
+                <td>Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)</td>
+                <td>180 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/hero/stetmann/garyzone1.png" alt = "Gary-Zone"><img src="/images/commanderdata/hero/stetmann/garyzone2.png" alt = "Gary-Zone"><img src="/images/commanderdata/hero/stetmann/garyzone3.png" alt = "Gary-Zone"></td>
+                <td>Gary Zone</td>
+                <td>Generates a Stetzone around Super Gary for 30 seconds.</td>
+                <td>120 seconds</td>
+            </tr>
+        </tbody>
+    </table>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <p>The recommended army composition for Stetmann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/stetmann/mechazergling.jpg" alt="Mecha Zergling"><img class="army" src="/images/commanderdata/units/stetmann/mechahydralisk.jpg" alt="Mecha Hydralisk">
+    <p>Using Zerglings to tank for Hydralisks, Stetmann should be able to handle almost any enemy composition without any issues. Attack wave should first be engaged with Super Gary before attacking with your army.</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/stetmann/mechabaneling.jpg" alt="Mecha Baneling"><div class="techAdd">+</div></div>
+    <p>If dealing with a pure ground composition, Mecha Banelings are a great way of handling attack waves. Place them near spawn points if possible.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+            
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+            
+        });
+    </script>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="units"></a><h2>Combat Units</h2>
+    <p>For more information on Stetmann's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
+    <p>Stetmann's combat units are listed below:</p>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechazergling.jpg" alt="Mecha Zergling">
+            <p>Mecha Zergling</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 50</li>
+                <li>Can be an extremely effective tank with the Hardened Egonergy Shield.</li>
+                <li>Hardened Egonergy Shield stacks with HUGS overcharge.</li>
+                <li>Almost invincible with the the Hardened Egonergy Shield Upgrade and alternating HUGS and JUICE Stetzones.</li>
+                <li>Use JUICE after clearing out most enemy units in bases to minimize the energy drain of the Synthetic Adrenal Pumps upgrade.</li>
+                <li>Great unit as a mineral dump.</li>
+            </ul>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/metalbolicboost.png" alt="Metal-Bolic Boost"></td>
+                        <td>Metal-Bolic Boost</td>
+                        <td>Increases the movement speed of Mecha Zerglings by 60%.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/hardenedegonergyshield.png" alt="Hardened Egonergy Shield"></td>
+                        <td>Hardened Egonergy Shield</td>
+                        <td>Allows Mecha Zerglings to reduce incoming damage to a maximum of 10. Drains 5 Egonergy per use.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/syntheticadrenalpumps.png" alt="Synthetic Adrenal Pumps"></td>
+                        <td>Synthetic Adrenal Pumps</td>
+                        <td>Increases attack speed of Mecha Zerglings by 100%. Drains 1 Egonergy per attack.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechabaneling.jpg" alt="Mecha Baneling">
+            <p>Mecha Baneling</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 50</li>
+                <li>Expensive unit, given its utility.</li>
+                <li>Does great amounts of splash damage.</li>
+                <li>Can be useful for clearing up clumps of enemy units.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="unlockable autocast">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/anticentripetalrocketservos.png" alt="Anti-Centripetal Rocket Servos"></td>
+                        <td>Anti-Centripetal Rocket Servos</td>
+                        <td>Increases the movement speed of this unit by 15% and allows it to leap onto enemy units.</td>
+                        <td>5 seconds</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/anticentripetalrocketservos.png" alt="Anti-Centripetal Rocket Servos"></td>
+                        <td>Anti-Centripetal Rocket Servos</td>
+                        <td>Increases the movement speed of Mecha Banelings by 15% and allows them to leap onto enemy units.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/egonergyenhancedexplosives.png" alt="Egonergy Enhanced Explosives"></td>
+                        <td>Egonergy Enhanced Explosives</td>
+                        <td>Allows the Mecha Baneling to add its current Egonergy to its damage when it explodes.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/egonergyefficientbarrier.png" alt="Egonergy Efficient Barrier"></td>
+                        <td>Egonergy Efficient Barrier</td>
+                        <td>Increases the damage absorbed by the Mecha Baneling's Egonergy Impact Barrier to 2 damage per point of Egonergy.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechahydralisk.jpg" alt="Mecha Hydralisk">
+            <p>Mecha Hydralisk</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 100</li>
+                <li>Does great amounts of Anti-Air damage.</li>
+                <li>Erudition Missile Launchers upgrade can increase Hydralisk damage greatly vs. Air Armored units.</li>
+                <li>Very effective against armored objectives that can be hit by air attacks.</li>
+                <li>Can overkill due to its attacks being projectiles, so attention needs to be paid to how they are taking engagements.</li>
+                <li>Versatile but fragile unit.</li>
+            </ul>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/hydralicaugments.png" alt="Hydra-lic Augments"></td>
+                        <td>Hydra-lic Augments</td>
+                        <td>Increases the movement speed of Mecha Hydralisks by 50%.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/eruditionmissilelaunchers.png" alt="Erudition Missile Launchers"></td>
+                        <td>Erudition Missile Launchers</td>
+                        <td>Allows the Mecha Hydralisk to replace its anti-air Needle Spine weapon with a more powerful Erudition Missile armament.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/tyrclasstargetingsystem.png" alt="Tyr-Class Targeting System"></td>
+                        <td>Tyr-Class Targeting System</td>
+                        <td>Increases the Mecha Hydralisk's anti-air weapon range by 3.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechalurker.jpg" alt="Mecha Lurker">
+            <p>Mecha Lurker</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 200</li>
+                <li>Good defensive unit which can be used to clear attack waves.</li>
+                <li>Due to its high-damage skill being manual cast, this unit requires a little bit of micromanagement.</li>
+                <li>Tunnel of Terror Algorithm gives Lurkers invulnerability while in motion and does not require the Lurker to be burrowed.</li>
+                <li>Focused Strike Algorithm can stack, making it a useful ability to burst down targets.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/stetmann/tunnelofterroralgorithm.png" alt="Tunnel of TERROR Algorithm"></td>
+                        <td>Tunnel of TERROR Algorithm</td>
+                        <td>Tunnels to a nearby target location, dealing 60 damage to enemies along the way.</td>
+                        <td>8 seconds</td>
+                        <td>75</td>
+                    </tr>
+                    <tr class="unlockable">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/focusedstrikealgorithm.png" alt="Focused Strike Algorithm"></td>
+                        <td>Focused Strike Algorithm</td>
+                        <td>The Mecha Lurker concentrates its fire on a target unit, dealing 50 damage to a small area around that unit for 10 seconds or until the unit is destroyed.</td>
+                        <td>0 seconds</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/extendedtunnelofterroralgorithm.png" alt="Extended Tunnel of TERROR Algorithm"></td>
+                        <td>Extended Tunnel of TERROR Algorithm</td>
+                        <td>Increases the maximum range of the Mecha Lurker's Tunnel of TERROR Algorithm by 6.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/focusedstrikealgorithm.png" alt="Focused Strike Algorithm"></td>
+                        <td>Focused Strike Algorithm</td>
+                        <td>Allows the Mecha Lurker to concentrate its fire on a target unit, dealing 50 damage to a small area around that unit for 10 seconds or until the unit is destroyed.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechacorruptor.jpg" alt="Mecha Corruptor">
+            <p>Mecha Corruptor</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 200</li>
+                <li>Great anti-air unit.</li>
+                <li>Cluster Busters ability can be used to destroy clumps of enemy units while spawn-camping attack waves.</li>
+                <li>Cluster Busters works very well with <a href="/guides/generaltips#bindrapidfire">Rapidfire.</a></li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/stetmann/clusterbusters.png" alt="Cluster Busters"></td>
+                        <td>Cluster Busters</td>
+                        <td>Fires a barrage of missiles dealing 50 (+30 vs. light) damage to enemy air units in a target area.</td>
+                        <td>10 seconds</td>
+                        <td>100</td>
+                    </tr>
+                    <tr class="unlockable">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/terracleansolvent.png" alt="Terraclean Solvent"></td>
+                        <td>Terraclean Solvent</td>
+                        <td>Emits a solvent stream that deals 10 damage per second for 3 seconds, then increases to 50 damage per second.<br><br>Channeled ability. Can target enemy ground units and structures.</td>
+                        <td>20 seconds</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/wideareaclusterbusters.png" alt="Wide Area Cluster Busters"></td>
+                        <td>Wide Area Cluster Busters</td>
+                        <td>Increases the search radius of Mecha Corruptor's Cluster Busters by 100%.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/terracleansolvent.png" alt="Terraclean Solvent "></td>
+                        <td>Terraclean Solvent</td>
+                        <td>Allows the Mecha Corruptor to emit a solvent stream that deals devastating damage to enemy ground units over time.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechabattlecarrierlord.jpg" alt="Mecha Battlecarrier Lord">
+            <p>Mecha Battlecarrier Lord</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 400</li>
+                <li>Extremely expensive unit.</li>
+                <li>Relatively ineffective due to its high dependence on Egonergy in order to attack.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="autocast">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/readymechabroodling.png" alt="Ready Mecha Broodling"></td>
+                        <td>Ready Mecha Broodling</td>
+                        <td>Builds Mecha Broodlings that can attack ground units.</td>
+                        <td>3 seconds</td>
+                        <td>5</td>
+                    </tr>
+                    <tr class="unlockable autocast">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/buildmechalocusceptor.png" alt="Build Mecha Locusceptor"></td>
+                        <td>Build Mecha Locusceptor</td>
+                        <td>Builds Mecha Locusceptors that automatically attack the Mecha Battlecarrier Lord's target.<br><br>Can attack ground units.</td>
+                        <td>20 seconds</td>
+                        <td>50</td>
+                    </tr>
+                    <tr class="unlockable">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/stetmatocannon.png" alt="Stetmato Cannon"></td>
+                        <td>Stetmato Cannon</td>
+                        <td>Blasts a target with a devastating plasma cannon causing 300 damage and delusions of grandeur.</td>
+                        <td>0 seconds</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/mechalocusceptorbays.png" alt="Mecha Locusceptor Bays"></td>
+                        <td>Mecha Locusceptor Bays</td>
+                        <td>Allows the Mecha Battlecarrier Lord to build and launch 6 Mecha Locusceptors that automatically attack enemy ground units.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/stetmatocannon.png" alt="Stetmato Cannon"></td>
+                        <td>Stetmato Cannon</td>
+                        <td>Allows the Mecha Battlecarrier Lord to blast targets with a devastating plasma cannon causing 300 damage and delusions of grandeur.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechainfestor.jpg" alt="Mecha Infestor">
+            <p>Mecha Infestor</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 400</li>
+                <li>Extremely powerful unit when massed.</li>
+                <li>Can create large waves of spawned units and overwhelm enemies.</li>
+                <li>Bonus Ravager upgrade is a critical upgrade which greatly increases damage output.</li>
+                <li>Extremely fragile and will need to be kept at the backline.</li>
+                <li>UMI-C Charging Protocol can be used consistently to keep Infestors at full energy.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/stetmann/roachesaway.png" alt="Roaches Away!"></td>
+                        <td>Roaches Away!</td>
+                        <td>Spawn 2 Mecha Roaches. Spawned units last 45 seconds.</td>
+                        <td>0 seconds</td>
+                        <td>250</td>
+                    </tr>
+                    <tr class="unlockable">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/umicchargingprotocol.png" alt="UMI-C Charging Protocol"></td>
+                        <td>UMI-C Charging Protocol</td>
+                        <td>The Mecha Infestor launches a mechanical nerve cord at a friendly unit, restoring 150 life, 50 Egonergy, and 50 energy instantly. An additional 600 life, 200 Egonergy, and 200 energy regenerates over 20 seconds. The unit's ability cooldown rate is increased by 25% </td>
+                        <td>5 seconds</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/stetmann/deconstructiveroachnites.png" alt="Deconstructive Roach-nites"></td>
+                        <td>Deconstructive Roach-nites</td>
+                        <td>Infests target enemy structure, dealing 500 damage over 10 seconds and disabling it for the duration of the effect. If the structure is destroyed while under the effects of Deconstructive Roach-nites, it will spawn 2 Mecha Roaches.</td>
+                        <td>0 seconds</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/umicchargingprotocol.png" alt="UMI-C Charging Protocol"></td>
+                        <td>UMI-C Charging Protocol</td>
+                        <td>Allows the Mecha Infestor to launch a mechanical nerve cord at a friendly unit, restoring 150 life, 50 Egonergy, and 50 energy instantly. An additional 600 life, 200 Egonergy, and 200 energy regenerates over 20 seconds. The unit's ability cooldown rate is increased by 25% </td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/bonusravager.png" alt="BONUS Ravager!"></td>
+                        <td>BONUS Ravager!</td>
+                        <td>Allows the Mecha Infestor's Roaches Away! and Deconstructive Roach-nites to spawn an additional Mecha Ravager.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/stetmann/mechaultralisk.jpg" alt="Mecha Ultralisk">
+            <p>Mecha Ultralisk</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Max Egonergy: 300</li>
+                <li>Can be made in small quantities to provide a strong frontline force.</li>
+                <li>Mecha Mooch Module can be used to further increase ruggedness in combat.</li>
+                <li>Vectored Burrow Charge and Electrostatic Surprise can take out a lot of high-damage mech units (even from two Ultralisks), reducing overall threat to Stetmann's army.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/stetmann/vectoredburrowcharge.png" alt="Vectored Burrow Charge"></td>
+                        <td>Vectored Burrow Charge</td>
+                        <td>Burrow and charge towards a unit. Upon unburrowing, all enemy units in the vicinity are knocked back and dealt 50 damage.</td>
+                        <td>5 seconds</td>
+                        <td>75</td>
+                    </tr>
+                    <tr class="unlockable autocast">
+                        <td><img src="/images/commanderdata/unitskills/stetmann/mechamoochmodule.png" alt="Mecha Mooch Module"></td>
+                        <td>Mecha Mooch Module</td>
+                        <td>Absorbs 25 health from a nearby enemy or friendly mechanical unit, healing for that amount.</td>
+                        <td>2 seconds</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_zerg.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/electrostaticsurprise.png" alt="Electrostatic Surprise!"></td>
+                        <td>Electrostatic Surprise!</td>
+                        <td>Allows the Mecha Ultralisk's Vectored Burrow Charge ability to stun enemy mechanical ground units in a large area.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/mechamoochmodule.png" alt="Mecha Mooch Module"></td>
+                        <td>Mecha Mooch Module</td>
+                        <td>Grants the Mecha Ultralisk the ability to absorb 25 life from nearby enemy or friendly mechanical units, healing for that amount.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/stetmann/chitaniumplating.png" alt="Chitanium Plating"></td>
+                        <td>Chitanium Plating</td>
+                        <td>Grants the Mecha Ultralisk 25% damage reduction.</td>
+                        <td>100/100</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="buildOrder"></a><h2>Build Order</h2>
+    <p>Below is a order for Stetmann that rushes Super Gary out. This one assumes max mastery points into the Structure Morph mastery to ensure adequate resources to upgrade Gary as soon as he spawns. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
+    <p class="buildOrder">
+        14 Overlord<br>
+        14 Extractor (2 drones on completion)<br>
+        14 Extractor (2 drones on completion)<br>
+        19 Spawning Pool<br>
+        18 Lair<br>
+        18 2x Zerglings to Expo<br>
+        20 Drone<br>
+        21 Infestation Pit<br>
+        20 Drone<br>
+        21 Overlord<br>
+        Saturate gasses at 200 minerals<br>
+        21 Hive<br>
+        Saturate mineral line<br>
+    </p>
+    <p>Note that on some maps that are more defensive (for example <a href="/missions/mistopportunities">Mist Opportunities</a>), it may be better to delay getting the Super Gary upgrade and focusing on a more economic-centric build by take your expansion faster. As such, the build order will need to be modified accordingly. To learn more about how to construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
+    <?php
+    include("../ad3.php");
+    ?>
+    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h3>Mecha Remnants</h3>
+    <p>Whenever any of Stetmann's Mech units are killed under a Stetzone or within 15 range of Gary/Super Gary, a certain number of Mecha Remnants for a unit will be recycled to Stetmann. When a certain number of Remnants are recycled, a Mecha unit will be rebuilt at no cost at their respective unlock structures. Additionally, when Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. This can stack up to 20 times. The table below summarizes which Remnants are dropped from each unit.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Unit Killed</th>
+                <th>Remnants Dropped</th>
+                <th>Number Dropped</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mecha Zergling</td>
+                <td>Mecha Zergling</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Mecha Baneling</td>
+                <td>Mecha Zergling</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Mecha Hydralisk</td>
+                <td>Mecha Hydralisk</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Mecha Lurker</td>
+                <td>Mecha Hydralisk</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Mecha Infestor</td>
+                <td>Mecha Infestor</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Mecha Corruptor</td>
+                <td>Mecha Corruptor</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Mecha Battlecarrierlord</td>
+                <td>Mecha Corruptor</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Mecha Ultralisk</td>
+                <td>Mecha Ultralisk</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>The table below lists out the required count of Mecha Remnants to produce a full unit.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Unit</th>
+                <th>Remnants Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mecha Zergling</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Mecha Hydralisk</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Mecha Infestor</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Mecha Corruptor</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Mecha Ultralisk</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Playstyle Traps</h3>
+    <p>A common trap for Stetmann players is to ignore the power of Stetzones and take engagements outside them. This can severely reduce their army's effectiveness in the mission. Additionally, switching Stetzone types is part of the gameplay, and continuously using a single Stetzone type is inefficient.</p>
+    <p>Additionally, some players may choose to cover their ally's base in a speed Stetzone. This should not always be done. Players will need to consider a number of factors:</p>
+    <ol>
+        <li>Ally's commander: Certain commanders macro up extremely quickly and reach full saturation within a few minutes (like Zagara). These commanders generally do not benefit from a Stetzone in their expansion as much as slower commanders (like Stukov).</li>
+        <li>Distance between bases: Some maps have player expansions very close to each other. As a result, it would take only a few Stetellites to cover an ally's base with a Stetzone.</li>
+        <li>Attack wave timing: If players find they do not have adequate resources to handle an attack wave early (such as on <a href="/missions/riftstokorhal">Rifts to Korhal</a>), putting a Stetzone in an ally's base and switching to HUGS may keep workers alive assuming there is nothing to draw aggro of the attack wave.</li>
+    </ol>
+    <h3>Playstyle Tips</h3>
+    <ul>
+        <li>When engaging an enemy camp, stay outside attack range of enemy units and use an E-Gorb on the enemy units. Taking damage, enemy units will run away, in the same direction as the orb is moving. This can clear large number of enemies effectively.</li>
+        <li>If you need a Stetzone in an area, use Super Gary's Stetzone ability, and then place a Stetellite in the Stetzone to produce a permanent Stetzone once the ability runs out.</li>
+        <li>Following from the above point, it may be useful to spend less time spreading Stetzones to some locations from your base. Instead, use Super Gary's Stetzone ability to provide a place to put a Stetellite and spread from there.</li>
+        <li>You can use Hatcheries to create additional Stetzones to place Stetellites and spread Stetzones from there.</li>
+        <li>Switch to the Speed Stetzone to move valuable units away from the enemy if they get aggro'ed.</li>
+        <li>Alternating between the Energy and the HP Stetzone can keep fully-upgraded Zerglings alive for a very long time.</li>
+        <li>Tech structures can be assigned rally points, so make sure to set them to ensure recycled units go to where they are supposed to go.</li>
+        <li>Make use of Stetellite overcharges because they provide large buffs to your units. Overcharge a Stetellite before taking engagements.</li>
+        <li>Build Macro Hatcheries to allow you to spend your resources more effectively.</li>
+        <li>Super Gary gains a temporary attack speed buff when he picks up Mecha Remnants. Make sure Super Gary is near your army in combat to take advantage of this buff.</li>
+    </ul>
+    <?php
+    include("../ad.php");
+    ?>
+</div>
+<?php include("../footer.php"); ?>
+</body>
+</html>

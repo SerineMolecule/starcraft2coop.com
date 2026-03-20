@@ -1,0 +1,1405 @@
+<?php
+include("../header.php");
+?>
+  <title>Starcraft 2 Co-op - Commander Guide - Tychus</title>
+  <meta name="description" content="Starcraft 2 Co-op Commander Guide Tychus">
+  <meta name="keywords" content="Starcraft co-op guides tychus commander mastery prestige build">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.1">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link rel="canonical" href="https://starcraft2coop.com/commanders/tychus">
+  <style>
+        #content{
+            background: url(/images/commanderdata/bgs/tychus.png);
+            background-repeat: no-repeat;
+        }
+        @media (min-width: 701px){
+            .outlaw{
+                height:830px;
+                margin-top:20px;
+            }
+        }
+        @media (max-width: 700px){
+            .outlawAbility{
+                clear:both;
+            }
+        }
+        .heroUpgrades th:nth-child(4){
+            white-space:nowrap;
+        }
+        #tooltip{
+            position:absolute;
+            background-color:khaki;
+            color:black;
+            font-size:0.8em;
+            display:none;
+            z-index:1;
+            padding:5px;
+            border-radius:5px;
+        }
+        .override{
+            height:880px;
+        }
+  </style>
+  </head>
+<body>
+<div id="header"><img src="/images/mainpageheader.png" alt="Starcraft II Co-op Logo">
+</div>
+<div id="menu"><?php include("../menu.php"); ?></div>
+<div id="content">
+    <div id="tooltip">tooltip</div>
+    <h1>Co-op Commander Guide: Tychus</h1>
+    <p id="commanderMotto">Legendary Outlaw</p>
+    <?php include("../scripts/reporterror.php");?>
+    <h2>Sections on this Page</h2>
+    <div id="links">
+        <p><a href="#comSum">Commander Summary</a></p>
+        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#achievements">Achievements</a></p>
+        <p><a href="#calldowns">Calldowns</a></p>
+        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p><a href="#masteries">Masteries</a></p>
+        <p><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#army">Recommended Army Composition</a></p>
+        <p><a href="#outlaws">Outlaws</a></p>
+        <p><a href="#buildOrder">Build Order</a></p>
+        <p><a href="#guide">Gameplay Guide</a></p>
+    </div>
+    <a id="comSum"></a><h2>Commander Summary</h2>
+    <p>Tychus leads a band of powerful outlaws, each with a unique ability and gear, to control the battlefield.</p>
+    <?php
+    include("../ad1.php");
+    ?>
+    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <table class="progressionTable">
+        <thead>
+            <tr>
+                <th>Level/Icon</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_01.png" alt = "Just Like Old Times"></td>
+                <td>Just Like Old Times</td>
+                <td>
+                    Tychus has a 100 supply maximum and can recruit legendary Outlaws from Joeyray's Bar. Heroic units. When an Outlaw is killed, they escape death and can be recruited again from the Bar.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_02.png" alt = "More the Merrier"></td>
+                <td>More the Merrier</td>
+                <td>
+                    Unlocks the ability to recruit a 5th Outlaw to Tychus' crew.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_03.png" alt = "Odin"></td>
+                <td>Odin</td>
+                <td>
+                   Unlocks the ability to call down the Odin at a target location, picking up Tychus and taking him as its pilot and dealing 150 damage on impact. The Odin is controllable and will fight for 60 seconds. Call down the Odin from the top panel.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/tychus/tychus_04.png" alt = 'New Outlaw: Kev "Rattlesnake" West'></td>
+                <td>New Outlaw: Kev "Rattlesnake" West</td>
+                <td>
+                    One of the Muscle. Adept at supporting friendly units and dealing with armored ground units. Can use Deploy Revitilizer. Recruited from Joeyray's Bar.<br><br>Can attack ground units.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_05.png" alt = "Engineering Bay Upgrade Cache"></td>
+                <td>Engineering Bay Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Engineering Bay:
+                    <ul>
+                        <li>Increases the attack speed of Tychus, Crooked Sam, and Sirius by 25%.</li>
+                        <li>Increases the life of Blaze, Cannonball, and Rattlesnake by 25%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/tychus/tychus_06.png" alt = 'New Outlaw: James "Sirius" Sykes'></td>
+                <td>New Outlaw: James "Sirius" Sykes</td>
+                <td>
+                    One of the Guns. Adept at deploying Turrets and imbuing both himself and his Turrets with special abilities. Can use Deploy Warhound Turret. Recruited from Joeyray's Bar.<br><br>Can attack ground and air units.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/tychus/tychus_07.png" alt = "First One's on the House"></td>
+                <td>First One's on the House</td>
+                <td>
+                    Reduces the mineral and gas costs of Tychus' first Outlaw by 50%.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_08.png" alt = 'New Outlaw: Rob "Cannonball" Boswell'></td>
+                <td>New Outlaw: Rob "Cannonball" Boswell</td>
+                <td>
+                    One of the Muscle. Adept at taking damage and dealing it back. Can use Heavy Impact. Recruited from Joeyray's Bar.<br><br>Can attack ground units.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/tychus/tychus_09.png" alt = "Need a Ride?"></td>
+                <td>Need a Ride?</td>
+                <td>
+                    Increases the maximum number of Medivacs Platforms from 1 to 3.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_10.png" alt = "New Outlaw: Vega"></td>
+                <td>New Outlaw: Vega</td>
+                <td>
+                    One of the Fixers. Adept at taking control of enemy units. Can use Dominate.  Can be upgraded to be a Detector. Recruited from Joeyray's Bar.<br><br>Can attack ground and air units.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/tychus/tychus_11.png" alt = "Five Finger Discount"></td>
+                <td>Five Finger Discount</td>
+                <td>
+                    Reduces the cost of all gear by 100 minerals and 100 gas.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_12.png" alt = "Primary Ultimate Gear Cache"></td>
+                <td>Primary Ultimate Gear Cache</td>
+                <td>
+                    Unlocks the following upgrades:
+                    <ul>
+                        <li>Tychus gains weapon damage for each Outlaw on the field (Purchased at the Gunslingers' Hideout).</li>
+                        <li>Crooked Sam gains the ability to reduce the charge-up time of Demolition Charge with each attack (Purchased at the Gunslingers' Hideout).</li>
+                        <li>Blaze gains the ability to reduce all damage to 30 (Purchased at the Muscle Armory).</li>
+                        <li>Lt. Nikara gains the ability to cast a defensive shield around friendly units (Purchased at the Fixers' Safehouse).</li>
+                        <li>Nux gains the ability to reduce the cooldown and charge-up time of all primary Outlaw abilities (Purchased at the Fixers' Safehouse).</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_13.png" alt = "Fully Loaded"></td>
+                <td>Fully Loaded</td>
+                <td>
+                    Unlocks the following upgrades at the Engineering Bay:
+                    <ul>
+                        <li>Level 4 and 5 Outlaw Weapons research upgrades.</li>
+                        <li>Level 4 and 5 Outlaw Life and Armor research upgrades.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/tychus/tychus_14.png" alt = "Advanced Ultimate Gear Cache"></td>
+                <td>Advanced Ultimate Gear Cache</td>
+                <td>
+                    Unlocks the following upgrades:
+                    <ul>
+                        <li>Improves the health and attack damage of Sirius' Warhound Turrets (Purchased at the Gunslingers' Hideout).</li>
+                        <li>Rattlesnake gains the ability to deal area of effect damage (Purchased at the Muscle Armory).</li>
+                        <li>Cannonball gains a 30% chance to deal 4 times more damage on each attack (Purchased at the Muscle Armory).</li>
+                        <li>Improves the duration of Vega's Dominate ability (Purchased at the Fixers' Safehouse).</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/tychus/tychus_15.png" alt = "Big Red Button"></td>
+                <td>Big Red Button</td>
+                <td>
+                    Unlocks the following upgrade at the Engineering Bay.
+                    <ul>
+                        <li>Replaces the Odin's Barrage ability with a better ability that allows the Odin to call down a nuke.</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="achievements"></a><h2>Achievements</h2>
+    <p>The commander-specific achievements for Tychus are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/tychus/buybuybuybuybuy.jpg" alt="Buy Buy Buy (Buy Buy)"></td>
+                <td>Buy Buy Buy (Buy Buy)</td>
+                <td>Purchase 5 pieces of ultimate gear by 20 minutes on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/tychus/iaintflippingthisbill.jpg" alt="I Ain't Flipping This Bill"></td>
+                <td>I Ain't Flipping This Bill</td>
+                <td>Purchase the ultimate gear of every heroic unit.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/tychus/outofnetworkcoverage.jpg" alt="Out-Of-Network Coverage"></td>
+                <td>Out-Of-Network Coverage</td>
+                <td>Heal 50,000 life on allied units in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/tychus/pushincaseofemergency.jpg" alt="Push In Case of Emergency"></td>
+                <td>Push In Case of Emergency</td>
+                <td>Kill 1,000 units with the Odin's Big Red Button ability.</td>
+            </tr>
+        </tbody>
+    </table>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="calldowns"></a><h2>Calldowns</h2>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Calldown</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/tychus/medivacpickup.png" alt = "Medivac Pickup"></td>
+                <td>Medivac Pickup</td>
+                <td>Instantly transports all Outlaws in the target area to a targeted location, healing and cloaking them (10 seconds) on drop-off. If these units are attacked, they will stop healing and decloak.</td>
+                <td>
+                    <ul>
+                        <li>Useful for dealing with attack waves and then returning back.</li>
+                        <li>Can be used to move freshly recruited/revived outlaws to your main group.</li>
+                        <li>Works well as a heal before your healer is recruited.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 120 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/tychus/calldownodin.png" alt = "Calldown Odin"></td>
+                <td>Calldown Odin</td>
+                <td>Calls down the Odin at the target location, dealing 150 damage on impact. The Odin takes Tychus as the pilot and revives him if he is inactive. It is controllable and will fight for 60 seconds.</td>
+                <td>
+                    <ul>
+                        <li>Extremely tanky unit.</li>
+                        <li>Great for pushing into enemy bases.</li>
+                        <li>Can be used to revive Tychus for free just before pushing into an enemy base.</li>
+                        <li>Big Red Button is a must-get upgrade that does lots of damage.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coolup: 600 seconds</li>
+                        <li>Cooldown: 360 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>The Calldown Odin ability brings an Odin onto the battlefield. This unit has abilities itself, shown below. Depending on whether the "Big Red Button" is researched, it will have one of these two abilities. You only have one charge for each of these abilities, so optimal placement (and timing) is required.</p>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/tychus/odin.jpg" alt="Odin">
+            <p>Odin</p>
+        </div>
+        <div>
+            <table class="centered unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/barrage.png" alt="Barrage"></td>
+                        <td>Barrage</td>
+                        <td>Stuns all enemies and deals 1000 damage over 5 seconds in a large area.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/bigredbutton.png" alt="Big Red Button"></td>
+                        <td>Big Red Button</td>
+                        <td>Calls down a Nuclear Strike at a target location. Nukes take 3 seconds to land, but they deal up to 1000 damage in a large area.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p>The Odin's Big Red Button ability does damage depending on how far away from the center of the target area the enemy is. Below shows an image after an Odin Nuke has been dropped, overlayed with the damage dealt.</p>
+    <img src="/images/commanderdata/abilities/tychus/bigredbuttonarea.jpg" alt="Big Red Button Damage">
+    <p>The damage details are shown below:</p>
+    <table class="centered">
+        <thead>
+            <tr>
+                <th>Distance from Center</th>
+                <th>Damage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0-8</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>8-10</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>10-12</td>
+                <td>250</td>
+            </tr>
+        </tbody>
+    </table>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <p>Difficulty: Very Easy</p>
+    <p>Tychus has most of the tools he needs to deal with any mission and enemy composition at level 1, making him one of the easier commanders to level. Use Nikara as your primary healer until you get Rattlesnake. Due to the lack of upgrades available, build only two Engineering Bays.</p>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="masteries"></a><h2>Masteries</h2>
+    <p>Below are the three Power Sets for Tychus with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
+    <p>Power Set 1:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tychus Attack Speed</td>
+                <td>1% per point<br>30% maximum</td>
+                <td>0</td>
+                <td rowspan="2">Depending on a player's playstyle, more aggressive players may want to get the Shredder Grenade mastery to reduce its cooldown, thus allowing them to spam it more often. This is particularly the case when players prefer to actively play Tychus and use all his outlaws' abilities as efficiently as possible.</td>
+            </tr>
+            <tr>
+                <td>Tychus Shredder Grenade Cooldown</td>
+                <td>-1% per point<br>-30% maximum</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">The Shredder Grenade is used to provide an initial burst of damage that usually kills off low-HP units in an engagement. Reducing this cooldown will allow players to take more engagements and play more aggressively, which is generally rewarded in co-op.</p>
+    <p>Power Set 2:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tri-Outlaw Research Improvement</td>
+                <td>0.5% per point<br>15% maximum</td>
+                <td>30</td>
+                <td rowspan="2">In general, both these masteries are not too great. The Tri-Outlaw mastery only affects the three upgrades in the engineering bay, and not the class of outlaws. The Outlaw availability might be useful on certain mutators where you get attacked very early on and need some defense.</td>
+            </tr>
+            <tr>
+                <td>Outlaw Availability</td>
+                <td>-3 sec per point<br>-90 sec maximum</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">Unless you are in very niche circumstances (e.g. speedrunning) where having an outlaw out early is critical, the Tri-Outlaw Research mastery is the better choice (despite it being relatively ineffective too). Additionally, in regular missions, you rarely will have the resources to recruit your first outlaw so early in the game.</p>
+    <p>Power Set 3:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Medivac Pickup Cooldown</td>
+                <td>-1.5 sec per point<br>-45 sec maximum</td>
+                <td>?</td>
+                <td rowspan="2">Both of these choices are competitive, depending on the mobility the player needs. In the case that mobility is not required very much, players should consider reducing the cooldown for the Odin, especially if it helps them push into enemy defenses effectively.</td>
+            </tr>
+            <tr>
+                <td>Odin Cooldown</td>
+                <td>-4 sec per point<br>-120 sec maximum</td>
+                <td>?</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">The Medivac Pickup Cooldown allows you to spam Medivacs, allowing for greater mobility and less chances of outlaw losses. The Odin is usually used for pushing into enemy bases, which reducing the cooldown by 120s (to a 240s cooldown) helps a lot. Both these choices are competitive.</p>
+    <?php
+    include("../ad2.php");
+    ?>
+    <a id="prestiges"></a><h2>Prestiges</h2>
+    <p>Below are the prestiges for Tychus. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
+    <table class="prestigeTable">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Effective Level</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Technical Recruiter</td>
+                <td>
+		            <ul>
+                        <li>Advantages:
+                            <ul>
+                                <li>Outlaws' active ability cooldowns reduced by 35%.</li>
+                            </ul>
+                        </li>
+                        <li>Disadvantages:
+                            <ul>
+                                <li>Outlaw cost and time between Outlaw recruitment increased by 50%.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>1</td>
+                <td>
+                    <ul>
+                        <li>Cooldown reduction for Shredder Grenade works additively with the Mastery</li>
+                        <li>Outlaw spawn timing mastery is applied first, then prestige cooldown increase applied</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="forceleft" colspan="5">This prestige allows outlaws to spam their abilities more often, and compounds very well with the Tychus Shredder Grenade cooldown. Players that prefer to actively micro their outlaws and are more active with their outlaw ability usage may get a lot of value out of this prestige.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Effective Level</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>Lone Wolf</td>
+                <td>
+		            <ul>
+                        <li>Advantages:
+                            <ul>
+                                <li>When beyond the vision range of other Outlaws, outlaws deal 30% more damage for each Outlaw recruited and take 50% less damage.</li>
+                            </ul>
+                        </li>
+                        <li>Disadvantages:
+                            <ul>
+                                <li>Ultimate Gear is unavailable.</li>
+                                <li>Gear costs 25% more.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>1</td>
+                <td>
+                    <ul>
+                        <li>Sirius Turrets get the Lone Wolf buff</li>
+                        <li>Vega Dominated units get the Lone Wolf buff</li>
+                        <li>Buffs to Turrets and Dominated units apply if the the respective Hero unit has the Lone Wolf buff</li>
+                        <li>Odin does not remove Lone Wolf buff from other outlaws if within range</li>
+                        <li>Damage reduction is applied before Armor</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="forceleft" colspan="5">Lone Wolf is an extremely powerful prestige, that when used well, can allow the player to push on multiple sides of the map simultaneously. This obviously does require a lot of micromanagement and individual unit control from the player's part, but can be extremely rewarding when pulled off.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Effective Level</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3</td>
+                <td>Dutiful Dogwalker</td>
+                <td>
+		            <ul>
+                        <li>Advantages:
+                            <ul>
+                                <li>The Odin no longer requires Tychus as its pilot, its duration is increased by 100%, and its cooldown is reduced by 40%.</li>
+                            </ul>
+                        </li>
+                        <li>Disadvantages:
+                            <ul>
+                                <li>Barrage and Big Red Button are unavailable.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>3</td>
+                <td>
+                    <ul>
+                        <li>Odin Cooldown reduction Mastery applied first, then cooldown reduced by an additional 40%</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="forceleft" colspan="5">The loss of the Barrage is insignificant in this prestige, but the loss of the Big Red Button removes the Odin's ability for a large area burst damage. However, this is compensated by the increased duration and the cooldown reduction, which also compounds well with the Odin Cooldown mastery.</td>            
+            </tr>
+        </tbody>
+    </table>
+    <p>For general play, all of the Tychus prestiges are solid picks. A good choice for a prestige is Technical Recruiter as it is versatile enough to handle any map with ease.</p>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <p>The recommended army composition for Tychus is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/tychus/tychus.jpg" alt="Tychus Findlay"><img class="army" src="/images/commanderdata/units/tychus/rattlesnake.jpg" alt='Kev "Rattlesnake" West'><img class="army" src="/images/commanderdata/units/tychus/sirius.jpg" alt='James "Sirius" Sykes'>
+    <p>Rattlesnake first allows a player to get adequate healing but also an increase to their potential damage output. They may then get Sirius to handle air units as well as further increase their potential damage output. Additionally, his turrets are detectors, which reduces the need to recruiting a Fixer for detection.</p>
+    <div class="techContainer"><img class="army"  src="/images/commanderdata/units/tychus/crookedsam.jpg" alt="Crooked Sam"><div class="techAdd">+</div></div>
+    <p>Add Crooked Sam to your Outlaws for his powerful disabling abilities as well as high single-target damage through his Demolition Charges.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+            
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+            
+        });
+    </script>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="outlaws"></a><h2>Outlaws</h2>
+    <p>Tychus has three classes of outlaws. These are:</p>
+    <ul>
+        <li><b>Guns:</b> These are damage-dealers.</li>
+        <li><b>Muscles:</b> These outlaws are designed for high survivability and tanking.</li>
+        <li><b>Fixers:</b> These units are specialist units who with very unique skills designed with a certain gimmick in mind.</li>
+    </ul>
+    <p>Each Outlaw costs 1000/200 to recruit. However, the first outlaw will cost only 500/100 to recruit. Upgrades cost 600/150, while Ultimate Upgrades cost 1200/400. Ultimate Upgrades can only be bought once all three Primary Upgrades have been purchased. This means that the total cost of a single outlaw (assuming no first outlaw discount) is 4000/1050.</p>
+    <p>Tychus will spawn at the 3:00 mark, and an outlaw slot will open at the same time. Then, every 4 minutes, another slot will open for another outlaw to be recruited.</p>
+    <p>For more information on Tychus' unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
+    <p>Tychus's outlaws are listed below:</p>
+    <h3>Guns:</h3>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/tychus.jpg" alt="Tychus Findlay">
+            <p>Tychus Findlay</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/shreddergrenade.png" alt="Shredder Grenade"></td>
+                        <td>Shredder Grenade</td>
+                        <td>Deals 75 damage to enemy units in the target area.</td>
+                        <td>20 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/kd9aimplosioncore.png" alt="KD9a Implosion Core"></td>
+                        <td>KD9a Implosion Core</td>
+                        <td>Allows Tychus' Shredder Grenade to pull affected units to the center of its area of effect, stunning them for 2 seconds.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/vanadiumshell.png" alt="Vanadium Shell"></td>
+                        <td>Vanadium Shell</td>
+                        <td>Increases the damage of Tychus' Shredder Grenade by 50.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/kelmorianripperrounds.png" alt="Kel-Morian Ripper Rounds"></td>
+                        <td>Kel-Morian Ripper Rounds</td>
+                        <td>Tychus' attacks decrease the armor of their targets by 5 for 2 seconds.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/sureshotnetworkedhelm.png" alt="SureShot Networked Helm"></td>
+                        <td>SureShot Networked Helm</td>
+                        <td>Increases Tychus' weapon damage by 20% for each Outlaw in his immediate vicinity.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Use him to defend the first attack wave, clear rocks and then push out.</li>
+                <li>Combined with the Medivac Pickups, he should not die while pushing out early.</li>
+                <li>If the Odin is available and can be used efficiently, revive him by calling down the Odin.</li>
+                <li>Shredder Grenade with the KD9a Implosion Core works great when combined with Nux's Ultrasonic Pulse.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/crookedsam.jpg" alt="Crooked Sam">
+            <p>Crooked Sam</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/demolitioncharge.png" alt="Demolition Charge"></td>
+                        <td>Demolition Charge</td>
+                        <td>Marks a target unit, dealing 500 damage after 5 seconds. Holds up to 3 charges.</td>
+                        <td>30 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/larscorpg7charges.png" alt="LarsCorp G7 Charges"></td>
+                        <td>LarsCorp G7 Charges</td>
+                        <td>Increases the damage of Crooked Sam's Demolition Charge by 100%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/moebiusrestraintmatrix.png" alt="Moebius Restraint Matrix"></td>
+                        <td>Moebius Restraint Matrix</td>
+                        <td>Stuns and disables the detection of units hit by Crooked Sam's Demolition Charge.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/procyonshadesuit.png" alt="Procyon Shade Suit"></td>
+                        <td>Procyon Shade Suit</td>
+                        <td>Prevents Crooked Sam from taking any damage and increases his movement speed by 80% for 5 seconds after being attacked. Cannot occur more than once every 15 seconds.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/enhancedhostilitieskit.png" alt="Enhanced Hostilities Kit"></td>
+                        <td>Enhanced Hostilities Kit</td>
+                        <td>Reduces the charge-up time of Demolition Charge by 3 seconds each time Crooked Sam attacks.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Perfect for taking down objectives and high-HP structures.</li>
+                <li>Can place multiple Demolition Charges on trains like those on <a href="/missions/oblivionexpress">Oblivion Express</a> and <a href="/missions/partparcel">Part & Parcel</a>.</li>
+                <li>Moebius Restraint Matrix can disable skills, like those on Hybrid Dominators.</li>
+                <li>Draws a lot of aggro, so keep him behind your other outlaws.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/sirius.jpg" alt='James "Sirius" Sykes'>
+            <p>James "Sirius" Sykes</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/deploywarhoundturret.png" alt="Deploy Warhound Turret"></td>
+                        <td>Deploy Warhound Turret</td>
+                        <td>Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.<br><br>Can attack ground and air units.</td>
+                        <td>15 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/sa55thunderboltmissiles.png" alt="SA-55 Thunderbolt Missiles"></td>
+                        <td>SA-55 Thunderbolt Missiles</td>
+                        <td>Equips Sirius with missiles that deal 100 damage to 8 air targets. Warhound Turrets deal 100 to 2 air targets.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/moebiusm34terrorrounds.png" alt="Moebius M34 Terror Rounds"></td>
+                        <td>Moebius M34 Terror Rounds</td>
+                        <td>Provides a 30% chance for Sirius to cast Fear in a small area with each attack. Enemy units in the area will run around in fear for 3 seconds. Warhound Turrets have a 3% chance to cast Fear with each attack.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/d99detonator.png" alt="D99 Detonator"></td>
+                        <td>D99 Detonator</td>
+                        <td>When Sirius is defeated, he triggers an explosion, dealing 300 damage to enemy units in an area around him. Warhound Turrets deal 50 damage on death.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/umojanturretframe.png" alt="Umojan Turret Frame"></td>
+                        <td>Umojan Turret Frame</td>
+                        <td>Increases the life and weapon damage of Warhound Turrets by 75%.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Has great anti-air capabilities with the SA-55 Thunderbolt Missiles Upgrade.</li>
+                <li>His turrets have detection, so they can be used if no detection is present.</li>
+                <li>Turrets can be used to tank for other outlaws in the early game if you do not have a healer as you take engagements.</li>
+            </ul>
+        </div>
+    </div>
+    <h3>Muscles:</h3>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/blaze.jpg" alt='Miles "Blaze" Lewis'>
+            <p>Miles "Blaze" Lewis</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/oilspill.png" alt="Oil Spill"></td>
+                        <td>Oil Spill</td>
+                        <td>Douses enemy ground units in oil, reducing attack and movement speed by 75% and preventing them from cloaking. When a unit under the effect of Oil Spill is hit by a fire attack, it takes 5 (5 vs Light) damage per second over 10 seconds.</td>
+                        <td>15 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/highcapacitycontainers.png" alt="High Capacity Containers"></td>
+                        <td>High Capacity Containers</td>
+                        <td>Increases the radius Blaze's of Oil Spill by 100%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/hadesoil.png" alt="Hades Oil"></td>
+                        <td>Hades Oil</td>
+                        <td>Improves the damage dealt by the Enflame effect from Blaze's Oil Spill to deal +25 per second vs. light units.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/wildflamefueladditives.png" alt="Wildflame Fuel Additives"></td>
+                        <td>Wildflame Fuel Additives</td>
+                        <td>When units Enflamed by Blaze's Oil Spill die, they explode, spreading Enflamed to enemy units in the area.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/xcmc670combatsuit.png" alt="XCMC-670 Combat Suit"></td>
+                        <td>XCMC-670 Combat Suit</td>
+                        <td>Reduces all damage taken by Blaze to 30.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>He is a must-get on infested maps.</li>
+                <li>"Wildflame Fuel Additives" is his most important upgrade, as it can cause fires to chain.</li>
+                <li>Oil Spill can be used to reduce enemy attack speed, increasing his effectiveness in tanking, and reveals ground cloaked units.</li>
+                <li>Ultimate Gear should be a low priority upgrade on Infested maps.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/cannonball.jpg" alt='Rob "Cannonball" Boswell'>
+            <p>Rob "Cannonball" Boswell</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/heavyimpact.png" alt="Heavy Impact"></td>
+                        <td>Heavy Impact</td>
+                        <td>Cannonball pulls himself to the target location, dealing 20 damage and stunning enemy units on impact.</td>
+                        <td>15 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/x71impactboots.png" alt="X-71 Impact Boots"></td>
+                        <td>X-71 Impact Boots</td>
+                        <td>Increases the stun duration and radius of Cannonball's Heavy Impact by 100%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/criticalresponsesystem.png" alt="Critical Response System"></td>
+                        <td>Critical Response System</td>
+                        <td>Allows Cannonball to become immune to damage for 5 seconds and restores all his life when he takes fatal damage. Cannot occur more than once every 60 seconds.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/redlinepowercells.png" alt="Redline Power Cells"></td>
+                        <td>Redline Power Cells</td>
+                        <td>Increases Cannonball's attack speed by 3% with each attack, up to a maximum of 60%. Increases his attack damage by 3 with each attack, up to a maximum of 60.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/maliceammunition.png" alt="M.A.L.I.C.E. Ammunition"></td>
+                        <td>M.A.L.I.C.E. Ammunition</td>
+                        <td>Provides a 30% chance that Cannonball will deal 4 times more damage with his attacks.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Really good at tanking due to the Critical Response System Upgrade.</li>
+                <li>For long-term DPS'ing, the Redline Power Cells Upgrade and the M.A.L.I.C.E. Ammunition can compound properly.</li>
+                <li>As most engages in the game are short, it is quite difficult to take advantage of those upgrades.</li>
+                <li>Heavy Impact should be used to bring Cannonball to the front of your outlaws where he can tank.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer outlaw override">
+            <img src="/images/commanderdata/units/tychus/rattlesnake.jpg" alt='Kev "Rattlesnake" West'>
+            <p>Kev "Rattlesnake" West</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/deployrevitalizer.png" alt="Deploy Revitalizer"></td>
+                        <td>Deploy Revitalizer</td>
+                        <td>Places a structure on the ground that heals all friendly units in an area around the structure for 2% of their life every second. 3 charges max.</td>
+                        <td>30 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/umojansignalmodulator.png" alt="Umojan Signal Modulator"></td>
+                        <td>Umojan Signal Modulator</td>
+                        <td>Improves the healing rate of Rattlesnake's Revitalizers by 100%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/moebiusaggressionblend.png" alt="Moebius Aggression Blend"></td>
+                        <td>Moebius Aggression Blend</td>
+                        <td>Units in range of Rattlesnake's Revitalizers gain 15% additional attack speed.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/secretstashstimpack.png" alt="Secret Stash Stimpack"></td>
+                        <td>Secret Stash Stimpack</td>
+                        <td>Heals Rattlesnake for 2 life per second and increases his attack and movement speed for 15 seconds.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/hammermunitions.png" alt="Hammer Munitions"></td>
+                        <td>Hammer Munitions</td>
+                        <td>Rattlesnake's attacks slow and deal 50% of their damage in an area of effect.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Secret Stash Stimpack should be a low-priority upgrade due to it not being as good as some of the other gear.</li>
+                <li>Rattlesnake is a must-have in most compositions due to his ability to heal as well as increase the damage output of other outlaws.</li>
+                <li>Revitalizers do not stack.</li>
+                <li>He does draw aggro, so keep an eye out for his HP.</li>
+                <li>Getting his Ultimate Gear is also not worth the cost and should be one of the lowest priority upgrades.</li>
+            </ul>
+        </div>
+    </div>
+    <h3>Fixers:</h3>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/vega.jpg" alt='Vega'>
+            <p>Vega</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/dominate.png" alt="Dominate"></td>
+                        <td>Dominate</td>
+                        <td>Temporarily take control of target enemy unit and increases its damage by 50%. Dominated units self-destruct after 240 seconds. Holds up to 3 charges.</td>
+                        <td>30 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/moebiuspsionicmotivator.png" alt="Moebius Psionic Motivator"></td>
+                        <td>Moebius Psionic Motivator</td>
+                        <td>Vega's Dominate fully restores the target's life, shields, and energy and increases its attack speed by 75%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/neuraldisruptiondevice.png" alt="Neural Disruption Device"></td>
+                        <td>Neural Disruption Device</td>
+                        <td>Vega's Dominate ability confuses enemy units in an area around the dominated unit, forcing them to attack each other for 10 seconds.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/psiprojector.png" alt="Psi Projector"></td>
+                        <td>Psi Projector</td>
+                        <td>Grants Vega the ability to bring up to 5 enemy air units to the ground, allowing friendly units to attack them as if they were ground units.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/type88persuader.png" alt="Type-88 Persuader"></td>
+                        <td>Type-88 Persuader</td>
+                        <td>Increases the duration of Vega's Dominate by 200%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Dominate, combined with Neural Distruption Device can be used to deal with tough attack waves.</li>
+                <li>With adequate micro, your Vega can steal Amon's units and use them against him.</li>
+                <li>Moebius Psionic Motivator is a good upgrade to have if you intend on stealing units.</li>
+                <li>If you intend on using Dominated units to help push through the mission, the Ultimate Gear is recommended.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/nux.jpg" alt='Nux'>
+            <p>Nux</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/ultrasonicpulse.png" alt="Ultrasonic Pulse"></td>
+                        <td>Ultrasonic Pulse</td>
+                        <td>Fires pulses of ultrasonic energy that lasts 6 seconds, causing 20 damage per second to enemy units in the target area. Does not damage friendly units. Holds up to 3 charges.</td>
+                        <td>30 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/t4cloudburstshells.png" alt="T4 Cloudburst Shells"></td>
+                        <td>T4 Cloudburst Shells</td>
+                        <td>Increases the damage of Nux's Ultrasonic Pulse by 50%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/ultrasonicboosters.png" alt="Ultrasonic Boosters"></td>
+                        <td>Ultrasonic Boosters</td>
+                        <td>Increases the radius of Nux's Ultrasonic Pulse by 50%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/crystallineamplifiers.png" alt="Crystalline Amplifiers"></td>
+                        <td>Crystalline Amplifiers</td>
+                        <td>Increases the duration of Nux's Ultrasonic Pulse by 100%.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/n3networking.png" alt="N3 Networking"></td>
+                        <td>N3 Networking</td>
+                        <td>Grants Nux the ability to reduce the charge-up times and cooldowns of the primary abilities of all nearby Outlaws by 20%.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Can clear out entire attack waves with one Ultrasonic Pulse combined with Tychus' Shredder Grenade with the KD9a Implosion Core Upgrade.</li>
+                <li>Ultrasonic Pulse can be used to reveal cloaked and burrowed units.</li>
+                <li>The Crystalline Amplifiers Upgrade is not necessary if you don't intend to get his Ultimate Gear.</li>
+                <li>Works well with other outlaws due to his Ultimate Gear.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer outlaw">
+            <img src="/images/commanderdata/units/tychus/nikara.jpg" alt='Lt. Layna Nikara'>
+            <p>Lt. Layna Nikara</p>
+        </div>
+        <div class="outlawAbility">
+            <p>Ability:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/tychus/reinvigoratingburst.png" alt="Reinvigorating Burst"></td>
+                        <td>Reinvigorating Burst</td>
+                        <td>Instantly heals friendly units in an area around Lt. Nikara for 200 life and grants them 25% increased attack and ability damage. Regenerates an additional 10 life per second over 10 seconds.</td>
+                        <td>30 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Primary Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/umojanrepairnanites.png" alt="Umojan Repair Nanites"></td>
+                        <td>Umojan Repair Nanites</td>
+                        <td>Increases the immediate and periodic heal of Lt. Nikara's Reinvigorating Burst by 100%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/procyonserum.png" alt="Procyon Serum"></td>
+                        <td>Procyon Serum</td>
+                        <td>Increases the healing rate of Lt. Nikara's Super Heal by 100%.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/procyontwinhealbeamgauntlet.png" alt="Procyon Twin Heal Beam Gauntlet"></td>
+                        <td>Procyon Twin Heal Beam Gauntlet</td>
+                        <td>Allows Lt. Nikara to cast Super Heal on two targets at the same time.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Ultimate Gear:</p>
+            <table class="unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ultimate Gear</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/tychus/xm77matrixgenerator.png" alt="XM-77 Matrix Generator"></td>
+                        <td>XM-77 Matrix Generator</td>
+                        <td>Enables Lt. Nikara to surround a target friendly unit with a shield that can absorb 400 damage over 20 seconds.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Notes:</p>
+            <ul>
+                <li>Extremely powerful healer.</li>
+                <li>Can be used with Vega at the start to heal high HP dominated targets.</li>
+                <li>Reinvigorating Burst provides a 25% buff to all damage types including abilities and spells.</li>
+                <li>Has some niche uses in some mutations.</li>
+            </ul>
+        </div>
+    </div>
+    <p>In addition to the equipment above, Tychus has three "Tri-Outlaw" upgrades. These are listed below:</p>
+    <table class="heroUpgrades">
+        <thead>
+            <tr>
+                <th>Upgrade</th>
+                <th>Name</th>
+                <th>Effect</th>
+                <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                <th>Research Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/unitupgrades/tychus/itcetriggers.png" alt="ITC-E Triggers"></td>
+                <td>ITC-E Triggers</td>
+                <td>Increases the attack speed of Tychus, Crooked Sam, and Sirius by 25%.</td>
+                <td>150/150</td>
+                <td>90 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/unitupgrades/tychus/endurancesupplements.png" alt="Endurance Supplements"></td>
+                <td>Endurance Supplements</td>
+                <td>Increases the life of Blaze, Cannonball, and Rattlesnake by 25%.</td>
+                <td>150/150</td>
+                <td>90 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png" alt="Flashforce GDM Visor"></td>
+                <td>Flashforce GDM Visor</td>
+                <td>Provides Vega, Nux, and Lt. Nikara with Detection, allowing them to see cloaked and burrowed enemy units.</td>
+                <td>75/75</td>
+                <td>90 seconds</td>
+            </tr>
+        </tbody>
+    </table>
+    <?php
+    include("../ad.php");
+    ?>
+    <a id="buildOrder"></a><h2>Build Order</h2>
+    <p>Below is the standard economic build order for Tychus. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
+    <p class="buildOrder">
+        17 Command Center<br>
+        18 Refinery<br>
+        19 Refinery<br>
+        20 Engineering Bay<br>
+        22 2x Turrets -> Rocks
+    </p>
+    <?php
+    include("../ad3.php");
+    ?>
+    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h3>Playstyle Traps</h3>
+    <p>A common trap for Tychus players is focusing on attack and armor upgrades while going for a Vega-centric build. Units that are dominated do not get benefits of attack and armor upgrades from Tychus. Therefore, these upgrades should be a low priority.</p>
+    <p>With higher skill levels, it is even possible to go for a greedy play and get out other damage dealers first, relying purely on the healing from Medivac Platforms.</p>
+    <h3>Playstyle Tips</h3>
+    <ul>
+        <li>Ensure you have adequate medivac platforms to provide you with the mobility you need to handle the mission. Healing is stopped when damage is taken, so if Medivacs are used for healing, ensure you move away from the enemy lines.</li>
+        <li>Three Engineering Bays are recommended. Two will be researching the attack and armor upgrades, while the other one researches other upgrades.</li>
+        <li>Build an early Command Center and either use Tychus (foregoing an early Engineering Bay) or two Turrets (with the build order above) to clear the expansion. This depends if you want to push with Tychus early or if the expansion is contested.</li>
+        <li>You can revive Tychus by calling down the Odin, saving you on the mineral costs.</li>
+        <li>If your ally doesn't help, it may be necessary to go for Sirius first for early DPS. In those cases, ensure you have a Medivac Platform ready to use for heals.</li>
+        <li>Your choice of healer (Rattlesnake/Nikara) will depend on which outlaws you use. A build that uses lower HP outlaws (Fixers) will gain more benefit from having Nikara, whereas a higher HP outlaw set (Muscles) will benefit more from having Rattlesnake.</li>
+    </ul>
+    <?php
+    include("../ad.php");
+    ?>
+</div>
+<?php include("../footer.php"); ?>
+</body>
+</html>

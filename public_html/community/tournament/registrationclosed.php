@@ -1,0 +1,1 @@
+<p>Unfortunately, registrations are now closed. Please check back later for the next registration wave.</p>

@@ -1,0 +1,39 @@
+<?
+     ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
+    if(isset($_POST['tool']) && isset($_POST['recaptcha_response'])){
+        $fileToDownload=$_POST['tool'];;
+        include("recaptcha.php");
+    		if ($recaptchaResult) {
+    		    if($fileToDownload=="sc2cassistant"){
+    		        print("https://starcraft2coop.com/files/SC2C_Assistant.exe");
+    		        return;
+    		    }
+    		    if($fileToDownload=="crds"){
+    		        print("https://starcraft2coop.com/files/CRDS.py");
+    		        return;
+    		    }
+    		    if($fileToDownload=="opencv"){
+    		        print("https://starcraft2coop.com/files/OpenCvSharpExtern.dll");
+    		        return;
+    		    }
+    		    if($fileToDownload=="mutatorfinder"){
+    		        print("https://starcraft2coop.com/files/MutatorFinder.dll");
+    		        return;
+    		    }
+    		    if($fileToDownload=="tournament1"){
+    		        print("https://starcraft2coop.com/files/tournament/Tournament1.zip");
+    		        return;
+    		    }
+    		    if($fileToDownload=="tournament2"){
+    		        print("https://starcraft2coop.com/files/tournament/Tournament2.zip");
+    		        return;
+    		    }
+    		}
+    		else{
+    		    print("Error");
+    		}
+    }
+    else{
+        print("Fail");
+    }
+?>
