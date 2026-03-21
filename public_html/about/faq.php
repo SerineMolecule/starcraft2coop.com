@@ -64,7 +64,7 @@ include("../header.php");
     <h2>Miscellaneous</h2>
     
     <h3>Who are you?</h3>
-    <p>The site was originally written by Aommaster, who had been playing co-op since November 2015, when it first released. He was a co-op streamer from 2018 to 2022. He has level 1,000 ascension accounts on all servers. You may also check out his personal website <a href="http://aommaster.com" rel="nofollow">here</a>, which details his other interests.</p>
+    <p>The site was originally written by Aommaster, who had been playing co-op since November 2015, when it first released. He was a co-op streamer from 2018 to 2022. He has level 1,000 ascension accounts on all servers. You may also check out <a href="http://aommaster.com" rel="nofollow">his personal website here</a>, which details his other interests, or <a href="https://discord.gg/AbFXRAB">his Discord here</a>.</p>
     <p>It's currently being hosted by Serine.</p>
     
     <h3>What Aommaster's ladder rank?</h3>
