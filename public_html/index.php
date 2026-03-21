@@ -59,7 +59,6 @@ include("header.php");
             </td>
         </tr>
     </table>
-    <p>For any critical issues regarding the site, you may contact me through <a href="https://discord.gg/AbFXRAB" rel="nofollow">My Discord</a>.</p>
 </div>
 <?php include("footer.php"); ?>
 </body>
