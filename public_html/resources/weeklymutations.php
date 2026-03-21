@@ -523,7 +523,7 @@ $_SESSION["known"] = true;
     <div id="tooltip">tooltip</div>
     
     <a id="cycle"></a><h2>Weekly Mutations Cycle</h2>
-    <p>The weekly mutations follow a fixed cycle as shown below. The current mutation is highlighted in green.</p>
+    <p>The weekly mutations follow a fixed cycle as shown below. The <a href="#thisweek">current mutation for this week</a> is highlighted in green.</p>
     <table id="mutationCycle">
             <thead>
                 <tr id="columnNames">
@@ -594,7 +594,7 @@ $_SESSION["known"] = true;
                 $diffArray = getDiffString($score);
                 $classVals .= " brutal" . $diffArray[0];
                 if ($counter== $weekNumber){
-                    $classVals .= " current";
+                    $classVals .= " current' id='thisweek";
                 }
                 echo "<tr class='" . $classVals . "'>\n";
                     echo "<td class='ribbon'>" .  $row["mutation"]. "<div class='ribbon" . $diffArray[0] . "'>" . $diffArray[1] . "</div></td>\n";

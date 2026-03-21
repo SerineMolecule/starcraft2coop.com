@@ -49,6 +49,8 @@ include("header.php");
     <p>This site serves as a repository of all the information gathered by the Starcraft II co-op community. It aims to help players improve their gameplay, by providing in-depth commander and map analysis, as well as providing tips on how to deal with certain tricky situations that may arise in-game.</p>
     <p>Starcraft II is currently free to play. Three of the commanders in co-op mode are free, while the others are free to play up to level 5. If you are a new player, check out the <a href="/guides/newplayer">New Players</a> page to help you select your first commander. Also, check out the <a href="guides/generaltips">General Tips</a> page for some great tips to get you started with this game mode.</p>
     <p>Visit the official Starcraft II page <a href="https://starcraft2.com" rel="nofollow">here</a> and join the fight against Amon!</p>
+    <h2>This week's mutation</h2>
+    <a href="/resources/weeklymutations#thisweek">Go to this week's mutation</a>
     <h2>Latest Updates:</h2>
         <tr>
             <td class="left-column">
