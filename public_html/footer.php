@@ -1,4 +1,4 @@
 <div id="footer">
     <p>Note: All data generated on this site is based on Brutal difficulty. Timings, compositions and other elements may differ on easier difficulty levels.</p>
-    <p>© Blizzard Entertainment, Inc. All rights reserved. Wings of Liberty, Heart of the Swarm, Legacy of the Void, and StarCraft are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</p>
+    <p>CC-BY-NC-SA-4.0. Originally written by aommaster. This is a fansite not affiliated with StarCraft 2 or Blizzard Entertainment, Inc.</p>
 </div>
