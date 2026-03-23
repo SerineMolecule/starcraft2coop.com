@@ -187,7 +187,13 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
                 break;
         }
     }
-    $('#topmenu li.highlight a').each(function () {
-        openSubmenu(null, this);
-    });
+    if (document.location.pathname === "/") {
+        $('#submenu-link-commanders').each(function () {
+            openSubmenu(null, this);
+        });
+    } else {
+        $('#topmenu li.highlight a').each(function () {
+            openSubmenu(null, this);
+        });
+    }
 </script>
