@@ -7,6 +7,11 @@ if ($pageSection === 'tournament') {
     $pageSection = basename(dirname(dirname($_SERVER['PHP_SELF'])));
 }
 
+?>
+<header id="header">
+    <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
+</header>
+<?php
 if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
 ?>
 <style>
@@ -25,22 +30,22 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
     background-origin: border-box;
     background-clip: padding-box, border-box;
 
-    padding: 5px 10px;
+    padding: 10px 15px;
     font-weight: bold;
     color: black;
 
     font-family: 'Convergence', sans-serif;
+    font-size: 1.5em;
+    margin: 0 auto 20px;
+    max-width: 1000px;
 }
 </style>
 <div class="construction">
     THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)
 </div>
-<?
+<?php
 }
 ?>
-<header id="header">
-    <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
-</header>
 <nav id="menu">
 <ul id="topmenu">
     <li class="normal"><a href="/">&#127968;</a></li>
