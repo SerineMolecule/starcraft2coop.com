@@ -443,7 +443,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige compounds really well with Vorazun's Black Hole, but a hit-and-run strategy for Swann isn't particularly effective. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) can help Swann get more mileage out of this Prestige by allowing him to deal with attack waves without the use of calldowns. A floating Factory can also be used to spot for the laser drill.</td>
+                <td class="forceleft" colspan="5">This prestige comboes well with Vorazun's Black Hole, but a hit-and-run strategy for Swann isn't particularly effective. It comboes particularly well with Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) by allowing him to deal with attack waves without the use of calldowns. A floating Factory can also be used to spot for the laser drill.</td>
             </tr>
         </tbody>
     </table>
@@ -526,7 +526,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p>For general play, P0 (no prestige, Chief Engineer) or P1 (Heavy Weapons Specialist) is recommended.</p>
+    <p>For general play, P0 (no prestige, Chief Engineer) and P1 (Heavy Weapons Specialist) are recommended. P1 is more beginner-friendly.</p>
     <a id="army"></a><h2>Recommended Army Composition</h2>
     <p>The recommended army composition for Swann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath"><img class="army" src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">

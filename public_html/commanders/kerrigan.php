@@ -334,6 +334,7 @@ include("../header.php");
                 <td>7</td>
                 <td><ul>
                         <li>Abathur allies will still have their Nydus Worms upgraded to Omega Worms</li>
+                        <li>Malignant Creep does not apply to Stukov's Infested</li>
                     </ul>
                 </td>
             </tr>
@@ -344,8 +345,8 @@ include("../header.php");
     </table>
     <p><b>Effectiveness Bonuses:</b></p>
     <ul>
-        <li>Attack speed bonus doubled</li>
-        <li>Life regeneration rate bonus doubled</li>
+        <li>Attack speed bonus doubled (to +60%)</li>
+        <li>Life regeneration rate bonus doubled (to 2HP/s)</li>
         <li>Creep Tumor Build Range increased by 3</li>
         <li>Creep Tumor Vision Range increased by 3</li>
         <li>Creep Spread Range increased by 3</li>
@@ -478,7 +479,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p>For general play, P0 (no prestige, Queen of Blades) and P3 (Desolate Queen) are recommended. P2 (Folly of Man) provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity, but is less beginner friendly. It allows Kerrigan to more effectively clear enemy bases and keep her army alive.</p>
+    <p>For general play, P0 (no prestige, Queen of Blades), P2 (Folly of Man), and P3 (Desolate Queen) are recommended. P3 has a better match-up against air (a general Kerrigan weakness) but a worse match-up against early-game hordes. P2 provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity, but some find it less beginner friendly. It allows Kerrigan to more effectively clear enemy bases and keep her army alive.</p>
     <a id="hero"></a><h2>Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan.jpg" alt="Kerrigan">
     <p>Spawn time: 4:00</p>
