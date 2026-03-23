@@ -385,13 +385,13 @@ include("../header.php");
             <tr>
                 <td>Deploy Stetellite Cooldown</td>
                 <td>-0.17 sec per point<br>-5 sec maximum</td>
-                <td>0</td>
-                <td rowspan="2">A minimum of 12 points into the Structure Morph Rate mastery will allow players to get Super Gary out as soon as he spawns, which compensates for Stetmann's lack of early game power. However, players that prefer to not rely on Super Gary may find more benefit in the Deploy Stetellite mastery, which will allow them to spawn more Stetellites more frequently.</td>
+                <td>20</td>
+                <td rowspan="2">Both of these choices are competitive. A minimum of 12 points into the Structure Morph Rate mastery will allow players to get Super Gary out as soon as he spawns, although the precise timing is frequently unimportant.</td>
             </tr>
             <tr>
                 <td>Structure Morph Rate</td>
                 <td>2% per point<br>60% maximum</td>
-                <td>30</td>
+                <td>10</td>
             </tr>
         </tbody>
     </table>

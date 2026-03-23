@@ -470,7 +470,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige changes the utility purpose of Artanis' Power Field. Instead of using it to quickly reinforce your army in combat, it changes to a mobility tool. As such, you will need to adapt your playstyle to accommodate this change. However, this prestige compounds well with the Speed Increase for Warped Units mastery, as every time units are warped away using the Power Field, they get the buff.</td>
+                <td class="forceleft" colspan="5">This prestige changes the utility purpose of Artanis' Power Field. Instead of using it to quickly reinforce your army in combat, it changes to a mobility tool. As such, you will need to adapt your playstyle to accommodate this change. This prestige compounds well with the Speed Increase for Warped Units mastery, as every time units are warped away using the Power Field, they get the buff.</td>
             </tr>
         </tbody>
     </table>
@@ -515,11 +515,11 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The Unbound Fanatics that spawn from the Orbital Strikes have strong splash damage, very equivalent to Karax's Solar Lances. However, where they fire their orbs is randomized, which reduces the efficacy of this prestige. The loss of Guardian shell, which increases the fragility of Artanis' already-fragile army, further adds to the weakness of this Prestige. However, the biggest advantage of this prestige is that it allows Artanis to fast-expand on maps. A single set of Orbital Strikes can be used to clear contested expansions very easily.</td>            
+                <td class="forceleft" colspan="5">This prestige gives Artanis much more powerful calldowns at a high cost: The loss of Guardian shell, which increases the fragility of Artanis' already-fragile army. The Unbound Fanatics that spawn from the Orbital Strikes have strong splash damage, very equivalent to Karax's Solar Lances. Where they fire their orbs is randomized, which reduces the efficacy of this prestige, but they are still very strong. A big advantage of this is that it allows Artanis to fast-expand on maps. A single set of Orbital Strikes can be used to clear contested expansions very easily. Shield Overcharge can be used twice as often, which partially offsets the loss of Guardian Shell.</td>
             </tr>
         </tbody>
     </table>
-    <p>For general play, Valorous Inspirator is a solid Prestige that improves the utility of almost all of Artanis' units with a minimal cost increase. It increases the viability of his High Templars and his Phoenixes.</p>
+    <p>For general play, all prestiges including P0 (no prestige, Hierarch of the Daelaam) are solid picks. If you find yourself with mobility difficulties, consider P2 (Nexus Legate) or P3 (Arkship Commandant).</p>
     <a id="army"></a><h2>Recommended Army Composition</h2>
     <p>The recommended army composition for Artanis is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot"><img class="army" src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">

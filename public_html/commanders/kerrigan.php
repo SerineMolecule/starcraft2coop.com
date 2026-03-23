@@ -338,7 +338,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige is a prestige that sacrifices mobility for better creep effectiveness. It works by improving the effectiveness of both you and your ally's units by providing them with extra attack speed, healing and map vision. If using this prestige, it is much better to spread Creep using other Creep Tumors than planting new ones. Newly-planted Creep Tumors build much slower than ones that are spread.</td>
+                <td class="forceleft" colspan="5">This prestige is a prestige that sacrifices mobility for better creep effectiveness. It works by improving the effectiveness of both you and your ally's units by providing them with extra attack speed, healing and map vision. If using this prestige, it is much better to spread Creep using other Creep Tumors than planting new ones. Newly-planted Creep Tumors build much slower than ones that are spread. This prestige comboes well with partners who can spread creep more easily, such as Stukov and Abathur.</td>
             </tr>
         </tbody>
     </table>
@@ -478,7 +478,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p>For general play, Folly of Man provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity. It allows Kerrigan to more effectively clear enemy bases and keep her army alive. Another competitive prestige is Desolate Queen, which will allow Kerrigan to quickly invest in her army units.</p>
+    <p>For general play, P0 (no prestige, Queen of Blades) and P3 (Desolate Queen) are recommended. P2 (Folly of Man) provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity, but is less beginner friendly. It allows Kerrigan to more effectively clear enemy bases and keep her army alive.</p>
     <a id="hero"></a><h2>Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan.jpg" alt="Kerrigan">
     <p>Spawn time: 4:00</p>
