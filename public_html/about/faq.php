@@ -34,8 +34,8 @@ include("../header.php");
     <p>Thank you very much for your interest. Visit us at <a href="https://github.com/SerineMolecule/starcraft2coop.com">the starcraft2coop.com GitHub repository</a>.</p>
     
     <h3>How did you get this data?</h3>
-    <p>All the data on this site was personally obtained by myself by looking through the map files and the information stored in the Trigger and Data Editor of the Starcraft Editor.</p>
-    
+    <p>All the data on this site was personally obtained by Aommaster by looking through the map files and the information stored in the Trigger and Data Editor of the Starcraft Editor.</p>
+
     <h3>What Replay Interface do you use for your game casts?</h3>
     <p>Aommaster used a custom Replay Interface that he wrote, exclusively for the content on this site.</p>
 
