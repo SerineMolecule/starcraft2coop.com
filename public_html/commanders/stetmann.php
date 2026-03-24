@@ -386,7 +386,7 @@ include("../header.php");
                 <td>Deploy Stetellite Cooldown</td>
                 <td>-0.17 sec per point<br>-5 sec maximum</td>
                 <td>20</td>
-                <td rowspan="2">Both of these choices are competitive. A minimum of 12 points into the Structure Morph Rate mastery will allow players to get Super Gary out as soon as he spawns, although the precise timing is frequently unimportant.</td>
+                <td rowspan="2">Both of these choices are competitive. A minimum of 12 points into the Structure Morph Rate mastery will allow players to get Super Gary out as soon as he spawns.</td>
             </tr>
             <tr>
                 <td>Structure Morph Rate</td>
