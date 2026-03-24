@@ -443,7 +443,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige comboes well with Vorazun's Black Hole, but a hit-and-run strategy for Swann isn't particularly effective. It comboes particularly well with Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) by allowing him to deal with attack waves without the use of calldowns. A floating Factory can also be used to spot for the laser drill.</td>
+                <td class="forceleft" colspan="5">This prestige revolves around using the constant AoE damage hitting any enemy you have vision on. It is best if you max out Laser Drill Build Time Mastery to rush Drill upgrades, and deploy floating Factories (with the Fire Suppression Systems upgrade) around the map to get vision on enemy units. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) combo well with this prestige.</td>
             </tr>
         </tbody>
     </table>
@@ -479,7 +479,7 @@ include("../header.php");
                 <td>11</td>
                 <td>
                     <ul>
-                        <li>Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
+                        <li>The Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
                     </ul>
                 </td>
             </tr>
