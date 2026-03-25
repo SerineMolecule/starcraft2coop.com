@@ -470,7 +470,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige changes how Power Field is used. Instead of letting you reinforce your army in combat, it's a mobility tool. The high cost of the Power Field (25 energy) makes the prestige quite energy starved, so energy management is crucial. This prestige compounds well with the "Speed Increase for Warped Units" mastery, since every time units are warped using the Power Field, they get the buff.</td>
+                <td class="forceleft" colspan="5">This prestige changes how Power Field is used. Instead of letting you reinforce your army in combat, it's a mobility tool. The high cost of the Power Field (25 energy) makes the prestige quite energy starved, so energy management is crucial. This prestige compounds well with the "Speed Increase for Warped Units" mastery, since every time units are moved using the Power Field, they get the buff.</td>
             </tr>
         </tbody>
     </table>
