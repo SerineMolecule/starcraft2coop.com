@@ -392,7 +392,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige works well when pushing into enemy bases with Kerrigan. It allows Kerrigan to not only deal damage to enemy units effectively, but also stun enemy units, allowing you to unload units from Nydus worms without getting abilities casted on them. It works better with low numbers of high-HP units, rather than a large numbers of low-HP units.</td>
+                <td class="forceleft" colspan="5">This prestige works well when pushing into enemy bases with Kerrigan. It allows Kerrigan to not only deal damage to enemy units effectively, but also stun enemy units, allowing you to unload units from Nydus worms without getting abilities casted on them. It works better with low numbers of high-HP units, rather than a large numbers of low-HP units. It decreases Kerrigan's damage against buildings.</td>
             </tr>
         </tbody>
     </table>
@@ -475,7 +475,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige replaces Leaping Strike with an equivalent ability that can also hit air. However, it comes at a cost of losing Psionic Shift, which is generally used for dealing with several units in a line. Crushing Grip has a very small area-of-effect size (1.75 radius), which means she cannot hit as many units as Psionic Shift theoretically can. But the ability to stun units in that area is invaluable. Be careful when using Immobilization Wave with Crushing Grip, because they can overwrite each others stun durations. However, it is compensated for by allowing you to build your army a lot quicker, due to double Assimilation Aura drops.</td>            
+                <td class="forceleft" colspan="5">This prestige replaces Leaping Strike with an equivalent ability that can also hit air. However, it comes at a cost of losing Psionic Shift (a stronger AoE option), and the ability to use Leaping Strike and Psionic Shift for mobility. Crushing Grip has a very small area-of-effect size (1.75 radius), which means she cannot hit as many units as Psionic Shift theoretically can. But the ability to stun units in that area is invaluable. Be careful when using Immobilization Wave with Crushing Grip, because they can overwrite each others stun durations. The double Assimilation Aura drops noticeably improve ramp-up time.</td>
             </tr>
         </tbody>
     </table>
