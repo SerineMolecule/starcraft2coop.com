@@ -392,7 +392,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige works well when pushing into enemy bases with Kerrigan. It allows Kerrigan to not only deal damage to enemy units effectively, but also stun enemy units, allowing you to unload units from Nydus worms without getting abilities casted on them. It works better with low numbers of high-HP units, rather than a large numbers of low-HP units. It decreases Kerrigan's damage against buildings.</td>
+                <td class="forceleft" colspan="5">This prestige works well when pushing into enemy bases with Kerrigan. It allows Kerrigan to not only deal damage to enemy units effectively, but also stun enemy units, allowing you to unload units from Nydus worms without getting abilities casted on them. It works better with low numbers of high-HP units, rather than a large numbers of low-HP units. It noticeably slows Kerrigan's ability to focus down buildings.</td>
             </tr>
         </tbody>
     </table>
