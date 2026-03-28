@@ -348,7 +348,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p class="masterySummary">The Strike Fighter Area of Effect mastery can be used if the player intends on cheesing various maps (such as <a href="/maps/deadofnight">Dead of Night</a>). However, for all other playstyles, the Stronger Death Chance mastery is better.</p>
+    <p class="masterySummary">The Strike Fighter Area of Effect mastery can be used if the player intends on cheesing various maps (such as <a href="/maps/deadofnight">Dead of Night</a>). However, for all other playstyles, the Stronger Death Chance mastery is better. <a href="https://www.reddit.com/r/starcraft2coop/comments/1s36acy/do_p1_han_horner_and_double_death_chance_mastery/ocd4exs/" target="_blank">TwoTuuu's post details the exact buffs for Stronger Death Chance</a>.</p>
     <p>Power Set 2:</p>
     <table class="masteryTable">
         <thead>

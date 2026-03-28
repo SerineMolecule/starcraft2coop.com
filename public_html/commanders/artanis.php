@@ -519,7 +519,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p>For general play, all four prestiges (including no prestige) have their place. P3 (Arkship Commandant) is arguably strongest and most flexible, but it lacks Artanis's signature ability. P2 (Nexus Legate) is strong but requires careful Spear of Adun energy management. P1 (Valorous Inspirator) ramps slowly. P0 (no prestige, Hierarch of the Daelaam) and P1 (Valorous Inspirator) also lack mobility.</p>
+    <p>For general play, P3 (Arkship Commandant), P2 (Nexus Legate), and P0 (no prestige, Hierarch of the Daelaam) have their place. P3 (Arkship Commandant) is arguably strongest and most flexible, but it lacks Artanis's signature ability. P2 (Nexus Legate) is strong but requires careful Spear of Adun energy management. P1 (Valorous Inspirator) ramps slowly. P0 (no prestige, Hierarch of the Daelaam) has easy reinforcement but lack mobility.</p>
     <a id="army"></a><h2>Recommended Army Composition</h2>
     <p>The recommended army composition for Artanis is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot"><img class="army" src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">

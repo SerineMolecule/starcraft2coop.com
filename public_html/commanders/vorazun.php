@@ -563,7 +563,7 @@ include("../header.php");
                 <td>
                     <ul>
                         <li>Shadow Guard duration Mastery applied first, then duration reduced by 40%</li>
-                        <li>Shadow Guards do not need to be killed. Despawned Shadow Guards will also spawn</li>
+                        <li>Shadow Guards do not need to be killed. Expired (despawned) Shadow Guards will also spawn</li>
                         <li>Time Stop is still a global effect. Target location is where Shadow Guards spawn</li>
                     </ul>
                 </td>
