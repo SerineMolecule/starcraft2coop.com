@@ -24,13 +24,6 @@ include("header.php");
         #updateTable td, #updateTable th{
             border:none;
         }
-        ul{
-            padding:0;
-        }
-        ul li ul li{
-            margin-left:25px;
-
-        }
         #service{
             padding:0.5rem;
             display:inline-block;
@@ -49,6 +42,11 @@ include("header.php");
     <p>Visit the official Starcraft II page <a href="https://starcraft2.com" rel="nofollow">here</a> and join the fight against Amon!</p>
     <h2>This week's mutation</h2>
     <a href="/resources/weeklymutations#thisweek">Go to this week's mutation</a>
+    <h2>Community Links</h2>
+    <ul>
+        <li><a href="https://discord.gg/VQnXMdm">Starcraft 2 Co-op Discord</a></li>
+        <li><a href="https://reddit.com/r/starcraft2coop">/r/starcraft2coop Subreddit</a></li>
+    </ul>
     <h2>Latest Updates:</h2>
         <tr>
             <td class="left-column">

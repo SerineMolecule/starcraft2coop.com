@@ -50,7 +50,7 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
 <ul id="topmenu">
     <li class="normal"><a href="/">&#127968;</a></li>
     <li class="<?=$pageSection==="commanders"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
-    <li class="<?=$pageSection==="community"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-community">Community</a></li>
+    <!--li class="<?=$pageSection==="community"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-community">Community</a></li-->
     <li class="<?=$pageSection==="guides"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-guides">Guides</a></li>
     <li class="<?=$pageSection==="missions"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
     <li class="<?=$pageSection==="resources"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Resources</a></li>
@@ -101,6 +101,7 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
             <li class="<?=$pageFile==="enemycomps.php"?'highlight':'normal'?>"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
             <li class="<?=$pageFile==="generaltips.php"?'highlight':'normal'?>"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
             <li class="<?=$pageFile==="newplayer.php"?'highlight':'normal'?>"><a href="/guides/newplayer">New&nbsp;Players&nbsp;</a></li>
+            <li class="<?=$pageFile==="youtube.php"?'highlight':'normal'?>"><a href="/guides/youtube">Youtube&nbsp;</a></li>
         </ul>
     </div>
     <div id="resources" class="submenu">
@@ -140,7 +141,7 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
             <!--<li class="<?=$pageFile==="contact.php"?'highlight':'normal'?>"><a href="/about/contact">Contact</a></li>-->
             <li class="<?=$pageFile==="faq.php"?'highlight':'normal'?>"><a href="/about/faq">FAQ</a></li>
             <li class="<?=$pageFile==="links.php"?'highlight':'normal'?>"><a href="/about/links">Links</a></li>
-            <li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li>
+            <!--li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li-->
         </ul>
     </div>
     <!--<div id="imgs">

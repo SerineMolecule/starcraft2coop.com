@@ -67,6 +67,9 @@ include("../header.php");
     
     <h3>What Aommaster's ladder rank?</h3>
     <p>He is exclusively a co-op player. In fact, he has never played a single ladder game before. Ever.</p>
+
+    <h3>Wasn't there a Co-op Tournament page?</h3>
+    <p>Yeah, there were two tournaments, one in 2019 and one in 2021. The <a href="/community/tournament/archive">tournament replay archives</a> still exist, and <a href="/community/tournament/main">the old signup page</a> is still accessible.</p>
 </div>
 <?php include("../footer.php"); ?>
 </body>
