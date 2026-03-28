@@ -115,7 +115,7 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
             <li class="<?=$pageFile==="levels.php"?'highlight':'normal'?>"><a href="/resources/levels">Levels</a></li>
             <li class="<?=$pageFile==="mutators.php"?'highlight':'normal'?>"><a href="/resources/mutators">Mutators</a></li>
             <li class="<?=$pageFile==="patchdata.php"?'highlight':'normal'?>"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
-            <li class="<?=$pageFile==="stats.php"?'highlight':'normal'?>"><a href="/resources/stats">Stats</a></li>
+            <!--li class="<?=$pageFile==="stats.php"?'highlight':'normal'?>"><a href="/resources/stats">Stats</a></li-->
             <li class="<?=$pageFile==="weeklymutations.php"?'highlight':'normal'?>"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
             
         </ul>
@@ -142,6 +142,7 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
             <li class="<?=$pageFile==="faq.php"?'highlight':'normal'?>"><a href="/about/faq">FAQ</a></li>
             <li class="<?=$pageFile==="links.php"?'highlight':'normal'?>"><a href="/about/links">Links</a></li>
             <!--li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li-->
+            <li class="<?=$pageFile==="stats.php"?'highlight':'normal'?>"><a href="/resources/stats">Misc. Stats</a></li>
         </ul>
     </div>
     <!--<div id="imgs">
