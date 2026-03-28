@@ -559,7 +559,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige provides an early-game power-spike in the Mothership, which is also a great mobility tool throughout the mission. A trap in using this prestige is using it to mass up a large fleet of air units. Because Destroyers deal small amounts of damage with a high attack speed, they are heavily weakened by armored targets, especially considering that bounces are unaffected by Attack upgrades. They are also susceptible to splash damage, like Parasitic Bombs.</td>            
+                <td class="forceleft" colspan="5">This prestige provides an early-game power-spike in the Mothership, which is also a great mobility tool throughout the mission. It also allows you to summon a large fleet of Destroyers, which are very susceptible to splash damage, like Parasitic Bombs. Note that this prestige is quite strong even if you don't summon the fleet of Destroyers; most of its power is in the Mothership.</td>
             </tr>
         </tbody>
     </table>
