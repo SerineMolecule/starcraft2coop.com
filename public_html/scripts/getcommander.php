@@ -10,28 +10,27 @@
             die();
         }
         $commander = $_GET['commander'];
-        if (!preg_match('/[^A-Za-z\s0-9]/', $commander)){
-            include 'sqlconnection.php';
-            $sql = "SELECT fullname, motto, stat01, stat02, stat03, stat04, stat05, stat06, stat07, stat08, stat09, summary
-                    FROM commandersummaries
-                    WHERE commander='$commander'";
-            $result=mysqli_query($con,$sql);
-            $commanderData = [];
-            while($row = mysqli_fetch_array($result)) {
-                $commanderData[] = $row;
-            }
-            
-            if (count($commanderData)!==1){
-                echo("Error!");
-                die();
-            }
-            $finalString = json_encode($commanderData[0]);
-            echo $finalString;
-            $con->close();
-        }
-        else{
+        $json = file_get_contents('../data/commandersummaries.json');
+        $allCommanders = json_decode($json, true);
+        
+        $match = array_find($allCommanders, function($value) use ($commander) {
+            return $value['commander'] === $commander;
+        });
+        if ($match === null) {
             echo("Error!");
+            die();
         }
+        
+        $fields = ['fullname', 'motto', 'stat01', 'stat02', 'stat03', 'stat04', 'stat05', 'stat06', 'stat07', 'stat08', 'stat09', 'summary'];
+        $match = array_intersect_key($match, array_flip($fields));
+        // also add all the fields with their index because that's what the frontend AJAX expects
+        // TODO: remove this after updating the AJAX
+        foreach ($fields as $index => $field) {
+            $match[$index] = $match[$field];
+        }
+        
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($match);
     }
     else{
         echo("Error!");

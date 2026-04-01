@@ -31,6 +31,9 @@ Redirect 301 /contact /about/contact
 # 28-mar-2026 menu reorganization
 Redirect 302 /resources/stats /about/stats
 
+# 01-apr-2026 de-databasing; json data should not be accessible
+Redirect 404 /data
+
 # we probably don't need hotlink protection; server can handle hotlinking
 
 # RewriteCond %{HTTP_REFERER} !^$

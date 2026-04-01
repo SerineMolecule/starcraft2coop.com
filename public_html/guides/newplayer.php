@@ -162,15 +162,12 @@ $_SESSION["known"] = true;
     </div>
     <div id="commanderSelection">
         <?php
-            include '../scripts/sqlconnection.php';
-            $sql = "SELECT commander
-                    FROM commandersummaries";
-            $result=mysqli_query($con,$sql);
-            while($row = mysqli_fetch_array($result)) {
+            $json = file_get_contents(__DIR__ . '/../data/commandersummaries.json');
+            $allCommanders = json_decode($json, true);
+
+            foreach ($allCommanders as $row) {
                 echo("<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>");
             }
-            
-            $con->close();
         ?>
     </div>
     <script>
@@ -199,10 +196,9 @@ $_SESSION["known"] = true;
             var colorArray = ["red", "orangered", "yellow", "limegreen", "darkgreen"]
             $.ajax({  
                 type: 'GET',
-                url: '..//scripts/getcommander.php', 
+                url: '/scripts/getcommander.php',
                 data: { commander: commander},
-                success: function(response) {
-                    val = JSON.parse(response);
+                success: function(val) {
                     $("#commanderName").html("<h2>" + val[0] + "</h2>");
                     $("#commanderMotto").text(val[1]);
                     $("#commanderPic").hide();

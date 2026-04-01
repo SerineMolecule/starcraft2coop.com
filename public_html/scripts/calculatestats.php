@@ -44,6 +44,7 @@
             echo($unitsList);
             $con->close();
             return;
+        
         case 2:
             //Mode:2    [commander, unit] : Unit was clicked -> Get basic stats for that unit
             $commander = $_GET['commander'];
@@ -70,7 +71,7 @@
             $returnArray[1] = $upgradesString;
             print(json_encode($returnArray));
             return;
-            
+        
         case 3:
             //Mode:3    [commander, selectedUnit, upgrades, [ranklevel]/[attacklevel] : Recalculate was clicked -> Get basic stats for that unit, apply the upgrades, find stats that changed
             $commander = $_GET['commander'];
@@ -927,12 +928,20 @@ function getUnitUpgradesOutput($commander, $unit){
         
     }
     
-    $sql = "SELECT motto, prestige1, prestige2, prestige3
-            FROM commandersummaries
-            WHERE commander='$commander'";
-    $result=mysqli_query($con,$sql);
-    $commanderPrestiges = mysqli_fetch_assoc($result);
-    $commanderPrestiges = array_values($commanderPrestiges);
+    $json = file_get_contents('../data/commandersummaries.json');
+    $allCommanders = json_decode($json, true);
+    
+    $match = array_find($allCommanders, function($value) use ($commander) {
+        return $value['commander'] === strtolower($commander);
+    });
+    if ($match === null) {
+        echo("Error!");
+        die();
+    }
+    
+    $fields = ['motto', 'prestige1', 'prestige2', 'prestige3'];
+    $match = array_intersect_key($match, array_flip($fields));
+    $commanderPrestiges = [$match['motto'], $match['prestige1'], $match['prestige2'], $match['prestige3']];
     $basePrestige = $commanderPrestiges[0];
     
     $con->close();

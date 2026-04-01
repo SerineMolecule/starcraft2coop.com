@@ -331,7 +331,7 @@ $_SESSION["known"] = true;
             
             $.ajax({  
                 type: 'GET',
-                url: '../scripts/calculatestats.php', 
+                url: '/scripts/calculatestats.php',
                 data: {mode:1, commander: selectedCommander},
                 success: function(response) {
                     $("#leftList").html(response);
@@ -347,7 +347,7 @@ $_SESSION["known"] = true;
             $("#leftStats").text("Loading...");
             $.ajax({  
                 type: 'GET',
-                url: '../scripts/calculatestats.php', 
+                url: '/scripts/calculatestats.php',
                 data: {mode:2, commander: selectedCommander, unit: selectedUnit },
                 success: function(response) {
                     response = JSON.parse(response);
