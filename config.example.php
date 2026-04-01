@@ -4,4 +4,3 @@
     $DB_USER = 'sc2coop';
     $DB_PASS = 'sc2coop';
     $DB_NAME = 'starcraf_coop';
-?>
