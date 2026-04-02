@@ -7,6 +7,7 @@ if ($pageSection === 'tournament') {
     $pageSection = basename(dirname(dirname($_SERVER['PHP_SELF'])));
 }
 if (!$pageSection) $pageSection = 'index';
+if ($pageSection === 'tools' || $pageSection === 'guides') $pageSection = 'resources';
 
 ?>
 <header id="header">
@@ -52,10 +53,10 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
     <li class="<?=$pageSection==="index"?'highlight':'normal'?>"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
     <li class="<?=$pageSection==="commanders"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
     <!--li class="<?=$pageSection==="community"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-community">Community</a></li-->
-    <li class="<?=$pageSection==="guides"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-guides">Guides</a></li>
-    <li class="<?=$pageSection==="missions"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
+    <!--li class="<?=$pageSection==="guides"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-guides">Guides</a></li-->
     <li class="<?=$pageSection==="resources"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Resources</a></li>
-    <li class="<?=$pageSection==="tools"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-tools">Tools</a></li>
+    <li class="<?=$pageSection==="missions"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
+    <!--li class="<?=$pageSection==="tools"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-tools">Tools</a></li-->
     <li class="<?=$pageSection==="about"?'highlight':'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-about">About</a></li>
 </ul>
 <div id="container">
@@ -105,20 +106,34 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
             <li class="<?=$pageFile==="youtube.php"?'highlight':'normal'?>"><a href="/guides/youtube">Youtube&nbsp;</a></li>
         </ul>
     </div>
-    <div id="resources" class="submenu">
+    <div id="resources" class="submenu" style="text-align: left;padding-left: 30px;">
+        <strong style="color:#999">Core:</strong>
+        <ul>
+            <li class="<?=$pageFile==="mutators.php"?'highlight':'normal'?>"><a href="/resources/mutators">Mutators</a></li>
+            <li class="<?=$pageFile==="weeklymutations.php"?'highlight':'normal'?>"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
+            <li class="<?=$pageFile==="brutal.php"?'highlight':'normal'?>"><a href="/resources/brutal">Brutal+</a></li>
+            <li class="<?=$pageFile==="unitstats.php"?'highlight':'normal'?>"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+        </ul>
+        <br /><strong style="color:#999">Guides:</strong>
+        <ul>
+            <li class="<?=$pageFile==="buildordertheory.php"?'highlight':'normal'?>"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
+            <li class="<?=$pageFile==="enemycomps.php"?'highlight':'normal'?>"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
+            <li class="<?=$pageFile==="generaltips.php"?'highlight':'normal'?>"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
+            <li class="<?=$pageFile==="newplayer.php"?'highlight':'normal'?>"><a href="/guides/newplayer">New&nbsp;Players</a></li>
+            <li class="<?=$pageFile==="youtube.php"?'highlight':'normal'?>"><a href="/guides/youtube">Youtube</a></li>
+        </ul>
+        <br /><strong style="color:#999">Resources:</strong>
         <ul>
             <li class="<?=$pageFile==="achievements.php"?'highlight':'normal'?>"><a href="/resources/achievements">Achievements</a></li>
             <li class="<?=$pageFile==="ailogic.php"?'highlight':'normal'?>"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
             <li class="<?=$pageFile==="bugs.php"?'highlight':'normal'?>"><a href="/resources/bugs">Bugs</a></li>
-            <li class="<?=$pageFile==="brutal.php"?'highlight':'normal'?>"><a href="/resources/brutal">Brutal+</a></li>
             <li class="<?=$pageFile==="deathprevention.php"?'highlight':'normal'?>"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
             <li class="<?=$pageFile==="eastereggs.php"?'highlight':'normal'?>"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
             <li class="<?=$pageFile==="levels.php"?'highlight':'normal'?>"><a href="/resources/levels">Levels</a></li>
-            <li class="<?=$pageFile==="mutators.php"?'highlight':'normal'?>"><a href="/resources/mutators">Mutators</a></li>
             <li class="<?=$pageFile==="patchdata.php"?'highlight':'normal'?>"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
             <!--li class="<?=$pageFile==="stats.php"?'highlight':'normal'?>"><a href="/resources/stats">Stats</a></li-->
-            <li class="<?=$pageFile==="weeklymutations.php"?'highlight':'normal'?>"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
-            
+            <li class="<?=$pageFile==="downloads.php"?'highlight':'normal'?>"><a href="/tools/downloads">Downloads</a></li>
+            <li class="<?=$pageFile==="masterybreakpoints.php"?'highlight':'normal'?>"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
         </ul>
     </div>
     <div id="tools" class="submenu">
