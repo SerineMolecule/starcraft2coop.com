@@ -928,20 +928,17 @@ function getUnitUpgradesOutput($commander, $unit){
         
     }
     
-    $json = file_get_contents('../data/commandersummaries.json');
-    $allCommanders = json_decode($json, true);
+    require __DIR__ . '/../data/queries.php';
     
-    $match = array_find($allCommanders, function($value) use ($commander) {
-        return $value['commander'] === strtolower($commander);
-    });
-    if ($match === null) {
-        echo("Error!");
-        die();
-    }
-    
+    $commanderData = get_commanders($commander);
     $fields = ['motto', 'prestige1', 'prestige2', 'prestige3'];
-    $match = array_intersect_key($match, array_flip($fields));
-    $commanderPrestiges = [$match['motto'], $match['prestige1'], $match['prestige2'], $match['prestige3']];
+    $commanderData = select_fields($commanderData, $fields);
+    $commanderPrestiges = [
+        $commanderData['motto'],
+        $commanderData['prestige1'],
+        $commanderData['prestige2'],
+        $commanderData['prestige3'],
+    ];
     $basePrestige = $commanderPrestiges[0];
     
     $con->close();

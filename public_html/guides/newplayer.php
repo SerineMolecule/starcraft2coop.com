@@ -162,12 +162,15 @@ $_SESSION["known"] = true;
     </div>
     <div id="commanderSelection">
         <?php
-            $json = file_get_contents(__DIR__ . '/../data/commandersummaries.json');
-            $allCommanders = json_decode($json, true);
 
-            foreach ($allCommanders as $row) {
-                echo("<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>");
-            }
+        require __DIR__ . '/../data/queries.php';
+
+        $allCommanders = get_commanders();
+        $allCommanders = select_fields($allCommanders, ['commander']);
+        foreach ($allCommanders as $row) {
+            echo("<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>");
+        }
+
         ?>
     </div>
     <script>
@@ -199,17 +202,19 @@ $_SESSION["known"] = true;
                 url: '/scripts/getcommander.php',
                 data: { commander: commander},
                 success: function(val) {
-                    $("#commanderName").html("<h2>" + val[0] + "</h2>");
-                    $("#commanderMotto").text(val[1]);
+                    $("#commanderName").html("<h2>" + val.fullname + "</h2>");
+                    $("#commanderMotto").text(val.motto);
                     $("#commanderPic").hide();
                     $("#commanderPic").attr("src", "/images/selection/" + commander.toLowerCase() + ".png").on("load", function() {
                         $("#commanderPic").show()
                         });
-                    for(var i=2; i<11;i++){
-                        $(".currentProgress").eq(i-2).animate({width: val[i]*20 + "%"});
-                        $(".currentProgress").eq(i-2).css("background-color", colorArray[val[i]-1]);
-                    }
-                    $("#commanderDescription").html(val[11]).append(" Visit their commander page <a href='/commanders/" + commander + "'>here</a> to learn more.");
+                    const stats = [val.stat01, val.stat02, val.stat03, val.stat04, val.stat05,
+                        val.stat06, val.stat07, val.stat08, val.stat09];
+                    stats.forEach((stat, i) => {
+                        $(".currentProgress").eq(i).animate({width: stats[i]*20 + "%"});
+                        $(".currentProgress").eq(i).css("background-color", colorArray[stats[i]-1]);
+                    });
+                    $("#commanderDescription").html(val.summary).append(" Visit their commander page <a href='/commanders/" + commander + "'>here</a> to learn more.");
                 }
             });
         }

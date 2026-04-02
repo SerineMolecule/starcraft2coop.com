@@ -5,34 +5,16 @@
         die();
     }
     if(isset($_GET['commander'])){
-        if (!is_string($_GET['commander'])){
-            echo("Error!");
-            die();
-        }
+        require __DIR__ . '/../data/queries.php';
+        
         $commander = $_GET['commander'];
-        $json = file_get_contents('../data/commandersummaries.json');
-        $allCommanders = json_decode($json, true);
-        
-        $match = array_find($allCommanders, function($value) use ($commander) {
-            return $value['commander'] === $commander;
-        });
-        if ($match === null) {
-            echo("Error!");
-            die();
-        }
-        
+        $commanderData = get_commanders($commander);
         $fields = ['fullname', 'motto', 'stat01', 'stat02', 'stat03', 'stat04', 'stat05', 'stat06', 'stat07', 'stat08', 'stat09', 'summary'];
-        $match = array_intersect_key($match, array_flip($fields));
-        // also add all the fields with their index because that's what the frontend AJAX expects
-        // TODO: remove this after updating the AJAX
-        foreach ($fields as $index => $field) {
-            $match[$index] = $match[$field];
-        }
+        $commanderData = select_fields($commanderData, $fields);
         
         header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($match);
+        echo json_encode($commanderData);
     }
     else{
         echo("Error!");
     }
-?>
