@@ -9,8 +9,8 @@ include("../header.php");
     .centered {
         text-align:center
     }
-    .split td:nth-child(2), .split th:nth-child(2), 
-    .split td:nth-child(4), .split th:nth-child(4), 
+    .split td:nth-child(2), .split th:nth-child(2),
+    .split td:nth-child(4), .split th:nth-child(4),
     .split td:nth-child(6), .split th:nth-child(6),
     .split td:nth-child(8), .split th:nth-child(8),
     .split td:nth-child(10), .split th:nth-child(10){
@@ -459,9 +459,9 @@ include("../header.php");
     <p>Stimpack Active: <label><input type="checkbox" value="0.5" name="exp_stim_pack"></label></p>
     <p>Warchest Active: <label><input type="checkbox" value="0.5" name="exp_war_chest"></label></p>
     <p>Holiday Bonus:
-    	<label><input type="radio" checked="checked" value="0" name="exp_holiday_bonus">None</label>
-    	<label><input type="radio" value="0.5" name="exp_holiday_bonus">50%</label>
-    	<label><input type="radio" name="exp_holiday_bonus" value="1">100%</label>
+        <label><input type="radio" checked="checked" value="0" name="exp_holiday_bonus">None</label>
+        <label><input type="radio" value="0.5" name="exp_holiday_bonus">50%</label>
+        <label><input type="radio" name="exp_holiday_bonus" value="1">100%</label>
     </p>
     <input type="submit" value="Go" id="calcGames">
     <div id ="gameCount">
@@ -472,7 +472,7 @@ include("../header.php");
                     <th>Difficulty</th>
                     <th>Games Needed</th>
                     <th>Total Time (Hours)</th>
-                </tr>   
+                </tr>
             </thead>
             <tbody>
                 <tr>
@@ -533,17 +533,17 @@ include("../header.php");
     <p>Your current mastery:</p>
     <input type="text" name="masteryLevel" id="masteryLevel" maxlength="4" size="5" value="0">
     <p>Target Level:
-	<label><input type="radio" name="targetLevel" value="90" checked="checked"> 90</label>
-	<label><input type="radio" name="targetLevel" value="1000"> 1000</label>
+    <label><input type="radio" name="targetLevel" value="90" checked="checked"> 90</label>
+    <label><input type="radio" name="targetLevel" value="1000"> 1000</label>
     </p>
     <p>Random Mission Bonus: <label><input type="checkbox" name="random_mission_bonus" value="0.25"></label></p>
     <p>Bonus Objective Completed: <label><input type="checkbox" value="1" name="bonus_objective_completed"></label></p>
     <p>Stimpack Active: <label><input type="checkbox" value="0.5" name="stim_pack"></label></p>
     <p>Warchest Active: <label><input type="checkbox" value="0.5" name="war_chest"></label></p>
     <p>Holiday Bonus:
-    	<label><input type="radio" checked="checked" value="0" name="holiday_bonus">None</label>
-    	<label><input type="radio" value="0.5" name="holiday_bonus">50%</label>
-    	<label><input type="radio" name="holiday_bonus" value="1">100%</label>
+        <label><input type="radio" checked="checked" value="0" name="holiday_bonus">None</label>
+        <label><input type="radio" value="0.5" name="holiday_bonus">50%</label>
+        <label><input type="radio" name="holiday_bonus" value="1">100%</label>
     </p>
     <input type="submit" value="Go" id="calcMastery">
     <br><br>
@@ -561,7 +561,7 @@ include("../header.php");
                     <th>Difficulty</th>
                     <th>Games Needed</th>
                     <th>Total Time (Hours)</th>
-                </tr>   
+                </tr>
             </thead>
             <tbody>
                 <tr>
@@ -620,53 +620,49 @@ include("../header.php");
     <a id="numbers"></a><h2>Some Interesting Numbers</h2>
     <p>Use this calculator to get some interesting numbers regarding your leveling.</p>
     <?php
-        $username="";
-        if(isset($_COOKIE['sc2coop'])){
-            $cookieData = json_decode($_COOKIE['sc2coop']);
-            $username=$cookieData->username;
-        }
-        if($username!=""){
-            echo("<p>Initial values are based on replays you have uploaded to this site.</p>");
-            include("../scripts/sqlconnection.php");
-            $sql = "SELECT server, mycommander, commanderlevel, masterylevel, prestige from userreplays
+    $username = "";
+    if (isset($_COOKIE['sc2coop'])) {
+        $cookieData = json_decode($_COOKIE['sc2coop']);
+        $username = $cookieData->username;
+    }
+    if ($username != "") {
+        echo("<p>Initial values are based on replays you have uploaded to this site.</p>");
+        include("../scripts/sqlconnection.php");
+        $sql = "SELECT server, mycommander, commanderlevel, masterylevel, prestige from userreplays
                     WHERE username='$username'
                     ORDER BY played ASC";
-            $result=mysqli_query($con,$sql);
-            $levelInfo = [];
-            while($row = mysqli_fetch_array($result)) {
-                if(isset($levelInfo[$row['server']])){
-                    if($row['masterylevel'] > $levelInfo[$row['server']][0]){
-                        $levelInfo[$row['server']][0] = $row['masterylevel'];
-                    }
-                    if(isset($levelInfo[$row['server']][1][$row['mycommander']])){
-                        $levelInfo[$row['server']][1][$row['mycommander']] [0]= $row['commanderlevel'];
-                        if($row['prestige'] > $levelInfo[$row['server']][1][$row['mycommander']][1]){
-                            $levelInfo[$row['server']][1][$row['mycommander']][1] = $row['prestige'];
-                        }
-                        
-                    }
-                    else{
-                        $levelInfo[$row['server']][1][$row['mycommander']] = [$row['commanderlevel'],$row['prestige']];
-                    }
-                    
+        $result = mysqli_query($con, $sql);
+        $levelInfo = [];
+        while ($row = mysqli_fetch_array($result)) {
+            if (isset($levelInfo[$row['server']])) {
+                if ($row['masterylevel'] > $levelInfo[$row['server']][0]) {
+                    $levelInfo[$row['server']][0] = $row['masterylevel'];
                 }
-                else{
-                    $levelInfo[$row['server']]=[$row['masterylevel'],[]];
+                if (isset($levelInfo[$row['server']][1][$row['mycommander']])) {
+                    $levelInfo[$row['server']][1][$row['mycommander']] [0] = $row['commanderlevel'];
+                    if ($row['prestige'] > $levelInfo[$row['server']][1][$row['mycommander']][1]) {
+                        $levelInfo[$row['server']][1][$row['mycommander']][1] = $row['prestige'];
+                    }
+                } else {
                     $levelInfo[$row['server']][1][$row['mycommander']] = [$row['commanderlevel'],$row['prestige']];
                 }
-            }
-            $prestigeInfo = [];
-            foreach($levelInfo as $server => $data){
-                $prestigeInfo[$server]=[0,0,0,0];
-                foreach($data[1] as $commander){
-                    $prestigeInfo[$server][$commander[1]]+=1;
-                }
+            } else {
+                $levelInfo[$row['server']] = [$row['masterylevel'],[]];
+                $levelInfo[$row['server']][1][$row['mycommander']] = [$row['commanderlevel'],$row['prestige']];
             }
         }
-        
+        $prestigeInfo = [];
+        foreach ($levelInfo as $server => $data) {
+            $prestigeInfo[$server] = [0,0,0,0];
+            foreach ($data[1] as $commander) {
+                $prestigeInfo[$server][$commander[1]] += 1;
+            }
+        }
+    }
+
     ?>
     <form action="#">
-        (There are a total of <?php echo (count(scandir("../images/commanderportraits")) - 2); ?> commanders currently)
+        (There are a total of <?php echo(count(scandir("../images/commanderportraits")) - 2); ?> commanders currently)
         <br>
         <table id="calcTable">
             <thead>
@@ -735,7 +731,7 @@ include("../header.php");
                         <th>Difficulty</th>
                         <th>Games Played</th>
                         <th>Total Time (Hours)</th>
-                    </tr>   
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -810,7 +806,7 @@ include("../header.php");
         }
         var calcExpFromLevel = function(level){
             var totalExp=0;
-            
+
             if(level ==0){
                 totalExp=0;
             }
@@ -825,151 +821,151 @@ include("../header.php");
             return totalExp;
         }
         var calcXPPerGame = function(objectiveBonus, randomBonus, difficulty, holidayBonus, stimBonus, chestBonus){
-        	return xpPerGame = (20000 + objectiveBonus * 2000) * (1 + randomBonus + difficulty + holidayBonus) * (1 + stimBonus + chestBonus);
+            return xpPerGame = (20000 + objectiveBonus * 2000) * (1 + randomBonus + difficulty + holidayBonus) * (1 + stimBonus + chestBonus);
         }
         $("#calcGames").on("click", function(event){
-        	event.preventDefault();
-        	var remainingExp;
-        	
-        	if($("#experienceNeeded").val()==""){remainingExp}else if(!$.isNumeric($("#experienceNeeded").val())){alert("Experience Needed is not numeric");}else{remainingExp= parseInt($("#experienceNeeded").val());}
-        	if(remainingExp<0){remainingExp = 0;$("#experienceNeeded").val("0");}
-        	
-        	randomBonus = +$('input[name=exp_random_mission_bonus]:checked').val() || 0
-        	objectiveBonus = +$('input[name=exp_bonus_objective_completed]:checked').val() || 0
-        	stimBonus = +$('input[name=exp_stim_pack]:checked').val() || 0
-        	chestBonus = +$('input[name=exp_war_chest]:checked').val() || 0
-        	holidayBonus = +$('input[name=exp_holiday_bonus]:checked').val()
-        
-        	casGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0, holidayBonus, stimBonus, chestBonus));
-        	casTime = Math.ceil(casGames /3);
-        	normGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.2, holidayBonus, stimBonus, chestBonus));
-        	normTime = Math.ceil(normGames /3);
-        	hardGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.5, holidayBonus, stimBonus, chestBonus));
-        	hardTime = Math.ceil(hardGames /3);
-        	brutGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1, holidayBonus, stimBonus, chestBonus));
-        	brutTime = Math.ceil(brutGames /3);
-        	brut1Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1.75, holidayBonus, stimBonus, chestBonus));
-        	brut1Time = Math.ceil(brut1Games /3);
-        	brut2Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2, holidayBonus, stimBonus, chestBonus));
-        	brut2Time = Math.ceil(brut2Games /3);
-        	brut3Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.25, holidayBonus, stimBonus, chestBonus));
-        	brut3Time = Math.ceil(brut3Games /3);
-        	brut4Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.5, holidayBonus, stimBonus, chestBonus));
-        	brut4Time = Math.ceil(brut4Games /3);
-        	brut5Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.75, holidayBonus, stimBonus, chestBonus));
-        	brut5Time = Math.ceil(brut5Games /3);
-        	brut6Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 3, holidayBonus, stimBonus, chestBonus));
-        	brut6Time = Math.ceil(brut6Games /3);
-        	
-        	$("#expCasGames").text(casGames);
-        	$("#expCasTime").text(casTime);
-        	$("#expNormGames").text(normGames);
-        	$("#expNormTime").text(normTime);
-        	$("#expHardGames").text(hardGames);
-        	$("#expHardTime").text(hardTime);
-        	$("#expBrutGames").text(brutGames);
-        	$("#expBrutTime").text(brutTime);
-        	$("#expBrut1Games").text(brut1Games);
-        	$("#expBrut1Time").text(brut1Time);
-        	$("#expBrut2Games").text(brut2Games);
-        	$("#expBrut2Time").text(brut2Time);
-        	$("#expBrut3Games").text(brut3Games);
-        	$("#expBrut3Time").text(brut3Time);
-        	$("#expBrut4Games").text(brut4Games);
-        	$("#expBrut4Time").text(brut4Time);
-        	$("#expBrut5Games").text(brut5Games);
-        	$("#expBrut5Time").text(brut5Time);
-        	$("#expBrut6Games").text(brut6Games);
-        	$("#expBrut6Time").text(brut6Time);
+            event.preventDefault();
+            var remainingExp;
+
+            if($("#experienceNeeded").val()==""){remainingExp}else if(!$.isNumeric($("#experienceNeeded").val())){alert("Experience Needed is not numeric");}else{remainingExp= parseInt($("#experienceNeeded").val());}
+            if(remainingExp<0){remainingExp = 0;$("#experienceNeeded").val("0");}
+
+            randomBonus = +$('input[name=exp_random_mission_bonus]:checked').val() || 0
+            objectiveBonus = +$('input[name=exp_bonus_objective_completed]:checked').val() || 0
+            stimBonus = +$('input[name=exp_stim_pack]:checked').val() || 0
+            chestBonus = +$('input[name=exp_war_chest]:checked').val() || 0
+            holidayBonus = +$('input[name=exp_holiday_bonus]:checked').val()
+
+            casGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0, holidayBonus, stimBonus, chestBonus));
+            casTime = Math.ceil(casGames /3);
+            normGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.2, holidayBonus, stimBonus, chestBonus));
+            normTime = Math.ceil(normGames /3);
+            hardGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.5, holidayBonus, stimBonus, chestBonus));
+            hardTime = Math.ceil(hardGames /3);
+            brutGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1, holidayBonus, stimBonus, chestBonus));
+            brutTime = Math.ceil(brutGames /3);
+            brut1Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1.75, holidayBonus, stimBonus, chestBonus));
+            brut1Time = Math.ceil(brut1Games /3);
+            brut2Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2, holidayBonus, stimBonus, chestBonus));
+            brut2Time = Math.ceil(brut2Games /3);
+            brut3Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.25, holidayBonus, stimBonus, chestBonus));
+            brut3Time = Math.ceil(brut3Games /3);
+            brut4Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.5, holidayBonus, stimBonus, chestBonus));
+            brut4Time = Math.ceil(brut4Games /3);
+            brut5Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.75, holidayBonus, stimBonus, chestBonus));
+            brut5Time = Math.ceil(brut5Games /3);
+            brut6Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 3, holidayBonus, stimBonus, chestBonus));
+            brut6Time = Math.ceil(brut6Games /3);
+
+            $("#expCasGames").text(casGames);
+            $("#expCasTime").text(casTime);
+            $("#expNormGames").text(normGames);
+            $("#expNormTime").text(normTime);
+            $("#expHardGames").text(hardGames);
+            $("#expHardTime").text(hardTime);
+            $("#expBrutGames").text(brutGames);
+            $("#expBrutTime").text(brutTime);
+            $("#expBrut1Games").text(brut1Games);
+            $("#expBrut1Time").text(brut1Time);
+            $("#expBrut2Games").text(brut2Games);
+            $("#expBrut2Time").text(brut2Time);
+            $("#expBrut3Games").text(brut3Games);
+            $("#expBrut3Time").text(brut3Time);
+            $("#expBrut4Games").text(brut4Games);
+            $("#expBrut4Time").text(brut4Time);
+            $("#expBrut5Games").text(brut5Games);
+            $("#expBrut5Time").text(brut5Time);
+            $("#expBrut6Games").text(brut6Games);
+            $("#expBrut6Time").text(brut6Time);
         });
         $("#calcMastery").on("click", function(event){
-        	event.preventDefault();
-        	var masteryLevel;
-        	var currentExp=0;
-        	var remainingExp;
-        	var progress;
-        	var targetLevel;
-        	
-        	if($("#masteryLevel").val()==""){masteryLevel =0;}else if(!$.isNumeric($("#masteryLevel").val())){alert("Mastery Level is not numeric");}else{masteryLevel= parseInt($("#masteryLevel").val());}
-        	if(masteryLevel<0){masteryLevel = 0;$("#masteryLevel").val("0");}
-        	
-        	targetLevel = $('input[name=targetLevel]:checked').val()
-        	if(targetLevel==90){
-        		if(masteryLevel>90){masteryLevel = 90;$("#masteryLevel").val("90");}
-        	}
-        	else{
-        		if(masteryLevel>1000){masteryLevel = 1000;$("#masteryLevel").val("1000");}
-        	}
-        	
-        	randomBonus = +$('input[name=random_mission_bonus]:checked').val() || 0
-        	objectiveBonus = +$('input[name=bonus_objective_completed]:checked').val() || 0
-        	stimBonus = +$('input[name=stim_pack]:checked').val() || 0
-        	chestBonus = +$('input[name=war_chest]:checked').val() || 0
-        	holidayBonus = +$('input[name=holiday_bonus]:checked').val()
-        
-        	neededExp = calcExpFromLevel(targetLevel);
-        	currentExp = calcExpFromLevel(masteryLevel);
-        	progress = currentExp/neededExp;
-        	remainingExp = neededExp - currentExp;
-        
-        	casGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0, holidayBonus, stimBonus, chestBonus));
-        	casTime = Math.ceil(casGames /3);
-        	normGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.2, holidayBonus, stimBonus, chestBonus));
-        	normTime = Math.ceil(normGames /3);
-        	hardGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.5, holidayBonus, stimBonus, chestBonus));
-        	hardTime = Math.ceil(hardGames /3);
-        	brutGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1, holidayBonus, stimBonus, chestBonus));
-        	brutTime = Math.ceil(brutGames /3);
-        	brut1Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1.75, holidayBonus, stimBonus, chestBonus));
-        	brut1Time = Math.ceil(brut1Games /3);
-        	brut2Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2, holidayBonus, stimBonus, chestBonus));
-        	brut2Time = Math.ceil(brut2Games /3);
-        	brut3Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.25, holidayBonus, stimBonus, chestBonus));
-        	brut3Time = Math.ceil(brut3Games /3);
-        	brut4Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.5, holidayBonus, stimBonus, chestBonus));
-        	brut4Time = Math.ceil(brut4Games /3);
-        	brut5Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.75, holidayBonus, stimBonus, chestBonus));
-        	brut5Time = Math.ceil(brut5Games /3);
-        	brut6Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 3, holidayBonus, stimBonus, chestBonus));
-        	brut6Time = Math.ceil(brut6Games /3);
-        	
-        	$("#masCasGames").text(casGames);
-        	$("#masCasTime").text(casTime);
-        	$("#masNormGames").text(normGames);
-        	$("#masNormTime").text(normTime);
-        	$("#masHardGames").text(hardGames);
-        	$("#masHardTime").text(hardTime);
-        	$("#masBrutGames").text(brutGames);
-        	$("#masBrutTime").text(brutTime);
-        	$("#masBrut1Games").text(brut1Games);
-        	$("#masBrut1Time").text(brut1Time);
-        	$("#masBrut2Games").text(brut2Games);
-        	$("#masBrut2Time").text(brut2Time);
-        	$("#masBrut3Games").text(brut3Games);
-        	$("#masBrut3Time").text(brut3Time);
-        	$("#masBrut4Games").text(brut4Games);
-        	$("#masBrut4Time").text(brut4Time);
-        	$("#masBrut5Games").text(brut5Games);
-        	$("#masBrut5Time").text(brut5Time);
-        	$("#masBrut6Games").text(brut6Games);
-        	$("#masBrut6Time").text(brut6Time);
-        	
-        	if (progress>=0.99){
-        		$('#currentProgress').css('opacity', '0');
-        		$('#currentProgress').css('display', 'block');
-        		$('#currentProgress').css('width', 'auto');
-        		var autoWidth = $('#currentProgress').width();
-        		$('#currentProgress').css('display', 'inline-block');
-        		$("#currentProgress").css("width", 0);
-        		$('#currentProgress').css('opacity', '1');
-        		$("#currentProgress").animate({"width": autoWidth}, 1000);
-        		$("#progress p").text("100%");
-        	}
-        	else{
-        		$("#currentProgress").css("width", 0);
-        		$("#currentProgress").animate({"width" : progress*100 + "%"}, 1000);
-        		$("#progress p").text(parseInt(progress*100) + "%");
-        	}
+            event.preventDefault();
+            var masteryLevel;
+            var currentExp=0;
+            var remainingExp;
+            var progress;
+            var targetLevel;
+
+            if($("#masteryLevel").val()==""){masteryLevel =0;}else if(!$.isNumeric($("#masteryLevel").val())){alert("Mastery Level is not numeric");}else{masteryLevel= parseInt($("#masteryLevel").val());}
+            if(masteryLevel<0){masteryLevel = 0;$("#masteryLevel").val("0");}
+
+            targetLevel = $('input[name=targetLevel]:checked').val()
+            if(targetLevel==90){
+                if(masteryLevel>90){masteryLevel = 90;$("#masteryLevel").val("90");}
+            }
+            else{
+                if(masteryLevel>1000){masteryLevel = 1000;$("#masteryLevel").val("1000");}
+            }
+
+            randomBonus = +$('input[name=random_mission_bonus]:checked').val() || 0
+            objectiveBonus = +$('input[name=bonus_objective_completed]:checked').val() || 0
+            stimBonus = +$('input[name=stim_pack]:checked').val() || 0
+            chestBonus = +$('input[name=war_chest]:checked').val() || 0
+            holidayBonus = +$('input[name=holiday_bonus]:checked').val()
+
+            neededExp = calcExpFromLevel(targetLevel);
+            currentExp = calcExpFromLevel(masteryLevel);
+            progress = currentExp/neededExp;
+            remainingExp = neededExp - currentExp;
+
+            casGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0, holidayBonus, stimBonus, chestBonus));
+            casTime = Math.ceil(casGames /3);
+            normGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.2, holidayBonus, stimBonus, chestBonus));
+            normTime = Math.ceil(normGames /3);
+            hardGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 0.5, holidayBonus, stimBonus, chestBonus));
+            hardTime = Math.ceil(hardGames /3);
+            brutGames = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1, holidayBonus, stimBonus, chestBonus));
+            brutTime = Math.ceil(brutGames /3);
+            brut1Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 1.75, holidayBonus, stimBonus, chestBonus));
+            brut1Time = Math.ceil(brut1Games /3);
+            brut2Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2, holidayBonus, stimBonus, chestBonus));
+            brut2Time = Math.ceil(brut2Games /3);
+            brut3Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.25, holidayBonus, stimBonus, chestBonus));
+            brut3Time = Math.ceil(brut3Games /3);
+            brut4Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.5, holidayBonus, stimBonus, chestBonus));
+            brut4Time = Math.ceil(brut4Games /3);
+            brut5Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 2.75, holidayBonus, stimBonus, chestBonus));
+            brut5Time = Math.ceil(brut5Games /3);
+            brut6Games = Math.ceil(remainingExp / calcXPPerGame(objectiveBonus, randomBonus, 3, holidayBonus, stimBonus, chestBonus));
+            brut6Time = Math.ceil(brut6Games /3);
+
+            $("#masCasGames").text(casGames);
+            $("#masCasTime").text(casTime);
+            $("#masNormGames").text(normGames);
+            $("#masNormTime").text(normTime);
+            $("#masHardGames").text(hardGames);
+            $("#masHardTime").text(hardTime);
+            $("#masBrutGames").text(brutGames);
+            $("#masBrutTime").text(brutTime);
+            $("#masBrut1Games").text(brut1Games);
+            $("#masBrut1Time").text(brut1Time);
+            $("#masBrut2Games").text(brut2Games);
+            $("#masBrut2Time").text(brut2Time);
+            $("#masBrut3Games").text(brut3Games);
+            $("#masBrut3Time").text(brut3Time);
+            $("#masBrut4Games").text(brut4Games);
+            $("#masBrut4Time").text(brut4Time);
+            $("#masBrut5Games").text(brut5Games);
+            $("#masBrut5Time").text(brut5Time);
+            $("#masBrut6Games").text(brut6Games);
+            $("#masBrut6Time").text(brut6Time);
+
+            if (progress>=0.99){
+                $('#currentProgress').css('opacity', '0');
+                $('#currentProgress').css('display', 'block');
+                $('#currentProgress').css('width', 'auto');
+                var autoWidth = $('#currentProgress').width();
+                $('#currentProgress').css('display', 'inline-block');
+                $("#currentProgress").css("width", 0);
+                $('#currentProgress').css('opacity', '1');
+                $("#currentProgress").animate({"width": autoWidth}, 1000);
+                $("#progress p").text("100%");
+            }
+            else{
+                $("#currentProgress").css("width", 0);
+                $("#currentProgress").animate({"width" : progress*100 + "%"}, 1000);
+                $("#progress p").text(parseInt(progress*100) + "%");
+            }
         });
         $("#calc").on("click", function(event){
             event.preventDefault();
@@ -1014,7 +1010,7 @@ include("../header.php");
             var brut5Time;
             var brut6Games;
             var brut6Time;
-            
+
             if($("#krLevel").val()==""){krLevel=0}else if(!$.isNumeric($("#krLevel").val())){alert("KR Level is not numeric");return;}else{krLevel=parseInt($("#krLevel").val())}
             if(krLevel<0){krLevel = 0;$("#krLevel").val("0");}
             if($("#cnLevel").val()==""){cnLevel=0}else if(!$.isNumeric($("#cnLevel").val())){alert("CN Level is not numeric");return;}else{cnLevel=parseInt($("#cnLevel").val())}
@@ -1025,7 +1021,7 @@ include("../header.php");
             if(naLevel<0){naLevel = 0;$("#naLevel").val("0");}
             if($("#seaLevel").val()==""){seaLevel=0}else if(!$.isNumeric($("#seaLevel").val())){alert("SEA Level is not numeric");return;}else{seaLevel=parseInt($("#seaLevel").val())}
             if(seaLevel<0){seaLevel = 0;$("#seaLevel").val("0");}
-            
+
             var serverArray=['kr','cn','eu','na','sea']
             var cnComExp = 0;
             var krComExp = 0;
@@ -1050,17 +1046,17 @@ include("../header.php");
             euComExp = exp['eu'];
             naComExp = exp['na'];
             seaComExp = exp['sea'];
-            
+
             euLevelExp = calcExpFromLevel(euLevel);
             krLevelExp = calcExpFromLevel(krLevel);
             naLevelExp = calcExpFromLevel(naLevel);
             cnLevelExp = calcExpFromLevel(cnLevel);
             seaLevelExp = calcExpFromLevel(seaLevel);
-            
+
             totalExp = euComExp + krComExp + naComExp + cnComExp + seaComExp + euLevelExp + krLevelExp + naLevelExp + cnLevelExp + seaLevelExp;
-            bestLevel = calcLevelFromExp(totalExp - <?php echo (count(scandir("../images/commanderportraits")) - 2); ?> * (1045000*4));
+            bestLevel = calcLevelFromExp(totalExp - <?= count(scandir("../images/commanderportraits")) - 2 ?> * (1045000*4));
             maxLevel = calcLevelFromExp(totalExp - 1045000);
-            
+
             casGames = Math.ceil(totalExp / (22000 + 5500));
             casTime = Math.ceil(casGames /3);
             normGames = Math.ceil(totalExp / (22000 + 5500 + (0.20 * 22000)));
@@ -1081,7 +1077,7 @@ include("../header.php");
             brut5Time = Math.ceil(brut5Games /3);
             brut6Games = Math.ceil(totalExp / (22000 + 5500 + (3.11 * 22000)));
             brut6Time = Math.ceil(brut6Games /3);
-            
+
             $("#totalExp").text(totalExp.toLocaleString('en'));
             $("#bestLevel").text(bestLevel);
             $("#maxLevel").text(maxLevel);

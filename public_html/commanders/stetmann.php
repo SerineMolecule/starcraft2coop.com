@@ -413,7 +413,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Signal Savant</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Stetellites are invulnerable once they are online.</li>
@@ -451,7 +451,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Best Buddy</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Gary's health and damage increased by 100%.</li>
@@ -493,7 +493,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Oil Baron</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Combat units gain a stack of The Best Oil when they kill an enemy unit.</li>
@@ -516,7 +516,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">While this prestige might appear to be useful, The Best Oil is only useful when provided in several stacks, such as those given to Super Gary. Since these stacks are only given out on a kill, it is highly unlikely that a unit can accumulate enough stacks such that they would get a signficant advantage from this prestige. Combined with the fact that these stacks are temporary and wear off after 30 seconds, this prestige is not very useful for most units. However, units that deal splash damage, or have cleave attacks (such as Lurkers and Ultralisks) can benefit from this prestige, especially on missions like Dead of Night, where there is a constant stream of enemy units to keep the stacks refreshed.</td>            
+                <td class="forceleft" colspan="5">While this prestige might appear to be useful, The Best Oil is only useful when provided in several stacks, such as those given to Super Gary. Since these stacks are only given out on a kill, it is highly unlikely that a unit can accumulate enough stacks such that they would get a signficant advantage from this prestige. Combined with the fact that these stacks are temporary and wear off after 30 seconds, this prestige is not very useful for most units. However, units that deal splash damage, or have cleave attacks (such as Lurkers and Ultralisks) can benefit from this prestige, especially on missions like Dead of Night, where there is a constant stream of enemy units to keep the stacks refreshed.</td>
             </tr>
         </tbody>
     </table>
@@ -613,7 +613,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -627,7 +627,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

@@ -102,28 +102,28 @@
   </head>
 <body>
     <?php
-        include '../scripts/sqlconnection.php';
-        $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination 
+    include '../scripts/sqlconnection.php';
+    $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination
                 FROM mutators
                 ORDER BY mutatorid ASC";
-        $result=mysqli_query($con,$sql);
-        $mutators = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $mutators[] = $row;
-        }
-        
-        $sql = "SELECT DISTINCT mutation,map, mut01, mut02, mut03 
+    $result = mysqli_query($con, $sql);
+    $mutators = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $mutators[] = $row;
+    }
+
+    $sql = "SELECT DISTINCT mutation,map, mut01, mut02, mut03
                 FROM weeklymutations
                 WHERE mutation <> 'Sudden But Inevitable'
                 ORDER BY mutation";
-        $result=mysqli_query($con,$sql);
-        while($row = mysqli_fetch_array($result)) {
-            if($row['map']=="Lock and Load"){
-                $row['map']="Lock Load";
-            }
-            $mutations[] = $row;
+    $result = mysqli_query($con, $sql);
+    while ($row = mysqli_fetch_array($result)) {
+        if ($row['map'] == "Lock and Load") {
+            $row['map'] = "Lock Load";
         }
+        $mutations[] = $row;
+    }
     ?>
     <div id="mutatorsList" class="hidden">
     <?php
@@ -180,10 +180,10 @@
             var elem = $(this).parent();
             var mutationIndex = $(this).prop('selectedIndex') - 1;
             var selectedMutation = mutationsList[mutationIndex];
-            
+
             var mapFile = "assets/" + selectedMutation.map.replace(/ /g,'').toLowerCase() +".png";
             elem.find(".map").attr('src', mapFile);
-            
+
             var totalabom = 0;
             if(selectedMutation.mut01 !=null){
                 var mutationFile = "/images/mutators/"+ mutatorsList[selectedMutation.mut01-1].mutatorname.replace(/ /g,'').toLowerCase() +".png";
@@ -245,7 +245,7 @@
         function allowDrop(ev) {
           ev.preventDefault();
         }
-        
+
         function drop(ev) {
           ev.preventDefault();
           var data = ev.dataTransfer.getData("text");

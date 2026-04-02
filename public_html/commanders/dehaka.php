@@ -296,7 +296,7 @@ include("../header.php");
                         <li>Excellent mobility with Deep Tunnel (although vision is required).</li>
                         <li>Useful for dealing structure damage.</li>
                     </ul>
-                    
+
                 </td>
                 <td>
                     <ul>
@@ -562,7 +562,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Devouring One</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Devour applies its benefits to all nearby friendly units.</li>
@@ -619,7 +619,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Primal Contender</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Pack Leaders and their entourage deal 50% more damage and have 100% increased life.</li>
@@ -666,7 +666,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Broodbrother</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Dehaka spawns a clone.</li>
@@ -687,7 +687,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">Because Essence is not shared between the two hero units, the amount of Essence required to reach maximum level is essentially doubled. Combined with the fact that micro-ing Dehaka (while also macro-ing behind) is already very difficult, adding a second Hero unit that also increases your liability makes this prestige fairly ineffective.</td>            
+                <td class="forceleft" colspan="5">Because Essence is not shared between the two hero units, the amount of Essence required to reach maximum level is essentially doubled. Combined with the fact that micro-ing Dehaka (while also macro-ing behind) is already very difficult, adding a second Hero unit that also increases your liability makes this prestige fairly ineffective.</td>
             </tr>
         </tbody>
     </table>
@@ -762,7 +762,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -776,7 +776,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>
@@ -835,7 +835,7 @@ include("../header.php");
                         <td>60 seconds</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -869,7 +869,7 @@ include("../header.php");
                         <td>60 seconds</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -910,7 +910,7 @@ include("../header.php");
                         <td>120 seconds</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -972,7 +972,7 @@ include("../header.php");
                         <td>60 seconds</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -1006,7 +1006,7 @@ include("../header.php");
                         <td>60 seconds</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -1057,7 +1057,7 @@ include("../header.php");
                         <td>90 seconds</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -1093,7 +1093,7 @@ include("../header.php");
                         <td>60 seconds</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -1639,36 +1639,36 @@ include("../header.php");
     </table>
     <p>Devouring Psionic units is a critical part of good Dehaka play. Being able to pick out High Templars and other Psionic units from the middle of attack waves to clear them entirely is a key part of this play. Below is a list of the Psionic units that can be found in Amon's army:</p>
     <ul>
-        
+
     <?php
-        include '../scripts/sqlconnection.php';
-        $sql = "SELECT name, race
-                FROM amonunits
-                WHERE psionic=1 and race<>'Objective' and race<>'Mutator' 
-                ORDER BY race, name";
-        $result=mysqli_query($con,$sql);
-        $units = [];
-        while($row = mysqli_fetch_array($result)) {
-            $units[] = $row;
+    include '../scripts/sqlconnection.php';
+    $sql = "SELECT name, race
+            FROM amonunits
+            WHERE psionic=1 and race<>'Objective' and race<>'Mutator'
+            ORDER BY race, name";
+    $result = mysqli_query($con, $sql);
+    $units = [];
+    while ($row = mysqli_fetch_array($result)) {
+        $units[] = $row;
+    }
+    $races = [];
+    $sortedArray = [];
+    $sortedArray[0][0] = $units[0]['name'];
+    $startRace = $units[0]['race'];
+    $races[] = $startRace;
+    $currentIndex = 0;
+    for ($i = 1; $i < sizeof($units); $i++) {
+        if ($units[$i]['race'] !== $units[$i - 1]['race']) {
+            $currentIndex += 1;
+            $races[] = $units[$i]['race'];
         }
-        $races = [];
-        $sortedArray = [];
-        $sortedArray[0][0]=$units[0]['name'];
-        $startRace = $units[0]['race'];
-        $races[] = $startRace;
-        $currentIndex = 0;
-        for($i=1; $i<sizeof($units); $i++){
-            if ($units[$i]['race']!== $units[$i-1]['race']){
-                $currentIndex +=1;
-                $races[] = $units[$i]['race'];
-            }
-            $sortedArray[$currentIndex][]=$units[$i]['name'];
-        }
-        for ($i=0; $i<sizeof($sortedArray);$i++){
-            echo ("<li><b>" . $races[$i] . ":</b> " .  implode(", ", $sortedArray[$i]) . "</li>");
-        }
+        $sortedArray[$currentIndex][] = $units[$i]['name'];
+    }
+    for ($i = 0; $i < sizeof($sortedArray); $i++) {
+        echo("<li><b>" . $races[$i] . ":</b> " . implode(", ", $sortedArray[$i]) . "</li>");
+    }
     ?>
-    
+
     </ul>
     <a id="essence"></a><h3>Essence Farming</h3>
     <p>As soon as Dehaka has spawned, he should be sent towards enemy bases to kill units and gather Essence. Using Dehaka to clear expansion rocks (referred to as "Rockslapping") is one of the most inefficient things a Dehaka player can do, due to Dehaka's low attack speed and low attack damage. The table below provides a guide for the path Dehaka should take on each of the missions to gather Essence as effectively as possible.</p>

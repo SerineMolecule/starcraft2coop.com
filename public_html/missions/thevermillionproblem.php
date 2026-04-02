@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - The Vermillion Problem</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide The Vermillion Problem">
@@ -85,24 +86,24 @@ include("../header.php");
         <li><b>Terran:</b> Three Goliaths</li>
         <li><b>Zerg:</b> Two Ravagers and Eight Zerglings</li>
     </ul>
-    <?php $info = "expansionlong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("expansionlong") ?>
     <p>At this point, the bases you will clear will usually depend on where the crystals spawn, rather than a particular order.</p>
     <p>The base to the West is usually the most lightly defended base after the expansion. It is shown below:</p>
-    <?php $info = "wbase"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("wbase") ?>
     <p>The next base usually captured is the base to the North. It is slightly more heavily defended, but should be relatively easy to capture.</p>
-    <?php $info = "nbaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("nbaselong") ?>
     <p>Due to the flow of the mission, there will be a lava surge by the time this base is cleared. It is usually optimal to continue pushing downwards to the North-East base. Watch out for the Hybrid Dominator in this area.</p>
-    <?php $info = "nebase"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("nebase") ?>
     <p>The rest of the bases do require some strong forces in order to clear. The base to the South-West is probably the easiest of the remaining bases that can have crystals near them.</p>
-    <?php $info = "swbaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("swbaselong") ?>
     <p>If you choose to push East from this base towards the bonus objective, you'll need to destroy a small enemy camp. Note that the ramp from the opposite side of this island is unguarded and you can reach the bonus objective without fighting enemy units.</p>
-    <?php $info = "bonuscamp"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("bonuscamp") ?>
     <p>If you push East from your expansion, there are a patches of enemies present. The first is a camp of units.</p>
-    <?php $info = "ebasecamp"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("ebasecamp") ?>
     <p>If you follow the path up North, you'll get to the enemy base.</p>
-    <?php $info = "ebaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("ebaselong") ?>
     <p>Just South of this base, there is a small enclave of enemies.</p>
-    <?php $info = "eenclavelong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("eenclavelong") ?>
     <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/thevermillionproblem/moltensalamander.jpg" alt="Molten Salamander">

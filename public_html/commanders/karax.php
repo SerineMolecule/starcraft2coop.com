@@ -440,7 +440,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Architect of War</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Repair Beam is 100% more effective and can target twice as many structures.</li>
@@ -485,7 +485,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Templar Apparent</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Combat unit cost reduced by 40%.</li>
@@ -522,7 +522,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Solarite Celestial</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Orbital Strike and Solar Lance energy cost reduced by 40%.</li>
@@ -540,7 +540,7 @@ include("../header.php");
                 <td>None</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige improves Karax's Spear of Adun abilities at the cost of him losing his ramp up capabilities. The Spear of Adun is a key pillar in good Karax play, and players that know how to use the Spear of Adun to its maximum potential can gain a lot of value from this prestige. Due to the highly reduced costs of Spear of Adun abilities, players do not need to rely on the Chrono abilities in order to get a reasonably-sized army out in the early game. Instead, a small handful of units are more than enough, as the Spear of Adun becomes the primary damage dealer in the mission. This prestige emphasizes Spear of Adun play, and players will need to get familiar with this style of play in order to utilize this prestige to its maximum potential.</td>            
+                <td class="forceleft" colspan="5">This prestige improves Karax's Spear of Adun abilities at the cost of him losing his ramp up capabilities. The Spear of Adun is a key pillar in good Karax play, and players that know how to use the Spear of Adun to its maximum potential can gain a lot of value from this prestige. Due to the highly reduced costs of Spear of Adun abilities, players do not need to rely on the Chrono abilities in order to get a reasonably-sized army out in the early game. Instead, a small handful of units are more than enough, as the Spear of Adun becomes the primary damage dealer in the mission. This prestige emphasizes Spear of Adun play, and players will need to get familiar with this style of play in order to utilize this prestige to its maximum potential.</td>
             </tr>
         </tbody>
     </table>
@@ -565,7 +565,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -579,7 +579,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>
@@ -874,7 +874,7 @@ include("../header.php");
                         <td>90 seconds</td>
                     </tr>
                 </tbody>
-            </table>   
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -1173,7 +1173,7 @@ include("../header.php");
                             newImg.attr('id', 'coa2');
                             return false;
                         })
-                    </script> 
+                    </script>
                 </td>
                 <td><div class="fastExpand" id="coa1div"><img id="coa1" src="/images/commanderdata/guides/karax/fastexpand_coa_protoss_1.jpg" alt="Player 1 Fast Expand on Chain of Ascension"></div></td>
                 <td><div class="fastExpand" id="coa2div"><img id="coa2" src="/images/commanderdata/guides/karax/fastexpand_coa_protoss_2.jpg" alt="Player 2 Fast Expand on Chain of Ascension"></div></td>
@@ -1274,7 +1274,7 @@ include("../header.php");
                             newImg.attr('id', 'pp1');
                             return false;
                         })
-                    </script> 
+                    </script>
                 </td>
                 <td colspan="2"><div class="fastExpand" id="pp1div"><img id="pp1" src="/images/commanderdata/guides/karax/fastexpand_pp_protoss.jpg" alt="Fast Expand on Part & Parcel"></div></td>
             </tr>

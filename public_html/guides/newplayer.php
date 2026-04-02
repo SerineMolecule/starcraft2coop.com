@@ -85,9 +85,9 @@ $_SESSION["known"] = true;
         padding:5px;
         border-radius:5px;
     }
-    
+
   </style>
-  
+
   </head>
 <body>
 <?php include("../menu.php"); ?>
@@ -162,15 +162,15 @@ $_SESSION["known"] = true;
     </div>
     <div id="commanderSelection">
         <?php
-            include '../scripts/sqlconnection.php';
-            $sql = "SELECT commander
-                    FROM commandersummaries";
-            $result=mysqli_query($con,$sql);
-            while($row = mysqli_fetch_array($result)) {
-                echo("<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>");
-            }
-            
-            $con->close();
+        include '../scripts/sqlconnection.php';
+        $sql = "SELECT commander
+                FROM commandersummaries";
+        $result = mysqli_query($con, $sql);
+        while ($row = mysqli_fetch_array($result)) {
+            echo("<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>");
+        }
+
+        $con->close();
         ?>
     </div>
     <script>
@@ -193,13 +193,13 @@ $_SESSION["known"] = true;
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         function update(commander){
             var colorArray = ["red", "orangered", "yellow", "limegreen", "darkgreen"]
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '..//scripts/getcommander.php', 
+                url: '..//scripts/getcommander.php',
                 data: { commander: commander},
                 success: function(response) {
                     val = JSON.parse(response);

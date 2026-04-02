@@ -494,7 +494,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Akhundelar</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>All Armor Suit damage increased by 100%.</li>
@@ -540,7 +540,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Network Administrator</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Tactical Data Web effectiveness increased by 200%.</li>
@@ -591,7 +591,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Unconquered Spirit</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Avenging Protocol effectiveness increased by 100%.</li>
@@ -613,7 +613,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige encourages players to take advantage of Avenging Protocol by reducing the Champion A.I. vitality and attack ranges. This forces them to the frontline and makes them easier to kill by Amon's forces. While in theory, this strategy may work, one of the issues that players will face with this prestige is the issue of body-blocking. As A.I Champions get transferred to a new shell, they might find themselves at the back of the army, meaning that Avenging Protocol may wear off by the time they push through to the front to fight. This prestige works well with the Champion A.I attack speed mastery.</td>            
+                <td class="forceleft" colspan="5">This prestige encourages players to take advantage of Avenging Protocol by reducing the Champion A.I. vitality and attack ranges. This forces them to the frontline and makes them easier to kill by Amon's forces. While in theory, this strategy may work, one of the issues that players will face with this prestige is the issue of body-blocking. As A.I Champions get transferred to a new shell, they might find themselves at the back of the army, meaning that Avenging Protocol may wear off by the time they push through to the front to fight. This prestige works well with the Champion A.I attack speed mastery.</td>
             </tr>
         </tbody>
     </table>
@@ -642,7 +642,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -656,7 +656,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

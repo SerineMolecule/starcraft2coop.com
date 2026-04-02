@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Mist Opportunities</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Mist Opportunities">
@@ -69,9 +70,9 @@ include("../header.php");
     </div>
     <p>The bonus objective requires you to destroy two Terrazine Extraction Devices that are extracting Terrazine from the Belshir Gliders.</p>
     <p>Each extraction device is guarded by a number of enemy forces. The location and guards of the first extraction device is shown below.</p>
-    <?php $info = "extractiondevice1"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("extractiondevice1") ?>
     <p>The location and guards of the second extraction device is shown below. These forces are a lot stronger, but are much more clumped up together.</p>
-    <?php $info = "extractiondevice2"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("extractiondevice2") ?>
     <a id="timings"></a><h2>Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>There are three timings that play a role in Mist Opportunities. These are:</p>

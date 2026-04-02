@@ -416,7 +416,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Chaotic Power Couple</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Mag Mines arm and fire 80% faster.</li>
@@ -461,7 +461,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Wing Commanders</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Horner's units' vespene gas costs reduced by 20% and charge cooldowns reduced by 50%.</li>
@@ -498,7 +498,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Galactic Gunrunners</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Bombing Platforms are no longer capped.</li>
@@ -515,7 +515,7 @@ include("../header.php");
                 <td>None</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige might appear to be extremely powerful, but the increase in the cost of the platforms signficantly slows down a player's ability to build them. Considering that the player will also want to push (since Strike Fighters aren't effective against most mission objectives), and that the platforms can only deal with ground targets, the prestige is not very effective in providing the player with a useful benefit.</td>            
+                <td class="forceleft" colspan="5">This prestige might appear to be extremely powerful, but the increase in the cost of the platforms signficantly slows down a player's ability to build them. Considering that the player will also want to push (since Strike Fighters aren't effective against most mission objectives), and that the platforms can only deal with ground targets, the prestige is not very effective in providing the player with a useful benefit.</td>
             </tr>
         </tbody>
     </table>
@@ -540,7 +540,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -554,7 +554,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

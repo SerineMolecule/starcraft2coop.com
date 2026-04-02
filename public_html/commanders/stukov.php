@@ -100,7 +100,7 @@ include("../header.php");
                 <td><img src="/images/commanderdata/progression/stukov/stukov_06.png" alt = "Corrupted Conscription"></td>
                 <td>Corrupted Conscription</td>
                 <td>
-                    Spawn Infested Marine can now store 10 additional charges and Infested Marines now spawn 100% faster. 
+                    Spawn Infested Marine can now store 10 additional charges and Infested Marines now spawn 100% faster.
                 </td>
             </tr>
             <tr class="spike">
@@ -427,7 +427,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Frightful Fleshwelder</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Factory and Starport no longer have tech requirements.</li>
@@ -466,7 +466,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Plague Warden</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Banshees can load up to 16 Infested infantry and can launch their cargo at a ground target.</li>
@@ -507,7 +507,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Lord of the Horde</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Infested Bunkers spawn Infested Troopers 200% faster.</li>
@@ -524,7 +524,7 @@ include("../header.php");
                 <td>None</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige converts Bunkers from static defense structures to Infested Trooper generators. Bunkers lose the loaded troopers functionality, but they generate Infested units at a highly accelerated rate. For players that prefer a mass Bunker strategy, this prestige is better than having no prestige talents selected. The prestige works well with the Infested Duration mastery, and on maps where you are required to push in a single direction. Missions like Temple of the Past will provide a little more challenge for players using this Prestige. It can be very effective against <a href="/resources/mutators">mutators</a> such as Boom Bots, Black Death and Kill Bots</td>            
+                <td class="forceleft" colspan="5">This prestige converts Bunkers from static defense structures to Infested Trooper generators. Bunkers lose the loaded troopers functionality, but they generate Infested units at a highly accelerated rate. For players that prefer a mass Bunker strategy, this prestige is better than having no prestige talents selected. The prestige works well with the Infested Duration mastery, and on maps where you are required to push in a single direction. Missions like Temple of the Past will provide a little more challenge for players using this Prestige. It can be very effective against <a href="/resources/mutators">mutators</a> such as Boom Bots, Black Death and Kill Bots</td>
             </tr>
         </tbody>
     </table>
@@ -548,7 +548,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -562,7 +562,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

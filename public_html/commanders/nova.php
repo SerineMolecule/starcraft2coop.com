@@ -307,7 +307,7 @@ include("../header.php");
                     </ul>
                 </td>
             </tr>
-            
+
         </tbody>
     </table>
     <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
@@ -408,7 +408,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Soldier of Fortune</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Factory and Starport no longer have Tech requirements.</li>
@@ -450,7 +450,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Tactical Dispatcher</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Tactical Airlift cooldown reduced by 75%.</li>
@@ -487,7 +487,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Infiltration Specialist</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Nova gains permanent Super Cloak.</li>
@@ -505,7 +505,7 @@ include("../header.php");
                 <td>None</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The loss of the Combat Suit reduces Nova's versatility. The impact of this depends on several factors, like the enemy composition faced, since Nova will usually use the Combat Suit to clear weaker attack waves that are not worth airstriking. However, it does allow Nova to easily clear large swathes of enemy bases with her Nukes and Sabotage Drones. Combined with the Nuke cooldown reduction mastery, this prestige is very powerful.</td>            
+                <td class="forceleft" colspan="5">The loss of the Combat Suit reduces Nova's versatility. The impact of this depends on several factors, like the enemy composition faced, since Nova will usually use the Combat Suit to clear weaker attack waves that are not worth airstriking. However, it does allow Nova to easily clear large swathes of enemy bases with her Nukes and Sabotage Drones. Combined with the Nuke cooldown reduction mastery, this prestige is very powerful.</td>
             </tr>
         </tbody>
     </table>
@@ -645,7 +645,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -659,7 +659,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

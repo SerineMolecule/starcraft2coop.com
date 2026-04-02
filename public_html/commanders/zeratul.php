@@ -174,7 +174,7 @@ include("../header.php");
                 <td><img src="/images/commanderdata/progression/zeratul/zeratul_09.png" alt = "New Unit: Xel'Naga Void Array"></td>
                 <td>New Unit: Xel'Naga Void Array</td>
                 <td>
-                    Flying wormhole generator. Builds two at a time. Can deploy to create a link between all Xel'Naga Void Arrays on the field. 
+                    Flying wormhole generator. Builds two at a time. Can deploy to create a link between all Xel'Naga Void Arrays on the field.
                 </td>
             </tr>
             <tr>
@@ -305,7 +305,7 @@ include("../header.php");
                     </ul>
                 </td>
             </tr>
-            
+
             <tr>
                 <td><img src="/images/commanderdata/abilities/zeratul/serdathlegion.png" alt = "Serdath Legion"></td>
                 <td>Serdath Legion</td>
@@ -963,7 +963,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Anakh Su'n</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Zeratul can deploy the Void Seeker, granting all friendly units in a target area Super Cloak for 15 seconds.</li>
@@ -1005,7 +1005,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Knowledge Seeker</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Zeratul can collect an unlimited number of Artifact Fragments.</li>
@@ -1046,7 +1046,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Herald of the Void</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Each collected Artifact Fragment reduces the cooldown of Zeratul's Shadow Cleave by 5 seconds.</li>
@@ -1069,7 +1069,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige sacrifices the third artifact set of upgrades (as well as the Avatars) for a more versatile hero unit. This prestige works best on shorter maps and missions where hyper-aggressive hero play is rewarded, as a lot of the units will not have the defensive upgrades that are provided with the third Artifact Fragment. This prestige works well against certain <a href="/resources/mutators">mutators</a> like Minesweeper, as the Tornadoes can damage burrowed units without the need for any detection.</td>            
+                <td class="forceleft" colspan="5">This prestige sacrifices the third artifact set of upgrades (as well as the Avatars) for a more versatile hero unit. This prestige works best on shorter maps and missions where hyper-aggressive hero play is rewarded, as a lot of the units will not have the defensive upgrades that are provided with the third Artifact Fragment. This prestige works well against certain <a href="/resources/mutators">mutators</a> like Minesweeper, as the Tornadoes can damage burrowed units without the need for any detection.</td>
             </tr>
         </tbody>
     </table>
@@ -1152,7 +1152,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -1166,7 +1166,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>
@@ -1554,7 +1554,7 @@ include("../header.php");
                 <th>Legion Expand</th>
             </tr>
         </thead>
-        
+
         <tbody>
             <tr>
                 <td><a href="/missions/chainofascension">Chain of Ascension</a></td>
@@ -1619,7 +1619,7 @@ include("../header.php");
                         <label><input type='radio' name='pp' value='terran'>Terran</label><br>
                         <label><input type='radio' name='pp' value='zerg'>Zerg</label><br></form>
                     <div class="fastExpand" id="ppdiv"><img id="pp" src="/images/commanderdata/guides/zeratul/legionexpand_pp_protoss.jpg" alt="Zeratul Legion Expand on Part & Parcel"></div>
-                
+
                     <script>
                         var imgList=[];
                         imgList.push('/images/commanderdata/guides/zeratul/legionexpand_pp_protoss.jpg');
@@ -1640,7 +1640,7 @@ include("../header.php");
                             newImg.attr('id', 'pp');
                             return false;
                         })
-                    </script> 
+                    </script>
                 </td>
             </tr>
             <tr>

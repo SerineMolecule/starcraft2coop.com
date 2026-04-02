@@ -78,21 +78,21 @@ $_SESSION["known"] = true;
         </thead>
         <tbody>
             <?php
-                include '../scripts/sqlconnection.php';
-                
-                $sql = "SELECT *  
-                        FROM brutalplus
-                        ORDER BY difficulty ASC";
-                $result=mysqli_query($con,$sql);
-                while($row = mysqli_fetch_array($result)) {
-                    echo "<tr><td>" . $row['difficulty'] . "</td><td>" . $row['minpoints'] . "</td><td>" . $row['maxpoints'] . "</td><td>" . $row['minmutators'] . "</td><td>" . $row['maxmutators'] . "</td></tr>";
-                }
+            include '../scripts/sqlconnection.php';
+
+            $sql = "SELECT *
+                    FROM brutalplus
+                    ORDER BY difficulty ASC";
+            $result = mysqli_query($con, $sql);
+            while ($row = mysqli_fetch_array($result)) {
+                echo "<tr><td>" . $row['difficulty'] . "</td><td>" . $row['minpoints'] . "</td><td>" . $row['maxpoints'] . "</td><td>" . $row['minmutators'] . "</td><td>" . $row['maxmutators'] . "</td></tr>";
+            }
             ?>
         </tbody>
     </table>
     <p>Each mutator in the game is assigned a point cost that corresponds to its difficulty level. For more information on mutators, you may check the <a href="mutators">Mutators page</a>, which contains a lot of mutator-specific information such as their internal mechanics and also provide some commander-specific tips on how to handle them. The list of mutators and their associated point costs are shown below.</p>
     <p>Click the column headers to sort Ascending/Descending by that column. Click a row to toggle that row and calculate the total cost of a selected set of mutators.</p>
-    
+
     <table id="points">
         <thead>
             <tr>
@@ -102,18 +102,18 @@ $_SESSION["known"] = true;
         </thead>
         <tbody>
             <?php
-            
-            $sql = "SELECT mutatorname, abomination 
+
+            $sql = "SELECT mutatorname, abomination
                     FROM mutators
                     ORDER BY mutatorname ASC";
-            $result=mysqli_query($con,$sql);
-            $mutators=array_fill(0, 11, []);
-            //10 is the highest point value
-            $countArray= array_fill(0, 11, 0);
-            while($row = mysqli_fetch_array($result)) {
-                if($row['abomination']>0){
+            $result = mysqli_query($con, $sql);
+            $mutators = array_fill(0, 11, []);
+//10 is the highest point value
+            $countArray = array_fill(0, 11, 0);
+            while ($row = mysqli_fetch_array($result)) {
+                if ($row['abomination'] > 0) {
                     echo "<tr><td>" . $row['mutatorname'] . "</td><td>" . $row['abomination'] . "</td></tr>";
-                    $countArray[$row['abomination']] +=1;
+                    $countArray[$row['abomination']] += 1;
                     array_push($mutators[$row['abomination']], $row['mutatorname']) ;
                 }
             }
@@ -145,7 +145,7 @@ $_SESSION["known"] = true;
             }
             if (sortedAsc){rows = rows.reverse()}
             for (var i = 0; i < rows.length; i++){table.append(rows[i])}
-            
+
         })
         $('#points td').click(function(){
             $(this).parent().toggleClass("toggled");
@@ -217,9 +217,9 @@ $_SESSION["known"] = true;
             $("#randomMutation").append("<p>Loading...</p>");
             var difficultyLevel = parseInt($("#difficultyLevel").val());
 
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '/scripts/generatemutation.php', 
+                url: '/scripts/generatemutation.php',
                 data: { difficulty:difficultyLevel },
                 success: function(response) {
                     var template = response;
@@ -227,11 +227,11 @@ $_SESSION["known"] = true;
                 },
             dataType:"json"
             });
-            
-            
+
+
         });
-        
-        
+
+
         function generateTemplate(muts, minPts, maxPts){
             var found = false;
             var cost = 0;
@@ -256,18 +256,18 @@ $_SESSION["known"] = true;
                     }
                 }
                 if (totalCost <= maxPts && totalCost >=minPts){
-                    found = true;  
+                    found = true;
                     for(var i=0; i<result.length-1;i++){
                         if (result[i] > limits[i]){
                             found=false;
                         }
                     }
-                     
+
                 }
             }
             return result;
         }
-        
+
         function generateMutation(template){
             const mutatorArray = <?php echo(json_encode($mutators))?>;
             var cost = 0;
@@ -286,7 +286,7 @@ $_SESSION["known"] = true;
             }
             $("#cost").text(cost);
         }
-        
+
         function weightedRandom(prob) {
             var i;
             var sum=0;
@@ -294,26 +294,26 @@ $_SESSION["known"] = true;
             for (i in prob) {
                 sum += prob[i];
                 if (r <= sum){
-                   return i; 
-                } 
+                   return i;
+                }
             }
         }
-        
+
         $(document).on('mouseover','.tooltip',function(){
             var mutator = $(this).attr("alt");
             $("#tooltip").html("<b>" + mutator + "</b>");
             $("#tooltip").show();
         });
-        
+
         $(document).on('mouseleave','.tooltip',function(){
             $("#tooltip").hide();
         });
-        
+
         $(document).on('mousemove','.tooltip',function(e){
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
 
     </script>

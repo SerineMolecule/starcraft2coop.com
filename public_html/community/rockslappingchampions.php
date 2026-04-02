@@ -12,7 +12,7 @@ include("../header.php");
               alert("File not selected");
               return false;
           }
-    	  var x = $('#rcForm [name=desc]').val()
+          var x = $('#rcForm [name=desc]').val()
           if (x == "") {
               alert("Description is blank");
               return false;
@@ -88,45 +88,7 @@ include("../header.php");
         <li>If you would like either or both of the player's names to be anonymized, please mention so in your description. Do note that only names on the interface will be anonymized. Accidental hovers over units will still show player's names (although every effort to avoid doing so will be taken).</li>
     </ul>
     <p>If you would like to see statistics about the series, please check out the <a href="/resources/stats">Statistics Page</a>. It shows statistics such as top submitters and commanders most featured as the Rockslapper in the series.</p>
-    <?php
-    /* ini_set('file_uploads', 'On');
-    	if(isset($_POST['url']) && $_POST['url'] == ''){
-    		if(isset($_FILES["file"]) && isset($_POST['recaptcha_response'])){
-    		    
-        		include("../scripts/recaptcha.php");
-        		if ($recaptchaResult) {
-        			
-        			$target_dir = "../aommaster_admin/submissions/";
-        			$md5 = md5_file($_FILES["file"]["tmp_name"]);
-        			$description =  escapeshellarg($_POST['desc']);
-                    $target_file = $target_dir . $md5 . ".sc2replay";
-                    $uploadOk = 1;
-                    $fileExtension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                    if ($fileExtension!=="sc2replay"){
-                        echo ('<p><span style="color:red">File format incorrect.</span></p>');
-                        $uploadOk = 0;
-                    }
-                    if (file_exists($target_file)) {
-                        echo ('<p><span style="color:red">File already exists.</span></p>');
-                        $uploadOk = 0;
-                    }
-                    if ($_FILES["file"]["size"] > 600000) {
-                        echo ('<p><span style="color:red">File too large.</span></p>');
-                        $uploadOk = 0;
-                    }
-                    if ($uploadOk !== 0) {
-                        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                            echo ('<p><span style="color:green">Your replay has been submitted successfully!</span></p>');
-                            exec("php ../scripts/addsubmission.php" . " '" .$md5."' ".$description."  'rc'> /dev/null &");
-                        } else {
-                            echo "Sorry, there was an error uploading your file.";
-                        }
-                    }
-        		}
-        	}
-        } */
-    ?>
-    
+
     <form action="rockslappingchampions.php" name="submissionform" id="rcForm" class="captchaForm" onsubmit="return validate()" method="post" enctype="multipart/form-data">
         <p>Replay File: <input type="file" name="file" accept=".SC2Replay"></p>
         <p>Brief Description: <input name="desc" type="text" size="30"></p>
@@ -172,7 +134,7 @@ include("../header.php");
                 commanders.push("." + $(this).attr("alt"));
             });
             var collection = $('#rcList a');
-            
+
             $("#rcList a").hide();
             if(commanders.length!==0){
                 collection = collection.filter(commanders.join());
@@ -198,9 +160,9 @@ include("../header.php");
             $("#showList").hide();
             $("#commanderSelection").show();
             $("#rcList").show();
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/generaterclist.php', 
+                url: '../scripts/generaterclist.php',
                 success: function(data) {
                     var stringArray=JSON.parse(data);
                     $("#commanderSelection").html(stringArray[0]);

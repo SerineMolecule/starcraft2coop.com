@@ -315,9 +315,9 @@ include("../header.php");
         <tbody>
             <tr>
                 <td>1</td>
-		        <td>Malevolent Matriarch</td>
+                <td>Malevolent Matriarch</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Malignant Creep effectiveness increased by 100%.</li>
@@ -366,9 +366,9 @@ include("../header.php");
         <tbody>
             <tr>
                 <td>2</td>
-		        <td>Folly of Man</td>
+                <td>Folly of Man</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Kerrigan expends stacks of Fury while using Leaping Strike or Psionic Shift, striking nearby enemies for 50 damage and stunning them for 3 seconds.</li>
@@ -449,9 +449,9 @@ include("../header.php");
         <tbody>
             <tr>
                 <td>3</td>
-		        <td>Desolate Queen</td>
+                <td>Desolate Queen</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Assimilation Aura resource drops increased by 100%.</li>
@@ -623,7 +623,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -637,7 +637,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

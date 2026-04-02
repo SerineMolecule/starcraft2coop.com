@@ -5,7 +5,7 @@ include("header.php");
   <meta name="description" content="Your #1 Source for Starcraft 2 Co-op Information. Commander Guides, Mission Data, Unit Stats, Mutation Information and more!">
   <meta name="keywords" content="Starcraft co-op guides">
   <link rel="canonical" href="https://starcraft2coop.com">
-  
+
   <style>
         @media (min-width: 701px){
             #updateTable td:nth-child(1){

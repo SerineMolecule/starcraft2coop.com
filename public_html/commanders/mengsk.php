@@ -448,7 +448,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Toxic Tyrant</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Contaminated Strike's fear lasts 200% longer, its damage-over-time effect additionally increases damage received by 25%, its cost is reduced by 20%, and its cooldown is reduced by 66%.</li>
@@ -492,7 +492,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Principal Proletariat</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Royal Guard vespene gas costs reduced by 25% and XP gain increased by 100%.</li>
@@ -533,7 +533,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Merchant of Death</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Equipped Troopers activate a self-destruct mechanism in their weapons upon death.</li>
@@ -561,7 +561,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige allows Mengsk to quickly ramp up his earlygame DPS, by providing a large cost reduction to equipping improved weapons to his troopers. Due to the lack of Intercessors, any damage taken by Mengsk's Aegis Guard and Emperor's Shadows is permanent, while Troopers need to be converted back to Laborers to repair themselves. Thus, Bunker play is encouraged to reduce damage taken by the army. Players will also need to be careful while pushing into bases and attack waves. It is recommended to use calldowns or Earthsplitters to first soften up enemy forces before cleaning up with the army to reduce damage taken. Additionally, a few Troopers can be sacrificed into an attack wave to weaken it. However, pay attention to the army footprint. Waves that spread out over a large area result in much less efficient trades than those that are clumped up. Troops should also not be suicided into enemy bases, as explosions from weapons will probably only kill a single unit at a time.</td>            
+                <td class="forceleft" colspan="5">This prestige allows Mengsk to quickly ramp up his earlygame DPS, by providing a large cost reduction to equipping improved weapons to his troopers. Due to the lack of Intercessors, any damage taken by Mengsk's Aegis Guard and Emperor's Shadows is permanent, while Troopers need to be converted back to Laborers to repair themselves. Thus, Bunker play is encouraged to reduce damage taken by the army. Players will also need to be careful while pushing into bases and attack waves. It is recommended to use calldowns or Earthsplitters to first soften up enemy forces before cleaning up with the army to reduce damage taken. Additionally, a few Troopers can be sacrificed into an attack wave to weaken it. However, pay attention to the army footprint. Waves that spread out over a large area result in much less efficient trades than those that are clumped up. Troops should also not be suicided into enemy bases, as explosions from weapons will probably only kill a single unit at a time.</td>
             </tr>
         </tbody>
     </table>
@@ -583,7 +583,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -597,10 +597,10 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
-    
+
     <a id="units"></a><h2>Combat Units</h2>
     <p>For more information on Mengsk's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Mengsk's combat units are listed below:</p>
@@ -1379,7 +1379,7 @@ include("../header.php");
                             newImg.attr('id', 'coa2');
                             return false;
                         })
-                    </script> 
+                    </script>
                 </td>
                 <td><div class="fastExpand" id="coa1div"><img id="coa1" src="/images/commanderdata/guides/mengsk/fastexpand_coa_protoss_1.jpg" alt="Player 1 Fast Expand on Chain of Ascension"></div></td>
                 <td><div class="fastExpand" id="coa2div"><img id="coa2" src="/images/commanderdata/guides/mengsk/fastexpand_coa_protoss_2.jpg" alt="Player 2 Fast Expand on Chain of Ascension"></div></td>
@@ -1481,7 +1481,7 @@ include("../header.php");
                             newImg.attr('id', 'pp1');
                             return false;
                         })
-                    </script> 
+                    </script>
                 </td>
                 <td colspan="2"><div class="fastExpand" id="pp1div"><img id="pp1" src="/images/commanderdata/guides/mengsk/fastexpand_pp_protoss.jpg" alt="Fast Expand on Part & Parcel"></div></td>
             </tr>

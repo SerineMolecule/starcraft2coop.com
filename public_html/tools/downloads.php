@@ -69,7 +69,7 @@ include("../header.php");
                        if(data.indexOf("Error") == -1){
                            window.location.href = data;
                        }
-                       
+
                     }
                 });
                 e.preventDefault();
@@ -172,7 +172,7 @@ include("../header.php");
                        if(data.indexOf("Error") == -1){
                            window.location.href = data;
                        }
-                       
+
                     }
                 });
                 e.preventDefault();
@@ -196,7 +196,7 @@ include("../header.php");
                        if(data.indexOf("Error") == -1){
                            window.location.href = data;
                        }
-                       
+
                     }
                 });
                 e.preventDefault();

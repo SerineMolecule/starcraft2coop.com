@@ -441,7 +441,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Technical Recruiter</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Outlaws' active ability cooldowns reduced by 35%.</li>
@@ -483,7 +483,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Lone Wolf</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>When beyond the vision range of other Outlaws, outlaws deal 30% more damage for each Outlaw recruited and take 50% less damage.</li>
@@ -529,7 +529,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Dutiful Dogwalker</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>The Odin no longer requires Tychus as its pilot, its duration is increased by 100%, and its cooldown is reduced by 40%.</li>
@@ -550,7 +550,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The loss of the Barrage is insignificant in this prestige, but the loss of the Big Red Button removes the Odin's ability for a large area burst damage. However, this is compensated by the increased duration and the cooldown reduction, which also compounds well with the Odin Cooldown mastery.</td>            
+                <td class="forceleft" colspan="5">The loss of the Barrage is insignificant in this prestige, but the loss of the Big Red Button removes the Odin's ability for a large area burst damage. However, this is compensated by the increased duration and the cooldown reduction, which also compounds well with the Odin Cooldown mastery.</td>
             </tr>
         </tbody>
     </table>
@@ -574,7 +574,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -588,7 +588,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="outlaws"></a><h2>Outlaws</h2>

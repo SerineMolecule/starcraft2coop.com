@@ -1,6 +1,7 @@
 /config.php
 /public_html/errors/404log.txt
 /dbdata
+/vendor
 
 # generated automatically by Dreamhost
 .dh-diag

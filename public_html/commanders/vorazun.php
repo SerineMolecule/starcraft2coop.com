@@ -137,7 +137,7 @@ include("../header.php");
                 <td><img src="/images/commanderdata/progression/vorazun/vorazun_10.png" alt = "Spear of Adun: Time Stop"></td>
                 <td>Spear of Adun: Time Stop</td>
                 <td>
-                    Unlocks the Time Stop ability which freezes all enemies in place for 20 seconds. This ability is located in the top panel. 
+                    Unlocks the Time Stop ability which freezes all enemies in place for 20 seconds. This ability is located in the top panel.
                 </td>
             </tr>
             <tr>
@@ -465,7 +465,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Spirit of Respite</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Emergency Recall recalls cloaked units to the closest Nexus or Dark Pylon instead of the primary structure and heals life and shields to full.</li>
@@ -503,7 +503,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Withering Siphon</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Void Stasis, Confusion, Stasis Ward, Disruption Web, and Darkcoil may affect Heroic units and cause enemies to lose 20 life per second. This effect cannot kill.</li>
@@ -546,7 +546,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Keeper of Shadows</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Time Stop becomes targeted. All Shadow Guard who have died are resurrected at the target location.</li>
@@ -569,7 +569,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige allows Time Stop to get more powerful as the player utilizes their Shadow Guard calldowns. However, the duration reduction of the Shadow Guards will mean that the player will need to clearly know how to utilize them effectively, even while using the Shadow Guard duration mastery.</td>            
+                <td class="forceleft" colspan="5">This prestige allows Time Stop to get more powerful as the player utilizes their Shadow Guard calldowns. However, the duration reduction of the Shadow Guards will mean that the player will need to clearly know how to utilize them effectively, even while using the Shadow Guard duration mastery.</td>
             </tr>
         </tbody>
     </table>
@@ -591,7 +591,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -605,7 +605,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

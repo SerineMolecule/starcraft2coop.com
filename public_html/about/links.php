@@ -5,7 +5,7 @@ include("../header.php");
   <meta name="description" content="Links to other Starcraft II Co-op community content such as speedrun replay files and records, Discord Servers and Youtube channels.">
   <meta name="keywords" content="Starcraft co-op links">
   <link rel="canonical" href="https://starcraft2coop.com/about/links">
-  
+
   <style>
 
   </style>

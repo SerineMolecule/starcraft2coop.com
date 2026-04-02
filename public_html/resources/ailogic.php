@@ -424,7 +424,7 @@ include("../header.php");
                                         <li>Stalker: +1/unit</li>
                                         <li>Viking (Fighter Mode): +2/unit</li>
                                     </ul></li>
-                                        
+
                                 <li>Total score is 6 or more
                                 <br>&#8618;Trigger Point Defense Drone</li>
                             </ol>

@@ -97,7 +97,7 @@ $_SESSION["known"] = true;
         border-right: 1px solid #ccc;
     }
     #unitStats th.rotate1 > div {
-      transform: 
+      transform:
         translate(23px, -7px)
         rotate(315deg);
         width: 30px;
@@ -328,10 +328,10 @@ $_SESSION["known"] = true;
             oldtdLeft=$(this).parent();
             selectedCommanders[0] = selectedCommander;
             $("#leftList").text("Loading...");
-            
-            $.ajax({  
+
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/calculatestats.php', 
+                url: '../scripts/calculatestats.php',
                 data: {mode:1, commander: selectedCommander},
                 success: function(response) {
                     $("#leftList").html(response);
@@ -345,9 +345,9 @@ $_SESSION["known"] = true;
             var selectedCommander = selectedCommanders[0];
             selectedUnits[0] = selectedUnit;
             $("#leftStats").text("Loading...");
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/calculatestats.php', 
+                url: '../scripts/calculatestats.php',
                 data: {mode:2, commander: selectedCommander, unit: selectedUnit },
                 success: function(response) {
                     response = JSON.parse(response);
@@ -357,7 +357,7 @@ $_SESSION["known"] = true;
                 },
             });
         });
-        
+
         $("#leftList").on('mouseover',"img", function(e){
             var upgrade = $(this).attr("alt").split(":");
             $("#tooltip").html("<b>" + upgrade[0] + "</b><br><br>" + upgrade[1]);
@@ -370,7 +370,7 @@ $_SESSION["known"] = true;
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $("#leftList").on('click',"img", function(e){
             $(this).toggleClass("selectedUpgrade");
@@ -380,18 +380,18 @@ $_SESSION["known"] = true;
             var jsonobject = {};
             var upgradeArray=[];
             var masteryArray=[];
-            
+
             jsonobject['mode'] = 3;
             jsonobject['commander'] = selectedCommanders[0];
             jsonobject['selectedUnit'] = selectedUnits[0];
-            
+
             $("#leftList").find(".upgradesList").find(".selectedUpgrade").each(function(){
                 var filePath = $(this).attr("src");
                 var tempArray = filePath.split("/");
                 upgradeArray.push(tempArray[5].replace(".png", ""));
             })
             jsonobject['upgrades']=upgradeArray;
-            
+
             if($("#leftList input[name='attackupgradelevel']:checked").length){
                 jsonobject['attacklevel'] = $("#leftList input[name='attackupgradelevel']:checked").val();
                 jsonobject['armorlevel'] = $("#leftList input[name='armorupgradelevel']:checked").val();
@@ -402,24 +402,24 @@ $_SESSION["known"] = true;
             else{
                 jsonobject['artifactslevel'] =$("#leftList input[name='fragmentscollected']:checked").val();
             }
-            
+
             if($("#leftList input[name='shieldupgradelevel']:checked").length){
                 jsonobject['shieldlevel'] = $("#leftList input[name='shieldupgradelevel']:checked").val();
             }
-            
+
             $(".masterySlider").each(function(){
                 masteryArray.push([$(this).attr('name'), $(this).val()]);
             })
             jsonobject['masteries']= masteryArray;
-            
+
             if($("#leftList input[name='" + selectedCommanders[0] + "Prestige']:checked").length){
                 jsonobject['prestige'] = $("#leftList input[name='" + selectedCommanders[0] + "Prestige']:checked").val();
             }
-            
+
             console.log(jsonobject);
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '/scripts/calculatestats.php', 
+                url: '/scripts/calculatestats.php',
                 data: jsonobject,
                 success: function(response){
                     $("#leftStats").html("<button id='setCompare' type='button'>Set Compare >></button><br><div id='statsContent'>" + response + "</div>");
@@ -428,7 +428,7 @@ $_SESSION["known"] = true;
         });
         $("#leftList").on('input',".masterySlider", function(e){
             $(this).siblings("span").text($(this).val());
-            
+
         })
         $("#leftStats").on('click',"#setCompare", function(e){
             $("#comparison").html($("#statsContent").html());
@@ -473,16 +473,16 @@ $_SESSION["known"] = true;
                 $(".content." + toggledRace).fadeIn(400, function(){
                     $(".content." + toggledRace).css("display","inline-flex");
                 })
-                
+
             }
             else{
                 $(this).css("opacity", 0.25);
                 $(".content." + toggledRace).fadeOut(400, function(){
                     $(".content." + toggledRace).css("display","none");
                 })
-                
+
             }
-            
+
         })
     </script>
     <div id="dataContainer"></div>
@@ -495,9 +495,9 @@ $_SESSION["known"] = true;
         $("#flexContainer").on("click",".content", function(){
             selectedUnit=$(this).text();
             $("#dataContainer").text("Loading...");
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/getamonstats.php', 
+                url: '../scripts/getamonstats.php',
                 data: { unit: selectedUnit },
                 success: function(response) {
                     $("#dataContainer").html(response);
@@ -514,9 +514,9 @@ $_SESSION["known"] = true;
                 if(minVit==""){
                     minVit = 0;
                 }
-                $.ajax({  
+                $.ajax({
                     type: 'GET',
-                    url: '../scripts/generatetable.php', 
+                    url: '../scripts/generatetable.php',
                     data: { maxvitality: maxVit, minvitality: minVit },
                     success: function(response) {
                         $("#flexContainer").html(response);
@@ -528,7 +528,7 @@ $_SESSION["known"] = true;
                     }
                 });
             }
-            
+
         })
         $("#reset").on("click", function(){
             $(".toggle").each(function(){
@@ -536,9 +536,9 @@ $_SESSION["known"] = true;
             })
             $("#maxVitality").val("");
             $("#minVitality").val("");
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/generatetable.php', 
+                url: '../scripts/generatetable.php',
                 data: {},
                 success: function(response) {
                     $("#flexContainer").html(response);

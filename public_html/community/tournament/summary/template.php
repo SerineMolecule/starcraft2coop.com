@@ -52,7 +52,7 @@
         $('#tooltip').css('top', e.pageY-35);
         $('#tooltip').css('left', e.pageX);
         $('#tooltip').css('position', "absolute");
-        
+
     });
     $("#abilityicons img").on('mouseover',function(e){
         $("#tooltip").html($(this).attr("alt"));
@@ -65,7 +65,7 @@
         $('#tooltip').css('top', e.pageY-35);
         $('#tooltip').css('left', e.pageX);
         $('#tooltip').css('position', "absolute");
-        
+
     });
     $(".spoiler").on('click', function(){
         $(this).fadeOut();

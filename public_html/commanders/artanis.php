@@ -394,7 +394,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Valorous Inspirator</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Increase the effectiveness of all active combat unit abilities by 100%.</li>
@@ -449,7 +449,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Nexus Legate</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Upon use, Project Power Field warps out any of your combat units standing in an existing Power Field projection into the new location. Cooldown removed.</li>
@@ -490,7 +490,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Arkship Commandant</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Orbital Strikes warp in an Unbound Fanatic that throws off damaging energy and lasts 15 seconds.</li>
@@ -540,7 +540,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -554,7 +554,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>
@@ -1001,7 +1001,7 @@ include("../header.php");
                         <td>90 seconds</td>
                     </tr>
                 </tbody>
-            </table>    
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -1056,7 +1056,7 @@ include("../header.php");
                         <td>90 seconds</td>
                     </tr>
                 </tbody>
-            </table>  
+            </table>
         </div>
     </div>
     <a id="buildOrder"></a><h2>Build Order</h2>
