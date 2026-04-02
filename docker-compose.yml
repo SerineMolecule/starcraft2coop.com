@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public_html:/var/www/html
+      - ./config.php:/var/www/config.php
+
+  db:
+    # the values here should match config.php
+    container_name: db  # DB_HOST
+    image: mariadb:10.11
+    environment:
+      MARIADB_USER: sc2coop  # DB_USER
+      MARIADB_PASSWORD: sc2coop  # DB_PASS
+      MARIADB_DATABASE: starcraf_coop  # DB_NAME
+      MARIADB_ROOT_PASSWORD: rootpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./dbdata:/var/lib/mysql
+      - ./starcraft_coop.sql:/docker-entrypoint-initdb.d/init.sql
