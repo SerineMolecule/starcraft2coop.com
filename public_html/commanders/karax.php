@@ -544,7 +544,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p>Templar Apparent puts Karax in the perfect position to be a reasonably powerful commander by reducing the cost of his once-expensive units. This allows for Karax to develop an early-game presence, and opens up a variety of playstyles that were prohibitive due to high unit costs. This prestige is the recommended prestige for general Karax play.</p>
+    <p>P2 (Templar Apparent) puts Karax in the perfect position to be a reasonably powerful commander by reducing the cost of his once-expensive units. This allows for Karax to develop an early-game presence, and opens up a variety of playstyles that were prohibitive due to high unit costs. This prestige is the recommended prestige for general Karax play.</p>
     <a id="army"></a><h2>Recommended Army Composition</h2>
     <p>The recommended army composition for Karax is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/karax/sentinel.jpg" alt="Sentinel"><img class="army" src="/images/commanderdata/units/karax/energizer.jpg" alt="Energizer"><img class="army" src="/images/commanderdata/units/karax/immortal.jpg" alt="Immortal">

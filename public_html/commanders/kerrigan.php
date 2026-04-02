@@ -334,18 +334,19 @@ include("../header.php");
                 <td>7</td>
                 <td><ul>
                         <li>Abathur allies will still have their Nydus Worms upgraded to Omega Worms</li>
+                        <li>Malignant Creep does not apply to Stukov's Infested</li>
                     </ul>
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige is a prestige that sacrifices mobility for better creep effectiveness. It works by improving the effectiveness of both you and your ally's units by providing them with extra attack speed, healing and map vision. If using this prestige, it is much better to spread Creep using other Creep Tumors than planting new ones. Newly-planted Creep Tumors build much slower than ones that are spread.</td>
+                <td class="forceleft" colspan="5">This prestige is a prestige that sacrifices mobility for better creep effectiveness. It works by improving the effectiveness of both you and your ally's units by providing them with extra attack speed, healing and map vision. If using this prestige, it is much better to spread Creep using other Creep Tumors than planting new ones. Newly-planted Creep Tumors build much slower than ones that are spread. This prestige comboes well with partners who can spread creep more easily, such as Stukov and Abathur.</td>
             </tr>
         </tbody>
     </table>
     <p><b>Effectiveness Bonuses:</b></p>
     <ul>
-        <li>Attack speed bonus doubled</li>
-        <li>Life regeneration rate bonus doubled</li>
+        <li>Attack speed bonus doubled (to +60%)</li>
+        <li>Life regeneration rate bonus doubled (to 2HP/s)</li>
         <li>Creep Tumor Build Range increased by 3</li>
         <li>Creep Tumor Vision Range increased by 3</li>
         <li>Creep Spread Range increased by 3</li>
@@ -391,7 +392,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige works well when pushing into enemy bases with Kerrigan. It allows Kerrigan to not only deal damage to enemy units effectively, but also stun enemy units, allowing you to unload units from Nydus worms without getting abilities casted on them. It works better with low numbers of high-HP units, rather than a large numbers of low-HP units.</td>
+                <td class="forceleft" colspan="5">This prestige works well when pushing into enemy bases with Kerrigan. It allows Kerrigan to not only deal damage to enemy units effectively, but also stun enemy units, allowing you to unload units from Nydus worms without getting abilities casted on them. It works better with low numbers of high-HP units, rather than a large numbers of low-HP units. It noticeably slows Kerrigan's ability to focus down buildings.</td>
             </tr>
         </tbody>
     </table>
@@ -474,11 +475,11 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige replaces Leaping Strike with an equivalent ability that can also hit air. However, it comes at a cost of losing Psionic Shift, which is generally used for dealing with several units in a line. Crushing Grip has a very small area-of-effect size (1.75 radius), which means she cannot hit as many units as Psionic Shift theoretically can. But the ability to stun units in that area is invaluable. Be careful when using Immobilization Wave with Crushing Grip, because they can overwrite each others stun durations. However, it is compensated for by allowing you to build your army a lot quicker, due to double Assimilation Aura drops.</td>            
+                <td class="forceleft" colspan="5">This prestige replaces Leaping Strike with an equivalent ability that can also hit air. However, it comes at a cost of losing Psionic Shift (a stronger AoE option), and the ability to use Leaping Strike and Psionic Shift for mobility. Crushing Grip has a very small area-of-effect size (1.75 radius), which means she cannot hit as many units as Psionic Shift theoretically can. But the ability to stun units in that area is invaluable. Be careful when using Immobilization Wave with Crushing Grip, because they can overwrite each others stun durations. The double Assimilation Aura drops noticeably improve ramp-up time.</td>
             </tr>
         </tbody>
     </table>
-    <p>For general play, Folly of Man provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity. It allows Kerrigan to more effectively clear enemy bases and keep her army alive. Another competitive prestige is Desolate Queen, which will allow Kerrigan to quickly invest in her army units.</p>
+    <p>For general play, P0 (no prestige, Queen of Blades), P2 (Folly of Man), and P3 (Desolate Queen) are recommended. P3 has a better match-up against air (a general Kerrigan weakness) but a worse match-up against early-game hordes. P2 provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity, but some find it less beginner friendly. It allows Kerrigan to more effectively clear enemy bases and keep her army alive.</p>
     <a id="hero"></a><h2>Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan.jpg" alt="Kerrigan">
     <p>Spawn time: 4:00</p>

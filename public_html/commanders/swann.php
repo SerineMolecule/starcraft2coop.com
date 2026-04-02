@@ -426,7 +426,7 @@ include("../header.php");
 		            <ul>
                         <li>Advantages:
                             <ul>
-                                <li>The Laser Drill deals 100% splash damage and slows enemy movement by 70% and locks on targets 50% faster.</li>
+                                <li>The Laser Drill deals 100% splash damage, slows enemy movement by 70%, and locks on targets 50% faster.</li>
                             </ul>
                         </li>
                         <li>Disadvantages:
@@ -443,7 +443,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige, by itself, is not very useful. While it does compound really well with Vorazun's Black Hole, the hit-and-run strategy for Swann isn't particularly effective. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) can help Swann get a little more mileage out of this Prestige by allowing him to deal with attack waves without the use of calldowns.</td>
+                <td class="forceleft" colspan="5">This prestige revolves around using the constant AoE damage hitting any enemy you have vision on. It is best if you max out Laser Drill Build Time Mastery to rush Drill upgrades, and deploy floating Factories (with the Fire Suppression Systems upgrade) around the map to get vision on enemy units. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) combo well with this prestige.</td>
             </tr>
         </tbody>
     </table>
@@ -479,7 +479,7 @@ include("../header.php");
                 <td>11</td>
                 <td>
                     <ul>
-                        <li>Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
+                        <li>The Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
                     </ul>
                 </td>
             </tr>
@@ -526,7 +526,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p>For general play, playing without a Prestige Talent selected is recommended, as none of the Prestige Talents available to Swann provide him with a solution to problem he cannot already overcome by proper play.</p>
+    <p>For general play, P0 (no prestige, Chief Engineer) and P1 (Heavy Weapons Specialist) are recommended. P1 is more beginner-friendly.</p>
     <a id="army"></a><h2>Recommended Army Composition</h2>
     <p>The recommended army composition for Swann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath"><img class="army" src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">

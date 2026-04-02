@@ -515,6 +515,7 @@ include("../header.php");
                     <ul>
                         <li>Suit Cooldown: 2 minutes</li>
                         <li>Suit Rebuild Time: 5 minutes</li>
+                        <li>Contrary to the description, the Arbiter suit doesn't actually have a cooldown</li>
                     </ul>
                 </td>
             </tr>

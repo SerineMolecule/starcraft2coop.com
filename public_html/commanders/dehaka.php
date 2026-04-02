@@ -691,7 +691,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <p>The choice of prestige will come down to both, player and ally skill. A player with a highly-skilled ally might be able to get a lot of value out of Devouring One. On the other hand, a highly-skilled player that understands how to use Pack Leaders effectively may get a lot of mileage out of Primal Contender. For safer play, playing without a Prestige Talent is fine too.</p>
+    <p>The choice of prestige will come down to both player and ally skill. A player with a highly-skilled ally might be able to get a lot of value out of Devouring One. On the other hand, a highly-skilled player that understands how to use Pack Leaders effectively may get a lot of mileage out of Primal Contender. For safer play, playing without a Prestige Talent is fine too.</p>
     <a id="hero"></a><h2>Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/dehaka/dehaka.jpg" alt="Dehaka">
     <p>Spawn time: 1:00</p>

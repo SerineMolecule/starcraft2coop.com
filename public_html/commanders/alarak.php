@@ -559,11 +559,11 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">A trap in using this prestige is using it to mass up a large fleet of air units. Because Destroyers deal small amounts of damage with a high attack speed, they are heavily weakened by armored targets, especially considering that bounces are unaffected by Attack upgrades. They are also susceptible to splash damage, like Parasitic Bombs. A better utility for this prestige would be to invest in the initial Mothership for a big early-game power spike, and then use the Mothership as a mobility tool throughout the course of the mission.</td>            
+                <td class="forceleft" colspan="5">This prestige provides an early-game power-spike in the Mothership, which is also a great mobility tool throughout the mission. It also allows you to summon a large fleet of Destroyers, which are very susceptible to splash damage, like Parasitic Bombs. Note that this prestige is quite strong even if you don't summon the fleet of Destroyers; most of its power is in the Mothership.</td>
             </tr>
         </tbody>
     </table>
-    <p>Depending on the player's prefered playstyle, Artificer of Souls or Tyrant Ascendant both offer Alarak potential power level increases to their respective playstyles. Those two prestiges are recommended for general play.</p>
+    <p>All three prestiges are recommended for general play. P3 (Shadow of Death) is particularly popular.</p>
     <a id="hero"></a><h2>Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/alarak/alarak.jpg" alt="Alarak">
     <p>Spawn time: 4:00</p>
