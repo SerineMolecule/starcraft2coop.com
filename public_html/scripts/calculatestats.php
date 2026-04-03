@@ -893,12 +893,11 @@ function getUnitUpgradesOutput($commander, $unit)
             $prestigeList[str_replace(" ", "", $row['name'])] = $row;
         }
     }
+    $con->close();
 
     require __DIR__ . '/../data/queries.php';
 
     $commanderData = get_commanders($commander);
-    $fields = ['motto', 'prestige1', 'prestige2', 'prestige3'];
-    $commanderData = select_fields($commanderData, $fields);
     $commanderPrestiges = [
         $commanderData['motto'],
         $commanderData['prestige1'],
@@ -907,7 +906,6 @@ function getUnitUpgradesOutput($commander, $unit)
     ];
     $basePrestige = $commanderPrestiges[0];
 
-    $con->close();
     $upgradeString = "<div class='upgradesList'>";
     //Loop through all found upgrades, parse the icons and descriptions for display for selection
     if (!empty($upgradeList)) {

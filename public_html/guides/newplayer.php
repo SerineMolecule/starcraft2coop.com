@@ -166,7 +166,6 @@ $_SESSION["known"] = true;
         require __DIR__ . '/../data/queries.php';
 
         $allCommanders = get_commanders();
-        $allCommanders = select_fields($allCommanders, ['commander']);
         foreach ($allCommanders as $row) {
             echo("<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>");
         }
