@@ -41,144 +41,143 @@ include("../header.php");
 <?php include("../menu.php"); ?>
 <div id="content">
     <h1>Site-Specific and Co-op Related Statistics</h1>
-    <?php 
-        include '../scripts/sqlconnection.php';
-        
-        $sql = "SELECT count(*)  
-                FROM mutators";
-        $result=mysqli_query($con,$sql);
-        $row = mysqli_fetch_array($result);
-        $mutatorCount = $row[0];
-        
-        $sql = "SELECT count(*)  
-                FROM mutatorinteractions";
-        $result=mysqli_query($con,$sql);
-        $row = mysqli_fetch_array($result);
-        $mutatorInteractionCount = $row[0];
-        
-        $sql = "SELECT count(*)  
-                FROM mutatorcommandertips";
-        $result=mysqli_query($con,$sql);
-        $row = mysqli_fetch_array($result);
-        $mutatorCommanderTips = $row[0];
-        
-        $sql = "SELECT count(*)  
-                FROM patchdata";
-        $result=mysqli_query($con,$sql);
-        $row = mysqli_fetch_array($result);
-        $patchCount = $row[0];
-        
-        $sql = "SELECT count(*)  
-                FROM weeklymutations";
-        $result=mysqli_query($con,$sql);
-        $row = mysqli_fetch_array($result);
-        $weeklyMutationCount = $row[0];
-        
-        $sql = "SELECT count(*)  
-                FROM weeklymutations
-                WHERE mut01=8";
-        $result=mysqli_query($con,$sql);
-        $row = mysqli_fetch_array($result);
-        $WOMCount = $row[0];
-        
-        $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination 
-                FROM mutators
-                ORDER BY mutatorid ASC";
-        $result=mysqli_query($con,$sql);
-        $mutators = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $mutators[] = $row;
-        }
-        
-        $sql = "SELECT map, count(map) FROM `weeklymutations`
-                group by map
-                order by count(map) DESC
-                Limit 5";
-        $result=mysqli_query($con,$sql);
-        $topMaps = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $topMaps[] = $row;
-        }
-        
-        $sql = "SELECT map, count(map) FROM (select * from weeklymutations group by mutation) as T
-                group by map
-                order by count(map) DESC
-                Limit 5";
-        $result=mysqli_query($con,$sql);
-        $topMaps1 = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $topMaps1[] = $row;
-        }
-        
-        $sql = "select id, count(*) From (select mut01 as id from weeklymutations
-                union all
-                select mut02 as id from weeklymutations
-                union all
-                select mut03 as id from weeklymutations) weeklymutations
-                where id<>0
-                group by id
-                order by count(*) desc
-                Limit 5";
-        $result=mysqli_query($con,$sql);
-        $topMutators = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $topMutators[] = [$mutators[$row[0]-1]['mutatorname'], $mutators[$row[0]-1]['mutatordescription'], $row[1]];
-        }
-        
-        $sql = "select id, count(*) From (select mut01 as id from weeklymutations
-                union all
-                select mut02 as id from weeklymutations
-                union all
-                select mut03 as id from weeklymutations) weeklymutations
-                where id<>0
-                group by id
-                order by count(*) asc
-                Limit 5";
-        $result=mysqli_query($con,$sql);
-        $bottomMutators = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $bottomMutators[] = [$mutators[$row[0]-1]['mutatorname'], $mutators[$row[0]-1]['mutatordescription'], $row[1]];
-        }
-        
-        $sql = "select id, count(*) From (select mut01 as id from (select * from weeklymutations group by mutation) as T
-                union all
-                select mut02 as id from (select * from weeklymutations group by mutation) as T
-                union all
-                select mut03 as id from (select * from weeklymutations group by mutation) as T) as T
-                where id<>0
-                group by id
-                order by count(*) desc
-                Limit 5";
-        $result=mysqli_query($con,$sql);
-        $topMutators1 = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $topMutators1[] = [$mutators[$row[0]-1]['mutatorname'], $mutators[$row[0]-1]['mutatordescription'], $row[1]];
-        }
-        
-        $sql = "select id, count(*) From (select mut01 as id from (select * from weeklymutations group by mutation) as T
-                union all
-                select mut02 as id from (select * from weeklymutations group by mutation) as T
-                union all
-                select mut03 as id from (select * from weeklymutations group by mutation) as T) as T
-                where id<>0
-                group by id
-                order by count(*) asc
-                Limit 5";
-        $result=mysqli_query($con,$sql);
-        $bottomMutators1 = [];
-        
-        while($row = mysqli_fetch_array($result)) {
-            $bottomMutators1[] = [$mutators[$row[0]-1]['mutatorname'], $mutators[$row[0]-1]['mutatordescription'], $row[1]];
-        }
-        
-        $con->close();
+    <?php
+    include '../scripts/sqlconnection.php';
 
+    $sql = "SELECT count(*)
+            FROM mutators";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $mutatorCount = $row[0];
+
+    $sql = "SELECT count(*)
+            FROM mutatorinteractions";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $mutatorInteractionCount = $row[0];
+
+    $sql = "SELECT count(*)
+            FROM mutatorcommandertips";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $mutatorCommanderTips = $row[0];
+
+    $sql = "SELECT count(*)
+            FROM patchdata";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $patchCount = $row[0];
+
+    $sql = "SELECT count(*)
+            FROM weeklymutations";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $weeklyMutationCount = $row[0];
+
+    $sql = "SELECT count(*)
+            FROM weeklymutations
+            WHERE mut01=8";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+    $WOMCount = $row[0];
+
+    $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination
+            FROM mutators
+            ORDER BY mutatorid ASC";
+    $result = mysqli_query($con, $sql);
+    $mutators = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $mutators[] = $row;
+    }
+
+    $sql = "SELECT map, count(map) FROM `weeklymutations`
+            GROUP BY map
+            ORDER BY count(map) DESC
+            LIMIT 5";
+    $result = mysqli_query($con, $sql);
+    $topMaps = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $topMaps[] = $row;
+    }
+
+    $sql = "SELECT map, count(map) FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T
+            GROUP BY map
+            ORDER BY count(map) DESC
+            LIMIT 5";
+    $result = mysqli_query($con, $sql);
+    $topMaps1 = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $topMaps1[] = $row;
+    }
+
+    $sql = "SELECT id, count(*) FROM (SELECT mut01 AS id FROM weeklymutations
+            UNION ALL
+            SELECT mut02 AS id FROM weeklymutations
+            UNION ALL
+            SELECT mut03 AS id FROM weeklymutations) weeklymutations
+            WHERE id<>0
+            GROUP BY id
+            ORDER BY count(*) DESC
+            LIMIT 5";
+    $result = mysqli_query($con, $sql);
+    $topMutators = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $topMutators[] = [$mutators[$row[0] - 1]['mutatorname'], $mutators[$row[0] - 1]['mutatordescription'], $row[1]];
+    }
+
+    $sql = "SELECT id, count(*) FROM (SELECT mut01 AS id FROM weeklymutations
+            UNION ALL
+            SELECT mut02 AS id FROM weeklymutations
+            UNION ALL
+            SELECT mut03 AS id FROM weeklymutations) weeklymutations
+            WHERE id<>0
+            GROUP BY id
+            ORDER BY count(*) ASC
+            LIMIT 5";
+    $result = mysqli_query($con, $sql);
+    $bottomMutators = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $bottomMutators[] = [$mutators[$row[0] - 1]['mutatorname'], $mutators[$row[0] - 1]['mutatordescription'], $row[1]];
+    }
+
+    $sql = "SELECT id, count(*) FROM (SELECT mut01 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T
+            UNION ALL
+            SELECT mut02 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T
+            UNION ALL
+            SELECT mut03 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T) AS T
+            WHERE id<>0
+            GROUP BY id
+            ORDER BY count(*) DESC
+            LIMIT 5";
+    $result = mysqli_query($con, $sql);
+    $topMutators1 = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $topMutators1[] = [$mutators[$row[0] - 1]['mutatorname'], $mutators[$row[0] - 1]['mutatordescription'], $row[1]];
+    }
+
+    $sql = "SELECT id, count(*) FROM (SELECT mut01 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T
+            UNION ALL
+            SELECT mut02 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T
+            UNION ALL
+            SELECT mut03 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T) AS T
+            WHERE id<>0
+            GROUP BY id
+            ORDER BY count(*) ASC
+            LIMIT 5";
+    $result = mysqli_query($con, $sql);
+    $bottomMutators1 = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $bottomMutators1[] = [$mutators[$row[0] - 1]['mutatorname'], $mutators[$row[0] - 1]['mutatordescription'], $row[1]];
+    }
+
+    $con->close();
     ?>
     <h2>Sections on this Page</h2>
     <div id="links">
@@ -191,18 +190,18 @@ include("../header.php");
     <div id="tooltip">tooltip</div>
     <a id="general"></a><h2>General</h2>
     <p>These statistics are directly related to the Co-op game mode and do not include any community-made content. Please note that as new content gets added, these statistics may not be accurate until the entire site has been updated to reflect the new patch. When this happens, a post will be made on the front page of the site, notifying readers of this.</p>
-    <p>Total Commanders: <?php echo (count(scandir("../commanders")) - 3); ?></p>
-    <p>Total Missions: <?php echo (count(scandir("../missions")) - 3); ?></p>
-    <p>Total Mutators: <?php echo ($mutatorCount); ?></p>
+    <p>Total Commanders: <?= count(scandir("../commanders")) - 3 ?></p>
+    <p>Total Missions: <?= count(scandir("../missions")) - 3 ?></p>
+    <p>Total Mutators: <?= $mutatorCount ?></p>
     <a id="site"></a><h2>Site-Specific</h2>
     <p>These statistics provide you with a bit of a behind-the-scenes look at starcraft2coop.com. There is a lot of data that is stored in the site's databases that allow users to pull useful information when they wish, such as mutator interactions. A lot of this data is automatically pulled and presented to readers in an easy-to-find manner, such as on the <a href="/resources/weeklymutations">Weekly Mutations</a> page.</p>
-    <p>Total Mutator Interactions: <?php echo ($mutatorInteractionCount); ?></p>
-    <p>Commander Tips for Mutators: <?php echo ($mutatorCommanderTips); ?></p>
-    <p>Patches Recognized by Analyzer: <?php echo ($patchCount); ?></p>
+    <p>Total Mutator Interactions: <?= $mutatorInteractionCount ?></p>
+    <p>Commander Tips for Mutators: <?= $mutatorCommanderTips ?></p>
+    <p>Patches Recognized by Analyzer: <?= $patchCount ?></p>
     <a id="weeklyMutations"></a><h2>Weekly Mutations</h2>
     <p>These are some interesting statistics from all <a href="/resources/weeklymutations">Weekly Mutations</a> that have been released to date including the current Weekly Mutation. Statistics include the most and least frequent mutators. Occasionally, Weekly Mutations are repeated, which can offset counts. Hence, statistics will be analyzed with and without these repeats.</p>
-    <p>Total Weekly Mutations: <?php echo ($weeklyMutationCount); ?></p>
-    <p>Wheel of Misfortune Count: <?php echo ($WOMCount); ?></p>
+    <p>Total Weekly Mutations: <?= $weeklyMutationCount ?></p>
+    <p>Wheel of Misfortune Count: <?= $WOMCount ?></p>
     <p>Most Frequent Missions: </p>
     <table>
         <thead>
@@ -218,8 +217,8 @@ include("../header.php");
             </tr>
         </thead>
         <tbody>
-            <?
-            for ($i=0;$i<5; $i++){
+            <?php
+            for ($i = 0; $i < 5; $i++) {
                 echo("<tr>");
                 echo("<td>{$topMaps[$i][0]}</td>");
                 echo("<td class=centered>{$topMaps[$i][1]}</td>");
@@ -247,24 +246,25 @@ include("../header.php");
             </tr>
         </thead>
         <tbody>
-            <?
-            for ($i=0;$i<5; $i++){
+            <?php
+            for ($i = 0; $i < 5; $i++) {
                 echo("<tr>");
                 $element = $topMutators[$i];
-                $filename=str_replace(' ', '', strtolower($element[0]));
+                $filename = str_replace(' ', '', strtolower($element[0]));
                 echo("<td>$element[0]</td>");
-                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] ."\"></td>";
+                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] . "\"></td>";
                 echo("<td class=centered>$element[2]</td>");
                 $element = $topMutators1[$i];
-                $filename=str_replace(' ', '', strtolower($element[0]));
+                $filename = str_replace(' ', '', strtolower($element[0]));
                 echo("<td>$element[0]</td>");
-                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] ."\"></td>";
+                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] . "\"></td>";
                 echo("<td class=centered>$element[2]</td>");
                 echo("<tr>\n");
-            }?>
+            }
+            ?>
         </tbody>
     </table>
-    
+
     <p>Most Infrequent Mutators:</p>
     <table>
         <thead>
@@ -282,21 +282,22 @@ include("../header.php");
             </tr>
         </thead>
         <tbody>
-            <?
-            for ($i=0;$i<5; $i++){
+            <?php
+            for ($i = 0; $i < 5; $i++) {
                 echo("<tr>");
                 $element = $bottomMutators[$i];
-                $filename=str_replace(' ', '', strtolower($element[0]));
+                $filename = str_replace(' ', '', strtolower($element[0]));
                 echo("<td>$element[0]</td>");
-                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] ."\"></td>";
+                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] . "\"></td>";
                 echo("<td class=centered>$element[2]</td>");
                 $element = $bottomMutators1[$i];
-                $filename=str_replace(' ', '', strtolower($element[0]));
+                $filename = str_replace(' ', '', strtolower($element[0]));
                 echo("<td>$element[0]</td>");
-                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] ."\"></td>";
+                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $element[0] . ":" . $element[1] . "\"></td>";
                 echo("<td class=centered>$element[2]</td>");
                 echo("<tr>\n");
-            }?>
+            }
+            ?>
         </tbody>
     </table>
     <a id="community"></a><h2>Community Stats</h2>
@@ -355,7 +356,7 @@ include("../header.php");
                             return currentValue + " games played (" + percentage + "%)";
                         }
                     }
-                } 
+                }
             }
         });
     </script>
@@ -399,7 +400,7 @@ include("../header.php");
                             return currentValue + " games played (" + percentage + "%)";
                         }
                     }
-                } 
+                }
             }
         });
     </script>
@@ -443,7 +444,7 @@ include("../header.php");
                             return currentValue + " games played (" + percentage + "%)";
                         }
                     }
-                } 
+                }
             }
         });
     </script>
@@ -491,7 +492,7 @@ include("../header.php");
                             return currentValue + " games played (" + percentage + "%)";
                         }
                     }
-                } 
+                }
             }
         });
     </script>
@@ -548,7 +549,7 @@ include("../header.php");
                             for(var i=16;i<22;i++){
                                 meta.data[i].hidden = !meta.data[i].hidden;
                             }
-                            
+
                         }
                         ci.update();
                     }
@@ -569,7 +570,7 @@ include("../header.php");
                             return currentValue + " games played (" + percentage + "%)";
                         }
                     }
-                } 
+                }
             }
         });
     </script>
@@ -822,7 +823,7 @@ include("../header.php");
 <tr><td>Ancalagon</td><td class=centered>5.5</td><td class=centered>6</td><tr>
         </tbody>
     </table>
-    
+
     <p>Rockslappingiest Commanders:</p>
     <table>
         <thead>
@@ -853,23 +854,23 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $('.infoIcon img').mouseover(function(){
             var text = $(this).next().html();
             $("#tooltip").html(text);
             $("#tooltip").show();
         });
-        
+
         $('.infoIcon img').mouseleave(function(){
             $("#tooltip").hide();
         });
-        
+
         $('.infoIcon img').mousemove(function(e){
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
 </div>

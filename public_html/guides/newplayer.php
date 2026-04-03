@@ -85,9 +85,9 @@ $_SESSION["known"] = true;
         padding:5px;
         border-radius:5px;
     }
-    
+
   </style>
-  
+
   </head>
 <body>
 <?php include("../menu.php"); ?>
@@ -193,11 +193,11 @@ $_SESSION["known"] = true;
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         function update(commander){
             var colorArray = ["red", "orangered", "yellow", "limegreen", "darkgreen"]
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
                 url: '/scripts/getcommander.php',
                 data: { commander: commander},

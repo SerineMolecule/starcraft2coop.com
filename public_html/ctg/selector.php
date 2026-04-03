@@ -3,11 +3,11 @@
         <select class="mutation">
             <option value="NULL"> </option>
             <?php
-                $index = 0;
-                foreach ($mutations as $mut){
-                    echo "<option value='$index'>{$mut['mutation']}</option>\n";
-                    $index++;
-                }
+            $index = 0;
+            foreach ($mutations as $mut) {
+                echo "<option value='$index'>{$mut['mutation']}</option>\n";
+                $index++;
+            }
             ?>
         </select>
         <div class="mapcom">

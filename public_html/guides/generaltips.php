@@ -29,20 +29,20 @@ include("../header.php");
         <p class="subgroup"><a href="#minimap">Learn the Minimap Icons</a></p>
         <p class="subgroup"><a href="#usehero">Use Your Hero Unit</a></p>
         <p class="subgroup"><a href="#usetopbar">Use Your Topbar Abilities</a></p>
-        
+
         <p><a href="#tips2">Tips for Intermediate Players</a></p>
         <p class="subgroup"><a href="#adapt">Adapt to the Enemy Composition and Map</a></p>
         <p class="subgroup"><a href="#aggressive">Aggressive Play is Rewarded</a></p>
         <p class="subgroup"><a href="#bindrapidfire">Bind Rapidfire</a></p>
         <p class="subgroup"><a href="#expand">Expand As Fast As Possible</a></p>
-        
+
         <p><a href="#tips3">Tips for Veterans</a></p>
         <p class="subgroup"><a href="#armor">Armor Upgrades</a></p>
         <p class="subgroup"><a href="#checkingcreep">Checking Creep</a></p>
         <p class="subgroup"><a href="#knowledge">Knowledge is Power</a></p>
         <p class="subgroup"><a href="#attacktypes">Note the Different Attack Types</a></p>
         <p class="subgroup"><a href="#workercounts">Worker Counts</a></p>
-        
+
     </div>
     <a id="tips1"></a><h2>Tips for Beginners</h2>
     <a id="overproduction"></a><h3>Avoid Overproduction</h3>
@@ -96,7 +96,7 @@ include("../header.php");
     </ul>
     <p>A video that explains this in more detail is below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/IsPSXlj8Nh8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    
+
     <a id="checkingcreep"></a><h3>Checking Creep</h3>
     <p>Checking creep for the presence of Zerg can allow you to adjust your opening to better counter the potential attack waves you will face at the start of the mission. Press Alt+T. This changes the minimap to a Terrain view. If you see creep, you'll be facing a Zerg composition. If you don't see creep, you'll be facing a Protoss or a Terran composition. The below image shows you an example:</p>
     <img src="/images/newplayer/creepminimap.jpg" alt="Creep on Minimap">

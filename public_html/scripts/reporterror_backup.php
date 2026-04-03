@@ -7,11 +7,10 @@
 <div id="errorReport">
     <p id="reportErrorLink">Report an error on this page</p>
     <?php
-        
-        $newPatch=file_get_contents(dirname(__FILE__)."/newpatch.txt");
-        if($newPatch){
-            echo '<div id="newPatch">Co-op has recently been updated. Please do not report patch mismatches yet.</div>';
-        }
+    $newPatch = file_get_contents(dirname(__FILE__) . "/newpatch.txt");
+    if ($newPatch) {
+        echo '<div id="newPatch">Co-op has recently been updated. Please do not report patch mismatches yet.</div>';
+    }
     ?>
     <form action="javascript:void(0);" name="errorReport" id="reportForm" class="captchaForm" onsubmit="return validate()" method="post">
         <p>Comment: <input type="text" name="comment" maxlength="100" size="50" onkeyup="countChar(this)"></p>

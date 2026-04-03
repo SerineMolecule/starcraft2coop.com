@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Temple of the Past</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Temple of the Past">
@@ -77,13 +78,13 @@ include("../header.php");
     </ul>
     <p>There are three bases to clear, one for each of the ramps leading to the temple. These are shown below. Note: These are the starting configurations of the enemy bases. As time progresses in the mission, more static defense will be made. It is best to clear them as quickly as possible.</p>
     <p>Middle Base:</p>
-    <?php $info = "basemidlong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("basemidlong") ?>
     <p>Top Base:</p>
-    <?php $info = "basetop"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("basetop") ?>
     <p>Bottom Base:</p>
-    <?php $info = "basebottomlong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("basebottomlong") ?>
     <p>If you like, you can also clear the base from which the drops come from. However, there is no advantage to doing so, and you will require to fly units over, or warp/teleport them in at that location.</p>
-    <?php $info = "basedroplong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("basedroplong") ?>
     <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/templeofthepast/zenithstone.jpg" alt="Zenith Stone">

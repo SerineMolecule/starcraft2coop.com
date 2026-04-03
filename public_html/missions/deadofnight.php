@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Dead of Night</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Dead of Night">
@@ -66,20 +67,20 @@ include("../header.php");
     <p>Note that the images below show the starting state of the mission. As the mission progresses, Hybrids get added to enemy bases.</p>
     <?php $mission = "deadofnight"; ?>
     <p>A camp is located to the West of the starting location. It is very lightly defended.</p>
-    <?php $info = "w"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("w") ?>
     <p>Clockwise from the above camp, a small enemy base is located. Linear calldowns are best used here to take advantage of all the enemies that are lined up.</p>
-    <?php $info = "nwlong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("nwlong") ?>
     <p>The enemy base at the North of the map is well-defended, and will need a reasonably-sized army to push into.</p>
-    <?php $info = "nlong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("nlong") ?>
     <p>The enclave in the North East of the map is a great spot to use large Area of Effect calldowns like Pulse Cannon and Nukes.</p>
-    <?php $info = "ne"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("ne") ?>
     <p>The enemy base at the East contains strong defenses, and will need a powerful army to push into.</p>
-    <?php $info = "e"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("e") ?>
     <p>The South East base is the largest enemy base on the map. It contains several Hybrids and cloaked units.</p>
-    <?php $info = "selong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("selong") ?>
     <p>The South West area is covered by very lightly defended camps and is a great spot to push into after the first night.</p>
-    <?php $info = "slong"; include("../scripts/switchergenerator.php");?>
-    <?php $info = "swlong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("slong") ?>
+    <?php switcher_generator("swlong") ?>
     <a id="dayNight"></a><h2>Day and Night Cycle Information</h2>
     <p>Days are always 3:30 long, whereas nights are 4:00 long. The first few day/night cycles are shown below:</p>
     <table>

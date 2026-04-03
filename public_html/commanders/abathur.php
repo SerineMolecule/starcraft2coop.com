@@ -380,7 +380,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Essence Hoarder</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Combat units can hold an additional 25 Biomass and have an additional 50% chance to drop their Biomass upon death.</li>
@@ -422,7 +422,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Tunneling Horror</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Locusts have 50% increased attack range, movement speed, and duration.</li>
@@ -464,7 +464,7 @@ include("../header.php");
                 <td>3</td>
                 <td>The Limitless</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>The number of Ultimate Evolutions is no longer limited to 3.</li>
@@ -486,7 +486,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">At first glance, this prestige might look great, but it actually slows down Abathur's powerful earlygame, which is one of his greatest strengths. Abathur's power lies in his ability to clear missions as quickly as possible. This prestige will work well on missions with a fixed time, assuming the Abathur player is active with their Biomass collection, but it should not be the go-to pick for Abathur.</td>            
+                <td class="forceleft" colspan="5">At first glance, this prestige might look great, but it actually slows down Abathur's powerful earlygame, which is one of his greatest strengths. Abathur's power lies in his ability to clear missions as quickly as possible. This prestige will work well on missions with a fixed time, assuming the Abathur player is active with their Biomass collection, but it should not be the go-to pick for Abathur.</td>
             </tr>
         </tbody>
     </table>
@@ -513,7 +513,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -527,7 +527,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>
@@ -950,7 +950,7 @@ include("../header.php");
                         <td>60 seconds</td>
                     </tr>
                 </tbody>
-            </table>    
+            </table>
         </div>
     </div>
     <div class="leftImage">

@@ -423,10 +423,10 @@ include("../header.php");
                 <td>1</td>
                 <td>Heavy Weapons Specialist</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
-                                <li>The Laser Drill deals 100% splash damage and slows enemy movement by 70% and locks on targets 50% faster.</li>
+                                <li>The Laser Drill deals 100% splash damage, slows enemy movement by 70%, and locks on targets 50% faster.</li>
                             </ul>
                         </li>
                         <li>Disadvantages:
@@ -443,7 +443,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige, by itself, is not very useful. While it does compound really well with Vorazun's Black Hole, the hit-and-run strategy for Swann isn't particularly effective. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) can help Swann get a little more mileage out of this Prestige by allowing him to deal with attack waves without the use of calldowns.</td>
+                <td class="forceleft" colspan="5">This prestige revolves around using the constant AoE damage hitting any enemy you have vision on. It is best if you max out Laser Drill Build Time Mastery to rush Drill upgrades, and deploy floating Factories (with the Fire Suppression Systems upgrade) around the map to get vision on enemy units. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) combo well with this prestige.</td>
             </tr>
         </tbody>
     </table>
@@ -463,7 +463,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Grease Monkey</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Turret upgrades are 100% more effective.</li>
@@ -479,7 +479,7 @@ include("../header.php");
                 <td>11</td>
                 <td>
                     <ul>
-                        <li>Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
+                        <li>The Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
                     </ul>
                 </td>
             </tr>
@@ -504,7 +504,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Payload Director</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Hercules have twice the cargo capacity and unload units instantly.</li>
@@ -522,11 +522,11 @@ include("../header.php");
                 <td>None</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The extreme amount of burst damage this Prestige can provide may, at-first-glance, seem valuable in addition to the ability to not only Tactical Jump your damage dealers but also your detection and healer. However, with proper micro, players should not be losing Siege Tanks to enemy units, especially with a Goliath frontline combined with Science Vessel Defense Matrices. Additionally, the disadvantage of having longer cooldowns on the Drill abilities means that the abilities do not sync up with mission attack wave/event timings as well.</td>            
+                <td class="forceleft" colspan="5">The extreme amount of burst damage this Prestige can provide may, at-first-glance, seem valuable in addition to the ability to not only Tactical Jump your damage dealers but also your detection and healer. However, with proper micro, players should not be losing Siege Tanks to enemy units, especially with a Goliath frontline combined with Science Vessel Defense Matrices. Additionally, the disadvantage of having longer cooldowns on the Drill abilities means that the abilities do not sync up with mission attack wave/event timings as well.</td>
             </tr>
         </tbody>
     </table>
-    <p>For general play, playing without a Prestige Talent selected is recommended, as none of the Prestige Talents available to Swann provide him with a solution to problem he cannot already overcome by proper play.</p>
+    <p>For general play, P0 (no prestige, Chief Engineer) and P1 (Heavy Weapons Specialist) are recommended. P1 is more beginner-friendly.</p>
     <a id="army"></a><h2>Recommended Army Composition</h2>
     <p>The recommended army composition for Swann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath"><img class="army" src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">
@@ -546,7 +546,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -560,7 +560,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>
@@ -1339,7 +1339,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p1_cb_sw_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p1_cb_sw_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p1_cb_sw']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p1_cb_sw');
@@ -1375,7 +1375,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p1_cb_ne_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p1_cb_ne_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p1_cb_ne']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p1_cb_ne');
@@ -1411,7 +1411,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p1_cb_nw_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p1_cb_nw_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p1_cb_nw']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p1_cb_nw');
@@ -1447,7 +1447,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p1_cb_s_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p1_cb_s_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p1_cb_s']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p1_cb_s');
@@ -1484,7 +1484,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p2_cb_ne_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p2_cb_ne_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p2_cb_ne']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p2_cb_ne');
@@ -1520,7 +1520,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p2_cb_se_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p2_cb_se_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p2_cb_se']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p2_cb_se');
@@ -1556,7 +1556,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p2_cb_nw_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p2_cb_nw_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p2_cb_nw']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p2_cb_nw');
@@ -1592,7 +1592,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p2_cb_s_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p2_cb_s_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p2_cb_s']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p2_cb_s');
@@ -1628,7 +1628,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/p2_cb_w_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/p2_cb_w_after.jpg');
         preload(imgList);
-        
+
         $("input[name='p2_cb_w']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#p2_cb_w');
@@ -1665,7 +1665,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/pc_ne_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/pc_ne_after.jpg');
         preload(imgList);
-        
+
         $("input[name='pc_ne']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#pc_ne');
@@ -1701,7 +1701,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/pc_nw_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/pc_nw_after.jpg');
         preload(imgList);
-        
+
         $("input[name='pc_nw']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#pc_nw');
@@ -1737,7 +1737,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/pc_w_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/pc_w_after.jpg');
         preload(imgList);
-        
+
         $("input[name='pc_w']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#pc_w');
@@ -1773,7 +1773,7 @@ include("../header.php");
         imgList.push('/images/commanderdata/guides/swann/pc_s_before.jpg');
         imgList.push('/images/commanderdata/guides/swann/pc_s_after.jpg');
         preload(imgList);
-        
+
         $("input[name='pc_s']").change(function(){
             var phase= $(this).val();
             var oldImg = $('#pc_s');

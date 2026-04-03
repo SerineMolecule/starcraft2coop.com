@@ -15,7 +15,7 @@ include("../header.php");
 <?php include("../menu.php"); ?>
 <div id="content">
     <h1>Order of Death Prevention Effects</h1>
-    <?php 
+    <?php
     include("../scripts/reporterror.php");?>
     <h2>Summary</h2>
     <p>Death Prevention Effects are effects that stop a unit from dying. Examples of these are <a href="/commanders/artanis">Artanis' Guardian Shell</a> and <a href="/commanders/kerrigan">Kerrigan's Torrasque Strain Ultralisk Passive</a>. When multiple Death Prevention Effects are active, it is difficult to predict what order they will trigger. The order of Death Prevention Effects is shown in the following section.</p>

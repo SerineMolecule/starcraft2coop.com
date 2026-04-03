@@ -394,7 +394,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Valorous Inspirator</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Increase the effectiveness of all active combat unit abilities by 100%.</li>
@@ -416,7 +416,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige provides an all-round improvement to Artanis' units. For example, it increases the damage dealt by High Templar Psi Storms and reduces the construction time of Reaver scarabs. This opens up a lot of avenues for playstyle changes. However Dragoons are unaffected and Tempests receive minimal improvements. This Prestige works well with the Energy Regeneration and Cooldown Reduction mastery.</td>
+                <td class="forceleft" colspan="5">This prestige provides an all-round improvement to Artanis' units. For example, it increases the damage dealt by High Templar Psi Storms and reduces the construction time of Reaver scarabs. This opens up a lot of avenues for playstyle changes. However, Dragoons are unaffected and Tempests receive minimal improvements. The higher cost of units makes it slower to ramp up and more punishing of unit losses. This Prestige works well with the Energy Regeneration and Cooldown Reduction mastery.</td>
             </tr>
         </tbody>
     </table>
@@ -449,7 +449,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Nexus Legate</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Upon use, Project Power Field warps out any of your combat units standing in an existing Power Field projection into the new location. Cooldown removed.</li>
@@ -470,7 +470,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige changes the utility purpose of Artanis' Power Field. Instead of using it to quickly reinforce your army in combat, it changes to a mobility tool. As such, you will need to adapt your playstyle to accommodate this change. However, this prestige compounds well with the Speed Increase for Warped Units mastery, as every time units are warped away using the Power Field, they get the buff.</td>
+                <td class="forceleft" colspan="5">This prestige changes how Power Field is used. Instead of letting you reinforce your army in combat, it's a mobility tool. The high cost of the Power Field (25 energy) makes the prestige quite energy starved, so energy management is crucial. This prestige compounds well with the "Speed Increase for Warped Units" mastery, since every time units are moved using the Power Field, they get the buff.</td>
             </tr>
         </tbody>
     </table>
@@ -490,7 +490,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Arkship Commandant</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Orbital Strikes warp in an Unbound Fanatic that throws off damaging energy and lasts 15 seconds.</li>
@@ -515,11 +515,11 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The Unbound Fanatics that spawn from the Orbital Strikes have strong splash damage, very equivalent to Karax's Solar Lances. However, where they fire their orbs is randomized, which reduces the efficacy of this prestige. The loss of Guardian shell, which increases the fragility of Artanis' already-fragile army, further adds to the weakness of this Prestige. However, the biggest advantage of this prestige is that it allows Artanis to fast-expand on maps. A single set of Orbital Strikes can be used to clear contested expansions very easily.</td>            
+                <td class="forceleft" colspan="5">This prestige gives Artanis much more powerful calldowns at a high cost: The loss of Guardian Shell, which increases the fragility of Artanis' already-fragile army. The Unbound Fanatics that spawn from the Orbital Strikes have strong splash damage, similar to Karax's Solar Lances. It also allows Artanis to fast-expand on maps (a single set of Orbital Strikes can easily clear contested expansions). In addition, Shield Overcharge can be used twice as often, which partially offsets the loss of Guardian Shell, and if armies are bunched up, it is still possible to cover both armies.</td>
             </tr>
         </tbody>
     </table>
-    <p>For general play, Valorous Inspirator is a solid Prestige that improves the utility of almost all of Artanis' units with a minimal cost increase. It increases the viability of his High Templars and his Phoenixes.</p>
+    <p>For general play, P3 (Arkship Commandant), P2 (Nexus Legate), and P0 (no prestige, Hierarch of the Daelaam) have their place. P3 (Arkship Commandant) is arguably strongest and most flexible, but it lacks Artanis's signature ability. P2 (Nexus Legate) is strong but requires careful Spear of Adun energy management. P1 (Valorous Inspirator) ramps slowly. P0 (no prestige, Hierarch of the Daelaam) has easy reinforcement but lack mobility.</p>
     <a id="army"></a><h2>Recommended Army Composition</h2>
     <p>The recommended army composition for Artanis is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot"><img class="army" src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">
@@ -540,7 +540,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -554,7 +554,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>
@@ -1001,7 +1001,7 @@ include("../header.php");
                         <td>90 seconds</td>
                     </tr>
                 </tbody>
-            </table>    
+            </table>
         </div>
     </div>
     <div class="leftImage">
@@ -1056,7 +1056,7 @@ include("../header.php");
                         <td>90 seconds</td>
                     </tr>
                 </tbody>
-            </table>  
+            </table>
         </div>
     </div>
     <a id="buildOrder"></a><h2>Build Order</h2>

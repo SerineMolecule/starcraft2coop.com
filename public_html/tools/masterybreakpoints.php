@@ -227,16 +227,16 @@ $_SESSION["known"] = true;
             $("#tooltip").html(text);
             $("#tooltip").show();
         });
-        
+
         $(document).on('mouseleave','.tooltip',function(){
             $("#tooltip").hide();
         });
-        
+
         $(document).on('mousemove','.tooltip',function(e){
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".tooltip").click(function(){
             $(".selected").addClass("unselected");
@@ -253,7 +253,7 @@ $_SESSION["known"] = true;
                     ability: abilityName,
                 },
                 success: function(data) {
- 
+
                     var data = JSON.parse(data);
                     unitsList = data[4];
                     $("#baseDmg").text(data[2]);
@@ -294,7 +294,7 @@ $_SESSION["known"] = true;
             else{
                 var currentDamage = Math.floor(parseFloat(baseDamage) + (damageIncrease*points*parseFloat(baseDamage)/100));
             }
-            
+
             $("#currentDamage").text(currentDamage);
             //Add bonus text for Penetrating Blast
             if($("#penBlast1").hasClass("selected")){
@@ -312,7 +312,7 @@ $_SESSION["known"] = true;
             else{
                 $("#bonus").text("");
             }
-            
+
             if($("#armorContainer").is(":visible")){
                 var subtractor = $("input[name='armor']:checked").val();
                 currentDamage = currentDamage - subtractor;
@@ -325,7 +325,7 @@ $_SESSION["known"] = true;
                 container = "#unitContainerSingle";
             }
             $("#masteryPoints").text(points);
-            
+
             $(container + " table tbody tr").each(function(){
                 var row = $(this);
                 row.find("td:nth-child(2)").empty();
@@ -370,8 +370,8 @@ $_SESSION["known"] = true;
                             row.find("td:nth-child(3)").append("<img class='" + classes + "' src='/images/comps/unitimages/" + imageName + "' alt='" + item[1] + ": " + item[0] + " vitality'>")
                         }
                     }
-                    
-                    
+
+
                })
             });
         }

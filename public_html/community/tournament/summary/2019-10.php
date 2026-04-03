@@ -154,7 +154,10 @@ include("../../../header.php");
                         </div>
                     </div>
             </tr>
-            <?php $start=3; include("../fakerows.php"); ?>
+            <?php
+            $start = 3;
+            include("../fakerows.php");
+            ?>
         </tbody>
 </table>
 </div>
@@ -170,7 +173,7 @@ include("../../../header.php");
         $('#tooltip').css('top', e.pageY-35);
         $('#tooltip').css('left', e.pageX);
         $('#tooltip').css('position', "absolute");
-        
+
     });
     $("#abilityicons img").on('mouseover',function(e){
         $("#tooltip").html($(this).attr("alt"));
@@ -183,7 +186,7 @@ include("../../../header.php");
         $('#tooltip').css('top', e.pageY-35);
         $('#tooltip').css('left', e.pageX);
         $('#tooltip').css('position', "absolute");
-        
+
     });
     $(".spoiler").on('click', function(){
         $(this).fadeOut();

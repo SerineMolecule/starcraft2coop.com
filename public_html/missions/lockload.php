@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Lock & Load</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Lock & Load">
@@ -103,28 +104,28 @@ include("../header.php");
         </tbody>
     </table>
     <p>The first Lock that is captured is usually the middle lock. This is very lightly defended, and usually a hero unit can clear.</p>
-    <?php $info = "lock_c"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_c") ?>
     <p>The next Lock that is captured is usually either the West or the Southern Lock. The Western Lock is shown below. Note the presence of cloaked/burrowed units.</p>
-    <?php $info = "lock_w"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_w") ?>
     <p>The Southern Lock is shown below. Note the presence of Capital Ships.</p>
-    <?php $info = "lock_s"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_s") ?>
     <p>The Eastern Lock is one of the more difficult Locks to capture, due to the presence of Hybrids and high-HP units. You will need to push up one of the two ramps to get to the Lock.</p>
     <p>If you choose to push from the Southern ramp, there is a small enemy camp in this location as follows. Note the presence of cloaked units.</p>
-    <?php $info = "lock_e_bottomcamp"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_e_bottomcamp") ?>
     <p>If you choose to push from the Northern ramp, there is also a camp, but guarded by two Hybrid Destroyers.</p>
-    <?php $info = "lock_e_topcamp"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_e_topcamp") ?>
     <p>The Eastern Lock is well-defended by Capital Ships and a Hybrid Dominator.</p>
-    <?php $info = "lock_e"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_e") ?>
     <p>The last Lock that has to be captured is the Northern Lock. Like the Eastern Lock, there are two ramps that can be used to access it. The Southern ramp is guarded by a small force of units.</p>
-    <?php $info = "lock_n_rampguard"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_n_rampguard") ?>
     <p>If you choose to go up the Eastern ramp, you can bypass the above force entirely.</p>
-    <?php $info = "lock_n"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("lock_n") ?>
     <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/lockload/xelnagaconstruct.jpg" alt="Xel'Naga Construct">
     </div>
     <p>The bonus objective requires you to kill the Xel'Naga Construct. The Construct is guarded by a small force of enemy units as shown below.</p>
-    <?php $info = "xelnagaconstruct"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("xelnagaconstruct") ?>
     <p>The Xel'Naga Construct can be quite difficult to kill in the early game. Usually, it is much easier to kill it on the way to Northern Lock if that is the last Lock to be captured.</p>
     <a id="timings"></a><h2>Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>

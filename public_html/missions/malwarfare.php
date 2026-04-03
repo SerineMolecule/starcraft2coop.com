@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Malwarfare</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Malwarfare">
@@ -60,7 +61,7 @@ include("../header.php");
     </div>
     <?php $mission = "malwarfare"; ?>
     <p>The first camp you will have to take is positioned over your expansion. The expansions on Malwarfare for both players are defended by static defense and a few units.</p>
-    <?php $info = "expo"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("expo") ?>
     <p>Aurana's Transport will move from Terminal to Terminal and she will purify each one. It takes 2:45 to purify the Terminals. Your goal is to defend her transport from attack waves and Suppression Towers. After every terminal has been purified, she heals any damage taken up to 5,000HP.</p>
     <p>Suppression Towers deal 240 damage per volley to Aurana's Transport. That ability has a cooldown of 6 seconds.</p>
     <p>However, there are two additional timers involved as well. When players engage a Suppression Tower, it stops attacking Aurana for 30 seconds before resuming attacks again. Additionally, if players have not destroyed the tower within three minutes of it spawning, it will attack Aurana's transport every 2 seconds.</p>
@@ -83,9 +84,9 @@ include("../header.php");
     <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to download three AI Personalities each from two beacons on the map. This is the only bonus objective that requires resources to complete. Each AI personality costs 350 Minerals/100 Gas to download. Therefore, you will require 1050 minerals/300 Gas to download all personalities for a single objective. The objective will expire exactly 4 minutes after it starts. Each beacon is defended by a force of enemy units and static defense.</p>
     <p>The first beacon is shown below.</p>
-    <?php $info = "beacon1"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("beacon1") ?>
     <p>The second beacon is shown below.</p>
-    <?php $info = "beacon2"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("beacon2") ?>
     <p>Note that when the first A.I. Personality download has been initiated, three attack waves will spawn to attack and destroy the objective. Once these are cleared, you only require vision in order to complete the rest of the downloads.</p>
     <a id="timings"></a><h2>Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>

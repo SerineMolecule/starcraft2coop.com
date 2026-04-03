@@ -12,7 +12,7 @@ include("../header.php");
               alert("File not selected");
               return false;
           }
-    	  var x = $('#gsForm [name=desc]').val()
+          var x = $('#gsForm [name=desc]').val()
           if (x == "") {
               alert("Description is blank");
               return false;
@@ -20,7 +20,7 @@ include("../header.php");
       }
   </script>
     <style>
-        
+
     </style>
   </head>
 <body>
@@ -49,15 +49,15 @@ include("../header.php");
     </ul>
     <?php
     /* ini_set('file_uploads', 'On');
-    	if(isset($_POST['url']) && $_POST['url'] == ''){
-    		if(isset($_FILES["file"]) && isset($_POST['recaptcha_response'])){
-    		    
-        		include("../scripts/recaptcha.php");
-        		if ($recaptchaResult) {
-        			
-        			$target_dir = "../aommaster_admin/submissions/";
-        			$md5 = md5_file($_FILES["file"]["tmp_name"]);
-        			$description =  escapeshellarg($_POST['desc']);
+        if(isset($_POST['url']) && $_POST['url'] == ''){
+            if(isset($_FILES["file"]) && isset($_POST['recaptcha_response'])){
+
+                include("../scripts/recaptcha.php");
+                if ($recaptchaResult) {
+
+                    $target_dir = "../aommaster_admin/submissions/";
+                    $md5 = md5_file($_FILES["file"]["tmp_name"]);
+                    $description =  escapeshellarg($_POST['desc']);
                     $target_file = $target_dir . $md5 . ".sc2replay";
                     $uploadOk = 1;
                     $fileExtension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -81,11 +81,11 @@ include("../header.php");
                             echo "Sorry, there was an error uploading your file.";
                         }
                     }
-        		}
-        	}
+                }
+            }
         } */
     ?>
-    
+
     <form action="gamespotlight.php" name="submissionform" id="gsForm" class="captchaForm" onsubmit="return validate()" method="post" enctype="multipart/form-data">
         <p>Replay File: <input type="file" name="file" accept=".SC2Replay"></p>
         <p>Brief Description: <input name="desc" type="text" size="30"></p>
