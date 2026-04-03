@@ -8,6 +8,7 @@
 ## Build
 
 When in the root directory of the project, needed the first time or when making changes to the Dockerfile:
+
 ```shell
 docker compose build
 ```
@@ -19,6 +20,7 @@ Before the first run or when re-creating the DB environment, delete the top leve
 ```shell
 docker compose up
 ```
+
 Opening your browser to http://localhost:8080 should show the application.
 
 ### Build + Run
@@ -30,3 +32,25 @@ docker compose up --build
 ## DB connection with external tools
 
 The DB is accessible via `localhost`, on port 3306. The 'db' name is for containers to connect.
+
+## Running PHP Code Sniffer
+
+(Replace `${pwd}` with `$(pwd)` if using bash.)
+
+### Install
+
+```shell
+docker run --rm -v ${pwd}:/app composer:2.7.1 install --prefer-dist
+```
+
+### Check
+
+```shell
+docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script ci
+```
+
+### Check and Fix
+
+```shell
+docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script fix
+```
