@@ -43,3 +43,27 @@ function get_commanders(string|null $commander = null): array
     }
     return $match;
 }
+
+
+/**
+ * @param int|null $difficulty Difficulty to filter on; otherwise all difficulties.
+ * @return array Single or All BrutalPlus info.
+ */
+function get_brutalplus(int|null $difficulty = null): array
+{
+    $json = file_get_contents(__DIR__ . '/brutalplus.json');
+    $allDiffs = json_decode($json, true);
+
+    if ($difficulty === null) {
+        return $allDiffs;
+    }
+
+    $match = array_find($allDiffs, function ($value) use ($difficulty) {
+        return $value['difficulty'] === $difficulty;
+    });
+    if ($match === null) {
+        echo("Error! get_brutalplus");
+        die();
+    }
+    return $match;
+}

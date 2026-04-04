@@ -21,17 +21,14 @@ if ($difficulty < 1 || $difficulty > 6) {
     die();
 }
 
-include 'sqlconnection.php';
+require __DIR__ . '/../data/queries.php';
 
-$sql = "SELECT * FROM brutalplus WHERE difficulty=" . $difficulty;
-$result = mysqli_query($con, $sql);
-while ($row = mysqli_fetch_array($result)) {
-    $minMutators = intval($row['minmutators']);
-    $maxMutators = intval($row['maxmutators']);
-    $minPoints = intval($row['minpoints']);
-    $maxPoints = intval($row['maxpoints']);
-}
-$con->close();
+$oneBrutal = get_brutalplus($difficulty);
+$minMutators = $oneBrutal['minmutators'];
+$maxMutators = $oneBrutal['maxmutators'];
+$minPoints = $oneBrutal['minpoints'];
+$maxPoints = $oneBrutal['maxpoints'];
+
 
 $pointCeiling = 10; //highest possible mutator cost
 
@@ -125,6 +122,7 @@ function traverse($template, $index, $totalCost, $totalMutators)
     }
     return 1; //fix this maybe?
 }
+
 function consider($template, $mutatorCount)
 {
     //Make sure a template meets the required restrictions. If it does, add it to the global Template Possibilities
@@ -144,6 +142,7 @@ function consider($template, $mutatorCount)
 
     //$templatePossibilities[$mutatorCount][0][]= $templatePossibilities[$mutatorCount][1];
 }
+
 function calculateCombos($template)
 {
     //Given a template, calculate the possible unique mutations that can be generated.
@@ -154,11 +153,13 @@ function calculateCombos($template)
     }
     return $combos;
 }
+
 function nCr($n, $r)
 {
 
     return (factorial($n) / (factorial($r) * factorial($n - $r)));
 }
+
 function factorial($number)
 {
     if ($number <= 1) {
