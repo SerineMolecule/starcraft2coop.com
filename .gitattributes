@@ -4,7 +4,7 @@
 # Default to never messing with line breaks
 * -text
 
-# Declare files that will always have LF line endings on checkout.
+# Declare files that will always have LF line endings
 *.php text eol=lf
 *.js text eol=lf
 *.css text eol=lf
