@@ -5,6 +5,8 @@
 * -text
 
 # Declare files that will always have LF line endings
+*.txt text eol=lf
+*.md text eol=lf
 *.php text eol=lf
 *.js text eol=lf
 *.css text eol=lf
