@@ -1,0 +1,14 @@
+# .gitattributes based on template from GitHub
+# https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings#example
+
+# Default to never messing with line breaks
+* -text
+
+# Declare files that will always have LF line endings
+*.txt text eol=lf
+*.md text eol=lf
+*.php text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
