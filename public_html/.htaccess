@@ -1,9 +1,17 @@
 ErrorDocument 404 /errors/404.php
 RewriteEngine on
 RewriteRule .* - [E=Cache-Control:no-cache]
+
+# Extensionless URLs - prefer .html, fall back to .php
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
+RewriteRule ^(.*)$ $1.php [L]
 
 RemoveHandler .py
 AddType text/x-python .py

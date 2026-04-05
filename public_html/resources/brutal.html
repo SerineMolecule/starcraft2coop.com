@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+<link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
+<link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.31">
+<link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
+<link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Starcraft 2 Co-op - Brutal+ Difficulty</title>
+  <meta name="description" content="Starcraft 2 Co-op Brutal+ Difficulty Mutators">
+  <meta name="keywords" content="Starcraft co-op brutal difficulty mutators">
+  <link rel="canonical" href="https://starcraft2coop.com/resources/brutal">
+  <style>
+    #points{
+        display:inline;
+    }
+    #points th{
+        cursor:pointer;
+    }
+    .sort{
+        display:inline-block;
+        width:30px;
+    }
+    .sort img{
+        width:25px;
+    }
+    #mutationBox{
+        border:1px solid white;
+        display:none;
+    }
+    .toggled{
+        background-color: darkslateblue;
+    }
+    #tooltip{
+        position:absolute;
+        background-color:khaki;
+        color:black;
+        font-size:0.8em;
+        display:none;
+        z-index:1;
+        padding:5px;
+        border-radius:5px;
+    }
+    #totalCost{
+        background-color:khaki;
+        color:black;
+        font-size:0.8em;
+        display:none;
+        z-index:1;
+        padding:5px;
+        border-radius:5px;
+        margin-left:10px;
+    }
+    .tooltip{
+        padding-left:10px;
+        padding-right:10px;
+        border-radius:25%;
+    }
+    form{
+        margin-bottom:50px;
+    }
+  </style>
+  </head>
+<body>
+<header id="header">
+    <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
+</header>
+<nav id="menu">
+<ul id="topmenu">
+    <li class="normal"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
+    <!--li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-community">Community</a></li-->
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-guides">Guides</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Resources</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-tools">Tools</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-about">About</a></li>
+</ul>
+<div id="container">
+    <div id="commanderList" class="submenu">
+        <a href="/commanders/raynor" class="normal"><img src="/images/commanderportraits/raynorportrait.png" alt="Raynor"></a>
+        <a href="/commanders/kerrigan" class="normal"><img src="/images/commanderportraits/kerriganportrait.png" alt="Kerrigan"></a>
+        <a href="/commanders/artanis" class="normal"><img src="/images/commanderportraits/artanisportrait.png" alt="Artanis"></a>
+        <a href="/commanders/swann" class="normal"><img src="/images/commanderportraits/swannportrait.png" alt="Swann"></a>
+        <a href="/commanders/zagara" class="normal"><img src="/images/commanderportraits/zagaraportrait.png" alt="Zagara"></a>
+        <a href="/commanders/vorazun" class="normal"><img src="/images/commanderportraits/vorazunportrait.png" alt="Vorazun"></a>
+        <a href="/commanders/karax" class="normal"><img src="/images/commanderportraits/karaxportrait.png" alt="Karax"></a>
+        <a href="/commanders/abathur" class="normal"><img src="/images/commanderportraits/abathurportrait.png" alt="Abathur"></a>
+        <a href="/commanders/alarak" class="normal"><img src="/images/commanderportraits/alarakportrait.png" alt="Alarak"></a>
+        <a href="/commanders/nova" class="normal"><img src="/images/commanderportraits/novaportrait.png" alt="Nova"></a>
+        <a href="/commanders/stukov" class="normal"><img src="/images/commanderportraits/stukovportrait.png" alt="Stukov"></a>
+        <a href="/commanders/fenix" class="normal"><img src="/images/commanderportraits/fenixportrait.png" alt="Fenix"></a>
+        <a href="/commanders/dehaka" class="normal"><img src="/images/commanderportraits/dehakaportrait.png" alt="Dehaka"></a>
+        <a href="/commanders/horner" class="normal"><img src="/images/commanderportraits/hornerportrait.png" alt="Han &amp; Horner"></a>
+        <a href="/commanders/tychus" class="normal"><img src="/images/commanderportraits/tychusportrait.png" alt="Tychus"></a>
+        <a href="/commanders/zeratul" class="normal"><img src="/images/commanderportraits/zeratulportrait.png" alt="Zeratul"></a>
+        <a href="/commanders/stetmann" class="normal"><img src="/images/commanderportraits/stetmannportrait.png" alt="Stetmann"></a>
+        <a href="/commanders/mengsk" class="normal"><img src="/images/commanderportraits/mengskportrait.png" alt="Mengsk"></a>
+    </div>
+    <div id="missionList" class="submenu">
+        <a href="/missions/chainofascension" class="normal"><img src="/images/missionthumbnails/chainofascension.png" alt="Chain of Ascension"></a>
+        <a href="/missions/cradleofdeath" class="normal"><img src="/images/missionthumbnails/cradleofdeath.png" alt="Cradle of Death"></a>
+        <a href="/missions/deadofnight" class="normal"><img src="/images/missionthumbnails/deadofnight.png" alt="Dead of Night"></a>
+        <a href="/missions/lockload" class="normal"><img src="/images/missionthumbnails/lockload.png" alt="Lock & Load"></a>
+        <a href="/missions/malwarfare" class="normal"><img src="/images/missionthumbnails/malwarfare.png" alt="Malwarfare"></a>
+        <a href="/missions/minerevacuation" class="normal"><img src="/images/missionthumbnails/minerevacuation.png" alt="Miner Evacuation"></a>
+        <a href="/missions/mistopportunities" class="normal"><img src="/images/missionthumbnails/mistopportunities.png" alt="Mist Opportunities"></a>
+        <a href="/missions/oblivionexpress" class="normal"><img src="/images/missionthumbnails/oblivionexpress.png" alt="Oblivion Express"></a>
+        <a href="/missions/partparcel" class="normal"><img src="/images/missionthumbnails/partparcel.png" alt="Part & Parcel"></a>
+        <a href="/missions/riftstokorhal" class="normal"><img src="/images/missionthumbnails/riftstokorhal.png" alt="Rifts to Korhal"></a>
+        <a href="/missions/scytheofamon" class="normal"><img src="/images/missionthumbnails/scytheofamon.png" alt="Scythe Of Amon"></a>
+        <a href="/missions/templeofthepast" class="normal"><img src="/images/missionthumbnails/templeofthepast.png" alt="Temple of the Past"></a>
+        <a href="/missions/thevermillionproblem" class="normal"><img src="/images/missionthumbnails/thevermillionproblem.png" alt="The Vermillion Problem"></a>
+        <a href="/missions/voidlaunch" class="normal"><img src="/images/missionthumbnails/voidlaunch.png" alt="Void Launch"></a>
+        <a href="/missions/voidthrashing" class="normal"><img src="/images/missionthumbnails/voidthrashing.png" alt="Void Thrashing"></a>
+    </div>
+    <div id="guideList" class="submenu">
+        <ul>
+            <li class="normal"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
+            <li class="normal"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
+            <li class="normal"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
+            <li class="normal"><a href="/guides/newplayer">New&nbsp;Players&nbsp;</a></li>
+            <li class="normal"><a href="/guides/youtube">Youtube&nbsp;</a></li>
+        </ul>
+    </div>
+    <div id="resources" class="submenu">
+        <ul>
+            <li class="normal"><a href="/resources/achievements">Achievements</a></li>
+            <li class="normal"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
+            <li class="normal"><a href="/resources/bugs">Bugs</a></li>
+            <li class="normal"><a href="/resources/brutal">Brutal+</a></li>
+            <li class="normal"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
+            <li class="normal"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
+            <li class="normal"><a href="/resources/levels">Levels</a></li>
+            <li class="normal"><a href="/resources/mutators">Mutators</a></li>
+            <li class="normal"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
+            <!--li class="normal"><a href="/resources/stats">Stats</a></li-->
+            <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
+
+        </ul>
+    </div>
+    <div id="tools" class="submenu">
+        <ul>
+            <li class="normal"><a href="/tools/downloads">Downloads</a></li>
+            <li class="normal"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
+            <li class="normal"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+        </ul>
+    </div>
+    <div id="community" class="submenu">
+        <ul>
+            <li class="normal"><a href="/community/tournament/main">Co&#8209;op&nbsp;Tournament</a></li>
+            <li class="normal"><a href="/community/gamespotlight">Game&nbsp;Spotlight</a></li>
+            <li class="normal"><a href="/community/mythbusters">Mythbusters</a></li>
+            <li class="normal"><a href="/community/rockslappingchampions">Rockslapping&nbsp;Champions</a></li>
+            <li class="normal"><a href="/youtube">Youtube</a></li>
+        </ul>
+    </div>
+    <div id="about" class="submenu">
+        <ul>
+            <!--<li class="normal"><a href="/about/contact">Contact</a></li>-->
+            <li class="normal"><a href="/about/faq">FAQ</a></li>
+            <li class="normal"><a href="/about/links">Links</a></li>
+            <!--li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li-->
+            <li class="normal"><a href="/resources/stats">Misc. Stats</a></li>
+        </ul>
+    </div>
+    <!--<div id="imgs">
+        <a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow"><img src="/images/links/yt.png" alt="Youtube"></a>
+        <a href="https://www.patreon.com/starcraft2coop" rel="nofollow"><img src="/images/links/patreon.png" alt="Patreon"></a>
+        <a href="https://www.twitch.tv/aommaster" rel="nofollow"><img src="/images/links/twitch.png" alt="Twitch"></a>
+        <a href="https://discord.gg/AbFXRAB" rel="nofollow"><img src="/images/links/discord.png" alt="Discord"></a>
+    </div>-->
+</div>
+</nav>
+<script>
+    function openSubmenu(event, elem){
+        if (event) event.preventDefault();
+        if (!elem) elem = event.currentTarget;
+        var alreadyOpen = $(elem).hasClass('open');
+
+        $('#topmenu a').removeClass('open');
+        $(".submenu").hide();
+
+        if (alreadyOpen) return;
+
+        $(elem).addClass('open');
+        switch (elem.id.slice(13)){
+            case "commanders":
+                $("#commanderList").show();
+                break;
+            case "missions":
+                $("#missionList").show();
+                break;
+            case "community":
+                $("#community").show();
+                break;
+            case "guides":
+                $("#guideList").show();
+                break;
+            case "resources":
+                $("#resources").show();
+                break;
+            case "tools":
+                $("#tools").show();
+                break;
+            case "about":
+                $("#about").show();
+                break;
+        }
+    }
+    if (document.location.pathname === "/") {
+        $('#submenu-link-commanders').each(function () {
+            openSubmenu(null, this);
+        });
+    } else {
+        $('#topmenu li.highlight a').each(function () {
+            openSubmenu(null, this);
+        });
+    }
+</script>
+<div id="content">
+    <h1>Brutal+ Difficulty: Mutation Cost Brackets and Templates</h1>
+        <p>Brutal+ is considered an "Extended Difficulty". That is, missions will take place on the regular Brutal difficulty. However, in addition to the standard mission mechanics, a certain number of random <a href="mutators">mutators</a> are added to your game. You may queue into random queue on Brutal+ difficulty, as long as the commander you are queueing in with is at Level 15. For Brutal+2 and higher, you will require a person in your party to play.</p>
+    <p>To learn more about how Brutal+ difficulty mutators are selected, you may watch the video below. The video goes over what Mutation Templates are, how the different mutator possibility counts are calculated mathematically and then how the weightings are rebalanced to be more in line with Blizzard's design intent.</p>
+    <iframe width="475" height="268" src="https://www.youtube.com/embed/9jfWuM215_c" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p>The number of mutators that will be selected is between two and four. Each difficulty level is assigned a total number of points, which corresponds to the total mutation difficulty. The point/mutator brackets for each difficulty level is shown below. Note that the mutator counts for generated Brutal+ mutations are not evenly distributed. You are more likely to see 2 and 3-mutator games than 4 mutator games, as is Blizzard's desgin intent. For more information, please watch the video above.</p>
+    <table id="limits" class="centered">
+        <thead>
+            <tr>
+                <th>Difficulty</th>
+                <th>Min. Points</th>
+                <th>Max. Points</th>
+                <th>Min. Mutators</th>
+                <th>Max. Mutators</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>4</td><td>6</td><td>2</td><td>3</td></tr><tr><td>2</td><td>7</td><td>8</td><td>2</td><td>3</td></tr><tr><td>3</td><td>9</td><td>10</td><td>2</td><td>3</td></tr><tr><td>4</td><td>11</td><td>12</td><td>2</td><td>3</td></tr><tr><td>5</td><td>15</td><td>16</td><td>2</td><td>4</td></tr><tr><td>6</td><td>19</td><td>20</td><td>2</td><td>4</td></tr>        </tbody>
+    </table>
+    <p>Each mutator in the game is assigned a point cost that corresponds to its difficulty level. For more information on mutators, you may check the <a href="mutators">Mutators page</a>, which contains a lot of mutator-specific information such as their internal mechanics and also provide some commander-specific tips on how to handle them. The list of mutators and their associated point costs are shown below.</p>
+    <p>Click the column headers to sort Ascending/Descending by that column. Click a row to toggle that row and calculate the total cost of a selected set of mutators.</p>
+
+    <table id="points">
+        <thead>
+            <tr>
+                <th id="col1">Mutator <div class="sort"><img src="/images/asc.png" alt="Sorted Ascending"><img src="/images/desc.png" alt="Sorted Descending" style="display:none"></div></th>
+                <th id="col2">Cost <div class="sort"><img src="/images/asc.png" alt="Sorted Ascending" style="display:none"><img src="/images/desc.png" alt="Sorted Descending" style="display:none"></div></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Aggressive Deployment</td><td>3</td></tr><tr><td>Alien Incubation</td><td>2</td></tr><tr><td>Avenger</td><td>5</td></tr><tr><td>Barrier</td><td>2</td></tr><tr><td>Black Death</td><td>7</td></tr><tr><td>Blizzard</td><td>4</td></tr><tr><td>Boom Bots</td><td>10</td></tr><tr><td>Concussive Attacks</td><td>1</td></tr><tr><td>Darkness</td><td>2</td></tr><tr><td>Diffusion</td><td>3</td></tr><tr><td>Double Edged</td><td>3</td></tr><tr><td>Eminent Domain</td><td>1</td></tr><tr><td>Evasive Maneuvers</td><td>1</td></tr><tr><td>Fatal Attraction</td><td>3</td></tr><tr><td>Fear</td><td>3</td></tr><tr><td>Going Nuclear</td><td>3</td></tr><tr><td>Hardened Will</td><td>2</td></tr><tr><td>Heroes from the Storm</td><td>10</td></tr><tr><td>Inspiration</td><td>2</td></tr><tr><td>Just Die</td><td>7</td></tr><tr><td>Kill Bots</td><td>6</td></tr><tr><td>Laser Drill</td><td>2</td></tr><tr><td>Lava Burst</td><td>3</td></tr><tr><td>Life Leech</td><td>1</td></tr><tr><td>Long Range</td><td>2</td></tr><tr><td>Mag-nificent</td><td>4</td></tr><tr><td>Micro Transactions</td><td>5</td></tr><tr><td>Mineral Shields</td><td>2</td></tr><tr><td>Minesweeper</td><td>6</td></tr><tr><td>Missile Command</td><td>3</td></tr><tr><td>Moment of Silence</td><td>2</td></tr><tr><td>Mutually Assured Destruction</td><td>5</td></tr><tr><td>Orbital Strike</td><td>1</td></tr><tr><td>Outbreak</td><td>3</td></tr><tr><td>Photon Overload</td><td>1</td></tr><tr><td>Polarity</td><td>7</td></tr><tr><td>Power Overwhelming</td><td>5</td></tr><tr><td>Propagators</td><td>8</td></tr><tr><td>Purifier Beam</td><td>2</td></tr><tr><td>Scorched Earth</td><td>2</td></tr><tr><td>Self Destruction</td><td>3</td></tr><tr><td>Shortsighted</td><td>1</td></tr><tr><td>Slim Pickings</td><td>5</td></tr><tr><td>Speed Freaks</td><td>2</td></tr><tr><td>Temporal Field</td><td>1</td></tr><tr><td>Time Warp</td><td>1</td></tr><tr><td>Transmutation</td><td>7</td></tr><tr><td>Twister</td><td>2</td></tr><tr><td>Void Reanimators</td><td>5</td></tr><tr><td>Void Rifts</td><td>10</td></tr><tr><td>Walking Infested</td><td>2</td></tr><tr><td>We Move Unseen</td><td>3</td></tr>        </tbody>
+    </table>
+    <div id="totalCost">Total Cost</div>
+    <script>
+        $('#points th').click(function(){
+            var table = $(this).parents('table').eq(0)
+            var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+            var sortedAsc = false;
+            var iconVisible = false;
+            $(this).find('img').each(function(){
+               if($(this).is(':visible')){
+                   iconVisible = true;
+                   if ($(this).attr('alt')=="Sorted Ascending"){
+                       sortedAsc = true;
+                   }
+               }
+            });
+            if (!iconVisible){
+                 $(this).parents('table'). find('img').hide();
+                 $(this).find('img:first').toggle()
+            }
+            else{
+                $(this).find("img").toggle();
+            }
+            if (sortedAsc){rows = rows.reverse()}
+            for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+
+        })
+        $('#points td').click(function(){
+            $(this).parent().toggleClass("toggled");
+            if($('.toggled').length>0){
+                var totalCost = 0;
+                $('.toggled').each(function(){
+                    totalCost += parseInt($(this).find('td:nth-child(2)').text());
+                    $("#totalCost").text("Total Cost: " + totalCost);
+                })
+                $("#totalCost").css('display', 'inline');
+            }
+            else{
+                $("#totalCost").hide();
+            }
+        })
+        $(window).scroll(function() {
+            var tableTop = $("#col1").offset().top;
+            var tableBottom = $("#points td").last().offset().top;
+            var documentHeight = $(document).height();
+            if (tableTop > $(window).scrollTop()) {
+                $("#totalCost").css({
+                    position: 'absolute',
+                    top: tableTop
+                });
+            }
+            else if (tableTop < $(window).scrollTop() + $(window).height()) {
+                $("#totalCost").css({
+                    position: 'fixed',
+                    top: 10
+                });
+            } else {
+                $("#totalCost").css({
+                    position: 'fixed',
+                    top: tableBottom - $(window).scrollTop()
+                });
+            }
+        });
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index), valB = getCellValue(b, index)
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+            }
+        }
+        function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
+    </script>
+    <p>You may use the demo below to simulate random mutator templates at different difficulty levels. Simply select your intended Brutal+ difficulty level and press Go. The algorithm used very closely matches the algorithm that the Starcraft II engine uses to generate the mutations, with a few optimizations to speed up the code, given that this is coded in PHP and not Galaxy. When a mutation set has been provided, you will also be given the total point cost of all the mutators in your set.</p>
+    <form action='#'>
+        <select id="difficultyLevel">
+            <option value="1">Brutal+1</option>
+            <option value="2">Brutal+2</option>
+            <option value="3">Brutal+3</option>
+            <option value="4">Brutal+4</option>
+            <option value="5">Brutal+5</option>
+            <option value="6">Brutal+6</option>
+        </select>
+        <input type="submit" value="Go" id="generateMutation">
+    </form>
+    <div id="tooltip">tooltip</div>
+    <div id="mutationBox">
+        <p>Mutators (<span id="cost">0</span> Points):</p>
+        <div id="randomMutation">
+        </div>
+    </div>
+    <script>
+        $("#generateMutation").on("click", function(event){
+            event.preventDefault();
+            $("#cost").text("?");
+            $("#randomMutation").empty();
+            $("#randomMutation").append("<p>Loading...</p>");
+            var difficultyLevel = parseInt($("#difficultyLevel").val());
+
+            $.ajax({
+                type: 'GET',
+                url: '/scripts/generatemutation.php',
+                data: { difficulty:difficultyLevel },
+                success: function(response) {
+                    var template = response;
+                    generateMutation(template);
+                },
+            dataType:"json"
+            });
+
+
+        });
+
+
+        function generateTemplate(muts, minPts, maxPts){
+            var found = false;
+            var cost = 0;
+            var totalCost = 0;
+            var result = [];
+            const limits = [0,9,14,11,2,6,2,4,1,0,3];
+            while (!found){
+                totalCost = 0;
+                result = new Array(11).fill(0);
+                for (var i=0; i<muts; i++){
+                    //10 is the maximum point value
+                    cost = Math.floor(Math.random() * Math.min((maxPts-muts + 1), 10)) + 1;
+                    totalCost += cost;
+                    if (totalCost > maxPts){
+                        break;
+                    }
+                    else{
+                        result[cost] += 1;
+                    }
+                    if(result[cost] > limits[cost]){
+                        break;
+                    }
+                }
+                if (totalCost <= maxPts && totalCost >=minPts){
+                    found = true;
+                    for(var i=0; i<result.length-1;i++){
+                        if (result[i] > limits[i]){
+                            found=false;
+                        }
+                    }
+
+                }
+            }
+            return result;
+        }
+
+        function generateMutation(template){
+            const mutatorArray = [[],["Concussive Attacks","Eminent Domain","Evasive Maneuvers","Life Leech","Orbital Strike","Photon Overload","Shortsighted","Temporal Field","Time Warp"],["Alien Incubation","Barrier","Darkness","Hardened Will","Inspiration","Laser Drill","Long Range","Mineral Shields","Moment of Silence","Purifier Beam","Scorched Earth","Speed Freaks","Twister","Walking Infested"],["Aggressive Deployment","Diffusion","Double Edged","Fatal Attraction","Fear","Going Nuclear","Lava Burst","Missile Command","Outbreak","Self Destruction","We Move Unseen"],["Blizzard","Mag-nificent"],["Avenger","Micro Transactions","Mutually Assured Destruction","Power Overwhelming","Slim Pickings","Void Reanimators"],["Kill Bots","Minesweeper"],["Black Death","Just Die","Polarity","Transmutation"],["Propagators"],[],["Boom Bots","Heroes from the Storm","Void Rifts"]];
+            var cost = 0;
+            $("#randomMutation").empty();
+            $("#mutationBox").show();
+            for(var i=template.length-1;i>0;i--){
+                if (template[i]>0){
+                    for(var j=0;j<template[i];j++){
+                        cost +=i
+                        var randomIndex = Math.floor(Math.random() *  mutatorArray[i].length);
+                        var selectedMutator = mutatorArray[i][randomIndex];
+                        mutatorArray[i]=mutatorArray[i].slice(0, randomIndex).concat(mutatorArray[i].slice(randomIndex + 1, mutatorArray[i].length));
+                        $("#randomMutation").append('<img class="tooltip" src="/images/mutators/'+ selectedMutator.replace(/ /g,'').toLowerCase() +'.png" alt="' + selectedMutator + '">')
+                    }
+                }
+            }
+            $("#cost").text(cost);
+        }
+
+        function weightedRandom(prob) {
+            var i;
+            var sum=0;
+            var r=Math.random();
+            for (i in prob) {
+                sum += prob[i];
+                if (r <= sum){
+                   return i;
+                }
+            }
+        }
+
+        $(document).on('mouseover','.tooltip',function(){
+            var mutator = $(this).attr("alt");
+            $("#tooltip").html("<b>" + mutator + "</b>");
+            $("#tooltip").show();
+        });
+
+        $(document).on('mouseleave','.tooltip',function(){
+            $("#tooltip").hide();
+        });
+
+        $(document).on('mousemove','.tooltip',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+
+    </script>
+</div>
+<div id="footer">
+    <p>Note: All data generated on this site is based on Brutal difficulty. Timings, compositions and other elements may differ on easier difficulty levels.</p>
+    <p>CC-BY-NC-SA-4.0. Originally written by Aommaster. This is a fansite not affiliated with StarCraft 2 or Blizzard Entertainment, Inc.</p>
+</div>
+</body>
+</html>

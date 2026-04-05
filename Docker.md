@@ -33,6 +33,12 @@ docker compose up --build
 
 The DB is accessible via `localhost`, on port 3306. The 'db' name is for containers to connect.
 
+## Generating static pages
+
+```shell
+docker exec -w /var/www sc2coop-web php generate.php
+```
+
 ## Running PHP Code Sniffer
 
 (Replace `${pwd}` with `$(pwd)` if using bash.)
