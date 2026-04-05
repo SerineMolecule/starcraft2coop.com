@@ -1,6 +1,6 @@
 /**
  * @minimum 1
- * @type integer
+ * @asType integer
  */
 export type PositiveInteger = number;
 export type CommanderPowerRating = 1 | 2 | 3 | 4 | 5;

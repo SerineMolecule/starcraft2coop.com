@@ -1,4 +1,4 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-npx typescript-json-schema ../data-types.ts CommanderList > commandersummaries.json
-npx typescript-json-schema ../data-types.ts BrutalPlusList > brutalplus.json
+bunx ts-json-schema-generator --path ../data-types.ts --type CommanderList > commandersummaries.json
+bunx ts-json-schema-generator --path ../data-types.ts --type BrutalPlusList > brutalplus.json
