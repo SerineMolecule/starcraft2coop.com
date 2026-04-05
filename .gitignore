@@ -2,6 +2,7 @@
 /public_html/errors/404log.txt
 /dbdata
 /vendor
+/node_modules
 
 # generated automatically by Dreamhost
 .dh-diag
