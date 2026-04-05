@@ -897,7 +897,7 @@ function getUnitUpgradesOutput($commander, $unit)
 
     require __DIR__ . '/../data/queries.php';
 
-    $commanderData = get_commanders($commander);
+    $commanderData = get_commander($commander);
     $commanderPrestiges = [
         $commanderData['motto'],
         $commanderData['prestige1'],
