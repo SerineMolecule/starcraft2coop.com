@@ -43,4 +43,4 @@ jobs:
       run: bun install
 
     - name: Validate JSON schemas
-      run: bun ./data/validate
+      run: bun ./source-data/validate

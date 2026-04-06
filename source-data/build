@@ -7,17 +7,17 @@ import tsj from "ts-json-schema-generator";
 console.log(`Generating schemas`);
 
 const generator = tsj.createGenerator({
-    path: "./data/data-types.ts",
+    path: "./source-data/data-types.ts",
     tsconfig: "./tsconfig.json",
 });
 
-Bun.write('data/schemas/brutalplus.schema.json', JSON.stringify(generator.createSchema('BrutalPlusList'), null, 4) + '\n');
-Bun.write('data/schemas/commandersummaries.schema.json', JSON.stringify(generator.createSchema('CommanderList'), null, 4) + '\n');
+Bun.write('source-data/schemas/brutalplus.schema.json', JSON.stringify(generator.createSchema('BrutalPlusList'), null, 4) + '\n');
+Bun.write('source-data/schemas/commandersummaries.schema.json', JSON.stringify(generator.createSchema('CommanderList'), null, 4) + '\n');
 
 /** @type {import('./data-types.ts').BrutalPlus[]} */
-const brutalPluses = await Bun.file('data/brutalplus.json').json();
+const brutalPluses = await Bun.file('source-data/brutalplus.json').json();
 /** @type {import('./data-types.ts').Commander[]} */
-const commanders = await Bun.file('data/commandersummaries.json').json();
+const commanders = await Bun.file('source-data/commandersummaries.json').json();
 console.log(`Done`)
 
 /////////////////////////////////////////////////
