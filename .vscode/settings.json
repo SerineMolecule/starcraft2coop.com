@@ -6,13 +6,13 @@
             "fileMatch": [
                 "/data/brutalplus.json"
             ],
-            "url": "./data/schemas/brutalplus.json"
+            "url": "./data/schemas/brutalplus.schema.json"
         },
         {
             "fileMatch": [
                 "/data/commandersummaries.json"
             ],
-            "url": "./data/schemas/commandersummaries.json"
+            "url": "./data/schemas/commandersummaries.schema.json"
         }
     ]
 }

@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/BrutalPlusList",
+    "definitions": {
+        "BrutalPlusList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/BrutalPlus"
+            }
+        },
+        "BrutalPlus": {
+            "type": "object",
+            "properties": {
+                "difficulty": {
+                    "$ref": "#/definitions/PositiveInteger",
+                    "description": "as in, the X in Brutal+X"
+                },
+                "minpoints": {
+                    "$ref": "#/definitions/PositiveInteger",
+                    "description": "minimum total points of all the mutators"
+                },
+                "maxpoints": {
+                    "$ref": "#/definitions/PositiveInteger",
+                    "description": "maximum total points of all the mutators"
+                },
+                "minmutators": {
+                    "$ref": "#/definitions/PositiveInteger",
+                    "description": "minimum number of mutators"
+                },
+                "maxmutators": {
+                    "$ref": "#/definitions/PositiveInteger",
+                    "description": "maximum number of mutators"
+                }
+            },
+            "required": [
+                "difficulty",
+                "minpoints",
+                "maxpoints",
+                "minmutators",
+                "maxmutators"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}

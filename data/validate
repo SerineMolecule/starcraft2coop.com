@@ -8,9 +8,9 @@ const brutalPluses = await Bun.file('data/brutalplus.json').json();
 const commanders = await Bun.file('data/commandersummaries.json').json();
 
 /** @type {import('./data-types.ts').BrutalPlus[]} */
-const brutalPlusesSchema   = await Bun.file('data/schemas/brutalplus.json').json();
+const brutalPlusesSchema   = await Bun.file('data/schemas/brutalplus.schema.json').json();
 /** @type {import('./data-types.ts').Commander[]} */
-const commandersSchema = await Bun.file('data/schemas/commandersummaries.json').json();
+const commandersSchema = await Bun.file('data/schemas/commandersummaries.schema.json').json();
 
 const ajv = new Ajv();
 

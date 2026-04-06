@@ -1,22 +1,35 @@
 #!/usr/bin/env bun
 // @ts-check
-export {};
+import tsj from "ts-json-schema-generator";
+
+/////////////////////////////////////////////////
+
+console.log(`Generating schemas`);
+
+const generator = tsj.createGenerator({
+    path: "./data/data-types.ts",
+    tsconfig: "./tsconfig.json",
+});
+
+Bun.write('data/schemas/brutalplus.schema.json', JSON.stringify(generator.createSchema('BrutalPlusList'), null, 4) + '\n');
+Bun.write('data/schemas/commandersummaries.schema.json', JSON.stringify(generator.createSchema('CommanderList'), null, 4) + '\n');
 
 /** @type {import('./data-types.ts').BrutalPlus[]} */
 const brutalPluses = await Bun.file('data/brutalplus.json').json();
 /** @type {import('./data-types.ts').Commander[]} */
 const commanders = await Bun.file('data/commandersummaries.json').json();
+console.log(`Done`)
 
-console.log(`Writing brutalplus.json`);
+/////////////////////////////////////////////////
+
+console.log(`Writing to public_html/data`);
+
 Bun.write('public_html/data/brutalplus.json', JSON.stringify(brutalPluses, null, 4) + '\n');
 for (const brutalPlus of brutalPluses) {
-    console.log(`Writing brutalplus/${brutalPlus.difficulty}.json`);
     Bun.write(`public_html/data/brutalplus/${brutalPlus.difficulty}.json`, JSON.stringify(brutalPlus, null, 4) + '\n');
 }
-console.log(`Writing commandersummaries.json`);
 Bun.write('public_html/data/commandersummaries.json', JSON.stringify(commanders, null, 4) + '\n');
 for (const commander of commanders) {
-    console.log(`Writing commandersummaries/${commander.commander}.json`);
     Bun.write(`public_html/data/commandersummaries/${commander.commander}.json`, JSON.stringify(commander, null, 4) + '\n');
 }
 console.log(`Done`);
