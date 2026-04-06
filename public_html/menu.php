@@ -56,11 +56,8 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
 <ul id="topmenu">
     <li class="<?=$pageSection === "index" ? 'highlight' : 'normal'?>"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
     <li class="<?=$pageSection === "commanders" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
-    <!--li class="<?=$pageSection === "community" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-community">Community</a></li-->
-    <!--li class="<?=$pageSection === "guides" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-guides">Guides</a></li-->
-    <li class="<?=$pageSection === "resources" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Resources</a></li>
+    <li class="<?=$pageSection === "resources" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Guides</a></li>
     <li class="<?=$pageSection === "missions" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
-    <!--li class="<?=$pageSection === "tools" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-tools">Tools</a></li-->
     <li class="<?=$pageSection === "about" ? 'highlight' : 'normal'?>"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-about">About</a></li>
 </ul>
 <div id="container">
