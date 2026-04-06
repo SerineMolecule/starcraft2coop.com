@@ -1,9 +1,11 @@
 #!/usr/bin/env bun
+// @ts-check
+export {};
 
-import { BrutalPlus, Commander } from './data-types.ts';
-
-const brutalPluses: BrutalPlus[] = await Bun.file('data/brutalplus.json').json();
-const commanders: Commander[] = await Bun.file('data/commandersummaries.json').json();
+/** @type {import('./data-types.ts').BrutalPlus[]} */
+const brutalPluses = await Bun.file('data/brutalplus.json').json();
+/** @type {import('./data-types.ts').Commander[]} */
+const commanders = await Bun.file('data/commandersummaries.json').json();
 
 Bun.write('public_html/data/brutalplus.json', JSON.stringify(brutalPluses, null, 4) + '\n');
 for (const brutalPlus of brutalPluses) {
