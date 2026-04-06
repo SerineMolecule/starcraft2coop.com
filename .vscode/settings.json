@@ -4,15 +4,15 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "/public_html/data/brutalplus.json"
+                "/data/brutalplus.json"
             ],
-            "url": "./public_html/data/schemas/brutalplus.json"
+            "url": "./data/schemas/brutalplus.json"
         },
         {
             "fileMatch": [
-                "/public_html/data/commandersummaries.json"
+                "/data/commandersummaries.json"
             ],
-            "url": "./public_html/data/schemas/commandersummaries.json"
+            "url": "./data/schemas/commandersummaries.json"
         }
     ]
 }
