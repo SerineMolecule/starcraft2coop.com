@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Test
 
 on:
   push:
@@ -15,25 +15,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@main
+    - uses: oven-sh/setup-bun@main
 
     # - name: Validate composer.json and composer.lock
     #   run: composer validate --strict
 
     - name: Cache Composer packages
       id: composer-cache
-      uses: actions/cache@v5
+      uses: actions/cache@main
       with:
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
+    - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
-    - name: Run test suite
+    - name: Run phpcs formatter
       run: composer run-script ci
+
+    - name: Install Bun dependencies
+      run: bun install
+
+    - name: Validate JSON schemas
+      run: bun ./source-data/validate
