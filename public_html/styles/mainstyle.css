@@ -48,7 +48,7 @@ body {
      font-size: 1.25rem;
    }
 }
-.grecaptcha-badge { 
+.grecaptcha-badge {
     visibility: hidden;
 }
 #captchaTOS{
@@ -165,6 +165,13 @@ body {
 }
 #menu .submenu a:hover {
     text-decoration: underline;
+}
+.submenu-section strong {
+    color: #999;
+}
+.submenu-section {
+    text-align: left;
+    padding: 7px 10px 7px 30px;
 }
 #footer{
     font-style:italic;
