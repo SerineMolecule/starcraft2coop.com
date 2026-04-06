@@ -1,1 +1,24 @@
-{"commander":"fenix","fullname":"Fenix","motto":"Purifier Executor","stat01":3,"stat02":3,"stat03":2,"stat04":5,"stat05":4,"stat06":2,"stat07":4,"stat08":3,"stat09":4,"summary":"Fenix has a very powerful hero unit as well as six other Protoss units that can be buffed by a Champion AI, giving them access to unique abilities. As such, Fenix's core gameplay requires him to build at least one of each of the units that support Champion AI's, which means he has to research both Ground and Air upgrades. Combined with the fact that Champion AI's get stronger when they have other similar non-buffed units around them, Fenix is usually forced to research all upgrades for many units, severely taxing his macro capabilities.<br><br>Given the macro-intensity of the commander, Fenix is still not a difficult commander to play. Simpler builds exist and are reasonably effective. At high skill level, Fenix's army is extremely powerful and can handle even the toughest of circumstances.","mastery11":"Fenix Atk. Spd.","mastery12":"Fenix Energy Regen","mastery21":"AI Atk. Spd.","mastery22":"AI Vitality","mastery31":"Chrono Boost","mastery32":"Starting Supply","prestige1":"Akhundelar","prestige2":"Network Administrator","prestige3":"Unconquered Spirit"}
+{
+    "commander": "fenix",
+    "fullname": "Fenix",
+    "motto": "Purifier Executor",
+    "stat01": 3,
+    "stat02": 3,
+    "stat03": 2,
+    "stat04": 5,
+    "stat05": 4,
+    "stat06": 2,
+    "stat07": 4,
+    "stat08": 3,
+    "stat09": 4,
+    "summary": "Fenix has a very powerful hero unit as well as six other Protoss units that can be buffed by a Champion AI, giving them access to unique abilities. As such, Fenix's core gameplay requires him to build at least one of each of the units that support Champion AI's, which means he has to research both Ground and Air upgrades. Combined with the fact that Champion AI's get stronger when they have other similar non-buffed units around them, Fenix is usually forced to research all upgrades for many units, severely taxing his macro capabilities.<br><br>Given the macro-intensity of the commander, Fenix is still not a difficult commander to play. Simpler builds exist and are reasonably effective. At high skill level, Fenix's army is extremely powerful and can handle even the toughest of circumstances.",
+    "mastery11": "Fenix Atk. Spd.",
+    "mastery12": "Fenix Energy Regen",
+    "mastery21": "AI Atk. Spd.",
+    "mastery22": "AI Vitality",
+    "mastery31": "Chrono Boost",
+    "mastery32": "Starting Supply",
+    "prestige1": "Akhundelar",
+    "prestige2": "Network Administrator",
+    "prestige3": "Unconquered Spirit"
+}

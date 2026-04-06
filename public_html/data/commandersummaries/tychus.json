@@ -1,1 +1,24 @@
-{"commander":"tychus","fullname":"Tychus","motto":"Legendary Outlaw","stat01":5,"stat02":5,"stat03":4,"stat04":4,"stat05":4,"stat06":5,"stat07":4,"stat08":4,"stat09":4,"summary":"Tychus is one of the more unique commanders in the game in the sense that he doesn't build an army of units. He plays with at most four other units in the game, referred to as \"outlaws\". Every few minutes, he gains the ability to recruit one more outlaw from a choice of eight outlaws, each having different abilities and having their own specialties.<br><br>Tychus is a very easy commander to play and extremely powerful, even at sub-mastery levels. His outlaws have a wide range of specialties that allow the player to pick and choose accordingly to handle the challenges they face.","mastery11":"Tychus Atk. Spd.","mastery12":"Shredder CD","mastery21":"Tri-outlaw","mastery22":"Outlaw Spawn","mastery31":"Medivac CD","mastery32":"Odin CD","prestige1":"Technical Recruiter","prestige2":"Lone Wolf","prestige3":"Dutiful Dogwalker"}
+{
+    "commander": "tychus",
+    "fullname": "Tychus",
+    "motto": "Legendary Outlaw",
+    "stat01": 5,
+    "stat02": 5,
+    "stat03": 4,
+    "stat04": 4,
+    "stat05": 4,
+    "stat06": 5,
+    "stat07": 4,
+    "stat08": 4,
+    "stat09": 4,
+    "summary": "Tychus is one of the more unique commanders in the game in the sense that he doesn't build an army of units. He plays with at most four other units in the game, referred to as \"outlaws\". Every few minutes, he gains the ability to recruit one more outlaw from a choice of eight outlaws, each having different abilities and having their own specialties.<br><br>Tychus is a very easy commander to play and extremely powerful, even at sub-mastery levels. His outlaws have a wide range of specialties that allow the player to pick and choose accordingly to handle the challenges they face.",
+    "mastery11": "Tychus Atk. Spd.",
+    "mastery12": "Shredder CD",
+    "mastery21": "Tri-outlaw",
+    "mastery22": "Outlaw Spawn",
+    "mastery31": "Medivac CD",
+    "mastery32": "Odin CD",
+    "prestige1": "Technical Recruiter",
+    "prestige2": "Lone Wolf",
+    "prestige3": "Dutiful Dogwalker"
+}

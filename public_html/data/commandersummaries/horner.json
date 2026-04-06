@@ -1,1 +1,24 @@
-{"commander":"horner","fullname":"Han & Horner","motto":"Mercenary Leader and Dominion Admiral","stat01":2,"stat02":3,"stat03":1,"stat04":4,"stat05":2,"stat06":3,"stat07":3,"stat08":2,"stat09":3,"summary":"Han & Horner bring together two different types of Terran units: Ground units and Air units. While Mira's units are weak, they trigger various effects when they die, applying powerful buffs to the units in their vicinity. Horner's Air units are much stronger, but also much more expensive. While it is very difficult for players to take direct engagements, calldowns can be used to soften enemy forces and keeping their units alive.<br><br>Han & Horner may appear to be easy to play, but their units are fragile, which can be extremely punishing without adequate understanding of the co-op mechanics. However, with good map awareness, calldowns can be used to cover for the army's weaknesses.","mastery11":"Strike Fighter AOE","mastery12":"Death Chance","mastery21":"Significant Other","mastery22":"Double Salvage","mastery31":"Air Fleet","mastery32":"Mag Mine","prestige1":"Chaotic Power Couple","prestige2":"Wing Commanders","prestige3":"Galactic Gunrunners"}
+{
+    "commander": "horner",
+    "fullname": "Han & Horner",
+    "motto": "Mercenary Leader and Dominion Admiral",
+    "stat01": 2,
+    "stat02": 3,
+    "stat03": 1,
+    "stat04": 4,
+    "stat05": 2,
+    "stat06": 3,
+    "stat07": 3,
+    "stat08": 2,
+    "stat09": 3,
+    "summary": "Han & Horner bring together two different types of Terran units: Ground units and Air units. While Mira's units are weak, they trigger various effects when they die, applying powerful buffs to the units in their vicinity. Horner's Air units are much stronger, but also much more expensive. While it is very difficult for players to take direct engagements, calldowns can be used to soften enemy forces and keeping their units alive.<br><br>Han & Horner may appear to be easy to play, but their units are fragile, which can be extremely punishing without adequate understanding of the co-op mechanics. However, with good map awareness, calldowns can be used to cover for the army's weaknesses.",
+    "mastery11": "Strike Fighter AOE",
+    "mastery12": "Death Chance",
+    "mastery21": "Significant Other",
+    "mastery22": "Double Salvage",
+    "mastery31": "Air Fleet",
+    "mastery32": "Mag Mine",
+    "prestige1": "Chaotic Power Couple",
+    "prestige2": "Wing Commanders",
+    "prestige3": "Galactic Gunrunners"
+}

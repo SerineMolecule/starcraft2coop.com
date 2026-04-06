@@ -1,1 +1,7 @@
-{"difficulty":4,"minpoints":11,"maxpoints":12,"minmutators":2,"maxmutators":3}
+{
+    "difficulty": 4,
+    "minpoints": 11,
+    "maxpoints": 12,
+    "minmutators": 2,
+    "maxmutators": 3
+}

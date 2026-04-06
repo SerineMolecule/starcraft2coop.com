@@ -1,1 +1,24 @@
-{"commander":"alarak","fullname":"Alarak","motto":"Highlord of the Tal'darim","stat01":1,"stat02":3,"stat03":1,"stat04":4,"stat05":2,"stat06":3,"stat07":1,"stat08":3,"stat09":2,"summary":"Alarak's Tal'darim Ascendants have some of the highest damage output of any units in the game. However, these come at a cost of being extremely difficult to build up. As a result, Alarak relies on his Hero unit as well as his Photon Overload ability to provide him with the damage output to deal with the early stages of the game. He excels at dealing damage to units, but does struggle a bit when it comes to clearing structures.<br><br>Alarak is one of the most difficult commanders to play well. He is extremely punishing if a player takes a bad engagement, almost finding it impossible to recover. But with adequate understanding of his mechanics, Alarak players can decimate enemy waves and melt through attack waves while taking minimal losses.","mastery11":"Alarak Atk. Dmg.","mastery12":"Unit Atk. Spd.","mastery21":"Empower Me","mastery22":"Death Fleet CD","mastery31":"Overcharge","mastery32":"Chrono Boost","prestige1":"Artificer of Souls ","prestige2":"Tyrant Ascendant","prestige3":"Shadow of Death"}
+{
+    "commander": "alarak",
+    "fullname": "Alarak",
+    "motto": "Highlord of the Tal'darim",
+    "stat01": 1,
+    "stat02": 3,
+    "stat03": 1,
+    "stat04": 4,
+    "stat05": 2,
+    "stat06": 3,
+    "stat07": 1,
+    "stat08": 3,
+    "stat09": 2,
+    "summary": "Alarak's Tal'darim Ascendants have some of the highest damage output of any units in the game. However, these come at a cost of being extremely difficult to build up. As a result, Alarak relies on his Hero unit as well as his Photon Overload ability to provide him with the damage output to deal with the early stages of the game. He excels at dealing damage to units, but does struggle a bit when it comes to clearing structures.<br><br>Alarak is one of the most difficult commanders to play well. He is extremely punishing if a player takes a bad engagement, almost finding it impossible to recover. But with adequate understanding of his mechanics, Alarak players can decimate enemy waves and melt through attack waves while taking minimal losses.",
+    "mastery11": "Alarak Atk. Dmg.",
+    "mastery12": "Unit Atk. Spd.",
+    "mastery21": "Empower Me",
+    "mastery22": "Death Fleet CD",
+    "mastery31": "Overcharge",
+    "mastery32": "Chrono Boost",
+    "prestige1": "Artificer of Souls ",
+    "prestige2": "Tyrant Ascendant",
+    "prestige3": "Shadow of Death"
+}
