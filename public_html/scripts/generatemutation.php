@@ -1,10 +1,5 @@
 <?php
 
-session_start();
-if (!isset($_SESSION["known"])) {
-    echo("Error!");
-    die();
-}
 if (!isset($_GET['difficulty'])) {
     echo("Error!");
     die();

@@ -33,6 +33,12 @@ docker compose up --build
 
 The DB is accessible via `localhost`, on port 3306. The 'db' name is for containers to connect.
 
+## Generating static pages
+
+```shell
+docker exec -w /var/www sc2coop-web php generate.php
+```
+
 ## Running PHP Code Sniffer
 
 (Replace `${pwd}` with `$(pwd)` if using bash.)
@@ -53,4 +59,20 @@ docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script ci
 
 ```shell
 docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script fix
+```
+
+## Generating schemas and JSON data files
+
+If you edit the data files in `/source-data`, then you will need bun to run the build script.
+
+### Bun install
+
+```shell
+docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun install
+```
+
+### Bun run build
+
+```shell
+docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun source-data/build
 ```

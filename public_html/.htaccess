@@ -1,9 +1,6 @@
 ErrorDocument 404 /errors/404.php
 RewriteEngine on
 RewriteRule .* - [E=Cache-Control:no-cache]
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
 
 RemoveHandler .py
 AddType text/x-python .py
@@ -11,6 +8,17 @@ AddType text/x-python .py
 # remove `www.`
 RewriteCond %{HTTP_HOST} ^www\.(.*)$
 RewriteRule ^(.*)$ https://starcraft2coop.com/$1 [R=302,L]
+
+# Extensionless URLs - prefer .html, fall back to .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
 
 # Permanent Redirects for link shortening and Youtube links
 Redirect 301 /mutators /resources/mutators

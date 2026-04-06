@@ -1,11 +1,13 @@
 services:
   web:
+    container_name: sc2coop-web
     build: .
     ports:
       - "8080:80"
     volumes:
       - ./public_html:/var/www/html
       - ./config.php:/var/www/config.php
+      - ./generate.php:/var/www/generate.php
 
   db:
     # the values here should match config.php
