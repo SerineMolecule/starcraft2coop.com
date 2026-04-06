@@ -151,8 +151,8 @@ body {
 }
 #menu .submenu li{
     display:inline;
-    margin-left:10px;
-    margin-right:10px;
+    margin-left:16px;
+    margin-right:4px;
 }
 #menu .highlight a {
     color:rgb(219, 150, 32);
@@ -166,12 +166,16 @@ body {
 #menu .submenu a:hover {
     text-decoration: underline;
 }
+.submenu-with-sections {
+    width: fit-content;
+    margin: 0 auto;
+}
 .submenu-section strong {
     color: #999;
 }
 .submenu-section {
     text-align: left;
-    padding: 7px 10px 7px 30px;
+    padding: 7px 15px 7px 15px;
 }
 #footer{
     font-style:italic;

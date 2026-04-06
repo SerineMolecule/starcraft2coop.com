@@ -108,34 +108,37 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
         </ul>
     </div>
     <div id="resources" class="submenu">
-        <div class="submenu-section"><strong>Resources:</strong>
-        <ul>
-            <li class="<?=$pageFile === "mutators.php" ? 'highlight' : 'normal'?>"><a href="/resources/mutators">Mutators</a></li>
-            <li class="<?=$pageFile === "weeklymutations.php" ? 'highlight' : 'normal'?>"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
-            <li class="<?=$pageFile === "brutal.php" ? 'highlight' : 'normal'?>"><a href="/resources/brutal">Brutal+</a></li>
-            <li class="<?=$pageFile === "unitstats.php" ? 'highlight' : 'normal'?>"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
-        </ul>
-        </div><div class="submenu-section"><strong>Guides:</strong>
-        <ul>
-            <li class="<?=$pageFile === "buildordertheory.php" ? 'highlight' : 'normal'?>"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
-            <li class="<?=$pageFile === "enemycomps.php" ? 'highlight' : 'normal'?>"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
-            <li class="<?=$pageFile === "generaltips.php" ? 'highlight' : 'normal'?>"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
-            <li class="<?=$pageFile === "newplayer.php" ? 'highlight' : 'normal'?>"><a href="/guides/newplayer">New&nbsp;Players</a></li>
-            <li class="<?=$pageFile === "youtube.php" ? 'highlight' : 'normal'?>"><a href="/guides/youtube">Youtube</a></li>
-        </ul>
-        </div><div class="submenu-section"><strong>Miscellaneous:</strong>
-        <ul>
-            <li class="<?=$pageFile === "achievements.php" ? 'highlight' : 'normal'?>"><a href="/resources/achievements">Achievements</a></li>
-            <li class="<?=$pageFile === "ailogic.php" ? 'highlight' : 'normal'?>"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
-            <li class="<?=$pageFile === "bugs.php" ? 'highlight' : 'normal'?>"><a href="/resources/bugs">Bugs</a></li>
-            <li class="<?=$pageFile === "deathprevention.php" ? 'highlight' : 'normal'?>"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
-            <li class="<?=$pageFile === "eastereggs.php" ? 'highlight' : 'normal'?>"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
-            <li class="<?=$pageFile === "levels.php" ? 'highlight' : 'normal'?>"><a href="/resources/levels">Levels</a></li>
-            <li class="<?=$pageFile === "patchdata.php" ? 'highlight' : 'normal'?>"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
-            <!--li class="<?=$pageFile === "stats.php" ? 'highlight' : 'normal'?>"><a href="/resources/stats">Stats</a></li-->
-            <li class="<?=$pageFile === "downloads.php" ? 'highlight' : 'normal'?>"><a href="/tools/downloads">Downloads</a></li>
-            <li class="<?=$pageFile === "masterybreakpoints.php" ? 'highlight' : 'normal'?>"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
-        </ul></div>
+        <div class="submenu-with-sections"><div class="submenu-section">
+            <strong>Resources:</strong>
+            <ul>
+                <li class="<?=$pageFile === "mutators.php" ? 'highlight' : 'normal'?>"><a href="/resources/mutators">Mutators</a></li>
+                <li class="<?=$pageFile === "weeklymutations.php" ? 'highlight' : 'normal'?>"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
+                <li class="<?=$pageFile === "brutal.php" ? 'highlight' : 'normal'?>"><a href="/resources/brutal">Brutal+</a></li>
+                <li class="<?=$pageFile === "masterybreakpoints.php" ? 'highlight' : 'normal'?>"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
+                <li class="<?=$pageFile === "unitstats.php" ? 'highlight' : 'normal'?>"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Guides:</strong>
+            <ul>
+                <li class="<?=$pageFile === "buildordertheory.php" ? 'highlight' : 'normal'?>"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
+                <li class="<?=$pageFile === "enemycomps.php" ? 'highlight' : 'normal'?>"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
+                <li class="<?=$pageFile === "generaltips.php" ? 'highlight' : 'normal'?>"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
+                <li class="<?=$pageFile === "newplayer.php" ? 'highlight' : 'normal'?>"><a href="/guides/newplayer">New&nbsp;Players</a></li>
+                <li class="<?=$pageFile === "youtube.php" ? 'highlight' : 'normal'?>"><a href="/guides/youtube">Youtube</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Miscellaneous:</strong>
+            <ul>
+                <li class="<?=$pageFile === "achievements.php" ? 'highlight' : 'normal'?>"><a href="/resources/achievements">Achievements</a></li>
+                <li class="<?=$pageFile === "ailogic.php" ? 'highlight' : 'normal'?>"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
+                <li class="<?=$pageFile === "bugs.php" ? 'highlight' : 'normal'?>"><a href="/resources/bugs">Bugs</a></li>
+                <li class="<?=$pageFile === "deathprevention.php" ? 'highlight' : 'normal'?>"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
+                <li class="<?=$pageFile === "eastereggs.php" ? 'highlight' : 'normal'?>"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
+                <li class="<?=$pageFile === "levels.php" ? 'highlight' : 'normal'?>"><a href="/resources/levels">Levels</a></li>
+                <li class="<?=$pageFile === "patchdata.php" ? 'highlight' : 'normal'?>"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
+                <li class="<?=$pageFile === "downloads.php" ? 'highlight' : 'normal'?>"><a href="/tools/downloads">Downloads</a></li>
+            </ul>
+        </div></div>
     </div>
     <div id="tools" class="submenu">
         <ul>
