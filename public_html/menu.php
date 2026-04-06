@@ -114,7 +114,6 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
                 <li class="<?=$pageFile === "mutators.php" ? 'highlight' : 'normal'?>"><a href="/resources/mutators">Mutators</a></li>
                 <li class="<?=$pageFile === "weeklymutations.php" ? 'highlight' : 'normal'?>"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
                 <li class="<?=$pageFile === "brutal.php" ? 'highlight' : 'normal'?>"><a href="/resources/brutal">Brutal+</a></li>
-                <li class="<?=$pageFile === "masterybreakpoints.php" ? 'highlight' : 'normal'?>"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
                 <li class="<?=$pageFile === "unitstats.php" ? 'highlight' : 'normal'?>"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
             </ul>
         </div><div class="submenu-section">
@@ -137,6 +136,7 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
                 <li class="<?=$pageFile === "levels.php" ? 'highlight' : 'normal'?>"><a href="/resources/levels">Levels</a></li>
                 <li class="<?=$pageFile === "patchdata.php" ? 'highlight' : 'normal'?>"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
                 <li class="<?=$pageFile === "downloads.php" ? 'highlight' : 'normal'?>"><a href="/tools/downloads">Downloads</a></li>
+                <li class="<?=$pageFile === "masterybreakpoints.php" ? 'highlight' : 'normal'?>"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
             </ul>
         </div></div>
     </div>
