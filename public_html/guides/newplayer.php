@@ -198,7 +198,7 @@ $_SESSION["known"] = true;
             var colorArray = ["red", "orangered", "yellow", "limegreen", "darkgreen"]
             $.ajax({
                 type: 'GET',
-                url: '/data/commandersummaries/' + commander '.json',
+                url: '/data/commandersummaries/' + commander + '.json',
                 success: function(val) {
                     $("#commanderName").html("<h2>" + val.fullname + "</h2>");
                     $("#commanderMotto").text(val.motto);
