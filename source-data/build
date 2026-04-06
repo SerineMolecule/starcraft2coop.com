@@ -2,6 +2,12 @@
 // @ts-check
 import tsj from "ts-json-schema-generator";
 
+/** @type {[`${string}.json`, string][]} */
+const files = [
+    ['brutalplus.json', 'BrutalPlusList'],
+    ['commandersummaries.json', 'CommanderList'],
+];
+
 /////////////////////////////////////////////////
 
 console.log(`Generating schemas`);
@@ -11,24 +17,30 @@ const generator = tsj.createGenerator({
     tsconfig: "./tsconfig.json",
 });
 
-Bun.write('source-data/schemas/brutalplus.schema.json', JSON.stringify(generator.createSchema('BrutalPlusList'), null, 4) + '\n');
-Bun.write('source-data/schemas/commandersummaries.schema.json', JSON.stringify(generator.createSchema('CommanderList'), null, 4) + '\n');
+for (const [file, type] of files) {
+    Bun.write(`source-data/schemas/${file.slice(0, -5)}.schema.json`, JSON.stringify(generator.createSchema(type), null, 4) + '\n');
+}
 
-/** @type {import('./data-types.ts').BrutalPlus[]} */
-const brutalPluses = await Bun.file('source-data/brutalplus.json').json();
-/** @type {import('./data-types.ts').Commander[]} */
-const commanders = await Bun.file('source-data/commandersummaries.json').json();
 console.log(`Done`)
 
 /////////////////////////////////////////////////
 
-console.log(`Writing to public_html/data`);
+console.log(`Writing to public_html/data/`);
+for (const [file, type] of files) {
+    const data = await Bun.file(`source-data/${file}`).json();
+    Bun.write(`public_html/data/${file}`, JSON.stringify(data, null, 4) + '\n');
+}
 
-Bun.write('public_html/data/brutalplus.json', JSON.stringify(brutalPluses, null, 4) + '\n');
+console.log(`Writing to public_html/data/brutalplus/`);
+/** @type {import('./data-types.ts').BrutalPlus[]} */
+const brutalPluses = await Bun.file('source-data/brutalplus.json').json();
 for (const brutalPlus of brutalPluses) {
     Bun.write(`public_html/data/brutalplus/${brutalPlus.difficulty}.json`, JSON.stringify(brutalPlus, null, 4) + '\n');
 }
-Bun.write('public_html/data/commandersummaries.json', JSON.stringify(commanders, null, 4) + '\n');
+
+console.log(`Writing to public_html/data/commandersummaries/`);
+/** @type {import('./data-types.ts').Commander[]} */
+const commanders = await Bun.file('source-data/commandersummaries.json').json();
 for (const commander of commanders) {
     Bun.write(`public_html/data/commandersummaries/${commander.commander}.json`, JSON.stringify(commander, null, 4) + '\n');
 }

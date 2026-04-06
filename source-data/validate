@@ -2,30 +2,24 @@
 // @ts-check
 import Ajv from 'ajv';
 
-/** @type {import('./data-types.ts').BrutalPlus[]} */
-const brutalPluses = await Bun.file('source-data/brutalplus.json').json();
-/** @type {import('./data-types.ts').Commander[]} */
-const commanders = await Bun.file('source-data/commandersummaries.json').json();
-
-/** @type {import('./data-types.ts').BrutalPlus[]} */
-const brutalPlusesSchema   = await Bun.file('source-data/schemas/brutalplus.schema.json').json();
-/** @type {import('./data-types.ts').Commander[]} */
-const commandersSchema = await Bun.file('source-data/schemas/commandersummaries.schema.json').json();
+/** @type {[`${string}.json`, string][]} */
+const files = [
+    ['brutalplus.json', 'BrutalPlusList'],
+    ['commandersummaries.json', 'CommanderList'],
+];
 
 const ajv = new Ajv();
+for (const [file, type] of files) {
+    const fileContent = await Bun.file(`source-data/${file}`).json();
 
-const validateBrutalPluses = ajv.compile(brutalPlusesSchema);
-if (!validateBrutalPluses(brutalPluses)) {
-    console.error('BrutalPluses validation failed');
-    console.error(validateBrutalPluses.errors);
-    process.exit(1);
-}
+    const fileSchema = await Bun.file(`source-data/schemas/${file.slice(0, -5)}.schema.json`).json();
 
-const validateCommanders = ajv.compile(commandersSchema);
-if (!validateCommanders(commanders)) {
-    console.error('Commanders validation failed');
-    console.error(validateCommanders.errors);
-    process.exit(1);
+    const validateFile = ajv.compile(fileSchema);
+    if (!validateFile(fileContent)) {
+        console.error(`${file} does not match schema:`);
+        console.error(validateFile.errors);
+        process.exit(1);
+    }
 }
 
 console.log('All validations passed');
