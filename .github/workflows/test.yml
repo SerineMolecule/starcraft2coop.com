@@ -15,15 +15,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout
-    - uses: oven-sh/setup-bun
+    - uses: actions/checkout@main
+    - uses: oven-sh/setup-bun@main
 
     # - name: Validate composer.json and composer.lock
     #   run: composer validate --strict
 
     - name: Cache Composer packages
       id: composer-cache
-      uses: actions/cache
+      uses: actions/cache@main
       with:
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
