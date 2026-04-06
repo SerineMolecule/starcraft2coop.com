@@ -239,7 +239,7 @@ include("../header.php");
                 <tr>
                     <td>1</td>
                     <td><img src="/images/comps/unitimages/zealot.png" alt="Zealot"></td>
-                    <td><img src="/images/comps/unitimages/zealot.png" alt="Zealot"></td>                
+                    <td><img src="/images/comps/unitimages/zealot.png" alt="Zealot"></td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -351,37 +351,37 @@ include("../header.php");
                 <tr>
                     <td>1</td>
                     <td><img src="/images/comps/unitimages/marine.png" alt="Marine"></td>
-                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"></td>                
+                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td><img src="/images/comps/unitimages/marine.png" alt="Marine"><img src="/images/comps/unitimages/medic.png" alt="Medic"></td>
-                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"></td>                
+                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td><img src="/images/comps/unitimages/marine.png" alt="Marine"><img src="/images/comps/unitimages/medic.png" alt="Medic"><img src="/images/comps/unitimages/firebat.png" alt="Firebat"></td>
-                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/wraith.png" alt="Wraith"></td>                
+                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/wraith.png" alt="Wraith"></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td><img src="/images/comps/unitimages/marine.png" alt="Marine"><img src="/images/comps/unitimages/medic.png" alt="Medic"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"></td>
-                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/wraith.png" alt="Wraith"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"></td>                
+                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/wraith.png" alt="Wraith"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"></td>
                 </tr>
                 <tr>
                     <td>5</td>
                     <td><img src="/images/comps/unitimages/marine.png" alt="Marine"><img src="/images/comps/unitimages/medic.png" alt="Medic"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"><img src="/images/comps/unitimages/ghost.png" alt="Ghost"></td>
-                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"><img src="/images/comps/unitimages/battlecruiser.png" alt="Battlecruiser"></td>                
+                    <td><img src="/images/comps/unitimages/vulture.png" alt="Vulture"><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"><img src="/images/comps/unitimages/battlecruiser.png" alt="Battlecruiser"></td>
                 </tr>
                 <tr>
                     <td>6</td>
                     <td><img src="/images/comps/unitimages/marine.png" alt="Marine"><img src="/images/comps/unitimages/medic.png" alt="Medic"><img src="/images/comps/unitimages/firebat.png" alt="Firebat"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"><img src="/images/comps/unitimages/sciencevessel.png" alt="Science Vessel"></td>
-                    <td><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/battlecruiser.png" alt="Battlecruiser"><img src="/images/comps/unitimages/sciencevessel.png" alt="Science Vessel"></td>                
+                    <td><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/battlecruiser.png" alt="Battlecruiser"><img src="/images/comps/unitimages/sciencevessel.png" alt="Science Vessel"></td>
                 </tr>
                 <tr>
                     <td>7</td>
                     <td><img src="/images/comps/unitimages/marine.png" alt="Marine"><img src="/images/comps/unitimages/medic.png" alt="Medic"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"><img src="/images/comps/unitimages/ghost.png" alt="Ghost"><img src="/images/comps/unitimages/sciencevessel.png" alt="Science Vessel"></td>
-                    <td><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"><img src="/images/comps/unitimages/battlecruiser.png" alt="Battlecruiser"><img src="/images/comps/unitimages/sciencevessel.png" alt="Science Vessel"></td>                
+                    <td><img src="/images/comps/unitimages/goliath.png" alt="Goliath"><img src="/images/comps/unitimages/siegetank.png" alt="Siege Tank"><img src="/images/comps/unitimages/battlecruiser.png" alt="Battlecruiser"><img src="/images/comps/unitimages/sciencevessel.png" alt="Science Vessel"></td>
             </tbody>
         </table>
     </div>
@@ -503,7 +503,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="strength"></a><h2>Strength Level</h2>

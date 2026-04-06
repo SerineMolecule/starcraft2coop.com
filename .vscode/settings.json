@@ -1,0 +1,18 @@
+{
+    "intelephense.environment.phpVersion": "8.5.0",
+    "php.version": "8.5",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/source-data/brutalplus.json"
+            ],
+            "url": "./source-data/schemas/brutalplus.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/source-data/commandersummaries.json"
+            ],
+            "url": "./source-data/schemas/commandersummaries.schema.json"
+        }
+    ]
+}

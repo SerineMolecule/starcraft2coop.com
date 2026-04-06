@@ -115,7 +115,7 @@ include("../header.php");
                 <td><img src="/images/commanderdata/progression/raynor/raynor_08.png" alt = "Orbital Drop Pods"></td>
                 <td>Orbital Drop Pods</td>
                 <td>
-                    Barracks, Factory, and Starport units are delivered directly to the structure's Rally Point 
+                    Barracks, Factory, and Starport units are delivered directly to the structure's Rally Point
                 </td>
             </tr>
             <tr>
@@ -403,7 +403,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Backwater Marshal</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Biological combat units gain 100% increased life.</li>
@@ -445,7 +445,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Rough Rider</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Afterburners additionally increases attack speed by 100%. Cooldown reduced by 50%.</li>
@@ -506,7 +506,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige is particularly useful if you prefer to use air units and rushing Battlecruisers. The lack of tech requirements combined with the gas cost reduction makes Battlecruiser rushing a viable strategy. you may even combine this with the Hyperion cooldown mastery to be able to spam Hyperions much more frequently.</td>            
+                <td class="forceleft" colspan="5">This prestige is particularly useful if you prefer to use air units and rushing Battlecruisers. The lack of tech requirements combined with the gas cost reduction makes Battlecruiser rushing a viable strategy. you may even combine this with the Hyperion cooldown mastery to be able to spam Hyperions much more frequently.</td>
             </tr>
         </tbody>
     </table>
@@ -532,7 +532,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -546,7 +546,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

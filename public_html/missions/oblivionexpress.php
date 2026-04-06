@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Oblivion Express</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Oblivion Express">
@@ -63,9 +64,9 @@ include("../header.php");
     <p>The main objective will either spawn on the top rail or the middle rail. The paths these main objectives will take is shown below.</p>
     <img src="/images/missiondata/oblivionexpress/mainobjectivepath.jpg" alt="Paths Taken by the Main Objectives">
     <p>The top base is shown below.</p>
-    <?php $info = "topbaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("topbaselong") ?>
     <p>The bottom base is shown below.</p>
-    <?php $info = "bottombaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("bottombaselong") ?>
     <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to kill two fast trains that will spawn on the bottom rail. The path these bonus objectives will take is shown below.</p>
     <img src="/images/missiondata/oblivionexpress/bonusobjectivepath.jpg" alt="Path Taken by the Bonus Objectives">
@@ -246,7 +247,7 @@ include("../header.php");
         <li><a href="/commanders/dehaka">Dehaka</a>: If you choose to use Impalers, the "Tenderize" upgrade is highly recommended as it can be applied on each train carriage, compounding the total damage you can do to the train.</li>
         <li><a href="/commanders/horner">Han & Horner</a>: You can use one of your calldowns for each train spawn to destroy the escort wave.</li>
         <li><a href="/commanders/horner">Han & Horner</a>: Strike-Fighter platforms with the Napalm upgrade can be used to deal continuous damage to the trains.</li>
-        <li><a href="/commanders/horner">Han & Horner</a>: Place Mag-Mines on the gather point of the middle rail to clear out air attack waves. 2 sets for Protoss, 3 for Terran and 1 for Zerg.</li>        
+        <li><a href="/commanders/horner">Han & Horner</a>: Place Mag-Mines on the gather point of the middle rail to clear out air attack waves. 2 sets for Protoss, 3 for Terran and 1 for Zerg.</li>
         <li><a href="/commanders/karax">Karax</a>: You can clear all the rocks on your expansion if you target the area between the main and the gas rocks at 10 shots each.</li>
         <li><a href="/commanders/karax">Karax</a>: An upgraded Solar Lance can destroy the first train.</li>
         <li><a href="/commanders/karax">Karax</a>: Orbital Strikes can be used to clear out air attack waves when they teleport to the their gather points because they clump up.</li>

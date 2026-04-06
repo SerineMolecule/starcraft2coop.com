@@ -315,7 +315,7 @@ include("../header.php");
                 <td>1</td>
                 <td>Scourge Queen</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Max supply increased by 50.</li>
@@ -358,7 +358,7 @@ include("../header.php");
                 <td>2</td>
                 <td>Mother of Constructs</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Aberrations and Corruptors cost 25% less, gain 50% increased health, and possess greatly increased health regeneration.</li>
@@ -399,7 +399,7 @@ include("../header.php");
                 <td>3</td>
                 <td>Apex Predator</td>
                 <td>
-		            <ul>
+                    <ul>
                         <li>Advantages:
                             <ul>
                                 <li>Zagara gains reduced ability cooldowns (33% reduction), increased health and energy regeneration, and access to the Deep Tunnel ability.</li>
@@ -422,7 +422,7 @@ include("../header.php");
                 </td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige vastly improves the hero unit's power level such that she can solo some enemy bases without the help of her army. The Deep Tunnel ability provides Zagara with extreme mobility that is particular useful when trying to deal with <a href="/resources/mutators">mutators</a> such as Void Rifts. However, the downside is fairly impactful. Players that take a lot of inefficient trades may find themselves starved of resources. As such, they'll need to be more careful with how they choose to engage attack waves and push into enemy bases. Avoid using this prestige on sub-mastery Zagara, as the increase in the Energy Regeneration is still not enough to allow Zagara to remain in sustained combat.</td>            
+                <td class="forceleft" colspan="5">This prestige vastly improves the hero unit's power level such that she can solo some enemy bases without the help of her army. The Deep Tunnel ability provides Zagara with extreme mobility that is particular useful when trying to deal with <a href="/resources/mutators">mutators</a> such as Void Rifts. However, the downside is fairly impactful. Players that take a lot of inefficient trades may find themselves starved of resources. As such, they'll need to be more careful with how they choose to engage attack waves and push into enemy bases. Avoid using this prestige on sub-mastery Zagara, as the increase in the Energy Regeneration is still not enough to allow Zagara to remain in sustained combat.</td>
             </tr>
         </tbody>
     </table>
@@ -518,7 +518,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".techAdd").on('mouseover',function(e){
             var unit = $(this).siblings(".army").attr("alt").split(":");
@@ -532,7 +532,7 @@ include("../header.php");
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
     </script>
     <a id="units"></a><h2>Combat Units</h2>

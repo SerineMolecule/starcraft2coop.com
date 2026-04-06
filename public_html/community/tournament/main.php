@@ -6,7 +6,7 @@ include("../../header.php");
   <meta name="keywords" content="Starcraft co-op tournament">
   <link rel="canonical" href="https://starcraft2coop.com/community/tournament/main">
   <style>
-        
+
   </style>
   </head>
 <body>
@@ -293,16 +293,15 @@ include("../../header.php");
         <li>Payment will be made via Paypal. If you prefer payment in the form of an electronic gift card or giftable in-game items (such as commanders), you may request that.</li>
     </ul>
     <h3>Registration</h3>
-    <?php 
-        $closed=true;
-        if ($closed){
-            include("registrationclosed.php"); 
-        }
-        else{
-             include("registrationopen.php"); 
-        }
+    <?php
+    $closed = true;
+    if ($closed) {
+        include("registrationclosed.php");
+    } else {
+        include("registrationopen.php");
+    }
     ?>
-    
+
 </div>
 <?php include("../../footer.php"); ?>
 </body>

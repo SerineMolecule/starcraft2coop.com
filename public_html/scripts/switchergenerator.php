@@ -1,7 +1,11 @@
 <?php
+
+function switcher_generator($info)
+{
+    global $mission;
     $missionpath = "/images/missiondata/" . $mission . "/";
-    
-    if ($info=="expo"){
+
+    if ($info == "expo") {
         echo "<div class='switcher'>";
         echo    "<div class='p1Expo'>";
         echo        "<img id ='p1Expo' src=' {$missionpath}p1expo_protoss.jpg' alt='Player 1 Expo'>";
@@ -21,7 +25,7 @@
         echo        "<img id='p2Expo' src='{$missionpath}p2expo_protoss.jpg' alt='Player 2 Expo'>";
         echo    "</div>";
         echo "</div>";
-        
+
         echo '<script>';
         echo    "$(\"input[name='$info']\").change(function(){";
         echo        "var race= $(this).val();";
@@ -56,8 +60,7 @@
         echo    "imgList.push('{$missionpath}p2expo_zerg.jpg');";
         echo    "preload(imgList);";
         echo "</script>";
-    }
-    elseif (strpos($info, 'comparison') !== false){
+    } elseif (strpos($info, 'comparison') !== false) {
         echo "<div class='switcher'>";
         echo    "<div class='basePic1' id='{$info}div1'>";
         echo        "<img id ='{$info}1' src=' {$missionpath}{$info}1_protoss.jpg' alt='Base 1'>";
@@ -77,7 +80,7 @@
         echo        "<img id='{$info}2' src='{$missionpath}{$info}2_protoss.jpg' alt='Base 2'>";
         echo    "</div>";
         echo "</div>";
-        
+
         echo '<script>';
         echo    "$(\"input[name='$info']\").change(function(){";
         echo        "var race= $(this).val();";
@@ -112,14 +115,11 @@
         echo    "imgList.push('{$missionpath}{$info}2_zerg.jpg');";
         echo    "preload(imgList);";
         echo "</script>";
-    }
-    else{
+    } else {
         echo "<div class='switcher'>";
-        if (strpos($info, 'long') !== false){
+        if (strpos($info, 'long') !== false) {
             echo    "<div class='long' id='{$info}div'>";
-            
-        }
-        else{
+        } else {
             echo    "<div class='basePic' id='{$info}div'>";
         }
         echo        "<img id ='$info' src=' {$missionpath}{$info}_protoss.jpg' alt='{$info} Picture'>";
@@ -136,7 +136,7 @@
         echo        "</div>";
         echo    "</div>";
         echo "</div>";
-        
+
         echo '<script>';
         echo    "$(\"input[name='$info']\").change(function(){";
         echo        "var race= $(this).val();";
@@ -159,4 +159,4 @@
         echo    "preload(imgList);";
         echo "</script>";
     }
-?>
+}

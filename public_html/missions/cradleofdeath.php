@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Cradle of Death</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Cradle of Death">
@@ -115,28 +116,28 @@ include("../header.php");
     </div>
     <p>The purpose of the trucks is to not only escort them to a particular beacon on the map. The trucks also disable the Xel'Naga Constructs, scattered on your way to each objective. These Constructs cannot be targeted and deal large amounts of damage until they are disabled by the trucks. Once disabled, they can be targeted and killed.</p>
     <p>The first objective will require you to destroy the Hybrid Facility. This area also contains your expansion, so clearing it as fast as possible is critical for a healthy economy. The area is guarded very lightly.</p>
-    <?php $info = "hybridfacility"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("hybridfacility") ?>
     <p>The second or third objective will be the Resource Stockpile (see the section above for details). If it is the second objective, the base will look like the one on the left. If it is the third objective, it will look like the one on the right. Notice the presence of Hybrids and the additional Construct.</p>
-    <?php $info = "resourcestockpilecomparison"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("resourcestockpilecomparison") ?>
     <p>If the Xenon Reactor is the third objective, you will need to fight a small camp of enemies before climbing up the ramp.</p>
-    <?php $info = "xenonreactorcamp"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("xenonreactorcamp") ?>
     <p>The second or third objective will be the Xenon Reactor (see the section above for details). If it is the second objective, the base will look like the one on the left. If it is the third objective, it will look like the one on the right. Notice the presence of Hybrids and the additional Construct.</p>
-    <?php $info = "xenonreactorcomparison"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("xenonreactorcomparison") ?>
     <p>If the last objective is the Terrazine Extraction area, you will need to go South-East to get to it. Notice the Constructs guarding the entrance to the valley there. This area is guarded with a heavy ground presence.</p>
-    <?php $info = "terrazineextractorlong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("terrazineextractorlong") ?>
     <p>If the last objective is the Vespene Refinery area, you will need to go South-West to get to it. This area is guarded with a heavy air presence.</p>
-    <?php $info = "vespenerefinery"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("vespenerefinery") ?>
     <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to Move your truck in front of a Moebius Research Outpost, which is guarded by a Construct and an enemy camp.</p>
     <p>There are a total of two bonus objectives present on the map. One will appear when the second main objective activates, and one will appear when the third main objective activates. Additionally, the first bonus objective will always lie in the north of the main objective. The second bonus objective will always lie to the south of the main objective.</p>
     <p>For the Resource Stockpile, the northern bonus area is shown below. This will be the bonus area you will need to clear if the Resource Stockpile is the second main objective.</p>
-    <?php $info = "resourcestockpilebonus1"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("resourcestockpilebonus1") ?>
     <p>For the Resource Stockpile, the southern bonus area is shown below. This will be the bonus area you will need to clear if the Resource Stockpile is the third main objective.</p>
-    <?php $info = "resourcestockpilebonus2long"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("resourcestockpilebonus2long") ?>
     <p>For the Xenon Reactor, the northern bonus area is shown below. This will be the bonus area you will need to clear if the Xenon Reactor is the second main objective.</p>
-    <?php $info = "xenonreactorbonus1long"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("xenonreactorbonus1long") ?>
     <p>For the Xenon Reactor, the southern bonus area is shown below. This will be the bonus area you will need to clear if the Xenon Reactor is the third main objective.</p>
-    <?php $info = "xenonreactorbonus2long"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("xenonreactorbonus2long") ?>
     <a id="timings"></a><h2>Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Due to the nature of this map, there are two types of attacks on this map:</p>

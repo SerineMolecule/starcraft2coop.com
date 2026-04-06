@@ -1,8 +1,8 @@
 ErrorDocument 404 /errors/404.php
-RewriteEngine on 
+RewriteEngine on
 RewriteRule .* - [E=Cache-Control:no-cache]
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 
 RemoveHandler .py
@@ -17,11 +17,10 @@ Redirect 301 /mutators /resources/mutators
 Redirect 301 /weeklymutations /resources/weeklymutations
 Redirect 301 /rockslappingchampions /community/rockslappingchampions
 Redirect 301 /gamespotlight /community/gamespotlight
-Redirect 301 /patrons /community/patrons
 Redirect 301 /mythbusters /community/mythbusters
 
 # 19-apr-2020 menu reorganization
-Redirect 301 /newplayer /resources/newplayer
+Redirect 301 /newplayer /guides/newplayer
 Redirect 301 /resources/links /about/links
 Redirect 301 /resources/downloads /tools/downloads
 Redirect 301 /tournament /community/tournament
@@ -59,31 +58,4 @@ Redirect 302 /resources/stats /about/stats
 # RewriteCond %{HTTP_REFERER} !^https://www.starcraft2coop.com/.*$      [NC]
 # RewriteCond %{HTTP_REFERER} !^https://www.starcraft2coop.com$      [NC]
 # RewriteRule .*\.(jpg|gif|png)$ http://starcraft2coop.com/images/hotlink.bmp [R,NC]
-# 
-# RewriteCond %{HTTP_REFERER} !^$
-# RewriteCond %{HTTP_REFERER} !^http://sc2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sc2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sc2coop.starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://sc2coop.starcraft2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://starcraft2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sc2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sc2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sc2coop.starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.sc2coop.starcraft2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^http://www.starcraft2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sc2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sc2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sc2coop.starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://sc2coop.starcraft2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://starcraft2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sc2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sc2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sc2coop.starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.sc2coop.starcraft2coop.com$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.starcraft2coop.com/.*$      [NC]
-# RewriteCond %{HTTP_REFERER} !^https://www.starcraft2coop.com$      [NC]
-# RewriteRule .*\.(jpg|gif|png)$ http://starcraft2coop.com/images/hotlink.bmp [R,NC]
-# 
+#

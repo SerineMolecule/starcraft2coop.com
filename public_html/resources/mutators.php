@@ -11,7 +11,7 @@ $_SESSION["known"] = true;
         #mutatorTable>td:nth-child(1), #mutatorTable>th:nth-child(1){
             display:none;
         }
-        #navList{t
+        #navList{
             display:none;
         }
     }
@@ -167,25 +167,25 @@ $_SESSION["known"] = true;
     </div>
     <a id="mutatorInteractions"></a><h2>Mutator Interactions</h2>
     <?php
-        include '../scripts/sqlconnection.php';
-        $sql = "SELECT mutatorname, mutatorid 
-                FROM mutators
-                ORDER BY mutatorname ASC";
-        $result=mysqli_query($con,$sql);
-        $mutators = [];
-        
-         while($row = mysqli_fetch_array($result)) {
-            $mutators[] = [$row['mutatorid'],$row['mutatorname']];
-        }
+    include '../scripts/sqlconnection.php';
+    $sql = "SELECT mutatorname, mutatorid
+            FROM mutators
+            ORDER BY mutatorname ASC";
+    $result = mysqli_query($con, $sql);
+    $mutators = [];
+
+    while ($row = mysqli_fetch_array($result)) {
+        $mutators[] = [$row['mutatorid'],$row['mutatorname']];
+    }
     ?>
     <form action="mutators.php" method="post">
         <p class="centerAlign">Mutator 1:</p>
         <select name="mut1" id="mut1">
             <?php
-                echo "<option value='0'>-</option>";
-                foreach ($mutators as $mut){
-                    echo "<option value='$mut[0]'>$mut[1]</option>\n";
-                }
+            echo "<option value='0'>-</option>";
+            foreach ($mutators as $mut) {
+                echo "<option value='$mut[0]'>$mut[1]</option>\n";
+            }
             ?>
         </select>
         <img class="centerAlign" id="mut1img" src="/images/mutators/afraidofthedark.png" height="50" width="50" alt="Mutator 1">
@@ -193,10 +193,10 @@ $_SESSION["known"] = true;
         <p class="centerAlign" >Mutator 2:</p>
         <select name="mut2" id="mut2">
             <?php
-                echo "<option value='0'>-</option>";
-                foreach ($mutators as $mut){
-                    echo "<option value='$mut[0]'>$mut[1]</option>\n";
-                }
+            echo "<option value='0'>-</option>";
+            foreach ($mutators as $mut) {
+                echo "<option value='$mut[0]'>$mut[1]</option>\n";
+            }
             ?>
         </select>
         <img class="centerAlign"  id="mut2img" src="/images/mutators/afraidofthedark.png" height="50" width="50" alt="Mutator 2">
@@ -214,9 +214,9 @@ $_SESSION["known"] = true;
             }
             $("#mut1img").attr("src", "/images/mutators/" + filename + ".png");
             var mut1= $("#mut1").val();
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/checkinteractions.php', 
+                url: '../scripts/checkinteractions.php',
                 data: { id: mut1},
                 success: function(response) {
                     var interactions = JSON.parse(response);
@@ -227,7 +227,7 @@ $_SESSION["known"] = true;
                     if ($("#mut2").prop('selectedIndex').hasAttr("disabled")){
                         $("#mut2").val(0);
                     }
-                    
+
                 }
             });
         })
@@ -238,9 +238,9 @@ $_SESSION["known"] = true;
             }
             var mut2= $("#mut2").val();
             $("#mut2img").attr("src", "/images/mutators/" + filename + ".png");
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/checkinteractions.php', 
+                url: '../scripts/checkinteractions.php',
                 data: { id: mut2},
                 success: function(response) {
                     var interactions = JSON.parse(response);
@@ -257,9 +257,9 @@ $_SESSION["known"] = true;
         $("#getInteraction").on("click", function(){
             var mut1= $("#mut1").val() ;
             var mut2= $("#mut2").val();
-            $.ajax({  
+            $.ajax({
                 type: 'GET',
-                url: '../scripts/getinteraction.php', 
+                url: '../scripts/getinteraction.php',
                 data: { id1: mut1, id2: mut2 },
                 success: function(response) {
                     $("#interactions").text(response);
@@ -501,14 +501,14 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Time Stop delays Aggressive Deployment timings.</li>
                         </ul>
                     </div>
-                </td>        
+                </td>
                 <td><img src="/images/mutators/yes.png" alt="Yes"></td>
             </tr>
-			<tr id="row_alienincubation">
-				<td><img src="/images/mutators/alienincubation.png" alt="Alien Incubation"></td>
-				<td>Alien Incubation</td>
-				<td>All enemy units spawn Broodlings upon death.
-    				<br><br>
+            <tr id="row_alienincubation">
+                <td><img src="/images/mutators/alienincubation.png" alt="Alien Incubation"></td>
+                <td>Alien Incubation</td>
+                <td>All enemy units spawn Broodlings upon death.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#spawnBroodling").toggle();'>Details</span>
                     <div id="spawnBroodling" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -521,13 +521,13 @@ $_SESSION["known"] = true;
                         </ul>
                     </div>
                 </td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_avenger">
-				<td><img src="/images/mutators/avenger.png" alt="Avenger"></td>
-				<td>Avenger</td>
-				<td>Enemy units gain increased attack speed, movement speed, armor, life, and life-regeneration when nearby enemy units die.
-				    <br><br>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_avenger">
+                <td><img src="/images/mutators/avenger.png" alt="Avenger"></td>
+                <td>Avenger</td>
+                <td>Enemy units gain increased attack speed, movement speed, armor, life, and life-regeneration when nearby enemy units die.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#avenger").toggle();'>Details</span>
                     <div id="avenger" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -597,14 +597,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Zeratul's Avatar of Essence's Devolve ability will devolve a unit and cause it to lose any Avenger stacks it has.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_barrier">
-				<td><img src="/images/mutators/barrier.png" alt="Barrier"></td>
-				<td>Barrier</td>
-				<td>Enemy units and structures gain a temporary shield upon the first time they take damage.
-    				<br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_barrier">
+                <td><img src="/images/mutators/barrier.png" alt="Barrier"></td>
+                <td>Barrier</td>
+                <td>Enemy units and structures gain a temporary shield upon the first time they take damage.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#barrier").toggle();'>Details</span>
                     <div id="barrier" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -615,13 +615,13 @@ $_SESSION["known"] = true;
                         </ul>
                     </div>
                 </td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_blackdeath">
-				<td><img src="/images/mutators/blackdeath.png" alt="Black Death"></td>
-				<td>Black Death</td>
-				<td>Some enemy units carry a plague that deals damage over time and spreads to other nearby units. The plague spreads to your units when the enemy unit is killed.
-				    <br><br>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_blackdeath">
+                <td><img src="/images/mutators/blackdeath.png" alt="Black Death"></td>
+                <td>Black Death</td>
+                <td>Some enemy units carry a plague that deals damage over time and spreads to other nearby units. The plague spreads to your units when the enemy unit is killed.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#plague").toggle();'>Details</span>
                     <div id="plague" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -644,13 +644,13 @@ $_SESSION["known"] = true;
                         </ul>
                     </div>
                 </td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_blizzard">
-				<td><img src="/images/mutators/blizzard.png" alt="Blizzard"></td>
-				<td>Blizzard</td>
-				<td>Storm clouds move across the map, damaging and freezing player units in their path.
-				    <br><br>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_blizzard">
+                <td><img src="/images/mutators/blizzard.png" alt="Blizzard"></td>
+                <td>Blizzard</td>
+                <td>Storm clouds move across the map, damaging and freezing player units in their path.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#blizzard").toggle();'>Details</span>
                     <div id="blizzard" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -663,18 +663,18 @@ $_SESSION["known"] = true;
                             <li>Zagara: Zergling evasion applies to damage dealt by Blizzard.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_boombots">
-				<td><img src="/images/mutators/boombots.png" alt="Boom Bots"></td>
-				<td>Boom Bots</td>
-				<td>Uncaring automatons carry a nuclear payload toward your base. One player must discern the disarming sequence and the other player must enter it.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_boombots">
+                <td><img src="/images/mutators/boombots.png" alt="Boom Bots"></td>
+                <td>Boom Bots</td>
+                <td>Uncaring automatons carry a nuclear payload toward your base. One player must discern the disarming sequence and the other player must enter it.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#boomBots").toggle();'>Details</span>
                     <div id="boomBots" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
-                        <p>The bots will spawn from any enemy building. If you clear all enemy buildings on the map, the bots will stop spawning. Note that all-clearing Malwarfare and Void Launch does not stop them from spawning, because Suppression Towers and Launch Bays are indestructible enemy structures.</p> 
+                        <p>The bots will spawn from any enemy building. If you clear all enemy buildings on the map, the bots will stop spawning. Note that all-clearing Malwarfare and Void Launch does not stop them from spawning, because Suppression Towers and Launch Bays are indestructible enemy structures.</p>
                         <p>A Boom Bot is shown below:</p>
                         <img src="/images/mutatordata/boombot.jpg" alt="Boom Bot">
                         <p>When a Boom Bot spawns, one player will see its code above the unit. The other player will see "?-?-?-?". The player that sees the code must provide the other player with the code, so that they may input it into the Boom Bot. Once a bot is clicked, losing vision does not cause the player to lose the command card and they can still input the code.</p>
@@ -756,14 +756,14 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Corsair Disruption Webs stop Boom Bots from attacking.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_chaosstudios">
-				<td><img src="/images/mutators/chaosstudios.png" alt="Chaos Studios"></td>
-				<td>Chaos Studios</td>
-				<td>Mutators are chosen at random and periodically cycle throughout the mission.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_chaosstudios">
+                <td><img src="/images/mutators/chaosstudios.png" alt="Chaos Studios"></td>
+                <td>Chaos Studios</td>
+                <td>Mutators are chosen at random and periodically cycle throughout the mission.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#cycleRandom").toggle();'>Details</span>
                     <div id="cycleRandom" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -821,14 +821,14 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Time Stop does not affect Chaos Studios timings.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_concussiveattacks">
-				<td><img src="/images/mutators/concussiveattacks.png" alt="Concussive Attacks"></td>
-				<td>Concussive Attacks</td>
-				<td>Player units are slowed by all enemy attacks.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_concussiveattacks">
+                <td><img src="/images/mutators/concussiveattacks.png" alt="Concussive Attacks"></td>
+                <td>Concussive Attacks</td>
+                <td>Player units are slowed by all enemy attacks.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#concussiveAttacks").toggle();'>Details</span>
                     <div id="concussiveAttacks" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -838,14 +838,14 @@ $_SESSION["known"] = true;
                             <li>Tychus: Medivac Pickups can be used to remove the Concussive Attacks debuff.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_darkness">
-				<td><img src="/images/mutators/darkness.png" alt="Darkness"></td>
-				<td>Darkness</td>
-				<td>Previously explored areas remain blacked out on the minimap while outside of player vision.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_darkness">
+                <td><img src="/images/mutators/darkness.png" alt="Darkness"></td>
+                <td>Darkness</td>
+                <td>Previously explored areas remain blacked out on the minimap while outside of player vision.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#blackFog").toggle();'>Details</span>
                     <div id="blackFog" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -859,14 +859,14 @@ $_SESSION["known"] = true;
                             </li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_diffusion">
-				<td><img src="/images/mutators/diffusion.png" alt="Diffusion"></td>
-				<td>Diffusion</td>
-				<td>Damage dealt to enemies is split evenly across all nearby units, including your own.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_diffusion">
+                <td><img src="/images/mutators/diffusion.png" alt="Diffusion"></td>
+                <td>Diffusion</td>
+                <td>Damage dealt to enemies is split evenly across all nearby units, including your own.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#damageBounce").toggle();'>Details</span>
                     <div id="damageBounce" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -880,14 +880,14 @@ $_SESSION["known"] = true;
                             <li>Swann: Swann's Science Vessels' Defensive Matrix can block damage dealt by Diffusion.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_doubleedged">
-				<td><img src="/images/mutators/doubleedged.png" alt="Double Edged"></td>
-				<td>Double Edged</td>
-				<td>Damage dealt by your units and structures is dealt back to them, but then healed back over time.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_doubleedged">
+                <td><img src="/images/mutators/doubleedged.png" alt="Double Edged"></td>
+                <td>Double Edged</td>
+                <td>Damage dealt by your units and structures is dealt back to them, but then healed back over time.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#tePDMamageReflect").toggle();'>Details</span>
                     <div id="tePDMamageReflect" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -912,14 +912,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Tornadoes created by Herald of the Void do not deal damage to Zeratul.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_eminentdomain">
-				<td><img src="/images/mutators/eminentdomain.png" alt="Eminent Domain"></td>
-				<td>Eminent Domain</td>
-				<td>Enemies gain control of your structures after destroying them.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_eminentdomain">
+                <td><img src="/images/mutators/eminentdomain.png" alt="Eminent Domain"></td>
+                <td>Eminent Domain</td>
+                <td>Enemies gain control of your structures after destroying them.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#structureSteal").toggle();'>Details</span>
                     <div id="structureSteal" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -945,14 +945,14 @@ $_SESSION["known"] = true;
                             <li>Zagara: Bile Launchers stop attacking when captured by Eminent Domain.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_evasivemaneuvers">
-				<td><img src="/images/mutators/evasivemaneuvers.png" alt="Evasive Maneuvers"></td>
-				<td>Evasive Maneuvers</td>
-				<td>Enemy units teleport a short distance away upon taking damage.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_evasivemaneuvers">
+                <td><img src="/images/mutators/evasivemaneuvers.png" alt="Evasive Maneuvers"></td>
+                <td>Evasive Maneuvers</td>
+                <td>Enemy units teleport a short distance away upon taking damage.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#sidestep").toggle();'>Details</span>
                     <div id="sidestep" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -964,14 +964,14 @@ $_SESSION["known"] = true;
                             <li>Swann: Due to how Pulse Cannon damage is dealt, Pulse Cannon only deals about 50% of its stated damage.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_fatalattraction">
-				<td><img src="/images/mutators/fatalattraction.png" alt="Fatal Attraction"></td>
-				<td>Fatal Attraction</td>
-				<td>When enemy units and structures die, any of your nearby units are pulled to their location.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_fatalattraction">
+                <td><img src="/images/mutators/fatalattraction.png" alt="Fatal Attraction"></td>
+                <td>Fatal Attraction</td>
+                <td>When enemy units and structures die, any of your nearby units are pulled to their location.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#deathPull").toggle();'>Details</span>
                     <div id="deathPull" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1012,14 +1012,14 @@ $_SESSION["known"] = true;
                             <li>Tychus: The Odin is immune to Fatal Attraction.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_fear">
-				<td><img src="/images/mutators/fear.png" alt="Fear"></td>
-				<td>Fear</td>
-				<td>Player units will occasionally stop attacking and run around in fear upon taking damage.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_fear">
+                <td><img src="/images/mutators/fear.png" alt="Fear"></td>
+                <td>Fear</td>
+                <td>Player units will occasionally stop attacking and run around in fear upon taking damage.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#fear").toggle();'>Details</span>
                     <div id="fear" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1033,14 +1033,14 @@ $_SESSION["known"] = true;
                             <li>Tychus: Medivac Pickup does not remove the Fear debuff.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_fireworks">
-				<td><img src="/images/mutators/fireworks.png" alt="Fireworks"></td>
-				<td>Fireworks</td>
-				<td>Enemies launch a dazzling fireworks display upon death, dealing damage to your nearby units.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_fireworks">
+                <td><img src="/images/mutators/fireworks.png" alt="Fireworks"></td>
+                <td>Fireworks</td>
+                <td>Enemies launch a dazzling fireworks display upon death, dealing damage to your nearby units.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#fireworks").toggle();'>Details</span>
                     <div id="fireworks" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1050,14 +1050,14 @@ $_SESSION["known"] = true;
                             <li>Zagara: Zergling evasion applies to damage dealt by Fireworks.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_giftexchange">
-				<td><img src="/images/mutators/giftexchange.png" alt="Gift Exchange"></td>
-				<td>Gift Exchange</td>
-				<td>Gifts are periodically deployed around the map. If you don't claim them, Amon will!
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_giftexchange">
+                <td><img src="/images/mutators/giftexchange.png" alt="Gift Exchange"></td>
+                <td>Gift Exchange</td>
+                <td>Gifts are periodically deployed around the map. If you don't claim them, Amon will!
+                    <br><br>
                     <span class="detailsButton" onclick='$("#giftFight").toggle();'>Details</span>
                     <div id="giftFight" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1301,14 +1301,14 @@ $_SESSION["known"] = true;
                             <li>Fenix: Fenix loses all Avenger stacks given to him if he changes suit.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_goingnuclear">
-				<td><img src="/images/mutators/goingnuclear.png" alt="Going Nuclear"></td>
-				<td>Going Nuclear</td>
-				<td>Nukes are launched at random throughout the map.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_goingnuclear">
+                <td><img src="/images/mutators/goingnuclear.png" alt="Going Nuclear"></td>
+                <td>Going Nuclear</td>
+                <td>Nukes are launched at random throughout the map.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#nukes").toggle();'>Details</span>
                     <div id="nukes" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1322,14 +1322,14 @@ $_SESSION["known"] = true;
                             <li>Tychus: Tychus' Medivac Platforms can be used to save units from a nuke, before dropping them back down in the same location.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_hardenedwill">
-				<td><img src="/images/mutators/hardenedwill.png" alt="Hardened Will"></td>
-				<td>Hardened Will</td>
-				<td>Enemy Heroic units reduce all incoming damage to a maximum of 10 when any non-heroic enemy unit is near them.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_hardenedwill">
+                <td><img src="/images/mutators/hardenedwill.png" alt="Hardened Will"></td>
+                <td>Hardened Will</td>
+                <td>Enemy Heroic units reduce all incoming damage to a maximum of 10 when any non-heroic enemy unit is near them.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#hardenedWill").toggle();'>Details</span>
                     <div id="hardenedWill" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1340,14 +1340,14 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Hardened Will does not get removed from units while Time Stop is active.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_heroesfromthestorm">
-				<td><img src="/images/mutators/heroesfromthestorm.png" alt="Heroes From the Storm"></td>
-				<td>Heroes From the Storm</td>
-				<td>Attack waves will be joined by heroes of increasing power.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_heroesfromthestorm">
+                <td><img src="/images/mutators/heroesfromthestorm.png" alt="Heroes From the Storm"></td>
+                <td>Heroes From the Storm</td>
+                <td>Attack waves will be joined by heroes of increasing power.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#heroesFromTheStorm").toggle();'>Details</span>
                     <div id="heroesFromTheStorm" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1522,7 +1522,7 @@ $_SESSION["known"] = true;
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <p><b>Karax</b></p>
                         <img src="/images/mutatordata/hotskarax.jpg" alt="Heroes From the Storm Karax">
                         <p>HP/Shields: 750/750</p>
@@ -1576,7 +1576,7 @@ $_SESSION["known"] = true;
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <p><b>Kerrigan</b></p>
                         <img src="/images/mutatordata/hotskerrigan.jpg" alt="Heroes From the Storm Kerrigan">
                         <p>HP: 5000</p>
@@ -1612,7 +1612,7 @@ $_SESSION["known"] = true;
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <p><b>Nova</b></p>
                         <img src="/images/mutatordata/hotsnova.jpg" alt="Heroes From the Storm Nova">
                         <p>HP: 2250</p>
@@ -1642,7 +1642,7 @@ $_SESSION["known"] = true;
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <p><b>Raynor</b></p>
                         <img src="/images/mutatordata/hotsraynor.jpg" alt="Heroes From the Storm Raynor">
                         <p>HP: 1000</p>
@@ -1666,7 +1666,7 @@ $_SESSION["known"] = true;
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <p><b>Tychus</b></p>
                         <img src="/images/mutatordata/hotstychus.jpg" alt="Heroes From the Storm Tychus">
                         <p>HP: 1000</p>
@@ -1708,7 +1708,7 @@ $_SESSION["known"] = true;
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <p><b>Zagara</b></p>
                         <img src="/images/mutatordata/hotszagara.jpg" alt="Heroes From the Storm Zagara">
                         <p>HP: 2250</p>
@@ -1750,7 +1750,7 @@ $_SESSION["known"] = true;
                                 </tr>
                             </tbody>
                         </table>
-                        
+
                         <p><b>Zeratul</b></p>
                         <img src="/images/mutatordata/hotszeratul.jpg" alt="Heroes From the Storm Zeratul">
                         <p>HP/Shields: 2000/2000</p>
@@ -1812,28 +1812,28 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Oracle Stasis Wards can be used to disable Heroes. Combine with the Stasis Calibration upgrade to be able to attack them while in stasis.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_inspiration">
-				<td><img src="/images/mutators/inspiration.png" alt="Inspiration"></td>
-				<td>Inspiration</td>
-				<td>Enemy Heroic units increase the attack speed and armor of all enemies within a small range.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_inspiration">
+                <td><img src="/images/mutators/inspiration.png" alt="Inspiration"></td>
+                <td>Inspiration</td>
+                <td>Enemy Heroic units increase the attack speed and armor of all enemies within a small range.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#inspiration").toggle();'>Details</span>
                     <div id="inspiration" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>Inspiration grants an increase of 25% attack speed and 3 armor to all units within 5 range of a Heroic unit. The buff can also be applied to structures and static defense.</p>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_justdie">
-				<td><img src="/images/mutators/justdie.png" alt="Just Die"></td>
-				<td>Just Die</td>
-				<td>Enemy units are automatically revived upon death.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_justdie">
+                <td><img src="/images/mutators/justdie.png" alt="Just Die"></td>
+                <td>Just Die</td>
+                <td>Enemy units are automatically revived upon death.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#justDie").toggle();'>Details</span>
                     <div id="justDie" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -1847,18 +1847,18 @@ $_SESSION["known"] = true;
                             <li>Mengsk: Units will provide Royal Guard experience once, which is when they are finally killed.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_killbots">
-				<td><img src="/images/mutators/killbots.png" alt="Kill Bots"></td>
-				<td>Kill Bots</td>
-				<td>Waves of bots attack players and are invulnerable to damage until they have killed a set amount of units.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_killbots">
+                <td><img src="/images/mutators/killbots.png" alt="Kill Bots"></td>
+                <td>Kill Bots</td>
+                <td>Waves of bots attack players and are invulnerable to damage until they have killed a set amount of units.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#killBots").toggle();'>Details</span>
                     <div id="killBots" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
-                        <p>The bots will spawn from any enemy building. If you clear all enemy buildings on the map, the bots will stop spawning. Note that all-clearing Malwarfare and Void Launch does not stop them from spawning, because Suppression Towers and Launch Bays are indestructible enemy structures.</p> 
+                        <p>The bots will spawn from any enemy building. If you clear all enemy buildings on the map, the bots will stop spawning. Note that all-clearing Malwarfare and Void Launch does not stop them from spawning, because Suppression Towers and Launch Bays are indestructible enemy structures.</p>
                         <p>There are three types of Kill Bots that will spawn, as follows:</p>
                         <table class="dataTable centered">
                             <thead>
@@ -2011,14 +2011,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Legion units do not get attacked by Kill Bots.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_laserdrill">
-				<td><img src="/images/mutators/laserdrill.png" alt="Laser Drill"></td>
-				<td>Laser Drill</td>
-				<td>An enemy Drakken laser drill constantly attacks player units within enemy vision.
-				<br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_laserdrill">
+                <td><img src="/images/mutators/laserdrill.png" alt="Laser Drill"></td>
+                <td>Laser Drill</td>
+                <td>An enemy Drakken laser drill constantly attacks player units within enemy vision.
+                <br><br>
                     <span class="detailsButton" onclick='$("#laserDrill").toggle();'>Details</span>
                     <div id="laserDrill" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2123,14 +2123,14 @@ $_SESSION["known"] = true;
                         </ul>
                         </table>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_lavaburst">
-				<td><img src="/images/mutators/lavaburst.png" alt="Lava Burst"></td>
-				<td>Lava Burst</td>
-				<td>Lava periodically bursts from the ground at random locations and deals damage to player air and ground units.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_lavaburst">
+                <td><img src="/images/mutators/lavaburst.png" alt="Lava Burst"></td>
+                <td>Lava Burst</td>
+                <td>Lava periodically bursts from the ground at random locations and deals damage to player air and ground units.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#lavaBurst").toggle();'>Details</span>
                     <div id="lavaBurst" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2200,41 +2200,41 @@ $_SESSION["known"] = true;
                             <li>Alarak: Place force-fields over Lava Bursts to prevent your units from accidentally walking over Lava Bursts. Be careful if you use Massive units, because they can break force-fields.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_lifeleech">
-				<td><img src="/images/mutators/lifeleech.png" alt="Life Leech"></td>
-				<td>Life Leech</td>
-				<td>Enemy units steal life or shields whenever they do damage.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_lifeleech">
+                <td><img src="/images/mutators/lifeleech.png" alt="Life Leech"></td>
+                <td>Life Leech</td>
+                <td>Enemy units steal life or shields whenever they do damage.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#lifeLeech").toggle();'>Details</span>
                     <div id="lifeLeech" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>Life Leech heals Amon's units for 100% of the damage they do against player units.</p>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_longrange">
-				<td><img src="/images/mutators/longrange.png" alt="Long Range"></td>
-				<td>Long Range</td>
-				<td>Enemy units and structures have increased weapon and vision range.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_longrange">
+                <td><img src="/images/mutators/longrange.png" alt="Long Range"></td>
+                <td>Long Range</td>
+                <td>Enemy units and structures have increased weapon and vision range.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#longRange").toggle();'>Details</span>
                     <div id="longRange" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>All enemies get +3 to their ranged weapon range and sight range.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_luckyenvelopes">
-				<td><img src="/images/mutators/luckyenvelopes.png" alt="Lucky Envelopes"></td>
-				<td>Lucky Envelopes</td>
-				<td>Festive envelopes containing resource pickups are dropped at random throughout the map.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_luckyenvelopes">
+                <td><img src="/images/mutators/luckyenvelopes.png" alt="Lucky Envelopes"></td>
+                <td>Lucky Envelopes</td>
+                <td>Festive envelopes containing resource pickups are dropped at random throughout the map.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#redEnvelopes").toggle();'>Details</span>
                     <div id="redEnvelopes" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2242,14 +2242,14 @@ $_SESSION["known"] = true;
                         <p>During the first 3:00, all envelopes will spawn within 30 range of player bases every 7 seconds. After that, envelopes can spawn anywhere on the map every 5.4 seconds.</p>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_magnificent">
-				<td><img src="/images/mutators/mag-nificent.png" alt="Mag-nificent"></td>
-				<td>Mag-nificent</td>
-				<td>Mag Mines are deployed throughout the map at the start of the mission.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_magnificent">
+                <td><img src="/images/mutators/mag-nificent.png" alt="Mag-nificent"></td>
+                <td>Mag-nificent</td>
+                <td>Mag Mines are deployed throughout the map at the start of the mission.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#magMines").toggle();'>Details</span>
                     <div id="magMines" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2266,14 +2266,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Shieldguards have a 50% chance to remove a Mag-mine projectile.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_microtransactions">
-				<td><img src="/images/mutators/microtransactions.png" alt="Micro Transactions"></td>
-				<td>Micro Transactions</td>
-				<td>Giving commands to your units costs resources based on the unit's cost.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_microtransactions">
+                <td><img src="/images/mutators/microtransactions.png" alt="Micro Transactions"></td>
+                <td>Micro Transactions</td>
+                <td>Giving commands to your units costs resources based on the unit's cost.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#orderCosts").toggle();'>Details</span>
                     <div id="orderCosts" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2281,14 +2281,14 @@ $_SESSION["known"] = true;
                         <p>Costs will only be applied if commands are issued to a unit. Therefore, units following another unit will only incur the initial cost to set them on follow. When that unit moves, no costs will be charged for all units following that unit.</p>
                         <p>If your ally leaves, commands issued to their units will also not be free.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_mineralshields">
-				<td><img src="/images/mutators/mineralshields.png" alt="Mineral Shields"></td>
-				<td>Mineral Shields</td>
-				<td>Mineral clusters at player bases are periodically encased in a shield which must be destroyed for gathering to continue.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_mineralshields">
+                <td><img src="/images/mutators/mineralshields.png" alt="Mineral Shields"></td>
+                <td>Mineral Shields</td>
+                <td>Mineral clusters at player bases are periodically encased in a shield which must be destroyed for gathering to continue.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#entomb").toggle();'>Details</span>
                     <div id="entomb" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2301,14 +2301,14 @@ $_SESSION["known"] = true;
                             <li>Zagara: Place Bile Launchers behind mineral lines so their bombardments can clear Mineral Shields automatically.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_minesweeper">
-				<td><img src="/images/mutators/minesweeper.png" alt="Minesweeper"></td>
-				<td>Minesweeper</td>
-				<td>Groups of Widow Mines and Spider Mines are buried throughout the battlefield.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_minesweeper">
+                <td><img src="/images/mutators/minesweeper.png" alt="Minesweeper"></td>
+                <td>Minesweeper</td>
+                <td>Groups of Widow Mines and Spider Mines are buried throughout the battlefield.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#mineFields").toggle();'>Details</span>
                     <div id="mineFields" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2331,14 +2331,14 @@ $_SESSION["known"] = true;
                             <li>Stetmann: Getting the Hardened Egonergy Shield upgrade for Zerglings will allow them to clear mines efficiently without taking heavy losses.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_missilecommand">
-				<td><img src="/images/mutators/missilecommand.png" alt="Missile Command"></td>
-				<td>Missile Command</td>
-				<td>Endless missile bombardments target your structures and must be shot down throughout the mission.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_missilecommand">
+                <td><img src="/images/mutators/missilecommand.png" alt="Missile Command"></td>
+                <td>Missile Command</td>
+                <td>Endless missile bombardments target your structures and must be shot down throughout the mission.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#missileBarrage").toggle();'>Details</span>
                     <div id="missileBarrage" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2450,14 +2450,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Tesseract Monoliths can stun Point Defense Missiles, allowing projectile attacks to connect with their targets.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_momentofsilence">
-				<td><img src="/images/mutators/momentofsilence.png" alt="Moment of Silence"></td>
-				<td>Moment of Silence</td>
-				<td>When a Heroic enemy dies, all player units around it will reflect on their transgressions, leaving them temporarily unable to attack or use abilities.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_momentofsilence">
+                <td><img src="/images/mutators/momentofsilence.png" alt="Moment of Silence"></td>
+                <td>Moment of Silence</td>
+                <td>When a Heroic enemy dies, all player units around it will reflect on their transgressions, leaving them temporarily unable to attack or use abilities.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#momentOfSilence").toggle();'>Details</span>
                     <div id="momentOfSilence" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2471,14 +2471,14 @@ $_SESSION["known"] = true;
                             <li>Tychus: Medivac Pickup can be used to dodge the Moment of Silence Debuff before it triggers.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_mutuallyassureddestruction">
-				<td><img src="/images/mutators/mutuallyassureddestruction.png" alt="Mutually Assured Destruction"></td>
-				<td>Mutually Assured Destruction</td>
-				<td>Enemy Hybrid units detonate a Nuke upon death.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_mutuallyassureddestruction">
+                <td><img src="/images/mutators/mutuallyassureddestruction.png" alt="Mutually Assured Destruction"></td>
+                <td>Mutually Assured Destruction</td>
+                <td>Enemy Hybrid units detonate a Nuke upon death.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#hybridDeathNuke").toggle();'>Details</span>
                     <div id="hybridDeathNuke" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2513,14 +2513,14 @@ $_SESSION["known"] = true;
                         </table>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_naughtylist">
-				<td><img src="/images/mutators/naughtylist.png" alt="Naughty List"></td>
-				<td>Naughty List</td>
-				<td>Player units and structures take increased damage for each enemy they've killed.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_naughtylist">
+                <td><img src="/images/mutators/naughtylist.png" alt="Naughty List"></td>
+                <td>Naughty List</td>
+                <td>Player units and structures take increased damage for each enemy they've killed.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#killKarma").toggle();'>Details</span>
                     <div id="killKarma" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2555,14 +2555,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Zeratul's Shade Projections do not count towards Cannon/Monolith kill counts. The Projection gets the Naughty List count, but disappears after the Projection despawns and gets reset.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_orbitalstrike">
-				<td><img src="/images/mutators/orbitalstrike.png" alt="Orbital Strike"></td>
-				<td>Orbital Strike</td>
-				<td>Enemy Orbital Strikes are periodically fired throughout the map.
-    				<br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_orbitalstrike">
+                <td><img src="/images/mutators/orbitalstrike.png" alt="Orbital Strike"></td>
+                <td>Orbital Strike</td>
+                <td>Enemy Orbital Strikes are periodically fired throughout the map.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#orbitalStrike").toggle();'>Details</span>
                     <div id="orbitalStrike" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2602,13 +2602,13 @@ $_SESSION["known"] = true;
                         <p>Mission objectives, although not particularly targeted, will take damage from Orbital Strike splash damage.</p>
                     </div>
                 </td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_outbreak">
-				<td><img src="/images/mutators/outbreak.png" alt="Outbreak"></td>
-				<td>Outbreak</td>
-				<td>Continuous waves of the infested horde march against the commanders' bases.
-				    <br><br>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_outbreak">
+                <td><img src="/images/mutators/outbreak.png" alt="Outbreak"></td>
+                <td>Outbreak</td>
+                <td>Continuous waves of the infested horde march against the commanders' bases.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#outbreak").toggle();'>Details</span>
                     <div id="outbreak" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2656,28 +2656,28 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Time Stop does not affect Outbreak timings.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_photonoverload">
-				<td><img src="/images/mutators/photonoverload.png" alt="Photon Overload"></td>
-				<td>Photon Overload</td>
-				<td>All enemy structures attack nearby hostile units.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_photonoverload">
+                <td><img src="/images/mutators/photonoverload.png" alt="Photon Overload"></td>
+                <td>Photon Overload</td>
+                <td>All enemy structures attack nearby hostile units.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#photonOverload").toggle();'>Details</span>
                     <div id="photonOverload" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>It gets cast on any structure that takes damage (shield or life). Deals 20 damage to a single unit within 10 range every 1.25 seconds and lasts for 15 seconds.</p>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_polarity">
-				<td><img src="/images/mutators/polarity.png" alt="Polarity"></td>
-				<td>Polarity</td>
-				<td>Each enemy unit is immune to either your units or your ally's units.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_polarity">
+                <td><img src="/images/mutators/polarity.png" alt="Polarity"></td>
+                <td>Polarity</td>
+                <td>Each enemy unit is immune to either your units or your ally's units.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#polarity").toggle();'>Details</span>
                     <div id="polarity" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2694,15 +2694,15 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Units devolved by the Avatar of Essence will have a random polarity.</li>
                         </ul>
                     </div>
-                    
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_poweroverwhelming">
-				<td><img src="/images/mutators/poweroverwhelming.png" alt="Power Overwhelming"></td>
-				<td>Power Overwhelming</td>
-				<td>All enemy units have energy and use random abilities.
-				    <br><br>
+
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_poweroverwhelming">
+                <td><img src="/images/mutators/poweroverwhelming.png" alt="Power Overwhelming"></td>
+                <td>Power Overwhelming</td>
+                <td>All enemy units have energy and use random abilities.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#allCasters").toggle();'>Details</span>
                     <div id="allCasters" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2860,14 +2860,14 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Due to Power Overwhelming being a map-wide effect, rather than a unit-based one, Time Stop does not prevent skills from being cast.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_propagators">
-				<td><img src="/images/mutators/propagators.png" alt="Propagators"></td>
-				<td>Propagators</td>
-				<td>Reality warping sludges are crawling towards you. Anything they touch is turned into a copy of the sludge.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_propagators">
+                <td><img src="/images/mutators/propagators.png" alt="Propagators"></td>
+                <td>Propagators</td>
+                <td>Reality warping sludges are crawling towards you. Anything they touch is turned into a copy of the sludge.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#propagators").toggle();'>Details</span>
                     <div id="propagators" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -2990,14 +2990,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Shade Projections generate Propagators when killed by a Propagator.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_purifierbeam">
-				<td><img src="/images/mutators/purifierbeam.png" alt="Purifier Beam"></td>
-				<td>Purifier Beam</td>
-				<td>An enemy Purifier Beam moves across the map toward nearby player units.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_purifierbeam">
+                <td><img src="/images/mutators/purifierbeam.png" alt="Purifier Beam"></td>
+                <td>Purifier Beam</td>
+                <td>An enemy Purifier Beam moves across the map toward nearby player units.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#purifierBeam").toggle();'>Details</span>
                     <div id="purifierBeam" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3019,27 +3019,27 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Time Stop delays Purifier Beam timings.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_random">
-				<td><img src="/images/mutators/random.png" alt="Random"></td>
-				<td>Random</td>
-				<td>A mutation is randomly assigned.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_random">
+                <td><img src="/images/mutators/random.png" alt="Random"></td>
+                <td>Random</td>
+                <td>A mutation is randomly assigned.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#random").toggle();'>Details</span>
                     <div id="random" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>Picks a random mutator that is available on the Custom Mutator list, except for Vertigo.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_scorchedearth">
-				<td><img src="/images/mutators/scorchedearth.png" alt="Scorched Earth"></td>
-				<td>Scorched Earth</td>
-				<td>Enemy units set the terrain on fire upon death.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_scorchedearth">
+                <td><img src="/images/mutators/scorchedearth.png" alt="Scorched Earth"></td>
+                <td>Scorched Earth</td>
+                <td>Enemy units set the terrain on fire upon death.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#deathFire").toggle();'>Details</span>
                     <div id="deathFire" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3079,41 +3079,41 @@ $_SESSION["known"] = true;
                             </tbody>
                         </table>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_selfdestruction">
-				<td><img src="/images/mutators/selfdestruction.png" alt="Self Destruction"></td>
-				<td>Self Destruction</td>
-				<td>Enemy units explode and deal damage to friendly player units upon death.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_selfdestruction">
+                <td><img src="/images/mutators/selfdestruction.png" alt="Self Destruction"></td>
+                <td>Self Destruction</td>
+                <td>Enemy units explode and deal damage to friendly player units upon death.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#deathAOE").toggle();'>Details</span>
                     <div id="deathAOE" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>All enemy units explode, dealing damage to player units. The explosion occurs after a 1.75 second delay and deals 20 damage in a 1.5 radius. For units with supply cost 3 or more, the explosion repeats at [supply cost + 1] times.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_sharingiscaring">
-				<td><img src="/images/mutators/sharingiscaring.png" alt="Sharing is Caring"></td>
-				<td>Sharing is Caring</td>
-				<td>Supply is shared between you and your partner, and units from both armies contribute to your combined supply cap.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_sharingiscaring">
+                <td><img src="/images/mutators/sharingiscaring.png" alt="Sharing is Caring"></td>
+                <td>Sharing is Caring</td>
+                <td>Supply is shared between you and your partner, and units from both armies contribute to your combined supply cap.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#sharedSupply").toggle();'>Details</span>
                     <div id="sharedSupply" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>Used supply is shared between both players. However, total supply caps are still player-based. Therefore, regular commanders will still be limited by the number of Pylons/Supply Depots/Overlords that they have. Max supply commanders will still have access to their normal supply cap. However, both players' supplies will be affected when a unit is produced on either side.</p>
                         <p>Commanders with a supply cap of 100 can suffer greatly with this mutator. If they are paired up with a 200 supply cap commander who consumed over 100 supply, the 100 Supply cap commander will be unable to produce any units which cost supply until the total consumed supply falls below 100.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_shortsighted">
-				<td><img src="/images/mutators/shortsighted.png" alt="Shortsighted"></td>
-				<td>Shortsighted</td>
-				<td>Player units and structures have reduced vision range.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_shortsighted">
+                <td><img src="/images/mutators/shortsighted.png" alt="Shortsighted"></td>
+                <td>Shortsighted</td>
+                <td>Player units and structures have reduced vision range.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#shortSighted").toggle();'>Details</span>
                     <div id="shortSighted" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3130,13 +3130,13 @@ $_SESSION["known"] = true;
                         </ul>
                     </div>
                 </td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_slimpickings">
-				<td><img src="/images/mutators/slimpickings.png" alt="Slim Pickings"></td>
-				<td>Slim Pickings</td>
-				<td>Player worker units gather resources at a reduced rate, but resource pickups spawn throughout the map.
-				    <br><br>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_slimpickings">
+                <td><img src="/images/mutators/slimpickings.png" alt="Slim Pickings"></td>
+                <td>Slim Pickings</td>
+                <td>Player worker units gather resources at a reduced rate, but resource pickups spawn throughout the map.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#minedOut").toggle();'>Details</span>
                     <div id="minedOut" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3145,27 +3145,27 @@ $_SESSION["known"] = true;
                         <p>Every other spawn, a pickup will spawn anywhere on map, while the other will only spawn within 30 range of the starting location. This only occurs before the 3-minute mark, after which pickups will never be limited to spawning at the starting location.</p>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_speedfreaks">
-				<td><img src="/images/mutators/speedfreaks.png" alt="Speed Freaks"></td>
-				<td>Speed Freaks</td>
-				<td>The enemy moves faster than any unit a player has at their disposal.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_speedfreaks">
+                <td><img src="/images/mutators/speedfreaks.png" alt="Speed Freaks"></td>
+                <td>Speed Freaks</td>
+                <td>The enemy moves faster than any unit a player has at their disposal.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#unitSpeed").toggle();'>Details</span>
                     <div id="unitSpeed" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>All enemy units have a movement speed of 5.5.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_temporalfield">
-				<td><img src="/images/mutators/temporalfield.png" alt="Temporal Field"></td>
-				<td>Temporal Field</td>
-				<td>Enemy Temporal Fields are periodically deployed throughout the map.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_temporalfield">
+                <td><img src="/images/mutators/temporalfield.png" alt="Temporal Field"></td>
+                <td>Temporal Field</td>
+                <td>Enemy Temporal Fields are periodically deployed throughout the map.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#temporalField").toggle();'>Details</span>
                     <div id="temporalField" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3178,28 +3178,28 @@ $_SESSION["known"] = true;
                             <li>Nova: Infiltration Specialist Nova will lose Super Cloak if she walks into a Temporal Field.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_timewarp">
-				<td><img src="/images/mutators/timewarp.png" alt="Time Warp"></td>
-				<td>Time Warp</td>
-				<td>Enemy Time Warps are periodically deployed throughout the map.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_timewarp">
+                <td><img src="/images/mutators/timewarp.png" alt="Time Warp"></td>
+                <td>Time Warp</td>
+                <td>Enemy Time Warps are periodically deployed throughout the map.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#timeWarp").toggle();'>Details</span>
                     <div id="timeWarp" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>Time Warps scale time to 33% of the normal speed, reducing all time-based effects in their area of effect. This includes cooldowns, regeneration, timed life and attacks. They spawn every 3 seconds and there is a 2.5 second delay before a Time Warp becomes active. Each field lasts for 30 seconds. Units with the Frenzied passive (such as Brutalisks, the Odin and Ultralisks) will be unaffected.</p>
                         <p>Time Warps will always be at least 25 units away from the starting locations as well as at least 4 units away from mineral patches.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_transmutation">
-				<td><img src="/images/mutators/transmutation.png" alt="Transmutation"></td>
-				<td>Transmutation</td>
-				<td>Enemy units have a chance to transform into more powerful units whenever they deal damage.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_transmutation">
+                <td><img src="/images/mutators/transmutation.png" alt="Transmutation"></td>
+                <td>Transmutation</td>
+                <td>Enemy units have a chance to transform into more powerful units whenever they deal damage.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#evolve").toggle();'>Details</span>
                     <div id="evolve" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3350,14 +3350,14 @@ $_SESSION["known"] = true;
                             <li>Swann: Defensive Matrix prevents Transmutation from triggering on the attacking unit.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_trickortreat">
-				<td><img src="/images/mutators/trickortreat.png" alt="Trick or Treat"></td>
-				<td>Trick or Treat</td>
-				<td>Civilians visit your Candy Bowl looking for treats, which are generated by spending minerals. If no treats are available, the civilians randomly transform into enemy units.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_trickortreat">
+                <td><img src="/images/mutators/trickortreat.png" alt="Trick or Treat"></td>
+                <td>Trick or Treat</td>
+                <td>Civilians visit your Candy Bowl looking for treats, which are generated by spending minerals. If no treats are available, the civilians randomly transform into enemy units.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#trickOrTreat").toggle();'>Details</span>
                     <div id="trickOrTreat" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3451,14 +3451,14 @@ $_SESSION["known"] = true;
                             <li>Vorazun: Time Stop does not affect Trick or Treat timings.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_turkeyshoot">
-				<td><img src="/images/mutators/turkeyshoot.png" alt="Turkey Shoot"></td>
-				<td>Turkey Shoot</td>
-				<td>Supply can only be generated by killing turkeys that wander throughout the map. Doing so may anger the turkeys that remain.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_turkeyshoot">
+                <td><img src="/images/mutators/turkeyshoot.png" alt="Turkey Shoot"></td>
+                <td>Turkey Shoot</td>
+                <td>Supply can only be generated by killing turkeys that wander throughout the map. Doing so may anger the turkeys that remain.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#foodHunt").toggle();'>Details</span>
                     <div id="foodHunt" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3500,14 +3500,14 @@ $_SESSION["known"] = true;
                         <p>The Turking deal 250 damage (500 vs structures) every 2 seconds and has 6000 HP and 3 armor. It has an ability "Terrifying Gobble" with a 30-second cooldown that fear all player units within 11 range.</p>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/no.png" alt="No"></td>
-			</tr>
-			<tr id="row_twister">
-				<td><img src="/images/mutators/twister.png" alt="Twister"></td>
-				<td>Twister</td>
-				<td>Tornadoes move across the map, damaging and knocking back player units in their path.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/no.png" alt="No"></td>
+            </tr>
+            <tr id="row_twister">
+                <td><img src="/images/mutators/twister.png" alt="Twister"></td>
+                <td>Twister</td>
+                <td>Tornadoes move across the map, damaging and knocking back player units in their path.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#tornadoes").toggle();'>Details</span>
                     <div id="tornadoes" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3515,28 +3515,28 @@ $_SESSION["known"] = true;
                         <p>Twisters will always be at least 25 units away from the starting locations as well as at least 5 units away from mineral patches.</p>
                         <p>Twisters do not knock back any units with an "Untransportable" tag (such as the trucks on Cradle of Death). Instead, they deal their damage continuously, and can destroy the unit within seconds.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_vertigo">
-				<td><img src="/images/mutators/vertigo.png" alt="Vertigo"></td>
-				<td>Vertigo</td>
-				<td>Your camera randomly changes positions.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_vertigo">
+                <td><img src="/images/mutators/vertigo.png" alt="Vertigo"></td>
+                <td>Vertigo</td>
+                <td>Your camera randomly changes positions.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#vertigo").toggle();'>Details</span>
                     <div id="vertigo" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>Every 20 seconds, your camera will change position.</p>
 
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_voidreanimators">
-				<td><img src="/images/mutators/voidreanimators.png" alt="Void Reanimators"></td>
-				<td>Void Reanimators</td>
-				<td>Void Reanimators wander the battlefield, bringing your enemies back to life.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_voidreanimators">
+                <td><img src="/images/mutators/voidreanimators.png" alt="Void Reanimators"></td>
+                <td>Void Reanimators</td>
+                <td>Void Reanimators wander the battlefield, bringing your enemies back to life.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#reanimator").toggle();'>Details</span>
                     <div id="reanimator" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3579,14 +3579,14 @@ $_SESSION["known"] = true;
                             <li>Mengsk: Units resurrected by Void Reanimators do not provide Royal Guard experience.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_voidrifts">
-				<td><img src="/images/mutators/voidrifts.png" alt="Void Rifts"></td>
-				<td>Void Rifts</td>
-				<td>Void Rifts periodically appear in random locations and spawn enemy units until destroyed.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_voidrifts">
+                <td><img src="/images/mutators/voidrifts.png" alt="Void Rifts"></td>
+                <td>Void Rifts</td>
+                <td>Void Rifts periodically appear in random locations and spawn enemy units until destroyed.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#voidRifts").toggle();'>Details</span>
                     <div id="voidRifts" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
@@ -3756,14 +3756,14 @@ $_SESSION["known"] = true;
                             <li>Zeratul: Spread Observers around the map and use Projections to kill Void Rifts. Three projections can kill a Void Rift as soon as it spawns.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_walkinginfested">
-				<td><img src="/images/mutators/walkinginfested.png" alt="Walking Infested"></td>
-				<td>Walking Infested</td>
-				<td>Every enemy unit that commanders destroy will spawn infested terrans. The more life a unit has, the more infested will rise from it's corpse.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_walkinginfested">
+                <td><img src="/images/mutators/walkinginfested.png" alt="Walking Infested"></td>
+                <td>Walking Infested</td>
+                <td>Every enemy unit that commanders destroy will spawn infested terrans. The more life a unit has, the more infested will rise from it's corpse.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#spawnInfested").toggle();'>Details</span>
                     <div id="spawnInfested" class="details">
                         <p>On Miner Evacuation, all infested from Walking Infested will have double HP.</p>
@@ -3776,22 +3776,22 @@ $_SESSION["known"] = true;
                             <li>Mengsk: Infested Terrans do not provide Royal Guard experience.</li>
                         </ul>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
-			<tr id="row_wemoveunseen">
-				<td><img src="/images/mutators/wemoveunseen.png" alt="We Move Unseen"></td>
-				<td>We Move Unseen</td>
-				<td>All enemy units are permanently cloaked.
-				    <br><br>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
+            <tr id="row_wemoveunseen">
+                <td><img src="/images/mutators/wemoveunseen.png" alt="We Move Unseen"></td>
+                <td>We Move Unseen</td>
+                <td>All enemy units are permanently cloaked.
+                    <br><br>
                     <span class="detailsButton" onclick='$("#permaCloak").toggle();'>Details</span>
                     <div id="permaCloak" class="details">
                         <p class="subheading">Detailed Mutator Information</p>
                         <p>All non-structure units are cloaked, including map objectives.</p>
                     </div>
-				</td>
-				<td><img src="/images/mutators/yes.png" alt="Yes"></td>
-			</tr>
+                </td>
+                <td><img src="/images/mutators/yes.png" alt="Yes"></td>
+            </tr>
         </tbody>
     </table>
     <script>

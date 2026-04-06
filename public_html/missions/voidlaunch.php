@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Void Launch</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Void Launch">
@@ -61,11 +62,11 @@ include("../header.php");
     <?php $mission = "voidlaunch"; ?>
     <p>It is not required to push into enemy bases this map. However, it is highly recommended you do so, as it will simplify the mission in the later stages, where shuttles will spawn from multiple bays at the same time. By clearing enemy bases, you can build static defenses at the bays themselves, and spawn-camp the shuttles.</p>
     <p>The base on the far left is shown below:</p>
-    <?php $info = "leftbaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("leftbaselong") ?>
     <p>To the East of this base is a smaller base guarding the middle bay. This is the least heavily defended base present. However, it can only be accessed through one of the other two bases:</p>
-    <?php $info = "midbaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("midbaselong") ?>
     <p>The base on the far right is shown below:</p>
-    <?php $info = "rightbaselong"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("rightbaselong") ?>
     <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/voidlaunch/researchvessel.jpg" alt="Research Vessel">
@@ -74,11 +75,11 @@ include("../header.php");
     </div>
     <p>The bonus objective requires you to escort three Research Vessels to the Xel'Naga Shrines on the map, and defend them against a single attack wave targeting them. The locations of the Xel'Naga Shrines are shown below:</p>
     <p>The first Shrine is guarded by a very small force of enemy units.</p>
-    <?php $info = "shrine1"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("shrine1") ?>
     <p>The second Shrine is guarded by a relatively strong force of units.</p>
-    <?php $info = "shrine2"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("shrine2") ?>
     <p>The last Shrine is guarded by an enemy camp which will require a significant force to clear.</p>
-    <?php $info = "shrine3long"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("shrine3long") ?>
     <a id="timings"></a><h2>Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Shuttle Timings, Headings, Escort Strength and Tech Levels for this mission are shown below. Note that wave #7 will occur in one of three different patterns, all listed in the table.</p>

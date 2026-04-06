@@ -1,0 +1,129 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/CommanderList",
+    "definitions": {
+        "CommanderList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Commander"
+            }
+        },
+        "Commander": {
+            "type": "object",
+            "properties": {
+                "commander": {
+                    "type": "string",
+                    "description": "Normalized commander name for use in URLs and stuff",
+                    "pattern": "^[a-z0-9]+$"
+                },
+                "fullname": {
+                    "type": "string"
+                },
+                "motto": {
+                    "type": "string"
+                },
+                "stat01": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Ease of play"
+                },
+                "stat02": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Sub-ascension power"
+                },
+                "stat03": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Power level for beginners"
+                },
+                "stat04": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Power level for veterans"
+                },
+                "stat05": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Early game strength"
+                },
+                "stat06": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Ease of macro"
+                },
+                "stat07": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Ease of micro"
+                },
+                "stat08": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Mutation versatility"
+                },
+                "stat09": {
+                    "$ref": "#/definitions/CommanderPowerRating",
+                    "description": "Ramp-up speed"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "mastery11": {
+                    "type": "string"
+                },
+                "mastery12": {
+                    "type": "string"
+                },
+                "mastery21": {
+                    "type": "string"
+                },
+                "mastery22": {
+                    "type": "string"
+                },
+                "mastery31": {
+                    "type": "string"
+                },
+                "mastery32": {
+                    "type": "string"
+                },
+                "prestige1": {
+                    "type": "string"
+                },
+                "prestige2": {
+                    "type": "string"
+                },
+                "prestige3": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "commander",
+                "fullname",
+                "motto",
+                "stat01",
+                "stat02",
+                "stat03",
+                "stat04",
+                "stat05",
+                "stat06",
+                "stat07",
+                "stat08",
+                "stat09",
+                "summary",
+                "mastery11",
+                "mastery12",
+                "mastery21",
+                "mastery22",
+                "mastery31",
+                "mastery32",
+                "prestige1",
+                "prestige2",
+                "prestige3"
+            ],
+            "additionalProperties": false
+        },
+        "CommanderPowerRating": {
+            "type": "number",
+            "enum": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    }
+}

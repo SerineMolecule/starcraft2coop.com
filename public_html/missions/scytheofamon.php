@@ -1,5 +1,6 @@
 <?php
 include("../header.php");
+include("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Scythe of Amon</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Scythe of Amon">
@@ -277,11 +278,11 @@ include("../header.php");
     </div>
     <p>The bonus objective requires you to escort a Warp Prism as it attempts to evacuate people. The stopping points of these prisms are within enemy bases. The bases that will be encountered, in the order of the stopping points (assuming the objective doesn't get shot down) is shown below.</p>
     <p>Stop Point 1:</p>
-    <?php $info = "bonusbase1long"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("bonusbase1long") ?>
     <p>Stop Point 2:</p>
-    <?php $info = "bonusbase2"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("bonusbase2") ?>
     <p>Stop Point 3:</p>
-    <?php $info = "bonusbase3long"; include("../scripts/switchergenerator.php");?>
+    <?php switcher_generator("bonusbase3long") ?>
     <p>It is also important to note that each stopping point will feature a difference race of enemy units. The race will not match the race of the Attack Waves on this map. However, based on the race of the Attack Waves, you can tell what race of enemy units will be present in each of the three Stopping Points above as follows:</p>
     <table class="centered">
         <thead>

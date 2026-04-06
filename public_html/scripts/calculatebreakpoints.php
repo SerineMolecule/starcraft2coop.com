@@ -1,18 +1,19 @@
 <?php
+
 session_start();
-if(!isset($_SESSION["known"])){
+if (!isset($_SESSION["known"])) {
     print("Error!");
     die();
 }
-if(isset($_POST['ability'])){
+if (isset($_POST['ability'])) {
     $ability = $_POST['ability'];
-    $returnArray=[];
+    $returnArray = [];
     $abilityFound = false;
     #0 => Spammable
     #1 => Affected by armor
     #2 => Base damage
     #3 => Mastery damage increase per point (%)
-    if($ability=="immobilizationwave"){
+    if ($ability == "immobilizationwave") {
         $abilityFound = true;
         $spammable = 0;
         $affectedByArmor = 0;
@@ -20,8 +21,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.0333;
         $air = 1;
         $structure = 0;
-    }
-    elseif($ability=="leapingstrike"){
+    } elseif ($ability == "leapingstrike") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -29,8 +29,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.01;
         $air = 0;
         $structure = 1;
-    }
-    elseif($ability=="psionicshift"){
+    } elseif ($ability == "psionicshift") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -38,8 +37,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.01;
         $air = 0;
         $structure = 0;
-    }
-    elseif($ability=="immobilizationwavep2"){
+    } elseif ($ability == "immobilizationwavep2") {
         $abilityFound = true;
         $spammable = 0;
         $affectedByArmor = 0;
@@ -47,8 +45,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.0333;
         $air = 1;
         $structure = 0;
-    }
-    elseif($ability=="leapingstrikep2"){
+    } elseif ($ability == "leapingstrikep2") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -56,8 +53,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.01;
         $air = 0;
         $structure = 1;
-    }
-    elseif($ability=="psionicshiftp2"){
+    } elseif ($ability == "psionicshiftp2") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -65,8 +61,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.01;
         $air = 0;
         $structure = 0;
-    }
-    elseif($ability=="kineticblast"){
+    } elseif ($ability == "kineticblast") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -74,8 +69,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.01;
         $air = 1;
         $structure = 1;
-    }
-    elseif($ability=="crushinggrip"){
+    } elseif ($ability == "crushinggrip") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -83,8 +77,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.01;
         $air = 1;
         $structure = 0;
-    }
-    elseif($ability=="concentratedbeam"){
+    } elseif ($ability == "concentratedbeam") {
         $abilityFound = true;
         $spammable = 0;
         $affectedByArmor = 0;
@@ -92,8 +85,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.02;
         $air = 1;
         $structure = 1;
-    }
-    elseif($ability=="infesteddrop"){
+    } elseif ($ability == "infesteddrop") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -101,8 +93,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.02;
         $air = 0;
         $structure = 1;
-    }
-    elseif($ability=="spawntoxicnest"){
+    } elseif ($ability == "spawntoxicnest") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -110,8 +101,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.02;
         $air = 0;
         $structure = 0;
-    }
-    elseif($ability=="snipe"){
+    } elseif ($ability == "snipe") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -119,8 +109,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.0167;
         $air = 1;
         $structure = 0;
-    }
-    elseif($ability=="penetratingblast"){
+    } elseif ($ability == "penetratingblast") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -128,8 +117,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.0167;
         $air = 0;
         $structure = 1;
-    }
-    elseif($ability=="sabotagedrone"){
+    } elseif ($ability == "sabotagedrone") {
         $abilityFound = true;
         $spammable = 0;
         $affectedByArmor = 0;
@@ -137,8 +125,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.0167;
         $air = 0;
         $structure = 1;
-    }
-    elseif($ability=="stancedanceswitch"){
+    } elseif ($ability == "stancedanceswitch") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 0;
@@ -146,8 +133,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.0167;
         $air = 0;
         $structure = 1;
-    }
-    elseif($ability=="banelingbarrage"){
+    } elseif ($ability == "banelingbarrage") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 1;
@@ -155,8 +141,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.025;
         $air = 0;
         $structure = 1;
-    }
-    elseif($ability=="alarakportrait" || $ability=="zagaraportrait"){
+    } elseif ($ability == "alarakportrait" || $ability == "zagaraportrait") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 1;
@@ -164,8 +149,7 @@ if(isset($_POST['ability'])){
         $dmgIncrease = 0.0333;
         $air = 1;
         $structure = 1;
-    }
-    elseif($ability=="kerriganportrait"){
+    } elseif ($ability == "kerriganportrait") {
         $abilityFound = true;
         $spammable = 1;
         $affectedByArmor = 1;
@@ -174,42 +158,37 @@ if(isset($_POST['ability'])){
         $air = 1;
         $structure = 1;
     }
-    
-    if($abilityFound){
+
+    if ($abilityFound) {
         #If ability can hit flyers, get all, otherwise get only ground
         $appendString = "";
-        if($air==0){
+        if ($air == 0) {
             $appendString .= " and flyer='0'";
         }
-        if($structure==0){
+        if ($structure == 0) {
             $appendString .= " and structure='0'";
         }
         include("sqlconnection.php");
-        $sql="SELECT name, race, hp+shields as vitality, light,structure
+        $sql = "SELECT name, race, hp+shields as vitality, light,structure
                   FROM amonunits
                   WHERE breakpoint='1' $appendString
                   ORDER BY vitality ASC, name ASC";
-        
-        $result=mysqli_query($con,$sql);
+
+        $result = mysqli_query($con, $sql);
         $unitArray = [];
-        
-        while($row = mysqli_fetch_array($result)) {
+
+        while ($row = mysqli_fetch_array($result)) {
             $unitArray[$row['race']][] = [$row['vitality'], $row['name'], $row['light'], $row['structure']];
         }
-        $returnArray[]=$spammable;
-        $returnArray[]=$affectedByArmor;
-        $returnArray[]=$baseDmg;
-        $returnArray[]=$dmgIncrease;
-        $returnArray[]=$unitArray;
+        $returnArray[] = $spammable;
+        $returnArray[] = $affectedByArmor;
+        $returnArray[] = $baseDmg;
+        $returnArray[] = $dmgIncrease;
+        $returnArray[] = $unitArray;
         print(json_encode($returnArray));
-    }
-    else{
+    } else {
         print("Error!");
     }
-    
-}
-else{
+} else {
     print("Error!");
 }
-
-?>

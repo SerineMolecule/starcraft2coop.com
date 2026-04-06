@@ -1,0 +1,44 @@
+[
+    {
+        "difficulty": 1,
+        "minpoints": 4,
+        "maxpoints": 6,
+        "minmutators": 2,
+        "maxmutators": 3
+    },
+    {
+        "difficulty": 2,
+        "minpoints": 7,
+        "maxpoints": 8,
+        "minmutators": 2,
+        "maxmutators": 3
+    },
+    {
+        "difficulty": 3,
+        "minpoints": 9,
+        "maxpoints": 10,
+        "minmutators": 2,
+        "maxmutators": 3
+    },
+    {
+        "difficulty": 4,
+        "minpoints": 11,
+        "maxpoints": 12,
+        "minmutators": 2,
+        "maxmutators": 3
+    },
+    {
+        "difficulty": 5,
+        "minpoints": 15,
+        "maxpoints": 16,
+        "minmutators": 2,
+        "maxmutators": 4
+    },
+    {
+        "difficulty": 6,
+        "minpoints": 19,
+        "maxpoints": 20,
+        "minmutators": 2,
+        "maxmutators": 4
+    }
+]

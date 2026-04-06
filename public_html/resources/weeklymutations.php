@@ -85,7 +85,7 @@ $_SESSION["known"] = true;
         #current p{
             padding-left:10px;
         }
-        
+
         #commanders{
             vertical-align:top;
             display:inline-block;
@@ -112,7 +112,7 @@ $_SESSION["known"] = true;
         }
         .commanderTip{
             display:none;
-            
+
         }
         #castedGame{
             text-align:center;
@@ -380,128 +380,124 @@ $_SESSION["known"] = true;
     <p>For a brief description of each mutator, hover over its icon. For details, please go to the <a href="/resources/mutators">Mutators</a> page.</p>
     <ul>
         <?php
-            
-            include '../scripts/sqlconnection.php';
-            
-            $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination 
+
+        include '../scripts/sqlconnection.php';
+
+        $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination
                     FROM mutators
                     ORDER BY mutatorid ASC";
-            $result=mysqli_query($con,$sql);
-            $mutators = [];
-            
-            while($row = mysqli_fetch_array($result)) {
-                $mutators[] = $row;
-            }
-            
-            $sql = "SELECT mutationid, releasedate, mutation, link, map, mut01, mut02, mut03 
-                    FROM weeklymutations
-                    ORDER BY mutationid DESC";
-            $weeklyList = [];        
-            $result=mysqli_query($con,$sql);
-            $row = mysqli_fetch_array($result);
-            $weeklyList[] = $row;
-            $url= $row['link'];
-            
-            $mutationName = $row['mutation'];
-            
-            $toggled=false;
-            $listed=false;
-            $currentMutation = 0;
+        $result = mysqli_query($con, $sql);
+        $mutators = [];
 
-            while($row = mysqli_fetch_array($result)) {
-                $weeklyList[] = $row;
+        while ($row = mysqli_fetch_array($result)) {
+            $mutators[] = $row;
+        }
+
+        $sql = "SELECT mutationid, releasedate, mutation, link, map, mut01, mut02, mut03
+                FROM weeklymutations
+                ORDER BY mutationid DESC";
+        $weeklyList = [];
+        $result = mysqli_query($con, $sql);
+        $row = mysqli_fetch_array($result);
+        $weeklyList[] = $row;
+        $url = $row['link'];
+
+        $mutationName = $row['mutation'];
+
+        $toggled = false;
+        $listed = false;
+        $currentMutation = 0;
+
+        while ($row = mysqli_fetch_array($result)) {
+            $weeklyList[] = $row;
+        }
+
+        $sql2 = "SELECT difficulty, minpoints FROM brutalplus";
+        $result2 = mysqli_query($con, $sql2);
+        $difficultyArray = [];
+        while ($row = mysqli_fetch_array($result2)) {
+            $difficultyArray[] = $row;
+        }
+        if ($unknown) {
+            $score = 0;
+        }
+
+        $val = getDiffString($score);
+        $diff = $val[0];
+        if ($val[0] !== 0) {
+            $diffString = "Brutal+" . $val[1];
+        } else {
+            $diffString = "Unknown";
+        }
+
+        function getDiffString($score)
+        {
+            global $difficultyArray;
+            if ($score == 0) {
+                $diff = 0;
+                $diffString = "?";
+            } elseif ($score > 20) {
+                $diff = 7;
+                $diffString = "&#9760;&#65039;";
+            } else {
+                $diffString = "&#128522;";
+                $diff = 1;
+                for ($i = 0; $i < count($difficultyArray); $i++) {
+                    if ($score >= intval($difficultyArray[$i]['minpoints'])) {
+                        $diff = intval($difficultyArray[$i]['difficulty']);
+                        $diffString = $diff;
+                    } else {
+                        break;
+                    }
+                }
             }
-            
-             $sql2 = "SELECT difficulty, minpoints FROM brutalplus";
-                $result2=mysqli_query($con,$sql2);
-                $difficultyArray=[];
-                while($row = mysqli_fetch_array($result2)) {
-                    $difficultyArray[] = $row;
-                }
-                if ($unknown){
-                    $score = 0;
-                }
-                
-                $val = getDiffString($score);
-                $diff = $val[0];
-                if($val[0]!==0){
-                    $diffString = "Brutal+" . $val[1];
-                }
-                else{
-                    $diffString = "Unknown";
-                }
-                
-                
-                function getDiffString($score){
-                    global $difficultyArray;
-                    if ($score==0){
-                        $diff = 0;
-                        $diffString = "?";
-                    }
-                    else if ($score>20){
-                        $diff=7;
-                        $diffString="&#9760;&#65039;";
-                    }
-                    else{
-                        $diffString = "&#128522;";
-                        $diff = 1;
-                        for($i=0;$i<count($difficultyArray);$i++){
-                            if($score>=intval($difficultyArray[$i]['minpoints'])){
-                                $diff = intval($difficultyArray[$i]['difficulty']);
-                                $diffString = $diff;
-                            }
-                            else{
-                                break;
-                            }
-                        }
-                    }
-                    
-                    return [$diff,$diffString];
-                }
-            
-            $mutationStart = new DateTime($weeklyList[0]['releasedate'] . " 18:00:00");
-            $mutationStart->modify("-1 day");
-            $mutationEnd = clone $mutationStart;
-            $mutationEnd ->modify("+7 days 17 hours");
-            $map = str_replace("Lock and Load", "Lock & Load", $weeklyList[0]['map']);
-            
-            $mutationStart1 = clone $mutationStart;
-            $mutationStart1->modify("-7 days");
-            $mutationEnd1 = clone $mutationEnd;
-            $mutationEnd1->modify("-7 days");
-            $map1 = str_replace("Lock and Load", "Lock & Load", $weeklyList[1]['map']);
-            
-            $mutationStart = $mutationStart->format('Y-m-d H:i:s');
-            $mutationEnd = $mutationEnd->format('Y-m-d H:i:s');
-            $mutationStart1 = $mutationStart1->format('Y-m-d H:i:s');
-            $mutationEnd1 = $mutationEnd1->format('Y-m-d H:i:s');
-            $oldMutationName = $weeklyList[1]['mutation'];
-            
-            // $sql = "SELECT difficulty, mycommander, allycommander, result 
-            //         FROM userreplays
-            //         WHERE mutation = 1 AND 
-            //               mission='$map' AND 
-            //               (difficulty='Casual' OR difficulty='Normal' OR difficulty='Hard' OR difficulty='Brutal') AND
-            //               played BETWEEN '$mutationStart' AND '$mutationEnd'";
-            // $result=mysqli_query($con,$sql);
-            // $mutationGames = [];
-            // while($row = mysqli_fetch_array($result)) {
-            //     $mutationGames[] = $row;
-            // }
-            
-            // $sql = "SELECT difficulty, mycommander, allycommander, result 
-            //         FROM userreplays
-            //         WHERE mutation = 1 AND 
-            //               mission='$map1' AND 
-            //               (difficulty='Casual' OR difficulty='Normal' OR difficulty='Hard' OR difficulty='Brutal') AND
-            //               played BETWEEN '$mutationStart1' AND '$mutationEnd1'";
-            // $result=mysqli_query($con,$sql);
-            // $mutationGames1 = [];
-            // while($row = mysqli_fetch_array($result)) {
-            //     $mutationGames1[] = $row;
-            // }
+
+            return [$diff,$diffString];
+        }
+
+        $mutationStart = new DateTime($weeklyList[0]['releasedate'] . " 18:00:00");
+        $mutationStart->modify("-1 day");
+        $mutationEnd = clone $mutationStart;
+        $mutationEnd ->modify("+7 days 17 hours");
+        $map = str_replace("Lock and Load", "Lock & Load", $weeklyList[0]['map']);
+
+        $mutationStart1 = clone $mutationStart;
+        $mutationStart1->modify("-7 days");
+        $mutationEnd1 = clone $mutationEnd;
+        $mutationEnd1->modify("-7 days");
+        $map1 = str_replace("Lock and Load", "Lock & Load", $weeklyList[1]['map']);
+
+        $mutationStart = $mutationStart->format('Y-m-d H:i:s');
+        $mutationEnd = $mutationEnd->format('Y-m-d H:i:s');
+        $mutationStart1 = $mutationStart1->format('Y-m-d H:i:s');
+        $mutationEnd1 = $mutationEnd1->format('Y-m-d H:i:s');
+        $oldMutationName = $weeklyList[1]['mutation'];
+
+        // $sql = "SELECT difficulty, mycommander, allycommander, result
+        //         FROM userreplays
+        //         WHERE mutation = 1 AND
+        //               mission='$map' AND
+        //               (difficulty='Casual' OR difficulty='Normal' OR difficulty='Hard' OR difficulty='Brutal') AND
+        //               played BETWEEN '$mutationStart' AND '$mutationEnd'";
+        // $result=mysqli_query($con,$sql);
+        // $mutationGames = [];
+        // while($row = mysqli_fetch_array($result)) {
+        //     $mutationGames[] = $row;
+        // }
+
+        // $sql = "SELECT difficulty, mycommander, allycommander, result
+        //         FROM userreplays
+        //         WHERE mutation = 1 AND
+        //               mission='$map1' AND
+        //               (difficulty='Casual' OR difficulty='Normal' OR difficulty='Hard' OR difficulty='Brutal') AND
+        //               played BETWEEN '$mutationStart1' AND '$mutationEnd1'";
+        // $result=mysqli_query($con,$sql);
+        // $mutationGames1 = [];
+        // while($row = mysqli_fetch_array($result)) {
+        //     $mutationGames1[] = $row;
+        // }
         ?>
-        
+
     </ul>
 
     <script>
@@ -519,7 +515,7 @@ $_SESSION["known"] = true;
         });
     </script>
     <div id="tooltip">tooltip</div>
-    
+
     <a id="cycle"></a><h2>Weekly Mutations Cycle</h2>
     <p>The weekly mutations follow a fixed cycle as shown below. The <a href="#thisweek">current mutation for this week</a> is highlighted in green.</p>
     <table id="mutationCycle">
@@ -534,123 +530,114 @@ $_SESSION["known"] = true;
             </thead>
             <tbody>
     <?php
-        $sql = "SELECT mutationid, mutation, map, mut01, mut02, mut03 
-                    FROM mutationcycle
-                    ORDER BY mutationid ASC";
-            $cycleList = [];        
-            $result=mysqli_query($con,$sql);
-            
-            while($row = mysqli_fetch_array($result)) {
-                $cycleList[] = $row;
-            }
-            $mutationCount = count($cycleList);
-            //$mutationCycleStart = new DateTime("2020-10-26 18:00:00");
-            //$today = new DateTime('now');
-            //print($mutationCycleStart->diff($today)->a);
-            //$weekNumber = floor($mutationCycleStart->diff($today)->days/7) % $mutationCount;
-            //print($weekNumber);
-            $mutationCycleStart = strtotime("2020-10-25 18:00:00");
-            $today = time();
-            $datediff = $today - $mutationCycleStart;
+    $sql = "SELECT mutationid, mutation, map, mut01, mut02, mut03
+            FROM mutationcycle
+            ORDER BY mutationid ASC";
+    $cycleList = [];
+    $result = mysqli_query($con, $sql);
 
-            $weekNumber= floor($datediff / (7 * 60 * 60 * 24)) % $mutationCount;
-            $counter=0;
-            foreach($cycleList as $row) {
-                $classVals = str_replace("and", "", str_replace(' ', '', strtolower($row["map"])));
-                $score = 0;
-                $unknown = false;
-                if ($row["mut01"]){
-                    $classVals .=" " . str_replace(' ', '', strtolower($mutators[intval($row["mut01"])-1]['mutatorname']));
-                    if ($mutators[intval($row["mut01"])-1]['abomination'] > 0){
-                        $score += $mutators[intval($row["mut01"])-1]['abomination'];
-                    }
-                    else{
-                    $unknown = true;
-                    }
-                }
-                if ($row["mut02"]){
-                    $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut02"])-1]['mutatorname']));
-                    if ($mutators[intval($row["mut02"])-1]['abomination'] > 0){
-                        $score += $mutators[intval($row["mut02"])-1]['abomination'];
-                    }
-                    else{
-                        $unknown = true;
-                    }
-                }
-                if ($row["mut03"]){
-                    $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut03"])-1]['mutatorname']));
-                    if ($mutators[intval($row["mut03"])-1]['abomination'] > 0){
-                        $score += $mutators[intval($row["mut03"])-1]['abomination'];
-                    }
-                    else{
-                        $unknown = true;
-                    }
-                }
-                if($unknown){
-                    $score=0;
-                }
-                $diffArray = getDiffString($score);
-                $classVals .= " brutal" . $diffArray[0];
-                if ($counter== $weekNumber){
-                    $classVals .= " current' id='thisweek";
-                }
-                echo "<tr class='" . $classVals . "'>\n";
-                    echo "<td class='ribbon'>" .  $row["mutation"]. "<div class='ribbon" . $diffArray[0] . "'>" . $diffArray[1] . "</div></td>\n";
-                    
-                    if ($row["map"]){
-                        echo "<td><img src='/images/missionthumbnails/" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . ".png' alt='" . $row["map"] . "'></td>\n";
-                    }
-                    else{
-                        echo "<td></td>\n";
-                    }
-                    
-                    if ($row["mut01"]){
-                        $filename=str_replace(' ', '', strtolower($mutators[intval($row["mut01"])-1]['mutatorname']));
-                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"])-1]['mutatorname'] . ":" . $mutators[intval($row["mut01"])-1]['mutatordescription'] ."\">" . $mutators[intval($row["mut01"])-1]['mutatorname'] . "</td>\n";
-                    }
-                    else{
-                        echo "<td></td>\n";
-                    }
-                    if ($row["mut02"]){
-                        $filename=str_replace(' ', '', strtolower($mutators[intval($row["mut02"])-1]['mutatorname']));
-                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"])-1]['mutatorname'] . ":" . $mutators[intval($row["mut02"])-1]['mutatordescription'] ."\">" . $mutators[intval($row["mut02"])-1]['mutatorname'] . "</td>\n";
-                    }
-                    else{
-                        echo "<td></td>\n";
-                    }
-                    if ($row["mut03"]){
-                        $filename=str_replace(' ', '', strtolower($mutators[intval($row["mut03"])-1]['mutatorname']));
-                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"])-1]['mutatorname'] . ":" . $mutators[intval($row["mut03"])-1]['mutatordescription'] ."\">" . $mutators[intval($row["mut03"])-1]['mutatorname'] . "</td>\n";
-                    }
-                    else{
-                        echo "<td></td>\n";
-                    }
-                echo "</tr>\n";
-                $counter+=1;
-            }
+    while ($row = mysqli_fetch_array($result)) {
+        $cycleList[] = $row;
+    }
+    $mutationCount = count($cycleList);
+    //$mutationCycleStart = new DateTime("2020-10-26 18:00:00");
+    //$today = new DateTime('now');
+    //print($mutationCycleStart->diff($today)->a);
+    //$weekNumber = floor($mutationCycleStart->diff($today)->days/7) % $mutationCount;
+    //print($weekNumber);
+    $mutationCycleStart = strtotime("2020-10-25 18:00:00");
+    $today = time();
+    $datediff = $today - $mutationCycleStart;
 
-    
+    $weekNumber = floor($datediff / (7 * 60 * 60 * 24)) % $mutationCount;
+    $counter = 0;
+    foreach ($cycleList as $row) {
+        $classVals = str_replace("and", "", str_replace(' ', '', strtolower($row["map"])));
+        $score = 0;
+        $unknown = false;
+        if ($row["mut01"]) {
+            $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname']));
+            if ($mutators[intval($row["mut01"]) - 1]['abomination'] > 0) {
+                $score += $mutators[intval($row["mut01"]) - 1]['abomination'];
+            } else {
+                $unknown = true;
+            }
+        }
+        if ($row["mut02"]) {
+            $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname']));
+            if ($mutators[intval($row["mut02"]) - 1]['abomination'] > 0) {
+                $score += $mutators[intval($row["mut02"]) - 1]['abomination'];
+            } else {
+                $unknown = true;
+            }
+        }
+        if ($row["mut03"]) {
+            $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname']));
+            if ($mutators[intval($row["mut03"]) - 1]['abomination'] > 0) {
+                $score += $mutators[intval($row["mut03"]) - 1]['abomination'];
+            } else {
+                $unknown = true;
+            }
+        }
+        if ($unknown) {
+            $score = 0;
+        }
+        $diffArray = getDiffString($score);
+        $classVals .= " brutal" . $diffArray[0];
+        if ($counter == $weekNumber) {
+            $classVals .= " current' id='thisweek";
+        }
+        echo "<tr class='" . $classVals . "'>\n";
+        echo "<td class='ribbon'>" . $row["mutation"] . "<div class='ribbon" . $diffArray[0] . "'>" . $diffArray[1] . "</div></td>\n";
+
+        if ($row["map"]) {
+            echo "<td><img src='/images/missionthumbnails/" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . ".png' alt='" . $row["map"] . "'></td>\n";
+        } else {
+            echo "<td></td>\n";
+        }
+
+        if ($row["mut01"]) {
+            $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname']));
+            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut01"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . "</td>\n";
+        } else {
+            echo "<td></td>\n";
+        }
+        if ($row["mut02"]) {
+            $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname']));
+            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut02"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . "</td>\n";
+        } else {
+            echo "<td></td>\n";
+        }
+        if ($row["mut03"]) {
+            $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname']));
+            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut03"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . "</td>\n";
+        } else {
+            echo "<td></td>\n";
+        }
+        echo "</tr>\n";
+        $counter += 1;
+    }
+
     ?>
     </tbody>
     <table>
     <a id="past"></a><h2>Casted Weekly Mutations</h2>
     <p>The list of weekly mutations is shown below:</p>
     <p>Filters (click a filter to remove):</p>
-    <div id="maps"><p>Map: <select id="mapselect"> 
+    <div id="maps"><p>Map: <select id="mapselect">
         <?php
-            $sql = "SELECT distinct map FROM weeklymutations ORDER BY cast(map as char) ASC";
-            $result2=mysqli_query($con,$sql);
-    
-            while($row = mysqli_fetch_array($result2)) {
-                $string = $row['map'];
-                if ($string !== ""){
-                    $string=str_replace(" ", "", $string);
-                    $string=str_replace("and", "", $string);
-                    $string=str_replace("&", "", $string);
-                    echo ("<option value='" . strtolower($string) . "'>" . $row['map'] . "</option>");
-                }
+        $sql = "SELECT distinct map FROM weeklymutations ORDER BY cast(map as char) ASC";
+        $result2 = mysqli_query($con, $sql);
+
+        while ($row = mysqli_fetch_array($result2)) {
+            $string = $row['map'];
+            if ($string !== "") {
+                $string = str_replace(" ", "", $string);
+                $string = str_replace("and", "", $string);
+                $string = str_replace("&", "", $string);
+                echo("<option value='" . strtolower($string) . "'>" . $row['map'] . "</option>");
             }
-            
+        }
         ?>
         </select>
         <button type="button" id="addmap">Add</button>
@@ -658,17 +645,17 @@ $_SESSION["known"] = true;
     </div>
     <div id="mutators"><p>Mutators: <select id="mutatorselect">
         <?php
-            $sql = "SELECT mutatorname FROM mutators ORDER BY mutatorname ASC";
-            $result2=mysqli_query($con,$sql);
-    
-            while($row = mysqli_fetch_array($result2)) {
-                $string = $row['mutatorname'];
-                if ($string !== ""){
-                    $string=str_replace(" ", "", $string);
-                    $string=str_replace("&", "", $string);
-                    echo ("<option value='" . strtolower($string) . "'>" . $row['mutatorname'] . "</option>");
-                }
+        $sql = "SELECT mutatorname FROM mutators ORDER BY mutatorname ASC";
+        $result2 = mysqli_query($con, $sql);
+
+        while ($row = mysqli_fetch_array($result2)) {
+            $string = $row['mutatorname'];
+            if ($string !== "") {
+                $string = str_replace(" ", "", $string);
+                $string = str_replace("&", "", $string);
+                echo("<option value='" . strtolower($string) . "'>" . $row['mutatorname'] . "</option>");
             }
+        }
         ?>
         </select>
         <button type="button" id="addmutator">Add</button>
@@ -676,9 +663,9 @@ $_SESSION["known"] = true;
     </div>
     <div id="difficultyLevel"><p>Difficulty: <select id="difficultyselect"><option value='0'>?</option>
         <?php
-            foreach($difficultyArray as $row){
-                echo ("<option value='" . $row['difficulty'] . "'>Brutal+" . $row['difficulty'] . "</option>");
-            }
+        foreach ($difficultyArray as $row) {
+            echo("<option value='" . $row['difficulty'] . "'>Brutal+" . $row['difficulty'] . "</option>");
+        }
         ?>
         </select>
         <button type="button" id="adddifficulty">Add</button>
@@ -721,7 +708,7 @@ $_SESSION["known"] = true;
             else{
                 label="?";
             }
-            
+
             var exists = false;
             $("#difficultyLevel div").each(function(){
                 if($(this).text()==label){
@@ -737,7 +724,7 @@ $_SESSION["known"] = true;
             var mapClasses = [];
             var mutatorClasses = [];
             var difficultyClasses = [];
-            
+
             $("#maps img").each(function(){
                 mapClasses.push("." + $(this).attr("alt"));
             });
@@ -747,9 +734,9 @@ $_SESSION["known"] = true;
             $("#difficultyLevel div").each(function(){
                 difficultyClasses.push("." + $(this).attr('class').split(' ')[1].replace("Filter",""));
             });
-            
+
             var collection = $('#mutationList tr');
-             
+
             $("#mutationList tr").hide();
             if(mapClasses.length!==0){
                 collection = collection.filter(mapClasses.join());
@@ -762,7 +749,7 @@ $_SESSION["known"] = true;
             if(difficultyClasses.length!==0){
                 collection = collection.filter(difficultyClasses.join());
             }
-            
+
             collection.show();
             $("#columnNames").show();
             recount();
@@ -798,83 +785,75 @@ $_SESSION["known"] = true;
                 </tr>
             </thead>
             <tbody>
-                 <?php
-                    foreach($weeklyList as $row) {
-                        $classVals = str_replace("and", "", str_replace(' ', '', strtolower($row["map"])));
-                        $score = 0;
-                        $unknown = false;
-                        if ($row["mut01"]){
-                            $classVals .=" " . str_replace(' ', '', strtolower($mutators[intval($row["mut01"])-1]['mutatorname']));
-                            if ($mutators[intval($row["mut01"])-1]['abomination'] > 0){
-                                $score += $mutators[intval($row["mut01"])-1]['abomination'];
-                            }
-                            else{
+                <?php
+                foreach ($weeklyList as $row) {
+                    $classVals = str_replace("and", "", str_replace(' ', '', strtolower($row["map"])));
+                    $score = 0;
+                    $unknown = false;
+                    if ($row["mut01"]) {
+                        $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname']));
+                        if ($mutators[intval($row["mut01"]) - 1]['abomination'] > 0) {
+                            $score += $mutators[intval($row["mut01"]) - 1]['abomination'];
+                        } else {
                             $unknown = true;
-                            }
                         }
-                        if ($row["mut02"]){
-                            $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut02"])-1]['mutatorname']));
-                            if ($mutators[intval($row["mut02"])-1]['abomination'] > 0){
-                                $score += $mutators[intval($row["mut02"])-1]['abomination'];
-                            }
-                            else{
-                                $unknown = true;
-                            }
-                        }
-                        if ($row["mut03"]){
-                            $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut03"])-1]['mutatorname']));
-                            if ($mutators[intval($row["mut03"])-1]['abomination'] > 0){
-                                $score += $mutators[intval($row["mut03"])-1]['abomination'];
-                            }
-                            else{
-                                $unknown = true;
-                            }
-                        }
-                        if($unknown){
-                            $score=0;
-                        }
-                        $diffArray = getDiffString($score);
-                        $classVals .= " brutal" . $diffArray[0];
-                        echo "<tr class='" . $classVals . "'>\n";
-                            echo "<td class='ribbon'>" . $row["releasedate"]. "<div class='ribbon" . $diffArray[0] . "'>" . $diffArray[1] . "</div></td>\n";
-                            if($row["link"]){
-                                echo "<td>" . $row["mutation"]. "<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/" . $row["link"] . "'></td>\n";
-                            }
-                            else{
-                                echo "<td>" . $row["mutation"]. "</td>\n";
-                            }
-                            
-                            if ($row["map"]){
-                                echo "<td><img src='/images/missionthumbnails/" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . ".png' alt='" . $row["map"] . "'></td>\n";
-                            }
-                            else{
-                                echo "<td></td>\n";
-                            }
-                            
-                            if ($row["mut01"]){
-                                $filename=str_replace(' ', '', strtolower($mutators[intval($row["mut01"])-1]['mutatorname']));
-                                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"])-1]['mutatorname'] . ":" . $mutators[intval($row["mut01"])-1]['mutatordescription'] ."\">" . $mutators[intval($row["mut01"])-1]['mutatorname'] . "</td>\n";
-                            }
-                            else{
-                                echo "<td></td>\n";
-                            }
-                            if ($row["mut02"]){
-                                $filename=str_replace(' ', '', strtolower($mutators[intval($row["mut02"])-1]['mutatorname']));
-                                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"])-1]['mutatorname'] . ":" . $mutators[intval($row["mut02"])-1]['mutatordescription'] ."\">" . $mutators[intval($row["mut02"])-1]['mutatorname'] . "</td>\n";
-                            }
-                            else{
-                                echo "<td></td>\n";
-                            }
-                            if ($row["mut03"]){
-                                $filename=str_replace(' ', '', strtolower($mutators[intval($row["mut03"])-1]['mutatorname']));
-                                echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"])-1]['mutatorname'] . ":" . $mutators[intval($row["mut03"])-1]['mutatordescription'] ."\">" . $mutators[intval($row["mut03"])-1]['mutatorname'] . "</td>\n";
-                            }
-                            else{
-                                echo "<td></td>\n";
-                            }
-                        echo "</tr>\n";
                     }
-                    $con->close();
+                    if ($row["mut02"]) {
+                        $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname']));
+                        if ($mutators[intval($row["mut02"]) - 1]['abomination'] > 0) {
+                            $score += $mutators[intval($row["mut02"]) - 1]['abomination'];
+                        } else {
+                            $unknown = true;
+                        }
+                    }
+                    if ($row["mut03"]) {
+                        $classVals .= " " . str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname']));
+                        if ($mutators[intval($row["mut03"]) - 1]['abomination'] > 0) {
+                            $score += $mutators[intval($row["mut03"]) - 1]['abomination'];
+                        } else {
+                            $unknown = true;
+                        }
+                    }
+                    if ($unknown) {
+                        $score = 0;
+                    }
+                    $diffArray = getDiffString($score);
+                    $classVals .= " brutal" . $diffArray[0];
+                    echo "<tr class='" . $classVals . "'>\n";
+                    echo "<td class='ribbon'>" . $row["releasedate"] . "<div class='ribbon" . $diffArray[0] . "'>" . $diffArray[1] . "</div></td>\n";
+                    if ($row["link"]) {
+                        echo "<td>" . $row["mutation"] . "<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/" . $row["link"] . "'></td>\n";
+                    } else {
+                        echo "<td>" . $row["mutation"] . "</td>\n";
+                    }
+
+                    if ($row["map"]) {
+                        echo "<td><img src='/images/missionthumbnails/" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . ".png' alt='" . $row["map"] . "'></td>\n";
+                    } else {
+                        echo "<td></td>\n";
+                    }
+
+                    if ($row["mut01"]) {
+                        $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname']));
+                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut01"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . "</td>\n";
+                    } else {
+                        echo "<td></td>\n";
+                    }
+                    if ($row["mut02"]) {
+                        $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname']));
+                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut02"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . "</td>\n";
+                    } else {
+                        echo "<td></td>\n";
+                    }
+                    if ($row["mut03"]) {
+                        $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname']));
+                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut03"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . "</td>\n";
+                    } else {
+                        echo "<td></td>\n";
+                    }
+                    echo "</tr>\n";
+                }
+                $con->close();
                 ?>
             </tbody>
         </table>
@@ -900,13 +879,13 @@ $_SESSION["known"] = true;
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(".currentMutatorIcon").on('mousemove',function(e){
             $('#tooltip').css('top', e.pageY-40);
             $('#tooltip').css('left', e.pageX+5);
             $('#tooltip').css('position', "absolute");
-            
+
         });
         $(document).click(function(e) {
             if (e.srcElement !== $("#player")){
