@@ -2,16 +2,17 @@
 
 // run from CLI; generate static pages
 require "config.php";
+
 $pages = [
     '/resources/brutal',
 ];
 
-foreach ($pages as $page) {
-    $HTML_DIR = '/html';
-    $_SERVER['REQUEST_URI'] = "$page";
-    $_SERVER['ADMIN_KEY'] = $ADMIN_KEY;
-    $_SERVER['SERVER_NAME'] = $SERVER_NAME;
+$HTML_DIR = '/html';
+$_SERVER['ADMIN_KEY'] = $ADMIN_KEY;
+$_SERVER['SERVER_NAME'] = $SERVER_NAME;
 
+foreach ($pages as $page) {
+    $_SERVER['REQUEST_URI'] = "$page";
     $pageDir = __DIR__ . $HTML_DIR . dirname($page);
     chdir($pageDir);
 
