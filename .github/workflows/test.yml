@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Test
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
+    - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
@@ -39,7 +39,8 @@ jobs:
     - name: Run phpcs formatter
       run: composer run-script ci
 
-    - run: bun install
+    - name: Install Bun dependencies
+      run: bun install
 
     - name: Validate JSON schemas
       run: bun ./data/validate
