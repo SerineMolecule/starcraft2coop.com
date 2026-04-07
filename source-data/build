@@ -25,23 +25,23 @@ console.log(`Done`)
 
 /////////////////////////////////////////////////
 
-console.log(`Writing to public_html/data/`);
+console.log(`Writing to html/data/`);
 for (const [file, type] of files) {
     const data = await Bun.file(`source-data/${file}`).json();
-    Bun.write(`public_html/data/${file}`, JSON.stringify(data, null, 4) + '\n');
+    Bun.write(`html/data/${file}`, JSON.stringify(data, null, 4) + '\n');
 }
 
-console.log(`Writing to public_html/data/brutalplus/`);
+console.log(`Writing to html/data/brutalplus/`);
 /** @type {import('./data-types.ts').BrutalPlus[]} */
 const brutalPluses = await Bun.file('source-data/brutalplus.json').json();
 for (const brutalPlus of brutalPluses) {
-    Bun.write(`public_html/data/brutalplus/${brutalPlus.difficulty}.json`, JSON.stringify(brutalPlus, null, 4) + '\n');
+    Bun.write(`html/data/brutalplus/${brutalPlus.difficulty}.json`, JSON.stringify(brutalPlus, null, 4) + '\n');
 }
 
-console.log(`Writing to public_html/data/commandersummaries/`);
+console.log(`Writing to html/data/commandersummaries/`);
 /** @type {import('./data-types.ts').Commander[]} */
 const commanders = await Bun.file('source-data/commandersummaries.json').json();
 for (const commander of commanders) {
-    Bun.write(`public_html/data/commandersummaries/${commander.commander}.json`, JSON.stringify(commander, null, 4) + '\n');
+    Bun.write(`html/data/commandersummaries/${commander.commander}.json`, JSON.stringify(commander, null, 4) + '\n');
 }
 console.log(`Done`);
