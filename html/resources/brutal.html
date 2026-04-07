@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
 <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
-<link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.31">
+<link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.32">
 <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
 <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -73,11 +73,8 @@
 <ul id="topmenu">
     <li class="normal"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
     <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
-    <!--li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-community">Community</a></li-->
-    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-guides">Guides</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Guides</a></li>
     <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
-    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Resources</a></li>
-    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-tools">Tools</a></li>
     <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-about">About</a></li>
 </ul>
 <div id="container">
@@ -128,20 +125,37 @@
         </ul>
     </div>
     <div id="resources" class="submenu">
-        <ul>
-            <li class="normal"><a href="/resources/achievements">Achievements</a></li>
-            <li class="normal"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
-            <li class="normal"><a href="/resources/bugs">Bugs</a></li>
-            <li class="normal"><a href="/resources/brutal">Brutal+</a></li>
-            <li class="normal"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
-            <li class="normal"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
-            <li class="normal"><a href="/resources/levels">Levels</a></li>
-            <li class="normal"><a href="/resources/mutators">Mutators</a></li>
-            <li class="normal"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
-            <!--li class="normal"><a href="/resources/stats">Stats</a></li-->
-            <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
-
-        </ul>
+        <div class="submenu-with-sections"><div class="submenu-section">
+            <strong>Resources:</strong>
+            <ul>
+                <li class="normal"><a href="/resources/mutators">Mutators</a></li>
+                <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
+                <li class="normal"><a href="/resources/brutal">Brutal+</a></li>
+                <li class="normal"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Guides:</strong>
+            <ul>
+                <li class="normal"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
+                <li class="normal"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
+                <li class="normal"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
+                <li class="normal"><a href="/guides/newplayer">New&nbsp;Players</a></li>
+                <li class="normal"><a href="/guides/youtube">Youtube</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Miscellaneous:</strong>
+            <ul>
+                <li class="normal"><a href="/resources/achievements">Achievements</a></li>
+                <li class="normal"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
+                <li class="normal"><a href="/resources/bugs">Bugs</a></li>
+                <li class="normal"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
+                <li class="normal"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
+                <li class="normal"><a href="/resources/levels">Levels</a></li>
+                <li class="normal"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
+                <li class="normal"><a href="/tools/downloads">Downloads</a></li>
+                <li class="normal"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
+            </ul>
+        </div></div>
     </div>
     <div id="tools" class="submenu">
         <ul>
