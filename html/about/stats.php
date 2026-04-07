@@ -94,7 +94,7 @@ include("../header.php");
 
     $sql = "SELECT map, count(map) FROM `weeklymutations`
             GROUP BY map
-            ORDER BY count(map) DESC
+            ORDER BY count(map) DESC, map
             LIMIT 5";
     $result = mysqli_query($con, $sql);
     $topMaps = [];
@@ -105,7 +105,7 @@ include("../header.php");
 
     $sql = "SELECT map, count(map) FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T
             GROUP BY map
-            ORDER BY count(map) DESC
+            ORDER BY count(map) DESC, map
             LIMIT 5";
     $result = mysqli_query($con, $sql);
     $topMaps1 = [];
@@ -121,7 +121,7 @@ include("../header.php");
             SELECT mut03 AS id FROM weeklymutations) weeklymutations
             WHERE id<>0
             GROUP BY id
-            ORDER BY count(*) DESC
+            ORDER BY count(*) DESC, id
             LIMIT 5";
     $result = mysqli_query($con, $sql);
     $topMutators = [];
@@ -137,7 +137,7 @@ include("../header.php");
             SELECT mut03 AS id FROM weeklymutations) weeklymutations
             WHERE id<>0
             GROUP BY id
-            ORDER BY count(*) ASC
+            ORDER BY count(*) ASC, id
             LIMIT 5";
     $result = mysqli_query($con, $sql);
     $bottomMutators = [];
@@ -153,7 +153,7 @@ include("../header.php");
             SELECT mut03 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T) AS T
             WHERE id<>0
             GROUP BY id
-            ORDER BY count(*) DESC
+            ORDER BY count(*) DESC, id
             LIMIT 5";
     $result = mysqli_query($con, $sql);
     $topMutators1 = [];
@@ -169,7 +169,7 @@ include("../header.php");
             SELECT mut03 AS id FROM (SELECT * FROM weeklymutations GROUP BY mutation) AS T) AS T
             WHERE id<>0
             GROUP BY id
-            ORDER BY count(*) ASC
+            ORDER BY count(*) ASC, id
             LIMIT 5";
     $result = mysqli_query($con, $sql);
     $bottomMutators1 = [];
