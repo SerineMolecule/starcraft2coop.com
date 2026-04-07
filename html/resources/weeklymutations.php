@@ -1,5 +1,3 @@
-<html lang="en">
-<head>
 <?php
 include("../header.php");
 $_SESSION["known"] = true;
