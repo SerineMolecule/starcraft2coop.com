@@ -27,14 +27,6 @@ Redirect 301 /rockslappingchampions /community/rockslappingchampions
 Redirect 301 /gamespotlight /community/gamespotlight
 Redirect 301 /mythbusters /community/mythbusters
 
-# 19-apr-2020 menu reorganization
-Redirect 301 /newplayer /guides/newplayer
-Redirect 301 /resources/links /about/links
-Redirect 301 /resources/downloads /tools/downloads
-Redirect 301 /tournament /community/tournament
-Redirect 301 /faq /about/faq
-Redirect 301 /contact /about/contact
-
 # 28-mar-2026 menu reorganization
 Redirect 302 /resources/stats /about/stats
 
