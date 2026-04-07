@@ -15,7 +15,7 @@ function get_commanders(): array
  */
 function get_commander(string $commander): array
 {
-    $json = file_get_contents(__DIR__ . '/commandersummaries/' . $commander . '.json');
+    $json = file_get_contents(__DIR__ . '/commandersummaries/' . strtolower($commander) . '.json');
     return json_decode($json, true);
 }
 
