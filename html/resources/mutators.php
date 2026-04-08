@@ -227,18 +227,28 @@ $_SESSION["known"] = true;
             });
             return false;
         }
+        function getInteraction(mut1, mut2) {
+            if (mut1 > mut2) {
+                var temp = mut1;
+                mut1 = mut2;
+                mut2 = temp;
+            }
+            var key = '' + mut1 + '-' + mut2;
+            return interactionsPairs[key];
+        }
         function updateInteractions() {
             if (!getInteractions()) return;
-            var mut1 = parseInt($("#mut1").val());
-            var filename1 = $("#mut1 option:selected").text().replace(/ /g,'').toLowerCase();
+            var $mut1 = $("#mut1 option:selected");
+            var mut1 = parseInt($mut1.val());
+            var filename1 = $mut1.text().replace(/ /g,'').toLowerCase();
             if (filename1 === '-') filename1 = 'random';
-            var mut2 = parseInt($("#mut2").val());
-            var filename2 = $("#mut2 option:selected").text().replace(/ /g,'').toLowerCase();
+            var $mut2 = $("#mut2 option:selected");
+            var mut2 = parseInt($mut2.val());
+            var filename2 = $mut2.text().replace(/ /g,'').toLowerCase();
             if (filename2 === '-') filename2 = 'random';
             $("#mut2 option").each(function () {
                 var val = parseInt(this.value);
-                var key = '' + mut1 + '-' + val;
-                if (!val || !mut1 || interactionsPairs[key]) {
+                if (!val || !mut1 || getInteraction(mut1, val)) {
                     this.disabled = false;
                 } else {
                     this.disabled = true;
@@ -247,8 +257,10 @@ $_SESSION["known"] = true;
             $("#mut1img").attr("src", "/images/mutators/" + filename1 + ".png");
             $("#mut2img").attr("src", "/images/mutators/" + filename2 + ".png");
             if (mut1 && mut2) {
-                var key = '' + mut1 + '-' + mut2;
-                $("#interactions").text(interactionsPairs[key] || "No interaction found.");
+                $("#interactions").text(getInteraction(mut1, mut2) || "No interaction found.");
+            } else if (mut1 && !$mut2.length) {
+                // mut2 has a disabled option selected, which means there's no interaction
+                $("#interactions").text("No interaction found.");
             } else {
                 $("#interactions").text(mut1 || mut2 ? "(Select both mutators)" : "");
             }
