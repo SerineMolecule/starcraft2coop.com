@@ -69,6 +69,10 @@ $pages = [
     '/tools/downloads',
     '/tools/masterybreakpoints',
     '/tools/unitstats',
+
+    '/account',
+    '/index',
+
 ];
 
 $HTML_DIR = '/html';

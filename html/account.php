@@ -1,8 +1,8 @@
 <?php
-http_response_code(410);
 
 include("header.php");
 ?>
+  <meta http-equiv="Status" content="410 Gone"/>
   <title>Starcraft 2 Co-op - Account</title>
 </head>
 <body>
