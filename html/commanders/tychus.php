@@ -62,9 +62,9 @@ include("../header.php");
         <p><a href="#buildOrder">Build Order</a></p>
         <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Tychus leads a band of powerful outlaws, each with a unique ability and gear, to control the battlefield.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -206,7 +206,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Tychus are:</p>
     <table>
         <thead>
@@ -239,7 +239,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="calldowns"></a><h2>Calldowns</h2>
+    <h2 id="calldowns">Calldowns</h2>
     <table class="calldownTable">
         <thead>
             <tr>
@@ -344,10 +344,10 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Very Easy</p>
     <p>Tychus has most of the tools he needs to deal with any mission and enemy composition at level 1, making him one of the easier commanders to level. Use Nikara as your primary healer until you get Rattlesnake. Due to the lack of upgrades available, build only two Engineering Bays.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Tychus with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -424,7 +424,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">The Medivac Pickup Cooldown allows you to spam Medivacs, allowing for greater mobility and less chances of outlaw losses. The Odin is usually used for pushing into enemy bases, which reducing the cooldown by 120s (to a 240s cooldown) helps a lot. Both these choices are competitive.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Tychus. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -555,7 +555,7 @@ include("../header.php");
         </tbody>
     </table>
     <p>For general play, all of the Tychus prestiges are solid picks. A good choice for a prestige is Technical Recruiter as it is versatile enough to handle any map with ease.</p>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Tychus is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/tychus/tychus.jpg" alt="Tychus Findlay"><img class="army" src="/images/commanderdata/units/tychus/rattlesnake.jpg" alt='Kev "Rattlesnake" West'><img class="army" src="/images/commanderdata/units/tychus/sirius.jpg" alt='James "Sirius" Sykes'>
     <p>Rattlesnake first allows a player to get adequate healing but also an increase to their potential damage output. They may then get Sirius to handle air units as well as further increase their potential damage output. Additionally, his turrets are detectors, which reduces the need to recruiting a Fixer for detection.</p>
@@ -591,7 +591,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="outlaws"></a><h2>Outlaws</h2>
+    <h2 id="outlaws">Outlaws</h2>
     <p>Tychus has three classes of outlaws. These are:</p>
     <ul>
         <li><b>Guns:</b> These are damage-dealers.</li>
@@ -1342,7 +1342,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Tychus. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         17 Command Center<br>
@@ -1351,7 +1351,7 @@ include("../header.php");
         20 Engineering Bay<br>
         22 2x Turrets -> Rocks
     </p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>A common trap for Tychus players is focusing on attack and armor upgrades while going for a Vega-centric build. Units that are dominated do not get benefits of attack and armor upgrades from Tychus. Therefore, these upgrades should be a low priority.</p>
     <p>With higher skill levels, it is even possible to go for a greedy play and get out other damage dealers first, relying purely on the healing from Medivac Platforms.</p>

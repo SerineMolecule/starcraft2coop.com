@@ -45,9 +45,9 @@ include("../header.php");
         <p><a href="#buildOrder">Build Order</a></p>
         <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Kerrigan dominates the battlefield with her aggressive abilities combined with some classic Zerg units.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -186,7 +186,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Kerrigan are:</p>
     <table>
         <thead>
@@ -219,11 +219,11 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Easy</p>
     <p>Kerrigan (the hero unit) is extremely powerful, so utilize her as much as possible. Your army composition should be mass Hydralisk, with Nydus (and then Omega) worms to reinforce. Until you get Omega worms, place Nydus worms further away from where you are taking an engagement, as it will be used to reinforce your army a lot slower than usual.</p>
     <p>While leveling through Mastery levels, allocate points into Power Set 1's Energy Regeneration mastery until you hit the desired number of points, before allocating them to Attack Damage.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Kerrigan with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -300,7 +300,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">Reducing the cost and research time of evolutions allows you to get "Ability Efficiency" as quickly as possible, improving Kerrigan's power level. The 1 point into the Primary Ability improvement allows you to two-shot burrowed Lurkers.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Kerrigan. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -480,7 +480,7 @@ include("../header.php");
         </tbody>
     </table>
     <p>For general play, P0 (no prestige, Queen of Blades), P2 (Folly of Man), and P3 (Desolate Queen) are recommended. P3 has a better match-up against air (a general Kerrigan weakness) but a worse match-up against early-game hordes. P2 provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity, but some find it less beginner friendly. It allows Kerrigan to more effectively clear enemy bases and keep her army alive.</p>
-    <a id="hero"></a><h2>Hero Unit</h2>
+    <h2 id="hero">Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan.jpg" alt="Kerrigan">
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
@@ -604,7 +604,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Kerrigan is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/kerrigan/hydralisk.jpg" alt="Hydralisk">
     <p>Mass Hydralisk builds work very well for Kerrigan because of their large amounts of burst potential from their Frenzy, when they are unloaded from Omega Worms.</p>
@@ -640,7 +640,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="units"></a><h2>Combat Units</h2>
+    <h2 id="units">Combat Units</h2>
     <p>For more information on Kerrigan's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Kerrigan's combat units are listed below:</p>
     <div class="leftImage">
@@ -1000,7 +1000,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Kerrigan. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Overlord<br>
@@ -1012,7 +1012,7 @@ include("../header.php");
         33 Overlord<br>
         Kerrigan -> Rocks
     </p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>None</p>
     <h3>Playstyle Tips</h3>

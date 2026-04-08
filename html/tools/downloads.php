@@ -36,16 +36,16 @@ include("../header.php");
         <p><a href="#updates2">Updates</a></p>
         <p><a href="#other2">Other Notes</a></p>
     </div>
-    <a id="coopassistant"></a><h2>Co-op Overlay</h2>
+    <h2 id="coopassistant">Co-op Overlay</h2>
     <p><a href="https://github.com/FluffyMaguro/SC2_Coop_overlay" rel="nofollow">Maguro's Coop Overlay</a> is recommended for viewing game statistics and automatically uploading replay files to the site.</p>
     <!--
-    <a id="coopassistant"></a><h2>Co-op Assistant</h2>
+    <h2 id="coopassistant">Co-op Assistant</h2>
     <p>This is a Windows application that provides two pieces of functionality which can be turned on/off as required:</p>
     <ul>
         <li>It detects the map you're playing on, and if you are playing on a map with a fast expand, will prompt you for a commander. If there is a fast expand available for the commander, it will create a small overlay, with an image from this site to remind you how to fast expand</li>
         <li>If you have an account on this site, your replays will be automatically uploaded to your account</li>
     </ul>
-    <a id="download1"></a><h2>Download Links</h2>
+    <h2 id="download1">Download Links</h2>
     <form action="downloads.php" name="download1form" id="download1Form" class="dynamic" method="post" enctype="multipart/form-data">
         <input type="hidden" name="recaptcha_response" id="download1FormRecaptchaResponse">
         <p><input type="submit" id="startDownload1" value="Download Co-op Assistant"></p>
@@ -79,14 +79,14 @@ include("../header.php");
             return false;
         })
     </script>
-    <a id="usage1"></a><h2>Usage Notes</h2>
+    <h2 id="usage1">Usage Notes</h2>
     <ul>
         <li>You will to have the .NET Framework 4.7.2. You can get it from <a href="https://support.microsoft.com/en-ae/help/4054530/microsoft-net-framework-4-7-2-offline-installer-for-windows" rel="nofollow">here</a>.</li>
         <li>An internet connection will be required for the program to function.</li>
         <li>If there is an update to the program, you will be notified when you launch it. Updates should be few and far between, and usually only if a new commander gets added with a Fast Expand strategy.</li>
         <li>The program will need write access to its current running folder to save your settings. It is best to save this program in its own folder on your Desktop or other directory where write permissions exist.</li>
     </ul>
-    <a id="config1"></a><h2>Configuring the Program</h2>
+    <h2 id="config1">Configuring the Program</h2>
     <p><b>For Automatic Uploading of Replays to your starcraft2coop.com Account</b></p>
     <ol>
         <li>Generate a Secret Key from the Account Settings tab in the <a href="/account">Account Page</a>.
@@ -144,7 +144,7 @@ include("../header.php");
     </ol>
     <p>Note: If a mutator present does not get automatically identified, you may select the unidentified mutator and click "Add Mutator". This will take a screenshot of the mutator and save it in an "Extra Icons" folder to help with future identification.</p>
     <img src="/images/tools/mutatoridentification.jpg" alt="Mutator Identification">
-    <a id="download1"></a><h2>Download Links</h2>
+    <h2 id="download1">Download Links</h2>
     <form action="downloads.php" name="download3form" id="download3Form" class="dynamic" method="post" enctype="multipart/form-data">
         <input type="hidden" name="recaptcha_response" id="download3FormRecaptchaResponse">
         <p><input type="submit" id="startDownload3" value="Download OpenCV Library">
@@ -207,7 +207,7 @@ include("../header.php");
         })
     </script>
     -->
-    <a id="replaySummarizer"></a><h2>Co-op Replay Data Summarizer</h2>
+    <h2 id="replaySummarizer">Co-op Replay Data Summarizer</h2>
     <p>This is a Python script which takes a Replays folder and generates a delimited text file summarizing the replay data for co-op games, which can be imported for further data analysis. Below is an example of the output:</p>
     <div id="output">
         <p>Date Played&#9;Map&#9;Commander&#9;Level&#9;Ally Commander&#9;Ally Level&#9;Game Type&#9;Result&#9;Game Length<br>
@@ -218,9 +218,9 @@ include("../header.php");
             2019-02-24&#9;The Vermillion Problem&#9;Dehaka&#9;57&#9;Raynor&#9;0&#9;Standard&#9;Lose&#9;1536<br>
             2019-02-17&#9;Void Launch&#9;Swann&#9;0&#9;Fenix&#9;73&#9;Standard&#9;Win&#9;1465</p>
     </div>
-    <a id="download2"></a><h2>Download Links</h2>
+    <h2 id="download2">Download Links</h2>
     <p><a href="/files/CRDS.py" download>Download CRDS</a></p>
-    <a id="usage2"></a><h2>Usage Notes</h2>
+    <h2 id="usage2">Usage Notes</h2>
     <ul>
         <li>You will require Python 2, as S2Protocol has been written under that version of Python. You can download Python from <a href="https://www.python.org/downloads/release/python-2718/">here</a>. Make sure to select the appropriate installer for your system.</li>
         <li>You will need to have Python's S2Protocol installed in order for this script to work. You can get it from <a href="https://github.com/Blizzard/s2protocol" rel="nofollow">here</a>. If you have Pip, you may use "pip install s2protocol" to install S2Protocol.</li>
@@ -229,13 +229,13 @@ include("../header.php");
         <li>Replay parsing should not take more than a second, as only the simple data is being read.</li>
         <li>You may modify the script to parse Ladder game information as well. However, this script is only provided as-is, and support is only available for Co-op games. Support for advanced parsing of Co-op game data will not be provided.</li>
     </ul>
-    <a id="updates2"></a><h2>Updates</h2>
+    <h2 id="updates2">Updates</h2>
     <ul>
         <li>Whenever a new version of Starcraft gets released (major or minor patch), you may need to update S2Protocol. You may do so by copying any newly-added protocol files from the Github to the Versions folder of S2Protocol, or if you used Pip, you can use "pip install s2protocol --upgrade".</li>
         <li>Sometimes, S2Protocol may not be updated, which means you can use the last protocol version for the latest build. Simply copy and rename the last protocol file as the last build ID and the parser should work fine. This is because the Protocols are very rarely updated and most are copies of the older versions. The advantage to this is that it is possible that older Protocol versions can work with newer replay files.</li>
         <li>The above issue has occurred before and may occur for older replay files. If you notice that you are missing a protocol version, you may use the steps above to solve the problem.</li>
     </ul>
-    <a id="other2"></a><h2>Other Notes</h2>
+    <h2 id="other2">Other Notes</h2>
     <ul>
         <li>Map names will be affected by language localization. That is, the map names will be displayed in the language the game was played in when the replay was created.</li>
     </ul>

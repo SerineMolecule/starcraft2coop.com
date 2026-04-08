@@ -46,9 +46,9 @@ include("../header.php");
         <p><a href="#buildOrder">Build Order</a></p>
         <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Nova is a deadly covert operative that uses highly-trained soldiers to control the battlefield.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -188,7 +188,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Nova are:</p>
     <table>
         <thead>
@@ -221,7 +221,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="calldowns"></a><h2>Calldowns</h2>
+    <h2 id="calldowns">Calldowns</h2>
     <p>The calldowns for Nova, at level 15, with no mastery points added are:</p>
     <table class="calldownTable">
         <thead>
@@ -310,11 +310,11 @@ include("../header.php");
 
         </tbody>
     </table>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Easy</p>
     <p>Your army composition should be mostly Biological units, with Liberators to help protect your army against enemy ground units. Rely on Griffin Airstrikes and Defensive Drones as much as possible to reduce army losses.</p>
     <p>While leveling through Mastery levels, allocate points into Power Set 3 in a 2:1 split for Nova's Energy Regeneration to Unit HP Regeneration.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Nova with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -391,7 +391,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">The split here is to allow your units to regenerate themselves on the battlefield when out of combat, at a reasonable rate while still ensuring Nova has enough energy regeneration to spam skills.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Nova. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -510,7 +510,7 @@ include("../header.php");
         </tbody>
     </table>
     <p>For general play, Soldier of Fortune offers Nova the versatility she needs to be able to handle any mission and attack wave composition. Infiltration Specialist may excel on some maps, but it's efficacy is highly affected by attack wave compositions, and is therefore, not a reliable prestige to be used.</p>
-    <a id="hero"></a><h2>Hero Unit</h2>
+    <h2 id="hero">Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/nova/nova.jpg" alt="Nova">
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:30</p>
@@ -626,7 +626,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Nova is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/nova/raidliberator.jpg" alt="Raid Liberator"><img class="army" src="/images/commanderdata/units/nova/strikegoliath.jpg" alt="Strike Goliath"><img class="army" src="/images/commanderdata/units/nova/raventypeii.jpg" alt="Raven Type-II">
     <p>Goliath/Liberator builds for Nova are extremely versatile and allow her to handle a variety of different situations. By making use of Griffin Airstrikes, her army can clear off any left-over forces. Ensure you have Ravens to heal damage on your army.</p>
@@ -662,7 +662,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="units"></a><h2>Combat Units</h2>
+    <h2 id="units">Combat Units</h2>
     <p>For more information on Nova's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Nova's combat units are listed below:</p>
     <div class="leftImage">
@@ -1234,7 +1234,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Nova. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Refinery<br>
@@ -1243,7 +1243,7 @@ include("../header.php");
         19 Barracks<br>
         22 Marines -> Rocks
     </p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>Many players prefer to use Assault mode to deal with units when pushing into enemy bases. However, Nova's strength is with her Snipe ability that can be used to target Mechanical units. Use Nova's Snipe to take out high value targets and minimize your army losses. Combined with the "Operational Efficiency" upgrade, you'll be able to clear out a lot of high-damage units very quickly.</p>
     <h3>Playstyle Tips</h3>

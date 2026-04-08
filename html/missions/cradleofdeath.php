@@ -28,9 +28,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>Moebius Corps is using this massive battle station to target Dominion colonies. Help Stone deliver xel'naga artifacts to key target sites in order to destroy the station and save innocent lives.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Escort Artifact Trucks to Hybrid Facility</li>
@@ -49,7 +49,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Escort Artifact Truck to Moebius Research Outpost (2)</li>
         </ul>
-    <a id="objectiveOrder"></a><h2>Determining Objective Order</h2>
+    <h2 id="objectiveOrder">Determining Objective Order</h2>
     <?php $mission = "cradleofdeath"; ?>
     <p>It is first important to understand the order of the objectives before analyzing enemy bases. Cradle of Death is a mission that has a random element to the objectives. The image below shows the objective locations. These names will be used throughout the guide to refer to the specific objectives on the map.</p>
     <img src="/images/missiondata/cradleofdeath/objectivemap.jpg" alt="Objective Map">
@@ -94,7 +94,7 @@ include("../scripts/switchergenerator.php");
         <li>Send your truck towards the Terrazine Extractors. If the valley entrance is guarded by constructs, it is the fourth objective. If there are no constructs, the fourth objective is the Vespene Refinery</li>
     </ol>
     <img src="/images/missiondata/cradleofdeath/objectivescout2.jpg" alt="Scouting Objective 2">
-    <a id="baseAnalysis"></a><h2>Enemy Base Analysis</h2>
+    <h2 id="baseAnalysis">Enemy Base Analysis</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -127,7 +127,7 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("terrazineextractorlong") ?>
     <p>If the last objective is the Vespene Refinery area, you will need to go South-West to get to it. This area is guarded with a heavy air presence.</p>
     <?php switcher_generator("vespenerefinery") ?>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to Move your truck in front of a Moebius Research Outpost, which is guarded by a Construct and an enemy camp.</p>
     <p>There are a total of two bonus objectives present on the map. One will appear when the second main objective activates, and one will appear when the third main objective activates. Additionally, the first bonus objective will always lie in the north of the main objective. The second bonus objective will always lie to the south of the main objective.</p>
     <p>For the Resource Stockpile, the northern bonus area is shown below. This will be the bonus area you will need to clear if the Resource Stockpile is the second main objective.</p>
@@ -138,7 +138,7 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("xenonreactorbonus1long") ?>
     <p>For the Xenon Reactor, the southern bonus area is shown below. This will be the bonus area you will need to clear if the Xenon Reactor is the third main objective.</p>
     <?php switcher_generator("xenonreactorbonus2long") ?>
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Due to the nature of this map, there are two types of attacks on this map:</p>
     <ul>
@@ -335,7 +335,7 @@ include("../scripts/switchergenerator.php");
             </tr>
         </tbody>
     </table>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>Attack waves will spawn from the location of the next objective you will need to complete. In the case you are on the final objective, it will spawn from the side you did not attack.</p>
     <p>The image below shows you the spawn point if the Attack Wave is coming from the Resource Stockpile side.</p>
     <img src="/images/missiondata/cradleofdeath/resourcestockpilespawnpoint.jpg" alt ="Resource Stockpile Spawn Point">
@@ -349,14 +349,14 @@ include("../scripts/switchergenerator.php");
         <li>If your truck is in your main, or your expansion, the Drop Attacks will drop outside the base of your ramp. They will never spawn inside your bases. The area that they will spawn on will be the one that is closest to your truck.</li>
         <li>If your truck is anywhere else on the map, the Attacks will drop a little distance away from your truck, in a location that lies in between the truck and the objective. In essence, they will try to block your truck from reaching the objective.</li>
     </ul>
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>If you want to pre-scout the mission order, use the trucks to do so.</li>
         <li>Send trucks into constructs first, before your army to reduce damage. Trucks are fairly rugged, and have a low attack priority, so enemies will de-aggro your truck as soon as they see your army.</li>
         <li>The only entrances to your base are through your ramps, which can easily be defended.</li>
         <li>Do not bother with clearing out all enemies and buildings from objective areas. The goal is to clear the construct on the beacon. Once your truck is in position, it is immune to damage.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests outside the Hybrid Facility and lure the units with your truck to get the biomass.</li>
         <li><a href="/commanders/kerrigan">Kerrigan</a>: Place plenty of Omega worms around the map to be able to deal with the attack waves as well as push effectively.</li>

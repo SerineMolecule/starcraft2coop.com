@@ -35,7 +35,7 @@ include("../header.php");
         <p><a href="#vt">Void Thrashing</a></p>
     </div>
     <p><span class="hidden">Text in green denote changes not listed in the patch notes.</span></p>
-    <a id="core"></a><h2>Game Core (5.0.5) 2020-12-02</h2>
+    <h2 id="core">Game Core (5.0.5) 2020-12-02</h2>
     <ul>
         <li>Commander Changes:
             <ul>
@@ -47,74 +47,74 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="coa"></a><h2>Chain of Ascension (v.177) 2020-02-24</h2>
+    <h2 id="coa">Chain of Ascension (v.177) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Ji'nara will now have voice lines if player's forces or Amon's forces get destroyed around her.</span></li>
     </ul>
-    <a id="cod"></a><h2>Cradle of Death (v.1854) 2020-02-24</h2>
+    <h2 id="cod">Cradle of Death (v.1854) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Changed how player units are removed from the game during the Victory sequence.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="don"></a><h2>Dead of Night (v.873) 2020-02-24</h2>
+    <h2 id="don">Dead of Night (v.873) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Fixed a bug where a ping marker would remain active even after the Special Infested was killed.</span></li>
     </ul>
-    <a id="ll"></a><h2>Lock & Load (v.261) 2020-02-24</h2>
+    <h2 id="ll">Lock & Load (v.261) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Internal changes to Lock Attack Wave triggers to handle spawn-camping of attack waves.</span></li>
     </ul>
-    <a id="mw"></a><h2>Malwarfare (v.8316) 2020-02-24</h2>
+    <h2 id="mw">Malwarfare (v.8316) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Changed ownership of Bonus Objectives to a different Player number.</span></li>
         <li><span class="hidden">Fixed a bug that would cause a spawn-camped Suppression Tower to not trigger its death events.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="me"></a><h2>Miner Evacuation (v.627) 2020-02-24</h2>
+    <h2 id="me">Miner Evacuation (v.627) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Internal changes for unhandled errors if one of the Eradicators were killed off.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="mo"></a><h2>Mist Opportunities (v.311) 2020-02-24</h2>
+    <h2 id="mo">Mist Opportunities (v.311) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Fixed a bug which would cause Terrazine Harvesting Bots to get stuck before they started moving towards Terrazine Geysers.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="oe"></a><h2>Oblivion Express (v.363) 2020-02-24</h2>
+    <h2 id="oe">Oblivion Express (v.363) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Fixed a bug where Train Cars would not spawn correctly.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="pp"></a><h2>Part and Parcel (v.1007) 2020-02-24</h2>
+    <h2 id="pp">Part and Parcel (v.1007) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Fixed a bug where Train Cars would not spawn correctly.</span></li>
         <li><span class="hidden">Fixed a bug where attack waves would not spawn in the correct locaion.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="rtk"></a><h2>Rifts to Korhal (v.311) 2020-02-24</h2>
+    <h2 id="rtk">Rifts to Korhal (v.311) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="soa"></a><h2>Scythe of Amon (v.182) 2020-02-24</h2>
+    <h2 id="soa">Scythe of Amon (v.182) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Killing Hatcheries, Lairs and Hives around the map no longer automatically kills the larva around them.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="totp"></a><h2>Temple of the Past (v.155) 2020-02-24</h2>
+    <h2 id="totp">Temple of the Past (v.155) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Void Thrasher spawn triggers now use Mission Time instead of AI Time.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="tvp"></a><h2>The Vermillion Problem (v.273) 2020-02-24</h2>
+    <h2 id="tvp">The Vermillion Problem (v.273) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Internal changes for unhandled errors if Molten Sal were being spawn-camped.</span></li>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="vl"></a><h2>Void Launch (v.231) 2020-02-24</h2>
+    <h2 id="vl">Void Launch (v.231) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-    <a id="vt"></a><h2>Void Thrashing (v.501) 2020-02-24</h2>
+    <h2 id="vt">Void Thrashing (v.501) 2020-02-24</h2>
     <ul>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>

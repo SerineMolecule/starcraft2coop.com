@@ -187,17 +187,17 @@ include("../header.php");
         <p></p>
     </div>
     <div id="tooltip">tooltip</div>
-    <a id="general"></a><h2>General</h2>
+    <h2 id="general">General</h2>
     <p>These statistics are directly related to the Co-op game mode and do not include any community-made content. Please note that as new content gets added, these statistics may not be accurate until the entire site has been updated to reflect the new patch. When this happens, a post will be made on the front page of the site, notifying readers of this.</p>
     <p>Total Commanders: <?= count(scandir("../commanders")) - 3 ?></p>
     <p>Total Missions: <?= count(scandir("../missions")) - 3 ?></p>
     <p>Total Mutators: <?= $mutatorCount ?></p>
-    <a id="site"></a><h2>Site-Specific</h2>
+    <h2 id="site">Site-Specific</h2>
     <p>These statistics provide you with a bit of a behind-the-scenes look at starcraft2coop.com. There is a lot of data that is stored in the site's databases that allow users to pull useful information when they wish, such as mutator interactions. A lot of this data is automatically pulled and presented to readers in an easy-to-find manner, such as on the <a href="/resources/weeklymutations">Weekly Mutations</a> page.</p>
     <p>Total Mutator Interactions: <?= $mutatorInteractionCount ?></p>
     <p>Commander Tips for Mutators: <?= $mutatorCommanderTips ?></p>
     <p>Patches Recognized by Analyzer: <?= $patchCount ?></p>
-    <a id="weeklyMutations"></a><h2>Weekly Mutations</h2>
+    <h2 id="weeklyMutations">Weekly Mutations</h2>
     <p>These are some interesting statistics from all <a href="/resources/weeklymutations">Weekly Mutations</a> that have been released to date including the current Weekly Mutation. Statistics include the most and least frequent mutators. Occasionally, Weekly Mutations are repeated, which can offset counts. Hence, statistics will be analyzed with and without these repeats.</p>
     <p>Total Weekly Mutations: <?= $weeklyMutationCount ?></p>
     <p>Wheel of Misfortune Count: <?= $WOMCount ?></p>
@@ -299,7 +299,7 @@ include("../header.php");
             ?>
         </tbody>
     </table>
-    <a id="community"></a><h2>Community Stats</h2>
+    <h2 id="community">Community Stats</h2>
         <p>Note: Data refreshes once every 24 hours<br>
         Current data refreshed on: 2024-05-04 04:00:01<br>
         Total replays counted: 255876</p>
@@ -801,7 +801,7 @@ include("../header.php");
         <tbody>
             <tr><td>Lock & Load</td><td>05:33</td></tr><tr><td>Void Thrashing</td><td>06:30</td></tr><tr><td>Scythe of Amon</td><td>07:15</td></tr><tr><td>Rifts to Korhal</td><td>08:20</td></tr><tr><td>Chain of Ascension</td><td>09:25</td></tr><tr><td>Miner Evacuation</td><td>09:51</td></tr><tr><td>Dead of Night</td><td>10:44</td></tr><tr><td>Cradle of Death</td><td>11:02</td></tr><tr><td>Part and Parcel</td><td>14:22</td></tr>        </tbody>
     </table>
-    <a id="rc"></a><h2>Rockslapping Champions</h2>
+    <h2 id="rc">Rockslapping Champions</h2>
     <p>The flagship series of the site, these statistics gather information for some commonly-asked questions about the series. This also serves as a page that frequent submitters can use to try and one-up each other!</p>
     <p>Note: Score is calculated as +1.0 for a full episode feature and +0.5 for a compilation feature. If a submitter gets multiple features in a single compilation, they will receive multiple +0.5 points to reflect each of their submissions.</p>
     <p>For more information on Rockslapping Champions and links to the videos, please visit <a href="/community/rockslappingchampions">this page</a>.</p>

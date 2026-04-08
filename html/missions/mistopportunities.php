@@ -27,9 +27,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>Egon Stetmann, stranded on Bel’shir since before the fall of Arcturus, is now under assault from Amon’s forces. Protect his harvesters as they collect the planet’s terrazine to prevent it from falling into the wrong hands.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Escort Harvesting Bots (5 Waves)</li>
@@ -39,7 +39,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Destroy the Extraction Device (2)</li>
         </ul>
-    <a id="botOrder"></a><h2>Bot Harvesting Order</h2>
+    <h2 id="botOrder">Bot Harvesting Order</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -63,7 +63,7 @@ include("../scripts/switchergenerator.php");
     <p>There are a total of five bot waves that will leave the base area to go to harvest Terrazine. The goal of the mission is to protect those bots from enemy attack forces. The number of the bots in the wave increases as the mission progresses. The harvesting locations for each of the waves is shown below.</p>
     <img src="/images/missiondata/mistopportunities/botwaves.jpg" alt="Harvesting Wave Locations">
     <p>Each bot takes 60 seconds to harvest the Terrazine. However, do note that there is a travel time to and from the Terrazine Geyser, where the bots can also be attacked by stray forces and attack waves.</p>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/mistopportunities/extractiondevice.jpg" alt="Terrazine Extraction Device">
         <img src="/images/missiondata/mistopportunities/extractiondevice.jpg" alt="Terrazine Extraction Device">
@@ -73,7 +73,7 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("extractiondevice1") ?>
     <p>The location and guards of the second extraction device is shown below. These forces are a lot stronger, but are much more clumped up together.</p>
     <?php switcher_generator("extractiondevice2") ?>
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>There are three timings that play a role in Mist Opportunities. These are:</p>
     <ul>
@@ -423,7 +423,7 @@ include("../scripts/switchergenerator.php");
             </tr>
         </tbody>
     </table>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>Attack Waves have two spawn points on the map. These are shown below.</p>
     <img src="/images/missiondata/mistopportunities/attackwavespawns.jpg" alt="Attack Wave Spawn Positions">
     <p>Escort Wave spawn positions are much more complicated. There are multiple different spawn positions in the same area. The logic behind this is that spawn positions farther away from the bots will be used at the start of the harass waves. As the bots continue to harvest Terrazine, closer spawn positions will be used. The possible spawn positions for harass waves for each bot wave is shown below.</p>
@@ -437,12 +437,12 @@ include("../scripts/switchergenerator.php");
     <img src="/images/missiondata/mistopportunities/wave4harassspawns.jpg" alt="Harass Wave Spawn Positions for Bot Wave 4">
     <p>Bot Wave 5:</p>
     <img src="/images/missiondata/mistopportunities/wave5harassspawns.jpg" alt="Harass Wave Spawn Positions for Bot Wave 5">
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>Clear harvest locations ahead of time to ensure bots do not take damage.</li>
         <li>The bonus objective countdown will stop as long as the bonus objective is being hit. This means a single photon canon or army unit can stop the countdown. Use that to take out the bonus objective after you have cleared the area.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests on key choke points to weaken attack and harass waves.</li>
         <li><a href="/commanders/horner">Han & Horner</a>: Place Mag Mines on key choke points to weaken attack and harass waves.</li>

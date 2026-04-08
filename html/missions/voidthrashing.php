@@ -32,9 +32,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>Void thrashers are surfacing on Char. Work together and destroy them before Sgt. Hammer's fortress falls to their ruthless assault.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Kill the Void Thrashers (10)</li>
@@ -44,7 +44,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Destroy the Archangel (1)</li>
         </ul>
-    <a id="baseAnalysis"></a><h2>Enemy Base Analysis</h2>
+    <h2 id="baseAnalysis">Enemy Base Analysis</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -77,7 +77,7 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("thrasher3") ?>
     <p>The Final Set of Void Thrashers are in a heavily fortified enemy base. This is shown below:</p>
     <?php switcher_generator("thrasher4long") ?>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/voidthrashing/archangel.jpg" alt="Archangel">
     </div>
@@ -86,7 +86,7 @@ include("../scripts/switchergenerator.php");
     <p>When the Archangel gets to below 50% HP, it will switch to Fighter mode and fly to another area of the map. With high burst damage, it is very possible to destroy the Archangel before it flies away. The below minimap shows where it ends up after flying away.</p>
     <?php switcher_generator("archangelescape") ?>
     <p>Note that this can happen several times. The escape location will alternate between the two places until the Archangel is destroyed.</p>
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Void Thrashers will spawn if the total HP and Shields (vitality) of all units and buildings around the Void Thrashers reaches 50% relative to when the game started.</p>
     <p>Additionally, the each set of Void Thrashers will spawn at a given time, regardless of the state of the mission. These timings are:</p>
@@ -250,17 +250,17 @@ include("../scripts/switchergenerator.php");
         </tbody>
     </table>
     <p>If players have not gotten vision of the Archangel after 13:30, the bonus objective will start.</p>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>There are two spawn points for attack waves on this map.</p>
     <p>Left Spawn Point (near second set of Void Thrashers):</p>
     <img src="/images/missiondata/voidthrashing/leftspawnpoint.jpg" alt="Left Spawn Point">
     <p>Right Spawn Point (near bonus area):</p>
     <img src="/images/missiondata/voidthrashing/rightspawnpoint.jpg" alt="Right Spawn Point">
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>This mission is very short, and rewards aggressive play because of weak enemy defenses.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests on attack wave spawn locations to weaken them.</li>
         <li><a href="/commanders/horner">Han & Horner</a>: Place Mag Mines on attack wave spawn locations to weaken them.</li>

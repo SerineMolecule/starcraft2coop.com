@@ -41,14 +41,14 @@ include("../header.php");
         <p><a href="#mission">Mission Objective Units</a></p>
         <p><a href="#mutator">Mutator Units</a></p>
     </div>
-    <a id="genNotes"></a><h2>General Notes</h2>
+    <h2 id="genNotes">General Notes</h2>
     <p>This page lists out abilities available to enemy spellcasters and provides you with information on the conditions the AI uses to determine when and where to cast any ability. For units with multiple abilities, abilities at the top will be prioritized over abilities below them if they are off cooldown.</p>
     <p>Usually for ability usage, "Vitality" is a key factor that is taken into consideration. Vitality is simply the sum of the current HP + Shields of a unit.</p>
     <p>"Units Within Range" corresponds to the units within the range of the skill + 1, which allows for the unit to move a bit before casting its ability at maximum range.</p>
     <p>Sometimes, a Vitality Score may be used for a group of units. A vitality score assigns a score from 0.0 to 1.0 for each enemy unit, spanning from vitality 0.0 to a certain damage value (which will be specified for each individual ability). You may think of a Vitality score as the number of units that an ability is expected to kill. An additional 1.0 points may be added for units with bonus tags. Unfortunately, further details on the Vitality Score calculation cannot be extracted.</p>
     <p>Text that have been <del>struck through</del> is logic that is not being followed due to bugs in the code.</p>
     <p>SUGGEST implies that an order suggestion will be sent to the AI for further decision-making. It may or may not carry out the order if it deems it unncessary.</p>
-    <a id="protoss"></a><h2>Protoss Units</h2>
+    <h2 id="protoss">Protoss Units</h2>
     <div class="leftImage">
         <div class="imageContainer">
             <img src="/images/ailogic/hightemplar.jpg" alt="High Templar">
@@ -257,7 +257,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="terran"></a><h2>Terran Units</h2>
+    <h2 id="terran">Terran Units</h2>
     <p>Note: AI Logic surrounding the usage of Ghost Nukes cannot be extracted from the game files.</p>
     <p>For Liberators:</p>
     <p>Liberators will switch to anti-air mode if:</p>
@@ -508,7 +508,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="zerg"></a><h2>Zerg Units</h2>
+    <h2 id="zerg">Zerg Units</h2>
     <div class="leftImage">
         <div class="imageContainer">
             <img src="/images/ailogic/broodqueen.jpg" alt="Brood Queen">
@@ -795,7 +795,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="mission"></a><h2>Mission Objective Units</h2>
+    <h2 id="mission">Mission Objective Units</h2>
     <p>For a lot of mission objective units, the presence of a single enemy unit is enough for it to start spamming its skills, picking random units to target. If an objective unit is not present in this list, it may be assumed that this logic applies.</p>
     <p>Additionally, only real abilities will be listed here. Simulated abilities (such as Part and Parcel's Hybrid Abilities) will not be shown.</p>
     <div class="leftImage">
@@ -1026,7 +1026,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="hybrid"></a><h2>Hybrid Units</h2>
+    <h2 id="hybrid">Hybrid Units</h2>
     <div class="leftImage">
         <div class="imageContainer">
             <img src="/images/ailogic/hybriddestroyer.jpg" alt="Hybrid Destroyer">
@@ -1216,7 +1216,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="mutator"></a><h2>Mutator Units</h2>
+    <h2 id="mutator">Mutator Units</h2>
     <p>Note: Amon Karax is not listed as he uses his abilities as soon as they come off cooldown.</p>
     <div class="leftImage">
         <div class="imageContainer">

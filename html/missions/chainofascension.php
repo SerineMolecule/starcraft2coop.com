@@ -27,9 +27,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>Amon seeks to regain control of the Tal'darim by climbing the Chain of Ascension. Assist First Ascendant Ji'nara in the rite of Rak'Shir so she can defeat Amon's champion.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Push Amon's champion into the Pit of Sacrifice.</li>
@@ -39,7 +39,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Kill Slayn elementals (2)</li>
         </ul>
-    <a id="baseAnalysis"></a><h2>Enemy Base Analysis</h2>
+    <h2 id="baseAnalysis">Enemy Base Analysis</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -75,7 +75,7 @@ include("../scripts/switchergenerator.php");
     <p>The last camp that will need to be dealt with contains high-tech units. However, it is usually easier to engage, due to both players having strong armies.</p>
     <?php switcher_generator("camp3") ?>
     <p>Once this camp is cleared, the last set of Hybrids spawn behind the Pit of Sacrifice once Ji'Nara reaches the trigger location. There is no static defense or guards there, which means it can't be cleared ahead of time. The protection detail, however, is crammed in that area, making it relatively difficult to engage.</p>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/chainofascension/slaynelemental.jpg" alt="Slayn Elemental">
         <img src="/images/missiondata/chainofascension/slaynelemental.jpg" alt="Slayn Elemental">
@@ -83,7 +83,7 @@ include("../scripts/switchergenerator.php");
     <p>The bonus objective requires you to kill two Slayn Elementals that will appear on the minimap. The first one will always spawn in the green-marked location. The second will spawn in either of the blue-marked locations. The spawn points are shown below:</p>
     <img src="/images/missiondata/chainofascension/slaynelementalminimap.jpg" alt="Minimap of Slayn Elemental spawn locations">
     <p>The Slayn Elementals are flying units. Hence, they can only be hit by units that can target air. The Slayn Elementals cast a skill (with an AoE marker on the ground). This skill can encase your army in a Solarite Cocoon. The cocoon will slowly damage units encased within them but can be destroyed by other forces. </p>
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>As Ji'Nara gets pushed forward, Hybrids will spawn with a protection detail throughout the map. Hybrids will spawn when Ji'Nara reaches a certain location on the map, as shown below:</p>
     <img src="/images/missiondata/chainofascension/hybridtriggerlocations.jpg" alt="Hybrid Trigger Locations">
@@ -461,7 +461,7 @@ include("../scripts/switchergenerator.php");
             </tr>
         </tbody>
     </table>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>The spawn points for attack waves and escort waves are different.</p>
     <p>For single attack waves, a player is chosen at random and then attacked. Note, if you are playing on a harder difficulty than your ally, you will be attacked first. Then, the other player will be attacked on the next wave, and the players will alternate until double waves start appearing, in which both players will be attacked at the same time. Attack waves will spawn from a player's side (spawn point #1 or #2, below) as long as Amon has a unit or a building there. If he does not, attack waves will spawn in spawn point #3.</p>
     <p>The spawn locations for attack waves are shown below.</p>
@@ -480,7 +480,7 @@ include("../scripts/switchergenerator.php");
     <img src="/images/missiondata/chainofascension/escortwavespawn2.jpg" alt="Escort Wave Spawn Location 2">
     <p>Escort Wave Spawn Location 3:</p>
     <img src="/images/missiondata/chainofascension/escortwavespawn3.jpg" alt="Escort Wave Spawn Location 3">
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>Use a drone/probe/SCV to push Ji'Nara forward, while your army clears out bases ahead of time and deals with attack waves/escort waves.</li>
         <li>The second attack wave in the mission is extremely strong given the early game. Save calldowns for that wave.</li>
@@ -488,7 +488,7 @@ include("../scripts/switchergenerator.php");
         <li>All waves after the fourth attack wave are double waves which attack both players' bases.</li>
         <li>Protoss units gain increased Shield regeneration when near Ji'Nara.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests on hybrid spawn locations before spawning the Hybrid to weaken the protection detail.</li>
         <li><a href="/commanders/horner">Han & Horner</a>: Place Mag Mines on hybrid spawn locations before spawning the Hybrid to weaken the protection detail.</li>

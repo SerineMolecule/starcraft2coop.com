@@ -72,9 +72,9 @@ include("../header.php");
         <p><a href="#guide">Gameplay Guide</a></p>
         <p><a href="#dondrill">The Drill on Dead of Night</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Swann relies on mechanical units, backed up with a powerful laser drill to control the battlefield.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -209,7 +209,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Swann are:</p>
     <table>
         <thead>
@@ -242,7 +242,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="calldowns"></a><h2>Calldowns</h2>
+    <h2 id="calldowns">Calldowns</h2>
     <p>The calldowns for Swann, at level 15, with no mastery points added are:</p>
     <table class="calldownTable">
         <thead>
@@ -325,11 +325,11 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Moderate</p>
     <p>Swann plays the same way he does at Ascension levels when he is at lower levels. However, he is significantly slower to ramp up and build his army. In the early game, build a Commander Center next to your rocks, as it will take time for it to be built by a single SCV. Build four Factories in the later stages of the game, two with Tech Labs and two with Reactors to build your endgame armies.</p>
     <p>While leveling through Mastery levels, allocate points into Power Set 1's Concentrated Beam Width mastery until you hit the desired number of points, before allocating them to the Combat Drop duration mastery. Allocate points with an equal split on Power Set 3.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Swann with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -406,7 +406,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">The regular choice is the Vespene Drone Cost mastery. However, for more mineral-heavy builds, and builds that rely on the Laser Drill, the Laser Drill mastery is the preferred choice.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Swann. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -527,7 +527,7 @@ include("../header.php");
         </tbody>
     </table>
     <p>For general play, P0 (no prestige, Chief Engineer) and P1 (Heavy Weapons Specialist) are recommended. P1 is more beginner-friendly.</p>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Swann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath"><img class="army" src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">
     <p>Mass Goliath builds can do fairly well in most situations, as Science Vessels can give Goliaths not only healing, but protective Defensive Matrices.</p>
@@ -563,7 +563,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="units"></a><h2>Combat Units</h2>
+    <h2 id="units">Combat Units</h2>
     <p>For more information on Swann's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Swann's combat units are listed below:</p>
     <div class="leftImage">
@@ -1142,7 +1142,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Swann. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Supply Depot<br>
@@ -1151,7 +1151,7 @@ include("../header.php");
         18 Billy (4 SCV's)<br>
         21 Command Center (8 SCV's)
     </p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>A common trap for Swann players is to try and rush Thors out in the early game. Not only does it leave them extremely vulnerable to the early game, mass Thors can only work when actually massed in large numbers.</p>
     <p>A much better build would be to start with Goliaths backed up with Siege Tanks and then transitioning to Thors as the economy improves.</p>

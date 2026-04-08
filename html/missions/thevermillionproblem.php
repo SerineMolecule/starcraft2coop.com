@@ -45,9 +45,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>Amon has incited volcanic eruptions that are destroying Veridia Prime. Gather the crystals required to reactivate the environmental stabilizers and restore the planet before it is obliterated.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Collect Xenon Crystals (20).</li>
@@ -57,7 +57,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Kill the Molten Salamander (1)</li>
         </ul>
-    <a id="baseAnalysis"></a><h2>Enemy Base Analysis</h2>
+    <h2 id="baseAnalysis">Enemy Base Analysis</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -104,13 +104,13 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("ebaselong") ?>
     <p>Just South of this base, there is a small enclave of enemies.</p>
     <?php switcher_generator("eenclavelong") ?>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/thevermillionproblem/moltensalamander.jpg" alt="Molten Salamander">
     </div>
     <p>The bonus objective requires you to kill the Molten Salamander that spawns in the marked location below.</p>
     <img src="/images/missiondata/thevermillionproblem/moltensalamanderspawnlocation.jpg" alt="Minimap of Molten Salamander spawn location">
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Some attack waves in this mission have variance associated with their spawn timings. That is, attack waves have a little bit of randomness as to when they will spawn. The attack wave timings and variances are shown below. A variance of 1:30 seconds means attack waves can spawn anywhere from 1:30 <i>before</i> the attack wave timing to 1:30 <i>after</i> the attack wave timing.</p>
     <p>The Attack Wave Timings for this mission are:</p>
@@ -193,7 +193,7 @@ include("../scripts/switchergenerator.php");
     <p>* Attack wave #4 is a multi-pronged attack wave that will have attacking units spawn from two different locations.</p>
     <p>The final attack wave will repeat every two minutes until the end of the mission.</p>
     <p>The Molten Salamander will start to spawn every lava surge after 11:00.</p>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>The spawn points for attack waves are shown below.</p>
     <p>Attack Wave Spawn Location (West Base):</p>
     <img src="/images/missiondata/thevermillionproblem/wattackwavespawn.jpg" alt="West Attack Wave Spawn">
@@ -202,7 +202,7 @@ include("../scripts/switchergenerator.php");
     <p>Attack Wave Spawn Location (South, near Bonus Objective):</p>
     <img src="/images/missiondata/thevermillionproblem/sattackwavespawn.jpg" alt="South Attack Wave Spawn">
     <p>Crystals also have certain spawn locations. However, at each collection stage, crystals can spawn in more than 10 individual locations, making it infeasible to list them all out individually. Addtionally, spawn locations are randomized as the mission progresses.</p>
-    <a id="crystalSpawn"></a><h2>Crystal Spawn Order</h2>
+    <h2 id="crystalSpawn">Crystal Spawn Order</h2>
     <p>The spawn order and locations of the Xenon Crystals can be viewed below. This may be useful when playing against <a href="/resources/mutators">mutators</a> that hide the crystal locations on the minimap, such as Darkness.</p>
     <div id="spawnView">
         <img id="base"  src="/images/missiondata/thevermillionproblem/mapbase.jpg" alt="Terrain">
@@ -240,13 +240,13 @@ include("../scripts/switchergenerator.php");
             return false;
         })
     </script>
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>Ensure you have adequate defenses in your main and expansion for the attack waves.</li>
         <li>Pay attention to your army as you push into enemy defenses due to the large number of Hybrid Dominators present on this map.</li>
         <li>All crystals from the 3rd spawn will come with a small harass force. Ensure you clear them out before you send your workers to pick up the crystal. These forces do not spawn immediately with the crystal, and have some travel time before they arrive.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests on spawn locations to weaken attack waves.</li>
         <li><a href="/commanders/horner">Han & Horner</a>: Place Mag Mines on spawn locations to weaken attack waves.</li>

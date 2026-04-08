@@ -99,7 +99,7 @@ include("../header.php");
         <p><a href="#upgrades">Upgrades</a></p>
         <p><a href="#hybrids">Hybrids</a></p>
     </div>
-    <a id="genNotes"></a><h2>General Notes</h2>
+    <h2 id="genNotes">General Notes</h2>
     <p>Throughout any mission, you will need to deal with attack waves that target your base, expansion or your objective. There are a number of factors that affect the type and quantity of units in these attack waves. These factors are:</p>
     <ul>
         <li><b>Enemy Race</b>: This is the most obvious one. Units in attack waves will belong to the race of the enemy you're facing against. The only exception to this rule is on <a href="/missions/cradleofdeath">Cradle of Death</a>, where your truck will get attacked by units of a second race as well.</li>
@@ -108,10 +108,10 @@ include("../header.php");
         <li><b>Strength Level</b>: The Strength level affects the number of units in the attack wave. Strength Levels range from 1-7.</li>
     </ul>
     <p>As the mission progresses, both, Tech Level and Strength Level of the attack waves increase, making the attack waves strong and more potent.</p>
-    <a id="race"></a><h2>Enemy Race</h2>
+    <h2 id="race">Enemy Race</h2>
     <p>You will face enemies of a single race (Protoss, Terran or Zerg) in a mission (barring <a href="/missions/cradleofdeath">Cradle of Death</a>). This race is predetermined at the start of the game. To determine if the enemy race is Zerg, press Alt + T. If the enemy race is Zerg, you will see creep spread on the minimap.</p>
     <p>On <a href="/missions/cradleofdeath">Cradle of Death</a>, only attack waves that attack your truck will contain units of a second race.</p>
-    <a id="composition"></a><h2>Composition</h2>
+    <h2 id="composition">Composition</h2>
     <p>The Protoss compositions you can face (along with the strongest tech units) are as follows:</p>
     <ul>
         <li><b>Gateway:</b> A composition that relies mostly on gateway units for AoE's and damage.</li>
@@ -141,7 +141,7 @@ include("../header.php");
         <li><b>Classic Zerg Air:</b> Air Zerg composition based on units in Brood War.</li>
     </ul>
     <p>Note that the above names do not appear on the enemy composition indicator in-game. The names used in-game are custom titles used to describe the composition. These titles will be listed in the following section.</p>
-    <a id="tech"></a><h2>Tech Level</h2>
+    <h2 id="tech">Tech Level</h2>
     <div id="tooltip">tooltip</div>
     <p>The Tech level determines how far up the Tech Tree the enemy is. Higher Tech Levels will result in more Tech Units present in the attack waves. Tech Levels range on a scale from 1-7.</p>
     <p>Hover over a unit's icon to show its name.</p>
@@ -506,7 +506,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="strength"></a><h2>Strength Level</h2>
+    <h2 id="strength">Strength Level</h2>
     <p>The Strength Level determines the quantity of units in the attack wave. The in-game generation of the attack waves is randomized. That is, while the Tech Level and Strength Level are fixed, there is a little bit of allowable variance in the attack wave composition. As a result, attack waves are not always the same. Some may have more Liberators, with fewer Cyclones, for instance.</p>
     <p>However, the Strength Level is linked to a resource cost for the attack wave. Attack waves will not exceed a certain resource cost, depending on the Strength Level. The below table shows the estimated maximum resource cost for each Strength Level.</p>
     <p>Attack Wave Strength Level Resource Costs:</p>
@@ -548,7 +548,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="limits"></a><h2>Unit Limits</h2>
+    <h2 id="limits">Unit Limits</h2>
     <p>Attack waves have certain limits as to how many of a particular unit can appear. This strengthens the overall power of the attack wave because it prevents massing a single tech-unit which can easily be countered.</p>
     <p>Not all units have limits. The units that are limited are usually spellcasters. The list of limited units is below:</p>
     <table class="centered">
@@ -581,7 +581,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="demo"></a><h2>Putting it All Together</h2>
+    <h2 id="demo">Putting it All Together</h2>
     <p>You can use the demo below to see the impact of both, Tech Level and Strength Level on attack waves for all different compositions. Here, Strength Levels will match Tech Levels, as is common with most attack waves in the game.</p>
     <div id="compDemo">
         <form action='#'>
@@ -649,7 +649,7 @@ include("../header.php");
             updateImage();
         });
     </script>
-    <a id="upgrades"></a><h2>Upgrades</h2>
+    <h2 id="upgrades">Upgrades</h2>
     <p>As the mission progresses, the AI will automatically complete research. This naturally scales up the difficulty of the mission as time goes on. The timings are listed below:</p>
     <h3>Protoss Upgrades</h3>
     <h4>Protoss Power Level Upgrades</h4>
@@ -910,7 +910,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="hybrids"></a><h2>Hybrids</h2>
+    <h2 id="hybrids">Hybrids</h2>
     <p>Attack waves may be accompanied by Hybrids in varying numbers, depending on the mission. Hybrids are added to attack waves independent of enemy composition or Strength/Tech level. Instead, Hybrids are added to attack waves as part of the mission design. There are five different hybrids that may accompany attack waves. These are listed below, along with any abilities they may have.</p>
     <div class="leftImage">
         <div class="imageContainer">

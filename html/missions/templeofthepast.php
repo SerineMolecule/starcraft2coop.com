@@ -37,9 +37,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>The xel'naga temple on Shakuras is under assault. Build your defenses and hold out against the enemy's siege.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Defend the Temple (26:00)</li>
@@ -48,7 +48,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Destroy the Zenith Stones (3)</li>
         </ul>
-    <a id="baseAnalysis"></a><h2>Enemy Base Analysis</h2>
+    <h2 id="baseAnalysis">Enemy Base Analysis</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -85,7 +85,7 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("basebottomlong") ?>
     <p>If you like, you can also clear the base from which the drops come from. However, there is no advantage to doing so, and you will require to fly units over, or warp/teleport them in at that location.</p>
     <?php switcher_generator("basedroplong") ?>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/templeofthepast/zenithstone.jpg" alt="Zenith Stone">
         <img src="/images/missiondata/templeofthepast/zenithstone.jpg" alt="Zenith Stone">
@@ -94,7 +94,7 @@ include("../scripts/switchergenerator.php");
     <p>The bonus objective requires you to destroy the three Zenith Stones on the map. Each Zenith Stone is located off each path leading to the temple. The locations are shown below:</p>
     <img src="/images/missiondata/templeofthepast/zenithstonelocations.jpg" alt="Minimap of Zenith Stone locations">
     <p>The Zenith Stones are present from the start of the game. They will be revealed to the player either when the player gets within 15 range of any of the stones or when 9 minutes have elapsed. There is no time limit to destroy the stones. The stones are guarded by a very small force. Additionally, they will cast Psionic Storms in random areas around them when their HP drops to below 50%.</p>
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page. If Strength and Tech levels differ between attack waves occurring at the same time, they will be separated with commas respectively.</p>
     <p>There are two patterns on this mission. The patterns are shown below. Attack directions show you to direction the attack wave moves in.</p>
     <div class="tableContainer">
@@ -599,7 +599,7 @@ include("../scripts/switchergenerator.php");
             </tr>
         </tbody>
     </table>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>There are two types of spawn points of interest in this mission:</p>
     <ul>
         <li><b>Attack Wave Spawn Points:</b> These are where the Attack Waves that travel towards the temple spawn. There are four spawn points, one for each side of the temple (three ramps and one drop attack).</li>
@@ -615,12 +615,12 @@ include("../scripts/switchergenerator.php");
     <img src="/images/missiondata/templeofthepast/dropspawnpoint.jpg" alt="Drop Attack Wave Spawn Point">
     <p>The locations for Drop Attacks and Warp-ins are shown below:</p>
     <img src="/images/missiondata/templeofthepast/warpinlocations.jpg" alt="Drop Pod/Warp-in Locations">
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>Try to clear the enemy bases around the map as early as possible to simplify the mission.</li>
         <li>Build anti-air defenses and (if applicable) place Overlords around the temple when playing against Zerg compositions with Scourge to prevent them from targeting the temple.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests in front of the rocks on the middle lane to kill the early attack waves and stall them before they break the rocks.</li>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests on attack wave spawn locations to weaken them.</li>

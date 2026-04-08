@@ -65,7 +65,7 @@ include("../header.php");
         <p><a href="#close">How Close to Ascension/Max Level</a></p>
         <p><a href="#numbers">Some Interesting Numbers</a></p>
     </div>
-    <a id="summary"></a><h2>Summary</h2>
+    <h2 id="summary">Summary</h2>
     <p>When you complete missions (either completely or partially), you earn mission experience. This experience goes towards levelling. There are a total of three phases in levelling. These phases are:</p>
     <ol>
         <li><b>Commander Levels:</b> Levels range from 1-15. As you level a commander, you unlock upgrades that make the commander stronger. Commander levels are not shared between commanders.</li>
@@ -73,7 +73,7 @@ include("../header.php");
         <li><b>Ascension Levels:</b> Levels range from 91-1000. They do not award anything except for some cosmetic rewards. Ascension levels are shared between commanders.</li>
     </ol>
     <p>When a commander reaches level 15 (requiring a total of 1,045,000 experience), a player may choose to Prestige them. This resets the commander back down to level 1 and unlocks a new selectable talent. A player may Prestige a maximum of three times, unlocking three talents.</p>
-    <a id="rewards"></a><h2>Rewards</h2>
+    <h2 id="rewards">Rewards</h2>
     <p>Rewards for the completion of a mission is as follows:</p>
     <ul>
         <li>Mission Completion: 20,000 EXP</li>
@@ -148,7 +148,7 @@ include("../header.php");
         <li>Random Mission Bonus: 25%</li>
         <li>First Win of the Day Bonus: 10,000 EXP</li>
     </ul>
-    <a id="expTables"></a><h2>Experience Tables</h2>
+    <h2 id="expTables">Experience Tables</h2>
     <p>The experience requirements for leveling a commander is shown below:</p>
     <table class="centered">
         <thead>
@@ -450,7 +450,7 @@ include("../header.php");
         </table>
     </div>
     <p>From level 90 onwards, you need 200,000 experience to gain an ascension level.</p>
-    <a id="rawCalc"></a><h2>Games For Experience</h2>
+    <h2 id="rawCalc">Games For Experience</h2>
     <p>You can calculate how many games of each difficulty are required to get a certain amount of experience.</p>
     <p>Experience Required</p>
     <input type="text" name="experienceNeeded" id="experienceNeeded" maxlength="8" size="9" value="0">
@@ -528,7 +528,7 @@ include("../header.php");
             </tbody>
         </table>
     </div>
-    <a id="close"></a><h2>How Close to Ascension/Max Level</h2>
+    <h2 id="close">How Close to Ascension/Max Level</h2>
     <p>Levelling to Level 90 yields an increase in power to every commander a player has access to and is usually the most important part in co-op gameplay. You can use the calculator below to see how far you are in your levelling path towards level 90.</p>
     <p>Your current mastery:</p>
     <input type="text" name="masteryLevel" id="masteryLevel" maxlength="4" size="5" value="0">
@@ -617,7 +617,7 @@ include("../header.php");
             </tbody>
         </table>
     </div>
-    <a id="numbers"></a><h2>Some Interesting Numbers</h2>
+    <h2 id="numbers">Some Interesting Numbers</h2>
     <p>Use this calculator to get some interesting numbers regarding your leveling.</p>
     <?php
     $username = "";

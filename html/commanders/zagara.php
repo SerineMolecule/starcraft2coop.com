@@ -45,9 +45,9 @@ include("../header.php");
         <p><a href="#buildOrder">Build Order</a></p>
         <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Zagara overwhelms her enemies with cheap and swarmy units that she throws relentlessly at them.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -185,7 +185,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Zagara are:</p>
     <table>
         <thead>
@@ -218,10 +218,10 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Very Hard</p>
     <p>Due the the lack of free Banelings and Swarmlings, Zagara is one of the most difficult commanders to level at lower levels. Take the game extremely slowly to prevent unit loses, morphing Banelings whenever you have resources to spare. Add some Aberrations to your army to provide you with sustained damage.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Zagara with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -298,7 +298,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">Baneling Attack Damage is the better option here, especially if you use Banelings combined with Frenzy to push into enemy bases.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Zagara. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -427,7 +427,7 @@ include("../header.php");
         </tbody>
     </table>
     <p>While leveling Zagara sub-mastery, the Mother of Constructs prestige should be used, due to the weakness of the hero unit because of the lack of the level 15 Level Unlock. For players that prefer the F2 a-move style of play, playing without a Prestige Talent selected will provide them with all the tools they need to be able to handle any scenario thrown at them. However, players that are a little more proactive and aggressive with their hero units will probably be able to get a lot of value from the Apex Predator prestige.</p>
-    <a id="hero"></a><h2>Hero Unit</h2>
+    <h2 id="hero">Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/zagara/zagara.jpg" alt="Zagara">
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00 </p>
@@ -501,7 +501,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Zagara is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/zagara/zergling.jpg" alt="Zergling"><img class="army" src="/images/commanderdata/units/zagara/baneling.jpg" alt="Baneling"><img class="army" src="/images/commanderdata/units/zagara/scourge.jpg" alt="Scourge">
     <p>Zagara should be relying on her cheapest units to push into enemy bases and killing off attack waves. Attack Waves and base pushes should always be done while under the Frenzy from Zagara to prevent excessive losses.</p>
@@ -535,7 +535,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="units"></a><h2>Combat Units</h2>
+    <h2 id="units">Combat Units</h2>
     <p>For more information on Zagara's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Zagara's combat units are listed below:</p>
     <div class="leftImage">
@@ -802,7 +802,7 @@ include("../header.php");
             <p>Upgrades: None</p>
         </div>
     </div>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Zagara. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         9 Extractor<br>
@@ -815,7 +815,7 @@ include("../header.php");
         19 Hatchery
     </p>
     <p>Note: Zagara's drones cost 0.5 supply, but to prevent confusion, supplies in the build order above are shown as the supply you will see in-game.</p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>None</p>
     <h3>Bile Launchers</h3>

@@ -516,7 +516,7 @@ $_SESSION["known"] = true;
     </script>
     <div id="tooltip">tooltip</div>
 
-    <a id="cycle"></a><h2>Weekly Mutations Cycle</h2>
+    <h2 id="cycle">Weekly Mutations Cycle</h2>
     <p>The weekly mutations follow a fixed cycle as shown below. The <a href="#thisweek">current mutation for this week</a> is highlighted in green.</p>
     <table id="mutationCycle">
             <thead>
@@ -621,7 +621,7 @@ $_SESSION["known"] = true;
     ?>
     </tbody>
     <table>
-    <a id="past"></a><h2>Casted Weekly Mutations</h2>
+    <h2 id="past">Casted Weekly Mutations</h2>
     <p>The list of weekly mutations is shown below:</p>
     <p>Filters (click a filter to remove):</p>
     <div id="maps"><p>Map: <select id="mapselect">

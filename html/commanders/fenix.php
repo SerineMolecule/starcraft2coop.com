@@ -46,9 +46,9 @@ include("../header.php");
         <p><a href="#buildOrder">Build Order</a></p>
         <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Fenix uses a variety of different suits, backed up with an army led by AI Champions to dominate the battlefield.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -199,7 +199,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Fenix are:</p>
     <table>
         <thead>
@@ -232,7 +232,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="suits"></a><h2>Fenix Suits</h2>
+    <h2 id="suits">Fenix Suits</h2>
     <p>Coolup time: 4:00</p>
     <p>Instead of calldowns, Fenix can deploy one of three different Armor Suits onto the battlefield at any location with vision. There is a 15 second cooldown for suit deployment. Should a suit be destroyed, there is a 180 second cooldown before it can be used again. Each suit is designed for a particular purpose and has its own abilities. These are shown below:</p>
     <div class="leftImage">
@@ -396,11 +396,11 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Easy</p>
     <p>Use a mix of units, focusing Adept/Immortal/Carrier during early stages of leveling. Make sure you rely on your Fenix suit abilities as much as possible, to increase the survivability of your army.</p>
     <p>While leveling through Mastery levels, allocate points into Power Set 3's Initial Starting Supply mastery if you choose to use it.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Fenix with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -477,7 +477,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">The point allocation above is provided as a starting point. Depending on the efficiency of your macro, more points in the starting supply will reduce your need to build Pylons, while Chrono Boost efficiency can reduce the time it takes to get out your first Champion.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Fenix. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -623,7 +623,7 @@ include("../header.php");
         <li>Avenging Protocol Movement Speed Bonus doubled</li>
     </ul>
     <p>For general play, Akhundelar is a good prestige to use. If the player prefers to have an untimed Fenix, they may play without a Prestige Talent selected. For a more challenging play experience, players may try to use Network Administrator.</p>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Fenix is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/fenix/legionnaire.jpg" alt="Legionnaire"><img class="army" src="/images/commanderdata/units/fenix/adept.jpg" alt="Adept"><img class="army" src="/images/commanderdata/units/fenix/immortal.jpg" alt="Immortal"><img class="army" src="/images/commanderdata/units/fenix/colossus.jpg" alt="Colossus"><img class="army" src="/images/commanderdata/units/fenix/scout.jpg" alt="Scout"><img class="army" src="/images/commanderdata/units/fenix/carrier.jpg" alt="Carrier"><img class="army" src="/images/commanderdata/units/fenix/conservator.jpg" alt="Conservator"><br>
     <img class="army" src="/images/commanderdata/units/fenix/kaldalis.jpg" alt="Kaldalis"><img class="army" src="/images/commanderdata/units/fenix/talis.jpg" alt="Talis"><img class="army" src="/images/commanderdata/units/fenix/taldarin.jpg" alt="Taldarin"><img class="army" src="/images/commanderdata/units/fenix/warbringer.jpg" alt="Warbringer"><img class="army" src="/images/commanderdata/units/fenix/mojo.jpg" alt="Mojo"><img class="army" src="/images/commanderdata/units/fenix/clolarion.jpg" alt="Clolarion">
@@ -659,7 +659,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="units"></a><h2>Combat Units</h2>
+    <h2 id="units">Combat Units</h2>
     <p>For more information on Fenix's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Fenix's combat units are listed below:</p>
     <div class="leftImage">
@@ -1024,7 +1024,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="champions"></a><h2>Champion A.I.'s</h2>
+    <h2 id="champions">Champion A.I.'s</h2>
     <div class="leftImage">
         <div class="imageContainer">
             <img src="/images/commanderdata/units/fenix/kaldalis.jpg" alt="Kaldalis">
@@ -1427,7 +1427,7 @@ include("../header.php");
             </tbody>
         </table>
     </div>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Fenix. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         15 Pylon<br>
@@ -1438,7 +1438,7 @@ include("../header.php");
         26 Pylon<br>
         31 Nexus<br>
     </p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>A lot of Fenix players will attempt to rush Carriers. This is due to the lack of Tech requirements for Fenix. A player can simply build a Stargate and a Fleet Beacon (at the same time) without having to build a Gateway or a Cybernetics Core. Additionally, Carriers are end-game units that can swarm the enemy when massed. However, the downside to this rush is it significantly slows down the player from expanding - something which is extremely important when trying to mass carriers. Additionally, it foregoes Fenix's other champions, which are extremely powerful in their own right. It is much more effective to do a 6-champion build with a mix of units.</p>
     <h3>Playstyle Tips</h3>

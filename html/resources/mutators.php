@@ -89,7 +89,7 @@ $_SESSION["known"] = true;
         <p><a href="#mutatorInteractions">Mutator Interactions</a></p>
         <p><a href="#mutatorList">Mutator List</a></p>
     </div>
-    <a id="safetyZones"></a><h2>Safety Zones</h2>
+    <h2 id="safetyZones">Safety Zones</h2>
     <p>Certain mutators create environmental hazards that can impact/debuff player units, including workers. These mutators get deactivated in areas called "Safety Zones". All player bases and expansions are considered Safety Zones. The mutators that obey the Safety Zone rules are as follows:</p>
     <ul>
         <li>Blizzard</li>
@@ -165,7 +165,7 @@ $_SESSION["known"] = true;
             <img src="/images/mutatordata/safetyzonevoidthrashing.jpg" alt="Void Thrashing Safety Zone">
         </div>
     </div>
-    <a id="mutatorInteractions"></a><h2>Mutator Interactions</h2>
+    <h2 id="mutatorInteractions">Mutator Interactions</h2>
     <?php
     include '../scripts/sqlconnection.php';
     $sql = "SELECT mutatorname, mutatorid
@@ -281,7 +281,7 @@ $_SESSION["known"] = true;
             $("#interactions").text("");
         })
     </script>
-    <a id="mutatorList"></a><h2>Mutator List</h2>
+    <h2 id="mutatorList">Mutator List</h2>
     <p>A list of all of Starcraft II Co-op mutators is shown below. Names, icons, descriptions and mechanics of these mutators are listed. Click the "Details" button to display more information on each mutator. For more numeric data on mutators (as well as mutator information for other difficulty levels), please visit <a href="https://seamaguro.blogspot.com/2017/12/mutator-compendium.html" rel="nofollow">Maguro's Blog</a>.</p>
     <p>Most mutators also have a certain difficulty score associated with them, called an "Abomination Value". These scores are used for selecting different levels of difficulty levels for Brutal+ games. You can find a list of scores and difficulty level breakpoints on the <a href="brutal">Brutal+ Page</a>.</p>
     <p>You may quickly navigate to a mutator by clicking the links below:</p>

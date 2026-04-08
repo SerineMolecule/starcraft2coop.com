@@ -38,7 +38,7 @@ include("../header.php");
         <p><a href="#QOL">Quality of Life</a></p>
         <p><a href="#aesthetic">Aesthetic</a></p>
     </div>
-    <a id="core"></a><h2>Game Core</h2>
+    <h2 id="core">Game Core</h2>
     <ul>
         <li>After Warpgate Research completion, Gateways will automatically transform into Warpgates, even if a unit is in production. That unit's supply and cost is not refunded. Reverting to Gateway will complete production.</li>
         <li>Aura effects apply with units even if they are inside transports</li>
@@ -49,7 +49,7 @@ include("../header.php");
         <li>Prestiging a commander while the game countdown is active adds experience to the level 1 commander while the player plays at mastery level</li>
         <li>Score screen displays jumping units (e.g. Raptor-strain Zerglings) as units made</li>
     </ul>
-    <a id="amon"></a><h2>Amon</h2>
+    <h2 id="amon">Amon</h2>
     <ul>
         <li>Attack Waves take units from the map if they are killed too quickly</li>
         <li>Attack waves with only air units can take unexpected paths to player's bases</li>
@@ -61,7 +61,7 @@ include("../header.php");
         <li>Hybrid Destroyer's Graviton Prison is not marked as a Stasis ability</li>
         <li>Raven Seeker Missiles will hit Interceptors if it was the target even if the Interceptor is already inside the Carrier before it hits</li>
     </ul>
-    <a id="abathur"></a><h2>Abathur</h2>
+    <h2 id="abathur">Abathur</h2>
     <ul>
         <li>Base
             <ul>
@@ -81,7 +81,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="alarak"></a><h2>Alarak</h2>
+    <h2 id="alarak">Alarak</h2>
     <ul>
         <li>Base
             <ul>
@@ -101,7 +101,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="artanis"></a><h2>Artanis</h2>
+    <h2 id="artanis">Artanis</h2>
     <ul>
         <li>Base
             <ul>
@@ -118,7 +118,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="dehaka"></a><h2>Dehaka</h2>
+    <h2 id="dehaka">Dehaka</h2>
     <ul>
         <li>Base
             <ul>
@@ -142,7 +142,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="fenix"></a><h2>Fenix</h2>
+    <h2 id="fenix">Fenix</h2>
     <ul>
         <li>Base
             <ul>
@@ -163,7 +163,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="horner"></a><h2>Han/Horner</h2>
+    <h2 id="horner">Han/Horner</h2>
     <ul>
         <li>Base
             <ul>
@@ -184,7 +184,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="karax"></a><h2>Karax</h2>
+    <h2 id="karax">Karax</h2>
     <ul>
         <li>Base
             <ul>
@@ -199,7 +199,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="kerrigan"></a><h2>Kerrigan</h2>
+    <h2 id="kerrigan">Kerrigan</h2>
     <ul>
         <li>Base
             <ul>
@@ -217,7 +217,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="mengsk"></a><h2>Mengsk</h2>
+    <h2 id="mengsk">Mengsk</h2>
     <ul>
         <li>Base
             <ul>
@@ -240,7 +240,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="nova"></a><h2>Nova</h2>
+    <h2 id="nova">Nova</h2>
     <ul>
         <li>Base
             <ul>
@@ -252,7 +252,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="raynor"></a><h2>Raynor</h2>
+    <h2 id="raynor">Raynor</h2>
     <ul>
         <li>Base
             <ul>
@@ -269,7 +269,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="stetmann"></a><h2>Stetmann</h2>
+    <h2 id="stetmann">Stetmann</h2>
     <ul>
         <li>Base
             <ul>
@@ -290,7 +290,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="stukov"></a><h2>Stukov</h2>
+    <h2 id="stukov">Stukov</h2>
     <ul>
         <li>Base
             <ul>
@@ -309,7 +309,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="swann"></a><h2>Swann</h2>
+    <h2 id="swann">Swann</h2>
     <ul>
         <li>Base
             <ul>
@@ -329,7 +329,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="tychus"></a><h2>Tychus</h2>
+    <h2 id="tychus">Tychus</h2>
     <ul>
         <li>Base
             <ul>
@@ -346,7 +346,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="vorazun"></a><h2>Vorazun</h2>
+    <h2 id="vorazun">Vorazun</h2>
     <ul>
         <li>Base
             <ul>
@@ -365,7 +365,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="zagara"></a><h2>Zagara</h2>
+    <h2 id="zagara">Zagara</h2>
     <ul>
         <li>Base
             <ul>
@@ -379,7 +379,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="zeratul"></a><h2>Zeratul</h2>
+    <h2 id="zeratul">Zeratul</h2>
     <ul>
         <li>Base
             <ul>
@@ -399,7 +399,7 @@ include("../header.php");
             </ul>
         </li>
     </ul>
-    <a id="missions"></a><h2>Missions</h2>
+    <h2 id="missions">Missions</h2>
     <ul>
         <li>Chain of Ascension: All spawned Bonus objectives are auto-completed at the end of the mission</li>
         <li>Chain of Ascension: Amon does not attack Solarite Cocoons that Elemental casts even if its his own units trapped</li>
@@ -437,7 +437,7 @@ include("../header.php");
         <li>The Vermillion Problem: Amon's units are immune to lava surges despite the AI respecting the surges</li>
         <li>The Vermillion Problem: Lava Bursts from the mutator are treated the same as the Lava Spouts in the mission, triggering Donny Vermillion's voice line</li>
     </ul>
-    <a id="mutators"></a><h2>Mutators</h2>
+    <h2 id="mutators">Mutators</h2>
     <ul>
         <li>Aggressive Deployment drops will not spawn if a player's only valid drop target is placed over unpathable terrain</li>
         <li>Using the above bug, Aggressive Deployment will drop a max'ed out wave if it can drop a subsequent wave</li>
@@ -462,7 +462,7 @@ include("../header.php");
         <li>When transmutating an air unit sometimes the unit will transmute to ground unit in an impassable terran and be stuck</li>
         <li>With Transmutation active, some units transform into tier 1 units due to not having a tier associated with them. eg Mothership and Stank</li>
     </ul>
-    <a id="QOL"></a><h2>Quality of Life</h2>
+    <h2 id="QOL">Quality of Life</h2>
     <ul>
         <li>Abathur: Amon units killed by non-player instances like Thrasher attacks will not drop Biomass</li>
         <li>Abathur: Burrowed Swarm Hosts and Unburrowed Swarm Hosts are treated as different units when control-clicked</li>
@@ -492,7 +492,7 @@ include("../header.php");
         <li>Hybrids on Part and Parcel can teleport onto unpathable terrain, preventing them from being attacked by melee units</li>
         <li>Boom Bot codes cannot be input too quickly</li>
     </ul>
-    <a id="aesthetic"></a><h2>Aesthetic</h2>
+    <h2 id="aesthetic">Aesthetic</h2>
     <ul>
         <li>Abathur: Canceling a morph causes various visual bugs</li>
         <li>Alarak: Destroyers dont do their attack animation if they start firing while doing their warp animation</li>

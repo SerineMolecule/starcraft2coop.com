@@ -81,9 +81,9 @@ include("../header.php");
         <p><a href="#fastexpand">Fast Expanding</a></p>
         <p><a href="#videos">Video Guides</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Alarak uses the presence of his own army to improve the power of his own abilities. He has powerful army units that can deal large amounts of damage in a short period of time.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -224,7 +224,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Alarak are:</p>
     <table>
         <thead>
@@ -257,7 +257,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="calldowns"></a><h2>Calldowns</h2>
+    <h2 id="calldowns">Calldowns</h2>
     <p>The calldowns for Alarak, at level 15, with no mastery points added are:</p>
     <table class="calldownTable">
         <thead>
@@ -354,11 +354,11 @@ include("../header.php");
         </div>
     </div>
     <p>*If using the Shadow of Death prestige, this cooldown is increased to 60s, and no longer teleports allied units.</p>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Moderate</p>
     <p>Use a Slayer/Supplicant build as your main attack force. Use Alarak's Destruction Wave ability to push enemy units away from your army. Additionally, ensure you have a War Prism which you can Overcharge to provide you with additional DPS when pushing into enemy bases. Clear your expansion with two Overcharges.</p>
     <p>While leveling through Mastery levels, allocate points into Power Set 3's Structure Overcharge mastery until you hit the desired number of points, before allocating them to Chrono Boost efficiency.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Alarak with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -435,7 +435,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">The 22 points into the first mastery is just enough to clear both, the main and the gas rocks at your expansion. The rest are put into Chrono Boost.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Alarak. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -564,7 +564,7 @@ include("../header.php");
         </tbody>
     </table>
     <p>All three prestiges are recommended for general play. P3 (Shadow of Death) is particularly popular.</p>
-    <a id="hero"></a><h2>Hero Unit</h2>
+    <h2 id="hero">Hero Unit</h2>
     <img id="heroPic" src="/images/commanderdata/hero/alarak/alarak.jpg" alt="Alarak">
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
@@ -627,7 +627,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Alarak is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" img src="/images/commanderdata/units/alarak/supplicant.jpg" alt="Supplicant"><img class="army" img src="/images/commanderdata/units/alarak/ascendant.jpg" alt="Ascendant">
     <p>Ascendants, with the Power Overwhelming upgrades, can deal extremely large amounts of damage to units, allowing Alarak to handle attack waves and unit-based objectives with ease. Supplicants are required for Alarak's Empower Me as well as keeping Ascendants filled with energy through Sacrifice.</p>
@@ -666,7 +666,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="units"></a><h2>Combat Units</h2>
+    <h2 id="units">Combat Units</h2>
     <p>For more information on Alarak's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Alarak's combat units are listed below:</p>
     <div class="leftImage">
@@ -1037,7 +1037,7 @@ include("../header.php");
             <p>Upgrades: None</p>
         </div>
     </div>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Alarak. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Pylon<br>
@@ -1048,7 +1048,7 @@ include("../header.php");
         21 Assimilator<br>
         22 Gateway
     </p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>A possible playstyle trap is to focus on building a mass of Supplicants without adding any other tech units. While Supplicants are used to keep Alarak alive, and massing a large number increases Alarak's power when he uses Empower Me, Supplicants do not have a high DPS by themselves. Specific tech units (Ascendants, Wrathwalkers, etc.) will be needed to further improve a player's performance in the mission.</p>
     <a id="fastexpand"></a><h3>Fast Expanding</h3>
@@ -1295,7 +1295,7 @@ include("../header.php");
         <li>Getting the Soul Augmentation upgrade pushes Supplicants past the vitality breakpoint for Battlecruiser Yamato cannons, allowing them to be used to draw out Yamato Cannons so that your more expensive units do not.</li>
         <li>More skilled players can use the No Cooldown Alarak technique above with Empower Me to completely decimate enemy bases.</li>
     </ul>
-    <a id="videos"></a><h2>Video Guides</h2>
+    <h2 id="videos">Video Guides</h2>
     <p>The below videos demonstrate the various fast expands explained earlier.</p>
     <iframe width="950" height="535" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu5U6PR3fDDVRcpgRFZtveuG" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>

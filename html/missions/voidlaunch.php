@@ -27,9 +27,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>Amon is using Kaldir's warp conduits to transport his troops across the sector. Destroy the shuttles carrying the troops before they reach the warp conduits.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Destroy Shuttles (7 Waves).</li>
@@ -39,7 +39,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Escort Scientists to Xel'Naga Shrines (3)</li>
         </ul>
-    <a id="baseAnalysis"></a><h2>Enemy Base Analysis</h2>
+    <h2 id="baseAnalysis">Enemy Base Analysis</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -67,7 +67,7 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("midbaselong") ?>
     <p>The base on the far right is shown below:</p>
     <?php switcher_generator("rightbaselong") ?>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/voidlaunch/researchvessel.jpg" alt="Research Vessel">
         <img src="/images/missiondata/voidlaunch/researchvessel.jpg" alt="Research Vessel">
@@ -80,7 +80,7 @@ include("../scripts/switchergenerator.php");
     <?php switcher_generator("shrine2") ?>
     <p>The last Shrine is guarded by an enemy camp which will require a significant force to clear.</p>
     <?php switcher_generator("shrine3long") ?>
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Shuttle Timings, Headings, Escort Strength and Tech Levels for this mission are shown below. Note that wave #7 will occur in one of three different patterns, all listed in the table.</p>
     <div class="tableContainer">
@@ -391,15 +391,15 @@ include("../scripts/switchergenerator.php");
         <li>14:48</li>
         <li>19:48</li>
     </ul>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>All the shuttles and their escorts will spawn from the launch bays. However, there are two other spawning points, dedicated for the attack waves that attack player bases. These are located near the two entrances to the enemy bases on the map on either side of the first Xel'Naga Shrine. These are shown below.</p>
     <img src="/images/missiondata/voidlaunch/attackwavespawnpoints.jpg" alt="Attack Wave Spawn Points">
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>Clearing the enemy bases early can give you access to two additional expansions for an even greater foothold in the game.</li>
         <li>Once the enemies around a bay is cleared, build anti-air static defenses to instantly shoot down shuttles as they spawn.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests on attack wave spawn locations to weaken them.</li>
         <li><a href="/commanders/dehaka">Dehaka</a>: Get your early Essence by attacking the enemies near the first Xel'Naga Shrine.</li>

@@ -45,9 +45,9 @@ include("../header.php");
         <p><a href="#buildOrder">Build Order</a></p>
         <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <a id="comSum"></a><h2>Commander Summary</h2>
+    <h2 id="comSum">Commander Summary</h2>
     <p>Han uses her relatively weak mercenaries with Horner's more powerful air units to create a powerful army that complements each other.</p>
-    <a id="levelUnlocks"></a><h2>Level Unlocks</h2>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -189,7 +189,7 @@ include("../header.php");
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <a id="achievements"></a><h2>Achievements</h2>
+    <h2 id="achievements">Achievements</h2>
     <p>The commander-specific achievements for Han & Horner are:</p>
     <table>
         <thead>
@@ -222,7 +222,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="calldowns"></a><h2>Calldowns</h2>
+    <h2 id="calldowns">Calldowns</h2>
     <p>The calldowns for Han & Horner, at level 15, with no mastery points added are:</p>
     <table class="calldownTable">
         <thead>
@@ -318,11 +318,11 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="leveling"></a><h2>Sub-Ascension Leveling</h2>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
     <p>Difficulty: Moderate</p>
     <p>During early stages of leveling, Han's units are very fragile. However, rushing up to Horner's units will leave you extremely vulnerable in the early game. Therefore, start off with some of Han's units (with Death Effect upgrades researched) and transition into Horner's units as quickly as reasonably possible. To increase effectiveness in the early levels, use Mag-Mines aggressively, by placing them behind your army, just before you push in. You can lure enemy units into the mines to deal damage.</p>
     <p>While leveling through Mastery levels, allocate points into Power Set 3 in a 2:1 split for the Air Fleet to Mag Mine masteries.</p>
-    <a id="masteries"></a><h2>Masteries</h2>
+    <h2 id="masteries">Masteries</h2>
     <p>Below are the three Power Sets for Han & Horner with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -399,7 +399,7 @@ include("../header.php");
         </tbody>
     </table>
     <p class="masterySummary">It is useful to have a higher Mag Mine Charge cap than is provided. Your playstyle will determine how many more you'd like to add.</p>
-    <a id="prestiges"></a><h2>Prestiges</h2>
+    <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Han & Horner. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <thead>
@@ -520,7 +520,7 @@ include("../header.php");
         </tbody>
     </table>
     <p>For general play, Chaotic Power Couple offers a good tradeoff between its advantages and disadvantages by allowing the player to use Mag-mines a lot more aggressively and also improving the death effects of Han's units, while still keeping Horner's units viable.</p>
-    <a id="army"></a><h2>Recommended Army Composition</h2>
+    <h2 id="army">Recommended Army Composition</h2>
     <p>The recommended army composition for Han/Horner is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
     <img class="army" src="/images/commanderdata/units/horner/reaper.jpg" alt="Reaper"><img class="army" src="/images/commanderdata/units/horner/hellion.jpg" alt="Hellion"><img class="army" src="/images/commanderdata/units/horner/asteriawraith.jpg" alt="Asteria Wraith"><img class="army" src="/images/commanderdata/units/horner/theiaraven.jpg" alt="Theia Raven">
     <p>Reapers should be making up the bulk of your army with Hellions to provide the death effect stim buffs. Additionally, Ravens should also be added in to provide extra damage bonus to Reaper targets.</p>
@@ -557,7 +557,7 @@ include("../header.php");
 
         });
     </script>
-    <a id="units"></a><h2>Combat Units</h2>
+    <h2 id="units">Combat Units</h2>
     <p>For more information on Han & Horner's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
     <p>Han & Horner's combat units are listed below:</p>
     <div class="leftImage">
@@ -1127,7 +1127,7 @@ include("../header.php");
             </table>
         </div>
     </div>
-    <a id="buildOrder"></a><h2>Build Order</h2>
+    <h2 id="buildOrder">Build Order</h2>
     <p>Below is the standard economic build order for Han & Horner. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Supply Depot<br>
@@ -1137,7 +1137,7 @@ include("../header.php");
         20 Refinery<br>
         20 2x Hellions -> Rocks<br>
     </p>
-    <a id="guide"></a><h2>Gameplay Guide</h2>
+    <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>A common trap for Han & Horner players is completely skip on Han's units in favor of Horner's more powerful air units. This can be quite an expensive mistake, as Horner's units, while strong, cannot take prolonged lengths of damage. This is particular true for the Asteria Wraiths, which naturally draw a lot of aggro. Given their high price, the best way to keep them safe is to add some of Han's units into the mix.</p>
     <p>Additionally, these players will also find that they end up floating a lot of resources, particularly minerals as a result, because of the cooldown-based mechanic behind summoning Horner's units. Thus, it is better to use these spare resources to your advantage by making some of Han's units.</p>

@@ -27,9 +27,9 @@ include("../scripts/switchergenerator.php");
         <p><a href="#misTips">Mission Tips</a></p>
         <p><a href="#comTips">Commander-Specific Tips</a></p>
     </div>
-    <a id="misSum"></a><h2>Mission Summary</h2>
+    <h2 id="misSum">Mission Summary</h2>
     <p>Long ago, this protoss facility was used to convert the personalities of great warriors into AI known as the Purifiers. Researchers tested the process on a Tal'darim prisoner, whose rogue personality began to attack the facility. Now the Purifier guardian Aurana is attempting to regain control.</p>
-    <a id="objectives"></a><h2>Objectives</h2>
+    <h2 id="objectives">Objectives</h2>
     <h3>Primary Objective</h3>
         <ul>
             <li>Do not let Aurana's Transport be destroyed</li>
@@ -39,7 +39,7 @@ include("../scripts/switchergenerator.php");
         <ul>
             <li>Download AI Personalities (6)</li>
         </ul>
-    <a id="towerOrder"></a><h2>Suppression Tower Order</h2>
+    <h2 id="towerOrder">Suppression Tower Order</h2>
     <div id="globalRaceSelect">
         <p>Change all base analysis pictures to race:</p>
         <form action="#">
@@ -81,14 +81,14 @@ include("../scripts/switchergenerator.php");
         <li>Multi-Target Lock On: Deals 40 damage to all enemy units in the targeting circles and slows their attack speed and movement speed by 50% for 4 seconds</li>
         <li>Single-Target Lock On: Deals 150 damage to all enemy units in the targeting circle</li>
     </ul>
-    <a id="bonus"></a><h2>Completing the Bonus Objective</h2>
+    <h2 id="bonus">Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to download three AI Personalities each from two beacons on the map. This is the only bonus objective that requires resources to complete. Each AI personality costs 350 Minerals/100 Gas to download. Therefore, you will require 1050 minerals/300 Gas to download all personalities for a single objective. The objective will expire exactly 4 minutes after it starts. Each beacon is defended by a force of enemy units and static defense.</p>
     <p>The first beacon is shown below.</p>
     <?php switcher_generator("beacon1") ?>
     <p>The second beacon is shown below.</p>
     <?php switcher_generator("beacon2") ?>
     <p>Note that when the first A.I. Personality download has been initiated, three attack waves will spawn to attack and destroy the objective. Once these are cleared, you only require vision in order to complete the rest of the downloads.</p>
-    <a id="timings"></a><h2>Timings</h2>
+    <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>There are three different timings that will be listed in this section. These are:</p>
     <ul>
@@ -406,20 +406,20 @@ include("../scripts/switchergenerator.php");
             </tr>
         </tbody>
     </table>
-    <a id="spawnPoints"></a><h2>Spawn Points</h2>
+    <h2 id="spawnPoints">Spawn Points</h2>
     <p>The spawn points for the Harass waves and Attack waves are different. Harass waves are created from a random point in the lock area.</p>
     <p>However, attack waves have a fixed number of spawn positions. Attack Waves 1 and 2 have the same possible spawn points. The spawn points for attack waves 1 and 2 are shown below.</p>
     <img src="/images/missiondata/malwarfare/wave12spawnpoint.jpg" alt="Spawn Points for Attack Waves 1 and 2">
     <p>Attack Wave 3 only has one spawn point. This is shown below.</p>
     <img src="/images/missiondata/malwarfare/wave3spawnpoint.jpg" alt="Spawn Points for Attack Waves 3">
-    <a id="misTips"></a><h2>Mission Tips</h2>
+    <h2 id="misTips">Mission Tips</h2>
     <ul>
         <li>Pay attention to Aurana's Transport while it is moving. It will slow down if enemy units attack it, giving them even more time to damage it.</li>
         <li>Aurana's Transport does not regen to full HP at the end of every Terminal. It heals a total of 5000 HP per terminal.</li>
         <li>When downloading Personalities for the bonus objective, only three attack waves will spawn in close proximity to each other. Once those attack waves are cleared, all you need is vision to download the rest. No defenses are required.</li>
         <li>Pre-clearing the areas ahead of the transport is the best way to ensure it doesn't take damage and allows you to finish the mission as fast as possible.</li>
     </ul>
-    <a id="comTips"></a><h2>Commander-specific Tips</h2>
+    <h2 id="comTips">Commander-specific Tips</h2>
     <ul>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests outside the camps at the expansions and lure the units to get early biomass.</li>
         <li><a href="/commanders/abathur">Abathur</a>: Place Toxic Nests on attack wave and suppression tower defense spawn locations to weaken them.</li>

@@ -53,7 +53,7 @@ include("../header.php");
         <p><a href="#constructing">Constructing Build Orders</a></p>
         <p><a href="#closing">Closing Notes</a></p>
     </div>
-    <a id="what"></a><h2>What is a Build Order</h2>
+    <h2 id="what">What is a Build Order</h2>
     <p>Before you start to develop your own build order, it is first important to understand what a build order is and what its purpose is. A build order provides a player with a set of actions that they should follow at the start of the game. These actions will include things like when to make a worker, or when to put down a building.</p>
     <p>The reasoning behind this is that games all start with the same state. Therefore, there is a theoretical set of actions that can be taken such that a particular state of the player's situation is highly optimized. For example, a player can follow an economy-focused build order, and after a certain amount of time, they would have maximized their economic potential, far more than a player not following the build order.</p>
     <p>Build orders are extremely precise. They require very particular timings and repetition for practice. Players with excellent macro abilities can benefit a lot from build orders. This is because they float very minimal quantities of resources and play efficiently. For example, Speedrunners can benefit greatly from a good build order due to the repetitive requirement of their gameplay.</p>
@@ -71,7 +71,7 @@ include("../header.php");
     <p>There are certain limitations to build orders in Co-op. For one, Missions can have varying degrees of how contested an expansion is. For example, expanding on <a href="/missions/malwarfare">Malwarfare</a> is significantly easier than expanding on <a href="/missions/cradleofdeath">Cradle of Death</a>. You will need a signficantly larger army to expand on the latter, which means your build order will have to be different. Listing build orders for every possible scenario is extremely difficult.</p>
     <p>What this guide aims to do is give players a rough framework on how to come up with a build order on the spot that addresses their particular needs by providing them with information on how to manage their economy.</p>
     <p>Note that all builds were done on <a href="/missions/oblivionexpress">Oblivion Express</a>, so timings to move the workers to the expansion may vary depending on the mission.</p>
-    <a id="spending"></a><h2>Spending Resources</h2>
+    <h2 id="spending">Spending Resources</h2>
     <p>In Starcraft II, you can spend resources across three different channels. These are:</p>
     <ul>
         <li>Economy: These are units/structures that further contribute to the enhancement of your economy. These include:
@@ -98,7 +98,7 @@ include("../header.php");
             <li>You are able to comfortably complete the mission objectives.</li>
             <li>You are in the best possible place economically at a certain point in the game.</li>
         </ol>
-    <a id="coreConcept"></a><h2>Core Concept: Making Workers</h2>
+    <h2 id="coreConcept">Core Concept: Making Workers</h2>
     <p>Since workers improve your economy, it follows logically that you should be making workers consistently until you reach saturation across both your bases. In fact, this is the core concept behind most (if not all) build orders. By paying attention to your macro to ensure that all your primary structures are producing workers, you can improve your in-game economic state immensely.</p>
     <p>However, making workers has a cost associated with it. Consistently making workers without doing anything else can cause two problems:</p>
     <ol type="1">
@@ -106,7 +106,7 @@ include("../header.php");
         <li>It prevents you from Teching up, weakening your army, and potentially preventing you from expanding.</li>
     </ol>
     <p>Therefore, part of the resources you get need to be spend on Teching up, expanding and making an army. Usually, the resources you spend will be your "floating" resources. That is, resources that you do not need to maintain a single worker in production in your primary structure.</p>
-    <a id="concept1"></a><h2>Concept #1: Using Calldowns</h2>
+    <h2 id="concept1">Concept #1: Using Calldowns</h2>
     <p>Calldowns are a unique aspect to Co-op. Calldowns can significantly impact a commander's build order. They can allow commanders to expand much quicker than normal, because most calldowns are free, and players are only sacrificing a cooldown charge for it.</p>
     <p>A small note to make here is that players must ask whether using the calldown to fast-expand is worth it, given their in-game situation. Most of the time, the answer is "yes", but players will have to evaluate this for themselves given their situation (for example, custom <a href="/resources/mutators">Mutators</a>).</p>
     <p>With that in mind, we can now come up with a reasonably decent Zeratul build. Note that this includes the Legion cost reduction mastery (the Legion will cost 540 minerals to summon), as outlined in the <a href="/commanders/zeratul">Zeratul</a> page.</p>
@@ -120,7 +120,7 @@ include("../header.php");
         Concept #1<br>
         <br>
     </p>
-    <a id="concept2"></a><h2>Concept #2: When to Take Gas</h2>
+    <h2 id="concept2">Concept #2: When to Take Gas</h2>
     <p>As a general rule of thumb, whenever gasses are automated, it is better to take the gasses first using floating resources, before attempting to expand.</p>
     <p>Additionally, you also want to ensure that your mineral line does not get over-saturated. More than the maximum number of workers on a mineral line means that you have workers that are doing nothing. It would be much better if they were collecting gas instead. Therefore, under certain conditions, gas collection structures need to be constructed so they can prevent oversaturation of the mineral line.</p>
     <p>With that in mind, we can now come up with a reasonably decent Vorazun build. Note that this assumes at least 8 points into the Initial Spear of Adun Energy, to get Shadow Guard out as soon as it comes off cooldown.</p>
@@ -148,7 +148,7 @@ include("../header.php");
         Core Concept<br>
         Concept #2
     </p>
-    <a id="concept3"></a><h2>Concept #3: Primary Structure Placement</h2>
+    <h2 id="concept3">Concept #3: Primary Structure Placement</h2>
     <p>Terrans have an advantage which allows them to move their structures after construction. This comes in handy for slower Terrans, as it allows them to pre-build their Command Centers near the expansion rocks. During this time, they can tech up, build up a small force of units, and use that force to clear the expansion rocks. In general, if you are playing Terran, it is always better to spend your first floating resources on a Supply Depot (to keep being able to produce workers), and then on a Command Center.</p>
     <p>Protoss commanders are not as lucky. The Nexus is solely used for the production of workers, and constructing an additional Nexus, purely for the use of it's Chrono Boost is not recommended. A Protoss commander will have to clear their gas rocks before they put down their Nexus.</p>
     <p>With that in mind, we can now come up with a reasonably decent Nova build.</p>
@@ -168,7 +168,7 @@ include("../header.php");
         <br>
         Concept #2
     </p>
-    <a id="concept4"></a><h2>Concept #4: Combat Units</h2>
+    <h2 id="concept4">Concept #4: Combat Units</h2>
     <p>As mentioned in the previous section, Protoss commanders do not have the luxury of pre-building their structures and relocating them. Therefore, they will have to resort to the use of their calldowns or army units. For commanders that do not have calldowns that can be used to clear the Expansion, getting army units out as fast as possible with floating resources is vital.</p>
     <p>With that in mind, we can now come up with a reasonably decent Artanis build. Note that this includes all mastery points into the Chrono Boost mastery, as outlined in the <a href="/commanders/artanis">Artanis</a> page.</p>
     <p class="buildOrder">
@@ -199,7 +199,7 @@ include("../header.php");
         <br>
         Core Concept
     </p>
-    <a id="concept5"></a><h2>Concept #5: Static Defenses</h2>
+    <h2 id="concept5">Concept #5: Static Defenses</h2>
     <p>Static defense can be used to clear an expansion. Terran commanders should particularly consider this as an option, as static defenses can be salvaged. This means a player simply "locks up" some of their resources for a short amount of time before getting them back again. This is particularly useful for commanders that do not have high tech requirements, or those that require the expansion to prop up an expensive production.</p>
     <p>With that in mind, we can now come up with a reasonably decent Tychus build.</p>
     <p class="buildOrder">
@@ -216,7 +216,7 @@ include("../header.php");
         Concept #5<br>
         Concept #5
     </p>
-    <a id="theory"></a><h2>Theory: Mining Rates</h2>
+    <h2 id="theory">Theory: Mining Rates</h2>
     <p>Each Worker mines roughly 40 resources (minerals or gas) per minute. Let's examine what happens when we assign different numbers of workers to a single patch of resources.</p>
     <table class="centered">
         <thead>
@@ -320,7 +320,7 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-    <a id="break1"></a><h2>Breaking Concept #3</h2>
+    <h2 id="break1">Breaking Concept #3</h2>
     <h3>Macro Hatcheries</h3>
     <p>Certain Zerg commanders, such as <a href="/commanders/kerrigan">Kerrigan</a>, rely on "Macro Hatcheries". These are Hatcheries used solely for the production of larva, instead of relying on Queens, which take up supply. As a result, Kerrigan normally requires several Hatcheries to attain maximum production efficiency. Therefore, Kerrigan can get away with putting down an initial Hatchery next to the gas rocks and start semi-long distance mining from that Hatchery. After the rocks are cleared, a third Hatchery is placed, completing Kerrigan's production and economic requirements.</p>
     <p>Below is a Kerrigan build order, taking advantage of Optimal Gather Rates and Macro Hatcheries.</p>
@@ -367,7 +367,7 @@ include("../header.php");
         and salvage one after<br>
         <br>
     </p>
-    <a id="break2"></a><h2>Breaking the Core Concept</h2>
+    <h2 id="break2">Breaking the Core Concept</h2>
     <p>Given the knowledge of Optimal vs. Maximum gather rates, Karax has a very interesting potential build order. Note that this includes all mastery points into the Initial Spear of Adun Energy mastery, as outlined in the <a href="/commanders/karax">Karax</a> page.</p>
     <p class="buildOrder">
         14 Pylon<br>
@@ -384,7 +384,7 @@ include("../header.php");
         <br>
     </p>
     <p>This particular build allows you to put your Nexus down at a blazingly fast 1:04 seconds, and is the fastest possible expand for an uncontested expansion in the game. We'll now look at how to compare build orders to one another.</p>
-    <a id="testing"></a><h2>Testing Build Orders</h2>
+    <h2 id="testing">Testing Build Orders</h2>
     <p>Given the above Karax build, we would like to test it and see how well it fares, as compared to continuosly making Probes until you float 400 minerals for a Nexus.</p>
     <p>The general methodology is to simply go in-game and test it. Execute both build orders perfectly, and see where they get you at a certain amount of time. Make sure to take a full account of structures and extra units created, and adjust your resource values accordingly when doing the comparison.</p>
     <p>A cutoff point of between 6:00 and 7:00 is normally chosen for the test, as those are key points in the game: the start of the mid-game. This point in time will transition you into more difficult attack waves and objectives. This time also ensures both Primary Structures have reached saturation. This means that resource gains henceforth will be exactly the same per minute.</p>
@@ -418,7 +418,7 @@ include("../header.php");
     </table>
     <p>It is always important to report your saturation time. This is because it means all your income can now be spent on either army or tech units, rather than improving the economy. Additionally, you should always separate mineral and gas collected, as builds may gather the same <i>quantity</i> of resources, but in vastly different ratios.</p>
     <p>Testing build orders is a laborious process. Make sure you repeat the exact build multiple times. If you make any mistakes (assigning a worker to the wrong resource, delaying worker production, etc.), you should restart and try again.</p>
-    <a id="constructing"></a><h2>Constructing Build Orders</h2>
+    <h2 id="constructing">Constructing Build Orders</h2>
     <p>Given all the concepts and theory, we will now construct and fine-tune a build order for Alarak. The methodology will be as follows:</p>
     <ol type="1">
         <li>Expand Method</li>
@@ -836,7 +836,7 @@ include("../header.php");
                 <td colspan="3">After the Nexus comes down, we float 100 more minerals. We can choose to wait to build a Gateway, or strengthen our economy by putting down another Assimilator. Here, an Assimilator is put down.</td>
         </table>
     </div>
-    <a id="closing"></a><h2>Closing Notes</h2>
+    <h2 id="closing">Closing Notes</h2>
     <p>The build orders presented and demonstrated on this page work well for maps with an uncontested expansion. That is, there are no enemy forces guarding the expansion. Players will have to modify their builds accordingly to account for any enemy forces at the expansion. The degree to which the build has to be modified depends on the type and quantity of forces present.</p>
     <p>It is because of this that following build orders blindly without consideration of why certain actions are taken is not recommended. Players can get a lot more value out of build orders if they understand the core theory behind it - something which this guide aims to do.</p>
     <p>At the end of the day, taking an expansion and saturating it as fast as possible will yield the best possible results. How to do that, given a set of circumstances, whether it is a mission or a mutator, is up to the player.</p>
