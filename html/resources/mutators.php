@@ -216,10 +216,8 @@ $_SESSION["known"] = true;
             var mut1= $("#mut1").val();
             $.ajax({
                 type: 'GET',
-                url: '../scripts/checkinteractions.php',
-                data: { id: mut1},
-                success: function(response) {
-                    var interactions = JSON.parse(response);
+                url: '/data/mutatorinteractions/check/' + mut1 + '.json',
+                success: function(interactions) {
                     $("#mut2 option").attr("disabled","disabled");
                     for (var i=0; i< interactions.length; i++){
                         $("#mut2 option[value='" + parseInt(interactions[i]) + "']").removeAttr("disabled");
@@ -240,10 +238,8 @@ $_SESSION["known"] = true;
             $("#mut2img").attr("src", "/images/mutators/" + filename + ".png");
             $.ajax({
                 type: 'GET',
-                url: '../scripts/checkinteractions.php',
-                data: { id: mut2},
-                success: function(response) {
-                    var interactions = JSON.parse(response);
+                url: '/data/mutatorinteractions/check/' + mut2 + '.json',
+                success: function(interactions) {
                     $("#mut1 option").attr("disabled","disabled");
                     for (var i=0; i< interactions.length; i++){
                         $("#mut1 option[value='" + parseInt(interactions[i]) + "']").removeAttr("disabled");
@@ -257,12 +253,16 @@ $_SESSION["known"] = true;
         $("#getInteraction").on("click", function(){
             var mut1= $("#mut1").val() ;
             var mut2= $("#mut2").val();
+            const minMut = Math.min(mut1, mut2);
+            const maxMut = Math.max(mut1, mut2);
             $.ajax({
                 type: 'GET',
-                url: '../scripts/getinteraction.php',
-                data: { id1: mut1, id2: mut2 },
+                url: '/data/mutatorinteractions/get/' + minMut + '-' + maxMut + '.json',
                 success: function(response) {
                     $("#interactions").text(response);
+                },
+                error: function() {
+                    $("#interactions").text('No interaction found.');
                 }
             });
         })

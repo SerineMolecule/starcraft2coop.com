@@ -57,3 +57,14 @@ export interface Commander {
 }
 
 export type CommanderList = Commander[];
+
+export interface MutatorInteraction {
+    /** ID of the first mutator in the pair */
+    id1: PositiveInteger;
+    /** ID of the second mutator in the pair */
+    id2: PositiveInteger;
+    /** Description of how the two mutators interact */
+    interaction: string;
+}
+
+export type MutatorInteractionList = MutatorInteraction[];

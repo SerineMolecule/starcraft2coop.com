@@ -42,6 +42,8 @@ include("../header.php");
 <div id="content">
     <h1>Site-Specific and Co-op Related Statistics</h1>
     <?php
+
+    require __DIR__ . '/../data/queries.php';
     include '../scripts/sqlconnection.php';
 
     $sql = "SELECT count(*)
@@ -50,11 +52,8 @@ include("../header.php");
     $row = mysqli_fetch_array($result);
     $mutatorCount = $row[0];
 
-    $sql = "SELECT count(*)
-            FROM mutatorinteractions";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
-    $mutatorInteractionCount = $row[0];
+    $result = get_mutator_interactions();
+    $mutatorInteractionCount = count($result);
 
     $sql = "SELECT count(*)
             FROM mutatorcommandertips";

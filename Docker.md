@@ -71,8 +71,14 @@ If you edit the data files in `/source-data`, then you will need bun to run the 
 docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun install
 ```
 
-### Bun run build
+### Generate schemas and JSON data files
 
 ```shell
 docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun source-data/build
+```
+
+### Validate source-data and schemas
+
+```shell
+docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun source-data/validate
 ```

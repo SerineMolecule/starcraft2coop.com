@@ -40,3 +40,12 @@ function get_brutalplus(int $difficulty): array
     $json = file_get_contents(__DIR__ . '/brutalplus/' . $difficulty . '.json');
     return json_decode($json, true);
 }
+
+/**
+ * @return array All MutatorInteraction info.
+ */
+function get_mutator_interactions(): array
+{
+    $json = file_get_contents(__DIR__ . '/mutatorinteractions.json');
+    return json_decode($json, true);
+}
