@@ -28,6 +28,7 @@ $pages = [
     '/commanders/zagara',
     '/commanders/zeratul',
 
+    '/community/tournament/summary/2019-10',
     '/community/tournament/archive',
     '/community/tournament/main',
     '/community/gamespotlight',
