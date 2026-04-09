@@ -195,6 +195,7 @@ include("../header.php");
         <select name="mut2" id="mut2">
             <?php
             echo "<option value='0'>-</option>";
+            echo "<option value='-1'>(show all interactions)</option>";
             foreach ($mutators as [$id, $name]) {
                 echo "<option value='$id'>$name</option>\n";
             }
@@ -208,6 +209,7 @@ include("../header.php");
     <p id="interactions"></p>
     <script>
         var interactionsPairs = {};
+        var mutators = {};
         var interactionsLoaded = false;
         function getInteractions() {
             if (interactionsLoaded !== false) {
@@ -226,6 +228,11 @@ include("../header.php");
                     updateInteractions();
                 }
             });
+            $("#mut1 option").each(function () {
+                var val = parseInt(this.value);
+                var text = $(this).text();
+                mutators[val] = text;
+            });
             return false;
         }
         function getInteraction(mut1, mut2) {
@@ -237,19 +244,29 @@ include("../header.php");
             var key = '' + mut1 + '-' + mut2;
             return interactionsPairs[key];
         }
+        function getAllInteractions(mut) {
+            var interactions = {};
+            for (var key in mutators) {
+                var interaction = getInteraction(mut, parseInt(key));
+                if (interaction) {
+                    interactions[key] = interaction;
+                }
+            }
+            return interactions;
+        }
         function updateInteractions() {
             if (!getInteractions()) return;
             var $mut1 = $("#mut1 option:selected");
             var mut1 = parseInt($mut1.val());
             var filename1 = $mut1.text().replace(/ /g,'').toLowerCase();
-            if (filename1 === '-') filename1 = 'random';
+            if (mut1 <= 0) filename1 = 'random';
             var $mut2 = $("#mut2 option:selected");
             var mut2 = parseInt($mut2.val());
             var filename2 = $mut2.text().replace(/ /g,'').toLowerCase();
-            if (filename2 === '-') filename2 = 'random';
+            if (mut2 <= 0) filename2 = 'random';
             $("#mut2 option").each(function () {
                 var val = parseInt(this.value);
-                if (!val || !mut1 || getInteraction(mut1, val)) {
+                if (!val || !mut1 || val === -1 || getInteraction(mut1, val)) {
                     this.disabled = false;
                 } else {
                     this.disabled = true;
@@ -257,7 +274,15 @@ include("../header.php");
             });
             $("#mut1img").attr("src", "/images/mutators/" + filename1 + ".png");
             $("#mut2img").attr("src", "/images/mutators/" + filename2 + ".png");
-            if (mut1 && mut2) {
+            if (mut1 && mut2 === -1) {
+                var html = "";
+                var interactions = getAllInteractions(mut1);
+                for (var key in interactions) {
+                    var filename = mutators[key].replace(/ /g,'').toLowerCase();
+                    html += "<p><img src=\"/images/mutators/" + filename + ".png\" height=\"25\" width=\"25\" style=\"vertical-align:middle\"> " + mutators[key] + ": " + interactions[key] + "</p>";
+                }
+                $("#interactions").html(html);
+            } else if (mut1 && mut2) {
                 $("#interactions").text(getInteraction(mut1, mut2) || "No interaction found.");
             } else if (mut1 && !$mut2.length) {
                 // mut2 has a disabled option selected, which means there's no interaction
