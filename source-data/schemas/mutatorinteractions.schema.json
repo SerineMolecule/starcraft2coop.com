@@ -12,11 +12,11 @@
             "type": "object",
             "properties": {
                 "id1": {
-                    "$ref": "#/definitions/PositiveInteger",
+                    "type": "string",
                     "description": "ID of the first mutator in the pair"
                 },
                 "id2": {
-                    "$ref": "#/definitions/PositiveInteger",
+                    "type": "string",
                     "description": "ID of the second mutator in the pair (id2 > id1)"
                 },
                 "interaction": {
@@ -30,10 +30,6 @@
                 "interaction"
             ],
             "additionalProperties": false
-        },
-        "PositiveInteger": {
-            "type": "integer",
-            "minimum": 1
         }
     }
 }
