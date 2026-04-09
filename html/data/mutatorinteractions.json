@@ -1496,11 +1496,6 @@
     },
     {
         "id1": 20,
-        "id2": 23,
-        "interaction": "Mines respawn when taking fatal damage."
-    },
-    {
-        "id1": 20,
         "id2": 24,
         "interaction": "Kill Bots can get the Hardened Will buff."
     },
