@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Downloads</title>
   <meta name="description" content="A list of free tools and software for community use. Some programming experience will be required in order to utilize the code provided.">
@@ -17,7 +17,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Downloads (Co-op Assistant and Replay Parsing Script)</h1>
     <div id="links">
@@ -238,7 +238,7 @@ include("../header.php");
         <li>Map names will be affected by language localization. That is, the map names will be displayed in the language the game was played in when the replay was created.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

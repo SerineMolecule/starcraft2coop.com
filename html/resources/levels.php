@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Levels</title>
   <meta name="description" content="A list of experience brackets in Starcraft II Co-op, as well as a few calculators to show you how far you are through Ascension levels.">
@@ -54,7 +54,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Levels, Experience Requirements, Mastery and Ascension Levels</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -1106,7 +1106,7 @@ include("../header.php");
         });
     </script>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 require_once("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Dead of Night</title>
@@ -18,7 +18,7 @@ require_once("../scripts/switchergenerator.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Dead of Night</h1>
     <p id="missionPlace">Chazington</p>
@@ -500,7 +500,7 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zeratul">Zeratul</a>: Zeratul's Purity of Will passive allows him to escape from a Choker stun when the immunity buff is applied to him.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

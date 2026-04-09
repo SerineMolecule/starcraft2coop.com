@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Achievements</title>
   <meta name="description" content="A list of achievements in Starcraft II's Co-op game mode, with descriptions and images, along with unlock criteria.">
@@ -20,7 +20,7 @@ include("../header.php");
   </style>
 </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Achievements: Unlockable Achievements for Players</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -496,6 +496,6 @@ include("../header.php");
         </table>
     </div>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

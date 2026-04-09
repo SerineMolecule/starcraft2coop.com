@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Patch Data</title>
   <meta name="description" content="Data-mined patch data for the latest Starcraft II Co-op Patch. This page contains both, official and hidden patch changes.">
@@ -14,7 +14,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Starcraft Co-op Patch Data</h1>
     <div id="links">
@@ -121,7 +121,7 @@ include("../header.php");
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

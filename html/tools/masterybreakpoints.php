@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Mastery Breakpoints Calculator</title>
   <meta name="description" content="Figure out how many mastery points you need to reach certain breakpoints with this calculator.">
@@ -67,7 +67,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Mastery Breakpoints Calculator</h1>
@@ -378,6 +378,6 @@ include("../header.php");
         }
     </script>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

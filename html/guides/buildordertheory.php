@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Build Order Theory</title>
   <meta name="description" content="Learn how to make your own Co-op build orders and adapt your build to face challenges like mutators and weekly mutations.">
@@ -34,7 +34,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Build Order Theory: How to Develop Your Own Build Orders</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -844,7 +844,7 @@ include("../header.php");
     <p>At the end of the day, taking an expansion and saturating it as fast as possible will yield the best possible results. How to do that, given a set of circumstances, whether it is a mission or a mutator, is up to the player.</p>
     <p>Build orders are mostly tried and tested several times before an optimal build order is achieved. Players are advised to constantly question and attempt to fine-tune their build orders if they wish to arrive at a perfectly optimal build.</p>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

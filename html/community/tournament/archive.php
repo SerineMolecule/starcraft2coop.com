@@ -1,7 +1,7 @@
 <?php
 
-require "../../admin-only.php";
-include("../../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op Tournament Archives</title>
   <meta name="description" content="Starcraft 2 Co-op Tournament Archives. Browse past Co-op Tournament summaries and watch VoD's.">
@@ -19,7 +19,7 @@ include("../../header.php");
   </style>
   </head>
 <body>
-<?php include("../../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Tournament Archives</h1>
     <p>Below are the archives of past Co-op Tournaments.
@@ -52,6 +52,6 @@ include("../../header.php");
     <a href="https://policies.google.com/privacy">Privacy Policy</a> and
     <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
 </div>
-<?php include("../../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

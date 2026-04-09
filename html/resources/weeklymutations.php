@@ -1,5 +1,5 @@
 <?php
-include("../header.php");
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Weekly Mutations</title>
   <meta name="description" content="Starcraft 2 Co-op Weekly Mutations">
@@ -336,7 +336,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>A List of Weekly Mutations With Difficulties</h1>
     <div id="links">
@@ -897,7 +897,7 @@ include("../header.php");
         });
     </script>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Easter Eggs</title>
   <meta name="description" content="Easter Eggs are a staple in most video games and Co-op is no different. This page lists out all the Easter Eggs found in Co-op.">
@@ -16,7 +16,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Easter Eggs and Other Hidden Content in Co-op</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -70,6 +70,6 @@ include("../header.php");
         <li>"Have you ever wondered what happened to Reigel?"<br>"Not really. It always seemed like he knew more than he let on, though".</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

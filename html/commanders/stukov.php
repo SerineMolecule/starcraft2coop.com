@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Stukov</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Stukov">
@@ -27,7 +27,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Stukov</h1>
@@ -1124,7 +1124,7 @@ include("../header.php");
         <li>The Acidic Enzymes upgrade (available at the Factory's Tech Lab) affects Volatile Infested, which happen to be fired from the Siege Tanks. Therefore, buying this upgrade will also affect the Volatile Infested spawned from the compound.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

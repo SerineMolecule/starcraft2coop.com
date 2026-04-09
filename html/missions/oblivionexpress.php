@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 require_once("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Oblivion Express</title>
@@ -13,7 +13,7 @@ require_once("../scripts/switchergenerator.php");
   <script src="/scripts/preload.js"></script>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Oblivion Express</h1>
     <p id="missionPlace">Tarsonis</p>
@@ -258,7 +258,7 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/tychus">Tychus</a>: Crooked Sam can place a demolition charge on each train carriage, making him a fantastic source of DPS.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

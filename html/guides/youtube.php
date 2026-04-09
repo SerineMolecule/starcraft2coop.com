@@ -1,12 +1,12 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - YouTube</title>
 </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>YouTube</h1>
     <p>We have several guides on YouTube:</p>
@@ -17,6 +17,6 @@ include("../header.php");
             <li><a href="https://www.youtube.com/c/starcraft2coop">Entire Starcraft2coop.com YouTube Channel</a></li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

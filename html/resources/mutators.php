@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Mutator List</title>
   <meta name="description" content="A list of all mutators in Starcraft II Co-op, along with detailed descriptions of their mechanics and commander-specific tips.">
@@ -80,7 +80,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mutators List: Names, Icons, Descriptions and Mechanics</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -3837,7 +3837,7 @@ include("../header.php");
         })
     </script>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Brutal+ Difficulty</title>
   <meta name="description" content="Starcraft 2 Co-op Brutal+ Difficulty Mutators">
@@ -59,7 +59,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Brutal+ Difficulty: Mutation Cost Brackets and Templates</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -319,6 +319,6 @@ include("../header.php");
 
     </script>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

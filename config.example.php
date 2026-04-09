@@ -10,3 +10,6 @@ $DB_NAME = 'starcraf_coop';
 // Generating static pages
 $ADMIN_KEY = 'SuperSecretKey';
 $SERVER_NAME = 'localhost';  // use 'starcraft2coop.com' on the actual server
+
+// project root (not html root)
+const PROJECT_ROOT = __DIR__;

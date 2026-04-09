@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Selection Guide</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Selection Guide for new players, providing information on strengths and weaknesses of commanders.">
@@ -91,7 +91,7 @@ include("../header.php");
 
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>New Player Commander Selection</h1>
@@ -219,6 +219,6 @@ include("../header.php");
         }
     </script>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

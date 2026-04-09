@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Mengsk</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Mengsk">
@@ -69,7 +69,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Mengsk</h1>
@@ -1722,7 +1722,7 @@ include("../header.php");
     <p>The below videos demonstrate the various fast expands explained earlier. Note that as of patch 4.11.3, Mengsk's Starting Mandate Mastery has been modified which means the two Bunkers cannot be dropped at the start of the game. For double Bunker expands, you will need to wait (~2 mins) before both Bunkers can be placed. For single Bunker expands, the mineral line will not be saturated at the start of the game.</p>
     <iframe width="950" height="535" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu67esg6PKcDnh9ejc_3UZ7p" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

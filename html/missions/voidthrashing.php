@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 require_once("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Void Thrashing</title>
@@ -18,7 +18,7 @@ require_once("../scripts/switchergenerator.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Void Thrashing</h1>
     <p id="missionPlace">Char</p>
@@ -271,7 +271,7 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/stukov">Stukov</a>: Move your Infested Colonist Compound to the first Void Thrasher location after it is killed for quick reinforcements.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

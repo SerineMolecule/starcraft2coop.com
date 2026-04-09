@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Stetmann</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Stetmann">
@@ -27,7 +27,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Stetmann</h1>
@@ -1305,7 +1305,7 @@ include("../header.php");
         <li>Super Gary gains a temporary attack speed buff when he picks up Mecha Remnants. Make sure Super Gary is near your army in combat to take advantage of this buff.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

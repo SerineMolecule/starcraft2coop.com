@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Zagara</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Zagara">
@@ -27,7 +27,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Zagara</h1>
@@ -895,7 +895,7 @@ include("../header.php");
         <li>Cast Infested Drop and Spawn Hunter Killers before you cast Mass Frenzy so the newly-spawned units also get the buff.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

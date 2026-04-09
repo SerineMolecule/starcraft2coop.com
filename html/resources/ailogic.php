@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - AI Logic</title>
   <meta name="description" content="Starcraft 2 Co-op AI logic. Learn about how the different abilities are used by spellcasters and when they use them.">
@@ -29,7 +29,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>AI Logic: Ability Usage Conditions</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -1736,7 +1736,7 @@ include("../header.php");
         </div>
     </div>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

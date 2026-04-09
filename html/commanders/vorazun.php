@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Vorazun</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Vorazun">
@@ -27,7 +27,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Vorazun</h1>
@@ -1195,7 +1195,7 @@ include("../header.php");
         <li>In the early game, focus on Air attack upgrades over ground attack upgrades, as Dark Templars will be dealing most of their damage through Shadow Fury, which does not get affected by Ground attack upgrades. Additionally, Corsairs need these upgrades in order to kill enemy units.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

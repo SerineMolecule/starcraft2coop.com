@@ -3,6 +3,8 @@
 /dbdata
 /vendor
 /node_modules
+# only ignore the root .htaccess file
+.htaccess
 
 # generated automatically by Dreamhost
 .dh-diag

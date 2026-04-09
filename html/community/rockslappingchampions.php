@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Rockslapping Champions</title>
   <meta name="description" content="Rockslapping Champions is starcraft2coop.com's flagship series, which is very similar to Bronze League Heroes.">
@@ -63,7 +63,7 @@ include("../header.php");
     </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Rockslapping Champions</h1>
     <h2>The Series</h2>
@@ -175,6 +175,6 @@ include("../header.php");
         })
     </script>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

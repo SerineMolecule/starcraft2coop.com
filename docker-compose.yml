@@ -8,6 +8,7 @@ services:
       - ./html:/var/www/html
       - ./config.php:/var/www/config.php
       - ./generate.php:/var/www/generate.php
+      - ./.htaccess:/var/www/.htaccess
 
   db:
     # the values here should match config.php

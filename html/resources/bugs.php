@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Bugs List</title>
   <meta name="description" content="A list of bugs that are present in the current Starcraft II Co-op Patch">
@@ -9,7 +9,7 @@ include("../header.php");
   <link rel="canonical" href="https://starcraft2coop.com/resources/bugs">
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Starcraft Co-op Bugs List</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -528,7 +528,7 @@ include("../header.php");
         <li>When a player unit kills a missile from Missile Command with Just Die! active, the Just Die! respawn animation occurs on the player unit instead of the missile</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

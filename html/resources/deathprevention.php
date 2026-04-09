@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Order of Death Prevention Effects</title>
   <meta name="description" content="Order of Death Prevention Effect Triggers in Starcraft 2 Co-op">
@@ -14,7 +14,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Order of Death Prevention Effects</h1>
     <?php
@@ -101,6 +101,6 @@ include("../header.php");
         </tbody>
     </table>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>

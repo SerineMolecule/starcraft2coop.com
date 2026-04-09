@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Han & Horner</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Han Horner">
@@ -27,7 +27,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Han & Horner</h1>
@@ -1153,7 +1153,7 @@ include("../header.php");
         <li>Space Station Reallocation does reduced damage to some non-heroic structures. For example, Zenith Stones on <a href="/missions/templeofthepast">Temple of the Past</a> do not get instantly destroyed by the calldown, despite having no Heroic tag.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

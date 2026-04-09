@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Dehaka</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Dehaka">
@@ -34,7 +34,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Dehaka</h1>
@@ -1901,7 +1901,7 @@ include("../header.php");
         <li>If Dehaka dies, use drones to instantly respawn him. Each drone reduces Dehaka's respawn time by 24 seconds (-1 second per level for Dehaka). This can have huge negative impact on your economy in the early game, so make sure you don't lose him at the start, when he is at his weakest.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

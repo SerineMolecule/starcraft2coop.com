@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 require_once("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Part and Parcel</title>
@@ -18,7 +18,7 @@ require_once("../scripts/switchergenerator.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Part and Parcel</h1>
     <p id="missionPlace">Moebius Research Station</p>
@@ -296,7 +296,7 @@ require_once("../scripts/switchergenerator.php");
     </ul>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/YkCX8PXqyAc" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Tychus</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Tychus">
@@ -44,7 +44,7 @@ include("../header.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Tychus</h1>
@@ -1367,7 +1367,7 @@ include("../header.php");
         <li>Your choice of healer (Rattlesnake/Nikara) will depend on which outlaws you use. A build that uses lower HP outlaws (Fixers) will gain more benefit from having Nikara, whereas a higher HP outlaw set (Muscles) will benefit more from having Rattlesnake.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

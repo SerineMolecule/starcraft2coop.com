@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 require_once("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Temple of the Past</title>
@@ -23,7 +23,7 @@ require_once("../scripts/switchergenerator.php");
   </style>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Temple of the Past</h1>
     <p id="missionPlace">Shakuras</p>
@@ -633,7 +633,7 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/raynor">Raynor</a>: If you use Vultures, place Spider-mines on attack wave and Thrasher spawn locations to weaken them.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

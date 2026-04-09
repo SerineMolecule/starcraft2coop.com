@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Miner Evacuation</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Miner Evacuation">
@@ -12,7 +12,7 @@ include("../header.php");
   <script src="/scripts/preload.js"></script>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Miner Evacuation</h1>
     <p id="missionPlace">Jarban</p>
@@ -300,7 +300,7 @@ include("../header.php");
         <li><a href="/commanders/zeratul">Zeratul</a>: Use Void Arrays to quickly reinforce your army.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 

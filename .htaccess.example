@@ -1,0 +1,4 @@
+# copy this file as `.htaccess` in the project root dir and change the necessary values
+
+# set this to the FULL PATH of `config.php` in the project root dir
+php_value auto_prepend_file /var/www/config.php

@@ -1,7 +1,7 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require PROJECT_ROOT . "/html/admin-only.php";
+include PROJECT_ROOT . "/html/header.php";
 require_once("../scripts/switchergenerator.php");
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Cradle of Death</title>
@@ -13,7 +13,7 @@ require_once("../scripts/switchergenerator.php");
   <script src="/scripts/preload.js"></script>
   </head>
 <body>
-<?php include("../menu.php"); ?>
+<?php include PROJECT_ROOT . "/html/menu.php"; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Cradle of Death</h1>
     <p id="missionPlace">Moebius Battle Station</p>
@@ -365,7 +365,7 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zeratul">Zeratul</a>: Place plenty of Void Arrays around the map to be able to deal with the attack waves as well as push effectively.</li>
     </ul>
 </div>
-<?php include("../footer.php"); ?>
+<?php include PROJECT_ROOT . "/html/footer.php"; ?>
 </body>
 </html>
 
