@@ -98,15 +98,6 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
         <a href="/missions/voidlaunch" class="<?=$pageFile === 'voidlaunch.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/voidlaunch.png" alt="Void Launch"></a>
         <a href="/missions/voidthrashing" class="<?=$pageFile === 'voidthrashing.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/voidthrashing.png" alt="Void Thrashing"></a>
     </div>
-    <div id="guideList" class="submenu">
-        <ul>
-            <li class="<?=$pageFile === "buildordertheory.php" ? 'highlight' : 'normal'?>"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
-            <li class="<?=$pageFile === "enemycomps.php" ? 'highlight' : 'normal'?>"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
-            <li class="<?=$pageFile === "generaltips.php" ? 'highlight' : 'normal'?>"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
-            <li class="<?=$pageFile === "newplayer.php" ? 'highlight' : 'normal'?>"><a href="/guides/newplayer">New&nbsp;Players&nbsp;</a></li>
-            <li class="<?=$pageFile === "youtube.php" ? 'highlight' : 'normal'?>"><a href="/guides/youtube">Youtube&nbsp;</a></li>
-        </ul>
-    </div>
     <div id="resources" class="submenu">
         <div class="submenu-with-sections"><div class="submenu-section">
             <strong>Resources:</strong>
@@ -139,22 +130,6 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
                 <li class="<?=$pageFile === "masterybreakpoints.php" ? 'highlight' : 'normal'?>"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
             </ul>
         </div></div>
-    </div>
-    <div id="tools" class="submenu">
-        <ul>
-            <li class="<?=$pageFile === "downloads.php" ? 'highlight' : 'normal'?>"><a href="/tools/downloads">Downloads</a></li>
-            <li class="<?=$pageFile === "masterybreakpoints.php" ? 'highlight' : 'normal'?>"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
-            <li class="<?=$pageFile === "unitstats.php" ? 'highlight' : 'normal'?>"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
-        </ul>
-    </div>
-    <div id="community" class="submenu">
-        <ul>
-            <li class="<?=$pageFile === "tournament.php" ? 'highlight' : 'normal'?>"><a href="/community/tournament/main">Co&#8209;op&nbsp;Tournament</a></li>
-            <li class="<?=$pageFile === "gamespotlight.php" ? 'highlight' : 'normal'?>"><a href="/community/gamespotlight">Game&nbsp;Spotlight</a></li>
-            <li class="<?=$pageFile === "mythbusters.php" ? 'highlight' : 'normal'?>"><a href="/community/mythbusters">Mythbusters</a></li>
-            <li class="<?=$pageFile === "rockslappingchampions.php" ? 'highlight' : 'normal'?>"><a href="/community/rockslappingchampions">Rockslapping&nbsp;Champions</a></li>
-            <li class="normal"><a href="/youtube">Youtube</a></li>
-        </ul>
     </div>
     <div id="about" class="submenu">
         <ul>
@@ -192,17 +167,8 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
             case "missions":
                 $("#missionList").show();
                 break;
-            case "community":
-                $("#community").show();
-                break;
-            case "guides":
-                $("#guideList").show();
-                break;
             case "resources":
                 $("#resources").show();
-                break;
-            case "tools":
-                $("#tools").show();
                 break;
             case "about":
                 $("#about").show();
