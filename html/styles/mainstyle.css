@@ -187,7 +187,12 @@ html, body {
 }
 .submenu-section {
     text-align: left;
-    padding: 7px 15px 7px 15px;
+    padding: 6px 15px 6px 15px;
+}
+.submenu-section + .submenu-section {
+    border-top: 1px solid rgba(103, 112, 169, .5);
+    padding-top: 11px;
+    margin-top: 5px;
 }
 #footer{
     font-style:italic;
