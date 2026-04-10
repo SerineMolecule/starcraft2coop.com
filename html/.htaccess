@@ -1,3 +1,6 @@
+# default index pages
+DirectoryIndex index.html index.php
+
 ErrorDocument 404 /errors/404.php
 
 RewriteEngine on
@@ -35,6 +38,9 @@ Redirect 301 /weeklymutations /resources/weeklymutations
 Redirect 301 /rockslappingchampions /community/rockslappingchampions
 Redirect 301 /gamespotlight /community/gamespotlight
 Redirect 301 /mythbusters /community/mythbusters
+
+# rename tournament/main to tournament/index 09-apr-2026
+Redirect 301 /community/tournament/main /community/tournament/index
 
 # 19-apr-2020 menu reorganization
 Redirect 301 /newplayer /guides/newplayer
