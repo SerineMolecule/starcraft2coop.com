@@ -39,7 +39,7 @@ Redirect 301 /rockslappingchampions /community/rockslappingchampions
 Redirect 301 /gamespotlight /community/gamespotlight
 Redirect 301 /mythbusters /community/mythbusters
 
-# rename tournament/main to tournament/index 09-apr-2026
+# rename tournament/main to tournament/index 10-apr-2026
 Redirect 301 /community/tournament/main /community/tournament/index
 
 # 19-apr-2020 menu reorganization
