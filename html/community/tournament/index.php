@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Tournament</title>
   <meta name="description" content="Information on the one-of-a-kind Co-op Tournament, which features two teams of two battling it out in mutliple-round mutation games.">
@@ -12,7 +12,7 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>The Co-Op Tournament</h1>
     <p>The Co-Op tournament is designed to test the limits of players' skill, knowledge and map awareness in Starcraft II Co-op mode. Currently, there is a $100 prize given to the winning team ($50 each player).</p>
@@ -298,13 +298,13 @@ include PROJECT_ROOT . "/html/header.php";
     <?php
     $closed = true;
     if ($closed) {
-        include("registrationclosed.php");
+        include 'registrationclosed.php';
     } else {
-        include("registrationopen.php");
+        include 'registrationopen.php';
     }
     ?>
 
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

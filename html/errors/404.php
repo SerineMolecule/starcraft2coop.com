@@ -26,7 +26,7 @@
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <?php
     if (isset($_SERVER['HTTP_REFERER'])) {
@@ -59,6 +59,6 @@
     <p>(Either that, or the page was not found.)</p>
 
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

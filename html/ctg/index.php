@@ -98,7 +98,7 @@
   </head>
 <body>
     <?php
-    include PROJECT_ROOT . "/html/scripts/sqlconnection.php";
+    include PROJECT_ROOT . '/html/scripts/sqlconnection.php';
     $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination
                 FROM mutators
                 ORDER BY mutatorid ASC";

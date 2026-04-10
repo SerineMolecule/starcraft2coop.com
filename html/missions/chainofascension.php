@@ -1,8 +1,8 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
-require_once("../scripts/switchergenerator.php");
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
+require_once PROJECT_ROOT . '/html/scripts/switchergenerator.php';
 ?>
   <title>Starcraft 2 Co-op - Mission Guide - Chain of Ascension</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Chain of Ascension">
@@ -13,11 +13,11 @@ require_once("../scripts/switchergenerator.php");
   <script src="/scripts/preload.js"></script>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Co-op Mission Guide: Chain of Ascension</h1>
     <p id="missionPlace">Slayn</p>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -503,7 +503,7 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zagara">Zagara</a>: Build your macro hatcheries at your expansion for quick reinforcements.</li>
     </ul>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

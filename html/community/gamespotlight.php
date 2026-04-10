@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Game Spotlight</title>
   <meta name="description" content="This is the submission page to get games that feature a high skill level casted.">
@@ -26,7 +26,7 @@ include PROJECT_ROOT . "/html/header.php";
     </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Game Spotlight</h1>
     <p>Game Spotlight is a special non-routine series of game casts from some of the best Co-op players in the community. The videos provide a glimpse of what Co-op looks like at the highest levels of play and show how top Co-op players handle difficult situations. Each game will be casted with added "Did You Know" facts scattered throughout the video. A full playlist is below:</p>
@@ -54,7 +54,7 @@ include PROJECT_ROOT . "/html/header.php";
         if(isset($_POST['url']) && $_POST['url'] == ''){
             if(isset($_FILES["file"]) && isset($_POST['recaptcha_response'])){
 
-                include("../scripts/recaptcha.php");
+                include PROJECT_ROOT . '/html/scripts/recaptcha.php';
                 if ($recaptchaResult) {
 
                     $target_dir = "../aommaster_admin/submissions/";
@@ -100,6 +100,6 @@ include PROJECT_ROOT . "/html/header.php";
     </form>-->
     <p>Submissions are now closed. Thank you.</p>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

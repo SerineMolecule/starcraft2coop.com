@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Links</title>
   <meta name="description" content="Links to other Starcraft II Co-op community content such as speedrun replay files and records, Discord Servers and Youtube channels.">
@@ -13,7 +13,7 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Links - Various Other Starcraft 2 Co-op Content</h1>
     <p>Below are some links to other content (including websites) dedicated to Starcraft II Co-op.</p>
@@ -28,6 +28,6 @@ include PROJECT_ROOT . "/html/header.php";
         <li><a href="https://drive.google.com/drive/u/0/folders/0B0kAPEv3WqAeZlhmbzN5NWlDc1E" rel="nofollow">Co-op Speedrun Replays</a></li>
     </ul>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

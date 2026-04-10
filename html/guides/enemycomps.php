@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Enemy Compositions</title>
   <meta name="description" content="Starcraft 2 Co-op Enemy Compositions. Learn about Hybrids and the different units in Amon's attack waves.">
@@ -85,10 +85,10 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Enemy Compositions: Units in Attack Waves and Hybrid Data</h1>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#genNotes">General Notes</a></p>
@@ -1118,7 +1118,7 @@ include PROJECT_ROOT . "/html/header.php";
         </div>
     </div>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

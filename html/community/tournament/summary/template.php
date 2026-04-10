@@ -20,7 +20,7 @@
 <body>
 <div id="header"><img src="/images/mainpageheader.png" alt="Starcraft II Co-op Logo">
 </div>
-<div id="menu"><?php include PROJECT_ROOT . "/html/menu.php"; ?></div>
+<div id="menu"><?php include PROJECT_ROOT . '/html/menu.php'; ?></div>
 <div id="content">
     <h1>Co-op Tournament Summary - November 2018</h1>
     <!-- Paste the content before the tooltip tag here -->
@@ -96,6 +96,6 @@
         return false;
     });
 </script>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

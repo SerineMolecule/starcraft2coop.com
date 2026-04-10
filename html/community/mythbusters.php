@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Mythbusters</title>
   <meta name="description" content="This is the page which lists all the episodes of Mythbusters.">
@@ -9,7 +9,7 @@ include PROJECT_ROOT . "/html/header.php";
   <link rel="canonical" href="https://starcraft2coop.com/community/mythbusters">
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Mythbusters</h1>
     <p>Mythbusters takes theories and myths from the co-op community and puts them to the test. A full playlist is below:</p>
@@ -196,6 +196,6 @@ include PROJECT_ROOT . "/html/header.php";
     <br>Missiles from Missile Command are immune to Mind-Control
     <br>Swann can convert Tech Labs and Reactors to Tech Reactors
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

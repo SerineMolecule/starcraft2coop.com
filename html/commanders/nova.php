@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Nova</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Nova">
@@ -27,12 +27,12 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Nova</h1>
     <p id="commanderMotto">Dominion Ghost</p>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#comSum">Commander Summary</a></p>
@@ -1257,7 +1257,7 @@ include PROJECT_ROOT . "/html/header.php";
         <li>If using Spider Mines for defense, place them on the top of your ramp so they can take advantage of high-ground vision range.</li>
     </ul>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

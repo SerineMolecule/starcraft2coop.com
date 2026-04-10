@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Unit Stats</title>
   <meta name="description" content="A calculator to provide you with unit stats before and after upgrades for every unit in Co-op. Also includes data on Amon's units.">
@@ -223,10 +223,10 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>A List of Unit Stats for Player and Amon Units</h1>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <h2>Unit Comparison</h2>
     <p>Use the below applet to see single unit stats or compare two units together. Click on a commander, then a unit of theirs to get its stats. To compare two units, select a commander and their unit on the opposite side.</p>
     <p>Notes about the data:</p>
@@ -489,7 +489,7 @@ include PROJECT_ROOT . "/html/header.php";
     <div id="dataContainer"></div>
     <div id="amonTableContainer">
         <div id="flexContainer">
-            <?php include("../scripts/generatetable.php");?>
+            <?php include PROJECT_ROOT . '/html/scripts/generatetable.php'; ?>
         </div>
     </div>
     <script>
@@ -549,6 +549,6 @@ include PROJECT_ROOT . "/html/header.php";
     </script>
     <div class="clear"></div>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

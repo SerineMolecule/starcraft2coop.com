@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Statistics</title>
   <meta name="description" content="Various statistics related to starcraft2coop.com and Starcraft II content, such as mutator frequency counts in Weekly Mutations.">
@@ -40,13 +40,13 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Site-Specific and Co-op Related Statistics</h1>
     <?php
 
     require_once PROJECT_ROOT . '/html/data/queries.php';
-    include PROJECT_ROOT . "/html/scripts/sqlconnection.php";
+    include PROJECT_ROOT . '/html/scripts/sqlconnection.php';
 
     $sql = "SELECT count(*)
             FROM mutators";
@@ -875,7 +875,7 @@ include PROJECT_ROOT . "/html/header.php";
         });
     </script>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

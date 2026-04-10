@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Achievements</title>
   <meta name="description" content="A list of achievements in Starcraft II's Co-op game mode, with descriptions and images, along with unlock criteria.">
@@ -20,10 +20,10 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
 </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Co-op Achievements: Unlockable Achievements for Players</h1>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <p>There are several unlockable Co-op Mode achievements available for players to earn. These can be divided into two categories, shown below. Note that the achievements listed on this page is not an exhaustive list.</p>
     <ul>
         <li><b>Commander-specific Achievements:</b> These are specific to various gameplay elements of Co-op Commanders. Please check the individual commander pages for a list of their specific achievements.</li>
@@ -496,6 +496,6 @@ include PROJECT_ROOT . "/html/header.php";
         </table>
     </div>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

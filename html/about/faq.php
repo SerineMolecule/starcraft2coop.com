@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Frequently Asked Questions</title>
   <meta name="description" content="Starcraft 2 Co-op FAQ Frequently Asked Questions">
@@ -18,7 +18,7 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Frequently Asked Questions</h1>
     <p>This page contains some of the more frequently asked questions regarding Co-op and the site itself.</p>
@@ -73,6 +73,6 @@ include PROJECT_ROOT . "/html/header.php";
     <h3>Wasn't there a Co-op Tournament page?</h3>
     <p>Yeah, there were two tournaments, one in 2019 and one in 2021. The <a href="/community/tournament/archive">tournament replay archives</a> still exist, and <a href="/community/tournament/index">the old signup page</a> is still accessible.</p>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

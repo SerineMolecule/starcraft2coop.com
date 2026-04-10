@@ -1,5 +1,5 @@
 <?php
-include PROJECT_ROOT . "/html/header.php";
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Weekly Mutations</title>
   <meta name="description" content="Starcraft 2 Co-op Weekly Mutations">
@@ -336,7 +336,7 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>A List of Weekly Mutations With Difficulties</h1>
     <div id="links">
@@ -378,7 +378,7 @@ include PROJECT_ROOT . "/html/header.php";
     <ul>
         <?php
 
-        include PROJECT_ROOT . "/html/scripts/sqlconnection.php";
+        include PROJECT_ROOT . '/html/scripts/sqlconnection.php';
 
         $sql = "SELECT mutatorid, mutatorname, mutatordescription, abomination
                     FROM mutators
@@ -897,7 +897,7 @@ include PROJECT_ROOT . "/html/header.php";
         });
     </script>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 <?php
 
 // run from CLI; generate static pages
-require "config.php";
+require 'config.php';
 
 $pages = [
     '/about/contact',

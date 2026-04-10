@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Levels</title>
   <meta name="description" content="A list of experience brackets in Starcraft II Co-op, as well as a few calculators to show you how far you are through Ascension levels.">
@@ -54,10 +54,10 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Co-op Levels, Experience Requirements, Mastery and Ascension Levels</h1>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#summary">Summary</a></p>
@@ -629,7 +629,7 @@ include PROJECT_ROOT . "/html/header.php";
     }
     if ($username != "") {
         echo("<p>Initial values are based on replays you have uploaded to this site.</p>");
-        include PROJECT_ROOT . "/html/scripts/sqlconnection.php";
+        include PROJECT_ROOT . '/html/scripts/sqlconnection.php';
         $sql = "SELECT server, mycommander, commanderlevel, masterylevel, prestige from userreplays
                     WHERE username='$username'
                     ORDER BY played ASC";
@@ -1106,7 +1106,7 @@ include PROJECT_ROOT . "/html/header.php";
         });
     </script>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

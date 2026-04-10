@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Mutator List</title>
   <meta name="description" content="A list of all mutators in Starcraft II Co-op, along with detailed descriptions of their mechanics and commander-specific tips.">
@@ -80,10 +80,10 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Co-op Mutators List: Names, Icons, Descriptions and Mechanics</h1>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#safetyZones">Safety Zone</a></p>
@@ -168,7 +168,7 @@ include PROJECT_ROOT . "/html/header.php";
     </div>
     <h2 id="mutatorInteractions">Mutator Interactions</h2>
     <?php
-    include PROJECT_ROOT . "/html/scripts/sqlconnection.php";
+    include PROJECT_ROOT . '/html/scripts/sqlconnection.php';
     $sql = "SELECT mutatorname, mutatorid
             FROM mutators
             ORDER BY mutatorname ASC";
@@ -3837,7 +3837,7 @@ include PROJECT_ROOT . "/html/header.php";
         })
     </script>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

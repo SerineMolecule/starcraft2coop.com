@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Order of Death Prevention Effects</title>
   <meta name="description" content="Order of Death Prevention Effect Triggers in Starcraft 2 Co-op">
@@ -14,10 +14,10 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Order of Death Prevention Effects</h1>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <h2>Summary</h2>
     <p>Death Prevention Effects are effects that stop a unit from dying. Examples of these are <a href="/commanders/artanis">Artanis' Guardian Shell</a> and <a href="/commanders/kerrigan">Kerrigan's Torrasque Strain Ultralisk Passive</a>. When multiple Death Prevention Effects are active, it is difficult to predict what order they will trigger. The order of Death Prevention Effects is shown in the following section.</p>
     <p>For a little more context, this page was created to act as a supplement to the following video:</p>
@@ -100,6 +100,6 @@ include PROJECT_ROOT . "/html/header.php";
         </tbody>
     </table>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

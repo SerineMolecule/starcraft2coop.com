@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Commander Guide - Karax</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Karax">
@@ -60,12 +60,12 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Karax</h1>
     <p id="commanderMotto">Khalai Phase-Smith</p>
-    <?php include PROJECT_ROOT . "/html/scripts/reporterror.php"; ?>
+    <?php include PROJECT_ROOT . '/html/scripts/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#comSum">Commander Summary</a></p>
@@ -1319,7 +1319,7 @@ include PROJECT_ROOT . "/html/header.php";
     <p>The below videos demonstrate the various fast expands explained earlier. These fast expands are much more difficult to pull off, because you will be shooting your Solar Lances into the fog of war and will require a lot of practice.</p>
     <iframe width="950" height="535" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu6-eOs3pg4Bvvn27uuvClBW" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
 

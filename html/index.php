@@ -1,5 +1,5 @@
 <?php
-include PROJECT_ROOT . "/html/header.php";
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Commander Guides, Mission Data and more!</title>
   <meta name="description" content="Your #1 Source for Starcraft 2 Co-op Information. Commander Guides, Mission Data, Unit Stats, Mutation Information and more!">
@@ -33,7 +33,7 @@ include PROJECT_ROOT . "/html/header.php";
   </style>
   </head>
 <body>
-<?php include PROJECT_ROOT . "/html/menu.php"; ?>
+<?php include PROJECT_ROOT . '/html/menu.php'; ?>
 <div id="content">
     <h1>Starcraft II Co-op</h1>
     <p>Starcraft II is a real-time strategy game by Blizzard Entertainment. It is one of the most successful RTS's in history. In 2015, Starcraft II introduced a co-op mode, where two players would face up against Amon in a PVE-type mission. The game features several different commanders to play and many different maps to choose from.</p>
@@ -59,6 +59,6 @@ include PROJECT_ROOT . "/html/header.php";
         </tr>
     </table>
 </div>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>

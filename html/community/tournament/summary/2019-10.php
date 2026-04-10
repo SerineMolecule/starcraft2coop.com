@@ -1,7 +1,7 @@
 <?php
 
-require PROJECT_ROOT . "/html/admin-only.php";
-include PROJECT_ROOT . "/html/header.php";
+require PROJECT_ROOT . '/html/admin-only.php';
+include PROJECT_ROOT . '/html/header.php';
 ?>
   <title>Starcraft 2 Co-op - Tournament Summary - Oct 2019</title>
   <meta name="description" content="Starcraft 2 Co-op Tournament Summary November 2018">
@@ -15,7 +15,7 @@ include PROJECT_ROOT . "/html/header.php";
 <body>
 <div id="header"><img src="/images/mainpageheader.png" alt="Starcraft II Co-op Logo">
 </div>
-<div id="menu"><?php include PROJECT_ROOT . "/html/menu.php"; ?></div>
+<div id="menu"><?php include PROJECT_ROOT . '/html/menu.php'; ?></div>
 <div id="content">
     <h1>Co-op Tournament Summary - October 2019</h1>
     <p>Below is the round summary for the Starcraft 2 Co-op Tournament of October 2019. Each round has been hidden by a spoiler block which can be removed by clicking the block. You may remove all spoilers and highlight the winning team by using the spoiler toggle located on the page.</p>
@@ -158,7 +158,7 @@ include PROJECT_ROOT . "/html/header.php";
             </tr>
             <?php
             $start = 3;
-            include("../fakerows.php");
+            include PROJECT_ROOT . '/html/community/tournament/fakerows.php';
             ?>
         </tbody>
 </table>
@@ -219,6 +219,6 @@ include PROJECT_ROOT . "/html/header.php";
         return false;
     });
 </script>
-<?php include PROJECT_ROOT . "/html/footer.php"; ?>
+<?php include PROJECT_ROOT . '/html/footer.php'; ?>
 </body>
 </html>
