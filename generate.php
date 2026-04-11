@@ -39,6 +39,7 @@ foreach ($pages as $page) {
     $result = file_put_contents($HTML_DIR . "$page.html", $html);
     if (!$result) {
         echo "Error writing $page.html\n";
+        exit(1);
     } else {
         echo "Generated $page.html ($result bytes)\n";
     }
