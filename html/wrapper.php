@@ -34,7 +34,7 @@ function startContent()
         ob_end_clean();
         return '';
     }
-    $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    // $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     $pageFile = basename($_SERVER['PHP_SELF']);
     $pageSection = basename(dirname($_SERVER['PHP_SELF']));
     if ($pageSection === 'tournament') {
@@ -54,9 +54,6 @@ function startContent()
 <header id="header">
     <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
 </header>
-    <?php
-    if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
-        ?>
 <style>
 .construction {
     border: 15px solid transparent;
@@ -88,9 +85,6 @@ if (document.location.host === 'dev.starcraft2coop.com') {
     document.write('<div class="construction">THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)</div>');
 }
 </script>
-        <?php
-    }
-    ?>
 <nav id="menu">
 <ul id="topmenu">
     <li class="<?=$pageSection === "index" ? 'highlight' : 'normal'?>"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>

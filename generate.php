@@ -79,7 +79,6 @@ $pages = [
 
 $HTML_DIR = __DIR__ . '/html';
 $GENERATING_STATIC_PAGES = true;
-$_SERVER['SERVER_NAME'] = $SERVER_NAME;
 
 foreach ($pages as $page) {
     $_SERVER['REQUEST_URI'] = "$page";
