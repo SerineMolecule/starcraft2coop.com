@@ -10,7 +10,9 @@ $pages = [];
 if ($grep_output) {
     $lines = explode("\n", trim($grep_output));
     foreach ($lines as $line) {
-        if (empty($line)) continue;
+        if (empty($line)) {
+            continue;
+        }
 
         [$filepath] = explode(":", $line, 2);
 
