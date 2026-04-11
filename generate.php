@@ -3,79 +3,22 @@
 // run from CLI; generate static pages
 require "config.php";
 
-$pages = [
-    '/about/contact',
-    '/about/faq',
-    '/about/links',
-    '/about/stats',
+chdir(__DIR__);
+$grep_output = shell_exec("grep \"/wrapper-static.php\" -r html");
 
-    '/commanders/abathur',
-    '/commanders/alarak',
-    '/commanders/artanis',
-    '/commanders/dehaka',
-    '/commanders/fenix',
-    '/commanders/horner',
-    '/commanders/karax',
-    '/commanders/kerrigan',
-    '/commanders/mengsk',
-    '/commanders/nova',
-    '/commanders/raynor',
-    '/commanders/stetmann',
-    '/commanders/stukov',
-    '/commanders/swann',
-    '/commanders/tychus',
-    '/commanders/vorazun',
-    '/commanders/zagara',
-    '/commanders/zeratul',
+$pages = [];
+if ($grep_output) {
+    $lines = explode("\n", trim($grep_output));
+    foreach ($lines as $line) {
+        if (empty($line)) continue;
 
-    '/community/tournament/summary/2019-10',
-    '/community/tournament/archive',
-    '/community/tournament/signup',
-    '/community/tournament/index',
-    '/community/gamespotlight',
-    '/community/mythbusters',
-    '/community/rockslappingchampions',
+        [$filepath] = explode(":", $line, 2);
 
-    '/guides/buildordertheory',
-    '/guides/enemycomps',
-    '/guides/generaltips',
-    '/guides/newplayer',
-    '/guides/youtube',
-
-    '/missions/chainofascension',
-    '/missions/cradleofdeath',
-    '/missions/deadofnight',
-    '/missions/lockload',
-    '/missions/malwarfare',
-    '/missions/minerevacuation',
-    '/missions/mistopportunities',
-    '/missions/oblivionexpress',
-    '/missions/partparcel',
-    '/missions/riftstokorhal',
-    '/missions/scytheofamon',
-    '/missions/templeofthepast',
-    '/missions/thevermillionproblem',
-    '/missions/voidlaunch',
-    '/missions/voidthrashing',
-
-    '/resources/achievements',
-    '/resources/ailogic',
-    '/resources/brutal',
-    '/resources/bugs',
-    '/resources/deathprevention',
-    '/resources/eastereggs',
-    '/resources/levels',
-    '/resources/mutators',
-    '/resources/patchdata',
-
-    '/tools/downloads',
-    '/tools/masterybreakpoints',
-    '/tools/unitstats',
-
-    '/account',
-    '/index',
-
-];
+        if (str_starts_with($filepath, 'html/') && str_ends_with($filepath, '.php')) {
+            $pages[] = substr($filepath, 4, -4);
+        }
+    }
+}
 
 $HTML_DIR = __DIR__ . '/html';
 $GENERATING_STATIC_PAGES = true;
