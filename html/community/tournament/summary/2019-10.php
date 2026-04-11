@@ -1,22 +1,14 @@
 <?php
 
-require "../../../admin-only.php";
-include("../../../header.php");
+require_once "../../../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Tournament Summary - Oct 2019</title>
   <meta name="description" content="Starcraft 2 Co-op Tournament Summary November 2018">
   <meta name="keywords" content="Starcraft co-op tournament summary november 2018">
   <link rel="canonical" href="https://starcraft2coop.com/community/tournament/summary/2019-10">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/standingsstyle.css">
-  <style>
-
-  </style>
-  </head>
-<body>
-<div id="header"><img src="/images/mainpageheader.png" alt="Starcraft II Co-op Logo">
-</div>
-<div id="menu"><?php include("../../../menu.php"); ?></div>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Tournament Summary - October 2019</h1>
     <p>Below is the round summary for the Starcraft 2 Co-op Tournament of October 2019. Each round has been hidden by a spoiler block which can be removed by clicking the block. You may remove all spoilers and highlight the winning team by using the spoiler toggle located on the page.</p>
     <div id="abilities">
@@ -162,7 +154,6 @@ include("../../../header.php");
             ?>
         </tbody>
 </table>
-</div>
 <script>
     $(".tooltip").on('mouseover',function(e){
         $("#tooltip").html($(this).attr("alt"));
@@ -219,6 +210,4 @@ include("../../../header.php");
         return false;
     });
 </script>
-<?php include("../../../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

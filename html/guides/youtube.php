@@ -1,13 +1,10 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - YouTube</title>
-</head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>YouTube</h1>
     <p>We have several guides on YouTube:</p>
         <ul>
@@ -16,7 +13,4 @@ include("../header.php");
             <li><a href="/community/rockslappingchampions">Rockslapping Champions</a> - a comedy series of co-op games casted where a player has demonstrated poor decision-making and strategic-thinking ability</li>
             <li><a href="https://www.youtube.com/c/starcraft2coop">Entire Starcraft2coop.com YouTube Channel</a></li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

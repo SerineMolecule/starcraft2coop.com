@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Vorazun</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Vorazun">
   <meta name="keywords" content="Starcraft co-op guides vorazun commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Vorazun</h1>
     <p id="commanderMotto">Matriarch of the Nerazim</p>
@@ -1194,9 +1191,5 @@ include("../header.php");
         <li>Stasis Wards can be used to chain-stasis enemies by placing a ward underneath already-stasis'ed enemies. Use this to handle high-HP targets and difficult <a href="/resources/mutators">Mutators</a>.</li>
         <li>In the early game, focus on Air attack upgrades over ground attack upgrades, as Dark Templars will be dealing most of their damage through Shadow Fury, which does not get affected by Ground attack upgrades. Additionally, Corsairs need these upgrades in order to kill enemy units.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

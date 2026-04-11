@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Part and Parcel</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Part and Parcel">
   <meta name="keywords" content="Starcraft co-op guides part parcel mission">
@@ -16,10 +16,7 @@ require_once("../scripts/switchergenerator.php");
           border-radius:50%;
       }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Part and Parcel</h1>
     <p id="missionPlace">Moebius Research Station</p>
     <?php include("../scripts/reporterror.php");?>
@@ -295,9 +292,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zeratul">Zeratul</a>: Zeratul can identify the enemy race at the start of the game. As usual, if creep is present, the enemy race is Zerg. If the enemy is Terran, the four boxes that form a diamond shape will be centered in the expansion area on the minimap. If the diamond is off-center, the enemy race is Protoss. A video is below:</li>
     </ul>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/YkCX8PXqyAc" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

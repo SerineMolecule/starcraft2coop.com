@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Stetmann</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Stetmann">
   <meta name="keywords" content="Starcraft co-op guides stetmann commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Stetmann</h1>
     <p id="commanderMotto">Hero Genius (Henius)</p>
@@ -1304,9 +1301,5 @@ include("../header.php");
         <li>Build Macro Hatcheries to allow you to spend your resources more effectively.</li>
         <li>Super Gary gains a temporary attack speed buff when he picks up Mecha Remnants. Make sure Super Gary is near your army in combat to take advantage of this buff.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

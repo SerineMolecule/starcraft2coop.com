@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Game Spotlight</title>
   <meta name="description" content="This is the submission page to get games that feature a high skill level casted.">
   <meta name="keywords" content="Starcraft co-op special games casts spotlight">
@@ -24,10 +24,7 @@ include("../header.php");
     <style>
 
     </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Game Spotlight</h1>
     <p>Game Spotlight is a special non-routine series of game casts from some of the best Co-op players in the community. The videos provide a glimpse of what Co-op looks like at the highest levels of play and show how top Co-op players handle difficult situations. Each game will be casted with added "Did You Know" facts scattered throughout the video. A full playlist is below:</p>
     <iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu5f0jQ_vfclXCclVMgw6Ktn" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -99,7 +96,4 @@ include("../header.php");
     <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
     </form>-->
     <p>Submissions are now closed. Thank you.</p>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

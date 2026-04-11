@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - The Vermillion Problem</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide The Vermillion Problem">
   <meta name="keywords" content="Starcraft co-op guides Vermillion Problem mission">
@@ -28,10 +28,7 @@ require_once("../scripts/switchergenerator.php");
           line-height:2em;
       }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: The Vermillion Problem</h1>
     <p id="missionPlace">Veridia Prime</p>
     <?php include("../scripts/reporterror.php");?>
@@ -260,9 +257,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zagara">Zagara</a>: Build your macro hatcheries at your expansion for quick reinforcements.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Place a Void Array on each of the islands to help you intercept attack waves and crystals in a timely manner.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

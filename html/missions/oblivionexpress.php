@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Oblivion Express</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Oblivion Express">
   <meta name="keywords" content="Starcraft co-op guides oblivion express mission">
@@ -11,10 +11,7 @@ require_once("../scripts/switchergenerator.php");
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/missions/oblivionexpress">
   <script src="/scripts/preload.js"></script>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Oblivion Express</h1>
     <p id="missionPlace">Tarsonis</p>
     <?php include("../scripts/reporterror.php");?>
@@ -257,9 +254,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/swann">Swann</a>: A properly positioned Concentrated Beam with full points into the Width mastery can 1-shot the first train and all the escorts.</li>
         <li><a href="/commanders/tychus">Tychus</a>: Crooked Sam can place a demolition charge on each train carriage, making him a fantastic source of DPS.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

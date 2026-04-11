@@ -1,19 +1,13 @@
 <?php
 
-require "../../admin-only.php";
-include("../../header.php");
+require_once "../../wrapper-static.php";
 ?>
-  <title>Starcraft 2 Co-op - Tournament</title>
-  <meta name="description" content="Information on the one-of-a-kind Co-op Tournament, which features two teams of two battling it out in mutliple-round mutation games.">
-  <meta name="keywords" content="Starcraft co-op tournament">
-  <link rel="canonical" href="https://starcraft2coop.com/community/tournament/signup">
-  <style>
-
-  </style>
-  </head>
-<body>
-<?php include("../../menu.php"); ?>
-<div id="content">
+<?= startHead() ?>
+    <title>Starcraft 2 Co-op - Tournament</title>
+    <meta name="description" content="Information on the one-of-a-kind Co-op Tournament, which features two teams of two battling it out in mutliple-round mutation games.">
+    <meta name="keywords" content="Starcraft co-op tournament">
+    <link rel="canonical" href="https://starcraft2coop.com/community/tournament/signup">
+<?= startContent() ?>
     <h1>The Co-Op Tournament</h1>
     <p>The Co-Op tournament is designed to test the limits of players' skill, knowledge and map awareness in Starcraft II Co-op mode. Currently, there is a $100 prize given to the winning team ($50 each player).</p>
     <p>You may visit the <a href="archive">Archive</a> to see how the past tournaments played out, download replays of all the games, and view the casted VODs for each game of the event.</p>
@@ -303,8 +297,4 @@ include("../../header.php");
         include("registrationopen.php");
     }
     ?>
-
-</div>
-<?php include("../../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Stukov</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Stukov">
   <meta name="keywords" content="Starcraft co-op guides stukov commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Stukov</h1>
     <p id="commanderMotto">Infested Admiral</p>
@@ -1123,9 +1120,5 @@ include("../header.php");
         <li>When a Bunker is at low HP, unload it to reduce its aggro rating, providing it a way to escape without dying.</li>
         <li>The Acidic Enzymes upgrade (available at the Factory's Tech Lab) affects Volatile Infested, which happen to be fired from the Siege Tanks. Therefore, buying this upgrade will also affect the Volatile Infested spawned from the compound.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

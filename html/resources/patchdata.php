@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Patch Data</title>
   <meta name="description" content="Data-mined patch data for the latest Starcraft II Co-op Patch. This page contains both, official and hidden patch changes.">
   <meta name="keywords" content="Starcraft co-op patch data">
@@ -12,10 +12,7 @@ include("../header.php");
          color:aquamarine;
      }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Starcraft Co-op Patch Data</h1>
     <div id="links">
         <h2>Sections on this Page</h2>
@@ -120,9 +117,5 @@ include("../header.php");
     <ul>
         <li><span class="hidden">Modified regular Transmission to Victory Tranmission on mission Victory.</span></li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

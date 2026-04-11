@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Selection Guide</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Selection Guide for new players, providing information on strengths and weaknesses of commanders.">
   <meta name="keywords" content="Starcraft co-op guides commander selection">
@@ -89,10 +89,7 @@ include("../header.php");
 
   </style>
 
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>New Player Commander Selection</h1>
     <p>One of the most common questions that players interested in playing co-op ask is "Which commander is right for me?". A lot of new players have problems with commander selection, particularly their first paid commander. Co-op features a host of different commanders with a wide variety of playstyles, and given the large roster available, can be overwhelming. This is especially true considering that most co-op commanders are paid, so players would like to get the best out of their investment.</p>
@@ -218,7 +215,4 @@ include("../header.php");
             });
         }
     </script>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Chain of Ascension</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Chain of Ascension">
   <meta name="keywords" content="Starcraft co-op guides chain ascension mission">
@@ -11,10 +11,7 @@ require_once("../scripts/switchergenerator.php");
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/missions/chainofascension">
   <script src="/scripts/preload.js"></script>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Chain of Ascension</h1>
     <p id="missionPlace">Slayn</p>
     <?php include("../scripts/reporterror.php");?>
@@ -502,9 +499,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zagara">Zagara</a>: Build a single corruptor to apply Corruption to the Slayn Elemental before you run your Scourge into it.</li>
         <li><a href="/commanders/zagara">Zagara</a>: Build your macro hatcheries at your expansion for quick reinforcements.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

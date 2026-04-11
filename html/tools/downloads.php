@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Downloads</title>
   <meta name="description" content="A list of free tools and software for community use. Some programming experience will be required in order to utilize the code provided.">
   <meta name="keywords" content="Starcraft co-op downloads">
@@ -15,10 +15,7 @@ include("../header.php");
             padding: 10px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Downloads (Co-op Assistant and Replay Parsing Script)</h1>
     <div id="links">
         <h2>Sections on this Page</h2>
@@ -237,9 +234,5 @@ include("../header.php");
     <ul>
         <li>Map names will be affected by language localization. That is, the map names will be displayed in the language the game was played in when the replay was created.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

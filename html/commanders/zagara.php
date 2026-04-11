@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Zagara</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Zagara">
   <meta name="keywords" content="Starcraft co-op guides zagara commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Zagara</h1>
     <p id="commanderMotto">Swarm Broodmother</p>
@@ -894,9 +891,5 @@ include("../header.php");
         <li>Use Mass Frenzy as much as possible. With a 90 second cooldown, it can be used in most engagements and increase the effectiveness of your army.</li>
         <li>Cast Infested Drop and Spawn Hunter Killers before you cast Mass Frenzy so the newly-spawned units also get the buff.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

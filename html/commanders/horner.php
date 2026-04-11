@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Han & Horner</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Han Horner">
   <meta name="keywords" content="Starcraft co-op guides han horner commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Han & Horner</h1>
     <p id="commanderMotto">Mercenary Leader and Dominion Admiral</p>
@@ -1152,9 +1149,5 @@ include("../header.php");
         <li>Contrary to the description, Space Station Reallocation does not instantly destroy every non-heroic unit/structure. It deals a total of 5,000 damage to everything it hits.</li>
         <li>Space Station Reallocation does reduced damage to some non-heroic structures. For example, Zenith Stones on <a href="/missions/templeofthepast">Temple of the Past</a> do not get instantly destroyed by the calldown, despite having no Heroic tag.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

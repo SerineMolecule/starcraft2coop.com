@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Rifts to Korhal</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Rifts to Korhal">
   <meta name="keywords" content="Starcraft co-op guides rifts korhal mission">
@@ -11,10 +11,7 @@ require_once("../scripts/switchergenerator.php");
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/missions/riftstokorhal">
   <script src="/scripts/preload.js"></script>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Rifts to Korhal</h1>
     <p id="missionPlace">Korhal</p>
     <?php include("../scripts/reporterror.php");?>
@@ -243,9 +240,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/raynor">Raynor</a>: If you use Vultures, place Spider Mines near the exit of the funnel leading to the middle of the map to weaken/destroy attack waves.</li>
         <li><a href="/commanders/swann">Swann</a>: Concentrated Beam can be used to deal with all the attack waves, and can even wipe it out entirely if placed correctly.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

@@ -1,12 +1,14 @@
 <?php
-include("header.php");
-?>
-  <title>Starcraft 2 Co-op - Commander Guides, Mission Data and more!</title>
-  <meta name="description" content="Your #1 Source for Starcraft 2 Co-op Information. Commander Guides, Mission Data, Unit Stats, Mutation Information and more!">
-  <meta name="keywords" content="Starcraft co-op guides">
-  <link rel="canonical" href="https://starcraft2coop.com">
 
-  <style>
+require_once "./wrapper.php";
+?>
+<?= startHead() ?>
+    <title>Starcraft 2 Co-op - Commander Guides, Mission Data and more!</title>
+    <meta name="description" content="Your #1 Source for Starcraft 2 Co-op Information. Commander Guides, Mission Data, Unit Stats, Mutation Information and more!">
+    <meta name="keywords" content="Starcraft co-op guides">
+    <link rel="canonical" href="https://starcraft2coop.com">
+
+    <style>
         @media (min-width: 701px){
             #updateTable td:nth-child(1){
                 width:120px;
@@ -30,11 +32,8 @@ include("header.php");
             font-size:0.85rem;
             border:1px solid white;
         }
-  </style>
-  </head>
-<body>
-<?php include("menu.php"); ?>
-<div id="content">
+    </style>
+<?= startContent() ?>
     <h1>Starcraft II Co-op</h1>
     <p>Starcraft II is a real-time strategy game by Blizzard Entertainment. It is one of the most successful RTS's in history. In 2015, Starcraft II introduced a co-op mode, where two players would face up against Amon in a PVE-type mission. The game features several different commanders to play and many different maps to choose from.</p>
     <p>This site serves as a repository of all the information gathered by the Starcraft II co-op community. It aims to help players improve their gameplay, by providing in-depth commander and map analysis, as well as providing tips on how to deal with certain tricky situations that may arise in-game.</p>
@@ -48,6 +47,7 @@ include("header.php");
         <li><a href="https://reddit.com/r/starcraft2coop">/r/starcraft2coop Subreddit</a></li>
     </ul>
     <h2>Latest Updates:</h2>
+    <table>
         <tr>
             <td class="left-column">
                 <p>Site Update Notice</p>
@@ -58,7 +58,4 @@ include("header.php");
             </td>
         </tr>
     </table>
-</div>
-<?php include("footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

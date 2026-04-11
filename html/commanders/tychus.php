@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Tychus</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Tychus">
   <meta name="keywords" content="Starcraft co-op guides tychus commander mastery prestige build">
@@ -42,10 +42,7 @@ include("../header.php");
             height:880px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Tychus</h1>
     <p id="commanderMotto">Legendary Outlaw</p>
@@ -1366,9 +1363,5 @@ include("../header.php");
         <li>If your ally doesn't help, it may be necessary to go for Sirius first for early DPS. In those cases, ensure you have a Medivac Platform ready to use for heals.</li>
         <li>Your choice of healer (Rattlesnake/Nikara) will depend on which outlaws you use. A build that uses lower HP outlaws (Fixers) will gain more benefit from having Nikara, whereas a higher HP outlaw set (Muscles) will benefit more from having Rattlesnake.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

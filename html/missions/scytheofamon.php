@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Scythe of Amon</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Scythe of Amon">
   <meta name="keywords" content="Starcraft co-op guides scythe amon mission">
@@ -28,10 +28,7 @@ require_once("../scripts/switchergenerator.php");
         display:inline-block;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Scythe of Amon</h1>
     <p id="missionPlace">Xel'Naga Temple</p>
     <?php include("../scripts/reporterror.php");?>
@@ -506,9 +503,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/vorazun">Vorazun</a>: Place Dark Pylons on each side of the map so you can intercept Attack Waves.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: The Void Suppression Crystal can be used to interrupt and disable all Void Sliver abilities.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mastery Breakpoints Calculator</title>
   <meta name="description" content="Figure out how many mastery points you need to reach certain breakpoints with this calculator.">
   <meta name="keywords" content="Starcraft co-op mastery breakpoints calculator damage units">
@@ -65,10 +65,7 @@ include("../header.php");
             width:200px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Mastery Breakpoints Calculator</h1>
     <?php include("../scripts/reporterror.php");?>
@@ -377,7 +374,4 @@ include("../header.php");
             });
         }
     </script>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

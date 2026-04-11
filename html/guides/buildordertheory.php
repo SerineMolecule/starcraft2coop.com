@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Build Order Theory</title>
   <meta name="description" content="Learn how to make your own Co-op build orders and adapt your build to face challenges like mutators and weekly mutations.">
   <meta name="keywords" content="Starcraft co-op guides build order theory">
@@ -32,10 +32,7 @@ include("../header.php");
             display:inline;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Build Order Theory: How to Develop Your Own Build Orders</h1>
     <?php include("../scripts/reporterror.php");?>
     <div id="links">
@@ -843,9 +840,5 @@ include("../header.php");
     <p>It is because of this that following build orders blindly without consideration of why certain actions are taken is not recommended. Players can get a lot more value out of build orders if they understand the core theory behind it - something which this guide aims to do.</p>
     <p>At the end of the day, taking an expansion and saturating it as fast as possible will yield the best possible results. How to do that, given a set of circumstances, whether it is a mission or a mutator, is up to the player.</p>
     <p>Build orders are mostly tried and tested several times before an optimal build order is achieved. Players are advised to constantly question and attempt to fine-tune their build orders if they wish to arrive at a perfectly optimal build.</p>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

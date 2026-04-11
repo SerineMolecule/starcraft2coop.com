@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - General Tips for Co-op Players</title>
   <meta name="description" content="Improve your Co-op gameplay with these simple tips, made for players of all skill levels. Beginners and Veterans can all benefit.">
   <meta name="keywords" content="Starcraft Co-op General Tips ">
@@ -18,10 +18,7 @@ include("../header.php");
             text-indent:10px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>General Tips For Co-op Players</h1>
     <?php include("../scripts/reporterror.php");?>
     <div id="links">
@@ -122,9 +119,5 @@ include("../header.php");
     <a id="workercounts"></a><h3>Worker Counts</h3>
     <p>In Versus games, the worker count displayed at the top of the Primary Structure denotes the worker count that corresponds to the Optimal mining rate. However, in Co-op, the value denotes the Maximum mining rate. More information on these mining rates can be found in the <a href="/guides/buildordertheory">Build Order Theory</a> Guide.</p>
     <img src="/images/newplayer/workercounts.jpg" alt="Worker Counts">
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

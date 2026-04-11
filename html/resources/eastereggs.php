@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Easter Eggs</title>
   <meta name="description" content="Easter Eggs are a staple in most video games and Co-op is no different. This page lists out all the Easter Eggs found in Co-op.">
   <meta name="keywords" content="Starcraft co-op easter eggs">
@@ -14,10 +14,7 @@ include("../header.php");
         margin-bottom:25px;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Easter Eggs and Other Hidden Content in Co-op</h1>
     <?php include("../scripts/reporterror.php");?>
     <p>A number of Easter Eggs are hidden throughout the Co-op mode content. These are listed below.</p>
@@ -69,7 +66,4 @@ include("../header.php");
         <li>"Sometimes, this really feels like a dead-end job"<br>"Oh, I know what you mean. Deader than those Death Shards".</li>
         <li>"Have you ever wondered what happened to Reigel?"<br>"Not really. It always seemed like he knew more than he let on, though".</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

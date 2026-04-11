@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Order of Death Prevention Effects</title>
   <meta name="description" content="Order of Death Prevention Effect Triggers in Starcraft 2 Co-op">
   <meta name="keywords" content="Starcraft co-op guides death prevention effect order">
@@ -12,10 +12,7 @@ include("../header.php");
         text-align:center;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Order of Death Prevention Effects</h1>
     <?php
     include("../scripts/reporterror.php");?>
@@ -100,7 +97,4 @@ include("../header.php");
             </tr>
         </tbody>
     </table>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>
