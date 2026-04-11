@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.33">
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.34">
     <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
     <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -28,7 +28,12 @@
 <header id="header">
     <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
 </header>
-    <nav id="menu">
+<script>
+if (document.location.host === 'dev.starcraft2coop.com') {
+    document.write('<div class="construction">THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)</div>');
+}
+</script>
+<nav id="menu">
 <ul id="topmenu">
     <li class="normal"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
     <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
