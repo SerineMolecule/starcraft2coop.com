@@ -78,7 +78,7 @@ $pages = [
 ];
 
 $HTML_DIR = __DIR__ . '/html';
-$_SERVER['ADMIN_KEY'] = $ADMIN_KEY;
+$GENERATING_STATIC_PAGES = true;
 $_SERVER['SERVER_NAME'] = $SERVER_NAME;
 
 foreach ($pages as $page) {

@@ -2,10 +2,9 @@
 
 require_once __DIR__ . "/../config.php";
 
-if (!isset($_SERVER['ADMIN_KEY']) || $_SERVER['ADMIN_KEY'] != $ADMIN_KEY) {
+if (empty($GENERATING_STATIC_PAGES)) {
     http_response_code(401);
-    echo "Error!";
-    die();
+    die("Error! This file should not be accessed directly");
 }
 
 require __DIR__ . "/wrapper.php";

@@ -8,5 +8,4 @@ $DB_PASS = 'sc2coop';
 $DB_NAME = 'starcraf_coop';
 
 // Generating static pages
-$ADMIN_KEY = 'SuperSecretKey';
 $SERVER_NAME = 'localhost';  // use 'starcraft2coop.com' on the actual server
