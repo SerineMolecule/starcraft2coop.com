@@ -4,7 +4,7 @@
 require "config.php";
 
 chdir(__DIR__);
-$grep_output = shell_exec("grep \"/wrapper-static.php\" -r html");
+$grep_output = shell_exec('grep -r -l --include="*.php" "/wrapper-static.php" html/');
 
 $pages = [];
 if ($grep_output) {
