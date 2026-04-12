@@ -214,6 +214,7 @@ function endContent()
 
 </body>
 </html>
+
     <?php
     return '';
 }
