@@ -9,13 +9,10 @@ $grep_output = shell_exec('grep -r -l --include="*.php" "/wrapper-static.php" ht
 $pages = [];
 if ($grep_output) {
     $lines = explode("\n", trim($grep_output));
-    foreach ($lines as $line) {
-        if (empty($line)) {
+    foreach ($lines as $filepath) {
+        if (empty($filepath)) {
             continue;
         }
-
-        [$filepath] = explode(":", $line, 2);
-
         if (str_starts_with($filepath, 'html/') && str_ends_with($filepath, '.php')) {
             $pages[] = substr($filepath, 4, -4);
         }
