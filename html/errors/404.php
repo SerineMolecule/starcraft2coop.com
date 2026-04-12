@@ -26,8 +26,7 @@ require_once "../wrapper.php";
     } else {
         $ref = "";
     }
-
-    $cur = 'http://www.' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    $cur = $_SERVER['REQUEST_URI'];
 
     if ($ref != "") {
         $errorTime = date('Y-m-d H:i:s');
