@@ -12,14 +12,12 @@
             "type": "object",
             "properties": {
                 "id1": {
-                    "type": "string",
-                    "description": "ID of the first mutator in the pair, Normalized",
-                    "pattern": "^[a-z0-9]+$"
+                    "$ref": "#/definitions/MutatorId",
+                    "description": "ID of the first mutator in the pair, lowercased & without spaces"
                 },
                 "id2": {
-                    "type": "string",
-                    "description": "ID of the second mutator in the pair, Normalized & id2 > id1",
-                    "pattern": "^[a-z0-9]+$"
+                    "$ref": "#/definitions/MutatorId",
+                    "description": "ID of the second mutator in the pair, lowercased & without spaces, id2 > id1"
                 },
                 "interaction": {
                     "type": "string",
@@ -32,6 +30,13 @@
                 "interaction"
             ],
             "additionalProperties": false
+        },
+        "MutatorId": {
+            "$ref": "#/definitions/LowercaseNoSpaces"
+        },
+        "LowercaseNoSpaces": {
+            "type": "string",
+            "pattern": "^[^ A-Z]+$"
         }
     }
 }

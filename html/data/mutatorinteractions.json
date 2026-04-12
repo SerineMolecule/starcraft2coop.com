@@ -21,7 +21,7 @@
     },
     {
         "id1": "afraidofthedark",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines appear on the minimap."
     },
     {
@@ -261,7 +261,7 @@
     },
     {
         "id1": "alienincubation",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines do not spawn Broodlings when they detonate."
     },
     {
@@ -381,7 +381,7 @@
     },
     {
         "id1": "avenger",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines do not give out Avenger stacks when they detonate."
     },
     {
@@ -556,7 +556,7 @@
     },
     {
         "id1": "blackdeath",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines cannot carry Plague."
     },
     {
@@ -706,7 +706,7 @@
     },
     {
         "id1": "concussiveattacks",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mines apply the Concussive Attacks debuff."
     },
     {
@@ -816,7 +816,7 @@
     },
     {
         "id1": "darkness",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines appear on the minimap."
     },
     {
@@ -1051,7 +1051,7 @@
     },
     {
         "id1": "fatalattraction",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines trigger Fatal Attraction when they detonate."
     },
     {
@@ -1161,7 +1161,7 @@
     },
     {
         "id1": "fear",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mines can apply the Fear effect."
     },
     {
@@ -1261,7 +1261,7 @@
     },
     {
         "id1": "fireworks",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mines do not launch Fireworks when they explode."
     },
     {
@@ -1361,7 +1361,7 @@
     },
     {
         "id1": "giftexchange",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines can capture gifts."
     },
     {
@@ -1496,7 +1496,7 @@
     },
     {
         "id1": "hardenedwill",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines do not cause Hardened Will to activate."
     },
     {
@@ -1696,7 +1696,7 @@
     },
     {
         "id1": "justdie",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines do not respawn when they explode."
     },
     {
@@ -1866,7 +1866,7 @@
     },
     {
         "id1": "laserdrill",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines provide vision for the Laser Drill."
     },
     {
@@ -2001,7 +2001,7 @@
     },
     {
         "id1": "longrange",
-        "id2": "magnificent",
+        "id2": "mag-nificent",
         "interaction": "Mag-mines do not get the Long Range buff."
     },
     {
@@ -2050,42 +2050,42 @@
         "interaction": "Units spawned from Void Rifts get the Long Range buff."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "poweroverwhelming",
         "interaction": "Mag-mines cannot cast abilities."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "scorchedearth",
         "interaction": "Mag-mines do not set the ground on fire when they explode."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "selfdestruction",
         "interaction": "Mag-mines do not create an explosion when explode."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "speedfreaks",
         "interaction": "Mag-mines do not move faster with Speed Freaks."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "transmutation",
         "interaction": "Mag-mines do not Transmute after killing a unit."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "voidreanimators",
         "interaction": "Void Reanimators do not resurrect Mag-mines."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "walkinginfested",
         "interaction": "Mag-mines do not spawn Infested when they detonate."
     },
     {
-        "id1": "magnificent",
+        "id1": "mag-nificent",
         "id2": "wemoveunseen",
         "interaction": "Mag-mines are cloaked."
     },
