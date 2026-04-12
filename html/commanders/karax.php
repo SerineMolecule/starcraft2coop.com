@@ -1119,7 +1119,7 @@ require_once "../wrapper-static.php";
             </tbody>
         </table>
     </div>
-    <a id="fastexpand"></a><h3>Fast Expanding</h3>
+    <h3 id="fastexpand">Fast Expanding</h3>
     <p>On certain maps with a small number of enemies and structures blocking expansions, Karax can fast expand. These fast expand techniques are difficult as most of the time, Solar Lance will be shot into the dark and therefore will require a lot of practice.</p>
     <p>Below are pictures that show how to fast-expand on maps. These require a lot of practice to pull off, but can put you ahead economically.</p>
     <table id="fastExpoTable">

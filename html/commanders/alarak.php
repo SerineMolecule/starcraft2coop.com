@@ -1050,7 +1050,7 @@ require_once "../wrapper-static.php";
     <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>A possible playstyle trap is to focus on building a mass of Supplicants without adding any other tech units. While Supplicants are used to keep Alarak alive, and massing a large number increases Alarak's power when he uses Empower Me, Supplicants do not have a high DPS by themselves. Specific tech units (Ascendants, Wrathwalkers, etc.) will be needed to further improve a player's performance in the mission.</p>
-    <a id="fastexpand"></a><h3>Fast Expanding</h3>
+    <h3 id="fastexpand">Fast Expanding</h3>
     <p>One of the perks of playing Alarak is his ability to fast-expand, even on contested maps. While other commanders will need to wait for their hero unit to spawn, or make an army to clear contested expansions, Alarak can use a probe with an overcharged pylon to clear contested expansions.</p>
     <p>Below are pictures that show how to fast-expand on maps. These require a lot of practice to pull off, but can put you ahead economically. It is also advisable to fast-expand with two probes, one as a backup in case you lose the first one to prevent you from wasting an overcharge. You will be using these probes to get vision for the Overcharge.</p>
     <table id="fastExpoTable">

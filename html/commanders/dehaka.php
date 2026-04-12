@@ -1669,7 +1669,7 @@ require_once "../wrapper-static.php";
     ?>
 
     </ul>
-    <a id="essence"></a><h3>Essence Farming</h3>
+    <h3 id="essence">Essence Farming</h3>
     <p>As soon as Dehaka has spawned, he should be sent towards enemy bases to kill units and gather Essence. Using Dehaka to clear expansion rocks (referred to as "Rockslapping") is one of the most inefficient things a Dehaka player can do, due to Dehaka's low attack speed and low attack damage. The table below provides a guide for the path Dehaka should take on each of the missions to gather Essence as effectively as possible.</p>
     <table id="essenceOrder">
         <thead>

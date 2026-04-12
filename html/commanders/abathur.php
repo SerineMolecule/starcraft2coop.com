@@ -1194,7 +1194,7 @@ require_once "../wrapper-static.php";
     <p>When placing several nests, it is recommended to use a checkerboard pattern for nests to maximize nest damage cover and minimize unnecessary overlap of the nest damage area.</p>
     <p>A video is below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/jxEJVn_s5FE" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <a id="biomass"></a><h3>Biomass Farming</h3>
+    <h3 id="biomass">Biomass Farming</h3>
     <p>This section provides the recommended location to farm Biomass on all the maps currently present in Co-op. The most efficient farming technique is to place your Toxic Nests down, disable the automatic detonation on the nests, and use a Spore Crawler to lure units into the nests. Usually, the first attack wave will spawn near where you are farming, allowing you to clear it too. Once you have your first Brutalisk, you can use it to lure to farm additional Biomass.</p>
     <p>In general, Zerg provides the easiest Biomass farming, due to the large presence of weak units. Terran is most difficult, due to the fact that units are normally hiding inside Bunkers.</p>
     <table>

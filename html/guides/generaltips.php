@@ -44,24 +44,24 @@ require_once "../wrapper-static.php";
 
     </div>
     <h2 id="tips1">Tips for Beginners</h2>
-    <a id="overproduction"></a><h3>Avoid Overproduction</h3>
+    <h3 id="overproduction">Avoid Overproduction</h3>
     <p>Queueing up several units/structures, and overproducing structures can tie up vital resources you need, especially during the early stage of the game. For example:</p>
     <img src="/images/newplayer/overproduction.jpg" alt="Overproduction">
     <p>In the image above, the six queued up Laborers account for 240 minerals spent that isn't being used. Additionally, the 11 queued up Supply Bunkers costed 1100 minerals, but none are being built. Most of all, the player will be unable to use all that extra supply. In total, the 12 Supply Bunkers account for 144 Supply - too much supply to be utilized. Build only what you need, and spend the rest of your resources teching up and making your army larger.</p>
     <p>Additionally, make sure you will have adequate resources to spend once the structure is complete. For example, don't build Tech structures if you do not have the gas to spend to use it.</p>
-    <a id="minimap"></a><h3>Learn the Minimap Icons</h3>
+    <h3 id="minimap">Learn the Minimap Icons</h3>
     <p>Your minimap provides you with critical information throughout the course of the mission. Use it to evaluate your position and what is going on around the map.</p>
     <img src="/images/newplayer/minimapicons.jpg" alt="Minimap Icons">
-    <a id="usehero"></a><h3>Use Your Hero Unit</h3>
+    <h3 id="usehero">Use Your Hero Unit</h3>
     <p>Certain commanders (such as <a href="/commanders/kerrigan">Kerrigan</a>) spawn a Hero unit. These Hero units are extremely powerful and should be used as much as possible, especially during the early game. They provide the player with early-game power to allow them to push and complete objectives, while macro'ing up at the back to tech up and gain access to high-tier units.</p>
-    <a id="usetopbar"></a><h3>Use Your Topbar Abilities</h3>
+    <h3 id="usetopbar">Use Your Topbar Abilities</h3>
     <p>Topbar Abilities provide players with a large amount of power throughout the course of the game. Use these Topbars to help you push and take engagements. They should be used as soon as they are off cooldown, as frequently as possible. You can time your pushes to line up with when powerful Topbar abilities come off cooldown.</p>
     <h2 id="tips2">Tips for Intermediate Players</h2>
-    <a id="adapt"></a><h3>Adapt to the Enemy Composition and Map</h3>
+    <h3 id="adapt">Adapt to the Enemy Composition and Map</h3>
     <p>It is important to learn the units that make up various Attack Waves that will attack players. Check the <a href="/guides/enemycomps">Enemy Compositions</a> page to learn about the various enemy compositions in the game. Use that knowledge to build an army that directly counters that composition while allowing you to push and complete the objectives in the game.</p>
-    <a id="aggressive"></a><h3>Aggressive Play is Rewarded</h3>
+    <h3 id="aggressive">Aggressive Play is Rewarded</h3>
     <p>Enemy bases can seem very intimidating, discouraging players from pushing in when they're not required to do so. However, playing aggressively can make missions easier by providing players with access to enemy wave spawn points. Players can then use Topbar abilities (such as <a href="/commanders/abathur">Abathur's</a> Toxic Nests) to spawn-camp attack waves.</p>
-    <a id="bindrapidfire"></a><h3>Bind Rapidfire</h3>
+    <h3 id="bindrapidfire">Bind Rapidfire</h3>
     <p>Rapidfire binds the selection of a skill (through its hotkey) and its targeting to the same hotkey. This means in order to cast a skill, you need to press its hotkey once (to select it) and then once more to target it at your cursor's current position.</p>
     <p>Rapidfire has its advantages, because it allows you to cast skills in quick succession. This is very important for commanders like <a href="/commanders/alarak">Alarak</a>, who depends on Rapidfire for his Ascendant abilities. Without Rapidfire, skills like Mind Blast would be ineffective due to the high amount of clicking required.</p>
     <p>Rapidfire is also used for Protoss warp-ins. In order to warp in units quickly, you'd want to bind Rapidfire to your warp in units hotkeys.</p>
@@ -78,10 +78,10 @@ require_once "../wrapper-static.php";
     <p>You may add as many keys as you'd like, separated by commas to the "TargetChoose" setting to bind additional keys to Rapidfire.</p>
     <p>A video on Rapidfire is below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/SxXmfRhY6m8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <a id="expand"></a><h3>Expand As Fast As Possible</h3>
+    <h3 id="expand">Expand As Fast As Possible</h3>
     <p>Some missions in co-op have uncontested expansions, while others might be guarded. Regardless, you should always aim to take your expansion as quickly as possible. Certain commanders (like <a href="/commanders/mengsk">Mengsk</a>) have ways of capturing expansions unusually early in the game (these are called "Fast-Expand Techniques"). Learn them to strengthen your early-game economy. If you are playing Terran, pre-build your Expansion Commander Center and float it over once you clear the defenders/rocks.</p>
     <h2 id="tips3">Tips for Veterans</h2>
-    <a id="armor"></a><h3>Armor Upgrades</h3>
+    <h3 id="armor">Armor Upgrades</h3>
     <p>In Versus games, armor is a critical part of a player's macro, as without it, they end up taking much less efficient trades in battle. However, due to the unique nature of Co-op, armor upgrades are not that important because:</p>
     <ul>
         <li>Calldowns reduce the damage an army takes by eliminating high-threat targets, protecting the army or debuffing enemies</li>
@@ -96,11 +96,11 @@ require_once "../wrapper-static.php";
     <p>A video that explains this in more detail is below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/IsPSXlj8Nh8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-    <a id="checkingcreep"></a><h3>Checking Creep</h3>
+    <h3 id="checkingcreep">Checking Creep</h3>
     <p>Checking creep for the presence of Zerg can allow you to adjust your opening to better counter the potential attack waves you will face at the start of the mission. Press Alt+T. This changes the minimap to a Terrain view. If you see creep, you'll be facing a Zerg composition. If you don't see creep, you'll be facing a Protoss or a Terran composition. The below image shows you an example:</p>
     <img src="/images/newplayer/creepminimap.jpg" alt="Creep on Minimap">
     <p>Note that for <a href="/missions/scytheofamon">Scythe of Amon</a>, creep will <i>always</i> be present. However, the <i>positions</i> of the creep will allow you to uniquely identify which enemy race you'll be playing against.</p>
-    <a id="knowledge"></a><h3>Knowledge is Power</h3>
+    <h3 id="knowledge">Knowledge is Power</h3>
     <p>In Co-op, knowledge of the game mode can significantly reduce the challenges that new players face. While some interactions between Co-op mechanics are rare, good Co-op players should at least be aware of:</p>
     <ul>
         <li>Mission Timings (most importantly, the first attack wave)</li>
@@ -111,12 +111,12 @@ require_once "../wrapper-static.php";
         <li>Commander Topbars</li>
         <li>Commander Passives</li>
     </ul>
-    <a id="attacktypes"></a><h3>Note the Different Attack Types</h3>
+    <h3 id="attacktypes">Note the Different Attack Types</h3>
     <p>In Co-op, Point Defense Drones and Point Defense Missiles frequently appear, which can affect your effectiveness in a mission, especially when dealing with <a href="/resources/mutators">Mutators</a>. It is important to be aware of what Hitscan and Projectile attacks are and what the difference between them is.</p>
     <p>These terms refer to the types of attack a unit has and may be a factor in unit selection against certain <a href="/resources/mutators">mutators</a> such as Missile Command.</p>
     <p>In short, a Hitscan attack deals damage as soon as it is fired. A Projectile attack has a physcial projectile that must travel to its target to deal damage. For more details on the differences, you can watch the video below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/OKg_hJ-ldD8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <a id="workercounts"></a><h3>Worker Counts</h3>
+    <h3 id="workercounts">Worker Counts</h3>
     <p>In Versus games, the worker count displayed at the top of the Primary Structure denotes the worker count that corresponds to the Optimal mining rate. However, in Co-op, the value denotes the Maximum mining rate. More information on these mining rates can be found in the <a href="/guides/buildordertheory">Build Order Theory</a> Guide.</p>
     <img src="/images/newplayer/workercounts.jpg" alt="Worker Counts">
 <script src="/scripts/nav.js"></script>

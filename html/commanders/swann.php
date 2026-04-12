@@ -1312,7 +1312,7 @@ require_once "../wrapper-static.php";
             </tr>
         </tbody>
     </table>
-    <a id="dondrill"></a><h3>The Drill on Dead of Night</h3>
+    <h3 id="dondrill">The Drill on Dead of Night</h3>
     <p>The Drill should be used by Swann to clear infested structures on Dead of Night. Clearing defenders with the Concentrated Beam or Pulse Cannon is just an added bonus. The images below show suggested uses for both, the Concentrated Beam and the Pulse Cannon. Note that the Concentrated Beam here has the bare minimum number of mastery points added to 1-shot infested structures (13 points). You will get better results if you have more mastery points added (for example, if you follow this guide and allocate 19 points).</p>
     <p>Also, notice the difference in Concentrated Beam Locations depending on the player. Because the beam exits your Laser Drill, the positioning is different depending on which player you are. Unfortunately, Player 2's Concentrated Beams are significantly less efficient, purely due to the layout of the infested structures relative to the drill.</p>
     <p>To get the best positioning consistently, Tactical Jump a Hercules to the location to get vision to perfectly position the beam.</p>

@@ -343,8 +343,8 @@ require_once "../wrapper.php";
         <p><a href="#cycle">Weekly Mutations Cycle</a></p>
         <p><a href="#past">Casted Weekly Mutations</a></p>
     </div>
-    <h2>Weekly Mutation Beginner's Guide</h2>
-    <a id="guide"></a><p>Weekly Mutations are, as the name suggests, mutations that appear as weekly challenges. Completing the weekly challenge offers an experience bounty, depending on the difficulty level completed. These bounties are shown below:</p>
+    <h2 id="guide">Weekly Mutation Beginner's Guide</h2>
+    <p>Weekly Mutations are, as the name suggests, mutations that appear as weekly challenges. Completing the weekly challenge offers an experience bounty, depending on the difficulty level completed. These bounties are shown below:</p>
     <table class="centered">
         <thead>
             <tr>

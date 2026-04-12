@@ -1544,7 +1544,7 @@ require_once "../wrapper-static.php";
     <h2 id="guide">Gameplay Guide</h2>
     <h3>Playstyle Traps</h3>
     <p>None.</p>
-    <a id="fastexpand"></a><h3>Legion Expands</h3>
+    <h3 id="fastexpand">Legion Expands</h3>
     <p>One of the advantages of Zeratul is his access to powerful Legion calldowns which can be used to not only clear expansion rocks, but also clear contested expansions and sometimes even clear their ally's expansion too. The table below explains how to maximize utilization of your first Legion calldown.. Note that for some missions (like <a href="/missions/oblivionexpress">Oblivion Express</a>), the Legion expand is simple because clearing both expansions is easy and therefore, no details will be provided.</p>
     <table id="fastExpand">
         <thead>
@@ -1681,7 +1681,7 @@ require_once "../wrapper-static.php";
             </tr>
         </tbody>
     </table>
-    <a id="artifact"></a><h3>Artifact Spawn Locations</h3>
+    <h3 id="artifact">Artifact Spawn Locations</h3>
     <p>A key part of Zeratul gameplay is finding Artifact Fragments. These fragments directly correspond to the power level of your units and therefore, it is critical to get them as fast as possible. Assuming Artifact fragments are found as quickly as possible, Prophetic Vision incurs a 3-minute cooldown (assuming no masteries are added).</p>
     <p>If an artifact is not found within a certain amount of time, the minimap will be pinged and a circle displaying the rough area to look shown to the player. Each hint makes the search radius smaller, making it easier for the player to find the artifact fragment. The hint timings are shown below and are also affected by the Zeratul Artifact Spawn mastery:</p>
     <table>

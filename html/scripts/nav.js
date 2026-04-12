@@ -1,7 +1,7 @@
 // html/scripts/nav.ts
 var navLinks = [];
 var activeLink = null;
-var headings = Array.from(document.querySelectorAll("#content h2, #content h3"));
+var headings = Array.from(document.querySelectorAll("#content h2, #content h3, #thisweek"));
 var hasPageNav = false;
 function initNav() {
   const toc = document.createElement("ul");
@@ -15,6 +15,10 @@ function initNav() {
     a.href = "#" + heading.id;
     a.textContent = heading.textContent;
     a.className = heading.tagName.toLowerCase();
+    if (heading.id === 'thisweek') {
+      a.textContent = 'This week\'s mutation';
+      a.className = 'h3';
+    }
     li.append(a);
     navLinks.push(a);
     toc.append(li);
