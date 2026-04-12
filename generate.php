@@ -59,6 +59,4 @@ foreach ($all_errors as $error) {
     echo "$error\n";
 }
 
-// reset the error level and exit with status 0 or 1
-error_reporting($prev_error_level);
 exit(empty($all_errors) ? 0 : 1);
