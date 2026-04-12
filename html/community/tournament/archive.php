@@ -1,13 +1,14 @@
 <?php
 
-require "../../admin-only.php";
-include("../../header.php");
+require_once "../../wrapper-static.php";
 ?>
-  <title>Starcraft 2 Co-op Tournament Archives</title>
-  <meta name="description" content="Starcraft 2 Co-op Tournament Archives. Browse past Co-op Tournament summaries and watch VoD's.">
-  <meta name="keywords" content="Starcraft co-op tournament past archives">
-  <link rel="canonical" href="https://starcraft2coop.com/community/tournament/archive">
-  <style>
+<?= startHead() ?>
+    <title>Starcraft 2 Co-op Tournament Archives</title>
+    <meta name="description" content="Starcraft 2 Co-op Tournament Archives. Browse past Co-op Tournament summaries and watch VoD's.">
+    <meta name="keywords" content="Starcraft co-op tournament past archives">
+    <link rel="canonical" href="https://starcraft2coop.com/community/tournament/archive">
+<?= startContent() ?>
+    <style>
     .spoiler{
         background-color:black;
         color:black;
@@ -16,11 +17,7 @@ include("../../header.php");
         background-color:unset;
         color:white;
     }
-  </style>
-  </head>
-<body>
-<?php include("../../menu.php"); ?>
-<div id="content">
+    </style>
     <h1>Co-op Tournament Archives</h1>
     <p>Below are the archives of past Co-op Tournaments.
     <table>
@@ -48,10 +45,4 @@ include("../../header.php");
             </tr>
         </tbody>
     </table>
-<p id="captchaTOS">This site is protected by reCAPTCHA and the Google
-    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-    <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
-</div>
-<?php include("../../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - AI Logic</title>
   <meta name="description" content="Starcraft 2 Co-op AI logic. Learn about how the different abilities are used by spellcasters and when they use them.">
   <meta name="keywords" content="Starcraft co-op guides AI logic abilities skills">
@@ -27,10 +27,7 @@ include("../header.php");
         text-align:center;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>AI Logic: Ability Usage Conditions</h1>
     <?php include("../scripts/reporterror.php");?>
     <div id="links">
@@ -1735,9 +1732,5 @@ include("../header.php");
             </table>
         </div>
     </div>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Nova</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Nova">
   <meta name="keywords" content="Starcraft co-op guides nova commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Nova</h1>
     <p id="commanderMotto">Dominion Ghost</p>
@@ -1256,9 +1253,5 @@ include("../header.php");
         <li>Soften enemy bases with Tac Nuke Strikes and Griffin Air Strikes before pushing in to reduce losses.</li>
         <li>If using Spider Mines for defense, place them on the top of your ramp so they can take advantage of high-ground vision range.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

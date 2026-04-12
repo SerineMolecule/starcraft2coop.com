@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="robots" content="index, follow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
-<link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
-<link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.33">
-<link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
-<link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>Starcraft 2 Co-op - Tournament Summary - Oct 2019</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.34">
+    <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
+    <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <title>Starcraft 2 Co-op - Tournament Summary - Oct 2019</title>
   <meta name="description" content="Starcraft 2 Co-op Tournament Summary November 2018">
   <meta name="keywords" content="Starcraft co-op tournament summary november 2018">
   <link rel="canonical" href="https://starcraft2coop.com/community/tournament/summary/2019-10">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/standingsstyle.css">
-  <style>
-
-  </style>
-  </head>
+</head>
 <body>
-<div id="header"><img src="/images/mainpageheader.png" alt="Starcraft II Co-op Logo">
-</div>
-<div id="menu"><header id="header">
+
+<header id="header">
     <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
 </header>
+<script>
+if (document.location.host === 'dev.starcraft2coop.com') {
+    document.write('<div class="construction">THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)</div>');
+}
+</script>
 <nav id="menu">
 <ul id="topmenu">
     <li class="normal"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
@@ -158,9 +159,8 @@
         });
     }
 </script>
-</div>
 <div id="content">
-    <h1>Co-op Tournament Summary - October 2019</h1>
+        <h1>Co-op Tournament Summary - October 2019</h1>
     <p>Below is the round summary for the Starcraft 2 Co-op Tournament of October 2019. Each round has been hidden by a spoiler block which can be removed by clicking the block. You may remove all spoilers and highlight the winning team by using the spoiler toggle located on the page.</p>
     <div id="abilities">
         <h2>Team Abilities</h2>
@@ -301,7 +301,6 @@
             </tr>
             <tr class="fake round"><td class="number"><h2>Round 4</h2></td><td class="mutset1"><div class="spoiler"><p>Click to reveal spoiler</p></div><div class="points">(x)</div><div class="muts"><div class="icons"><img class="tooltip" src="/images/tournament/blankmutator.png" alt="No Mutator" style="opacity: 1;"></div></div><div class="map"><img class="tooltip" src="/images/tournament/blankmap.png" alt="No Map"></div><div class="powers"></div><div class="links"><div class="link"><img src="/images/tournament/casticon.png" alt="Game Cast VOD"><p>No Game</p></div></div><td class="mutset2"><div class="points">(x)</div><div class="muts"><div class="icons"><img class="tooltip" src="/images/tournament/blankmutator.png" alt="No Mutator" style="opacity: 1;"></div></div><div class="map"><img class="tooltip" src="/images/tournament/blankmap.png" alt="No Map"></div><div class="powers"></div><div class="links"><div class="link"><img src="/images/tournament/casticon.png" alt="Game Cast VOD"><p>No Game</p></div></div></tr><tr class="fake round"><td class="number"><h2>Round 5</h2></td><td class="mutset1"><div class="spoiler"><p>Click to reveal spoiler</p></div><div class="points">(x)</div><div class="muts"><div class="icons"><img class="tooltip" src="/images/tournament/blankmutator.png" alt="No Mutator" style="opacity: 1;"></div></div><div class="map"><img class="tooltip" src="/images/tournament/blankmap.png" alt="No Map"></div><div class="powers"></div><div class="links"><div class="link"><img src="/images/tournament/casticon.png" alt="Game Cast VOD"><p>No Game</p></div></div><td class="mutset2"><div class="points">(x)</div><div class="muts"><div class="icons"><img class="tooltip" src="/images/tournament/blankmutator.png" alt="No Mutator" style="opacity: 1;"></div></div><div class="map"><img class="tooltip" src="/images/tournament/blankmap.png" alt="No Map"></div><div class="powers"></div><div class="links"><div class="link"><img src="/images/tournament/casticon.png" alt="Game Cast VOD"><p>No Game</p></div></div></tr>        </tbody>
 </table>
-</div>
 <script>
     $(".tooltip").on('mouseover',function(e){
         $("#tooltip").html($(this).attr("alt"));
@@ -358,9 +357,14 @@
         return false;
     });
 </script>
+</div>
+
 <div id="footer">
     <p>Note: All data generated on this site is based on Brutal difficulty. Timings, compositions and other elements may differ on easier difficulty levels.</p>
     <p>CC-BY-NC-SA-4.0. Originally written by Aommaster. This is a fansite not affiliated with StarCraft 2 or Blizzard Entertainment, Inc.</p>
 </div>
+
 </body>
 </html>
+
+    

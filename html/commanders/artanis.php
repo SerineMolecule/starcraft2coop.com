@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Artanis</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Artanis">
   <meta name="keywords" content="Starcraft co-op guides artanis commande mastery prestige buildr">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Artanis</h1>
     <p id="commanderMotto">Hierarch of the Daelaam</p>
@@ -1100,9 +1097,5 @@ include("../header.php");
         <li>Use Observers when playing with Tempests to provide vision. Tempests' Disintegration has a higher attack range than their vision range.</li>
         <li>Hold Shift when Orbital Strike is selected and press any key <a href="/guides/generaltips">bound to Rapidfire</a> to fire Orbital Strikes without delay in between shots.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

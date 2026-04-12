@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Links</title>
   <meta name="description" content="Links to other Starcraft II Co-op community content such as speedrun replay files and records, Discord Servers and Youtube channels.">
   <meta name="keywords" content="Starcraft co-op links">
@@ -11,10 +11,7 @@ include("../header.php");
   <style>
 
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Links - Various Other Starcraft 2 Co-op Content</h1>
     <p>Below are some links to other content (including websites) dedicated to Starcraft II Co-op.</p>
     <p>Please note that a vast majority of these links are not affiliated with starcraft2coop.com, so information present on those sites may not be accurate/reflect the current state of the game.</p>
@@ -27,7 +24,4 @@ include("../header.php");
         <li><a href="https://docs.google.com/spreadsheets/d/19e94QlfZvXaCcsMLGMXaN5fILDkshbppDb6yIfEwl0s/edit#gid=0" rel="nofollow">Co-op Speedrun Records</a></li>
         <li><a href="https://drive.google.com/drive/u/0/folders/0B0kAPEv3WqAeZlhmbzN5NWlDc1E" rel="nofollow">Co-op Speedrun Replays</a></li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

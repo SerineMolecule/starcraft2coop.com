@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Void Launch</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Void Launch">
   <meta name="keywords" content="Starcraft co-op guides Void Launch mission">
@@ -11,10 +11,7 @@ require_once("../scripts/switchergenerator.php");
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/missions/voidlaunch">
   <script src="/scripts/preload.js"></script>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Void Launch</h1>
     <p id="missionPlace">Kaldir</p>
     <?php include("../scripts/reporterror.php");?>
@@ -412,9 +409,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zeratul">Zeratul</a>: Zeratul can uniquely identify the enemy race at the start of the game. As usual, if creep is present, the enemy race is Zerg. If the enemy is Protoss, gold floor plates will be present in the enemy base. If concrete panels are present, the enemy is Terran. A video is below:</li>
     </ul>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/YXDuDOIrkro" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

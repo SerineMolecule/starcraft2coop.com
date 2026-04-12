@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Kerrigan</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Kerrigan">
   <meta name="keywords" content="Starcraft co-op guides kerrigan commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Kerrigan</h1>
     <p id="commanderMotto">Queen of Blades</p>
@@ -1033,9 +1030,5 @@ include("../header.php");
         <li>Use Queens to Transfuse Kerrigan to increase uptime of the Hero unit, especially during Hero solos.</li>
         <li>Kerrigan's Psionic Shift does not need detection to damage cloaked or burrowed targets.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

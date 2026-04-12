@@ -3,83 +3,24 @@
 // run from CLI; generate static pages
 require "config.php";
 
-$pages = [
-    '/about/contact',
-    '/about/faq',
-    '/about/links',
-    '/about/stats',
+chdir(__DIR__);
+$grep_output = shell_exec('grep -r -l --include="*.php" "/wrapper-static.php" html/');
 
-    '/commanders/abathur',
-    '/commanders/alarak',
-    '/commanders/artanis',
-    '/commanders/dehaka',
-    '/commanders/fenix',
-    '/commanders/horner',
-    '/commanders/karax',
-    '/commanders/kerrigan',
-    '/commanders/mengsk',
-    '/commanders/nova',
-    '/commanders/raynor',
-    '/commanders/stetmann',
-    '/commanders/stukov',
-    '/commanders/swann',
-    '/commanders/tychus',
-    '/commanders/vorazun',
-    '/commanders/zagara',
-    '/commanders/zeratul',
-
-    '/community/tournament/summary/2019-10',
-    '/community/tournament/archive',
-    '/community/tournament/signup',
-    '/community/tournament/index',
-    '/community/gamespotlight',
-    '/community/mythbusters',
-    '/community/rockslappingchampions',
-
-    '/guides/buildordertheory',
-    '/guides/enemycomps',
-    '/guides/generaltips',
-    '/guides/newplayer',
-    '/guides/youtube',
-
-    '/missions/chainofascension',
-    '/missions/cradleofdeath',
-    '/missions/deadofnight',
-    '/missions/lockload',
-    '/missions/malwarfare',
-    '/missions/minerevacuation',
-    '/missions/mistopportunities',
-    '/missions/oblivionexpress',
-    '/missions/partparcel',
-    '/missions/riftstokorhal',
-    '/missions/scytheofamon',
-    '/missions/templeofthepast',
-    '/missions/thevermillionproblem',
-    '/missions/voidlaunch',
-    '/missions/voidthrashing',
-
-    '/resources/achievements',
-    '/resources/ailogic',
-    '/resources/brutal',
-    '/resources/bugs',
-    '/resources/deathprevention',
-    '/resources/eastereggs',
-    '/resources/levels',
-    '/resources/mutators',
-    '/resources/patchdata',
-
-    '/tools/downloads',
-    '/tools/masterybreakpoints',
-    '/tools/unitstats',
-
-    '/account',
-    '/index',
-
-];
+$pages = [];
+if ($grep_output) {
+    $lines = explode("\n", trim($grep_output));
+    foreach ($lines as $filepath) {
+        if (empty($filepath)) {
+            continue;
+        }
+        if (str_starts_with($filepath, 'html/') && str_ends_with($filepath, '.php')) {
+            $pages[] = substr($filepath, 4, -4);
+        }
+    }
+}
 
 $HTML_DIR = __DIR__ . '/html';
-$_SERVER['ADMIN_KEY'] = $ADMIN_KEY;
-$_SERVER['SERVER_NAME'] = $SERVER_NAME;
+$GENERATING_STATIC_PAGES = true;
 
 foreach ($pages as $page) {
     $_SERVER['REQUEST_URI'] = "$page";
@@ -95,6 +36,7 @@ foreach ($pages as $page) {
     $result = file_put_contents($HTML_DIR . "$page.html", $html);
     if (!$result) {
         echo "Error writing $page.html\n";
+        exit(1);
     } else {
         echo "Generated $page.html ($result bytes)\n";
     }

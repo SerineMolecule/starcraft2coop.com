@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Zeratul</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Zeratul">
   <meta name="keywords" content="Starcraft co-op guides zeratul commander mastery prestige build">
@@ -49,10 +49,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Zeratul</h1>
     <p id="commanderMotto">Dark Prelate</p>
@@ -2057,9 +2054,5 @@ include("../header.php");
     <h2 id="videos">Video Guides</h2>
     <p>The below videos demonstrate the various Legion expands explained earlier. Note that as of patch 4.11.3, Zeratul's Legion costs have been increased significantly. The expand will still take place in the same way, but at a later point in the game (~2 mins).</p>
     <iframe width="950" height="535" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu53ZsL8KSqVBysp4tPpg5CT" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

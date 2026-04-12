@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Frequently Asked Questions</title>
   <meta name="description" content="Starcraft 2 Co-op FAQ Frequently Asked Questions">
   <meta name="keywords" content="Starcraft co-op FAQ Frequently Asked Questions">
@@ -16,10 +16,7 @@ include("../header.php");
             padding:10px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Frequently Asked Questions</h1>
     <p>This page contains some of the more frequently asked questions regarding Co-op and the site itself.</p>
     <h2>Gameplay</h2>
@@ -72,7 +69,4 @@ include("../header.php");
 
     <h3>Wasn't there a Co-op Tournament page?</h3>
     <p>Yeah, there were two tournaments, one in 2019 and one in 2021. The <a href="/community/tournament/archive">tournament replay archives</a> still exist, and <a href="/community/tournament/signup">the old signup page</a> is still accessible.</p>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

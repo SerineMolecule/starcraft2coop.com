@@ -1,16 +1,13 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mythbusters</title>
   <meta name="description" content="This is the page which lists all the episodes of Mythbusters.">
   <meta name="keywords" content="Starcraft co-op mythbusters community tests myths">
   <link rel="canonical" href="https://starcraft2coop.com/community/mythbusters">
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Mythbusters</h1>
     <p>Mythbusters takes theories and myths from the co-op community and puts them to the test. A full playlist is below:</p>
     <iframe width="480" height="270" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu6RZILcYqKk3FZRSK4htwIB" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -195,7 +192,4 @@ include("../header.php");
     <br>Desolate Queen Kerrigan’s Kinetic Blast can trigger Mag-Mines
     <br>Missiles from Missile Command are immune to Mind-Control
     <br>Swann can convert Tech Labs and Reactors to Tech Reactors
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

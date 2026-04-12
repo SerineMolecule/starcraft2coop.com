@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Lock & Load</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Lock & Load">
   <meta name="keywords" content="Starcraft co-op guides lock load mission">
@@ -11,10 +11,7 @@ require_once("../scripts/switchergenerator.php");
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/missions/lockload">
   <script src="/scripts/preload.js"></script>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Lock & Load</h1>
     <p id="missionPlace">Ulnar</p>
     <?php include("../scripts/reporterror.php");?>
@@ -254,9 +251,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zagara">Zagara</a>: Build your macro hatcheries at the central Lock for quick reinforcements.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Place a Void Array on each captured Lock to give you the mobility to defend against attack waves.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

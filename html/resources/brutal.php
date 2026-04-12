@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Brutal+ Difficulty</title>
   <meta name="description" content="Starcraft 2 Co-op Brutal+ Difficulty Mutators">
   <meta name="keywords" content="Starcraft co-op brutal difficulty mutators">
@@ -57,10 +57,7 @@ include("../header.php");
         margin-bottom:50px;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Brutal+ Difficulty: Mutation Cost Brackets and Templates</h1>
     <?php include("../scripts/reporterror.php");?>
     <p>Brutal+ is considered an "Extended Difficulty". That is, missions will take place on the regular Brutal difficulty. However, in addition to the standard mission mechanics, a certain number of random <a href="mutators">mutators</a> are added to your game. You may queue into random queue on Brutal+ difficulty, as long as the commander you are queueing in with is at Level 15. For Brutal+2 and higher, you will require a person in your party to play.</p>
@@ -318,7 +315,4 @@ include("../header.php");
         });
 
     </script>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

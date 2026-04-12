@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Achievements</title>
   <meta name="description" content="A list of achievements in Starcraft II's Co-op game mode, with descriptions and images, along with unlock criteria.">
   <meta name="keywords" content="Starcraft co-op guides achievements">
@@ -18,10 +18,7 @@ include("../header.php");
         border-right:5px lightgrey solid;
     }
   </style>
-</head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Achievements: Unlockable Achievements for Players</h1>
     <?php include("../scripts/reporterror.php");?>
     <p>There are several unlockable Co-op Mode achievements available for players to earn. These can be divided into two categories, shown below. Note that the achievements listed on this page is not an exhaustive list.</p>
@@ -495,7 +492,4 @@ include("../header.php");
             </tr>
         </table>
     </div>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

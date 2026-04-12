@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Statistics</title>
   <meta name="description" content="Various statistics related to starcraft2coop.com and Starcraft II content, such as mutator frequency counts in Weekly Mutations.">
   <meta name="keywords" content="Starcraft co-op stats">
@@ -38,10 +38,7 @@ include("../header.php");
         border-radius:5px;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Site-Specific and Co-op Related Statistics</h1>
     <?php
 
@@ -874,9 +871,5 @@ include("../header.php");
 
         });
     </script>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

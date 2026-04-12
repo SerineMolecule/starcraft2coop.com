@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Temple of the Past</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Temple of the Past">
   <meta name="keywords" content="Starcraft co-op guides temple past mission">
@@ -21,10 +21,7 @@ require_once("../scripts/switchergenerator.php");
         vertical-align:text-top;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Temple of the Past</h1>
     <p id="missionPlace">Shakuras</p>
     <?php include("../scripts/reporterror.php");?>
@@ -632,9 +629,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/nova">Nova</a>: If you use Siege Tanks, place Spider-mines on attack wave and Thrasher spawn locations to weaken them.</li>
         <li><a href="/commanders/raynor">Raynor</a>: If you use Vultures, place Spider-mines on attack wave and Thrasher spawn locations to weaken them.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

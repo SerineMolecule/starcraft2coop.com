@@ -1,12 +1,13 @@
 <?php
-include("../header.php");
+require_once "../wrapper.php";
 ?>
-  <title>Starcraft 2 Co-op - Weekly Mutations</title>
-  <meta name="description" content="Starcraft 2 Co-op Weekly Mutations">
-  <meta name="keywords" content="Starcraft co-op guides weekly mutations">
-  <link rel="canonical" href="https://starcraft2coop.com/resources/weeklymutations">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <script>
+<?= startHead() ?>
+    <title>Starcraft 2 Co-op - Weekly Mutations</title>
+    <meta name="description" content="Starcraft 2 Co-op Weekly Mutations">
+    <meta name="keywords" content="Starcraft co-op guides weekly mutations">
+    <link rel="canonical" href="https://starcraft2coop.com/resources/weeklymutations">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <script>
       function validate() {
           var x = $('#mutationForm [name=file]').val()
           if (x == "") {
@@ -19,8 +20,8 @@ include("../header.php");
               return false;
           }
       }
-  </script>
-  <style>
+    </script>
+    <style>
         #player{
             position:fixed;
             z-index: 3;
@@ -333,11 +334,8 @@ include("../header.php");
         .current{
             background:#2d602d;
         }
-  </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+    </style>
+<?= startContent() ?>
     <h1>A List of Weekly Mutations With Difficulties</h1>
     <div id="links">
         <h2>Sections on this Page</h2>
@@ -896,9 +894,6 @@ include("../header.php");
             return false;
         });
     </script>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
 
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

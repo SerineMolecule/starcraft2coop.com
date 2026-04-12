@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Abathur</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Abathur">
   <meta name="keywords" content="Starcraft co-op guides abathur commander mastery prestige build">
@@ -25,10 +25,7 @@ include("../header.php");
             border-radius:5px;
         }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Abathur</h1>
     <p id="commanderMotto">Evolution Master</p>
@@ -1320,9 +1317,5 @@ include("../header.php");
         <li>More skilled players can add two to four Vipers to their composition and make use of Disabling Cloud and Abduct.</li>
         <li>Loading units into Nydus Worms will prevent them from taking DoT (damage over time) damage.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

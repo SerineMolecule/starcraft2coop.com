@@ -1,15 +1,10 @@
 <?php
 
-include("header.php");
+require_once "./wrapper-static.php";
 ?>
-  <title>Starcraft 2 Co-op - Account</title>
-</head>
-<body>
-<?php include("menu.php"); ?>
-<div id="content">
+<?= startHead() ?>
+    <title>Starcraft 2 Co-op - Account</title>
+<?= startContent() ?>
     <h1>Account</h1>
     <p>Sorry, accounts are no longer available.</p>
-</div>
-<?php include("footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

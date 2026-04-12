@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Cradle of Death</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Cradle of Death">
   <meta name="keywords" content="Starcraft co-op guides chain cradle death mission">
@@ -11,10 +11,7 @@ require_once("../scripts/switchergenerator.php");
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/missions/cradleofdeath">
   <script src="/scripts/preload.js"></script>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Cradle of Death</h1>
     <p id="missionPlace">Moebius Battle Station</p>
     <?php include("../scripts/reporterror.php");?>
@@ -364,9 +361,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/kerrigan">Kerrigan</a>: Place plenty of Omega worms around the map to be able to deal with the attack waves as well as push effectively.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Place plenty of Void Arrays around the map to be able to deal with the attack waves as well as push effectively.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

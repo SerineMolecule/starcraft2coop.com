@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Enemy Compositions</title>
   <meta name="description" content="Starcraft 2 Co-op Enemy Compositions. Learn about Hybrids and the different units in Amon's attack waves.">
   <meta name="keywords" content="Starcraft co-op guides enemy compositions">
@@ -83,10 +83,7 @@ include("../header.php");
         opacity:0.5;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Enemy Compositions: Units in Attack Waves and Hybrid Data</h1>
     <?php include("../scripts/reporterror.php");?>
     <div id="links">
@@ -1117,9 +1114,5 @@ include("../header.php");
             </table>
         </div>
     </div>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

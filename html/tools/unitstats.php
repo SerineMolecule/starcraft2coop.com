@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Unit Stats</title>
   <meta name="description" content="A calculator to provide you with unit stats before and after upgrades for every unit in Co-op. Also includes data on Amon's units.">
   <meta name="keywords" content="Starcraft co-op unit stats">
@@ -221,10 +221,7 @@ include("../header.php");
         padding: 5px 10px;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>A List of Unit Stats for Player and Amon Units</h1>
     <?php include("../scripts/reporterror.php");?>
     <h2>Unit Comparison</h2>
@@ -548,7 +545,4 @@ include("../header.php");
         })
     </script>
     <div class="clear"></div>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

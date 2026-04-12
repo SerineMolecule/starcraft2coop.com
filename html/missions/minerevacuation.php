@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Miner Evacuation</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Miner Evacuation">
   <meta name="keywords" content="Starcraft co-op guides miner evacuation mission">
@@ -10,10 +10,7 @@ include("../header.php");
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/missions/minerevacuation">
   <script src="/scripts/preload.js"></script>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Co-op Mission Guide: Miner Evacuation</h1>
     <p id="missionPlace">Jarban</p>
     <?php include("../scripts/reporterror.php");?>
@@ -299,9 +296,5 @@ include("../header.php");
         <li><a href="/commanders/vorazun">Vorazun</a>: Time-Stop will delay the launch sequence of the ship as well. Ie. while it does freeze everything on the map, the countdown timer for launch of the ships will also stop for the duration of Time-Stop.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Use Void Arrays to quickly reinforce your army.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

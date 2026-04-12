@@ -1,9 +1,9 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
-require_once("../scripts/switchergenerator.php");
+require_once "../wrapper-static.php";
+require_once "../scripts/switchergenerator.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Dead of Night</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Dead of Night">
   <meta name="keywords" content="Starcraft co-op guides dead night mission">
@@ -16,10 +16,7 @@ require_once("../scripts/switchergenerator.php");
           border-radius:50%;
       }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+<?= startContent() ?>
     <h1>Co-op Mission Guide: Dead of Night</h1>
     <p id="missionPlace">Chazington</p>
     <?php include("../scripts/reporterror.php");?>
@@ -499,9 +496,5 @@ require_once("../scripts/switchergenerator.php");
         <li><a href="/commanders/zeratul">Zeratul</a>: Use Shaded Cannons to clear buildings while your army moves on to clear enemy forces.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Zeratul's Purity of Will passive allows him to escape from a Choker stun when the immunity buff is applied to him.</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

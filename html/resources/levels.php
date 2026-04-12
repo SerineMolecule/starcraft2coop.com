@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Levels</title>
   <meta name="description" content="A list of experience brackets in Starcraft II Co-op, as well as a few calculators to show you how far you are through Ascension levels.">
   <meta name="keywords" content="Starcraft co-op guides levels">
@@ -52,10 +52,7 @@ include("../header.php");
         margin-bottom:50px;
     }
   </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Co-op Levels, Experience Requirements, Mastery and Ascension Levels</h1>
     <?php include("../scripts/reporterror.php");?>
     <div id="links">
@@ -1105,9 +1102,5 @@ include("../header.php");
             $("#brut6Time").text(brut6Time);
         });
     </script>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

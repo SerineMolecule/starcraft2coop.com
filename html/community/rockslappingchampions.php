@@ -1,8 +1,8 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Rockslapping Champions</title>
   <meta name="description" content="Rockslapping Champions is starcraft2coop.com's flagship series, which is very similar to Bronze League Heroes.">
   <meta name="keywords" content="Starcraft co-op rockslapping champions">
@@ -61,10 +61,7 @@ include("../header.php");
             opacity:0.33;
         }
     </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Rockslapping Champions</h1>
     <h2>The Series</h2>
     <p>Rockslapping Champions is a comedy series of co-op games casted where a player has demonstrated poor decision-making and strategic-thinking ability.  It is named after <a href="/commanders/dehaka">Dehaka's Rockslapping</a> (a highly inefficient opening with Dehaka). The games are casted with a one-of-a-kind Co-op Observer UI, with "Did You Know" facts scattered throughout the video.</p>
@@ -174,7 +171,4 @@ include("../header.php");
             return true;
         })
     </script>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>

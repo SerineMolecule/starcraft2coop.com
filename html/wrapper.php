@@ -1,57 +1,64 @@
 <?php
-$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-$pageFile = basename($_SERVER['PHP_SELF']);
-$pageSection = basename(dirname($_SERVER['PHP_SELF']));
-if ($pageSection === 'tournament') {
-    $pageFile = 'tournament.php';
-    $pageSection = basename(dirname(dirname($_SERVER['PHP_SELF'])));
-}
-if (!$pageSection) {
-    $pageSection = 'index';
-}
-if ($pageSection === 'tools' || $pageSection === 'guides') {
-    $pageSection = 'resources';
+
+$wrapperNesting = 0;
+
+function startHead()
+{
+    global $wrapperNesting;
+    $wrapperNesting++;
+    if ($wrapperNesting > 1) {
+        ob_start();
+        return '';
+    }
+    ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.34">
+    <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
+    <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <?php
+    return '';
 }
 
-?>
+function startContent()
+{
+    global $wrapperNesting;
+    if ($wrapperNesting > 1) {
+        ob_end_clean();
+        return '';
+    }
+    // $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    $pageFile = basename($_SERVER['PHP_SELF']);
+    $pageSection = basename(dirname($_SERVER['PHP_SELF']));
+    if ($pageSection === 'tournament') {
+        $pageFile = 'tournament.php';
+        $pageSection = basename(dirname(dirname($_SERVER['PHP_SELF'])));
+    }
+    if (!$pageSection) {
+        $pageSection = 'index';
+    }
+    if ($pageSection === 'tools' || $pageSection === 'guides') {
+        $pageSection = 'resources';
+    }
+    ?>
+</head>
+<body>
+
 <header id="header">
     <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
 </header>
-<?php
-if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
-    ?>
-<style>
-.construction {
-    border: 15px solid transparent;
-    padding: 5px 10px;
-    background: #d9ca28;
-    /* opera doesn't support single-arg linear-gradient */
-    background-image: linear-gradient(#d9ca28, #d9ca28), repeating-linear-gradient(
-        -45deg,
-        #d9ca28,
-        #d9ca28 10px,
-        #292824 10px,
-        #292824 20px
-    );
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-
-    padding: 10px 15px;
-    font-weight: bold;
-    color: black;
-
-    font-family: 'Convergence', sans-serif;
-    font-size: 1.5em;
-    margin: 0 auto 20px;
-    max-width: 1000px;
+<script>
+if (document.location.host === 'dev.starcraft2coop.com') {
+    document.write('<div class="construction">THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)</div>');
 }
-</style>
-<div class="construction">
-    THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)
-</div>
-    <?php
-}
-?>
+</script>
 <nav id="menu">
 <ul id="topmenu">
     <li class="<?=$pageSection === "index" ? 'highlight' : 'normal'?>"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
@@ -185,3 +192,29 @@ if ($_SERVER['SERVER_NAME'] === 'dev.starcraft2coop.com') {
         });
     }
 </script>
+<div id="content">
+    <?php
+    return '';
+}
+
+function endContent()
+{
+    global $wrapperNesting;
+    $wrapperNesting--;
+    if ($wrapperNesting > 0) {
+        return '';
+    }
+    ?>
+</div>
+
+<div id="footer">
+    <p>Note: All data generated on this site is based on Brutal difficulty. Timings, compositions and other elements may differ on easier difficulty levels.</p>
+    <p>CC-BY-NC-SA-4.0. Originally written by Aommaster. This is a fansite not affiliated with StarCraft 2 or Blizzard Entertainment, Inc.</p>
+</div>
+
+</body>
+</html>
+
+    <?php
+    return '';
+}

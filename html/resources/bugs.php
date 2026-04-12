@@ -1,16 +1,13 @@
 <?php
 
-require "../admin-only.php";
-include("../header.php");
+require_once "../wrapper-static.php";
 ?>
+<?= startHead() ?>
   <title>Starcraft 2 Co-op - Bugs List</title>
   <meta name="description" content="A list of bugs that are present in the current Starcraft II Co-op Patch">
   <meta name="keywords" content="Starcraft co-op bugs glitches">
   <link rel="canonical" href="https://starcraft2coop.com/resources/bugs">
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+  <?= startContent() ?>
     <h1>Starcraft Co-op Bugs List</h1>
     <?php include("../scripts/reporterror.php");?>
     <div id="links">
@@ -527,9 +524,5 @@ include("../header.php");
         <li>Zeratul: Void Apparitions are counted towards Units Made count</li>
         <li>When a player unit kills a missile from Missile Command with Just Die! active, the Just Die! respawn animation occurs on the player unit instead of the missile</li>
     </ul>
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
-
 <script src="/scripts/nav.js"></script>
+<?= endContent() ?>

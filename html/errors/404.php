@@ -1,17 +1,12 @@
-<!DOCTYPE html>
+<?php
 
-<html lang="en">
-<head>
-  <title>Starcraft 2 Coop - Page Not Found!</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Starcraft 2 Co-op Error">
-  <meta name="keywords" content="Starcraft co-op error">
-  <meta name="robots" content="index, follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.33">
-  <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet' type='text/css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <style>
+require_once "../wrapper.php";
+?>
+<?= startHead() ?>
+    <title>Starcraft 2 Coop - Page Not Found!</title>
+    <meta name="description" content="Starcraft 2 Co-op Error">
+    <meta name="keywords" content="Starcraft co-op error">
+    <style>
     p{
         text-align:center;
         margin:auto;
@@ -23,19 +18,15 @@
         padding-top:25px;
         padding-bottom:25px;
     }
-  </style>
-  </head>
-<body>
-<?php include("../menu.php"); ?>
-<div id="content">
+    </style>
+<?= startContent() ?>
     <?php
     if (isset($_SERVER['HTTP_REFERER'])) {
         $ref = $_SERVER['HTTP_REFERER'];
     } else {
         $ref = "";
     }
-
-    $cur = 'http://www.' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    $cur = $_SERVER['REQUEST_URI'];
 
     if ($ref != "") {
         $errorTime = date('Y-m-d H:i:s');
@@ -58,7 +49,4 @@
 
     <p>(Either that, or the page was not found.)</p>
 
-</div>
-<?php include("../footer.php"); ?>
-</body>
-</html>
+<?= endContent() ?>
