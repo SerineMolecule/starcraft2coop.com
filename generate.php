@@ -21,7 +21,7 @@ if ($grep_output) {
 
 $HTML_DIR = __DIR__ . '/html';
 $GENERATING_STATIC_PAGES = true;
-$prev_error_level = error_reporting(E_ALL);
+error_reporting(E_ALL);
 
 set_error_handler(function (int $severity, string $message, string $file, int $line) {
     throw new ErrorException($message, 0, $severity, $file, $line);
@@ -38,7 +38,6 @@ foreach ($pages as $page) {
     try {
         require $HTML_DIR . "$page.php";
     } catch (ErrorException $e) {
-        // TODO: exit on first generate error or let it run for all?
         $all_errors[] = "Captured an exception in {$e->getFile()}: {$e->getMessage()} (line {$e->getLine()})";
     }
     $html = ob_get_clean();
@@ -46,10 +45,8 @@ foreach ($pages as $page) {
 
     $result = file_put_contents($HTML_DIR . "$page.html", $html);
     if (!$result) {
-        $msg = "Error writing $page.html";
-        $all_errors[] = $msg;
-        echo "$msg\n";
-        break;  // TODO: exit on first write error?
+        $all_errors[] = "Error writing $page.html";
+        break;
     } else {
         echo "Generated $page.html ($result bytes)\n";
     }
