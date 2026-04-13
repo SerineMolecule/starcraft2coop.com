@@ -1,0 +1,165 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/WeeklyMutationList",
+    "definitions": {
+        "WeeklyMutationList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/WeeklyMutation"
+            }
+        },
+        "WeeklyMutation": {
+            "type": "object",
+            "properties": {
+                "mutationid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "releasedate": {
+                    "type": "string"
+                },
+                "mutation": {
+                    "type": "string"
+                },
+                "link": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "YouTube ID of TwoTuuu beating it"
+                },
+                "map": {
+                    "type": "string"
+                },
+                "mut01": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "only null for Sudden but Inevitable"
+                },
+                "mut02": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut03": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut04": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut05": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut06": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut07": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut08": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut09": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mut10": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "final": {
+                    "type": "number",
+                    "const": 0,
+                    "description": "no clue what this is; always 0"
+                }
+            },
+            "required": [
+                "mutationid",
+                "releasedate",
+                "mutation",
+                "link",
+                "map",
+                "mut01",
+                "mut02",
+                "mut03",
+                "mut04",
+                "mut05",
+                "mut06",
+                "mut07",
+                "mut08",
+                "mut09",
+                "mut10",
+                "final"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}

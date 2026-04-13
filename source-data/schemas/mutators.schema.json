@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/MutatorList",
+    "definitions": {
+        "MutatorList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Mutator"
+            }
+        },
+        "Mutator": {
+            "type": "object",
+            "properties": {
+                "mutatorid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "mutatorname": {
+                    "type": "string"
+                },
+                "abomination": {
+                    "$ref": "#/definitions/NonNegativeInteger",
+                    "description": "Mutator difficulty points (see Brutal+ page)"
+                },
+                "mutatordescription": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "mutatorid",
+                "mutatorname",
+                "abomination",
+                "mutatordescription"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "NonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
+        }
+    }
+}

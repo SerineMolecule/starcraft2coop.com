@@ -3,6 +3,11 @@
  * @asType integer
  */
 export type PositiveInteger = number;
+/**
+ * @minimum 0
+ * @asType integer
+ */
+export type NonNegativeInteger = number;
 export type CommanderPowerRating = 1 | 2 | 3 | 4 | 5;
 
 export interface BrutalPlus {
@@ -68,3 +73,37 @@ export interface MutatorInteraction {
 }
 
 export type MutatorInteractionList = MutatorInteraction[];
+
+export interface Mutator {
+    mutatorid: PositiveInteger;
+    mutatorname: string;
+    /** Mutator difficulty points (see Brutal+ page) */
+    abomination: NonNegativeInteger;
+    mutatordescription: string;
+}
+
+export type MutatorList = Mutator[];
+
+export interface WeeklyMutation {
+    mutationid: PositiveInteger;
+    releasedate: string;
+    mutation: string;
+    /** YouTube ID of TwoTuuu beating it */
+    link: string | null;
+    map: string;
+    /** only null for Sudden but Inevitable */
+    mut01: PositiveInteger | null;
+    mut02: PositiveInteger | null;
+    mut03: PositiveInteger | null;
+    mut04: PositiveInteger | null;
+    mut05: PositiveInteger | null;
+    mut06: PositiveInteger | null;
+    mut07: PositiveInteger | null;
+    mut08: PositiveInteger | null;
+    mut09: PositiveInteger | null;
+    mut10: PositiveInteger | null;
+    /** no clue what this is; always 0 */
+    final: 0;
+}
+
+export type WeeklyMutationList = WeeklyMutation[];

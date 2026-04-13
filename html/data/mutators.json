@@ -1,0 +1,380 @@
+[
+    {
+        "mutatorid": 1,
+        "mutatorname": "Afraid of the Dark",
+        "abomination": 0,
+        "mutatordescription": "Vision provided by all sources is extremely limited except when in view of your camera."
+    },
+    {
+        "mutatorid": 2,
+        "mutatorname": "Aggressive Deployment",
+        "abomination": 3,
+        "mutatordescription": "Additional enemy units are periodically deployed onto the battlefield."
+    },
+    {
+        "mutatorid": 3,
+        "mutatorname": "Alien Incubation",
+        "abomination": 2,
+        "mutatordescription": "All enemy units spawn Broodlings upon death."
+    },
+    {
+        "mutatorid": 4,
+        "mutatorname": "Avenger",
+        "abomination": 5,
+        "mutatordescription": "Enemy units gain increased attack speed, movement speed, armor, life, and life-regeneration when nearby enemy units die."
+    },
+    {
+        "mutatorid": 5,
+        "mutatorname": "Barrier",
+        "abomination": 2,
+        "mutatordescription": "Enemy units and structures gain a temporary shield upon the first time they take damage."
+    },
+    {
+        "mutatorid": 6,
+        "mutatorname": "Black Death",
+        "abomination": 7,
+        "mutatordescription": "Some enemy units carry a plague that deals damage over time and spreads to other nearby units. The plague spreads to your units when the enemy unit is killed."
+    },
+    {
+        "mutatorid": 7,
+        "mutatorname": "Blizzard",
+        "abomination": 4,
+        "mutatordescription": "Storm clouds move across the map, damaging and freezing player units in their path."
+    },
+    {
+        "mutatorid": 8,
+        "mutatorname": "Chaos Studios",
+        "abomination": 0,
+        "mutatordescription": "Mutators are chosen at random and periodically cycle throughout the mission."
+    },
+    {
+        "mutatorid": 9,
+        "mutatorname": "Concussive Attacks",
+        "abomination": 1,
+        "mutatordescription": "Player units are slowed by all enemy attacks."
+    },
+    {
+        "mutatorid": 10,
+        "mutatorname": "Darkness",
+        "abomination": 2,
+        "mutatordescription": "Previously explored areas remain blacked out on the minimap while outside of player vision."
+    },
+    {
+        "mutatorid": 11,
+        "mutatorname": "Diffusion",
+        "abomination": 3,
+        "mutatordescription": "Damage dealt to enemies is split evenly across all nearby units, including your own."
+    },
+    {
+        "mutatorid": 12,
+        "mutatorname": "Double Edged",
+        "abomination": 3,
+        "mutatordescription": "Damage dealt by your units and structures is dealt back to them, but then healed back over time."
+    },
+    {
+        "mutatorid": 13,
+        "mutatorname": "Eminent Domain",
+        "abomination": 1,
+        "mutatordescription": "Enemies gain control of your structures after destroying them."
+    },
+    {
+        "mutatorid": 14,
+        "mutatorname": "Evasive Maneuvers",
+        "abomination": 1,
+        "mutatordescription": "Enemy units teleport a short distance away upon taking damage."
+    },
+    {
+        "mutatorid": 15,
+        "mutatorname": "Fatal Attraction",
+        "abomination": 3,
+        "mutatordescription": "When enemy units and structures die, any of your nearby units are pulled to their location."
+    },
+    {
+        "mutatorid": 16,
+        "mutatorname": "Fear",
+        "abomination": 3,
+        "mutatordescription": "Player units will occasionally stop attacking and run around in fear upon taking damage."
+    },
+    {
+        "mutatorid": 17,
+        "mutatorname": "Fireworks",
+        "abomination": 0,
+        "mutatordescription": "Enemies launch a dazzling fireworks display upon death, dealing damage to your nearby units."
+    },
+    {
+        "mutatorid": 18,
+        "mutatorname": "Gift Exchange",
+        "abomination": 0,
+        "mutatordescription": "Gifts are periodically deployed around the map. If you don't claim them, Amon will!"
+    },
+    {
+        "mutatorid": 19,
+        "mutatorname": "Going Nuclear",
+        "abomination": 3,
+        "mutatordescription": "Nukes are launched at random throughout the map."
+    },
+    {
+        "mutatorid": 20,
+        "mutatorname": "Hardened Will",
+        "abomination": 2,
+        "mutatordescription": "Enemy Heroic units reduce all incoming damage to a maximum of 10 when any non-heroic enemy unit is near them."
+    },
+    {
+        "mutatorid": 21,
+        "mutatorname": "Heroes from the Storm",
+        "abomination": 10,
+        "mutatordescription": "Every attack wave will be led by Heroes of increasing power."
+    },
+    {
+        "mutatorid": 22,
+        "mutatorname": "Inspiration",
+        "abomination": 2,
+        "mutatordescription": "Enemy Heroic units increase the attack speed and armor of all enemies within a small range."
+    },
+    {
+        "mutatorid": 23,
+        "mutatorname": "Just Die",
+        "abomination": 7,
+        "mutatordescription": "Enemy units are automatically revived upon death."
+    },
+    {
+        "mutatorid": 24,
+        "mutatorname": "Kill Bots",
+        "abomination": 6,
+        "mutatordescription": "Waves of bots attack players and are invulnerable to damage until they have killed a set amount of units."
+    },
+    {
+        "mutatorid": 25,
+        "mutatorname": "Laser Drill",
+        "abomination": 2,
+        "mutatordescription": "An enemy Drakken laser drill constantly attacks player units within enemy vision."
+    },
+    {
+        "mutatorid": 26,
+        "mutatorname": "Lava Burst",
+        "abomination": 3,
+        "mutatordescription": "Lava periodically bursts from the ground at random locations and deals damage to player air and ground units."
+    },
+    {
+        "mutatorid": 27,
+        "mutatorname": "Life Leech",
+        "abomination": 1,
+        "mutatordescription": "Enemy units steal life or shields whenever they do damage."
+    },
+    {
+        "mutatorid": 28,
+        "mutatorname": "Long Range",
+        "abomination": 2,
+        "mutatordescription": "Enemy units and structures have increased weapon and vision range."
+    },
+    {
+        "mutatorid": 29,
+        "mutatorname": "Lucky Envelopes",
+        "abomination": 0,
+        "mutatordescription": "Festive envelopes containing resource pickups are dropped at random throughout the map."
+    },
+    {
+        "mutatorid": 30,
+        "mutatorname": "Mag-nificent",
+        "abomination": 4,
+        "mutatordescription": "Mag Mines are deployed throughout the map at the start of the mission."
+    },
+    {
+        "mutatorid": 31,
+        "mutatorname": "Micro Transactions",
+        "abomination": 5,
+        "mutatordescription": "Giving commands to your units costs resources based on the unit's cost."
+    },
+    {
+        "mutatorid": 32,
+        "mutatorname": "Mineral Shields",
+        "abomination": 2,
+        "mutatordescription": "Mineral clusters at player bases are periodically encased in a shield which must be destroyed for gathering to continue."
+    },
+    {
+        "mutatorid": 33,
+        "mutatorname": "Minesweeper",
+        "abomination": 6,
+        "mutatordescription": "Groups of Widow Mines and Spider Mines are buried throughout the battlefield."
+    },
+    {
+        "mutatorid": 34,
+        "mutatorname": "Missile Command",
+        "abomination": 3,
+        "mutatordescription": "Endless missile bombardments target your structures and must be shot down throughout the mission."
+    },
+    {
+        "mutatorid": 35,
+        "mutatorname": "Moment of Silence",
+        "abomination": 2,
+        "mutatordescription": "When a Heroic enemy dies, all player units around it will reflect on their transgressions, leaving them temporarily unable to attack or use abilities."
+    },
+    {
+        "mutatorid": 36,
+        "mutatorname": "Mutually Assured Destruction",
+        "abomination": 5,
+        "mutatordescription": "Enemy Hybrid units detonate a Nuke upon death."
+    },
+    {
+        "mutatorid": 37,
+        "mutatorname": "Naughty List",
+        "abomination": 0,
+        "mutatordescription": "Player units and structures take increased damage for each enemy they've killed."
+    },
+    {
+        "mutatorid": 38,
+        "mutatorname": "Orbital Strike",
+        "abomination": 1,
+        "mutatordescription": "Enemy Orbital Strikes are periodically fired throughout the map."
+    },
+    {
+        "mutatorid": 39,
+        "mutatorname": "Outbreak",
+        "abomination": 3,
+        "mutatordescription": "Continuous waves of the infested horde march against the commanders' bases."
+    },
+    {
+        "mutatorid": 40,
+        "mutatorname": "Photon Overload",
+        "abomination": 1,
+        "mutatordescription": "All enemy structures attack nearby hostile units."
+    },
+    {
+        "mutatorid": 41,
+        "mutatorname": "Polarity",
+        "abomination": 7,
+        "mutatordescription": "Each enemy unit is immune to either your units or your ally's units."
+    },
+    {
+        "mutatorid": 42,
+        "mutatorname": "Power Overwhelming",
+        "abomination": 5,
+        "mutatordescription": "All enemy units have energy and use random abilities."
+    },
+    {
+        "mutatorid": 43,
+        "mutatorname": "Propagators",
+        "abomination": 8,
+        "mutatordescription": "Reality warping sludges are crawling towards you. Anything they touch is turned into a copy of the sludge."
+    },
+    {
+        "mutatorid": 44,
+        "mutatorname": "Purifier Beam",
+        "abomination": 2,
+        "mutatordescription": "An enemy Purifier Beam moves across the map toward nearby player units."
+    },
+    {
+        "mutatorid": 45,
+        "mutatorname": "Random",
+        "abomination": 0,
+        "mutatordescription": "A mutation is randomly assigned."
+    },
+    {
+        "mutatorid": 46,
+        "mutatorname": "Scorched Earth",
+        "abomination": 2,
+        "mutatordescription": "Enemy units set the terrain on fire upon death."
+    },
+    {
+        "mutatorid": 47,
+        "mutatorname": "Self Destruction",
+        "abomination": 3,
+        "mutatordescription": "Enemy units explode and deal damage to friendly player units upon death."
+    },
+    {
+        "mutatorid": 48,
+        "mutatorname": "Sharing is Caring",
+        "abomination": 0,
+        "mutatordescription": "Supply is shared between you and your partner, and units from both armies contribute to your combined supply cap."
+    },
+    {
+        "mutatorid": 49,
+        "mutatorname": "Shortsighted",
+        "abomination": 1,
+        "mutatordescription": "Player units and structures have reduced vision range."
+    },
+    {
+        "mutatorid": 50,
+        "mutatorname": "Slim Pickings",
+        "abomination": 5,
+        "mutatordescription": "Player worker units gather resources at a reduced rate, but resource pickups spawn throughout the map."
+    },
+    {
+        "mutatorid": 51,
+        "mutatorname": "Speed Freaks",
+        "abomination": 2,
+        "mutatordescription": "The enemy moves faster than any unit a player has at their disposal."
+    },
+    {
+        "mutatorid": 52,
+        "mutatorname": "Temporal Field",
+        "abomination": 1,
+        "mutatordescription": "Enemy Temporal Fields are periodically deployed throughout the map."
+    },
+    {
+        "mutatorid": 53,
+        "mutatorname": "Time Warp",
+        "abomination": 1,
+        "mutatordescription": "Enemy Time Warps are periodically deployed throughout the map."
+    },
+    {
+        "mutatorid": 54,
+        "mutatorname": "Transmutation",
+        "abomination": 7,
+        "mutatordescription": "Enemy units have a chance to transform into more powerful units whenever they deal damage."
+    },
+    {
+        "mutatorid": 55,
+        "mutatorname": "Trick or Treat",
+        "abomination": 0,
+        "mutatordescription": "Civilians visit your Candy Bowl looking for treats, which are generated by spending minerals. If no treats are available, the civilians randomly transform into enemy units."
+    },
+    {
+        "mutatorid": 56,
+        "mutatorname": "Turkey Shoot",
+        "abomination": 0,
+        "mutatordescription": "Supply can only be generated by killing turkeys that wander throughout the map. Doing so may anger the turkeys that remain."
+    },
+    {
+        "mutatorid": 57,
+        "mutatorname": "Twister",
+        "abomination": 2,
+        "mutatordescription": "Tornadoes move across the map, damaging and knocking back player units in their path."
+    },
+    {
+        "mutatorid": 58,
+        "mutatorname": "Vertigo",
+        "abomination": 0,
+        "mutatordescription": "Your camera randomly changes positions."
+    },
+    {
+        "mutatorid": 59,
+        "mutatorname": "Void Reanimators",
+        "abomination": 5,
+        "mutatordescription": "Void Reanimators wander the battlefield, bringing your enemies back to life."
+    },
+    {
+        "mutatorid": 60,
+        "mutatorname": "Void Rifts",
+        "abomination": 10,
+        "mutatordescription": "Void Rifts periodically appear in random locations and spawn enemy units until destroyed."
+    },
+    {
+        "mutatorid": 61,
+        "mutatorname": "Walking Infested",
+        "abomination": 2,
+        "mutatordescription": "Every enemy unit that commanders destroy will spawn infested terrans. The more life a unit has, the more infested will rise from its corpse."
+    },
+    {
+        "mutatorid": 62,
+        "mutatorname": "We Move Unseen",
+        "abomination": 3,
+        "mutatordescription": "All enemy units are permanently cloaked."
+    },
+    {
+        "mutatorid": 63,
+        "mutatorname": "Boom Bots",
+        "abomination": 10,
+        "mutatordescription": "Uncaring automatons carry a nuclear payload toward your base. One player must discern the disarming sequence and the other player must enter it."
+    }
+]

@@ -1,11 +1,13 @@
 #!/usr/bin/env bun
 import tsj from "ts-json-schema-generator";
-import type { BrutalPlusList, CommanderList, MutatorInteractionList } from "./data-types";
+import type { BrutalPlusList, CommanderList } from "./data-types";
 
 const files: [`${string}.json`, string][] = [
     ['brutalplus.json', 'BrutalPlusList'],
     ['commandersummaries.json', 'CommanderList'],
     ['mutatorinteractions.json', 'MutatorInteractionList'],
+    ['mutators.json', 'MutatorList'],
+    ['weeklymutations.json', 'WeeklyMutationList'],
 ];
 
 /////////////////////////////////////////////////
@@ -18,6 +20,7 @@ const generator = tsj.createGenerator({
 });
 
 for (const [file, type] of files) {
+    console.log(`Generating schema for ${file}`);
     Bun.write(`source-data/schemas/${file.slice(0, -5)}.schema.json`, JSON.stringify(generator.createSchema(type), null, 4) + '\n');
 }
 

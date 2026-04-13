@@ -1,11 +1,13 @@
 #!/usr/bin/env bun
 import Ajv from 'ajv';
-import type { MutatorInteractionList } from './data-types';
+import type { MutatorInteractionList, MutatorList, WeeklyMutationList } from './data-types';
 
 const files: [`${string}.json`, string][] = [
     ['brutalplus.json', 'BrutalPlusList'],
     ['commandersummaries.json', 'CommanderList'],
     ['mutatorinteractions.json', 'MutatorInteractionList'],
+    ['mutators.json', 'MutatorList'],
+    ['weeklymutations.json', 'WeeklyMutationList'],
 ];
 
 const ajv = new Ajv();
@@ -27,6 +29,24 @@ const mutatorInteractions: MutatorInteractionList = await Bun.file('source-data/
 for (const [i, entry] of mutatorInteractions.entries()) {
     if (entry.id1 >= entry.id2) {
         console.error(`mutatorinteractions.json[${i}]: id1 (${entry.id1}) must be less than id2 (${entry.id2})`);
+        process.exit(1);
+    }
+}
+
+// mutators in order
+const mutators: MutatorList = await Bun.file('source-data/mutators.json').json();
+for (const [i, entry] of mutators.entries()) {
+    if (entry.mutatorid !== i + 1) {
+        console.error(`mutators.json[${i}]: mutatorid (${entry.mutatorid}) must be equal to ${i + 1}`);
+        process.exit(1);
+    }
+}
+
+// weeklymutations in order
+const weeklymutations: WeeklyMutationList = await Bun.file('source-data/weeklymutations.json').json();
+for (const [i, entry] of weeklymutations.entries()) {
+    if (entry.mutationid !== i + 1) {
+        console.error(`weeklymutations.json[${i}]: mutationid (${entry.mutationid}) must be equal to ${i + 1}`);
         process.exit(1);
     }
 }
