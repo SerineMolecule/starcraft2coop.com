@@ -1,0 +1,12 @@
+FROM httpd:2.4
+
+# Enable the 3 modules needed: rewrite (.htaccess), proxy + proxy_fcgi (PHP-FPM)
+# and enable the vhosts include
+RUN sed -i \
+    -e 's/#LoadModule rewrite_module/LoadModule rewrite_module/' \
+    -e 's/#LoadModule proxy_module/LoadModule proxy_module/' \
+    -e 's/#LoadModule proxy_fcgi_module/LoadModule proxy_fcgi_module/' \
+    -e 's|#Include conf/extra/httpd-vhosts.conf|Include conf/extra/httpd-vhosts.conf|' \
+    /usr/local/apache2/conf/httpd.conf
+
+COPY httpd-vhost.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
