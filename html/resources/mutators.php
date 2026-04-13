@@ -171,7 +171,7 @@ require_once "../wrapper-static.php";
     $mutators = [];
     foreach ($mutatorInfo as $mutator) {
         // TODO: when de-database-ifying mutators, use the human-ish id and remove the conversion here
-        $mutators[] = [str_replace(' ', '', strtolower($mutator['mutatorname'])) ,$mutator['mutatorname']];
+        $mutators[] = [str_replace(' ', '', strtolower($mutator['mutatorname'])), $mutator['mutatorname']];
     }
     ?>
     <form action="mutators.php" method="post">
@@ -236,7 +236,7 @@ require_once "../wrapper-static.php";
                 mut1 = mut2;
                 mut2 = temp;
             }
-            var key = mut1 + '-' + mut2;
+            var key = '' + mut1 + '-' + mut2;
             return interactionsPairs[key];
         }
         function getAllInteractions(mut) {
@@ -253,12 +253,10 @@ require_once "../wrapper-static.php";
             if (!getInteractions()) return;
             var $mut1 = $("#mut1 option:selected");
             var mut1 = $mut1.val();
-            var filename1 = $mut1.text().replace(/ /g,'').toLowerCase();
-            if (mut1 === "NONE") filename1 = 'random';
+            var filename1 = mut1 === "NONE" ? 'random' : mut1;
             var $mut2 = $("#mut2 option:selected");
             var mut2 = $mut2.val();
-            var filename2 = $mut2.text().replace(/ /g,'').toLowerCase();
-            if (mut2 === "NONE" || mut2 === "ALL") filename2 = 'random';
+            var filename2 = mut2 === "NONE" || mut2 === "ALL" ? 'random' : mut2
             $("#mut2 option").each(function () {
                 var val = this.value;
                 if (mut1 === "NONE" || val === "NONE" || val === "ALL" || getInteraction(mut1, val)) {
@@ -273,7 +271,7 @@ require_once "../wrapper-static.php";
                 var html = "";
                 var interactions = getAllInteractions(mut1);
                 for (var key in interactions) {
-                    var filename = mutators[key].replace(/ /g,'').toLowerCase();
+                    var filename = key;
                     html += "<p><img src=\"/images/mutators/" + filename + ".png\" height=\"25\" width=\"25\" style=\"vertical-align:middle\"> " + mutators[key] + ": " + interactions[key] + "</p>";
                 }
                 $("#interactions").html(html || "No interaction found.");
