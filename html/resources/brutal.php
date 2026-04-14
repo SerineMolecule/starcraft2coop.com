@@ -264,12 +264,14 @@ require_once "../wrapper-static.php";
         function generateMutation(template){
             const mutatorArray = <?php echo(json_encode($mutators))?>;
             var cost = 0;
+            var costString = '';
             $("#randomMutation").empty();
             $("#mutationBox").show();
             for(var i=template.length-1;i>0;i--){
                 if (template[i]>0){
                     for(var j=0;j<template[i];j++){
-                        cost +=i
+                        cost += i;
+                        costString += i + ' + ';
                         var randomIndex = Math.floor(Math.random() *  mutatorArray[i].length);
                         var selectedMutator = mutatorArray[i][randomIndex];
                         mutatorArray[i]=mutatorArray[i].slice(0, randomIndex).concat(mutatorArray[i].slice(randomIndex + 1, mutatorArray[i].length));
@@ -277,7 +279,7 @@ require_once "../wrapper-static.php";
                     }
                 }
             }
-            $("#cost").text(cost);
+            $("#cost").text(costString.slice(0, -3) + ' = ' + cost);
         }
 
         function weightedRandom(prob) {
