@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 import tsj from "ts-json-schema-generator";
+import { unlink } from "node:fs/promises";
 import type { BrutalPlusList, CommanderList, Mission, MutationCycleList, MutatorWithStats } from "./data-types";
 
 const files: [`${string}.json`, string][] = [
@@ -13,6 +14,15 @@ const files: [`${string}.json`, string][] = [
     ['amonunits.json', 'AmonUnitList'],
     ['playerunits.json', 'PlayerUnitList'],
 ];
+
+/////////////////////////////////////////////////
+
+console.log(`Clearing targets`);
+for (const dir of ["./source-data/schemas", "./html/data"]) {
+    for await (const file of new Bun.Glob("**/*.json").scan(dir)) {
+        await unlink(`${dir}/${file}`);
+    }
+}
 
 /////////////////////////////////////////////////
 
