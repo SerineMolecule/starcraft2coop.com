@@ -427,17 +427,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Architect of War</td>
+                <td><strong>Architect of War</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -452,16 +451,16 @@ require_once "../wrapper-static.php";
                                 <li>Repair Beam may only target structures. Unity Barrier no longer affects units.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Prestige and Mastery applied to base healing rate (5/10), then a compounding of prestige+mastery is applied at 0.05/0.1 per mastery point</li>
+                        <li>Chrono Boost and Chrono Wave can be used on ally defenses as well</li>
+                        <li>Chrono Field doesn't have an effect on ally defenses</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>15</td>
-                <td>
-                    <ul>
-                        <li>Prestige and Mastery applied to base healing rate (5/10), then a compounding of prestige+mastery is applied at 0.05/0.1 per mastery point</li>
-                        <li>Chrono Boost and Chrono Wave can be used on ally defenses as well</li>
-                        <li>Chrono Field doesn't have an effect on ally defenses</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">Due to the fact that the Repair Beam only unlocks at level 7 and the Unity Barrier at level 15, this prestige has no disadvantage until level 7 and should be used until that level. This prestige encourages a static defense-style play for Karax by empowering his structures with various chrono abilities and healing. However, due to the nature of co-op, defensive-style play is not rewarded and this prestige, albeit well-tailored for this type of play, does not help the player get any additional value.</td>
@@ -472,17 +471,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Templar Apparent</td>
+                <td><strong>Templar Apparent</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -498,7 +496,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>1</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige puts Karax in a great position to build units, and this does not only include Carriers, which can now be rushed out quickly with this Prestige. Karax is able to build up a reasonable mass of units quickly, at the cost of static defense. This does mean that on missions where static defense is required (e.g. <a href="/missions/oblivionexpress">Oblivion Express</a> vs. Terran to stop Nukes), he will need to resort to other methods of detecting cloaked attackers at his base.</td>
@@ -509,17 +506,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Solarite Celestial</td>
+                <td><strong>Solarite Celestial</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -536,7 +532,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>10</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige improves Karax's Spear of Adun abilities at the cost of him losing his ramp up capabilities. The Spear of Adun is a key pillar in good Karax play, and players that know how to use the Spear of Adun to its maximum potential can gain a lot of value from this prestige. Due to the highly reduced costs of Spear of Adun abilities, players do not need to rely on the Chrono abilities in order to get a reasonably-sized army out in the early game. Instead, a small handful of units are more than enough, as the Spear of Adun becomes the primary damage dealer in the mission. This prestige emphasizes Spear of Adun play, and players will need to get familiar with this style of play in order to utilize this prestige to its maximum potential.</td>
@@ -1094,8 +1089,7 @@ require_once "../wrapper-static.php";
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>None</td>
-                    <td>1 energy/6 seconds</td>
+                        <td>1 energy/6 seconds</td>
                     <td>26 energy/minute</td>
                     <td>100/100</td>
                     <td>90 seconds</td>

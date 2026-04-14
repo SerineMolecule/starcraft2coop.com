@@ -304,17 +304,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Malevolent Matriarch</td>
+                <td><strong>Malevolent Matriarch</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -328,14 +327,15 @@ require_once "../wrapper-static.php";
                                 <li>Nydus and Omega Networks are unavailable.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Abathur allies will still have their Nydus Worms upgraded to Omega Worms</li>
+                        <li>Malignant Creep does not apply to Stukov's Infested</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>7</td>
-                <td><ul>
-                        <li>Abathur allies will still have their Nydus Worms upgraded to Omega Worms</li>
-                        <li>Malignant Creep does not apply to Stukov's Infested</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige is a prestige that sacrifices mobility for better creep effectiveness. It works by improving the effectiveness of both you and your ally's units by providing them with extra attack speed, healing and map vision. If using this prestige, it is much better to spread Creep using other Creep Tumors than planting new ones. Newly-planted Creep Tumors build much slower than ones that are spread. This prestige comboes well with partners who can spread creep more easily, such as Stukov and Abathur.</td>
@@ -355,17 +355,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Folly of Man</td>
+                <td><strong>Folly of Man</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -379,16 +378,16 @@ require_once "../wrapper-static.php";
                                 <li>Kerrigan's ability damage reduced by 50%.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>You get 1 Fury stack per auto-attack</li>
+                        <li>Fury stacks are limited to 5</li>
+                        <li>Stun + Fury Damage range is 10</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>10</td>
-                <td>
-                    <ul>
-                        <li>You get 1 Fury stack per auto-attack</li>
-                        <li>Fury stacks are limited to 5</li>
-                        <li>Stun + Fury Damage range is 10</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige works well when pushing into enemy bases with Kerrigan. It allows Kerrigan to not only deal damage to enemy units effectively, but also stun enemy units, allowing you to unload units from Nydus worms without getting abilities casted on them. It works better with low numbers of high-HP units, rather than a large numbers of low-HP units. It noticeably slows Kerrigan's ability to focus down buildings.</td>
@@ -438,17 +437,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Desolate Queen</td>
+                <td><strong>Desolate Queen</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -462,16 +460,16 @@ require_once "../wrapper-static.php";
                                 <li>Leaping Strike and Psionic Shift are unavailable</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Crushing Grip can be used to reveal Cloaked/Burrowed units</li>
+                        <li>Both abilities hit air</li>
+                        <li>Both abilities are affected by the Primary Ability Improvement mastery</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>Crushing Grip can be used to reveal Cloaked/Burrowed units</li>
-                        <li>Both abilities hit air</li>
-                        <li>Both abilities are affected by the Primary Ability Improvement mastery</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige replaces Leaping Strike with an equivalent ability that can also hit air. However, it comes at a cost of losing Psionic Shift (a stronger AoE option), and the ability to use Leaping Strike and Psionic Shift for mobility. Crushing Grip has a very small area-of-effect size (1.75 radius), which means she cannot hit as many units as Psionic Shift theoretically can. But the ability to stun units in that area is invaluable. Be careful when using Immobilization Wave with Crushing Grip, because they can overwrite each others stun durations. The double Assimilation Aura drops noticeably improve ramp-up time.</td>

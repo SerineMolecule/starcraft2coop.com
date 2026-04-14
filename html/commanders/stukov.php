@@ -414,17 +414,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Frightful Fleshwelder</td>
+                <td><strong>Frightful Fleshwelder</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -442,7 +441,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>1</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige puts Stukov's mech units well within reach in the early game, allowing him to have map presence by removing tech requirements and providing a cost reduction to his units. It is an extremely powerful prestige and the loss of the Infested Colonist Compound only affects the infested in the infested-specific upgrades (Anaerobic Enhancement and Broodling Gestation). While those upgrades are useful, their value does not match up to that of having significantly cheaper mech units.</td>
@@ -453,17 +451,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Plague Warden</td>
+                <td><strong>Plague Warden</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -476,14 +473,14 @@ require_once "../wrapper-static.php";
                                 <li>Infested Civilians have 30% reduced timed life.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Banshees can unload units to a target location within 10 range, dealing 20 damage.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>Banshees can unload units to a target location within 10 range, dealing 20 damage.</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige makes Banshees double up as Medivacs to shuttle Infested Infantry to various locations on the map. While this prestige allows for some creative strategies to be utilized, the excessive amount of micro required to load and unload units from Banshees is not worth the payback. Additionally, Infested Banshees generally are not as effective as Diamondbacks in dealing with most ground objectives, especially considering their high cost, rendering this prestige fairly useless.</td>
@@ -494,17 +491,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Lord of the Horde</td>
+                <td><strong>Lord of the Horde</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -520,7 +516,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>1</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige converts Bunkers from static defense structures to Infested Trooper generators. Bunkers lose the loaded troopers functionality, but they generate Infested units at a highly accelerated rate. For players that prefer a mass Bunker strategy, this prestige is better than having no prestige talents selected. The prestige works well with the Infested Duration mastery, and on maps where you are required to push in a single direction. Missions like Temple of the Past will provide a little more challenge for players using this Prestige. It can be very effective against <a href="/resources/mutators">mutators</a> such as Boom Bots, Black Death and Kill Bots</td>

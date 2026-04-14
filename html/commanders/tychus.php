@@ -428,17 +428,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Technical Recruiter</td>
+                <td><strong>Technical Recruiter</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -451,15 +450,15 @@ require_once "../wrapper-static.php";
                                 <li>Outlaw cost and time between Outlaw recruitment increased by 50%.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Cooldown reduction for Shredder Grenade works additively with the Mastery</li>
+                        <li>Outlaw spawn timing mastery is applied first, then prestige cooldown increase applied</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>Cooldown reduction for Shredder Grenade works additively with the Mastery</li>
-                        <li>Outlaw spawn timing mastery is applied first, then prestige cooldown increase applied</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige allows outlaws to spam their abilities more often, and compounds very well with the Tychus Shredder Grenade cooldown. Players that prefer to actively micro their outlaws and are more active with their outlaw ability usage may get a lot of value out of this prestige.</td>
@@ -470,17 +469,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Lone Wolf</td>
+                <td><strong>Lone Wolf</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -494,18 +492,18 @@ require_once "../wrapper-static.php";
                                 <li>Gear costs 25% more.</li>
                             </ul>
                         </li>
-                    </ul>
-                </td>
-                <td>1</td>
-                <td>
-                    <ul>
-                        <li>Sirius Turrets get the Lone Wolf buff</li>
+                        <li>Notes:
+                            <ul>
+                                <li>Sirius Turrets get the Lone Wolf buff</li>
                         <li>Vega Dominated units get the Lone Wolf buff</li>
                         <li>Buffs to Turrets and Dominated units apply if the the respective Hero unit has the Lone Wolf buff</li>
                         <li>Odin does not remove Lone Wolf buff from other outlaws if within range</li>
                         <li>Damage reduction is applied before Armor</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
+                <td>1</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">Lone Wolf is an extremely powerful prestige, that when used well, can allow the player to push on multiple sides of the map simultaneously. This obviously does require a lot of micromanagement and individual unit control from the player's part, but can be extremely rewarding when pulled off.</td>
@@ -516,17 +514,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Dutiful Dogwalker</td>
+                <td><strong>Dutiful Dogwalker</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -539,14 +536,14 @@ require_once "../wrapper-static.php";
                                 <li>Barrage and Big Red Button are unavailable.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Odin Cooldown reduction Mastery applied first, then cooldown reduced by an additional 40%</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>3</td>
-                <td>
-                    <ul>
-                        <li>Odin Cooldown reduction Mastery applied first, then cooldown reduced by an additional 40%</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">The loss of the Barrage is insignificant in this prestige, but the loss of the Big Red Button removes the Odin's ability for a large area burst damage. However, this is compensated by the increased duration and the cooldown reduction, which also compounds well with the Odin Cooldown mastery.</td>

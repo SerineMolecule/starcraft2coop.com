@@ -439,17 +439,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Artificer of Souls</td>
+                <td><strong>Artificer of Souls</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -462,17 +461,17 @@ require_once "../wrapper-static.php";
                                 <li>Deadly Charge and Destruction Wave damage reduced by 50%.</li>
                             </ul>
                         </li>
-                    </ul>
-                </td>
-                <td>1</td>
-                <td>
-                    <ul>
-                        <li>Stacks get applied within 15 range.</li>
+                        <li>Notes:
+                            <ul>
+                                <li>Stacks get applied within 15 range.</li>
                         <li>Each stack adds 10% damage and attack speed</li>
                         <li>Slayers and War Prisms get two stacks per Supplicant</li>
                         <li>Maximum stack count is 10.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
+                <td>1</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige adds further utility to Supplicant deaths by allowing them to buff Alarak's mech units. This does mean that Alarak cannot 1-shot Zergling waves by using Destruction Wave. However, adding Ascendants to deal with attack waves is very beneficial anyway, as Supplicants can be sacrificed for Power Overwhelming stacks as well as buffing Mech units.</td>
@@ -483,17 +482,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Tyrant Ascendant</td>
+                <td><strong>Tyrant Ascendant</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -509,7 +507,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>5</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige sacrifices Alarak's mobility from his Death Fleet to add extra power to Alarak pushes by making his Empower Me more frequent. Death Fleet damage is not considered due to its relatively low damage compared to Alarak's units. For players that are aware of mission timings, they will very rarely get caught unawares, and combined with the No Cooldown Alarak technique, this prestige can be very valuable.</td>
@@ -520,17 +517,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Shadow of Death</td>
+                <td><strong>Shadow of Death</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -545,17 +541,17 @@ require_once "../wrapper-static.php";
                                 <li>Mass Teleport now has a 60 second cooldown and no longer teleports allied units.</li>
                             </ul>
                         </li>
-                    </ul>
-                </td>
-                <td>10</td>
-                <td>
-                    <ul>
-                        <li>Mothership costs 400/400.</li>
+                        <li>Notes:
+                            <ul>
+                                <li>Mothership costs 400/400.</li>
                         <li>Each Destroyer costs 125/75.</li>
                         <li>Mothership and Destroyers are unaffected by Unit Attack Speed mastery.</li>
                         <li>Destroyer bounce damage is unaffected by attack upgrades.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
+                <td>10</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige provides an early-game power-spike in the Mothership, which is also a great mobility tool throughout the mission. It also allows you to summon a large fleet of Destroyers, which are very susceptible to splash damage, like Parasitic Bombs. Note that this prestige is quite strong even if you don't summon the fleet of Destroyers; most of its power is in the Mothership.</td>

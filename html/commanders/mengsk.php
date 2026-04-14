@@ -435,17 +435,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Toxic Tyrant</td>
+                <td><strong>Toxic Tyrant</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -459,16 +458,16 @@ require_once "../wrapper-static.php";
                                 <li>Nuclear Annihilation is unavailable.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Mandate Generation will only work after getting the Unquestioned Authority Level 5 Unlock</li>
+                        <li>Amplified Airwaves affects Troopers inside Earthsplitters</li>
+                        <li>Troopers inside Earthsplitters do not need a Witness to generate extra Mandate.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>11</td>
-                <td>
-                    <ul>
-                        <li>Mandate Generation will only work after getting the Unquestioned Authority Level 5 Unlock</li>
-                        <li>Amplified Airwaves affects Troopers inside Earthsplitters</li>
-                        <li>Troopers inside Earthsplitters do not need a Witness to generate extra Mandate.</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige works best when a player decides to use Earthsplitters as part of their strategy. While Nuclear Annihilation is unavailable, Contaminated Strike can be used on top of enemy bases, just before Mengsk's army pushes in. Fear and the increased damage received can be used to launch very effective assaults on enemy bases. This prestige also further simplifies dealing with attack waves. Not only does Fear break the AI move command of the attack wave, but the extra damage bonus dealt makes it easier to kill off the units while under the effect.</td>
@@ -479,17 +478,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Principal Proletariat</td>
+                <td><strong>Principal Proletariat</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -502,14 +500,14 @@ require_once "../wrapper-static.php";
                                 <li>Royal Guard mineral costs increased by 100% and supply cost increased by 50%.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Royal Guard Cost stacks multiplicatively with the Royal Guard Cost Reduction mastery.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>Royal Guard Cost stacks multiplicatively with the Royal Guard Cost Reduction mastery.</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige allows a player to focus on a mass Royal Guard build by allowing them to quickly get Royal Guards out at the start of the game, thus helping their early game. This prestige works well with the Royal Guard Cost reduction mastery and really well with the Royal Guard Imperial Mandate Support mastery, resulting in one of the highest Mandate generation rates possible, due to increased Royal Guard Supply costs.</td>
@@ -520,17 +518,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Merchant of Death</td>
+                <td><strong>Merchant of Death</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -545,19 +542,19 @@ require_once "../wrapper-static.php";
                                 <li>Imperial Intercessors are unavailable.</li>
                             </ul>
                         </li>
-                    </ul>
-                </td>
-                <td>2</td>
-                <td>
-                    <ul>
-                        <li>The weapon deals 150 damage (+100 vs. Structures) within a range of 1.5</li>
+                        <li>Notes:
+                            <ul>
+                                <li>The weapon deals 150 damage (+100 vs. Structures) within a range of 1.5</li>
                         <li>Weapon will search for a target within 12 range</li>
                         <li>Vision required for weapon to find target</li>
                         <li>Weapon will denotate after 2 seconds if no target is found</li>
                         <li>Weapon can target air units as well</li>
                         <li>Troopers can be converted back to Laborers to repair each other</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
+                <td>2</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige allows Mengsk to quickly ramp up his earlygame DPS, by providing a large cost reduction to equipping improved weapons to his troopers. Due to the lack of Intercessors, any damage taken by Mengsk's Aegis Guard and Emperor's Shadows is permanent, while Troopers need to be converted back to Laborers to repair themselves. Thus, Bunker play is encouraged to reduce damage taken by the army. Players will also need to be careful while pushing into bases and attack waves. It is recommended to use calldowns or Earthsplitters to first soften up enemy forces before cleaning up with the army to reduce damage taken. Additionally, a few Troopers can be sacrificed into an attack wave to weaken it. However, pay attention to the army footprint. Waves that spread out over a large area result in much less efficient trades than those that are clumped up. Troops should also not be suicided into enemy bases, as explosions from weapons will probably only kill a single unit at a time.</td>

@@ -390,17 +390,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Backwater Marshal</td>
+                <td><strong>Backwater Marshal</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -413,15 +412,15 @@ require_once "../wrapper-static.php";
                                 <li>MULEs are unavailable.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Stacks with Combat Shield</li>
+                        <li>Stacks with Armor Upgrades</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>Stacks with Combat Shield</li>
-                        <li>Stacks with Armor Upgrades</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige increases the ruggedness of Raynor's army. If you have good micro, you might find this prestige to be particularly valuable. However, its disadvantage is a big one. You lose the ability to spawn-camp effectively using Vultures due to the lack of potentially high mineral income from MULEs. Remember that you will still need Orbital Command Centers for detection. </td>
@@ -432,17 +431,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Rough Rider</td>
+                <td><strong>Rough Rider</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -459,7 +457,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>11</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige is essentially a Stim-for-Mechs prestige. It can be particularly useful when playing under constrained resources, while also playing a Bio+Mech build. You may even combine this with the Mech Attack Speed mastery to get even higher DPS output out of your Mech units.</td>
@@ -470,17 +467,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Rebel Raider</td>
+                <td><strong>Rebel Raider</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -495,14 +491,14 @@ require_once "../wrapper-static.php";
                                 <li>Combat units cost 50% more minerals.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Cooldown Reduction mastery is applied first, then prestige cooldown increase applied</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>6</td>
-                <td>
-                    <ul>
-                        <li>Cooldown Reduction mastery is applied first, then prestige cooldown increase applied</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige is particularly useful if you prefer to use air units and rushing Battlecruisers. The lack of tech requirements combined with the gas cost reduction makes Battlecruiser rushing a viable strategy. you may even combine this with the Hyperion cooldown mastery to be able to spam Hyperions much more frequently.</td>

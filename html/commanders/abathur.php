@@ -367,17 +367,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Essence Hoarder</td>
+                <td><strong>Essence Hoarder</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -390,15 +389,15 @@ require_once "../wrapper-static.php";
                                 <li>Ultimate Evolutions are unavailable.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Stacks additively with the Biomass Recovery Level 7 Unlock Talent, providing 100% chance to drop Biomass.</li>
+                        <li>Biomass bonuses also extend linearly through the extra 25 Biomass collected.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>7</td>
-                <td>
-                    <ul>
-                        <li>Stacks additively with the Biomass Recovery Level 7 Unlock Talent, providing 100% chance to drop Biomass.</li>
-                        <li>Biomass bonuses also extend linearly through the extra 25 Biomass collected.</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige is very useful while leveling sub-mastery Abathur in the early levels as Ultimate Evolutions are not very strong without their Symbiotes which unlock at level 10. However, at Mastery level, this prestige remove Abathur's extremely powerful early-game and mobility, and should be avoided. This prestige works well against <a href="/resources/mutators">mutators</a> like Black Death, which heavily punishes Ultimate Evolutions.</td>
@@ -409,17 +408,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Tunneling Horror</td>
+                <td><strong>Tunneling Horror</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -433,14 +431,14 @@ require_once "../wrapper-static.php";
                                 <li>Combat units cost 25% more vespene gas.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Locusts spawned by the Level 13 unlock also get the prestige buffs</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>9</td>
-                <td>
-                    <ul>
-                        <li>Locusts spawned by the Level 13 unlock also get the prestige buffs</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige allows Abathur to move his entire Roach/Ravager army through the Deep Tunnel ability as well as providing buffs to his Swarm Host's Locusts. In general, it isn't very useful, as attack waves can be intercepted by Brutalisks and Toxic Nests. However, this prestige does open up some creative methods that will allow the Abathur player to snipe objectives if they choose to go for a pure ground army, with minimal cost increase to them.</td>
@@ -451,17 +449,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>The Limitless</td>
+                <td><strong>The Limitless</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -475,14 +472,14 @@ require_once "../wrapper-static.php";
                                 <li>Biomass is less powerful.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Benefits gained per Biomass pickup is halved. At 200 Biomass, bonuses match Biomass bonuses of other prestiges at 100 Biomass.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>2</td>
-                <td>
-                    <ul>
-                        <li>Benefits gained per Biomass pickup is halved. At 200 Biomass, bonuses match Biomass bonuses of other prestiges at 100 Biomass.</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">At first glance, this prestige might look great, but it actually slows down Abathur's powerful earlygame, which is one of his greatest strengths. Abathur's power lies in his ability to clear missions as quickly as possible. This prestige will work well on missions with a fixed time, assuming the Abathur player is active with their Biomass collection, but it should not be the go-to pick for Abathur.</td>

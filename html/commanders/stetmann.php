@@ -400,17 +400,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Signal Savant</td>
+                <td><strong>Signal Savant</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -427,7 +426,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>1</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">The disadvantage for this Prestige only takes effect at level 5, which means below Stetmann level 5, this prestige provides purely a positive benefit to the player. However, the loss of Super Gary can be a huge disadvantage, as Super Gary is responsible for Stetmann's overall strength as a commander. This prestige works well against <a href="/resources/mutators">mutators</a> like Propagators, as Stetellites can no longer be converted by Propagators. Additionally, this prestige also favours mass Infestor-style play, as that style of play does not rely much on Super Gary as a hero unit.</td>
@@ -438,17 +436,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Best Buddy</td>
+                <td><strong>Best Buddy</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -461,15 +458,15 @@ require_once "../wrapper-static.php";
                                 <li>Gary's movement speed is reduced by 90% outside of Stetzones.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Applies to Super Gary</li>
+                        <li>Applies to E-Gorbs used by both units</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>5</td>
-                <td>
-                    <ul>
-                        <li>Applies to Super Gary</li>
-                        <li>Applies to E-Gorbs used by both units</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige doubles up on the Hero unit and provides it with a large set of buffs that makes the unit even more powerful. When played well, Super Gary can be used to severely weaken enemy bases and wipe attack waves. The disadvantage may appear to be a big one, and for a unit like Gary, it is true. However, Super Gary has access to the Gary Zone ability which allows him to not only move outside Stetzones at regular speed, but also place Stetellites. When used efficiently, the player should have all the mobility around the map they require, without being hindered by this prestige's disadvantage.</td>
@@ -480,17 +477,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Oil Baron</td>
+                <td><strong>Oil Baron</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -504,15 +500,15 @@ require_once "../wrapper-static.php";
                                 <li>Mecha Infestors are unavailable.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>The Best Oil buff gives +10% Attack Speed and +1HP/second regeneration for 30 seconds per stack.</li>
+                        <li>A maximum of 20 Best Oil stacks can be collected per unit.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>The Best Oil buff gives +10% Attack Speed and +1HP/second regeneration for 30 seconds per stack.</li>
-                        <li>A maximum of 20 Best Oil stacks can be collected per unit.</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">While this prestige might appear to be useful, The Best Oil is only useful when provided in several stacks, such as those given to Super Gary. Since these stacks are only given out on a kill, it is highly unlikely that a unit can accumulate enough stacks such that they would get a signficant advantage from this prestige. Combined with the fact that these stacks are temporary and wear off after 30 seconds, this prestige is not very useful for most units. However, units that deal splash damage, or have cleave attacks (such as Lurkers and Ultralisks) can benefit from this prestige, especially on missions like Dead of Night, where there is a constant stream of enemy units to keep the stacks refreshed.</td>

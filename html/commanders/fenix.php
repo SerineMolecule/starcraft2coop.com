@@ -481,17 +481,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Akhundelar</td>
+                <td><strong>Akhundelar</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -507,16 +506,16 @@ require_once "../wrapper-static.php";
                                 <li>Each suit can only be sustained for 20 seconds at a time.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Suit Cooldown: 2 minutes</li>
+                        <li>Suit Rebuild Time: 5 minutes</li>
+                        <li>Contrary to the description, the Arbiter suit doesn't actually have a cooldown</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>Suit Cooldown: 2 minutes</li>
-                        <li>Suit Rebuild Time: 5 minutes</li>
-                        <li>Contrary to the description, the Arbiter suit doesn't actually have a cooldown</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">Akhundelar allows Fenix to clear entire enemy bases by using carefully-placed abilities. The prestige is extremely powerful, but knowledge of enemy bases and units within them is important to ensure the player selects the correct suit for handling the base. Additionally, losing a suit, especially the Solarite Dragoon can be extremely punishing. The prestige also taxes player's macro abilities because (assuming optimal play) players will be micro'ing suits 50% of the time.</td>
@@ -527,17 +526,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Network Administrator</td>
+                <td><strong>Network Administrator</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -551,14 +549,14 @@ require_once "../wrapper-static.php";
                                 <li>All non-heroic combat unit damage reduced by 50% and vitals reduced by 50%.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Kaldalis benefits the most from this prestige due to his cleave attack</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>15</td>
-                <td>
-                    <ul>
-                        <li>Kaldalis benefits the most from this prestige due to his cleave attack</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige requires a unique playstyle for Fenix. The idea is to have Fenix and his Champion A.I's alongside him on the front line, pushing into enemy bases and dealing with attack waves. Behind them, but away from the heat of the battle, the shells provide quick reinforcements for A.I's once they die on the frontline. Pushing in with the shell army will cause the player to take heavy losses, so adequate management of control groups is a must.</td>
@@ -578,17 +576,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Unconquered Spirit</td>
+                <td><strong>Unconquered Spirit</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -602,14 +599,14 @@ require_once "../wrapper-static.php";
                                 <li>Champion A.I.s do not gain additional life or shields and have reduced attack range (-2 range).</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Champion A.I vitality mastery still works, although it should not be used with this prestige</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>11</td>
-                <td>
-                    <ul>
-                        <li>Champion A.I vitality mastery still works, although it should not be used with this prestige</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige encourages players to take advantage of Avenging Protocol by reducing the Champion A.I. vitality and attack ranges. This forces them to the frontline and makes them easier to kill by Amon's forces. While in theory, this strategy may work, one of the issues that players will face with this prestige is the issue of body-blocking. As A.I Champions get transferred to a new shell, they might find themselves at the back of the army, meaning that Avenging Protocol may wear off by the time they push through to the front to fight. This prestige works well with the Champion A.I attack speed mastery.</td>

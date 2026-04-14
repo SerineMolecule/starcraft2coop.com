@@ -395,17 +395,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Soldier of Fortune</td>
+                <td><strong>Soldier of Fortune</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -419,14 +418,14 @@ require_once "../wrapper-static.php";
                                 <li>Unit charges accrue 50% slower for the second and third production structures built.</li>
                             </ul>
                         </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Bonus applies to the first completed structure.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </td>
                 <td>1</td>
-                <td>
-                    <ul>
-                        <li>Bonus applies to the first completed structure.</li>
-                    </ul>
-                </td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige allows Nova to accrue charges faster on the production structure of her choice, making this a very versatile prestige. The choice of structure will be heavily dependant on the enemy composition, so early scouting will be important.</td>
@@ -437,17 +436,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Tactical Dispatcher</td>
+                <td><strong>Tactical Dispatcher</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -463,7 +461,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>5</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">While map mobility is important, the increase in cooldown of Griffin Airstrike is very detrimental to Nova, as the airstrike is Nova's primary method of weakening enemy bases and attack waves before engaging with her army to minimize losses. This prestige encourages players to engage waves with their armies directly, which can increase losses taken by Nova.</td>
@@ -474,17 +471,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Infiltration Specialist</td>
+                <td><strong>Infiltration Specialist</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -501,7 +497,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>9</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">The loss of the Combat Suit reduces Nova's versatility. The impact of this depends on several factors, like the enemy composition faced, since Nova will usually use the Combat Suit to clear weaker attack waves that are not worth airstriking. However, it does allow Nova to easily clear large swathes of enemy bases with her Nukes and Sabotage Drones. Combined with the Nuke cooldown reduction mastery, this prestige is very powerful.</td>

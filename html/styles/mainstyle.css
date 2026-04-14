@@ -11,6 +11,12 @@ html, body {
     margin: 0;
     padding: 0;
 }
+strong {
+    font-family: Helvetica, Arial, sans-serif;
+}
+th {
+    color: #aaa;
+}
 
 :where(table ul) {
     padding: 0 0 0 1.2em;

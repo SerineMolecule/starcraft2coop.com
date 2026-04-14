@@ -403,17 +403,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Chaotic Power Couple</td>
+                <td><strong>Chaotic Power Couple</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -430,7 +429,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>1</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">The increase in the arming speed of the Mag-mines makes this prestige very useful when trying to push into enemy bases, as enemy units usually do not have time to deal with the mines before they become invulnerable. Additionally since Horner's units aren't meant to be massed, but rather provide a strong backbone of support for Han's units, the increase in cost (albeit significant) is worth the benefits of this prestige.</td>
@@ -448,17 +446,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>2</td>
-                <td>Wing Commanders</td>
+                <td><strong>Wing Commanders</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -474,7 +471,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>1</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige provides players with the opportunity to mass Horner's units. However, the capping of Galleons at 2 is a significant detriment to the player's earlygame performance, due to the difficulty in being able to rebuild a lost Han army.</td>
@@ -485,17 +481,16 @@ require_once "../wrapper-static.php";
     <table class="prestigeTable">
         <thead>
             <tr>
-                <th>Level</th>
+                <th>Prestige</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Effective Level</th>
-                <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>3</td>
-                <td>Galactic Gunrunners</td>
+                <td><strong>Galactic Gunrunners</strong></td>
                 <td>
                     <ul>
                         <li>Advantages:
@@ -511,7 +506,6 @@ require_once "../wrapper-static.php";
                     </ul>
                 </td>
                 <td>13</td>
-                <td>None</td>
             </tr>
             <tr>
                 <td class="forceleft" colspan="5">This prestige might appear to be extremely powerful, but the increase in the cost of the platforms signficantly slows down a player's ability to build them. Considering that the player will also want to push (since Strike Fighters aren't effective against most mission objectives), and that the platforms can only deal with ground targets, the prestige is not very effective in providing the player with a useful benefit.</td>

@@ -105,22 +105,37 @@
 .masterySummary{
     margin-bottom:75px;
 }
+.prestigeTable td {
+    vertical-align: top;
+}
+.prestigeTable ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.prestigeTable li {
+    margin-bottom: 8px;
+}
+.prestigeTable li ul {
+    list-style: disc;
+    padding-left: 1.4em;
+}
+.prestigeTable li li {
+    margin-bottom: 0;
+}
 .prestigeTable th:nth-child(1),.prestigeTable td:nth-child(1){
     width:5%;
     text-align:center;
 }
 .prestigeTable th:nth-child(2),.prestigeTable td:nth-child(2){
-    width:15%;
+    width:18%;
 }
 .prestigeTable th:nth-child(3),.prestigeTable td:nth-child(3){
-    width:45%;
+    width:62%;
 }
 .prestigeTable th:nth-child(4),.prestigeTable td:nth-child(4){
-    width:10%;
+    width:15%;
     text-align:center;
-}
-.prestigeTable th:nth-child(5),.prestigeTable td:nth-child(5){
-    width:25%;
 }
 .prestigeTable td.forceleft{
     text-align:left;
@@ -141,7 +156,7 @@
     margin-left:25px;
 }
 .abilityTable td:nth-child(5){
-    text-align:center;    
+    text-align:center;
 }
 .unitUpgrades th > img{
     display:inline;
