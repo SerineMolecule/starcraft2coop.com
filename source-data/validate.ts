@@ -30,7 +30,7 @@ for (const [file, type] of files) {
 const mutatorInteractions: MutatorInteractionList = await Bun.file('source-data/mutatorinteractions.json').json();
 for (const [i, entry] of mutatorInteractions.entries()) {
     if (entry.id1 >= entry.id2) {
-        console.error(`mutatorinteractions.json[${i}]: id1 (${entry.id1}) must be less than id2 (${entry.id2})`);
+        console.error(`mutatorinteractions.json[${i}]: id1 (${entry.id1}) must be strictly less than id2 (${entry.id2})`);
         process.exit(1);
     }
 }

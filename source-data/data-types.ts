@@ -9,6 +9,11 @@ export type PositiveInteger = number;
  */
 export type NonNegativeInteger = number;
 export type CommanderPowerRating = 1 | 2 | 3 | 4 | 5;
+/**
+ * @pattern ^[^ A-Z]+$
+ */
+export type LowercaseNoSpaces = string;
+export type MutatorId = LowercaseNoSpaces;
 
 export interface BrutalPlus {
     /** as in, the X in Brutal+X */
@@ -64,10 +69,10 @@ export interface Commander {
 export type CommanderList = Commander[];
 
 export interface MutatorInteraction {
-    /** ID of the first mutator in the pair */
-    id1: PositiveInteger;
-    /** ID of the second mutator in the pair (id2 > id1) */
-    id2: PositiveInteger;
+    /** ID of the first mutator in the pair, lowercased & without spaces */
+    id1: MutatorId;
+    /** ID of the second mutator in the pair, lowercased & without spaces, id2 > id1 */
+    id2: MutatorId;
     /** Description of how the two mutators interact */
     interaction: string;
 }

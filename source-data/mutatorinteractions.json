@@ -1,2682 +1,2682 @@
 [
   {
-    "id1": 1,
-    "id2": 7,
+    "id1": "afraidofthedark",
+    "id2": "blizzard",
     "interaction": "Blizzards appear on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 18,
+    "id1": "afraidofthedark",
+    "id2": "giftexchange",
     "interaction": "Gifts do not appear on the minimap. Kill Bots gifted to Amon do not appear on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 24,
+    "id1": "afraidofthedark",
+    "id2": "killbots",
     "interaction": "Kill Bots do not appear on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 25,
+    "id1": "afraidofthedark",
+    "id2": "laserdrill",
     "interaction": "The Laser Drill will be marked on the minimap when it attacks you."
   },
   {
-    "id1": 1,
-    "id2": 30,
+    "id1": "afraidofthedark",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines appear on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 34,
+    "id1": "afraidofthedark",
+    "id2": "missilecommand",
     "interaction": "Missiles do not appear on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 43,
+    "id1": "afraidofthedark",
+    "id2": "propagators",
     "interaction": "Propagators do not appear on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 44,
+    "id1": "afraidofthedark",
+    "id2": "purifierbeam",
     "interaction": "Purifier Beam appears as a red dot on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 56,
+    "id1": "afraidofthedark",
+    "id2": "turkeyshoot",
     "interaction": "The Turking does not appear on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 60,
+    "id1": "afraidofthedark",
+    "id2": "voidrifts",
     "interaction": "Void Rifts are marked on the minimap."
   },
   {
-    "id1": 1,
-    "id2": 63,
+    "id1": "afraidofthedark",
+    "id2": "boombots",
     "interaction": "Boom Bots do not appear on the minimap."
   },
   {
-    "id1": 2,
-    "id2": 3,
+    "id1": "aggressivedeployment",
+    "id2": "alienincubation",
     "interaction": "Units from Aggressive Deployment Drops spawn Broodlings when they die."
   },
   {
-    "id1": 2,
-    "id2": 4,
+    "id1": "aggressivedeployment",
+    "id2": "avenger",
     "interaction": "Units from Aggressive Deployment Drops give out and receive Avenger stacks."
   },
   {
-    "id1": 2,
-    "id2": 5,
+    "id1": "aggressivedeployment",
+    "id2": "barrier",
     "interaction": "Units from Aggressive Deployment Drops get the Barrier buff."
   },
   {
-    "id1": 2,
-    "id2": 6,
+    "id1": "aggressivedeployment",
+    "id2": "blackdeath",
     "interaction": "Units from Aggressive Deployment Drops can carry Plague."
   },
   {
-    "id1": 2,
-    "id2": 8,
+    "id1": "aggressivedeployment",
+    "id2": "chaosstudios",
     "interaction": "A single 1/1 Aggressive Deployment drop will spawn once the mutator rolls out."
   },
   {
-    "id1": 2,
-    "id2": 9,
+    "id1": "aggressivedeployment",
+    "id2": "concussiveattacks",
     "interaction": "Units from Aggressive Deployment Drops apply the Concussive Attacks debuff."
   },
   {
-    "id1": 2,
-    "id2": 14,
+    "id1": "aggressivedeployment",
+    "id2": "evasivemaneuvers",
     "interaction": "Units from Aggressive Deployment Drops get the Evasive Maneuvers buff."
   },
   {
-    "id1": 2,
-    "id2": 15,
+    "id1": "aggressivedeployment",
+    "id2": "fatalattraction",
     "interaction": "Units from Aggressive Deployment Drops trigger Fatal Attraction when they die."
   },
   {
-    "id1": 2,
-    "id2": 16,
+    "id1": "aggressivedeployment",
+    "id2": "fear",
     "interaction": "Units from Aggressive Deployment Drops can apply the Fear effect."
   },
   {
-    "id1": 2,
-    "id2": 17,
+    "id1": "aggressivedeployment",
+    "id2": "fireworks",
     "interaction": "Units from Aggressive Deployment Drops do not launch Fireworks when they die."
   },
   {
-    "id1": 2,
-    "id2": 18,
+    "id1": "aggressivedeployment",
+    "id2": "giftexchange",
     "interaction": "Units from Aggressive Deployment Drops can capture gifts."
   },
   {
-    "id1": 2,
-    "id2": 20,
+    "id1": "aggressivedeployment",
+    "id2": "hardenedwill",
     "interaction": "Units from Aggressive Deployment Drops cause Hardened Will to activate."
   },
   {
-    "id1": 2,
-    "id2": 21,
+    "id1": "aggressivedeployment",
+    "id2": "heroesfromthestorm",
     "interaction": "Aggressive Deployment drops do not contain Amon Heroes."
   },
   {
-    "id1": 2,
-    "id2": 22,
+    "id1": "aggressivedeployment",
+    "id2": "inspiration",
     "interaction": "Units from Aggressive Deployment Drops can get the Inspiration buff."
   },
   {
-    "id1": 2,
-    "id2": 23,
+    "id1": "aggressivedeployment",
+    "id2": "justdie",
     "interaction": "Units from Aggressive Deployment Drops respawn when they die."
   },
   {
-    "id1": 2,
-    "id2": 27,
+    "id1": "aggressivedeployment",
+    "id2": "lifeleech",
     "interaction": "Units from Aggressive Deployment Drops have the Life Leech buff."
   },
   {
-    "id1": 2,
-    "id2": 28,
+    "id1": "aggressivedeployment",
+    "id2": "longrange",
     "interaction": "Units from Aggressive Deployment Drops get the Long Range buff."
   },
   {
-    "id1": 2,
-    "id2": 37,
+    "id1": "aggressivedeployment",
+    "id2": "naughtylist",
     "interaction": "Aggressive Deployment Drop kills increase the Naughty List count."
   },
   {
-    "id1": 2,
-    "id2": 41,
+    "id1": "aggressivedeployment",
+    "id2": "polarity",
     "interaction": "Units from Aggressive Deployment Drops all have Polarity applied to them."
   },
   {
-    "id1": 2,
-    "id2": 42,
+    "id1": "aggressivedeployment",
+    "id2": "poweroverwhelming",
     "interaction": "Units from Aggressive Deployment Drops move can cast skills."
   },
   {
-    "id1": 2,
-    "id2": 46,
+    "id1": "aggressivedeployment",
+    "id2": "scorchedearth",
     "interaction": "Units from Aggressive Deployment Drops set the ground on fire when they die."
   },
   {
-    "id1": 2,
-    "id2": 47,
+    "id1": "aggressivedeployment",
+    "id2": "selfdestruction",
     "interaction": "Units from Aggressive Deployment Drops create an explosion when they die."
   },
   {
-    "id1": 2,
-    "id2": 51,
+    "id1": "aggressivedeployment",
+    "id2": "speedfreaks",
     "interaction": "Units from Aggressive Deployment Drops move faster with Speed Freaks."
   },
   {
-    "id1": 2,
-    "id2": 54,
+    "id1": "aggressivedeployment",
+    "id2": "transmutation",
     "interaction": "Units from Aggressive Deployment Drops can Transmute."
   },
   {
-    "id1": 2,
-    "id2": 59,
+    "id1": "aggressivedeployment",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can resurrect units from Aggressive Deployment Drops."
   },
   {
-    "id1": 2,
-    "id2": 61,
+    "id1": "aggressivedeployment",
+    "id2": "walkinginfested",
     "interaction": "Units from Aggressive Deployment Drops spawn Infested when they die."
   },
   {
-    "id1": 2,
-    "id2": 62,
+    "id1": "aggressivedeployment",
+    "id2": "wemoveunseen",
     "interaction": "Units from Aggressive Deployment Drops are cloaked."
   },
   {
-    "id1": 3,
-    "id2": 4,
+    "id1": "alienincubation",
+    "id2": "avenger",
     "interaction": "Broodlings can give out/receive Avenger stacks."
   },
   {
-    "id1": 3,
-    "id2": 5,
+    "id1": "alienincubation",
+    "id2": "barrier",
     "interaction": "Broodlings get the Barrier buff."
   },
   {
-    "id1": 3,
-    "id2": 6,
+    "id1": "alienincubation",
+    "id2": "blackdeath",
     "interaction": "Broodlings can carry Plague."
   },
   {
-    "id1": 3,
-    "id2": 14,
+    "id1": "alienincubation",
+    "id2": "evasivemaneuvers",
     "interaction": "Broodlings get the Evasive Maneuvers buff."
   },
   {
-    "id1": 3,
-    "id2": 15,
+    "id1": "alienincubation",
+    "id2": "fatalattraction",
     "interaction": "Broodlings trigger Fatal Attraction when they die."
   },
   {
-    "id1": 3,
-    "id2": 16,
+    "id1": "alienincubation",
+    "id2": "fear",
     "interaction": "Broodlings can apply the Fear effect."
   },
   {
-    "id1": 3,
-    "id2": 17,
+    "id1": "alienincubation",
+    "id2": "fireworks",
     "interaction": "Broodlings launch Fireworks when they die."
   },
   {
-    "id1": 3,
-    "id2": 18,
+    "id1": "alienincubation",
+    "id2": "giftexchange",
     "interaction": "Broodlings can capture gifts. Units spawned from Gift Exchange spawn Broodlings when they die."
   },
   {
-    "id1": 3,
-    "id2": 20,
+    "id1": "alienincubation",
+    "id2": "hardenedwill",
     "interaction": "Broodlings cause Hardened Will to activate."
   },
   {
-    "id1": 3,
-    "id2": 21,
+    "id1": "alienincubation",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes spawn Broodlings when they die."
   },
   {
-    "id1": 3,
-    "id2": 22,
+    "id1": "alienincubation",
+    "id2": "inspiration",
     "interaction": "Broodlings can get the Inspiration buff."
   },
   {
-    "id1": 3,
-    "id2": 23,
+    "id1": "alienincubation",
+    "id2": "justdie",
     "interaction": "Broodlings respawn when they die."
   },
   {
-    "id1": 3,
-    "id2": 24,
+    "id1": "alienincubation",
+    "id2": "killbots",
     "interaction": "Kill Bots spawn Broodlings when they die."
   },
   {
-    "id1": 3,
-    "id2": 27,
+    "id1": "alienincubation",
+    "id2": "lifeleech",
     "interaction": "Broodlings have Life Leech."
   },
   {
-    "id1": 3,
-    "id2": 30,
+    "id1": "alienincubation",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines do not spawn Broodlings when they detonate."
   },
   {
-    "id1": 3,
-    "id2": 33,
+    "id1": "alienincubation",
+    "id2": "minesweeper",
     "interaction": "Mines spawn Broodlings when they are destroyed."
   },
   {
-    "id1": 3,
-    "id2": 34,
+    "id1": "alienincubation",
+    "id2": "missilecommand",
     "interaction": "Missiles do not spawn Broodlings when destroyed."
   },
   {
-    "id1": 3,
-    "id2": 37,
+    "id1": "alienincubation",
+    "id2": "naughtylist",
     "interaction": "Broodling kills increase the Naughty List count."
   },
   {
-    "id1": 3,
-    "id2": 39,
+    "id1": "alienincubation",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations do not spawn Broodlings units when killed."
   },
   {
-    "id1": 3,
-    "id2": 41,
+    "id1": "alienincubation",
+    "id2": "polarity",
     "interaction": "Broodlings all have Polarity applied to them."
   },
   {
-    "id1": 3,
-    "id2": 42,
+    "id1": "alienincubation",
+    "id2": "poweroverwhelming",
     "interaction": "Broodlings can cast abilities."
   },
   {
-    "id1": 3,
-    "id2": 43,
+    "id1": "alienincubation",
+    "id2": "propagators",
     "interaction": "Propagators spawn Broodlings when they die."
   },
   {
-    "id1": 3,
-    "id2": 46,
+    "id1": "alienincubation",
+    "id2": "scorchedearth",
     "interaction": "Broodlings set the ground on fire when they die."
   },
   {
-    "id1": 3,
-    "id2": 47,
+    "id1": "alienincubation",
+    "id2": "selfdestruction",
     "interaction": "Broodlings create an explosion when they die."
   },
   {
-    "id1": 3,
-    "id2": 51,
+    "id1": "alienincubation",
+    "id2": "speedfreaks",
     "interaction": "Broodlings move faster with Speed Freaks."
   },
   {
-    "id1": 3,
-    "id2": 54,
+    "id1": "alienincubation",
+    "id2": "transmutation",
     "interaction": "Broodlings can transmutate. Newly-transmuted units spawn Broodlings when they die."
   },
   {
-    "id1": 3,
-    "id2": 55,
+    "id1": "alienincubation",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians spawn Broodlings when they die."
   },
   {
-    "id1": 3,
-    "id2": 56,
+    "id1": "alienincubation",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not spawn Broodlings when they die. Angry Turkeys spawn Broodlings when they die. The Turking does not spawn Broodlings when it dies."
   },
   {
-    "id1": 3,
-    "id2": 59,
+    "id1": "alienincubation",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators cannot resurrect Broodlings."
   },
   {
-    "id1": 3,
-    "id2": 60,
+    "id1": "alienincubation",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts spawn Broodlings when they die."
   },
   {
-    "id1": 3,
-    "id2": 61,
+    "id1": "alienincubation",
+    "id2": "walkinginfested",
     "interaction": "Killed units spawn both, Infested and Broodlings at the same time. Infested units and Broodlings do not spawn units on death."
   },
   {
-    "id1": 3,
-    "id2": 62,
+    "id1": "alienincubation",
+    "id2": "wemoveunseen",
     "interaction": "Broodlings are cloaked."
   },
   {
-    "id1": 3,
-    "id2": 63,
+    "id1": "alienincubation",
+    "id2": "boombots",
     "interaction": "Boom Bots spawn Broodlings when they die."
   },
   {
-    "id1": 4,
-    "id2": 18,
+    "id1": "avenger",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange can give out/receive Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 21,
+    "id1": "avenger",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes can give out (1 stack)/receive Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 22,
+    "id1": "avenger",
+    "id2": "inspiration",
     "interaction": "Units with Avenger stacks can get the Inspiration buff."
   },
   {
-    "id1": 4,
-    "id2": 23,
+    "id1": "avenger",
+    "id2": "justdie",
     "interaction": "Units do not give out/lose Avenger stacks when taking fatal damage and respawning. When a unit is finally killed, Avenger stacks are provided to surrounding units. Units retain their Avenger stacks when taking fatal damage and respawning."
   },
   {
-    "id1": 4,
-    "id2": 24,
+    "id1": "avenger",
+    "id2": "killbots",
     "interaction": "Kill Bots can give out Avenger stacks (1 stack) when they die."
   },
   {
-    "id1": 4,
-    "id2": 30,
+    "id1": "avenger",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines do not give out Avenger stacks when they detonate."
   },
   {
-    "id1": 4,
-    "id2": 33,
+    "id1": "avenger",
+    "id2": "minesweeper",
     "interaction": "Mines can give out Avenger stacks, but cannot receive them."
   },
   {
-    "id1": 4,
-    "id2": 34,
+    "id1": "avenger",
+    "id2": "missilecommand",
     "interaction": "Missiles do not give out Avenger stacks when destroyed."
   },
   {
-    "id1": 4,
-    "id2": 39,
+    "id1": "avenger",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations can give out/receive Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 43,
+    "id1": "avenger",
+    "id2": "propagators",
     "interaction": "Propagators can give out (1 stack)/receive Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 51,
+    "id1": "avenger",
+    "id2": "speedfreaks",
     "interaction": "Units with Avenger stacks move faster with Speed Freaks."
   },
   {
-    "id1": 4,
-    "id2": 54,
+    "id1": "avenger",
+    "id2": "transmutation",
     "interaction": "Units lose their Avenger stacks after they Transmute."
   },
   {
-    "id1": 4,
-    "id2": 55,
+    "id1": "avenger",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians give out and collect Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 56,
+    "id1": "avenger",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not give out Avenger stacks. Angry Turkeys can give out (1 stack)/receive Avenger stacks. The Turking can give out (10 stacks) Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 59,
+    "id1": "avenger",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can give out (3 stacks) Avenger stacks. Resurrected units do not keep their Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 60,
+    "id1": "avenger",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts can give out/receive Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 61,
+    "id1": "avenger",
+    "id2": "walkinginfested",
     "interaction": "Infested can give out/receive Avenger stacks."
   },
   {
-    "id1": 4,
-    "id2": 63,
+    "id1": "avenger",
+    "id2": "boombots",
     "interaction": "Boom Bots do not give out Avenger stacks when they die."
   },
   {
-    "id1": 5,
-    "id2": 13,
+    "id1": "barrier",
+    "id2": "eminentdomain",
     "interaction": "Structures captured by Amon get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 18,
+    "id1": "barrier",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 21,
+    "id1": "barrier",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 23,
+    "id1": "barrier",
+    "id2": "justdie",
     "interaction": "If a unit has used its Barrier buff, the respawned unit will not get the Barrier buff. If a unit has not used its Barrier buff, the respawned unit will have the Barrier buff activated when it respawns."
   },
   {
-    "id1": 5,
-    "id2": 32,
+    "id1": "barrier",
+    "id2": "mineralshields",
     "interaction": "Mineral Shields get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 33,
+    "id1": "barrier",
+    "id2": "minesweeper",
     "interaction": "Mines get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 34,
+    "id1": "barrier",
+    "id2": "missilecommand",
     "interaction": "Missiles get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 39,
+    "id1": "barrier",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 41,
+    "id1": "barrier",
+    "id2": "polarity",
     "interaction": "Damage blocked by Polarity still triggers Barrier."
   },
   {
-    "id1": 5,
-    "id2": 43,
+    "id1": "barrier",
+    "id2": "propagators",
     "interaction": "Propagators get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 54,
+    "id1": "barrier",
+    "id2": "transmutation",
     "interaction": "Transmuted units get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 55,
+    "id1": "barrier",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 56,
+    "id1": "barrier",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 59,
+    "id1": "barrier",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators get the Barrier buff. Resurrected units get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 60,
+    "id1": "barrier",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts get the Barrier buff."
   },
   {
-    "id1": 5,
-    "id2": 61,
+    "id1": "barrier",
+    "id2": "walkinginfested",
     "interaction": "Infested get the Barrier buff."
   },
   {
-    "id1": 6,
-    "id2": 12,
+    "id1": "blackdeath",
+    "id2": "doubleedged",
     "interaction": "Units with Black Death will die twice as fast with Double Edged active."
   },
   {
-    "id1": 6,
-    "id2": 16,
+    "id1": "blackdeath",
+    "id2": "fear",
     "interaction": "Plague damage ticks do not have a chance of applying Fear."
   },
   {
-    "id1": 6,
-    "id2": 18,
+    "id1": "blackdeath",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 21,
+    "id1": "blackdeath",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 23,
+    "id1": "blackdeath",
+    "id2": "justdie",
     "interaction": "Whether a unit has Plague or not is retained when it takes fatal damage. Plague only spreads when the unit is finnally killed."
   },
   {
-    "id1": 6,
-    "id2": 24,
+    "id1": "blackdeath",
+    "id2": "killbots",
     "interaction": "Kill Bots cannot carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 30,
+    "id1": "blackdeath",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines cannot carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 33,
+    "id1": "blackdeath",
+    "id2": "minesweeper",
     "interaction": "Mines can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 34,
+    "id1": "blackdeath",
+    "id2": "missilecommand",
     "interaction": "Missiles cannot carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 39,
+    "id1": "blackdeath",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 43,
+    "id1": "blackdeath",
+    "id2": "propagators",
     "interaction": "Propagators can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 54,
+    "id1": "blackdeath",
+    "id2": "transmutation",
     "interaction": "Transmuted units may or may not carry Plague, irrespective of whether it carried Plague or not before Transmuting."
   },
   {
-    "id1": 6,
-    "id2": 55,
+    "id1": "blackdeath",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 56,
+    "id1": "blackdeath",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys cannot carry Plague. The Turking can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 59,
+    "id1": "blackdeath",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can carry Plague. Resurrected units may or may not carry Plague, irrespective of whether it originally carried Plague or not before it died."
   },
   {
-    "id1": 6,
-    "id2": 60,
+    "id1": "blackdeath",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 61,
+    "id1": "blackdeath",
+    "id2": "walkinginfested",
     "interaction": "Infested can carry Plague."
   },
   {
-    "id1": 6,
-    "id2": 63,
+    "id1": "blackdeath",
+    "id2": "boombots",
     "interaction": "Boom Bots cannot carry Plague."
   },
   {
-    "id1": 7,
-    "id2": 9,
+    "id1": "blizzard",
+    "id2": "concussiveattacks",
     "interaction": "Blizzard applies the Concussive Attacks debuff."
   },
   {
-    "id1": 7,
-    "id2": 10,
+    "id1": "blizzard",
+    "id2": "darkness",
     "interaction": "Blizzards appear on the minimap."
   },
   {
-    "id1": 7,
-    "id2": 16,
+    "id1": "blizzard",
+    "id2": "fear",
     "interaction": "Blizzard can apply the Fear effect."
   },
   {
-    "id1": 7,
-    "id2": 18,
+    "id1": "blizzard",
+    "id2": "giftexchange",
     "interaction": "Blizzards can capture gifts."
   },
   {
-    "id1": 7,
-    "id2": 25,
+    "id1": "blizzard",
+    "id2": "laserdrill",
     "interaction": "Blizzards do not provide vision for the Laser Drill."
   },
   {
-    "id1": 7,
-    "id2": 62,
+    "id1": "blizzard",
+    "id2": "wemoveunseen",
     "interaction": "Blizzards are not cloaked."
   },
   {
-    "id1": 8,
-    "id2": 32,
+    "id1": "chaosstudios",
+    "id2": "mineralshields",
     "interaction": "Mineral Shields will always spawn on all mineral patches."
   },
   {
-    "id1": 8,
-    "id2": 50,
+    "id1": "chaosstudios",
+    "id2": "slimpickings",
     "interaction": "Mineral patches will have their total mineral count permanently reduced, even after Slim Pickings  cycles out."
   },
   {
-    "id1": 8,
-    "id2": 60,
+    "id1": "chaosstudios",
+    "id2": "voidrifts",
     "interaction": "Void Rifts will spawn 2:20 after they are activated, meaning only two spawns will occur."
   },
   {
-    "id1": 9,
-    "id2": 13,
+    "id1": "concussiveattacks",
+    "id2": "eminentdomain",
     "interaction": "Turrets captured by Amon apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 17,
+    "id1": "concussiveattacks",
+    "id2": "fireworks",
     "interaction": "Fireworks apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 18,
+    "id1": "concussiveattacks",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 19,
+    "id1": "concussiveattacks",
+    "id2": "goingnuclear",
     "interaction": "Nukes apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 21,
+    "id1": "concussiveattacks",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 23,
+    "id1": "concussiveattacks",
+    "id2": "justdie",
     "interaction": "Respawned units apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 24,
+    "id1": "concussiveattacks",
+    "id2": "killbots",
     "interaction": "Kill Bots apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 25,
+    "id1": "concussiveattacks",
+    "id2": "laserdrill",
     "interaction": "Laser Drill applies the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 26,
+    "id1": "concussiveattacks",
+    "id2": "lavaburst",
     "interaction": "Lava Burst applies the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 30,
+    "id1": "concussiveattacks",
+    "id2": "mag-nificent",
     "interaction": "Mines apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 33,
+    "id1": "concussiveattacks",
+    "id2": "minesweeper",
     "interaction": "Mines apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 34,
+    "id1": "concussiveattacks",
+    "id2": "missilecommand",
     "interaction": "Missiles apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 36,
+    "id1": "concussiveattacks",
+    "id2": "mutuallyassureddestruction",
     "interaction": "Hybrid Nukes apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 38,
+    "id1": "concussiveattacks",
+    "id2": "orbitalstrike",
     "interaction": "Orbital Strikes apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 39,
+    "id1": "concussiveattacks",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 40,
+    "id1": "concussiveattacks",
+    "id2": "photonoverload",
     "interaction": "Photon Overload applies the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 42,
+    "id1": "concussiveattacks",
+    "id2": "poweroverwhelming",
     "interaction": "Damaging skills will apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 44,
+    "id1": "concussiveattacks",
+    "id2": "purifierbeam",
     "interaction": "Purifier Beam applies the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 46,
+    "id1": "concussiveattacks",
+    "id2": "scorchedearth",
     "interaction": "Scorched Earth applies the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 47,
+    "id1": "concussiveattacks",
+    "id2": "selfdestruction",
     "interaction": "Self Destruction applies the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 54,
+    "id1": "concussiveattacks",
+    "id2": "transmutation",
     "interaction": "Transmuted units apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 55,
+    "id1": "concussiveattacks",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 56,
+    "id1": "concussiveattacks",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 57,
+    "id1": "concussiveattacks",
+    "id2": "twister",
     "interaction": "Twisters apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 59,
+    "id1": "concussiveattacks",
+    "id2": "voidreanimators",
     "interaction": "Resurrected units apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 60,
+    "id1": "concussiveattacks",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 61,
+    "id1": "concussiveattacks",
+    "id2": "walkinginfested",
     "interaction": "Infested apply the Concussive Attacks debuff."
   },
   {
-    "id1": 9,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "concussiveattacks",
     "interaction": "Boom Bots apply the Concussive Attacks debuff."
   },
   {
-    "id1": 10,
-    "id2": 18,
+    "id1": "darkness",
+    "id2": "giftexchange",
     "interaction": "Gifts do not appear on the minimap. Kill Bots gifted to Amon do not appear on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 24,
+    "id1": "darkness",
+    "id2": "killbots",
     "interaction": "Kill Bots do not appear on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 25,
+    "id1": "darkness",
+    "id2": "laserdrill",
     "interaction": "The Laser Drill will be marked on the minimap when it attacks you."
   },
   {
-    "id1": 10,
-    "id2": 30,
+    "id1": "darkness",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines appear on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 34,
+    "id1": "darkness",
+    "id2": "missilecommand",
     "interaction": "Missiles do not appear on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 43,
+    "id1": "darkness",
+    "id2": "propagators",
     "interaction": "Propagators do not appear on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 44,
+    "id1": "darkness",
+    "id2": "purifierbeam",
     "interaction": "Purifier Beam appears as a red dot on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 56,
+    "id1": "darkness",
+    "id2": "turkeyshoot",
     "interaction": "The Turking does not appear on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 60,
+    "id1": "darkness",
+    "id2": "voidrifts",
     "interaction": "Void Rifts are marked on the minimap."
   },
   {
-    "id1": 10,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "darkness",
     "interaction": "Boom Bots do not appear on the minimap."
   },
   {
-    "id1": 11,
-    "id2": 13,
+    "id1": "diffusion",
+    "id2": "eminentdomain",
     "interaction": "Turrets can be captured by Amon if they deal too much damage to themselves."
   },
   {
-    "id1": 11,
-    "id2": 16,
+    "id1": "diffusion",
+    "id2": "fear",
     "interaction": "Damage dealt by Diffusion can trigger Fear."
   },
   {
-    "id1": 11,
-    "id2": 18,
+    "id1": "diffusion",
+    "id2": "giftexchange",
     "interaction": "Diffusion applies to all units spawned from Gift Exchange."
   },
   {
-    "id1": 11,
-    "id2": 27,
+    "id1": "diffusion",
+    "id2": "lifeleech",
     "interaction": "Damage dealt by Diffusion counts as Life Leech for the unit attacked."
   },
   {
-    "id1": 11,
-    "id2": 41,
+    "id1": "diffusion",
+    "id2": "polarity",
     "interaction": "Diffusion damages all units regardless of their Polarity."
   },
   {
-    "id1": 11,
-    "id2": 54,
+    "id1": "diffusion",
+    "id2": "transmutation",
     "interaction": "Damage dealt by Diffusion can trigger Transmutation on enemy units."
   },
   {
-    "id1": 12,
-    "id2": 13,
+    "id1": "doubleedged",
+    "id2": "eminentdomain",
     "interaction": "Turrets can be captured by Amon if they deal too much damage to themselves."
   },
   {
-    "id1": 12,
-    "id2": 16,
+    "id1": "doubleedged",
+    "id2": "fear",
     "interaction": "Damage dealt by Double Edged does not trigger Fear."
   },
   {
-    "id1": 12,
-    "id2": 27,
+    "id1": "doubleedged",
+    "id2": "lifeleech",
     "interaction": "Damage dealt by Double Edged does not trigger Life Leech."
   },
   {
-    "id1": 12,
-    "id2": 54,
+    "id1": "doubleedged",
+    "id2": "transmutation",
     "interaction": "Damage dealt by Double Edged does not trigger Transmutation."
   },
   {
-    "id1": 13,
-    "id2": 16,
+    "id1": "eminentdomain",
+    "id2": "fear",
     "interaction": "Turrets captured by Amon can apply the Fear effect."
   },
   {
-    "id1": 13,
-    "id2": 24,
+    "id1": "eminentdomain",
+    "id2": "killbots",
     "interaction": "Kill Bots spawn out of structures converted by Eminent Domain."
   },
   {
-    "id1": 13,
-    "id2": 27,
+    "id1": "eminentdomain",
+    "id2": "lifeleech",
     "interaction": "Turrets captured by Amon have Life Leech."
   },
   {
-    "id1": 13,
-    "id2": 28,
+    "id1": "eminentdomain",
+    "id2": "longrange",
     "interaction": "Structures captured by Amon get the Long Range buff."
   },
   {
-    "id1": 13,
-    "id2": 39,
+    "id1": "eminentdomain",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations spawn out of structures converted by Eminent Domain."
   },
   {
-    "id1": 13,
-    "id2": 41,
+    "id1": "eminentdomain",
+    "id2": "polarity",
     "interaction": "Structures captured by Amon get Polarity."
   },
   {
-    "id1": 13,
-    "id2": 43,
+    "id1": "eminentdomain",
+    "id2": "propagators",
     "interaction": "Structures hit by Propagators change to a Propagator and do not get converted. Propagators spawn out of structures converted by Eminent Domain."
   },
   {
-    "id1": 13,
-    "id2": 54,
+    "id1": "eminentdomain",
+    "id2": "transmutation",
     "interaction": "The attack that kills a player's structure will not cause the enemy unit to Transmute."
   },
   {
-    "id1": 13,
-    "id2": 55,
+    "id1": "eminentdomain",
+    "id2": "trickortreat",
     "interaction": "Civilians spawn out of structures converted by Eminent Domain."
   },
   {
-    "id1": 13,
-    "id2": 56,
+    "id1": "eminentdomain",
+    "id2": "turkeyshoot",
     "interaction": "Structures destroyed by Turkeys will be converted."
   },
   {
-    "id1": 13,
-    "id2": 59,
+    "id1": "eminentdomain",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators spawn out of structures converted by Eminent Domain."
   },
   {
-    "id1": 13,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "eminentdomain",
     "interaction": "Boom Bots spawn out of structures converted by Eminent Domain."
   },
   {
-    "id1": 14,
-    "id2": 18,
+    "id1": "evasivemaneuvers",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange get the Evasive Manuevers buff."
   },
   {
-    "id1": 14,
-    "id2": 21,
+    "id1": "evasivemaneuvers",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes do not get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 23,
+    "id1": "evasivemaneuvers",
+    "id2": "justdie",
     "interaction": "Respawned units get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 33,
+    "id1": "evasivemaneuvers",
+    "id2": "minesweeper",
     "interaction": "Mines do not get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 34,
+    "id1": "evasivemaneuvers",
+    "id2": "missilecommand",
     "interaction": "Missiles do not get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 39,
+    "id1": "evasivemaneuvers",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 41,
+    "id1": "evasivemaneuvers",
+    "id2": "polarity",
     "interaction": "Damage blocked by Polarity still triggers Evasive Maneuvers."
   },
   {
-    "id1": 14,
-    "id2": 43,
+    "id1": "evasivemaneuvers",
+    "id2": "propagators",
     "interaction": "Propagators do not get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 54,
+    "id1": "evasivemaneuvers",
+    "id2": "transmutation",
     "interaction": "Transmuted units get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 55,
+    "id1": "evasivemaneuvers",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 56,
+    "id1": "evasivemaneuvers",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not get the Evasive Maneuvers buff. Angry Turkeys get the Evasive Maneuvers buff. The Turking does not get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 59,
+    "id1": "evasivemaneuvers",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators do not get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 60,
+    "id1": "evasivemaneuvers",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts get the Evasive Maneuvers buff."
   },
   {
-    "id1": 14,
-    "id2": 61,
+    "id1": "evasivemaneuvers",
+    "id2": "walkinginfested",
     "interaction": "Infested get the Evasive Maneuvers buff."
   },
   {
-    "id1": 15,
-    "id2": 18,
+    "id1": "fatalattraction",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 21,
+    "id1": "fatalattraction",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 23,
+    "id1": "fatalattraction",
+    "id2": "justdie",
     "interaction": "Units do not trigger Fatal Attraction when taking fatal damage and respawning."
   },
   {
-    "id1": 15,
-    "id2": 24,
+    "id1": "fatalattraction",
+    "id2": "killbots",
     "interaction": "Kill Bots trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 30,
+    "id1": "fatalattraction",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines trigger Fatal Attraction when they detonate."
   },
   {
-    "id1": 15,
-    "id2": 32,
+    "id1": "fatalattraction",
+    "id2": "mineralshields",
     "interaction": "Mineral Shields trigger Fatal Attraction when destroyed or when they expire.\r\n."
   },
   {
-    "id1": 15,
-    "id2": 33,
+    "id1": "fatalattraction",
+    "id2": "minesweeper",
     "interaction": "Mines trigger Fatal Attraction when they are destroyed."
   },
   {
-    "id1": 15,
-    "id2": 34,
+    "id1": "fatalattraction",
+    "id2": "missilecommand",
     "interaction": "Missiles do not trigger Fatal Attraction when destroyed."
   },
   {
-    "id1": 15,
-    "id2": 36,
+    "id1": "fatalattraction",
+    "id2": "mutuallyassureddestruction",
     "interaction": "Hybrids will only trigger Mutually Assured Destruction"
   },
   {
-    "id1": 15,
-    "id2": 39,
+    "id1": "fatalattraction",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 43,
+    "id1": "fatalattraction",
+    "id2": "propagators",
     "interaction": "Propagators trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 54,
+    "id1": "fatalattraction",
+    "id2": "transmutation",
     "interaction": "Transmuted units trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 55,
+    "id1": "fatalattraction",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians  trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 56,
+    "id1": "fatalattraction",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 59,
+    "id1": "fatalattraction",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 60,
+    "id1": "fatalattraction",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 61,
+    "id1": "fatalattraction",
+    "id2": "walkinginfested",
     "interaction": "Infested trigger Fatal Attraction when they die."
   },
   {
-    "id1": 15,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "fatalattraction",
     "interaction": "Boom Bots trigger Fatal Attraction when they die."
   },
   {
-    "id1": 16,
-    "id2": 17,
+    "id1": "fear",
+    "id2": "fireworks",
     "interaction": "Fireworks can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 18,
+    "id1": "fear",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 19,
+    "id1": "fear",
+    "id2": "goingnuclear",
     "interaction": "Nukes can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 21,
+    "id1": "fear",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 23,
+    "id1": "fear",
+    "id2": "justdie",
     "interaction": "Respawned units can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 24,
+    "id1": "fear",
+    "id2": "killbots",
     "interaction": "Kill Bots can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 25,
+    "id1": "fear",
+    "id2": "laserdrill",
     "interaction": "Laser Drill can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 26,
+    "id1": "fear",
+    "id2": "lavaburst",
     "interaction": "Lava Burst can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 30,
+    "id1": "fear",
+    "id2": "mag-nificent",
     "interaction": "Mines can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 33,
+    "id1": "fear",
+    "id2": "minesweeper",
     "interaction": "Mines can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 36,
+    "id1": "fear",
+    "id2": "mutuallyassureddestruction",
     "interaction": "Hybrid Nukes can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 38,
+    "id1": "fear",
+    "id2": "orbitalstrike",
     "interaction": "Orbital Strikes can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 39,
+    "id1": "fear",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 40,
+    "id1": "fear",
+    "id2": "photonoverload",
     "interaction": "Photon Overload can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 44,
+    "id1": "fear",
+    "id2": "purifierbeam",
     "interaction": "Purifier Beam can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 46,
+    "id1": "fear",
+    "id2": "scorchedearth",
     "interaction": "Scorched Earth can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 47,
+    "id1": "fear",
+    "id2": "selfdestruction",
     "interaction": "Self Destruction can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 54,
+    "id1": "fear",
+    "id2": "transmutation",
     "interaction": "Transmuted units can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 55,
+    "id1": "fear",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 56,
+    "id1": "fear",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 57,
+    "id1": "fear",
+    "id2": "twister",
     "interaction": "Twisters can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 59,
+    "id1": "fear",
+    "id2": "voidreanimators",
     "interaction": "Resurrected units can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 60,
+    "id1": "fear",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 61,
+    "id1": "fear",
+    "id2": "walkinginfested",
     "interaction": "Infested can apply the Fear effect."
   },
   {
-    "id1": 16,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "fear",
     "interaction": "Boom Bots do not apply the Fear effect."
   },
   {
-    "id1": 17,
-    "id2": 18,
+    "id1": "fireworks",
+    "id2": "giftexchange",
     "interaction": "Units spawned from Gift Exchange launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 21,
+    "id1": "fireworks",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes do not launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 24,
+    "id1": "fireworks",
+    "id2": "killbots",
     "interaction": "Kill Bots launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 30,
+    "id1": "fireworks",
+    "id2": "mag-nificent",
     "interaction": "Mines do not launch Fireworks when they explode."
   },
   {
-    "id1": 17,
-    "id2": 33,
+    "id1": "fireworks",
+    "id2": "minesweeper",
     "interaction": "Mines do not launch Fireworks when they are destroyed."
   },
   {
-    "id1": 17,
-    "id2": 34,
+    "id1": "fireworks",
+    "id2": "missilecommand",
     "interaction": "Missiles do not launch Fireworks when they are destroyed."
   },
   {
-    "id1": 17,
-    "id2": 39,
+    "id1": "fireworks",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 43,
+    "id1": "fireworks",
+    "id2": "propagators",
     "interaction": "Propagators do not launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 55,
+    "id1": "fireworks",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 56,
+    "id1": "fireworks",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not launch Fireworks when they die. The Turking launches Fireworks when it dies."
   },
   {
-    "id1": 17,
-    "id2": 59,
+    "id1": "fireworks",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators do not launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 60,
+    "id1": "fireworks",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 61,
+    "id1": "fireworks",
+    "id2": "walkinginfested",
     "interaction": "Infested do not launch Fireworks when they die."
   },
   {
-    "id1": 17,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "fireworks",
     "interaction": "Boom Bots launch Fireworks when they die."
   },
   {
-    "id1": 18,
-    "id2": 20,
+    "id1": "giftexchange",
+    "id2": "hardenedwill",
     "interaction": "Units spawned from Gift Exchange can cause Hardened Will to activate. Hybrids and Kill Bots spawned from Gift Exchange can get the Hardened Will buff."
   },
   {
-    "id1": 18,
-    "id2": 21,
+    "id1": "giftexchange",
+    "id2": "heroesfromthestorm",
     "interaction": "Gift spawns do not spawn an Amon Heroes with the capturing attack force. Amon Heroes can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 22,
+    "id1": "giftexchange",
+    "id2": "inspiration",
     "interaction": "Units spawned from Gift Exchange can get the Inspiration buff. Hybrids and Kill Bots spawned from Gift Exchange can provide the Inspiration buff."
   },
   {
-    "id1": 18,
-    "id2": 23,
+    "id1": "giftexchange",
+    "id2": "justdie",
     "interaction": "Units spawned from Gift Exchange respawn when they die."
   },
   {
-    "id1": 18,
-    "id2": 24,
+    "id1": "giftexchange",
+    "id2": "killbots",
     "interaction": "Kill Bots can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 25,
+    "id1": "giftexchange",
+    "id2": "laserdrill",
     "interaction": "Gifts do not provide vision for the Laser Drill."
   },
   {
-    "id1": 18,
-    "id2": 26,
+    "id1": "giftexchange",
+    "id2": "lavaburst",
     "interaction": "Lava Bursts cannot capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 27,
+    "id1": "giftexchange",
+    "id2": "lifeleech",
     "interaction": "Units spawned from Gift Exchange have Life Leech."
   },
   {
-    "id1": 18,
-    "id2": 28,
+    "id1": "giftexchange",
+    "id2": "longrange",
     "interaction": "Units spawned from Gift Exchange get the Long Range buff."
   },
   {
-    "id1": 18,
-    "id2": 30,
+    "id1": "giftexchange",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 33,
+    "id1": "giftexchange",
+    "id2": "minesweeper",
     "interaction": "Mines can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 34,
+    "id1": "giftexchange",
+    "id2": "missilecommand",
     "interaction": "Missiles can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 35,
+    "id1": "giftexchange",
+    "id2": "momentofsilence",
     "interaction": "Hybrids spawned from Gift Exchange trigger Moment of Silence when they die."
   },
   {
-    "id1": 18,
-    "id2": 36,
+    "id1": "giftexchange",
+    "id2": "mutuallyassureddestruction",
     "interaction": "Hybrids spawned from Gift Exchange detonate Hybrid Nukes when they die."
   },
   {
-    "id1": 18,
-    "id2": 37,
+    "id1": "giftexchange",
+    "id2": "naughtylist",
     "interaction": "Units spawned from Gift Exchange kills increase the Naughty List count."
   },
   {
-    "id1": 18,
-    "id2": 39,
+    "id1": "giftexchange",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 41,
+    "id1": "giftexchange",
+    "id2": "polarity",
     "interaction": "Units spawned from Gift Exchange all have Polarity applied to them."
   },
   {
-    "id1": 18,
-    "id2": 42,
+    "id1": "giftexchange",
+    "id2": "poweroverwhelming",
     "interaction": "Units spawned from Gift Exchange can cast abilities."
   },
   {
-    "id1": 18,
-    "id2": 43,
+    "id1": "giftexchange",
+    "id2": "propagators",
     "interaction": "Propagators can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 44,
+    "id1": "giftexchange",
+    "id2": "purifierbeam",
     "interaction": "Purifier Beam can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 46,
+    "id1": "giftexchange",
+    "id2": "scorchedearth",
     "interaction": "Units spawned from Gift Exchange set the ground on fire when they die."
   },
   {
-    "id1": 18,
-    "id2": 47,
+    "id1": "giftexchange",
+    "id2": "selfdestruction",
     "interaction": "Units spawned from Gift Exchange create an explosion when they die."
   },
   {
-    "id1": 18,
-    "id2": 51,
+    "id1": "giftexchange",
+    "id2": "speedfreaks",
     "interaction": "Units spawned from Gift Exchange move faster with Speed Freaks."
   },
   {
-    "id1": 18,
-    "id2": 52,
+    "id1": "giftexchange",
+    "id2": "temporalfield",
     "interaction": "Temporal Fields cannot capture gifts. Units caught in a Temporal Field can still capture Gifts."
   },
   {
-    "id1": 18,
-    "id2": 53,
+    "id1": "giftexchange",
+    "id2": "timewarp",
     "interaction": "Time Warps cannot capture gifts. Units caught in a Time Warp can still capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 54,
+    "id1": "giftexchange",
+    "id2": "transmutation",
     "interaction": "Units spawned from Gift Exchange can Transmute."
   },
   {
-    "id1": 18,
-    "id2": 56,
+    "id1": "giftexchange",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys cannot capture gifts. Angry Turkeys can capture gifts. The Turking can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 57,
+    "id1": "giftexchange",
+    "id2": "twister",
     "interaction": "Twisters can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 59,
+    "id1": "giftexchange",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can capture gifts. Void Reanimators can resurrect units spawned from Gift Exchange. Void Reanimators do not resurrect Kill Bots."
   },
   {
-    "id1": 18,
-    "id2": 60,
+    "id1": "giftexchange",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts can capture gifts."
   },
   {
-    "id1": 18,
-    "id2": 61,
+    "id1": "giftexchange",
+    "id2": "walkinginfested",
     "interaction": "Infested can capture gifts. Units spawned from Gift Exchange spawn Infested when they die."
   },
   {
-    "id1": 18,
-    "id2": 62,
+    "id1": "giftexchange",
+    "id2": "wemoveunseen",
     "interaction": "Units spawned from Gift Exchange are cloaked."
   },
   {
-    "id1": 18,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "giftexchange",
     "interaction": "Boom Bots do not capture gifts."
   },
   {
-    "id1": 19,
-    "id2": 25,
+    "id1": "goingnuclear",
+    "id2": "laserdrill",
     "interaction": "The Laser Drill has vision of the area for a short time after the nuke hits."
   },
   {
-    "id1": 20,
-    "id2": 21,
+    "id1": "hardenedwill",
+    "id2": "heroesfromthestorm",
     "interaction": "Amon Heroes can get the Hardened Will buff."
   },
   {
-    "id1": 20,
-    "id2": 24,
+    "id1": "hardenedwill",
+    "id2": "killbots",
     "interaction": "Kill Bots can get the Hardened Will buff."
   },
   {
-    "id1": 20,
-    "id2": 30,
+    "id1": "hardenedwill",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines do not cause Hardened Will to activate."
   },
   {
-    "id1": 20,
-    "id2": 33,
+    "id1": "hardenedwill",
+    "id2": "minesweeper",
     "interaction": "Mines cause Hardened Will to activate."
   },
   {
-    "id1": 20,
-    "id2": 34,
+    "id1": "hardenedwill",
+    "id2": "missilecommand",
     "interaction": "Missiles cause Hardened Will to activate."
   },
   {
-    "id1": 20,
-    "id2": 39,
+    "id1": "hardenedwill",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations cause Hardened Will to activate."
   },
   {
-    "id1": 20,
-    "id2": 43,
+    "id1": "hardenedwill",
+    "id2": "propagators",
     "interaction": "Propagators can get the Hardened Will buff."
   },
   {
-    "id1": 20,
-    "id2": 44,
+    "id1": "hardenedwill",
+    "id2": "purifierbeam",
     "interaction": "Purifier Beam does not cause Hardened Will to activate."
   },
   {
-    "id1": 20,
-    "id2": 54,
+    "id1": "hardenedwill",
+    "id2": "transmutation",
     "interaction": "Transmuted units cause Hardened Will to activate."
   },
   {
-    "id1": 20,
-    "id2": 55,
+    "id1": "hardenedwill",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians can cause Hardened Will to activate. Hybrids spawned from Civilians can get the Hardened Will buff."
   },
   {
-    "id1": 20,
-    "id2": 56,
+    "id1": "hardenedwill",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not cause Hardened Will to activate. Angry Turkeys cause Hardened Will to activate. The Turking can get the Hardened Will buff."
   },
   {
-    "id1": 20,
-    "id2": 60,
+    "id1": "hardenedwill",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts cause Hardened Will to activate. Hybrids spawned from Void Rifts can get the Hardened Will buff."
   },
   {
-    "id1": 20,
-    "id2": 61,
+    "id1": "hardenedwill",
+    "id2": "walkinginfested",
     "interaction": "Infested cause Hardened Will to activate."
   },
   {
-    "id1": 20,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "hardenedwill",
     "interaction": "Boom Bots do not get the Hardened Will buff."
   },
   {
-    "id1": 21,
-    "id2": 22,
+    "id1": "heroesfromthestorm",
+    "id2": "inspiration",
     "interaction": "Amon Heroes can provide the Inspiration buff."
   },
   {
-    "id1": 21,
-    "id2": 23,
+    "id1": "heroesfromthestorm",
+    "id2": "justdie",
     "interaction": "Amon Heroes respawn when they die."
   },
   {
-    "id1": 21,
-    "id2": 27,
+    "id1": "heroesfromthestorm",
+    "id2": "lifeleech",
     "interaction": "Amon Heroes have Life Leech."
   },
   {
-    "id1": 21,
-    "id2": 28,
+    "id1": "heroesfromthestorm",
+    "id2": "longrange",
     "interaction": "Amon Heroes do not get the Long Range buff."
   },
   {
-    "id1": 21,
-    "id2": 35,
+    "id1": "heroesfromthestorm",
+    "id2": "momentofsilence",
     "interaction": "Amon Heroes trigger Moment of Silence when they die."
   },
   {
-    "id1": 21,
-    "id2": 37,
+    "id1": "heroesfromthestorm",
+    "id2": "naughtylist",
     "interaction": "Amon Hero kills increase the Naughty List count."
   },
   {
-    "id1": 21,
-    "id2": 40,
+    "id1": "heroesfromthestorm",
+    "id2": "photonoverload",
     "interaction": "Amon's Karax's spawned structures will have Photon Overload applied when damaged."
   },
   {
-    "id1": 21,
-    "id2": 41,
+    "id1": "heroesfromthestorm",
+    "id2": "polarity",
     "interaction": "Amon Heroes all have Polarity applied to them."
   },
   {
-    "id1": 21,
-    "id2": 42,
+    "id1": "heroesfromthestorm",
+    "id2": "poweroverwhelming",
     "interaction": "Amon Heroes can cast abilities other than the ones they already have."
   },
   {
-    "id1": 21,
-    "id2": 46,
+    "id1": "heroesfromthestorm",
+    "id2": "scorchedearth",
     "interaction": "Amon Heroes set the ground on fire when they die."
   },
   {
-    "id1": 21,
-    "id2": 47,
+    "id1": "heroesfromthestorm",
+    "id2": "selfdestruction",
     "interaction": "Amon Heroes create an explosion when they die."
   },
   {
-    "id1": 21,
-    "id2": 51,
+    "id1": "heroesfromthestorm",
+    "id2": "speedfreaks",
     "interaction": "Amon Heroes move faster with Speed Freaks."
   },
   {
-    "id1": 21,
-    "id2": 54,
+    "id1": "heroesfromthestorm",
+    "id2": "transmutation",
     "interaction": "Amon Heroes do not Transmute after killing a unit."
   },
   {
-    "id1": 21,
-    "id2": 59,
+    "id1": "heroesfromthestorm",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators do not resurrect Amon Heroes."
   },
   {
-    "id1": 21,
-    "id2": 61,
+    "id1": "heroesfromthestorm",
+    "id2": "walkinginfested",
     "interaction": "Amon Heroes spawn Infested when they die."
   },
   {
-    "id1": 21,
-    "id2": 62,
+    "id1": "heroesfromthestorm",
+    "id2": "wemoveunseen",
     "interaction": "Amon Heroes are cloaked."
   },
   {
-    "id1": 22,
-    "id2": 24,
+    "id1": "inspiration",
+    "id2": "killbots",
     "interaction": "Kill Bots can provide the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 39,
+    "id1": "inspiration",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations can get the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 43,
+    "id1": "inspiration",
+    "id2": "propagators",
     "interaction": "Propagators can provide the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 54,
+    "id1": "inspiration",
+    "id2": "transmutation",
     "interaction": "Transmuted units can get the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 55,
+    "id1": "inspiration",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians can get the Inspiration buff. Hybrids spawned from Civilians can provide the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 56,
+    "id1": "inspiration",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not get the Inspiration buff. Angry Turkeys get the Inspiration buff. The Turking can provide the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 59,
+    "id1": "inspiration",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can get the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 60,
+    "id1": "inspiration",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts can get the Inspiration buff. Hybrids spawned from Void Rifts can provide the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 61,
+    "id1": "inspiration",
+    "id2": "walkinginfested",
     "interaction": "Infested can get the Inspiration buff."
   },
   {
-    "id1": 22,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "inspiration",
     "interaction": "Boom Bots do not provide the Inspiration buff."
   },
   {
-    "id1": 23,
-    "id2": 24,
+    "id1": "justdie",
+    "id2": "killbots",
     "interaction": "Kill Bots do not respawn when they self-destruct. They will respawn if killed by Abathur's Toxic Nests."
   },
   {
-    "id1": 23,
-    "id2": 27,
+    "id1": "justdie",
+    "id2": "lifeleech",
     "interaction": "Respawned units have Life Leech."
   },
   {
-    "id1": 23,
-    "id2": 30,
+    "id1": "justdie",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines do not respawn when they explode."
   },
   {
-    "id1": 23,
-    "id2": 33,
+    "id1": "justdie",
+    "id2": "minesweeper",
     "interaction": "Mines respawn when they are destroyed."
   },
   {
-    "id1": 23,
-    "id2": 34,
+    "id1": "justdie",
+    "id2": "missilecommand",
     "interaction": "Missiles respawn when destroyed."
   },
   {
-    "id1": 23,
-    "id2": 35,
+    "id1": "justdie",
+    "id2": "momentofsilence",
     "interaction": "Units do not trigger Moment of Silence when taking fatal damage and respawning."
   },
   {
-    "id1": 23,
-    "id2": 36,
+    "id1": "justdie",
+    "id2": "mutuallyassureddestruction",
     "interaction": "Hybrids do not detonate Hybrid Nukes when taking fatal damage and respawning."
   },
   {
-    "id1": 23,
-    "id2": 37,
+    "id1": "justdie",
+    "id2": "naughtylist",
     "interaction": "Units do not increase the Naughty List count when taking fatal damage and respawning."
   },
   {
-    "id1": 23,
-    "id2": 39,
+    "id1": "justdie",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations respawn when they die."
   },
   {
-    "id1": 23,
-    "id2": 41,
+    "id1": "justdie",
+    "id2": "polarity",
     "interaction": "Polarity reverses after a unit respawns."
   },
   {
-    "id1": 23,
-    "id2": 43,
+    "id1": "justdie",
+    "id2": "propagators",
     "interaction": "Propagators respawn when they die. When a Propagator Propagates a unit, the new Propagator will have the Just Die! buff applied to it too and will need to be killed twice."
   },
   {
-    "id1": 23,
-    "id2": 46,
+    "id1": "justdie",
+    "id2": "scorchedearth",
     "interaction": "Units do not set the ground of fire when taking fatal damage and respawning."
   },
   {
-    "id1": 23,
-    "id2": 47,
+    "id1": "justdie",
+    "id2": "selfdestruction",
     "interaction": "Units do set the ground on fire when taking fatal damage and respawning."
   },
   {
-    "id1": 23,
-    "id2": 51,
+    "id1": "justdie",
+    "id2": "speedfreaks",
     "interaction": "Respawned units keep moving faster with Speed Freaks."
   },
   {
-    "id1": 23,
-    "id2": 54,
+    "id1": "justdie",
+    "id2": "transmutation",
     "interaction": "Transmutated units have their Just Die stacks reset, allowing them to respawn again."
   },
   {
-    "id1": 23,
-    "id2": 55,
+    "id1": "justdie",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians respawn when they die."
   },
   {
-    "id1": 23,
-    "id2": 56,
+    "id1": "justdie",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not respawn when they die. The Turking respawns when it dies."
   },
   {
-    "id1": 23,
-    "id2": 59,
+    "id1": "justdie",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators respawn when they die. Resurrected units respawn when they die."
   },
   {
-    "id1": 23,
-    "id2": 60,
+    "id1": "justdie",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts respawn when they die."
   },
   {
-    "id1": 23,
-    "id2": 61,
+    "id1": "justdie",
+    "id2": "walkinginfested",
     "interaction": "Infested respawn when they die."
   },
   {
-    "id1": 23,
-    "id2": 62,
+    "id1": "justdie",
+    "id2": "wemoveunseen",
     "interaction": "Respawned units are cloaked."
   },
   {
-    "id1": 23,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "justdie",
     "interaction": "Boom Bots do not respawn when they self-destruct."
   },
   {
-    "id1": 24,
-    "id2": 25,
+    "id1": "killbots",
+    "id2": "laserdrill",
     "interaction": "Kill Bots provide vision for the Laser Drill.\r\nKill Bots do not spawn from the Laser Drill."
   },
   {
-    "id1": 24,
-    "id2": 28,
+    "id1": "killbots",
+    "id2": "longrange",
     "interaction": "Kill Bots get the Long Range buff."
   },
   {
-    "id1": 24,
-    "id2": 35,
+    "id1": "killbots",
+    "id2": "momentofsilence",
     "interaction": "Kill Bots trigger Moment of Silence when they die."
   },
   {
-    "id1": 24,
-    "id2": 42,
+    "id1": "killbots",
+    "id2": "poweroverwhelming",
     "interaction": "Kill Bots can cast abilities. Kill bots can spawn out of Point Defense Drones dropped by Power Overwhelming."
   },
   {
-    "id1": 24,
-    "id2": 46,
+    "id1": "killbots",
+    "id2": "scorchedearth",
     "interaction": "Kill Bots set the ground on fire when they die."
   },
   {
-    "id1": 24,
-    "id2": 47,
+    "id1": "killbots",
+    "id2": "selfdestruction",
     "interaction": "Kill Bots create an explosion when they die."
   },
   {
-    "id1": 24,
-    "id2": 51,
+    "id1": "killbots",
+    "id2": "speedfreaks",
     "interaction": "Kill Bots move faster with Speed Freaks."
   },
   {
-    "id1": 24,
-    "id2": 54,
+    "id1": "killbots",
+    "id2": "transmutation",
     "interaction": "Kill Bots do not Transmute when dealing damage or killing units."
   },
   {
-    "id1": 24,
-    "id2": 59,
+    "id1": "killbots",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators do not resurrect Kill Bots."
   },
   {
-    "id1": 24,
-    "id2": 60,
+    "id1": "killbots",
+    "id2": "voidrifts",
     "interaction": "Kill Bots do not spawn from Void Rifts."
   },
   {
-    "id1": 24,
-    "id2": 61,
+    "id1": "killbots",
+    "id2": "walkinginfested",
     "interaction": "Kill Bots spawn Infested when they die."
   },
   {
-    "id1": 24,
-    "id2": 62,
+    "id1": "killbots",
+    "id2": "wemoveunseen",
     "interaction": "Kill Bots are cloaked."
   },
   {
-    "id1": 25,
-    "id2": 26,
+    "id1": "laserdrill",
+    "id2": "lavaburst",
     "interaction": "Lava Bursts do not provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 27,
+    "id1": "laserdrill",
+    "id2": "lifeleech",
     "interaction": "Laser Drill has Life Leech."
   },
   {
-    "id1": 25,
-    "id2": 30,
+    "id1": "laserdrill",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 32,
+    "id1": "laserdrill",
+    "id2": "mineralshields",
     "interaction": "Mineral Shields provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 33,
+    "id1": "laserdrill",
+    "id2": "minesweeper",
     "interaction": "Mines provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 34,
+    "id1": "laserdrill",
+    "id2": "missilecommand",
     "interaction": "Missiles do not provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 39,
+    "id1": "laserdrill",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations provide vision for the Laser Drill.\r\nInfested and Aberrations do not spawn from the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 40,
+    "id1": "laserdrill",
+    "id2": "photonoverload",
     "interaction": "The Laser Drill does not get Photon Overcharge when damaged."
   },
   {
-    "id1": 25,
-    "id2": 41,
+    "id1": "laserdrill",
+    "id2": "polarity",
     "interaction": "Polarity of the Laser Drill remains fixed, even when the drill respawns after being destroyed."
   },
   {
-    "id1": 25,
-    "id2": 43,
+    "id1": "laserdrill",
+    "id2": "propagators",
     "interaction": "Propagators provide vision for the Laser Drill. Propagators do not spawn from the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 44,
+    "id1": "laserdrill",
+    "id2": "purifierbeam",
     "interaction": "Purifier Beams do not provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 52,
+    "id1": "laserdrill",
+    "id2": "temporalfield",
     "interaction": "The area inside a Temporal Field provides vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 53,
+    "id1": "laserdrill",
+    "id2": "timewarp",
     "interaction": "Time Warps do not provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 54,
+    "id1": "laserdrill",
+    "id2": "transmutation",
     "interaction": "Transmuted units provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 55,
+    "id1": "laserdrill",
+    "id2": "trickortreat",
     "interaction": "The Candy Bowl provides vision for the Laser Drill. Units spawned from Civilians provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 56,
+    "id1": "laserdrill",
+    "id2": "turkeyshoot",
     "interaction": "Normal Turkeys do not provide vision for the Laser Drill. Angry Turkeys provide vision for the Laser Drill. The Turking provides vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 57,
+    "id1": "laserdrill",
+    "id2": "twister",
     "interaction": "Twisters do not provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 59,
+    "id1": "laserdrill",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators provide vision for the Laser Drill. Void Reanimators do not spawn from the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 60,
+    "id1": "laserdrill",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 61,
+    "id1": "laserdrill",
+    "id2": "walkinginfested",
     "interaction": "Infested provide vision for the Laser Drill."
   },
   {
-    "id1": 25,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "laserdrill",
     "interaction": "Boom Bots provide vision for the Laser Drill.\r\nBoom Bots do not spawn from the Laser Drill."
   },
   {
-    "id1": 26,
-    "id2": 62,
+    "id1": "lavaburst",
+    "id2": "wemoveunseen",
     "interaction": "Lava Bursts are not cloaked."
   },
   {
-    "id1": 27,
-    "id2": 39,
+    "id1": "lifeleech",
+    "id2": "outbreak",
     "interaction": "Infested and Aberrations have Life Leech."
   },
   {
-    "id1": 27,
-    "id2": 54,
+    "id1": "lifeleech",
+    "id2": "transmutation",
     "interaction": "Transmuted units have Life Leech."
   },
   {
-    "id1": 27,
-    "id2": 55,
+    "id1": "lifeleech",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians have Life Leech."
   },
   {
-    "id1": 27,
-    "id2": 56,
+    "id1": "lifeleech",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys have Life Leech."
   },
   {
-    "id1": 27,
-    "id2": 59,
+    "id1": "lifeleech",
+    "id2": "voidreanimators",
     "interaction": "Resurrected units have Life Leech."
   },
   {
-    "id1": 27,
-    "id2": 60,
+    "id1": "lifeleech",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts have Life Leech."
   },
   {
-    "id1": 27,
-    "id2": 61,
+    "id1": "lifeleech",
+    "id2": "walkinginfested",
     "interaction": "Infested have Life Leech."
   },
   {
-    "id1": 28,
-    "id2": 30,
+    "id1": "longrange",
+    "id2": "mag-nificent",
     "interaction": "Mag-mines do not get the Long Range buff."
   },
   {
-    "id1": 28,
-    "id2": 33,
+    "id1": "longrange",
+    "id2": "minesweeper",
     "interaction": "Mines do not get the Long Range buff."
   },
   {
-    "id1": 28,
-    "id2": 39,
+    "id1": "longrange",
+    "id2": "outbreak",
     "interaction": "Infested Marines get the Long Range buff."
   },
   {
-    "id1": 28,
-    "id2": 40,
+    "id1": "longrange",
+    "id2": "photonoverload",
     "interaction": "Photon Overload gets increased range with Long Range."
   },
   {
-    "id1": 28,
-    "id2": 42,
+    "id1": "longrange",
+    "id2": "poweroverwhelming",
     "interaction": "Ranges of spells does not increase with Long Range."
   },
   {
-    "id1": 28,
-    "id2": 43,
+    "id1": "longrange",
+    "id2": "propagators",
     "interaction": "Propagators do not get the Long Range buff."
   },
   {
-    "id1": 28,
-    "id2": 55,
+    "id1": "longrange",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians get the Long Range buff."
   },
   {
-    "id1": 28,
-    "id2": 56,
+    "id1": "longrange",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not get the Long Range buff."
   },
   {
-    "id1": 28,
-    "id2": 59,
+    "id1": "longrange",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators do not get increased Resurrection range."
   },
   {
-    "id1": 28,
-    "id2": 60,
+    "id1": "longrange",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts get the Long Range buff."
   },
   {
-    "id1": 30,
-    "id2": 42,
+    "id1": "mag-nificent",
+    "id2": "poweroverwhelming",
     "interaction": "Mag-mines cannot cast abilities."
   },
   {
-    "id1": 30,
-    "id2": 46,
+    "id1": "mag-nificent",
+    "id2": "scorchedearth",
     "interaction": "Mag-mines do not set the ground on fire when they explode."
   },
   {
-    "id1": 30,
-    "id2": 47,
+    "id1": "mag-nificent",
+    "id2": "selfdestruction",
     "interaction": "Mag-mines do not create an explosion when explode."
   },
   {
-    "id1": 30,
-    "id2": 51,
+    "id1": "mag-nificent",
+    "id2": "speedfreaks",
     "interaction": "Mag-mines do not move faster with Speed Freaks."
   },
   {
-    "id1": 30,
-    "id2": 54,
+    "id1": "mag-nificent",
+    "id2": "transmutation",
     "interaction": "Mag-mines do not Transmute after killing a unit."
   },
   {
-    "id1": 30,
-    "id2": 59,
+    "id1": "mag-nificent",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators do not resurrect Mag-mines."
   },
   {
-    "id1": 30,
-    "id2": 61,
+    "id1": "mag-nificent",
+    "id2": "walkinginfested",
     "interaction": "Mag-mines do not spawn Infested when they detonate."
   },
   {
-    "id1": 30,
-    "id2": 62,
+    "id1": "mag-nificent",
+    "id2": "wemoveunseen",
     "interaction": "Mag-mines are cloaked."
   },
   {
-    "id1": 32,
-    "id2": 37,
+    "id1": "mineralshields",
+    "id2": "naughtylist",
     "interaction": "Mineral Shield kills increase the Naughty List count."
   },
   {
-    "id1": 32,
-    "id2": 40,
+    "id1": "mineralshields",
+    "id2": "photonoverload",
     "interaction": "Mineral Shields will have Photon Overload applied when damaged."
   },
   {
-    "id1": 32,
-    "id2": 41,
+    "id1": "mineralshields",
+    "id2": "polarity",
     "interaction": "Mineral Shields all have Polarity applied to them."
   },
   {
-    "id1": 33,
-    "id2": 37,
+    "id1": "minesweeper",
+    "id2": "naughtylist",
     "interaction": "Mine kills increase the Naughty List count."
   },
   {
-    "id1": 33,
-    "id2": 41,
+    "id1": "minesweeper",
+    "id2": "polarity",
     "interaction": "Widow Mines and Spider Mines all have Polarity applied to them."
   },
   {
-    "id1": 33,
-    "id2": 42,
+    "id1": "minesweeper",
+    "id2": "poweroverwhelming",
     "interaction": "Widow mines can cast abilities. Spider mines cannot cast abilities."
   },
   {
-    "id1": 33,
-    "id2": 46,
+    "id1": "minesweeper",
+    "id2": "scorchedearth",
     "interaction": "Mines set the ground on fire when they die."
   },
   {
-    "id1": 33,
-    "id2": 47,
+    "id1": "minesweeper",
+    "id2": "selfdestruction",
     "interaction": "Mines set the ground on fire when they are destroyed."
   },
   {
-    "id1": 33,
-    "id2": 51,
+    "id1": "minesweeper",
+    "id2": "speedfreaks",
     "interaction": "Spider mines do not move faster with Speed Freaks."
   },
   {
-    "id1": 33,
-    "id2": 54,
+    "id1": "minesweeper",
+    "id2": "transmutation",
     "interaction": "Widow Mines Transmute after killing a unit."
   },
   {
-    "id1": 33,
-    "id2": 59,
+    "id1": "minesweeper",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators resurrect Widow Mines but not Spider Mines. Widow Mines will move towards player bases after resurrection."
   },
   {
-    "id1": 33,
-    "id2": 61,
+    "id1": "minesweeper",
+    "id2": "walkinginfested",
     "interaction": "Mines spawned Infested when they are destroyed."
   },
   {
-    "id1": 34,
-    "id2": 37,
+    "id1": "missilecommand",
+    "id2": "naughtylist",
     "interaction": "Missile kills do not increase the Naughty List count."
   },
   {
-    "id1": 34,
-    "id2": 41,
+    "id1": "missilecommand",
+    "id2": "polarity",
     "interaction": "Missiles have Polarity applied to them."
   },
   {
-    "id1": 34,
-    "id2": 42,
+    "id1": "missilecommand",
+    "id2": "poweroverwhelming",
     "interaction": "Point Defense Missiles can cast abilities."
   },
   {
-    "id1": 34,
-    "id2": 46,
+    "id1": "missilecommand",
+    "id2": "scorchedearth",
     "interaction": "Missiles set the ground on fire when they are destroyed."
   },
   {
-    "id1": 34,
-    "id2": 47,
+    "id1": "missilecommand",
+    "id2": "selfdestruction",
     "interaction": "Missiles create an explosion when destroyed."
   },
   {
-    "id1": 34,
-    "id2": 51,
+    "id1": "missilecommand",
+    "id2": "speedfreaks",
     "interaction": "Missiles do not move faster with Speed Freaks."
   },
   {
-    "id1": 34,
-    "id2": 59,
+    "id1": "missilecommand",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators cannot resurrect Missiles."
   },
   {
-    "id1": 34,
-    "id2": 61,
+    "id1": "missilecommand",
+    "id2": "walkinginfested",
     "interaction": "Missiles do not spawn Infested when they land on their target. Missiles spawn Infested when destroyed by players."
   },
   {
-    "id1": 34,
-    "id2": 62,
+    "id1": "missilecommand",
+    "id2": "wemoveunseen",
     "interaction": "Missiles are cloaked."
   },
   {
-    "id1": 35,
-    "id2": 43,
+    "id1": "momentofsilence",
+    "id2": "propagators",
     "interaction": "Propagators trigger Moment of Silence when they die."
   },
   {
-    "id1": 35,
-    "id2": 54,
+    "id1": "momentofsilence",
+    "id2": "transmutation",
     "interaction": "Transmuted units which are now Hybrids trigger Moment of Silence when they die."
   },
   {
-    "id1": 35,
-    "id2": 55,
+    "id1": "momentofsilence",
+    "id2": "trickortreat",
     "interaction": "Hybrids spawned from Civilians trigger Moment of Silence when they die."
   },
   {
-    "id1": 35,
-    "id2": 56,
+    "id1": "momentofsilence",
+    "id2": "turkeyshoot",
     "interaction": "The Turking triggers Moment of Silence when it dies."
   },
   {
-    "id1": 35,
-    "id2": 60,
+    "id1": "momentofsilence",
+    "id2": "voidrifts",
     "interaction": "Hybrids spawned from Void Rifts trigger Moment of Silence when they die."
   },
   {
-    "id1": 35,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "momentofsilence",
     "interaction": "Boom Bots do not trigger Moment of Silence when they die."
   },
   {
-    "id1": 36,
-    "id2": 55,
+    "id1": "mutuallyassureddestruction",
+    "id2": "trickortreat",
     "interaction": "Hybrids spawned from Civilians detonate Hybrid Nukes when they die."
   },
   {
-    "id1": 36,
-    "id2": 60,
+    "id1": "mutuallyassureddestruction",
+    "id2": "voidrifts",
     "interaction": "Hybrids spawned from Void Rifts detonate Hybrid Nukes when they die."
   },
   {
-    "id1": 37,
-    "id2": 39,
+    "id1": "naughtylist",
+    "id2": "outbreak",
     "interaction": "Infested and Aberration kills increase the Naughty List count."
   },
   {
-    "id1": 37,
-    "id2": 43,
+    "id1": "naughtylist",
+    "id2": "propagators",
     "interaction": "Propagator kills increase the Naughty List count."
   },
   {
-    "id1": 37,
-    "id2": 50,
+    "id1": "naughtylist",
+    "id2": "slimpickings",
     "interaction": "Turkey kills increase the Naughty List count."
   },
   {
-    "id1": 37,
-    "id2": 55,
+    "id1": "naughtylist",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians kills increase the Naughty List count."
   },
   {
-    "id1": 37,
-    "id2": 56,
+    "id1": "naughtylist",
+    "id2": "turkeyshoot",
     "interaction": "Turkey kills increase the Naughty List count."
   },
   {
-    "id1": 37,
-    "id2": 59,
+    "id1": "naughtylist",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimator kills increase the Naughty List count."
   },
   {
-    "id1": 37,
-    "id2": 60,
+    "id1": "naughtylist",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts kills increase the Naughty List count."
   },
   {
-    "id1": 37,
-    "id2": 61,
+    "id1": "naughtylist",
+    "id2": "walkinginfested",
     "interaction": "Infested kills increase the Naughty List count."
   },
   {
-    "id1": 39,
-    "id2": 41,
+    "id1": "outbreak",
+    "id2": "polarity",
     "interaction": "Infested and Aberrations all have Polarity applied to them."
   },
   {
-    "id1": 39,
-    "id2": 42,
+    "id1": "outbreak",
+    "id2": "poweroverwhelming",
     "interaction": "Infested and Aberrations can cast abilities. Infested and Aberrations can spawn out of Point Defense Drones dropped by Power Overwhelming."
   },
   {
-    "id1": 39,
-    "id2": 46,
+    "id1": "outbreak",
+    "id2": "scorchedearth",
     "interaction": "Infested and Aberrations set the ground on fire when they die."
   },
   {
-    "id1": 39,
-    "id2": 47,
+    "id1": "outbreak",
+    "id2": "selfdestruction",
     "interaction": "Infested and Aberrations create an explosion when they die."
   },
   {
-    "id1": 39,
-    "id2": 51,
+    "id1": "outbreak",
+    "id2": "speedfreaks",
     "interaction": "Infested and Aberrations move faster with Speed Freaks."
   },
   {
-    "id1": 39,
-    "id2": 54,
+    "id1": "outbreak",
+    "id2": "transmutation",
     "interaction": "Infested and Aberrations can transmute."
   },
   {
-    "id1": 39,
-    "id2": 59,
+    "id1": "outbreak",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can resurrect Infested and Aberrations."
   },
   {
-    "id1": 39,
-    "id2": 60,
+    "id1": "outbreak",
+    "id2": "voidrifts",
     "interaction": "Infested and Aberrations do not spawn from Void Rifts."
   },
   {
-    "id1": 39,
-    "id2": 61,
+    "id1": "outbreak",
+    "id2": "walkinginfested",
     "interaction": "Infested and Aberrations do not spawn other infested units when killed."
   },
   {
-    "id1": 39,
-    "id2": 62,
+    "id1": "outbreak",
+    "id2": "wemoveunseen",
     "interaction": "Infested and Aberrations are cloaked."
   },
   {
-    "id1": 40,
-    "id2": 42,
+    "id1": "photonoverload",
+    "id2": "poweroverwhelming",
     "interaction": "Point Defense Drones spawned from Power Overwhelming will gain Photon Overcharge when damaged."
   },
   {
-    "id1": 40,
-    "id2": 60,
+    "id1": "photonoverload",
+    "id2": "voidrifts",
     "interaction": "Void Rifts do not get Photon Overcharge when damaged. "
   },
   {
-    "id1": 41,
-    "id2": 43,
+    "id1": "polarity",
+    "id2": "propagators",
     "interaction": "Propagators that spawn around the map have Polarity applied to them. Propagators spawned from other Propagators do not have any polarity."
   },
   {
-    "id1": 41,
-    "id2": 54,
+    "id1": "polarity",
+    "id2": "transmutation",
     "interaction": "When units Transmute, they can switch Polarities."
   },
   {
-    "id1": 41,
-    "id2": 55,
+    "id1": "polarity",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians all have Polarity applied to them."
   },
   {
-    "id1": 41,
-    "id2": 56,
+    "id1": "polarity",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not have Polarity applied to them. The Turking has Polarity applied to it."
   },
   {
-    "id1": 41,
-    "id2": 59,
+    "id1": "polarity",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators all have Polarity applied to them. Resurrected units may change Polarity after resurrection."
   },
   {
-    "id1": 41,
-    "id2": 60,
+    "id1": "polarity",
+    "id2": "voidrifts",
     "interaction": "Void Rifts and units spawned from Void Rifts all have Polarity applied to them."
   },
   {
-    "id1": 41,
-    "id2": 61,
+    "id1": "polarity",
+    "id2": "walkinginfested",
     "interaction": "Infested all have Polarity applied to them."
   },
   {
-    "id1": 42,
-    "id2": 43,
+    "id1": "poweroverwhelming",
+    "id2": "propagators",
     "interaction": "Propagators can cast abilities. Propagators can spawn out of Point Defense Drones dropped by Power Overwhelming."
   },
   {
-    "id1": 42,
-    "id2": 55,
+    "id1": "poweroverwhelming",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians  can cast abilities."
   },
   {
-    "id1": 42,
-    "id2": 56,
+    "id1": "poweroverwhelming",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys cannot cast abilities."
   },
   {
-    "id1": 42,
-    "id2": 59,
+    "id1": "poweroverwhelming",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can cast abilities. Void Reanimators can spawn out of Point Defense Drones dropped by Power Overwhelming."
   },
   {
-    "id1": 42,
-    "id2": 60,
+    "id1": "poweroverwhelming",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts can cast abilities."
   },
   {
-    "id1": 42,
-    "id2": 61,
+    "id1": "poweroverwhelming",
+    "id2": "walkinginfested",
     "interaction": "Infested can cast abilities."
   },
   {
-    "id1": 42,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "poweroverwhelming",
     "interaction": "Boom Bots can cast abilities. Boom Bots can spawn out of Point Defense Drones dropped by Power Overwhelming."
   },
   {
-    "id1": 43,
-    "id2": 46,
+    "id1": "propagators",
+    "id2": "scorchedearth",
     "interaction": "Propagators set the ground on fire when they die."
   },
   {
-    "id1": 43,
-    "id2": 47,
+    "id1": "propagators",
+    "id2": "selfdestruction",
     "interaction": "Propagators create an explosion when they die."
   },
   {
-    "id1": 43,
-    "id2": 51,
+    "id1": "propagators",
+    "id2": "speedfreaks",
     "interaction": "Propagators move faster with Speed Freaks."
   },
   {
-    "id1": 43,
-    "id2": 54,
+    "id1": "propagators",
+    "id2": "transmutation",
     "interaction": "Propagators do not Transmute."
   },
   {
-    "id1": 43,
-    "id2": 59,
+    "id1": "propagators",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can resurrect Propagators. Propagators resurrected by Void Reanimators are not marked with an icon on the minimap."
   },
   {
-    "id1": 43,
-    "id2": 60,
+    "id1": "propagators",
+    "id2": "voidrifts",
     "interaction": "Propagators do not spawn from Void Rifts."
   },
   {
-    "id1": 43,
-    "id2": 61,
+    "id1": "propagators",
+    "id2": "walkinginfested",
     "interaction": "Propagators spawn Infested when they die."
   },
   {
-    "id1": 43,
-    "id2": 62,
+    "id1": "propagators",
+    "id2": "wemoveunseen",
     "interaction": "Propagators are cloaked."
   },
   {
-    "id1": 44,
-    "id2": 51,
+    "id1": "purifierbeam",
+    "id2": "speedfreaks",
     "interaction": "Purifier Beam does not move faster with Speed Freaks."
   },
   {
-    "id1": 44,
-    "id2": 62,
+    "id1": "purifierbeam",
+    "id2": "wemoveunseen",
     "interaction": "Purifier Beam is cloaked."
   },
   {
-    "id1": 46,
-    "id2": 55,
+    "id1": "scorchedearth",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians set the ground on fire when they die."
   },
   {
-    "id1": 46,
-    "id2": 56,
+    "id1": "scorchedearth",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys set the ground on fire when they die."
   },
   {
-    "id1": 46,
-    "id2": 59,
+    "id1": "scorchedearth",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators set the ground on fire when they die."
   },
   {
-    "id1": 46,
-    "id2": 60,
+    "id1": "scorchedearth",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts set the ground on fire when they die."
   },
   {
-    "id1": 46,
-    "id2": 61,
+    "id1": "scorchedearth",
+    "id2": "walkinginfested",
     "interaction": "Infested set the ground on fire when they die."
   },
   {
-    "id1": 46,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "scorchedearth",
     "interaction": "Boom Bots set the ground on fire when they die."
   },
   {
-    "id1": 47,
-    "id2": 55,
+    "id1": "selfdestruction",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians create an explosion when they die."
   },
   {
-    "id1": 47,
-    "id2": 56,
+    "id1": "selfdestruction",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not create an explosion when they die. Angry Turkeys create an explosion when they die. The Turking creates an explosion when it does."
   },
   {
-    "id1": 47,
-    "id2": 59,
+    "id1": "selfdestruction",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators create an explosion when they die."
   },
   {
-    "id1": 47,
-    "id2": 60,
+    "id1": "selfdestruction",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts  create an explosion when they die."
   },
   {
-    "id1": 47,
-    "id2": 61,
+    "id1": "selfdestruction",
+    "id2": "walkinginfested",
     "interaction": "Infested create an explosion when they die."
   },
   {
-    "id1": 47,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "selfdestruction",
     "interaction": "Boom Bots create an explosion when they die."
   },
   {
-    "id1": 51,
-    "id2": 54,
+    "id1": "speedfreaks",
+    "id2": "transmutation",
     "interaction": "Transmuted units move faster with Speed Freaks."
   },
   {
-    "id1": 51,
-    "id2": 55,
+    "id1": "speedfreaks",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians move faster with Speed Freaks."
   },
   {
-    "id1": 51,
-    "id2": 56,
+    "id1": "speedfreaks",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys do not move faster with Speed Freaks. The Turking moves faster with Speed Freaks."
   },
   {
-    "id1": 51,
-    "id2": 59,
+    "id1": "speedfreaks",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators move faster with Speed Freaks. Resurrected units move faster with Speed Freaks."
   },
   {
-    "id1": 51,
-    "id2": 60,
+    "id1": "speedfreaks",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts move faster with Speed Freaks."
   },
   {
-    "id1": 51,
-    "id2": 61,
+    "id1": "speedfreaks",
+    "id2": "walkinginfested",
     "interaction": "Infested units move faster with Speed Freaks."
   },
   {
-    "id1": 51,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "speedfreaks",
     "interaction": "Boom Bots move faster with Speed Freaks."
   },
   {
-    "id1": 52,
-    "id2": 62,
+    "id1": "temporalfield",
+    "id2": "wemoveunseen",
     "interaction": "Temporal Fields are not cloaked."
   },
   {
-    "id1": 53,
-    "id2": 62,
+    "id1": "timewarp",
+    "id2": "wemoveunseen",
     "interaction": "Time Warps are not cloaked."
   },
   {
-    "id1": 54,
-    "id2": 55,
+    "id1": "transmutation",
+    "id2": "trickortreat",
     "interaction": "Units spawned from Civilians can Transmute."
   },
   {
-    "id1": 54,
-    "id2": 56,
+    "id1": "transmutation",
+    "id2": "turkeyshoot",
     "interaction": "Turkeys can transmute when they deal damage or kill a unit. The Turking does not transmute."
   },
   {
-    "id1": 54,
-    "id2": 59,
+    "id1": "transmutation",
+    "id2": "voidreanimators",
     "interaction": "Resurrected units can Transmute."
   },
   {
-    "id1": 54,
-    "id2": 60,
+    "id1": "transmutation",
+    "id2": "voidrifts",
     "interaction": "Units spawned from Void Rifts can transmute."
   },
   {
-    "id1": 54,
-    "id2": 61,
+    "id1": "transmutation",
+    "id2": "walkinginfested",
     "interaction": "Infested can transmute. Newly-transmuted units spawn Infested when they die."
   },
   {
-    "id1": 54,
-    "id2": 62,
+    "id1": "transmutation",
+    "id2": "wemoveunseen",
     "interaction": "Transmuted units are cloaked."
   },
   {
-    "id1": 55,
-    "id2": 59,
+    "id1": "trickortreat",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can resurrect units spawned from Civilians."
   },
   {
-    "id1": 55,
-    "id2": 60,
+    "id1": "trickortreat",
+    "id2": "voidrifts",
     "interaction": "Civilians do not spawn from Void Rifts."
   },
   {
-    "id1": 55,
-    "id2": 61,
+    "id1": "trickortreat",
+    "id2": "walkinginfested",
     "interaction": "Units spawned from Civilians spawn Infested when they die."
   },
   {
-    "id1": 55,
-    "id2": 62,
+    "id1": "trickortreat",
+    "id2": "wemoveunseen",
     "interaction": "Units spawned from Civilians are cloaked."
   },
   {
-    "id1": 56,
-    "id2": 59,
+    "id1": "turkeyshoot",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators can resurrect Turkeys. Void Reanimators do not resurrect the Turking."
   },
   {
-    "id1": 56,
-    "id2": 61,
+    "id1": "turkeyshoot",
+    "id2": "walkinginfested",
     "interaction": "Turkeys do not spawn Infested when they die. Angry Turkeys spawn Infested when they die. The Turking does not spawn Infested when it dies."
   },
   {
-    "id1": 56,
-    "id2": 62,
+    "id1": "turkeyshoot",
+    "id2": "wemoveunseen",
     "interaction": "Turkeys are not cloaked. The Turking is cloaked."
   },
   {
-    "id1": 57,
-    "id2": 62,
+    "id1": "twister",
+    "id2": "wemoveunseen",
     "interaction": "Twisters are not cloaked."
   },
   {
-    "id1": 59,
-    "id2": 60,
+    "id1": "voidreanimators",
+    "id2": "voidrifts",
     "interaction": "Void Reanimators can resurrect units spawned from Void Rifts.\r\nVoid Reanimators do not spawn from Void Rifts."
   },
   {
-    "id1": 59,
-    "id2": 61,
+    "id1": "voidreanimators",
+    "id2": "walkinginfested",
     "interaction": "Void Reanimators can resurrect Infested."
   },
   {
-    "id1": 59,
-    "id2": 62,
+    "id1": "voidreanimators",
+    "id2": "wemoveunseen",
     "interaction": "Void Reanimators are cloaked."
   },
   {
-    "id1": 59,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "voidreanimators",
     "interaction": "Void Reanimators do not resurrect Boom Bots."
   },
   {
-    "id1": 60,
-    "id2": 61,
+    "id1": "voidrifts",
+    "id2": "walkinginfested",
     "interaction": "Units spawned from Void Rifts spawn Infested when they die."
   },
   {
-    "id1": 60,
-    "id2": 62,
+    "id1": "voidrifts",
+    "id2": "wemoveunseen",
     "interaction": "Units spawned from Void Rifts are cloaked."
   },
   {
-    "id1": 60,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "voidrifts",
     "interaction": "Boom Bots do not spawn from Void Rifts."
   },
   {
-    "id1": 61,
-    "id2": 62,
+    "id1": "walkinginfested",
+    "id2": "wemoveunseen",
     "interaction": "Infested are cloaked."
   },
   {
-    "id1": 61,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "walkinginfested",
     "interaction": "Boom Bots spawn Infested when they die."
   },
   {
-    "id1": 62,
-    "id2": 63,
+    "id1": "boombots",
+    "id2": "wemoveunseen",
     "interaction": "Boom Bots are cloaked, but their tags are still visible.\r\nCodes cannot be input without detection."
   }
 ]

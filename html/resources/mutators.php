@@ -170,14 +170,15 @@ require_once "../wrapper-static.php";
     usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     $mutators = [];
     foreach ($mutatorInfo as $mutator) {
-        $mutators[] = [$mutator['mutatorid'],$mutator['mutatorname']];
+        // TODO: when de-database-ifying mutators, use the human-ish id and remove the conversion here
+        $mutators[] = [str_replace(' ', '', strtolower($mutator['mutatorname'])), $mutator['mutatorname']];
     }
     ?>
     <form action="mutators.php" method="post">
         <p class="centerAlign">Mutator 1:</p>
         <select name="mut1" id="mut1">
             <?php
-            echo "<option value='0'>-</option>";
+            echo "<option value='NONE'>-</option>\n";
             foreach ($mutators as [$id, $name]) {
                 echo "<option value='$id'>$name</option>\n";
             }
@@ -188,8 +189,8 @@ require_once "../wrapper-static.php";
         <p class="centerAlign" >Mutator 2:</p>
         <select name="mut2" id="mut2">
             <?php
-            echo "<option value='0'>-</option>";
-            echo "<option value='-1'>(show all interactions)</option>";
+            echo "<option value='NONE'>-</option>\n";
+            echo "<option value='ALL'>(show all interactions)</option>\n";
             foreach ($mutators as [$id, $name]) {
                 echo "<option value='$id'>$name</option>\n";
             }
@@ -223,7 +224,7 @@ require_once "../wrapper-static.php";
                 }
             });
             $("#mut1 option").each(function () {
-                var val = parseInt(this.value);
+                var val = this.value;
                 var text = $(this).text();
                 mutators[val] = text;
             });
@@ -241,7 +242,7 @@ require_once "../wrapper-static.php";
         function getAllInteractions(mut) {
             var interactions = {};
             for (var key in mutators) {
-                var interaction = getInteraction(mut, parseInt(key));
+                var interaction = getInteraction(mut, key);
                 if (interaction) {
                     interactions[key] = interaction;
                 }
@@ -251,16 +252,14 @@ require_once "../wrapper-static.php";
         function updateInteractions() {
             if (!getInteractions()) return;
             var $mut1 = $("#mut1 option:selected");
-            var mut1 = parseInt($mut1.val());
-            var filename1 = $mut1.text().replace(/ /g,'').toLowerCase();
-            if (mut1 <= 0) filename1 = 'random';
+            var mut1 = $mut1.val();
+            var filename1 = mut1 === "NONE" ? 'random' : mut1;
             var $mut2 = $("#mut2 option:selected");
-            var mut2 = parseInt($mut2.val());
-            var filename2 = $mut2.text().replace(/ /g,'').toLowerCase();
-            if (mut2 <= 0) filename2 = 'random';
+            var mut2 = $mut2.val();
+            var filename2 = mut2 === "NONE" || mut2 === "ALL" ? 'random' : mut2
             $("#mut2 option").each(function () {
-                var val = parseInt(this.value);
-                if (!val || !mut1 || val === -1 || getInteraction(mut1, val)) {
+                var val = this.value;
+                if (mut1 === "NONE" || val === "NONE" || val === "ALL" || getInteraction(mut1, val)) {
                     this.disabled = false;
                 } else {
                     this.disabled = true;
@@ -268,21 +267,21 @@ require_once "../wrapper-static.php";
             });
             $("#mut1img").attr("src", "/images/mutators/" + filename1 + ".png");
             $("#mut2img").attr("src", "/images/mutators/" + filename2 + ".png");
-            if (mut1 && mut2 === -1) {
+            if (mut1 !== "NONE" && mut2 === "ALL") {
                 var html = "";
                 var interactions = getAllInteractions(mut1);
                 for (var key in interactions) {
-                    var filename = mutators[key].replace(/ /g,'').toLowerCase();
+                    var filename = key;
                     html += "<p><img src=\"/images/mutators/" + filename + ".png\" height=\"25\" width=\"25\" style=\"vertical-align:middle\"> " + mutators[key] + ": " + interactions[key] + "</p>";
                 }
                 $("#interactions").html(html || "No interaction found.");
-            } else if (mut1 && mut2) {
+            } else if (mut1 !== "NONE" && mut2 !== "NONE") {
                 $("#interactions").text(getInteraction(mut1, mut2) || "No interaction found.");
-            } else if (mut1 && !$mut2.length) {
+            } else if (mut1 !== "NONE" && !$mut2.length) {
                 // mut2 has a disabled option selected, which means there's no interaction
                 $("#interactions").text("No interaction found.");
             } else {
-                $("#interactions").text(mut1 || mut2 ? "(Select both mutators)" : "");
+                $("#interactions").text((mut1 === "NONE") !== (mut2 === "NONE") ? "(Select both mutators)" : "");
             }
         }
         $("#mut1").change(function(){

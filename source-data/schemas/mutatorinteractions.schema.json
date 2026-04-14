@@ -12,12 +12,12 @@
             "type": "object",
             "properties": {
                 "id1": {
-                    "$ref": "#/definitions/PositiveInteger",
-                    "description": "ID of the first mutator in the pair"
+                    "$ref": "#/definitions/MutatorId",
+                    "description": "ID of the first mutator in the pair, lowercased & without spaces"
                 },
                 "id2": {
-                    "$ref": "#/definitions/PositiveInteger",
-                    "description": "ID of the second mutator in the pair (id2 > id1)"
+                    "$ref": "#/definitions/MutatorId",
+                    "description": "ID of the second mutator in the pair, lowercased & without spaces, id2 > id1"
                 },
                 "interaction": {
                     "type": "string",
@@ -31,9 +31,12 @@
             ],
             "additionalProperties": false
         },
-        "PositiveInteger": {
-            "type": "integer",
-            "minimum": 1
+        "MutatorId": {
+            "$ref": "#/definitions/LowercaseNoSpaces"
+        },
+        "LowercaseNoSpaces": {
+            "type": "string",
+            "pattern": "^[^ A-Z]+$"
         }
     }
 }
