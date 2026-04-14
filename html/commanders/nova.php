@@ -393,113 +393,105 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Nova. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Soldier of Fortune</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Soldier of Fortune</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Factory and Starport no longer have Tech requirements.</li>
                                 <li>Unit charges accrue 100% faster for the first production structure built.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Unit charges accrue 50% slower for the second and third production structures built.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Bonus applies to the first completed structure.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Unit charges accrue 50% slower for the second and third production structures built.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Bonus applies to the first completed structure.</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige allows Nova to accrue charges faster on the production structure of her choice, making this a very versatile prestige. The choice of structure will be heavily dependant on the enemy composition, so early scouting will be important.</td>
+                <th>Advice</th><td>This prestige allows Nova to accrue charges faster on the production structure of her choice, making this a very versatile prestige. The choice of structure will be heavily dependant on the enemy composition, so early scouting will be important.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Tactical Dispatcher</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Tactical Dispatcher</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Tactical Airlift cooldown reduced by 75%.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Griffin Airstrike cooldown increased by 300%.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Griffin Airstrike cooldown increased by 300%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>5</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">While map mobility is important, the increase in cooldown of Griffin Airstrike is very detrimental to Nova, as the airstrike is Nova's primary method of weakening enemy bases and attack waves before engaging with her army to minimize losses. This prestige encourages players to engage waves with their armies directly, which can increase losses taken by Nova.</td>
+                <th>Advice</th><td>While map mobility is important, the increase in cooldown of Griffin Airstrike is very detrimental to Nova, as the airstrike is Nova's primary method of weakening enemy bases and attack waves before engaging with her army to minimize losses. This prestige encourages players to engage waves with their armies directly, which can increase losses taken by Nova.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Infiltration Specialist</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Infiltration Specialist</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Nova gains permanent Super Cloak.</li>
                                 <li>Her abilities have a 50% increased radius and a 50% reduced cooldown.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Nova cannot switch to her Combat Suit and loses Super Cloak for 4 seconds upon attacking or using Snipe.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Nova cannot switch to her Combat Suit and loses Super Cloak for 4 seconds upon attacking or using Snipe.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>9</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The loss of the Combat Suit reduces Nova's versatility. The impact of this depends on several factors, like the enemy composition faced, since Nova will usually use the Combat Suit to clear weaker attack waves that are not worth airstriking. However, it does allow Nova to easily clear large swathes of enemy bases with her Nukes and Sabotage Drones. Combined with the Nuke cooldown reduction mastery, this prestige is very powerful.</td>
+                <th>Advice</th><td>The loss of the Combat Suit reduces Nova's versatility. The impact of this depends on several factors, like the enemy composition faced, since Nova will usually use the Combat Suit to clear weaker attack waves that are not worth airstriking. However, it does allow Nova to easily clear large swathes of enemy bases with her Nukes and Sabotage Drones. Combined with the Nuke cooldown reduction mastery, this prestige is very powerful.</td>
             </tr>
         </tbody>
     </table>

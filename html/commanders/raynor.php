@@ -388,120 +388,116 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Raynor. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Backwater Marshal</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Backwater Marshal</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Biological combat units gain 100% increased life.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>MULEs are unavailable.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Stacks with Combat Shield</li>
-                        <li>Stacks with Armor Upgrades</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>MULEs are unavailable.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Stacks with Combat Shield</li>
+                        <li>Stacks with Armor Upgrades</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige increases the ruggedness of Raynor's army. If you have good micro, you might find this prestige to be particularly valuable. However, its disadvantage is a big one. You lose the ability to spawn-camp effectively using Vultures due to the lack of potentially high mineral income from MULEs. Remember that you will still need Orbital Command Centers for detection. </td>
+                <th>Advice</th><td>This prestige increases the ruggedness of Raynor's army. If you have good micro, you might find this prestige to be particularly valuable. However, its disadvantage is a big one. You lose the ability to spawn-camp effectively using Vultures due to the lack of potentially high mineral income from MULEs. Remember that you will still need Orbital Command Centers for detection. </td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Rough Rider</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Rough Rider</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Afterburners additionally increases attack speed by 100%. Cooldown reduced by 50%.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Units no longer cost less.</li>
-                                <li>Afterburners cost 10 life and its movement speed bonus reduced to 50%.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Units no longer cost less.</li>
+                                <li>Afterburners cost 10 life and its movement speed bonus reduced to 50%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>11</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige is essentially a Stim-for-Mechs prestige. It can be particularly useful when playing under constrained resources, while also playing a Bio+Mech build. You may even combine this with the Mech Attack Speed mastery to get even higher DPS output out of your Mech units.</td>
+                <th>Advice</th><td>This prestige is essentially a Stim-for-Mechs prestige. It can be particularly useful when playing under constrained resources, while also playing a Bio+Mech build. You may even combine this with the Mech Attack Speed mastery to get even higher DPS output out of your Mech units.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Rebel Raider</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Rebel Raider</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>The Starport, Armory and Orbital Command no longer have tech requirements.</li>
                                 <li>The Starport no longer has a gas cost and its units cost 30% less gas</li>
                                 <li>Vikings, Banshees and Battlecruisers increase top bar cooldown rates by 1% per supply used.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Combat units cost 50% more minerals.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Cooldown Reduction mastery is applied first, then prestige cooldown increase applied</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Combat units cost 50% more minerals.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Cooldown Reduction mastery is applied first, then prestige cooldown increase applied</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>6</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige is particularly useful if you prefer to use air units and rushing Battlecruisers. The lack of tech requirements combined with the gas cost reduction makes Battlecruiser rushing a viable strategy. you may even combine this with the Hyperion cooldown mastery to be able to spam Hyperions much more frequently.</td>
+                <th>Advice</th><td>This prestige is particularly useful if you prefer to use air units and rushing Battlecruisers. The lack of tech requirements combined with the gas cost reduction makes Battlecruiser rushing a viable strategy. you may even combine this with the Hyperion cooldown mastery to be able to spam Hyperions much more frequently.</td>
             </tr>
         </tbody>
     </table>

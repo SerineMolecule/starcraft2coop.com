@@ -300,126 +300,126 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Zagara. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Scourge Queen</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Scourge Queen</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Max supply increased by 50.</li>
                                 <li>Zerglings and Scourge spawn one extra unit per egg.</li>
                                 <li>Baneling Nests will spawn an additional 4 free Banelings and Scourge Nests will spawn 4 free Scourge.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Zagara is unavailable.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Zerglings will spawn in 3's from level 1 to level 11</li>
-                        <li>Zerglings will spawn in 4's once Swarmling strain unlocks at level 12</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Zagara is unavailable.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Zerglings will spawn in 3's from level 1 to level 11</li>
+                        <li>Zerglings will spawn in 4's once Swarmling strain unlocks at level 12</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>7</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige sacrifices the hero unit for a higher supply cap as well as the ability to spawn large numbers of units. The loss of Frenzy, which is often used to help her units contact enemy forces through spells does negatively impact this prestige. However, this prestige is able to overcome that by overwhelming enemy forces with units. The costs of this are mitigated by the large number of free units that are spawned throughout the course of the game. If using this Prestige, make sure to adjust your Mastery selections so they are not invested in Zagara or her abilities.</td>
+                <th>Advice</th><td>This prestige sacrifices the hero unit for a higher supply cap as well as the ability to spawn large numbers of units. The loss of Frenzy, which is often used to help her units contact enemy forces through spells does negatively impact this prestige. However, this prestige is able to overcome that by overwhelming enemy forces with units. The costs of this are mitigated by the large number of free units that are spawned throughout the course of the game. If using this Prestige, make sure to adjust your Mastery selections so they are not invested in Zagara or her abilities.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Mother of Constructs</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Mother of Constructs</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Aberrations and Corruptors cost 25% less, gain 50% increased health, and possess greatly increased health regeneration.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>No free Banelings.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Regeneration rate increased by 3</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>No free Banelings.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Regeneration rate increased by 3</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige is a solid prestige that is particularly useful during sub-mastery leveling, as it partially solves the lack of resilience of Zagara's army. The lack of free Banelings means the player will have to think a bit more carefully about how they take engagements and how to most efficiently utilize their Banelings to achieve maximum damage. Note that this does <i>not</i> mean that you should not be investing in some of the smaller units or their upgrades. Banelings, Zerglings and Scourge should be made in tiny quantities, and their important upgrades (e.g. Corrosive Acid, Virulent Spores) should still be obtained, as Aberrations and Corruptors spawn Banelings and Scourge respectively when they die. Remember to adapt your build order such that you're not building a Baneling Nest too early.</td>
+                <th>Advice</th><td>This prestige is a solid prestige that is particularly useful during sub-mastery leveling, as it partially solves the lack of resilience of Zagara's army. The lack of free Banelings means the player will have to think a bit more carefully about how they take engagements and how to most efficiently utilize their Banelings to achieve maximum damage. Note that this does <i>not</i> mean that you should not be investing in some of the smaller units or their upgrades. Banelings, Zerglings and Scourge should be made in tiny quantities, and their important upgrades (e.g. Corrosive Acid, Virulent Spores) should still be obtained, as Aberrations and Corruptors spawn Banelings and Scourge respectively when they die. Remember to adapt your build order such that you're not building a Baneling Nest too early.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Apex Predator</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Apex Predator</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Zagara gains reduced ability cooldowns (33% reduction), increased health and energy regeneration, and access to the Deep Tunnel ability.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>Mass Frenzy only affects Zagara and her summoned units.</li>
                                 <li>Combat units cost 25% more.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Deep Tunnel does not require vision or explored terrain.</li>
-                                <li>Deep Tunnel has a cooldown of 20 seconds.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Deep Tunnel does not require vision or explored terrain.</li>
+                                <li>Deep Tunnel has a cooldown of 20 seconds.</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige vastly improves the hero unit's power level such that she can solo some enemy bases without the help of her army. The Deep Tunnel ability provides Zagara with extreme mobility that is particular useful when trying to deal with <a href="/resources/mutators">mutators</a> such as Void Rifts. However, the downside is fairly impactful. Players that take a lot of inefficient trades may find themselves starved of resources. As such, they'll need to be more careful with how they choose to engage attack waves and push into enemy bases. Avoid using this prestige on sub-mastery Zagara, as the increase in the Energy Regeneration is still not enough to allow Zagara to remain in sustained combat.</td>
+                <th>Advice</th><td>This prestige vastly improves the hero unit's power level such that she can solo some enemy bases without the help of her army. The Deep Tunnel ability provides Zagara with extreme mobility that is particular useful when trying to deal with <a href="/resources/mutators">mutators</a> such as Void Rifts. However, the downside is fairly impactful. Players that take a lot of inefficient trades may find themselves starved of resources. As such, they'll need to be more careful with how they choose to engage attack waves and push into enemy bases. Avoid using this prestige on sub-mastery Zagara, as the increase in the Energy Regeneration is still not enough to allow Zagara to remain in sustained combat.</td>
             </tr>
         </tbody>
     </table>

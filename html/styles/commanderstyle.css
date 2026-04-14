@@ -105,43 +105,21 @@
 .masterySummary{
     margin-bottom:75px;
 }
-.prestigeTable td {
+.prestigeTable th {
     vertical-align: top;
+    width: 5%;
+    text-align: right;
+}
+.prestigeTable td {
+    text-align:left;
+}
+.prestigeTitle{
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .prestigeTable ul {
     margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.prestigeTable li {
-    margin-bottom: 8px;
-}
-.prestigeTable li ul {
-    list-style: disc;
-    padding-left: 1.4em;
-}
-.prestigeTable li li {
-    margin-bottom: 0;
-}
-.prestigeTable th:nth-child(1),.prestigeTable td:nth-child(1){
-    width:5%;
-    text-align:center;
-}
-.prestigeTable th:nth-child(2),.prestigeTable td:nth-child(2){
-    width:18%;
-}
-.prestigeTable th:nth-child(3),.prestigeTable td:nth-child(3){
-    width:62%;
-}
-.prestigeTable th:nth-child(4),.prestigeTable td:nth-child(4){
-    width:15%;
-    text-align:center;
-}
-.prestigeTable td.forceleft{
-    text-align:left;
-}
-.abilityTable td:first-child{
-    text-align:center;
 }
 .leftImage,.rightImage{
     overflow:auto;

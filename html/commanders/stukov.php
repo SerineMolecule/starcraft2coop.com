@@ -412,113 +412,105 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Stukov. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Frightful Fleshwelder</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Frightful Fleshwelder</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Factory and Starport no longer have tech requirements.</li>
                                 <li>Mechanical combat units cost 30% less.</li>
                                 <li>Automated Mitosis generates Infested Siege Tank ammunition 200% faster.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>The Infested Colonist Compound does not spawn and cannot be built.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige puts Stukov's mech units well within reach in the early game, allowing him to have map presence by removing tech requirements and providing a cost reduction to his units. It is an extremely powerful prestige and the loss of the Infested Colonist Compound only affects the infested in the infested-specific upgrades (Anaerobic Enhancement and Broodling Gestation). While those upgrades are useful, their value does not match up to that of having significantly cheaper mech units.</td>
+                <th>Advice</th><td>This prestige puts Stukov's mech units well within reach in the early game, allowing him to have map presence by removing tech requirements and providing a cost reduction to his units. It is an extremely powerful prestige and the loss of the Infested Colonist Compound only affects the infested in the infested-specific upgrades (Anaerobic Enhancement and Broodling Gestation). While those upgrades are useful, their value does not match up to that of having significantly cheaper mech units.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Plague Warden</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Plague Warden</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Banshees can load up to 16 Infested infantry and can launch their cargo at a ground target.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Infested Civilians have 30% reduced timed life.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Banshees can unload units to a target location within 10 range, dealing 20 damage.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Infested Civilians have 30% reduced timed life.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Banshees can unload units to a target location within 10 range, dealing 20 damage.</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige makes Banshees double up as Medivacs to shuttle Infested Infantry to various locations on the map. While this prestige allows for some creative strategies to be utilized, the excessive amount of micro required to load and unload units from Banshees is not worth the payback. Additionally, Infested Banshees generally are not as effective as Diamondbacks in dealing with most ground objectives, especially considering their high cost, rendering this prestige fairly useless.</td>
+                <th>Advice</th><td>This prestige makes Banshees double up as Medivacs to shuttle Infested Infantry to various locations on the map. While this prestige allows for some creative strategies to be utilized, the excessive amount of micro required to load and unload units from Banshees is not worth the payback. Additionally, Infested Banshees generally are not as effective as Diamondbacks in dealing with most ground objectives, especially considering their high cost, rendering this prestige fairly useless.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Lord of the Horde</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Lord of the Horde</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Infested Bunkers spawn Infested Troopers 200% faster.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Infested Bunkers no longer have cargo capacity.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Infested Bunkers no longer have cargo capacity.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige converts Bunkers from static defense structures to Infested Trooper generators. Bunkers lose the loaded troopers functionality, but they generate Infested units at a highly accelerated rate. For players that prefer a mass Bunker strategy, this prestige is better than having no prestige talents selected. The prestige works well with the Infested Duration mastery, and on maps where you are required to push in a single direction. Missions like Temple of the Past will provide a little more challenge for players using this Prestige. It can be very effective against <a href="/resources/mutators">mutators</a> such as Boom Bots, Black Death and Kill Bots</td>
+                <th>Advice</th><td>This prestige converts Bunkers from static defense structures to Infested Trooper generators. Bunkers lose the loaded troopers functionality, but they generate Infested units at a highly accelerated rate. For players that prefer a mass Bunker strategy, this prestige is better than having no prestige talents selected. The prestige works well with the Infested Duration mastery, and on maps where you are required to push in a single direction. Missions like Temple of the Past will provide a little more challenge for players using this Prestige. It can be very effective against <a href="/resources/mutators">mutators</a> such as Boom Bots, Black Death and Kill Bots</td>
             </tr>
         </tbody>
     </table>

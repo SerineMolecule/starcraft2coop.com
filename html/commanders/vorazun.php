@@ -450,121 +450,117 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Vorazun. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Spirit of Respite</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Spirit of Respite</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Emergency Recall recalls cloaked units to the closest Nexus or Dark Pylon instead of the primary structure and heals life and shields to full.</li>
                                 <li>Deploy Dark Pylon cooldown and cost reduced by 50%.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Dark Pylons lose Recall.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Dark Pylons lose Recall.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>13</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige sacrifices Vorazun's mobility but allows her to quickly bring back recalled units onto the battlefield. The lack of mobility can be solved partially by being aware of mission timings. Another advantage of this prestige is it helps when playing against the Black Death <a href="/resources/mutators">mutator</a> well by keeping infected units away from your mineral line. This prestige should be played while leveling Vorazun up to level 11, as it has no disadvantage.</td>
+                <th>Advice</th><td>This prestige sacrifices Vorazun's mobility but allows her to quickly bring back recalled units onto the battlefield. The lack of mobility can be solved partially by being aware of mission timings. Another advantage of this prestige is it helps when playing against the Black Death <a href="/resources/mutators">mutator</a> well by keeping infected units away from your mineral line. This prestige should be played while leveling Vorazun up to level 11, as it has no disadvantage.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Withering Siphon</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Withering Siphon</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Void Stasis, Confusion, Stasis Ward, Disruption Web, and Darkcoil may affect Heroic units and cause enemies to lose 20 life per second. This effect cannot kill.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Combat units deal 25% reduced damage.</li>
-                                <li>Stasis Ward duration reduced by 75%.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>DoT effects do not stack</li>
-                        <li>Only way to deal DoT damage to air units is using Confusion</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Combat units deal 25% reduced damage.</li>
+                                <li>Stasis Ward duration reduced by 75%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>DoT effects do not stack</li>
+                        <li>Only way to deal DoT damage to air units is using Confusion</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>6</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The fact that this prestige does not kill severely limits its potential utility. Additionally, the reduction of the Stasis Ward duration further reduces the effectiveness of this Prestige, since Stasis Ward with Stasis Calibration is a very powerful tool in Vorazun's kit for dealing with attack waves and other difficult situations.</td>
+                <th>Advice</th><td>The fact that this prestige does not kill severely limits its potential utility. Additionally, the reduction of the Stasis Ward duration further reduces the effectiveness of this Prestige, since Stasis Ward with Stasis Calibration is a very powerful tool in Vorazun's kit for dealing with attack waves and other difficult situations.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Keeper of Shadows</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Keeper of Shadows</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Time Stop becomes targeted. All Shadow Guard who have died are resurrected at the target location.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>Shadow Guard duration reduced by 40%.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
                                 <li>Shadow Guard duration Mastery applied first, then duration reduced by 40%</li>
                         <li>Shadow Guards do not need to be killed. Expired (despawned) Shadow Guards will also spawn</li>
                         <li>Time Stop is still a global effect. Target location is where Shadow Guards spawn</li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>10</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige allows Time Stop to get more powerful as the player utilizes their Shadow Guard calldowns. However, the duration reduction of the Shadow Guards will mean that the player will need to clearly know how to utilize them effectively, even while using the Shadow Guard duration mastery.</td>
+                <th>Advice</th><td>This prestige allows Time Stop to get more powerful as the player utilizes their Shadow Guard calldowns. However, the duration reduction of the Shadow Guards will mean that the player will need to clearly know how to utilize them effectively, even while using the Shadow Guard duration mastery.</td>
             </tr>
         </tbody>
     </table>

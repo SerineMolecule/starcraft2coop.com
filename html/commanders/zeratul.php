@@ -948,124 +948,124 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Zeratul. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Anakh Su'n</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Anakh Su'n</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Zeratul can deploy the Void Seeker, granting all friendly units in a target area Super Cloak for 15 seconds.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>The Void Seeker can no longer transport Zeratul.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
                                 <li>Void Seeker cooldown is 180 seconds</li>
                                 <li>Supercloak range is 16 range from selected point</li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">One of the primary uses for the Void Seeker for Zeratul play is quickly getting to Artifact Fragments. You can mitigate the disadvantage by using Void Arrays or Blink to transport Zeratul. The prestige sacrifices that for a Supercloak that Zeratul can use to push into enemy bases without taking losses. It is a powerful prestige that helps Zeratul mitigate losses of his expensive units. This prestige works very well when both players coordinate a push into an enemy base, as both players can take advantage of the Supercloak to pick off high-priority targets.</td>
+                <th>Advice</th><td>One of the primary uses for the Void Seeker for Zeratul play is quickly getting to Artifact Fragments. You can mitigate the disadvantage by using Void Arrays or Blink to transport Zeratul. The prestige sacrifices that for a Supercloak that Zeratul can use to push into enemy bases without taking losses. It is a powerful prestige that helps Zeratul mitigate losses of his expensive units. This prestige works very well when both players coordinate a push into an enemy base, as both players can take advantage of the Supercloak to pick off high-priority targets.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Knowledge Seeker</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Knowledge Seeker</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Zeratul can collect an unlimited number of Artifact Fragments.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Zeratul's combat units cost 25% more.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Each artifact increases number of Blink charges by 1</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Zeratul's combat units cost 25% more.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Each artifact increases number of Blink charges by 1</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige works well for players that can quickly find their Artifact Fragments. The effectiveness of this prestige is dependant on the length of the mission. Fixed-time missions are best for this, as the longer game time allows Zeratul's units to upgrade more and more. This prestige works best with the Artifact Spawn mastery. The disadvantage can be further mitigated by using Tesseract Cannons. As they are structures, their costs are not increased from this prestige.</td>
+                <th>Advice</th><td>This prestige works well for players that can quickly find their Artifact Fragments. The effectiveness of this prestige is dependant on the length of the mission. Fixed-time missions are best for this, as the longer game time allows Zeratul's units to upgrade more and more. This prestige works best with the Artifact Spawn mastery. The disadvantage can be further mitigated by using Tesseract Cannons. As they are structures, their costs are not increased from this prestige.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Herald of the Void</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Herald of the Void</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Each collected Artifact Fragment reduces the cooldown of Zeratul's Shadow Cleave by 5 seconds.</li>
                                 <li>Shadow Cleave spawns a tornado that damages and slows enemy units.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Zeratul can only collect up to two Artifact Fragments.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Tornadoes deal 5 damage every 0.25 seconds and slows units by 30% for 5 seconds</li>
-                        <li>Tornadoes target Detectors first</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Zeratul can only collect up to two Artifact Fragments.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Tornadoes deal 5 damage every 0.25 seconds and slows units by 30% for 5 seconds</li>
+                        <li>Tornadoes target Detectors first</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige sacrifices the third artifact set of upgrades (as well as the Avatars) for a more versatile hero unit. This prestige works best on shorter maps and missions where hyper-aggressive hero play is rewarded, as a lot of the units will not have the defensive upgrades that are provided with the third Artifact Fragment. This prestige works well against certain <a href="/resources/mutators">mutators</a> like Minesweeper, as the Tornadoes can damage burrowed units without the need for any detection.</td>
+                <th>Advice</th><td>This prestige sacrifices the third artifact set of upgrades (as well as the Avatars) for a more versatile hero unit. This prestige works best on shorter maps and missions where hyper-aggressive hero play is rewarded, as a lot of the units will not have the defensive upgrades that are provided with the third Artifact Fragment. This prestige works well against certain <a href="/resources/mutators">mutators</a> like Minesweeper, as the Tornadoes can damage burrowed units without the need for any detection.</td>
             </tr>
         </tbody>
     </table>

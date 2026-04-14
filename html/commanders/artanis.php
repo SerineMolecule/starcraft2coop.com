@@ -379,43 +379,43 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Artanis. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Valorous Inspirator</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Valorous Inspirator</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Increase the effectiveness of all active combat unit abilities by 100%.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>Combat units cost 30% more.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
                                 <li>Dragoons do not get any benefits from this Prestige</li>
                         <li>Cooldown reduction from prestige is multiplicative with the Cooldown Reduction mastery</li>
                         <li>Reavers will not run out of Scarabs when combined with the Cooldown Reduction mastery</li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige provides an all-round improvement to Artanis' units. For example, it increases the damage dealt by High Templar Psi Storms and reduces the construction time of Reaver scarabs. This opens up a lot of avenues for playstyle changes. However, Dragoons are unaffected and Tempests receive minimal improvements. The higher cost of units makes it slower to ramp up and more punishing of unit losses. This Prestige works well with the Energy Regeneration and Cooldown Reduction mastery.</td>
+                <th>Advice</th><td>This prestige provides an all-round improvement to Artanis' units. For example, it increases the damage dealt by High Templar Psi Storms and reduces the construction time of Reaver scarabs. This opens up a lot of avenues for playstyle changes. However, Dragoons are unaffected and Tempests receive minimal improvements. The higher cost of units makes it slower to ramp up and more punishing of unit losses. This Prestige works well with the Energy Regeneration and Cooldown Reduction mastery.</td>
             </tr>
         </tbody>
     </table>
@@ -434,85 +434,85 @@ require_once "../wrapper-static.php";
     </ul>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Nexus Legate</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Nexus Legate</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Upon use, Project Power Field warps out any of your combat units standing in an existing Power Field projection into the new location. Cooldown removed.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Project Power Field costs 25 energy.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>When units are warped in, they get the Speed Increase for Warped Units buff</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Project Power Field costs 25 energy.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>When units are warped in, they get the Speed Increase for Warped Units buff</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige changes how Power Field is used. Instead of letting you reinforce your army in combat, it's a mobility tool. The high cost of the Power Field (25 energy) makes the prestige quite energy starved, so energy management is crucial. This prestige compounds well with the "Speed Increase for Warped Units" mastery, since every time units are moved using the Power Field, they get the buff.</td>
+                <th>Advice</th><td>This prestige changes how Power Field is used. Instead of letting you reinforce your army in combat, it's a mobility tool. The high cost of the Power Field (25 energy) makes the prestige quite energy starved, so energy management is crucial. This prestige compounds well with the "Speed Increase for Warped Units" mastery, since every time units are moved using the Power Field, they get the buff.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Arkship Commandant</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Arkship Commandant</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Orbital Strikes warp in an Unbound Fanatic that throws off damaging energy and lasts 15 seconds.</li>
                                 <li>Shield Overcharge is now targeted, has its cooldown reduced by 50%, and costs 25 energy.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>Orbital Strike costs 50 energy. Guardian Shell is disabled.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
                                 <li>Shield Overcharge applies to all units within 8 range of selected area</li>
                         <li>Unbound Fanatic's energy ball does 60 DPS along a path of 1.5 radius</li>
                         <li>Energy balls are thrown once per second. Each ball lasts 1 second</li>
                         <li>Fanatics start at maximum 3/3/3 upgrades</li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige gives Artanis much more powerful calldowns at a high cost: The loss of Guardian Shell, which increases the fragility of Artanis' already-fragile army. The Unbound Fanatics that spawn from the Orbital Strikes have strong splash damage, similar to Karax's Solar Lances. It also allows Artanis to fast-expand on maps (a single set of Orbital Strikes can easily clear contested expansions). In addition, Shield Overcharge can be used twice as often, which partially offsets the loss of Guardian Shell, and if armies are bunched up, it is still possible to cover both armies.</td>
+                <th>Advice</th><td>This prestige gives Artanis much more powerful calldowns at a high cost: The loss of Guardian Shell, which increases the fragility of Artanis' already-fragile army. The Unbound Fanatics that spawn from the Orbital Strikes have strong splash damage, similar to Karax's Solar Lances. It also allows Artanis to fast-expand on maps (a single set of Orbital Strikes can easily clear contested expansions). In addition, Shield Overcharge can be used twice as often, which partially offsets the loss of Guardian Shell, and if armies are bunched up, it is still possible to cover both armies.</td>
             </tr>
         </tbody>
     </table>

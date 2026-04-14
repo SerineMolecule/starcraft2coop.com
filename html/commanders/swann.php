@@ -408,117 +408,113 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Swann. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Heavy Weapons Specialist</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Heavy Weapons Specialist</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>The Laser Drill deals 100% splash damage, slows enemy movement by 70%, and locks on targets 50% faster.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>The Laser Drill's abilities are unavailable.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Splash damage range is 1.5</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>The Laser Drill's abilities are unavailable.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Splash damage range is 1.5</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige revolves around using the constant AoE damage hitting any enemy you have vision on. It is best if you max out Laser Drill Build Time Mastery to rush Drill upgrades, and deploy floating Factories (with the Fire Suppression Systems upgrade) around the map to get vision on enemy units. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) combo well with this prestige.</td>
+                <th>Advice</th><td>This prestige revolves around using the constant AoE damage hitting any enemy you have vision on. It is best if you max out Laser Drill Build Time Mastery to rush Drill upgrades, and deploy floating Factories (with the Fire Suppression Systems upgrade) around the map to get vision on enemy units. Commanders that can provide global map vision (e.g. Stetmann's Stetellites, Zeratul's Xel'Naga Watchers, Kerrigan's Creep Tumors or Nydus Worms) combo well with this prestige.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Grease Monkey</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Grease Monkey</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Turret upgrades are 100% more effective.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Combat units cost 50% more vespene gas.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>The Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Combat units cost 50% more vespene gas.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>The Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>11</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige makes Swann's already-powerful turrets even more powerful by further increasing their armor, attack speed and range. It should be a go-to pick for any defense-specific scenarios.</td>
+                <th>Advice</th><td>This prestige makes Swann's already-powerful turrets even more powerful by further increasing their armor, attack speed and range. It should be a go-to pick for any defense-specific scenarios.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Payload Director</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Payload Director</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Hercules have twice the cargo capacity and unload units instantly.</li>
                                 <li>Science Vessels can use Tactical Jump and its cooldown reduced by 50%.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>Top bar cooldowns increased by 50%.</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>Top bar cooldowns increased by 50%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">The extreme amount of burst damage this Prestige can provide may, at-first-glance, seem valuable in addition to the ability to not only Tactical Jump your damage dealers but also your detection and healer. However, with proper micro, players should not be losing Siege Tanks to enemy units, especially with a Goliath frontline combined with Science Vessel Defense Matrices. Additionally, the disadvantage of having longer cooldowns on the Drill abilities means that the abilities do not sync up with mission attack wave/event timings as well.</td>
+                <th>Advice</th><td>The extreme amount of burst damage this Prestige can provide may, at-first-glance, seem valuable in addition to the ability to not only Tactical Jump your damage dealers but also your detection and healer. However, with proper micro, players should not be losing Siege Tanks to enemy units, especially with a Goliath frontline combined with Science Vessel Defense Matrices. Additionally, the disadvantage of having longer cooldowns on the Drill abilities means that the abilities do not sync up with mission attack wave/event timings as well.</td>
             </tr>
         </tbody>
     </table>

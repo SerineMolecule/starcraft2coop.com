@@ -547,43 +547,43 @@ require_once "../wrapper-static.php";
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Dehaka. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><strong>Devouring One</strong></td>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Devouring One</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Devour applies its benefits to all nearby friendly units.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>Dehaka has 0 base armor, loses the Scorching Breath ability, and has his max level reduced by 4.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
                                 <li>All friendly units within 10 range of Dehaka gets the Devour buffs</li>
                         <li>When Devouring air units, buff applied is +2 range for ranged weapons</li>
                         <li>When Devouring Psionic units, buff applied is only cooldown reduction</li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige allows Dehaka to buff his own and allied units as he devours enemies in battle. It is especially powerful when playing with commanders that have Hero units. However, if your ally is not able to take advantage of Dehaka's buff's, the impact of the prestige is greatly diminished and the player is better off not using a Prestige Talent.</td>
+                <th>Advice</th><td>This prestige allows Dehaka to buff his own and allied units as he devours enemies in battle. It is especially powerful when playing with commanders that have Hero units. However, if your ally is not able to take advantage of Dehaka's buff's, the impact of the prestige is greatly diminished and the player is better off not using a Prestige Talent.</td>
             </tr>
         </tbody>
     </table>
@@ -603,87 +603,87 @@ require_once "../wrapper-static.php";
     <li>Zeratul: Cleave, Void Seeker get cooldown reduction only. Both Avatars and all Legions get cooldown reduction</li>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>2</td>
-                <td><strong>Primal Contender</strong></td>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Primal Contender</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Pack Leaders and their entourage deal 50% more damage and have 100% increased life.</li>
                                 <li>Pack Leader cooldowns reduced by 33%. </li>
                                 <li>Pack Leaders can consume Essence for Dehaka.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
                                 <li>Dehaka exits the map while a Pack Leader is active.</li>
                                 <li>Only one Pack Leader may be active at a time.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
                                 <li>Dehaka respawns from where he left the map</li>
                         <li>Pack Leaders do not have abilities until they get unlocked with the Level 10 talent</li>
                         <li>Pack Leader Coolup times are not affected</li>
                         <li>Combined with the Pack Leader Duration mastery, you can have Pack Leaders on the map nearly 100% of the game length</li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">This prestige can vastly increase the amount of damage that can be dealt by Pack Leaders by increasing their life and allowing the player to spawn them more often. However, it can be challenging for players that are unaware on how to select Pack Leaders to deal with a situation they are facing. However, this presige does alleviate the pressure on players to micro several things at the same time, allowing them to focus on a single Pack Leader at a time.</td>
+                <th>Advice</th><td>This prestige can vastly increase the amount of damage that can be dealt by Pack Leaders by increasing their life and allowing the player to spawn them more often. However, it can be challenging for players that are unaware on how to select Pack Leaders to deal with a situation they are facing. However, this presige does alleviate the pressure on players to micro several things at the same time, allowing them to focus on a single Pack Leader at a time.</td>
             </tr>
         </tbody>
     </table>
     <br>
     <table class="prestigeTable">
-        <thead>
-            <tr>
-                <th>Prestige</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Effective Level</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>3</td>
-                <td><strong>Broodbrother</strong></td>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Broodbrother</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
                 <td>
                     <ul>
-                        <li>Advantages:
-                            <ul>
                                 <li>Dehaka spawns a clone.</li>
-                            </ul>
-                        </li>
-                        <li>Disadvantages:
-                            <ul>
-                                <li>If either Dehaka or the clone dies, the other dies as well.</li>
-                            </ul>
-                        </li>
-                        <li>Notes:
-                            <ul>
-                                <li>Essence is not shared between Dehaka and Zweihaka</li>
-                            </ul>
-                        </li>
                     </ul>
                 </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                                <li>If either Dehaka or the clone dies, the other dies as well.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                                <li>Essence is not shared between Dehaka and Zweihaka</li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
                 <td>1</td>
             </tr>
             <tr>
-                <td class="forceleft" colspan="5">Because Essence is not shared between the two hero units, the amount of Essence required to reach maximum level is essentially doubled. Combined with the fact that micro-ing Dehaka (while also macro-ing behind) is already very difficult, adding a second Hero unit that also increases your liability makes this prestige fairly ineffective.</td>
+                <th>Advice</th><td>Because Essence is not shared between the two hero units, the amount of Essence required to reach maximum level is essentially doubled. Combined with the fact that micro-ing Dehaka (while also macro-ing behind) is already very difficult, adding a second Hero unit that also increases your liability makes this prestige fairly ineffective.</td>
             </tr>
         </tbody>
     </table>
