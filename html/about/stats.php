@@ -134,7 +134,9 @@ require_once "../wrapper-static.php";
         <tbody>
             <?php
             foreach ($sortedMutators as $mutator) {
-                if ($mutator['mutatorname'] === 'Random') continue;
+                if ($mutator['mutatorname'] === 'Random') {
+                    continue;
+                }
                 echo("<tr>");
                 $filename = str_replace(' ', '', strtolower($mutator['mutatorname']));
                 $img = "<img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutator['mutatorname'] . ":" . $mutator['mutatordescription'] . "\" width=\"25\" height=\"25\">";
