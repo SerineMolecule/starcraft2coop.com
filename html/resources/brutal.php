@@ -99,6 +99,7 @@ require_once "../wrapper-static.php";
             <?php
 
             $mutatorInfo = get_mutators();
+            usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
             $mutators = array_fill(0, 11, []);
 //10 is the highest point value
             $countArray = array_fill(0, 11, 0);
