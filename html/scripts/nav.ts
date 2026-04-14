@@ -2,7 +2,7 @@
 // ==============================================================
 const navLinks: HTMLAnchorElement[] = [];
 let activeLink: HTMLAnchorElement | null = null;
-let headings = Array.from(document.querySelectorAll<HTMLElement>('#content h2, #content h3'));
+let headings = Array.from(document.querySelectorAll<HTMLElement>('#content h2, #content h3, #thisweek'));
 let hasPageNav = false;
 
 function initNav() {
@@ -18,6 +18,10 @@ function initNav() {
         a.href = '#' + heading.id;
         a.textContent = heading.textContent;
         a.className = heading.tagName.toLowerCase();
+        if (heading.id === 'thisweek') {
+            a.textContent = 'This week\'s mutation';
+            a.className = 'h3';
+        }
         li.append(a);
         navLinks.push(a);
         toc.append(li);

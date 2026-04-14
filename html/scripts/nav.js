@@ -15,9 +15,9 @@ function initNav() {
     a.href = "#" + heading.id;
     a.textContent = heading.textContent;
     a.className = heading.tagName.toLowerCase();
-    if (heading.id === 'thisweek') {
-      a.textContent = 'This week\'s mutation';
-      a.className = 'h3';
+    if (heading.id === "thisweek") {
+      a.textContent = "This week's mutation";
+      a.className = "h3";
     }
     li.append(a);
     navLinks.push(a);
