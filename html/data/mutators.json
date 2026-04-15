@@ -5,6 +5,8 @@
         "abomination": 0,
         "mutatordescription": "Vision provided by all sources is extremely limited except when in view of your camera.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 6
     },
     {
@@ -13,6 +15,8 @@
         "abomination": 3,
         "mutatordescription": "Additional enemy units are periodically deployed onto the battlefield.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -21,6 +25,8 @@
         "abomination": 2,
         "mutatordescription": "All enemy units spawn Broodlings upon death.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 10
     },
     {
@@ -29,6 +35,8 @@
         "abomination": 5,
         "mutatordescription": "Enemy units gain increased attack speed, movement speed, armor, life, and life-regeneration when nearby enemy units die.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 12
     },
     {
@@ -37,6 +45,8 @@
         "abomination": 2,
         "mutatordescription": "Enemy units and structures gain a temporary shield upon the first time they take damage.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 13
     },
     {
@@ -45,6 +55,8 @@
         "abomination": 7,
         "mutatordescription": "Some enemy units carry a plague that deals damage over time and spreads to other nearby units. The plague spreads to your units when the enemy unit is killed.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -53,6 +65,8 @@
         "abomination": 4,
         "mutatordescription": "Storm clouds move across the map, damaging and freezing player units in their path.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 8
     },
     {
@@ -61,6 +75,8 @@
         "abomination": 0,
         "mutatordescription": "Mutators are chosen at random and periodically cycle throughout the mission.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 7
     },
     {
@@ -69,6 +85,8 @@
         "abomination": 1,
         "mutatordescription": "Player units are slowed by all enemy attacks.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 4
     },
     {
@@ -77,6 +95,8 @@
         "abomination": 2,
         "mutatordescription": "Previously explored areas remain blacked out on the minimap while outside of player vision.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 7
     },
     {
@@ -85,6 +105,8 @@
         "abomination": 3,
         "mutatordescription": "Damage dealt to enemies is split evenly across all nearby units, including your own.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 5
     },
     {
@@ -93,6 +115,8 @@
         "abomination": 3,
         "mutatordescription": "Damage dealt by your units and structures is dealt back to them, but then healed back over time.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 5
     },
     {
@@ -101,6 +125,8 @@
         "abomination": 1,
         "mutatordescription": "Enemies gain control of your structures after destroying them.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 7
     },
     {
@@ -109,6 +135,8 @@
         "abomination": 1,
         "mutatordescription": "Enemy units teleport a short distance away upon taking damage.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 5
     },
     {
@@ -117,6 +145,8 @@
         "abomination": 3,
         "mutatordescription": "When enemy units and structures die, any of your nearby units are pulled to their location.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 5
     },
     {
@@ -125,6 +155,8 @@
         "abomination": 3,
         "mutatordescription": "Player units will occasionally stop attacking and run around in fear upon taking damage.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -133,6 +165,8 @@
         "abomination": 0,
         "mutatordescription": "Enemies launch a dazzling fireworks display upon death, dealing damage to your nearby units.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 3
     },
     {
@@ -141,6 +175,8 @@
         "abomination": 0,
         "mutatordescription": "Gifts are periodically deployed around the map. If you don't claim them, Amon will!",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 4
     },
     {
@@ -149,6 +185,8 @@
         "abomination": 3,
         "mutatordescription": "Nukes are launched at random throughout the map.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 11
     },
     {
@@ -157,6 +195,8 @@
         "abomination": 2,
         "mutatordescription": "Enemy Heroic units reduce all incoming damage to a maximum of 10 when any non-heroic enemy unit is near them.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 6
     },
     {
@@ -165,6 +205,8 @@
         "abomination": 10,
         "mutatordescription": "Every attack wave will be led by Heroes of increasing power.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 6
     },
     {
@@ -173,6 +215,8 @@
         "abomination": 2,
         "mutatordescription": "Enemy Heroic units increase the attack speed and armor of all enemies within a small range.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -181,6 +225,8 @@
         "abomination": 7,
         "mutatordescription": "Enemy units are automatically revived upon death.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 16
     },
     {
@@ -189,6 +235,8 @@
         "abomination": 6,
         "mutatordescription": "Waves of bots attack players and are invulnerable to damage until they have killed a set amount of units.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -197,6 +245,8 @@
         "abomination": 2,
         "mutatordescription": "An enemy Drakken laser drill constantly attacks player units within enemy vision.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -205,6 +255,8 @@
         "abomination": 3,
         "mutatordescription": "Lava periodically bursts from the ground at random locations and deals damage to player air and ground units.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 9
     },
     {
@@ -213,6 +265,8 @@
         "abomination": 1,
         "mutatordescription": "Enemy units steal life or shields whenever they do damage.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 3
     },
     {
@@ -221,6 +275,8 @@
         "abomination": 2,
         "mutatordescription": "Enemy units and structures have increased weapon and vision range.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 7
     },
     {
@@ -229,6 +285,8 @@
         "abomination": 0,
         "mutatordescription": "Festive envelopes containing resource pickups are dropped at random throughout the map.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 3
     },
     {
@@ -237,6 +295,8 @@
         "abomination": 4,
         "mutatordescription": "Mag Mines are deployed throughout the map at the start of the mission.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 9
     },
     {
@@ -245,6 +305,8 @@
         "abomination": 5,
         "mutatordescription": "Giving commands to your units costs resources based on the unit's cost.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -253,6 +315,8 @@
         "abomination": 2,
         "mutatordescription": "Mineral clusters at player bases are periodically encased in a shield which must be destroyed for gathering to continue.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 7
     },
     {
@@ -261,6 +325,8 @@
         "abomination": 6,
         "mutatordescription": "Groups of Widow Mines and Spider Mines are buried throughout the battlefield.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 10
     },
     {
@@ -269,6 +335,8 @@
         "abomination": 3,
         "mutatordescription": "Endless missile bombardments target your structures and must be shot down throughout the mission.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 11
     },
     {
@@ -277,6 +345,8 @@
         "abomination": 2,
         "mutatordescription": "When a Heroic enemy dies, all player units around it will reflect on their transgressions, leaving them temporarily unable to attack or use abilities.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 5
     },
     {
@@ -285,6 +355,8 @@
         "abomination": 5,
         "mutatordescription": "Enemy Hybrid units detonate a Nuke upon death.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -293,6 +365,8 @@
         "abomination": 0,
         "mutatordescription": "Player units and structures take increased damage for each enemy they've killed.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 3
     },
     {
@@ -301,6 +375,8 @@
         "abomination": 1,
         "mutatordescription": "Enemy Orbital Strikes are periodically fired throughout the map.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 5
     },
     {
@@ -309,6 +385,8 @@
         "abomination": 3,
         "mutatordescription": "Continuous waves of the infested horde march against the commanders' bases.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 9
     },
     {
@@ -317,6 +395,8 @@
         "abomination": 1,
         "mutatordescription": "All enemy structures attack nearby hostile units.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -325,6 +405,8 @@
         "abomination": 7,
         "mutatordescription": "Each enemy unit is immune to either your units or your ally's units.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 11
     },
     {
@@ -333,6 +415,8 @@
         "abomination": 5,
         "mutatordescription": "All enemy units have energy and use random abilities.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 9
     },
     {
@@ -341,6 +425,8 @@
         "abomination": 8,
         "mutatordescription": "Reality warping sludges are crawling towards you. Anything they touch is turned into a copy of the sludge.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 9
     },
     {
@@ -349,6 +435,8 @@
         "abomination": 2,
         "mutatordescription": "An enemy Purifier Beam moves across the map toward nearby player units.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 10
     },
     {
@@ -357,6 +445,8 @@
         "abomination": 0,
         "mutatordescription": "A mutation is randomly assigned.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 0
     },
     {
@@ -365,6 +455,8 @@
         "abomination": 2,
         "mutatordescription": "Enemy units set the terrain on fire upon death.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 10
     },
     {
@@ -373,6 +465,8 @@
         "abomination": 3,
         "mutatordescription": "Enemy units explode and deal damage to friendly player units upon death.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 11
     },
     {
@@ -381,6 +475,8 @@
         "abomination": 0,
         "mutatordescription": "Supply is shared between you and your partner, and units from both armies contribute to your combined supply cap.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 4
     },
     {
@@ -389,6 +485,8 @@
         "abomination": 1,
         "mutatordescription": "Player units and structures have reduced vision range.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -397,6 +495,8 @@
         "abomination": 5,
         "mutatordescription": "Player worker units gather resources at a reduced rate, but resource pickups spawn throughout the map.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 7
     },
     {
@@ -405,6 +505,8 @@
         "abomination": 2,
         "mutatordescription": "The enemy moves faster than any unit a player has at their disposal.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 14
     },
     {
@@ -413,6 +515,8 @@
         "abomination": 1,
         "mutatordescription": "Enemy Temporal Fields are periodically deployed throughout the map.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 7
     },
     {
@@ -421,6 +525,8 @@
         "abomination": 1,
         "mutatordescription": "Enemy Time Warps are periodically deployed throughout the map.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 8
     },
     {
@@ -429,6 +535,8 @@
         "abomination": 7,
         "mutatordescription": "Enemy units have a chance to transform into more powerful units whenever they deal damage.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 8
     },
     {
@@ -437,6 +545,8 @@
         "abomination": 0,
         "mutatordescription": "Civilians visit your Candy Bowl looking for treats, which are generated by spending minerals. If no treats are available, the civilians randomly transform into enemy units.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 2
     },
     {
@@ -445,6 +555,8 @@
         "abomination": 0,
         "mutatordescription": "Supply can only be generated by killing turkeys that wander throughout the map. Doing so may anger the turkeys that remain.",
         "customusable": false,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 2
     },
     {
@@ -453,6 +565,8 @@
         "abomination": 2,
         "mutatordescription": "Tornadoes move across the map, damaging and knocking back player units in their path.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": true,
         "mutationcount": 6
     },
     {
@@ -461,6 +575,8 @@
         "abomination": 0,
         "mutatordescription": "Your camera randomly changes positions.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 1
     },
     {
@@ -469,6 +585,8 @@
         "abomination": 5,
         "mutatordescription": "Void Reanimators wander the battlefield, bringing your enemies back to life.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 11
     },
     {
@@ -477,6 +595,8 @@
         "abomination": 10,
         "mutatordescription": "Void Rifts periodically appear in random locations and spawn enemy units until destroyed.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 14
     },
     {
@@ -485,6 +605,8 @@
         "abomination": 2,
         "mutatordescription": "Every enemy unit that commanders destroy will spawn infested terrans. The more life a unit has, the more infested will rise from its corpse.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 6
     },
     {
@@ -493,6 +615,8 @@
         "abomination": 3,
         "mutatordescription": "All enemy units are permanently cloaked.",
         "customusable": true,
+        "chaosrollable": true,
+        "hassafezone": false,
         "mutationcount": 10
     },
     {
@@ -501,6 +625,8 @@
         "abomination": 10,
         "mutatordescription": "Uncaring automatons carry a nuclear payload toward your base. One player must discern the disarming sequence and the other player must enter it.",
         "customusable": true,
+        "chaosrollable": false,
+        "hassafezone": false,
         "mutationcount": 3
     }
 ]

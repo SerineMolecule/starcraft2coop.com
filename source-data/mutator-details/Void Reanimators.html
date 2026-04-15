@@ -1,0 +1,39 @@
+<p class="subheading">Detailed Mutator Information</p>
+<p>Void Reanimators will spawn 10 seconds after the first killed enemy unit from a random enemy building. Following Void Reanimators will spawn every 55 seconds. If you destroy all enemy buildings on the map, no Void Reanimators will spawn.  Note that all-clearing Malwarfare and Void Launch does not stop them from spawning, because Suppression Towers and Launch Bays are indestructible enemy structures.</p>
+<p>Void Reanimators have 200 HP and 200 Shields. They do not have an attack. There can only be a maximum of 4 Void Reanimators on the map. They only resurrect dead enemy units. Below is an image of a Void Reanimator:</p>
+<img src="/images/mutatordata/voidreanimator.jpg" alt="Void Reanimator">
+<p>Void Reanimators will try to revive the closest dead unit to them. They revive dead units at different speeds, depending on their supply cost. This is detailed below:</p>
+<table class="dataTable centered">
+    <thead>
+        <tr>
+            <th>Supply Cost</th>
+            <th>Reanimation Time (seconds)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0-1</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>2-5</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>6+</td>
+            <td>8</td>
+        </tr>
+    </tbody>
+</table>
+<p>Only a total of 500 corpses are stored. When the list fills up, the dead unit will replace a random one on the corpse list if the dead unit has a supply cost of 2 or more.</p>
+<p>Void Reanimators can be path-blocked, preventing them from reaching their targets for resurrection. For more information, watch this video below:</p>
+<iframe width="475" height="268" src="https://www.youtube.com/embed/T051w67T4Dc" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p>On Dead of Night, Infested units that are resurrected will not die to sunlight and will have to be killed by the player.</p>
+<p>On Miner Evacuation, Void Reanimators will not resurrect any of the Infested units.</p>
+<p class="subheading">Commander-specific Tips</p>
+<ul>
+    <li>Abathur: Units resurrected by Void Reanimators do not drop Biomass.</li>
+    <li>Dehaka: Units resurrected by Void Reanimators do not drop Essence.</li>
+    <li>Kerrigan: Units resurrected by Void Reanimators drop resource pickups from Assimilation Aura.</li>
+    <li>Mengsk: Units resurrected by Void Reanimators do not provide Royal Guard experience.</li>
+</ul>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.35">
+    <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
+    <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Starcraft 2 Co-op - Mutator - Twister</title>
+    <link rel="canonical" href="https://starcraft2coop.com/mutators/twister">
+</head>
+<body>
+
+<header id="header">
+    <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
+</header>
+<script>
+if (document.location.host === 'dev.starcraft2coop.com') {
+    document.write('<div class="construction">THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)</div>');
+}
+</script>
+<nav id="menu">
+<ul id="topmenu">
+    <li class="normal"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
+    <li class="highlight"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Guides</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-about">About</a></li>
+</ul>
+<div id="container">
+    <div id="commanderList" class="submenu">
+        <a href="/commanders/raynor" class="normal"><img src="/images/commanderportraits/raynorportrait.png" alt="Raynor"></a>
+        <a href="/commanders/kerrigan" class="normal"><img src="/images/commanderportraits/kerriganportrait.png" alt="Kerrigan"></a>
+        <a href="/commanders/artanis" class="normal"><img src="/images/commanderportraits/artanisportrait.png" alt="Artanis"></a>
+        <a href="/commanders/swann" class="normal"><img src="/images/commanderportraits/swannportrait.png" alt="Swann"></a>
+        <a href="/commanders/zagara" class="normal"><img src="/images/commanderportraits/zagaraportrait.png" alt="Zagara"></a>
+        <a href="/commanders/vorazun" class="normal"><img src="/images/commanderportraits/vorazunportrait.png" alt="Vorazun"></a>
+        <a href="/commanders/karax" class="normal"><img src="/images/commanderportraits/karaxportrait.png" alt="Karax"></a>
+        <a href="/commanders/abathur" class="normal"><img src="/images/commanderportraits/abathurportrait.png" alt="Abathur"></a>
+        <a href="/commanders/alarak" class="normal"><img src="/images/commanderportraits/alarakportrait.png" alt="Alarak"></a>
+        <a href="/commanders/nova" class="normal"><img src="/images/commanderportraits/novaportrait.png" alt="Nova"></a>
+        <a href="/commanders/stukov" class="normal"><img src="/images/commanderportraits/stukovportrait.png" alt="Stukov"></a>
+        <a href="/commanders/fenix" class="normal"><img src="/images/commanderportraits/fenixportrait.png" alt="Fenix"></a>
+        <a href="/commanders/dehaka" class="normal"><img src="/images/commanderportraits/dehakaportrait.png" alt="Dehaka"></a>
+        <a href="/commanders/horner" class="normal"><img src="/images/commanderportraits/hornerportrait.png" alt="Han &amp; Horner"></a>
+        <a href="/commanders/tychus" class="normal"><img src="/images/commanderportraits/tychusportrait.png" alt="Tychus"></a>
+        <a href="/commanders/zeratul" class="normal"><img src="/images/commanderportraits/zeratulportrait.png" alt="Zeratul"></a>
+        <a href="/commanders/stetmann" class="normal"><img src="/images/commanderportraits/stetmannportrait.png" alt="Stetmann"></a>
+        <a href="/commanders/mengsk" class="normal"><img src="/images/commanderportraits/mengskportrait.png" alt="Mengsk"></a>
+    </div>
+    <div id="missionList" class="submenu">
+        <a href="/missions/chainofascension" class="normal"><img src="/images/missionthumbnails/chainofascension.png" alt="Chain of Ascension"></a>
+        <a href="/missions/cradleofdeath" class="normal"><img src="/images/missionthumbnails/cradleofdeath.png" alt="Cradle of Death"></a>
+        <a href="/missions/deadofnight" class="normal"><img src="/images/missionthumbnails/deadofnight.png" alt="Dead of Night"></a>
+        <a href="/missions/lockload" class="normal"><img src="/images/missionthumbnails/lockload.png" alt="Lock & Load"></a>
+        <a href="/missions/malwarfare" class="normal"><img src="/images/missionthumbnails/malwarfare.png" alt="Malwarfare"></a>
+        <a href="/missions/minerevacuation" class="normal"><img src="/images/missionthumbnails/minerevacuation.png" alt="Miner Evacuation"></a>
+        <a href="/missions/mistopportunities" class="normal"><img src="/images/missionthumbnails/mistopportunities.png" alt="Mist Opportunities"></a>
+        <a href="/missions/oblivionexpress" class="normal"><img src="/images/missionthumbnails/oblivionexpress.png" alt="Oblivion Express"></a>
+        <a href="/missions/partparcel" class="normal"><img src="/images/missionthumbnails/partparcel.png" alt="Part & Parcel"></a>
+        <a href="/missions/riftstokorhal" class="normal"><img src="/images/missionthumbnails/riftstokorhal.png" alt="Rifts to Korhal"></a>
+        <a href="/missions/scytheofamon" class="normal"><img src="/images/missionthumbnails/scytheofamon.png" alt="Scythe Of Amon"></a>
+        <a href="/missions/templeofthepast" class="normal"><img src="/images/missionthumbnails/templeofthepast.png" alt="Temple of the Past"></a>
+        <a href="/missions/thevermillionproblem" class="normal"><img src="/images/missionthumbnails/thevermillionproblem.png" alt="The Vermillion Problem"></a>
+        <a href="/missions/voidlaunch" class="normal"><img src="/images/missionthumbnails/voidlaunch.png" alt="Void Launch"></a>
+        <a href="/missions/voidthrashing" class="normal"><img src="/images/missionthumbnails/voidthrashing.png" alt="Void Thrashing"></a>
+    </div>
+    <div id="resources" class="submenu">
+        <div class="submenu-with-sections"><div class="submenu-section">
+            <strong>Resources:</strong>
+            <ul>
+                <li class="highlight"><a href="/mutators/">Mutators</a></li>
+                <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
+                <li class="normal"><a href="/resources/brutal">Brutal+</a></li>
+                <li class="normal"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Guides:</strong>
+            <ul>
+                <li class="normal"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
+                <li class="normal"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
+                <li class="normal"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
+                <li class="normal"><a href="/guides/newplayer">New&nbsp;Players</a></li>
+                <li class="normal"><a href="/guides/youtube">Youtube</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Miscellaneous:</strong>
+            <ul>
+                <li class="normal"><a href="/resources/achievements">Achievements</a></li>
+                <li class="normal"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
+                <li class="normal"><a href="/resources/bugs">Bugs</a></li>
+                <li class="normal"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
+                <li class="normal"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
+                <li class="normal"><a href="/resources/levels">Levels</a></li>
+                <li class="normal"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
+                <li class="normal"><a href="/tools/downloads">Downloads</a></li>
+                <li class="normal"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
+            </ul>
+        </div></div>
+    </div>
+    <div id="about" class="submenu">
+        <ul>
+            <!--<li class="normal"><a href="/about/contact">Contact</a></li>-->
+            <li class="normal"><a href="/about/faq">FAQ</a></li>
+            <li class="normal"><a href="/about/links">Links</a></li>
+            <!--li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li-->
+            <li class="normal"><a href="/resources/stats">Misc. Stats</a></li>
+        </ul>
+    </div>
+    <!--<div id="imgs">
+        <a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow"><img src="/images/links/yt.png" alt="Youtube"></a>
+        <a href="https://www.patreon.com/starcraft2coop" rel="nofollow"><img src="/images/links/patreon.png" alt="Patreon"></a>
+        <a href="https://www.twitch.tv/aommaster" rel="nofollow"><img src="/images/links/twitch.png" alt="Twitch"></a>
+        <a href="https://discord.gg/AbFXRAB" rel="nofollow"><img src="/images/links/discord.png" alt="Discord"></a>
+    </div>-->
+</div>
+</nav>
+<script>
+    function openSubmenu(event, elem){
+        if (event) event.preventDefault();
+        if (!elem) elem = event.currentTarget;
+        var alreadyOpen = $(elem).hasClass('open');
+
+        $('#topmenu a').removeClass('open');
+        $(".submenu").hide();
+
+        if (alreadyOpen) return;
+
+        $(elem).addClass('open');
+        switch (elem.id.slice(13)){
+            case "commanders":
+                $("#commanderList").show();
+                break;
+            case "missions":
+                $("#missionList").show();
+                break;
+            case "resources":
+                $("#resources").show();
+                break;
+            case "about":
+                $("#about").show();
+                break;
+        }
+    }
+    if (document.location.pathname === "/") {
+        $('#submenu-link-commanders').each(function () {
+            openSubmenu(null, this);
+        });
+    } else {
+        $('#topmenu li.highlight a').each(function () {
+            openSubmenu(null, this);
+        });
+    }
+</script>
+<div id="content">
+        <h1>Mutator: Twister</h1>
+    <p><img src="/images/mutators/twister.png" alt="" /></p>
+    <p>Tornadoes move across the map, damaging and knocking back player units in their path.</p>
+    <table>
+        <tr><th align="right">Difficulty points</th><td align="left">2</td></tr>
+        <tr><th align="right">Available in custom</th><td align="left">Yes</td></tr>
+        <tr><th align="right">Rollable in Chaos Studios</th><td align="left">Yes</td></tr>
+    </table>
+    <h2 id="detailedmutatorinformation">Detailed Mutator Information</h2>
+    <p>The total number of Twisters on the map is based on the map size. It is the (width + height)/19. Each Twister does 25 damage and knocks all units back.</p>
+    <p>Twisters will always be at least 25 units away from the starting locations as well as at least 5 units away from mineral patches.</p>
+    <p>Twisters do not knock back any units with an "Untransportable" tag (such as the trucks on Cradle of Death). Instead, they deal their damage continuously, and can destroy the unit within seconds.</p>    <style>
+    .mapSafetyZone{
+        border: 1px solid #888;
+        display:inline-block;
+    }
+    .mapSafetyZone p{
+        text-align:center;
+    }
+    </style>
+    <h2 id="safetyZones">Safety Zones</h2>
+    <p>Certain mutators create environmental hazards that can impact/debuff player units, including workers. These mutators get deactivated in areas called "Safety Zones". All player bases and expansions are considered Safety Zones. The mutators that obey the Safety Zone rules are as follows:</p>
+    <ul>
+        <li>Blizzard</li>
+        <li>Going Nuclear*</li>
+        <li>Lava Burst</li>
+        <li>Orbital Strike</li>
+        <li>Purifier Beam</li>
+        <li>Temporal Field</li>
+        <li>Time Warp</li>
+        <li>Twister</li>
+    </ul>
+    <p>*The centers of the nukes will not be placed inside the safety zones. However, nukes can still damage units inside the safety zone due to their large radius.</p>
+    <p>Images of the Safety Zones for all maps are shown below.</p>
+    <div id="safetyZone">
+        <div class="mapSafetyZone">
+            <p>Chain of Ascension</p>
+            <img src="/images/mutatordata/safetyzonechainofascension.jpg" alt="Chain of Ascension Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Cradle of Death</p>
+            <img src="/images/mutatordata/safetyzonecradleofdeath.jpg" alt="Cradle of Death Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Dead of Night</p>
+            <img src="/images/mutatordata/safetyzonedeadofnight.jpg" alt="Dead of Night Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Lock & Load</p>
+            <img src="/images/mutatordata/safetyzonelockandload.jpg" alt="Lock & Load Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Malwarfare</p>
+            <img src="/images/mutatordata/safetyzonemalwarfare.jpg" alt="Malwarfare Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Miner Evacuation</p>
+            <img src="/images/mutatordata/safetyzoneminerevacuation.jpg" alt="Miner Evacuation Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Mist Opportunities</p>
+            <img src="/images/mutatordata/safetyzonemistopportunities.jpg" alt="Mist Opportunities Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Oblivion Express</p>
+            <img src="/images/mutatordata/safetyzoneoblivionexpress.jpg" alt="Oblivion Express Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Part and Parcel</p>
+            <img src="/images/mutatordata/safetyzonepartandparcel.jpg" alt="Part and Parcel Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Rifts to Korhal</p>
+            <img src="/images/mutatordata/safetyzoneriftstokorhal.jpg" alt="Rifts to Korhal Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Scythe of Amon</p>
+            <img src="/images/mutatordata/safetyzonescytheofamon.jpg" alt="Scythe of Amon Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Temple of the Past</p>
+            <img src="/images/mutatordata/safetyzonetempleofthepast.jpg" alt="Temple of the Past Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>The Vermillion Problem</p>
+            <img src="/images/mutatordata/safetyzonethevermillionproblem.jpg" alt="The Vermillion Problem Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Void Launch</p>
+            <img src="/images/mutatordata/safetyzonevoidlaunch.jpg" alt="Void Launch Safety Zone">
+        </div>
+        <div class="mapSafetyZone">
+            <p>Void Thrashing</p>
+            <img src="/images/mutatordata/safetyzonevoidthrashing.jpg" alt="Void Thrashing Safety Zone">
+        </div>
+    </div>
+
+    <h2 id="interactions">Mutator Interactions</h2>
+    <table>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/concussiveattacks.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/concussiveattacks">Concussive Attacks</a></td><td>Twisters apply the Concussive Attacks debuff.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/fear.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/fear">Fear</a></td><td>Twisters can apply the Fear effect.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/giftexchange.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/giftexchange">Gift Exchange</a></td><td>Twisters can capture gifts.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/laserdrill.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/laserdrill">Laser Drill</a></td><td>Twisters do not provide vision for the Laser Drill.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/wemoveunseen.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/wemoveunseen">We Move Unseen</a></td><td>Twisters are not cloaked.</td></tr>
+
+    </table>
+<script src="/scripts/nav.js"></script>
+</div>
+
+<div id="footer">
+    <p>Note: All data generated on this site is based on Brutal difficulty. Timings, compositions and other elements may differ on easier difficulty levels.</p>
+    <p>CC-BY-NC-SA-4.0. Originally written by Aommaster. This is a fansite not affiliated with StarCraft 2 or Blizzard Entertainment, Inc.</p>
+</div>
+
+</body>
+</html>
+
+    

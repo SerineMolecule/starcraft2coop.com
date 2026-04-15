@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.35">
+    <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
+    <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Starcraft 2 Co-op - Mutator - Avenger</title>
+    <link rel="canonical" href="https://starcraft2coop.com/mutators/avenger">
+</head>
+<body>
+
+<header id="header">
+    <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
+</header>
+<script>
+if (document.location.host === 'dev.starcraft2coop.com') {
+    document.write('<div class="construction">THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)</div>');
+}
+</script>
+<nav id="menu">
+<ul id="topmenu">
+    <li class="normal"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
+    <li class="highlight"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Guides</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-about">About</a></li>
+</ul>
+<div id="container">
+    <div id="commanderList" class="submenu">
+        <a href="/commanders/raynor" class="normal"><img src="/images/commanderportraits/raynorportrait.png" alt="Raynor"></a>
+        <a href="/commanders/kerrigan" class="normal"><img src="/images/commanderportraits/kerriganportrait.png" alt="Kerrigan"></a>
+        <a href="/commanders/artanis" class="normal"><img src="/images/commanderportraits/artanisportrait.png" alt="Artanis"></a>
+        <a href="/commanders/swann" class="normal"><img src="/images/commanderportraits/swannportrait.png" alt="Swann"></a>
+        <a href="/commanders/zagara" class="normal"><img src="/images/commanderportraits/zagaraportrait.png" alt="Zagara"></a>
+        <a href="/commanders/vorazun" class="normal"><img src="/images/commanderportraits/vorazunportrait.png" alt="Vorazun"></a>
+        <a href="/commanders/karax" class="normal"><img src="/images/commanderportraits/karaxportrait.png" alt="Karax"></a>
+        <a href="/commanders/abathur" class="normal"><img src="/images/commanderportraits/abathurportrait.png" alt="Abathur"></a>
+        <a href="/commanders/alarak" class="normal"><img src="/images/commanderportraits/alarakportrait.png" alt="Alarak"></a>
+        <a href="/commanders/nova" class="normal"><img src="/images/commanderportraits/novaportrait.png" alt="Nova"></a>
+        <a href="/commanders/stukov" class="normal"><img src="/images/commanderportraits/stukovportrait.png" alt="Stukov"></a>
+        <a href="/commanders/fenix" class="normal"><img src="/images/commanderportraits/fenixportrait.png" alt="Fenix"></a>
+        <a href="/commanders/dehaka" class="normal"><img src="/images/commanderportraits/dehakaportrait.png" alt="Dehaka"></a>
+        <a href="/commanders/horner" class="normal"><img src="/images/commanderportraits/hornerportrait.png" alt="Han &amp; Horner"></a>
+        <a href="/commanders/tychus" class="normal"><img src="/images/commanderportraits/tychusportrait.png" alt="Tychus"></a>
+        <a href="/commanders/zeratul" class="normal"><img src="/images/commanderportraits/zeratulportrait.png" alt="Zeratul"></a>
+        <a href="/commanders/stetmann" class="normal"><img src="/images/commanderportraits/stetmannportrait.png" alt="Stetmann"></a>
+        <a href="/commanders/mengsk" class="normal"><img src="/images/commanderportraits/mengskportrait.png" alt="Mengsk"></a>
+    </div>
+    <div id="missionList" class="submenu">
+        <a href="/missions/chainofascension" class="normal"><img src="/images/missionthumbnails/chainofascension.png" alt="Chain of Ascension"></a>
+        <a href="/missions/cradleofdeath" class="normal"><img src="/images/missionthumbnails/cradleofdeath.png" alt="Cradle of Death"></a>
+        <a href="/missions/deadofnight" class="normal"><img src="/images/missionthumbnails/deadofnight.png" alt="Dead of Night"></a>
+        <a href="/missions/lockload" class="normal"><img src="/images/missionthumbnails/lockload.png" alt="Lock & Load"></a>
+        <a href="/missions/malwarfare" class="normal"><img src="/images/missionthumbnails/malwarfare.png" alt="Malwarfare"></a>
+        <a href="/missions/minerevacuation" class="normal"><img src="/images/missionthumbnails/minerevacuation.png" alt="Miner Evacuation"></a>
+        <a href="/missions/mistopportunities" class="normal"><img src="/images/missionthumbnails/mistopportunities.png" alt="Mist Opportunities"></a>
+        <a href="/missions/oblivionexpress" class="normal"><img src="/images/missionthumbnails/oblivionexpress.png" alt="Oblivion Express"></a>
+        <a href="/missions/partparcel" class="normal"><img src="/images/missionthumbnails/partparcel.png" alt="Part & Parcel"></a>
+        <a href="/missions/riftstokorhal" class="normal"><img src="/images/missionthumbnails/riftstokorhal.png" alt="Rifts to Korhal"></a>
+        <a href="/missions/scytheofamon" class="normal"><img src="/images/missionthumbnails/scytheofamon.png" alt="Scythe Of Amon"></a>
+        <a href="/missions/templeofthepast" class="normal"><img src="/images/missionthumbnails/templeofthepast.png" alt="Temple of the Past"></a>
+        <a href="/missions/thevermillionproblem" class="normal"><img src="/images/missionthumbnails/thevermillionproblem.png" alt="The Vermillion Problem"></a>
+        <a href="/missions/voidlaunch" class="normal"><img src="/images/missionthumbnails/voidlaunch.png" alt="Void Launch"></a>
+        <a href="/missions/voidthrashing" class="normal"><img src="/images/missionthumbnails/voidthrashing.png" alt="Void Thrashing"></a>
+    </div>
+    <div id="resources" class="submenu">
+        <div class="submenu-with-sections"><div class="submenu-section">
+            <strong>Resources:</strong>
+            <ul>
+                <li class="highlight"><a href="/mutators/">Mutators</a></li>
+                <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
+                <li class="normal"><a href="/resources/brutal">Brutal+</a></li>
+                <li class="normal"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Guides:</strong>
+            <ul>
+                <li class="normal"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
+                <li class="normal"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
+                <li class="normal"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
+                <li class="normal"><a href="/guides/newplayer">New&nbsp;Players</a></li>
+                <li class="normal"><a href="/guides/youtube">Youtube</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Miscellaneous:</strong>
+            <ul>
+                <li class="normal"><a href="/resources/achievements">Achievements</a></li>
+                <li class="normal"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
+                <li class="normal"><a href="/resources/bugs">Bugs</a></li>
+                <li class="normal"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
+                <li class="normal"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
+                <li class="normal"><a href="/resources/levels">Levels</a></li>
+                <li class="normal"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
+                <li class="normal"><a href="/tools/downloads">Downloads</a></li>
+                <li class="normal"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
+            </ul>
+        </div></div>
+    </div>
+    <div id="about" class="submenu">
+        <ul>
+            <!--<li class="normal"><a href="/about/contact">Contact</a></li>-->
+            <li class="normal"><a href="/about/faq">FAQ</a></li>
+            <li class="normal"><a href="/about/links">Links</a></li>
+            <!--li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li-->
+            <li class="normal"><a href="/resources/stats">Misc. Stats</a></li>
+        </ul>
+    </div>
+    <!--<div id="imgs">
+        <a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow"><img src="/images/links/yt.png" alt="Youtube"></a>
+        <a href="https://www.patreon.com/starcraft2coop" rel="nofollow"><img src="/images/links/patreon.png" alt="Patreon"></a>
+        <a href="https://www.twitch.tv/aommaster" rel="nofollow"><img src="/images/links/twitch.png" alt="Twitch"></a>
+        <a href="https://discord.gg/AbFXRAB" rel="nofollow"><img src="/images/links/discord.png" alt="Discord"></a>
+    </div>-->
+</div>
+</nav>
+<script>
+    function openSubmenu(event, elem){
+        if (event) event.preventDefault();
+        if (!elem) elem = event.currentTarget;
+        var alreadyOpen = $(elem).hasClass('open');
+
+        $('#topmenu a').removeClass('open');
+        $(".submenu").hide();
+
+        if (alreadyOpen) return;
+
+        $(elem).addClass('open');
+        switch (elem.id.slice(13)){
+            case "commanders":
+                $("#commanderList").show();
+                break;
+            case "missions":
+                $("#missionList").show();
+                break;
+            case "resources":
+                $("#resources").show();
+                break;
+            case "about":
+                $("#about").show();
+                break;
+        }
+    }
+    if (document.location.pathname === "/") {
+        $('#submenu-link-commanders').each(function () {
+            openSubmenu(null, this);
+        });
+    } else {
+        $('#topmenu li.highlight a').each(function () {
+            openSubmenu(null, this);
+        });
+    }
+</script>
+<div id="content">
+        <h1>Mutator: Avenger</h1>
+    <p><img src="/images/mutators/avenger.png" alt="" /></p>
+    <p>Enemy units gain increased attack speed, movement speed, armor, life, and life-regeneration when nearby enemy units die.</p>
+    <table>
+        <tr><th align="right">Difficulty points</th><td align="left">5</td></tr>
+        <tr><th align="right">Available in custom</th><td align="left">Yes</td></tr>
+        <tr><th align="right">Rollable in Chaos Studios</th><td align="left">Yes</td></tr>
+    </table>
+    <h2 id="detailedmutatorinformation">Detailed Mutator Information</h2>
+    <p>When a unit dies, it gives out a certain number of Avenger stacks to units within a 1.25 range. The number of stacks equals the unit's supply count. If the unit costs no supply, 1 stack is given. Note that Hybrids take up 8 supply.</p>
+    <p>The total number of Avenger stacks (buffs) a unit can have is 10. These stacks are lost when the unit ownership changes (Mind Control, Domination, etc.).</p>
+    <p>Each Avenger stack provides the following buffs to the unit receiving the stack. Stacks are additive.</p>
+    <table class="dataTable">
+        <thead>
+            <tr>
+                <th>Stat</th>
+                <th>Buff</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Attack Speed</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Movement Speed</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Armor</td>
+                <td>0.3</td>
+            </tr>
+            <tr>
+                <td>HP</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>HP Regen</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Shields</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Shield Regen</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Avenger stacks can be transferred to the hybrid on Part & Parcel. On Oblivion Express, the train counts as a whole unit. Therefore, only 8 stacks will be provided.</p>
+    <p>Below are a list of mission-specific unit Avenger stacks given out on unit death. :</p>
+    <ul>
+        <li>Chain of Ascension Slayn Elemental: 1</li>
+        <li>Cradle of Death Gatekeeper Construct: 10</li>
+        <li>Dead of Night Hunterling: 1</li>
+        <li>Dead of Night Kaboomer, Spotter: 2</li>
+        <li>Dead of Night Choker: 3</li>
+        <li>Dead of Night Stank: 12</li>
+        <li>Lock & Load Xel'Naga Construct: 10</li>
+        <li>Miner Evacuation Blightbringer, Eradicators: 1</li>
+        <li>Oblivion Express Train: 8</li>
+        <li>Part and Parcel Moebius Hybrid Experiment: 8</li>
+        <li>Part and Parcel Train: 8</li>
+        <li>Rifts to Korhal Pirate Ship: 6</li>
+        <li>Temple of the Past Void Thrasher: 10</li>
+        <li>The Vermillion Problem Molten Salamander: 10</li>
+        <li>Void Launch Shuttle: 2</li>
+        <li>Void Thrashing Void Thrasher: 10</li>
+    </ul>
+    <h2 id="commanderspecifictips">Commander-specific Tips</h2>
+    <ul>
+        <li>Zeratul: Zeratul's Avatar of Essence's Devolve ability will devolve a unit and cause it to lose any Avenger stacks it has.</li>
+    </ul>
+    <h2 id="interactions">Mutator Interactions</h2>
+    <table>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/aggressivedeployment.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/aggressivedeployment">Aggressive Deployment</a></td><td>Units from Aggressive Deployment Drops give out and receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/alienincubation.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/alienincubation">Alien Incubation</a></td><td>Broodlings can give out/receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/giftexchange.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/giftexchange">Gift Exchange</a></td><td>Units spawned from Gift Exchange can give out/receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/heroesfromthestorm.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/heroesfromthestorm">Heroes from the Storm</a></td><td>Amon Heroes can give out (1 stack)/receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/inspiration.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/inspiration">Inspiration</a></td><td>Units with Avenger stacks can get the Inspiration buff.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/justdie.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/justdie">Just Die</a></td><td>Units do not give out/lose Avenger stacks when taking fatal damage and respawning. When a unit is finally killed, Avenger stacks are provided to surrounding units. Units retain their Avenger stacks when taking fatal damage and respawning.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/killbots.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/killbots">Kill Bots</a></td><td>Kill Bots can give out Avenger stacks (1 stack) when they die.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/magnificent.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/magnificent">Mag-nificent</a></td><td>Mag-mines do not give out Avenger stacks when they detonate.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/minesweeper.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/minesweeper">Minesweeper</a></td><td>Mines can give out Avenger stacks, but cannot receive them.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/missilecommand.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/missilecommand">Missile Command</a></td><td>Missiles do not give out Avenger stacks when destroyed.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/outbreak.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/outbreak">Outbreak</a></td><td>Infested and Aberrations can give out/receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/propagators.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/propagators">Propagators</a></td><td>Propagators can give out (1 stack)/receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/speedfreaks.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/speedfreaks">Speed Freaks</a></td><td>Units with Avenger stacks move faster with Speed Freaks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/transmutation.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/transmutation">Transmutation</a></td><td>Units lose their Avenger stacks after they Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/trickortreat.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/trickortreat">Trick or Treat</a></td><td>Units spawned from Civilians give out and collect Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/turkeyshoot.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/turkeyshoot">Turkey Shoot</a></td><td>Turkeys do not give out Avenger stacks. Angry Turkeys can give out (1 stack)/receive Avenger stacks. The Turking can give out (10 stacks) Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/voidreanimators.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/voidreanimators">Void Reanimators</a></td><td>Void Reanimators can give out (3 stacks) Avenger stacks. Resurrected units do not keep their Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/voidrifts.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/voidrifts">Void Rifts</a></td><td>Units spawned from Void Rifts can give out/receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/walkinginfested.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/walkinginfested">Walking Infested</a></td><td>Infested can give out/receive Avenger stacks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/boombots.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/boombots">Boom Bots</a></td><td>Boom Bots do not give out Avenger stacks when they die.</td></tr>
+
+    </table>
+<script src="/scripts/nav.js"></script>
+</div>
+
+<div id="footer">
+    <p>Note: All data generated on this site is based on Brutal difficulty. Timings, compositions and other elements may differ on easier difficulty levels.</p>
+    <p>CC-BY-NC-SA-4.0. Originally written by Aommaster. This is a fansite not affiliated with StarCraft 2 or Blizzard Entertainment, Inc.</p>
+</div>
+
+</body>
+</html>
+
+    

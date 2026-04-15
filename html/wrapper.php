@@ -44,7 +44,10 @@ function startContent()
     if (!$pageSection) {
         $pageSection = 'index';
     }
-    if ($pageSection === 'tools' || $pageSection === 'guides') {
+    if ($pageSection === 'mutators') {
+        $pageFile = 'mutators.php';
+    }
+    if ($pageSection === 'tools' || $pageSection === 'guides' || $pageSection === 'mutators') {
         $pageSection = 'resources';
     }
     ?>
@@ -109,7 +112,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <div class="submenu-with-sections"><div class="submenu-section">
             <strong>Resources:</strong>
             <ul>
-                <li class="<?=$pageFile === "mutators.php" ? 'highlight' : 'normal'?>"><a href="/resources/mutators">Mutators</a></li>
+                <li class="<?=$pageFile === "mutators.php" ? 'highlight' : 'normal'?>"><a href="/mutators/">Mutators</a></li>
                 <li class="<?=$pageFile === "weeklymutations.php" ? 'highlight' : 'normal'?>"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
                 <li class="<?=$pageFile === "brutal.php" ? 'highlight' : 'normal'?>"><a href="/resources/brutal">Brutal+</a></li>
                 <li class="<?=$pageFile === "unitstats.php" ? 'highlight' : 'normal'?>"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>

@@ -82,6 +82,8 @@ export interface Mutator {
     mutatordescription: string;
     /** Usable in custom mutator mode */
     customusable: boolean;
+    chaosrollable: boolean;
+    hassafezone: boolean;
 }
 
 export interface MutatorWithStats extends Mutator {

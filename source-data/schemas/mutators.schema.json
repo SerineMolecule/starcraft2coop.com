@@ -27,6 +27,12 @@
                 "customusable": {
                     "type": "boolean",
                     "description": "Usable in custom mutator mode"
+                },
+                "chaosrollable": {
+                    "type": "boolean"
+                },
+                "hassafezone": {
+                    "type": "boolean"
                 }
             },
             "required": [
@@ -34,7 +40,9 @@
                 "mutatorname",
                 "abomination",
                 "mutatordescription",
-                "customusable"
+                "customusable",
+                "chaosrollable",
+                "hassafezone"
             ],
             "additionalProperties": false
         },

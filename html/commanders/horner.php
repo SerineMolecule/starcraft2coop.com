@@ -807,7 +807,7 @@ require_once "../wrapper-static.php";
         </div>
     </div>
     <h3>Death Effects:</h3>
-    <p>The below table lists out the death effects and the Improved Death Effects for each of Han's units:</p>
+    <p>The below table lists out the death effects and the Improved Death Effects (P1) for each of Han's units:</p>
     <table>
         <thead>
             <tr>

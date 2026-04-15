@@ -1,0 +1,108 @@
+<p class="subheading">Detailed Mutator Information</p>
+<p>Missiles get launched from the sides of the map. The spawning of the missiles cannot be stopped, but the missiles can be destroyed. There are different types of missiles that will appear. These are shown in the table below:</p>
+<table class="dataTable centered">
+    <thead>
+        <tr>
+            <th>Missile</th>
+            <th>HP</th>
+            <th>Damage</th>
+            <th>Description</th>
+            <th>Picture</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Standard</td>
+            <td>10</td>
+            <td>100</td>
+            <td>This is the standard missile and most commonly-spawned missile.</td>
+            <td><img src="/images/mutatordata/missilecommandstandard.jpg" alt="Standard Missile"></td>
+        </tr>
+        <tr>
+            <td>Point Defense Missile</td>
+            <td>15</td>
+            <td>-</td>
+            <td>This travels alongside a missile and will stop when it reaches the target building. It starts with 200 energy and shoots down any projectiles. Each projectile shot drains 10 energy.</td>
+            <td><img src="/images/mutatordata/missilecommandpdm.jpg" alt="Point Defense Missile"></td>
+        </tr>
+        <tr>
+            <td>Splitter Missile</td>
+            <td>20</td>
+            <td>175</td>
+            <td>When destroyed, this will split into two smaller missiles.</td>
+            <td><img src="/images/mutatordata/missilecommandsplitter.jpg" alt="Splitter Missile"></td>
+        </tr>
+        <tr>
+            <td>Splitter Missile Child</td>
+            <td>5</td>
+            <td>75</td>
+            <td>Spawned from a Splitter Missile.</td>
+            <td><img src="/images/mutatordata/missilecommandsplitterchild.jpg" alt="Splitter Missile Child"></td>
+        </tr>
+        <tr>
+            <td>Nuke</td>
+            <td>100</td>
+            <td>300 (500 vs Structures)</td>
+            <td>Accompanied by 5 PDM's. Nukes can only be deployed once every 60 seconds.<br>Damage dealt depends on distance from center of hit:<br>100% within 4 range<br>50% within 6 range<br>25% within 8 range</td>
+            <td><img src="/images/mutatordata/missilecommandnuke.jpg" alt="Nuke Missile"></td>
+        </tr>
+    </tbody>
+</table>
+<p>Depending on the mission time, the spawn rate for the missiles is different as shown in the table below, as well as the percentages for each of the missiles. Note that 2 missiles are fired every spawn cycle, one for each player.</p>
+<table class="dataTable">
+    <thead>
+        <tr>
+            <th>Mission Time</th>
+            <th>Spawn Rate</th>
+            <th>Standard %</th>
+            <th>Standard + PDM %</th>
+            <th>Splitter %</th>
+            <th>Nuke + 5 PDM's %</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0:00-5:00</td>
+            <td>15 seconds</td>
+            <td>100%</td>
+            <td>0%</td>
+            <td>0%</td>
+            <td>0%</td>
+        </tr>
+        <tr>
+            <td>5:00-10:00</td>
+            <td>5 seconds</td>
+            <td>90%</td>
+            <td>10%</td>
+            <td>0%</td>
+            <td>0%</td>
+        </tr>
+        <tr>
+            <td>10:00-15:00</td>
+            <td>2 seconds</td>
+            <td>60%</td>
+            <td>20%</td>
+            <td>20%</td>
+            <td>0%</td>
+        </tr>
+        <tr>
+            <td>15:00+</td>
+            <td>1 second</td>
+            <td>40%</td>
+            <td>20%</td>
+            <td>30%</td>
+            <td>10%</td>
+        </tr>
+    </tbody>
+</table>
+<p>Point Defense Missiles shoot down all Projectile attacks until they run out of energy, but they be shot down/bypassed by Hitscan attacks. The video below explains the difference between the two attack types:</p>
+<iframe width="475" height="268" src="https://www.youtube.com/embed/OKg_hJ-ldD8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p>Another option would be to simply overwhelm the Point Defense Missiles. Point Defense Missiles will lose energy quickly and cannot shoot down all projectiles if many are being fired at them at the same time.</p>
+<p class="subheading">Commander-specific Tips</p>
+<ul>
+    <li>Artanis: High Templars/High Archons can feedback the Point Defense Missiles.</li>
+    <li>Kerrigan: Desolate Queen Kerrigan's Kinetic Blast is blocked by Point Defense Missiles and Point Defense Drones.</li>
+    <li>Stetmann: Super Gary's auto-attack cannot be shot down by Point Defense Missiles and Point Defense Drones.</li>
+    <li>Vorazun: Time Stop does not affect Missile Command timings.</li>
+    <li>Zeratul: Tesseract Monoliths can stun Point Defense Missiles, allowing projectile attacks to connect with their targets.</li>
+</ul>
