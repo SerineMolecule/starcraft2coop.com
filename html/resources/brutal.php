@@ -110,7 +110,6 @@ require_once "../wrapper-static.php";
                     array_push($mutators[$row['abomination']], $row['mutatorname']) ;
                 }
             }
-            $con->close();
             ?>
         </tbody>
     </table>
