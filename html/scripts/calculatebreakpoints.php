@@ -156,24 +156,21 @@ if (isset($_POST['ability'])) {
 
     if ($abilityFound) {
         #If ability can hit flyers, get all, otherwise get only ground
-        $appendString = "";
+        require_once '../data/queries.php';
+        $units = get_amonunits();
         if ($air == 0) {
-            $appendString .= " and flyer='0'";
+            $units = array_filter($units, fn($unit) => $unit['flyer'] === 0);
         }
         if ($structure == 0) {
-            $appendString .= " and structure='0'";
+            $units = array_filter($units, fn($unit) => $unit['structure'] === 0);
         }
-        include("sqlconnection.php");
-        $sql = "SELECT name, race, hp+shields as vitality, light,structure
-                  FROM amonunits
-                  WHERE breakpoint='1' $appendString
-                  ORDER BY vitality ASC, name ASC";
+        $units = array_filter($units, fn($unit) => $unit['breakpoint'] === 1);
+        usort($units, fn($a, $b) => ($a['hp'] + $a['shields']) <=> ($b['hp'] + $b['shields']) ?: strtolower($a['name']) <=> strtolower($b['name']));
 
-        $result = mysqli_query($con, $sql);
         $unitArray = [];
 
-        while ($row = mysqli_fetch_array($result)) {
-            $unitArray[$row['race']][] = [$row['vitality'], $row['name'], $row['light'], $row['structure']];
+        foreach ($units as $row) {
+            $unitArray[$row['race']][] = [$row['hp'] + $row['shields'], $row['name'], $row['light'], $row['structure']];
         }
         $returnArray[] = $spammable;
         $returnArray[] = $affectedByArmor;

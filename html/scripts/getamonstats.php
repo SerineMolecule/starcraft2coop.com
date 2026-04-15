@@ -7,21 +7,15 @@ if (isset($_GET['unit'])) {
     }
     $unit = $_GET['unit'];
     if (!preg_match('/[^A-Za-z\s0-9]/', $unit)) {
-        include 'sqlconnection.php';
-        $sql = "SELECT name, race, hp, armor, shields, shieldarmor, light, armored, biological, mechanical, psionic, heroic, massive, structure
-                FROM amonunits
-                WHERE name='$unit'
-                ORDER BY name ASC";
-        $result = mysqli_query($con, $sql);
-        $unitList = [];
-        while ($row = mysqli_fetch_array($result)) {
-            $unitList[] = $row;
-        }
+        require_once '../data/queries.php';
+        $units = get_amonunits();
+        $unitList = array_filter($units, fn($u) => $u['name'] === $unit);
 
         if (count($unitList) !== 1) {
             echo("Error!");
             die();
         }
+        $unitList = array_values($unitList);
         $finalString = "<span class='title'>" . $unit . "</span>\n";
 
         if ($unitList[0]['shields'] !== "0") {
@@ -56,7 +50,6 @@ if (isset($_GET['unit'])) {
             $finalString .= "Structure<br>\n";
         }
         echo $finalString;
-        $con->close();
     } else {
         echo("Error!");
     }
