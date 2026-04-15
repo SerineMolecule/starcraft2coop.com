@@ -1057,7 +1057,7 @@
     {
         "id1": 15,
         "id2": 32,
-        "interaction": "Mineral Shields trigger Fatal Attraction when destroyed or when they expire.\r\n."
+        "interaction": "Mineral Shields trigger Fatal Attraction when destroyed or when they expire."
     },
     {
         "id1": 15,
@@ -1797,7 +1797,7 @@
     {
         "id1": 24,
         "id2": 25,
-        "interaction": "Kill Bots provide vision for the Laser Drill.\r\nKill Bots do not spawn from the Laser Drill."
+        "interaction": "Kill Bots provide vision for the Laser Drill.\nKill Bots do not spawn from the Laser Drill."
     },
     {
         "id1": 24,
@@ -1887,7 +1887,7 @@
     {
         "id1": 25,
         "id2": 39,
-        "interaction": "Infested and Aberrations provide vision for the Laser Drill.\r\nInfested and Aberrations do not spawn from the Laser Drill."
+        "interaction": "Infested and Aberrations provide vision for the Laser Drill.\nInfested and Aberrations do not spawn from the Laser Drill."
     },
     {
         "id1": 25,
@@ -1957,7 +1957,7 @@
     {
         "id1": 25,
         "id2": 63,
-        "interaction": "Boom Bots provide vision for the Laser Drill.\r\nBoom Bots do not spawn from the Laser Drill."
+        "interaction": "Boom Bots provide vision for the Laser Drill.\nBoom Bots do not spawn from the Laser Drill."
     },
     {
         "id1": 26,
@@ -2632,7 +2632,7 @@
     {
         "id1": 59,
         "id2": 60,
-        "interaction": "Void Reanimators can resurrect units spawned from Void Rifts.\r\nVoid Reanimators do not spawn from Void Rifts."
+        "interaction": "Void Reanimators can resurrect units spawned from Void Rifts.\nVoid Reanimators do not spawn from Void Rifts."
     },
     {
         "id1": 59,
@@ -2677,6 +2677,6 @@
     {
         "id1": 62,
         "id2": 63,
-        "interaction": "Boom Bots are cloaked, but their tags are still visible.\r\nCodes cannot be input without detection."
+        "interaction": "Boom Bots are cloaked, but their tags are still visible.\nCodes cannot be input without detection."
     }
 ]

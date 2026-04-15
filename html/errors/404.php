@@ -31,7 +31,7 @@ require_once "../wrapper.php";
     if ($ref != "") {
         $errorTime = date('Y-m-d H:i:s');
         $file = fopen("404log.txt", 'a');
-        fwrite($file, "[$errorTime] $ref ===> $cur \r\n");
+        fwrite($file, "[$errorTime] $ref ===> $cur \n");
         fclose($file);
     }
     $val = rand(1, 3);

@@ -30,10 +30,10 @@ switch ($mode) {
                 WHERE commander='$commander'
                 ORDER BY basename ASC";
         $result = mysqli_query($con, $sql);
-        $unitsList = "<ul>\r\n";
+        $unitsList = "<ul>\n";
 
         while ($row = mysqli_fetch_array($result)) {
-            $unitsList .= "<li>" . $row['basename'] . "</li>\r\n";
+            $unitsList .= "<li>" . $row['basename'] . "</li>\n";
         }
         $unitsList .= "</ul>";
         echo($unitsList);
@@ -175,7 +175,7 @@ function convertStatsToOutput($unitStats)
     $standardStats = ['Shields','Shield_Armor','HP','Armor','Energy','Move_Speed','Vision'];
     $modeStats = ['Armor','Move_Speed','Vision','Range','Attack_Speed','Hits','Damage'];
     $outputString = "";
-    $outputString .= "<span class='title'>" . $unitStats['unitName'] . "</span>\r\n";
+    $outputString .= "<span class='title'>" . $unitStats['unitName'] . "</span>\n";
     $outputString .= "<span style='text-align:center;display:block'><img src='/images/commanderdata/unitupgrades/iconmineral.png' alt='Minerals'>/<img src='/images/commanderdata/unitupgrades/icongas_" . strtolower($unitStats['race']) . ".png' alt='Gas'><br>";
     $outputString .= "{$unitStats['mineralCost']}/{$unitStats['vespeneCost']}</span><br>";
     $outputString .= "<span style='display:block'><img style='margin-right:5px;' src='/images/commanderdata/unitupgrades/icontime_" . strtolower($unitStats['race']) . ".png' alt='Build Time'>{$unitStats['time']}</span><br>";
@@ -186,20 +186,20 @@ function convertStatsToOutput($unitStats)
             if ($unitStats[$stat] != 0 || strpos($unitStats[$stat], "modified") !== false) {
                 $statClass = str_replace("_", "", $stat);
                 $statTitle = str_replace("_", " ", $stat);
-                $outputString .= "<span id='unit{$statClass}'>$statTitle: {$unitStats[$stat]}</span><br>\r\n";
+                $outputString .= "<span id='unit{$statClass}'>$statTitle: {$unitStats[$stat]}</span><br>\n";
             }
         }
     }
 
-    $outputString .= "<span class='title'>Tags</span>\r\n" . str_replace(",", "<br>\r\n", $unitStats['Tags']);
+    $outputString .= "<span class='title'>Tags</span>\n" . str_replace(",", "<br>\n", $unitStats['Tags']);
 
     foreach ($unitStats['modes'] as $mode) {
-        $outputString .= "<span class='title'>{$mode['modeName']}</span>\r\n";
+        $outputString .= "<span class='title'>{$mode['modeName']}</span>\n";
         foreach ($modeStats as $stat) {
             if (isset($mode[$stat])) {
                 $statClass = str_replace("_", "", $stat);
                 $statTitle = str_replace("_", " ", $stat);
-                $outputString .= "<span id='unit{$statClass}'>$statTitle: {$mode[$stat]}</span><br>\r\n";
+                $outputString .= "<span id='unit{$statClass}'>$statTitle: {$mode[$stat]}</span><br>\n";
             }
         }
         if (isset($mode['attribute'])) {
@@ -210,13 +210,13 @@ function convertStatsToOutput($unitStats)
                     $attributeString = "(vs.$attribute): ";
                 }
 
-                $outputString .= $attributeString . $mode['damage'][$index] . " (" . $mode['damageResult'][$index] . " DPS)<br>\r\n";
+                $outputString .= $attributeString . $mode['damage'][$index] . " (" . $mode['damageResult'][$index] . " DPS)<br>\n";
             }
         }
     }
 
     if (isset($unitStats['Notes'])) {
-        $outputString .= "<span class='title'>Notes</span>\r\n{$unitStats['Notes']}";
+        $outputString .= "<span class='title'>Notes</span>\n{$unitStats['Notes']}";
     }
 
     return $outputString;
