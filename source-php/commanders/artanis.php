@@ -1,0 +1,1096 @@
+<?php
+
+require_once "../../html/wrapper-static.php";
+?>
+<?= startHead() ?>
+  <title>Starcraft 2 Co-op - Commander Guide - Artanis</title>
+  <meta name="description" content="Starcraft 2 Co-op Commander Guide Artanis">
+  <meta name="keywords" content="Starcraft co-op guides artanis commande mastery prestige buildr">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link rel="canonical" href="https://starcraft2coop.com/commanders/artanis">
+  <style>
+        #content{
+            background: url(/images/commanderdata/bgs/artanis.png);
+            background-repeat: no-repeat;
+        }
+        #tooltip{
+            position:absolute;
+            background-color:khaki;
+            color:black;
+            font-size:0.8em;
+            display:none;
+            z-index:1;
+            padding:5px;
+            border-radius:5px;
+        }
+  </style>
+  <?= startContent() ?>
+    <div id="tooltip">tooltip</div>
+    <h1>Co-op Commander Guide: Artanis</h1>
+    <p id="commanderMotto">Hierarch of the Daelaam</p>
+    <?php include("../../html/scripts/reporterror.php"); ?>
+    <div id="links">
+        <h2>Sections on this Page</h2>
+        <p><a href="#comSum">Commander Summary</a></p>
+        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#achievements">Achievements</a></p>
+        <p><a href="#calldowns">Calldowns</a></p>
+        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p><a href="#masteries">Masteries</a></p>
+        <p><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#army">Recommended Army Composition</a></p>
+        <p><a href="#units">Combat Units</a></p>
+        <p><a href="#buildOrder">Build Order</a></p>
+        <p><a href="#guide">Gameplay Guide</a></p>
+    </div>
+    <h2 id="comSum">Commander Summary</h2>
+    <p>Artanis' army features the basic staples of any Protoss army, including Zealots and Immortals. However, combined with the Spear of Adun, his army can be resilient and powerful.</p>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <table class="progressionTable">
+        <thead>
+            <tr>
+                <th>Level/Icon</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_01.png" alt = "Swift Retribution"></td>
+                <td>Swift Retribution</td>
+                <td>
+                    Artanis warps units into the battlefield almost instantly.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/artanis/artanis_02.png" alt = "Guardian Shell"></td>
+                <td>Guardian Shell</td>
+                <td>
+                    Upon taking fatal damage, friendly units become invulnerable for a short time, escaping death and restoring 15% life and shields. The same unit cannot be shielded again for 4 minutes.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_03.png" alt = "Superior Warp Gates"></td>
+                <td>Superior Warp Gates</td>
+                <td>
+                   Increases the number of charges on Warp Gates from 1 to 3.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_04.png" alt = "Twilight Council Upgrade Cache"></td>
+                <td>Twilight Council Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Twilight Council:
+                    <ul>
+                        <li>Unlock the zealot's Whirlwind ability, which damages all nearby enemies while active.</li>
+                        <li>Increase the Dragoon's life from 100 to 120 and double its shield regeneration rate. Also allow the Dragoon to regenerate shields in combat.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_05.png" alt = "New Unit: Reaver"></td>
+                <td>New Unit: Reaver</td>
+                <td>
+                    Area-damage siege unit. Shoots scarabs for high burst damage. Warped in at the Robotics Facility.<br><br>Can attack ground units.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_06.png" alt = "Templar Archives Upgrade Cache"></td>
+                <td>Templar Archives Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrade at the Templar Archives:
+                    <ul>
+                        <li>Increases the High Templar's starting energy from 50 to 200.</li>
+                        <li>Upgrade the High Templar's Psionic Storm ability to also restore 50 shields to friendly units to the target area.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_07.png" alt = "High Archon"></td>
+                <td>High Archon</td>
+                <td>
+                    Unlocks the ability for Archons to use the Feedback and Psionic Storm abilities.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/artanis/artanis_08.png" alt = "Spear of Adun: Warp Harmonization"></td>
+                <td>Spear of Adun: Warp Harmonization</td>
+                <td>
+                    Stargates and Robotics Facilities can warp in units at any location with pylon power.<br><br>Passive ability.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_09.png" alt = "Reaver Upgrades Pack"></td>
+                <td>Reaver Upgrades Pack</td>
+                <td>
+                    Unlocks the following upgrades at the Robotics Bay:
+                    <ul>
+                        <li>Increase the maximum number of scarabs that Reavers can hold from 5 to 10.</li>
+                        <li>Increases the splash radius of scarab explosions by 25%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/artanis/artanis_10.png" alt = "Spear of Adun: Solar Bombardment"></td>
+                <td>Spear of Adun: Solar Bombardment</td>
+                <td>
+                    Unlocks the ability for the Spear of Adun to randomly bombard an area for massive damage over 15 seconds. Activate Solar Bombardment from the top panel.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_11.png" alt = "New Unit: Tempest"></td>
+                <td>New Unit: Tempest</td>
+                <td>
+                    Siege artillery craft. Attacks from long range. Warped in at the Stargate.<br><br>Can attack ground and air units.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_12.png" alt = "Fleet Beacon Upgrade Cache"></td>
+                <td>Fleet Beacon Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Fleet Beacon:
+                    <ul>
+                        <li>Allow Phoenixes to use Graviton Beam on two targets at once.</li>
+                        <li>Unlock the Tempest's Disintegration ability, which deals 500 damage to target unit or structure over 20 seconds.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/artanis/artanis_13.png" alt = "Spear of Adun: Shield Overcharge"></td>
+                <td>Spear of Adun: Shield Overcharge</td>
+                <td>
+                    Increases the amount of damage absorbed by the Spear of Adun's Shield Overcharge ability from 100 to 200. Activate Shield Overcharge from the top panel.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/artanis/artanis_14.png" alt = "Spear of Adun: Solar Onslaught"></td>
+                <td>Spear of Adun: Solar Onslaught</td>
+                <td>
+                    Increases the number of shots fired during the Spear of Adun's Solar Bombardment ability from 200 to 400. Activate Solar Bombardment from the top panel.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/artanis/artanis_15.png" alt = "Glory of the Daelaam"></td>
+                <td>Glory of the Daelaam</td>
+                <td>
+                    Increases starting supply to 200.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Artanis are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/fingerofdeath.jpg" alt="Finger of Death"></td>
+                <td>Finger of Death</td>
+                <td>Kill 50 units with Artanis's Orbital Strike in a single mission on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/solalright.jpg" alt="Sol-alright"></td>
+                <td>Sol-alright</td>
+                <td>Absorb 10,000 damage for your ally with Artanis's Shield Overcharge in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/solarfury.jpg" alt="Solar Fury"></td>
+                <td>Solar Fury</td>
+                <td>Kill 50 units with a single strike of Artanis's Solar Bombardment on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/warpspeed.jpg" alt="Warp Speed"></td>
+                <td>Warp Speed</td>
+                <td>Warp in 5,000 units with Artanis in Co-op Missions.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="calldowns">Calldowns</h2>
+    <p>The calldowns for Artanis, at level 15, with no mastery points added are:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Calldown</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/projectpowerfield.png" alt = "Project Power Field"></td>
+                <td>Project Power Field</td>
+                <td>Project a power field onto the target location. Using this ability again will move the power field to a new location. Your ally may also use this field.</td>
+                <td>
+                    <ul>
+                        <li>Use this to build a gateway before the pylon at the start of the game to speed up going up the tech tree.</li>
+                        <li>Keep moving the power field around as your army moves forward for quick reinforcements.</li>
+                        <li>Great for re-powering static defense while a pylon has been disabled.</li>
+                        <li>Costs 25 Energy if using the Nexus Legate prestige.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 30 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/orbitalstrike.png" alt = "Orbital Strike"></td>
+                <td>Orbital Strike</td>
+                <td>Fires five lasers onto the battlefield from orbit, each of them dealing 50 (100 vs armored units) area damage.</td>
+                <td>
+                    <ul>
+                        <li>Very effective at taking clumps of enemy units.</li>
+                        <li>There is a short delay between each shot, reducing the effectiveness of <a href="/guides/generaltips">Rapidfire</a>.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 30 seconds</li>
+                        <li>Energy Required: 25</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/shieldovercharge.png" alt = "Shield Overcharge"></td>
+                <td>Shield Overcharge</td>
+                <td>Allows friendly units and structures to absorb up to 200 damage. Lasts for 20 seconds.</td>
+                <td>
+                    <ul>
+                        <li>Always use this while pushing into enemy bases.</li>
+                        <li>Can sometimes be useful when dealing with dangerously large attack waves.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 180 seconds</li>
+                        <li>Energy Required: 50</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/solarbombardment.png" alt = "Solar Bombardment"></td>
+                <td>Solar Bombardment</td>
+                <td>Bombards the target area from orbit, firing 400 random shots over 10 seconds. Each shot deals 15 (30 vs armored units) splash damage.</td>
+                <td>
+                    <ul>
+                        <li>Can be used to soften enemy defenses before pushing in.</li>
+                        <li>Run through the middle of a base with a zealot, which will be protected by Guardian Shell, to cast this in the middle of tough-to-push locations.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 300 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
+    <p>Difficulty: Easy</p>
+    <p>A Dragoon/Zealot build works best while leveling. Focus on mostly Dragoons, and warp in Zealots (with Charge) on the frontline before you take an engagement. This will cause the Zealots to soak up damage away from Dragoons.</p>
+    <h2 id="masteries">Masteries</h2>
+    <p>Below are the three Power Sets for Artanis with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
+    <p>Power Set 1:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shield Overcharge Duration and Damage Absorption</td>
+                <td>3% per point<br>90% maximum</td>
+                <td>30</td>
+                <td rowspan="2">In particular scenarios, where engagements last a longer time, with stronger enemy forces, the Shield Overcharge mastery might serve players better as it prevents the player's units from taking damage.</td>
+            </tr>
+            <tr>
+                <td>Guardian Shell Life and Shield Regeneration</td>
+                <td>0.5% per point<br>15% maximum</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">The difference in the amount of HP gained between no points and maximum points in the Guardian Shell is relatively insignificant. On higher difficulties, it means units will still be lost, regardless. It is best to prevent damage to the units entirely, making the Shield Overcharge mastery better.</p>
+    <p>Power Set 2:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Energy Regeneration and Cooldown Reduction</td>
+                <td>1.5% per point<br>45% maximum</td>
+                <td>?</td>
+                <td rowspan="2">The choice here mostly depends on the type of units that the player prefers to use. The Energy Regeneration mastery can help improve the effectiveness of Archons and High Templars, especially when dealing with Zerg compositions. Cooldown reduction affects cooldowns like Reaver Scarab creation, Zealot Charge and other time-based abilities. The speed increase buff lasts for 30 seconds.</td>
+            </tr>
+            <tr>
+                <td>Speed Increase for Warped in Units</td>
+                <td>2% per point<br>60% maximum</td>
+                <td>?</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">If you use a lot of Archons in your build, or rely on unit abilities like Zealot Charge or Reavers, you may want to consider having the Energy Regeneration mastery. Otherwise, the Speed Increase is beneficial.</p>
+    <p>Power Set 3:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Chrono Boost Efficiency</td>
+                <td>1% per point<br>30% maximum</td>
+                <td>30</td>
+                <td rowspan="2">The Spear of Adun mastery can be useful for players that prefer to spam its abilities often. For example, those with hyper-aggressive playstyles can utilize this energy to its maximum extent.</td>
+            </tr>
+            <tr>
+                <td>Initial and Maximum Spear of Adun Energy</td>
+                <td>3 per point<br>90 maximum</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">In general circumstances, the Spear of Adun Energy mastery isn't beneficial if you play efficiently because you won't be able to use the energy in the early game.</p>
+    <h2 id="prestiges">Prestiges</h2>
+    <p>Below are the prestiges for Artanis. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Valorous Inspirator</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Increase the effectiveness of all active combat unit abilities by 100%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>Combat units cost 30% more.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>Dragoons do not get any benefits from this Prestige</li>
+                        <li>Cooldown reduction from prestige is multiplicative with the Cooldown Reduction mastery</li>
+                        <li>Reavers will not run out of Scarabs when combined with the Cooldown Reduction mastery</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige provides an all-round improvement to Artanis' units. For example, it increases the damage dealt by High Templar Psi Storms and reduces the construction time of Reaver scarabs. This opens up a lot of avenues for playstyle changes. However, Dragoons are unaffected and Tempests receive minimal improvements. The higher cost of units makes it slower to ramp up and more punishing of unit losses. This Prestige works well with the Energy Regeneration and Cooldown Reduction mastery.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><b>Effectiveness Bonuses:</b></p>
+    <ul>
+        <li>Zealot Charge Speed doubled</li>
+        <li>Zealot Whirlwind Damage doubled</li>
+        <li>High Templar/Archon Feedback Damage doubled</li>
+        <li>High Templar/Archon Psionic Storm Damage doubled</li>
+        <li>High Templar/Archon Psionic Storm Shield Recharging rate doubled</li>
+        <li>Archon Merge Time halved</li>
+        <li>Immortal Barrier Damage Absorption doubled (upgrade included)</li>
+        <li>Reaver Scarab Build Time Halved</li>
+        <li>Phoenix Graviton Beam Cooldown Halved</li>
+        <li>Tempest Disintegration Damage doubled</li>
+    </ul>
+    <br>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Nexus Legate</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Upon use, Project Power Field warps out any of your combat units standing in an existing Power Field projection into the new location. Cooldown removed.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>Project Power Field costs 25 energy.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>When units are warped in, they get the Speed Increase for Warped Units buff</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige changes how Power Field is used. Instead of letting you reinforce your army in combat, it's a mobility tool. The high cost of the Power Field (25 energy) makes the prestige quite energy starved, so energy management is crucial. This prestige compounds well with the "Speed Increase for Warped Units" mastery, since every time units are moved using the Power Field, they get the buff.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Arkship Commandant</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Orbital Strikes warp in an Unbound Fanatic that throws off damaging energy and lasts 15 seconds.</li>
+                        <li>Shield Overcharge is now targeted, has its cooldown reduced by 50%, and costs 25 energy.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>Orbital Strike costs 50 energy. Guardian Shell is disabled.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>Shield Overcharge applies to all units within 8 range of selected area</li>
+                        <li>Unbound Fanatic's energy ball does 60 DPS along a path of 1.5 radius</li>
+                        <li>Energy balls are thrown once per second. Each ball lasts 1 second</li>
+                        <li>Fanatics start at maximum 3/3/3 upgrades</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige gives Artanis much more powerful calldowns at a high cost: The loss of Guardian Shell, which increases the fragility of Artanis' already-fragile army. The Unbound Fanatics that spawn from the Orbital Strikes have strong splash damage, similar to Karax's Solar Lances. It also allows Artanis to fast-expand on maps (a single set of Orbital Strikes can easily clear contested expansions). In addition, Shield Overcharge can be used twice as often, which partially offsets the loss of Guardian Shell, and if armies are bunched up, it is still possible to cover both armies.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>For general play, P3 (Arkship Commandant), P2 (Nexus Legate), and P0 (no prestige, Hierarch of the Daelaam) have their place. P3 (Arkship Commandant) is arguably strongest and most flexible, but it lacks Artanis's signature ability. P2 (Nexus Legate) is strong but requires careful Spear of Adun energy management. P1 (Valorous Inspirator) ramps slowly. P0 (no prestige, Hierarch of the Daelaam) has easy reinforcement but lack mobility.</p>
+    <h2 id="army">Recommended Army Composition</h2>
+    <p>The recommended army composition for Artanis is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot"><img class="army" src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">
+    <p>Dragoons deal good amounts of damage from long range, but are reasonably fragile, which is where Zealots come into play. Warp in Zealots in front of Dragoons so they can tank while Dragoons deal damage.</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/artanis/immortal.jpg" alt="Immortal"><div class="techAdd">+</div></div>
+    <p>Add Immortals to your army when dealing with Armored ground targets and to tank for Dragoons.</p>
+    <div id="tooltip">tooltip</div>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+    <h2 id="units">Combat Units</h2>
+    <p>For more information on Artanis' unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
+    <p>Artanis's combat units are listed below:</p>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot">
+            <p>Zealot</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>They are the most basic unit in Artanis' army.</li>
+                <li>Realtively fragile, so not particularly useful when massed.</li>
+                <li>They should make up a small part of your army to tank for more expensive units.</li>
+                <li>Reasonably good when dealing with large amounts of low-HP units when they have Whirlwind.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="unlockable autocast">
+                        <td><img src="/images/commanderdata/unitskills/artanis/charge.png" alt="Charge"></td>
+                        <td>Charge</td>
+                        <td>Intercepts enemy ground units and increases movement speed.</td>
+                        <td>10 seconds</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="unlockable autocast">
+                        <td><img src="/images/commanderdata/unitskills/artanis/whirlwind.png" alt="Whirlwind"></td>
+                        <td>Whirlwind</td>
+                        <td>Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.</td>
+                        <td>10 seconds</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/charge.png" alt="Charge"></td>
+                        <td>Charge</td>
+                        <td>Allows Zealots to intercept nearby enemies. Also increases the movement speed of Zealots by 0.25.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/whirlwind.png" alt="Whirlwind"></td>
+                        <td>Whirlwind</td>
+                        <td>Enables Zealots to use the Whirlwind ability. Whirlwind damages all nearby enemy units while active.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">
+            <p>Dragoon</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Useful when dealing with armored targets.</li>
+                <li>Good anti-air capabilities makes them a good choice against Air Terran.</li>
+            </ul>
+            <p>Skills: None</p>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/singularitycharge.png" alt="Singularity Charge"></td>
+                        <td>Singularity Charge</td>
+                        <td>Increases the Dragoon's attack range by 2.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/trilliccompressionsystems.png" alt="Trillic Compression Systems"></td>
+                        <td>Trillic Compression Systems</td>
+                        <td>Dragoons gain +20 life and their shield regeneration rate is doubled. Also allows the Dragoon to regenerate shields in combat.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/hightemplar.jpg" alt="High Templar">
+            <p>High Templar</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Powerful Psionic unit.</li>
+                <li>Psionic Storm is a great ability to use when dealing with Zerg and Infested compositions.</li>
+                <li>Feedback can 1-shot Phoenixes, Sentries and render BattleCruisers and Hybrid Dominators useless.</li>
+                <li>Draws high aggro, so they should be kept at the back of your army.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/artanis/feedback.png" alt="Feedback"></td>
+                        <td>Feedback</td>
+                        <td>Drains all energy from the target. Deals 1 damage per point of energy.</td>
+                        <td>0 seconds</td>
+                        <td>50</td>
+                    </tr>
+                    <tr class="unlockable">
+                        <td><img src="/images/commanderdata/unitskills/artanis/psionicstorm.png" alt="Psionic Storm"></td>
+                        <td>Psionic Storm</td>
+                        <td>Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.</td>
+                        <td>2s</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/psionicstorm.png" alt="Psionic Storm"></td>
+                        <td>Psionic Storm</td>
+                        <td>Allows High Templar and Archons to summon a storm of psionic energy, causing heavy damage to all enemy units in the target area.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/khaydarinamulet.png" alt="Khaydarin Amulet"></td>
+                        <td>Khaydarin Amulet</td>
+                        <td>Increases the starting energy of High Templar and Archons by 150.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/plasmasurge.png" alt="Plasma Surge"></td>
+                        <td>Plasma Surge</td>
+                        <td>The High Templar's Psionic Storm's radius is increased by 50%, range increased by 2, and restores 50 shields to friendly units in the target area.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/archon.jpg" alt="Archon">
+            <p>Archon</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Merged from two High Templars.</li>
+                <li>Psionic Storm is a great ability to use when dealing with Zerg and Infested compositions.</li>
+                <li>Feedback can 1-shot Phoenixes, Sentries and render BattleCruisers and Hybrid Dominators useless.</li>
+                <li>Splash damage is useful when dealing with Zerg and Infested compositions.</li>
+                <li>Bonus damage to Biological targets makes them a great pick for Infested maps.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/artanis/feedback.png" alt="Feedback"></td>
+                        <td>Feedback</td>
+                        <td>Drains all energy from the target. Deals 1 damage per point of energy.</td>
+                        <td>0 seconds</td>
+                        <td>50</td>
+                    </tr>
+                    <tr class="unlockable">
+                        <td><img src="/images/commanderdata/unitskills/artanis/psionicstorm.png" alt="Psionic Storm"></td>
+                        <td>Psionic Storm</td>
+                        <td>Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.</td>
+                        <td>2s</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/psionicstorm.png" alt="Psionic Storm"></td>
+                        <td>Psionic Storm</td>
+                        <td>Allows High Templar and Archons to summon a storm of psionic energy, causing heavy damage to all enemy units in the target area.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/khaydarinamulet.png" alt="Khaydarin Amulet"></td>
+                        <td>Khaydarin Amulet</td>
+                        <td>Increases the starting energy of High Templar and Archons by 150.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/plasmasurge.png" alt="Plasma Surge"></td>
+                        <td>Plasma Surge</td>
+                        <td>The High Templar's Psionic Storm's radius is increased by 50%, range increased by 2, and restores 50 shields to friendly units in the target area.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/immortal.jpg" alt="Immortal">
+            <p>Immortal</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Provides extremely powerful single-target DPS.</li>
+                <li>Great for destroying structures and other high-HP objectives</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="autocast">
+                        <td><img src="/images/commanderdata/unitskills/artanis/barrier.png" alt="Barrier"></td>
+                        <td>Barrier</td>
+                        <td>Absorbs up to 100 damage. Lasts for 10 seconds.</td>
+                        <td>60 seconds</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/improvedbarrier.png" alt="Improved Barrier"></td>
+                        <td>Improved Barrier</td>
+                        <td>Increases the amount of damage absorbed by the Immortal's Barrier by 100%.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/reaver.jpg" alt="Reaver">
+            <p>Reaver</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Provides high damage, burst, splash damage.</li>
+                <li>Relatively ineffective on maps with prolonged combat, as they can run out of scarabs.</li>
+                <li>Since scarabs take time to hit their target, several Reavers can fire at the same target, wasting shots.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="autocast">
+                        <td><img src="/images/commanderdata/unitskills/artanis/createscarab.png" alt="Create Scarab"></td>
+                        <td>Create Scarab</td>
+                        <td>Builds Scarabs that automatically launch at the Reaver's target and explode for area damage.<br><br>Can attack ground units. (5 max).</td>
+                        <td>8s</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/scarabhousing.png" alt="Scarab Housing"></td>
+                        <td>Scarab Housing</td>
+                        <td>Doubles the maximum number of Scarabs that Reavers can hold.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/solaritepayload.png" alt="Solarite Payload"></td>
+                        <td>Solarite Payload</td>
+                        <td>Increases the splash damage radius of Scarabs by 25%.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/phoenix.jpg" alt="Phoenix">
+            <p>Phoenix</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Great unit on defensive maps with ground compositions.</li>
+                <li>Its ability to lift can render ground-based attack waves useless.</li>
+                <li>Massing them should only be done against the correct compositions, because they are extremely fragile units.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="autocast">
+                        <td><img src="/images/commanderdata/unitskills/artanis/gravitonbeam.png" alt="Graviton Beam"></td>
+                        <td>Graviton Beam</td>
+                        <td>Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.<br><br>Massive units are immune.</td>
+                        <td>30 seconds</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/anionpulsecrystals.png" alt="Anion Pulse-Crystals"></td>
+                        <td>Anion Pulse-Crystals</td>
+                        <td>Phoenixes gain +2 range.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/doublegravitonbeam.png" alt="Double Graviton Beam"></td>
+                        <td>Double Graviton Beam</td>
+                        <td>Allows Phoenixes to cast Graviton Beam on two enemies at once.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/artanis/tempest.jpg" alt="Tempest">
+            <p>Tempest</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Powerful air siege unit that can fire from long range.</li>
+                <li>Useful for taking down bonus objectives.</li>
+                <li>Disintegration is great for dealing extra damage to objectives, but does not stack on the same unit.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Energy Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="unlockable">
+                        <td><img src="/images/commanderdata/unitskills/artanis/disintegration.png" alt="Disintegration"></td>
+                        <td>Disintegration</td>
+                        <td>Deals 500 damage over 20 seconds to target enemy unit or structure.</td>
+                        <td>90 seconds</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/artanis/disintegration.png" alt="Disintegration"></td>
+                        <td>Disintegration</td>
+                        <td>Enables Tempests to deal damage over time to an enemy unit or structure.</td>
+                        <td>150/150</td>
+                        <td>90 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h2 id="buildOrder">Build Order</h2>
+    <p>Below is the standard economic build order for Artanis. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
+    <p class="buildOrder">
+        Project Power Field<br>
+        15 Gateway<br>
+        17 Assimilator<br>
+        18 Assimilator<br>
+        Chrono Gateway<br>
+        21 Zealot -> Rocks<br>
+        24 Zealot<br>
+        Chrono Nexus<br>
+        31 Nexus<br>
+        33 Cybernetics Core<br>
+        34 Pylon
+    </p>
+    <h2 id="guide">Gameplay Guide</h2>
+    <h3>Playstyle Traps</h3>
+    <p>A common trap for Artanis players is to go for a mass Tempest build. Granted, Tempests are powerful units that can deal a lot of damage. However, it leaves players vulnerable to the early game. A mass Tempest build only works if the other ally is aware of that build, and is able to compensate with a strong early game. Additionally, enemy compositions also come into play. Compositions with a large number of low-HP units make Mass Tempests a difficult build to pull off.</p>
+    <p>In most co-op maps, a mass Tempest build can be outdone by some combination of Immortals/Zealots/Phoenixes/Archons. However, if a player still chooses to mass Tempests, it is better to start with some early game in the form of Zealots and Dragoons before transitioning to Tempests.</p>
+    <h3>Building the Artosis Pylon</h3>
+    <p>Because Artanis starts at 200 supply, he does not need to build pylons to increase his supply limit. Hence, pylons should only act as a source of power. Even warping in can be done via the "Project Power Field" calldown. Therefore, only one pylon should ever be built for Artanis.</p>
+    <p>A single pylon can power up to 16 buildings at the same time. This should be more than adequate for most intents and purposes. Such a pylon is shown below:</p>
+    <img src="/images/commanderdata/guides/artanis/artosispylon.jpg" alt="Artosis Pylon">
+    <p>The below is a top-down view of the pylon. The most important thing to notice is how two gateways are set adjacent to the pylon.</p>
+    <img src="/images/commanderdata/guides/artanis/artosispylonplacement.jpg" alt="Artosis Pylon Placement">
+    <p>Once those two gateways are positioned, the rest of the positioning is easy as you will build around the pylon.</p>
+    <h3>Playstyle Tips</h3>
+    <ul>
+        <li>Contrary to what some guides say, Solar Bombardment doesn't have a "heat map", ie, some patches which deal more damage than others. Solar Bombardment starts at a radius of 2 from the target area, and expands to a radius of 10 over the duration of the bombardment. Any areas that get hit more than others is purely due to randomness.</li>
+        <li>At the start of the game, before you build your Artosis Pylon, build a Gateway on the Warp Field. This will allow you to faster progress through the Tech Tree.</li>
+        <li>When you want to make Archons, ensure you have utilized the energy from the two High Templars first. Once the Archon is merged, it's energy will be replenished, allowing you to use the skills again.</li>
+        <li>Psi Storms can stack if Plasma Surge has been researched. This is demonstrated in the video below:
+        <iframe width="475" height="268" src="https://www.youtube.com/embed/aUZzteWm_JQ" allow="autoplay; encrypted-media" allowfullscreen></iframe></li>
+        <li>When you want to cast Solar Bombardment, suicide a Zealot to cast it deep into enemy territory.</li>
+        <li>While Solar Bombardment is active, Warp in a Zealot and use it to lure enemy units into the bombardment for extra clearing potential.</li>
+        <li>The Tempest's Disintegration ability can be cast on multiple train carriages in <a href="/missions/partparcel">Part & Parcel</a> and <a href="/missions/oblivionexpress">Oblivion Express</a>.</li>
+        <li>Use Observers when playing with Tempests to provide vision. Tempests' Disintegration has a higher attack range than their vision range.</li>
+        <li>Hold Shift when Orbital Strike is selected and press any key <a href="/guides/generaltips">bound to Rapidfire</a> to fire Orbital Strikes without delay in between shots.</li>
+    </ul>
+<script src="/scripts/nav.js"></script>
+<?= endContent() ?>

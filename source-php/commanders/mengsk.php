@@ -1,0 +1,1716 @@
+<?php
+
+require_once "../../html/wrapper-static.php";
+?>
+<?= startHead() ?>
+  <title>Starcraft 2 Co-op - Commander Guide - Mengsk</title>
+  <meta name="description" content="Starcraft 2 Co-op Commander Guide Mengsk">
+  <meta name="keywords" content="Starcraft co-op guides mengsk commander mastery prestige build">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link rel="canonical" href="https://starcraft2coop.com/commanders/mengsk">
+  <script src="/scripts/preload.js"></script>
+  <style>
+        @media (min-width: 701px){
+            .fastExpand{
+                display:inline-block;
+                width:400px;
+                height:400px;
+            }
+            .fastExpand img{
+                position:absolute;
+            }
+            #fastExpoTable td:nth-child(2){
+                width:50px;
+            }
+        }
+        @media (max-width: 700px){
+            #fastExpoTable th{
+                display:none;
+                border:none;
+            }
+            #fastExpoTable td{
+                display:block;
+                border:none;
+            }
+            .fastExpand{
+                display:inline-block;
+                width:250px;
+                height:250px;
+            }
+            .fastExpand img{
+                position:absolute;
+                width:250px;
+            }
+        }
+        #content{
+            background: url(/images/commanderdata/bgs/mengsk.png);
+            background-repeat: no-repeat;
+        }
+        .rankTable img{
+            float:left;
+        }
+        .rankTable td:nth-child(1),.rankTable td:nth-child(2){
+            text-align:center;
+        }
+        .guard {
+            font-weight:bold;
+        }
+        #tooltip{
+            position:absolute;
+            background-color:khaki;
+            color:black;
+            font-size:0.8em;
+            display:none;
+            z-index:1;
+            padding:5px;
+            border-radius:5px;
+        }
+  </style>
+  <?= startContent() ?>
+    <div id="tooltip">tooltip</div>
+    <h1>Co-op Commander Guide: Mengsk</h1>
+    <p id="commanderMotto">Emperor of the Dominion</p>
+    <?php include("../../html/scripts/reporterror.php"); ?>
+    <div id="links">
+        <h2>Sections on this Page</h2>
+        <p><a href="#comSum">Commander Summary</a></p>
+        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#achievements">Achievements</a></p>
+        <p><a href="#calldowns">Calldowns</a></p>
+        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p><a href="#masteries">Masteries</a></p>
+        <p><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#army">Recommended Army Composition</a></p>
+        <p><a href="#units">Combat Units</a></p>
+        <p><a href="#buildOrder">Build Order</a></p>
+        <p><a href="#guide">Gameplay Guide</a></p>
+        <p><a href="#fastexpand">Fast Expanding</a></p>
+        <p><a href="#videos">Video Guides</a></p>
+    </div>
+    <h2 id="comSum">Commander Summary</h2>
+    <p>Mengsk uses an army of conscripted workers and soldiers to bolster his defenses backed up by powerful units from his Royal Guard and Artillery fire from the large distances.</p>
+    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <table class="progressionTable">
+        <thead>
+            <tr>
+                <th>Level/Icon</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_01.png" alt = "Law and Order"></td>
+                <td>Law and Order</td>
+                <td>
+                    Mengsk conscripts Dominion Laborers instead of SCVs to work and Dominion Troopers instead of Marines to fight. His Royal Guard units can level up, gaining new abilities and improvements to existing abilities.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_02.png" alt = "Expanded Arsenal"></td>
+                <td>Expanded Arsenal</td>
+                <td>
+                    Allows Troopers to equip CPO-7 Salamander Flamethrowers and Hailstorm Launchers.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_03.png" alt = "New Unit: Earthsplitter Ordnance"></td>
+                <td>New Unit: Earthsplitter Ordnance</td>
+                <td>
+                   Randomly bombards near a target location, dealing damage to ground units in the area. Enables Contaminated Strike from the top panel.<br><br>Can attack ground units.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_04.png" alt = "Contaminated Strike"></td>
+                <td>Contaminated Strike</td>
+                <td>
+                    Unlocks the ability to launch experimental payloads, fired from your Earthsplitter Ordnance randomly near a target area.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_05.png" alt = "Unquestioned Authority"></td>
+                <td>Unquestioned Authority</td>
+                <td>
+                    Indoctrinated Laborers, Indoctrinated Troopers, and Royal Guards provide Imperial Support, which increases Imperial Mandate generation. Unlocks the Amplified Airwaves upgrade, which doubles the Imperial Support provided by Indoctrinated Laborers and Troopers (Researched at the Fusion Core).
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_06.png" alt = "Engineering Bay Upgrade Cache"></td>
+                <td>Engineering Bay Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades at the Engineering Bay:
+                    <ul>
+                        <li>Further increases the range of units within Supply Bunkers by +1.</li>
+                        <li>Increases the range of the Earthsplitter Ordnance's Bombardment ability by +25.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_07.png" alt = "Wolves of War"></td>
+                <td>Wolves of War</td>
+                <td>
+                    Dogs of War now deploys additional Mutalisks and Ultralisks at higher Imperial Mandate levels.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_08.png" alt = "Basic Royal Guard Upgrade Cache"></td>
+                <td>Basic Royal Guard Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades:
+                    <ul>
+                        <li>Allows Aegis Guard to slow enemy units with their attack (Researched at the Royal Academy).</li>
+                        <li>Allows Shock Division in Siege Mode to fire at enemy air units while picked up by an Imperial Intercessor (Researched at the Armory).</li>
+                        <li>Increases the movement speed of Sky Furies (Researched at the Fusion Core).</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_09.png" alt = "New Unit: Blackhammer"></td>
+                <td>New Unit: Blackhammer</td>
+                <td>
+                    Royal Guard heavy assault mech. Can use Overwatch Mode. Built from the Factory.<br><br>Can attack ground and air units.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_10.png" alt = "Nuclear Annihilation"></td>
+                <td>Nuclear Annihilation</td>
+                <td>
+                    Unlocks the ability to call down a rain of Tactical Missiles followed by a Nuclear Missile. Activate Nuclear Annihilation from the top panel.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_11.png" alt = "Psychoactive Payload"></td>
+                <td>Psychoactive Payload</td>
+                <td>
+                    Contaminated Strike now Fears enemy units on impact, causing them to run around in panic.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_12.png" alt = "New Unit: Pride of Augustgrad"></td>
+                <td>New Unit: Pride of Augustgrad</td>
+                <td>
+                   Powerful Royal Guard warship. Can use Yamato Cannon and Tactical Jump. Built from the Starport.<br><br>Can attack ground and air units.
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_13.png" alt = "Complete Annihilation"></td>
+                <td>Complete Annihilation</td>
+                <td>
+                    Increased the number of Tactical Missiles dropped by Nuclear Annihilation from 20 to 40.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_14.png" alt = "Advanced Royal Guard Upgrade Cache"></td>
+                <td>Advanced Royal Guard Upgrade Cache</td>
+                <td>
+                    Unlocks the following upgrades:
+                    <ul>
+                        <li>Allows Emperor's Shadows to fire Tactical Missile Strikes without channeling (Researched at the Royal Academy).</li>
+                        <li>Blackhammers grant 5 armor to units positioned beneath them. (Researched at the Armory).</li>
+                        <li>Pride of Augustgrads grant +1 attack range to nearby friendly ranged ground units. (Researched at the Fusion Core).</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="spike">
+                <td><img src="/images/commanderdata/progression/mengsk/mengsk_15.png" alt = "Promotion Granted"></td>
+                <td>Promotion Granted</td>
+                <td>
+                    Royal Guards can now attain Rank 3, gaining the following abilities
+                    <ul>
+                        <li>Aegis Guards can greatly increase their attack speed.</li>
+                        <li>The Emperor's Shadow's Pyrokinetic Immolation causes an explosion when the target dies. Units take damage from the Emperor's Shadow's EMP Blast equal to the amount of energy drained.</li>
+                        <li>Increases the Shock Division's attack's area of effect radius in Siege Mode.</li>
+                        <li>Increases the attack speed of Blackhammers in Overwatch Mode.</li>
+                        <li>Grants Sky Furies a chance to evade enemy attacks in Fighter Mode. When Sky Furies take fatal damage in Assault Mode, they transform to Fighter Mode and gain a barrier.</li>
+                        <li>Allows the Pride of Augustgrad's Yamato Cannon to fire three times in rapid succession.</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Mengsk are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/earthbroken.jpg" alt="Earthbroken"></td>
+                <td>Earthbroken</td>
+                <td>Deal 200,000 damage with Earthsplitter Ordnance bombardments.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/iamthelaw.jpg" alt="I Am the Law"></td>
+                <td>I Am the Law</td>
+                <td>Kill 2000 enemy units in total with Contaminated Strike, Dogs of War, and Nuclear Annihilation.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/thebestemperor.jpg" alt="The Best of the Best of the Best, Emperor"></td>
+                <td>The Best of the Best of the Best, Emperor</td>
+                <td>Reach Rank 3 with at least 50 supply of Royal Guard units simultaneously on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/thiswasyourrifle.jpg" alt="This Was Your Rifle"></td>
+                <td>This Was Your Rifle</td>
+                <td>Pick up 500 weapons with Dominion Troopers.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="calldowns">Calldowns</h2>
+    <p>The calldowns for Mengsk, at level 15, with no mastery points added are:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Calldown</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/forcedconscription.png" alt = "Forced Conscription"></td>
+                <td>Forced Conscription</td>
+                <td>Drops a Supply Bunker from orbit along with 6 unfortunate Trooper souls to man it.</td>
+                <td>
+                    <ul>
+                        <li>If the Mandate mastery has been selected, a fast expand is possible very early in the game.</li>
+                        <li>Useful for dropping in the field to convert Troopers back to Laborers to help repair units.</li>
+                        <li>Can be dropped without vision as long as terrain is explored.</li>
+                        <li>Salvage Bunkers that won't be used for extra resources.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Charge Cooldown: 60 seconds</li>
+                        <li>Mandate Required: 25</li>
+                        <li>Construction Time: 3 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/contaminatedstrike.png" alt = "Contaminated Strike"></td>
+                <td>Contaminated Strike</td>
+                <td>Loads all your Earthsplitter Ordnance with an experimental payload to target any area on the map. Payloads randomly land near the target area, causing enemies to run in fear and saturating the area in irradiated biomaterial, causing all enemies who enter to take 5 damage per second. Affected units cannot cloak.</td>
+                <td>
+                    <ul>
+                        <li>Useful for dropping on an attack wave or enemy base before pushing in.</li>
+                        <li>Only fears enemies that are hit by the initial strike. Enemies that walk into the cloud are not feared.</li>
+                        <li>Fear will cancel any current orders a unit has, which means attack waves hit by Contaminated Strike will stop moving towards player bases.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 30 seconds</li>
+                        <li>Mandate Required: 25</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/dogsofwar1.png" alt = "Dogs of War (Level 1)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar2.png" alt = "Dogs of War (Level 2)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar3.png" alt = "Dogs of War (Level 3)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar4.png" alt = "Dogs of War (Level 4"></td>
+                <td>Dogs of War</td>
+                <td>Deploys 30 enthralled Zerglings at the target location that last for 60 seconds. Enthralled zerg will seek out and attack the nearest enemy.<br><br>Deploys additional enthralled zerg based on Imperial Mandate.<br><br>50%: Deploys 10 additional Hydralisks.<br>75%: Deploys 10 additional Mutalisks.<br>100%: Deploys 5 additional Ultralisks.</td>
+                <td>
+                    <ul>
+                        <li>Can be used in place of one Bunker on some fast expands (see Gameplay Guide), although not recommended as it is less efficient.</li>
+                        <li>Great for drawing aggro of enemy units while your army attacks from behind the line of Zerg.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 180 seconds</li>
+                        <li>Mandate Required: 25</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/nuclearannihilation.png" alt = "Nuclear Annihilation"></td>
+                <td>Nuclear Annihilation</td>
+                <td>Blankets a target area with a seemingly endless barrage of 40 Tactical Missiles, each dealing 150(+100 vs. structures) damage in a small area, followed by a Nuclear Missile, which deals 500(+300 vs. structures) damage in a large area.</td>
+                <td>
+                    <ul>
+                        <li>Very powerful splash damage that can be used to clear out enemy bases.</li>
+                        <li>Get vision of the center of enemy bases with Earthsplitter Ordnances before using this calldown.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 300 seconds</li>
+                        <li>Mandate Required: 100</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="leveling">Sub-Ascension Leveling</h2>
+    <p>Difficulty: Moderate</p>
+    <p>Prior to gaining access to Earthsplitter Ordnances, Mengsk levelling can be extremely difficult, as it makes it impossible for him to take engagements without losing his army. Once Ordnances are unlocked, they should be used to weaken enemy bases and attack waves before pushing in. Shock Divisions should be used to provide damage, with Troopers in the front to keep enemy units off them.</p>
+    <h2 id="masteries">Masteries</h2>
+    <p>Below are the three Power Sets for Mengsk with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
+    <p>Power Set 1:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Laborer and Trooper Imperial Support</td>
+                <td>1% per point<br>30% maximum</td>
+                <td>30</td>
+                <td rowspan="2">The extremely high cost of the Royal Guard, combined with the relatively low rate of Mandate generation by them makes the Royal Guard mastery very uncompetitive. This is because players will always have access to Laborers and Troopers, which generate a lot more Mandate when around an Imperial Witness.</td>
+            </tr>
+            <tr>
+                <td>Royal Guard Imperial Support</td>
+                <td>1% per point<br>30% maximum</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">Given the varied playstyles, the Laborer mastery is a better pick here because it provides a benefit regardless of the playstyle used, allowing the commander to be effective on all maps.</p>
+    <p>Power Set 2:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Terrible Damage</td>
+                <td>1% per point<br>30% maximum</td>
+                <td>?</td>
+                <td rowspan="2">The Terrible Damage mastery can be used for a more topbar-centric focused build, assuming a maximum amount of Mandate generation, while the Royal Guard Cost allows you to increase the quantity of Royal Guard units in your army.</td>
+            </tr>
+            <tr>
+                <td>Royal Guard Cost</td>
+                <td>-0.66% per point<br>-20% maximum</td>
+                <td>?</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">If the player chooses to use the Dogs of War ability frequently (and potentially in fast expands if they struggle with the multitasking), the Terrible Damage would be a more beneficial pick for them. Otherwise, the Royal Guard Cost is the better choice here as it allows you to directly strengthen your army.</p>
+    <p>Power Set 3:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Starting Imperial Mandate</td>
+                <td>1 per point<br>30 maximum</td>
+                <td>30</td>
+                <td rowspan="2">The Guard Experience Gain rate mastery can be used to allow you to quickly level up Royal Guard units to gain access to their Rank-3 bonuses, while the Starting Mandate provides more early-game possibilities for the commander.</td>
+            </tr>
+            <tr>
+                <td>Royal Guard Experience Gain Rate</td>
+                <td>0.5% per point<br>15% maximum</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">The Starting Imperial Mandate is the better choice here because it provides Mengsk with access to two Supply Bunkers at the 2 minute mark, allowing him to fast expand and build his economy.</p>
+    <h2 id="prestiges">Prestiges</h2>
+    <p>Below are the prestiges for Mengsk. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Toxic Tyrant</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Contaminated Strike's fear lasts 200% longer, its damage-over-time effect additionally increases damage received by 25%, its cost is reduced by 20%, and its cooldown is reduced by 66%.</li>
+                        <li>Troopers provide Imperial Support while operating Earthsplitter Ordnance.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>Nuclear Annihilation is unavailable.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>Mandate Generation will only work after getting the Unquestioned Authority Level 5 Unlock</li>
+                        <li>Amplified Airwaves affects Troopers inside Earthsplitters</li>
+                        <li>Troopers inside Earthsplitters do not need a Witness to generate extra Mandate.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>11</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige works best when a player decides to use Earthsplitters as part of their strategy. While Nuclear Annihilation is unavailable, Contaminated Strike can be used on top of enemy bases, just before Mengsk's army pushes in. Fear and the increased damage received can be used to launch very effective assaults on enemy bases. This prestige also further simplifies dealing with attack waves. Not only does Fear break the AI move command of the attack wave, but the extra damage bonus dealt makes it easier to kill off the units while under the effect.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Principal Proletariat</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Royal Guard vespene gas costs reduced by 25% and XP gain increased by 100%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>Royal Guard mineral costs increased by 100% and supply cost increased by 50%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>Royal Guard Cost stacks multiplicatively with the Royal Guard Cost Reduction mastery.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige allows a player to focus on a mass Royal Guard build by allowing them to quickly get Royal Guards out at the start of the game, thus helping their early game. This prestige works well with the Royal Guard Cost reduction mastery and really well with the Royal Guard Imperial Mandate Support mastery, resulting in one of the highest Mandate generation rates possible, due to increased Royal Guard Supply costs.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Merchant of Death</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Equipped Troopers activate a self-destruct mechanism in their weapons upon death.</li>
+                        <li>Trooper weapons cost 40 minerals and 20 vespene gas.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>Troopers no longer drop weapons.</li>
+                        <li>Imperial Intercessors are unavailable.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>The weapon deals 150 damage (+100 vs. Structures) within a range of 1.5</li>
+                        <li>Weapon will search for a target within 12 range</li>
+                        <li>Vision required for weapon to find target</li>
+                        <li>Weapon will denotate after 2 seconds if no target is found</li>
+                        <li>Weapon can target air units as well</li>
+                        <li>Troopers can be converted back to Laborers to repair each other</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige allows Mengsk to quickly ramp up his earlygame DPS, by providing a large cost reduction to equipping improved weapons to his troopers. Due to the lack of Intercessors, any damage taken by Mengsk's Aegis Guard and Emperor's Shadows is permanent, while Troopers need to be converted back to Laborers to repair themselves. Thus, Bunker play is encouraged to reduce damage taken by the army. Players will also need to be careful while pushing into bases and attack waves. It is recommended to use calldowns or Earthsplitters to first soften up enemy forces before cleaning up with the army to reduce damage taken. Additionally, a few Troopers can be sacrificed into an attack wave to weaken it. However, pay attention to the army footprint. Waves that spread out over a large area result in much less efficient trades than those that are clumped up. Troops should also not be suicided into enemy bases, as explosions from weapons will probably only kill a single unit at a time.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>All of Mengsk's prestiges are viable, depending on the player's preferred playstyle. However, for general play, Merchant of Death offers Mengsk the versatility in being able to deal with a wide variety of situations. While upgraded troopers are slightly more expensive, they pay back in dividends by increasing your overall effectiveness in trading with Amon.</p>
+    <h2 id="army">Recommended Army Composition</h2>
+    <p>The recommended army composition for Mengsk is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/mengsk/dominionassaulttrooper.jpg" alt="Dominion Assault Trooper"><img class="army" src="/images/commanderdata/units/mengsk/dominionrockettrooper.jpg" alt="Dominion Rocket Trooper"><img class="army" src="/images/commanderdata/units/mengsk/aegisguard.jpg" alt="Aegis Guard"><img class="army" src="/images/commanderdata/units/mengsk/imperialintercessor.jpg" alt="Imperial Intercessor"><img  class="army" src="/images/commanderdata/units/mengsk/prideofaugustgrad.jpg" alt="Pride of Augustgrad"><img class="army"  src="/images/commanderdata/units/mengsk/imperialwitness.jpg" alt="Imperial Witness">
+    <p>A mix of different trooper types is important. Assault Troopers deal damage while Rocket Troopers handle air units with ease. The ratio of each will depend on the enemy composition and map objectives. Use Aegis Guards to tank for the troopers and Imperial Intercessors to heal damaged units. Tech up to a Pride of Augustgrad for powerful wave-handling abilities. Remember to put Imperial Witnesses into Patriot mode for extra buffs to your army.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+
+    <h2 id="units">Combat Units</h2>
+    <p>For more information on Mengsk's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
+    <p>Mengsk's combat units are listed below:</p>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/dominiontrooper.jpg" alt="Dominion Trooper">
+            <p>Dominion Trooper</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>The most basic unit available to Mengsk.</li>
+                <li>Can be equipped with one of three weapons to increase its stats and damage bonuses.</li>
+                <li>Useful for defending the first attack wave on most missions if loaded into a Bunker.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/dominionassaulttrooper.jpg" alt="Dominion Assault Trooper">
+            <p>Dominion Assault Trooper</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Good all-round damage output.</li>
+                <li>Has double the damage output of a regular Dominion Trooper.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/dominionflametrooper.jpg" alt="Dominion Flame Trooper">
+            <p>Dominion Flame Trooper</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Has much more HP than other Troopers and starts with 1 armor.</li>
+                <li>Useful for dealing with clumps of Light units like Zerg.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/dominionrockettrooper.jpg" alt="Dominion Rocket Trooper">
+            <p>Dominion Rocket Trooper</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Has a very powerful anti-air attack that deals bonus to Armored air targets.</li>
+                <li>Still uses the same unupgraded weapon as Trooper for anti-ground attack.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/aegisguard.jpg" alt="Aegis Guard">
+            <p>Aegis Guard</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Useful for tanking for other units on the frontline.</li>
+                <li>Damage against Armored targets is great, especially with the High-Grade Stimpacks unlocked.</li>
+                <li>Rank 2 upgrade enables them to be highly effective against waves with many low HP units like Zerg and Classic Bio.</li>
+                <li>Rank 2 splash damage is based on the armor type of the primary target, and ignores armor of units that take splash damage.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Rank Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="autocast">
+                        <td><img src="/images/commanderdata/unitskills/mengsk/highgradestimpacks.png" alt="High-Grade Stimpacks"></td>
+                        <td>High-Grade Stimpacks</td>
+                        <td>Increases attack speed by 200% for 10 seconds.</td>
+                        <td>30 seconds</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/incapacitatorshells.png" alt="Incapacitator Shells"></td>
+                        <td>Incapacitator Shells</td>
+                        <td>Allows the Aegis Guard's attacks to slow enemy units (-60% movement speed for 3 seconds).</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Rank Unlocks:</p>
+            <table class="rankTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Total Experience</th>
+                        <th>Rank Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1200</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/aegisbarrier.png" alt="Aegis Barrier"><p><b>Aegis Barrier: </b>Grants the Aegis Guard a shield that absorbs 300 damage. When the shield takes fatal damage, it releases a pulse of energy that knocks back nearby ground units. This shield refreshes to full every 60 seconds.</p></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>4000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Attacks create a cone of shrapnel, dealing 20% damage to enemies behind the target.</p></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>8800</td>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/highgradestimpacks.png" alt="High-Grade Stimpacks"><p><b>High-Grade Stimpacks: </b>Increases attack speed by 200% for 10 seconds.</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/emperorsshadow.jpg" alt="Emperor's Shadow">
+            <p>Emperor's Shadow</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Tactical Missile Strike is not a very useful ability due to its small size.</li>
+                <li>Pyrokinetic Immolation can be used to deal with small Biological waves, such as Zerglings.</li>
+                <li>EMP Blast is important when dealing with high damage output Mechanical unit compositions.</li>
+                <li>Multiple Royal Academies will allow Ghosts to have several Nukes available to launch.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Rank Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/pyrokineticimmolation.png" alt="Pyrokinetic Immolation"></td>
+                        <td>Pyrokinetic Immolation</td>
+                        <td>Immolates a target Biological enemy for 20 seconds, dealing 20 damage per second to themselves and nearby Biological enemies. Can be set to Autocast. Requires 75 energy.</td>
+                        <td>5 seconds</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/empblast.png" alt="EMP Blast"></td>
+                        <td>EMP Blast</td>
+                        <td>Deals 100 damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for 1 second. Cloaked units are revealed for 10 seconds after being hit. Can be set to Autocast. Requires 75 energy.</td>
+                        <td>8 seconds</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="autocast">
+                        <td><img src="/images/commanderdata/unitskills/mengsk/labyrinthcloak.png" alt="Labyrinth Cloak"></td>
+                        <td>Labyrinth Cloak</td>
+                        <td>Prevents the Emperor's Shadow from taking any damage for 10 seconds after being attacked. Cannot occur more than once every 30 seconds.</td>
+                        <td>30 seconds</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/tacticalmissilestrike.png" alt="Tactical Missile Strike"></td>
+                        <td>Tactical Missile Strike</td>
+                        <td>Calls down a Tactical Missile Strike at a target location. Tactical Missiles take 4 seconds to land, but they deal up to 150 (+100 vs. structures) damage to enemies in a small radius. (100% damage within 1.5 range of the hit, 50% from 1.5 to 2.0 range)<br><br>Cooldown is time to build one missile.</td>
+                        <td>90 seconds</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/sovereigntacticalmissiles.png" alt="Sovereign Tactical Missiles"></td>
+                        <td>Sovereign Tactical Missiles</td>
+                        <td>Emperor's Shadows no longer need to channel the Tactical Missile Strike ability.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Rank Unlocks:</p>
+            <table class="rankTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Total Experience</th>
+                        <th>Rank Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1200</td>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/labyrinthcloak.png" alt="Labyrinth Cloak"><p><b>Labyrinth Cloak: </b>Prevents the Emperor's Shadow from taking any damage for 10 seconds after being attacked. Cannot occur more than once every 30 seconds.</p></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>4000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Increases Pyrokinetic Immolation periodic damage by 50%. Increases EMP Blast stun duration by 1 second.</p></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>8800</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Upon target's death, Pyrokinetic Immolation deals 50 damage to nearby enemies. EMP Blast drains all of the target's energy and deals damage equal to that amount.</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/shockdivision.jpg" alt="Shock Division">
+            <p>Shock Division</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Useful when being placed behind Bunkers to deal with ground-based attack waves.</li>
+                <li>Can be used as an anti-air option when loaded sieged onto a Medivac.</li>
+                <li>Damage output in a Medivac is out-performed by much better anti-air options, such as Blackhammers and Prides of Augustgrad.</li>
+            </ul>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/armamentstabilizers.png" alt="Armament Stabilizers"></td>
+                        <td>Armament Stabilizers</td>
+                        <td>Allows Shock Divisions in Siege Mode to fire at air units at a reduced rate (66%) while being carried by an Imperial Intercessor.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/smartservos.png" alt="Smart Servos"></td>
+                        <td>Smart Servos</td>
+                        <td>Reduces the transformation time (by 66%) of Shock Divisions, Blackhammers, and Sky Furies.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Rank Unlocks:</p>
+            <table class="rankTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Total Experience</th>
+                        <th>Rank Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1800</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/shockandawe.png" alt="Shock and Awe"><p><b>Shock and Awe: </b>In Siege Mode, this unit's attacks now stun enemy units for 1 second. Can only occur once every 5 seconds on each unit.<br><br>Massive and Heroic units are slowed.</p></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>6000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Increases vision and attack range by 2 in Siege Mode.</p></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>13200</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Increases the area of sieged attacks by 40%.</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/blackhammer.jpg" alt="Blackhammer">
+            <p>Blackhammer</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Good tank unit for the frontline with decent anti-ground damage.</li>
+                <li>Overwatch mode is a great way of dealing with large numbers of low HP air units.</li>
+            </ul>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/bulwarkfield.png" alt="Bulwark Field"></td>
+                        <td>Bulwark Field</td>
+                        <td>Blackhammers provide nearby friendly ground units (within 5 range) +5 armor.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/smartservos.png" alt="Smart Servos"></td>
+                        <td>Smart Servos</td>
+                        <td>Reduces the transformation time (by 66%) of Shock Divisions, Blackhammers, and Sky Furies.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Rank Unlocks:</p>
+            <table class="rankTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Total Experience</th>
+                        <th>Rank Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2400</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Increases the area of effect of Overwatch Mode by 50%.</p></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>8000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Increases the range of Overwatch Mode by 2.</p></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>17600</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Increases attack speed in Overwatch Mode by 33%.</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/skyfury.jpg" alt="Sky Fury">
+            <p>Sky Fury</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Too expensive given its role, which is overshadowed by other Mengsk units.</li>
+                <li>Can be used to deal with Massive targets after reaching Rank 1.</li>
+                <li>At Rank 2, it's DPS increases when its mode is changed for 5 seconds, which can be used to provide bursts of damage.</li>
+            </ul>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/aesirturbines.png" alt="Aesir Turbines"></td>
+                        <td>Aesir Turbines</td>
+                        <td>Increases the movement speed of Sky Furies by 55%.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/smartservos.png" alt="Smart Servos"></td>
+                        <td>Smart Servos</td>
+                        <td>Reduces the transformation time (by 66%) of Shock Divisions, Blackhammers, and Sky Furies.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Rank Unlocks:</p>
+            <table class="rankTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Total Experience</th>
+                        <th>Rank Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1200</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Deals bonus damage (50) to Massive targets.</p></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>4000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/tacticalrealignment.png" alt="Tactical Realignment"><p><b>Tactical Realignment: </b>After transforming, this unit gains 50% increased attack damage for 5 seconds. Cannot occur more than once every 15 seconds.</p></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>8800</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/evasivemaneuvers.png" alt="Evasive Maneuvers"><p><b>Evasive Maneuvers: </b>This unit has a 50% chance to evade attacks.</p><br><br>
+                        <img src="/images/commanderdata/unitupgrades/mengsk/phoenixprotocol.png" alt="Phoenix Protocol"><p><b>Phoenix Protocol: </b>When this unit takes fatal damage, the Sky Fury transforms to Fighter mode and temporarily gains a barrier that absorbs 400 damage for 15 seconds. Can only occur once every 90 seconds.</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/imperialintercessor.jpg" alt="Imperial Intercessor">
+            <p>Imperial Intercessor</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Important unit for keeping Troopers alive in battle.</li>
+                <li>Both upgrades are very useful to improving the effectiveness and survivability of the Intercessor.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Rank Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="autocast">
+                        <td><img src="/images/commanderdata/unitskills/mengsk/heal.png" alt="Heal"></td>
+                        <td>Heal</td>
+                        <td>Heals a friendly biological target.<br><br>Heals 9 life per 3 energy.</td>
+                        <td>0 seconds</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/igniteafterburners.png" alt="Ignite Afterburners"></td>
+                        <td>Ignite Afterburners</td>
+                        <td>Increases this unit's movement speed by 70% for 8 seconds.</td>
+                        <td>15 seconds</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/dualresuscitators.png" alt="Dual Resuscitators"></td>
+                        <td>Dual Resuscitators</td>
+                        <td>Allows Imperial Intercessors to heal two targets at the same time.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/scatterveil.png" alt="Scatter Veil"></td>
+                        <td>Scatter Veil</td>
+                        <td>Allows Imperial Intercessors to permanently cloak and provides them with a shield that absorbs 100 damage.</td>
+                        <td>50/50</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/imperialwitness.jpg" alt="Imperial Witness">
+            <p>Imperial Witness</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>A critical unit for Mandate generation for Mengsk.</li>
+                <li>Players should try to rush this unit and place it in Patriot Mode over their own mineral lines.</li>
+                <li>Should not be placed on ally mineral lines as it does not generate Mandate, and movement speed increases do not raise resource income after saturation.</li>
+                <li>Can be put into Patriot Mode in the battlefield over areas you will be fighting in to take advantage of the movement speed and attack speed buffs.</li>
+                <li>Provides 20% Attack Speed and Movement Speed buff when in Patriot mode (15 range).</li>
+            </ul>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/amplifiedairwaves.png" alt="Amplified Airwaves"></td>
+                        <td>Amplfied Airwaves</td>
+                        <td>Doubles the Imperial Support Laborers and Troopers provide when affected by the Imperial Witness's Indoctrinate ability.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <img src="/images/commanderdata/units/mengsk/prideofaugustgrad.jpg" alt="Pride of Augustgrad">
+            <p>Pride of Augustgrad</p>
+        </div>
+        <div class="descContainer">
+            <ul>
+                <li>Great unit for dealing with clumps of enemy units in attack waves.</li>
+                <li>Yamato Cannon will retarget units once Rank 3 is reached, preventing overkilling a unit.</li>
+            </ul>
+            <p>Skills:</p>
+            <table class="unitSkills">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                        <th>Rank Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/yamatocannon.png" alt="Yamato Cannon"></td>
+                        <td>Yamato Cannon</td>
+                        <td>Blasts a target with a devastating plasma cannon, causing 300 damage.</td>
+                        <td>120 seconds</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitskills/mengsk/tacticaljump.png" alt="Tactical Jump"></td>
+                        <td>Tactical Jump</td>
+                        <td>Warps to the target location. Battlecruiser is invulnerable while warping.</td>
+                        <td>60 seconds</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Upgrades:</p>
+            <table class="unitUpgrades">
+                <thead>
+                    <tr>
+                        <th>Upgrade</th>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_terran.png" alt="Gas"></th>
+                        <th>Research Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/fieldassisttargetingsystem.png" alt="Field-Assist Targeting System"></td>
+                        <td>Field-Assist Targeting System</td>
+                        <td>Allows Pride of Augustgrad to grant nearby friendly ranged ground units +1 increased range.</td>
+                        <td>100/100</td>
+                        <td>60 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Rank Unlocks:</p>
+            <table class="rankTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Total Experience</th>
+                        <th>Rank Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>3000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Yamato Cannon and Tactical Jump hold an additional charge.</p></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>10000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Yamato Cannon deals damage in an area around the target.</p></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>22000</td>
+                        <td><img src="/images/commanderdata/unitupgrades/mengsk/veterancy.png" alt="Veterancy"><p>Yamato Cannon fires 2 additional times, choosing new targets.</p></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h2 id="buildOrder">Build Order</h2>
+    <p>Below is the standard economic build order for Mengsk. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
+    <p class="buildOrder">
+        13 Bunker Calldown at Expo<br>
+        24 Bunker keeping 16 laborers on Main<br>
+        25 Unload expo bunker + clear rocks<br>
+        28 4 Laborers -> Expo<br>
+        30 Enlistment Center with 4 Laborers<br>
+        32 Troopers to Laborers to fast-build expo<br>
+        32 Bunker Calldown, Unload to Laborer<br>
+        38 Refinery with 3 Laborers<br>
+        38 Refinery with 3 Laborers<br>
+        39 Refinery with 3 Laborers<br>
+        41 Refinery with 3 Laborers<br>
+        45 Barracks with 8 Laborers<br>
+        50 Factory with 8 Laborers<br>
+        53 Starport with 8 Laborers<br>
+        56 Imperial Witness<br>
+    </p>
+    <h2 id="guide">Gameplay Guide</h2>
+    <h3>Playstyle Traps</h3>
+    <p>Weapon upgrades for Troopers may seem expensive, but they can greatly increase the unit's performance in combat. Make sure to utilize any floating minerals to upgrade Trooper weapons where possible.</p>
+    <p>Finally, it can be very tempting to try and build many of the Royal Guard units. Doing so means that the experience you get from kills is split among more units, slowing down their levelling up through Ranks. While for smaller units (such as the Aegis Guard), it might not be too impactful, it can be very problematic for larger units such as the Pride of Augustgrad. These units gain a significant power spike at Rank 3 and is potentially the rank where they become invaluable. Having several Prides of Augustgrad, combined with their high levelling experience can prevent a player from reaching the rank which makes them important units.</p>
+    <h3>Unit Ranks</h3>
+    <p>Mengsk's Royal Guard units have a Veterancy mechanic that allows them to level up as enemy units are killed around the map. Once a certain amount of experience is reached, the unit ranks up, gaining access to additional skills or bonuses. The leveling up mechanics works as follows:</p>
+    <ul>
+        <li>When an enemy unit is killed, 100 experience per supply cost of unit killed is "dropped".</li>
+        <li>If the unit is a non-Heroic unit with 0 supply cost, it will drop no experience.</li>
+        <li>If the unit is a Heroic unit with 0 supply cost, it will drop 800 experience.</li>
+        <li>Dropped experience is equally split among all eligible units (Royal Guard, not at max rank) within 15 range of the unit killed.</li>
+        <li>If there are no eligible units within 15 range of the unit killed, all eligible units on the map get an equal split of the dropped experience.</li>
+        <li>Once a Royal Guard unit has reached maximum rank, it is removed from the pool of eligible units so as to not waste experience.</li>
+    </ul>
+    <h3>Laborer Multi-building</h3>
+    <p>Mengsk can send multiple Laborers to build a structure. The time taken to complete a structure based on the number of Laborers building is as follows:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Laborers</th>
+                <th>Build Time (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>62.5</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>45.5</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>35.7</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>29.4</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>21.7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>19.2</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>17.2</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>15.6</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="fastexpand">Fast Expanding</h3>
+    <p>With 30 points into the Starting Mandate Mastery, Mengsk has access to one of the following listed combinations of calldown usage once he hits 50 Mandate, which is when double-Bunker expands begin. Single bunker expands can be done at the start of the game.</p>
+    <ul>
+        <li>Two Bunkers</li>
+        <li>One Bunker, One Level 1 Dogs of War</li>
+        <li>One Level 2 Dogs of War</li>
+    </ul>
+    <p>The most optimal expands (shown below) will require the player to use the Bunker calldown as much as possible, while shying away from using the Zerg calldown. This is because the Bunker calldown provides the player with extra Troopers which can then be converted back to Laborers for saturating the expansion. However, if the player finds these expands difficult, a Zerg calldown instead of a Bunker may help (although they have not been tested).</p>
+    <p>Below are pictures that show how to fast-expand on maps. These require a lot of practice to pull off, but can put you ahead economically.</p>
+    <table id="fastExpoTable">
+        <thead>
+            <tr>
+                <th>Map</th>
+                <th>Race</th>
+                <th>Player 1 Expansion</th>
+                <th>Player 2 Expansion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="/missions/chainofascension">Chain of Ascension</a></td>
+                <td>
+                    <form action='#'>
+                        <label><input type='radio' name='coa' value='protoss' checked>Protoss</label><br>
+                        <label><input type='radio' name='coa' value='terran'>Terran</label><br>
+                        <label><input type='radio' name='coa' value='zerg'>Zerg</label><br></form>
+                    <script>
+                        var imgList=[];
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_coa_protoss_1.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_coa_terran_1.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_coa_zerg_1.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_coa_protoss_2.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_coa_terran_2.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_coa_zerg_2.jpg');
+                        preload(imgList);
+                        $("input[name='coa']").change(function(){
+                            var race= $(this).val();
+                            var oldImg = $('#coa1');
+                            var img = new Image();
+                            img.src = '/images/commanderdata/guides/mengsk/fastexpand_coa_'+ race + '_1.jpg';
+                            var newImg = $(img).hide();
+                            $('#coa1div').append(img);
+                            oldImg.stop(true).fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                            newImg.fadeIn(500);
+                            newImg.attr('id', 'coa1');
+                            var oldImg = $('#coa2');
+                            var img = new Image();
+                            img.src = '/images/commanderdata/guides/mengsk/fastexpand_coa_'+ race + '_2.jpg';
+                            var newImg = $(img).hide();
+                            $('#coa2div').append(img);
+                            oldImg.stop(true).fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                            newImg.fadeIn(500);
+                            newImg.attr('id', 'coa2');
+                            return false;
+                        })
+                    </script>
+                </td>
+                <td><div class="fastExpand" id="coa1div"><img id="coa1" src="/images/commanderdata/guides/mengsk/fastexpand_coa_protoss_1.jpg" alt="Player 1 Fast Expand on Chain of Ascension"></div></td>
+                <td><div class="fastExpand" id="coa2div"><img id="coa2" src="/images/commanderdata/guides/mengsk/fastexpand_coa_protoss_2.jpg" alt="Player 2 Fast Expand on Chain of Ascension"></div></td>
+            </tr>
+            <tr>
+                <td><a href="/missions/cradleofdeath">Cradle of Death</a></td>
+                <td class="centered" colspan="3">Not worth fast expanding as risks are too high to lose Troopers and Bunkers.</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/deadofnight">Dead of Night</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/lockload">Lock & Load</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/malwarfare">Malwarfare</a>*</td>
+                <td>
+                    <form action='#'>
+                        <label><input type='radio' name='mw' value='protoss' checked>Protoss</label><br>
+                        <label><input type='radio' name='mw' value='terran'>Terran</label><br>
+                        <label><input type='radio' name='mw' value='zerg'>Zerg</label><br></form>
+                    <script>
+                        var imgList=[];
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_mw_protoss_1.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_mw_terran_1.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_mw_zerg_1.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_mw_protoss_2.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_mw_terran_2.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_mw_zerg_2.jpg');
+                        preload(imgList);
+                        $("input[name='mw']").change(function(){
+                            var race= $(this).val();
+                            var oldImg = $('#mw1');
+                            var img = new Image();
+                            img.src = '/images/commanderdata/guides/mengsk/fastexpand_mw_'+ race + '_1.jpg';
+                            var newImg = $(img).hide();
+                            $('#mw1div').append(img);
+                            oldImg.stop(true).fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                            newImg.fadeIn(500);
+                            newImg.attr('id', 'mw1');
+                            var oldImg = $('#mw2');
+                            var img = new Image();
+                            img.src = '/images/commanderdata/guides/mengsk/fastexpand_mw_'+ race + '_2.jpg';
+                            var newImg = $(img).hide();
+                            $('#mw2div').append(img);
+                            oldImg.stop(true).fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                            newImg.fadeIn(500);
+                            newImg.attr('id', 'mw2');
+                            return false;
+                        })
+                    </script>
+                </td>
+                <td><div class="fastExpand" id="mw1div"><img id="mw1" src="/images/commanderdata/guides/mengsk/fastexpand_mw_protoss_1.jpg" alt="Player 1 Fast Expand on Malwarfare"></div></td>
+                <td><div class="fastExpand" id="mw2div"><img id="mw2" src="/images/commanderdata/guides/mengsk/fastexpand_mw_protoss_2.jpg" alt="Player 2 Fast Expand on Malwarfare"></div></td>
+            </tr>
+            <tr>
+                <td><a href="/missions/minerevacuation">Miner Evacuation</a></td>
+                <td>Race doesn't affect Expansion</td>
+                <td colspan="2"><div class="fastExpand"><img id="me1" src="/images/commanderdata/guides/mengsk/fastexpand_me.jpg" alt="Fast Expand on Miner Evacuation"></div></td>
+            </tr>
+            <tr>
+                <td><a href="/missions/mistopportunities">Mist Opportunities</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/oblivionexpress">Oblivion Express</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/partparcel">Part & Parcel</a>*</td>
+                <td>
+                    <form action='#'>
+                        <label><input type='radio' name='pp' value='protoss' checked>Protoss</label><br>
+                        <label><input type='radio' name='pp' value='terran'>Terran</label><br>
+                        <label><input type='radio' name='pp' value='zerg'>Zerg</label><br></form>
+                    <script>
+                        var imgList=[];
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_pp_protoss.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_pp_terran.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_pp_zerg.jpg');
+                        preload(imgList);
+                        $("input[name='pp']").change(function(){
+                            var race= $(this).val();
+                            var oldImg = $('#pp1');
+                            var img = new Image();
+                            img.src = '/images/commanderdata/guides/mengsk/fastexpand_pp_'+ race + '.jpg';
+                            var newImg = $(img).hide();
+                            $('#pp1div').append(img);
+                            oldImg.stop(true).fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                            newImg.fadeIn(500);
+                            newImg.attr('id', 'pp1');
+                            return false;
+                        })
+                    </script>
+                </td>
+                <td colspan="2"><div class="fastExpand" id="pp1div"><img id="pp1" src="/images/commanderdata/guides/mengsk/fastexpand_pp_protoss.jpg" alt="Fast Expand on Part & Parcel"></div></td>
+            </tr>
+            <tr>
+                <td><a href="/missions/riftstokorhal">Rifts to Korhal</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/scytheofamon">Scythe of Amon</a></td>
+                <td>Race doesn't affect Expansion</td>
+                <td colspan="2"><div class="fastExpand"><img id="soa1" src="/images/commanderdata/guides/mengsk/fastexpand_soa.jpg" alt="Fast Expand on Scythe of Amon"></div><p>Note: Fast expanding on this mission slows your mission completion time. Use the Bunker calldowns on Sliver #4 (South West) and clear those. Slivers #3 (North) and #5 (North West) can be cleared with your Nuclear Annihilation ability. Slivers #1 (Base) and #2(Expansion) can be cleared with Earthsplitters that you will build throughout the course of the mission.</p></td>
+            </tr>
+            <tr>
+                <td><a href="/missions/templeofthepast">Temple of the Past</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/thevermillionproblem">The Vermillion Problem</a></td>
+                <td>
+                    <form action='#'>
+                        <label><input type='radio' name='tvp' value='protoss' checked>Protoss</label><br>
+                        <label><input type='radio' name='tvp' value='terran'>Terran</label><br>
+                        <label><input type='radio' name='tvp' value='zerg'>Zerg</label><br></form>
+                    <script>
+                        var imgList=[];
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_tvp_protoss.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_tvp_terran.jpg');
+                        imgList.push('/images/commanderdata/guides/mengsk/fastexpand_tvp_zerg.jpg');
+                        preload(imgList);
+                        $("input[name='tvp']").change(function(){
+                            var race= $(this).val();
+                            var oldImg = $('#tvp1');
+                            var img = new Image();
+                            img.src = '/images/commanderdata/guides/mengsk/fastexpand_tvp_'+ race + '.jpg';
+                            var newImg = $(img).hide();
+                            $('#tvp1div').append(img);
+                            oldImg.stop(true).fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                            newImg.fadeIn(500);
+                            return false;
+                        })
+                    </script>
+                </td>
+                <td colspan="2"><div class="fastExpand" id="tvp1div"><img id="tvp1" src="/images/commanderdata/guides/mengsk/fastexpand_tvp_protoss.jpg" alt="Fast Expand on The Vermillion Problem"></div></td>
+            </tr>
+            <tr>
+                <td><a href="/missions/voidlaunch">Void Launch</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+            <tr>
+                <td><a href="/missions/voidthrashing">Void Thrashing</a></td>
+                <td class="centered" colspan="3">No contested expansion</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>*Due to how lightly this mission is contested, only one Bunker is required, allowing you to place your second Bunker at your main, unloading, and converting the Troopers to Laborers to further saturate your main mineral line.</p>
+    <h3>Earthsplitters</h3>
+    <p>Earthsplitters are a key part of Mengsk gameplay. They are used to soften attack waves and enemy bases, allowing Mengsk's more fragile army of conscripts to take more favourable engagements. Mengsk's Earthsplitters have the following upgrades available to them:</p>
+    <table class="unitUpgrades">
+        <thead>
+            <tr>
+                <th>Upgrade</th>
+                <th>Name</th>
+                <th>Effect</th>
+                <th><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals">/<img src="/images/commanderdata/unitupgrades/icongas_protoss.png" alt="Gas"></th>
+                <th>Research Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/unitupgrades/mengsk/neosteelfortifiedarmor.png" alt="Neosteel Fortified Armor"></td>
+                <td>Neosteel Fortified Armor</td>
+                <td>Increases the life (+200HP) and armor (+2) of Supply Bunkers, Missile Turrets, and Earthsplitter Ordnance.</td>
+                <td>100/100</td>
+                <td>90 seconds</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/unitupgrades/mengsk/hemisphericaccelerants.png" alt="Hemispheric Accelerants"></td>
+                <td>Hemispheric Accelerants</td>
+                <td>Increases the range of the Earthsplitter Ordnanace's Bombardment ability by +25.</td>
+                <td>150/150</td>
+                <td>90 seconds</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>In addition to upgrades, loading conscripts (either Troopers or Laborers) into Earthsplitter Ordnances increases the number of artillery volleys by one per each loaded conscript in every 30 seconds. The table below summarizes this information:</p>
+    <table class="centered">
+        <thead>
+            <tr>
+                <th>Loaded Conscripts</th>
+                <th>Volleys/30seconds</th>
+                <th>Time Between Volleys</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>30 seconds</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>15 seconds</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>3</td>
+                <td>10 seconds</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>7.5 seconds</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6 seconds</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Earthsplitters have an element of randomness to them. Upon selection of an area of bombard, an Earthsplitter will randomly select one area of 3 units radius that is within 7.5 range of the selected area. Before the strike, vision of 4 radius will be provided. The Earthsplitter will deal 100 damage in that area on impact. The image below shows the approximate sizes involved:</p>
+    <img src="/images/commanderdata/guides/mengsk/artillerysizes.jpg" alt="Mengsk Artillery Sizes">
+    <p>The areas denoted in the picture above are as follows:</p>
+    <ul>
+        <li><span style="color:red">Red Area:</span> The area over which a bombardment will be randomly selected, assuming the Pylon was targeted as the center.</li>
+        <li><span style="color:yellow">Yellow Area:</span> The area over which the artillery can deal damage, assuming the bombardment center was selected at the edge of the red area.</li>
+        <li><span style="color:limegreen">Green Area:</span> Size of the bombardment. All enemy ground units within this area will take 100 damage.</li>
+    </ul>
+    <p>The table below provides calculated data on various probabilities of the Artillery bombardment with different numbers of Earthsplitters. The measured parameters are:</p>
+    <ul>
+        <li><b>Earthsplitter Count:</b> The number of Earthsplitters in play.</li>
+        <li><b>Chance of Overlap:</b> The chance that there will be at least two shells that have some common overlap in area.</li>
+        <li><b>Expected Overlap:</b> The expected number of shells that will overlap in one volley.</li>
+        <li><b>Average Bombardment Cover:</b> Percentage of the total area (Red and Yellow zone) that is covered by the bombardment.</li>
+    </ul>
+    <table class="centered">
+        <thead>
+            <tr>
+                <th>Earthsplitter Count</th>
+                <th>Chance of Overlap</th>
+                <th>Expected Overlaps</th>
+                <th>Average Bombardment Cover</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>2</td><td>43%</td><td>0.43</td><td>15%</td></tr>
+            <tr><td>3</td><td>66%</td><td>0.85</td><td>22%</td></tr>
+            <tr><td>4</td><td>79%</td><td>1.28</td><td>27%</td></tr>
+            <tr><td>5</td><td>87%</td><td>1.71</td><td>32%</td></tr>
+            <tr><td>6</td><td>91%</td><td>2.13</td><td>36%</td></tr>
+            <tr><td>7</td><td>94%</td><td>2.56</td><td>40%</td></tr>
+            <tr><td>8</td><td>96%</td><td>2.98</td><td>44%</td></tr>
+            <tr><td>9</td><td>98%</td><td>3.40</td><td>47%</td></tr>
+            <tr><td>10</td><td>98%</td><td>3.84</td><td>49%</td></tr>
+            <tr><td>11</td><td>99%</td><td>4.27</td><td>52%</td></tr>
+            <tr><td>12</td><td>99%</td><td>4.69</td><td>54%</td></tr>
+            <tr><td>13</td><td>99%</td><td>5.12</td><td>56%</td></tr>
+            <tr><td>14</td><td>100%</td><td>5.54</td><td>58%</td></tr>
+            <tr><td>15</td><td>100%</td><td>5.96</td><td>60%</td></tr>
+            <tr><td>16</td><td>100%</td><td>6.39</td><td>61%</td></tr>
+            <tr><td>17</td><td>100%</td><td>6.83</td><td>63%</td></tr>
+            <tr><td>18</td><td>100%</td><td>7.25</td><td>64%</td></tr>
+            <tr><td>19</td><td>100%</td><td>7.67</td><td>65%</td></tr>
+            <tr><td>20</td><td>100%</td><td>8.09</td><td>66%</td></tr>
+        </tbody>
+    </table>
+    <p>The table below shows probabilities and expected number of hits on targets of various sizes per volley. For reference, the following objectives' radii are provided:</p>
+    <ul>
+        <li>Extraction Device (<a href="/missions/mistopportunities">Mist Opportunities</a>): 3.50</li>
+        <li>Gatekeeper Construct (<a href="/missions/cradleofdeath">Cradle of Death</a>): 1.75</li>
+        <li>Moebius Hybrid Experiment (<a href="/missions/partparcel">Part and Parcel</a>): 0.75</li>
+        <li>Void Rift (<a href="/resources/mutators">Mutators</a>): 1.00</li>
+        <li>Void Shard (<a href="/missions/riftstokorhal">Rifts to Korhal</a>): 4.50</li>
+        <li>Void Sliver (<a href="/missions/scytheofamon">Scythe of Amon</a>): 4.50</li>
+        <li>Void Thrasher (<a href="/missions/templeofthepast">Temple of the Past</a> and <a href="/missions/voidthrashing">Void Thrashing</a>): 2.50</li>
+        <li>Xel'Naga Construct (<a href="/missions/lockload">Lock & Load</a>): 0.75</li>
+    </ul>
+    <table class="centered">
+        <thead>
+            <tr>
+                <th>Earthsplitter Count</th>
+                <th colspan="2">Point Target</th>
+                <th colspan="2">1 Radius</th>
+                <th colspan="2">2 Radius</th>
+                <th colspan="2">2.5 Radius</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td></td><td>Hit Chance</td><td>Expected Hits</td><td>Hit Chance</td><td>Expected Hits</td><td>Hit Chance</td><td>Expected Hits</td><td>Hit Chance</td><td>Expected Hits</td></tr>
+            <tr><td>2</td><td>29%</td><td>0.32</td><td>48%</td><td>0.57</td><td>69%</td><td>0.89</td><td>78%</td><td>1.07</td></tr> <tr><td>3</td><td>41%</td><td>0.48</td><td>64%</td><td>0.86</td><td>83%</td><td>1.34</td><td>90%</td><td>1.62</td></tr>
+            <tr><td>4</td><td>50%</td><td>0.64</td><td>74%</td><td>1.14</td><td>91%</td><td>1.78</td><td>96%</td><td>2.15</td></tr>
+            <tr><td>5</td><td>58%</td><td>0.80</td><td>81%</td><td>1.42</td><td>95%</td><td>2.22</td><td>98%</td><td>2.69</td></tr>
+            <tr><td>6</td><td>65%</td><td>0.96</td><td>87%</td><td>1.71</td><td>97%</td><td>2.67</td><td>99%</td><td>3.23</td></tr>
+            <tr><td>7</td><td>70%</td><td>1.12</td><td>90%</td><td>1.99</td><td>98%</td><td>3.11</td><td>100%</td><td>3.76</td></tr>
+            <tr><td>8</td><td>75%</td><td>1.28</td><td>93%</td><td>2.28</td><td>99%</td><td>3.56</td><td>100%</td><td>4.31</td></tr>
+            <tr><td>9</td><td>79%</td><td>1.44</td><td>95%</td><td>2.56</td><td>99%</td><td>4.00</td><td>100%</td><td>4.84</td></tr>
+            <tr><td>10</td><td>83%</td><td>1.60</td><td>96%</td><td>2.85</td><td>100%</td><td>4.44</td><td>100%</td><td>5.37</td></tr>
+            <tr><td>11</td><td>85%</td><td>1.76</td><td>97%</td><td>3.13</td><td>100%</td><td>4.89</td><td>100%</td><td>5.92</td></tr>
+            <tr><td>12</td><td>88%</td><td>1.92</td><td>98%</td><td>3.42</td><td>100%</td><td>5.34</td><td>100%</td><td>6.46</td></tr>
+            <tr><td>13</td><td>90%</td><td>2.08</td><td>99%</td><td>3.70</td><td>100%</td><td>5.79</td><td>100%</td><td>7.00</td></tr>
+            <tr><td>14</td><td>91%</td><td>2.25</td><td>99%</td><td>3.99</td><td>100%</td><td>6.23</td><td>100%</td><td>7.54</td></tr>
+            <tr><td>15</td><td>93%</td><td>2.40</td><td>99%</td><td>4.26</td><td>100%</td><td>6.67</td><td>100%</td><td>8.07</td></tr>
+            <tr><td>16</td><td>94%</td><td>2.56</td><td>100%</td><td>4.55</td><td>100%</td><td>7.11</td><td>100%</td><td>8.60</td></tr>
+            <tr><td>17</td><td>95%</td><td>2.72</td><td>100%</td><td>4.83</td><td>100%</td><td>7.55</td><td>100%</td><td>9.15</td></tr>
+            <tr><td>18</td><td>96%</td><td>2.88</td><td>100%</td><td>5.11</td><td>100%</td><td>7.99</td><td>100%</td><td>9.67</td></tr>
+            <tr><td>19</td><td>96%</td><td>3.05</td><td>100%</td><td>5.42</td><td>100%</td><td>8.45</td><td>100%</td><td>10.22</td></tr>
+            <tr><td>20</td><td>97%</td><td>3.20</td><td>100%</td><td>5.69</td><td>100%</td><td>8.89</td><td>100%</td><td>10.76</td></tr>
+        </tbody>
+    </table>
+    <p>Note that if a unit's radius is 4 or above, the artillery is guaranteed to hit it with each volley.</p>
+    <p>If you are interested in learning more about how this data was generated, you may watch the video below:</p>
+    <iframe width="475" height="268" src="https://www.youtube.com/embed/yL6FQIlkE30" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h3>Mandate Generation</h3>
+    <p>Mandate is the Mengsk equivalent of energy that some of the Protoss commanders have. It is generated by increasing your "Imperial Support". The amount of total Imperial Support, divided by 240, gives your Mandate generation per second. Imperial Support is created in three ways:</p>
+    <ul>
+        <li>A base amount: 40</li>
+        <li>Royal Guard units: Base of 100% of supply cost. Increases by 50% per rank gained, for maximum of 250% of supply cost at Rank 3.</li>
+        <li>Indoctrinated Conscripts: Indoctrination occurs under a Witness in Patriot mode at 1 per supply, or 2 per supply if Amplified Airwaves is researched.</li>
+    </ul>
+    <p>With the Trooper Mandate mastery and Amplified Airwaves, the approximate Imperial Support for two fully saturated bases is 154 (0.6 Mandate/second). Without the upgrade, the Imperial Support is 64 (0.27 Mandate/second).</p>
+    <h3>Playstyle Tips</h3>
+    <ul>
+        <li>Try to rush the Imperial Witness as quickly as possible, as the Mandate generation it provides will allow you to spam your calldowns more frequently.</li>
+        <li>When playing on a mission that requires pushing deeper into the map, salvage Earthsplitters and move them closer towards the front line.</li>
+        <li>Units loaded into structures (e.g. Bunkers and Earthsplitters) do not generate Mandate from the Imperial Witness.</li>
+        <li>When loading Troopers into Earthsplitters, ensure that the Troopers do not have weapons equipped. Equipped weapons do not provide any benefits to Earthsplitters.</li>
+        <li>Make sure to upgrade Troopers' weapons before loading them into Bunkers to take advantage of the increased attack damage.</li>
+        <li>Troopers can build combat structures. Use them to build Bunkers or Earthsplitters in the field, fast-building them with multiple Troopers.</li>
+        <li>Aim to have 3-4 Enlistment Centers in the mid-late game to quickly reinforce Troopers after taking engagements</li>
+        <li>If a Trooper with a weapon is killed, the dropped weapon will remain on the ground for 300 seconds before despawning and refunding 120 minerals.</li>
+    </ul>
+    <h2 id="videos">Video Guides</h2>
+    <p>The below videos demonstrate the various fast expands explained earlier. Note that as of patch 4.11.3, Mengsk's Starting Mandate Mastery has been modified which means the two Bunkers cannot be dropped at the start of the game. For double Bunker expands, you will need to wait (~2 mins) before both Bunkers can be placed. For single Bunker expands, the mineral line will not be saturated at the start of the game.</p>
+    <iframe width="950" height="535" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu67esg6PKcDnh9ejc_3UZ7p" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<script src="/scripts/nav.js"></script>
+<?= endContent() ?>

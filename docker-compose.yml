@@ -6,6 +6,8 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       - ./html:/var/www/html
+      - ./source-data:/var/www/source-data
+      - ./source-php:/var/www/source-php
       - ./config.php:/var/www/config.php
       - ./generate.php:/var/www/generate.php
 
