@@ -16,7 +16,7 @@ require_once "../../html/wrapper-static.php";
     </table>
     <h2 id="detailedmutatorinformation">Detailed Mutator Information</h2>
     <p>Every 20 seconds, your camera will change position.</p>
-
+    
     <h2 id="interactions">Mutator Interactions</h2>
     <table>
         <tr><td>No interactions found.</td></tr>

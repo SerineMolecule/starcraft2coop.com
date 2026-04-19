@@ -41,7 +41,7 @@ function startContent()
         $pageFile = 'tournament.php';
         $pageSection = basename(dirname(dirname($_SERVER['PHP_SELF'])));
     }
-    if (!$pageSection) {
+    if (!$pageSection || $pageSection === '.') {
         $pageSection = 'index';
     }
     if ($pageSection === 'mutators') {

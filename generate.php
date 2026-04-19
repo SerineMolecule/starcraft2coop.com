@@ -9,12 +9,14 @@ $grep_output = shell_exec('grep -r -l --include="*.php" "/wrapper-static.php" so
 $pages = [];
 if ($grep_output) {
     $lines = explode("\n", trim($grep_output));
+    $prefix_len = strlen('source-php/');
+    $ext_len = strlen('.php');
     foreach ($lines as $filepath) {
         if (empty($filepath)) {
             continue;
         }
         if (str_starts_with($filepath, 'source-php/') && str_ends_with($filepath, '.php')) {
-            $pages[] = substr($filepath, 0, -4);
+            $pages[] = substr($filepath, $prefix_len, -$ext_len);
         }
     }
 } else {
@@ -22,6 +24,7 @@ if ($grep_output) {
     exit(1);
 }
 
+$SRC_DIR = __DIR__ . '/source-php';
 $HTML_DIR = __DIR__ . '/html';
 $GENERATING_STATIC_PAGES = true;
 error_reporting(E_ALL);
@@ -36,27 +39,26 @@ foreach ($pages as $page) {
     $_SERVER['PHP_SELF'] = "$page.php";
     $pageDir = dirname($page);
     $pageName = basename($page);
-    $targetDir = str_replace('source-php', $HTML_DIR, $pageDir);
-    chdir($pageDir);
+    $srcDir = "{$SRC_DIR}/{$pageDir}";
+    $targetDir = "{$HTML_DIR}/{$pageDir}";
+    chdir($srcDir);
 
     ob_start();
     try {
-        require "$page.php";
+        require "$srcDir/$pageName.php";
     } catch (ErrorException $e) {
         $all_errors[] = "Captured an exception in {$e->getFile()}: {$e->getMessage()} (line {$e->getLine()})";
     }
     $html = ob_get_clean();
     $html = str_replace("\r\n", "\n", $html);
 
-    $result = file_put_contents($targetDir . "/$pageName.html", $html);
+    $result = file_put_contents("{$targetDir}/$pageName.html", $html);
     if (!$result) {
         $all_errors[] = "Error writing $page.html";
         break;
     } else {
         echo "Generated $page.html ($result bytes)\n";
     }
-
-    chdir(__DIR__);
 }
 
 foreach ($all_errors as $error) {

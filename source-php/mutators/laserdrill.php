@@ -115,7 +115,7 @@ require_once "../../html/wrapper-static.php";
     <ul>
         <li>Dehaka: If the Laser Drill locks onto Dakrun, it will kill itself from his damage reflect.</li>
     </ul>
-
+    
     <h2 id="interactions">Mutator Interactions</h2>
     <table>
         <tr><td style="white-space:nowrap"><img src="/images/mutators/afraidofthedark.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/afraidofthedark">Afraid of the Dark</a></td><td>The Laser Drill will be marked on the minimap when it attacks you.</td></tr>

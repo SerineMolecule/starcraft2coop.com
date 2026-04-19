@@ -150,7 +150,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Dehaka</b></p>
     <img src="/images/mutatordata/hotsdehaka.jpg" alt="Heroes From the Storm Dehaka">
     <p>HP: 1500</p>
@@ -186,7 +186,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Karax</b></p>
     <img src="/images/mutatordata/hotskarax.jpg" alt="Heroes From the Storm Karax">
     <p>HP/Shields: 750/750</p>
@@ -240,7 +240,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Kerrigan</b></p>
     <img src="/images/mutatordata/hotskerrigan.jpg" alt="Heroes From the Storm Kerrigan">
     <p>HP: 5000</p>
@@ -276,7 +276,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Nova</b></p>
     <img src="/images/mutatordata/hotsnova.jpg" alt="Heroes From the Storm Nova">
     <p>HP: 2250</p>
@@ -306,7 +306,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Raynor</b></p>
     <img src="/images/mutatordata/hotsraynor.jpg" alt="Heroes From the Storm Raynor">
     <p>HP: 1000</p>
@@ -330,7 +330,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Tychus</b></p>
     <img src="/images/mutatordata/hotstychus.jpg" alt="Heroes From the Storm Tychus">
     <p>HP: 1000</p>
@@ -372,7 +372,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Zagara</b></p>
     <img src="/images/mutatordata/hotszagara.jpg" alt="Heroes From the Storm Zagara">
     <p>HP: 2250</p>
@@ -414,7 +414,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <p><b>Zeratul</b></p>
     <img src="/images/mutatordata/hotszeratul.jpg" alt="Heroes From the Storm Zeratul">
     <p>HP/Shields: 2000/2000</p>

@@ -44,7 +44,7 @@ require_once "../../html/wrapper-static.php";
             </tr>
         </tbody>
     </table>
-
+    
     <h2 id="interactions">Mutator Interactions</h2>
     <table>
         <tr><td style="white-space:nowrap"><img src="/images/mutators/concussiveattacks.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/concussiveattacks">Concussive Attacks</a></td><td>Hybrid Nukes apply the Concussive Attacks debuff.</td></tr>
