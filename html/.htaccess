@@ -33,7 +33,7 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [L]
 
 # Permanent Redirects for link shortening and Youtube links
-Redirect 301 /mutators /resources/mutators
+# Redirect 301 /mutators /resources/mutators
 Redirect 301 /weeklymutations /resources/weeklymutations
 Redirect 301 /rockslappingchampions /community/rockslappingchampions
 Redirect 301 /gamespotlight /community/gamespotlight

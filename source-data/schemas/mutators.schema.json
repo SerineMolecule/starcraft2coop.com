@@ -23,13 +23,26 @@
                 },
                 "mutatordescription": {
                     "type": "string"
+                },
+                "customusable": {
+                    "type": "boolean",
+                    "description": "Usable in custom mutator mode"
+                },
+                "chaosrollable": {
+                    "type": "boolean"
+                },
+                "hassafezone": {
+                    "type": "boolean"
                 }
             },
             "required": [
                 "mutatorid",
                 "mutatorname",
                 "abomination",
-                "mutatordescription"
+                "mutatordescription",
+                "customusable",
+                "chaosrollable",
+                "hassafezone"
             ],
             "additionalProperties": false
         },

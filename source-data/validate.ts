@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 import Ajv from 'ajv';
-import type { MutatorInteractionList, MutatorList, WeeklyMutationList } from './data-types';
+import type { AmonUnitList, MutatorInteractionList, MutatorList, PlayerUnitList, WeeklyMutationList } from './data-types';
 
 const files: [`${string}.json`, string][] = [
     ['brutalplus.json', 'BrutalPlusList'],
@@ -10,6 +10,8 @@ const files: [`${string}.json`, string][] = [
     ['weeklymutations.json', 'WeeklyMutationList'],
     ['mutationcycle.json', 'MutationCycleList'],
     ['missionnames.json', 'MissionNames'],
+    ['amonunits.json', 'AmonUnitList'],
+    ['playerunits.json', 'PlayerUnitList'],
 ];
 
 const ajv = new Ajv();
@@ -49,6 +51,24 @@ const weeklymutations: WeeklyMutationList = await Bun.file('source-data/weeklymu
 for (const [i, entry] of weeklymutations.entries()) {
     if (entry.mutationid !== i + 1) {
         console.error(`weeklymutations.json[${i}]: mutationid (${entry.mutationid}) must be equal to ${i + 1}`);
+        process.exit(1);
+    }
+}
+
+// amonunits in order // <- missing 155
+// const amonunits: AmonUnitList = await Bun.file('source-data/amonunits.json').json();
+// for (const [i, entry] of amonunits.entries()) {
+//     if (entry.amonid !== i + 1) {
+//         console.error(`amonunits.json[${i}]: id (${entry.amonid}) must be equal to ${i + 1}`);
+//         process.exit(1);
+//     }
+// }
+
+// playerunits in order
+const playerunits: PlayerUnitList = await Bun.file('source-data/playerunits.json').json();
+for (const [i, entry] of playerunits.entries()) {
+    if (entry.unitid !== i + 1) {
+        console.error(`playerunits.json[${i}]: id (${entry.unitid}) must be equal to ${i + 1}`);
         process.exit(1);
     }
 }

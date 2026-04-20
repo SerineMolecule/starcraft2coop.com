@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.34">
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.35">
     <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
     <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -125,7 +125,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <div class="submenu-with-sections"><div class="submenu-section">
             <strong>Resources:</strong>
             <ul>
-                <li class="normal"><a href="/resources/mutators">Mutators</a></li>
+                <li class="normal"><a href="/mutators/">Mutators</a></li>
                 <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
                 <li class="highlight"><a href="/resources/brutal">Brutal+</a></li>
                 <li class="normal"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
@@ -390,12 +390,14 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         function generateMutation(template){
             const mutatorArray = [[],["Concussive Attacks","Eminent Domain","Evasive Maneuvers","Life Leech","Orbital Strike","Photon Overload","Shortsighted","Temporal Field","Time Warp"],["Alien Incubation","Barrier","Darkness","Hardened Will","Inspiration","Laser Drill","Long Range","Mineral Shields","Moment of Silence","Purifier Beam","Scorched Earth","Speed Freaks","Twister","Walking Infested"],["Aggressive Deployment","Diffusion","Double Edged","Fatal Attraction","Fear","Going Nuclear","Lava Burst","Missile Command","Outbreak","Self Destruction","We Move Unseen"],["Blizzard","Mag-nificent"],["Avenger","Micro Transactions","Mutually Assured Destruction","Power Overwhelming","Slim Pickings","Void Reanimators"],["Kill Bots","Minesweeper"],["Black Death","Just Die","Polarity","Transmutation"],["Propagators"],[],["Boom Bots","Heroes from the Storm","Void Rifts"]];
             var cost = 0;
+            var costString = '';
             $("#randomMutation").empty();
             $("#mutationBox").show();
             for(var i=template.length-1;i>0;i--){
                 if (template[i]>0){
                     for(var j=0;j<template[i];j++){
-                        cost +=i
+                        cost += i;
+                        costString += i + ' + ';
                         var randomIndex = Math.floor(Math.random() *  mutatorArray[i].length);
                         var selectedMutator = mutatorArray[i][randomIndex];
                         mutatorArray[i]=mutatorArray[i].slice(0, randomIndex).concat(mutatorArray[i].slice(randomIndex + 1, mutatorArray[i].length));
@@ -403,7 +405,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
                     }
                 }
             }
-            $("#cost").text(cost);
+            $("#cost").text(costString.slice(0, -3) + ' = ' + cost);
         }
 
         function weightedRandom(prob) {

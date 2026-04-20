@@ -9,6 +9,7 @@ export type PositiveInteger = number;
  */
 export type NonNegativeInteger = number;
 export type CommanderPowerRating = 1 | 2 | 3 | 4 | 5;
+export type NumericBoolean = 0 | 1;
 
 export interface BrutalPlus {
     /** as in, the X in Brutal+X */
@@ -80,6 +81,10 @@ export interface Mutator {
     /** Mutator difficulty points (see Brutal+ page) */
     abomination: NonNegativeInteger;
     mutatordescription: string;
+    /** Usable in custom mutator mode */
+    customusable: boolean;
+    chaosrollable: boolean;
+    hassafezone: boolean;
 }
 
 export interface MutatorWithStats extends Mutator {
@@ -129,3 +134,59 @@ export interface Mission {
     name: string;
     mutationcount: NonNegativeInteger;
 }
+
+export interface AmonUnit {
+    amonid: PositiveInteger;
+    name: string;
+    race: string;
+    hp: NonNegativeInteger;
+    armor: NonNegativeInteger;
+    shields: NonNegativeInteger;
+    shieldarmor: NonNegativeInteger;
+    light: NumericBoolean;
+    armored: NumericBoolean;
+    biological: NumericBoolean;
+    mechanical: NumericBoolean;
+    psionic: NumericBoolean;
+    heroic: NumericBoolean;
+    massive: NumericBoolean;
+    structure: NumericBoolean;
+    breakpoint: NumericBoolean;
+    flyer: NumericBoolean;
+}
+
+export type AmonUnitList = AmonUnit[];
+
+export interface PlayerUnit {
+    unitid: PositiveInteger;
+    basename: string;
+    name: string;
+    commander: string;
+    race: string;
+    combatunit: NumericBoolean;
+    mcost: NonNegativeInteger;
+    vcost: NonNegativeInteger;
+    supply: number;
+    buildtime: NonNegativeInteger;
+    hp: NonNegativeInteger;
+    shields: NonNegativeInteger;
+    armor: NonNegativeInteger;
+    shieldarmor: NonNegativeInteger;
+    energy: NonNegativeInteger;
+    movementspeed: number;
+    sightrange: number;
+    tags: string;
+    atkrange: number;
+    attackspeed: number;
+    attacks: NonNegativeInteger;
+    /** Tags that this unit deals bonus damage to */
+    attribute: string | null;
+    damage: NonNegativeInteger;
+    attackbonus: NonNegativeInteger;
+    hpbonus: number;
+    armorbonus: NonNegativeInteger;
+    shieldbonus: number | null;
+    notes: string;
+}
+
+export type PlayerUnitList = PlayerUnit[];

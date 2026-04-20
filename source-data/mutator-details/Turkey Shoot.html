@@ -1,0 +1,37 @@
+<p class="subheading">Detailed Mutator Information</p>
+<p>Players start with 50 supply and will need to kill Turkeys on the map in order to raise the supply cap.</p>
+<p>The max supply will be reduced every variable interval. The interval is based on the supply. Supply drops by 1 every 250/[Supply]. So, at 250 supply, you will lose 1 Supply/per second.</p>
+<p>If players have more supply than they have available, their units will start taking damage after 3 seconds unless they gather more supply. The player whose units will take damage is the player who is currently using the bigger share of the supply. If they are both using the same supply, a player is randomly picked to take damage. Every second, a random unit from that player will take 20 damage. If the player stays above supply cap, the number of units that take damage is increased by 1 every 3 seconds. Combat units are first to take damage. Once all combat units are taking damage, workers will start to take damage.</p>
+<p>Initially, 30 turkeys spawn on the map within 7 and 40 range of the player bases. Every 8 seconds, two turkeys will spawn on the map, at least 20 units away from a player's current camera location.</p>
+<p>When a turkey is killed, any turkey within 10 range will target the player. Each turkey provides 2 supply. A turkey is shown below.</p>
+<img src="/images/mutatordata/turkeyshootturkey.jpg" alt="Turkey">
+<p>Turkeys deal 8 damage (16 vs. Structures) every 1.5 seconds and have 10 HP and 0 armor.</p>
+<h2>On Oblivion Express</h2>
+<p>This mutator occurred on a <a href="weeklymutations">weekly mutation</a> which was played on Oblivion Express called "Fowl Play". When trains are destroyed, they normally spawn 5 regular turkeys per carriage (either 7 or 13 carriages per train). However, specific train waves would spawn infested turkeys. The details are shown below:</p>
+<table class="dataTable centered">
+    <thead>
+        <tr>
+            <th>Train Wave</th>
+            <th>Infested Turkeys Per Carriage</th>
+            <th>Total Spawned</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>39</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>52</td>
+        </tr>
+    </tbody>
+</table>
+<p>Infested Turkeys do not generate supply when killed. An infested turkey is shown below:</p>
+<img src="/images/mutatordata/turkeyshootinfestedturkey.jpg" alt="Infested Turkey">
+<p>Infested Turkeys deal 0 damage (70 vs structures) every 2 seconds and have 150 HP and 1 armor.</p>
+<p>When the 6th train wave is destroyed, the Turking will spawn. The Turking is shown below:</p>
+<img src="/images/mutatordata/turkeyshootturking.jpg" alt="Turking">
+<p>The Turking deal 250 damage (500 vs structures) every 2 seconds and has 6000 HP and 3 armor. It has an ability "Terrifying Gobble" with a 30-second cooldown that fear all player units within 11 range.</p>

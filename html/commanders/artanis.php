@@ -6,7 +6,7 @@ require_once "../wrapper-static.php";
   <title>Starcraft 2 Co-op - Commander Guide - Artanis</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Artanis">
   <meta name="keywords" content="Starcraft co-op guides artanis commande mastery prestige buildr">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.1">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/artanis">
   <style>

@@ -494,20 +494,20 @@ require_once "../wrapper.php";
         }
 
         if ($row["mut01"]) {
-            $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname']));
-            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut01"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . "</td>\n";
+            $filename = str_replace('-', '', str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname'])));
+            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut01"]) - 1]['mutatordescription'] . "\"><a href=\"/mutators/" . $filename . "\">" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . "</a></td>\n";
         } else {
             echo "<td></td>\n";
         }
         if ($row["mut02"]) {
-            $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname']));
-            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut02"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . "</td>\n";
+            $filename = str_replace('-', '', str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname'])));
+            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut02"]) - 1]['mutatordescription'] . "\"><a href=\"/mutators/" . $filename . "\">" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . "</a></td>\n";
         } else {
             echo "<td></td>\n";
         }
         if ($row["mut03"]) {
-            $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname']));
-            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut03"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . "</td>\n";
+            $filename = str_replace('-', '', str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname'])));
+            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut03"]) - 1]['mutatordescription'] . "\"><a href=\"/mutators/" . $filename . "\">" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . "</a></td>\n";
         } else {
             echo "<td></td>\n";
         }

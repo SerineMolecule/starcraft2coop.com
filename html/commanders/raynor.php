@@ -6,7 +6,7 @@ require_once "../wrapper-static.php";
   <title>Starcraft 2 Co-op - Commander Guide - Raynor</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Raynor">
   <meta name="keywords" content="Starcraft co-op guides raynor commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.1">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/raynor">
   <style>

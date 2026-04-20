@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/AmonUnitList",
+    "definitions": {
+        "AmonUnitList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/AmonUnit"
+            }
+        },
+        "AmonUnit": {
+            "type": "object",
+            "properties": {
+                "amonid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "race": {
+                    "type": "string"
+                },
+                "hp": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "armor": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "shields": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "shieldarmor": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "light": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "armored": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "biological": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "mechanical": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "psionic": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "heroic": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "massive": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "structure": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "breakpoint": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "flyer": {
+                    "$ref": "#/definitions/NumericBoolean"
+                }
+            },
+            "required": [
+                "amonid",
+                "name",
+                "race",
+                "hp",
+                "armor",
+                "shields",
+                "shieldarmor",
+                "light",
+                "armored",
+                "biological",
+                "mechanical",
+                "psionic",
+                "heroic",
+                "massive",
+                "structure",
+                "breakpoint",
+                "flyer"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "NonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "NumericBoolean": {
+            "type": "number",
+            "enum": [
+                0,
+                1
+            ]
+        }
+    }
+}

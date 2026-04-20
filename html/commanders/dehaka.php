@@ -6,7 +6,7 @@ require_once "../wrapper-static.php";
   <title>Starcraft 2 Co-op - Commander Guide - Dehaka</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Dehaka">
   <meta name="keywords" content="Starcraft co-op guides dehaka commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.1">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/dehaka">
   <style>
@@ -1637,31 +1637,18 @@ require_once "../wrapper-static.php";
     <ul>
 
     <?php
-    include '../scripts/sqlconnection.php';
-    $sql = "SELECT name, race
-            FROM amonunits
-            WHERE psionic=1 and race<>'Objective' and race<>'Mutator'
-            ORDER BY race, name";
-    $result = mysqli_query($con, $sql);
-    $units = [];
-    while ($row = mysqli_fetch_array($result)) {
-        $units[] = $row;
+    require_once '../data/queries.php';
+    $units = get_amonunits();
+    $psionicUnits = array_filter($units, fn($unit) => $unit['psionic'] === 1 && $unit['race'] !== 'Objective' && $unit['race'] !== 'Mutator');
+    usort($psionicUnits, fn($a, $b) => $a['race'] <=> $b['race'] ?: $a['name'] <=> $b['name']);
+
+    $out = [];
+    foreach ($psionicUnits as $unit) {
+        $out[$unit['race']][] = $unit['name'];
     }
-    $races = [];
-    $sortedArray = [];
-    $sortedArray[0][0] = $units[0]['name'];
-    $startRace = $units[0]['race'];
-    $races[] = $startRace;
-    $currentIndex = 0;
-    for ($i = 1; $i < sizeof($units); $i++) {
-        if ($units[$i]['race'] !== $units[$i - 1]['race']) {
-            $currentIndex += 1;
-            $races[] = $units[$i]['race'];
-        }
-        $sortedArray[$currentIndex][] = $units[$i]['name'];
-    }
-    for ($i = 0; $i < sizeof($sortedArray); $i++) {
-        echo("<li><b>" . $races[$i] . ":</b> " . implode(", ", $sortedArray[$i]) . "</li>");
+    // very confused how the old code achieved this order
+    foreach (['Protoss', 'Terran', 'Zerg', 'Hybrid'] as $race) {
+        echo("<li><b>" . $race . ":</b> " . implode(", ", $out[$race]) . "</li>");
     }
     ?>
 

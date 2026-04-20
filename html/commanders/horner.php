@@ -6,7 +6,7 @@ require_once "../wrapper-static.php";
   <title>Starcraft 2 Co-op - Commander Guide - Han & Horner</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Han Horner">
   <meta name="keywords" content="Starcraft co-op guides han horner commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.1">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/hanhorner">
   <style>
@@ -795,7 +795,7 @@ require_once "../wrapper-static.php";
         </div>
     </div>
     <h3>Death Effects:</h3>
-    <p>The below table lists out the death effects and the Improved Death Effects for each of Han's units:</p>
+    <p>The below table lists out the death effects and the Improved Death Effects (P1) for each of Han's units:</p>
     <table>
         <thead>
             <tr>

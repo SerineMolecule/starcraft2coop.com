@@ -1,11 +1,13 @@
 <?php
 
-include 'sqlconnection.php';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once '../data/queries.php';
+$units = get_amonunits();
 
 if (!isset($_GET['maxvitality']) && !isset($_GET['minvitality'])) {
-    $sql = "SELECT name, race
-            FROM amonunits
-            ORDER BY name ASC";
+    // do nothing
 } else {
     if (!ctype_digit($_GET['maxvitality']) || !ctype_digit($_GET['minvitality'])) {
         echo("Error!");
@@ -22,15 +24,12 @@ if (!isset($_GET['maxvitality']) && !isset($_GET['minvitality'])) {
         $minVitality = intval($_GET['minvitality']);
     }
 
-    $sql = "SELECT name, race, hp, shields
-            FROM amonunits
-            WHERE (hp + shields)<= $maxVitality AND (hp + shields)>= $minVitality
-            ORDER BY name ASC";
+    $units = array_filter($units, fn($unit) => ($unit['hp'] + $unit['shields']) <= $maxVitality && ($unit['hp'] + $unit['shields']) >= $minVitality);
 }
-$result = mysqli_query($con, $sql);
+usort($units, fn($a, $b) => strtolower($a['name']) <=> strtolower($b['name']));
+
 $outputString = "";
-while ($row = mysqli_fetch_array($result)) {
+foreach ($units as $row) {
     $outputString .= "<div class='content " . $row['race'] . "'>" . $row['name'] . "</div>";
 }
 echo $outputString;
-$con->close();

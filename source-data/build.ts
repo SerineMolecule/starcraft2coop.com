@@ -10,6 +10,8 @@ const files: [`${string}.json`, string][] = [
     ['weeklymutations.json', 'WeeklyMutationList'],
     ['mutationcycle.json', 'MutationCycleList'],
     ['missionnames.json', 'MissionNames'],
+    ['amonunits.json', 'AmonUnitList'],
+    ['playerunits.json', 'PlayerUnitList'],
 ];
 
 /////////////////////////////////////////////////

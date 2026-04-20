@@ -85,3 +85,21 @@ function get_mutationcycle(): array
     $json = file_get_contents(__DIR__ . '/mutationcycle.json');
     return json_decode($json, true);
 }
+
+/**
+ * @return array All AmonUnit info.
+ */
+function get_amonunits(): array
+{
+    $json = file_get_contents(__DIR__ . '/amonunits.json');
+    return json_decode($json, true);
+}
+
+/**
+ * @return array All PlayerUnit info.
+ */
+function get_playerunits(): array
+{
+    $json = file_get_contents(__DIR__ . '/playerunits.json');
+    return json_decode($json, true);
+}

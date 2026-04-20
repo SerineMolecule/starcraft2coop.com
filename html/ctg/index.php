@@ -100,7 +100,7 @@
     <?php
     require_once '../data/queries.php';
     $mutators = get_mutators();
-    $mutations = get_weekly_mutations();
+    $mutations = get_weeklymutations();
     $mutations = array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden But Inevitable');
     foreach ($mutations as &$row) {
         if ($row['map'] == "Lock and Load") {

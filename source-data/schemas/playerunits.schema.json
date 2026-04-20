@@ -1,0 +1,154 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/PlayerUnitList",
+    "definitions": {
+        "PlayerUnitList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PlayerUnit"
+            }
+        },
+        "PlayerUnit": {
+            "type": "object",
+            "properties": {
+                "unitid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "basename": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "commander": {
+                    "type": "string"
+                },
+                "race": {
+                    "type": "string"
+                },
+                "combatunit": {
+                    "$ref": "#/definitions/NumericBoolean"
+                },
+                "mcost": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "vcost": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "supply": {
+                    "type": "number"
+                },
+                "buildtime": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "hp": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "shields": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "armor": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "shieldarmor": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "energy": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "movementspeed": {
+                    "type": "number"
+                },
+                "sightrange": {
+                    "type": "number"
+                },
+                "tags": {
+                    "type": "string"
+                },
+                "atkrange": {
+                    "type": "number"
+                },
+                "attackspeed": {
+                    "type": "number"
+                },
+                "attacks": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "attribute": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Tags that this unit deals bonus damage to"
+                },
+                "damage": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "attackbonus": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "hpbonus": {
+                    "type": "number"
+                },
+                "armorbonus": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "shieldbonus": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "notes": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "unitid",
+                "basename",
+                "name",
+                "commander",
+                "race",
+                "combatunit",
+                "mcost",
+                "vcost",
+                "supply",
+                "buildtime",
+                "hp",
+                "shields",
+                "armor",
+                "shieldarmor",
+                "energy",
+                "movementspeed",
+                "sightrange",
+                "tags",
+                "atkrange",
+                "attackspeed",
+                "attacks",
+                "attribute",
+                "damage",
+                "attackbonus",
+                "hpbonus",
+                "armorbonus",
+                "shieldbonus",
+                "notes"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "NumericBoolean": {
+            "type": "number",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "NonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
+        }
+    }
+}

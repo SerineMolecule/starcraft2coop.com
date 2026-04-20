@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.35">
+    <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
+    <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Starcraft 2 Co-op - Mutator - Transmutation</title>
+    <link rel="canonical" href="https://starcraft2coop.com/mutators/transmutation">
+</head>
+<body>
+
+<header id="header">
+    <img src="/images/starcraft2coop.png" alt="Starcraft II Co-op">
+</header>
+<script>
+if (document.location.host === 'dev.starcraft2coop.com') {
+    document.write('<div class="construction">THIS IS THE TEST SITE. (<a href="https://starcraft2coop.com">Go to the real site</a>)</div>');
+}
+</script>
+<nav id="menu">
+<ul id="topmenu">
+    <li class="normal"><a href="/" aria-label="Home" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-commanders">Commanders</a></li>
+    <li class="highlight"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-resources">Guides</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-missions">Missions</a></li>
+    <li class="normal"><a href="/" onclick="javascript:openSubmenu(event);" id="submenu-link-about">About</a></li>
+</ul>
+<div id="container">
+    <div id="commanderList" class="submenu">
+        <a href="/commanders/raynor" class="normal"><img src="/images/commanderportraits/raynorportrait.png" alt="Raynor"></a>
+        <a href="/commanders/kerrigan" class="normal"><img src="/images/commanderportraits/kerriganportrait.png" alt="Kerrigan"></a>
+        <a href="/commanders/artanis" class="normal"><img src="/images/commanderportraits/artanisportrait.png" alt="Artanis"></a>
+        <a href="/commanders/swann" class="normal"><img src="/images/commanderportraits/swannportrait.png" alt="Swann"></a>
+        <a href="/commanders/zagara" class="normal"><img src="/images/commanderportraits/zagaraportrait.png" alt="Zagara"></a>
+        <a href="/commanders/vorazun" class="normal"><img src="/images/commanderportraits/vorazunportrait.png" alt="Vorazun"></a>
+        <a href="/commanders/karax" class="normal"><img src="/images/commanderportraits/karaxportrait.png" alt="Karax"></a>
+        <a href="/commanders/abathur" class="normal"><img src="/images/commanderportraits/abathurportrait.png" alt="Abathur"></a>
+        <a href="/commanders/alarak" class="normal"><img src="/images/commanderportraits/alarakportrait.png" alt="Alarak"></a>
+        <a href="/commanders/nova" class="normal"><img src="/images/commanderportraits/novaportrait.png" alt="Nova"></a>
+        <a href="/commanders/stukov" class="normal"><img src="/images/commanderportraits/stukovportrait.png" alt="Stukov"></a>
+        <a href="/commanders/fenix" class="normal"><img src="/images/commanderportraits/fenixportrait.png" alt="Fenix"></a>
+        <a href="/commanders/dehaka" class="normal"><img src="/images/commanderportraits/dehakaportrait.png" alt="Dehaka"></a>
+        <a href="/commanders/horner" class="normal"><img src="/images/commanderportraits/hornerportrait.png" alt="Han &amp; Horner"></a>
+        <a href="/commanders/tychus" class="normal"><img src="/images/commanderportraits/tychusportrait.png" alt="Tychus"></a>
+        <a href="/commanders/zeratul" class="normal"><img src="/images/commanderportraits/zeratulportrait.png" alt="Zeratul"></a>
+        <a href="/commanders/stetmann" class="normal"><img src="/images/commanderportraits/stetmannportrait.png" alt="Stetmann"></a>
+        <a href="/commanders/mengsk" class="normal"><img src="/images/commanderportraits/mengskportrait.png" alt="Mengsk"></a>
+    </div>
+    <div id="missionList" class="submenu">
+        <a href="/missions/chainofascension" class="normal"><img src="/images/missionthumbnails/chainofascension.png" alt="Chain of Ascension"></a>
+        <a href="/missions/cradleofdeath" class="normal"><img src="/images/missionthumbnails/cradleofdeath.png" alt="Cradle of Death"></a>
+        <a href="/missions/deadofnight" class="normal"><img src="/images/missionthumbnails/deadofnight.png" alt="Dead of Night"></a>
+        <a href="/missions/lockload" class="normal"><img src="/images/missionthumbnails/lockload.png" alt="Lock & Load"></a>
+        <a href="/missions/malwarfare" class="normal"><img src="/images/missionthumbnails/malwarfare.png" alt="Malwarfare"></a>
+        <a href="/missions/minerevacuation" class="normal"><img src="/images/missionthumbnails/minerevacuation.png" alt="Miner Evacuation"></a>
+        <a href="/missions/mistopportunities" class="normal"><img src="/images/missionthumbnails/mistopportunities.png" alt="Mist Opportunities"></a>
+        <a href="/missions/oblivionexpress" class="normal"><img src="/images/missionthumbnails/oblivionexpress.png" alt="Oblivion Express"></a>
+        <a href="/missions/partparcel" class="normal"><img src="/images/missionthumbnails/partparcel.png" alt="Part & Parcel"></a>
+        <a href="/missions/riftstokorhal" class="normal"><img src="/images/missionthumbnails/riftstokorhal.png" alt="Rifts to Korhal"></a>
+        <a href="/missions/scytheofamon" class="normal"><img src="/images/missionthumbnails/scytheofamon.png" alt="Scythe Of Amon"></a>
+        <a href="/missions/templeofthepast" class="normal"><img src="/images/missionthumbnails/templeofthepast.png" alt="Temple of the Past"></a>
+        <a href="/missions/thevermillionproblem" class="normal"><img src="/images/missionthumbnails/thevermillionproblem.png" alt="The Vermillion Problem"></a>
+        <a href="/missions/voidlaunch" class="normal"><img src="/images/missionthumbnails/voidlaunch.png" alt="Void Launch"></a>
+        <a href="/missions/voidthrashing" class="normal"><img src="/images/missionthumbnails/voidthrashing.png" alt="Void Thrashing"></a>
+    </div>
+    <div id="resources" class="submenu">
+        <div class="submenu-with-sections"><div class="submenu-section">
+            <strong>Resources:</strong>
+            <ul>
+                <li class="highlight"><a href="/mutators/">Mutators</a></li>
+                <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
+                <li class="normal"><a href="/resources/brutal">Brutal+</a></li>
+                <li class="normal"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Guides:</strong>
+            <ul>
+                <li class="normal"><a href="/guides/buildordertheory">Build&nbsp;Order&nbsp;Theory</a></li>
+                <li class="normal"><a href="/guides/enemycomps">Enemy&nbsp;Compositions</a></li>
+                <li class="normal"><a href="/guides/generaltips">General&nbsp;Tips</a></li>
+                <li class="normal"><a href="/guides/newplayer">New&nbsp;Players</a></li>
+                <li class="normal"><a href="/guides/youtube">Youtube</a></li>
+            </ul>
+        </div><div class="submenu-section">
+            <strong>Miscellaneous:</strong>
+            <ul>
+                <li class="normal"><a href="/resources/achievements">Achievements</a></li>
+                <li class="normal"><a href="/resources/ailogic">AI&nbsp;Logic</a></li>
+                <li class="normal"><a href="/resources/bugs">Bugs</a></li>
+                <li class="normal"><a href="/resources/deathprevention">Death&nbsp;Prevent&nbsp;Effects</a></li>
+                <li class="normal"><a href="/resources/eastereggs">Easter&nbsp;Eggs</a></li>
+                <li class="normal"><a href="/resources/levels">Levels</a></li>
+                <li class="normal"><a href="/resources/patchdata">Patch&nbsp;Data</a></li>
+                <li class="normal"><a href="/tools/downloads">Downloads</a></li>
+                <li class="normal"><a href="/tools/masterybreakpoints">Mastery&nbsp;Breakpoints</a></li>
+            </ul>
+        </div></div>
+    </div>
+    <div id="about" class="submenu">
+        <ul>
+            <!--<li class="normal"><a href="/about/contact">Contact</a></li>-->
+            <li class="normal"><a href="/about/faq">FAQ</a></li>
+            <li class="normal"><a href="/about/links">Links</a></li>
+            <!--li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li-->
+            <li class="normal"><a href="/resources/stats">Misc. Stats</a></li>
+        </ul>
+    </div>
+    <!--<div id="imgs">
+        <a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow"><img src="/images/links/yt.png" alt="Youtube"></a>
+        <a href="https://www.patreon.com/starcraft2coop" rel="nofollow"><img src="/images/links/patreon.png" alt="Patreon"></a>
+        <a href="https://www.twitch.tv/aommaster" rel="nofollow"><img src="/images/links/twitch.png" alt="Twitch"></a>
+        <a href="https://discord.gg/AbFXRAB" rel="nofollow"><img src="/images/links/discord.png" alt="Discord"></a>
+    </div>-->
+</div>
+</nav>
+<script>
+    function openSubmenu(event, elem){
+        if (event) event.preventDefault();
+        if (!elem) elem = event.currentTarget;
+        var alreadyOpen = $(elem).hasClass('open');
+
+        $('#topmenu a').removeClass('open');
+        $(".submenu").hide();
+
+        if (alreadyOpen) return;
+
+        $(elem).addClass('open');
+        switch (elem.id.slice(13)){
+            case "commanders":
+                $("#commanderList").show();
+                break;
+            case "missions":
+                $("#missionList").show();
+                break;
+            case "resources":
+                $("#resources").show();
+                break;
+            case "about":
+                $("#about").show();
+                break;
+        }
+    }
+    if (document.location.pathname === "/") {
+        $('#submenu-link-commanders').each(function () {
+            openSubmenu(null, this);
+        });
+    } else {
+        $('#topmenu li.highlight a').each(function () {
+            openSubmenu(null, this);
+        });
+    }
+</script>
+<div id="content">
+        <h1>Mutator: Transmutation</h1>
+    <p><img src="/images/mutators/transmutation.png" alt="" /></p>
+    <p>Enemy units have a chance to transform into more powerful units whenever they deal damage.</p>
+    <table>
+        <tr><th align="right">Difficulty points</th><td align="left">7</td></tr>
+        <tr><th align="right">Available in custom</th><td align="left">Yes</td></tr>
+        <tr><th align="right">Rollable in Chaos Studios</th><td align="left">Yes</td></tr>
+    </table>
+    <h2 id="detailedmutatorinformation">Detailed Mutator Information</h2>
+    <p>Every time an enemy unit does damage to a player unit, it has a chance to change to a unit of 1 higher supply that it costs. 0 supply units are counted as 1 supply units.</p>
+    <p>Note that the change is permanent. Therefore, newly Transmutated units will drop higher amounts of Biomass, Essence, etc. than the unit they were previously. Additionally, units that would not drop Biomass (such as units from Void Rifts) will also start to drop Biomass.</p>
+    <p>The chance of Transmutation triggering is calculated as a percentage of damage dealt as Damage/2. So, if a unit does 200 damage, it has a 100% chance of triggering Transmutation. This calculation occurs after damage reduction is calculated in the form of armor/shield damage reduction and damage reduction buffs.</p>
+    <p>If an enemy unit kills a player unit, it jumps a number of tiers equal to the killed unit's supply. If that unit is a heroic, the killing unit instantly jumps to the max tier.</p>
+    <p>Transmuted units also drop Biomass, Essence and Mengsk Royal Guard experience, even if the original unit did not (e.g. from Void Rifts).</p>
+    <p>Tiers are shown below:</p>
+    <table class="dataTable">
+        <thead>
+            <tr>
+                <th>Tier</th>
+                <th>Units</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>
+                    <ul>
+                        <li>Baneling</li>
+                        <li>Marine</li>
+                        <li>Zergling</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <ul>
+                        <li>Hellbat</li>
+                        <li>Hellion</li>
+                        <li>Reaper</li>
+                        <li>Roach</li>
+                        <li>Widow Mine</li>
+                        <li>Zealot</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <ul>
+                        <li>Adept</li>
+                        <li>Firebat</li>
+                        <li>Hydralisk</li>
+                        <li>Marauder</li>
+                        <li>Sentry</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    <ul>
+                        <li>Dragoon</li>
+                        <li>Goliath</li>
+                        <li>High Templar</li>
+                        <li>Mutalisk</li>
+                        <li>Stalker</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>
+                    <ul>
+                        <li>Banshee</li>
+                        <li>Infestor</li>
+                        <li>Phoenix</li>
+                        <li>Scout</li>
+                        <li>Viking</li>
+                        <li>Warhound</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>
+                    <ul>
+                        <li>Cyclone</li>
+                        <li>Ghost</li>
+                        <li>Lurker</li>
+                        <li>Oracle</li>
+                        <li>Siege Tank</li>
+                        <li>Swarm Host</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>
+                    <ul>
+                        <li>Archon</li>
+                        <li>Disruptor</li>
+                        <li>Immortal</li>
+                        <li>Liberator</li>
+                        <li>Ravager</li>
+                        <li>Void Ray</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>
+                    <ul>
+                        <li>Battlecruiser</li>
+                        <li>Brood Lord</li>
+                        <li>Carrier</li>
+                        <li>Colossus</li>
+                        <li>Reaver</li>
+                        <li>Tempest</li>
+                        <li>Thor</li>
+                        <li>Ultralisk</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>
+                    <ul>
+                        <li>Hybrid Destroyer</li>
+                        <li>Hybrid Nemesis</li>
+                        <li>Hybrid Reaver</li>
+                        <li>Loki</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>
+                    <ul>
+                        <li>Hybrid Behemoth</li>
+                        <li>Hybrid Dominator</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="commanderspecifictips">Commander-specific Tips</h2>
+    <ul>
+        <li>Alarak: Structure Overcharge prevents Transmutation from triggering on the unit.</li>
+        <li>Artanis: Shield Overcharge prevents Transmutation from triggering on the unit.</li>
+        <li>Fenix: Fenix Champions do not count as Heroic units that cause max-tier transmutation.</li>
+        <li>Nova: Defensive Drones' Defensive Matrix prevents Transmutation from triggering on the attacking unit.</li>
+        <li>Stetmann: H.U.G.S Overload prevents Transmutation from triggering on the unit.</li>
+        <li>Swann: Defensive Matrix prevents Transmutation from triggering on the attacking unit.</li>
+    </ul>
+    <h2 id="interactions">Mutator Interactions</h2>
+    <table>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/aggressivedeployment.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/aggressivedeployment">Aggressive Deployment</a></td><td>Units from Aggressive Deployment Drops can Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/alienincubation.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/alienincubation">Alien Incubation</a></td><td>Broodlings can transmutate. Newly-transmuted units spawn Broodlings when they die.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/avenger.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/avenger">Avenger</a></td><td>Units lose their Avenger stacks after they Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/barrier.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/barrier">Barrier</a></td><td>Transmuted units get the Barrier buff.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/blackdeath.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/blackdeath">Black Death</a></td><td>Transmuted units may or may not carry Plague, irrespective of whether it carried Plague or not before Transmuting.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/concussiveattacks.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/concussiveattacks">Concussive Attacks</a></td><td>Transmuted units apply the Concussive Attacks debuff.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/diffusion.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/diffusion">Diffusion</a></td><td>Damage dealt by Diffusion can trigger Transmutation on enemy units.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/doubleedged.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/doubleedged">Double Edged</a></td><td>Damage dealt by Double Edged does not trigger Transmutation.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/eminentdomain.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/eminentdomain">Eminent Domain</a></td><td>The attack that kills a player's structure will not cause the enemy unit to Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/evasivemaneuvers.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/evasivemaneuvers">Evasive Maneuvers</a></td><td>Transmuted units get the Evasive Maneuvers buff.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/fatalattraction.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/fatalattraction">Fatal Attraction</a></td><td>Transmuted units trigger Fatal Attraction when they die.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/fear.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/fear">Fear</a></td><td>Transmuted units can apply the Fear effect.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/giftexchange.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/giftexchange">Gift Exchange</a></td><td>Units spawned from Gift Exchange can Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/hardenedwill.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/hardenedwill">Hardened Will</a></td><td>Transmuted units cause Hardened Will to activate.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/heroesfromthestorm.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/heroesfromthestorm">Heroes from the Storm</a></td><td>Amon Heroes do not Transmute after killing a unit.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/inspiration.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/inspiration">Inspiration</a></td><td>Transmuted units can get the Inspiration buff.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/justdie.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/justdie">Just Die</a></td><td>Transmutated units have their Just Die stacks reset, allowing them to respawn again.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/killbots.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/killbots">Kill Bots</a></td><td>Kill Bots do not Transmute when dealing damage or killing units.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/laserdrill.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/laserdrill">Laser Drill</a></td><td>Transmuted units provide vision for the Laser Drill.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/lifeleech.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/lifeleech">Life Leech</a></td><td>Transmuted units have Life Leech.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/magnificent.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/magnificent">Mag-nificent</a></td><td>Mag-mines do not Transmute after killing a unit.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/minesweeper.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/minesweeper">Minesweeper</a></td><td>Widow Mines Transmute after killing a unit.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/momentofsilence.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/momentofsilence">Moment of Silence</a></td><td>Transmuted units which are now Hybrids trigger Moment of Silence when they die.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/outbreak.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/outbreak">Outbreak</a></td><td>Infested and Aberrations can transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/polarity.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/polarity">Polarity</a></td><td>When units Transmute, they can switch Polarities.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/propagators.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/propagators">Propagators</a></td><td>Propagators do not Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/speedfreaks.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/speedfreaks">Speed Freaks</a></td><td>Transmuted units move faster with Speed Freaks.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/trickortreat.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/trickortreat">Trick or Treat</a></td><td>Units spawned from Civilians can Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/turkeyshoot.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/turkeyshoot">Turkey Shoot</a></td><td>Turkeys can transmute when they deal damage or kill a unit. The Turking does not transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/voidreanimators.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/voidreanimators">Void Reanimators</a></td><td>Resurrected units can Transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/voidrifts.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/voidrifts">Void Rifts</a></td><td>Units spawned from Void Rifts can transmute.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/walkinginfested.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/walkinginfested">Walking Infested</a></td><td>Infested can transmute. Newly-transmuted units spawn Infested when they die.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/wemoveunseen.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/wemoveunseen">We Move Unseen</a></td><td>Transmuted units are cloaked.</td></tr>
+
+    </table>
+<script src="/scripts/nav.js"></script>
+</div>
+
+<div id="footer">
+    <p>Note: All data generated on this site is based on Brutal difficulty. Timings, compositions and other elements may differ on easier difficulty levels.</p>
+    <p>CC-BY-NC-SA-4.0. Originally written by Aommaster. This is a fansite not affiliated with StarCraft 2 or Blizzard Entertainment, Inc.</p>
+</div>
+
+</body>
+</html>
+
+    
