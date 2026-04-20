@@ -956,7 +956,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Zeratul can deploy the Void Seeker, granting all friendly units in a target area Super Cloak for 15 seconds.</li>
+                        <li>Zeratul can deploy the Void Seeker, granting all friendly units in a target area Super Cloak for 15 seconds.</li>
                     </ul>
                 </td>
             </tr>
@@ -964,7 +964,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>The Void Seeker can no longer transport Zeratul.</li>
+                        <li>The Void Seeker can no longer transport Zeratul.</li>
                     </ul>
                 </td>
             </tr>
@@ -972,9 +972,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Void Seeker cooldown is 180 seconds</li>
-                                <li>Supercloak range is 16 range from selected point</li>
-
+                        <li>Void Seeker cooldown is 180 seconds</li>
+                        <li>Supercloak range is 16 range from selected point</li>
                     </ul>
                 </td>
             </tr>
@@ -997,7 +996,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Zeratul can collect an unlimited number of Artifact Fragments.</li>
+                        <li>Zeratul can collect an unlimited number of Artifact Fragments.</li>
                     </ul>
                 </td>
             </tr>
@@ -1005,7 +1004,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Zeratul's combat units cost 25% more.</li>
+                        <li>Zeratul's combat units cost 25% more.</li>
                     </ul>
                 </td>
             </tr>
@@ -1013,8 +1012,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Each artifact increases number of Blink charges by 1</li>
-
+                        <li>Each artifact increases number of Blink charges by 1</li>
                     </ul>
                 </td>
             </tr>
@@ -1037,8 +1035,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Each collected Artifact Fragment reduces the cooldown of Zeratul's Shadow Cleave by 5 seconds.</li>
-                                <li>Shadow Cleave spawns a tornado that damages and slows enemy units.</li>
+                        <li>Each collected Artifact Fragment reduces the cooldown of Zeratul's Shadow Cleave by 5 seconds.</li>
+                        <li>Shadow Cleave spawns a tornado that damages and slows enemy units.</li>
                     </ul>
                 </td>
             </tr>
@@ -1046,7 +1044,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Zeratul can only collect up to two Artifact Fragments.</li>
+                        <li>Zeratul can only collect up to two Artifact Fragments.</li>
                     </ul>
                 </td>
             </tr>
@@ -1054,9 +1052,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Tornadoes deal 5 damage every 0.25 seconds and slows units by 30% for 5 seconds</li>
+                        <li>Tornadoes deal 5 damage every 0.25 seconds and slows units by 30% for 5 seconds</li>
                         <li>Tornadoes target Detectors first</li>
-
                     </ul>
                 </td>
             </tr>

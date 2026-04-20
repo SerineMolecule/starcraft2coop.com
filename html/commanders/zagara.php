@@ -308,9 +308,9 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Max supply increased by 50.</li>
-                                <li>Zerglings and Scourge spawn one extra unit per egg.</li>
-                                <li>Baneling Nests will spawn an additional 4 free Banelings and Scourge Nests will spawn 4 free Scourge.</li>
+                        <li>Max supply increased by 50.</li>
+                        <li>Zerglings and Scourge spawn one extra unit per egg.</li>
+                        <li>Baneling Nests will spawn an additional 4 free Banelings and Scourge Nests will spawn 4 free Scourge.</li>
                     </ul>
                 </td>
             </tr>
@@ -318,7 +318,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Zagara is unavailable.</li>
+                        <li>Zagara is unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -326,9 +326,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Zerglings will spawn in 3's from level 1 to level 11</li>
+                        <li>Zerglings will spawn in 3's from level 1 to level 11</li>
                         <li>Zerglings will spawn in 4's once Swarmling strain unlocks at level 12</li>
-
                     </ul>
                 </td>
             </tr>
@@ -351,7 +350,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Aberrations and Corruptors cost 25% less, gain 50% increased health, and possess greatly increased health regeneration.</li>
+                        <li>Aberrations and Corruptors cost 25% less, gain 50% increased health, and possess greatly increased health regeneration.</li>
                     </ul>
                 </td>
             </tr>
@@ -359,7 +358,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>No free Banelings.</li>
+                        <li>No free Banelings.</li>
                     </ul>
                 </td>
             </tr>
@@ -367,8 +366,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Regeneration rate increased by 3</li>
-
+                        <li>Regeneration rate increased by 3</li>
                     </ul>
                 </td>
             </tr>
@@ -391,7 +389,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Zagara gains reduced ability cooldowns (33% reduction), increased health and energy regeneration, and access to the Deep Tunnel ability.</li>
+                        <li>Zagara gains reduced ability cooldowns (33% reduction), increased health and energy regeneration, and access to the Deep Tunnel ability.</li>
                     </ul>
                 </td>
             </tr>
@@ -399,8 +397,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Mass Frenzy only affects Zagara and her summoned units.</li>
-                                <li>Combat units cost 25% more.</li>
+                        <li>Mass Frenzy only affects Zagara and her summoned units.</li>
+                        <li>Combat units cost 25% more.</li>
                     </ul>
                 </td>
             </tr>
@@ -408,9 +406,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Deep Tunnel does not require vision or explored terrain.</li>
-                                <li>Deep Tunnel has a cooldown of 20 seconds.</li>
-
+                        <li>Deep Tunnel does not require vision or explored terrain.</li>
+                        <li>Deep Tunnel has a cooldown of 20 seconds.</li>
                     </ul>
                 </td>
             </tr>

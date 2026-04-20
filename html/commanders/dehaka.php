@@ -555,7 +555,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Devour applies its benefits to all nearby friendly units.</li>
+                        <li>Devour applies its benefits to all nearby friendly units.</li>
                     </ul>
                 </td>
             </tr>
@@ -563,7 +563,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Dehaka has 0 base armor, loses the Scorching Breath ability, and has his max level reduced by 4.</li>
+                        <li>Dehaka has 0 base armor, loses the Scorching Breath ability, and has his max level reduced by 4.</li>
                     </ul>
                 </td>
             </tr>
@@ -571,10 +571,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>All friendly units within 10 range of Dehaka gets the Devour buffs</li>
+                        <li>All friendly units within 10 range of Dehaka gets the Devour buffs</li>
                         <li>When Devouring air units, buff applied is +2 range for ranged weapons</li>
                         <li>When Devouring Psionic units, buff applied is only cooldown reduction</li>
-
                     </ul>
                 </td>
             </tr>
@@ -611,9 +610,9 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Pack Leaders and their entourage deal 50% more damage and have 100% increased life.</li>
-                                <li>Pack Leader cooldowns reduced by 33%. </li>
-                                <li>Pack Leaders can consume Essence for Dehaka.</li>
+                        <li>Pack Leaders and their entourage deal 50% more damage and have 100% increased life.</li>
+                        <li>Pack Leader cooldowns reduced by 33%. </li>
+                        <li>Pack Leaders can consume Essence for Dehaka.</li>
                     </ul>
                 </td>
             </tr>
@@ -621,8 +620,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Dehaka exits the map while a Pack Leader is active.</li>
-                                <li>Only one Pack Leader may be active at a time.</li>
+                        <li>Dehaka exits the map while a Pack Leader is active.</li>
+                        <li>Only one Pack Leader may be active at a time.</li>
                     </ul>
                 </td>
             </tr>
@@ -630,11 +629,10 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Dehaka respawns from where he left the map</li>
+                        <li>Dehaka respawns from where he left the map</li>
                         <li>Pack Leaders do not have abilities until they get unlocked with the Level 10 talent</li>
                         <li>Pack Leader Coolup times are not affected</li>
                         <li>Combined with the Pack Leader Duration mastery, you can have Pack Leaders on the map nearly 100% of the game length</li>
-
                     </ul>
                 </td>
             </tr>
@@ -657,7 +655,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Dehaka spawns a clone.</li>
+                        <li>Dehaka spawns a clone.</li>
                     </ul>
                 </td>
             </tr>
@@ -665,7 +663,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>If either Dehaka or the clone dies, the other dies as well.</li>
+                        <li>If either Dehaka or the clone dies, the other dies as well.</li>
                     </ul>
                 </td>
             </tr>
@@ -673,8 +671,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Essence is not shared between Dehaka and Zweihaka</li>
-
+                        <li>Essence is not shared between Dehaka and Zweihaka</li>
                     </ul>
                 </td>
             </tr>

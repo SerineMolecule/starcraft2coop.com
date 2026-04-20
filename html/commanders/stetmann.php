@@ -406,8 +406,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Stetellites are invulnerable once they are online.</li>
-                                <li>Stetellites generate a 50% larger Stetzone.</li>
+                        <li>Stetellites are invulnerable once they are online.</li>
+                        <li>Stetellites generate a 50% larger Stetzone.</li>
                     </ul>
                 </td>
             </tr>
@@ -415,7 +415,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Super Gary is unavailable.</li>
+                        <li>Super Gary is unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -438,7 +438,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Gary's health and damage increased by 100%.</li>
+                        <li>Gary's health and damage increased by 100%.</li>
                     </ul>
                 </td>
             </tr>
@@ -446,7 +446,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Gary's movement speed is reduced by 90% outside of Stetzones.</li>
+                        <li>Gary's movement speed is reduced by 90% outside of Stetzones.</li>
                     </ul>
                 </td>
             </tr>
@@ -454,9 +454,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Applies to Super Gary</li>
+                        <li>Applies to Super Gary</li>
                         <li>Applies to E-Gorbs used by both units</li>
-
                     </ul>
                 </td>
             </tr>
@@ -479,7 +478,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Combat units gain a stack of The Best Oil when they kill an enemy unit.</li>
+                        <li>Combat units gain a stack of The Best Oil when they kill an enemy unit.</li>
                     </ul>
                 </td>
             </tr>
@@ -487,8 +486,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Combat units cost 40% more minerals.</li>
-                                <li>Mecha Infestors are unavailable.</li>
+                        <li>Combat units cost 40% more minerals.</li>
+                        <li>Mecha Infestors are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -496,9 +495,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>The Best Oil buff gives +10% Attack Speed and +1HP/second regeneration for 30 seconds per stack.</li>
+                        <li>The Best Oil buff gives +10% Attack Speed and +1HP/second regeneration for 30 seconds per stack.</li>
                         <li>A maximum of 20 Best Oil stacks can be collected per unit.</li>
-
                     </ul>
                 </td>
             </tr>

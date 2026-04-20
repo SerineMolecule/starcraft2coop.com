@@ -458,8 +458,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Emergency Recall recalls cloaked units to the closest Nexus or Dark Pylon instead of the primary structure and heals life and shields to full.</li>
-                                <li>Deploy Dark Pylon cooldown and cost reduced by 50%.</li>
+                        <li>Emergency Recall recalls cloaked units to the closest Nexus or Dark Pylon instead of the primary structure and heals life and shields to full.</li>
+                        <li>Deploy Dark Pylon cooldown and cost reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -467,7 +467,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Dark Pylons lose Recall.</li>
+                        <li>Dark Pylons lose Recall.</li>
                     </ul>
                 </td>
             </tr>
@@ -490,7 +490,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Void Stasis, Confusion, Stasis Ward, Disruption Web, and Darkcoil may affect Heroic units and cause enemies to lose 20 life per second. This effect cannot kill.</li>
+                        <li>Void Stasis, Confusion, Stasis Ward, Disruption Web, and Darkcoil may affect Heroic units and cause enemies to lose 20 life per second. This effect cannot kill.</li>
                     </ul>
                 </td>
             </tr>
@@ -498,8 +498,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Combat units deal 25% reduced damage.</li>
-                                <li>Stasis Ward duration reduced by 75%.</li>
+                        <li>Combat units deal 25% reduced damage.</li>
+                        <li>Stasis Ward duration reduced by 75%.</li>
                     </ul>
                 </td>
             </tr>
@@ -507,9 +507,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>DoT effects do not stack</li>
+                        <li>DoT effects do not stack</li>
                         <li>Only way to deal DoT damage to air units is using Confusion</li>
-
                     </ul>
                 </td>
             </tr>
@@ -532,7 +531,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Time Stop becomes targeted. All Shadow Guard who have died are resurrected at the target location.</li>
+                        <li>Time Stop becomes targeted. All Shadow Guard who have died are resurrected at the target location.</li>
                     </ul>
                 </td>
             </tr>
@@ -540,7 +539,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Shadow Guard duration reduced by 40%.</li>
+                        <li>Shadow Guard duration reduced by 40%.</li>
                     </ul>
                 </td>
             </tr>
@@ -548,10 +547,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Shadow Guard duration Mastery applied first, then duration reduced by 40%</li>
+                        <li>Shadow Guard duration Mastery applied first, then duration reduced by 40%</li>
                         <li>Shadow Guards do not need to be killed. Expired (despawned) Shadow Guards will also spawn</li>
                         <li>Time Stop is still a global effect. Target location is where Shadow Guards spawn</li>
-
                     </ul>
                 </td>
             </tr>

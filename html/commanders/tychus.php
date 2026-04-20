@@ -434,7 +434,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Outlaws' active ability cooldowns reduced by 35%.</li>
+                        <li>Outlaws' active ability cooldowns reduced by 35%.</li>
                     </ul>
                 </td>
             </tr>
@@ -442,7 +442,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Outlaw cost and time between Outlaw recruitment increased by 50%.</li>
+                        <li>Outlaw cost and time between Outlaw recruitment increased by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -450,9 +450,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Cooldown reduction for Shredder Grenade works additively with the Mastery</li>
+                        <li>Cooldown reduction for Shredder Grenade works additively with the Mastery</li>
                         <li>Outlaw spawn timing mastery is applied first, then prestige cooldown increase applied</li>
-
                     </ul>
                 </td>
             </tr>
@@ -475,7 +474,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>When beyond the vision range of other Outlaws, outlaws deal 30% more damage for each Outlaw recruited and take 50% less damage.</li>
+                        <li>When beyond the vision range of other Outlaws, outlaws deal 30% more damage for each Outlaw recruited and take 50% less damage.</li>
                     </ul>
                 </td>
             </tr>
@@ -483,8 +482,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Ultimate Gear is unavailable.</li>
-                                <li>Gear costs 25% more.</li>
+                        <li>Ultimate Gear is unavailable.</li>
+                        <li>Gear costs 25% more.</li>
                     </ul>
                 </td>
             </tr>
@@ -492,12 +491,11 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Sirius Turrets get the Lone Wolf buff</li>
+                        <li>Sirius Turrets get the Lone Wolf buff</li>
                         <li>Vega Dominated units get the Lone Wolf buff</li>
                         <li>Buffs to Turrets and Dominated units apply if the the respective Hero unit has the Lone Wolf buff</li>
                         <li>Odin does not remove Lone Wolf buff from other outlaws if within range</li>
                         <li>Damage reduction is applied before Armor</li>
-
                     </ul>
                 </td>
             </tr>
@@ -520,7 +518,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>The Odin no longer requires Tychus as its pilot, its duration is increased by 100%, and its cooldown is reduced by 40%.</li>
+                        <li>The Odin no longer requires Tychus as its pilot, its duration is increased by 100%, and its cooldown is reduced by 40%.</li>
                     </ul>
                 </td>
             </tr>
@@ -528,7 +526,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Barrage and Big Red Button are unavailable.</li>
+                        <li>Barrage and Big Red Button are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -536,8 +534,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Odin Cooldown reduction Mastery applied first, then cooldown reduced by an additional 40%</li>
-
+                        <li>Odin Cooldown reduction Mastery applied first, then cooldown reduced by an additional 40%</li>
                     </ul>
                 </td>
             </tr>

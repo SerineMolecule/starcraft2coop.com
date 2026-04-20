@@ -487,9 +487,9 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>All Armor Suit damage increased by 100%.</li>
-                                <li>Ability cooldowns reduced by 50%.</li>
-                                <li>Life, shield, and energy regeneration increased by 100% while in storage.</li>
+                        <li>All Armor Suit damage increased by 100%.</li>
+                        <li>Ability cooldowns reduced by 50%.</li>
+                        <li>Life, shield, and energy regeneration increased by 100% while in storage.</li>
                     </ul>
                 </td>
             </tr>
@@ -497,8 +497,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>All Armor Suit calldown cooldowns increased by 700%.</li>
-                                <li>Each suit can only be sustained for 20 seconds at a time.</li>
+                        <li>All Armor Suit calldown cooldowns increased by 700%.</li>
+                        <li>Each suit can only be sustained for 20 seconds at a time.</li>
                     </ul>
                 </td>
             </tr>
@@ -506,10 +506,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Suit Cooldown: 2 minutes</li>
+                        <li>Suit Cooldown: 2 minutes</li>
                         <li>Suit Rebuild Time: 5 minutes</li>
                         <li>Contrary to the description, the Arbiter suit doesn't actually have a cooldown</li>
-
                     </ul>
                 </td>
             </tr>
@@ -532,8 +531,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Tactical Data Web effectiveness increased by 200%.</li>
-                                <li>All combat unit costs reduced by 50%.</li>
+                        <li>Tactical Data Web effectiveness increased by 200%.</li>
+                        <li>All combat unit costs reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -541,7 +540,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>All non-heroic combat unit damage reduced by 50% and vitals reduced by 50%.</li>
+                        <li>All non-heroic combat unit damage reduced by 50% and vitals reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -549,8 +548,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Kaldalis benefits the most from this prestige due to his cleave attack</li>
-
+                        <li>Kaldalis benefits the most from this prestige due to his cleave attack</li>
                     </ul>
                 </td>
             </tr>
@@ -582,8 +580,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Avenging Protocol effectiveness increased by 100%.</li>
-                                <li>Champion A.I.s that die refund 75% of their base unit cost.</li>
+                        <li>Avenging Protocol effectiveness increased by 100%.</li>
+                        <li>Champion A.I.s that die refund 75% of their base unit cost.</li>
                     </ul>
                 </td>
             </tr>
@@ -591,7 +589,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Champion A.I.s do not gain additional life or shields and have reduced attack range (-2 range).</li>
+                        <li>Champion A.I.s do not gain additional life or shields and have reduced attack range (-2 range).</li>
                     </ul>
                 </td>
             </tr>
@@ -599,8 +597,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Champion A.I vitality mastery still works, although it should not be used with this prestige</li>
-
+                        <li>Champion A.I vitality mastery still works, although it should not be used with this prestige</li>
                     </ul>
                 </td>
             </tr>

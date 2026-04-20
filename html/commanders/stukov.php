@@ -420,9 +420,9 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Factory and Starport no longer have tech requirements.</li>
-                                <li>Mechanical combat units cost 30% less.</li>
-                                <li>Automated Mitosis generates Infested Siege Tank ammunition 200% faster.</li>
+                        <li>Factory and Starport no longer have tech requirements.</li>
+                        <li>Mechanical combat units cost 30% less.</li>
+                        <li>Automated Mitosis generates Infested Siege Tank ammunition 200% faster.</li>
                     </ul>
                 </td>
             </tr>
@@ -430,7 +430,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>The Infested Colonist Compound does not spawn and cannot be built.</li>
+                        <li>The Infested Colonist Compound does not spawn and cannot be built.</li>
                     </ul>
                 </td>
             </tr>
@@ -453,7 +453,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Banshees can load up to 16 Infested infantry and can launch their cargo at a ground target.</li>
+                        <li>Banshees can load up to 16 Infested infantry and can launch their cargo at a ground target.</li>
                     </ul>
                 </td>
             </tr>
@@ -461,7 +461,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Infested Civilians have 30% reduced timed life.</li>
+                        <li>Infested Civilians have 30% reduced timed life.</li>
                     </ul>
                 </td>
             </tr>
@@ -469,8 +469,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Banshees can unload units to a target location within 10 range, dealing 20 damage.</li>
-
+                        <li>Banshees can unload units to a target location within 10 range, dealing 20 damage.</li>
                     </ul>
                 </td>
             </tr>
@@ -493,7 +492,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Infested Bunkers spawn Infested Troopers 200% faster.</li>
+                        <li>Infested Bunkers spawn Infested Troopers 200% faster.</li>
                     </ul>
                 </td>
             </tr>
@@ -501,7 +500,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Infested Bunkers no longer have cargo capacity.</li>
+                        <li>Infested Bunkers no longer have cargo capacity.</li>
                     </ul>
                 </td>
             </tr>

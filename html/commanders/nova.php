@@ -401,8 +401,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Factory and Starport no longer have Tech requirements.</li>
-                                <li>Unit charges accrue 100% faster for the first production structure built.</li>
+                        <li>Factory and Starport no longer have Tech requirements.</li>
+                        <li>Unit charges accrue 100% faster for the first production structure built.</li>
                     </ul>
                 </td>
             </tr>
@@ -410,7 +410,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Unit charges accrue 50% slower for the second and third production structures built.</li>
+                        <li>Unit charges accrue 50% slower for the second and third production structures built.</li>
                     </ul>
                 </td>
             </tr>
@@ -418,8 +418,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Bonus applies to the first completed structure.</li>
-
+                        <li>Bonus applies to the first completed structure.</li>
                     </ul>
                 </td>
             </tr>
@@ -442,7 +441,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Tactical Airlift cooldown reduced by 75%.</li>
+                        <li>Tactical Airlift cooldown reduced by 75%.</li>
                     </ul>
                 </td>
             </tr>
@@ -450,7 +449,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Griffin Airstrike cooldown increased by 300%.</li>
+                        <li>Griffin Airstrike cooldown increased by 300%.</li>
                     </ul>
                 </td>
             </tr>
@@ -473,8 +472,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Nova gains permanent Super Cloak.</li>
-                                <li>Her abilities have a 50% increased radius and a 50% reduced cooldown.</li>
+                        <li>Nova gains permanent Super Cloak.</li>
+                        <li>Her abilities have a 50% increased radius and a 50% reduced cooldown.</li>
                     </ul>
                 </td>
             </tr>
@@ -482,7 +481,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Nova cannot switch to her Combat Suit and loses Super Cloak for 4 seconds upon attacking or using Snipe.</li>
+                        <li>Nova cannot switch to her Combat Suit and loses Super Cloak for 4 seconds upon attacking or using Snipe.</li>
                     </ul>
                 </td>
             </tr>

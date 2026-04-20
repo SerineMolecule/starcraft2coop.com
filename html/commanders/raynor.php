@@ -396,7 +396,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Biological combat units gain 100% increased life.</li>
+                        <li>Biological combat units gain 100% increased life.</li>
                     </ul>
                 </td>
             </tr>
@@ -404,7 +404,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>MULEs are unavailable.</li>
+                        <li>MULEs are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -412,9 +412,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Stacks with Combat Shield</li>
+                        <li>Stacks with Combat Shield</li>
                         <li>Stacks with Armor Upgrades</li>
-
                     </ul>
                 </td>
             </tr>
@@ -437,7 +436,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Afterburners additionally increases attack speed by 100%. Cooldown reduced by 50%.</li>
+                        <li>Afterburners additionally increases attack speed by 100%. Cooldown reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -445,8 +444,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Units no longer cost less.</li>
-                                <li>Afterburners cost 10 life and its movement speed bonus reduced to 50%.</li>
+                        <li>Units no longer cost less.</li>
+                        <li>Afterburners cost 10 life and its movement speed bonus reduced to 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -469,9 +468,9 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>The Starport, Armory and Orbital Command no longer have tech requirements.</li>
-                                <li>The Starport no longer has a gas cost and its units cost 30% less gas</li>
-                                <li>Vikings, Banshees and Battlecruisers increase top bar cooldown rates by 1% per supply used.</li>
+                        <li>The Starport, Armory and Orbital Command no longer have tech requirements.</li>
+                        <li>The Starport no longer has a gas cost and its units cost 30% less gas</li>
+                        <li>Vikings, Banshees and Battlecruisers increase top bar cooldown rates by 1% per supply used.</li>
                     </ul>
                 </td>
             </tr>
@@ -479,7 +478,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Combat units cost 50% more minerals.</li>
+                        <li>Combat units cost 50% more minerals.</li>
                     </ul>
                 </td>
             </tr>
@@ -487,8 +486,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Cooldown Reduction mastery is applied first, then prestige cooldown increase applied</li>
-
+                        <li>Cooldown Reduction mastery is applied first, then prestige cooldown increase applied</li>
                     </ul>
                 </td>
             </tr>

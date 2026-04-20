@@ -416,7 +416,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>The Laser Drill deals 100% splash damage, slows enemy movement by 70%, and locks on targets 50% faster.</li>
+                        <li>The Laser Drill deals 100% splash damage, slows enemy movement by 70%, and locks on targets 50% faster.</li>
                     </ul>
                 </td>
             </tr>
@@ -424,7 +424,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>The Laser Drill's abilities are unavailable.</li>
+                        <li>The Laser Drill's abilities are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -432,8 +432,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Splash damage range is 1.5</li>
-
+                        <li>Splash damage range is 1.5</li>
                     </ul>
                 </td>
             </tr>
@@ -456,7 +455,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Turret upgrades are 100% more effective.</li>
+                        <li>Turret upgrades are 100% more effective.</li>
                     </ul>
                 </td>
             </tr>
@@ -464,7 +463,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Combat units cost 50% more vespene gas.</li>
+                        <li>Combat units cost 50% more vespene gas.</li>
                     </ul>
                 </td>
             </tr>
@@ -472,8 +471,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>The Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
-
+                        <li>The Fire Suppression Systems upgrade does not gain any benefit from this Prestige.</li>
                     </ul>
                 </td>
             </tr>
@@ -496,8 +494,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Hercules have twice the cargo capacity and unload units instantly.</li>
-                                <li>Science Vessels can use Tactical Jump and its cooldown reduced by 50%.</li>
+                        <li>Hercules have twice the cargo capacity and unload units instantly.</li>
+                        <li>Science Vessels can use Tactical Jump and its cooldown reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -505,7 +503,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Top bar cooldowns increased by 50%.</li>
+                        <li>Top bar cooldowns increased by 50%.</li>
                     </ul>
                 </td>
             </tr>

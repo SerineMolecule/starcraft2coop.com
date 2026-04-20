@@ -441,8 +441,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Contaminated Strike's fear lasts 200% longer, its damage-over-time effect additionally increases damage received by 25%, its cost is reduced by 20%, and its cooldown is reduced by 66%.</li>
-                                <li>Troopers provide Imperial Support while operating Earthsplitter Ordnance.</li>
+                        <li>Contaminated Strike's fear lasts 200% longer, its damage-over-time effect additionally increases damage received by 25%, its cost is reduced by 20%, and its cooldown is reduced by 66%.</li>
+                        <li>Troopers provide Imperial Support while operating Earthsplitter Ordnance.</li>
                     </ul>
                 </td>
             </tr>
@@ -450,7 +450,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Nuclear Annihilation is unavailable.</li>
+                        <li>Nuclear Annihilation is unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -458,10 +458,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Mandate Generation will only work after getting the Unquestioned Authority Level 5 Unlock</li>
+                        <li>Mandate Generation will only work after getting the Unquestioned Authority Level 5 Unlock</li>
                         <li>Amplified Airwaves affects Troopers inside Earthsplitters</li>
                         <li>Troopers inside Earthsplitters do not need a Witness to generate extra Mandate.</li>
-
                     </ul>
                 </td>
             </tr>
@@ -484,7 +483,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Royal Guard vespene gas costs reduced by 25% and XP gain increased by 100%.</li>
+                        <li>Royal Guard vespene gas costs reduced by 25% and XP gain increased by 100%.</li>
                     </ul>
                 </td>
             </tr>
@@ -492,7 +491,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Royal Guard mineral costs increased by 100% and supply cost increased by 50%.</li>
+                        <li>Royal Guard mineral costs increased by 100% and supply cost increased by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -500,8 +499,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Royal Guard Cost stacks multiplicatively with the Royal Guard Cost Reduction mastery.</li>
-
+                        <li>Royal Guard Cost stacks multiplicatively with the Royal Guard Cost Reduction mastery.</li>
                     </ul>
                 </td>
             </tr>
@@ -524,8 +522,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Equipped Troopers activate a self-destruct mechanism in their weapons upon death.</li>
-                                <li>Trooper weapons cost 40 minerals and 20 vespene gas.</li>
+                        <li>Equipped Troopers activate a self-destruct mechanism in their weapons upon death.</li>
+                        <li>Trooper weapons cost 40 minerals and 20 vespene gas.</li>
                     </ul>
                 </td>
             </tr>
@@ -533,8 +531,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Troopers no longer drop weapons.</li>
-                                <li>Imperial Intercessors are unavailable.</li>
+                        <li>Troopers no longer drop weapons.</li>
+                        <li>Imperial Intercessors are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -542,13 +540,12 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>The weapon deals 150 damage (+100 vs. Structures) within a range of 1.5</li>
+                        <li>The weapon deals 150 damage (+100 vs. Structures) within a range of 1.5</li>
                         <li>Weapon will search for a target within 12 range</li>
                         <li>Vision required for weapon to find target</li>
                         <li>Weapon will denotate after 2 seconds if no target is found</li>
                         <li>Weapon can target air units as well</li>
                         <li>Troopers can be converted back to Laborers to repair each other</li>
-
                     </ul>
                 </td>
             </tr>

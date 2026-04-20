@@ -310,8 +310,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Malignant Creep effectiveness increased by 100%.</li>
-                                <li>Queens are no longer slowed and may place Creep Tumors while off creep.</li>
+                        <li>Malignant Creep effectiveness increased by 100%.</li>
+                        <li>Queens are no longer slowed and may place Creep Tumors while off creep.</li>
                     </ul>
                 </td>
             </tr>
@@ -319,7 +319,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Nydus and Omega Networks are unavailable.</li>
+                        <li>Nydus and Omega Networks are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -327,9 +327,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Abathur allies will still have their Nydus Worms upgraded to Omega Worms</li>
+                        <li>Abathur allies will still have their Nydus Worms upgraded to Omega Worms</li>
                         <li>Malignant Creep does not apply to Stukov's Infested</li>
-
                     </ul>
                 </td>
             </tr>
@@ -361,7 +360,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Kerrigan expends stacks of Fury while using Leaping Strike or Psionic Shift, striking nearby enemies for 50 damage and stunning them for 3 seconds.</li>
+                        <li>Kerrigan expends stacks of Fury while using Leaping Strike or Psionic Shift, striking nearby enemies for 50 damage and stunning them for 3 seconds.</li>
                     </ul>
                 </td>
             </tr>
@@ -369,8 +368,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Kerrigan's Carapace generation reduced by 50%.</li>
-                                <li>Kerrigan's ability damage reduced by 50%.</li>
+                        <li>Kerrigan's Carapace generation reduced by 50%.</li>
+                        <li>Kerrigan's ability damage reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -378,10 +377,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>You get 1 Fury stack per auto-attack</li>
+                        <li>You get 1 Fury stack per auto-attack</li>
                         <li>Fury stacks are limited to 5</li>
                         <li>Stun + Fury Damage range is 10</li>
-
                     </ul>
                 </td>
             </tr>
@@ -443,8 +441,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Assimilation Aura resource drops increased by 100%.</li>
-                                <li>Kerrigan gains Kinetic Blast and Crushing Grip.</li>
+                        <li>Assimilation Aura resource drops increased by 100%.</li>
+                        <li>Kerrigan gains Kinetic Blast and Crushing Grip.</li>
                     </ul>
                 </td>
             </tr>
@@ -452,7 +450,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Leaping Strike and Psionic Shift are unavailable</li>
+                        <li>Leaping Strike and Psionic Shift are unavailable</li>
                     </ul>
                 </td>
             </tr>
@@ -460,10 +458,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Crushing Grip can be used to reveal Cloaked/Burrowed units</li>
+                        <li>Crushing Grip can be used to reveal Cloaked/Burrowed units</li>
                         <li>Both abilities hit air</li>
                         <li>Both abilities are affected by the Primary Ability Improvement mastery</li>
-
                     </ul>
                 </td>
             </tr>

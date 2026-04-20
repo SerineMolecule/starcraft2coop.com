@@ -373,7 +373,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Combat units can hold an additional 25 Biomass and have an additional 50% chance to drop their Biomass upon death.</li>
+                        <li>Combat units can hold an additional 25 Biomass and have an additional 50% chance to drop their Biomass upon death.</li>
                     </ul>
                 </td>
             </tr>
@@ -381,7 +381,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Ultimate Evolutions are unavailable.</li>
+                        <li>Ultimate Evolutions are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -389,9 +389,8 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Stacks additively with the Biomass Recovery Level 7 Unlock Talent, providing 100% chance to drop Biomass.</li>
+                        <li>Stacks additively with the Biomass Recovery Level 7 Unlock Talent, providing 100% chance to drop Biomass.</li>
                         <li>Biomass bonuses also extend linearly through the extra 25 Biomass collected.</li>
-
                     </ul>
                 </td>
             </tr>
@@ -414,8 +413,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Locusts have 50% increased attack range, movement speed, and duration.</li>
-                                <li>The Deep Tunnel upgrade no longer requires Hive, no longer requires vision, and can be used by Roaches and Ravagers.</li>
+                        <li>Locusts have 50% increased attack range, movement speed, and duration.</li>
+                        <li>The Deep Tunnel upgrade no longer requires Hive, no longer requires vision, and can be used by Roaches and Ravagers.</li>
                     </ul>
                 </td>
             </tr>
@@ -423,7 +422,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Combat units cost 25% more vespene gas.</li>
+                        <li>Combat units cost 25% more vespene gas.</li>
                     </ul>
                 </td>
             </tr>
@@ -431,8 +430,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Locusts spawned by the Level 13 unlock also get the prestige buffs</li>
-
+                        <li>Locusts spawned by the Level 13 unlock also get the prestige buffs</li>
                     </ul>
                 </td>
             </tr>
@@ -455,7 +453,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>The number of Ultimate Evolutions is no longer limited to 3.</li>
+                        <li>The number of Ultimate Evolutions is no longer limited to 3.</li>
                     </ul>
                 </td>
             </tr>
@@ -463,8 +461,8 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Ultimate Evolution requires 200 Biomass.</li>
-                                <li>Biomass is less powerful.</li>
+                        <li>Ultimate Evolution requires 200 Biomass.</li>
+                        <li>Biomass is less powerful.</li>
                     </ul>
                 </td>
             </tr>
@@ -472,8 +470,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Benefits gained per Biomass pickup is halved. At 200 Biomass, bonuses match Biomass bonuses of other prestiges at 100 Biomass.</li>
-
+                        <li>Benefits gained per Biomass pickup is halved. At 200 Biomass, bonuses match Biomass bonuses of other prestiges at 100 Biomass.</li>
                     </ul>
                 </td>
             </tr>

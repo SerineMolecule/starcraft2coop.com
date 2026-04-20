@@ -387,7 +387,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Increase the effectiveness of all active combat unit abilities by 100%.</li>
+                        <li>Increase the effectiveness of all active combat unit abilities by 100%.</li>
                     </ul>
                 </td>
             </tr>
@@ -395,7 +395,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Combat units cost 30% more.</li>
+                        <li>Combat units cost 30% more.</li>
                     </ul>
                 </td>
             </tr>
@@ -403,10 +403,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Dragoons do not get any benefits from this Prestige</li>
+                        <li>Dragoons do not get any benefits from this Prestige</li>
                         <li>Cooldown reduction from prestige is multiplicative with the Cooldown Reduction mastery</li>
                         <li>Reavers will not run out of Scarabs when combined with the Cooldown Reduction mastery</li>
-
                     </ul>
                 </td>
             </tr>
@@ -442,7 +441,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Upon use, Project Power Field warps out any of your combat units standing in an existing Power Field projection into the new location. Cooldown removed.</li>
+                        <li>Upon use, Project Power Field warps out any of your combat units standing in an existing Power Field projection into the new location. Cooldown removed.</li>
                     </ul>
                 </td>
             </tr>
@@ -450,7 +449,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Project Power Field costs 25 energy.</li>
+                        <li>Project Power Field costs 25 energy.</li>
                     </ul>
                 </td>
             </tr>
@@ -458,8 +457,7 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>When units are warped in, they get the Speed Increase for Warped Units buff</li>
-
+                        <li>When units are warped in, they get the Speed Increase for Warped Units buff</li>
                     </ul>
                 </td>
             </tr>
@@ -482,8 +480,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Orbital Strikes warp in an Unbound Fanatic that throws off damaging energy and lasts 15 seconds.</li>
-                                <li>Shield Overcharge is now targeted, has its cooldown reduced by 50%, and costs 25 energy.</li>
+                        <li>Orbital Strikes warp in an Unbound Fanatic that throws off damaging energy and lasts 15 seconds.</li>
+                        <li>Shield Overcharge is now targeted, has its cooldown reduced by 50%, and costs 25 energy.</li>
                     </ul>
                 </td>
             </tr>
@@ -491,7 +489,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Orbital Strike costs 50 energy. Guardian Shell is disabled.</li>
+                        <li>Orbital Strike costs 50 energy. Guardian Shell is disabled.</li>
                     </ul>
                 </td>
             </tr>
@@ -499,11 +497,10 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Shield Overcharge applies to all units within 8 range of selected area</li>
+                        <li>Shield Overcharge applies to all units within 8 range of selected area</li>
                         <li>Unbound Fanatic's energy ball does 60 DPS along a path of 1.5 radius</li>
                         <li>Energy balls are thrown once per second. Each ball lasts 1 second</li>
                         <li>Fanatics start at maximum 3/3/3 upgrades</li>
-
                     </ul>
                 </td>
             </tr>

@@ -445,7 +445,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>When a supplicant dies, it increases the damage and attack speed of one of Alarak's nearby non-heroic mechanical combat units.</li>
+                        <li>When a supplicant dies, it increases the damage and attack speed of one of Alarak's nearby non-heroic mechanical combat units.</li>
                     </ul>
                 </td>
             </tr>
@@ -453,7 +453,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Deadly Charge and Destruction Wave damage reduced by 50%.</li>
+                        <li>Deadly Charge and Destruction Wave damage reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -461,11 +461,10 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Stacks get applied within 15 range.</li>
+                        <li>Stacks get applied within 15 range.</li>
                         <li>Each stack adds 10% damage and attack speed</li>
                         <li>Slayers and War Prisms get two stacks per Supplicant</li>
                         <li>Maximum stack count is 10.</li>
-
                     </ul>
                 </td>
             </tr>
@@ -488,7 +487,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Empower Me cooldown reduced by 50%.</li>
+                        <li>Empower Me cooldown reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -496,7 +495,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>The Death Fleet is unavailable.</li>
+                        <li>The Death Fleet is unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -519,7 +518,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Summon Death Fleet has no duration or initial cooldown. The Mothership may construct Destroyers.</li>
+                        <li>Summon Death Fleet has no duration or initial cooldown. The Mothership may construct Destroyers.</li>
                     </ul>
                 </td>
             </tr>
@@ -527,9 +526,9 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Destroyers are no longer summoned with the Mothership.</li>
-                                <li>The Mothership and Destroyers have resource and Supply Costs.</li>
-                                <li>Mass Teleport now has a 60 second cooldown and no longer teleports allied units.</li>
+                        <li>Destroyers are no longer summoned with the Mothership.</li>
+                        <li>The Mothership and Destroyers have resource and Supply Costs.</li>
+                        <li>Mass Teleport now has a 60 second cooldown and no longer teleports allied units.</li>
                     </ul>
                 </td>
             </tr>
@@ -537,11 +536,10 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Mothership costs 400/400.</li>
+                        <li>Mothership costs 400/400.</li>
                         <li>Each Destroyer costs 125/75.</li>
                         <li>Mothership and Destroyers are unaffected by Unit Attack Speed mastery.</li>
                         <li>Destroyer bounce damage is unaffected by attack upgrades.</li>
-
                     </ul>
                 </td>
             </tr>

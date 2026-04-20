@@ -409,8 +409,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Mag Mines arm and fire 80% faster.</li>
-                                <li>Mira's units' on-death effects are 100% more effective.</li>
+                        <li>Mag Mines arm and fire 80% faster.</li>
+                        <li>Mira's units' on-death effects are 100% more effective.</li>
                     </ul>
                 </td>
             </tr>
@@ -418,7 +418,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Horner's units cost 30% more.</li>
+                        <li>Horner's units cost 30% more.</li>
                     </ul>
                 </td>
             </tr>
@@ -448,7 +448,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Horner's units' vespene gas costs reduced by 20% and charge cooldowns reduced by 50%.</li>
+                        <li>Horner's units' vespene gas costs reduced by 20% and charge cooldowns reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -456,7 +456,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Galleons are capped at 2.</li>
+                        <li>Galleons are capped at 2.</li>
                     </ul>
                 </td>
             </tr>
@@ -479,7 +479,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Bombing Platforms are no longer capped.</li>
+                        <li>Bombing Platforms are no longer capped.</li>
                     </ul>
                 </td>
             </tr>
@@ -487,7 +487,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Bombing Platforms cost 100% more.</li>
+                        <li>Bombing Platforms cost 100% more.</li>
                     </ul>
                 </td>
             </tr>

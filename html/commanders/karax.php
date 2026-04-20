@@ -433,9 +433,9 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Repair Beam is 100% more effective and can target twice as many structures.</li>
-                                <li>Unity Barrier affects defensive structures and its cooldown is reduced by 75%.</li>
-                                <li>Chrono Boost, Chrono Wave, and Chrono Field affect defensive structures, increasing their rate of attack.</li>
+                        <li>Repair Beam is 100% more effective and can target twice as many structures.</li>
+                        <li>Unity Barrier affects defensive structures and its cooldown is reduced by 75%.</li>
+                        <li>Chrono Boost, Chrono Wave, and Chrono Field affect defensive structures, increasing their rate of attack.</li>
                     </ul>
                 </td>
             </tr>
@@ -443,7 +443,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Repair Beam may only target structures. Unity Barrier no longer affects units.</li>
+                        <li>Repair Beam may only target structures. Unity Barrier no longer affects units.</li>
                     </ul>
                 </td>
             </tr>
@@ -451,10 +451,9 @@ require_once "../wrapper-static.php";
                 <th>Notes</th>
                 <td>
                     <ul>
-                                <li>Prestige and Mastery applied to base healing rate (5/10), then a compounding of prestige+mastery is applied at 0.05/0.1 per mastery point</li>
+                        <li>Prestige and Mastery applied to base healing rate (5/10), then a compounding of prestige+mastery is applied at 0.05/0.1 per mastery point</li>
                         <li>Chrono Boost and Chrono Wave can be used on ally defenses as well</li>
                         <li>Chrono Field doesn't have an effect on ally defenses</li>
-
                     </ul>
                 </td>
             </tr>
@@ -477,7 +476,7 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Combat unit cost reduced by 40%.</li>
+                        <li>Combat unit cost reduced by 40%.</li>
                     </ul>
                 </td>
             </tr>
@@ -485,7 +484,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Photon Cannons and Khaydarin Monoliths are unavailable.</li>
+                        <li>Photon Cannons and Khaydarin Monoliths are unavailable.</li>
                     </ul>
                 </td>
             </tr>
@@ -508,8 +507,8 @@ require_once "../wrapper-static.php";
                 <th>Advantages</th>
                 <td>
                     <ul>
-                                <li>Orbital Strike and Solar Lance energy cost reduced by 40%.</li>
-                                <li>Solar Lance and Purifier Beam cooldowns reduced by 50%.</li>
+                        <li>Orbital Strike and Solar Lance energy cost reduced by 40%.</li>
+                        <li>Solar Lance and Purifier Beam cooldowns reduced by 50%.</li>
                     </ul>
                 </td>
             </tr>
@@ -517,7 +516,7 @@ require_once "../wrapper-static.php";
                 <th>Disadvantages</th>
                 <td>
                     <ul>
-                                <li>Chrono Boost, Chrono Wave, and Chrono Field are unavailable.</li>
+                        <li>Chrono Boost, Chrono Wave, and Chrono Field are unavailable.</li>
                     </ul>
                 </td>
             </tr>
