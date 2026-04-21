@@ -161,7 +161,7 @@ require_once "../wrapper-static.php";
     <div id="commanderSelection">
         <?php
 
-        require_once __DIR__ . '/../data/queries.php';
+        require_once __DIR__ . '/../scripts/queries.php';
 
         $allCommanders = get_commanders();
         foreach ($allCommanders as $row) {

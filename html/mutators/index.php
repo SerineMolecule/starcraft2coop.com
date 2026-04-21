@@ -41,7 +41,7 @@ require_once "../wrapper-static.php";
     </p>
     <ul class="mutatortiles">
     <?php
-    require_once '../data/queries.php';
+    require_once '../scripts/queries.php';
     $mutators = get_mutators();
     usort($mutators, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     foreach ($mutators as $mutator) {

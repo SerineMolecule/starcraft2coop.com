@@ -890,7 +890,7 @@ function getUnitUpgradesOutput($commander, $unit)
     }
     $con->close();
 
-    require_once __DIR__ . '/../data/queries.php';
+    require_once __DIR__ . '/../scripts/queries.php';
 
     $commanderData = get_commander($commander);
     $commanderPrestiges = [

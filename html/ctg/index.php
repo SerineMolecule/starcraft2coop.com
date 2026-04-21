@@ -98,7 +98,7 @@
   </head>
 <body>
     <?php
-    require_once '../data/queries.php';
+    require_once '../scripts/queries.php';
     $mutators = get_mutators();
     $mutations = get_weeklymutations();
     $mutations = array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden But Inevitable');

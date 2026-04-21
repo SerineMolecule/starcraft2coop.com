@@ -156,7 +156,7 @@ if (isset($_POST['ability'])) {
 
     if ($abilityFound) {
         #If ability can hit flyers, get all, otherwise get only ground
-        require_once '../data/queries.php';
+        require_once '../scripts/queries.php';
         $units = get_amonunits();
         if ($air == 0) {
             $units = array_filter($units, fn($unit) => $unit['flyer'] === 0);

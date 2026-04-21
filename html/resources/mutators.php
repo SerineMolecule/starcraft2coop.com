@@ -165,7 +165,7 @@ require_once "../wrapper-static.php";
     </div>
     <h2 id="mutatorInteractions">Mutator Interactions</h2>
     <?php
-    require_once '../data/queries.php';
+    require_once '../scripts/queries.php';
     $mutatorInfo = get_mutators();
     usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     $mutators = [];
@@ -369,7 +369,7 @@ require_once "../wrapper-static.php";
         <a href="#row_walkinginfested">Walking Infested</a> -
         <a href="#row_wemoveunseen">We Move Unseen</a></p>
 <?php
-require_once __DIR__ . '/../data/queries.php';
+require_once __DIR__ . '/../scripts/queries.php';
 $mutatorInfo = get_mutators();
 usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
 function token($name)

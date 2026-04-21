@@ -42,7 +42,7 @@ require_once "../wrapper-static.php";
     <h1>Site-Specific and Co-op Related Statistics</h1>
     <?php
 
-    require_once __DIR__ . '/../data/queries.php';
+    require_once __DIR__ . '/../scripts/queries.php';
     include '../scripts/sqlconnection.php';
 
     $mutatorInteractionCount = count(get_mutator_interactions());

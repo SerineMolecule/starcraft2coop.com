@@ -406,7 +406,7 @@ require_once "../wrapper.php";
             </thead>
             <tbody>
     <?php
-    require_once '../data/queries.php';
+    require_once '../scripts/queries.php';
 
     $difficultyArray = get_brutalpluses();
     function getDiffString($score)

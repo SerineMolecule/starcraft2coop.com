@@ -18,7 +18,7 @@ if ($difficulty < 1 || $difficulty > 6) {
 
 header('Cache-Control: no-cache, no-store, must-revalidate');
 
-require_once __DIR__ . '/../data/queries.php';
+require_once __DIR__ . '/../scripts/queries.php';
 
 $oneBrutal = get_brutalplus($difficulty);
 $minMutators = $oneBrutal['minmutators'];

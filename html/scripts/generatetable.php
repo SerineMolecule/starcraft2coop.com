@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-require_once '../data/queries.php';
+require_once '../scripts/queries.php';
 $units = get_amonunits();
 
 if (!isset($_GET['maxvitality']) && !isset($_GET['minvitality'])) {

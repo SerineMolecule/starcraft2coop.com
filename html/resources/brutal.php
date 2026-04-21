@@ -76,7 +76,7 @@ require_once "../wrapper-static.php";
         </thead>
         <tbody>
             <?php
-            require_once '../data/queries.php';
+            require_once '../scripts/queries.php';
 
             $brutalPlus = get_brutalpluses();
             foreach ($brutalPlus as $row) {
