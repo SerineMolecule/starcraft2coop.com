@@ -1,4 +1,5 @@
-import type { Mutator, MutatorInteraction, MutatorInteractionList, MutatorList } from "./data-types";
+#!/usr/bin/env bun
+import type { Mutator, MutatorInteraction } from "./data-types";
 
 const mutators: Mutator[] = await Bun.file('./source-data/mutators.json').json();
 

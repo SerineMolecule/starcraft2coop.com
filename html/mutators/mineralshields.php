@@ -27,8 +27,7 @@ require_once "../wrapper-static.php";
     <table>
         <tr><td style="white-space:nowrap"><img src="/images/mutators/barrier.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/barrier">Barrier</a></td><td>Mineral Shields get the Barrier buff.</td></tr>
         <tr><td style="white-space:nowrap"><img src="/images/mutators/chaosstudios.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/chaosstudios">Chaos Studios</a></td><td>Mineral Shields will always spawn on all mineral patches.</td></tr>
-        <tr><td style="white-space:nowrap"><img src="/images/mutators/fatalattraction.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/fatalattraction">Fatal Attraction</a></td><td>Mineral Shields trigger Fatal Attraction when destroyed or when they expire.
-.</td></tr>
+        <tr><td style="white-space:nowrap"><img src="/images/mutators/fatalattraction.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/fatalattraction">Fatal Attraction</a></td><td>Mineral Shields trigger Fatal Attraction when destroyed or when they expire.</td></tr>
         <tr><td style="white-space:nowrap"><img src="/images/mutators/laserdrill.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/laserdrill">Laser Drill</a></td><td>Mineral Shields provide vision for the Laser Drill.</td></tr>
         <tr><td style="white-space:nowrap"><img src="/images/mutators/naughtylist.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/naughtylist">Naughty List</a></td><td>Mineral Shield kills increase the Naughty List count.</td></tr>
         <tr><td style="white-space:nowrap"><img src="/images/mutators/photonoverload.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/photonoverload">Photon Overload</a></td><td>Mineral Shields will have Photon Overload applied when damaged.</td></tr>
