@@ -1,5 +1,5 @@
 /config.php
-/html/errors/404log.txt
+/logs
 /dbdata
 /vendor
 /node_modules

@@ -28,11 +28,13 @@ require_once "../wrapper.php";
     }
     $cur = $_SERVER['REQUEST_URI'];
 
-    if ($ref != "") {
+    if ($ref !== "") {
         $errorTime = date('Y-m-d H:i:s');
-        $file = fopen("404log.txt", 'a');
-        fwrite($file, "[$errorTime] $ref ===> $cur \n");
-        fclose($file);
+        file_put_contents(
+            __DIR__ . "/../../logs/404log.txt",
+            "[$errorTime] $ref ===> $cur \n",
+            FILE_APPEND
+        );
     }
     $val = rand(1, 3);
     if ($val == 1) {
