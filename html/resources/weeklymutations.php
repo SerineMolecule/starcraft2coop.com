@@ -417,9 +417,9 @@ require_once "../wrapper.php";
             $diffString = "?";
         } elseif ($score > 20) {
             $diff = 7;
-            $diffString = "&#9760;&#65039;";
+            $diffString = "&#9760;&#65039;"; // skull and crossbones emoji
         } else {
-            $diffString = "&#128522;";
+            $diffString = "&#128522;"; // smiling face with smiling eyes emoji
             $diff = 1;
             for ($i = 0; $i < count($difficultyArray); $i++) {
                 if ($score >= intval($difficultyArray[$i]['minpoints'])) {
@@ -436,19 +436,10 @@ require_once "../wrapper.php";
 
     $cycleList = get_mutationcycle();
     $mutators = get_mutators();
-    $mutationCount = count($cycleList);
-    //$mutationCycleStart = new DateTime("2020-10-26 18:00:00");
-    //$today = new DateTime('now');
-    //print($mutationCycleStart->diff($today)->a);
-    //$weekNumber = floor($mutationCycleStart->diff($today)->days/7) % $mutationCount;
-    //print($weekNumber);
-    $mutationCycleStart = strtotime("2020-10-25 18:00:00");
-    $today = time();
-    $datediff = $today - $mutationCycleStart;
 
-    $weekNumber = floor($datediff / (7 * 60 * 60 * 24)) % $mutationCount;
-    $counter = 0;
-    foreach ($cycleList as $row) {
+    [$currentWeekIndex] = get_currentmutationcycle();
+
+    foreach ($cycleList as $rowIndex => $row) {
         $classVals = str_replace("and", "", str_replace(' ', '', strtolower($row["map"])));
         $score = 0;
         $unknown = false;
@@ -479,13 +470,13 @@ require_once "../wrapper.php";
         if ($unknown) {
             $score = 0;
         }
-        $diffArray = getDiffString($score);
-        $classVals .= " brutal" . $diffArray[0];
-        if ($counter == $weekNumber) {
+        [$diff, $diffString] = getDiffString($score);
+        $classVals .= " brutal" . $diff;
+        if ($rowIndex == $currentWeekIndex) {
             $classVals .= " current' id='thisweek";
         }
         echo "<tr class='" . $classVals . "'>\n";
-        echo "<td class='ribbon'>" . $row["mutation"] . "<div class='ribbon" . $diffArray[0] . "'>" . $diffArray[1] . "</div></td>\n";
+        echo "<td class='ribbon'>" . $row["mutation"] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
 
         if ($row["map"]) {
             echo "<td><img src='/images/missionthumbnails/" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . ".png' alt='" . $row["map"] . "'></td>\n";
@@ -512,7 +503,6 @@ require_once "../wrapper.php";
             echo "<td></td>\n";
         }
         echo "</tr>\n";
-        $counter += 1;
     }
 
     ?>
@@ -709,10 +699,10 @@ require_once "../wrapper.php";
                     if ($unknown) {
                         $score = 0;
                     }
-                    $diffArray = getDiffString($score);
-                    $classVals .= " brutal" . $diffArray[0];
+                    [$diff, $diffString] = getDiffString($score);
+                    $classVals .= " brutal" . $diff;
                     echo "<tr class='" . $classVals . "'>\n";
-                    echo "<td class='ribbon'>" . $row["releasedate"] . "<div class='ribbon" . $diffArray[0] . "'>" . $diffArray[1] . "</div></td>\n";
+                    echo "<td class='ribbon'>" . $row["releasedate"] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
                     if ($row["link"]) {
                         echo "<td>" . $row["mutation"] . "<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/" . $row["link"] . "'></td>\n";
                     } else {

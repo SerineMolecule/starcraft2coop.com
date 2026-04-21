@@ -86,6 +86,19 @@ function get_mutationcycle(): array
     return json_decode($json, true);
 }
 
+function get_currentmutationcycle(): array
+{
+    $cycleList = get_mutationcycle();
+    $mutationCount = count($cycleList);
+    $mutationCycleStart = strtotime("2020-10-26T11:00:00.000Z");
+    $today = time();
+    $datediff = $today - $mutationCycleStart;
+
+    $currentWeekIndex = floor($datediff / (7 * 24 * 60 * 60)) % $mutationCount;
+    $currentWeekStart = $mutationCycleStart + (floor($datediff / (7 * 24 * 60 * 60)) * 7 * 24 * 60 * 60);
+    return [$currentWeekIndex, $currentWeekStart];
+}
+
 /**
  * @return array All AmonUnit info.
  */
