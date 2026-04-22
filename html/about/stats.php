@@ -1,6 +1,6 @@
 <?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Statistics</title>
@@ -42,8 +42,8 @@ require_once "../wrapper-static.php";
     <h1>Site-Specific and Co-op Related Statistics</h1>
     <?php
 
-    require_once __DIR__ . '/../scripts/queries.php';
-    include '../scripts/sqlconnection.php';
+    require_once __DIR__ . '/../../includes/queries.php';
+    require_once '../../includes/sqlconnection.php';
 
     $mutatorInteractionCount = count(get_mutator_interactions());
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - AI Logic</title>
@@ -29,7 +29,7 @@ require_once "../wrapper-static.php";
   </style>
   <?= startContent() ?>
     <h1>AI Logic: Ability Usage Conditions</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#genNotes">General Notes</a></p>

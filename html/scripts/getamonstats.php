@@ -7,7 +7,7 @@ if (isset($_GET['unit'])) {
     }
     $unit = $_GET['unit'];
     if (!preg_match('/[^A-Za-z\s0-9]/', $unit)) {
-        require_once '../scripts/queries.php';
+        require_once '../../includes/queries.php';
         $units = get_amonunits();
         $unitList = array_filter($units, fn($u) => $u['name'] === $unit);
 

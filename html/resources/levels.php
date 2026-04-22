@@ -1,6 +1,6 @@
 <?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Levels</title>
@@ -54,7 +54,7 @@ require_once "../wrapper-static.php";
   </style>
   <?= startContent() ?>
     <h1>Co-op Levels, Experience Requirements, Mastery and Ascension Levels</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#summary">Summary</a></p>

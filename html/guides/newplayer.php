@@ -1,6 +1,6 @@
 <?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Selection Guide</title>
@@ -161,7 +161,7 @@ require_once "../wrapper-static.php";
     <div id="commanderSelection">
         <?php
 
-        require_once __DIR__ . '/../scripts/queries.php';
+        require_once __DIR__ . '/../../includes/queries.php';
 
         $allCommanders = get_commanders();
         foreach ($allCommanders as $row) {

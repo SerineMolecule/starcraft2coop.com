@@ -5,7 +5,7 @@
  */
 function get_commanders(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/commandersummaries.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/commandersummaries.json');
     return json_decode($json, true);
 }
 
@@ -18,7 +18,7 @@ function get_commander(string $commander): array
     if (!ctype_alnum($commander)) {
         throw new InvalidArgumentException('Commander must be alphanumeric');
     }
-    $json = file_get_contents(__DIR__ . '/../data/commandersummaries/' . strtolower($commander) . '.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/commandersummaries/' . strtolower($commander) . '.json');
     return json_decode($json, true);
 }
 
@@ -27,7 +27,7 @@ function get_commander(string $commander): array
  */
 function get_brutalpluses(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/brutalplus.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/brutalplus.json');
     return json_decode($json, true);
 }
 
@@ -37,7 +37,7 @@ function get_brutalpluses(): array
  */
 function get_brutalplus(int $difficulty): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/brutalplus/' . $difficulty . '.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/brutalplus/' . $difficulty . '.json');
     return json_decode($json, true);
 }
 
@@ -46,7 +46,7 @@ function get_brutalplus(int $difficulty): array
  */
 function get_mutator_interactions(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/mutatorinteractions.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/mutatorinteractions.json');
     return json_decode($json, true);
 }
 
@@ -55,7 +55,7 @@ function get_mutator_interactions(): array
  */
 function get_mutators(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/mutators.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/mutators.json');
     return json_decode($json, true);
 }
 
@@ -64,7 +64,7 @@ function get_mutators(): array
  */
 function get_missions(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/missions.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/missions.json');
     return json_decode($json, true);
 }
 
@@ -73,7 +73,7 @@ function get_missions(): array
  */
 function get_weeklymutations(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/weeklymutations.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/weeklymutations.json');
     return json_decode($json, true);
 }
 
@@ -82,7 +82,7 @@ function get_weeklymutations(): array
  */
 function get_mutationcycle(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/mutationcycle.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/mutationcycle.json');
     return json_decode($json, true);
 }
 
@@ -104,7 +104,7 @@ function get_currentmutationcycle(): array
  */
 function get_amonunits(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/amonunits.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/amonunits.json');
     return json_decode($json, true);
 }
 
@@ -113,6 +113,6 @@ function get_amonunits(): array
  */
 function get_playerunits(): array
 {
-    $json = file_get_contents(__DIR__ . '/../data/playerunits.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/playerunits.json');
     return json_decode($json, true);
 }

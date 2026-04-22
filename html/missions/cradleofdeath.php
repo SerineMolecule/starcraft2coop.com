@@ -1,7 +1,7 @@
 <?php
 
-require_once "../wrapper-static.php";
-require_once "../scripts/switchergenerator.php";
+require_once "../../includes/wrapper-static.php";
+require_once "../../includes/switchergenerator.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Cradle of Death</title>
@@ -14,7 +14,7 @@ require_once "../scripts/switchergenerator.php";
 <?= startContent() ?>
     <h1>Co-op Mission Guide: Cradle of Death</h1>
     <p id="missionPlace">Moebius Battle Station</p>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>

@@ -1,6 +1,6 @@
 <?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - General Tips for Co-op Players</title>
@@ -20,7 +20,7 @@ require_once "../wrapper-static.php";
   </style>
   <?= startContent() ?>
     <h1>General Tips For Co-op Players</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#tips1">Tips for Beginners</a></p>

@@ -1,6 +1,6 @@
 <?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Mutators</title>
@@ -41,7 +41,7 @@ require_once "../wrapper-static.php";
     </p>
     <ul class="mutatortiles">
     <?php
-    require_once '../scripts/queries.php';
+    require_once '../../includes/queries.php';
     $mutators = get_mutators();
     usort($mutators, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     foreach ($mutators as $mutator) {

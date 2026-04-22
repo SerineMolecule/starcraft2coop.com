@@ -23,7 +23,7 @@ switch ($mode) {
         //Mode:1    [commander] : Commander was clicked -> Generate a list of units for that commander
         $commander = $_GET['commander'];
         checkVariable($commander, "text");
-        include 'sqlconnection.php';
+        require_once '../../includes/sqlconnection.php';
 
         $sql = "SELECT DISTINCT basename
                 FROM playerunits
@@ -676,7 +676,7 @@ function applyUpgrade($entry, $upgrade, $fullUnitData)
 
 function generateMasteryUpgradeUpgradesArray($commander, $unit, $masteries)
 {
-    include 'sqlconnection.php';
+    require_once '../../includes/sqlconnection.php';
     $upgradesList = [];
 
     foreach ($masteries as $value) {
@@ -712,7 +712,7 @@ function generatePrestigeUpgradeUpgradesArray($commander, $unit, $prestige)
     if ($prestige == "") {
         return [];
     }
-    include 'sqlconnection.php';
+    require_once '../../includes/sqlconnection.php';
     $upgradesList = [];
     checkVariable($prestige, 'text');
     $sql = "SELECT modifier, modifier2, value, operation
@@ -735,7 +735,7 @@ function generatePrestigesArray($commander, $unit, $prestige, $phase)
     if ($prestige == "") {
         return [];
     }
-    include 'sqlconnection.php';
+    require_once '../../includes/sqlconnection.php';
     $upgradesList = [];
 
     checkVariable($prestige, 'text');
@@ -756,7 +756,7 @@ function generatePrestigesArray($commander, $unit, $prestige, $phase)
 
 function generateMasteriesArray($commander, $unit, $masteries)
 {
-    include 'sqlconnection.php';
+    require_once '../../includes/sqlconnection.php';
     $upgradesList = [];
 
     foreach ($masteries as $value) {
@@ -797,7 +797,7 @@ function generateMasteriesArray($commander, $unit, $masteries)
 
 function generateUpgradesArray($commander, $unit, $upgrades, $level)
 {
-    include 'sqlconnection.php';
+    require_once '../../includes/sqlconnection.php';
     $upgradesList = [];
 
     foreach ($upgrades as $value) {
@@ -831,7 +831,7 @@ function generateUpgradesArray($commander, $unit, $upgrades, $level)
 
 function getUnitStats($commander, $unit)
 {
-    include 'sqlconnection.php';
+    require_once '../../includes/sqlconnection.php';
     $sql = "SELECT name, race, combatunit, mcost, vcost, supply, buildtime, hp, shields, armor, shieldarmor, energy, movementspeed, sightrange, tags,
             atkrange, attackspeed, attacks, GROUP_CONCAT(IFNULL(attribute, 'None')) as attribute, GROUP_CONCAT(damage) as damage,
             GROUP_CONCAT(attackbonus) as attackbonus, hpbonus, armorbonus, shieldbonus, notes
@@ -861,7 +861,7 @@ function getUnitUpgradesOutput($commander, $unit)
 {
     global $royalGuard;
     global $shieldCommanders;
-    include 'sqlconnection.php';
+    require_once '../../includes/sqlconnection.php';
     $sql = "SELECT DISTINCT name, unit, icon, effect
             FROM playerupgrades
             WHERE commander='$commander' AND unit= '$unit'
@@ -890,7 +890,7 @@ function getUnitUpgradesOutput($commander, $unit)
     }
     $con->close();
 
-    require_once __DIR__ . '/../scripts/queries.php';
+    require_once __DIR__ . '/../../includes/queries.php';
 
     $commanderData = get_commander($commander);
     $commanderPrestiges = [

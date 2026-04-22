@@ -1,6 +1,6 @@
 <?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Downloads</title>
@@ -48,32 +48,6 @@ require_once "../wrapper-static.php";
     <a href="https://policies.google.com/privacy">Privacy Policy</a> and
     <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
     </form>
-    <script>
-        $("#download1Form").submit(function(e){
-            grecaptcha.execute('6LcWQfEUAAAAAKrJ7sgdGyROvE7wuzopdDeAV0qd', { action: "generateDownload" }).then(function (token) {
-                $("#download1FormRecaptchaResponse").val(token);
-                var captcha = $("#download1FormRecaptchaResponse").val();
-                $.ajax({
-                    type: "POST",
-                    url: "../scripts/getdownload.php",
-                    data: {
-                        tool: 'sc2cassistant',
-                        recaptcha_response: captcha,
-                    },
-                    success: function(data) {
-                       if(data.indexOf("Error") == -1){
-                           window.location.href = data;
-                       }
-
-                    }
-                });
-                e.preventDefault();
-                return false;
-            })
-            e.preventDefault();
-            return false;
-        })
-    </script>
     <h2 id="usage1">Usage Notes</h2>
     <ul>
         <li>You will to have the .NET Framework 4.7.2. You can get it from <a href="https://support.microsoft.com/en-ae/help/4054530/microsoft-net-framework-4-7-2-offline-installer-for-windows" rel="nofollow">here</a>.</li>
@@ -151,56 +125,6 @@ require_once "../wrapper-static.php";
     <a href="https://policies.google.com/privacy">Privacy Policy</a> and
     <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
     </form>
-    <script>
-        $("#download3Form").submit(function(e){
-            grecaptcha.execute('6LcWQfEUAAAAAKrJ7sgdGyROvE7wuzopdDeAV0qd', { action: "generateDownload" }).then(function (token) {
-                $("#download1FormRecaptchaResponse").val(token);
-                var captcha = $("#download1FormRecaptchaResponse").val();
-                $.ajax({
-                    type: "POST",
-                    url: "../scripts/getdownload.php",
-                    data: {
-                        tool: 'opencv',
-                        recaptcha_response: captcha,
-                    },
-                    success: function(data) {
-                       if(data.indexOf("Error") == -1){
-                           window.location.href = data;
-                       }
-
-                    }
-                });
-                e.preventDefault();
-                return false;
-            })
-            e.preventDefault();
-            return false;
-        })
-        $("#download4Form").submit(function(e){
-            grecaptcha.execute('6LcWQfEUAAAAAKrJ7sgdGyROvE7wuzopdDeAV0qd', { action: "generateDownload" }).then(function (token) {
-                $("#download1FormRecaptchaResponse").val(token);
-                var captcha = $("#download1FormRecaptchaResponse").val();
-                $.ajax({
-                    type: "POST",
-                    url: "../scripts/getdownload.php",
-                    data: {
-                        tool: 'mutatorfinder',
-                        recaptcha_response: captcha,
-                    },
-                    success: function(data) {
-                       if(data.indexOf("Error") == -1){
-                           window.location.href = data;
-                       }
-
-                    }
-                });
-                e.preventDefault();
-                return false;
-            })
-            e.preventDefault();
-            return false;
-        })
-    </script>
     -->
     <h2 id="replaySummarizer">Co-op Replay Data Summarizer</h2>
     <p>This is a Python script which takes a Replays folder and generates a delimited text file summarizing the replay data for co-op games, which can be imported for further data analysis. Below is an example of the output:</p>
