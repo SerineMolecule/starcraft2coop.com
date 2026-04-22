@@ -29,7 +29,7 @@ require_once "../../includes/wrapper-static.php";
     <div id="tooltip">tooltip</div>
     <h1>Co-op Commander Guide: Nova</h1>
     <p id="commanderMotto">Dominion Ghost</p>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#comSum">Commander Summary</a></p>

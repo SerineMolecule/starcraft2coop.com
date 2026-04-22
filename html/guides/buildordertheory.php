@@ -34,7 +34,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <h1>Build Order Theory: How to Develop Your Own Build Orders</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#what">What is a Build Order</a></p>

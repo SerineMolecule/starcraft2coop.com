@@ -80,7 +80,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <h1>Co-op Mutators List: Names, Icons, Descriptions and Mechanics</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#safetyZones">Safety Zone</a></p>

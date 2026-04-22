@@ -31,7 +31,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1>Co-op Mission Guide: Scythe of Amon</h1>
     <p id="missionPlace">Xel'Naga Temple</p>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>

@@ -20,7 +20,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
 <?= startContent() ?>
     <h1>Co-op Achievements: Unlockable Achievements for Players</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <p>There are several unlockable Co-op Mode achievements available for players to earn. These can be divided into two categories, shown below. Note that the achievements listed on this page is not an exhaustive list.</p>
     <ul>
         <li><b>Commander-specific Achievements:</b> These are specific to various gameplay elements of Co-op Commanders. Please check the individual commander pages for a list of their specific achievements.</li>

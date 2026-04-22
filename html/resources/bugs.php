@@ -9,7 +9,7 @@ require_once "../../includes/wrapper-static.php";
   <link rel="canonical" href="https://starcraft2coop.com/resources/bugs">
   <?= startContent() ?>
     <h1>Starcraft Co-op Bugs List</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#core">Game Core</a></p>

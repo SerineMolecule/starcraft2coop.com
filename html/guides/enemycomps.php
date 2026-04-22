@@ -85,7 +85,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <h1>Enemy Compositions: Units in Attack Waves and Hybrid Data</h1>
-    <?php include("../scripts/reporterror.php");?>
+    <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#genNotes">General Notes</a></p>
