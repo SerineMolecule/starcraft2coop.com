@@ -1,0 +1,214 @@
+@media (min-width: 701px){
+    .calldownTable td:nth-child(3){
+        width:20%;
+    }
+    .calldownTable td:nth-child(4){
+        width:40%;
+    }
+    .calldownTable td:first-child{
+        text-align:center;
+    }
+    .masteryTable td:nth-child(1){
+        width:200px;
+    }
+    .masteryTable td:nth-child(2){
+        white-space:nowrap;
+    }
+    .descContainer{
+        margin-left:125px;
+    }
+    .descContainer ul{
+        padding-left:15px;
+    }
+    .unitUpgrades td:nth-child(1),.unitSkills td:nth-child(1){
+        width:1%;
+        text-align:center;
+    }
+    .unitUpgrades td:nth-child(2), .unitUpgrades td:nth-child(4), .unitUpgrades td:nth-child(5),
+    .unitUpgrades th:nth-child(2), .unitUpgrades th:nth-child(4), .unitUpgrades th:nth-child(5),
+    .unitSkills td:nth-child(2), .unitSkills td:nth-child(4), .unitSkills td:nth-child(5),
+    .unitSkills th:nth-child(2), .unitSkills th:nth-child(4), .unitSkills th:nth-child(5){
+        width:1%;
+        white-space: nowrap;
+        text-align:center;
+    }
+    .autocast td:first-child:before{
+        content:"";
+        display:block;
+        width:75px;
+        height:75px;
+        background: url('/images/commanderdata/unitskills/autocast.png');
+        position:absolute;
+        opacity:0.5;
+    }
+}
+
+@media (max-width: 700px){
+    .calldownTable td{
+        display:block;
+        width:95%;
+    }
+    .calldownTable th{
+        display:none;
+    }
+    .calldownTable td:nth-child(1){
+        display:none;
+    }
+    .calldownTable td:nth-child(2){
+        text-decoration:underline;
+        font-weight:bold;
+    }
+    .calldownTable th, .calldownTable td{
+        border:none;
+    }
+    .descContainer{
+        clear:both;
+    }
+    .unitUpgrades th:nth-child(1),.unitUpgrades td:nth-child(1),
+    .unitSkills th:nth-child(1),.unitSkills td:nth-child(1),
+    .heroUpgrades th:nth-child(1),.heroUpgrades td:nth-child(1),
+    .abilityTable th:nth-child(1),.abilityTable td:nth-child(1),
+    .unitAbilities th:nth-child(1),.unitAbilities td:nth-child(1)
+    {
+        display:none;
+    }
+    .unitUpgrades td:nth-child(4),.unitSkills td:nth-child(4),
+    .unitUpgrades th:nth-child(4),.unitSkills th:nth-child(4){
+        width:1%;
+        white-space: nowrap;
+        text-align:center;
+    }
+    .autocast td:nth-child(2){
+        background: url('/images/commanderdata/unitskills/autocast.png');
+        background-repeat:no-repeat;
+        background-position:bottom;
+        background-size:50%;
+    }
+}
+#commanderMotto{
+    font-family: 'Kaushan Script', cursive;
+    text-align:center;
+}
+.spike{
+    background-color:darkslateblue;
+}
+#powerSpikeInfo{
+    font-style:italic;
+    font-size:0.75em;
+}
+.masteryTable td:nth-child(3){
+    text-align:center;
+}
+.progressionTable td:first-child{
+    text-align:center;
+}
+.masterySummary{
+    margin-bottom:75px;
+}
+.prestigeTable th {
+    vertical-align: top;
+    width: 5%;
+    text-align: right;
+}
+.prestigeTable td {
+    text-align:left;
+}
+.prestigeTitle{
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.prestigeTable ul {
+    margin: 0;
+}
+.leftImage,.rightImage{
+    overflow:auto;
+    margin-bottom:25px;
+}
+.leftImage div:first-child{
+    float:left;
+    margin-right:25px;
+}
+.rightImage div:first-child{
+    float:right;
+    margin-left:25px;
+}
+.abilityTable td:nth-child(5){
+    text-align:center;
+}
+.unitUpgrades th > img{
+    display:inline;
+    vertical-align:middle;
+}
+.heroUpgrades td:nth-child(4), .heroUpgrades td:nth-child(5){
+    text-align:center;
+}
+.unlockable{
+    opacity:0.33;
+}
+.unitUpgrades td:nth-child(3){
+    width:30%
+}
+.army{
+    width:50px;
+}
+.techContainer{
+    position:relative;
+    display:inline-block;
+}
+.techAdd{
+    position: absolute;
+    top: -25px;
+    left: 5px;
+    font-size: 80px;
+    opacity: 0.33;
+}
+.imageContainer img{
+    border-radius:50%;
+}
+.imageContainer p{
+    text-align:center;
+    max-width: 100px;
+}
+.unitAbilities td:nth-child(2){
+    width:15%;
+}
+.unitAbilities td:nth-child(3){
+    width:75%;
+}
+.unitAbilities td:nth-child(4){
+    width:10%;
+}
+.abilityTable td:nth-child(3){
+    width:60%;
+}
+#heroPic{
+    display:inline;
+    border-radius:50%;
+}
+#heroPic1{
+    display:inline;
+    border-radius:50%;
+}
+.centered{
+    text-align:center;
+}
+.buildOrder{
+    font-family:"Courier New", Courier, monospace;
+    background-color:steelblue;
+    display:block;
+    padding:10px;
+}
+#tooltip{
+    position:absolute;
+    background-color:khaki;
+    color:black;
+    font-size:0.8em;
+    display:none;
+    z-index:1;
+    padding:5px;
+    border-radius:5px;
+}
+.techAdd{
+    cursor:default;
+}

@@ -1,0 +1,155 @@
+@media (max-width: 950px){
+    thead{
+        display:none;
+    }
+    td{
+        display:block;
+    }
+    .links{
+        height:50px;
+    }
+    .spoiler{
+        width:95%;
+        height:220px;
+    }
+    .spoiler p{
+        line-height:180px;
+    }
+}
+@media (min-width: 951px){
+    .spoiler{
+        width: 750px;
+        height: 150px;
+    }
+    .spoiler p{
+        line-height:90px;
+    }
+}
+#player{
+    position:fixed;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display:none;
+}
+#player iframe{
+    max-width:none;
+    width: 85vw;
+    height: 50vw;
+}
+#spoilerToggle{
+    text-align:center;
+    margin-bottom:25px;
+}
+#abilities{
+    text-align:center;
+    margin-bottom:25px;
+}
+#abilityicons img{
+    margin-left:20px;
+    margin-right:20px;
+}
+#standings{
+    width:100%;
+}
+#standings th, #standings td{
+    border:none;
+}
+#spacer{
+    width:20%;
+}
+#team1{
+    width:40%;
+}
+#team2{
+    width:40%;
+}
+#standings .mutset1{
+    border-right: 1px solid white;
+    padding-right: 5px;
+}
+.points{
+    width:10%;
+    float:left;
+    padding-top:15px;
+}
+.muts{
+    width:60%;
+    float:left;
+    padding-top:12px;
+}
+.muts img{
+    width:25px;
+}
+.map{
+    width:20%;
+    float:left;
+    padding-top:5px;
+    position:relative;
+}
+.portrait{
+    border-radius:50%;
+    width: 35px !important; 
+    position:absolute;
+    top:10px;
+}
+.portrait:nth-child(2){
+    top:50px;
+    left:0;
+}
+.portrait:nth-child(3){
+    top:50px;
+    right:0;
+}
+.map img{
+    width:80px;
+    
+}
+.powers{
+    width:10%;
+    float:left;
+    padding-top:5px;
+}
+.powers img{
+    width:25px;
+}
+.icons{
+    float:left;
+    line-height:0;
+    margin-right:3px;
+}
+.links{
+    clear:both;
+}
+.links img{
+    display:inline;
+    margin-right:15px;
+    vertical-align:middle;
+}
+.links p{
+    display:inline-block;
+}
+.link{
+    float:left;
+    margin-right:50px;
+}
+#tooltip{
+    position:absolute;
+    background-color:khaki;
+    color:black;
+    font-size:0.8em;
+    display:none;
+    z-index:1;
+}
+.spoiler{
+    border:1px dashed white;
+    background-color: black;
+    float: left;
+    position: absolute;
+    z-index:2;
+    cursor:pointer;
+}
+.spoiler p{
+    text-align:center;
+}

@@ -1,0 +1,107 @@
+@media (min-width: 801px){
+    .p1Expo, .basePic1{
+    display:inline-block;
+    margin-right:25px;
+    width:400px;
+    height:400px;
+    }
+    .long{
+        display:inline-block;
+        margin-right:25px;
+        width:800px;
+        height:400px;
+    }
+    .p2Expo, .basePic2{
+        display:inline;
+        margin-left:25px;
+    }
+    .basePic{
+        display:inline-block;
+        margin-right:25px;
+        width:400px;
+        height:400px;
+    }
+}
+
+@media (max-width: 800px){
+    .p1Expo, .basePic1{
+        display:block;
+        margin-right:25px;
+        width:150px;
+        height:150px;
+    }
+    .p1Expo img, .basePic1 img{
+        width:150px;
+    }
+    .long{
+        display:block;
+        margin-right:25px;
+        width:250px;
+        height:125px;
+    }
+    .long img{
+        width:250px;
+    }
+    .p2Expo, .basePic2{
+        display:block;
+        margin-left:25px;
+        width:150px;
+        height:150px;
+        position: relative;
+        top: -502px;
+        left:150px;
+    }
+    .p2Expo img, .basePic2 img{
+        width:150px;
+    }
+    .basePic{
+        display:block;
+        margin-right:25px;
+        width:200px;
+        height:200px;
+    }
+    .basePic img{
+        width:200px;
+    }
+    #links p{
+        padding:5px 0 5px 0;
+    }
+    input[type="radio"]{
+        margin: 10px 0 10px 0;
+    }
+}
+
+#missionPlace{
+    font-family: 'Kaushan Script', cursive;
+    text-align:center;
+}
+#globalRaceSelect{
+    border:1px solid white;
+    display:inline-block;
+    padding: 0 10px 10px 5px;
+}
+.p1Expo img, .p2Expo img,
+.basePic img, .long img,
+.basePic1 img, .basePic2 img{
+    position:absolute;
+}
+.expoMinimap, .baseMinimap{
+    display:inline-block;
+}
+.baseMinimap{
+    display:inline-block;
+}
+.switcher{
+    margin-bottom:50px;
+}
+#objectiveImages img{
+    display:inline;
+    border-radius:50%;
+    margin-right:25px;
+}
+.centered{
+    text-align:center;
+}
+.firstCentered td:first-child{
+    text-align:center;
+}

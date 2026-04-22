@@ -1,4 +1,4 @@
-all: data static
+all: static
 
 .PHONY: test
 test: validate-data check
@@ -14,7 +14,7 @@ validate-data:
 
 .PHONY: static
 static: config.php
-	php generate.php
+	bun ./generate.ts
 
 .PHONY: check
 check: vendor

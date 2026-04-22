@@ -12,3 +12,6 @@
 *.css text eol=lf
 *.html text eol=lf
 *.json text eol=lf
+
+# html contains only generated files and should be hidden from diffs
+html/** linguist-generated
