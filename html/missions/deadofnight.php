@@ -1,7 +1,7 @@
 <?php
 
-require_once "../wrapper-static.php";
-require_once "../scripts/switchergenerator.php";
+require_once "../../includes/wrapper-static.php";
+require_once "../../includes/switchergenerator.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Dead of Night</title>

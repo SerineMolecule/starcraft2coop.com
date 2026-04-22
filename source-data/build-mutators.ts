@@ -34,7 +34,7 @@ for (const mutator of mutators) {
     const interactions = getInteractions(mutator.mutatorid);
     Bun.write(`./html/mutators/${url}.php`, `<?php
 
-require_once "../wrapper-static.php";
+require_once "../../includes/wrapper-static.php";
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Mutator - ${mutator.mutatorname}</title>
