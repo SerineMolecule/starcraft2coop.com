@@ -1,0 +1,41 @@
+BUN_DOCKER = docker run --rm -v $(PWD):/usr/src/app -w /usr/src/app oven/bun:1
+PHP_EXEC = docker exec -w /var/www sc2coop-php
+COMPOSER_DOCKER = docker run --rm -v $(PWD):/app composer:2.7.1
+
+all: static
+
+.PHONY: test
+test: validate-data check
+
+.PHONY: data
+data: node_modules
+	$(BUN_DOCKER) bun ./source-data/build.ts
+	$(BUN_DOCKER) bun ./source-data/validate.ts
+
+.PHONY: validate-data
+validate-data:
+	$(BUN_DOCKER) bun ./source-data/validate.ts
+
+.PHONY: static
+static: config.php
+	$(BUN_DOCKER) bun ./generate.ts
+	$(PHP_EXEC) php ./generate.php
+
+.PHONY: check
+check: vendor
+	$(COMPOSER_DOCKER) composer run-script ci
+
+.PHONY: fix
+fix: vendor
+	$(COMPOSER_DOCKER) composer run-script fix
+
+node_modules: package.json
+	$(BUN_DOCKER) bun install
+	touch -m node_modules
+
+vendor: composer.json
+	$(COMPOSER_DOCKER) install --prefer-dist
+	touch -m vendor
+
+config.php:
+	cp -n config.example.php config.php

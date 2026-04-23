@@ -6,8 +6,12 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       - ./html:/var/www/html
+      - ./source-data:/var/www/source-data
+      - ./source-html:/var/www/source-html
+      - ./includes:/var/www/includes
       - ./config.php:/var/www/config.php
       - ./generate.php:/var/www/generate.php
+      - ./generate.ts:/var/www/generate.ts
 
   web:
     container_name: sc2coop-web

@@ -17,6 +17,9 @@ if ($grep_output) {
             $pages[] = substr($filepath, 4, -4);
         }
     }
+} else {
+    echo "Error: Grep had 0 results!";
+    exit(1);
 }
 
 $HTML_DIR = __DIR__ . '/html';
@@ -28,6 +31,7 @@ set_error_handler(function (int $severity, string $message, string $file, int $l
 });
 
 $all_errors = [];
+$to_delete = [];
 foreach ($pages as $page) {
     $_SERVER['REQUEST_URI'] = "$page";
     $_SERVER['PHP_SELF'] = "$page.php";
@@ -48,9 +52,12 @@ foreach ($pages as $page) {
         $all_errors[] = "Error writing $page.html";
         break;
     } else {
+        $to_delete[] = $HTML_DIR . "$page.php";
         echo "Generated $page.html ($result bytes)\n";
     }
 }
+
+array_map('unlink', $to_delete);
 
 foreach ($all_errors as $error) {
     echo "$error\n";

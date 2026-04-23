@@ -15,6 +15,7 @@ validate-data:
 .PHONY: static
 static: config.php
 	bun ./generate.ts
+	php ./generate.php
 
 .PHONY: check
 check: vendor
