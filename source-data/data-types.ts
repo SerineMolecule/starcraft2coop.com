@@ -195,3 +195,38 @@ export interface PlayerUnit {
 }
 
 export type PlayerUnitList = PlayerUnit[];
+
+export interface PlayerTalent {
+    talentid: PositiveInteger;
+    unit: string;
+    commander: string;
+    name: string;
+    nameid: string;
+    modifier: string;
+    modifier2: string | null;
+    extra: string | null;
+    value: number;
+    operation: string;
+    operationtype: string;
+    talenttype: string;
+    target: string;
+}
+
+export type PlayerTalentList = PlayerTalent[];
+
+export interface PlayerUpgrade {
+    upgradeid: PositiveInteger;
+    unit: string;
+    commander: string;
+    name: string;
+    icon: string;
+    effect: string;
+    modifier: string;
+    modifier2: string | null;
+    modifier3: string | null;
+    value: number;
+    operation: string;
+    upgradetype: string;
+}
+
+export type PlayerUpgradeList = PlayerUpgrade[];

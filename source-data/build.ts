@@ -12,6 +12,8 @@ const files: [`${string}.json`, string][] = [
     ['missionnames.json', 'MissionNames'],
     ['amonunits.json', 'AmonUnitList'],
     ['playerunits.json', 'PlayerUnitList'],
+    ['playertalents.json', 'PlayerTalentList'],
+    ['playerupgrades.json', 'PlayerUpgradeList'],
 ];
 
 /////////////////////////////////////////////////

@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/PlayerTalentList",
+    "definitions": {
+        "PlayerTalentList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PlayerTalent"
+            }
+        },
+        "PlayerTalent": {
+            "type": "object",
+            "properties": {
+                "talentid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "unit": {
+                    "type": "string"
+                },
+                "commander": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nameid": {
+                    "type": "string"
+                },
+                "modifier": {
+                    "type": "string"
+                },
+                "modifier2": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "extra": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "type": "number"
+                },
+                "operation": {
+                    "type": "string"
+                },
+                "operationtype": {
+                    "type": "string"
+                },
+                "talenttype": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "talentid",
+                "unit",
+                "commander",
+                "name",
+                "nameid",
+                "modifier",
+                "modifier2",
+                "extra",
+                "value",
+                "operation",
+                "operationtype",
+                "talenttype",
+                "target"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}

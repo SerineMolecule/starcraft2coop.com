@@ -1,0 +1,78 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/PlayerUpgradeList",
+    "definitions": {
+        "PlayerUpgradeList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PlayerUpgrade"
+            }
+        },
+        "PlayerUpgrade": {
+            "type": "object",
+            "properties": {
+                "upgradeid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "unit": {
+                    "type": "string"
+                },
+                "commander": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "icon": {
+                    "type": "string"
+                },
+                "effect": {
+                    "type": "string"
+                },
+                "modifier": {
+                    "type": "string"
+                },
+                "modifier2": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "modifier3": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "type": "number"
+                },
+                "operation": {
+                    "type": "string"
+                },
+                "upgradetype": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "upgradeid",
+                "unit",
+                "commander",
+                "name",
+                "icon",
+                "effect",
+                "modifier",
+                "modifier2",
+                "modifier3",
+                "value",
+                "operation",
+                "upgradetype"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}
