@@ -2,32 +2,13 @@ BUN_DOCKER = docker run --rm -v $(PWD):/usr/src/app -w /usr/src/app oven/bun:1
 PHP_EXEC = docker exec -w /var/www sc2coop-php
 COMPOSER_DOCKER = docker run --rm -v $(PWD):/app composer:2.7.1
 
-all: static
+all: html test
 
-.PHONY: test
-test: validate-data check
+.PHONY: deps
+deps: config.php node_modules vendor
 
-.PHONY: data
-data: node_modules
-	$(BUN_DOCKER) bun ./source-data/build.ts
-	$(BUN_DOCKER) bun ./source-data/validate.ts
-
-.PHONY: validate-data
-validate-data:
-	$(BUN_DOCKER) bun ./source-data/validate.ts
-
-.PHONY: static
-static: config.php
-	$(BUN_DOCKER) bun ./generate.ts
-	$(PHP_EXEC) php ./generate.php
-
-.PHONY: check
-check: vendor
-	$(COMPOSER_DOCKER) ./vendor/bin/phpcs --ignore=vendor,.dh-diag -n .
-
-.PHONY: fix
-fix: vendor
-	$(COMPOSER_DOCKER) ./vendor/bin/phpcbf --ignore=vendor,.dh-diag -n .
+config.php:
+	cp -n config.example.php config.php
 
 node_modules: package.json
 	$(BUN_DOCKER) bun install
@@ -37,5 +18,27 @@ vendor: composer.json
 	$(COMPOSER_DOCKER) install --prefer-dist
 	touch -m vendor
 
-config.php:
-	cp -n config.example.php config.php
+.PHONY: data
+data: node_modules
+	$(BUN_DOCKER) bun ./source-data/build.ts
+	$(BUN_DOCKER) bun ./source-data/validate.ts
+
+.PHONY: validate-data
+validate-data: node_modules
+	$(BUN_DOCKER) bun ./source-data/validate.ts
+
+.PHONY: html
+html: node_modules config.php
+	$(BUN_DOCKER) bun ./generate.ts
+	$(PHP_EXEC) php ./generate.php
+
+.PHONY: test
+test: validate-data check
+
+.PHONY: check
+check: vendor
+	$(COMPOSER_DOCKER) ./vendor/bin/phpcs --ignore=vendor,.dh-diag -n .
+
+.PHONY: fix
+fix: vendor
+	$(COMPOSER_DOCKER) ./vendor/bin/phpcbf --ignore=vendor,.dh-diag -n .
