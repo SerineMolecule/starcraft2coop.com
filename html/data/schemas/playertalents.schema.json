@@ -29,11 +29,12 @@
                 "modifier": {
                     "type": "string"
                 },
-                "modifier2": {
+                "modifierupgrade": {
                     "type": [
                         "string",
                         "null"
-                    ]
+                    ],
+                    "description": "which upgrade needs to be enabled for this to have an effect?"
                 },
                 "extra": {
                     "type": [
@@ -48,10 +49,23 @@
                     "type": "string"
                 },
                 "operationtype": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "enum": [
+                        "increase",
+                        "decrease",
+                        null
+                    ]
                 },
                 "talenttype": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "mastery",
+                        "prestige",
+                        "post"
+                    ]
                 },
                 "target": {
                     "type": "string"
@@ -64,7 +78,7 @@
                 "name",
                 "nameid",
                 "modifier",
-                "modifier2",
+                "modifierupgrade",
                 "extra",
                 "value",
                 "operation",

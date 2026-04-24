@@ -203,12 +203,13 @@ export interface PlayerTalent {
     name: string;
     nameid: string;
     modifier: string;
-    modifier2: string | null;
+    /** which upgrade needs to be enabled for this to have an effect? */
+    modifierupgrade: string | null;
     extra: string | null;
     value: number;
     operation: string;
-    operationtype: string;
-    talenttype: string;
+    operationtype: 'increase' | 'decrease' | null;
+    talenttype: 'mastery' | 'prestige' | 'post';
     target: string;
 }
 
@@ -222,11 +223,13 @@ export interface PlayerUpgrade {
     icon: string;
     effect: string;
     modifier: string;
-    modifier2: string | null;
-    modifier3: string | null;
+    /** which mode does it apply to? (e.g. Siege Mode) */
+    modifiermode: string | null;
+    /** which target tag does it apply to? (e.g. vs. Armored) */
+    modifiertag: string | null;
     value: number;
-    operation: string;
-    upgradetype: string;
+    operation: 'add' | 'set' | 'multiply';
+    upgradetype: 'preupgrade' | 'upgrade';
 }
 
 export type PlayerUpgradeList = PlayerUpgrade[];

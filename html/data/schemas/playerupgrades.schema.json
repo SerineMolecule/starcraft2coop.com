@@ -32,26 +32,37 @@
                 "modifier": {
                     "type": "string"
                 },
-                "modifier2": {
+                "modifiermode": {
                     "type": [
                         "string",
                         "null"
-                    ]
+                    ],
+                    "description": "which mode does it apply to? (e.g. Siege Mode)"
                 },
-                "modifier3": {
+                "modifiertag": {
                     "type": [
                         "string",
                         "null"
-                    ]
+                    ],
+                    "description": "which target tag does it apply to? (e.g. vs. Armored)"
                 },
                 "value": {
                     "type": "number"
                 },
                 "operation": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "add",
+                        "set",
+                        "multiply"
+                    ]
                 },
                 "upgradetype": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "preupgrade",
+                        "upgrade"
+                    ]
                 }
             },
             "required": [
@@ -62,8 +73,8 @@
                 "icon",
                 "effect",
                 "modifier",
-                "modifier2",
-                "modifier3",
+                "modifiermode",
+                "modifiertag",
                 "value",
                 "operation",
                 "upgradetype"

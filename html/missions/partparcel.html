@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/fontawesome/fontawesome-solid-5-home.css" />
@@ -88,7 +88,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
                 <li class="normal"><a href="/mutators/">Mutators</a></li>
                 <li class="normal"><a href="/resources/weeklymutations">Weekly&nbsp;Mutations</a></li>
                 <li class="normal"><a href="/resources/brutal">Brutal+</a></li>
-                <li class="normal"><a href="/tools/unitstats">Unit&nbsp;Stats</a></li>
+                <li class="normal"><a href="/units/">Unit&nbsp;Stats</a></li>
             </ul>
         </div><div class="submenu-section">
             <strong>Guides:</strong>
@@ -132,41 +132,44 @@ if (document.location.host === 'dev.starcraft2coop.com') {
 </div>
 </nav>
 <script>
-    function openSubmenu(event, elem){
-        if (event) event.preventDefault();
-        if (!elem) elem = event.currentTarget;
-        var alreadyOpen = $(elem).hasClass('open');
+    (function($) {
+        function openSubmenu(event, elem){
+            if (event) event.preventDefault();
+            if (!elem) elem = event.currentTarget;
+            var alreadyOpen = $(elem).hasClass('open');
 
-        $('#topmenu a').removeClass('open');
-        $(".submenu").hide();
+            $('#topmenu a').removeClass('open');
+            $(".submenu").hide();
 
-        if (alreadyOpen) return;
+            if (alreadyOpen) return;
 
-        $(elem).addClass('open');
-        switch (elem.id.slice(13)){
-            case "commanders":
-                $("#commanderList").show();
-                break;
-            case "missions":
-                $("#missionList").show();
-                break;
-            case "resources":
-                $("#resources").show();
-                break;
-            case "about":
-                $("#about").show();
-                break;
+            $(elem).addClass('open');
+            switch (elem.id.slice(13)){
+                case "commanders":
+                    $("#commanderList").show();
+                    break;
+                case "missions":
+                    $("#missionList").show();
+                    break;
+                case "resources":
+                    $("#resources").show();
+                    break;
+                case "about":
+                    $("#about").show();
+                    break;
+            }
         }
-    }
-    if (document.location.pathname === "/") {
-        $('#submenu-link-commanders').each(function () {
-            openSubmenu(null, this);
-        });
-    } else {
-        $('#topmenu li.highlight a').each(function () {
-            openSubmenu(null, this);
-        });
-    }
+        window.openSubmenu = openSubmenu;
+        if (document.location.pathname === "/") {
+            $('#submenu-link-commanders').each(function () {
+                openSubmenu(null, this);
+            });
+        } else {
+            $('#topmenu li.highlight a').each(function () {
+                openSubmenu(null, this);
+            });
+        }
+    })(jQuery);
 </script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Part and Parcel</h1>

@@ -16,6 +16,9 @@ th {
     color: #aaa;
     font-weight: normal;
 }
+img {
+    vertical-align: middle;
+}
 .unbold {
     font-weight: normal;
     color: #aaa;
@@ -55,7 +58,7 @@ th {
     max-width: 1000px;
 }
 .construction a {
-    color: #875500;
+    color: #ae5700;
 }
 
 .mutatorIcon {
@@ -252,11 +255,11 @@ th,td{
     border:1px solid #888;
     padding:5px;
 }
-#content a{
+a{
     color: yellow;
 }
-#content a:visited{
-    color:orange;
+a:where(:visited){
+    color: orange;
 }
 #content h1{
     text-align:center;
