@@ -23,11 +23,11 @@ static: config.php
 
 .PHONY: check
 check: vendor
-	$(COMPOSER_DOCKER) composer run-script ci
+	$(COMPOSER_DOCKER) ./vendor/bin/phpcs --ignore=vendor,.dh-diag -n .
 
 .PHONY: fix
 fix: vendor
-	$(COMPOSER_DOCKER) composer run-script fix
+	$(COMPOSER_DOCKER) ./vendor/bin/phpcbf --ignore=vendor,.dh-diag -n .
 
 node_modules: package.json
 	$(BUN_DOCKER) bun install
