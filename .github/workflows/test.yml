@@ -31,13 +31,13 @@ jobs:
           ${{ runner.os }}-php-
 
     - name: Install Composer dependencies
-      run: composer install --prefer-dist --no-progress
+      run: composer install --prefer-dist --no-progress && touch -m vendor
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run phpcs formatter
-      run: composer run-script ci
+      run: make check
 
     - name: Install Bun dependencies
       run: bun install
