@@ -51,7 +51,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Co-op Commander Guide:</span> Zeratul</h1>
+    <h1><span class="unbold">Commander:</span> Zeratul</h1>
     <p id="commanderMotto">Dark Prelate</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

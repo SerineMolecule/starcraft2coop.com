@@ -22,7 +22,7 @@ require_once "../../includes/switchergenerator.php";
     }
   </style>
 <?= startContent() ?>
-    <h1><span class="unbold">Co-op Mission Guide:</span> Temple of the Past</h1>
+    <h1><span class="unbold">Mission:</span> Temple of the Past</h1>
     <p id="missionPlace">Shakuras</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

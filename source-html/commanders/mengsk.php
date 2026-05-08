@@ -69,7 +69,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Co-op Commander Guide:</span> Mengsk</h1>
+    <h1><span class="unbold">Commander:</span> Mengsk</h1>
     <p id="commanderMotto">Emperor of the Dominion</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

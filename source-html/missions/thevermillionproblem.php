@@ -29,7 +29,7 @@ require_once "../../includes/switchergenerator.php";
       }
   </style>
 <?= startContent() ?>
-    <h1><span class="unbold">Co-op Mission Guide:</span> The Vermillion Problem</h1>
+    <h1><span class="unbold">Mission:</span> The Vermillion Problem</h1>
     <p id="missionPlace">Veridia Prime</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

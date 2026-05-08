@@ -44,7 +44,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Co-op Commander Guide:</span> Tychus</h1>
+    <h1><span class="unbold">Commander:</span> Tychus</h1>
     <p id="commanderMotto">Legendary Outlaw</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

@@ -12,7 +12,7 @@ require_once "../../includes/switchergenerator.php";
   <link rel="canonical" href="https://starcraft2coop.com/missions/oblivionexpress">
   <script src="/scripts/preload.js"></script>
 <?= startContent() ?>
-    <h1><span class="unbold">Co-op Mission Guide:</span> Oblivion Express</h1>
+    <h1><span class="unbold">Mission:</span> Oblivion Express</h1>
     <p id="missionPlace">Tarsonis</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

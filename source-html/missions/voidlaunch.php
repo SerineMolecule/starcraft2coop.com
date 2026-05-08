@@ -12,7 +12,7 @@ require_once "../../includes/switchergenerator.php";
   <link rel="canonical" href="https://starcraft2coop.com/missions/voidlaunch">
   <script src="/scripts/preload.js"></script>
 <?= startContent() ?>
-    <h1><span class="unbold">Co-op Mission Guide:</span> Void Launch</h1>
+    <h1><span class="unbold">Mission:</span> Void Launch</h1>
     <p id="missionPlace">Kaldir</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

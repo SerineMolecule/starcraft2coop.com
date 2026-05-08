@@ -11,7 +11,7 @@ require_once "../../includes/wrapper-static.php";
   <link rel="canonical" href="https://starcraft2coop.com/missions/minerevacuation">
   <script src="/scripts/preload.js"></script>
   <?= startContent() ?>
-    <h1><span class="unbold">Co-op Mission Guide:</span> Miner Evacuation</h1>
+    <h1><span class="unbold">Mission:</span> Miner Evacuation</h1>
     <p id="missionPlace">Jarban</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

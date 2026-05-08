@@ -60,7 +60,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Co-op Commander Guide:</span> Karax</h1>
+    <h1><span class="unbold">Commander:</span> Karax</h1>
     <p id="commanderMotto">Khalai Phase-Smith</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

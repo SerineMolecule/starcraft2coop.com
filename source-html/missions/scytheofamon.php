@@ -29,7 +29,7 @@ require_once "../../includes/switchergenerator.php";
     }
   </style>
 <?= startContent() ?>
-    <h1><span class="unbold">Co-op Mission Guide:</span> Scythe of Amon</h1>
+    <h1><span class="unbold">Mission:</span> Scythe of Amon</h1>
     <p id="missionPlace">Xel'Naga Temple</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

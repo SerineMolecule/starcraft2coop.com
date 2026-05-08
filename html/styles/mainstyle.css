@@ -18,6 +18,10 @@ th {
 }
 .unbold {
     font-weight: normal;
+    color: #aaa;
+}
+#comSum, #misSum {
+    visibility: hidden;
 }
 
 :where(table ul) {
