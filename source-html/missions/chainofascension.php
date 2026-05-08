@@ -12,7 +12,7 @@ require_once "../../includes/switchergenerator.php";
   <link rel="canonical" href="https://starcraft2coop.com/missions/chainofascension">
   <script src="/scripts/preload.js"></script>
 <?= startContent() ?>
-    <h1>Co-op Mission Guide: Chain of Ascension</h1>
+    <h1><span class="unbold">Co-op Mission Guide:</span> Chain of Ascension</h1>
     <p id="missionPlace">Slayn</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

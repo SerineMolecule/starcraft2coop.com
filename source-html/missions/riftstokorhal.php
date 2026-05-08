@@ -12,7 +12,7 @@ require_once "../../includes/switchergenerator.php";
   <link rel="canonical" href="https://starcraft2coop.com/missions/riftstokorhal">
   <script src="/scripts/preload.js"></script>
 <?= startContent() ?>
-    <h1>Co-op Mission Guide: Rifts to Korhal</h1>
+    <h1><span class="unbold">Co-op Mission Guide:</span> Rifts to Korhal</h1>
     <p id="missionPlace">Korhal</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

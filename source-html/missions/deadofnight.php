@@ -17,7 +17,7 @@ require_once "../../includes/switchergenerator.php";
       }
   </style>
 <?= startContent() ?>
-    <h1>Co-op Mission Guide: Dead of Night</h1>
+    <h1><span class="unbold">Co-op Mission Guide:</span> Dead of Night</h1>
     <p id="missionPlace">Chazington</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

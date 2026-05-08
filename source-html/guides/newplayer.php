@@ -48,7 +48,7 @@ require_once "../../includes/wrapper-static.php";
         margin:0;
     }
     #commanderMotto{
-        font-family: 'Kaushan Script', cursive;
+        font-style: italic;
         text-align:center;
         padding-bottom:5px;
     }

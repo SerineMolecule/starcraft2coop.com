@@ -12,7 +12,7 @@ require_once "../../includes/switchergenerator.php";
   <link rel="canonical" href="https://starcraft2coop.com/missions/malwarfare">
   <script src="/scripts/preload.js"></script>
 <?= startContent() ?>
-    <h1>Co-op Mission Guide: Malwarfare</h1>
+    <h1><span class="unbold">Co-op Mission Guide:</span> Malwarfare</h1>
     <p id="missionPlace">Purifer Facility</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

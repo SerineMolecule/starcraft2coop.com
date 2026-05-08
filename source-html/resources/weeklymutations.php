@@ -121,7 +121,7 @@ require_once "../../includes/wrapper.php";
         }
         #title{
             text-align:center;
-            font-family: 'Kaushan Script', cursive;
+            font-style: italic;
         }
         #info{
             padding-left:10px;

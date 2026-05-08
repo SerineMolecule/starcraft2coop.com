@@ -22,6 +22,7 @@ require_once "../includes/wrapper.php";
         .left-column{
             text-align: left;
             font-weight: bold;
+            white-space: nowrap;
         }
         #updateTable td, #updateTable th{
             border:none;
@@ -50,7 +51,15 @@ require_once "../includes/wrapper.php";
     <table>
         <tr>
             <td class="left-column">
-                <p>Site Update Notice</p>
+                <p>2026-05-07</p>
+            </td>
+            <td>
+                <p>I've been hard at work sprucing up the site. Prestige advice has been updated, it's now easier to jump to this week's mutation, the menu navigation has been revamped, and mutators have been completely redesigned.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-column">
+                <p>2026-3-21</p>
             </td>
             <td>
                 <p>starcraft2coop.com will stay available! Unfortunately, accounts and the replay analyzer are no longer working.</p>

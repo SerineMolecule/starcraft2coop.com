@@ -27,7 +27,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1>Co-op Commander Guide: Fenix</h1>
+    <h1><span class="unbold">Co-op Commander Guide:</span> Fenix</h1>
     <p id="commanderMotto">Purifier Executor</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

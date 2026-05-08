@@ -27,7 +27,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1>Co-op Commander Guide: Vorazun</h1>
+    <h1><span class="unbold">Co-op Commander Guide:</span> Vorazun</h1>
     <p id="commanderMotto">Matriarch of the Nerazim</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

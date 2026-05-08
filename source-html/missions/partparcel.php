@@ -17,7 +17,7 @@ require_once "../../includes/switchergenerator.php";
       }
   </style>
 <?= startContent() ?>
-    <h1>Co-op Mission Guide: Part and Parcel</h1>
+    <h1><span class="unbold">Co-op Mission Guide:</span> Part and Parcel</h1>
     <p id="missionPlace">Moebius Research Station</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

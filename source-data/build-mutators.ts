@@ -40,7 +40,7 @@ require_once "../../includes/wrapper-static.php";
     <title>Starcraft 2 Co-op - Mutator - ${mutator.mutatorname}</title>
     <link rel="canonical" href="https://starcraft2coop.com/mutators/${url}">
 <?= startContent() ?>
-    <h1>Mutator: ${mutator.mutatorname}</h1>
+    <h1><span class="unbold">Mutator:</span> ${mutator.mutatorname}</h1>
     <p><img src="/images/mutators/${url}.png" alt="" /></p>
     <p>${mutator.mutatordescription}</p>
     <table>

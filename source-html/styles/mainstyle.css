@@ -1,8 +1,9 @@
 html {
-    font-family: 'Convergence', sans-serif;
+    font-family: Ubuntu, sans-serif;
     background:rgb(10, 13, 33);
     color: white;
-    font-size: 1em;
+    font-size: 16.5px;
+    color-scheme: dark;
 
     background-image: linear-gradient(rgb(30, 37, 91), rgb(10, 13, 33));
     background-attachment: fixed;
@@ -11,11 +12,12 @@ html, body {
     margin: 0;
     padding: 0;
 }
-strong {
-    font-family: Helvetica, Arial, sans-serif;
-}
 th {
     color: #aaa;
+    font-weight: normal;
+}
+.unbold {
+    font-weight: normal;
 }
 
 :where(table ul) {
@@ -44,10 +46,12 @@ th {
     font-weight: bold;
     color: black;
 
-    font-family: 'Convergence', sans-serif;
     font-size: 1.5em;
     margin: 0 auto 20px;
     max-width: 1000px;
+}
+.construction a {
+    color: #875500;
 }
 
 .mutatorIcon {
@@ -150,7 +154,6 @@ th {
 
 #content{
     color:white;
-    font-family: 'Convergence', sans-serif;
     max-width:950px;
     margin-top:100px;
     margin-right:auto;
@@ -168,7 +171,6 @@ th {
 #menu .submenu ul{
     text-decoration: none;
     color:white;
-    font-family: 'Convergence', sans-serif;
     font-size:0.85em;
 }
 #commanderList img{
@@ -210,6 +212,7 @@ th {
 }
 .submenu-section strong {
     color: #999;
+    font-size: 0.9em;
 }
 .submenu-section {
     text-align: left;
@@ -225,7 +228,6 @@ th {
     font-size:0.66em;
     margin-top:100px;
     color:white;
-    font-family: 'Convergence', sans-serif;
     margin-left:50px;
     margin-right:50px;
 }
@@ -294,7 +296,7 @@ label {
     padding: 0 8px;
 }
 #toc {
-	font-size: 13px;
+	font-size: 0.8em;
 }
 #toc ul::before {
 	display: block;
@@ -397,7 +399,6 @@ label {
 		margin: 0;
 		border: 0;
 		background: transparent;
-		font-size: 13px;
 	}
 
     @media (min-width: 1370px) {

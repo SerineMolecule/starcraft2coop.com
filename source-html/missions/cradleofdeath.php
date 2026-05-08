@@ -12,7 +12,7 @@ require_once "../../includes/switchergenerator.php";
   <link rel="canonical" href="https://starcraft2coop.com/missions/cradleofdeath">
   <script src="/scripts/preload.js"></script>
 <?= startContent() ?>
-    <h1>Co-op Mission Guide: Cradle of Death</h1>
+    <h1><span class="unbold">Co-op Mission Guide:</span> Cradle of Death</h1>
     <p id="missionPlace">Moebius Battle Station</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">

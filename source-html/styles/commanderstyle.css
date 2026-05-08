@@ -86,7 +86,7 @@
     }
 }
 #commanderMotto{
-    font-family: 'Kaushan Script', cursive;
+    font-style: italic;
     text-align:center;
 }
 .spike{
@@ -107,7 +107,7 @@
 }
 .prestigeTable th {
     vertical-align: top;
-    width: 5%;
+    width: 14%;
     text-align: right;
 }
 .prestigeTable td {

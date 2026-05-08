@@ -60,7 +60,7 @@ require_once "../../includes/wrapper-static.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1>Co-op Commander Guide: Karax</h1>
+    <h1><span class="unbold">Co-op Commander Guide:</span> Karax</h1>
     <p id="commanderMotto">Khalai Phase-Smith</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">
@@ -1080,7 +1080,8 @@ require_once "../../includes/wrapper-static.php";
             <tbody>
                 <tr>
                     <td>1</td>
-                        <td>1 energy/6 seconds</td>
+                    <td></td>
+                    <td>1 energy/6 seconds</td>
                     <td>26 energy/minute</td>
                     <td>100/100</td>
                     <td>90 seconds</td>
