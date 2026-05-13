@@ -63,8 +63,6 @@ require_once "../../includes/wrapper.php";
 
     $sortedMutators = $mutators;
     usort($sortedMutators, fn($a, $b) => $b['mutationcount'] <=> $a['mutationcount']);
-
-    $con->close();
     ?>
     <div id="links">
         <h2>Sections on this Page</h2>

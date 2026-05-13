@@ -4,7 +4,7 @@
 require "config.php";
 
 chdir(__DIR__);
-$grep_output = shell_exec('grep -r -l --include="*.php" "/** @generateStatic " html/');
+$grep_output = shell_exec('grep -r -l -F --include="*.php" "/** @generateStatic " html/');
 
 $pages = [];
 if ($grep_output) {
