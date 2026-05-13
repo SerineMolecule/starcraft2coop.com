@@ -45,21 +45,10 @@ require_once "../../includes/wrapper.php";
     <?php
 
     require_once __DIR__ . '/../../includes/queries.php';
-    require_once '../../includes/sqlconnection.php';
 
     $mutatorInteractionCount = count(get_mutator_interactions());
-
-    $sql = "SELECT count(*)
-            FROM mutatorcommandertips";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
-    $mutatorCommanderTips = $row[0];
-
-    $sql = "SELECT count(*)
-            FROM patchdata";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
-    $patchCount = $row[0];
+    $mutatorCommanderTipsCount = count(get_mutator_commander_tips());
+    $patchCount = count(get_patch_data());
 
     $weeklyMutations = get_weeklymutations();
     $weeklyMutationCount = count($weeklyMutations);
@@ -94,7 +83,7 @@ require_once "../../includes/wrapper.php";
     <h2 id="site">Site-Specific</h2>
     <p>These statistics provide you with a bit of a behind-the-scenes look at starcraft2coop.com. There is a lot of data that is stored in the site's databases that allow users to pull useful information when they wish, such as mutator interactions. A lot of this data is automatically pulled and presented to readers in an easy-to-find manner, such as on the <a href="/resources/weeklymutations">Weekly Mutations</a> page.</p>
     <p>Total Mutator Interactions: <?= $mutatorInteractionCount ?></p>
-    <p>Commander Tips for Mutators: <?= $mutatorCommanderTips ?></p>
+    <p>Commander Tips for Mutators: <?= $mutatorCommanderTipsCount ?></p>
     <p>Patches Recognized by Analyzer: <?= $patchCount ?></p>
     <h2 id="weeklyMutations">Weekly Mutations</h2>
     <p>These are some interesting statistics from all <a href="/resources/weeklymutations">Weekly Mutations</a> that have been released to date including the current Weekly Mutation. Statistics include the most and least frequent mutators. Occasionally, Weekly Mutations are repeated, which can offset counts. Hence, statistics will be analyzed with and without these repeats.</p>

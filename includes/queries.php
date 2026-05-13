@@ -116,3 +116,21 @@ function get_playerunits(): array
     $json = file_get_contents(__DIR__ . '/../html/data/playerunits.json');
     return json_decode($json, true);
 }
+
+/**
+ * @return array All Patch info.
+ */
+function get_patch_data(): array
+{
+    $json = file_get_contents(__DIR__ . '/../html/data/patchdata.json');
+    return json_decode($json, true);
+}
+
+/**
+ * @return array All MutatorCommanderTips info.
+ */
+function get_mutator_commander_tips(): array
+{
+    $json = file_get_contents(__DIR__ . '/../html/data/mutatorcommandertips.json');
+    return json_decode($json, true);
+}

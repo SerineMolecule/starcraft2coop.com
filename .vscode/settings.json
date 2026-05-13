@@ -61,6 +61,18 @@
                 "/source-data/playertalents.json"
             ],
             "url": "./html/data/schemas/playertalents.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/source-data/patchdata.json"
+            ],
+            "url": "./html/data/schemas/patchdata.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/source-data/mutatorcommandertips.json"
+            ],
+            "url": "./html/data/schemas/mutatorcommandertips.schema.json"
         }
     ]
 }

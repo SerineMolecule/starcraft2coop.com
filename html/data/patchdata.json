@@ -1,0 +1,422 @@
+[
+    {
+        "build": 52910,
+        "version": "3.13.0",
+        "link": 20721907,
+        "notes": "New Commander: Fenix"
+    },
+    {
+        "build": 53644,
+        "version": "3.14.0",
+        "link": 20799759,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 54518,
+        "version": "3.15.0",
+        "link": 20861966,
+        "notes": "Carrier/Swarm Host AI targeting change"
+    },
+    {
+        "build": 54724,
+        "version": "3.15.1",
+        "link": 20852983,
+        "notes": null
+    },
+    {
+        "build": 55505,
+        "version": "3.16.0",
+        "link": 20859948,
+        "notes": "Abathur revamp|Swann revamp|Zagara revamp"
+    },
+    {
+        "build": 55958,
+        "version": "3.16.1",
+        "link": 20960769,
+        "notes": null
+    },
+    {
+        "build": 56787,
+        "version": "3.17.0",
+        "link": 21018734,
+        "notes": "New Commander: Dehaka|New Feature: Ascension|New Mission: Malwarfare|Fenix buffs"
+    },
+    {
+        "build": 57218,
+        "version": "3.17.1",
+        "link": 21018734,
+        "notes": null
+    },
+    {
+        "build": 57507,
+        "version": "3.18.0",
+        "link": 21033998,
+        "notes": "New Mutators: Inspiration, Hardened Will, Kill Bots, Moment of Silence, Life Leech|Dehaka bug fixes"
+    },
+    {
+        "build": 58400,
+        "version": "3.19.0",
+        "link": 21042161,
+        "notes": "Small Co-op changes"
+    },
+    {
+        "build": 58600,
+        "version": "3.19.1",
+        "link": 21121980,
+        "notes": null
+    },
+    {
+        "build": 59587,
+        "version": "4.0.0",
+        "link": 21183638,
+        "notes": "New Commander: Han and Horner|New Mission: Part and Parcel"
+    },
+    {
+        "build": 59729,
+        "version": "4.0.1",
+        "link": null,
+        "notes": null
+    },
+    {
+        "build": 59877,
+        "version": "4.0.2",
+        "link": null,
+        "notes": null
+    },
+    {
+        "build": 60196,
+        "version": "4.1.0",
+        "link": 21313391,
+        "notes": "Small Co-op changes"
+    },
+    {
+        "build": 60321,
+        "version": "4.1.1",
+        "link": 21313391,
+        "notes": null
+    },
+    {
+        "build": 60604,
+        "version": "4.1.2",
+        "link": 21313391,
+        "notes": null
+    },
+    {
+        "build": 61021,
+        "version": "4.1.3",
+        "link": 21313391,
+        "notes": null
+    },
+    {
+        "build": 61545,
+        "version": "4.1.4",
+        "link": 21313391,
+        "notes": "Han and Horner bug fixes"
+    },
+    {
+        "build": 62347,
+        "version": "4.2.0",
+        "link": 21534738,
+        "notes": "Co-op revamp"
+    },
+    {
+        "build": 62848,
+        "version": "4.2.1",
+        "link": 21590509,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 63454,
+        "version": "4.2.2",
+        "link": 21647153,
+        "notes": null
+    },
+    {
+        "build": 63785,
+        "version": "4.2.3",
+        "link": null,
+        "notes": null
+    },
+    {
+        "build": 64128,
+        "version": "4.2.4",
+        "link": 21700683,
+        "notes": "Artanis revamp|Raynor revamp|Swann revamp"
+    },
+    {
+        "build": 64469,
+        "version": "4.3.0",
+        "link": 21728663,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 65094,
+        "version": "4.3.1",
+        "link": 21728663,
+        "notes": null
+    },
+    {
+        "build": 65384,
+        "version": "4.3.2",
+        "link": 21728663,
+        "notes": null
+    },
+    {
+        "build": 65895,
+        "version": "4.4.0",
+        "link": 21870976,
+        "notes": "New Mission: Cradle of Death|Kerrigan revamp|Nova revamp|Zagara revamp"
+    },
+    {
+        "build": 66668,
+        "version": "4.4.1",
+        "link": 21965053,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 67188,
+        "version": "4.5.0",
+        "link": 22023343,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 67344,
+        "version": "4.5.1",
+        "link": 22013472,
+        "notes": null
+    },
+    {
+        "build": 67926,
+        "version": "4.6.0",
+        "link": 22467379,
+        "notes": "New Commander: Tychus|Abathur revamp|Alarak revamp|Vorazun revamp"
+    },
+    {
+        "build": 68195,
+        "version": "4.6.1",
+        "link": 22492977,
+        "notes": "Tychus bug fixes"
+    },
+    {
+        "build": 69232,
+        "version": "4.6.2",
+        "link": 22548751,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 70154,
+        "version": "4.7.0",
+        "link": 22764996,
+        "notes": "New Commander: Zeratul"
+    },
+    {
+        "build": 70326,
+        "version": "4.7.1",
+        "link": 22771167,
+        "notes": null
+    },
+    {
+        "build": 71061,
+        "version": "4.8.0",
+        "link": 22837870,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 71523,
+        "version": "4.8.1",
+        "link": 22862446,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 71663,
+        "version": "4.8.2",
+        "link": 22871519,
+        "notes": null
+    },
+    {
+        "build": 72282,
+        "version": "4.8.3",
+        "link": 22883350,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 73286,
+        "version": "4.8.4",
+        "link": 22933133,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 73559,
+        "version": "4.8.5",
+        "link": 22938864,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 73620,
+        "version": "4.8.6",
+        "link": 22938944,
+        "notes": null
+    },
+    {
+        "build": 74071,
+        "version": "4.9.0",
+        "link": 22989880,
+        "notes": "New Commander: Stetmann|Dehaka revamp|Stukov revamp"
+    },
+    {
+        "build": 74456,
+        "version": "4.9.1",
+        "link": 23015443,
+        "notes": "Stetmann bug fixes"
+    },
+    {
+        "build": 74741,
+        "version": "4.9.2",
+        "link": 23016011,
+        "notes": "Amon revamp"
+    },
+    {
+        "build": 75025,
+        "version": "4.9.3",
+        "link": 23049576,
+        "notes": "Cradle of Death revamp"
+    },
+    {
+        "build": 75689,
+        "version": "4.10.0",
+        "link": 23091081,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 75800,
+        "version": "4.10.1",
+        "link": 23093843,
+        "notes": null
+    },
+    {
+        "build": 76052,
+        "version": "4.10.2",
+        "link": 23114896,
+        "notes": null
+    },
+    {
+        "build": 76114,
+        "version": "4.10.3",
+        "link": 23114901,
+        "notes": null
+    },
+    {
+        "build": 76811,
+        "version": "4.10.4",
+        "link": 23188507,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 77379,
+        "version": "4.11.0",
+        "link": 23227811,
+        "notes": "New Commander: Mengsk|New Feature: Brutal+ Difficulty"
+    },
+    {
+        "build": 77474,
+        "version": "4.11.1",
+        "link": null,
+        "notes": null
+    },
+    {
+        "build": 77535,
+        "version": "4.11.2",
+        "link": 23239991,
+        "notes": "Mengsk bug fixes"
+    },
+    {
+        "build": 77661,
+        "version": "4.11.3",
+        "link": 23230078,
+        "notes": "Stetmann revamp|Tychus revamp|Zeratul revamp"
+    },
+    {
+        "build": 78285,
+        "version": "4.11.4",
+        "link": 23312740,
+        "notes": "Han and Horner revamp|Karax revamp|Stukov revamp|Swann revamp"
+    },
+    {
+        "build": 79998,
+        "version": "4.12.0",
+        "link": 23442717,
+        "notes": null
+    },
+    {
+        "build": 80188,
+        "version": "4.12.1",
+        "link": 23442722,
+        "notes": null
+    },
+    {
+        "build": 80949,
+        "version": "5.0.0",
+        "link": 23482838,
+        "notes": "Commander Prestige|Boombots Mutator added"
+    },
+    {
+        "build": 81009,
+        "version": "5.0.1",
+        "link": null,
+        "notes": null
+    },
+    {
+        "build": 81102,
+        "version": "5.0.2",
+        "link": 23495670,
+        "notes": "Prestige bug fixes"
+    },
+    {
+        "build": 81433,
+        "version": "5.0.3",
+        "link": 23492556,
+        "notes": "Prestige revamp|Co-op bug fixes"
+    },
+    {
+        "build": 82457,
+        "version": "5.0.4",
+        "link": 23557934,
+        "notes": "Co-op bug fixes"
+    },
+    {
+        "build": 82893,
+        "version": "5.0.5",
+        "link": 23572858,
+        "notes": null
+    },
+    {
+        "build": 83830,
+        "version": "5.0.6",
+        "link": null,
+        "notes": null
+    },
+    {
+        "build": 84643,
+        "version": "5.0.7",
+        "link": 23657318,
+        "notes": null
+    },
+    {
+        "build": 86383,
+        "version": "5.0.8",
+        "link": null,
+        "notes": null
+    },
+    {
+        "build": 87702,
+        "version": "5.0.9",
+        "link": 23774006,
+        "notes": null
+    },
+    {
+        "build": 88500,
+        "version": "5.0.10",
+        "link": 23826546,
+        "notes": "Co-op bug fixes"
+    }
+]

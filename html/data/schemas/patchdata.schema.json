@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/PatchList",
+    "definitions": {
+        "PatchList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Patch"
+            }
+        },
+        "Patch": {
+            "type": "object",
+            "properties": {
+                "build": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "link": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "notes": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "build",
+                "version",
+                "link",
+                "notes"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}

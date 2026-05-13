@@ -1,0 +1,1570 @@
+[
+    {
+        "tipid": 1,
+        "mutator": 1,
+        "commander": "Dehaka",
+        "tip": "Dehaka's Pack Leaders are Map Bosses and therefore retain their regular vision.",
+        "video": null
+    },
+    {
+        "tipid": 2,
+        "mutator": 1,
+        "commander": "Horner",
+        "tip": "Horner's Call in the Fleet ability generates its own vision circle as it moves through strafing area.",
+        "video": null
+    },
+    {
+        "tipid": 3,
+        "mutator": 1,
+        "commander": "Mengsk",
+        "tip": "Earthsplitter Bombardments provide vision regardless of camera position.",
+        "video": null
+    },
+    {
+        "tipid": 4,
+        "mutator": 1,
+        "commander": "Raynor",
+        "tip": "Raynor's Scans can provide temporary vision for the duration of the scan.",
+        "video": null
+    },
+    {
+        "tipid": 5,
+        "mutator": 1,
+        "commander": "Stukov",
+        "tip": "Brood Queen's Ocular Symbiote ability increases vision for units.",
+        "video": null
+    },
+    {
+        "tipid": 6,
+        "mutator": 1,
+        "commander": "Stukov",
+        "tip": "Units mind-controlled by the Aleksander retain their full vision.",
+        "video": null
+    },
+    {
+        "tipid": 7,
+        "mutator": 1,
+        "commander": "Zeratul",
+        "tip": "Afraid of the Dark disables Zeratul's map-wide terrain vision. You may need to use Rally Points to find the Artifact Fragments.",
+        "video": "h0OZG494TCY"
+    },
+    {
+        "tipid": 8,
+        "mutator": 2,
+        "commander": "Abathur",
+        "tip": "Units spawned from Aggressive Deployment drops do not drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 9,
+        "mutator": 2,
+        "commander": "Dehaka",
+        "tip": "Units spawned from Aggressive Deployment drops do not drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 10,
+        "mutator": 2,
+        "commander": "Kerrigan",
+        "tip": "Assimilation Aura can be used on the drops to gain additional resources.",
+        "video": null
+    },
+    {
+        "tipid": 11,
+        "mutator": 2,
+        "commander": "Mengsk",
+        "tip": "Units spawned from Aggressive Deployment drops do not provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 12,
+        "mutator": 2,
+        "commander": "Vorazun",
+        "tip": "Time Stop delays Aggressive Deployment timings.",
+        "video": null
+    },
+    {
+        "tipid": 13,
+        "mutator": 3,
+        "commander": "Abathur",
+        "tip": "Broodlings do not drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 14,
+        "mutator": 3,
+        "commander": "Dehaka",
+        "tip": "Broodlings do not drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 15,
+        "mutator": 3,
+        "commander": "Mengsk",
+        "tip": "Broodlings do not provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 16,
+        "mutator": 4,
+        "commander": "Zeratul",
+        "tip": "Zeratul's Avatar of Essence's Devolve ability will devolve a unit and cause it to lose any Avenger stacks it has.",
+        "video": null
+    },
+    {
+        "tipid": 17,
+        "mutator": 6,
+        "commander": "Abathur",
+        "tip": "Roaches that burrow can outheal the effect of Black Death.",
+        "video": null
+    },
+    {
+        "tipid": 18,
+        "mutator": 6,
+        "commander": "Abathur",
+        "tip": "100 Biomass units don't take damage from Black Death.",
+        "video": null
+    },
+    {
+        "tipid": 19,
+        "mutator": 6,
+        "commander": "Abathur",
+        "tip": "Due to lack of regeneration, Ultimate Evolutions die quickly to Black Death. Disable making Ultimate Evolutions by right-clicking on \"Evolution\" for newly-created units.",
+        "video": null
+    },
+    {
+        "tipid": 20,
+        "mutator": 6,
+        "commander": "Fenix",
+        "tip": "Changing Fenix suits removes the Plague debuff.",
+        "video": null
+    },
+    {
+        "tipid": 21,
+        "mutator": 6,
+        "commander": "Kerrigan",
+        "tip": "Units inside Kerrigan's Omega Network do not take damage.",
+        "video": null
+    },
+    {
+        "tipid": 22,
+        "mutator": 6,
+        "commander": "Kerrigan",
+        "tip": "Kerrigan's Creep allows units to regenerate at 1HP/s. This means any unit below a max HP of 50HP, standing on Kerrigan's Creep, will not die from Black Death. This is increased to 100 HP if using the Malevolent Matriarch Prestige.",
+        "video": null
+    },
+    {
+        "tipid": 23,
+        "mutator": 6,
+        "commander": "Nova",
+        "tip": "Nova's base health regeneration (even without the upgrade) counters the effect of Black Death.",
+        "video": null
+    },
+    {
+        "tipid": 24,
+        "mutator": 6,
+        "commander": "Nova",
+        "tip": "The barrier created by Nova's Defensive Drone can be used to prevent damage ticks of Black Death.",
+        "video": null
+    },
+    {
+        "tipid": 25,
+        "mutator": 6,
+        "commander": "Stukov",
+        "tip": "Stukov's Rooted Bunkers can outheal the effect of Black Death.",
+        "video": null
+    },
+    {
+        "tipid": 26,
+        "mutator": 6,
+        "commander": "Stetmann",
+        "tip": "Max mastery Stetzone (on HUGS) can outheal Black death for your units up to 800HP, or allied units up to 400HP.",
+        "video": null
+    },
+    {
+        "tipid": 27,
+        "mutator": 6,
+        "commander": "Tychus",
+        "tip": "Rattlesnake's upgraded Revitalizer can outheal the effect of Black Death.",
+        "video": null
+    },
+    {
+        "tipid": 28,
+        "mutator": 6,
+        "commander": "Vorazun",
+        "tip": "Emergency Recall recalls your units to the closest Nexus. Build a Nexus away from your main and expansion, towards where you are pushing to prevent your units from being Recalled with Black Death and killing your workers.",
+        "video": null
+    },
+    {
+        "tipid": 29,
+        "mutator": 7,
+        "commander": "Artanis",
+        "tip": "The Dragoon's Trillic Compression Systems upgrade can allow Dragoons to survive longer in Blizzard.",
+        "video": null
+    },
+    {
+        "tipid": 30,
+        "mutator": 7,
+        "commander": "Stukov",
+        "tip": "Stukov's Rooted Bunkers can outheal the effect of Blizzard.",
+        "video": null
+    },
+    {
+        "tipid": 31,
+        "mutator": 7,
+        "commander": "Zagara",
+        "tip": "Zergling evasion applies to damage dealt by Blizzard.",
+        "video": null
+    },
+    {
+        "tipid": 32,
+        "mutator": 8,
+        "commander": "Vorazun",
+        "tip": "Time Stop does not affect Chaos Studios timings.",
+        "video": null
+    },
+    {
+        "tipid": 33,
+        "mutator": 9,
+        "commander": "Tychus",
+        "tip": "Medivac Pickups can be used to remove the Concussive Attacks debuff.",
+        "video": null
+    },
+    {
+        "tipid": 34,
+        "mutator": 10,
+        "commander": "Zeratul",
+        "tip": "Darkness disables Zeratul's map-wide terrain vision. You may need to use Rally Points to find the Artifact Fragments.",
+        "video": "h0OZG494TCY"
+    },
+    {
+        "tipid": 35,
+        "mutator": 11,
+        "commander": "Nova",
+        "tip": "Nova's Defensive Drones' Defensive Matrix can block damage dealt by Diffusion.",
+        "video": null
+    },
+    {
+        "tipid": 36,
+        "mutator": 11,
+        "commander": "Stetmann",
+        "tip": "Stetmann's HUGS Overload can block damage dealt by Diffusion.",
+        "video": null
+    },
+    {
+        "tipid": 37,
+        "mutator": 11,
+        "commander": "Swann",
+        "tip": "Swann's Science Vessels' Defensive Matrix can block damage dealt by Diffusion.",
+        "video": null
+    },
+    {
+        "tipid": 38,
+        "mutator": 12,
+        "commander": "Abathur",
+        "tip": "Units with 100 or more Biomass can ignore Double Edged damage.",
+        "video": null
+    },
+    {
+        "tipid": 39,
+        "mutator": 12,
+        "commander": "Dehaka",
+        "tip": "Dakrun and any Tyrannozors with the Spiked Hide mutation will kill themselves due to the damage reflect very quickly (within 2 seconds).",
+        "video": null
+    },
+    {
+        "tipid": 40,
+        "mutator": 12,
+        "commander": "Fenix",
+        "tip": "Conservator's Fields can be used to reduce the damage taken by Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 41,
+        "mutator": 12,
+        "commander": "Kerrigan",
+        "tip": "Kerrigan's current Mutating Carapace gets consumed by Double Edged, before the new Mutating Carapace (from the damage dealt) gets added.",
+        "video": null
+    },
+    {
+        "tipid": 42,
+        "mutator": 12,
+        "commander": "Nova",
+        "tip": "Nova's Defensive Drones' Defensive Matrix can block damage dealt by Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 43,
+        "mutator": 12,
+        "commander": "Stetmann",
+        "tip": "Stetmann's HUGS Overload can block damage dealt by Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 44,
+        "mutator": 12,
+        "commander": "Swann",
+        "tip": "Swann's Science Vessels' Defensive Matrix can block damage dealt by Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 45,
+        "mutator": 12,
+        "commander": "Tychus",
+        "tip": "Tychus' Medivac Pickup can be used on the Odin after it fires its missile to protect it from taking damage when the missile hits.  The same applies to all Outlaw abilities.",
+        "video": null
+    },
+    {
+        "tipid": 46,
+        "mutator": 12,
+        "commander": "Zagara",
+        "tip": "Zagara's Baneling Barrage does damage to Zagara if it hits structures. However, it can be used against units, without dealing damage back to Zagara.",
+        "video": null
+    },
+    {
+        "tipid": 47,
+        "mutator": 12,
+        "commander": "Zeratul",
+        "tip": "Void Apparitions that are created by the Ambushers are considered units themselves. Therefore, Ambushers do not take damage from Double-Edged when they blink.",
+        "video": null
+    },
+    {
+        "tipid": 48,
+        "mutator": 13,
+        "commander": "Mengsk",
+        "tip": "Earthsplitters stop attacking when captured by Eminent Domain. Any units loaded into the Earthsplitter are lost.",
+        "video": null
+    },
+    {
+        "tipid": 49,
+        "mutator": 13,
+        "commander": "Mengsk",
+        "tip": "Units loaded inside a Supply Bunker are lost if the Supply Bunker is captured by Eminent Domain.",
+        "video": null
+    },
+    {
+        "tipid": 50,
+        "mutator": 13,
+        "commander": "Raynor",
+        "tip": "Units loaded inside a Bunker are lost if the Bunker is captured by Eminent Domain.",
+        "video": null
+    },
+    {
+        "tipid": 51,
+        "mutator": 13,
+        "commander": "Swann",
+        "tip": "If you lose your drill to an enemy, it will respawn as Amon's Laser Drill. After destroying it, the drill goes on cooldown before respawning again. This means you will permanently lose your drill and have no way of getting it back.",
+        "video": null
+    },
+    {
+        "tipid": 52,
+        "mutator": 13,
+        "commander": "Zeratul",
+        "tip": "Eminent Domain affects Cannon Projections. If a Cannon Projection has been captured by Amon, it can be cancelled by cancelling the Projection at the source Cannon.",
+        "video": null
+    },
+    {
+        "tipid": 53,
+        "mutator": 13,
+        "commander": "Zagara",
+        "tip": "Bile Launchers stop attacking when captured by Eminent Domain.",
+        "video": null
+    },
+    {
+        "tipid": 54,
+        "mutator": 15,
+        "commander": "Alarak",
+        "tip": "Use the Havoc's Force-field ability to prevent your army from being drawn in by the mutator.",
+        "video": null
+    },
+    {
+        "tipid": 55,
+        "mutator": 23,
+        "commander": "Mengsk",
+        "tip": "Units will provide Royal Guard experience once, which is when they are finally killed.",
+        "video": null
+    },
+    {
+        "tipid": 56,
+        "mutator": 16,
+        "commander": "Tychus",
+        "tip": "Medivac Pickup does not remove the Fear debuff.",
+        "video": null
+    },
+    {
+        "tipid": 57,
+        "mutator": 17,
+        "commander": "Zagara",
+        "tip": "Zergling evasion applies to damage dealt by Fireworks.",
+        "video": null
+    },
+    {
+        "tipid": 58,
+        "mutator": 18,
+        "commander": "Abathur",
+        "tip": "Units spawned from Gift Exchange drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 59,
+        "mutator": 18,
+        "commander": "Artanis",
+        "tip": "Artanis' Warp Field counts as a unit, and therefore, his calldown can be used to capture gifts.",
+        "video": null
+    },
+    {
+        "tipid": 60,
+        "mutator": 18,
+        "commander": "Dehaka",
+        "tip": "Units spawned from Gift Exchange drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 61,
+        "mutator": 18,
+        "commander": "Mengsk",
+        "tip": "Units spawned from Gift Exchange provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 62,
+        "mutator": 18,
+        "commander": "Fenix",
+        "tip": "Fenix loses all Avenger stacks given to him if he changes suit.",
+        "video": null
+    },
+    {
+        "tipid": 63,
+        "mutator": 19,
+        "commander": "Kerrigan",
+        "tip": "Kerrigan's Omega Worms can be used to load units in to save them from being killed by a nuke.",
+        "video": null
+    },
+    {
+        "tipid": 64,
+        "mutator": 19,
+        "commander": "Nova",
+        "tip": "Nova's Tactical Airlift can be used to save units from a nuke, before dropping them back down in the same location.",
+        "video": null
+    },
+    {
+        "tipid": 65,
+        "mutator": 19,
+        "commander": "Tychus",
+        "tip": "Tychus' Medivac Platforms can be used to save units from a nuke, before dropping them back down in the same location.",
+        "video": null
+    },
+    {
+        "tipid": 66,
+        "mutator": 21,
+        "commander": "Dehaka",
+        "tip": "Dehaka can Devour Amon's Dehaka (with an Easter Egg voice line). He cannot Devour other heroes.",
+        "video": null
+    },
+    {
+        "tipid": 67,
+        "mutator": 21,
+        "commander": "Tychus",
+        "tip": "Crooked Sam's Moebius Restraint Matrix upgrade can be used to stun Amon Heroes with his Demolition Charge.",
+        "video": null
+    },
+    {
+        "tipid": 68,
+        "mutator": 23,
+        "commander": "Abathur",
+        "tip": "Units will only drop one Biomass drop, which is when they are finally killed.",
+        "video": null
+    },
+    {
+        "tipid": 69,
+        "mutator": 23,
+        "commander": "Dehaka",
+        "tip": "Units will only drop one Essence drop, which is when they are finally killed.",
+        "video": null
+    },
+    {
+        "tipid": 70,
+        "mutator": 24,
+        "commander": "Kerrigan",
+        "tip": "If using Zerglings to feed Kill Bots, avoid getting the Hardened Carapace upgrade until Kill Bots start to spawn. This will allow the Death Bots to 1-shot the Zerglings.",
+        "video": null
+    },
+    {
+        "tipid": 71,
+        "mutator": 24,
+        "commander": "Stetmann",
+        "tip": "If using Zerglings to feed Kill Bots, never get the Hardened Egonergy Shield upgrade as this prolongs Zergling life, keeping Kill Bots alive longer on the map.",
+        "video": null
+    },
+    {
+        "tipid": 72,
+        "mutator": 24,
+        "commander": "Stukov",
+        "tip": "Volatile Infested do not add to the Kill Bot's kill counter.",
+        "video": null
+    },
+    {
+        "tipid": 73,
+        "mutator": 24,
+        "commander": "Vorazun",
+        "tip": "Units that get Emergency Recalled do not add to the Kill Bot's kill counter.",
+        "video": null
+    },
+    {
+        "tipid": 74,
+        "mutator": 24,
+        "commander": "Vorazun",
+        "tip": "Time Stop does not affect Kill Bots timings.",
+        "video": null
+    },
+    {
+        "tipid": 75,
+        "mutator": 24,
+        "commander": "Zagara",
+        "tip": "If using Zerglings to feed Kill Bots, avoid getting the Hardened Carapace upgrade until Kill Bots start to spawn. This will allow the Death Bots to 1-shot the Zerglings.",
+        "video": null
+    },
+    {
+        "tipid": 76,
+        "mutator": 24,
+        "commander": "Zeratul",
+        "tip": "Cannon Projection kills do not add to the Kill Bot's kill counter.",
+        "video": null
+    },
+    {
+        "tipid": 77,
+        "mutator": 33,
+        "commander": "Kerrigan",
+        "tip": "25 points into the Immobilization Wave mastery will allow Kerrigan to 1-shot Widow Mines.",
+        "video": null
+    },
+    {
+        "tipid": 78,
+        "mutator": 34,
+        "commander": "Artanis",
+        "tip": "High Templars/High Archons can feedback the Point Defense Missiles.",
+        "video": null
+    },
+    {
+        "tipid": 79,
+        "mutator": 34,
+        "commander": "Vorazun",
+        "tip": "Time Stop does not affect Missile Command timings.",
+        "video": null
+    },
+    {
+        "tipid": 80,
+        "mutator": 34,
+        "commander": "Zeratul",
+        "tip": "Tesseract Monoliths can stun Point Defense Missiles, allowing projectile attacks to connect with their targets.",
+        "video": null
+    },
+    {
+        "tipid": 81,
+        "mutator": 35,
+        "commander": "Kerrigan",
+        "tip": "Omega Worms can be used to dodge the Moment of Silence Debuff before it triggers.",
+        "video": null
+    },
+    {
+        "tipid": 82,
+        "mutator": 35,
+        "commander": "Nova",
+        "tip": "Tactical Airlift can be used to dodge the Moment of Silence Debuff before it triggers.",
+        "video": null
+    },
+    {
+        "tipid": 83,
+        "mutator": 35,
+        "commander": "Tychus",
+        "tip": "Medivac Pickup can be used to dodge the Moment of Silence Debuff before it triggers.",
+        "video": null
+    },
+    {
+        "tipid": 84,
+        "mutator": 37,
+        "commander": "Fenix",
+        "tip": "Changing Fenix suits does not reset the Naughty List.",
+        "video": null
+    },
+    {
+        "tipid": 85,
+        "mutator": 37,
+        "commander": "Zeratul",
+        "tip": "Zeratul's Shade Projections do not count towards Cannon/Monolith kill counts. The Projection gets the Naughty List count, but disappears after the Projection despawns and gets reset.",
+        "video": null
+    },
+    {
+        "tipid": 86,
+        "mutator": 39,
+        "commander": "Abathur",
+        "tip": "Units spawned from Outbreak do not drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 87,
+        "mutator": 39,
+        "commander": "Dehaka",
+        "tip": "Units spawned from Outbreak do not drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 88,
+        "mutator": 39,
+        "commander": "Mengsk",
+        "tip": "Units spawned from Outbreak do not provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 89,
+        "mutator": 39,
+        "commander": "Vorazun",
+        "tip": "Time Stop does not affect Outbreak timings.",
+        "video": null
+    },
+    {
+        "tipid": 90,
+        "mutator": 42,
+        "commander": "Artanis",
+        "tip": "Feedback cannot be cast on units that do not have energy without Power Overwhelming.",
+        "video": null
+    },
+    {
+        "tipid": 91,
+        "mutator": 42,
+        "commander": "Dehaka",
+        "tip": "Even though units have Psionic abilities, they do not gain the Psionic tag, so devouring them with Dehaka does not cause area of effect damage.",
+        "video": null
+    },
+    {
+        "tipid": 92,
+        "mutator": 42,
+        "commander": "Mengsk",
+        "tip": "Emperor's Shadow EMP's drain energy from the Power Overwhelming Energy bar.",
+        "video": ""
+    },
+    {
+        "tipid": 93,
+        "mutator": 42,
+        "commander": "Nova",
+        "tip": "Ghost EMP's drain energy from the Power Overwhelming Energy bar.",
+        "video": null
+    },
+    {
+        "tipid": 94,
+        "mutator": 42,
+        "commander": "Stetmann",
+        "tip": "Mecha remnants can be shot down by Defensive Drones, preventing Gary or Stetellites from collecting them.",
+        "video": null
+    },
+    {
+        "tipid": 95,
+        "mutator": 42,
+        "commander": "Vorazun",
+        "tip": "Due to Power Overwhelming being a map-wide effect, rather than a unit-based one, Time Stop does not prevent skills from being cast.",
+        "video": null
+    },
+    {
+        "tipid": 96,
+        "mutator": 43,
+        "commander": "Dehaka",
+        "tip": "A minimum of six Impalers are required to be able to deal with a Propagator.",
+        "video": null
+    },
+    {
+        "tipid": 97,
+        "mutator": 43,
+        "commander": "Kerrigan",
+        "tip": "Kerrigan's Heroic unit can be used to kill a Propagator with 13 points in the Primary Ability Damage.",
+        "video": "K5kwuOQdvj4"
+    },
+    {
+        "tipid": 98,
+        "mutator": 43,
+        "commander": "Stetmann",
+        "tip": "Stetellites can be converted to Propagators. Place Stetellites on unpathable terrain.",
+        "video": null
+    },
+    {
+        "tipid": 99,
+        "mutator": 43,
+        "commander": "Stukov",
+        "tip": "Disable autocast of the \"Spawn Infested Civilian\" ability at the Infested Colonist Compound to prevent your units from accidentally engaging a Propagator.",
+        "video": null
+    },
+    {
+        "tipid": 100,
+        "mutator": 43,
+        "commander": "Stukov",
+        "tip": "Two fully upgraded Bunkers (attack upgrades and Barracks Tech upgrades) or Four non-upgraded Bunkers can kill a Propagator assuming they all attack together. Three Bunkers can deal with a Propagator, but a Bunker will be lost, assuming no micro.",
+        "video": null
+    },
+    {
+        "tipid": 101,
+        "mutator": 43,
+        "commander": "Tychus",
+        "tip": "Crooked Sam's Moebius Restraint Matrix upgrade will stop a Propagator from moving when Demolition Charge is used.",
+        "video": null
+    },
+    {
+        "tipid": 102,
+        "mutator": 43,
+        "commander": "Vorazun",
+        "tip": "Manually cast Shadow Fury with Dark Templars to prevent them from accidentally wandering too close to a Propagator.",
+        "video": null
+    },
+    {
+        "tipid": 103,
+        "mutator": 43,
+        "commander": "Vorazun",
+        "tip": "Time Stop does not affect Propagators timings.",
+        "video": null
+    },
+    {
+        "tipid": 104,
+        "mutator": 43,
+        "commander": "Zagara",
+        "tip": "With a max'ed Baneling Damage mastery, Zagara can kill a Propagator with a Baneling Barrage and two auto attacks.",
+        "video": null
+    },
+    {
+        "tipid": 105,
+        "mutator": 43,
+        "commander": "Zeratul",
+        "tip": "Shade Projections generate Propagators when killed by a Propagator.",
+        "video": null
+    },
+    {
+        "tipid": 106,
+        "mutator": 44,
+        "commander": "Karax",
+        "tip": "With enough Shield Batteries, a Purifier Beam can be \"trapped\" on a Pylon while Shield Batteries around it recharge its shields.",
+        "video": "zvvnvFFTooY"
+    },
+    {
+        "tipid": 107,
+        "mutator": 44,
+        "commander": "Kerrigan",
+        "tip": "Kerrigan can use Omega Worms to lure the Purifier Beam away from an area.",
+        "video": null
+    },
+    {
+        "tipid": 108,
+        "mutator": 44,
+        "commander": "Vorazun",
+        "tip": "Time Stop delays Purifier Beam timings.",
+        "video": null
+    },
+    {
+        "tipid": 109,
+        "mutator": 49,
+        "commander": "Raynor",
+        "tip": "Raynor's Scanner Sweep can be used to provide regular vision in the area of the Scan.",
+        "video": null
+    },
+    {
+        "tipid": 110,
+        "mutator": 49,
+        "commander": "Stukov",
+        "tip": "Brood Queen's Ocular Symbiote ability increases vision for units.",
+        "video": null
+    },
+    {
+        "tipid": 111,
+        "mutator": 49,
+        "commander": "Stukov",
+        "tip": "Units mind-controlled by the Aleksander retain their full vision.",
+        "video": null
+    },
+    {
+        "tipid": 112,
+        "mutator": 55,
+        "commander": "Abathur",
+        "tip": "Units spawned from Trick or Treat drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 113,
+        "mutator": 55,
+        "commander": "Dehaka",
+        "tip": "Units spawned from Trick or Treat drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 114,
+        "mutator": 55,
+        "commander": "Mengsk",
+        "tip": "Units spawned from Trick or Treat provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 115,
+        "mutator": 55,
+        "commander": "Vorazun",
+        "tip": "Time Stop does not affect Trick or Treat timings.",
+        "video": null
+    },
+    {
+        "tipid": 116,
+        "mutator": 60,
+        "commander": "Abathur",
+        "tip": "Units spawned from the Void Rifts do not drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 117,
+        "mutator": 60,
+        "commander": "Abathur",
+        "tip": "Use Brutalisks' Deep Tunnel ability to snipe Void Rifts as it does not require vision.",
+        "video": null
+    },
+    {
+        "tipid": 118,
+        "mutator": 60,
+        "commander": "Artanis",
+        "tip": "Spread Observers around the map and use five Orbital Strikes to clear out a single Void Rift.",
+        "video": null
+    },
+    {
+        "tipid": 119,
+        "mutator": 60,
+        "commander": "Dehaka",
+        "tip": "Units spawned from the Void Rifts do not drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 120,
+        "mutator": 60,
+        "commander": "Horner",
+        "tip": "Three Precision Strikes can kill a Void Rift. With the Napalm upgrade, two can clear a Void Rift, given enough time.",
+        "video": null
+    },
+    {
+        "tipid": 121,
+        "mutator": 60,
+        "commander": "Karax",
+        "tip": "Level 2 Solar Efficiency + max'ed Chrono Wave Energy Regeneration mastery will allow Karax to have enough energy to snipe all Void Rifts as they spawn.",
+        "video": null
+    },
+    {
+        "tipid": 122,
+        "mutator": 60,
+        "commander": "Karax",
+        "tip": "Spread Observers around the map and use five Orbital Strikes to clear out each Void Rift.",
+        "video": null
+    },
+    {
+        "tipid": 123,
+        "mutator": 60,
+        "commander": "Kerrigan",
+        "tip": "Units spawned from the Void Rifts drop resource pickups from Assimilation Aura.",
+        "video": null
+    },
+    {
+        "tipid": 124,
+        "mutator": 60,
+        "commander": "Kerrigan",
+        "tip": "Use Kerrigan's Leap ability to get past enemy bases so you can snipe Void Rifts as they spawn.",
+        "video": null
+    },
+    {
+        "tipid": 125,
+        "mutator": 60,
+        "commander": "Mengsk",
+        "tip": "Units spawned from the Void Rifts do not provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 126,
+        "mutator": 60,
+        "commander": "Nova",
+        "tip": "One Sabotage Drone can 1-shot a Void Rift  with 15 points in the Primary Ability Improvement Mastery.",
+        "video": null
+    },
+    {
+        "tipid": 127,
+        "mutator": 60,
+        "commander": "Raynor",
+        "tip": "Build extra Orbital Command Centers to allow you to scan on Void Rifts when they spawn to provide vision for you and your ally to clear them.",
+        "video": null
+    },
+    {
+        "tipid": 128,
+        "mutator": 60,
+        "commander": "Swann",
+        "tip": "Use a Tactical Jump from a Hercules to gain vision of a Void Rift. Set it on \"Hold Position\", then manually target the Void Rift with the Drill to clear it.",
+        "video": null
+    },
+    {
+        "tipid": 129,
+        "mutator": 60,
+        "commander": "Vorazun",
+        "tip": "Time Stop delays Void Rifts timings.",
+        "video": null
+    },
+    {
+        "tipid": 130,
+        "mutator": 60,
+        "commander": "Zagara",
+        "tip": "Roach Drops do not require vision and can be used to snipe inaccessible Void Rifts.",
+        "video": null
+    },
+    {
+        "tipid": 131,
+        "mutator": 60,
+        "commander": "Zeratul",
+        "tip": "Spread Observers around the map and use Cannon Projections to kill Void Rifts. Three projections can kill a Void Rift as soon as it spawns.",
+        "video": null
+    },
+    {
+        "tipid": 132,
+        "mutator": 61,
+        "commander": "Abathur",
+        "tip": "Infested Terrans do not drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 133,
+        "mutator": 61,
+        "commander": "Dehaka",
+        "tip": "Infested Terrans do not drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 134,
+        "mutator": 61,
+        "commander": "Mengsk",
+        "tip": "Infested Terrans do not provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 135,
+        "mutator": 60,
+        "commander": "Dehaka",
+        "tip": "Try to explore the entire map, which will allow you to drop Greater Primal Wurms to handle Void Rifts.",
+        "video": null
+    },
+    {
+        "tipid": 136,
+        "mutator": 59,
+        "commander": "Kerrigan",
+        "tip": "Units resurrected by Void Reanimators drop resource pickups from Assimilation Aura.",
+        "video": null
+    },
+    {
+        "tipid": 137,
+        "mutator": 59,
+        "commander": "Abathur",
+        "tip": "Units resurrected by Void Reanimators do not drop Biomass.",
+        "video": null
+    },
+    {
+        "tipid": 138,
+        "mutator": 59,
+        "commander": "Dehaka",
+        "tip": "Units resurrected by Void Reanimators do not drop Essence.",
+        "video": null
+    },
+    {
+        "tipid": 139,
+        "mutator": 59,
+        "commander": "Mengsk",
+        "tip": "Units resurrected by Void Reanimators do not provide Royal Guard experience.",
+        "video": null
+    },
+    {
+        "tipid": 140,
+        "mutator": 26,
+        "commander": "Alarak",
+        "tip": "Place force-fields over Lava Bursts to prevent your units from accidentally walking over Lava Bursts. Be careful if you use Massive units, because they can break force-fields.",
+        "video": null
+    },
+    {
+        "tipid": 141,
+        "mutator": 21,
+        "commander": "Vorazun",
+        "tip": "Oracle Stasis Wards can be used to disable Heroes. Combine with the Stasis Calibration upgrade to be able to attack them while in stasis.",
+        "video": null
+    },
+    {
+        "tipid": 142,
+        "mutator": 41,
+        "commander": "Tychus",
+        "tip": "Crooked Sam's Demolition Charge's Stun can stun Polarity's units (although the damage will not be applied).",
+        "video": null
+    },
+    {
+        "tipid": 143,
+        "mutator": 7,
+        "commander": "Vorazun",
+        "tip": "Time Stop stops currently-present Blizzards from moving. Newly-created Blizzards will move as normal. All Blizzards still deal damage.",
+        "video": null
+    },
+    {
+        "tipid": 144,
+        "mutator": 41,
+        "commander": "Zeratul",
+        "tip": "Units devolved by the Avatar of Essence will have a random polarity.",
+        "video": null
+    },
+    {
+        "tipid": 145,
+        "mutator": 33,
+        "commander": "Stetmann",
+        "tip": "Getting the Hardened Egonergy Shield upgrade for Zerglings will allow them to clear mines efficiently without taking heavy losses.",
+        "video": null
+    },
+    {
+        "tipid": 146,
+        "mutator": 43,
+        "commander": "Dehaka",
+        "tip": "Dehaka's Pack Leaders are Map Bosses and therefore are immune to Propagators.",
+        "video": null
+    },
+    {
+        "tipid": 147,
+        "mutator": 32,
+        "commander": "Horner",
+        "tip": "Two sets of Mag-mines can clear out all the minerals shields that spawn on a mineral line.",
+        "video": null
+    },
+    {
+        "tipid": 148,
+        "mutator": 24,
+        "commander": "Vorazun",
+        "tip": "Corsair Disruption Webs stop Kill Bots from attacking.",
+        "video": null
+    },
+    {
+        "tipid": 149,
+        "mutator": 63,
+        "commander": "Vorazun",
+        "tip": "Corsair Disruption Webs stop Boom Bots from attacking.",
+        "video": null
+    },
+    {
+        "tipid": 150,
+        "mutator": 63,
+        "commander": "Stetmann",
+        "tip": "Spread Stetellites around the map to provide you with vision of the Boom Bots.",
+        "video": null
+    },
+    {
+        "tipid": 151,
+        "mutator": 63,
+        "commander": "Raynor",
+        "tip": "Use Scans to get vision of Boom Bots far in advance.",
+        "video": null
+    },
+    {
+        "tipid": 152,
+        "mutator": 63,
+        "commander": "Kerrigan",
+        "tip": "Kerrigan's Nydus worms can tank two Boom Bot nukes before dying.",
+        "video": null
+    },
+    {
+        "tipid": 153,
+        "mutator": 15,
+        "commander": "Tychus",
+        "tip": "The Odin is immune to Fatal Attraction.",
+        "video": null
+    },
+    {
+        "tipid": 154,
+        "mutator": 63,
+        "commander": "Mengsk",
+        "tip": "Earthsplitters provide temporary vision in the bombardment area, which can be used to get vision of Boom Bots.",
+        "video": null
+    },
+    {
+        "tipid": 155,
+        "mutator": 32,
+        "commander": "Zagara",
+        "tip": "Place Bile Launchers behind mineral lines so their bombardments can clear Mineral Shields automatically.",
+        "video": null
+    },
+    {
+        "tipid": 156,
+        "mutator": 34,
+        "commander": "Kerrigan",
+        "tip": "Desolate Queen Kerrigan's Kinetic Blast is blocked by Point Defense Missiles and Point Defense Drones.",
+        "video": null
+    },
+    {
+        "tipid": 157,
+        "mutator": 42,
+        "commander": "Kerrigan",
+        "tip": "Desolate Queen Kerrigan's Kinetic Blast is blocked by Point Defense Drones.",
+        "video": null
+    },
+    {
+        "tipid": 158,
+        "mutator": 12,
+        "commander": "Alarak",
+        "tip": "Units (including Alarak) may be loaded into a War Prism as soon as they attack or use their abilities to prevent damage through Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 159,
+        "mutator": 35,
+        "commander": "Dehaka",
+        "tip": "Dehaka's Pack Leaders are Map Bosses and are therefore immune to Moment of Silence.",
+        "video": null
+    },
+    {
+        "tipid": 160,
+        "mutator": 41,
+        "commander": "Vorazun",
+        "tip": "Vorazun's Withering Siphon prestige deals damage to units with any polarity.",
+        "video": null
+    },
+    {
+        "tipid": 161,
+        "mutator": 41,
+        "commander": "Vorazun",
+        "tip": "Stasis wards can stasis units with any polarity.",
+        "video": null
+    },
+    {
+        "tipid": 162,
+        "mutator": 41,
+        "commander": "Vorazun",
+        "tip": "Confusion affects units with any polarity.",
+        "video": null
+    },
+    {
+        "tipid": 163,
+        "mutator": 24,
+        "commander": "Zeratul",
+        "tip": "Legion units do not get attacked by Kill Bots.",
+        "video": null
+    },
+    {
+        "tipid": 164,
+        "mutator": 63,
+        "commander": "Abathur",
+        "tip": "Disabling Cloud prevents Boom Bots from attacking.",
+        "video": null
+    },
+    {
+        "tipid": 165,
+        "mutator": 60,
+        "commander": "Zagara",
+        "tip": "Use Apex Predator's Zagara's Deep Tunnel ability to get quickly get to Void Rifts.",
+        "video": null
+    },
+    {
+        "tipid": 166,
+        "mutator": 41,
+        "commander": "Kerrigan",
+        "tip": "Folly of Man's lightning strikes can stun Polarity's units (although the damage will not be applied).",
+        "video": null
+    },
+    {
+        "tipid": 167,
+        "mutator": 12,
+        "commander": "Zeratul",
+        "tip": "Tornadoes created by Herald of the Void do not deal damage to Zeratul.",
+        "video": null
+    },
+    {
+        "tipid": 168,
+        "mutator": 6,
+        "commander": "Abathur",
+        "tip": "100+ Biomass Essence Hoarder will cause units to gradually heal themselves with Black Death.",
+        "video": null
+    },
+    {
+        "tipid": 169,
+        "mutator": 33,
+        "commander": "Kerrigan",
+        "tip": "Folly of Man Fury stacks can hit mines without detection.",
+        "video": null
+    },
+    {
+        "tipid": 170,
+        "mutator": 11,
+        "commander": "Mengsk",
+        "tip": "Units inside Supply Bunkers do not take damage from Diffusion.",
+        "video": null
+    },
+    {
+        "tipid": 171,
+        "mutator": 11,
+        "commander": "Raynor",
+        "tip": "Units inside Bunkers do not take damage from Diffusion.",
+        "video": null
+    },
+    {
+        "tipid": 172,
+        "mutator": 42,
+        "commander": "Mengsk",
+        "tip": "Emperor's Shadow Feedback deals damage to units with Power Overwhelming.",
+        "video": "EeNtBNtzGlU"
+    },
+    {
+        "tipid": 173,
+        "mutator": 12,
+        "commander": "Mengsk",
+        "tip": "Units inside Supply Bunkers do not take damage from Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 174,
+        "mutator": 12,
+        "commander": "Raynor",
+        "tip": "Units inside Bunkers do not take damage from Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 175,
+        "mutator": 2,
+        "commander": "Stukov",
+        "tip": "Units spawned from Stukov's Infested Colonist Compound are valid targets for Aggressive Deployment drops.",
+        "video": null
+    },
+    {
+        "tipid": 176,
+        "mutator": 42,
+        "commander": "Stetmann",
+        "tip": "Super Gary's auto-attack cannot be shot down by Defensive Drones.",
+        "video": null
+    },
+    {
+        "tipid": 177,
+        "mutator": 34,
+        "commander": "Stetmann",
+        "tip": "Super Gary's auto-attack cannot be shot down by Point Defense Missiles and Point Defense Drones.",
+        "video": null
+    },
+    {
+        "tipid": 178,
+        "mutator": 15,
+        "commander": "Dehaka",
+        "tip": "Impalers get pulled by Fatal Attraction.",
+        "video": null
+    },
+    {
+        "tipid": 179,
+        "mutator": 15,
+        "commander": "Horner",
+        "tip": "Han's Widow Mines get pulled by Fatal Attraction.",
+        "video": null
+    },
+    {
+        "tipid": 180,
+        "mutator": 63,
+        "commander": "Abathur",
+        "tip": "Place a Toxic Nest and disable automatic detonation which can be used to get vision of Boom Bots.",
+        "video": null
+    },
+    {
+        "tipid": 181,
+        "mutator": 10,
+        "commander": "Abathur",
+        "tip": "Place a Toxic Nest and disable automatic detonation to provide you vision of key areas of the map.",
+        "video": null
+    },
+    {
+        "tipid": 182,
+        "mutator": 10,
+        "commander": "Stetmann",
+        "tip": "Disabled Stetellites provide normal vision.",
+        "video": null
+    },
+    {
+        "tipid": 183,
+        "mutator": 16,
+        "commander": "Nova",
+        "tip": "Defensive Drones' Defensive Matrix prevents Fear from triggering on the unit.",
+        "video": null
+    },
+    {
+        "tipid": 184,
+        "mutator": 54,
+        "commander": "Nova",
+        "tip": "Defensive Drones' Defensive Matrix prevents Transmutation from triggering on the attacking unit.",
+        "video": null
+    },
+    {
+        "tipid": 185,
+        "mutator": 16,
+        "commander": "Swann",
+        "tip": "Defensive Matrix prevents Fear from triggering on the unit.",
+        "video": null
+    },
+    {
+        "tipid": 186,
+        "mutator": 54,
+        "commander": "Swann",
+        "tip": "Defensive Matrix prevents Transmutation from triggering on the attacking unit.",
+        "video": null
+    },
+    {
+        "tipid": 187,
+        "mutator": 16,
+        "commander": "Artanis",
+        "tip": "Shield Overcharge prevents Fear from triggering on the unit.",
+        "video": null
+    },
+    {
+        "tipid": 188,
+        "mutator": 54,
+        "commander": "Artanis",
+        "tip": "Shield Overcharge prevents Transmutation from triggering on the attacking unit.",
+        "video": null
+    },
+    {
+        "tipid": 189,
+        "mutator": 54,
+        "commander": "Alarak",
+        "tip": "Structure Overcharge prevents Transmutation from triggering on the attacking unit.",
+        "video": null
+    },
+    {
+        "tipid": 190,
+        "mutator": 16,
+        "commander": "Stetmann",
+        "tip": "H.U.G.S Overload prevents Fear from triggering on the unit.",
+        "video": null
+    },
+    {
+        "tipid": 191,
+        "mutator": 54,
+        "commander": "Stetmann",
+        "tip": "H.U.G.S Overload prevents Transmutation from triggering on the unit.",
+        "video": null
+    },
+    {
+        "tipid": 192,
+        "mutator": 14,
+        "commander": "Swann",
+        "tip": "Due to how Pulse Cannon damage is dealt, Pulse Cannon only deals about 50% of its stated damage.",
+        "video": null
+    },
+    {
+        "tipid": 193,
+        "mutator": 42,
+        "commander": "Dehaka",
+        "tip": "Point Defense Drones from Power Overwhelming can block Murvar's Locusts and Creepers from spawning.",
+        "video": null
+    },
+    {
+        "tipid": 194,
+        "mutator": 12,
+        "commander": "Artanis",
+        "tip": "Shield Overcharge can block damage dealt by Double Edged.",
+        "video": null
+    },
+    {
+        "tipid": 195,
+        "mutator": 41,
+        "commander": "Alarak",
+        "tip": "Alarak's Structure Overcharge will lock onto units in Polarity,  even though it cannot damage them, which can waste the calldown.",
+        "video": null
+    },
+    {
+        "tipid": 196,
+        "mutator": 12,
+        "commander": "Artanis",
+        "tip": "Arkship Commandant Unbound Fanatics Plasma Waves kill themselves when they deal damage, severely reducing Unbound Fanatic effectiveness.",
+        "video": null
+    },
+    {
+        "tipid": 197,
+        "mutator": 5,
+        "commander": "Swann",
+        "tip": "Due to how Pulse Cannon damage is dealt, Pulse Cannon will trigger Barrier if the unit has more than 100 HP.",
+        "video": null
+    },
+    {
+        "tipid": 198,
+        "mutator": 41,
+        "commander": "Vorazun",
+        "tip": "Centurion's Dark Coil does not stun units with opposite polarity.",
+        "video": null
+    },
+    {
+        "tipid": 199,
+        "mutator": 24,
+        "commander": "Mengsk",
+        "tip": "Kill Bots do not aggro Zerg units from Dogs of War.",
+        "video": null
+    },
+    {
+        "tipid": 200,
+        "mutator": 54,
+        "commander": "Fenix",
+        "tip": "Fenix Champions do not count as Heroic units that cause max-tier transmutation.",
+        "video": null
+    },
+    {
+        "tipid": 201,
+        "mutator": 37,
+        "commander": "Fenix",
+        "tip": "Fenix Champions retain their kill counts from previous shells.",
+        "video": null
+    },
+    {
+        "tipid": 202,
+        "mutator": 20,
+        "commander": "Dehaka",
+        "tip": "Devouring a unit with more than 10 vitality with Hardened Will will leave it at 1 HP.",
+        "video": null
+    },
+    {
+        "tipid": 203,
+        "mutator": 2,
+        "commander": "Tychus",
+        "tip": "Tychus is not a valid unit for Aggressive Deployment drops.",
+        "video": null
+    },
+    {
+        "tipid": 204,
+        "mutator": 2,
+        "commander": "Alarak",
+        "tip": "The Mothership is not a valid unit for Aggressive Deployment drops.",
+        "video": null
+    },
+    {
+        "tipid": 205,
+        "mutator": 15,
+        "commander": "Dehaka",
+        "tip": "Pack Leaders are immune to Fatal Attraction.",
+        "video": null
+    },
+    {
+        "tipid": 206,
+        "mutator": 25,
+        "commander": "Dehaka",
+        "tip": "If the Laser Drill locks onto Dakrun, it will kill itself from his damage reflect.",
+        "video": null
+    },
+    {
+        "tipid": 207,
+        "mutator": 36,
+        "commander": "Abathur",
+        "tip": "Toxic Nest killed by Hybrid nukes do not respawn.",
+        "video": null
+    },
+    {
+        "tipid": 208,
+        "mutator": 30,
+        "commander": "Zeratul",
+        "tip": "Shieldguards have a 50% chance to remove a Mag-mine projectile.",
+        "video": null
+    },
+    {
+        "tipid": 209,
+        "mutator": 52,
+        "commander": "Dehaka",
+        "tip": "Primal Mutalisks caught in a Temporal Field do not die as long as they have their Primal Reconstitution passive available.",
+        "video": null
+    },
+    {
+        "tipid": 210,
+        "mutator": 52,
+        "commander": "Karax",
+        "tip": "Sentinels caught in a Temporal Field do not die as long as they have their Reconstruction passive available.",
+        "video": null
+    },
+    {
+        "tipid": 211,
+        "mutator": 52,
+        "commander": "Kerrigan",
+        "tip": "Ultralisks caught in a Temporal Field do not die as long as they have their resurrection passive available.",
+        "video": null
+    },
+    {
+        "tipid": 212,
+        "mutator": 13,
+        "commander": "Stetmann",
+        "tip": "Stetellites will only respawn once before being destroyed permanently.",
+        "video": null
+    },
+    {
+        "tipid": 213,
+        "mutator": 20,
+        "commander": "Vorazun",
+        "tip": "Hardened Will does not get removed from units while Time Stop is active.",
+        "video": null
+    },
+    {
+        "tipid": 214,
+        "mutator": 21,
+        "commander": "Dehaka",
+        "tip": "Dakrun's knockback can cancel Kerrigan's Apocalypse and Nova's Nuke.",
+        "video": null
+    },
+    {
+        "tipid": 215,
+        "mutator": 15,
+        "commander": "Nova",
+        "tip": "Fatal Attraction will cancel Nova's Nuke and the nuke will be lost.",
+        "video": null
+    },
+    {
+        "tipid": 216,
+        "mutator": 52,
+        "commander": "Nova",
+        "tip": "Infiltration Specialist Nova will lose Super Cloak if she walks into a Temporal Field.",
+        "video": null
+    },
+    {
+        "tipid": 217,
+        "mutator": 24,
+        "commander": "Raynor",
+        "tip": "Spider Mines do not add to Kill Bot kill counters.",
+        "video": null
+    },
+    {
+        "tipid": 218,
+        "mutator": 32,
+        "commander": "Stukov",
+        "tip": "Patrol a Diamondback with the Caustic Mucus upgrade behind the mineral line to clear the shields automatically.",
+        "video": null
+    },
+    {
+        "tipid": 219,
+        "mutator": 49,
+        "commander": "Kerrigan",
+        "tip": "Assimilation Aura drops provide vision.",
+        "video": null
+    },
+    {
+        "tipid": 220,
+        "mutator": 49,
+        "commander": "Horner",
+        "tip": "Salvage drops provide vision.",
+        "video": null
+    },
+    {
+        "tipid": 221,
+        "mutator": 49,
+        "commander": "Dehaka",
+        "tip": "Essence drops provide vision.",
+        "video": null
+    },
+    {
+        "tipid": 222,
+        "mutator": 49,
+        "commander": "Abathur",
+        "tip": "Biomass drops provide vision.",
+        "video": null
+    },
+    {
+        "tipid": 223,
+        "mutator": 13,
+        "commander": "Zeratul",
+        "tip": "Tesseract Monoliths are not converted by Eminent Domain and will be destroyed instead of converted.",
+        "video": null
+    },
+    {
+        "tipid": 224,
+        "mutator": 30,
+        "commander": "Raynor",
+        "tip": "Hyperion Point Defense Drones can shoot down Mag-mines.",
+        "video": null
+    }
+]

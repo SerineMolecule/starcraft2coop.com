@@ -233,3 +233,22 @@ export interface PlayerUpgrade {
 }
 
 export type PlayerUpgradeList = PlayerUpgrade[];
+
+export interface Patch {
+    build: PositiveInteger;
+    version: string;
+    link: PositiveInteger | null;
+    notes: string | null;
+}
+
+export type PatchList = Patch[];
+
+export interface MutatorCommanderTip {
+    tipid: PositiveInteger;
+    mutator: PositiveInteger;
+    commander: string;
+    tip: string;
+    video: string | null;
+}
+
+export type MutatorCommanderTipList = MutatorCommanderTip[];

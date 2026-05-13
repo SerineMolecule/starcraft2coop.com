@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/MutatorCommanderTipList",
+    "definitions": {
+        "MutatorCommanderTipList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/MutatorCommanderTip"
+            }
+        },
+        "MutatorCommanderTip": {
+            "type": "object",
+            "properties": {
+                "tipid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "mutator": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "commander": {
+                    "type": "string"
+                },
+                "tip": {
+                    "type": "string"
+                },
+                "video": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "tipid",
+                "mutator",
+                "commander",
+                "tip",
+                "video"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}
