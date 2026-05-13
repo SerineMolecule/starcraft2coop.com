@@ -49,6 +49,7 @@ class Units extends preact.Component {
         unit: Token | null,
         modifiers: UnitModifiers | null,
         compareModifiers: UnitModifiers | null,
+        error?: string,
     } = {
         commander: null,
         unit: null,
@@ -81,7 +82,13 @@ class Units extends preact.Component {
     onClickClose = () => {
         this.setState({ compareModifiers: null });
     };
+    static override getDerivedStateFromError(error: Error): { error: string } {
+        return { error: error.stack || error.message, };
+    }
     override render() {
+        if (this.state.error) {
+            return <p>Error: <pre style="color: #ff6633;">{this.state.error}</pre></p>;
+        }
         return (
             <table class="units">
                 <tr>
