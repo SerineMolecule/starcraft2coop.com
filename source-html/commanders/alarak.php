@@ -658,7 +658,7 @@ require_once "../../includes/wrapper.php";
         });
     </script>
     <h2 id="units">Combat Units</h2>
-    <p>For more information on Alarak's unit stats, comparison between units and upgrade calculations, visit the <a href="/tools/unitstats">Data Tables</a> page.</p>
+    <p>For more information on Alarak's unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#alarak">Data Tables</a> page.</p>
     <p>Alarak's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
