@@ -719,8 +719,10 @@ class UnitStats extends preact.Component<{
                         const dps = damage.damage * mode.attacks! / mode.attackspeed!;
                         const baseDamage = baseMode.attributedamage![attribute]?.damage ?? baseMode.attributedamage!['']!.damage;
                         const baseDps = baseDamage * baseMode.attacks! / baseMode.attackspeed!;
+                        const noDps = ['Baneling', 'Baneling Spawn', 'Scourge', 'Volatile Infested', 'Spider Mine', 'Explosive Creeper'];
+                        const dpsMessage = (!noDps.includes(baseUnit.name)) ? <> ({this.renderValue(+dps.toFixed(2), +baseDps.toFixed(2))} DPS)</> : '';
                         return <li>
-                            <span class="unbold">{attribute ? `vs. ${attribute}:` : 'Damage:'}</span> {this.renderValue(damage.damage, baseDamage)} ({this.renderValue(+dps.toFixed(2), +baseDps.toFixed(2))} DPS)
+                            <span class="unbold">{attribute ? `vs. ${attribute}:` : 'Damage:'}</span> {this.renderValue(damage.damage, baseDamage)}{dpsMessage}
                         </li>;
                     })}
                     {(mode.attacks > 1 || baseMode.attacks! > 1) && <li><span class="unbold">Hits:</span> {this.renderValue(mode.attacks, baseMode.attacks!)}</li>}
