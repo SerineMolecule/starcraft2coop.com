@@ -2,7 +2,7 @@
 
 Here is the new [starcraft2coop.com](https://starcraft2coop.com)!
 
-Written by Aommaster, hosted by Serine. Accepting community contributions now!
+Maintained and hosted by Serine, originally written by Aommaster, with contributions from Aneroid. Accepting community contributions now!
 
 ## License
 
@@ -14,16 +14,16 @@ Ads are NOT allowed
 
 You'll need Bun installed to build the data files, PHP installed to build the static files, and Composer installed to autoformat the PHP files.
 
-If you edit the data files in `/source-data`, you'll need to run `make data` to rebuild them into `/html/data`. If you want to change the format of the data files, you'll need to update the types in `/source-data/data-types.ts` and run `make data` to build them.
+`html/` contains generated files and should not be edited directly - instead, edit `source-html/` and then run `make` to update `html/`. The exceptions are `html/images/` and `html/files/`, which were too big to store in `source-html/`.
 
-Running `make static` will rebuild the static files.
+If you edit the data files in `/source-data`, you'll need to run `make` to rebuild them into `/html/data`. If you want to change the format of the data files, you'll need to update the types in `/source-data/data-types.ts` and run `make` to build them.
 
-Running `make` will rebuild everything.
+In general, `make` will rebuild and test everything. You can also use `make html` to rebuild without testing, and `make test` to test without rebuilding.
 
 ### Docker
 
 Read [Docker.md](docker/Docker.md) for instructions on how to set up a local development environment using Docker.
 
-### Locally installed Apache, PHP, and MySQL/MariaDB
+### Locally installed Apache and PHP
 
 (TODO)
