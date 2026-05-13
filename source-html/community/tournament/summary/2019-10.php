@@ -1,6 +1,8 @@
 <?php
 
-require_once "../../../../includes/wrapper-static.php";
+/** @generateStatic */
+
+require_once "../../../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Tournament Summary - Oct 2019</title>

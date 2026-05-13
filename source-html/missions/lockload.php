@@ -1,6 +1,8 @@
 <?php
 
-require_once "../../includes/wrapper-static.php";
+/** @generateStatic */
+
+require_once "../../includes/wrapper.php";
 require_once "../../includes/switchergenerator.php";
 ?>
 <?= startHead() ?>
