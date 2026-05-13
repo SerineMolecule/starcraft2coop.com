@@ -23,7 +23,7 @@ function startHead()
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" type="text/css">
-    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.36">
+    <link rel="stylesheet"  media="all" type="text/css" href="/styles/mainstyle.css?v=1.37">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <?php
     return '';
