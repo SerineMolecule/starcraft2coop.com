@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/PlayerTalentList",
+    "definitions": {
+        "PlayerTalentList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PlayerTalent"
+            }
+        },
+        "PlayerTalent": {
+            "type": "object",
+            "properties": {
+                "talentid": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "unit": {
+                    "type": "string"
+                },
+                "commander": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nameid": {
+                    "type": "string"
+                },
+                "modifier": {
+                    "type": "string"
+                },
+                "modifierupgrade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "which upgrade needs to be enabled for this to have an effect?"
+                },
+                "extra": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "type": "number"
+                },
+                "operation": {
+                    "type": "string"
+                },
+                "operationtype": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "enum": [
+                        "increase",
+                        "decrease",
+                        null
+                    ]
+                },
+                "talenttype": {
+                    "type": "string",
+                    "enum": [
+                        "mastery",
+                        "prestige",
+                        "post"
+                    ]
+                },
+                "target": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "talentid",
+                "unit",
+                "commander",
+                "name",
+                "nameid",
+                "modifier",
+                "modifierupgrade",
+                "extra",
+                "value",
+                "operation",
+                "operationtype",
+                "talenttype",
+                "target"
+            ],
+            "additionalProperties": false
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}

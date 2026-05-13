@@ -15,6 +15,7 @@ await $`./source-data/build.ts`;
 await $`./source-data/build-mutators.ts`;
 
 await Bun.build({
-    entrypoints: ['./html/scripts/nav.ts'],
+    entrypoints: ['./html/scripts/nav.ts', './html/scripts/units.tsx'],
     outdir: './html/scripts',
+    sourcemap: 'inline',
 });

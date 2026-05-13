@@ -195,3 +195,41 @@ export interface PlayerUnit {
 }
 
 export type PlayerUnitList = PlayerUnit[];
+
+export interface PlayerTalent {
+    talentid: PositiveInteger;
+    unit: string;
+    commander: string;
+    name: string;
+    nameid: string;
+    modifier: string;
+    /** which upgrade needs to be enabled for this to have an effect? */
+    modifierupgrade: string | null;
+    extra: string | null;
+    value: number;
+    operation: string;
+    operationtype: 'increase' | 'decrease' | null;
+    talenttype: 'mastery' | 'prestige' | 'post';
+    target: string;
+}
+
+export type PlayerTalentList = PlayerTalent[];
+
+export interface PlayerUpgrade {
+    upgradeid: PositiveInteger;
+    unit: string;
+    commander: string;
+    name: string;
+    icon: string;
+    effect: string;
+    modifier: string;
+    /** which mode does it apply to? (e.g. Siege Mode) */
+    modifiermode: string | null;
+    /** which target tag does it apply to? (e.g. vs. Armored) */
+    modifiertag: string | null;
+    value: number;
+    operation: 'add' | 'set' | 'multiply';
+    upgradetype: 'preupgrade' | 'upgrade';
+}
+
+export type PlayerUpgradeList = PlayerUpgrade[];

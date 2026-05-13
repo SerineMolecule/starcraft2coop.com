@@ -55,6 +55,12 @@
                 "/source-data/playerunits.json"
             ],
             "url": "./html/data/schemas/playerunits.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/source-data/playertalents.json"
+            ],
+            "url": "./html/data/schemas/playertalents.schema.json"
         }
     ]
 }
