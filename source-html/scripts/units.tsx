@@ -403,7 +403,7 @@ class UnitStats extends preact.Component<{
                             };
                             mode.attributedamage![upgrade.modifiertag]!.damage = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.damage, upgrade, false, level);
                         } else {
-                            for (const damage of Object.values(mode.attributedamage!)) {
+                            for (const damage of Object.values(mode.attributedamage ||= { '': { damage: 0, bonus: 0 } })) {
                                 damage.damage = this.applyModifier(damage.damage, upgrade, false, level);
                             }
                         }
@@ -419,7 +419,7 @@ class UnitStats extends preact.Component<{
                             };
                             mode.attributedamage![upgrade.modifiertag]!.bonus = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.bonus, upgrade, false, level);
                         } else {
-                            for (const damage of Object.values(mode.attributedamage!)) {
+                            for (const damage of Object.values(mode.attributedamage ||= { '': { damage: 0, bonus: 0 } })) {
                                 damage.bonus = this.applyModifier(damage.bonus, upgrade, false, level);
                             }
                         }
@@ -490,7 +490,7 @@ class UnitStats extends preact.Component<{
         const weaponUpgrades = levels.weapon ?? levels.rank ?? levels.artifacts;
         if (weaponUpgrades) {
             for (const mode of Object.values(upgradedUnit.modes)) {
-                for (const attack of Object.values(mode.attributedamage!)) {
+                for (const attack of Object.values(mode.attributedamage || {})) {
                     if (levels.rank) attack.bonus ||= attack.damage * 0.25;
                     attack.damage += weaponUpgrades * attack.bonus;
                 }
@@ -714,10 +714,10 @@ class UnitStats extends preact.Component<{
         return <>
             <p class="units-head">{mode.modeName || "Weapon"}</p>
             <ul class="units-mode-stats">
-                {!!mode.attacks && <>
+                {!!mode.attributedamage && <>
                     {Object.entries(mode.attributedamage || {}).map(([attribute, damage]) => {
                         const dps = damage.damage * mode.attacks! / mode.attackspeed!;
-                        const baseDamage = baseMode.attributedamage![attribute]?.damage ?? baseMode.attributedamage!['']!.damage;
+                        const baseDamage = baseMode.attributedamage?.[attribute]?.damage ?? baseMode.attributedamage?.['']?.damage ?? 0;
                         const baseDps = baseDamage * baseMode.attacks! / baseMode.attackspeed!;
                         const noDps = ['Baneling', 'Baneling Spawn', 'Scourge', 'Volatile Infested', 'Spider Mine', 'Explosive Creeper'];
                         const dpsMessage = (!noDps.includes(baseUnit.name)) ? <> ({this.renderValue(+dps.toFixed(2), +baseDps.toFixed(2))} DPS)</> : '';
@@ -725,7 +725,7 @@ class UnitStats extends preact.Component<{
                             <span class="unbold">{attribute ? `vs. ${attribute}:` : 'Damage:'}</span> {this.renderValue(damage.damage, baseDamage)}{dpsMessage}
                         </li>;
                     })}
-                    {(mode.attacks > 1 || baseMode.attacks! > 1) && <li><span class="unbold">Hits:</span> {this.renderValue(mode.attacks, baseMode.attacks!)}</li>}
+                    {(mode.attacks! > 1 || baseMode.attacks! > 1) && <li><span class="unbold">Hits:</span> {this.renderValue(mode.attacks!, baseMode.attacks!)}</li>}
                     <li><span class="unbold">Cooldown:</span> {this.renderValue(mode.attackspeed!, baseMode.attackspeed!)}</li>
                     <li><span class="unbold">Range:</span> {this.renderValue(mode.atkrange!, baseMode.atkrange!)}</li>
                 </>}
