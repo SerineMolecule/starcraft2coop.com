@@ -36,7 +36,7 @@ The DB is accessible via `localhost`, on port 3306. The 'sc2coop-db' name is for
 ## Generating static pages
 
 ```shell
-docker exec -w /var/www sc2coop-php php generate.php
+docker exec -w /var/www sc2coop-php php generate-static.php
 ```
 
 ## Running PHP Code Sniffer

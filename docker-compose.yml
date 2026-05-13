@@ -10,8 +10,8 @@ services:
       - ./source-html:/var/www/source-html
       - ./includes:/var/www/includes
       - ./config.php:/var/www/config.php
-      - ./generate.php:/var/www/generate.php
-      - ./generate.ts:/var/www/generate.ts
+      - ./generate-static.php:/var/www/generate-static.php
+      - ./generate-html-dir.ts:/var/www/generate-html-dir.ts
 
   web:
     container_name: sc2coop-web

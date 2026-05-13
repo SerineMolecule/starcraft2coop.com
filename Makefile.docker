@@ -29,8 +29,8 @@ validate-data: node_modules
 
 .PHONY: html
 html: node_modules config.php
-	$(BUN_DOCKER) bun ./generate.ts
-	$(PHP_EXEC) php ./generate.php
+	$(BUN_DOCKER) bun ./generate-html-dir.ts
+	$(PHP_EXEC) php ./generate-static.php
 
 .PHONY: test
 test: validate-data check
