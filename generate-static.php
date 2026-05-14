@@ -1,7 +1,6 @@
 <?php
 
 // run from CLI; generate static pages
-require "config.php";
 
 chdir(__DIR__);
 $grep_output = shell_exec('grep -r -l -F --include="*.php" "/** @generateStatic " html/');

@@ -3,7 +3,6 @@
 ## Prerequisites
 
 - Use the defaults provided in [`docker-compose.yml`](../docker-compose.yml) or update it as needed.
-- Make sure that `config.example.php` is copied to `config.php` and updated with the same credentials.
 
 ## Build
 

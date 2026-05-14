@@ -1,10 +1,7 @@
 all: html test
 
 .PHONY: deps
-deps: config.php node_modules vendor
-
-config.php:
-	cp -n config.example.php config.php
+deps: node_modules vendor
 
 node_modules: package.json
 	bun install
@@ -24,7 +21,7 @@ validate-data: node_modules
 	bun ./source-data/validate.ts
 
 .PHONY: html
-html: node_modules config.php
+html: node_modules
 	bun ./generate-html-dir.ts
 	php ./generate-static.php
 

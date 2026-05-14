@@ -74,5 +74,6 @@
             ],
             "url": "./html/data/schemas/mutatorcommandertips.schema.json"
         }
-    ]
+    ],
+    "makefile.configureOnOpen": false
 }

@@ -21,7 +21,7 @@ $shieldCommanders = ['Alarak', 'Artanis', 'Fenix', 'Karax', 'Vorazun', 'Zeratul'
 //Mode:2    [commander, unit]                             : Unit was clicked              -> Get basic stats for that unit
 //Mode:3    [commander, selectedUnit, upgrades, level]    : Recalculate was clicked        -> Get basic stats for that unit, apply the upgrades, find stats that changed
 
-require_once '../../includes/sqlconnection.php';
+require_once '../../includes/queries.php';
 
 switch ($mode) {
     case 1:
@@ -29,15 +29,10 @@ switch ($mode) {
         $commander = $_GET['commander'];
         checkVariable($commander, "text");
 
-        $sql = "SELECT DISTINCT basename
-                FROM playerunits
-                WHERE commander='$commander'
-                ORDER BY basename ASC";
-        $result = mysqli_query($con, $sql);
         $unitsList = "<ul>\n";
 
-        while ($row = mysqli_fetch_array($result)) {
-            $unitsList .= "<li>" . $row['basename'] . "</li>\n";
+        foreach (get_playerunit_basenames($commander) as $basename) {
+            $unitsList .= "<li>" . $basename . "</li>\n";
         }
         $unitsList .= "</ul>";
         echo($unitsList);
@@ -679,20 +674,16 @@ function applyUpgrade($entry, $upgrade, $fullUnitData)
 
 function generateMasteryUpgradeUpgradesArray($commander, $unit, $masteries)
 {
-    global $con;
     $upgradesList = [];
 
     foreach ($masteries as $value) {
         if ($value[1] > 0) {
             checkVariable($value[0], 'text');
-            $sql = "SELECT value, modifier, modifier2, operation, operationtype
-                    FROM playertalents
-                    WHERE commander='$commander'
-                    AND unit = '$unit'
-                    AND nameid='{$value[0]}'
-                    AND target='upgrade'";
-            $result = mysqli_query($con, $sql);
-            while ($row = mysqli_fetch_array($result)) {
+            $rows = get_playertalents_for_calculator($commander, $unit, [
+                'nameid' => $value[0],
+                'target' => 'upgrade',
+            ]);
+            foreach ($rows as $row) {
                 if ($row['operation'] == "multiply") {
                     if ($row['operationtype'] == "increase") {
                         $row['value'] = ($row['value'] * $value[1]) + 1;
@@ -711,21 +702,17 @@ function generateMasteryUpgradeUpgradesArray($commander, $unit, $masteries)
 
 function generatePrestigeUpgradeUpgradesArray($commander, $unit, $prestige)
 {
-    global $con;
     if ($prestige == "") {
         return [];
     }
     $upgradesList = [];
     checkVariable($prestige, 'text');
-    $sql = "SELECT modifier, modifier2, value, operation
-            FROM playertalents
-            WHERE commander='$commander'
-            AND unit = '$unit'
-            AND nameid='$prestige'
-            AND target='upgrade'
-            AND talenttype='prestige'";
-    $result = mysqli_query($con, $sql);
-    while ($row = mysqli_fetch_array($result)) {
+    $rows = get_playertalents_for_calculator($commander, $unit, [
+        'nameid' => $prestige,
+        'target' => 'upgrade',
+        'talenttype' => 'prestige',
+    ]);
+    foreach ($rows as $row) {
         $upgradesList[] = $row;
     }
     return $upgradesList;
@@ -733,22 +720,18 @@ function generatePrestigeUpgradeUpgradesArray($commander, $unit, $prestige)
 
 function generatePrestigesArray($commander, $unit, $prestige, $phase)
 {
-    global $con;
     if ($prestige == "") {
         return [];
     }
     $upgradesList = [];
 
     checkVariable($prestige, 'text');
-    $sql = "SELECT modifier, extra, value, operation
-            FROM playertalents
-            WHERE commander='$commander'
-            AND unit = '$unit'
-            AND nameid='$prestige'
-            AND target='unit'
-            AND talenttype='$phase'";
-    $result = mysqli_query($con, $sql);
-    while ($row = mysqli_fetch_array($result)) {
+    $rows = get_playertalents_for_calculator($commander, $unit, [
+        'nameid' => $prestige,
+        'target' => 'unit',
+        'talenttype' => $phase,
+    ]);
+    foreach ($rows as $row) {
         $upgradesList[] = $row;
     }
     return $upgradesList;
@@ -756,21 +739,17 @@ function generatePrestigesArray($commander, $unit, $prestige, $phase)
 
 function generateMasteriesArray($commander, $unit, $masteries)
 {
-    global $con;
     $upgradesList = [];
 
     foreach ($masteries as $value) {
         if ($value[1] > 0) {
             checkVariable($value[0], 'text');
-            $sql = "SELECT modifier, value, operation, operationtype
-                    FROM playertalents
-                    WHERE commander='$commander'
-                    AND unit = '$unit'
-                    AND nameid='{$value[0]}'
-                    AND target='unit'
-                    AND talenttype='mastery'";
-            $result = mysqli_query($con, $sql);
-            while ($row = mysqli_fetch_array($result)) {
+            $rows = get_playertalents_for_calculator($commander, $unit, [
+                'nameid' => $value[0],
+                'target' => 'unit',
+                'talenttype' => 'mastery',
+            ]);
+            foreach ($rows as $row) {
                 //Fix 1/3 and 2/3 stuff
                 if ($row['value'] == 0.0066) {
                     $row['value'] = 2 / 300;
@@ -796,31 +775,17 @@ function generateMasteriesArray($commander, $unit, $masteries)
 
 function generateUpgradesArray($commander, $unit, $upgrades, $level)
 {
-    global $con;
     $upgradesList = [];
 
     foreach ($upgrades as $value) {
         checkVariable($value, 'text');
-        $sql = "SELECT name, modifier, modifier2, modifier3, value, operation, upgradetype
-                FROM playerupgrades
-                WHERE commander='$commander'
-                AND unit = '$unit'
-                AND icon='$value'";
-        $result = mysqli_query($con, $sql);
-        while ($row = mysqli_fetch_array($result)) {
+        foreach (get_playerupgrades_by_icon($commander, $unit, $value) as $row) {
             $upgradesList[] = $row;
         }
     }
     //If the unit is a Mengsk Royal Guard, pull the respective upgrades and apply them automatically based on their rank
     if ($commander == "Mengsk") {
-        $sql = "SELECT unit, name, modifier, modifier2, modifier3, value, operation, upgradetype
-                FROM playerupgrades
-                WHERE commander='$commander'
-                AND unit = '$unit'
-                AND icon='veterancy'
-                AND CONVERT(name, UNSIGNED INTEGER) <= $level";
-        $result = mysqli_query($con, $sql);
-        while ($row = mysqli_fetch_array($result)) {
+        foreach (get_mengsk_veterancy_playerupgrades($commander, $unit, intval($level)) as $row) {
             $upgradesList[] = $row;
         }
     }
@@ -829,65 +794,25 @@ function generateUpgradesArray($commander, $unit, $upgrades, $level)
 
 function getUnitStats($commander, $unit)
 {
-    global $con;
-    $sql = "SELECT name, race, combatunit, mcost, vcost, supply, buildtime, hp, shields, armor, shieldarmor, energy, movementspeed, sightrange, tags,
-            atkrange, attackspeed, attacks, GROUP_CONCAT(IFNULL(attribute, 'None')) as attribute, GROUP_CONCAT(damage) as damage,
-            GROUP_CONCAT(attackbonus) as attackbonus, hpbonus, armorbonus, shieldbonus, notes
-            FROM playerunits
-            WHERE commander='$commander' AND basename = '$unit'
-            GROUP BY name
-            ORDER BY name ASC";
-    $result = mysqli_query($con, $sql);
-    $unitStats = [];
-    while ($row = mysqli_fetch_array($result)) {
-        if (strpos($row['attribute'], ',') !== false) {
-            $row['attribute'] = explode(',', $row['attribute']);
-            $row['damage'] = explode(',', $row['damage']);
-            $row['attackbonus'] = explode(',', $row['attackbonus']);
-        } else {
-            $row['attribute'] = [$row['attribute']];
-            $row['damage'] = [$row['damage']];
-            $row['attackbonus'] = [$row['attackbonus']];
-        }
-        $unitStats[] = $row;
-    }
-    return $unitStats;
+    return get_playerunit_stats($commander, $unit);
 }
 
 function getUnitUpgradesOutput($commander, $unit)
 {
     global $royalGuard;
     global $shieldCommanders;
-    global $con;
 
-    $sql = "SELECT DISTINCT name, unit, icon, effect
-            FROM playerupgrades
-            WHERE commander='$commander' AND unit= '$unit'
-            ORDER BY name ASC";
-    $result = mysqli_query($con, $sql);
-
-    $upgradeList = [];
-    while ($row = mysqli_fetch_array($result)) {
-        $upgradeList[] = $row;
-    }
-
-    $sql = "SELECT DISTINCT name, nameid, talenttype
-            FROM playertalents
-            WHERE commander='$commander' AND unit= '$unit'
-            ORDER BY name ASC";
-    $result = mysqli_query($con, $sql);
+    $upgradeList = get_playerupgrade_display_list($commander, $unit);
 
     $masteryList = [];
     $prestigeList = [];
-    while ($row = mysqli_fetch_array($result)) {
+    foreach (get_playertalent_display_list($commander, $unit) as $row) {
         if ($row['talenttype'] == "mastery") {
             $masteryList[] = $row;
         } else {
             $prestigeList[str_replace(" ", "", $row['name'])] = $row;
         }
     }
-
-    require_once __DIR__ . '/../../includes/queries.php';
 
     $commanderData = get_commander($commander);
     $commanderPrestiges = [

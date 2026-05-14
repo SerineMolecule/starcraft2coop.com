@@ -5,10 +5,7 @@ COMPOSER_DOCKER = docker run --rm -v $(PWD):/app composer:2.7.1
 all: html test
 
 .PHONY: deps
-deps: config.php node_modules vendor
-
-config.php:
-	cp -n config.example.php config.php
+deps: node_modules vendor
 
 node_modules: package.json
 	$(BUN_DOCKER) bun install
@@ -28,7 +25,7 @@ validate-data: node_modules
 	$(BUN_DOCKER) bun ./source-data/validate.ts
 
 .PHONY: html
-html: node_modules config.php
+html: node_modules
 	$(BUN_DOCKER) bun ./generate-html-dir.ts
 	$(PHP_EXEC) php ./generate-static.php
 

@@ -101,5 +101,8 @@ require_once "../../includes/wrapper.php";
         <li>Only upgrades that change the units weapon stats are listed. For this reason, damage reduction like Fenix's Network Administrator is not shown.</li>
         <li>Since numbers are calculated, there may be small rounding errors.</li>
     </ul>
+    <p>
+        If you prefer <a href="/tools/unitstats">the old unit stats page, it's still available</a>.
+    </p>
 
 <?= endContent() ?>
