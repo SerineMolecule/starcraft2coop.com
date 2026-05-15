@@ -461,6 +461,8 @@ class UnitStats extends preact.Component<{
 
         // preupgrade -> mastery -> prestige -> generic upgrade -> upgrade -> post-prestige
 
+        const metaUpgrades: { [upgrade: string]: [PlayerTalent, level: number | null][] } = {};
+
         if (unit.name === 'Sky Fury') {
             delete upgradedUnit.modes['(Fighter Mode)']!.attributedamage!['Armored'];
             upgradedUnit.modes['(Fighter Mode)']!.attributedamage!['']!.damage = 21;
@@ -477,9 +479,13 @@ class UnitStats extends preact.Component<{
             if (talent.talenttype !== 'mastery') continue;
             if (modifiers.unit !== token(talent.unit)) continue;
             if (modifiers.commander !== token(talent.commander)) continue;
-            if (talent.modifierupgrade && !modifiers.upgrades[talent.modifierupgrade]) continue;
             const level = modifiers.masteries[talent.name];
             if (!level) continue;
+            if (talent.modifierupgrade) {
+                if (!modifiers.upgrades[talent.modifierupgrade]) continue;
+                (metaUpgrades[talent.modifierupgrade] ||= []).push([talent, level]);
+                continue;
+            }
 
             this.applyUpgrade(talent, upgradedUnit, level);
         }
@@ -488,7 +494,11 @@ class UnitStats extends preact.Component<{
             if (!modifiers.prestiges[talent.name]) continue;
             if (modifiers.unit !== token(talent.unit)) continue;
             if (modifiers.commander !== token(talent.commander)) continue;
-            if (talent.modifierupgrade && !modifiers.upgrades[talent.modifierupgrade]) continue;
+            if (talent.modifierupgrade) {
+                if (!modifiers.upgrades[talent.modifierupgrade]) continue;
+                (metaUpgrades[talent.modifierupgrade] ||= []).push([talent, null]);
+                continue;
+            }
 
             this.applyUpgrade(talent, upgradedUnit);
         }
@@ -532,12 +542,19 @@ class UnitStats extends preact.Component<{
             }
         }
 
-        for (const upgrade of playerUpgrades as PlayerUpgrade[]) {
+        for (let upgrade of playerUpgrades as PlayerUpgrade[]) {
             if (!modifiers.upgrades[upgrade.name]) continue;
             if (modifiers.unit !== token(upgrade.unit)) continue;
             if (modifiers.commander !== token(upgrade.commander)) continue;
             if (upgrade.upgradetype !== 'upgrade') continue;
 
+            if (metaUpgrades[upgrade.name]) {
+                upgrade = { ...upgrade };
+                for (const [metaUpgrade, level] of metaUpgrades[upgrade.name]!) {
+                    if (upgrade.modifier !== metaUpgrade.modifier) continue;
+                    upgrade.value = this.applyModifier(upgrade.value, metaUpgrade, true, level);
+                }
+            }
             this.applyUpgrade(upgrade, upgradedUnit);
         }
         for (const talent of playerTalents as PlayerTalent[]) {
@@ -690,15 +707,15 @@ class UnitStats extends preact.Component<{
             masteryInputs: null
         });
     };
-    static applyModifier(value: number, upgrade: { operation: string, value: number, operationtype?: string | null }, reverse?: boolean, level?: number): number {
+    static applyModifier(value: number, upgrade: { operation: string, value: number, operationtype?: string | null }, reverse?: boolean, level?: number | null): number {
         let upgradeValue = upgrade.value;
-        if (upgrade.operationtype) {
+        if (upgrade.operation === 'multiply') {
             // only used for masteries
-            if (upgrade.operation === 'multiply' && upgrade.operationtype === 'increase') {
+            if (upgrade.operationtype === 'increase') {
                 upgradeValue = (1 + upgrade.value * level!);
-            } else if (upgrade.operation === 'multiply' && upgrade.operationtype === 'decrease') {
+            } else if (upgrade.operationtype === 'decrease') {
                 upgradeValue = (1 - upgrade.value * level!);
-            } else {
+            } else if (level) {
                 throw new Error(`Unknown operation: ${upgrade.operation} : ${upgrade.operationtype}`);
             }
         }
@@ -708,6 +725,7 @@ class UnitStats extends preact.Component<{
             case 'multiply':
                 return reverse ? value / upgradeValue : value * upgradeValue;
             case 'set':
+                if (level) throw new Error(`Level can't be set for this upgrade`);
                 return upgradeValue;
             default:
                 throw new Error(`Unknown operation: ${upgrade.operation}`);
