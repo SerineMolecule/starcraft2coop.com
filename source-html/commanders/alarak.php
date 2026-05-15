@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Alarak</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Alarak">
   <meta name="keywords" content="Starcraft co-op guides alarak commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/alarak">
   <script src="/scripts/preload.js"></script>
@@ -317,8 +317,10 @@ require_once "../../includes/wrapper.php";
     <p>The Summon Death Fleet ability brings a Tal'Darim Mothership onto the battlefield. This unit has abilities itself, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/alarak/mothership.jpg" alt="Mothership">
-            <p>Mothership</p>
+            <a class="unitStatsLink" href="/units/#alarak/mothership">
+                <img src="/images/commanderdata/abilities/alarak/mothership.jpg" alt="Mothership">
+                <p>Mothership</p>
+            </a>
         </div>
         <div>
             <table class="centered unitAbilities">
@@ -350,8 +352,10 @@ require_once "../../includes/wrapper.php";
     <p>The Summon Death Fleet ability also brings Destroyers onto the battlefield. They do not have abilities or upgrades. Additionally, their bounce damage is not affected by attack upgrades.</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/alarak/destroyer.jpg" alt="Destroyer">
-            <p>Destroyer</p>
+            <a class="unitStatsLink" href="/units/#alarak/destroyer">
+                <img src="/images/commanderdata/abilities/alarak/destroyer.jpg" alt="Destroyer">
+                <p>Destroyer</p>
+            </a>
         </div>
     </div>
     <p>*If using the Shadow of Death prestige, this cooldown is increased to 60s, and no longer teleports allied units.</p>
@@ -556,7 +560,7 @@ require_once "../../includes/wrapper.php";
     </table>
     <p>All three prestiges are recommended for general play. P3 (Shadow of Death) is particularly popular.</p>
     <h2 id="hero">Hero Unit</h2>
-    <img id="heroPic" src="/images/commanderdata/hero/alarak/alarak.jpg" alt="Alarak">
+    <a class="unitStatsLink" href="/units/#alarak/alarak"><img id="heroPic" src="/images/commanderdata/hero/alarak/alarak.jpg" alt="Alarak"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
     <p>The abilities for Alarak are:</p>
@@ -662,8 +666,10 @@ require_once "../../includes/wrapper.php";
     <p>Alarak's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/alarak/supplicant.jpg" alt="Supplicant">
-            <p>Supplicant</p>
+            <a class="unitStatsLink" href="/units/#alarak/supplicant">
+                <img src="/images/commanderdata/units/alarak/supplicant.jpg" alt="Supplicant">
+                <p>Supplicant</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -704,8 +710,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/alarak/slayer.jpg" alt="Slayer">
-            <p>Slayer</p>
+            <a class="unitStatsLink" href="/units/#alarak/slayer">
+                <img src="/images/commanderdata/units/alarak/slayer.jpg" alt="Slayer">
+                <p>Slayer</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -766,8 +774,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/alarak/havoc.jpg" alt="Havoc">
-            <p>Havoc</p>
+            <a class="unitStatsLink" href="/units/#alarak/havoc">
+                <img src="/images/commanderdata/units/alarak/havoc.jpg" alt="Havoc">
+                <p>Havoc</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -845,8 +855,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/alarak/ascendant.jpg" alt="Ascendant">
-            <p>Ascendant</p>
+            <a class="unitStatsLink" href="/units/#alarak/ascendant">
+                <img src="/images/commanderdata/units/alarak/ascendant.jpg" alt="Ascendant">
+                <p>Ascendant</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -931,8 +943,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/alarak/vanguard.jpg" alt="Vanguard">
-            <p>Vanguard</p>
+            <a class="unitStatsLink" href="/units/#alarak/vanguard">
+                <img src="/images/commanderdata/units/alarak/vanguard.jpg" alt="Vanguard">
+                <p>Vanguard</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -973,8 +987,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/alarak/wrathwalker.jpg" alt="Wrathwalker">
-            <p>Wrathwalker</p>
+            <a class="unitStatsLink" href="/units/#alarak/wrathwalker">
+                <img src="/images/commanderdata/units/alarak/wrathwalker.jpg" alt="Wrathwalker">
+                <p>Wrathwalker</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1015,8 +1031,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/alarak/warprism.jpg" alt="War Prism">
-            <p>War Prism</p>
+            <a class="unitStatsLink" href="/units/#alarak/warprism">
+                <img src="/images/commanderdata/units/alarak/warprism.jpg" alt="War Prism">
+                <p>War Prism</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

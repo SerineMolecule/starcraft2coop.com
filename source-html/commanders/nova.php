@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Nova</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Nova">
   <meta name="keywords" content="Starcraft co-op guides nova commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/nova">
   <style>
@@ -498,7 +498,7 @@ require_once "../../includes/wrapper.php";
     </table>
     <p>For general play, Soldier of Fortune offers Nova the versatility she needs to be able to handle any mission and attack wave composition. Infiltration Specialist may excel on some maps, but it's efficacy is highly affected by attack wave compositions, and is therefore, not a reliable prestige to be used.</p>
     <h2 id="hero">Hero Unit</h2>
-    <img id="heroPic" src="/images/commanderdata/hero/nova/nova.jpg" alt="Nova">
+    <a class="unitStatsLink" href="/units/#nova/nova"><img id="heroPic" src="/images/commanderdata/hero/nova/nova.jpg" alt="Nova"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:30</p>
     <p>The abilities for Stealth Mode Nova are:</p>
@@ -654,8 +654,10 @@ require_once "../../includes/wrapper.php";
     <p>Nova's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/elitemarine.jpg" alt="Elite Marine">
-            <p>Elite Marine</p>
+            <a class="unitStatsLink" href="/units/#nova/elitemarine">
+                <img src="/images/commanderdata/units/nova/elitemarine.jpg" alt="Elite Marine">
+                <p>Elite Marine</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -715,8 +717,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/maraudercommando.jpg" alt="Marauder Commando">
-            <p>Marauder Commando</p>
+            <a class="unitStatsLink" href="/units/#nova/maraudercommando">
+                <img src="/images/commanderdata/units/nova/maraudercommando.jpg" alt="Marauder Commando">
+                <p>Marauder Commando</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -776,8 +780,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/specopsghost.jpg" alt="Spec Ops Ghost">
-            <p>Spec Ops Ghost</p>
+            <a class="unitStatsLink" href="/units/#nova/specopsghost">
+                <img src="/images/commanderdata/units/nova/specopsghost.jpg" alt="Spec Ops Ghost">
+                <p>Spec Ops Ghost</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -845,8 +851,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/hellbatranger.jpg" alt="Hellbat Ranger">
-            <p>Hellbat Ranger</p>
+            <a class="unitStatsLink" href="/units/#nova/hellbatranger">
+                <img src="/images/commanderdata/units/nova/hellbatranger.jpg" alt="Hellbat Ranger">
+                <p>Hellbat Ranger</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -907,8 +915,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/hellionranger.jpg" alt="Hellion Ranger">
-            <p>Hellion Ranger</p>
+            <a class="unitStatsLink" href="/units/#nova/hellionranger">
+                <img src="/images/commanderdata/units/nova/hellionranger.jpg" alt="Hellion Ranger">
+                <p>Hellion Ranger</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -941,8 +951,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/strikegoliath.jpg" alt="Strike Goliath">
-            <p>Strike Goliath</p>
+            <a class="unitStatsLink" href="/units/#nova/strikegoliath">
+                <img src="/images/commanderdata/units/nova/strikegoliath.jpg" alt="Strike Goliath">
+                <p>Strike Goliath</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -982,8 +994,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/heavysiegetank.jpg" alt="Heavy Siege Tank">
-            <p>Heavy Siege Tank</p>
+            <a class="unitStatsLink" href="/units/#nova/heavysiegetank">
+                <img src="/images/commanderdata/units/nova/heavysiegetank.jpg" alt="Heavy Siege Tank">
+                <p>Heavy Siege Tank</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1043,8 +1057,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/raidliberator.jpg" alt="Raid Liberator">
-            <p>Raid Liberator</p>
+            <a class="unitStatsLink" href="/units/#nova/raidliberator">
+                <img src="/images/commanderdata/units/nova/raidliberator.jpg" alt="Raid Liberator">
+                <p>Raid Liberator</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1085,8 +1101,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/covertbanshee.jpg" alt="Covert Banshee">
-            <p>Covert Banshee</p>
+            <a class="unitStatsLink" href="/units/#nova/covertbanshee">
+                <img src="/images/commanderdata/units/nova/covertbanshee.jpg" alt="Covert Banshee">
+                <p>Covert Banshee</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1146,8 +1164,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/nova/raventypeii.jpg" alt="Raven Type-II">
-            <p>Raven Type-II</p>
+            <a class="unitStatsLink" href="/units/#nova/raventypeii">
+                <img src="/images/commanderdata/units/nova/raventypeii.jpg" alt="Raven Type-II">
+                <p>Raven Type-II</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

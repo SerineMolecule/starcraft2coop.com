@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Mengsk</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Mengsk">
   <meta name="keywords" content="Starcraft co-op guides mengsk commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/mengsk">
   <script src="/scripts/preload.js"></script>
@@ -601,8 +601,10 @@ require_once "../../includes/wrapper.php";
     <p>Mengsk's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/dominiontrooper.jpg" alt="Dominion Trooper">
-            <p>Dominion Trooper</p>
+            <a class="unitStatsLink" href="/units/#mengsk/dominiontrooper">
+                <img src="/images/commanderdata/units/mengsk/dominiontrooper.jpg" alt="Dominion Trooper">
+                <p>Dominion Trooper</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -614,8 +616,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/dominionassaulttrooper.jpg" alt="Dominion Assault Trooper">
-            <p>Dominion Assault Trooper</p>
+            <a class="unitStatsLink" href="/units/#mengsk/dominionassaulttrooper">
+                <img src="/images/commanderdata/units/mengsk/dominionassaulttrooper.jpg" alt="Dominion Assault Trooper">
+                <p>Dominion Assault Trooper</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -626,8 +630,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/dominionflametrooper.jpg" alt="Dominion Flame Trooper">
-            <p>Dominion Flame Trooper</p>
+            <a class="unitStatsLink" href="/units/#mengsk/dominionflametrooper">
+                <img src="/images/commanderdata/units/mengsk/dominionflametrooper.jpg" alt="Dominion Flame Trooper">
+                <p>Dominion Flame Trooper</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -638,8 +644,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/dominionrockettrooper.jpg" alt="Dominion Rocket Trooper">
-            <p>Dominion Rocket Trooper</p>
+            <a class="unitStatsLink" href="/units/#mengsk/dominionrockettrooper">
+                <img src="/images/commanderdata/units/mengsk/dominionrockettrooper.jpg" alt="Dominion Rocket Trooper">
+                <p>Dominion Rocket Trooper</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -650,8 +658,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/aegisguard.jpg" alt="Aegis Guard">
-            <p>Aegis Guard</p>
+            <a class="unitStatsLink" href="/units/#mengsk/aegisguard">
+                <img src="/images/commanderdata/units/mengsk/aegisguard.jpg" alt="Aegis Guard">
+                <p>Aegis Guard</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -733,8 +743,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/emperorsshadow.jpg" alt="Emperor's Shadow">
-            <p>Emperor's Shadow</p>
+            <a class="unitStatsLink" href="/units/#mengsk/emperorsshadow">
+                <img src="/images/commanderdata/units/mengsk/emperorsshadow.jpg" alt="Emperor's Shadow">
+                <p>Emperor's Shadow</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -837,8 +849,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/shockdivision.jpg" alt="Shock Division">
-            <p>Shock Division</p>
+            <a class="unitStatsLink" href="/units/#mengsk/shockdivision">
+                <img src="/images/commanderdata/units/mengsk/shockdivision.jpg" alt="Shock Division">
+                <p>Shock Division</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -905,8 +919,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/blackhammer.jpg" alt="Blackhammer">
-            <p>Blackhammer</p>
+            <a class="unitStatsLink" href="/units/#mengsk/blackhammer">
+                <img src="/images/commanderdata/units/mengsk/blackhammer.jpg" alt="Blackhammer">
+                <p>Blackhammer</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -972,8 +988,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/skyfury.jpg" alt="Sky Fury">
-            <p>Sky Fury</p>
+            <a class="unitStatsLink" href="/units/#mengsk/skyfury">
+                <img src="/images/commanderdata/units/mengsk/skyfury.jpg" alt="Sky Fury">
+                <p>Sky Fury</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1041,8 +1059,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/imperialintercessor.jpg" alt="Imperial Intercessor">
-            <p>Imperial Intercessor</p>
+            <a class="unitStatsLink" href="/units/#mengsk/imperialintercessor">
+                <img src="/images/commanderdata/units/mengsk/imperialintercessor.jpg" alt="Imperial Intercessor">
+                <p>Imperial Intercessor</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1109,8 +1129,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/imperialwitness.jpg" alt="Imperial Witness">
-            <p>Imperial Witness</p>
+            <a class="unitStatsLink" href="/units/#mengsk/imperialwitness">
+                <img src="/images/commanderdata/units/mengsk/imperialwitness.jpg" alt="Imperial Witness">
+                <p>Imperial Witness</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1145,8 +1167,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/mengsk/prideofaugustgrad.jpg" alt="Pride of Augustgrad">
-            <p>Pride of Augustgrad</p>
+            <a class="unitStatsLink" href="/units/#mengsk/prideofaugustgrad">
+                <img src="/images/commanderdata/units/mengsk/prideofaugustgrad.jpg" alt="Pride of Augustgrad">
+                <p>Pride of Augustgrad</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Swann</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Swann">
   <meta name="keywords" content="Starcraft co-op guides swann commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/swann">
   <script src="/scripts/preload.js"></script>
@@ -560,8 +560,10 @@ require_once "../../includes/wrapper.php";
     <p>Swann's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/hellbat.jpg" alt="Hellbat">
-            <p>Hellbat</p>
+            <a class="unitStatsLink" href="/units/#swann/hellbat">
+                <img src="/images/commanderdata/units/swann/hellbat.jpg" alt="Hellbat">
+                <p>Hellbat</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -615,8 +617,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/hellion.jpg" alt="Hellion">
-            <p>Hellion</p>
+            <a class="unitStatsLink" href="/units/#swann/hellion">
+                <img src="/images/commanderdata/units/swann/hellion.jpg" alt="Hellion">
+                <p>Hellion</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -670,8 +674,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath">
-            <p>Goliath</p>
+            <a class="unitStatsLink" href="/units/#swann/goliath">
+                <img src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath">
+                <p>Goliath</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -727,8 +733,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/siegetank.jpg" alt="Siege Tank">
-            <p>Siege Tank</p>
+            <a class="unitStatsLink" href="/units/#swann/siegetank">
+                <img src="/images/commanderdata/units/swann/siegetank.jpg" alt="Siege Tank">
+                <p>Siege Tank</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -775,8 +783,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/cyclone.jpg" alt="Cyclone">
-            <p>Cyclone</p>
+            <a class="unitStatsLink" href="/units/#swann/cyclone">
+                <img src="/images/commanderdata/units/swann/cyclone.jpg" alt="Cyclone">
+                <p>Cyclone</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -851,8 +861,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/thor.jpg" alt="Thor">
-            <p>Thor</p>
+            <a class="unitStatsLink" href="/units/#swann/thor">
+                <img src="/images/commanderdata/units/swann/thor.jpg" alt="Thor">
+                <p>Thor</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -920,8 +932,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/wraith.jpg" alt="Wraith">
-            <p>Wraith</p>
+            <a class="unitStatsLink" href="/units/#swann/wraith">
+                <img src="/images/commanderdata/units/swann/wraith.jpg" alt="Wraith">
+                <p>Wraith</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -997,8 +1011,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/hercules.jpg" alt="Hercules">
-            <p>Hercules</p>
+            <a class="unitStatsLink" href="/units/#swann/hercules">
+                <img src="/images/commanderdata/units/swann/hercules.jpg" alt="Hercules">
+                <p>Hercules</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1052,8 +1068,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">
-            <p>Science Vessel</p>
+            <a class="unitStatsLink" href="/units/#swann/sciencevessel">
+                <img src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">
+                <p>Science Vessel</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

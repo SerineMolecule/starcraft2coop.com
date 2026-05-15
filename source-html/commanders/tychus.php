@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Tychus</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Tychus">
   <meta name="keywords" content="Starcraft co-op guides tychus commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/tychus">
   <style>
@@ -293,8 +293,10 @@ require_once "../../includes/wrapper.php";
     <p>The Calldown Odin ability brings an Odin onto the battlefield. This unit has abilities itself, shown below. Depending on whether the "Big Red Button" is researched, it will have one of these two abilities. You only have one charge for each of these abilities, so optimal placement (and timing) is required.</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/tychus/odin.jpg" alt="Odin">
-            <p>Odin</p>
+            <a class="unitStatsLink" href="/units/#tychus/odin">
+                <img src="/images/commanderdata/units/tychus/odin.jpg" alt="Odin">
+                <p>Odin</p>
+            </a>
         </div>
         <div>
             <table class="centered unitAbilities">
@@ -600,8 +602,10 @@ require_once "../../includes/wrapper.php";
     <h3>Guns:</h3>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/tychus.jpg" alt="Tychus Findlay">
-            <p>Tychus Findlay</p>
+            <a class="unitStatsLink" href="/units/#tychus/tychus">
+                <img src="/images/commanderdata/units/tychus/tychus.jpg" alt="Tychus Findlay">
+                <p>Tychus Findlay</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -678,8 +682,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/crookedsam.jpg" alt="Crooked Sam">
-            <p>Crooked Sam</p>
+            <a class="unitStatsLink" href="/units/#tychus/crookedsam">
+                <img src="/images/commanderdata/units/tychus/crookedsam.jpg" alt="Crooked Sam">
+                <p>Crooked Sam</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -756,8 +762,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/sirius.jpg" alt='James "Sirius" Sykes'>
-            <p>James "Sirius" Sykes</p>
+            <a class="unitStatsLink" href="/units/#tychus/sirius">
+                <img src="/images/commanderdata/units/tychus/sirius.jpg" alt='James "Sirius" Sykes'>
+                <p>James "Sirius" Sykes</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -834,8 +842,10 @@ require_once "../../includes/wrapper.php";
     <h3>Muscles:</h3>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/blaze.jpg" alt='Miles "Blaze" Lewis'>
-            <p>Miles "Blaze" Lewis</p>
+            <a class="unitStatsLink" href="/units/#tychus/blaze">
+                <img src="/images/commanderdata/units/tychus/blaze.jpg" alt='Miles "Blaze" Lewis'>
+                <p>Miles "Blaze" Lewis</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -912,8 +922,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/cannonball.jpg" alt='Rob "Cannonball" Boswell'>
-            <p>Rob "Cannonball" Boswell</p>
+            <a class="unitStatsLink" href="/units/#tychus/cannonball">
+                <img src="/images/commanderdata/units/tychus/cannonball.jpg" alt='Rob "Cannonball" Boswell'>
+                <p>Rob "Cannonball" Boswell</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -990,8 +1002,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer outlaw override">
-            <img src="/images/commanderdata/units/tychus/rattlesnake.jpg" alt='Kev "Rattlesnake" West'>
-            <p>Kev "Rattlesnake" West</p>
+            <a class="unitStatsLink" href="/units/#tychus/rattlesnake">
+                <img src="/images/commanderdata/units/tychus/rattlesnake.jpg" alt='Kev "Rattlesnake" West'>
+                <p>Kev "Rattlesnake" West</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -1070,8 +1084,10 @@ require_once "../../includes/wrapper.php";
     <h3>Fixers:</h3>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/vega.jpg" alt='Vega'>
-            <p>Vega</p>
+            <a class="unitStatsLink" href="/units/#tychus/vega">
+                <img src="/images/commanderdata/units/tychus/vega.jpg" alt='Vega'>
+                <p>Vega</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -1148,8 +1164,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/nux.jpg" alt='Nux'>
-            <p>Nux</p>
+            <a class="unitStatsLink" href="/units/#tychus/nux">
+                <img src="/images/commanderdata/units/tychus/nux.jpg" alt='Nux'>
+                <p>Nux</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>
@@ -1226,8 +1244,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer outlaw">
-            <img src="/images/commanderdata/units/tychus/nikara.jpg" alt='Lt. Layna Nikara'>
-            <p>Lt. Layna Nikara</p>
+            <a class="unitStatsLink" href="/units/#tychus/nikara">
+                <img src="/images/commanderdata/units/tychus/nikara.jpg" alt='Lt. Layna Nikara'>
+                <p>Lt. Layna Nikara</p>
+            </a>
         </div>
         <div class="outlawAbility">
             <p>Ability:</p>

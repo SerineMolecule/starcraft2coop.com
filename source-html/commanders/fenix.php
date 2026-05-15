@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Fenix</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Fenix">
   <meta name="keywords" content="Starcraft co-op guides fenix commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/fenix">
   <style>
@@ -238,8 +238,10 @@ require_once "../../includes/wrapper.php";
     <p>Instead of calldowns, Fenix can deploy one of three different Armor Suits onto the battlefield at any location with vision. There is a 15 second cooldown for suit deployment. Should a suit be destroyed, there is a 180 second cooldown before it can be used again. Each suit is designed for a particular purpose and has its own abilities. These are shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/fenix/praetorarmor.jpg" alt="Praetor Armor">
-            <p>Praetor Armor</p>
+            <a class="unitStatsLink" href="/units/#fenix/fenixpraetorarmor">
+                <img src="/images/commanderdata/abilities/fenix/praetorarmor.jpg" alt="Praetor Armor">
+                <p>Praetor Armor</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -280,8 +282,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/fenix/solaritedragoon.jpg" alt="Solarite Dragoon">
-            <p>Solarite Dragoon</p>
+            <a class="unitStatsLink" href="/units/#fenix/fenixsolaritedragoon">
+                <img src="/images/commanderdata/abilities/fenix/solaritedragoon.jpg" alt="Solarite Dragoon">
+                <p>Solarite Dragoon</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -322,8 +326,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/fenix/cybrosarbiter.jpg" alt="Cybros Arbiter">
-            <p>Cybros Arbiter</p>
+            <a class="unitStatsLink" href="/units/#fenix/fenixcybrosarbiter">
+                <img src="/images/commanderdata/abilities/fenix/cybrosarbiter.jpg" alt="Cybros Arbiter">
+                <p>Cybros Arbiter</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -659,8 +665,10 @@ require_once "../../includes/wrapper.php";
     <p>Fenix's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/legionnaire.jpg" alt="Legionnaire">
-            <p>Legionnaire</p>
+            <a class="unitStatsLink" href="/units/#fenix/legionnaire">
+                <img src="/images/commanderdata/units/fenix/legionnaire.jpg" alt="Legionnaire">
+                <p>Legionnaire</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -713,8 +721,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/adept.jpg" alt="Adept">
-            <p>Adept</p>
+            <a class="unitStatsLink" href="/units/#fenix/adept">
+                <img src="/images/commanderdata/units/fenix/adept.jpg" alt="Adept">
+                <p>Adept</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -747,8 +757,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/conservator.jpg" alt="Conservator">
-            <p>Conservator</p>
+            <a class="unitStatsLink" href="/units/#fenix/conservator">
+                <img src="/images/commanderdata/units/fenix/conservator.jpg" alt="Conservator">
+                <p>Conservator</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -803,8 +815,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/immortal.jpg" alt="Immortal">
-            <p>Immortal</p>
+            <a class="unitStatsLink" href="/units/#fenix/immortal">
+                <img src="/images/commanderdata/units/fenix/immortal.jpg" alt="Immortal">
+                <p>Immortal</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -838,8 +852,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/colossus.jpg" alt="Colossus">
-            <p>Colossus</p>
+            <a class="unitStatsLink" href="/units/#fenix/colossus">
+                <img src="/images/commanderdata/units/fenix/colossus.jpg" alt="Colossus">
+                <p>Colossus</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -872,8 +888,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/disruptor.jpg" alt="Disruptor">
-            <p>Disruptor</p>
+            <a class="unitStatsLink" href="/units/#fenix/disruptor">
+                <img src="/images/commanderdata/units/fenix/disruptor.jpg" alt="Disruptor">
+                <p>Disruptor</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -934,8 +952,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/scout.jpg" alt="Scout">
-            <p>Scout</p>
+            <a class="unitStatsLink" href="/units/#fenix/scout">
+                <img src="/images/commanderdata/units/fenix/scout.jpg" alt="Scout">
+                <p>Scout</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -968,8 +988,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/carrier.jpg" alt="Carrier">
-            <p>Carrier</p>
+            <a class="unitStatsLink" href="/units/#fenix/carrier">
+                <img src="/images/commanderdata/units/fenix/carrier.jpg" alt="Carrier">
+                <p>Carrier</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1022,8 +1044,10 @@ require_once "../../includes/wrapper.php";
     <h2 id="champions">Champion A.I.'s</h2>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/kaldalis.jpg" alt="Kaldalis">
-            <p>Kaldalis</p>
+            <a class="unitStatsLink" href="/units/#fenix/kaldalis">
+                <img src="/images/commanderdata/units/fenix/kaldalis.jpg" alt="Kaldalis">
+                <p>Kaldalis</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1078,8 +1102,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/talis.jpg" alt="Talis">
-            <p>Talis</p>
+            <a class="unitStatsLink" href="/units/#fenix/talis">
+                <img src="/images/commanderdata/units/fenix/talis.jpg" alt="Talis">
+                <p>Talis</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1132,8 +1158,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/taldarin.jpg" alt="Taldarin">
-            <p>Taldarin</p>
+            <a class="unitStatsLink" href="/units/#fenix/taldarin">
+                <img src="/images/commanderdata/units/fenix/taldarin.jpg" alt="Taldarin">
+                <p>Taldarin</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1187,8 +1215,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/warbringer.jpg" alt="Warbringer">
-            <p>Warbringer</p>
+            <a class="unitStatsLink" href="/units/#fenix/warbringer">
+                <img src="/images/commanderdata/units/fenix/warbringer.jpg" alt="Warbringer">
+                <p>Warbringer</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1242,8 +1272,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/mojo.jpg" alt="Mojo">
-            <p>Mojo</p>
+            <a class="unitStatsLink" href="/units/#fenix/mojo">
+                <img src="/images/commanderdata/units/fenix/mojo.jpg" alt="Mojo">
+                <p>Mojo</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1304,8 +1336,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/fenix/clolarion.jpg" alt="Clolarion">
-            <p>Clolarion</p>
+            <a class="unitStatsLink" href="/units/#fenix/clolarion">
+                <img src="/images/commanderdata/units/fenix/clolarion.jpg" alt="Clolarion">
+                <p>Clolarion</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Zagara</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Zagara">
   <meta name="keywords" content="Starcraft co-op guides zagara commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/zagara">
   <style>
@@ -424,7 +424,7 @@ require_once "../../includes/wrapper.php";
     </table>
     <p>While leveling Zagara sub-mastery, the Mother of Constructs prestige should be used, due to the weakness of the hero unit because of the lack of the level 15 Level Unlock. For players that prefer the F2 a-move style of play, playing without a Prestige Talent selected will provide them with all the tools they need to be able to handle any scenario thrown at them. However, players that are a little more proactive and aggressive with their hero units will probably be able to get a lot of value from the Apex Predator prestige.</p>
     <h2 id="hero">Hero Unit</h2>
-    <img id="heroPic" src="/images/commanderdata/hero/zagara/zagara.jpg" alt="Zagara">
+    <a class="unitStatsLink" href="/units/#zagara/zagara"><img id="heroPic" src="/images/commanderdata/hero/zagara/zagara.jpg" alt="Zagara"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00 </p>
     <p>The abilities for Zagara are:</p>
@@ -536,8 +536,10 @@ require_once "../../includes/wrapper.php";
     <p>Zagara's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zagara/queen.jpg" alt="Queen">
-            <p>Queen</p>
+            <a class="unitStatsLink" href="/units/#zagara/queen">
+                <img src="/images/commanderdata/units/zagara/queen.jpg" alt="Queen">
+                <p>Queen</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -584,8 +586,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zagara/zergling.jpg" alt="Zergling">
-            <p>Zergling</p>
+            <a class="unitStatsLink" href="/units/#zagara/zergling">
+                <img src="/images/commanderdata/units/zagara/zergling.jpg" alt="Zergling">
+                <p>Zergling</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -640,8 +644,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zagara/baneling.jpg" alt="Baneling">
-            <p>Baneling</p>
+            <a class="unitStatsLink" href="/units/#zagara/baneling">
+                <img src="/images/commanderdata/units/zagara/baneling.jpg" alt="Baneling">
+                <p>Baneling</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -689,8 +695,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zagara/aberration.jpg" alt="Aberration">
-            <p>Aberration</p>
+            <a class="unitStatsLink" href="/units/#zagara/aberration">
+                <img src="/images/commanderdata/units/zagara/aberration.jpg" alt="Aberration">
+                <p>Aberration</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -724,8 +732,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zagara/scourge.jpg" alt="Scourge">
-            <p>Scourge</p>
+            <a class="unitStatsLink" href="/units/#zagara/scourge">
+                <img src="/images/commanderdata/units/zagara/scourge.jpg" alt="Scourge">
+                <p>Scourge</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -766,8 +776,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zagara/corruptor.jpg" alt="Corruptor">
-            <p>Corruptor</p>
+            <a class="unitStatsLink" href="/units/#zagara/corruptor">
+                <img src="/images/commanderdata/units/zagara/corruptor.jpg" alt="Corruptor">
+                <p>Corruptor</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

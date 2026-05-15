@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Abathur</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Abathur">
   <meta name="keywords" content="Starcraft co-op guides abathur commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/abathur">
   <style>
@@ -530,8 +530,10 @@ require_once "../../includes/wrapper.php";
     <p>Abathur's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/roach.jpg" alt="Roach">
-            <p>Roach</p>
+            <a class="unitStatsLink" href="/units/#abathur/roach">
+                <img src="/images/commanderdata/units/abathur/roach.jpg" alt="Roach">
+                <p>Roach</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -587,8 +589,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/ravager.jpg" alt="Ravager">
-            <p>Ravager</p>
+            <a class="unitStatsLink" href="/units/#abathur/ravager">
+                <img src="/images/commanderdata/units/abathur/ravager.jpg" alt="Ravager">
+                <p>Ravager</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -651,8 +655,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/swarmhost.jpg" alt="Swarm Host">
-            <p>Swarm Host</p>
+            <a class="unitStatsLink" href="/units/#abathur/swarmhost">
+                <img src="/images/commanderdata/units/abathur/swarmhost.jpg" alt="Swarm Host">
+                <p>Swarm Host</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -724,8 +730,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/mutalisk.jpg" alt="Mutalisk">
-            <p>Mutalisk</p>
+            <a class="unitStatsLink" href="/units/#abathur/mutalisk">
+                <img src="/images/commanderdata/units/abathur/mutalisk.jpg" alt="Mutalisk">
+                <p>Mutalisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -773,8 +781,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/guardian.jpg" alt="Guardian">
-            <p>Guardian</p>
+            <a class="unitStatsLink" href="/units/#abathur/guardian">
+                <img src="/images/commanderdata/units/abathur/guardian.jpg" alt="Guardian">
+                <p>Guardian</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -809,8 +819,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/devourer.jpg" alt="Devourer">
-            <p>Devourer</p>
+            <a class="unitStatsLink" href="/units/#abathur/devourer">
+                <img src="/images/commanderdata/units/abathur/devourer.jpg" alt="Devourer">
+                <p>Devourer</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -864,8 +876,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/viper.jpg" alt="Viper">
-            <p>Viper</p>
+            <a class="unitStatsLink" href="/units/#abathur/viper">
+                <img src="/images/commanderdata/units/abathur/viper.jpg" alt="Viper">
+                <p>Viper</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -950,8 +964,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/swarmqueen.jpg" alt="Swarm Queen">
-            <p>Swarm Queen</p>
+            <a class="unitStatsLink" href="/units/#abathur/swarmqueen">
+                <img src="/images/commanderdata/units/abathur/swarmqueen.jpg" alt="Swarm Queen">
+                <p>Swarm Queen</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1018,8 +1034,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/brutalisk.jpg" alt="Brutalisk">
-            <p>Brutalisk</p>
+            <a class="unitStatsLink" href="/units/#abathur/brutalisk">
+                <img src="/images/commanderdata/units/abathur/brutalisk.jpg" alt="Brutalisk">
+                <p>Brutalisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1055,8 +1073,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/abathur/leviathan.jpg" alt="Leviathan">
-            <p>Leviathan</p>
+            <a class="unitStatsLink" href="/units/#abathur/leviathan">
+                <img src="/images/commanderdata/units/abathur/leviathan.jpg" alt="Leviathan">
+                <p>Leviathan</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

@@ -170,6 +170,13 @@
     text-align:center;
     max-width: 100px;
 }
+.imageContainer .unitStatsLink{
+    display:block;
+    text-decoration:none;
+}
+.imageContainer .unitStatsLink:hover p{
+    text-decoration:underline;
+}
 .unitAbilities td:nth-child(2){
     width:15%;
 }

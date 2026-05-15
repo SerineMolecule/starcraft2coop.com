@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Dehaka</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Dehaka">
   <meta name="keywords" content="Starcraft co-op guides dehaka commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/dehaka">
   <style>
@@ -346,8 +346,10 @@ require_once "../../includes/wrapper.php";
     <p>Each of the calldowns above bring a new unit onto the battlefield. These units have abilities themselves, shown below.</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/dehaka/greaterprimalwurm.jpg" alt="Greater Primal Wurm">
-            <p>Greater Primal Wurm</p>
+            <a class="unitStatsLink" href="/units/#dehaka/greaterprimalwurm">
+                <img src="/images/commanderdata/abilities/dehaka/greaterprimalwurm.jpg" alt="Greater Primal Wurm">
+                <p>Greater Primal Wurm</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -378,8 +380,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/dehaka/glevig.jpg" alt="Glevig">
-            <p>Glevig</p>
+            <a class="unitStatsLink" href="/units/#dehaka/glevig">
+                <img src="/images/commanderdata/abilities/dehaka/glevig.jpg" alt="Glevig">
+                <p>Glevig</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -410,8 +414,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/dehaka/murvar.jpg" alt="Murvar">
-            <p>Murvar</p>
+            <a class="unitStatsLink" href="/units/#dehaka/murvar">
+                <img src="/images/commanderdata/abilities/dehaka/murvar.jpg" alt="Murvar">
+                <p>Murvar</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -442,8 +448,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/dehaka/dakrun.jpg" alt="Dakrun">
-            <p>Dakrun</p>
+            <a class="unitStatsLink" href="/units/#dehaka/dakrun">
+                <img src="/images/commanderdata/abilities/dehaka/dakrun.jpg" alt="Dakrun">
+                <p>Dakrun</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -779,8 +787,10 @@ require_once "../../includes/wrapper.php";
     <p>Dehaka's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primalzergling.jpg" alt="Primal Zergling">
-            <p>Primal Zergling</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primalzergling">
+                <img src="/images/commanderdata/units/dehaka/primalzergling.jpg" alt="Primal Zergling">
+                <p>Primal Zergling</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -794,8 +804,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/ravasaur.jpg" alt="Ravasaur">
-            <p>Ravasaur</p>
+            <a class="unitStatsLink" href="/units/#dehaka/ravasaur">
+                <img src="/images/commanderdata/units/dehaka/ravasaur.jpg" alt="Ravasaur">
+                <p>Ravasaur</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -835,8 +847,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primalroach.jpg" alt="Primal Roach">
-            <p>Primal Roach</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primalroach">
+                <img src="/images/commanderdata/units/dehaka/primalroach.jpg" alt="Primal Roach">
+                <p>Primal Roach</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -869,8 +883,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primaligniter.jpg" alt="Primal Igniter">
-            <p>Primal Igniter</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primaligniter">
+                <img src="/images/commanderdata/units/dehaka/primaligniter.jpg" alt="Primal Igniter">
+                <p>Primal Igniter</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -910,8 +926,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primalguardian.jpg" alt="Primal Guardian">
-            <p>Primal Guardian</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primalguardian">
+                <img src="/images/commanderdata/units/dehaka/primalguardian.jpg" alt="Primal Guardian">
+                <p>Primal Guardian</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -972,8 +990,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primalhydralisk.jpg" alt="Primal Hydralisk">
-            <p>Primal Hydralisk</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primalhydralisk">
+                <img src="/images/commanderdata/units/dehaka/primalhydralisk.jpg" alt="Primal Hydralisk">
+                <p>Primal Hydralisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1006,8 +1026,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primalmutalisk.jpg" alt="Primal Mutalisk">
-            <p>Primal Mutalisk</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primalmutalisk">
+                <img src="/images/commanderdata/units/dehaka/primalmutalisk.jpg" alt="Primal Mutalisk">
+                <p>Primal Mutalisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1057,8 +1079,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/impaler.jpg" alt="Impaler">
-            <p>Impaler</p>
+            <a class="unitStatsLink" href="/units/#dehaka/impaler">
+                <img src="/images/commanderdata/units/dehaka/impaler.jpg" alt="Impaler">
+                <p>Impaler</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1093,8 +1117,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primalhost.jpg" alt="Primal Host">
-            <p>Primal Host</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primalhost">
+                <img src="/images/commanderdata/units/dehaka/primalhost.jpg" alt="Primal Host">
+                <p>Primal Host</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1129,8 +1155,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/creeperhost.jpg" alt="Creeper Host">
-            <p>Creeper Host</p>
+            <a class="unitStatsLink" href="/units/#dehaka/creeperhost">
+                <img src="/images/commanderdata/units/dehaka/creeperhost.jpg" alt="Creeper Host">
+                <p>Creeper Host</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1189,8 +1217,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/primalultralisk.jpg" alt="Primal Ultralisk">
-            <p>Primal Ultralisk</p>
+            <a class="unitStatsLink" href="/units/#dehaka/primalultralisk">
+                <img src="/images/commanderdata/units/dehaka/primalultralisk.jpg" alt="Primal Ultralisk">
+                <p>Primal Ultralisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1257,8 +1287,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/dehaka/tyrannozor.jpg" alt="Tyrannozor">
-            <p>Tyrannozor</p>
+            <a class="unitStatsLink" href="/units/#dehaka/tyrannozor">
+                <img src="/images/commanderdata/units/dehaka/tyrannozor.jpg" alt="Tyrannozor">
+                <p>Tyrannozor</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

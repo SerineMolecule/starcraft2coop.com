@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Han & Horner</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Han Horner">
   <meta name="keywords" content="Starcraft co-op guides han horner commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/hanhorner">
   <style>
@@ -545,8 +545,10 @@ require_once "../../includes/wrapper.php";
     <p>Han & Horner's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/assaultgalleon.jpg" alt="Assault Galleon">
-            <p>Assault Galleon</p>
+            <a class="unitStatsLink" href="/units/#horner/assaultgalleon">
+                <img src="/images/commanderdata/units/horner/assaultgalleon.jpg" alt="Assault Galleon">
+                <p>Assault Galleon</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -583,8 +585,10 @@ require_once "../../includes/wrapper.php";
     <h3>Han's Units:</h3>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/reaper.jpg" alt="Reaper">
-            <p>Reaper</p>
+            <a class="unitStatsLink" href="/units/#horner/reaper">
+                <img src="/images/commanderdata/units/horner/reaper.jpg" alt="Reaper">
+                <p>Reaper</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -646,8 +650,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/widowmine.jpg" alt="Widow Mine">
-            <p>Widow Mine</p>
+            <a class="unitStatsLink" href="/units/#horner/widowmine">
+                <img src="/images/commanderdata/units/horner/widowmine.jpg" alt="Widow Mine">
+                <p>Widow Mine</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -688,8 +694,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/hellion.jpg" alt="Hellion">
-            <p>Hellion</p>
+            <a class="unitStatsLink" href="/units/#horner/hellion">
+                <img src="/images/commanderdata/units/horner/hellion.jpg" alt="Hellion">
+                <p>Hellion</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -750,8 +758,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/hellbat.jpg" alt="Hellbat">
-            <p>Hellbat</p>
+            <a class="unitStatsLink" href="/units/#horner/hellbat">
+                <img src="/images/commanderdata/units/horner/hellbat.jpg" alt="Hellbat">
+                <p>Hellbat</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -837,8 +847,10 @@ require_once "../../includes/wrapper.php";
     <h3>Horner Units:</h3>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/asteriawraith.jpg" alt="Asteria Wraith">
-            <p>Asteria Wraith</p>
+            <a class="unitStatsLink" href="/units/#horner/asteriawraith">
+                <img src="/images/commanderdata/units/horner/asteriawraith.jpg" alt="Asteria Wraith">
+                <p>Asteria Wraith</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -912,8 +924,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/deimosviking.jpg" alt="Deimos Viking">
-            <p>Deimos Viking</p>
+            <a class="unitStatsLink" href="/units/#horner/deimosviking">
+                <img src="/images/commanderdata/units/horner/deimosviking.jpg" alt="Deimos Viking">
+                <p>Deimos Viking</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -988,8 +1002,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/theiaraven.jpg" alt="Theia Raven">
-            <p>Theia Raven</p>
+            <a class="unitStatsLink" href="/units/#horner/theiaraven">
+                <img src="/images/commanderdata/units/horner/theiaraven.jpg" alt="Theia Raven">
+                <p>Theia Raven</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1057,8 +1073,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/horner/sovereignbattlecruiser.jpg" alt="Sovereign Battlecruiser">
-            <p>Sovereign Battlecruiser</p>
+            <a class="unitStatsLink" href="/units/#horner/sovereignbattlecruiser">
+                <img src="/images/commanderdata/units/horner/sovereignbattlecruiser.jpg" alt="Sovereign Battlecruiser">
+                <p>Sovereign Battlecruiser</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Raynor</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Raynor">
   <meta name="keywords" content="Starcraft co-op guides raynor commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/raynor">
   <style>
@@ -270,8 +270,10 @@ require_once "../../includes/wrapper.php";
     <p>The Hyperion ability brings a Hyperion onto the battlefield. This unit has abilities itself, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/raynor/hyperion.jpg" alt="Hyperion">
-            <p>Hyperion</p>
+            <a class="unitStatsLink" href="/units/#raynor/hyperion">
+                <img src="/images/commanderdata/abilities/raynor/hyperion.jpg" alt="Hyperion">
+                <p>Hyperion</p>
+            </a>
         </div>
         <div>
             <table class="centered unitAbilities">
@@ -545,8 +547,10 @@ require_once "../../includes/wrapper.php";
     <p>Raynor's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/marine.jpg" alt="Marine">
-            <p>Marine</p>
+            <a class="unitStatsLink" href="/units/#raynor/marine">
+                <img src="/images/commanderdata/units/raynor/marine.jpg" alt="Marine">
+                <p>Marine</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -601,8 +605,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/marauder.jpg" alt="Marauder">
-            <p>Marauder</p>
+            <a class="unitStatsLink" href="/units/#raynor/marauder">
+                <img src="/images/commanderdata/units/raynor/marauder.jpg" alt="Marauder">
+                <p>Marauder</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -654,8 +660,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/firebat.jpg" alt="Firebat">
-            <p>Firebat</p>
+            <a class="unitStatsLink" href="/units/#raynor/firebat">
+                <img src="/images/commanderdata/units/raynor/firebat.jpg" alt="Firebat">
+                <p>Firebat</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -715,8 +723,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/medic.jpg" alt="Medic">
-            <p>Medic</p>
+            <a class="unitStatsLink" href="/units/#raynor/medic">
+                <img src="/images/commanderdata/units/raynor/medic.jpg" alt="Medic">
+                <p>Medic</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -769,8 +779,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/vulture.jpg" alt="Vulture">
-            <p>Vulture</p>
+            <a class="unitStatsLink" href="/units/#raynor/vulture">
+                <img src="/images/commanderdata/units/raynor/vulture.jpg" alt="Vulture">
+                <p>Vulture</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -860,8 +872,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/siegetank.jpg" alt="Siege Tank">
-            <p>Siege Tank</p>
+            <a class="unitStatsLink" href="/units/#raynor/siegetank">
+                <img src="/images/commanderdata/units/raynor/siegetank.jpg" alt="Siege Tank">
+                <p>Siege Tank</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -928,8 +942,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/viking.jpg" alt="Viking">
-            <p>Viking</p>
+            <a class="unitStatsLink" href="/units/#raynor/viking">
+                <img src="/images/commanderdata/units/raynor/viking.jpg" alt="Viking">
+                <p>Viking</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1003,8 +1019,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/banshee.jpg" alt="Banshee">
-            <p>Banshee</p>
+            <a class="unitStatsLink" href="/units/#raynor/banshee">
+                <img src="/images/commanderdata/units/raynor/banshee.jpg" alt="Banshee">
+                <p>Banshee</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1086,8 +1104,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/raynor/battlecruiser.jpg" alt="Battlecruiser">
-            <p>Battlecruiser</p>
+            <a class="unitStatsLink" href="/units/#raynor/battlecruiser">
+                <img src="/images/commanderdata/units/raynor/battlecruiser.jpg" alt="Battlecruiser">
+                <p>Battlecruiser</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Vorazun</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Vorazun">
   <meta name="keywords" content="Starcraft co-op guides vorazun commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/vorazun">
   <style>
@@ -332,8 +332,10 @@ require_once "../../includes/wrapper.php";
     <p>The Deploy Shadow Guard ability brings Shadow Guards onto the battlefield. These units have abilities themselves, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/vorazun/shadowguard.jpg" alt="Shadow Guard">
-            <p>Shadow Guard</p>
+            <a class="unitStatsLink" href="/units/#vorazun/shadowguard">
+                <img src="/images/commanderdata/abilities/vorazun/shadowguard.jpg" alt="Shadow Guard">
+                <p>Shadow Guard</p>
+            </a>
         </div>
         <div>
             <table class="centered unitAbilities">
@@ -604,8 +606,10 @@ require_once "../../includes/wrapper.php";
     <p>Vorazun's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/vorazun/centurion.jpg" alt="Centurion">
-            <p>Centurion</p>
+            <a class="unitStatsLink" href="/units/#vorazun/centurion">
+                <img src="/images/commanderdata/units/vorazun/centurion.jpg" alt="Centurion">
+                <p>Centurion</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -672,8 +676,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/vorazun/stalker.jpg" alt="Stalker">
-            <p>Stalker</p>
+            <a class="unitStatsLink" href="/units/#vorazun/stalker">
+                <img src="/images/commanderdata/units/vorazun/stalker.jpg" alt="Stalker">
+                <p>Stalker</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -734,8 +740,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/vorazun/darktemplar.jpg" alt="Dark Templar">
-            <p>Dark Templar</p>
+            <a class="unitStatsLink" href="/units/#vorazun/darktemplar">
+                <img src="/images/commanderdata/units/vorazun/darktemplar.jpg" alt="Dark Templar">
+                <p>Dark Templar</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -816,8 +824,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/vorazun/darkarchon.jpg" alt="Dark Archon">
-            <p>Dark Archon</p>
+            <a class="unitStatsLink" href="/units/#vorazun/darkarchon">
+                <img src="/images/commanderdata/units/vorazun/darkarchon.jpg" alt="Dark Archon">
+                <p>Dark Archon</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -886,8 +896,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/vorazun/corsair.jpg" alt="Corsair">
-            <p>Corsair</p>
+            <a class="unitStatsLink" href="/units/#vorazun/corsair">
+                <img src="/images/commanderdata/units/vorazun/corsair.jpg" alt="Corsair">
+                <p>Corsair</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -949,8 +961,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/vorazun/voidray.jpg" alt="Void Ray">
-            <p>Void Ray</p>
+            <a class="unitStatsLink" href="/units/#vorazun/voidray">
+                <img src="/images/commanderdata/units/vorazun/voidray.jpg" alt="Void Ray">
+                <p>Void Ray</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -983,8 +997,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/vorazun/oracle.jpg" alt="Oracle">
-            <p>Oracle</p>
+            <a class="unitStatsLink" href="/units/#vorazun/oracle">
+                <img src="/images/commanderdata/units/vorazun/oracle.jpg" alt="Oracle">
+                <p>Oracle</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

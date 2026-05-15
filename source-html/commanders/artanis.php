@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Artanis</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Artanis">
   <meta name="keywords" content="Starcraft co-op guides artanis commande mastery prestige buildr">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/artanis">
   <style>
@@ -558,8 +558,10 @@ require_once "../../includes/wrapper.php";
     <p>Artanis's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot">
-            <p>Zealot</p>
+            <a class="unitStatsLink" href="/units/#artanis/zealot">
+                <img src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot">
+                <p>Zealot</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -628,8 +630,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">
-            <p>Dragoon</p>
+            <a class="unitStatsLink" href="/units/#artanis/dragoon">
+                <img src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">
+                <p>Dragoon</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -669,8 +673,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/hightemplar.jpg" alt="High Templar">
-            <p>High Templar</p>
+            <a class="unitStatsLink" href="/units/#artanis/hightemplar">
+                <img src="/images/commanderdata/units/artanis/hightemplar.jpg" alt="High Templar">
+                <p>High Templar</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -746,8 +752,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/archon.jpg" alt="Archon">
-            <p>Archon</p>
+            <a class="unitStatsLink" href="/units/#artanis/archon">
+                <img src="/images/commanderdata/units/artanis/archon.jpg" alt="Archon">
+                <p>Archon</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -824,8 +832,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/immortal.jpg" alt="Immortal">
-            <p>Immortal</p>
+            <a class="unitStatsLink" href="/units/#artanis/immortal">
+                <img src="/images/commanderdata/units/artanis/immortal.jpg" alt="Immortal">
+                <p>Immortal</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -878,8 +888,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/reaver.jpg" alt="Reaver">
-            <p>Reaver</p>
+            <a class="unitStatsLink" href="/units/#artanis/reaver">
+                <img src="/images/commanderdata/units/artanis/reaver.jpg" alt="Reaver">
+                <p>Reaver</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -940,8 +952,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/phoenix.jpg" alt="Phoenix">
-            <p>Phoenix</p>
+            <a class="unitStatsLink" href="/units/#artanis/phoenix">
+                <img src="/images/commanderdata/units/artanis/phoenix.jpg" alt="Phoenix">
+                <p>Phoenix</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1002,8 +1016,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/artanis/tempest.jpg" alt="Tempest">
-            <p>Tempest</p>
+            <a class="unitStatsLink" href="/units/#artanis/tempest">
+                <img src="/images/commanderdata/units/artanis/tempest.jpg" alt="Tempest">
+                <p>Tempest</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

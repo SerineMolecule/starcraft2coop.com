@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Kerrigan</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Kerrigan">
   <meta name="keywords" content="Starcraft co-op guides kerrigan commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/kerrigan">
   <style>
@@ -477,7 +477,7 @@ require_once "../../includes/wrapper.php";
     </table>
     <p>For general play, P0 (no prestige, Queen of Blades), P2 (Folly of Man), and P3 (Desolate Queen) are recommended. P3 has a better match-up against air (a general Kerrigan weakness) but a worse match-up against early-game hordes. P2 provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity, but some find it less beginner friendly. It allows Kerrigan to more effectively clear enemy bases and keep her army alive.</p>
     <h2 id="hero">Hero Unit</h2>
-    <img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan.jpg" alt="Kerrigan">
+    <a class="unitStatsLink" href="/units/#kerrigan/kerrigan"><img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan.jpg" alt="Kerrigan"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
     <p>The abilities for Kerrigan are:</p>
@@ -523,7 +523,7 @@ require_once "../../includes/wrapper.php";
         </tbody>
     </table>
     <p>Selecting the Desolate Queen prestige replaces your hero unit with a new hero unit. This unit has abilities itself, shown below:</p>
-    <img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan2.jpg" alt="Kerrigan">
+    <a class="unitStatsLink" href="/units/#kerrigan/kerrigan"><img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan2.jpg" alt="Kerrigan"></a>
     <table class="abilityTable">
         <thead>
             <tr>
@@ -641,8 +641,10 @@ require_once "../../includes/wrapper.php";
     <p>Kerrigan's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/kerrigan/queen.jpg" alt="Queen">
-            <p>Queen</p>
+            <a class="unitStatsLink" href="/units/#kerrigan/queen">
+                <img src="/images/commanderdata/units/kerrigan/queen.jpg" alt="Queen">
+                <p>Queen</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -689,8 +691,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/kerrigan/zergling.jpg" alt="Zergling">
-            <p>Zergling</p>
+            <a class="unitStatsLink" href="/units/#kerrigan/zergling">
+                <img src="/images/commanderdata/units/kerrigan/zergling.jpg" alt="Zergling">
+                <p>Zergling</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -744,8 +748,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/kerrigan/hydralisk.jpg" alt="Hydralisk">
-            <p>Hydralisk</p>
+            <a class="unitStatsLink" href="/units/#kerrigan/hydralisk">
+                <img src="/images/commanderdata/units/kerrigan/hydralisk.jpg" alt="Hydralisk">
+                <p>Hydralisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -813,8 +819,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/kerrigan/lurker.jpg" alt="Lurker">
-            <p>Lurker</p>
+            <a class="unitStatsLink" href="/units/#kerrigan/lurker">
+                <img src="/images/commanderdata/units/kerrigan/lurker.jpg" alt="Lurker">
+                <p>Lurker</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -847,8 +855,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/kerrigan/ultralisk.jpg" alt="Ultralisk">
-            <p>Ultralisk</p>
+            <a class="unitStatsLink" href="/units/#kerrigan/ultralisk">
+                <img src="/images/commanderdata/units/kerrigan/ultralisk.jpg" alt="Ultralisk">
+                <p>Ultralisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -915,8 +925,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/kerrigan/mutalisk.jpg" alt="Mutalisk">
-            <p>Mutalisk</p>
+            <a class="unitStatsLink" href="/units/#kerrigan/mutalisk">
+                <img src="/images/commanderdata/units/kerrigan/mutalisk.jpg" alt="Mutalisk">
+                <p>Mutalisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -964,8 +976,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/kerrigan/broodlord.jpg" alt="Brood Lord">
-            <p>Brood Lord</p>
+            <a class="unitStatsLink" href="/units/#kerrigan/broodlord">
+                <img src="/images/commanderdata/units/kerrigan/broodlord.jpg" alt="Brood Lord">
+                <p>Brood Lord</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

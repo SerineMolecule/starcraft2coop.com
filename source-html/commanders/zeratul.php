@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Zeratul</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Zeratul">
   <meta name="keywords" content="Starcraft co-op guides zeratul commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/zeratul">
   <script src="/scripts/preload.js"></script>
@@ -361,8 +361,10 @@ require_once "../../includes/wrapper.php";
     <p>The Telbrus Legion ability deploys a Telbrus Legion onto the battlefield. The units have abilities themselves, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/zeratul/zealot.jpg" alt="Zealot">
-            <p>Zealot</p>
+            <a class="unitStatsLink" href="/units/#zeratul/zealot">
+                <img src="/images/commanderdata/abilities/zeratul/zealot.jpg" alt="Zealot">
+                <p>Zealot</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -393,8 +395,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/zeratul/telbrus.jpg" alt="Telbrus">
-            <p>Telbrus</p>
+            <a class="unitStatsLink" href="/units/#zeratul/telbrus">
+                <img src="/images/commanderdata/abilities/zeratul/telbrus.jpg" alt="Telbrus">
+                <p>Telbrus</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -429,8 +433,10 @@ require_once "../../includes/wrapper.php";
     <p>The Serdath Legion ability deploys a Serdath Legion onto the battlefield. The units have abilities themselves, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/zeratul/darkarchon.jpg" alt="Dark Archon">
-            <p>Dark Archon</p>
+            <a class="unitStatsLink" href="/units/#zeratul/darkarchon">
+                <img src="/images/commanderdata/abilities/zeratul/darkarchon.jpg" alt="Dark Archon">
+                <p>Dark Archon</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -464,8 +470,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/zeratul/serdath.jpg" alt="Serdath">
-            <p>Serdath</p>
+            <a class="unitStatsLink" href="/units/#zeratul/serdath">
+                <img src="/images/commanderdata/abilities/zeratul/serdath.jpg" alt="Serdath">
+                <p>Serdath</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -540,8 +548,10 @@ require_once "../../includes/wrapper.php";
     <p>The Deploy Tesseract Monolith ability brings a Tesseract Monolith onto the battlefield. This unit has abilities itself, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/zeratul/tesseractmonolith.jpg" alt="Tesseract Monolith">
-            <p>Tesseract Monolith</p>
+            <a class="unitStatsLink" href="/units/#zeratul/tesseractmonolith">
+                <img src="/images/commanderdata/abilities/zeratul/tesseractmonolith.jpg" alt="Tesseract Monolith">
+                <p>Tesseract Monolith</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -632,8 +642,10 @@ require_once "../../includes/wrapper.php";
     <p>The Avatar of Form ability brings an Avatar of Form onto the battlefield. This unit has abilities itself, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/zeratul/avatarofform.jpg" alt="Avatar of Form">
-            <p>Avatar of Form</p>
+            <a class="unitStatsLink" href="/units/#zeratul/avatarofform">
+                <img src="/images/commanderdata/abilities/zeratul/avatarofform.jpg" alt="Avatar of Form">
+                <p>Avatar of Form</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -671,8 +683,10 @@ require_once "../../includes/wrapper.php";
     <p>The Avatar of Essence ability brings an Avatar of Essence onto the battlefield. This unit has abilities itself, shown below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/abilities/zeratul/avatarofessence.jpg" alt="Avatar of Essence">
-            <p>Avatar of Essence</p>
+            <a class="unitStatsLink" href="/units/#zeratul/avatarofessence">
+                <img src="/images/commanderdata/abilities/zeratul/avatarofessence.jpg" alt="Avatar of Essence">
+                <p>Avatar of Essence</p>
+            </a>
         </div>
         <div>
             <table class="unitAbilities">
@@ -1070,7 +1084,7 @@ require_once "../../includes/wrapper.php";
     </table>
     <p>All of Zeratul's prestiges are solid and a player can get by general play using any (or none of them). The optimal prestige selection is highly dependant on the map that is being played. For example, Knowledge Seeker works best on long maps, whereas Herald of the Void works best on short maps.</p>
     <h2 id="hero">Hero Unit</h2>
-    <img id="heroPic" src="/images/commanderdata/hero/zeratul/zeratul.jpg" alt="Zeratul">
+    <a class="unitStatsLink" href="/units/#zeratul/zeratul"><img id="heroPic" src="/images/commanderdata/hero/zeratul/zeratul.jpg" alt="Zeratul"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
     <p>Zeratul has a Passive called "One With the Shadows". Zeratul is permanently cloaked. He becomes immune to damage for 0.5 seconds after being attacked. Cannot occur more than once every 5 seconds.</p>
@@ -1169,8 +1183,10 @@ require_once "../../includes/wrapper.php";
     <p>Zeratul's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zeratul/xelnagaambusher.jpg" alt="Xel'Naga Ambusher">
-            <p>Xel'Naga Ambusher</p>
+            <a class="unitStatsLink" href="/units/#zeratul/xelnagaambusher">
+                <img src="/images/commanderdata/units/zeratul/xelnagaambusher.jpg" alt="Xel'Naga Ambusher">
+                <p>Xel'Naga Ambusher</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1233,8 +1249,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zeratul/xelnagashieldguard.jpg" alt="Xel'Naga Shieldguard">
-            <p>Xel'Naga Shieldguard</p>
+            <a class="unitStatsLink" href="/units/#zeratul/xelnagashieldguard">
+                <img src="/images/commanderdata/units/zeratul/xelnagashieldguard.jpg" alt="Xel'Naga Shieldguard">
+                <p>Xel'Naga Shieldguard</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1304,8 +1322,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zeratul/voidtemplar.jpg" alt="Void Templar">
-            <p>Void Templar</p>
+            <a class="unitStatsLink" href="/units/#zeratul/voidtemplar">
+                <img src="/images/commanderdata/units/zeratul/voidtemplar.jpg" alt="Void Templar">
+                <p>Void Templar</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1369,8 +1389,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zeratul/xelnagaenforcer.jpg" alt="Xel'Naga Enforcer">
-            <p>Xel'Naga Enforcer</p>
+            <a class="unitStatsLink" href="/units/#zeratul/xelnagaenforcer">
+                <img src="/images/commanderdata/units/zeratul/xelnagaenforcer.jpg" alt="Xel'Naga Enforcer">
+                <p>Xel'Naga Enforcer</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1434,8 +1456,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zeratul/xelnagaabrogator.jpg" alt="Xel'Naga Abrogator">
-            <p>Xel'Naga Abrogator</p>
+            <a class="unitStatsLink" href="/units/#zeratul/xelnagaabrogator">
+                <img src="/images/commanderdata/units/zeratul/xelnagaabrogator.jpg" alt="Xel'Naga Abrogator">
+                <p>Xel'Naga Abrogator</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1493,8 +1517,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/zeratul/xelnagavoidarray.jpg" alt="Xel'Naga Void Array">
-            <p>Xel'Naga Void Array</p>
+            <a class="unitStatsLink" href="/units/#zeratul/xelnagavoidarray">
+                <img src="/images/commanderdata/units/zeratul/xelnagavoidarray.jpg" alt="Xel'Naga Void Array">
+                <p>Xel'Naga Void Array</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Stetmann</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Stetmann">
   <meta name="keywords" content="Starcraft co-op guides stetmann commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/stetmann">
   <style>
@@ -513,7 +513,7 @@ require_once "../../includes/wrapper.php";
     </table>
     <p>Best Buddy is the prestige that outshines the rest here, by providing a huge power level increase to Super Gary, with very minimal downsides. Pre-level 5, Stetmann should be using Signal Savant, as it offers no downsides. However, past level 5, Best Buddy should be used if it is unlocked, with a big focus on the hero unit, to reap the power of the prestige.</p>
     <h2 id="hero">Hero Unit</h2>
-    <img id="heroPic" src="/images/commanderdata/hero/stetmann/gary.jpg" alt="Gary">
+    <a class="unitStatsLink" href="/units/#stetmann/gary"><img id="heroPic" src="/images/commanderdata/hero/stetmann/gary.jpg" alt="Gary"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
     <p>The abilities for Gary are:</p>
@@ -547,7 +547,7 @@ require_once "../../includes/wrapper.php";
             </tr>
         </tbody>
     </table>
-    <img id="heroPic1" src="/images/commanderdata/hero/stetmann/supergary.jpg" alt="Super Gary">
+    <a class="unitStatsLink" href="/units/#stetmann/supergary"><img id="heroPic1" src="/images/commanderdata/hero/stetmann/supergary.jpg" alt="Super Gary"></a>
     <p>For a cost of 450 Minerals/300 Gas, Gary may be upgraded to Super Gary, with an extra ability charge (except for Gary-Zone) and a new ability. The abilities for Super Gary are:</p>
     <table class="abilityTable">
         <thead>
@@ -626,8 +626,10 @@ require_once "../../includes/wrapper.php";
     <p>Stetmann's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechazergling.jpg" alt="Mecha Zergling">
-            <p>Mecha Zergling</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechazergling">
+                <img src="/images/commanderdata/units/stetmann/mechazergling.jpg" alt="Mecha Zergling">
+                <p>Mecha Zergling</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -677,8 +679,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechabaneling.jpg" alt="Mecha Baneling">
-            <p>Mecha Baneling</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechabaneling">
+                <img src="/images/commanderdata/units/stetmann/mechabaneling.jpg" alt="Mecha Baneling">
+                <p>Mecha Baneling</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -747,8 +751,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechahydralisk.jpg" alt="Mecha Hydralisk">
-            <p>Mecha Hydralisk</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechahydralisk">
+                <img src="/images/commanderdata/units/stetmann/mechahydralisk.jpg" alt="Mecha Hydralisk">
+                <p>Mecha Hydralisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -798,8 +804,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechalurker.jpg" alt="Mecha Lurker">
-            <p>Mecha Lurker</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechalurker">
+                <img src="/images/commanderdata/units/stetmann/mechalurker.jpg" alt="Mecha Lurker">
+                <p>Mecha Lurker</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -869,8 +877,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechacorruptor.jpg" alt="Mecha Corruptor">
-            <p>Mecha Corruptor</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechacorruptor">
+                <img src="/images/commanderdata/units/stetmann/mechacorruptor.jpg" alt="Mecha Corruptor">
+                <p>Mecha Corruptor</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -939,8 +949,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechabattlecarrierlord.jpg" alt="Mecha Battlecarrier Lord">
-            <p>Mecha Battlecarrier Lord</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechabattlecarrierlord">
+                <img src="/images/commanderdata/units/stetmann/mechabattlecarrierlord.jpg" alt="Mecha Battlecarrier Lord">
+                <p>Mecha Battlecarrier Lord</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1015,8 +1027,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechainfestor.jpg" alt="Mecha Infestor">
-            <p>Mecha Infestor</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechainfestor">
+                <img src="/images/commanderdata/units/stetmann/mechainfestor.jpg" alt="Mecha Infestor">
+                <p>Mecha Infestor</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -1094,8 +1108,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/stetmann/mechaultralisk.jpg" alt="Mecha Ultralisk">
-            <p>Mecha Ultralisk</p>
+            <a class="unitStatsLink" href="/units/#stetmann/mechaultralisk">
+                <img src="/images/commanderdata/units/stetmann/mechaultralisk.jpg" alt="Mecha Ultralisk">
+                <p>Mecha Ultralisk</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>

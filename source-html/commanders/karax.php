@@ -8,7 +8,7 @@ require_once "../../includes/wrapper.php";
   <title>Starcraft 2 Co-op - Commander Guide - Karax</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Karax">
   <meta name="keywords" content="Starcraft co-op guides karax commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=1.3">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/karax">
   <script src="/scripts/preload.js"></script>
@@ -574,8 +574,10 @@ require_once "../../includes/wrapper.php";
     <p>Karax's combat units are listed below:</p>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/karax/sentinel.jpg" alt="Sentinel">
-            <p>Sentinel</p>
+            <a class="unitStatsLink" href="/units/#karax/sentinel">
+                <img src="/images/commanderdata/units/karax/sentinel.jpg" alt="Sentinel">
+                <p>Sentinel</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -635,8 +637,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/karax/energizer.jpg" alt="Energizer">
-            <p>Energizer</p>
+            <a class="unitStatsLink" href="/units/#karax/energizer">
+                <img src="/images/commanderdata/units/karax/energizer.jpg" alt="Energizer">
+                <p>Energizer</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -705,8 +709,10 @@ require_once "../../includes/wrapper.php";
     </div>
    <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/karax/immortal.jpg" alt="Immortal">
-            <p>Immortal</p>
+            <a class="unitStatsLink" href="/units/#karax/immortal">
+                <img src="/images/commanderdata/units/karax/immortal.jpg" alt="Immortal">
+                <p>Immortal</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -766,8 +772,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/karax/colossus.jpg" alt="Colossus">
-            <p>Colossus</p>
+            <a class="unitStatsLink" href="/units/#karax/colossus">
+                <img src="/images/commanderdata/units/karax/colossus.jpg" alt="Colossus">
+                <p>Colossus</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -806,8 +814,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/karax/mirage.jpg" alt="Mirage">
-            <p>Mirage</p>
+            <a class="unitStatsLink" href="/units/#karax/mirage">
+                <img src="/images/commanderdata/units/karax/mirage.jpg" alt="Mirage">
+                <p>Mirage</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
@@ -866,8 +876,10 @@ require_once "../../includes/wrapper.php";
     </div>
     <div class="leftImage">
         <div class="imageContainer">
-            <img src="/images/commanderdata/units/karax/carrier.jpg" alt="Carrier">
-            <p>Carrier</p>
+            <a class="unitStatsLink" href="/units/#karax/carrier">
+                <img src="/images/commanderdata/units/karax/carrier.jpg" alt="Carrier">
+                <p>Carrier</p>
+            </a>
         </div>
         <div class="descContainer">
             <ul>
