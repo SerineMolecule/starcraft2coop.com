@@ -620,14 +620,19 @@ class UnitStats extends preact.Component<{
 
         const upgradeData = new Map(
             playerUpgrades.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit)
-                .map((u) => [u.name, { title: u.effect, icon: u.icon }])
+                .map((u) => [u.name, { title: u.effect, icon: u.icon, unit: u.unit }])
         );
+        const upgradeIcon = (upgrade: string) => {
+            const data = upgradeData.get(upgrade);
+            const dir = token(data?.unit ?? "") === modifiers.commander ? "hero" : "unitupgrades";
+            return `/images/commanderdata/${dir}/${token(modifiers.commander)}/${data?.icon}.png`;
+        };
 
         return (
             <form class="units-modifiers">
                 {!!upgrades.length && (<fieldset>
                     <legend>Upgrades</legend>
-                    {upgrades.map((upgrade) => <div><label title={upgradeData.get(upgrade)?.title}><input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> <img src={`/images/commanderdata/unitupgrades/${token(modifiers.commander)}/${upgradeData.get(upgrade)?.icon}.png`} alt="" width={20} height={20} /> {upgrade}</label></div>)}
+                    {upgrades.map((upgrade) => <div><label title={upgradeData.get(upgrade)?.title}><input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> <img src={upgradeIcon(upgrade)} alt="" width={20} height={20} /> {upgrade}</label></div>)}
                 </fieldset>)}
                 {'weapon' in modifiers.upgradeLevels && (<fieldset>
                     <legend>Weapons</legend>
