@@ -152,7 +152,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
             <li class="<?=$pageFile === "faq.php" ? 'highlight' : 'normal'?>"><a href="/about/faq">FAQ</a></li>
             <li class="<?=$pageFile === "links.php" ? 'highlight' : 'normal'?>"><a href="/about/links">Links</a></li>
             <!--li class="normal"><a href="https://www.youtube.com/c/Starcraft2Coop" rel="nofollow">Youtube</a></li-->
-            <li class="<?=$pageFile === "stats.php" ? 'highlight' : 'normal'?>"><a href="/resources/stats">Misc. Stats</a></li>
+            <li class="<?=$pageFile === "stats.php" ? 'highlight' : 'normal'?>"><a href="/about/stats">Misc. Stats</a></li>
         </ul>
     </div>
     <!--<div id="imgs">
