@@ -29,16 +29,6 @@ require_once "../../includes/wrapper.php";
     .tooltip{
         display:none;
     }
-    #tooltip{
-        position:absolute;
-        background-color:khaki;
-        color:black;
-        font-size:0.8em;
-        display:none;
-        z-index:1;
-        padding:5px;
-        border-radius:5px;
-    }
   </style>
   <?= startContent() ?>
     <h1>Site-Specific and Co-op Related Statistics</h1>
@@ -63,6 +53,11 @@ require_once "../../includes/wrapper.php";
 
     $sortedMutators = $mutators;
     usort($sortedMutators, fn($a, $b) => $b['mutationcount'] <=> $a['mutationcount']);
+
+    function statsMutatorToken(string $name): string
+    {
+        return preg_replace('/[^a-z0-9]+/', '', strtolower($name));
+    }
     ?>
     <div id="links">
         <h2>Sections on this Page</h2>
@@ -127,9 +122,9 @@ require_once "../../includes/wrapper.php";
                     continue;
                 }
                 echo("<tr>");
-                $filename = str_replace(' ', '', strtolower($mutator['mutatorname']));
-                $img = "<img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutator['mutatorname'] . ":" . $mutator['mutatordescription'] . "\" width=\"25\" height=\"25\">";
-                echo("<td>$img {$mutator['mutatorname']}</td>");
+                $filename = statsMutatorToken($mutator['mutatorname']);
+                $img = "<img class='miniIcon' src='/images/mutators/" . $filename . ".png' alt=''>";
+                echo("<td><a href='/mutators/" . $filename . "'>$img{$mutator['mutatorname']}</a></td>");
                 echo("<td class=centered>{$mutator['mutationcount']}</td>");
                 echo("<tr>\n");
             }
@@ -679,20 +674,6 @@ require_once "../../includes/wrapper.php";
         </tbody>
     </table>
     <script>
-        $(".mutatorIcon").on('mouseover',function(e){
-            var mutator = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + mutator[0] + "</b><br><br>" + mutator[1]);
-            $("#tooltip").show();
-        });
-        $(".mutatorIcon").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".mutatorIcon").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
         $('.infoIcon img').mouseover(function(){
             var text = $(this).next().html();
             $("#tooltip").html(text);
@@ -710,5 +691,6 @@ require_once "../../includes/wrapper.php";
 
         });
     </script>
+<script src="/scripts/tooltips.js"></script>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

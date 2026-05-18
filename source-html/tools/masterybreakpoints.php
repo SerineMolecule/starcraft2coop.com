@@ -10,16 +10,6 @@ require_once "../../includes/wrapper.php";
   <meta name="keywords" content="Starcraft co-op mastery breakpoints calculator damage units">
   <link rel="canonical" href="https://starcraft2coop.com/tools/masterybreakpoints">
   <style>
-        #tooltip{
-            position:absolute;
-            background-color:khaki;
-            color:black;
-            font-size:0.8em;
-            display:none;
-            z-index:1;
-            padding:5px;
-            border-radius:5px;
-        }
         #abilityContainer,#damageContainer, #protossContainer,#terranContainer,#zergContainer,#infestedContainer,#mutatorContainer{
             border: 1px solid white;
             display: inline-block;

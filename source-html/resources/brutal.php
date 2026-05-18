@@ -30,16 +30,6 @@ require_once "../../includes/wrapper.php";
     .toggled{
         background-color: darkslateblue;
     }
-    #tooltip{
-        position:absolute;
-        background-color:khaki;
-        color:black;
-        font-size:0.8em;
-        display:none;
-        z-index:1;
-        padding:5px;
-        border-radius:5px;
-    }
     #totalCost{
         background-color:khaki;
         color:black;
@@ -275,8 +265,9 @@ require_once "../../includes/wrapper.php";
                         costString += i + ' + ';
                         var randomIndex = Math.floor(Math.random() *  mutatorArray[i].length);
                         var selectedMutator = mutatorArray[i][randomIndex];
+                        var selectedMutatorSlug = selectedMutator.toLowerCase().replace(/[^a-z0-9]+/g, '');
                         mutatorArray[i]=mutatorArray[i].slice(0, randomIndex).concat(mutatorArray[i].slice(randomIndex + 1, mutatorArray[i].length));
-                        $("#randomMutation").append('<img class="tooltip" src="/images/mutators/'+ selectedMutator.replace(/ /g,'').toLowerCase() +'.png" alt="' + selectedMutator + '">')
+                        $("#randomMutation").append('<a href="/mutators/' + selectedMutatorSlug + '"><img class="tooltip" src="/images/mutators/' + selectedMutatorSlug + '.png" alt=""></a>')
                     }
                 }
             }
@@ -290,27 +281,11 @@ require_once "../../includes/wrapper.php";
             for (i in prob) {
                 sum += prob[i];
                 if (r <= sum){
-                   return i;
+                    return i;
                 }
             }
         }
 
-        $(document).on('mouseover','.tooltip',function(){
-            var mutator = $(this).attr("alt");
-            $("#tooltip").html("<b>" + mutator + "</b>");
-            $("#tooltip").show();
-        });
-
-        $(document).on('mouseleave','.tooltip',function(){
-            $("#tooltip").hide();
-        });
-
-        $(document).on('mousemove','.tooltip',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-
     </script>
+<script src="/scripts/tooltips.js"></script>
 <?= endContent() ?>

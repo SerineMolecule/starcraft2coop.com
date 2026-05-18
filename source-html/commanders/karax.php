@@ -49,16 +49,6 @@ require_once "../../includes/wrapper.php";
             background: url(/images/commanderdata/bgs/karax.png);
             background-repeat: no-repeat;
         }
-        #tooltip{
-            position:absolute;
-            background-color:khaki;
-            color:black;
-            font-size:0.8em;
-            display:none;
-            z-index:1;
-            padding:5px;
-            border-radius:5px;
-        }
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>

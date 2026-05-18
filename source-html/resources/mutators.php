@@ -374,10 +374,6 @@ require_once "../../includes/wrapper.php";
 require_once __DIR__ . '/../../includes/queries.php';
 $mutatorInfo = get_mutators();
 usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
-function token($name)
-{
-    return strtolower(str_replace(' ', '', str_replace('-', '', $name)));
-}
 ?>
         <table id="mutatorTable">
         <thead>

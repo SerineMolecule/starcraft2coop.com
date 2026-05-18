@@ -36,16 +36,6 @@
     .tooltip{
         display:none;
     }
-    #tooltip{
-        position:absolute;
-        background-color:khaki;
-        color:black;
-        font-size:0.8em;
-        display:none;
-        z-index:1;
-        padding:5px;
-        border-radius:5px;
-    }
   </style>
   </head>
 <body>
@@ -260,68 +250,68 @@ if (document.location.host === 'dev.starcraft2coop.com') {
             </tr>
         </thead>
         <tbody>
-            <tr><td><img class='mutatorIcon' src='/images/mutators/justdie.png' alt="Just Die:Enemy units are automatically revived upon death." width="25" height="25"> Just Die</td><td class=centered>16</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/speedfreaks.png' alt="Speed Freaks:The enemy moves faster than any unit a player has at their disposal." width="25" height="25"> Speed Freaks</td><td class=centered>14</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/voidrifts.png' alt="Void Rifts:Void Rifts periodically appear in random locations and spawn enemy units until destroyed." width="25" height="25"> Void Rifts</td><td class=centered>14</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/barrier.png' alt="Barrier:Enemy units and structures gain a temporary shield upon the first time they take damage." width="25" height="25"> Barrier</td><td class=centered>13</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/avenger.png' alt="Avenger:Enemy units gain increased attack speed, movement speed, armor, life, and life-regeneration when nearby enemy units die." width="25" height="25"> Avenger</td><td class=centered>12</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/goingnuclear.png' alt="Going Nuclear:Nukes are launched at random throughout the map." width="25" height="25"> Going Nuclear</td><td class=centered>11</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/missilecommand.png' alt="Missile Command:Endless missile bombardments target your structures and must be shot down throughout the mission." width="25" height="25"> Missile Command</td><td class=centered>11</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/polarity.png' alt="Polarity:Each enemy unit is immune to either your units or your ally's units." width="25" height="25"> Polarity</td><td class=centered>11</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/selfdestruction.png' alt="Self Destruction:Enemy units explode and deal damage to friendly player units upon death." width="25" height="25"> Self Destruction</td><td class=centered>11</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/voidreanimators.png' alt="Void Reanimators:Void Reanimators wander the battlefield, bringing your enemies back to life." width="25" height="25"> Void Reanimators</td><td class=centered>11</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/alienincubation.png' alt="Alien Incubation:All enemy units spawn Broodlings upon death." width="25" height="25"> Alien Incubation</td><td class=centered>10</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/minesweeper.png' alt="Minesweeper:Groups of Widow Mines and Spider Mines are buried throughout the battlefield." width="25" height="25"> Minesweeper</td><td class=centered>10</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/purifierbeam.png' alt="Purifier Beam:An enemy Purifier Beam moves across the map toward nearby player units." width="25" height="25"> Purifier Beam</td><td class=centered>10</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/scorchedearth.png' alt="Scorched Earth:Enemy units set the terrain on fire upon death." width="25" height="25"> Scorched Earth</td><td class=centered>10</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/wemoveunseen.png' alt="We Move Unseen:All enemy units are permanently cloaked." width="25" height="25"> We Move Unseen</td><td class=centered>10</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/lavaburst.png' alt="Lava Burst:Lava periodically bursts from the ground at random locations and deals damage to player air and ground units." width="25" height="25"> Lava Burst</td><td class=centered>9</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/mag-nificent.png' alt="Mag-nificent:Mag Mines are deployed throughout the map at the start of the mission." width="25" height="25"> Mag-nificent</td><td class=centered>9</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/outbreak.png' alt="Outbreak:Continuous waves of the infested horde march against the commanders' bases." width="25" height="25"> Outbreak</td><td class=centered>9</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/poweroverwhelming.png' alt="Power Overwhelming:All enemy units have energy and use random abilities." width="25" height="25"> Power Overwhelming</td><td class=centered>9</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/propagators.png' alt="Propagators:Reality warping sludges are crawling towards you. Anything they touch is turned into a copy of the sludge." width="25" height="25"> Propagators</td><td class=centered>9</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/aggressivedeployment.png' alt="Aggressive Deployment:Additional enemy units are periodically deployed onto the battlefield." width="25" height="25"> Aggressive Deployment</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/blackdeath.png' alt="Black Death:Some enemy units carry a plague that deals damage over time and spreads to other nearby units. The plague spreads to your units when the enemy unit is killed." width="25" height="25"> Black Death</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/blizzard.png' alt="Blizzard:Storm clouds move across the map, damaging and freezing player units in their path." width="25" height="25"> Blizzard</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/fear.png' alt="Fear:Player units will occasionally stop attacking and run around in fear upon taking damage." width="25" height="25"> Fear</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/inspiration.png' alt="Inspiration:Enemy Heroic units increase the attack speed and armor of all enemies within a small range." width="25" height="25"> Inspiration</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/killbots.png' alt="Kill Bots:Waves of bots attack players and are invulnerable to damage until they have killed a set amount of units." width="25" height="25"> Kill Bots</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/laserdrill.png' alt="Laser Drill:An enemy Drakken laser drill constantly attacks player units within enemy vision." width="25" height="25"> Laser Drill</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/microtransactions.png' alt="Micro Transactions:Giving commands to your units costs resources based on the unit's cost." width="25" height="25"> Micro Transactions</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/mutuallyassureddestruction.png' alt="Mutually Assured Destruction:Enemy Hybrid units detonate a Nuke upon death." width="25" height="25"> Mutually Assured Destruction</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/photonoverload.png' alt="Photon Overload:All enemy structures attack nearby hostile units." width="25" height="25"> Photon Overload</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/shortsighted.png' alt="Shortsighted:Player units and structures have reduced vision range." width="25" height="25"> Shortsighted</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/timewarp.png' alt="Time Warp:Enemy Time Warps are periodically deployed throughout the map." width="25" height="25"> Time Warp</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/transmutation.png' alt="Transmutation:Enemy units have a chance to transform into more powerful units whenever they deal damage." width="25" height="25"> Transmutation</td><td class=centered>8</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/chaosstudios.png' alt="Chaos Studios:Mutators are chosen at random and periodically cycle throughout the mission." width="25" height="25"> Chaos Studios</td><td class=centered>7</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/darkness.png' alt="Darkness:Previously explored areas remain blacked out on the minimap while outside of player vision." width="25" height="25"> Darkness</td><td class=centered>7</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/eminentdomain.png' alt="Eminent Domain:Enemies gain control of your structures after destroying them." width="25" height="25"> Eminent Domain</td><td class=centered>7</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/longrange.png' alt="Long Range:Enemy units and structures have increased weapon and vision range." width="25" height="25"> Long Range</td><td class=centered>7</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/mineralshields.png' alt="Mineral Shields:Mineral clusters at player bases are periodically encased in a shield which must be destroyed for gathering to continue." width="25" height="25"> Mineral Shields</td><td class=centered>7</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/slimpickings.png' alt="Slim Pickings:Player worker units gather resources at a reduced rate, but resource pickups spawn throughout the map." width="25" height="25"> Slim Pickings</td><td class=centered>7</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/temporalfield.png' alt="Temporal Field:Enemy Temporal Fields are periodically deployed throughout the map." width="25" height="25"> Temporal Field</td><td class=centered>7</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/afraidofthedark.png' alt="Afraid of the Dark:Vision provided by all sources is extremely limited except when in view of your camera." width="25" height="25"> Afraid of the Dark</td><td class=centered>6</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/hardenedwill.png' alt="Hardened Will:Enemy Heroic units reduce all incoming damage to a maximum of 10 when any non-heroic enemy unit is near them." width="25" height="25"> Hardened Will</td><td class=centered>6</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/heroesfromthestorm.png' alt="Heroes from the Storm:Every attack wave will be led by Heroes of increasing power." width="25" height="25"> Heroes from the Storm</td><td class=centered>6</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/twister.png' alt="Twister:Tornadoes move across the map, damaging and knocking back player units in their path." width="25" height="25"> Twister</td><td class=centered>6</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/walkinginfested.png' alt="Walking Infested:Every enemy unit that commanders destroy will spawn infested terrans. The more life a unit has, the more infested will rise from its corpse." width="25" height="25"> Walking Infested</td><td class=centered>6</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/diffusion.png' alt="Diffusion:Damage dealt to enemies is split evenly across all nearby units, including your own." width="25" height="25"> Diffusion</td><td class=centered>5</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/doubleedged.png' alt="Double Edged:Damage dealt by your units and structures is dealt back to them, but then healed back over time." width="25" height="25"> Double Edged</td><td class=centered>5</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/evasivemaneuvers.png' alt="Evasive Maneuvers:Enemy units teleport a short distance away upon taking damage." width="25" height="25"> Evasive Maneuvers</td><td class=centered>5</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/fatalattraction.png' alt="Fatal Attraction:When enemy units and structures die, any of your nearby units are pulled to their location." width="25" height="25"> Fatal Attraction</td><td class=centered>5</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/momentofsilence.png' alt="Moment of Silence:When a Heroic enemy dies, all player units around it will reflect on their transgressions, leaving them temporarily unable to attack or use abilities." width="25" height="25"> Moment of Silence</td><td class=centered>5</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/orbitalstrike.png' alt="Orbital Strike:Enemy Orbital Strikes are periodically fired throughout the map." width="25" height="25"> Orbital Strike</td><td class=centered>5</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/concussiveattacks.png' alt="Concussive Attacks:Player units are slowed by all enemy attacks." width="25" height="25"> Concussive Attacks</td><td class=centered>4</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/giftexchange.png' alt="Gift Exchange:Gifts are periodically deployed around the map. If you don't claim them, Amon will!" width="25" height="25"> Gift Exchange</td><td class=centered>4</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/sharingiscaring.png' alt="Sharing is Caring:Supply is shared between you and your partner, and units from both armies contribute to your combined supply cap." width="25" height="25"> Sharing is Caring</td><td class=centered>4</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/fireworks.png' alt="Fireworks:Enemies launch a dazzling fireworks display upon death, dealing damage to your nearby units." width="25" height="25"> Fireworks</td><td class=centered>3</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/lifeleech.png' alt="Life Leech:Enemy units steal life or shields whenever they do damage." width="25" height="25"> Life Leech</td><td class=centered>3</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/luckyenvelopes.png' alt="Lucky Envelopes:Festive envelopes containing resource pickups are dropped at random throughout the map." width="25" height="25"> Lucky Envelopes</td><td class=centered>3</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/naughtylist.png' alt="Naughty List:Player units and structures take increased damage for each enemy they've killed." width="25" height="25"> Naughty List</td><td class=centered>3</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/boombots.png' alt="Boom Bots:Uncaring automatons carry a nuclear payload toward your base. One player must discern the disarming sequence and the other player must enter it." width="25" height="25"> Boom Bots</td><td class=centered>3</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/trickortreat.png' alt="Trick or Treat:Civilians visit your Candy Bowl looking for treats, which are generated by spending minerals. If no treats are available, the civilians randomly transform into enemy units." width="25" height="25"> Trick or Treat</td><td class=centered>2</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/turkeyshoot.png' alt="Turkey Shoot:Supply can only be generated by killing turkeys that wander throughout the map. Doing so may anger the turkeys that remain." width="25" height="25"> Turkey Shoot</td><td class=centered>2</td><tr>
-<tr><td><img class='mutatorIcon' src='/images/mutators/vertigo.png' alt="Vertigo:Your camera randomly changes positions." width="25" height="25"> Vertigo</td><td class=centered>1</td><tr>
+            <tr><td><a href='/mutators/justdie'><img class='miniIcon' src='/images/mutators/justdie.png' alt=''>Just Die</a></td><td class=centered>16</td><tr>
+<tr><td><a href='/mutators/speedfreaks'><img class='miniIcon' src='/images/mutators/speedfreaks.png' alt=''>Speed Freaks</a></td><td class=centered>14</td><tr>
+<tr><td><a href='/mutators/voidrifts'><img class='miniIcon' src='/images/mutators/voidrifts.png' alt=''>Void Rifts</a></td><td class=centered>14</td><tr>
+<tr><td><a href='/mutators/barrier'><img class='miniIcon' src='/images/mutators/barrier.png' alt=''>Barrier</a></td><td class=centered>13</td><tr>
+<tr><td><a href='/mutators/avenger'><img class='miniIcon' src='/images/mutators/avenger.png' alt=''>Avenger</a></td><td class=centered>12</td><tr>
+<tr><td><a href='/mutators/goingnuclear'><img class='miniIcon' src='/images/mutators/goingnuclear.png' alt=''>Going Nuclear</a></td><td class=centered>11</td><tr>
+<tr><td><a href='/mutators/missilecommand'><img class='miniIcon' src='/images/mutators/missilecommand.png' alt=''>Missile Command</a></td><td class=centered>11</td><tr>
+<tr><td><a href='/mutators/polarity'><img class='miniIcon' src='/images/mutators/polarity.png' alt=''>Polarity</a></td><td class=centered>11</td><tr>
+<tr><td><a href='/mutators/selfdestruction'><img class='miniIcon' src='/images/mutators/selfdestruction.png' alt=''>Self Destruction</a></td><td class=centered>11</td><tr>
+<tr><td><a href='/mutators/voidreanimators'><img class='miniIcon' src='/images/mutators/voidreanimators.png' alt=''>Void Reanimators</a></td><td class=centered>11</td><tr>
+<tr><td><a href='/mutators/alienincubation'><img class='miniIcon' src='/images/mutators/alienincubation.png' alt=''>Alien Incubation</a></td><td class=centered>10</td><tr>
+<tr><td><a href='/mutators/minesweeper'><img class='miniIcon' src='/images/mutators/minesweeper.png' alt=''>Minesweeper</a></td><td class=centered>10</td><tr>
+<tr><td><a href='/mutators/purifierbeam'><img class='miniIcon' src='/images/mutators/purifierbeam.png' alt=''>Purifier Beam</a></td><td class=centered>10</td><tr>
+<tr><td><a href='/mutators/scorchedearth'><img class='miniIcon' src='/images/mutators/scorchedearth.png' alt=''>Scorched Earth</a></td><td class=centered>10</td><tr>
+<tr><td><a href='/mutators/wemoveunseen'><img class='miniIcon' src='/images/mutators/wemoveunseen.png' alt=''>We Move Unseen</a></td><td class=centered>10</td><tr>
+<tr><td><a href='/mutators/lavaburst'><img class='miniIcon' src='/images/mutators/lavaburst.png' alt=''>Lava Burst</a></td><td class=centered>9</td><tr>
+<tr><td><a href='/mutators/magnificent'><img class='miniIcon' src='/images/mutators/magnificent.png' alt=''>Mag-nificent</a></td><td class=centered>9</td><tr>
+<tr><td><a href='/mutators/outbreak'><img class='miniIcon' src='/images/mutators/outbreak.png' alt=''>Outbreak</a></td><td class=centered>9</td><tr>
+<tr><td><a href='/mutators/poweroverwhelming'><img class='miniIcon' src='/images/mutators/poweroverwhelming.png' alt=''>Power Overwhelming</a></td><td class=centered>9</td><tr>
+<tr><td><a href='/mutators/propagators'><img class='miniIcon' src='/images/mutators/propagators.png' alt=''>Propagators</a></td><td class=centered>9</td><tr>
+<tr><td><a href='/mutators/aggressivedeployment'><img class='miniIcon' src='/images/mutators/aggressivedeployment.png' alt=''>Aggressive Deployment</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/blackdeath'><img class='miniIcon' src='/images/mutators/blackdeath.png' alt=''>Black Death</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/blizzard'><img class='miniIcon' src='/images/mutators/blizzard.png' alt=''>Blizzard</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/fear'><img class='miniIcon' src='/images/mutators/fear.png' alt=''>Fear</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/inspiration'><img class='miniIcon' src='/images/mutators/inspiration.png' alt=''>Inspiration</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/killbots'><img class='miniIcon' src='/images/mutators/killbots.png' alt=''>Kill Bots</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/laserdrill'><img class='miniIcon' src='/images/mutators/laserdrill.png' alt=''>Laser Drill</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/microtransactions'><img class='miniIcon' src='/images/mutators/microtransactions.png' alt=''>Micro Transactions</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/mutuallyassureddestruction'><img class='miniIcon' src='/images/mutators/mutuallyassureddestruction.png' alt=''>Mutually Assured Destruction</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/photonoverload'><img class='miniIcon' src='/images/mutators/photonoverload.png' alt=''>Photon Overload</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/shortsighted'><img class='miniIcon' src='/images/mutators/shortsighted.png' alt=''>Shortsighted</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/timewarp'><img class='miniIcon' src='/images/mutators/timewarp.png' alt=''>Time Warp</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/transmutation'><img class='miniIcon' src='/images/mutators/transmutation.png' alt=''>Transmutation</a></td><td class=centered>8</td><tr>
+<tr><td><a href='/mutators/chaosstudios'><img class='miniIcon' src='/images/mutators/chaosstudios.png' alt=''>Chaos Studios</a></td><td class=centered>7</td><tr>
+<tr><td><a href='/mutators/darkness'><img class='miniIcon' src='/images/mutators/darkness.png' alt=''>Darkness</a></td><td class=centered>7</td><tr>
+<tr><td><a href='/mutators/eminentdomain'><img class='miniIcon' src='/images/mutators/eminentdomain.png' alt=''>Eminent Domain</a></td><td class=centered>7</td><tr>
+<tr><td><a href='/mutators/longrange'><img class='miniIcon' src='/images/mutators/longrange.png' alt=''>Long Range</a></td><td class=centered>7</td><tr>
+<tr><td><a href='/mutators/mineralshields'><img class='miniIcon' src='/images/mutators/mineralshields.png' alt=''>Mineral Shields</a></td><td class=centered>7</td><tr>
+<tr><td><a href='/mutators/slimpickings'><img class='miniIcon' src='/images/mutators/slimpickings.png' alt=''>Slim Pickings</a></td><td class=centered>7</td><tr>
+<tr><td><a href='/mutators/temporalfield'><img class='miniIcon' src='/images/mutators/temporalfield.png' alt=''>Temporal Field</a></td><td class=centered>7</td><tr>
+<tr><td><a href='/mutators/afraidofthedark'><img class='miniIcon' src='/images/mutators/afraidofthedark.png' alt=''>Afraid of the Dark</a></td><td class=centered>6</td><tr>
+<tr><td><a href='/mutators/hardenedwill'><img class='miniIcon' src='/images/mutators/hardenedwill.png' alt=''>Hardened Will</a></td><td class=centered>6</td><tr>
+<tr><td><a href='/mutators/heroesfromthestorm'><img class='miniIcon' src='/images/mutators/heroesfromthestorm.png' alt=''>Heroes from the Storm</a></td><td class=centered>6</td><tr>
+<tr><td><a href='/mutators/twister'><img class='miniIcon' src='/images/mutators/twister.png' alt=''>Twister</a></td><td class=centered>6</td><tr>
+<tr><td><a href='/mutators/walkinginfested'><img class='miniIcon' src='/images/mutators/walkinginfested.png' alt=''>Walking Infested</a></td><td class=centered>6</td><tr>
+<tr><td><a href='/mutators/diffusion'><img class='miniIcon' src='/images/mutators/diffusion.png' alt=''>Diffusion</a></td><td class=centered>5</td><tr>
+<tr><td><a href='/mutators/doubleedged'><img class='miniIcon' src='/images/mutators/doubleedged.png' alt=''>Double Edged</a></td><td class=centered>5</td><tr>
+<tr><td><a href='/mutators/evasivemaneuvers'><img class='miniIcon' src='/images/mutators/evasivemaneuvers.png' alt=''>Evasive Maneuvers</a></td><td class=centered>5</td><tr>
+<tr><td><a href='/mutators/fatalattraction'><img class='miniIcon' src='/images/mutators/fatalattraction.png' alt=''>Fatal Attraction</a></td><td class=centered>5</td><tr>
+<tr><td><a href='/mutators/momentofsilence'><img class='miniIcon' src='/images/mutators/momentofsilence.png' alt=''>Moment of Silence</a></td><td class=centered>5</td><tr>
+<tr><td><a href='/mutators/orbitalstrike'><img class='miniIcon' src='/images/mutators/orbitalstrike.png' alt=''>Orbital Strike</a></td><td class=centered>5</td><tr>
+<tr><td><a href='/mutators/concussiveattacks'><img class='miniIcon' src='/images/mutators/concussiveattacks.png' alt=''>Concussive Attacks</a></td><td class=centered>4</td><tr>
+<tr><td><a href='/mutators/giftexchange'><img class='miniIcon' src='/images/mutators/giftexchange.png' alt=''>Gift Exchange</a></td><td class=centered>4</td><tr>
+<tr><td><a href='/mutators/sharingiscaring'><img class='miniIcon' src='/images/mutators/sharingiscaring.png' alt=''>Sharing is Caring</a></td><td class=centered>4</td><tr>
+<tr><td><a href='/mutators/fireworks'><img class='miniIcon' src='/images/mutators/fireworks.png' alt=''>Fireworks</a></td><td class=centered>3</td><tr>
+<tr><td><a href='/mutators/lifeleech'><img class='miniIcon' src='/images/mutators/lifeleech.png' alt=''>Life Leech</a></td><td class=centered>3</td><tr>
+<tr><td><a href='/mutators/luckyenvelopes'><img class='miniIcon' src='/images/mutators/luckyenvelopes.png' alt=''>Lucky Envelopes</a></td><td class=centered>3</td><tr>
+<tr><td><a href='/mutators/naughtylist'><img class='miniIcon' src='/images/mutators/naughtylist.png' alt=''>Naughty List</a></td><td class=centered>3</td><tr>
+<tr><td><a href='/mutators/boombots'><img class='miniIcon' src='/images/mutators/boombots.png' alt=''>Boom Bots</a></td><td class=centered>3</td><tr>
+<tr><td><a href='/mutators/trickortreat'><img class='miniIcon' src='/images/mutators/trickortreat.png' alt=''>Trick or Treat</a></td><td class=centered>2</td><tr>
+<tr><td><a href='/mutators/turkeyshoot'><img class='miniIcon' src='/images/mutators/turkeyshoot.png' alt=''>Turkey Shoot</a></td><td class=centered>2</td><tr>
+<tr><td><a href='/mutators/vertigo'><img class='miniIcon' src='/images/mutators/vertigo.png' alt=''>Vertigo</a></td><td class=centered>1</td><tr>
         </tbody>
     </table>
 
@@ -867,20 +857,6 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </tbody>
     </table>
     <script>
-        $(".mutatorIcon").on('mouseover',function(e){
-            var mutator = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + mutator[0] + "</b><br><br>" + mutator[1]);
-            $("#tooltip").show();
-        });
-        $(".mutatorIcon").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".mutatorIcon").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
         $('.infoIcon img').mouseover(function(){
             var text = $(this).next().html();
             $("#tooltip").html(text);
@@ -898,6 +874,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
 
         });
     </script>
+<script src="/scripts/tooltips.js"></script>
 <script src="/scripts/nav.js"></script>
 </div>
 

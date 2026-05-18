@@ -59,7 +59,7 @@ require_once "../../includes/wrapper.php";
     <?php
     foreach ($mutators as $mutator) {
         $filename = strtolower(str_replace("-", '', str_replace(' ', '', $mutator['mutatorname'])));
-        echo '<tr><td style="white-space: nowrap"><a href="/mutators/' . $filename . '"><img src="/images/mutators/' . $filename . '.png" alt="" height="25" width="25" style="vertical-align: middle" />' . $mutator['mutatorname'] . '</a></td><td>' . $mutator['mutatordescription'] . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['customusable'] ? '⚙️' : '') . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['chaosrollable'] ? '🎲' : '') . '</td></tr>' . "\n";
+        echo '<tr><td style="white-space: nowrap"><a href="/mutators/' . $filename . '"><img src="/images/mutators/' . $filename . '.png" alt="" class="miniIcon" />' . $mutator['mutatorname'] . '</a></td><td>' . $mutator['mutatordescription'] . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['customusable'] ? '⚙️' : '') . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['chaosrollable'] ? '🎲' : '') . '</td></tr>' . "\n";
     }
     ?>
     </table>
@@ -88,5 +88,6 @@ require_once "../../includes/wrapper.php";
         $('#table-option').click(updateTable);
         updateTable();
     </script>
+    <script src="/scripts/tooltips.js"></script>
     <p>If you prefer the old layout with everything on one page, <a href="/resources/mutators">it's still available</a>.</p>
 <?= endContent() ?>

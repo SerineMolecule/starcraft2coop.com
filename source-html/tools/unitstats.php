@@ -38,16 +38,6 @@ require_once "../../includes/wrapper.php";
             padding:5px;
         }
     }
-    #tooltip{
-        position:absolute;
-        background-color:khaki;
-        color:black;
-        font-size:0.8em;
-        display:none;
-        z-index:1;
-        padding:5px;
-        border-radius:5px;
-    }
     .tableContainer{
         overflow:hidden;
     }

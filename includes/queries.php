@@ -1,5 +1,10 @@
 <?php
 
+function token(string $name): string
+{
+    return preg_replace('/[^a-z0-9]+/', '', strtolower($name));
+}
+
 /**
  * @return array All commanders.
  */

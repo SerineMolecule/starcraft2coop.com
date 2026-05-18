@@ -35,14 +35,6 @@ require_once "../../includes/wrapper.php";
             width: 85vw;
             height: 50vw;
         }
-        .mutatorIcon{
-            height:20px;
-            margin-right:10px;
-        }
-        .currentMutatorIcon{
-            height:50px;
-            margin-right:10px;
-        }
         .cast{
             height:30px;
             display:inline;
@@ -59,16 +51,6 @@ require_once "../../includes/wrapper.php";
         .clickable{
             height:30px;
             cursor:pointer;
-        }
-        #tooltip{
-            position:absolute;
-            background-color:khaki;
-            color:black;
-            font-size:0.8em;
-            display:none;
-            z-index:1;
-            padding:5px;
-            border-radius:5px;
         }
         #mutationList td:nth-child(2),
         #mutationList td:nth-child(4),
@@ -425,6 +407,13 @@ require_once "../../includes/wrapper.php";
         return [$brutalPlus ?? 0, $diffString];
     }
 
+    function weeklyMutationMutatorLink(array $mutator): string
+    {
+        $filename = token($mutator['mutatorname']);
+        return "<a href=\"/mutators/" . $filename . "\"><img class=\"miniIcon\" src=\"/images/mutators/" .
+            $filename . ".png\" alt=\"\">" . $mutator['mutatorname'] . "</a>";
+    }
+
     $cycleList = get_mutationcycle();
     $mutators = get_mutators();
 
@@ -458,20 +447,17 @@ require_once "../../includes/wrapper.php";
         }
 
         if ($row["mut01"]) {
-            $filename = str_replace('-', '', str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname'])));
-            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut01"]) - 1]['mutatordescription'] . "\"><a href=\"/mutators/" . $filename . "\">" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . "</a></td>\n";
+            echo "<td>" . weeklyMutationMutatorLink($mutators[intval($row["mut01"]) - 1]) . "</td>\n";
         } else {
             echo "<td></td>\n";
         }
         if ($row["mut02"]) {
-            $filename = str_replace('-', '', str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname'])));
-            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut02"]) - 1]['mutatordescription'] . "\"><a href=\"/mutators/" . $filename . "\">" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . "</a></td>\n";
+            echo "<td>" . weeklyMutationMutatorLink($mutators[intval($row["mut02"]) - 1]) . "</td>\n";
         } else {
             echo "<td></td>\n";
         }
         if ($row["mut03"]) {
-            $filename = str_replace('-', '', str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname'])));
-            echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut03"]) - 1]['mutatordescription'] . "\"><a href=\"/mutators/" . $filename . "\">" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . "</a></td>\n";
+            echo "<td>" . weeklyMutationMutatorLink($mutators[intval($row["mut03"]) - 1]) . "</td>\n";
         } else {
             echo "<td></td>\n";
         }
@@ -669,20 +655,17 @@ require_once "../../includes/wrapper.php";
                     }
 
                     if ($row["mut01"]) {
-                        $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut01"]) - 1]['mutatorname']));
-                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut01"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut01"]) - 1]['mutatorname'] . "</td>\n";
+                        echo "<td>" . weeklyMutationMutatorLink($mutators[intval($row["mut01"]) - 1]) . "</td>\n";
                     } else {
                         echo "<td></td>\n";
                     }
                     if ($row["mut02"]) {
-                        $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut02"]) - 1]['mutatorname']));
-                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut02"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut02"]) - 1]['mutatorname'] . "</td>\n";
+                        echo "<td>" . weeklyMutationMutatorLink($mutators[intval($row["mut02"]) - 1]) . "</td>\n";
                     } else {
                         echo "<td></td>\n";
                     }
                     if ($row["mut03"]) {
-                        $filename = str_replace(' ', '', strtolower($mutators[intval($row["mut03"]) - 1]['mutatorname']));
-                        echo "<td><img class='mutatorIcon' src='/images/mutators/" . $filename . ".png' alt=\"" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . ":" . $mutators[intval($row["mut03"]) - 1]['mutatordescription'] . "\">" . $mutators[intval($row["mut03"]) - 1]['mutatorname'] . "</td>\n";
+                        echo "<td>" . weeklyMutationMutatorLink($mutators[intval($row["mut03"]) - 1]) . "</td>\n";
                     } else {
                         echo "<td></td>\n";
                     }
@@ -693,34 +676,6 @@ require_once "../../includes/wrapper.php";
         </table>
     </div>
     <script>
-        $(".mutatorIcon").on('mouseover',function(e){
-            var mutator = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + mutator[0] + "</b><br><br>" + mutator[1]);
-            $("#tooltip").show();
-        });
-        $(".currentMutatorIcon").on('mouseover',function(e){
-            var mutator = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + mutator[0] + "</b><br><br>" + mutator[1]);
-            $("#tooltip").show();
-        });
-        $(".mutatorIcon").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".currentMutatorIcon").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".mutatorIcon").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".currentMutatorIcon").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
         $(document).click(function(e) {
             if (e.srcElement !== $("#player")){
                 $("#video").attr("src",$("#video").attr("src"));
@@ -734,5 +689,6 @@ require_once "../../includes/wrapper.php";
         });
     </script>
 
+<script src="/scripts/tooltips.js"></script>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>
