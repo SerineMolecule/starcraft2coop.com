@@ -20,6 +20,8 @@ If you edit the data files in `/source-data`, you'll need to run `make` to rebui
 
 In general, `make` will rebuild and test everything. You can also use `make html` to rebuild without testing, and `make test` to test without rebuilding.
 
+To start a development server, use `make dev`. This rebuilds `html/` and starts a development server at `http://127.0.0.1:8000`. PHP is required but Apache is not. You can override the address with `HOST` and `PORT`, for example: `make dev PORT=8080`.
+
 ### Docker
 
 Read [Docker.md](docker/Docker.md) for instructions on how to set up a local development environment using Docker.

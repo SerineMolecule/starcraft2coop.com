@@ -1,5 +1,8 @@
 all: html test
 
+HOST ?= 127.0.0.1
+PORT ?= 8000
+
 .PHONY: deps
 deps: node_modules vendor
 
@@ -24,6 +27,11 @@ validate-data: node_modules
 html: node_modules
 	bun ./generate-html-dir.ts
 	php ./generate-static.php
+
+.PHONY: dev
+dev: html
+	@echo ""
+	@php -S $(HOST):$(PORT) -t html dev-router.php
 
 .PHONY: test
 test: validate-data check
