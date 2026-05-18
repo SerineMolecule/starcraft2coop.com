@@ -30,7 +30,7 @@ function token(text: string): Token {
     if (text === "Lt Layna Nikara") return 'nikara';
     if (text === "Kev Rattlesnake West") return 'rattlesnake';
 
-    return text.replace(/[^A-Za-z0-9]/g, "").toLowerCase() as Token;
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, "") as Token;
 }
 type Token = Lowercase<string>;
 
@@ -113,7 +113,7 @@ class CommanderSelector extends preact.Component<{ commander: string | null }> {
                 <ul class="units-nav">
                     {commandersummaries.map((commander) => (
                         <li><a href={`#${token(commander.commander)}`} aria-selected={this.isSelected(commander.commander)}>
-                            <img src={`/images/commanderportraits/${token(commander.commander)}portrait.png`} alt ="" width="20" height="20" /> {}
+                            <img src={`/images/commanderportraits/${token(commander.commander)}portrait.png`} alt="" width="21" height="21" style="margin-right:3px" />
                             {commander.fullname}
                         </a></li>
                     ))}
@@ -620,19 +620,20 @@ class UnitStats extends preact.Component<{
 
         const upgradeData = new Map(
             playerUpgrades.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit)
-                .map((u) => [u.name, { title: u.effect, icon: u.icon, unit: u.unit }])
+                .map((u) => [u.name, { tooltip: `upgrades/${token(u.commander)}/${u.icon}`, icon: u.icon, unit: u.unit }])
         );
         const upgradeIcon = (upgrade: string) => {
             const data = upgradeData.get(upgrade);
-            const dir = token(data?.unit ?? "") === modifiers.commander ? "hero" : "unitupgrades";
-            return `/images/commanderdata/${dir}/${token(modifiers.commander)}/${data?.icon}.png`;
+            const commander = modifiers.commander;
+            const dir = commander !== 'tychus' && token(data?.unit ?? "") === commander ? "hero" : "unitupgrades";
+            return `/images/commanderdata/${dir}/${commander}/${data?.icon}.png`;
         };
 
         return (
             <form class="units-modifiers">
                 {!!upgrades.length && (<fieldset>
                     <legend>Upgrades</legend>
-                    {upgrades.map((upgrade) => <div><label title={upgradeData.get(upgrade)?.title}><input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> <img src={upgradeIcon(upgrade)} alt="" width={20} height={20} /> {upgrade}</label></div>)}
+                    {upgrades.map((upgrade) => <div><label data-tooltip={upgradeData.get(upgrade)?.tooltip}><input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> <img src={upgradeIcon(upgrade)} alt="" width={20} height={20} /> {upgrade}</label></div>)}
                 </fieldset>)}
                 {'weapon' in modifiers.upgradeLevels && (<fieldset>
                     <legend>Weapons</legend>
