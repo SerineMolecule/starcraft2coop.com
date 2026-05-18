@@ -59,7 +59,7 @@ require_once "../../includes/wrapper.php";
     <?php
     foreach ($mutators as $mutator) {
         $filename = strtolower(str_replace("-", '', str_replace(' ', '', $mutator['mutatorname'])));
-        echo '<tr><td style="white-space: nowrap"><a href="/mutators/' . $filename . '"><img src="/images/mutators/' . $filename . '.png" alt="" class="miniIcon" />' . $mutator['mutatorname'] . '</a></td><td>' . $mutator['mutatordescription'] . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['customusable'] ? '⚙️' : '') . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['chaosrollable'] ? '🎲' : '') . '</td></tr>' . "\n";
+        echo '<tr><td style="white-space: nowrap"><a href="/mutators/' . $filename . '" data-no-tooltip><img src="/images/mutators/' . $filename . '.png" alt="" class="miniIcon" />' . $mutator['mutatorname'] . '</a></td><td>' . $mutator['mutatordescription'] . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['customusable'] ? '⚙️' : '') . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['chaosrollable'] ? '🎲' : '') . '</td></tr>' . "\n";
     }
     ?>
     </table>

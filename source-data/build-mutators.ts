@@ -52,7 +52,7 @@ require_once "../../includes/wrapper.php";
 ${indentedDetails}
     <h2 id="interactions">Mutator Interactions</h2>
     <table>
-${interactions.map((interaction) => `        <tr><td style="white-space:nowrap"><img src="/images/mutators/${token(interaction.otherMutator.mutatorname)}.png" height="25" width="25" style="vertical-align:middle"> <a href="/mutators/${token(interaction.otherMutator.mutatorname)}">${interaction.otherMutator.mutatorname}</a></td><td>${interaction.interaction}</td></tr>\n`).join('')}${interactions.length === 0 ? '        <tr><td>No interactions found.</td></tr>' : ''}
+${interactions.map((interaction) => `        <tr><td style="white-space:nowrap"><a href="/mutators/${token(interaction.otherMutator.mutatorname)}"><img src="/images/mutators/${token(interaction.otherMutator.mutatorname)}.png" class="miniIcon">${interaction.otherMutator.mutatorname}</a></td><td>${interaction.interaction}</td></tr>\n`).join('')}${interactions.length === 0 ? '        <tr><td>No interactions found.</td></tr>' : ''}
     </table>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

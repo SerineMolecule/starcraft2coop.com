@@ -121,7 +121,7 @@ function hideTooltip(): void {
 
 function closestTooltipTarget(target: EventTarget | null): HTMLElement | null {
     if (!(target instanceof Element)) return null;
-    return target.closest<HTMLElement>("[data-tooltip], a[href]");
+    return target.closest<HTMLElement>("[data-tooltip], a[href]:not([data-no-tooltip])");
 }
 
 function showTooltip(target: HTMLElement): void {
