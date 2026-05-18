@@ -95,7 +95,7 @@ function get_currentmutationcycle(): array
 {
     $cycleList = get_mutationcycle();
     $mutationCount = count($cycleList);
-    $mutationCycleStart = strtotime("2020-10-26T11:00:00.000Z");
+    $mutationCycleStart = strtotime("2020-10-26T10:00:00.000Z");
     $today = time();
     $datediff = $today - $mutationCycleStart;
 
