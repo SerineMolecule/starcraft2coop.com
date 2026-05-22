@@ -1116,15 +1116,13 @@ require_once "../../includes/wrapper.php";
         <thead>
             <tr>
                 <th>Map</th>
-                <th>Race</th>
                 <th>Player 1 Expansion</th>
                 <th>Player 2 Expansion</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><a href="/missions/chainofascension">Chain of Ascension</a></td>
-                <td>
+                <td><a href="/missions/chainofascension">Chain of Ascension</a><br /><br />
                     <form action='#'>
                         <label><input type='radio' name='coa' value='protoss' checked>Protoss</label><br>
                         <label><input type='radio' name='coa' value='terran'>Terran</label><br>
@@ -1169,19 +1167,18 @@ require_once "../../includes/wrapper.php";
             </tr>
             <tr>
                 <td><a href="/missions/cradleofdeath">Cradle of Death</a></td>
-                <td class="centered" colspan="3">Run both trucks straight past the forward construct towards the two Beacon Constructs. Use Orbital Strikes to kill the Beacon Constructs and trigger the first objective explosion. This will clear the expansion and the forward construct as well.</td>
+                <td class="centered" colspan="2">Run both trucks straight past the forward construct towards the two Beacon Constructs. Use Orbital Strikes to kill the Beacon Constructs and trigger the first objective explosion. This will clear the expansion and the forward construct as well.</td>
             </tr>
             <tr>
                 <td><a href="/missions/deadofnight">Dead of Night</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
-                <td><a href="/missions/lockload">Lock & Load</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td><a href="/missions/lockload">Lock &amp; Load</a></td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
-                <td><a href="/missions/malwarfare">Malwarfare</a></td>
-                <td>
+                <td><a href="/missions/malwarfare">Malwarfare</a><br /><br />
                     <form action='#'>
                         <label><input type='radio' name='mw' value='protoss' checked>Protoss</label><br>
                         <label><input type='radio' name='mw' value='terran'>Terran</label><br>
@@ -1226,19 +1223,18 @@ require_once "../../includes/wrapper.php";
             </tr>
             <tr>
                 <td><a href="/missions/minerevacuation">Miner Evacuation</a></td>
-                <td class="centered" colspan="3">No simple fast expand exists. It is best to cannon-rush the expansion if you wish to take an early expansion.</td>
+                <td class="centered" colspan="2">No simple fast expand exists. It is best to cannon-rush the expansion if you wish to take an early expansion.</td>
             </tr>
             <tr>
                 <td><a href="/missions/mistopportunities">Mist Opportunities</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
                 <td><a href="/missions/oblivionexpress">Oblivion Express</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
-                <td><a href="/missions/partparcel">Part & Parcel</a></td>
-                <td>
+                <td><a href="/missions/partparcel">Part &amp; Parcel</a><br /><br />
                     <form action='#'>
                         <label><input type='radio' name='pp' value='protoss' checked>Protoss</label><br>
                         <label><input type='radio' name='pp' value='terran'>Terran</label><br>
@@ -1269,27 +1265,27 @@ require_once "../../includes/wrapper.php";
             </tr>
             <tr>
                 <td><a href="/missions/riftstokorhal">Rifts to Korhal</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
                 <td><a href="/missions/scytheofamon">Scythe of Amon</a></td>
-                <td class="centered" colspan="3">No simple fast expand exists. It is best to cannon-rush the expansion if you wish to take an early expansion. Make sure to use Solar Lances to clear the Void Rift before you start building Cannons.</td>
+                <td class="centered" colspan="2">No simple fast expand exists. It is best to cannon-rush the expansion if you wish to take an early expansion. Make sure to use Solar Lances to clear the Void Rift before you start building Cannons.</td>
             </tr>
             <tr>
                 <td><a href="/missions/templeofthepast">Temple of the Past</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
                 <td><a href="/missions/thevermillionproblem">The Vermillion Problem</a></td>
-                <td class="centered" colspan="3">No simple fast expand exists. It is best to cannon-rush the expansion if you wish to take an early expansion.</td>
+                <td class="centered" colspan="2">No simple fast expand exists. It is best to cannon-rush the expansion if you wish to take an early expansion.</td>
             </tr>
             <tr>
                 <td><a href="/missions/voidlaunch">Void Launch</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
                 <td><a href="/missions/voidthrashing">Void Thrashing</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
         </tbody>
     </table>

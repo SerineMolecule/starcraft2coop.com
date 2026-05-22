@@ -1342,15 +1342,13 @@ require_once "../../includes/wrapper.php";
         <thead>
             <tr>
                 <th>Map</th>
-                <th>Race</th>
                 <th>Player 1 Expansion</th>
                 <th>Player 2 Expansion</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><a href="/missions/chainofascension">Chain of Ascension</a></td>
-                <td>
+                <td><a href="/missions/chainofascension">Chain of Ascension</a><br /><br />
                     <form action='#'>
                         <label><input type='radio' name='coa' value='protoss' checked>Protoss</label><br>
                         <label><input type='radio' name='coa' value='terran'>Terran</label><br>
@@ -1395,19 +1393,18 @@ require_once "../../includes/wrapper.php";
             </tr>
             <tr>
                 <td><a href="/missions/cradleofdeath">Cradle of Death</a></td>
-                <td class="centered" colspan="3">Not worth fast expanding as risks are too high to lose Troopers and Bunkers.</td>
+                <td class="centered" colspan="2">Not worth fast expanding as risks are too high to lose Troopers and Bunkers.</td>
             </tr>
             <tr>
                 <td><a href="/missions/deadofnight">Dead of Night</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
-                <td><a href="/missions/lockload">Lock & Load</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td><a href="/missions/lockload">Lock &amp; Load</a></td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
-                <td><a href="/missions/malwarfare">Malwarfare</a>*</td>
-                <td>
+                <td><a href="/missions/malwarfare">Malwarfare</a>*<br /><br />
                     <form action='#'>
                         <label><input type='radio' name='mw' value='protoss' checked>Protoss</label><br>
                         <label><input type='radio' name='mw' value='terran'>Terran</label><br>
@@ -1452,20 +1449,18 @@ require_once "../../includes/wrapper.php";
             </tr>
             <tr>
                 <td><a href="/missions/minerevacuation">Miner Evacuation</a></td>
-                <td>Race doesn't affect Expansion</td>
                 <td colspan="2"><div class="fastExpand"><img id="me1" src="/images/commanderdata/guides/mengsk/fastexpand_me.jpg" alt="Fast Expand on Miner Evacuation"></div></td>
             </tr>
             <tr>
                 <td><a href="/missions/mistopportunities">Mist Opportunities</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
                 <td><a href="/missions/oblivionexpress">Oblivion Express</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
-                <td><a href="/missions/partparcel">Part & Parcel</a>*</td>
-                <td>
+                <td><a href="/missions/partparcel">Part & Parcel</a>*<br /><br />
                     <form action='#'>
                         <label><input type='radio' name='pp' value='protoss' checked>Protoss</label><br>
                         <label><input type='radio' name='pp' value='terran'>Terran</label><br>
@@ -1496,20 +1491,18 @@ require_once "../../includes/wrapper.php";
             </tr>
             <tr>
                 <td><a href="/missions/riftstokorhal">Rifts to Korhal</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
                 <td><a href="/missions/scytheofamon">Scythe of Amon</a></td>
-                <td>Race doesn't affect Expansion</td>
                 <td colspan="2"><div class="fastExpand"><img id="soa1" src="/images/commanderdata/guides/mengsk/fastexpand_soa.jpg" alt="Fast Expand on Scythe of Amon"></div><p>Note: Fast expanding on this mission slows your mission completion time. Use the Bunker calldowns on Sliver #4 (South West) and clear those. Slivers #3 (North) and #5 (North West) can be cleared with your Nuclear Annihilation ability. Slivers #1 (Base) and #2(Expansion) can be cleared with Earthsplitters that you will build throughout the course of the mission.</p></td>
             </tr>
             <tr>
                 <td><a href="/missions/templeofthepast">Temple of the Past</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
-                <td><a href="/missions/thevermillionproblem">The Vermillion Problem</a></td>
-                <td>
+                <td><a href="/missions/thevermillionproblem">The Vermillion Problem</a><br /><br />
                     <form action='#'>
                         <label><input type='radio' name='tvp' value='protoss' checked>Protoss</label><br>
                         <label><input type='radio' name='tvp' value='terran'>Terran</label><br>
@@ -1539,11 +1532,11 @@ require_once "../../includes/wrapper.php";
             </tr>
             <tr>
                 <td><a href="/missions/voidlaunch">Void Launch</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
             <tr>
                 <td><a href="/missions/voidthrashing">Void Thrashing</a></td>
-                <td class="centered" colspan="3">No contested expansion</td>
+                <td class="centered" colspan="2">No contested expansion</td>
             </tr>
         </tbody>
     </table>

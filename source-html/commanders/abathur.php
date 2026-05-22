@@ -1212,8 +1212,7 @@ require_once "../../includes/wrapper.php";
         </thead>
         <tbody>
             <tr>
-                <td><a href="/missions/chainofascension">Chain of Ascension</a></td>
-                <td>
+                <td><a href="/missions/chainofascension">Chain of Ascension</a><br /><br />
                     <img src="/images/commanderdata/guides/abathur/coa.jpg" alt="Chain of Ascension Biomass Farming Location">
                 </td>
             </tr>
