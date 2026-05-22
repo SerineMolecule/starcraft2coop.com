@@ -414,7 +414,22 @@ label {
 		overflow-y: auto;
 	}
     #content.has-toc {
-        margin-left: 210px;
+        /* 1160px does make #content and #toc overlap a tiny bit. */
+        /* it's fine because the overlap is just padding, not text */
+        margin-left: auto;
+        margin-right: 0;
+    }
+    @media (min-width: 1190px) {
+        #content.has-toc {
+            margin-left: 210px;
+            margin-right: auto;
+        }
+    }
+    @media (min-width: 1400px) {
+        #content.has-toc {
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     #content.has-toc #links {
         display: none;
@@ -427,10 +442,4 @@ label {
 		border: 0;
 		background: transparent;
 	}
-
-    @media (min-width: 1370px) {
-        #content.has-toc {
-            margin-left: auto;
-        }
-    }
 }
