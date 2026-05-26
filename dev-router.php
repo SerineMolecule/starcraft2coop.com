@@ -7,22 +7,21 @@ if (!is_string($path) || $path === '') {
     $path = '/';
 }
 
-function servePhp(string $file, string $scriptName): bool
-{
-    $originalDir = getcwd();
-    chdir(dirname($file));
-    $_SERVER['SCRIPT_NAME'] = $scriptName;
-    $_SERVER['PHP_SELF'] = $scriptName;
-    $_SERVER['SCRIPT_FILENAME'] = $file;
-    require $file;
-    chdir($originalDir);
-    return true;
-}
-
 $file = realpath($docroot . $path);
 if ($file !== false && str_starts_with($file, $docroot) && is_file($file)) {
     if (str_ends_with($file, '.php')) {
-        return servePhp($file, $path);
+        // can't be refactored into a function because scripts may try to access globals
+        $originalDir = getcwd();
+        chdir(dirname($file));
+        $_SERVER['SCRIPT_NAME'] = $path;
+        $_SERVER['PHP_SELF'] = $path;
+        $_SERVER['SCRIPT_FILENAME'] = $file;
+        try {
+            require $file;
+        } finally {
+            chdir($originalDir);
+        }
+        return true;
     }
     return false;
 }
@@ -45,7 +44,18 @@ foreach ($candidates as $candidate) {
     }
 
     if (str_ends_with($candidateFile, '.php')) {
-        return servePhp($candidateFile, $candidate);
+        // can't be refactored into a function because scripts may try to access globals
+        $originalDir = getcwd();
+        chdir(dirname($candidateFile));
+        $_SERVER['SCRIPT_NAME'] = $candidate;
+        $_SERVER['PHP_SELF'] = $candidate;
+        $_SERVER['SCRIPT_FILENAME'] = $candidateFile;
+        try {
+            require $candidateFile;
+        } finally {
+            chdir($originalDir);
+        }
+        return true;
     }
 
     header('Content-Type: text/html; charset=UTF-8');
