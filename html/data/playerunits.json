@@ -927,7 +927,7 @@
         "hpbonus": 0,
         "armorbonus": 1,
         "shieldbonus": 1,
-        "notes": ""
+        "notes": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units."
     },
     {
         "unitid": 32,
@@ -957,7 +957,7 @@
         "hpbonus": 0,
         "armorbonus": 1,
         "shieldbonus": 1,
-        "notes": ""
+        "notes": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units."
     },
     {
         "unitid": 33,
@@ -2247,7 +2247,7 @@
         "hpbonus": 0,
         "armorbonus": 1,
         "shieldbonus": 1,
-        "notes": ""
+        "notes": "Purification Nova: Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures. Cooldown: 20 seconds."
     },
     {
         "unitid": 76,
@@ -3057,7 +3057,7 @@
         "hpbonus": 0,
         "armorbonus": 1,
         "shieldbonus": null,
-        "notes": ""
+        "notes": "Deals 125 (+35 vs. shields) damage to the primary target and 40 (+40 vs. shields) damage to other targets in a radius of 2, with a cooldown of 29 and a range of 5."
     },
     {
         "unitid": 103,
@@ -11337,7 +11337,7 @@
         "hpbonus": 0,
         "armorbonus": 0,
         "shieldbonus": null,
-        "notes": "Weapon stats listed are for its ability and not its equipped weapon."
+        "notes": "Weapon stats listed are for its ability and not its equipped weapon.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33."
     },
     {
         "unitid": 379,
@@ -11367,7 +11367,7 @@
         "hpbonus": 0,
         "armorbonus": 0,
         "shieldbonus": null,
-        "notes": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three."
+        "notes": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33."
     },
     {
         "unitid": 380,

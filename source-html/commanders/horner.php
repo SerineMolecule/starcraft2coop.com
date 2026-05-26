@@ -651,7 +651,8 @@ require_once "../../includes/wrapper.php";
                 <li>Recommended to combine Widow Mines with Mag Mines for defense.</li>
                 <li>Spread Widow Mines out so multiple mines they do not all get hit by single splash damage effects.</li>
             </ul>
-            <p>Skills: None</p>
+            <p>Skills:</p>
+            <p>Sentinel Missiles: Deals 125 (+35 vs. shields) damage to the primary target and 40 (+40 vs. shields) damage to other targets in a radius of 2, with a cooldown of 29 and a range of 5.</p>
             <p>Upgrades:</p>
             <table class="unitUpgrades">
                 <thead>
