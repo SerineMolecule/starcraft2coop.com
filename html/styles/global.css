@@ -414,6 +414,8 @@ label {
 		overflow-y: auto;
 	}
     #content.has-toc {
+        /* 1160px does make #content and #toc overlap a tiny bit. */
+        /* it's fine because the overlap is just padding, not text */
         margin-left: auto;
         margin-right: 0;
     }

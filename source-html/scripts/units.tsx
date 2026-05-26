@@ -51,11 +51,11 @@ class Units extends preact.Component {
         compareModifiers: UnitModifiers | null,
         error?: string,
     } = {
-        commander: null,
-        unit: null,
-        modifiers: null,
-        compareModifiers: null,
-    };
+            commander: null,
+            unit: null,
+            modifiers: null,
+            compareModifiers: null,
+        };
     override componentDidMount() {
         window.addEventListener("hashchange", () => {
             this.updateStateFromHash();
@@ -64,7 +64,7 @@ class Units extends preact.Component {
     }
     updateStateFromHash(): void {
         const hash = window.location.hash.slice(1);
-        const [ commander, unit ] = hash.split("/");
+        const [commander, unit] = hash.split("/");
         this.setState({ commander: commander || null, unit: unit || null });
         if (commander && unit) {
             this.setState({ modifiers: UnitStats.modifiers(commander as Token, unit as Token) });
@@ -228,7 +228,7 @@ interface UnitMode {
     attackspeed?: number;
     attacks?: number;
     /** Tags that this unit deals damage to */
-    attributedamage?: { [tag: string]: { damage: number, bonus: number }};
+    attributedamage?: { [tag: string]: { damage: number, bonus: number } };
 }
 
 class UnitStats extends preact.Component<{
@@ -344,60 +344,60 @@ class UnitStats extends preact.Component<{
     ) {
         switch (upgrade.modifier) {
             case 'mineralCost':
-                unit.mcost = this.applyModifier(unit.mcost, upgrade, false, level);
+                unit.mcost = this.applyModifier(unit.mcost, upgrade, level);
                 break;
             case 'vespeneCost':
-                unit.vcost = this.applyModifier(unit.vcost, upgrade, false, level);
+                unit.vcost = this.applyModifier(unit.vcost, upgrade, level);
                 break;
             case 'time':
-                unit.buildtime = this.applyModifier(unit.buildtime, upgrade, false, level);
+                unit.buildtime = this.applyModifier(unit.buildtime, upgrade, level);
                 break;
             case 'supply':
-                unit.supply = this.applyModifier(unit.supply, upgrade, false, level);
+                unit.supply = this.applyModifier(unit.supply, upgrade, level);
                 break;
             case 'HP':
-                unit.hp = this.applyModifier(unit.hp, upgrade, false, level);
+                unit.hp = this.applyModifier(unit.hp, upgrade, level);
                 break;
             case 'Shields':
-                unit.shields = this.applyModifier(unit.shields, upgrade, false, level);
+                unit.shields = this.applyModifier(unit.shields, upgrade, level);
                 break;
             case 'Armor':
                 if (!upgrade.modifiermode) {
-                    unit.armor = this.applyModifier(unit.armor, upgrade, false, level);
+                    unit.armor = this.applyModifier(unit.armor, upgrade, level);
                 }
                 for (const mode of Object.values(unit.modes)) {
                     if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : mode.armor !== undefined) {
-                        mode.armor = this.applyModifier(mode.armor ?? unit.armor, upgrade, false, level);
+                        mode.armor = this.applyModifier(mode.armor ?? unit.armor, upgrade, level);
                     }
                 }
                 break;
             case 'Shield_Armor':
                 if (!upgrade.modifiermode) {
-                    unit.shieldarmor = this.applyModifier(unit.shieldarmor, upgrade, false, level);
+                    unit.shieldarmor = this.applyModifier(unit.shieldarmor, upgrade, level);
                 }
                 for (const mode of Object.values(unit.modes)) {
                     if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : mode.shieldarmor !== undefined) {
-                        mode.shieldarmor = this.applyModifier(mode.shieldarmor ?? unit.shieldarmor, upgrade, false, level);
+                        mode.shieldarmor = this.applyModifier(mode.shieldarmor ?? unit.shieldarmor, upgrade, level);
                     }
                 }
                 break;
             case 'Move_Speed':
                 if (!upgrade.modifiermode) {
-                    unit.movementspeed = this.applyModifier(unit.movementspeed, upgrade, false, level);
+                    unit.movementspeed = this.applyModifier(unit.movementspeed, upgrade, level);
                 }
                 for (const mode of Object.values(unit.modes)) {
                     if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : mode.movementspeed !== undefined) {
-                        mode.movementspeed = this.applyModifier(mode.movementspeed ?? unit.movementspeed, upgrade, false, level);
+                        mode.movementspeed = this.applyModifier(mode.movementspeed ?? unit.movementspeed, upgrade, level);
                     }
                 }
                 break;
             case 'Vision':
                 if (!upgrade.modifiermode) {
-                    unit.sightrange = this.applyModifier(unit.sightrange, upgrade, false, level);
+                    unit.sightrange = this.applyModifier(unit.sightrange, upgrade, level);
                 }
                 for (const mode of Object.values(unit.modes)) {
                     if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : mode.sightrange !== undefined) {
-                        mode.sightrange = this.applyModifier(mode.sightrange ?? unit.sightrange, upgrade, false, level);
+                        mode.sightrange = this.applyModifier(mode.sightrange ?? unit.sightrange, upgrade, level);
                     }
                 }
                 break;
@@ -408,10 +408,10 @@ class UnitStats extends preact.Component<{
                             mode.attributedamage![upgrade.modifiertag] ||= {
                                 ...mode.attributedamage!['']!,
                             };
-                            mode.attributedamage![upgrade.modifiertag]!.damage = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.damage, upgrade, false, level);
+                            mode.attributedamage![upgrade.modifiertag]!.damage = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.damage, upgrade, level);
                         } else {
                             for (const damage of Object.values(mode.attributedamage ||= { '': { damage: 0, bonus: 0 } })) {
-                                damage.damage = this.applyModifier(damage.damage, upgrade, false, level);
+                                damage.damage = this.applyModifier(damage.damage, upgrade, level);
                             }
                         }
                     }
@@ -424,10 +424,10 @@ class UnitStats extends preact.Component<{
                             mode.attributedamage![upgrade.modifiertag] ||= {
                                 ...mode.attributedamage!['']!,
                             };
-                            mode.attributedamage![upgrade.modifiertag]!.bonus = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.bonus, upgrade, false, level);
+                            mode.attributedamage![upgrade.modifiertag]!.bonus = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.bonus, upgrade, level);
                         } else {
                             for (const damage of Object.values(mode.attributedamage ||= { '': { damage: 0, bonus: 0 } })) {
-                                damage.bonus = this.applyModifier(damage.bonus, upgrade, false, level);
+                                damage.bonus = this.applyModifier(damage.bonus, upgrade, level);
                             }
                         }
                     }
@@ -436,21 +436,21 @@ class UnitStats extends preact.Component<{
             case 'Hits':
                 for (const mode of Object.values(unit.modes)) {
                     if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
-                        mode.attacks = this.applyModifier(mode.attacks!, upgrade, false, level);
+                        mode.attacks = this.applyModifier(mode.attacks!, upgrade, level);
                     }
                 }
                 break;
             case 'Attack_Speed':
                 for (const mode of Object.values(unit.modes)) {
                     if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
-                        mode.attackspeed = this.applyModifier(mode.attackspeed!, upgrade, true, level);
+                        mode.attackspeed = this.applyModifier(mode.attackspeed!, upgrade, level);
                     }
                 }
                 break;
             case 'Range':
                 for (const mode of Object.values(unit.modes)) {
                     if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
-                        mode.atkrange = this.applyModifier(mode.atkrange!, upgrade, false, level);
+                        mode.atkrange = this.applyModifier(mode.atkrange!, upgrade, level);
                     }
                 }
                 break;
@@ -552,7 +552,7 @@ class UnitStats extends preact.Component<{
                 upgrade = { ...upgrade };
                 for (const [metaUpgrade, level] of metaUpgrades[upgrade.name]!) {
                     if (upgrade.modifier !== metaUpgrade.modifier) continue;
-                    upgrade.value = this.applyModifier(upgrade.value, metaUpgrade, true, level);
+                    upgrade.value = this.applyModifier(upgrade.value, metaUpgrade, level);
                 }
             }
             this.applyUpgrade(upgrade, upgradedUnit);
@@ -713,7 +713,11 @@ class UnitStats extends preact.Component<{
             masteryInputs: null
         });
     };
-    static applyModifier(value: number, upgrade: { operation: string, value: number, operationtype?: string | null }, reverse?: boolean, level?: number | null): number {
+    static applyModifier(
+        value: number,
+        upgrade: { modifier: string, operation: string, value: number, operationtype?: string | null },
+        level?: number | null
+    ): number {
         let upgradeValue = upgrade.value;
         if (upgrade.operation === 'multiply') {
             // only used for masteries
@@ -729,6 +733,7 @@ class UnitStats extends preact.Component<{
             case 'add':
                 return value + upgradeValue * (level ?? 1);
             case 'multiply':
+                const reverse = upgrade.modifier === 'Attack_Speed' && !level;
                 return reverse ? value / upgradeValue : value * upgradeValue;
             case 'set':
                 if (level) throw new Error(`Level can't be set for this upgrade`);
@@ -864,9 +869,9 @@ class UnitStats extends preact.Component<{
                 {this.renderImage(unit)}
                 <p><strong>{unit.name}</strong></p>
                 {(unit.mcost || unit.vcost || unit.buildtime || unit.supply) ? <p>
-                    <img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals:" /> {this.renderValue(unit.mcost, baseUnit.mcost)} {}
-                    <img src={`/images/commanderdata/unitupgrades/icongas_${race}.png`} alt="Gas:" /> {this.renderValue(unit.vcost, baseUnit.vcost)} {}
-                    <img src={`/images/commanderdata/unitupgrades/icontime_${race}.png`} alt="Build Time:" /> {this.renderValue(unit.buildtime, baseUnit.buildtime)} {}
+                    <img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals:" /> {this.renderValue(unit.mcost, baseUnit.mcost)} { }
+                    <img src={`/images/commanderdata/unitupgrades/icongas_${race}.png`} alt="Gas:" /> {this.renderValue(unit.vcost, baseUnit.vcost)} { }
+                    <img src={`/images/commanderdata/unitupgrades/icontime_${race}.png`} alt="Build Time:" /> {this.renderValue(unit.buildtime, baseUnit.buildtime)} { }
                     <img src={`/images/commanderdata/unitupgrades/iconsupply_${race}.png`} alt="Supply:" /> {this.renderValue(unit.supply, baseUnit.supply)}
                 </p> : <p>
                     (No cost)
