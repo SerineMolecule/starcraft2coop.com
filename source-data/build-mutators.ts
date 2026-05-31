@@ -35,7 +35,7 @@ for (const mutator of mutators) {
     Bun.write(`./html/mutators/${url}.php`, `<?php
 
 /** @generateStatic */
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Mutator - ${mutator.mutatorname}</title>

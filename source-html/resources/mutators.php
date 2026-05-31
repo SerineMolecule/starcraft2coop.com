@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mutator List</title>
@@ -167,7 +167,7 @@ require_once "../../includes/wrapper.php";
     </div>
     <h2 id="mutatorInteractions">Mutator Interactions</h2>
     <?php
-    require_once '../../includes/queries.php';
+    require_once __DIR__ . '/../../includes/queries.php';
     $mutatorInfo = get_mutators();
     usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     $mutators = [];

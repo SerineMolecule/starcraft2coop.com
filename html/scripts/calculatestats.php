@@ -21,7 +21,7 @@ $shieldCommanders = ['Alarak', 'Artanis', 'Fenix', 'Karax', 'Vorazun', 'Zeratul'
 //Mode:2    [commander, unit]                             : Unit was clicked              -> Get basic stats for that unit
 //Mode:3    [commander, selectedUnit, upgrades, level]    : Recalculate was clicked        -> Get basic stats for that unit, apply the upgrades, find stats that changed
 
-require_once '../../includes/queries.php';
+require_once __DIR__ . '/../../includes/queries.php';
 
 switch ($mode) {
     case 1:

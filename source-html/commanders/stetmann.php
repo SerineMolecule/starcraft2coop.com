@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Stetmann</title>

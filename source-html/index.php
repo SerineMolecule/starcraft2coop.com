@@ -1,7 +1,7 @@
 <?php
 
-require_once "../includes/wrapper.php";
-require_once "../includes/queries.php";
+require_once __DIR__ . "/../includes/wrapper.php";
+require_once __DIR__ . "/../includes/queries.php";
 
 function homeMissionImageFilename(string $mission): string
 {

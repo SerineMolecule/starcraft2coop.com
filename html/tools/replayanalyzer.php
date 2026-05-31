@@ -2,7 +2,7 @@
 
 http_response_code(410);
 
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Replay Analyzer</title>

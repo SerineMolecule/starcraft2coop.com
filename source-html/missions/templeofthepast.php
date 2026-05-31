@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 require_once "../../includes/switchergenerator.php";
 ?>
 <?= startHead() ?>

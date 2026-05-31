@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Mutators</title>
@@ -43,7 +43,7 @@ require_once "../../includes/wrapper.php";
     </p>
     <ul class="mutatortiles">
     <?php
-    require_once '../../includes/queries.php';
+    require_once __DIR__ . '/../../includes/queries.php';
     $mutators = get_mutators();
     usort($mutators, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     foreach ($mutators as $mutator) {

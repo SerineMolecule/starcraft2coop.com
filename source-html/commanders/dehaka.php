@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Dehaka</title>
@@ -1658,7 +1658,7 @@ require_once "../../includes/wrapper.php";
     <ul>
 
     <?php
-    require_once '../../includes/queries.php';
+    require_once __DIR__ . '/../../includes/queries.php';
     $units = get_amonunits();
     $psionicUnits = array_filter($units, fn($unit) => $unit['psionic'] === 1 && $unit['race'] !== 'Objective' && $unit['race'] !== 'Mutator');
     usort($psionicUnits, fn($a, $b) => $a['race'] <=> $b['race'] ?: $a['name'] <=> $b['name']);

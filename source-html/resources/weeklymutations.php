@@ -1,5 +1,5 @@
 <?php
-require_once "../../includes/wrapper.php";
+require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Weekly Mutations</title>
@@ -388,7 +388,7 @@ require_once "../../includes/wrapper.php";
             </thead>
             <tbody>
     <?php
-    require_once '../../includes/queries.php';
+    require_once __DIR__ . '/../../includes/queries.php';
 
     $difficultyArray = get_brutalpluses();
     function getDiffString(?int $brutalPlus): array
