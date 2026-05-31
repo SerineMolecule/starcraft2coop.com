@@ -89,7 +89,7 @@ require_once "../../includes/wrapper.php";
 <?= startContent() ?>
     <h1>Units</h1>
     <div id="units"></div>
-    <script src="/scripts/units.js?v1" defer></script>
+    <script src="/scripts/units.js?v2" defer></script>
     <script src="/scripts/tooltips.js" defer></script>
 
     <h3>Notes about the data</h3>
