@@ -32,7 +32,7 @@ function token(text: string): Token {
 
     return text.toLowerCase().replace(/[^a-z0-9]+/g, "") as Token;
 }
-type Token = Lowercase<string>;
+export type Token = Lowercase<string>;
 
 interface UnitModifiers {
     commander: Token;
@@ -231,7 +231,7 @@ interface UnitMode {
     attributedamage?: { [tag: string]: { damage: number, bonus: number } };
 }
 
-class UnitStats extends preact.Component<{
+export class UnitStats extends preact.Component<{
     modifiers: UnitModifiers | null,
     onSetModifiers: (modifiers: Partial<UnitModifiers>) => void,
     onClickClose?: () => void, onClickCompare?: () => void,
@@ -552,7 +552,7 @@ class UnitStats extends preact.Component<{
                 upgrade = { ...upgrade };
                 for (const [metaUpgrade, level] of metaUpgrades[upgrade.name]!) {
                     if (upgrade.modifier !== metaUpgrade.modifier) continue;
-                    upgrade.value = this.applyModifier(upgrade.value, metaUpgrade, level);
+                    upgrade.value = this.applyModifier(upgrade.value, metaUpgrade, level, false);
                 }
             }
             this.applyUpgrade(upgrade, upgradedUnit);
@@ -716,7 +716,8 @@ class UnitStats extends preact.Component<{
     static applyModifier(
         value: number,
         upgrade: { modifier: string, operation: string, value: number, operationtype?: string | null },
-        level?: number | null
+        level?: number | null,
+        reverseAttackSpeed = true,
     ): number {
         let upgradeValue = upgrade.value;
         if (upgrade.operation === 'multiply') {
@@ -733,7 +734,7 @@ class UnitStats extends preact.Component<{
             case 'add':
                 return value + upgradeValue * (level ?? 1);
             case 'multiply':
-                const reverse = upgrade.modifier === 'Attack_Speed' && !level;
+                const reverse = reverseAttackSpeed && upgrade.modifier === 'Attack_Speed';
                 return reverse ? value / upgradeValue : value * upgradeValue;
             case 'set':
                 if (level) throw new Error(`Level can't be set for this upgrade`);
@@ -746,15 +747,18 @@ class UnitStats extends preact.Component<{
         if (value !== baseValue) return <strong class="units-modified">{Number(value.toFixed(2))}</strong>
         return value;
     }
+    static calculateDps(damage: number, attacks: number, attackspeed: number): number {
+        return damage * attacks / attackspeed;
+    }
     renderMode(mode: UnitMode, baseMode: UnitMode, baseUnit: Unit) {
         return <>
             <p class="units-head">{mode.modeName || "Weapon"}</p>
             <ul class="units-mode-stats">
                 {!!mode.attributedamage && <>
                     {Object.entries(mode.attributedamage || {}).map(([attribute, damage]) => {
-                        const dps = damage.damage * mode.attacks! / mode.attackspeed!;
+                        const dps = UnitStats.calculateDps(damage.damage, mode.attacks!, mode.attackspeed!);
                         const baseDamage = baseMode.attributedamage?.[attribute]?.damage ?? baseMode.attributedamage?.['']?.damage ?? 0;
-                        const baseDps = baseDamage * baseMode.attacks! / baseMode.attackspeed!;
+                        const baseDps = UnitStats.calculateDps(baseDamage, baseMode.attacks!, baseMode.attackspeed!);
                         const noDps = ['Baneling', 'Baneling Spawn', 'Scourge', 'Volatile Infested', 'Spider Mine', 'Explosive Creeper'];
                         const dpsMessage = (!noDps.includes(baseUnit.name)) ? <> ({this.renderValue(+dps.toFixed(2), +baseDps.toFixed(2))} DPS)</> : '';
                         return <li>
@@ -898,4 +902,6 @@ class UnitStats extends preact.Component<{
     }
 }
 
-preact.render(<Units />, document.getElementById("units")!);
+if (typeof document !== "undefined") {
+    preact.render(<Units />, document.getElementById("units")!);
+}

@@ -34,7 +34,11 @@ dev: html
 	@php -S $(HOST):$(PORT) -t html dev-router.php
 
 .PHONY: test
-test: validate-data check
+test: validate-data bun-test check
+
+.PHONY: bun-test
+bun-test: node_modules
+	bun test --dots
 
 .PHONY: check
 check: vendor

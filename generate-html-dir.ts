@@ -11,6 +11,13 @@ for await (const file of scanner.scan({cwd: "html", dot: true, onlyFiles: false}
 
 await $`cp -r source-html/. html/`;
 
+for (const pattern of ['**/*.test.{ts,tsx,js,jsx}', '**/*.spec.{ts,tsx,js,jsx}']) {
+    const testScanner = new Glob(pattern);
+    for await (const file of testScanner.scan({cwd: "html", onlyFiles: true})) {
+        await $`rm -f html/${file}`;
+    }
+}
+
 await $`./source-data/build.ts`;
 await $`./source-data/build-mutators.ts`;
 
