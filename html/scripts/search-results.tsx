@@ -134,18 +134,20 @@ class SearchResults extends preact.Component<{
         if (!query.trim() || !fuse) {
             this.setState({
                 query,
-                activeIndex: 0,
+                resultsQuery: '',
                 results: [],
-                resultsQuery: query,
                 searchPending: undefined,
+                activeIndex: 0,
             });
             return;
         }
 
+        if (query === this.state.resultsQuery) return;
+
         const searchPending = setTimeout(() => {
             this.setState({
-                results: searchDocuments(fuse, query, MAX_RESULTS),
                 resultsQuery: query,
+                results: searchDocuments(fuse, query, MAX_RESULTS),
                 searchPending: undefined,
                 activeIndex: 0,
             });
