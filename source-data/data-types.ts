@@ -252,3 +252,31 @@ export interface MutatorCommanderTip {
 }
 
 export type MutatorCommanderTipList = MutatorCommanderTip[];
+
+export type SearchDocumentType =
+    | 'commander'
+    | 'mutator'
+    | 'mission'
+    | 'weeklymutation'
+    | 'upgrade'
+    | 'talent'
+    | 'prestige'
+    | 'playerunit'
+    | 'amonunit';
+
+export interface SearchDocument {
+    type: SearchDocumentType;
+    title: string;
+    path: string;
+    subtitle?: string;
+    commander?: string;
+    text?: string;
+    tokens?: string[];
+}
+
+export interface SearchIndexData {
+    version: 1;
+    keys: (string | { name: string, weight: number })[];
+    documents: SearchDocument[];
+    index: unknown;
+}

@@ -109,4 +109,7 @@ for (const commander of commanders) {
     Bun.write(`html/data/commandersummaries/${commander.commander}.json`, JSON.stringify(commander, null, 4) + '\n');
 }
 
+console.log(`Generating search index`);
+await import('./build-search-index');
+
 console.log(`Done`);

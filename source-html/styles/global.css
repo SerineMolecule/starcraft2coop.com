@@ -139,15 +139,38 @@ summary {
     text-decoration: none;
     color: white;
 }
-#topmenu a {
+#topmenu a,
+#topmenu button {
     display: block;
     background: rgba(10, 13, 33, 0.5);
     border: 1px solid rgb(51, 61, 127);
+    color: white;
+    fill: white;
+    font: inherit;
     padding: 10px 16px 0 16px;
     margin: 0 0 -1px -1px;
     height: 36px;
+    box-sizing: content-box;
 }
-#topmenu a:hover {
+#topmenu svg {
+    width: 24px;
+    height: 24px;
+}
+#topmenu button svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: 5px;
+}
+.search-shortcut {
+    display: inline-block;
+    margin-left: 8px;
+    color: #bbb;
+    font-size: 0.7em;
+    vertical-align: 6px;
+}
+#topmenu a:hover,
+#topmenu button:hover,
+#topmenu button[aria-expanded="true"] {
     background: rgb(10, 13, 33);
     border-color: rgb(103, 112, 169);
     position: relative;
@@ -165,17 +188,149 @@ summary {
     #topmenu {
         font-size: 1em;
     }
-    #topmenu a {
+    #topmenu a,
+    #topmenu button {
         height: 30px;
     }
     #topmenu a.open {
         height: 33px;
     }
+    .search-shortcut {
+        display: none;
+    }
+    #topmenu #submenu-link-about {
+        font-size: 0;
+    }
+    #topmenu #submenu-link-about::before {
+        content: "...";
+        font-size: 1rem;
+    }
 }
 @media (max-width: 700px) {
-    #topmenu a {
+    #topmenu a,
+    #topmenu button {
         padding-left: 8px;
         padding-right: 8px;
+    }
+}
+
+#site-search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background: rgba(3, 5, 18, 0.78);
+    padding: 12vh 16px 24px;
+    box-sizing: border-box;
+}
+#site-search-overlay[hidden] {
+    display: none;
+}
+.site-search-dialog {
+    max-width: 680px;
+    margin: 0 auto;
+    background: rgb(10, 13, 33);
+    border: 1px solid rgb(103, 112, 169);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+}
+.site-search-form {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid rgb(51, 61, 127);
+}
+#site-search-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font: inherit;
+    font-size: 1.2em;
+    padding: 14px 16px;
+}
+#site-search-input:focus {
+    outline: 2px solid rgb(219, 150, 32);
+    outline-offset: -2px;
+}
+.site-search-results {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.site-search-message {
+    color: #bbb;
+    padding: 16px;
+    text-align: left;
+}
+.site-search-message p {
+    margin: 0;
+}
+.site-search-key-guides {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-top: 12px !important;
+    color: #888;
+    font-size: 0.88em;
+}
+kbd {
+    display: inline-block;
+    min-width: 1.4em;
+    margin: 0 2px;
+    padding: 1px 5px;
+    border: 1px solid #767b98;
+    border-bottom-color: #474c6c;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #dddddd;
+    font-family: inherit;
+    font-size: 0.9em;
+    text-align: center;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+.site-search-list {
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+}
+.site-search-result {
+    margin: 0;
+}
+.site-search-result a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px 12px;
+    padding: 10px;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+.site-search-result a:visited {
+    color: white;
+}
+.site-search-result a[aria-selected="true"] {
+    background: rgba(103, 112, 169, 0.35);
+    border-color: rgb(103, 112, 169);
+}
+.site-search-title {
+    font-weight: bold;
+}
+.site-search-type {
+    color: rgb(219, 150, 32);
+    font-size: 0.78em;
+    text-transform: uppercase;
+}
+.site-search-subtitle {
+    grid-column: 1 / -1;
+    color: #bbb;
+    font-size: 0.88em;
+}
+
+@media (max-width: 700px) {
+    #site-search-overlay {
+        padding-top: 8vh;
+    }
+    .site-search-result a {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -223,7 +378,8 @@ summary {
     margin-right:4px;
 }
 #menu .highlight a {
-    color:rgb(219, 150, 32);
+    color: rgb(219, 150, 32);
+    fill: rgb(219, 150, 32);
 }
 #menu a:hover img {
     border-color: rgb(255, 255, 255);

@@ -22,7 +22,13 @@ await $`./source-data/build.ts`;
 await $`./source-data/build-mutators.ts`;
 
 await Bun.build({
-    entrypoints: ['./html/scripts/nav.ts', './html/scripts/tooltips.ts', './html/scripts/units.tsx'],
+    entrypoints: [
+        './html/scripts/nav.ts',
+        './html/scripts/search.ts',
+        './html/scripts/search-results.tsx',
+        './html/scripts/tooltips.ts',
+        './html/scripts/units.tsx',
+    ],
     outdir: './html/scripts',
     format: 'iife',
     sourcemap: 'inline',
