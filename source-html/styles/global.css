@@ -208,6 +208,7 @@ summary {
 }
 #missionList img{
     border: 1px solid transparent;
+    border-radius: 15px;
 }
 #menu .submenu ul{
     list-style-type: none;
