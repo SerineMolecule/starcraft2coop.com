@@ -689,6 +689,6 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         });
     </script>
 
-<script src="/scripts/tooltips.js"></script>
-<script src="/scripts/nav.js"></script>
+<script src="/scripts/tooltips.js?v=6bc4c4"></script>
+<script src="/scripts/nav.js?v=fd4985"></script>
 <?= endContent() ?>

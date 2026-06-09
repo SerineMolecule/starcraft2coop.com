@@ -3,6 +3,7 @@ import * as preact from 'preact';
 import Fuse from 'fuse.js';
 import type { SearchDocument, SearchIndexData } from '../../source-data/data-types';
 import { createSearchIndex, searchDocuments } from './search-core';
+import searchIndexData from '../../html/data/search-index.json';
 
 const MAX_RESULTS = 10;
 
@@ -82,7 +83,7 @@ class SearchResults extends preact.Component<{
     override componentDidMount(): void {
         this.props.input.addEventListener('input', this.onInput);
         this.props.input.addEventListener('keydown', this.onKeyDown);
-        void this.loadSearchIndex();
+        this.loadSearchIndex();
     }
 
     override componentWillUnmount(): void {
@@ -91,12 +92,9 @@ class SearchResults extends preact.Component<{
         clearTimeout(this.state.searchPending);
     }
 
-    async loadSearchIndex(): Promise<void> {
+    loadSearchIndex(): void {
         try {
-            const response = await fetch('/data/search-index.json?');
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const data = await response.json() as SearchIndexData;
-            const fuse = createSearchIndex(data);
+            const fuse = createSearchIndex(searchIndexData as SearchIndexData);
             this.setState({ status: 'ready', fuse });
             this.scheduleSearch(this.props.input.value, fuse);
         } catch (error) {

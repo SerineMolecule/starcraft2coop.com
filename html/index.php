@@ -156,7 +156,7 @@ $thirdNextWeekStart = $currentWeekStart + (3 * 7 * 24 * 60 * 60);
             setInterval(updateNextMutationCountdown, 1000);
         }());
     </script>
-    <script src="/scripts/tooltips.js"></script>
+    <script src="/scripts/tooltips.js?v=6bc4c4"></script>
     <h2>Community Links</h2>
     <ul>
         <li><a href="https://discord.gg/VQnXMdm">Starcraft 2 Co-op Discord</a></li>

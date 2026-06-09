@@ -1,6 +1,20 @@
 <?php
 
 $wrapperNesting = 0;
+$assetCachebusters = null;
+
+function cachebusted_asset(string $pathname): string
+{
+    global $assetCachebusters;
+    if ($assetCachebusters === null) {
+        $assetCachebusters = [];
+        $manifestPath = __DIR__ . '/../html/data/cachebusters.json';
+        if (file_exists($manifestPath)) {
+            $assetCachebusters = json_decode(file_get_contents($manifestPath), true) ?: [];
+        }
+    }
+    return $assetCachebusters[$pathname] ?? $pathname;
+}
 
 function startHead()
 {
@@ -22,7 +36,7 @@ function startHead()
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-    <link rel="stylesheet" href="/styles/global.css?">
+    <link rel="stylesheet" href="<?= cachebusted_asset('/styles/global.css') ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <?php
     return '';
@@ -208,7 +222,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js" defer></script>
+<script src="<?= cachebusted_asset('/scripts/search.js') ?>" defer></script>
 <div id="content">
     <?php
     return '';
