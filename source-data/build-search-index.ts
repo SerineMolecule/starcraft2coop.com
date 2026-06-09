@@ -193,7 +193,7 @@ function addPlayerUnits(documents: SearchDocument[], playerUnits: PlayerUnitList
             title: unit.basename,
             subtitle: `${unit.commander} ${unit.tags.includes('Structure') ? 'structure' : 'unit'}`,
             commander: unit.commander,
-            path: `units/#${unit.commander}/${unit.basename}`,
+            path: `units/#${key}`,
             text: unit.notes,
             tokens: [unit.race, unit.tags, unit.combatunit ? 'combat unit' : 'structure'],
         });
@@ -221,7 +221,7 @@ function addAmonUnits(documents: SearchDocument[], amonUnits: AmonUnitList): voi
             type: 'amonunit',
             title: unit.name,
             subtitle: `Amon ${unit.race} ${unit.structure ? 'structure' : 'unit'}`,
-            path: `units/#${unit.race}/${unit.name}`,
+            path: `units/#${key}`,
             text: tags.join(' '),
             tokens: [`${unit.amonid}`, unit.race, ...tags],
         });
