@@ -93,7 +93,7 @@ class SearchResults extends preact.Component<{
 
     async loadSearchIndex(): Promise<void> {
         try {
-            const response = await fetch('/data/search-index.json');
+            const response = await fetch('/data/search-index.json?');
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json() as SearchIndexData;
             const fuse = createSearchIndex(data);
