@@ -116,21 +116,21 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <a href="/commanders/mengsk" class="<?=$pageFile === 'mengsk.php' ? 'highlight' : 'normal'?>"><img src="/images/commanderportraits/mengskportrait.png" alt="Mengsk"></a>
     </div>
     <div id="missionList" class="submenu">
-        <a href="/missions/chainofascension" class="<?=$pageFile === 'chainofascension.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/chainofascension.png" alt="Chain of Ascension"></a>
-        <a href="/missions/cradleofdeath" class="<?=$pageFile === 'cradleofdeath.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/cradleofdeath.png" alt="Cradle of Death"></a>
-        <a href="/missions/deadofnight" class="<?=$pageFile === 'deadofnight.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/deadofnight.png" alt="Dead of Night"></a>
-        <a href="/missions/lockload" class="<?=$pageFile === 'lockload.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/lockload.png" alt="Lock & Load"></a>
-        <a href="/missions/malwarfare" class="<?=$pageFile === 'malwarfare.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/malwarfare.png" alt="Malwarfare"></a>
-        <a href="/missions/minerevacuation" class="<?=$pageFile === 'minerevacuation.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/minerevacuation.png" alt="Miner Evacuation"></a>
-        <a href="/missions/mistopportunities" class="<?=$pageFile === 'mistopportunities.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/mistopportunities.png" alt="Mist Opportunities"></a>
-        <a href="/missions/oblivionexpress" class="<?=$pageFile === 'oblivionexpress.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/oblivionexpress.png" alt="Oblivion Express"></a>
-        <a href="/missions/partparcel" class="<?=$pageFile === 'partparcel.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/partparcel.png" alt="Part & Parcel"></a>
-        <a href="/missions/riftstokorhal" class="<?=$pageFile === 'riftstokorhal.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/riftstokorhal.png" alt="Rifts to Korhal"></a>
-        <a href="/missions/scytheofamon" class="<?=$pageFile === 'scytheofamon.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/scytheofamon.png" alt="Scythe Of Amon"></a>
-        <a href="/missions/templeofthepast" class="<?=$pageFile === 'templeofthepast.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/templeofthepast.png" alt="Temple of the Past"></a>
-        <a href="/missions/thevermillionproblem" class="<?=$pageFile === 'thevermillionproblem.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/thevermillionproblem.png" alt="The Vermillion Problem"></a>
-        <a href="/missions/voidlaunch" class="<?=$pageFile === 'voidlaunch.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/voidlaunch.png" alt="Void Launch"></a>
-        <a href="/missions/voidthrashing" class="<?=$pageFile === 'voidthrashing.php' ? 'highlight' : 'normal'?>"><img src="/images/missionthumbnails/voidthrashing.png" alt="Void Thrashing"></a>
+        <a href="/missions/chainofascension" class="<?=$pageFile === 'chainofascension.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-chainofascension">Chain of Ascension</div></a>
+        <a href="/missions/cradleofdeath" class="<?=$pageFile === 'cradleofdeath.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-cradleofdeath">Cradle of Death</div></a>
+        <a href="/missions/deadofnight" class="<?=$pageFile === 'deadofnight.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-deadofnight">Dead of Night</div></a>
+        <a href="/missions/lockload" class="<?=$pageFile === 'lockload.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-lockload">Lock &amp; Load</div></a>
+        <a href="/missions/malwarfare" class="<?=$pageFile === 'malwarfare.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-malwarfare">Malwarfare</div></a>
+        <a href="/missions/minerevacuation" class="<?=$pageFile === 'minerevacuation.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-minerevacuation">Miner Evacuation</div></a>
+        <a href="/missions/mistopportunities" class="<?=$pageFile === 'mistopportunities.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-mistopportunities">Mist Opportunities</div></a>
+        <a href="/missions/oblivionexpress" class="<?=$pageFile === 'oblivionexpress.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-oblivionexpress">Oblivion Express</div></a>
+        <a href="/missions/partparcel" class="<?=$pageFile === 'partparcel.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-partparcel">Part &amp; Parcel</div></a>
+        <a href="/missions/riftstokorhal" class="<?=$pageFile === 'riftstokorhal.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-riftstokorhal">Rifts to Korhal</div></a>
+        <a href="/missions/scytheofamon" class="<?=$pageFile === 'scytheofamon.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-scytheofamon">Scythe of Amon</div></a>
+        <a href="/missions/templeofthepast" class="<?=$pageFile === 'templeofthepast.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-templeofthepast">Temple of the Past</div></a>
+        <a href="/missions/thevermillionproblem" class="<?=$pageFile === 'thevermillionproblem.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-thevermillionproblem">The Vermillion Problem</div></a>
+        <a href="/missions/voidlaunch" class="<?=$pageFile === 'voidlaunch.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-voidlaunch">Void Launch</div></a>
+        <a href="/missions/voidthrashing" class="<?=$pageFile === 'voidthrashing.php' ? 'highlight' : 'normal'?>"><div class="mapImg mapImg-voidthrashing">Void Thrashing</div></a>
     </div>
     <div id="resources" class="submenu">
         <div class="submenu-with-sections"><div class="submenu-section">

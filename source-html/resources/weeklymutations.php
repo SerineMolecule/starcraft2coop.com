@@ -441,7 +441,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         echo "<td class='ribbon'>" . $row["mutation"] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
 
         if ($row["map"]) {
-            echo "<td><img src='/images/missionthumbnails/" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . ".png' alt='" . $row["map"] . "'></td>\n";
+            echo "<td><div class='mapImg mapImg-" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . "'>" . htmlspecialchars(mapDisplayName($row["map"])) . "</div></td>\n";
         } else {
             echo "<td></td>\n";
         }
@@ -649,7 +649,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                     }
 
                     if ($row["map"]) {
-                        echo "<td><img src='/images/missionthumbnails/" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . ".png' alt='" . $row["map"] . "'></td>\n";
+                        echo "<td><div class='mapImg mapImg-" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . "'>" . htmlspecialchars(mapDisplayName($row["map"])) . "</div></td>\n";
                     } else {
                         echo "<td></td>\n";
                     }

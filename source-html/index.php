@@ -34,8 +34,8 @@ function homeMutationRow(string $week, array $mutation, array $mutators): string
     $html = "<tr>\n";
     $html .= "<td class=\"left-column\">" . $week . "</td>\n";
     $html .= "<td><strong>" . $mutation["mutation"] . "</strong></td>\n";
-    $html .= "<td><img src=\"/images/missionthumbnails/" . $missionFilename . ".png\" alt=\"" .
-        $mutation["map"] . "\"></td>\n";
+    $html .= "<td><div class=\"mapImg mapImg-" . $missionFilename . "\">" .
+        htmlspecialchars(mapDisplayName($mutation["map"])) . "</div></td>\n";
     $html .= "<td>" . homeMutationMutators($mutation, $mutators) . "</td>\n";
     $html .= "</tr>\n";
     return $html;
@@ -81,16 +81,8 @@ $thirdNextWeekStart = $currentWeekStart + (3 * 7 * 24 * 60 * 60);
             font-size:0.85rem;
             border:1px solid white;
         }
-        #homeMutationTable img{
-            max-width:140px;
-        }
         #homeMutationTable td:nth-child(4){
             min-width:180px;
-        }
-        @media (max-width: 700px){
-            #homeMutationTable img{
-                max-width:100px;
-            }
         }
     </style>
 <?= startContent() ?>

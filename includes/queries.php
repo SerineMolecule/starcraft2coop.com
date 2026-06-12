@@ -6,6 +6,15 @@ function token(string $name): string
 }
 
 /**
+ * Thumbnail images all use & ("Lock & Load", "Part & Parcel"), so the
+ * Ctrl+F-able hidden overlay text needs to match.
+ */
+function mapDisplayName(string $name): string
+{
+    return str_replace(" and ", " & ", $name);
+}
+
+/**
  * @return array All commanders.
  */
 function get_commanders(): array

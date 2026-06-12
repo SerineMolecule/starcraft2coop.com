@@ -19,6 +19,35 @@ th {
 img {
     vertical-align: middle;
 }
+/* Map thumbnail: the image is a background and the map name is the element's
+   own (transparent) text, so the name is findable with Ctrl+F. All thumbnails are
+   88x50. */
+.mapImg {
+    display: inline-block;
+    width: 88px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.mapImg-chainofascension { background-image: url(/images/missionthumbnails/chainofascension.png); }
+.mapImg-cradleofdeath { background-image: url(/images/missionthumbnails/cradleofdeath.png); }
+.mapImg-deadofnight { background-image: url(/images/missionthumbnails/deadofnight.png); }
+.mapImg-lockload { background-image: url(/images/missionthumbnails/lockload.png); }
+.mapImg-malwarfare { background-image: url(/images/missionthumbnails/malwarfare.png); }
+.mapImg-minerevacuation { background-image: url(/images/missionthumbnails/minerevacuation.png); }
+.mapImg-mistopportunities { background-image: url(/images/missionthumbnails/mistopportunities.png); }
+.mapImg-oblivionexpress { background-image: url(/images/missionthumbnails/oblivionexpress.png); }
+.mapImg-partparcel { background-image: url(/images/missionthumbnails/partparcel.png); }
+.mapImg-riftstokorhal { background-image: url(/images/missionthumbnails/riftstokorhal.png); }
+.mapImg-scytheofamon { background-image: url(/images/missionthumbnails/scytheofamon.png); }
+.mapImg-templeofthepast { background-image: url(/images/missionthumbnails/templeofthepast.png); }
+.mapImg-thevermillionproblem { background-image: url(/images/missionthumbnails/thevermillionproblem.png); }
+.mapImg-voidlaunch { background-image: url(/images/missionthumbnails/voidlaunch.png); }
+.mapImg-voidthrashing { background-image: url(/images/missionthumbnails/voidthrashing.png); }
 .unbold {
     font-weight: normal;
     color: #aaa;
@@ -361,7 +390,7 @@ kbd {
     border-radius:50%;
     border: 1px solid transparent;
 }
-#missionList img{
+#missionList .mapImg{
     border: 1px solid transparent;
     border-radius: 15px;
 }
@@ -381,10 +410,12 @@ kbd {
     color: rgb(219, 150, 32);
     fill: rgb(219, 150, 32);
 }
-#menu a:hover img {
+#menu a:hover img,
+#menu a:hover .mapImg {
     border-color: rgb(255, 255, 255);
 }
-#menu a.highlight img {
+#menu a.highlight img,
+#menu a.highlight .mapImg {
     border-color: rgb(219, 150, 32);
 }
 #menu .submenu a:hover {

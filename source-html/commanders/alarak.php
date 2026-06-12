@@ -1256,7 +1256,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </tr>
         </tbody>
     </table>
-    <p>* Zerg has been intentionally omitted from Part & Parcel due to the inconsistency in fast-expanding. This is due to a number of reasons:</p>
+    <p>* Zerg has been intentionally omitted from Part and Parcel due to the inconsistency in fast-expanding. This is due to a number of reasons:</p>
     <ul>
         <li>Defense Bots are present on the map, and they move randomly. They have a long leash which means they do not deaggro very quickly.</li>
         <li>There are a large number of Zerg units scattered near the ramps, requiring very precise pathing.</li>

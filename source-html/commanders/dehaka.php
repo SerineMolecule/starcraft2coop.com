@@ -1804,7 +1804,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                     <p>Clear the defenders outside the top ramp by luring them away from the Cannon. Then, move North and clear the enemies in that location, using the Sentry to clear them quickly. Once cleared, move to the expansion, using the Sentry there to clear the enemies in that location.</p>
                 </td>
                 <td>
-                    <img src="/images/commanderdata/guides/dehaka/pp_terran.jpg" alt="Parcel & Parcel Terran Essence Farming Order">
+                    <img src="/images/commanderdata/guides/dehaka/pp_terran.jpg" alt="Part & Parcel Terran Essence Farming Order">
                     <p>The presence of Bunkers makes gathering Essence very difficult. Clear the defenders outside the top ramp  by luring them away from the Bunker. Then, move North and clear the enemies in that location. You may then move South and clear the enemies around the Bunker. Alternatively, damaging a Bunker will cause SCV's to be sent from around the map. You may Devour them for HP sustain.</p>
                 </td>
                 <td>

@@ -408,9 +408,9 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <li>Dead of Night: Heavy Weapons Specialist (P1) Swann's Laser Drill does not slow down the Stank.</li>
         <li>Dead of Night: Hunterlings can stun units with the Frenzied buff</li>
         <li>Dead of Night: Volatile Infested spawned from the Virophage do not burn up during the day cycle</li>
-        <li>Lock and Load: Vorazun's Time Stop causes the AI to wake up</li>
-        <li>Lock and Load: Polarity removal (e.g. on Wheel of Misfortune mutations) causes the AI to wake up</li>
-        <li>Lock and Load: The Xel'Naga Construct can hit units in transports</li>
+        <li>Lock &amp; Load: Vorazun's Time Stop causes the AI to wake up</li>
+        <li>Lock &amp; Load: Polarity removal (e.g. on Wheel of Misfortune mutations) causes the AI to wake up</li>
+        <li>Lock &amp; Load: The Xel'Naga Construct can hit units in transports</li>
         <li>Miner Evacuation: Abathur's Vipers can use Abduct on ships outside of vision range through fog of war</li>
         <li>Miner Evacuation: Always plays voice lines that the enemy comp is Terran</li>
         <li>Miner Evacuation: Blightbringer can be body-blocked, preventing him from exiting the cave and using abilities</li>
