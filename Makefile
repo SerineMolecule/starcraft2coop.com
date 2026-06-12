@@ -42,8 +42,8 @@ bun-test: node_modules
 
 .PHONY: check
 check: vendor
-	./vendor/bin/phpcs --ignore=vendor,.dh-diag -n .
+	./vendor/bin/phpcs --ignore=vendor,.dh-diag,html -n .
 
 .PHONY: fix
 fix: vendor
-	./vendor/bin/phpcbf --ignore=vendor,.dh-diag -n .
+	./vendor/bin/phpcbf --ignore=vendor,.dh-diag,html -n .
