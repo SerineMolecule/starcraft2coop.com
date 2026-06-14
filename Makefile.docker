@@ -1,6 +1,8 @@
 BUN_DOCKER = docker run --rm -v $(PWD):/usr/src/app -w /usr/src/app oven/bun:1
-PHP_EXEC = docker exec -w /var/www sc2coop-php
+PHP_RUN = docker compose run --remove-orphans --service-ports -w //var/www php
 COMPOSER_DOCKER = docker run --rm -v $(PWD):/app composer:2.7.1
+
+PORT ?= 8000
 
 all: html test
 
@@ -27,15 +29,23 @@ validate-data: node_modules
 .PHONY: html
 html: node_modules
 	$(BUN_DOCKER) bun ./generate-html-dir.ts
-	$(PHP_EXEC) php ./generate-static.php
+	$(PHP_RUN) php ./generate-static.php
+
+.PHONY: dev
+dev: html
+	docker compose run --remove-orphans --service-ports -v "$(PWD)/dev-router.php:/var/www/dev-router.php" -w //var/www php php -S 0.0.0.0:$(PORT) -t html dev-router.php
 
 .PHONY: test
-test: validate-data check
+test: validate-data bun-test check
+
+.PHONY: bun-test
+bun-test: node_modules
+	$(BUN_DOCKER) bun test --dots
 
 .PHONY: check
 check: vendor
-	$(COMPOSER_DOCKER) ./vendor/bin/phpcs --ignore=vendor,.dh-diag -n .
+	$(COMPOSER_DOCKER) ./vendor/bin/phpcs --ignore=vendor,.dh-diag,html -n .
 
 .PHONY: fix
 fix: vendor
-	$(COMPOSER_DOCKER) ./vendor/bin/phpcbf --ignore=vendor,.dh-diag -n .
+	$(COMPOSER_DOCKER) ./vendor/bin/phpcbf --ignore=vendor,.dh-diag,html -n .

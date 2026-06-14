@@ -14,8 +14,6 @@ docker compose build
 
 ## Run
 
-Before the first run or when re-creating the DB environment, delete the top level `dbdata` directory.
-
 ```shell
 docker compose up
 ```
@@ -28,14 +26,12 @@ Opening your browser to http://localhost:8080 should show the application.
 docker compose up --build
 ```
 
-## DB connection with external tools
-
-The DB is accessible via `localhost`, on port 3306. The 'sc2coop-db' name is for containers to connect.
-
 ## Generating static pages
 
+For Makefile commands docker, use git-bash if on Windows.
+
 ```shell
-docker exec -w /var/www sc2coop-php php generate-static.php
+make -f Makefile.docker html
 ```
 
 ## Running PHP Code Sniffer
@@ -46,18 +42,24 @@ docker exec -w /var/www sc2coop-php php generate-static.php
 
 ```shell
 docker run --rm -v ${pwd}:/app composer:2.7.1 install --prefer-dist
+# or
+make -f Makefile.docker vendor
 ```
 
 ### Check
 
 ```shell
 docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script ci
+# or
+make -f Makefile.docker check
 ```
 
 ### Check and Fix
 
 ```shell
 docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script fix
+# or
+make -f Makefile.docker fix
 ```
 
 ## Generating schemas and JSON data files
@@ -68,15 +70,17 @@ If you edit the data files in `/source-data`, then you will need bun to run the 
 
 ```shell
 docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun install
+# or
+make -f Makefile.docker node_modules
 ```
 
-### Generate schemas and JSON data files
+### Generate schemas, JSON data files, and validate
 
 ```shell
-docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun source-data/build
+make -f Makefile.docker data
 ```
 
-### Validate source-data and schemas
+### Only Validate source-data and schemas
 
 ```shell
 docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun source-data/validate
