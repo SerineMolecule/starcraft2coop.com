@@ -3,6 +3,7 @@ html {
     background:rgb(10, 13, 33);
     color: white;
     font-size: 16.5px;
+    line-height: 22px;
     color-scheme: dark;
 
     background-image: linear-gradient(rgb(30, 37, 91), rgb(10, 13, 33));
