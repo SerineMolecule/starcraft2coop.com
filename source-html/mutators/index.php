@@ -37,9 +37,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <h1>Mutators</h1>
     <p>
         <label><input type="radio" name="layout" value="icons" id="icons-option" checked>Icons</label>
-        </label>
         <label><input type="radio" name="layout" value="table" id="table-option">Table</label>
-        </label>
     </p>
     <ul class="mutatortiles">
     <?php
