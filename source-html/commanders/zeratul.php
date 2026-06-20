@@ -62,6 +62,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <p><a href="#guide">Gameplay Guide</a></p>
         <p><a href="#fastexpand">Legion Expands</a></p>
         <p><a href="#artifact">Artifact Spawn Locations</a></p>
+        <p><a href="#artifacttrap">Artifact Trapping</a></p>
         <p><a href="#videos">Video Guides</a></p>
     </div>
     <h2 id="comSum">Commander Summary</h2>
@@ -2054,6 +2055,34 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                 </tr>
             </tbody>
     </table>
+    <h3 id="artifacttrap">Artifact Trapping</h3>
+    <p>When Zeratul uses Prophetic Vision, the fragment can be trapped by placing buildings around its "spawn" point. The first fragment can't be trapped this way (it's spawned in at the start), but every other fragment can. This is <strong>only possible on six maps</strong>: Cradle of Death, Dead of Night, Malwarfare, Miner Evacuation, Oblivion Express, and The Vermillion Problem.</p>
+    <p>The trap must not allow movement in and out of the area (check with a Probe), so the buildings must have one square of edges touching, not just corners. If you're not sure of the exact spot, you can make a bigger circle.</p>
+    <p>(This guide is adapted with permission from <a href="https://www.youtube.com/watch?v=oPB88elDVWY" target="_blank">TwoTuuu's video</a>).</p>
+    <h4><a href="/missions/cradleofdeath">Cradle of Death</a></h4>
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_cod1.jpg" style="width:100%" alt="Cradle of Death Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_cod2.jpg" style="width:100%" alt="Cradle of Death Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_cod3.jpg" style="width:100%" alt="Cradle of Death Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_cod4.jpg" style="width:100%" alt="Cradle of Death Artifact Trapping guide"><br />
+    <h4><a href="/missions/deadofnight">Dead of Night</a></h4>
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_don1.jpg" style="width:100%" alt="Dead of Night Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_don2.jpg" style="width:100%" alt="Dead of Night Artifact Trapping guide"><br />
+    <h4><a href="/missions/malwarfare">Malwarfare</a></h4>
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_mw1.jpg" style="width:100%" alt="Malwarfare Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_mw2.jpg" style="width:100%" alt="Malwarfare Artifact Trapping guide"><br />
+    <h4><a href="/missions/minerevacuation">Miner Evacuation</a></h4>
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_me1.jpg" style="width:100%" alt="Miner Evacuation Artifact Trapping guide"><br />
+    <!-- me2 just repeats the note about checking with a probe -->
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_me3.jpg" style="width:100%" alt="Miner Evacuation Artifact Trapping guide"><br />
+    <!-- me2 just repeats the note about a bigger circle -->
+    <h4><a href="/missions/oblivionexpress">Oblivion Express</a></h4>
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_oe1.jpg" style="width:100%" alt="Oblivion Express Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_oe2.jpg" style="width:100%" alt="Oblivion Express Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_oe3.jpg" style="width:100%" alt="Oblivion Express Artifact Trapping guide"><br />
+    <h4><a href="/missions/thevermillionproblem">The Vermillion Problem</a></h4>
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_tvp1.jpg" style="width:100%" alt="The Vermillion Problem Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_tvp2.jpg" style="width:100%" alt="The Vermillion Problem Artifact Trapping guide"><br />
+    <img src="/images/commanderdata/guides/zeratul/artifacttrap_tvp3.jpg" style="width:100%" alt="The Vermillion Problem Artifact Trapping guide"><br />
     <h3>Playstyle Tips</h3>
     <ul>
         <li>Shades can be cancelled by clicking on the unit's Shade and pressing the ESC key. The shade will disappear, starting the cooldown. This allows you to only utilize the shades when you need them.</li>
