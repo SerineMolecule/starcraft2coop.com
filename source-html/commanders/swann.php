@@ -386,17 +386,17 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             <tr>
                 <td>Vespene Drone Cost</td>
                 <td>-3% per point<br>-90% maximum</td>
-                <td>?</td>
-                <td rowspan="2">Early Vespene Harvesters can provide Swann with the much-needed gas that he needs to get some of his higher-tech units out earlier. However, the Laser Drill mastery will allow the player to have a much more global presence on the map, allowing them to tech up to their end-game build without the constant harassment of attack waves. It is up to the player to determine which mastery/what ratio of mastery points to allocate for this.</td>
+                <td>0</td>
+                <td rowspan="2">The Laser Drill mastery will allow the player to have a much more global presence on the map, allowing them to tech up to their end-game build without the constant harassment of attack waves. The Vespene Drone mastery could let Swann support allies more.</td>
             </tr>
             <tr>
                 <td>Laser Drill Build Time, Upgrade Time, and Upgrade Cost</td>
                 <td>-1.5% per point<br>-45% maximum</td>
-                <td>?</td>
+                <td>30</td>
             </tr>
         </tbody>
     </table>
-    <p class="masterySummary">The regular choice is the Vespene Drone Cost mastery. However, for more mineral-heavy builds, and builds that rely on the Laser Drill, the Laser Drill mastery is the preferred choice.</p>
+    <p class="masterySummary">The regular choice is the Laser Drill mastery, since the Drill is essentially Swann's "hero". However, if you find yourself gas-starved, or you want to support a specific ally's build, the Vespene Drone Cost mastery can be useful.</p>
     <h2 id="prestiges">Prestiges</h2>
     <p>Below are the prestiges for Swann. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
