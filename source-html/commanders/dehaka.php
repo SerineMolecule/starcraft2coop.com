@@ -1687,7 +1687,8 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </thead>
         <tbody>
             <tr>
-                <td><a href="/missions/chainofascension">Chain of Ascension</a><br /><br />
+                <td><a href="/missions/chainofascension">Chain of Ascension</a></td>
+                <td>
                     <img src="/images/commanderdata/guides/dehaka/coa_protoss.jpg" alt="Chain of Ascension Protoss Essence Farming Order">
                     <p>Start with the camp in between the two expansions. Use Devour on the Sentries and High Templars to quickly deal splash damage to enemy units before moving on to the camp guarding your expansion.</p>
                 </td>
