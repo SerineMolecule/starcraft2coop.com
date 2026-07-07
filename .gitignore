@@ -2,6 +2,9 @@
 /vendor
 /node_modules
 
+.DS_Store
+Thumbs.db
+
 # generated automatically by Dreamhost
 .dh-diag
 favicon.gif
