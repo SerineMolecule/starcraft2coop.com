@@ -738,7 +738,8 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <div class="descContainer">
             <ul>
                 <li>Should be the core of your army on most maps.</li>
-                <li>Extremely powerful with the "Blink" and the "Shadow Fury" Upgrades.</li>
+                <li>Extremely powerful with the "Blink" and the "Shadow Fury" upgrades. Shadow Fury is most of your DPS.</li>
+                <li>If they're dying too much, treat them like spellcasters: Use Shadow Fury, then run away while Shadow Fury cools down.</li>
             </ul>
             <p>Skills:</p>
             <table class="unitSkills">
@@ -755,7 +756,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                     <tr class="unlockable autocast">
                         <td><img src="/images/commanderdata/unitskills/vorazun/shadowfury.png" alt="Shadow Fury"></td>
                         <td>Shadow Fury</td>
-                        <td>Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.</td>
+                        <td>Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times. Invulnerable for the entire duration.</td>
                         <td>15 seconds</td>
                         <td>0</td>
                     </tr>
