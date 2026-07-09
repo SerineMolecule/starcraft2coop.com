@@ -36,7 +36,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         clear:both;
     }
     #commanderSelection{
-        padding-top:50px;
+        padding-top:20px;
         text-align:center;
     }
     #commanderSelection img{
@@ -44,6 +44,13 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         margin-left:5px;
         margin-right:5px;
         border-radius:50%;
+        border: 1px solid transparent;
+    }
+    #commanderSelection img:hover{
+        border-color: rgb(255, 255, 255);
+    }
+    #commanderSelection img.active{
+        border-color: rgb(219, 150, 32);
     }
     #commanderName h2{
         text-align:center;
@@ -54,24 +61,27 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         text-align:center;
         padding-bottom:5px;
     }
-    #bars p{
-        line-height:0;
-    }
     .barContainer{
-        position:relative;
-        margin-bottom:45px;
+        margin: 5px auto 12px;
         width:50%;
     }
     .barContainer p{
         white-space:nowrap;
+        margin: 0;
+    }
+    .barTrack{
+        height:10px;
+        width:100%;
+        box-sizing:border-box;
+        border:1px solid #888;
+        border-radius:6px;
+        background-image: repeating-linear-gradient(to right,
+            #777 0, #777 1px,
+            transparent 1px, transparent 20%);
     }
     .currentProgress{
-        display:inline-block;
-        position:absolute;
-        top:10px;
-        margin:2px;
-        height:4px;
-        border-radius:5px;
+        height:8px;
+        border-radius:6px;
         background-color:darkslateblue;
         width:0%;
     }
@@ -84,72 +94,8 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>New Player Commander Selection</h1>
-    <p>One of the most common questions that players interested in playing co-op ask is "Which commander is right for me?". A lot of new players have problems with commander selection, particularly their first paid commander. Co-op features a host of different commanders with a wide variety of playstyles, and given the large roster available, can be overwhelming. This is especially true considering that most co-op commanders are paid, so players would like to get the best out of their investment.</p>
     <p>While assigning arbitrary metrics for commanders and giving them a score from 1 to 5 is extremely subjective, the page below hopes to serve as a rough guide as to what each commander's power level and playstyle is, to allow new players to make a more informed decision as to which commander to play. It is highly advisable to read through the individual commander pages to see what abilities they have available to them, what strategies they utilize and what units they have to make a better informed decision. Additionally, players new to Co-op are advised to check the <a href="/guides/generaltips">General Tips</a> page to get some insight on some good strategies to use in Co-op.</p>
     <p>Additionally, participating in the community is another great way of learning about commanders and different playstyles. You may check out the <a href="/about/links">Links</a> page to find more Starcraft II Co-op Community content. Lastly, asking good questions and having an open-minded approach and a willingness to learn will take you a long way to improving your Co-op gameplay.</p>
-    <div id="commanderPanel">
-        <div id="stats">
-            <div id="commanderName">
-                <h2>Raynor</h2>
-            </div>
-            <div id="commanderMotto">
-                <p>Renegade Commander</p>
-            </div>
-            <div id="bars">
-                <div id="statDifficulty" class="barContainer">
-                    <div class="description">How easy the commander is to play assuming they carry their<br>own weight in the mission. Optimal play is not required.</div>
-                    <p>Ease of Play</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statLeveling" class="barContainer">
-                    <div class="description">How powerful the commander is as they level through<br>both, sub-Mastery and sub-Ascension levels.</div>
-                    <p>Sub-Ascension Power</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statPowerNew" class="barContainer">
-                    <div class="description">Power level shown by the commander<br>from inexperienced co-op players.</div>
-                    <p>Power Level for Beginners</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statPowerVeteran" class="barContainer">
-                    <div class="description">Power level shown by the commander<br>from experienced co-op players.</div>
-                    <p>Power Level for Veterans</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statEarly" class="barContainer">
-                    <div class="description">Amount of support the commander can offer towards<br>the mission objective in the early game.</div>
-                    <p>Early Game Strength</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statMacro" class="barContainer">
-                    <div class="description">The simplicity of the macro required to keep the commander<br>effective and ramping throughout the mission.</div>
-                    <p>Ease of Macro</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statMicro" class="barContainer">
-                    <div class="description">The simplicity of the micro required to keep<br>the commander at a high level play.</div>
-                    <p>Ease of Micro</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statMutation" class="barContainer">
-                    <div class="description">How effectively the commander adapts<br>to all the mutators in the game.</div>
-                    <p>Mutation Versatility</p>
-                    <div class="currentProgress"></div>
-                </div>
-                <div id="statSpeed" class="barContainer">
-                    <div class="description">How fast the commander is able to reach their desired<br>composition to handle the objective and attack waves.</div>
-                    <p>Ramp Up Speed</p>
-                    <div class="currentProgress"></div>
-                </div>
-            </div>
-        </div>
-        <div id="commanderImage">
-            <img id="commanderPic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" alt="Commander Image">
-        </div>
-    </div>
-    <div id="commanderDescription">
-        <p></p>
-    </div>
     <div id="commanderSelection">
         <?php
 
@@ -162,12 +108,78 @@ require_once __DIR__ . "/../../includes/wrapper.php";
 
         ?>
     </div>
+    <div id="commanderPanel">
+        <div id="stats">
+            <div id="commanderName">
+                <h2>Raynor</h2>
+            </div>
+            <div id="commanderMotto">
+                <p>Renegade Commander</p>
+            </div>
+            <div id="bars">
+                <div id="statDifficulty" class="barContainer">
+                    <div class="description">How easy the commander is to play assuming they carry their<br>own weight in the mission. Optimal play is not required.</div>
+                    <p>Ease of Play</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statLeveling" class="barContainer">
+                    <div class="description">How powerful the commander is as they level through<br>both, sub-Mastery and sub-Ascension levels.</div>
+                    <p>Sub-Ascension Power</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statPowerNew" class="barContainer">
+                    <div class="description">Power level shown by the commander<br>from inexperienced co-op players.</div>
+                    <p>Power Level for Beginners</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statPowerVeteran" class="barContainer">
+                    <div class="description">Power level shown by the commander<br>from experienced co-op players.</div>
+                    <p>Power Level for Veterans</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statEarly" class="barContainer">
+                    <div class="description">Amount of support the commander can offer towards<br>the mission objective in the early game.</div>
+                    <p>Early Game Strength</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statMacro" class="barContainer">
+                    <div class="description">The simplicity of the macro required to keep the commander<br>effective and ramping throughout the mission.</div>
+                    <p>Ease of Macro</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statMicro" class="barContainer">
+                    <div class="description">The simplicity of the micro required to keep<br>the commander at a high level play.</div>
+                    <p>Ease of Micro</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statMutation" class="barContainer">
+                    <div class="description">How effectively the commander adapts<br>to all the mutators in the game.</div>
+                    <p>Mutation Versatility</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+                <div id="statSpeed" class="barContainer">
+                    <div class="description">How fast the commander is able to reach their desired<br>composition to handle the objective and attack waves.</div>
+                    <p>Ramp Up Speed</p>
+                    <div class="barTrack"><div class="currentProgress"></div></div>
+                </div>
+            </div>
+        </div>
+        <div id="commanderImage">
+            <img id="commanderPic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" alt="Commander Image">
+        </div>
+    </div>
+    <div id="commanderDescription">
+        <p></p>
+    </div>
     <script>
         $( document ).ready(function() {
             update("raynor");
+            $("#commanderSelection img[alt='raynor']").addClass("active");
         });
         $("#commanderSelection").on("click","img", function(){
             var selectedCommander=$(this).attr("alt");
+            $("#commanderSelection img").removeClass("active");
+            $(this).addClass("active");
             update(selectedCommander)
         })
         $(".barContainer").on('mouseover',function(e){
