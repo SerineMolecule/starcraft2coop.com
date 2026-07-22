@@ -19,27 +19,33 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Commander:</span> Stetmann</h1>
+    <h1 data-toc-target="header"><span class="unbold">Commander:</span> Stetmann</h1>
     <p id="commanderMotto">Hero Genius (Henius)</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
-        <p><a href="#comSum">Commander Summary</a></p>
-        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#header">Commander: Stetmann</a></p>
+        <p><a href="#progression">Progression & Talents</a></p>
+        <p class="toc-subsection"><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p class="toc-subsection"><a href="#masteries">Masteries</a></p>
+        <p class="toc-subsection"><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#abilities">Abilities & Units</a></p>
+        <p class="toc-subsection"><a href="#stetzones">Stetzones</a></p>
+        <p class="toc-subsection"><a href="#hero">Hero Unit</a></p>
+        <p class="toc-subsection"><a href="#units">Combat Units</a></p>
+        <p><a href="#guide">Guide</a></p>
+        <p class="toc-subsection"><a href="#army">Recommended Army Composition</a></p>
+        <p class="toc-subsection"><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p class="toc-subsection"><a href="#buildOrder">Build Order</a></p>
+        <p class="toc-subsection"><a href="#mecha-remnants">Mecha Remnants</a></p>
+        <p class="toc-subsection"><a href="#playstyle-traps">Playstyle Traps</a></p>
+        <p class="toc-subsection"><a href="#playstyle-tips">Playstyle Tips</a></p>
         <p><a href="#achievements">Achievements</a></p>
-        <p><a href="#stetzones">Stetzones</a></p>
-        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
-        <p><a href="#masteries">Masteries</a></p>
-        <p><a href="#prestiges">Prestiges</a></p>
-        <p><a href="#hero">Hero Unit</a></p>
-        <p><a href="#army">Recommended Army Composition</a></p>
-        <p><a href="#units">Combat Units</a></p>
-        <p><a href="#buildOrder">Build Order</a></p>
-        <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <h2 id="comSum">Commander Summary</h2>
+    <h2 id="comSum" data-toc-exclude>Commander Summary</h2>
     <p>Stetmann uses his army of mecha zerg units powered by Egonergy while providing additional buffs through Stetzones to defeat enemy forces.</p>
-    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <h2 class="commanderSection" id="progression">Progression &amp; Talents</h2>
+    <h3 id="levelUnlocks">Level Unlocks</h3>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -179,138 +185,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <h2 id="achievements">Achievements</h2>
-    <p>The commander-specific achievements for Stetmann are:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Achievement</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/stetmann/beepbeeplittlesatellite.jpg" alt="Beep Beep Little Stetellite"></td>
-                <td>Beep Beep Little Stetellite</td>
-                <td>Deploy 30 Stetellites by 10 minutes on Hard difficulty.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/stetmann/notafillerepisode.jpg" alt="Not A Filler Episode"></td>
-                <td>Not A Filler Episode</td>
-                <td>Complete the Super Gary Transformation Sequence within 5 minutes.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/stetmann/recyclereducereuse.jpg" alt="Recycle, Reduce, Reuse"></td>
-                <td>Recycle, Reduce, Reuse</td>
-                <td>Collect 500 Mecha Remnants in a single mission.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/stetmann/xoxo.jpg" alt="X.O.X.O."></td>
-                <td>X.O.X.O.</td>
-                <td>Use Gary's Stetellite Overcharge to overload 2,500 allied units.</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="stetzones">Stetzones</h2>
-    <p>Stetzones provide bonuses for any of Stetmann or his ally's units that stand in them. Each Stetellite will spread a Stetzone within 8 range from itself. A Stetellite can only be deployed within a Stetzone. The Deploy Stetellite Ability is shown below:</p>
-    <table class="calldownTable">
-        <thead>
-            <tr>
-                <th>Ability</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Recommended Usage</th>
-                <th>Numbers</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/stetmann/deploystetellite.png" alt = "Deploy Stetellite"></td>
-                <td>Deploy Stetellite</td>
-                <td>Deploys a Stetellite at the target location. Stetellites must be placed within a Stetzone.</td>
-                <td>
-                    <ul>
-                        <li>Use Stetellites to cover the battlefield and provide you and your ally with vision and buffs.</li>
-                        <li>Stetellites can be placed in Super Gary's Stetzone.</li>
-                        <li>Teching up to a Lair and Hive will provide you with more max charges and a reduced charge cooldown.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 25/20/15 seconds</li>
-                        <li>Max Charges: 3/5/7</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <p>Stetzones can be operated in three different configurations. Configurations can be switched every 1 second, so changing configurations frequently is a key element of Stetmann's gameplay. These modes are listed below:</p>
-    <table class="calldownTable">
-        <thead>
-            <tr>
-                <th>Ability</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Recommended Usage</th>
-                <th>Numbers</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/stetmann/fastconfig.png" alt = "Fun Accelerator for Speedy Transportation Configuration"></td>
-                <td>Fun Accelerator for Speedy Transportation Configuration (FAST)</td>
-                <td>Stetzones grant Stetmann's units 100% increased movement speed. Allied units gain 50% increased movement speed.</td>
-                <td>
-                    <ul>
-                        <li>Useful to reach <a href="/guides/buildordertheory#theory">maximum mining rate</a> in the early game, despite not having worker saturation on resources (2 per resource patch).</li>
-                        <li>Switch to this mode to to get into position to handle attack waves before switching to another mode.</li>
-                        <li>Great to use for moving high-value army units out of harm's way.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 1 second</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/stetmann/healthconfig.png" alt = "Health Uptick Generating System Configuration"></td>
-                <td>Health Uptick Generating System Configuration (HUGS)</td>
-                <td>Stetzones grant Stetmann's units 10 life regeneration per second. Allied units gain 5 life regeneration per second.</td>
-                <td>
-                    <ul>
-                        <li>Use this to heal units after engaging attack waves and pushing into bases.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 1 second</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/stetmann/energyconfig.png" alt = "Just-in-time Uninterruptable Input for Charging Egonergy Configuration"></td>
-                <td>Just-in-time Uninterruptable Input for Charging Egonergy Configuration (JUICE)</td>
-                <td>Stetzones grant Stetmann's units 5 Egonergy regeneration per second. Allied units gain 2.5 energy regeneration per second.</td>
-                <td>
-                    <ul>
-                        <li>Use this to regenerate energy before taking large engagements.</li>
-                        <li>Toggle between this and HUGS to keep your units alive and fully energized.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 1 second</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="leveling">Sub-Ascension Leveling</h2>
-    <p>Difficulty: Moderate</p>
-    <p>Once Stetmann unlocks Super Gary, it is best to rely on that Hero unit to clear enemy encampments and bases before sending your army in to clear the objectives. Before Super Gary, it is best to use a Hydralisk/Zergling composition as the main backbone of your army, using the Zerglings to tank for the more fragile Hydralisks.</p>
-    <h2 id="masteries">Masteries</h2>
+    <h3 id="masteries">Masteries</h3>
     <p>Below are the three Power Sets for Stetmann with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -387,7 +262,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p class="masterySummary">Stetmann naturally floats many minerals which can be used to place Hatcheries around the map to spread Stetellites from, reducing the need for allocating points into the Stetellite mastery. Therefore, the Structure Morph mastery is the better choice here.</p>
-    <h2 id="prestiges">Prestiges</h2>
+    <h3 id="prestiges">Prestiges</h3>
     <p>Below are the prestiges for Stetmann. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <tbody>
@@ -503,7 +378,103 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p>Best Buddy is the prestige that outshines the rest here, by providing a huge power level increase to Super Gary, with very minimal downsides. Pre-level 5, Stetmann should be using Signal Savant, as it offers no downsides. However, past level 5, Best Buddy should be used if it is unlocked, with a big focus on the hero unit, to reap the power of the prestige.</p>
-    <h2 id="hero">Hero Unit</h2>
+    <h2 class="commanderSection" id="abilities">Abilities &amp; Units</h2>
+    <h3 id="stetzones">Stetzones</h3>
+    <p>Stetzones provide bonuses for any of Stetmann or his ally's units that stand in them. Each Stetellite will spread a Stetzone within 8 range from itself. A Stetellite can only be deployed within a Stetzone. The Deploy Stetellite Ability is shown below:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Ability</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/deploystetellite.png" alt = "Deploy Stetellite"></td>
+                <td>Deploy Stetellite</td>
+                <td>Deploys a Stetellite at the target location. Stetellites must be placed within a Stetzone.</td>
+                <td>
+                    <ul>
+                        <li>Use Stetellites to cover the battlefield and provide you and your ally with vision and buffs.</li>
+                        <li>Stetellites can be placed in Super Gary's Stetzone.</li>
+                        <li>Teching up to a Lair and Hive will provide you with more max charges and a reduced charge cooldown.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 25/20/15 seconds</li>
+                        <li>Max Charges: 3/5/7</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Stetzones can be operated in three different configurations. Configurations can be switched every 1 second, so changing configurations frequently is a key element of Stetmann's gameplay. These modes are listed below:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Ability</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/fastconfig.png" alt = "Fun Accelerator for Speedy Transportation Configuration"></td>
+                <td>Fun Accelerator for Speedy Transportation Configuration (FAST)</td>
+                <td>Stetzones grant Stetmann's units 100% increased movement speed. Allied units gain 50% increased movement speed.</td>
+                <td>
+                    <ul>
+                        <li>Useful to reach <a href="/guides/buildordertheory#theory">maximum mining rate</a> in the early game, despite not having worker saturation on resources (2 per resource patch).</li>
+                        <li>Switch to this mode to to get into position to handle attack waves before switching to another mode.</li>
+                        <li>Great to use for moving high-value army units out of harm's way.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 1 second</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/healthconfig.png" alt = "Health Uptick Generating System Configuration"></td>
+                <td>Health Uptick Generating System Configuration (HUGS)</td>
+                <td>Stetzones grant Stetmann's units 10 life regeneration per second. Allied units gain 5 life regeneration per second.</td>
+                <td>
+                    <ul>
+                        <li>Use this to heal units after engaging attack waves and pushing into bases.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 1 second</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/stetmann/energyconfig.png" alt = "Just-in-time Uninterruptable Input for Charging Egonergy Configuration"></td>
+                <td>Just-in-time Uninterruptable Input for Charging Egonergy Configuration (JUICE)</td>
+                <td>Stetzones grant Stetmann's units 5 Egonergy regeneration per second. Allied units gain 2.5 energy regeneration per second.</td>
+                <td>
+                    <ul>
+                        <li>Use this to regenerate energy before taking large engagements.</li>
+                        <li>Toggle between this and HUGS to keep your units alive and fully energized.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 1 second</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="hero">Hero Unit</h3>
     <a class="unitStatsLink" href="/units/#stetmann/gary"><img id="heroPic" src="/images/commanderdata/hero/stetmann/gary.jpg" alt="Gary"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
@@ -577,43 +548,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p>Super Gary also has a passive ability named The Best Oil: When Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. Can stack up to 20 times.</p>
-    <h2 id="army">Recommended Army Composition</h2>
-    <p>The recommended army composition for Stetmann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
-    <img class="army" src="/images/commanderdata/units/stetmann/mechazergling.jpg" alt="Mecha Zergling"><img class="army" src="/images/commanderdata/units/stetmann/mechahydralisk.jpg" alt="Mecha Hydralisk">
-    <p>Using Zerglings to tank for Hydralisks, Stetmann should be able to handle almost any enemy composition without any issues. Attack wave should first be engaged with Super Gary before attacking with your army.</p>
-    <div class="techContainer"><img class="army" src="/images/commanderdata/units/stetmann/mechabaneling.jpg" alt="Mecha Baneling"><div class="techAdd">+</div></div>
-    <p>If dealing with a pure ground composition, Mecha Banelings are a great way of handling attack waves. Place them near spawn points if possible.</p>
-    <script>
-        $(".army").on('mouseover',function(e){
-            var unit = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".army").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".army").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".techAdd").on('mouseover',function(e){
-            var unit = $(this).siblings(".army").attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".techAdd").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".techAdd").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-    </script>
-    <h2 id="units">Combat Units</h2>
+    <h3 id="units">Combat Units</h3>
     <p>For more information on Stetmann's unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#stetmann">Data Tables</a> page.</p>
     <p>Stetmann's combat units are listed below:</p>
     <div class="leftImage">
@@ -1177,7 +1112,47 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </table>
         </div>
     </div>
-    <h2 id="buildOrder">Build Order</h2>
+    <h2 class="commanderSection" id="guide">Guide</h2>
+    <h3 id="army">Recommended Army Composition</h3>
+    <p>The recommended army composition for Stetmann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/stetmann/mechazergling.jpg" alt="Mecha Zergling"><img class="army" src="/images/commanderdata/units/stetmann/mechahydralisk.jpg" alt="Mecha Hydralisk">
+    <p>Using Zerglings to tank for Hydralisks, Stetmann should be able to handle almost any enemy composition without any issues. Attack wave should first be engaged with Super Gary before attacking with your army.</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/stetmann/mechabaneling.jpg" alt="Mecha Baneling"><div class="techAdd">+</div></div>
+    <p>If dealing with a pure ground composition, Mecha Banelings are a great way of handling attack waves. Place them near spawn points if possible.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+    <h3 id="leveling">Sub-Ascension Leveling</h3>
+    <p>Difficulty: Moderate</p>
+    <p>Once Stetmann unlocks Super Gary, it is best to rely on that Hero unit to clear enemy encampments and bases before sending your army in to clear the objectives. Before Super Gary, it is best to use a Hydralisk/Zergling composition as the main backbone of your army, using the Zerglings to tank for the more fragile Hydralisks.</p>
+    <h3 id="buildOrder">Build Order</h3>
     <p>Below is a order for Stetmann that rushes Super Gary out. This one assumes max mastery points into the Structure Morph mastery to ensure adequate resources to upgrade Gary as soon as he spawns. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Overlord<br>
@@ -1195,8 +1170,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         Saturate mineral line<br>
     </p>
     <p>Note that on some maps that are more defensive (for example <a href="/missions/mistopportunities">Mist Opportunities</a>), it may be better to delay getting the Super Gary upgrade and focusing on a more economic-centric build by take your expansion faster. As such, the build order will need to be modified accordingly. To learn more about how to construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
-    <h2 id="guide">Gameplay Guide</h2>
-    <h3>Mecha Remnants</h3>
+    <h3 id="mecha-remnants">Mecha Remnants</h3>
     <p>Whenever any of Stetmann's Mech units are killed under a Stetzone or within 15 range of Gary/Super Gary, a certain number of Mecha Remnants for a unit will be recycled to Stetmann. When a certain number of Remnants are recycled, a Mecha unit will be rebuilt at no cost at their respective unlock structures. Additionally, when Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. This can stack up to 20 times. The table below summarizes which Remnants are dropped from each unit.</p>
     <table>
         <thead>
@@ -1280,7 +1254,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </tr>
         </tbody>
     </table>
-    <h3>Playstyle Traps</h3>
+    <h3 id="playstyle-traps">Playstyle Traps</h3>
     <p>A common trap for Stetmann players is to ignore the power of Stetzones and take engagements outside them. This can severely reduce their army's effectiveness in the mission. Additionally, switching Stetzone types is part of the gameplay, and continuously using a single Stetzone type is inefficient.</p>
     <p>Additionally, some players may choose to cover their ally's base in a speed Stetzone. This should not always be done. Players will need to consider a number of factors:</p>
     <ol>
@@ -1288,7 +1262,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <li>Distance between bases: Some maps have player expansions very close to each other. As a result, it would take only a few Stetellites to cover an ally's base with a Stetzone.</li>
         <li>Attack wave timing: If players find they do not have adequate resources to handle an attack wave early (such as on <a href="/missions/riftstokorhal">Rifts to Korhal</a>), putting a Stetzone in an ally's base and switching to HUGS may keep workers alive assuming there is nothing to draw aggro of the attack wave.</li>
     </ol>
-    <h3>Playstyle Tips</h3>
+    <h3 id="playstyle-tips">Playstyle Tips</h3>
     <ul>
         <li>When engaging an enemy camp, stay outside attack range of enemy units and use an E-Gorb on the enemy units. Taking damage, enemy units will run away, in the same direction as the orb is moving. This can clear large number of enemies effectively.</li>
         <li>If you need a Stetzone in an area, use Super Gary's Stetzone ability, and then place a Stetellite in the Stetzone to produce a permanent Stetzone once the ability runs out.</li>
@@ -1301,5 +1275,38 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <li>Build Macro Hatcheries to allow you to spend your resources more effectively.</li>
         <li>Super Gary gains a temporary attack speed buff named The Best Oil when he picks up Mecha Remnants. Make sure Super Gary is near your army in combat to take advantage of this buff.</li>
     </ul>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Stetmann are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/beepbeeplittlesatellite.jpg" alt="Beep Beep Little Stetellite"></td>
+                <td>Beep Beep Little Stetellite</td>
+                <td>Deploy 30 Stetellites by 10 minutes on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/notafillerepisode.jpg" alt="Not A Filler Episode"></td>
+                <td>Not A Filler Episode</td>
+                <td>Complete the Super Gary Transformation Sequence within 5 minutes.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/recyclereducereuse.jpg" alt="Recycle, Reduce, Reuse"></td>
+                <td>Recycle, Reduce, Reuse</td>
+                <td>Collect 500 Mecha Remnants in a single mission.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/stetmann/xoxo.jpg" alt="X.O.X.O."></td>
+                <td>X.O.X.O.</td>
+                <td>Use Gary's Stetellite Overcharge to overload 2,500 allied units.</td>
+            </tr>
+        </tbody>
+    </table>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

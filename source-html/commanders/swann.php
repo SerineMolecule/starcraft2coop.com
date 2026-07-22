@@ -45,27 +45,35 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Commander:</span> Swann</h1>
+    <h1 data-toc-target="header"><span class="unbold">Commander:</span> Swann</h1>
     <p id="commanderMotto">Chief Engineer</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
-        <p><a href="#comSum">Commander Summary</a></p>
-        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#header">Commander: Swann</a></p>
+        <p><a href="#progression">Progression & Talents</a></p>
+        <p class="toc-subsection"><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p class="toc-subsection"><a href="#masteries">Masteries</a></p>
+        <p class="toc-subsection"><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#abilities">Abilities & Units</a></p>
+        <p class="toc-subsection"><a href="#calldowns">Calldowns</a></p>
+        <p class="toc-subsection"><a href="#units">Combat Units</a></p>
+        <p><a href="#guide">Guide</a></p>
+        <p class="toc-subsection"><a href="#army">Recommended Army Composition</a></p>
+        <p class="toc-subsection"><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p class="toc-subsection"><a href="#buildOrder">Build Order</a></p>
+        <p class="toc-subsection"><a href="#playstyle-traps">Playstyle Traps</a></p>
+        <p class="toc-subsection"><a href="#drakken-laser-drill-levels">Drakken Laser Drill Levels</a></p>
+        <p class="toc-subsection"><a href="#scv-advanced-construction">SCV Advanced Construction</a></p>
+        <p class="toc-subsection"><a href="#static-defense">Static Defense</a></p>
+        <p class="toc-subsection"><a href="#dondrill">The Drill on Dead of Night</a></p>
+        <p class="toc-subsection"><a href="#playstyle-tips">Playstyle Tips</a></p>
         <p><a href="#achievements">Achievements</a></p>
-        <p><a href="#calldowns">Calldowns</a></p>
-        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
-        <p><a href="#masteries">Masteries</a></p>
-        <p><a href="#prestiges">Prestiges</a></p>
-        <p><a href="#army">Recommended Army Composition</a></p>
-        <p><a href="#units">Combat Units</a></p>
-        <p><a href="#buildOrder">Build Order</a></p>
-        <p><a href="#guide">Gameplay Guide</a></p>
-        <p><a href="#dondrill">The Drill on Dead of Night</a></p>
     </div>
-    <h2 id="comSum">Commander Summary</h2>
+    <h2 id="comSum" data-toc-exclude>Commander Summary</h2>
     <p>Swann relies on mechanical units, backed up with a powerful laser drill to control the battlefield.</p>
-    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <h2 class="commanderSection" id="progression">Progression &amp; Talents</h2>
+    <h3 id="levelUnlocks">Level Unlocks</h3>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -200,127 +208,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <h2 id="achievements">Achievements</h2>
-    <p>The commander-specific achievements for Swann are:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Achievement</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/swann/combatready.jpg" alt="Combat Ready"></td>
-                <td>Combat Ready</td>
-                <td>Kill 25 units with Swann's Combat Drop before they expire on Hard difficulty.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/swann/dropemdead.jpg" alt="Drop 'Em Dead"></td>
-                <td>Drop 'Em Dead</td>
-                <td>Kill 250 enemy units with Swann's Combat Drop in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/swann/smoothoperator.jpg" alt="Smooth Operator"></td>
-                <td>Smooth Operator</td>
-                <td>Harvest 100,000 Vespene Gas for your ally with Rory Swann's Vespene Harvester in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/swann/thepowerofthesunatyourfingertips.jpg" alt="The Power of the Sun at Your Fingertips"></td>
-                <td>The Power of the Sun at Your Fingertips</td>
-                <td>Deal 20,000 damage in a single mission with Swann's Drakken Laser Drill on Hard difficulty.</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="calldowns">Calldowns</h2>
-    <p>The calldowns for Swann, at level 15, with no mastery points added are:</p>
-    <table class="calldownTable">
-        <thead>
-            <tr>
-                <th>Calldown</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Recommended Usage</th>
-                <th>Numbers</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/swann/drakkenlaserdrillattack.png" alt = "Drakken Laser Drill Attack"></td>
-                <td>Drakken Laser Drill Attack</td>
-                <td>Attack with the Drakken Laser Drill. Deals 20 damage per second and has unlimited range.</td>
-                <td>
-                    <ul>
-                        <li>Auto-targets enemy units in vision.</li>
-                        <li>Relatively low DPS, but useful for whittling down high-HP targets.</li>
-                        <li>Can be used to take down objectives in vision.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 0 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/swann/concentratedbeam.png" alt = "Concentrated Beam"></td>
-                <td>Concentrated Beam</td>
-                <td>Requirements: Drakken Laser Drill Level 1<br><br>Deals 400 damage to enemy units and structures in a line across the entire map.</td>
-                <td>
-                    <ul>
-                        <li>Very useful for dealing with attack waves.</li>
-                        <li>Can be used to help with base pushes if bases are aligned correctly.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 180 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/swann/pulsecannon.png" alt = "Pulse Cannon"></td>
-                <td>Pulse Cannon</td>
-                <td>Requirements: Drakken Laser Drill Level 2<br><br>Deals 600 damage to enemy units and structures in the target area.</td>
-                <td>
-                    <ul>
-                        <li>Useful for dealing with clumped up enemies.</li>
-                        <li>Very useful for dealing with bases.</li>
-                        <li>Can be used for difficult attack waves.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 300 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/swann/combatdrop.png" alt = "Combat Drop"></td>
-                <td>Combat Drop</td>
-                <td>Calls down 6 A.R.E.S. War Bots, stunning enemy ground units in the drop zone. The War Bots are controllable and fight for 60 seconds.</td>
-                <td>
-                    <ul>
-                        <li>Should be used as often as possible, preferably as soon as they are off cooldown.</li>
-                        <li>Useful for defending in the early game.</li>
-                        <li>Can be used to tank for your units in the late game.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coolup: 240 seconds</li>
-                        <li>Cooldown:240 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="leveling">Sub-Ascension Leveling</h2>
-    <p>Difficulty: Moderate</p>
-    <p>Swann plays the same way he does at Ascension levels when he is at lower levels. However, he is significantly slower to ramp up and build his army. In the early game, build a Commander Center next to your rocks, as it will take time for it to be built by a single SCV. Build four Factories in the later stages of the game, two with Tech Labs and two with Reactors to build your endgame armies.</p>
-    <p>While leveling through Mastery levels, allocate points into Power Set 1's Concentrated Beam Width mastery until you hit the desired number of points, before allocating them to the Combat Drop duration mastery. Allocate points with an equal split on Power Set 3.</p>
-    <h2 id="masteries">Masteries</h2>
+    <h3 id="masteries">Masteries</h3>
     <p>Below are the three Power Sets for Swann with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -397,7 +285,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p class="masterySummary">The regular choice is the Laser Drill mastery, since the Drill is essentially Swann's "hero". However, if you find yourself gas-starved, or you want to support a specific ally's build, the Vespene Drone Cost mastery can be useful.</p>
-    <h2 id="prestiges">Prestiges</h2>
+    <h3 id="prestiges">Prestiges</h3>
     <p>Below are the prestiges for Swann. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <tbody>
@@ -509,43 +397,91 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p>For general play, P0 (no prestige, Chief Engineer) and P1 (Heavy Weapons Specialist) are recommended. P1 is more beginner-friendly.</p>
-    <h2 id="army">Recommended Army Composition</h2>
-    <p>The recommended army composition for Swann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
-    <img class="army" src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath"><img class="army" src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">
-    <p>Mass Goliath builds can do fairly well in most situations, as Science Vessels can give Goliaths not only healing, but protective Defensive Matrices.</p>
-    <div class="techContainer"><img class="army" src="/images/commanderdata/units/swann/siegetank.jpg" alt="Siege Tank"><div class="techAdd">+</div></div><div class="techContainer"><img class="army" src="/images/commanderdata/units/swann/hercules.jpg" alt="Hercules"><div class="techAdd">+</div></div>
-    <p>Add a Hercules with 8 sieged up Siege Tanks and drop them behind your line of Goliaths for powerful splash damage.</p>
-    <script>
-        $(".army").on('mouseover',function(e){
-            var unit = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".army").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".army").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".techAdd").on('mouseover',function(e){
-            var unit = $(this).siblings(".army").attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".techAdd").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".techAdd").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-    </script>
-    <h2 id="units">Combat Units</h2>
+    <h2 class="commanderSection" id="abilities">Abilities &amp; Units</h2>
+    <h3 id="calldowns">Calldowns</h3>
+    <p>The calldowns for Swann, at level 15, with no mastery points added are:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Calldown</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/swann/drakkenlaserdrillattack.png" alt = "Drakken Laser Drill Attack"></td>
+                <td>Drakken Laser Drill Attack</td>
+                <td>Attack with the Drakken Laser Drill. Deals 20 damage per second and has unlimited range.</td>
+                <td>
+                    <ul>
+                        <li>Auto-targets enemy units in vision.</li>
+                        <li>Relatively low DPS, but useful for whittling down high-HP targets.</li>
+                        <li>Can be used to take down objectives in vision.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 0 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/swann/concentratedbeam.png" alt = "Concentrated Beam"></td>
+                <td>Concentrated Beam</td>
+                <td>Requirements: Drakken Laser Drill Level 1<br><br>Deals 400 damage to enemy units and structures in a line across the entire map.</td>
+                <td>
+                    <ul>
+                        <li>Very useful for dealing with attack waves.</li>
+                        <li>Can be used to help with base pushes if bases are aligned correctly.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 180 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/swann/pulsecannon.png" alt = "Pulse Cannon"></td>
+                <td>Pulse Cannon</td>
+                <td>Requirements: Drakken Laser Drill Level 2<br><br>Deals 600 damage to enemy units and structures in the target area.</td>
+                <td>
+                    <ul>
+                        <li>Useful for dealing with clumped up enemies.</li>
+                        <li>Very useful for dealing with bases.</li>
+                        <li>Can be used for difficult attack waves.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 300 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/swann/combatdrop.png" alt = "Combat Drop"></td>
+                <td>Combat Drop</td>
+                <td>Calls down 6 A.R.E.S. War Bots, stunning enemy ground units in the drop zone. The War Bots are controllable and fight for 60 seconds.</td>
+                <td>
+                    <ul>
+                        <li>Should be used as often as possible, preferably as soon as they are off cooldown.</li>
+                        <li>Useful for defending in the early game.</li>
+                        <li>Can be used to tank for your units in the late game.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coolup: 240 seconds</li>
+                        <li>Cooldown:240 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="units">Combat Units</h3>
     <p>For more information on Swann's unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#swann">Data Tables</a> page.</p>
     <p>Swann's combat units are listed below:</p>
     <div class="leftImage">
@@ -1142,7 +1078,48 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </table>
         </div>
     </div>
-    <h2 id="buildOrder">Build Order</h2>
+    <h2 class="commanderSection" id="guide">Guide</h2>
+    <h3 id="army">Recommended Army Composition</h3>
+    <p>The recommended army composition for Swann is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/swann/goliath.jpg" alt="Goliath"><img class="army" src="/images/commanderdata/units/swann/sciencevessel.jpg" alt="Science Vessel">
+    <p>Mass Goliath builds can do fairly well in most situations, as Science Vessels can give Goliaths not only healing, but protective Defensive Matrices.</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/swann/siegetank.jpg" alt="Siege Tank"><div class="techAdd">+</div></div><div class="techContainer"><img class="army" src="/images/commanderdata/units/swann/hercules.jpg" alt="Hercules"><div class="techAdd">+</div></div>
+    <p>Add a Hercules with 8 sieged up Siege Tanks and drop them behind your line of Goliaths for powerful splash damage.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+    <h3 id="leveling">Sub-Ascension Leveling</h3>
+    <p>Difficulty: Moderate</p>
+    <p>Swann plays the same way he does at Ascension levels when he is at lower levels. However, he is significantly slower to ramp up and build his army. In the early game, build a Commander Center next to your rocks, as it will take time for it to be built by a single SCV. Build four Factories in the later stages of the game, two with Tech Labs and two with Reactors to build your endgame armies.</p>
+    <p>While leveling through Mastery levels, allocate points into Power Set 1's Concentrated Beam Width mastery until you hit the desired number of points, before allocating them to the Combat Drop duration mastery. Allocate points with an equal split on Power Set 3.</p>
+    <h3 id="buildOrder">Build Order</h3>
     <p>Below is the standard economic build order for Swann. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Supply Depot<br>
@@ -1151,11 +1128,10 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         18 Billy (4 SCV's)<br>
         21 Command Center (8 SCV's)
     </p>
-    <h2 id="guide">Gameplay Guide</h2>
-    <h3>Playstyle Traps</h3>
+    <h3 id="playstyle-traps">Playstyle Traps</h3>
     <p>A common trap for Swann players is to try and rush Thors out in the early game. Not only does it leave them extremely vulnerable to the early game, mass Thors can only work when actually massed in large numbers.</p>
     <p>A much better build would be to start with Goliaths backed up with Siege Tanks and then transitioning to Thors as the economy improves.</p>
-    <h3>Drakken Laser Drill Levels</h3>
+    <h3 id="drakken-laser-drill-levels">Drakken Laser Drill Levels</h3>
     <p>The below table summarizes the Levels available for the Drakken Laser Drill.</p>
     <table>
         <thead>
@@ -1190,7 +1166,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </tr>
         </tbody>
     </table>
-    <h3>SCV Advanced Construction</h3>
+    <h3 id="scv-advanced-construction">SCV Advanced Construction</h3>
     <p>Swann can send multiple SCV's to build a structure. The time taken to complete a structure based on the number of SCV's building is as follows:</p>
     <table>
         <thead>
@@ -1242,7 +1218,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </tr>
         </tbody>
     </table>
-    <h3>Static Defense</h3>
+    <h3 id="static-defense">Static Defense</h3>
     <p>Swann has a few of static defense structures available to him. These are shown below:</p>
     <table>
         <thead>
@@ -1787,7 +1763,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             newImg.attr('id', 'pc_s');
         })
     </script>
-    <h3>Playstyle Tips</h3>
+    <h3 id="playstyle-tips">Playstyle Tips</h3>
     <ul>
         <li>Always have enough Science Vessels on hand with your army. Not only do they provide you with detection, they also provide you with access to very useful abilities.</li>
         <li>Upgraded Wraiths only deal high amounts of damage while moving. You will need to practice your stutter-step micro to use them effectively.</li>
@@ -1796,5 +1772,38 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <li>Raynor can use your Tech Reactors! Make your Tech Reactors with a Factory at your ally's base and then lift your building away so he can use it.</li>
         <li>Use a Hercules to get vision so you can use the Drill to take out attack waves.</li>
     </ul>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Swann are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/swann/combatready.jpg" alt="Combat Ready"></td>
+                <td>Combat Ready</td>
+                <td>Kill 25 units with Swann's Combat Drop before they expire on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/swann/dropemdead.jpg" alt="Drop 'Em Dead"></td>
+                <td>Drop 'Em Dead</td>
+                <td>Kill 250 enemy units with Swann's Combat Drop in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/swann/smoothoperator.jpg" alt="Smooth Operator"></td>
+                <td>Smooth Operator</td>
+                <td>Harvest 100,000 Vespene Gas for your ally with Rory Swann's Vespene Harvester in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/swann/thepowerofthesunatyourfingertips.jpg" alt="The Power of the Sun at Your Fingertips"></td>
+                <td>The Power of the Sun at Your Fingertips</td>
+                <td>Deal 20,000 damage in a single mission with Swann's Drakken Laser Drill on Hard difficulty.</td>
+            </tr>
+        </tbody>
+    </table>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

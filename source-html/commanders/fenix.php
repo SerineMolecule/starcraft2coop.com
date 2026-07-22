@@ -19,27 +19,32 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Commander:</span> Fenix</h1>
+    <h1 data-toc-target="header"><span class="unbold">Commander:</span> Fenix</h1>
     <p id="commanderMotto">Purifier Executor</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
-        <p><a href="#comSum">Commander Summary</a></p>
-        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#header">Commander: Fenix</a></p>
+        <p><a href="#progression">Progression & Talents</a></p>
+        <p class="toc-subsection"><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p class="toc-subsection"><a href="#masteries">Masteries</a></p>
+        <p class="toc-subsection"><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#abilities">Abilities & Units</a></p>
+        <p class="toc-subsection"><a href="#suits">Fenix Suits</a></p>
+        <p class="toc-subsection"><a href="#units">Combat Units</a></p>
+        <p class="toc-subsection"><a href="#champions">Champion A.I.'s</a></p>
+        <p><a href="#guide">Guide</a></p>
+        <p class="toc-subsection"><a href="#army">Recommended Army Composition</a></p>
+        <p class="toc-subsection"><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p class="toc-subsection"><a href="#buildOrder">Build Order</a></p>
+        <p class="toc-subsection"><a href="#playstyle-traps">Playstyle Traps</a></p>
+        <p class="toc-subsection"><a href="#playstyle-tips">Playstyle Tips</a></p>
         <p><a href="#achievements">Achievements</a></p>
-        <p><a href="#suits">Fenix Suits</a></p>
-        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
-        <p><a href="#masteries">Masteries</a></p>
-        <p><a href="#prestiges">Prestiges</a></p>
-        <p><a href="#army">Recommended Army Composition</a></p>
-        <p><a href="#units">Combat Units</a></p>
-        <p><a href="#champions">Champion A.I.'s</a></p>
-        <p><a href="#buildOrder">Build Order</a></p>
-        <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <h2 id="comSum">Commander Summary</h2>
+    <h2 id="comSum" data-toc-exclude>Commander Summary</h2>
     <p>Fenix uses a variety of different suits, backed up with an army led by AI Champions to dominate the battlefield.</p>
-    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <h2 class="commanderSection" id="progression">Progression &amp; Talents</h2>
+    <h3 id="levelUnlocks">Level Unlocks</h3>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -190,40 +195,225 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <h2 id="achievements">Achievements</h2>
-    <p>The commander-specific achievements for Fenix are:</p>
-    <table>
+    <h3 id="masteries">Masteries</h3>
+    <p>Below are the three Power Sets for Fenix with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
+    <p>Power Set 1:</p>
+    <table class="masteryTable">
         <thead>
             <tr>
-                <th>Achievement</th>
-                <th>Name</th>
-                <th>Description</th>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><img src="/images/commanderdata/achievements/fenix/carrierme.jpg" alt="Carrier Me"></td>
-                <td>Carrier Me</td>
-                <td>Warp in 4 Carriers and complete the Clolarion A.I. research within the first 10 minutes of a Co-op Mission.</td>
+                <td>Fenix Suit Attack Speed</td>
+                <td>2% per point<br>60% maximum</td>
+                <td>?</td>
+                <td rowspan="2">If a player actively switches suits often, draining their energy completely with each use, they should consider the Energy Regeneration of the suit.</td>
             </tr>
             <tr>
-                <td><img src="/images/commanderdata/achievements/fenix/championsassemble.jpg" alt="Champions Assemble"></td>
-                <td>Champions Assemble</td>
-                <td>Have all 6 champions on the battlefield simultaneously during a Co-op Mission.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/fenix/suitup.jpg" alt="Suit Up!"></td>
-                <td>Suit Up!</td>
-                <td>Deal 300,000 damage with Fenix in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/fenix/theaipersonalitytest.jpg" alt="The A.I. Personality Test"></td>
-                <td>The A.I. Personality Test</td>
-                <td>Deal 300,000 damage with champions in Co-op Missions.</td>
+                <td>Fenix Suit Offline Energy Regeneration</td>
+                <td>0.75% per point<br>22.5% maximum</td>
+                <td>?</td>
             </tr>
         </tbody>
     </table>
-    <h2 id="suits">Fenix Suits</h2>
+    <p class="masterySummary">This is a matter of preference, and will depend on your playstyle. If you use Fenix to deal with attack waves, the Energy Regeneration is recommended. However, the Attack Speed mastery is useful when using Fenix combined with your army.</p>
+    <p>Power Set 2:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Champion A.I. Attack Speed</td>
+                <td>1% per point<br>30% maximum</td>
+                <td>?</td>
+                <td rowspan="2">Champion A.I's are extremely powerful and the decision here comes down to ensure they should be able to tank, or if they should be the core damage dealers in Fenix's army.</td>
+            </tr>
+            <tr>
+                <td>Champion A.I Life and Shields</td>
+                <td>2% per point<br>60% maximum</td>
+                <td>?</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">This mastery is a matter of preference. The Life and Shield mastery can give Champions like Kaldalis a lot of health, while the Attack Speed mastery can give Champions a lot of additional DPS.</p>
+    <p>Power Set 3:</p>
+    <table class="masteryTable">
+        <thead>
+            <tr>
+                <th>Power</th>
+                <th>Value</th>
+                <th>Recommended Points to Add</th>
+                <th>Further Considerations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Chrono Boost Efficiency</td>
+                <td>1% per point<br>30% maximum</td>
+                <td>27</td>
+                <td rowspan="2">The extra starting supply can help Fenix focus on rushing out army units and workers faster, by reducing the initial cost commitment to building pylons. However, this has a permanent effect of slowing him down during the later stages of the game due to a weaker Chrono Boost.</td>
+            </tr>
+            <tr>
+                <td>Extra Starting Supply</td>
+                <td>2 per point<br>60 maximum</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="masterySummary">The point allocation above is provided as a starting point. Depending on the efficiency of your macro, more points in the starting supply will reduce your need to build Pylons, while Chrono Boost efficiency can reduce the time it takes to get out your first Champion.</p>
+    <h3 id="prestiges">Prestiges</h3>
+    <p>Below are the prestiges for Fenix. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P1: <strong>Akhundelar</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>All Armor Suit damage increased by 100%.</li>
+                        <li>Ability cooldowns reduced by 50%.</li>
+                        <li>Life, shield, and energy regeneration increased by 100% while in storage.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>All Armor Suit calldown cooldowns increased by 700%.</li>
+                        <li>Each suit can only be sustained for 20 seconds at a time.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>Suit Cooldown: 2 minutes</li>
+                        <li>Suit Rebuild Time: 5 minutes</li>
+                        <li>Contrary to the description, the Arbiter suit doesn't actually have a cooldown</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>Akhundelar allows Fenix to clear entire enemy bases by using carefully-placed abilities. The prestige is extremely powerful, but knowledge of enemy bases and units within them is important to ensure the player selects the correct suit for handling the base. Additionally, losing a suit, especially the Solarite Dragoon can be extremely punishing. The prestige also taxes player's macro abilities because (assuming optimal play) players will be micro'ing suits 50% of the time.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P2: <strong>Network Administrator</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Tactical Data Web effectiveness increased by 200%.</li>
+                        <li>All combat unit costs reduced by 50%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>All non-heroic combat unit damage reduced by 50% and vitals reduced by 50%.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>Kaldalis benefits the most from this prestige due to his cleave attack</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>15</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige requires a unique playstyle for Fenix. The idea is to have Fenix and his Champion A.I's alongside him on the front line, pushing into enemy bases and dealing with attack waves. Behind them, but away from the heat of the battle, the shells provide quick reinforcements for A.I's once they die on the frontline. Pushing in with the shell army will cause the player to take heavy losses, so adequate management of control groups is a must.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><b>Effectiveness Bonuses:</b></p>
+    <ul>
+        <li>Kaldalis Empowered Blades damage bonus per shell tripled</li>
+        <li>Talis Ricochet Glaive damage bonus per shell tripled</li>
+        <li>Taldarin Gravimetric Overload damage storage bonus per shell tripled</li>
+        <li>Warbringer Purification Blast damage bonus per shell tripled</li>
+        <li>Mojo Suppression Procedure damage bonus per shell tripled</li>
+        <li>Clolarion Interdictor damage bonus per shell tripled</li>
+    </ul>
+    <br>
+    <table class="prestigeTable">
+        <tbody>
+            <tr>
+                <td class="prestigeTitle" colspan="2">P3: <strong>Unconquered Spirit</strong></td>
+            </tr>
+            <tr>
+                <th>Advantages</th>
+                <td>
+                    <ul>
+                        <li>Avenging Protocol effectiveness increased by 100%.</li>
+                        <li>Champion A.I.s that die refund 75% of their base unit cost.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Disadvantages</th>
+                <td>
+                    <ul>
+                        <li>Champion A.I.s do not gain additional life or shields and have reduced attack range (-2 range).</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>
+                    <ul>
+                        <li>Champion A.I vitality mastery still works, although it should not be used with this prestige</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Effective Level</th>
+                <td>11</td>
+            </tr>
+            <tr>
+                <th>Advice</th><td>This prestige encourages players to take advantage of Avenging Protocol by reducing the Champion A.I. vitality and attack ranges. This forces them to the frontline and makes them easier to kill by Amon's forces. While in theory, this strategy may work, one of the issues that players will face with this prestige is the issue of body-blocking. As A.I Champions get transferred to a new shell, they might find themselves at the back of the army, meaning that Avenging Protocol may wear off by the time they push through to the front to fight. This prestige works well with the Champion A.I attack speed mastery.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><b>Effectiveness Bonuses:</b></p>
+    <ul>
+        <li>Avenging Protocol Attack Speed Bonus doubled</li>
+        <li>Avenging Protocol Movement Speed Bonus doubled</li>
+    </ul>
+    <p>For general play, Akhundelar is a good prestige to use. If the player prefers to have an untimed Fenix, they may play without a Prestige Talent selected. For a more challenging play experience, players may try to use Network Administrator.</p>
+    <h2 class="commanderSection" id="abilities">Abilities &amp; Units</h2>
+    <h3 id="suits">Fenix Suits</h3>
     <p>Coolup time: 4:00</p>
     <p>Instead of calldowns, Fenix can deploy one of three different Armor Suits onto the battlefield at any location with vision. There is a 15 second cooldown for suit deployment. Should a suit be destroyed, there is a 180 second cooldown before it can be used again. Each suit is designed for a particular purpose and has its own abilities. These are shown below:</p>
     <div class="leftImage">
@@ -393,264 +583,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </tr>
         </tbody>
     </table>
-    <h2 id="leveling">Sub-Ascension Leveling</h2>
-    <p>Difficulty: Easy</p>
-    <p>Use a mix of units, focusing Adept/Immortal/Carrier during early stages of leveling. Make sure you rely on your Fenix suit abilities as much as possible, to increase the survivability of your army.</p>
-    <p>While leveling through Mastery levels, allocate points into Power Set 3's Initial Starting Supply mastery if you choose to use it.</p>
-    <h2 id="masteries">Masteries</h2>
-    <p>Below are the three Power Sets for Fenix with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
-    <p>Power Set 1:</p>
-    <table class="masteryTable">
-        <thead>
-            <tr>
-                <th>Power</th>
-                <th>Value</th>
-                <th>Recommended Points to Add</th>
-                <th>Further Considerations</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Fenix Suit Attack Speed</td>
-                <td>2% per point<br>60% maximum</td>
-                <td>?</td>
-                <td rowspan="2">If a player actively switches suits often, draining their energy completely with each use, they should consider the Energy Regeneration of the suit.</td>
-            </tr>
-            <tr>
-                <td>Fenix Suit Offline Energy Regeneration</td>
-                <td>0.75% per point<br>22.5% maximum</td>
-                <td>?</td>
-            </tr>
-        </tbody>
-    </table>
-    <p class="masterySummary">This is a matter of preference, and will depend on your playstyle. If you use Fenix to deal with attack waves, the Energy Regeneration is recommended. However, the Attack Speed mastery is useful when using Fenix combined with your army.</p>
-    <p>Power Set 2:</p>
-    <table class="masteryTable">
-        <thead>
-            <tr>
-                <th>Power</th>
-                <th>Value</th>
-                <th>Recommended Points to Add</th>
-                <th>Further Considerations</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Champion A.I. Attack Speed</td>
-                <td>1% per point<br>30% maximum</td>
-                <td>?</td>
-                <td rowspan="2">Champion A.I's are extremely powerful and the decision here comes down to ensure they should be able to tank, or if they should be the core damage dealers in Fenix's army.</td>
-            </tr>
-            <tr>
-                <td>Champion A.I Life and Shields</td>
-                <td>2% per point<br>60% maximum</td>
-                <td>?</td>
-            </tr>
-        </tbody>
-    </table>
-    <p class="masterySummary">This mastery is a matter of preference. The Life and Shield mastery can give Champions like Kaldalis a lot of health, while the Attack Speed mastery can give Champions a lot of additional DPS.</p>
-    <p>Power Set 3:</p>
-    <table class="masteryTable">
-        <thead>
-            <tr>
-                <th>Power</th>
-                <th>Value</th>
-                <th>Recommended Points to Add</th>
-                <th>Further Considerations</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Chrono Boost Efficiency</td>
-                <td>1% per point<br>30% maximum</td>
-                <td>27</td>
-                <td rowspan="2">The extra starting supply can help Fenix focus on rushing out army units and workers faster, by reducing the initial cost commitment to building pylons. However, this has a permanent effect of slowing him down during the later stages of the game due to a weaker Chrono Boost.</td>
-            </tr>
-            <tr>
-                <td>Extra Starting Supply</td>
-                <td>2 per point<br>60 maximum</td>
-                <td>3</td>
-            </tr>
-        </tbody>
-    </table>
-    <p class="masterySummary">The point allocation above is provided as a starting point. Depending on the efficiency of your macro, more points in the starting supply will reduce your need to build Pylons, while Chrono Boost efficiency can reduce the time it takes to get out your first Champion.</p>
-    <h2 id="prestiges">Prestiges</h2>
-    <p>Below are the prestiges for Fenix. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
-    <table class="prestigeTable">
-        <tbody>
-            <tr>
-                <td class="prestigeTitle" colspan="2">P1: <strong>Akhundelar</strong></td>
-            </tr>
-            <tr>
-                <th>Advantages</th>
-                <td>
-                    <ul>
-                        <li>All Armor Suit damage increased by 100%.</li>
-                        <li>Ability cooldowns reduced by 50%.</li>
-                        <li>Life, shield, and energy regeneration increased by 100% while in storage.</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Disadvantages</th>
-                <td>
-                    <ul>
-                        <li>All Armor Suit calldown cooldowns increased by 700%.</li>
-                        <li>Each suit can only be sustained for 20 seconds at a time.</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Notes</th>
-                <td>
-                    <ul>
-                        <li>Suit Cooldown: 2 minutes</li>
-                        <li>Suit Rebuild Time: 5 minutes</li>
-                        <li>Contrary to the description, the Arbiter suit doesn't actually have a cooldown</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Effective Level</th>
-                <td>1</td>
-            </tr>
-            <tr>
-                <th>Advice</th><td>Akhundelar allows Fenix to clear entire enemy bases by using carefully-placed abilities. The prestige is extremely powerful, but knowledge of enemy bases and units within them is important to ensure the player selects the correct suit for handling the base. Additionally, losing a suit, especially the Solarite Dragoon can be extremely punishing. The prestige also taxes player's macro abilities because (assuming optimal play) players will be micro'ing suits 50% of the time.</td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <table class="prestigeTable">
-        <tbody>
-            <tr>
-                <td class="prestigeTitle" colspan="2">P2: <strong>Network Administrator</strong></td>
-            </tr>
-            <tr>
-                <th>Advantages</th>
-                <td>
-                    <ul>
-                        <li>Tactical Data Web effectiveness increased by 200%.</li>
-                        <li>All combat unit costs reduced by 50%.</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Disadvantages</th>
-                <td>
-                    <ul>
-                        <li>All non-heroic combat unit damage reduced by 50% and vitals reduced by 50%.</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Notes</th>
-                <td>
-                    <ul>
-                        <li>Kaldalis benefits the most from this prestige due to his cleave attack</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Effective Level</th>
-                <td>15</td>
-            </tr>
-            <tr>
-                <th>Advice</th><td>This prestige requires a unique playstyle for Fenix. The idea is to have Fenix and his Champion A.I's alongside him on the front line, pushing into enemy bases and dealing with attack waves. Behind them, but away from the heat of the battle, the shells provide quick reinforcements for A.I's once they die on the frontline. Pushing in with the shell army will cause the player to take heavy losses, so adequate management of control groups is a must.</td>
-            </tr>
-        </tbody>
-    </table>
-    <p><b>Effectiveness Bonuses:</b></p>
-    <ul>
-        <li>Kaldalis Empowered Blades damage bonus per shell tripled</li>
-        <li>Talis Ricochet Glaive damage bonus per shell tripled</li>
-        <li>Taldarin Gravimetric Overload damage storage bonus per shell tripled</li>
-        <li>Warbringer Purification Blast damage bonus per shell tripled</li>
-        <li>Mojo Suppression Procedure damage bonus per shell tripled</li>
-        <li>Clolarion Interdictor damage bonus per shell tripled</li>
-    </ul>
-    <br>
-    <table class="prestigeTable">
-        <tbody>
-            <tr>
-                <td class="prestigeTitle" colspan="2">P3: <strong>Unconquered Spirit</strong></td>
-            </tr>
-            <tr>
-                <th>Advantages</th>
-                <td>
-                    <ul>
-                        <li>Avenging Protocol effectiveness increased by 100%.</li>
-                        <li>Champion A.I.s that die refund 75% of their base unit cost.</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Disadvantages</th>
-                <td>
-                    <ul>
-                        <li>Champion A.I.s do not gain additional life or shields and have reduced attack range (-2 range).</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Notes</th>
-                <td>
-                    <ul>
-                        <li>Champion A.I vitality mastery still works, although it should not be used with this prestige</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>Effective Level</th>
-                <td>11</td>
-            </tr>
-            <tr>
-                <th>Advice</th><td>This prestige encourages players to take advantage of Avenging Protocol by reducing the Champion A.I. vitality and attack ranges. This forces them to the frontline and makes them easier to kill by Amon's forces. While in theory, this strategy may work, one of the issues that players will face with this prestige is the issue of body-blocking. As A.I Champions get transferred to a new shell, they might find themselves at the back of the army, meaning that Avenging Protocol may wear off by the time they push through to the front to fight. This prestige works well with the Champion A.I attack speed mastery.</td>
-            </tr>
-        </tbody>
-    </table>
-    <p><b>Effectiveness Bonuses:</b></p>
-    <ul>
-        <li>Avenging Protocol Attack Speed Bonus doubled</li>
-        <li>Avenging Protocol Movement Speed Bonus doubled</li>
-    </ul>
-    <p>For general play, Akhundelar is a good prestige to use. If the player prefers to have an untimed Fenix, they may play without a Prestige Talent selected. For a more challenging play experience, players may try to use Network Administrator.</p>
-    <h2 id="army">Recommended Army Composition</h2>
-    <p>The recommended army composition for Fenix is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
-    <img class="army" src="/images/commanderdata/units/fenix/legionnaire.jpg" alt="Legionnaire"><img class="army" src="/images/commanderdata/units/fenix/adept.jpg" alt="Adept"><img class="army" src="/images/commanderdata/units/fenix/immortal.jpg" alt="Immortal"><img class="army" src="/images/commanderdata/units/fenix/colossus.jpg" alt="Colossus"><img class="army" src="/images/commanderdata/units/fenix/scout.jpg" alt="Scout"><img class="army" src="/images/commanderdata/units/fenix/carrier.jpg" alt="Carrier"><img class="army" src="/images/commanderdata/units/fenix/conservator.jpg" alt="Conservator"><br>
-    <img class="army" src="/images/commanderdata/units/fenix/kaldalis.jpg" alt="Kaldalis"><img class="army" src="/images/commanderdata/units/fenix/talis.jpg" alt="Talis"><img class="army" src="/images/commanderdata/units/fenix/taldarin.jpg" alt="Taldarin"><img class="army" src="/images/commanderdata/units/fenix/warbringer.jpg" alt="Warbringer"><img class="army" src="/images/commanderdata/units/fenix/mojo.jpg" alt="Mojo"><img class="army" src="/images/commanderdata/units/fenix/clolarion.jpg" alt="Clolarion">
-    <p>You should be making the full complement of Fenix's units to take advantage of the very powerful Champion AI's along with their Tactical Data Web. Use Conservators to reduce damage taken by your army before you take engagements.</p>
-    <div id="tooltip">tooltip</div>
-    <script>
-        $(".army").on('mouseover',function(e){
-            var unit = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".army").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".army").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".techAdd").on('mouseover',function(e){
-            var unit = $(this).siblings(".army").attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".techAdd").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".techAdd").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-    </script>
-    <h2 id="units">Combat Units</h2>
+    <h3 id="units">Combat Units</h3>
     <p>For more information on Fenix's unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#fenix">Data Tables</a> page.</p>
     <p>Fenix's combat units are listed below:</p>
     <div class="leftImage">
@@ -1031,7 +964,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </table>
         </div>
     </div>
-    <h2 id="champions">Champion A.I.'s</h2>
+    <h3 id="champions">Champion A.I.'s</h3>
     <div class="leftImage">
         <div class="imageContainer">
             <a class="unitStatsLink" href="/units/#fenix/kaldalis">
@@ -1446,7 +1379,48 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </tbody>
         </table>
     </div>
-    <h2 id="buildOrder">Build Order</h2>
+    <h2 class="commanderSection" id="guide">Guide</h2>
+    <h3 id="army">Recommended Army Composition</h3>
+    <p>The recommended army composition for Fenix is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/fenix/legionnaire.jpg" alt="Legionnaire"><img class="army" src="/images/commanderdata/units/fenix/adept.jpg" alt="Adept"><img class="army" src="/images/commanderdata/units/fenix/immortal.jpg" alt="Immortal"><img class="army" src="/images/commanderdata/units/fenix/colossus.jpg" alt="Colossus"><img class="army" src="/images/commanderdata/units/fenix/scout.jpg" alt="Scout"><img class="army" src="/images/commanderdata/units/fenix/carrier.jpg" alt="Carrier"><img class="army" src="/images/commanderdata/units/fenix/conservator.jpg" alt="Conservator"><br>
+    <img class="army" src="/images/commanderdata/units/fenix/kaldalis.jpg" alt="Kaldalis"><img class="army" src="/images/commanderdata/units/fenix/talis.jpg" alt="Talis"><img class="army" src="/images/commanderdata/units/fenix/taldarin.jpg" alt="Taldarin"><img class="army" src="/images/commanderdata/units/fenix/warbringer.jpg" alt="Warbringer"><img class="army" src="/images/commanderdata/units/fenix/mojo.jpg" alt="Mojo"><img class="army" src="/images/commanderdata/units/fenix/clolarion.jpg" alt="Clolarion">
+    <p>You should be making the full complement of Fenix's units to take advantage of the very powerful Champion AI's along with their Tactical Data Web. Use Conservators to reduce damage taken by your army before you take engagements.</p>
+    <div id="tooltip">tooltip</div>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+    <h3 id="leveling">Sub-Ascension Leveling</h3>
+    <p>Difficulty: Easy</p>
+    <p>Use a mix of units, focusing Adept/Immortal/Carrier during early stages of leveling. Make sure you rely on your Fenix suit abilities as much as possible, to increase the survivability of your army.</p>
+    <p>While leveling through Mastery levels, allocate points into Power Set 3's Initial Starting Supply mastery if you choose to use it.</p>
+    <h3 id="buildOrder">Build Order</h3>
     <p>Below is the standard economic build order for Fenix. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         15 Pylon<br>
@@ -1457,10 +1431,9 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         26 Pylon<br>
         31 Nexus<br>
     </p>
-    <h2 id="guide">Gameplay Guide</h2>
-    <h3>Playstyle Traps</h3>
+    <h3 id="playstyle-traps">Playstyle Traps</h3>
     <p>A lot of Fenix players will attempt to rush Carriers. This is due to the lack of Tech requirements for Fenix. A player can simply build a Stargate and a Fleet Beacon (at the same time) without having to build a Gateway or a Cybernetics Core. Additionally, Carriers are end-game units that can swarm the enemy when massed. However, the downside to this rush is it significantly slows down the player from expanding - something which is extremely important when trying to mass carriers. Additionally, it foregoes Fenix's other champions, which are extremely powerful in their own right. It is much more effective to do a 6-champion build with a mix of units.</p>
-    <h3>Playstyle Tips</h3>
+    <h3 id="playstyle-tips">Playstyle Tips</h3>
     <ul>
         <li>Get Taldarin out as soon as possible to clear your expansion. Back him up with Fenix if the expansion is contested.</li>
         <li>It is recommended to build 6 gateways to provide you with your Adepts.</li>
@@ -1472,5 +1445,38 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             <iframe width="475" height="268" src="https://www.youtube.com/embed/VyUOweN-ymQ" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </li>
     </ul>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Fenix are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/fenix/carrierme.jpg" alt="Carrier Me"></td>
+                <td>Carrier Me</td>
+                <td>Warp in 4 Carriers and complete the Clolarion A.I. research within the first 10 minutes of a Co-op Mission.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/fenix/championsassemble.jpg" alt="Champions Assemble"></td>
+                <td>Champions Assemble</td>
+                <td>Have all 6 champions on the battlefield simultaneously during a Co-op Mission.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/fenix/suitup.jpg" alt="Suit Up!"></td>
+                <td>Suit Up!</td>
+                <td>Deal 300,000 damage with Fenix in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/fenix/theaipersonalitytest.jpg" alt="The A.I. Personality Test"></td>
+                <td>The A.I. Personality Test</td>
+                <td>Deal 300,000 damage with champions in Co-op Missions.</td>
+            </tr>
+        </tbody>
+    </table>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

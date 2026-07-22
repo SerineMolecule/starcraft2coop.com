@@ -89,6 +89,9 @@
     font-style: italic;
     text-align:center;
 }
+.commanderSection + h3 {
+    margin-top: 20px;
+}
 .spike{
     background-color:darkslateblue;
 }

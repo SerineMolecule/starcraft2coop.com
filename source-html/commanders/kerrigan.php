@@ -19,26 +19,31 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Commander:</span> Kerrigan</h1>
+    <h1 data-toc-target="header"><span class="unbold">Commander:</span> Kerrigan</h1>
     <p id="commanderMotto">Queen of Blades</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
-        <p><a href="#comSum">Commander Summary</a></p>
-        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#header">Commander: Kerrigan</a></p>
+        <p><a href="#progression">Progression & Talents</a></p>
+        <p class="toc-subsection"><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p class="toc-subsection"><a href="#masteries">Masteries</a></p>
+        <p class="toc-subsection"><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#abilities">Abilities & Units</a></p>
+        <p class="toc-subsection"><a href="#hero">Hero Unit</a></p>
+        <p class="toc-subsection"><a href="#units">Combat Units</a></p>
+        <p><a href="#guide">Guide</a></p>
+        <p class="toc-subsection"><a href="#army">Recommended Army Composition</a></p>
+        <p class="toc-subsection"><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p class="toc-subsection"><a href="#buildOrder">Build Order</a></p>
+        <p class="toc-subsection"><a href="#playstyle-traps">Playstyle Traps</a></p>
+        <p class="toc-subsection"><a href="#playstyle-tips">Playstyle Tips</a></p>
         <p><a href="#achievements">Achievements</a></p>
-        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
-        <p><a href="#masteries">Masteries</a></p>
-        <p><a href="#prestiges">Prestiges</a></p>
-        <p><a href="#hero">Hero Unit</a></p>
-        <p><a href="#army">Recommended Army Composition</a></p>
-        <p><a href="#units">Combat Units</a></p>
-        <p><a href="#buildOrder">Build Order</a></p>
-        <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <h2 id="comSum">Commander Summary</h2>
+    <h2 id="comSum" data-toc-exclude>Commander Summary</h2>
     <p>Kerrigan dominates the battlefield with her aggressive abilities combined with some classic Zerg units.</p>
-    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <h2 class="commanderSection" id="progression">Progression &amp; Talents</h2>
+    <h3 id="levelUnlocks">Level Unlocks</h3>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -177,44 +182,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <h2 id="achievements">Achievements</h2>
-    <p>The commander-specific achievements for Kerrigan are:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Achievement</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/kerrigan/inthenameoflove.jpg" alt="In the Name of Love"></td>
-                <td>In the Name of Love</td>
-                <td>Stun 5,000 enemy units with Kerrigan's Immobilization Wave in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/kerrigan/makeitrain.jpg" alt="Make It Rain"></td>
-                <td>Make It Rain</td>
-                <td>Generate 50,000 resources for your ally with Kerrigan's Assimilation Aura in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/kerrigan/nowiambecomedeath.jpg" alt="Now I Am Become Death..."></td>
-                <td>Now I Am Become Death...</td>
-                <td>Kill 100 units with Kerrigan in a single mission on Hard difficulty.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/kerrigan/walkingdead.jpg" alt="Walking Dead"></td>
-                <td>Walking Dead</td>
-                <td>Kill 50 units with Kerrigan's Leaping Strike in a single mission on Hard difficulty.</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="leveling">Sub-Ascension Leveling</h2>
-    <p>Difficulty: Easy</p>
-    <p>Kerrigan (the hero unit) is extremely powerful, so utilize her as much as possible. Your army composition should be mass Hydralisk, with Nydus (and then Omega) worms to reinforce. Until you get Omega worms, place Nydus worms further away from where you are taking an engagement, as it will be used to reinforce your army a lot slower than usual.</p>
-    <p>While leveling through Mastery levels, allocate points into Power Set 1's Energy Regeneration mastery until you hit the desired number of points, before allocating them to Attack Damage.</p>
-    <h2 id="masteries">Masteries</h2>
+    <h3 id="masteries">Masteries</h3>
     <p>Below are the three Power Sets for Kerrigan with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -291,7 +259,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p class="masterySummary">Reducing the cost and research time of evolutions allows you to get "Ability Efficiency" as quickly as possible, improving Kerrigan's power level. The 1 point into the Primary Ability improvement allows you to two-shot burrowed Lurkers.</p>
-    <h2 id="prestiges">Prestiges</h2>
+    <h3 id="prestiges">Prestiges</h3>
     <p>Below are the prestiges for Kerrigan. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <tbody>
@@ -466,7 +434,8 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p>For general play, P0 (no prestige, Queen of Blades), P2 (Folly of Man), and P3 (Desolate Queen) are recommended. P3 has a better match-up against air (a general Kerrigan weakness) but a worse match-up against early-game hordes. P2 provides the player with a good long-range damage as long as Kerrigan is able to build up Fury stacks and not take engagements against several enemy units in close proximity, but some find it less beginner friendly. It allows Kerrigan to more effectively clear enemy bases and keep her army alive.</p>
-    <h2 id="hero">Hero Unit</h2>
+    <h2 class="commanderSection" id="abilities">Abilities &amp; Units</h2>
+    <h3 id="hero">Hero Unit</h3>
     <a class="unitStatsLink" href="/units/#kerrigan/kerrigan"><img id="heroPic" src="/images/commanderdata/hero/kerrigan/kerrigan.jpg" alt="Kerrigan"></a>
     <p>Spawn time: 4:00</p>
     <p>Respawn time: 1:00</p>
@@ -590,43 +559,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </tr>
         </tbody>
     </table>
-    <h2 id="army">Recommended Army Composition</h2>
-    <p>The recommended army composition for Kerrigan is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
-    <img class="army" src="/images/commanderdata/units/kerrigan/hydralisk.jpg" alt="Hydralisk">
-    <p>Mass Hydralisk builds work very well for Kerrigan because of their large amounts of burst potential from their Frenzy, when they are unloaded from Omega Worms.</p>
-    <div class="techContainer"><img class="army" src="/images/commanderdata/units/kerrigan/lurker.jpg" alt="Lurker"><div class="techAdd">+</div></div>
-    <p>Add Lurkers to your army composition when you need to defend at particular choke points.</p>
-    <script>
-        $(".army").on('mouseover',function(e){
-            var unit = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".army").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".army").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".techAdd").on('mouseover',function(e){
-            var unit = $(this).siblings(".army").attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".techAdd").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".techAdd").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-    </script>
-    <h2 id="units">Combat Units</h2>
+    <h3 id="units">Combat Units</h3>
     <p>For more information on Kerrigan's unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#kerrigan">Data Tables</a> page.</p>
     <p>Kerrigan's combat units are listed below:</p>
     <div class="leftImage">
@@ -1000,7 +933,48 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </table>
         </div>
     </div>
-    <h2 id="buildOrder">Build Order</h2>
+    <h2 class="commanderSection" id="guide">Guide</h2>
+    <h3 id="army">Recommended Army Composition</h3>
+    <p>The recommended army composition for Kerrigan is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/kerrigan/hydralisk.jpg" alt="Hydralisk">
+    <p>Mass Hydralisk builds work very well for Kerrigan because of their large amounts of burst potential from their Frenzy, when they are unloaded from Omega Worms.</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/kerrigan/lurker.jpg" alt="Lurker"><div class="techAdd">+</div></div>
+    <p>Add Lurkers to your army composition when you need to defend at particular choke points.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+    <h3 id="leveling">Sub-Ascension Leveling</h3>
+    <p>Difficulty: Easy</p>
+    <p>Kerrigan (the hero unit) is extremely powerful, so utilize her as much as possible. Your army composition should be mass Hydralisk, with Nydus (and then Omega) worms to reinforce. Until you get Omega worms, place Nydus worms further away from where you are taking an engagement, as it will be used to reinforce your army a lot slower than usual.</p>
+    <p>While leveling through Mastery levels, allocate points into Power Set 1's Energy Regeneration mastery until you hit the desired number of points, before allocating them to Attack Damage.</p>
+    <h3 id="buildOrder">Build Order</h3>
     <p>Below is the standard economic build order for Kerrigan. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Overlord<br>
@@ -1012,10 +986,9 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         33 Overlord<br>
         Kerrigan -> Rocks
     </p>
-    <h2 id="guide">Gameplay Guide</h2>
-    <h3>Playstyle Traps</h3>
+    <h3 id="playstyle-traps">Playstyle Traps</h3>
     <p>None</p>
-    <h3>Playstyle Tips</h3>
+    <h3 id="playstyle-tips">Playstyle Tips</h3>
     <ul>
         <li>Ability Efficiency works on all of Kerrigan's abilities, including Immobilization Wave.</li>
         <li>Kerrigan is extremely powerful, especially in the early game. Make sure she's always on the battlefield.</li>
@@ -1031,5 +1004,38 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <li>Use Queens to Transfuse Kerrigan to increase uptime of the Hero unit, especially during Hero solos.</li>
         <li>Kerrigan's Psionic Shift does not need detection to damage cloaked or burrowed targets.</li>
     </ul>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Kerrigan are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/kerrigan/inthenameoflove.jpg" alt="In the Name of Love"></td>
+                <td>In the Name of Love</td>
+                <td>Stun 5,000 enemy units with Kerrigan's Immobilization Wave in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/kerrigan/makeitrain.jpg" alt="Make It Rain"></td>
+                <td>Make It Rain</td>
+                <td>Generate 50,000 resources for your ally with Kerrigan's Assimilation Aura in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/kerrigan/nowiambecomedeath.jpg" alt="Now I Am Become Death..."></td>
+                <td>Now I Am Become Death...</td>
+                <td>Kill 100 units with Kerrigan in a single mission on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/kerrigan/walkingdead.jpg" alt="Walking Dead"></td>
+                <td>Walking Dead</td>
+                <td>Kill 50 units with Kerrigan's Leaping Strike in a single mission on Hard difficulty.</td>
+            </tr>
+        </tbody>
+    </table>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

@@ -19,26 +19,32 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Commander:</span> Artanis</h1>
+    <h1 data-toc-target="header"><span class="unbold">Commander:</span> Artanis</h1>
     <p id="commanderMotto">Hierarch of the Daelaam</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
-        <p><a href="#comSum">Commander Summary</a></p>
-        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#header">Commander: Artanis</a></p>
+        <p><a href="#progression">Progression & Talents</a></p>
+        <p class="toc-subsection"><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p class="toc-subsection"><a href="#masteries">Masteries</a></p>
+        <p class="toc-subsection"><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#abilities">Abilities & Units</a></p>
+        <p class="toc-subsection"><a href="#calldowns">Calldowns</a></p>
+        <p class="toc-subsection"><a href="#units">Combat Units</a></p>
+        <p><a href="#guide">Guide</a></p>
+        <p class="toc-subsection"><a href="#army">Recommended Army Composition</a></p>
+        <p class="toc-subsection"><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p class="toc-subsection"><a href="#buildOrder">Build Order</a></p>
+        <p class="toc-subsection"><a href="#playstyle-traps">Playstyle Traps</a></p>
+        <p class="toc-subsection"><a href="#building-the-artosis-pylon">Building the Artosis Pylon</a></p>
+        <p class="toc-subsection"><a href="#playstyle-tips">Playstyle Tips</a></p>
         <p><a href="#achievements">Achievements</a></p>
-        <p><a href="#calldowns">Calldowns</a></p>
-        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
-        <p><a href="#masteries">Masteries</a></p>
-        <p><a href="#prestiges">Prestiges</a></p>
-        <p><a href="#army">Recommended Army Composition</a></p>
-        <p><a href="#units">Combat Units</a></p>
-        <p><a href="#buildOrder">Build Order</a></p>
-        <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <h2 id="comSum">Commander Summary</h2>
+    <h2 id="comSum" data-toc-exclude>Commander Summary</h2>
     <p>Artanis' army features the basic staples of any Protoss army, including Zealots and Immortals. However, combined with the Spear of Adun, his army can be resilient and powerful.</p>
-    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <h2 class="commanderSection" id="progression">Progression &amp; Talents</h2>
+    <h3 id="levelUnlocks">Level Unlocks</h3>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -172,126 +178,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <h2 id="achievements">Achievements</h2>
-    <p>The commander-specific achievements for Artanis are:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Achievement</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/artanis/fingerofdeath.jpg" alt="Finger of Death"></td>
-                <td>Finger of Death</td>
-                <td>Kill 50 units with Artanis's Orbital Strike in a single mission on Hard difficulty.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/artanis/solalright.jpg" alt="Sol-alright"></td>
-                <td>Sol-alright</td>
-                <td>Absorb 10,000 damage for your ally with Artanis's Shield Overcharge in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/artanis/solarfury.jpg" alt="Solar Fury"></td>
-                <td>Solar Fury</td>
-                <td>Kill 50 units with a single strike of Artanis's Solar Bombardment on Hard difficulty.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/artanis/warpspeed.jpg" alt="Warp Speed"></td>
-                <td>Warp Speed</td>
-                <td>Warp in 5,000 units with Artanis in Co-op Missions.</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="calldowns">Calldowns</h2>
-    <p>The calldowns for Artanis, at level 15, with no mastery points added are:</p>
-    <table class="calldownTable">
-        <thead>
-            <tr>
-                <th>Calldown</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Recommended Usage</th>
-                <th>Numbers</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/artanis/projectpowerfield.png" alt = "Project Power Field"></td>
-                <td>Project Power Field</td>
-                <td>Project a power field onto the target location. Using this ability again will move the power field to a new location. Your ally may also use this field.</td>
-                <td>
-                    <ul>
-                        <li>Use this to build a gateway before the pylon at the start of the game to speed up going up the tech tree.</li>
-                        <li>Keep moving the power field around as your army moves forward for quick reinforcements.</li>
-                        <li>Great for re-powering static defense while a pylon has been disabled.</li>
-                        <li>Costs 25 Energy if using the Nexus Legate prestige.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 30 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/artanis/orbitalstrike.png" alt = "Orbital Strike"></td>
-                <td>Orbital Strike</td>
-                <td>Fires five lasers onto the battlefield from orbit, each of them dealing 50 (100 vs armored units) area damage.</td>
-                <td>
-                    <ul>
-                        <li>Very effective at taking clumps of enemy units.</li>
-                        <li>There is a short delay between each shot, reducing the effectiveness of <a href="/guides/generaltips">Rapidfire</a>.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 30 seconds</li>
-                        <li>Energy Required: 25</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/artanis/shieldovercharge.png" alt = "Shield Overcharge"></td>
-                <td>Shield Overcharge</td>
-                <td>Allows friendly units and structures to absorb up to 200 damage. Lasts for 20 seconds.</td>
-                <td>
-                    <ul>
-                        <li>Always use this while pushing into enemy bases.</li>
-                        <li>Can sometimes be useful when dealing with dangerously large attack waves.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 180 seconds</li>
-                        <li>Energy Required: 50</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/artanis/solarbombardment.png" alt = "Solar Bombardment"></td>
-                <td>Solar Bombardment</td>
-                <td>Bombards the target area from orbit, firing 400 random shots over 10 seconds. Each shot deals 15 (30 vs armored units) splash damage.</td>
-                <td>
-                    <ul>
-                        <li>Can be used to soften enemy defenses before pushing in.</li>
-                        <li>Run through the middle of a base with a zealot, which will be protected by Guardian Shell, to cast this in the middle of tough-to-push locations.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 300 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="leveling">Sub-Ascension Leveling</h2>
-    <p>Difficulty: Easy</p>
-    <p>A Dragoon/Zealot build works best while leveling. Focus on mostly Dragoons, and warp in Zealots (with Charge) on the frontline before you take an engagement. This will cause the Zealots to soak up damage away from Dragoons.</p>
-    <h2 id="masteries">Masteries</h2>
+    <h3 id="masteries">Masteries</h3>
     <p>Below are the three Power Sets for Artanis with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -368,7 +255,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p class="masterySummary">In general circumstances, the Spear of Adun Energy mastery isn't beneficial if you play efficiently because you won't be able to use the energy in the early game.</p>
-    <h2 id="prestiges">Prestiges</h2>
+    <h3 id="prestiges">Prestiges</h3>
     <p>Below are the prestiges for Artanis. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <tbody>
@@ -506,44 +393,91 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p>For general play, P3 (Arkship Commandant), P2 (Nexus Legate), and P0 (no prestige, Hierarch of the Daelaam) have their place. P3 (Arkship Commandant) is arguably strongest and most flexible, but it lacks Artanis's signature ability. P2 (Nexus Legate) is strong but requires careful Spear of Adun energy management. P1 (Valorous Inspirator) ramps slowly. P0 (no prestige, Hierarch of the Daelaam) has easy reinforcement but lack mobility.</p>
-    <h2 id="army">Recommended Army Composition</h2>
-    <p>The recommended army composition for Artanis is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
-    <img class="army" src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot"><img class="army" src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">
-    <p>Dragoons deal good amounts of damage from long range, but are reasonably fragile, which is where Zealots come into play. Warp in Zealots in front of Dragoons so they can tank while Dragoons deal damage.</p>
-    <div class="techContainer"><img class="army" src="/images/commanderdata/units/artanis/immortal.jpg" alt="Immortal"><div class="techAdd">+</div></div>
-    <p>Add Immortals to your army when dealing with Armored ground targets and to tank for Dragoons.</p>
-    <div id="tooltip">tooltip</div>
-    <script>
-        $(".army").on('mouseover',function(e){
-            var unit = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".army").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".army").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".techAdd").on('mouseover',function(e){
-            var unit = $(this).siblings(".army").attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".techAdd").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".techAdd").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-    </script>
-    <h2 id="units">Combat Units</h2>
+    <h2 class="commanderSection" id="abilities">Abilities &amp; Units</h2>
+    <h3 id="calldowns">Calldowns</h3>
+    <p>The calldowns for Artanis, at level 15, with no mastery points added are:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Calldown</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/projectpowerfield.png" alt = "Project Power Field"></td>
+                <td>Project Power Field</td>
+                <td>Project a power field onto the target location. Using this ability again will move the power field to a new location. Your ally may also use this field.</td>
+                <td>
+                    <ul>
+                        <li>Use this to build a gateway before the pylon at the start of the game to speed up going up the tech tree.</li>
+                        <li>Keep moving the power field around as your army moves forward for quick reinforcements.</li>
+                        <li>Great for re-powering static defense while a pylon has been disabled.</li>
+                        <li>Costs 25 Energy if using the Nexus Legate prestige.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 30 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/orbitalstrike.png" alt = "Orbital Strike"></td>
+                <td>Orbital Strike</td>
+                <td>Fires five lasers onto the battlefield from orbit, each of them dealing 50 (100 vs armored units) area damage.</td>
+                <td>
+                    <ul>
+                        <li>Very effective at taking clumps of enemy units.</li>
+                        <li>There is a short delay between each shot, reducing the effectiveness of <a href="/guides/generaltips">Rapidfire</a>.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 30 seconds</li>
+                        <li>Energy Required: 25</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/shieldovercharge.png" alt = "Shield Overcharge"></td>
+                <td>Shield Overcharge</td>
+                <td>Allows friendly units and structures to absorb up to 200 damage. Lasts for 20 seconds.</td>
+                <td>
+                    <ul>
+                        <li>Always use this while pushing into enemy bases.</li>
+                        <li>Can sometimes be useful when dealing with dangerously large attack waves.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 180 seconds</li>
+                        <li>Energy Required: 50</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/artanis/solarbombardment.png" alt = "Solar Bombardment"></td>
+                <td>Solar Bombardment</td>
+                <td>Bombards the target area from orbit, firing 400 random shots over 10 seconds. Each shot deals 15 (30 vs armored units) splash damage.</td>
+                <td>
+                    <ul>
+                        <li>Can be used to soften enemy defenses before pushing in.</li>
+                        <li>Run through the middle of a base with a zealot, which will be protected by Guardian Shell, to cast this in the middle of tough-to-push locations.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 300 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="units">Combat Units</h3>
     <p>For more information on Artanis' unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#artanis">Data Tables</a> page.</p>
     <p>Artanis's combat units are listed below:</p>
     <div class="leftImage">
@@ -1061,7 +995,48 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </table>
         </div>
     </div>
-    <h2 id="buildOrder">Build Order</h2>
+    <h2 class="commanderSection" id="guide">Guide</h2>
+    <h3 id="army">Recommended Army Composition</h3>
+    <p>The recommended army composition for Artanis is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/artanis/zealot.jpg" alt="Zealot"><img class="army" src="/images/commanderdata/units/artanis/dragoon.jpg" alt="Dragoon">
+    <p>Dragoons deal good amounts of damage from long range, but are reasonably fragile, which is where Zealots come into play. Warp in Zealots in front of Dragoons so they can tank while Dragoons deal damage.</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/artanis/immortal.jpg" alt="Immortal"><div class="techAdd">+</div></div>
+    <p>Add Immortals to your army when dealing with Armored ground targets and to tank for Dragoons.</p>
+    <div id="tooltip">tooltip</div>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+    <h3 id="leveling">Sub-Ascension Leveling</h3>
+    <p>Difficulty: Easy</p>
+    <p>A Dragoon/Zealot build works best while leveling. Focus on mostly Dragoons, and warp in Zealots (with Charge) on the frontline before you take an engagement. This will cause the Zealots to soak up damage away from Dragoons.</p>
+    <h3 id="buildOrder">Build Order</h3>
     <p>Below is the standard economic build order for Artanis. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         Project Power Field<br>
@@ -1076,18 +1051,17 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         33 Cybernetics Core<br>
         34 Pylon
     </p>
-    <h2 id="guide">Gameplay Guide</h2>
-    <h3>Playstyle Traps</h3>
+    <h3 id="playstyle-traps">Playstyle Traps</h3>
     <p>A common trap for Artanis players is to go for a mass Tempest build. Granted, Tempests are powerful units that can deal a lot of damage. However, it leaves players vulnerable to the early game. A mass Tempest build only works if the other ally is aware of that build, and is able to compensate with a strong early game. Additionally, enemy compositions also come into play. Compositions with a large number of low-HP units make Mass Tempests a difficult build to pull off.</p>
     <p>In most co-op maps, a mass Tempest build can be outdone by some combination of Immortals/Zealots/Phoenixes/Archons. However, if a player still chooses to mass Tempests, it is better to start with some early game in the form of Zealots and Dragoons before transitioning to Tempests.</p>
-    <h3>Building the Artosis Pylon</h3>
+    <h3 id="building-the-artosis-pylon">Building the Artosis Pylon</h3>
     <p>Because Artanis starts at 200 supply, he does not need to build pylons to increase his supply limit. Hence, pylons should only act as a source of power. Even warping in can be done via the "Project Power Field" calldown. Therefore, only one pylon should ever be built for Artanis.</p>
     <p>A single pylon can power up to 16 buildings at the same time. This should be more than adequate for most intents and purposes. Such a pylon is shown below:</p>
     <img src="/images/commanderdata/guides/artanis/artosispylon.jpg" alt="Artosis Pylon">
     <p>The below is a top-down view of the pylon. The most important thing to notice is how two gateways are set adjacent to the pylon.</p>
     <img src="/images/commanderdata/guides/artanis/artosispylonplacement.jpg" alt="Artosis Pylon Placement">
     <p>Once those two gateways are positioned, the rest of the positioning is easy as you will build around the pylon.</p>
-    <h3>Playstyle Tips</h3>
+    <h3 id="playstyle-tips">Playstyle Tips</h3>
     <ul>
         <li>Contrary to what some guides say, Solar Bombardment doesn't have a "heat map", ie, some patches which deal more damage than others. Solar Bombardment starts at a radius of 2 from the target area, and expands to a radius of 10 over the duration of the bombardment. Any areas that get hit more than others is purely due to randomness.</li>
         <li>At the start of the game, before you build your Artosis Pylon, build a Gateway on the Warp Field. This will allow you to faster progress through the Tech Tree.</li>
@@ -1100,5 +1074,38 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <li>Use Observers when playing with Tempests to provide vision. Tempests' Disintegration has a higher attack range than their vision range.</li>
         <li>Hold Shift when Orbital Strike is selected and press any key <a href="/guides/generaltips">bound to Rapidfire</a> to fire Orbital Strikes without delay in between shots.</li>
     </ul>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Artanis are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/fingerofdeath.jpg" alt="Finger of Death"></td>
+                <td>Finger of Death</td>
+                <td>Kill 50 units with Artanis's Orbital Strike in a single mission on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/solalright.jpg" alt="Sol-alright"></td>
+                <td>Sol-alright</td>
+                <td>Absorb 10,000 damage for your ally with Artanis's Shield Overcharge in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/solarfury.jpg" alt="Solar Fury"></td>
+                <td>Solar Fury</td>
+                <td>Kill 50 units with a single strike of Artanis's Solar Bombardment on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/artanis/warpspeed.jpg" alt="Warp Speed"></td>
+                <td>Warp Speed</td>
+                <td>Warp in 5,000 units with Artanis in Co-op Missions.</td>
+            </tr>
+        </tbody>
+    </table>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

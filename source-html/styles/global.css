@@ -584,6 +584,9 @@ label {
 #links p {
     margin: 8px 0;
 }
+#links p.toc-subsection {
+    padding-left: 15px;
+}
 @media (min-width: 1160px) {
 	#toc, #toc ul {
 		display: block;

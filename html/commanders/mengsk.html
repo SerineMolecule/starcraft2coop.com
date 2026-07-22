@@ -9,12 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-    <link rel="stylesheet" href="/styles/global.css?v=70e9bc">
+    <link rel="stylesheet" href="/styles/global.css?v=a78f03">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <title>Starcraft 2 Co-op - Commander Guide - Mengsk</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Mengsk">
   <meta name="keywords" content="Starcraft co-op guides mengsk commander mastery prestige build">
-  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=65483f?v=2">
+  <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=9a9839?v=2">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link rel="canonical" href="https://starcraft2coop.com/commanders/mengsk">
   <script src="/scripts/preload.js?v=0264fe"></script>
@@ -221,27 +221,36 @@ if (document.location.host === 'dev.starcraft2coop.com') {
 <script src="/scripts/search.js?v=3646f5" defer></script>
 <div id="content">
         <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Commander:</span> Mengsk</h1>
+    <h1 data-toc-target="header"><span class="unbold">Commander:</span> Mengsk</h1>
     <p id="commanderMotto">Emperor of the Dominion</p>
         <div id="links">
         <h2>Sections on this Page</h2>
-        <p><a href="#comSum">Commander Summary</a></p>
-        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#header">Commander: Mengsk</a></p>
+        <p><a href="#progression">Progression & Talents</a></p>
+        <p class="toc-subsection"><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p class="toc-subsection"><a href="#masteries">Masteries</a></p>
+        <p class="toc-subsection"><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#abilities">Abilities & Units</a></p>
+        <p class="toc-subsection"><a href="#calldowns">Calldowns</a></p>
+        <p class="toc-subsection"><a href="#units">Combat Units</a></p>
+        <p><a href="#guide">Guide</a></p>
+        <p class="toc-subsection"><a href="#army">Recommended Army Composition</a></p>
+        <p class="toc-subsection"><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p class="toc-subsection"><a href="#buildOrder">Build Order</a></p>
+        <p class="toc-subsection"><a href="#playstyle-traps">Playstyle Traps</a></p>
+        <p class="toc-subsection"><a href="#unit-ranks">Unit Ranks</a></p>
+        <p class="toc-subsection"><a href="#laborer-multi-building">Laborer Multi-building</a></p>
+        <p class="toc-subsection"><a href="#fastexpand">Fast Expanding</a></p>
+        <p class="toc-subsection"><a href="#earthsplitters">Earthsplitters</a></p>
+        <p class="toc-subsection"><a href="#mandate-generation">Mandate Generation</a></p>
+        <p class="toc-subsection"><a href="#playstyle-tips">Playstyle Tips</a></p>
+        <p class="toc-subsection"><a href="#videos">Video Guides</a></p>
         <p><a href="#achievements">Achievements</a></p>
-        <p><a href="#calldowns">Calldowns</a></p>
-        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
-        <p><a href="#masteries">Masteries</a></p>
-        <p><a href="#prestiges">Prestiges</a></p>
-        <p><a href="#army">Recommended Army Composition</a></p>
-        <p><a href="#units">Combat Units</a></p>
-        <p><a href="#buildOrder">Build Order</a></p>
-        <p><a href="#guide">Gameplay Guide</a></p>
-        <p><a href="#fastexpand">Fast Expanding</a></p>
-        <p><a href="#videos">Video Guides</a></p>
     </div>
-    <h2 id="comSum">Commander Summary</h2>
+    <h2 id="comSum" data-toc-exclude>Commander Summary</h2>
     <p>Mengsk uses an army of conscripted workers and soldiers to bolster his defenses backed up by powerful units from his Royal Guard and Artillery fire from the large distances.</p>
-    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <h2 class="commanderSection" id="progression">Progression &amp; Talents</h2>
+    <h3 id="levelUnlocks">Level Unlocks</h3>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -381,130 +390,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <h2 id="achievements">Achievements</h2>
-    <p>The commander-specific achievements for Mengsk are:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Achievement</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/mengsk/earthbroken.jpg" alt="Earthbroken"></td>
-                <td>Earthbroken</td>
-                <td>Deal 200,000 damage with Earthsplitter Ordnance bombardments.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/mengsk/iamthelaw.jpg" alt="I Am the Law"></td>
-                <td>I Am the Law</td>
-                <td>Kill 2000 enemy units in total with Contaminated Strike, Dogs of War, and Nuclear Annihilation.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/mengsk/thebestemperor.jpg" alt="The Best of the Best of the Best, Emperor"></td>
-                <td>The Best of the Best of the Best, Emperor</td>
-                <td>Reach Rank 3 with at least 50 supply of Royal Guard units simultaneously on Hard difficulty.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/mengsk/thiswasyourrifle.jpg" alt="This Was Your Rifle"></td>
-                <td>This Was Your Rifle</td>
-                <td>Pick up 500 weapons with Dominion Troopers.</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="calldowns">Calldowns</h2>
-    <p>The calldowns for Mengsk, at level 15, with no mastery points added are:</p>
-    <table class="calldownTable">
-        <thead>
-            <tr>
-                <th>Calldown</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Recommended Usage</th>
-                <th>Numbers</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/mengsk/forcedconscription.png" alt = "Forced Conscription"></td>
-                <td>Forced Conscription</td>
-                <td>Drops a Supply Bunker from orbit along with 6 unfortunate Trooper souls to man it.</td>
-                <td>
-                    <ul>
-                        <li>If the Mandate mastery has been selected, a fast expand is possible very early in the game.</li>
-                        <li>Useful for dropping in the field to convert Troopers back to Laborers to help repair units.</li>
-                        <li>Can be dropped without vision as long as terrain is explored.</li>
-                        <li>Salvage Bunkers that won't be used for extra resources.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Charge Cooldown: 60 seconds</li>
-                        <li>Mandate Required: 25</li>
-                        <li>Construction Time: 3 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/mengsk/contaminatedstrike.png" alt = "Contaminated Strike"></td>
-                <td>Contaminated Strike</td>
-                <td>Loads all your Earthsplitter Ordnance with an experimental payload to target any area on the map. Payloads randomly land near the target area, causing enemies to run in fear and saturating the area in irradiated biomaterial, causing all enemies who enter to take 5 damage per second. Affected units cannot cloak.</td>
-                <td>
-                    <ul>
-                        <li>Useful for dropping on an attack wave or enemy base before pushing in.</li>
-                        <li>Only fears enemies that are hit by the initial strike. Enemies that walk into the cloud are not feared.</li>
-                        <li>Fear will cancel any current orders a unit has, which means attack waves hit by Contaminated Strike will stop moving towards player bases.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 30 seconds</li>
-                        <li>Mandate Required: 25</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/mengsk/dogsofwar1.png" alt = "Dogs of War (Level 1)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar2.png" alt = "Dogs of War (Level 2)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar3.png" alt = "Dogs of War (Level 3)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar4.png" alt = "Dogs of War (Level 4"></td>
-                <td>Dogs of War</td>
-                <td>Deploys 30 enthralled Zerglings at the target location that last for 60 seconds. Enthralled zerg will seek out and attack the nearest enemy.<br><br>Deploys additional enthralled zerg based on Imperial Mandate.<br><br>50%: Deploys 10 additional Hydralisks.<br>75%: Deploys 10 additional Mutalisks.<br>100%: Deploys 5 additional Ultralisks.</td>
-                <td>
-                    <ul>
-                        <li>Can be used in place of one Bunker on some fast expands (see Gameplay Guide), although not recommended as it is less efficient.</li>
-                        <li>Great for drawing aggro of enemy units while your army attacks from behind the line of Zerg.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 180 seconds</li>
-                        <li>Mandate Required: 25</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/mengsk/nuclearannihilation.png" alt = "Nuclear Annihilation"></td>
-                <td>Nuclear Annihilation</td>
-                <td>Blankets a target area with a seemingly endless barrage of 40 Tactical Missiles, each dealing 150(+100 vs. structures) damage in a small area, followed by a Nuclear Missile, which deals 500(+300 vs. structures) damage in a large area.</td>
-                <td>
-                    <ul>
-                        <li>Very powerful splash damage that can be used to clear out enemy bases.</li>
-                        <li>Get vision of the center of enemy bases with Earthsplitter Ordnances before using this calldown.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Cooldown: 300 seconds</li>
-                        <li>Mandate Required: 100</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="leveling">Sub-Ascension Leveling</h2>
-    <p>Difficulty: Moderate</p>
-    <p>Prior to gaining access to Earthsplitter Ordnances, Mengsk levelling can be extremely difficult, as it makes it impossible for him to take engagements without losing his army. Once Ordnances are unlocked, they should be used to weaken enemy bases and attack waves before pushing in. Shock Divisions should be used to provide damage, with Troopers in the front to keep enemy units off them.</p>
-    <h2 id="masteries">Masteries</h2>
+    <h3 id="masteries">Masteries</h3>
     <p>Below are the three Power Sets for Mengsk with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encourged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -581,7 +467,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </tbody>
     </table>
     <p class="masterySummary">The Starting Imperial Mandate is the better choice here because it provides Mengsk with access to two Supply Bunkers at the 2 minute mark, allowing him to fast expand and build his economy.</p>
-    <h2 id="prestiges">Prestiges</h2>
+    <h3 id="prestiges">Prestiges</h3>
     <p>Below are the prestiges for Mengsk. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <tbody>
@@ -710,42 +596,95 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </tbody>
     </table>
     <p>All of Mengsk's prestiges are viable, depending on the player's preferred playstyle. However, for general play, Merchant of Death offers Mengsk the versatility in being able to deal with a wide variety of situations. While upgraded troopers are slightly more expensive, they pay back in dividends by increasing your overall effectiveness in trading with Amon.</p>
-    <h2 id="army">Recommended Army Composition</h2>
-    <p>The recommended army composition for Mengsk is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
-    <img class="army" src="/images/commanderdata/units/mengsk/dominionassaulttrooper.jpg" alt="Dominion Assault Trooper"><img class="army" src="/images/commanderdata/units/mengsk/dominionrockettrooper.jpg" alt="Dominion Rocket Trooper"><img class="army" src="/images/commanderdata/units/mengsk/aegisguard.jpg" alt="Aegis Guard"><img class="army" src="/images/commanderdata/units/mengsk/imperialintercessor.jpg" alt="Imperial Intercessor"><img  class="army" src="/images/commanderdata/units/mengsk/prideofaugustgrad.jpg" alt="Pride of Augustgrad"><img class="army"  src="/images/commanderdata/units/mengsk/imperialwitness.jpg" alt="Imperial Witness">
-    <p>A mix of different trooper types is important. Assault Troopers deal damage while Rocket Troopers handle air units with ease. The ratio of each will depend on the enemy composition and map objectives. Use Aegis Guards to tank for the troopers and Imperial Intercessors to heal damaged units. Tech up to a Pride of Augustgrad for powerful wave-handling abilities. Remember to put Imperial Witnesses into Patriot mode for extra buffs to your army.</p>
-    <script>
-        $(".army").on('mouseover',function(e){
-            var unit = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".army").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".army").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".techAdd").on('mouseover',function(e){
-            var unit = $(this).siblings(".army").attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".techAdd").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".techAdd").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-    </script>
-
-    <h2 id="units">Combat Units</h2>
+    <h2 class="commanderSection" id="abilities">Abilities &amp; Units</h2>
+    <h3 id="calldowns">Calldowns</h3>
+    <p>The calldowns for Mengsk, at level 15, with no mastery points added are:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Calldown</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/forcedconscription.png" alt = "Forced Conscription"></td>
+                <td>Forced Conscription</td>
+                <td>Drops a Supply Bunker from orbit along with 6 unfortunate Trooper souls to man it.</td>
+                <td>
+                    <ul>
+                        <li>If the Mandate mastery has been selected, a fast expand is possible very early in the game.</li>
+                        <li>Useful for dropping in the field to convert Troopers back to Laborers to help repair units.</li>
+                        <li>Can be dropped without vision as long as terrain is explored.</li>
+                        <li>Salvage Bunkers that won't be used for extra resources.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Charge Cooldown: 60 seconds</li>
+                        <li>Mandate Required: 25</li>
+                        <li>Construction Time: 3 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/contaminatedstrike.png" alt = "Contaminated Strike"></td>
+                <td>Contaminated Strike</td>
+                <td>Loads all your Earthsplitter Ordnance with an experimental payload to target any area on the map. Payloads randomly land near the target area, causing enemies to run in fear and saturating the area in irradiated biomaterial, causing all enemies who enter to take 5 damage per second. Affected units cannot cloak.</td>
+                <td>
+                    <ul>
+                        <li>Useful for dropping on an attack wave or enemy base before pushing in.</li>
+                        <li>Only fears enemies that are hit by the initial strike. Enemies that walk into the cloud are not feared.</li>
+                        <li>Fear will cancel any current orders a unit has, which means attack waves hit by Contaminated Strike will stop moving towards player bases.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 30 seconds</li>
+                        <li>Mandate Required: 25</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/dogsofwar1.png" alt = "Dogs of War (Level 1)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar2.png" alt = "Dogs of War (Level 2)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar3.png" alt = "Dogs of War (Level 3)"><img src="/images/commanderdata/abilities/mengsk/dogsofwar4.png" alt = "Dogs of War (Level 4"></td>
+                <td>Dogs of War</td>
+                <td>Deploys 30 enthralled Zerglings at the target location that last for 60 seconds. Enthralled zerg will seek out and attack the nearest enemy.<br><br>Deploys additional enthralled zerg based on Imperial Mandate.<br><br>50%: Deploys 10 additional Hydralisks.<br>75%: Deploys 10 additional Mutalisks.<br>100%: Deploys 5 additional Ultralisks.</td>
+                <td>
+                    <ul>
+                        <li>Can be used in place of one Bunker on some fast expands (see Gameplay Guide), although not recommended as it is less efficient.</li>
+                        <li>Great for drawing aggro of enemy units while your army attacks from behind the line of Zerg.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 180 seconds</li>
+                        <li>Mandate Required: 25</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/mengsk/nuclearannihilation.png" alt = "Nuclear Annihilation"></td>
+                <td>Nuclear Annihilation</td>
+                <td>Blankets a target area with a seemingly endless barrage of 40 Tactical Missiles, each dealing 150(+100 vs. structures) damage in a small area, followed by a Nuclear Missile, which deals 500(+300 vs. structures) damage in a large area.</td>
+                <td>
+                    <ul>
+                        <li>Very powerful splash damage that can be used to clear out enemy bases.</li>
+                        <li>Get vision of the center of enemy bases with Earthsplitter Ordnances before using this calldown.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Cooldown: 300 seconds</li>
+                        <li>Mandate Required: 100</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="units">Combat Units</h3>
     <p>For more information on Mengsk's unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#mengsk">Data Tables</a> page.</p>
     <p>Mengsk's combat units are listed below:</p>
     <div class="leftImage">
@@ -1403,7 +1342,46 @@ if (document.location.host === 'dev.starcraft2coop.com') {
             </table>
         </div>
     </div>
-    <h2 id="buildOrder">Build Order</h2>
+    <h2 class="commanderSection" id="guide">Guide</h2>
+    <h3 id="army">Recommended Army Composition</h3>
+    <p>The recommended army composition for Mengsk is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/mengsk/dominionassaulttrooper.jpg" alt="Dominion Assault Trooper"><img class="army" src="/images/commanderdata/units/mengsk/dominionrockettrooper.jpg" alt="Dominion Rocket Trooper"><img class="army" src="/images/commanderdata/units/mengsk/aegisguard.jpg" alt="Aegis Guard"><img class="army" src="/images/commanderdata/units/mengsk/imperialintercessor.jpg" alt="Imperial Intercessor"><img  class="army" src="/images/commanderdata/units/mengsk/prideofaugustgrad.jpg" alt="Pride of Augustgrad"><img class="army"  src="/images/commanderdata/units/mengsk/imperialwitness.jpg" alt="Imperial Witness">
+    <p>A mix of different trooper types is important. Assault Troopers deal damage while Rocket Troopers handle air units with ease. The ratio of each will depend on the enemy composition and map objectives. Use Aegis Guards to tank for the troopers and Imperial Intercessors to heal damaged units. Tech up to a Pride of Augustgrad for powerful wave-handling abilities. Remember to put Imperial Witnesses into Patriot mode for extra buffs to your army.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+
+    <h3 id="leveling">Sub-Ascension Leveling</h3>
+    <p>Difficulty: Moderate</p>
+    <p>Prior to gaining access to Earthsplitter Ordnances, Mengsk levelling can be extremely difficult, as it makes it impossible for him to take engagements without losing his army. Once Ordnances are unlocked, they should be used to weaken enemy bases and attack waves before pushing in. Shock Divisions should be used to provide damage, with Troopers in the front to keep enemy units off them.</p>
+    <h3 id="buildOrder">Build Order</h3>
     <p>Below is the standard economic build order for Mengsk. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         13 Bunker Calldown at Expo<br>
@@ -1422,11 +1400,10 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         53 Starport with 8 Laborers<br>
         56 Imperial Witness<br>
     </p>
-    <h2 id="guide">Gameplay Guide</h2>
-    <h3>Playstyle Traps</h3>
+    <h3 id="playstyle-traps">Playstyle Traps</h3>
     <p>Weapon upgrades for Troopers may seem expensive, but they can greatly increase the unit's performance in combat. Make sure to utilize any floating minerals to upgrade Trooper weapons where possible.</p>
     <p>Finally, it can be very tempting to try and build many of the Royal Guard units. Doing so means that the experience you get from kills is split among more units, slowing down their levelling up through Ranks. While for smaller units (such as the Aegis Guard), it might not be too impactful, it can be very problematic for larger units such as the Pride of Augustgrad. These units gain a significant power spike at Rank 3 and is potentially the rank where they become invaluable. Having several Prides of Augustgrad, combined with their high levelling experience can prevent a player from reaching the rank which makes them important units.</p>
-    <h3>Unit Ranks</h3>
+    <h3 id="unit-ranks">Unit Ranks</h3>
     <p>Mengsk's Royal Guard units have a Veterancy mechanic that allows them to level up as enemy units are killed around the map. Once a certain amount of experience is reached, the unit ranks up, gaining access to additional skills or bonuses. The leveling up mechanics works as follows:</p>
     <ul>
         <li>When an enemy unit is killed, 100 experience per supply cost of unit killed is "dropped".</li>
@@ -1436,7 +1413,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li>If there are no eligible units within 15 range of the unit killed, all eligible units on the map get an equal split of the dropped experience.</li>
         <li>Once a Royal Guard unit has reached maximum rank, it is removed from the pool of eligible units so as to not waste experience.</li>
     </ul>
-    <h3>Laborer Multi-building</h3>
+    <h3 id="laborer-multi-building">Laborer Multi-building</h3>
     <p>Mengsk can send multiple Laborers to build a structure. The time taken to complete a structure based on the number of Laborers building is as follows:</p>
     <table>
         <thead>
@@ -1700,7 +1677,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </tbody>
     </table>
     <p>*Due to how lightly this mission is contested, only one Bunker is required, allowing you to place your second Bunker at your main, unloading, and converting the Troopers to Laborers to further saturate your main mineral line.</p>
-    <h3>Earthsplitters</h3>
+    <h3 id="earthsplitters">Earthsplitters</h3>
     <p>Earthsplitters are a key part of Mengsk gameplay. They are used to soften attack waves and enemy bases, allowing Mengsk's more fragile army of conscripts to take more favourable engagements. Mengsk's Earthsplitters have the following upgrades available to them:</p>
     <table class="unitUpgrades">
         <thead>
@@ -1858,7 +1835,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
     <p>Note that if a unit's radius is 4 or above, the artillery is guaranteed to hit it with each volley.</p>
     <p>If you are interested in learning more about how this data was generated, you may watch the video below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/yL6FQIlkE30" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <h3>Mandate Generation</h3>
+    <h3 id="mandate-generation">Mandate Generation</h3>
     <p>Mandate is the Mengsk equivalent of energy that some of the Protoss commanders have. It is generated by increasing your "Imperial Support". The amount of total Imperial Support, divided by 240, gives your Mandate generation per second. Imperial Support is created in three ways:</p>
     <ul>
         <li>A base amount: 40</li>
@@ -1866,7 +1843,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li>Indoctrinated Conscripts: Indoctrination occurs under a Witness in Patriot mode at 1 per supply, or 2 per supply if Amplified Airwaves is researched.</li>
     </ul>
     <p>With the Trooper Mandate mastery and Amplified Airwaves, the approximate Imperial Support for two fully saturated bases is 154 (0.6 Mandate/second). Without the upgrade, the Imperial Support is 64 (0.27 Mandate/second).</p>
-    <h3>Playstyle Tips</h3>
+    <h3 id="playstyle-tips">Playstyle Tips</h3>
     <ul>
         <li>Try to rush the Imperial Witness as quickly as possible, as the Mandate generation it provides will allow you to spam your calldowns more frequently.</li>
         <li>When playing on a mission that requires pushing deeper into the map, salvage Earthsplitters and move them closer towards the front line.</li>
@@ -1877,10 +1854,43 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li>Aim to have 3-4 Enlistment Centers in the mid-late game to quickly reinforce Troopers after taking engagements</li>
         <li>If a Trooper with a weapon is killed, the dropped weapon will remain on the ground for 300 seconds before despawning and refunding 120 minerals.</li>
     </ul>
-    <h2 id="videos">Video Guides</h2>
+    <h3 id="videos">Video Guides</h3>
     <p>The below videos demonstrate the various fast expands explained earlier. Note that as of patch 4.11.3, Mengsk's Starting Mandate Mastery has been modified which means the two Bunkers cannot be dropped at the start of the game. For double Bunker expands, you will need to wait (~2 mins) before both Bunkers can be placed. For single Bunker expands, the mineral line will not be saturated at the start of the game.</p>
     <iframe width="950" height="535" src="https://www.youtube.com/embed/videoseries?list=PL-U97hco2Fu67esg6PKcDnh9ejc_3UZ7p" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<script src="/scripts/nav.js?v=fd4985"></script>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Mengsk are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/earthbroken.jpg" alt="Earthbroken"></td>
+                <td>Earthbroken</td>
+                <td>Deal 200,000 damage with Earthsplitter Ordnance bombardments.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/iamthelaw.jpg" alt="I Am the Law"></td>
+                <td>I Am the Law</td>
+                <td>Kill 2000 enemy units in total with Contaminated Strike, Dogs of War, and Nuclear Annihilation.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/thebestemperor.jpg" alt="The Best of the Best of the Best, Emperor"></td>
+                <td>The Best of the Best of the Best, Emperor</td>
+                <td>Reach Rank 3 with at least 50 supply of Royal Guard units simultaneously on Hard difficulty.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/mengsk/thiswasyourrifle.jpg" alt="This Was Your Rifle"></td>
+                <td>This Was Your Rifle</td>
+                <td>Pick up 500 weapons with Dominion Troopers.</td>
+            </tr>
+        </tbody>
+    </table>
+<script src="/scripts/nav.js?v=d64b61"></script>
 </div>
 
 <div id="footer">

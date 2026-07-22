@@ -19,26 +19,31 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
-    <h1><span class="unbold">Commander:</span> Raynor</h1>
+    <h1 data-toc-target="header"><span class="unbold">Commander:</span> Raynor</h1>
     <p id="commanderMotto">Renegade Commander</p>
     <?php include("../../includes/reporterror.php");?>
     <div id="links">
         <h2>Sections on this Page</h2>
-        <p><a href="#comSum">Commander Summary</a></p>
-        <p><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p><a href="#header">Commander: Raynor</a></p>
+        <p><a href="#progression">Progression & Talents</a></p>
+        <p class="toc-subsection"><a href="#levelUnlocks">Level Unlocks</a></p>
+        <p class="toc-subsection"><a href="#masteries">Masteries</a></p>
+        <p class="toc-subsection"><a href="#prestiges">Prestiges</a></p>
+        <p><a href="#abilities">Abilities & Units</a></p>
+        <p class="toc-subsection"><a href="#calldowns">Calldowns</a></p>
+        <p class="toc-subsection"><a href="#units">Combat Units</a></p>
+        <p><a href="#guide">Guide</a></p>
+        <p class="toc-subsection"><a href="#army">Recommended Army Composition</a></p>
+        <p class="toc-subsection"><a href="#leveling">Sub-Ascension Leveling</a></p>
+        <p class="toc-subsection"><a href="#buildOrder">Build Order</a></p>
+        <p class="toc-subsection"><a href="#playstyle-traps">Playstyle Traps</a></p>
+        <p class="toc-subsection"><a href="#playstyle-tips">Playstyle Tips</a></p>
         <p><a href="#achievements">Achievements</a></p>
-        <p><a href="#calldowns">Calldowns</a></p>
-        <p><a href="#leveling">Sub-Ascension Leveling</a></p>
-        <p><a href="#masteries">Masteries</a></p>
-        <p><a href="#prestiges">Prestiges</a></p>
-        <p><a href="#army">Recommended Army Composition</a></p>
-        <p><a href="#units">Combat Units</a></p>
-        <p><a href="#buildOrder">Build Order</a></p>
-        <p><a href="#guide">Gameplay Guide</a></p>
     </div>
-    <h2 id="comSum">Commander Summary</h2>
+    <h2 id="comSum" data-toc-exclude>Commander Summary</h2>
     <p>Raynor overwhelms enemies by using his Orbital Drop Pods to quickly reinforce his armies on the battlefield.</p>
-    <h2 id="levelUnlocks">Level Unlocks</h2>
+    <h2 class="commanderSection" id="progression">Progression &amp; Talents</h2>
+    <h3 id="levelUnlocks">Level Unlocks</h3>
     <table class="progressionTable">
         <thead>
             <tr>
@@ -173,136 +178,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p id="powerSpikeInfo">Highlighted rows denote large power spikes for the commander.</p>
-    <h2 id="achievements">Achievements</h2>
-    <p>The commander-specific achievements for Raynor are:</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Achievement</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/raynor/feelsgoodman.jpg" alt="Feels Good, Man"></td>
-                <td>Feels Good, Man</td>
-                <td>Heal 10,000 life on allied units in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/raynor/hyperactive.jpg" alt="Hyperactive"></td>
-                <td>Hyperactive</td>
-                <td>Kill 25 units with a single Hyperion calldown on Hard difficulty with Raynor.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/raynor/hyperionalert.jpg" alt="Hyperion Alert"></td>
-                <td>Hyperion Alert</td>
-                <td>Kill 500 units with Raynor's Hyperion in Co-op Missions.</td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/achievements/raynor/thethunder.jpg" alt="The Thunder"></td>
-                <td>The Thunder</td>
-                <td>Kill 25 units with a single Air-Strike on Hard difficulty.</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2 id="calldowns">Calldowns</h2>
-    <p>The calldowns for Raynor, at level 15, with no mastery points added are:</p>
-    <table class="calldownTable">
-        <thead>
-            <tr>
-                <th>Calldown</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Recommended Usage</th>
-                <th>Numbers</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/raynor/bansheeairstrike.png" alt = "Banshee Airstrike"></td>
-                <td>Banshee Airstrike</td>
-                <td>Calls down 5 cloaked Dusk Wings, dealing 50 damage to enemies in the drop zone. Dusk Wings are controllable and will fight for 60 seconds.</td>
-                <td>
-                    <ul>
-                        <li>Should be used as soon as it is off cooldown. With mastery points, Dusk Wings can be present on the map about 50% of the time.</li>
-                        <li>Useful for dealing with ground-based attack waves, and before pushing into enemy bases.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coolup: 240 seconds</li>
-                        <li>Cooldown: 240 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="/images/commanderdata/abilities/raynor/hyperion.png" alt = "Hyperion"></td>
-                <td>Hyperion</td>
-                <td>Calls down the Hyperion Battlecruiser. The Hyperion is controllable and will fight for 60 seconds.</td>
-                <td>
-                    <ul>
-                        <li>Useful for pushing into heavily guarded enemy bases.</li>
-                        <li>Use Yamato Cannon to take out key units. Leave the rest of the units for your army to clean up.</li>
-                        <li>Once key units are taken out, Hyperjump to another location and repeat the process.</li>
-                        <li>Deploy Point Defense Drones in strategic locations to not only protect the Hyperion, but also your army when it comes in to clear.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Coolup: 300 seconds</li>
-                        <li>Cooldown: 360 seconds</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <p>The Hyperion ability brings a Hyperion onto the battlefield. This unit has abilities itself, shown below:</p>
-    <div class="leftImage">
-        <div class="imageContainer">
-            <a class="unitStatsLink" href="/units/#raynor/hyperion">
-                <img src="/images/commanderdata/abilities/raynor/hyperion.jpg" alt="Hyperion">
-                <p>Hyperion</p>
-            </a>
-        </div>
-        <div>
-            <table class="centered unitAbilities">
-                <thead>
-                    <tr>
-                        <th>Ability</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Cooldown</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="/images/commanderdata/abilities/raynor/hyperjump.png" alt="Hyperjump"></td>
-                        <td>Hyperjump</td>
-                        <td>Hyperjump to the targeted location.</td>
-                        <td>15 seconds</td>
-                    </tr>
-                    <tr>
-                        <td><img src="/images/commanderdata/abilities/raynor/yamatocannon.png" alt="Yamato Cannon"></td>
-                        <td>Yamato Cannon</td>
-                        <td>Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.</td>
-                        <td>15 seconds</td>
-                    </tr>
-                    <tr>
-                        <td><img src="/images/commanderdata/abilities/raynor/pointdefensedrone.png" alt="Pont Defense Drone"></td>
-                        <td>Point Defense Drone</td>
-                        <td>Uses a laser to shoot down enemy missiles.<br>Cannot target special attacks.<br>Times out after 180 seconds.<br><br>Each shot consumes 10 energy. (4 charges max)</td>
-                        <td>5 seconds</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <h2 id="leveling">Sub-Ascension Leveling</h2>
-    <p>Difficulty: Moderate</p>
-    <p>Raynor plays the same way he does at Ascension levels when he is at lower levels. The only difference is that he is a lot slower, due to Supply Depots having a build time, as well as units not being able to be deployed directly onto the battlefield. Because of the latter, ensure the path between your army and your production is cleared to prevent your army units from being intercepted by enemy units.</p>
-    <p>While leveling through Mastery levels, allocate points with an equal split on Power Set 1.</p>
-    <h2 id="masteries">Masteries</h2>
+    <h3 id="masteries">Masteries</h3>
     <p>Below are the three Power Sets for Raynor with the recommended point allocations for each. Note that these are meant to serve a general, all-purpose build that is effective across all maps with no Prestiges selected. You are highly encouraged to change these masteries to suit your playstyle and particular challenges you face (e.g. <a href="/resources/weeklymutations">Weekly Mutations</a>).</p>
     <p>Power Set 1:</p>
     <table class="masteryTable">
@@ -379,7 +255,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p class="masterySummary">This depends on the playstyle. If going for a Mech build, the Mech Attack Speed is the better choice here. Otherwise, Medic Healing should be picked.</p>
-    <h2 id="prestiges">Prestiges</h2>
+    <h3 id="prestiges">Prestiges</h3>
     <p>Below are the prestiges for Raynor. Note that "Effective Level" is the level at which the prestige achieves it full effect.</p>
     <table class="prestigeTable">
         <tbody>
@@ -494,45 +370,100 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <p>While Backwater Marshal can provide you with an overall army effectiveness increase, playing without a Prestige is generally better if you prefer Bio-style play, or Rough Rider if you prefer a Mech-style play.</p>
-    <h2 id="army">Recommended Army Composition</h2>
-    <p>The recommended army composition for Raynor is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
-    <img class="army" src="/images/commanderdata/units/raynor/marine.jpg" alt="Marine"><img class="army" src="/images/commanderdata/units/raynor/marauder.jpg" alt="Marauder"><img class="army" src="/images/commanderdata/units/raynor/medic.jpg" alt="Medic">
-    <p>The Marine/Marauder/Medic army composition is a solid army composition for Raynor. Damage is dealt through cheap units like Marines, with a few Marauders to soak up damage. Medics provide the healing as well as damage reduction.</p>
-    <div class="techContainer"><img class="army" src="/images/commanderdata/units/raynor/firebat.jpg" alt="Firebat"><div class="techAdd">+</div></div>
-    <p>Add Firebats to the mix to provide extra splash damage (e.g. when dealing with Infested Units) or when you need to tank high amounts of damage (e.g. when dealing with Banelings).</p>
-    <div class="techContainer"><img class="army" src="/images/commanderdata/units/raynor/vulture.jpg" alt="Vulture"><div class="techAdd">+</div></div>
-    <p>Add Vultures when you have access to enemy attack wave spawn locations to spawn-camp waves that primarily consist of ground units.</p>
-    <script>
-        $(".army").on('mouseover',function(e){
-            var unit = $(this).attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".army").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".army").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-        $(".techAdd").on('mouseover',function(e){
-            var unit = $(this).siblings(".army").attr("alt").split(":");
-            $("#tooltip").html("<b>" + unit[0] + "</b>");
-            $("#tooltip").show();
-        });
-        $(".techAdd").on('mouseleave',function(){
-            $("#tooltip").hide();
-        });
-        $(".techAdd").on('mousemove',function(e){
-            $('#tooltip').css('top', e.pageY-40);
-            $('#tooltip').css('left', e.pageX+5);
-            $('#tooltip').css('position', "absolute");
-
-        });
-    </script>
-    <h2 id="units">Combat Units</h2>
+    <h2 class="commanderSection" id="abilities">Abilities &amp; Units</h2>
+    <h3 id="calldowns">Calldowns</h3>
+    <p>The calldowns for Raynor, at level 15, with no mastery points added are:</p>
+    <table class="calldownTable">
+        <thead>
+            <tr>
+                <th>Calldown</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Recommended Usage</th>
+                <th>Numbers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/raynor/bansheeairstrike.png" alt = "Banshee Airstrike"></td>
+                <td>Banshee Airstrike</td>
+                <td>Calls down 5 cloaked Dusk Wings, dealing 50 damage to enemies in the drop zone. Dusk Wings are controllable and will fight for 60 seconds.</td>
+                <td>
+                    <ul>
+                        <li>Should be used as soon as it is off cooldown. With mastery points, Dusk Wings can be present on the map about 50% of the time.</li>
+                        <li>Useful for dealing with ground-based attack waves, and before pushing into enemy bases.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coolup: 240 seconds</li>
+                        <li>Cooldown: 240 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/abilities/raynor/hyperion.png" alt = "Hyperion"></td>
+                <td>Hyperion</td>
+                <td>Calls down the Hyperion Battlecruiser. The Hyperion is controllable and will fight for 60 seconds.</td>
+                <td>
+                    <ul>
+                        <li>Useful for pushing into heavily guarded enemy bases.</li>
+                        <li>Use Yamato Cannon to take out key units. Leave the rest of the units for your army to clean up.</li>
+                        <li>Once key units are taken out, Hyperjump to another location and repeat the process.</li>
+                        <li>Deploy Point Defense Drones in strategic locations to not only protect the Hyperion, but also your army when it comes in to clear.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Coolup: 300 seconds</li>
+                        <li>Cooldown: 360 seconds</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>The Hyperion ability brings a Hyperion onto the battlefield. This unit has abilities itself, shown below:</p>
+    <div class="leftImage">
+        <div class="imageContainer">
+            <a class="unitStatsLink" href="/units/#raynor/hyperion">
+                <img src="/images/commanderdata/abilities/raynor/hyperion.jpg" alt="Hyperion">
+                <p>Hyperion</p>
+            </a>
+        </div>
+        <div>
+            <table class="centered unitAbilities">
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Cooldown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/raynor/hyperjump.png" alt="Hyperjump"></td>
+                        <td>Hyperjump</td>
+                        <td>Hyperjump to the targeted location.</td>
+                        <td>15 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/raynor/yamatocannon.png" alt="Yamato Cannon"></td>
+                        <td>Yamato Cannon</td>
+                        <td>Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.</td>
+                        <td>15 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/commanderdata/abilities/raynor/pointdefensedrone.png" alt="Pont Defense Drone"></td>
+                        <td>Point Defense Drone</td>
+                        <td>Uses a laser to shoot down enemy missiles.<br>Cannot target special attacks.<br>Times out after 180 seconds.<br><br>Each shot consumes 10 energy. (4 charges max)</td>
+                        <td>5 seconds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h3 id="units">Combat Units</h3>
     <p>For more information on Raynor's unit stats, comparison between units and upgrade calculations, visit the <a href="/units/#raynor">Data Tables</a> page.</p>
     <p>Raynor's combat units are listed below:</p>
     <div class="leftImage">
@@ -1177,7 +1108,50 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             </table>
         </div>
     </div>
-    <h2 id="buildOrder">Build Order</h2>
+    <h2 class="commanderSection" id="guide">Guide</h2>
+    <h3 id="army">Recommended Army Composition</h3>
+    <p>The recommended army composition for Raynor is below. Note that this assumes no Prestige talent selected and recommended Mastery Allocations. This is a basic recommendation for your army framework. It is recommended to gain an understanding for each of the units in the <a href="#units">Units</a> section and further add tech units so that you are able to better handle the situations you face.</p>
+    <img class="army" src="/images/commanderdata/units/raynor/marine.jpg" alt="Marine"><img class="army" src="/images/commanderdata/units/raynor/marauder.jpg" alt="Marauder"><img class="army" src="/images/commanderdata/units/raynor/medic.jpg" alt="Medic">
+    <p>The Marine/Marauder/Medic army composition is a solid army composition for Raynor. Damage is dealt through cheap units like Marines, with a few Marauders to soak up damage. Medics provide the healing as well as damage reduction.</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/raynor/firebat.jpg" alt="Firebat"><div class="techAdd">+</div></div>
+    <p>Add Firebats to the mix to provide extra splash damage (e.g. when dealing with Infested Units) or when you need to tank high amounts of damage (e.g. when dealing with Banelings).</p>
+    <div class="techContainer"><img class="army" src="/images/commanderdata/units/raynor/vulture.jpg" alt="Vulture"><div class="techAdd">+</div></div>
+    <p>Add Vultures when you have access to enemy attack wave spawn locations to spawn-camp waves that primarily consist of ground units.</p>
+    <script>
+        $(".army").on('mouseover',function(e){
+            var unit = $(this).attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".army").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".army").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+        $(".techAdd").on('mouseover',function(e){
+            var unit = $(this).siblings(".army").attr("alt").split(":");
+            $("#tooltip").html("<b>" + unit[0] + "</b>");
+            $("#tooltip").show();
+        });
+        $(".techAdd").on('mouseleave',function(){
+            $("#tooltip").hide();
+        });
+        $(".techAdd").on('mousemove',function(e){
+            $('#tooltip').css('top', e.pageY-40);
+            $('#tooltip').css('left', e.pageX+5);
+            $('#tooltip').css('position', "absolute");
+
+        });
+    </script>
+    <h3 id="leveling">Sub-Ascension Leveling</h3>
+    <p>Difficulty: Moderate</p>
+    <p>Raynor plays the same way he does at Ascension levels when he is at lower levels. The only difference is that he is a lot slower, due to Supply Depots having a build time, as well as units not being able to be deployed directly onto the battlefield. Because of the latter, ensure the path between your army and your production is cleared to prevent your army units from being intercepted by enemy units.</p>
+    <p>While leveling through Mastery levels, allocate points with an equal split on Power Set 1.</p>
+    <h3 id="buildOrder">Build Order</h3>
     <p>Below is the standard economic build order for Raynor. For more information on how to read and construct your own build orders, please check the <a href="/guides/buildordertheory">Build Order Theory</a> page.</p>
     <p class="buildOrder">
         14 Supply Depot<br>
@@ -1190,12 +1164,11 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         22 Refinery<br>
         25 Command Center at Main
     </p>
-    <h2 id="guide">Gameplay Guide</h2>
-    <h3>Playstyle Traps</h3>
+    <h3 id="playstyle-traps">Playstyle Traps</h3>
     <p>A common trap for Raynor players is to try and rush Battlecruisers, given their strength, while either ignoring/using their calldowns inefficiently. This causes them to be extremely weak in the early game.</p>
     <p>In order to rush Battlecruisers, players must be familiar with their build order and ensure that they are able to macro up and build their economy. Additionally, they also need to use their calldowns as efficiently as possible (as these calldowns will be the sole damage output from them for a while). In the early phases of the game where only a few Battlecruisers are present, players will need to also actively micro them, to ensure they do not lose any unnecessarily.</p>
     <p>An additional note to make is that a player should focus on one type of build, and not hybridize their build unless they intend on playing a long game. This is because when doing a Hybrid build, the player's resources are stretched too thinly and can weaken their entire army. For longer games, players can choose to transition into higher tech units in order to deal with high tech attack waves, such as Reavers and Disruptors.</p>
-    <h3>Playstyle Tips</h3>
+    <h3 id="playstyle-tips">Playstyle Tips</h3>
     <ul>
         <li>Build at least 4 Orbital Command Centers and drop Mules to quickly boost your mineral income.</li>
         <li>Ensure you always have enough energy for Scans, as that will be where most of your detection comes from.</li>
@@ -1207,5 +1180,38 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <iframe width="475" height="268" src="https://www.youtube.com/embed/Bp2cYMuxoPo" allow="autoplay; encrypted-media" allowfullscreen></iframe></li>
         <li>If using Spider Mines for defense, place them on the top of your ramp so they can take advantage of high-ground vision range.</li>
     </ul>
+    <h2 id="achievements">Achievements</h2>
+    <p>The commander-specific achievements for Raynor are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Achievement</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/raynor/feelsgoodman.jpg" alt="Feels Good, Man"></td>
+                <td>Feels Good, Man</td>
+                <td>Heal 10,000 life on allied units in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/raynor/hyperactive.jpg" alt="Hyperactive"></td>
+                <td>Hyperactive</td>
+                <td>Kill 25 units with a single Hyperion calldown on Hard difficulty with Raynor.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/raynor/hyperionalert.jpg" alt="Hyperion Alert"></td>
+                <td>Hyperion Alert</td>
+                <td>Kill 500 units with Raynor's Hyperion in Co-op Missions.</td>
+            </tr>
+            <tr>
+                <td><img src="/images/commanderdata/achievements/raynor/thethunder.jpg" alt="The Thunder"></td>
+                <td>The Thunder</td>
+                <td>Kill 25 units with a single Air-Strike on Hard difficulty.</td>
+            </tr>
+        </tbody>
+    </table>
 <script src="/scripts/nav.js"></script>
 <?= endContent() ?>

@@ -2,20 +2,20 @@
 // ==============================================================
 const navLinks: HTMLAnchorElement[] = [];
 let activeLink: HTMLAnchorElement | null = null;
-let headings = Array.from(document.querySelectorAll<HTMLElement>('#content h2, #content h3, #thisweek'));
+let headings = Array.from(document.querySelectorAll<HTMLElement>('#content h1[data-toc-target], #content h2, #content h3, #thisweek'));
 let hasPageNav = false;
 
 function initNav() {
     const toc = document.createElement('ul');
     // TODO (maybe): cache this directly in the HTML once the document is done
-    headings = headings.filter(h => h.id);
+    headings = headings.filter(h => !h.hasAttribute('data-toc-exclude') && (h.id || h.dataset.tocTarget));
     if (headings.length <= 1) {
         return;
     }
     for (const heading of headings) {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.href = '#' + heading.id;
+        a.href = '#' + (heading.dataset.tocTarget || heading.id);
         a.textContent = heading.textContent;
         a.className = heading.tagName.toLowerCase();
         if (heading.id === 'thisweek') {
@@ -53,6 +53,9 @@ function updateScroll() {
         } else {
             high = mid - 1;
         }
+    }
+    if (result === -1 && headings[0]?.dataset.tocTarget) {
+        result = 0;
     }
     if (result !== -1) {
         if (!headings[result]!.offsetTop) {
