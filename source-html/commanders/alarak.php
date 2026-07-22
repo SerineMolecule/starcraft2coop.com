@@ -775,7 +775,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                 <li>Has a passive that increases friendly units attack range (within a range of 4) by 2.</li>
                 <li>Force-field ability is highly situational, and rendered useless through Massive enemy units. Can be used on mutators like Fatal Attraction.</li>
                 <li>Target-lock ability increases damage dealt to a target by 15%.</li>
-                <li>Very powerful when combined with Ascendants.</li>
+                <li>Especially powerful when combined with Ascendants, but should be built with every army. Can also be good for your ally's army.</li>
                 <li>Good idea to build some at the start for detection.</li>
             </ul>
             <p>Skills:</p>
