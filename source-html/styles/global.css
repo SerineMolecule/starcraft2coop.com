@@ -476,6 +476,40 @@ a:where(:visited){
 #content h1,h2,h3{
     margin-top:50px;
 }
+#content h2 + h3 {
+    margin-top:25px;
+}
+#content h2,
+#content h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgb(175, 180, 222);
+    margin-left: -14px;
+    /* this one can't go more than 8px before it adds a horizontal scrollbar */
+    margin-right: -8px;
+}
+#content h2::after,
+#content h3::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to right, currentColor, transparent);
+}
+#content h2::before,
+#content h3::before {
+    content: "";
+    height: 1px;
+    width: 1rem;
+    background: linear-gradient(to right, transparent, currentColor);
+}
+#content h2::after, #content h2::before {
+    height: 4px;
+    opacity: 0.9;
+}
+#content h3::after, #content h3::before {
+    opacity: 0.5;
+}
 #content #reportClick{
     text-decoration:underline;
     color: red;

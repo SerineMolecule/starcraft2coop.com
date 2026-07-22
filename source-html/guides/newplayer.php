@@ -56,6 +56,9 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         text-align:center;
         margin:0;
     }
+    #commanderName h2::before{
+        flex: 1;
+    }
     #commanderMotto{
         font-style: italic;
         text-align:center;
