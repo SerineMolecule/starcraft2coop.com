@@ -1189,7 +1189,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tbody>
     </table>
     <h3 id="scv-advanced-construction">SCV Advanced Construction</h3>
-    <p>Swann can send multiple SCV's to build a structure. The time taken to complete a structure based on the number of SCV's building is as follows:</p>
+    <p>Swann can send multiple SCV's to build a structure. Each SCV after the first builds at 60% the speed of the first SCV. The time taken to complete a structure based on the number of SCV's building is as follows:</p>
     <table>
         <thead>
             <tr>
