@@ -76,9 +76,9 @@ function get_mutators(): array
 /**
  * @param string $token Token/Slug of the Mutator
  * @param array $mutators Array of all Mutators
- * @return array Single Mutator info.
+ * @return array|null Single Mutator info if found
  */
-function get_mutator(string $token, array $mutators): array
+function get_mutator(string $token, array $mutators): ?array
 {
     // TODO: maybe get_mutators() should return an assoc array of assoc arrays, with token as key
     return array_find($mutators, fn($value) => $value['mutatorid'] === $token);
