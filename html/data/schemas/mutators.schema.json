@@ -12,7 +12,7 @@
             "type": "object",
             "properties": {
                 "mutatorid": {
-                    "$ref": "#/definitions/PositiveInteger"
+                    "$ref": "#/definitions/MutatorId"
                 },
                 "mutatorname": {
                     "type": "string"
@@ -46,9 +46,12 @@
             ],
             "additionalProperties": false
         },
-        "PositiveInteger": {
-            "type": "integer",
-            "minimum": 1
+        "MutatorId": {
+            "$ref": "#/definitions/LowercaseHyphen"
+        },
+        "LowercaseHyphen": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
         },
         "NonNegativeInteger": {
             "type": "integer",

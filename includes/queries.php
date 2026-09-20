@@ -2,7 +2,7 @@
 
 function token(string $name): string
 {
-    return preg_replace('/[^a-z0-9]+/', '', strtolower($name));
+    return preg_replace('/[^a-z0-9]+/', '-', strtolower($name));
 }
 
 /**
@@ -71,6 +71,17 @@ function get_mutators(): array
 {
     $json = file_get_contents(__DIR__ . '/../html/data/mutators.json');
     return json_decode($json, true);
+}
+
+/**
+ * @param string $token Token/Slug of the Mutator
+ * @param array $mutators Array of all Mutators
+ * @return array|null Single Mutator info if found
+ */
+function get_mutator(string $token, array $mutators): ?array
+{
+    // TODO: maybe get_mutators() should return an assoc array of assoc arrays, with token as key
+    return array_find($mutators, fn($value) => $value['mutatorid'] === $token);
 }
 
 /**

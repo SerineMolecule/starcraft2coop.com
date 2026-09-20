@@ -16,7 +16,7 @@ function token(name: string): string {
     return name.toLowerCase().replace(/[^a-z0-9]+/g, "");
 }
 
-const mutatorData = new Map(mutators.map(mutator => [token(mutator.mutatorname), mutator]));
+const mutatorData = new Map(mutators.map(mutator => [mutator.mutatorid, mutator]));
 const upgradeData = new Map(playerUpgrades.map(upgrade => [`upgrades/${token(upgrade.commander)}/${upgrade.icon}`, upgrade]));
 let activeTooltipTarget: HTMLElement | null = null;
 
@@ -33,7 +33,7 @@ function tooltipElement(): HTMLElement {
 function mutatorSlug(link: HTMLAnchorElement): string | null {
     const url = new URL(link.href, window.location.href);
     if (url.origin !== window.location.origin) return null;
-    const match = url.pathname.match(/^\/mutators\/([a-z0-9]+)\/?$/);
+    const match = url.pathname.match(/^\/mutators\/([a-z0-9-]+)\/?$/);
     return match?.[1] ?? null;
 }
 

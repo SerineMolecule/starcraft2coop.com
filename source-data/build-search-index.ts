@@ -80,7 +80,7 @@ function addMutators(documents: SearchDocument[], mutators: MutatorList): void {
             type: 'mutator',
             title: mutator.mutatorname,
             subtitle: 'Mutator',
-            path: `mutators/${token(mutator.mutatorname)}`,
+            path: `mutators/${mutator.mutatorid}`,
             text: mutator.mutatordescription,
             tokens: [`${mutator.mutatorid}`, mutator.abomination ? `brutal+${mutator.abomination}` : ''],
         });

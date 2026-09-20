@@ -21,12 +21,12 @@
                     "type": "string"
                 },
                 "mut01": {
-                    "$ref": "#/definitions/PositiveInteger"
+                    "$ref": "#/definitions/MutatorId"
                 },
                 "mut02": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -36,7 +36,7 @@
                 "mut03": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -57,6 +57,13 @@
         "PositiveInteger": {
             "type": "integer",
             "minimum": 1
+        },
+        "MutatorId": {
+            "$ref": "#/definitions/LowercaseHyphen"
+        },
+        "LowercaseHyphen": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
         }
     }
 }

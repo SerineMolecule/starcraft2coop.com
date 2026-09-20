@@ -226,10 +226,10 @@
             "type": "mutator",
             "title": "Afraid of the Dark",
             "subtitle": "Mutator",
-            "path": "mutators/afraidofthedark",
+            "path": "mutators/afraid-of-the-dark",
             "text": "Vision provided by all sources is extremely limited except when in view of your camera.",
             "tokens": [
-                "1",
+                "afraid-of-the-dark",
                 "afraidofthedark",
                 "mutator"
             ]
@@ -238,10 +238,10 @@
             "type": "mutator",
             "title": "Aggressive Deployment",
             "subtitle": "Mutator",
-            "path": "mutators/aggressivedeployment",
+            "path": "mutators/aggressive-deployment",
             "text": "Additional enemy units are periodically deployed onto the battlefield.",
             "tokens": [
-                "2",
+                "aggressive-deployment",
                 "brutal+3",
                 "aggressivedeployment",
                 "mutator"
@@ -251,10 +251,10 @@
             "type": "mutator",
             "title": "Alien Incubation",
             "subtitle": "Mutator",
-            "path": "mutators/alienincubation",
+            "path": "mutators/alien-incubation",
             "text": "All enemy units spawn Broodlings upon death.",
             "tokens": [
-                "3",
+                "alien-incubation",
                 "brutal+2",
                 "alienincubation",
                 "mutator"
@@ -267,9 +267,8 @@
             "path": "mutators/avenger",
             "text": "Enemy units gain increased attack speed, movement speed, armor, life, and life-regeneration when nearby enemy units die.",
             "tokens": [
-                "4",
-                "brutal+5",
                 "avenger",
+                "brutal+5",
                 "mutator"
             ]
         },
@@ -280,9 +279,8 @@
             "path": "mutators/barrier",
             "text": "Enemy units and structures gain a temporary shield upon the first time they take damage.",
             "tokens": [
-                "5",
-                "brutal+2",
                 "barrier",
+                "brutal+2",
                 "mutator"
             ]
         },
@@ -290,10 +288,10 @@
             "type": "mutator",
             "title": "Black Death",
             "subtitle": "Mutator",
-            "path": "mutators/blackdeath",
+            "path": "mutators/black-death",
             "text": "Some enemy units carry a plague that deals damage over time and spreads to other nearby units. The plague spreads to your units when the enemy unit is killed.",
             "tokens": [
-                "6",
+                "black-death",
                 "brutal+7",
                 "blackdeath",
                 "mutator"
@@ -306,9 +304,8 @@
             "path": "mutators/blizzard",
             "text": "Storm clouds move across the map, damaging and freezing player units in their path.",
             "tokens": [
-                "7",
-                "brutal+4",
                 "blizzard",
+                "brutal+4",
                 "mutator"
             ]
         },
@@ -316,10 +313,10 @@
             "type": "mutator",
             "title": "Chaos Studios",
             "subtitle": "Mutator",
-            "path": "mutators/chaosstudios",
+            "path": "mutators/chaos-studios",
             "text": "Mutators are chosen at random and periodically cycle throughout the mission.",
             "tokens": [
-                "8",
+                "chaos-studios",
                 "chaosstudios",
                 "mutator"
             ]
@@ -328,10 +325,10 @@
             "type": "mutator",
             "title": "Concussive Attacks",
             "subtitle": "Mutator",
-            "path": "mutators/concussiveattacks",
+            "path": "mutators/concussive-attacks",
             "text": "Player units are slowed by all enemy attacks.",
             "tokens": [
-                "9",
+                "concussive-attacks",
                 "brutal+1",
                 "concussiveattacks",
                 "mutator"
@@ -344,9 +341,8 @@
             "path": "mutators/darkness",
             "text": "Previously explored areas remain blacked out on the minimap while outside of player vision.",
             "tokens": [
-                "10",
-                "brutal+2",
                 "darkness",
+                "brutal+2",
                 "mutator"
             ]
         },
@@ -357,9 +353,8 @@
             "path": "mutators/diffusion",
             "text": "Damage dealt to enemies is split evenly across all nearby units, including your own.",
             "tokens": [
-                "11",
-                "brutal+3",
                 "diffusion",
+                "brutal+3",
                 "mutator"
             ]
         },
@@ -367,10 +362,10 @@
             "type": "mutator",
             "title": "Double Edged",
             "subtitle": "Mutator",
-            "path": "mutators/doubleedged",
+            "path": "mutators/double-edged",
             "text": "Damage dealt by your units and structures is dealt back to them, but then healed back over time.",
             "tokens": [
-                "12",
+                "double-edged",
                 "brutal+3",
                 "doubleedged",
                 "mutator"
@@ -380,10 +375,10 @@
             "type": "mutator",
             "title": "Eminent Domain",
             "subtitle": "Mutator",
-            "path": "mutators/eminentdomain",
+            "path": "mutators/eminent-domain",
             "text": "Enemies gain control of your structures after destroying them.",
             "tokens": [
-                "13",
+                "eminent-domain",
                 "brutal+1",
                 "eminentdomain",
                 "mutator"
@@ -393,10 +388,10 @@
             "type": "mutator",
             "title": "Evasive Maneuvers",
             "subtitle": "Mutator",
-            "path": "mutators/evasivemaneuvers",
+            "path": "mutators/evasive-maneuvers",
             "text": "Enemy units teleport a short distance away upon taking damage.",
             "tokens": [
-                "14",
+                "evasive-maneuvers",
                 "brutal+1",
                 "evasivemaneuvers",
                 "mutator"
@@ -406,10 +401,10 @@
             "type": "mutator",
             "title": "Fatal Attraction",
             "subtitle": "Mutator",
-            "path": "mutators/fatalattraction",
+            "path": "mutators/fatal-attraction",
             "text": "When enemy units and structures die, any of your nearby units are pulled to their location.",
             "tokens": [
-                "15",
+                "fatal-attraction",
                 "brutal+3",
                 "fatalattraction",
                 "mutator"
@@ -422,9 +417,8 @@
             "path": "mutators/fear",
             "text": "Player units will occasionally stop attacking and run around in fear upon taking damage.",
             "tokens": [
-                "16",
-                "brutal+3",
                 "fear",
+                "brutal+3",
                 "mutator"
             ]
         },
@@ -435,7 +429,6 @@
             "path": "mutators/fireworks",
             "text": "Enemies launch a dazzling fireworks display upon death, dealing damage to your nearby units.",
             "tokens": [
-                "17",
                 "fireworks",
                 "mutator"
             ]
@@ -444,10 +437,10 @@
             "type": "mutator",
             "title": "Gift Exchange",
             "subtitle": "Mutator",
-            "path": "mutators/giftexchange",
+            "path": "mutators/gift-exchange",
             "text": "Gifts are periodically deployed around the map. If you don't claim them, Amon will!",
             "tokens": [
-                "18",
+                "gift-exchange",
                 "giftexchange",
                 "mutator"
             ]
@@ -456,10 +449,10 @@
             "type": "mutator",
             "title": "Going Nuclear",
             "subtitle": "Mutator",
-            "path": "mutators/goingnuclear",
+            "path": "mutators/going-nuclear",
             "text": "Nukes are launched at random throughout the map.",
             "tokens": [
-                "19",
+                "going-nuclear",
                 "brutal+3",
                 "goingnuclear",
                 "mutator"
@@ -469,10 +462,10 @@
             "type": "mutator",
             "title": "Hardened Will",
             "subtitle": "Mutator",
-            "path": "mutators/hardenedwill",
+            "path": "mutators/hardened-will",
             "text": "Enemy Heroic units reduce all incoming damage to a maximum of 10 when any non-heroic enemy unit is near them.",
             "tokens": [
-                "20",
+                "hardened-will",
                 "brutal+2",
                 "hardenedwill",
                 "mutator"
@@ -482,10 +475,10 @@
             "type": "mutator",
             "title": "Heroes from the Storm",
             "subtitle": "Mutator",
-            "path": "mutators/heroesfromthestorm",
+            "path": "mutators/heroes-from-the-storm",
             "text": "Every attack wave will be led by Heroes of increasing power.",
             "tokens": [
-                "21",
+                "heroes-from-the-storm",
                 "brutal+10",
                 "heroesfromthestorm",
                 "mutator"
@@ -498,9 +491,8 @@
             "path": "mutators/inspiration",
             "text": "Enemy Heroic units increase the attack speed and armor of all enemies within a small range.",
             "tokens": [
-                "22",
-                "brutal+2",
                 "inspiration",
+                "brutal+2",
                 "mutator"
             ]
         },
@@ -508,10 +500,10 @@
             "type": "mutator",
             "title": "Just Die",
             "subtitle": "Mutator",
-            "path": "mutators/justdie",
+            "path": "mutators/just-die",
             "text": "Enemy units are automatically revived upon death.",
             "tokens": [
-                "23",
+                "just-die",
                 "brutal+7",
                 "justdie",
                 "mutator"
@@ -521,10 +513,10 @@
             "type": "mutator",
             "title": "Kill Bots",
             "subtitle": "Mutator",
-            "path": "mutators/killbots",
+            "path": "mutators/kill-bots",
             "text": "Waves of bots attack players and are invulnerable to damage until they have killed a set amount of units.",
             "tokens": [
-                "24",
+                "kill-bots",
                 "brutal+6",
                 "killbots",
                 "mutator"
@@ -534,10 +526,10 @@
             "type": "mutator",
             "title": "Laser Drill",
             "subtitle": "Mutator",
-            "path": "mutators/laserdrill",
+            "path": "mutators/laser-drill",
             "text": "An enemy Drakken laser drill constantly attacks player units within enemy vision.",
             "tokens": [
-                "25",
+                "laser-drill",
                 "brutal+2",
                 "laserdrill",
                 "mutator"
@@ -547,10 +539,10 @@
             "type": "mutator",
             "title": "Lava Burst",
             "subtitle": "Mutator",
-            "path": "mutators/lavaburst",
+            "path": "mutators/lava-burst",
             "text": "Lava periodically bursts from the ground at random locations and deals damage to player air and ground units.",
             "tokens": [
-                "26",
+                "lava-burst",
                 "brutal+3",
                 "lavaburst",
                 "mutator"
@@ -560,10 +552,10 @@
             "type": "mutator",
             "title": "Life Leech",
             "subtitle": "Mutator",
-            "path": "mutators/lifeleech",
+            "path": "mutators/life-leech",
             "text": "Enemy units steal life or shields whenever they do damage.",
             "tokens": [
-                "27",
+                "life-leech",
                 "brutal+1",
                 "lifeleech",
                 "mutator"
@@ -573,10 +565,10 @@
             "type": "mutator",
             "title": "Long Range",
             "subtitle": "Mutator",
-            "path": "mutators/longrange",
+            "path": "mutators/long-range",
             "text": "Enemy units and structures have increased weapon and vision range.",
             "tokens": [
-                "28",
+                "long-range",
                 "brutal+2",
                 "longrange",
                 "mutator"
@@ -586,10 +578,10 @@
             "type": "mutator",
             "title": "Lucky Envelopes",
             "subtitle": "Mutator",
-            "path": "mutators/luckyenvelopes",
+            "path": "mutators/lucky-envelopes",
             "text": "Festive envelopes containing resource pickups are dropped at random throughout the map.",
             "tokens": [
-                "29",
+                "lucky-envelopes",
                 "luckyenvelopes",
                 "mutator"
             ]
@@ -598,10 +590,10 @@
             "type": "mutator",
             "title": "Mag-nificent",
             "subtitle": "Mutator",
-            "path": "mutators/magnificent",
+            "path": "mutators/mag-nificent",
             "text": "Mag Mines are deployed throughout the map at the start of the mission.",
             "tokens": [
-                "30",
+                "mag-nificent",
                 "brutal+4",
                 "magnificent",
                 "mutator"
@@ -611,10 +603,10 @@
             "type": "mutator",
             "title": "Micro Transactions",
             "subtitle": "Mutator",
-            "path": "mutators/microtransactions",
+            "path": "mutators/micro-transactions",
             "text": "Giving commands to your units costs resources based on the unit's cost.",
             "tokens": [
-                "31",
+                "micro-transactions",
                 "brutal+5",
                 "microtransactions",
                 "mutator"
@@ -624,10 +616,10 @@
             "type": "mutator",
             "title": "Mineral Shields",
             "subtitle": "Mutator",
-            "path": "mutators/mineralshields",
+            "path": "mutators/mineral-shields",
             "text": "Mineral clusters at player bases are periodically encased in a shield which must be destroyed for gathering to continue.",
             "tokens": [
-                "32",
+                "mineral-shields",
                 "brutal+2",
                 "mineralshields",
                 "mutator"
@@ -640,9 +632,8 @@
             "path": "mutators/minesweeper",
             "text": "Groups of Widow Mines and Spider Mines are buried throughout the battlefield.",
             "tokens": [
-                "33",
-                "brutal+6",
                 "minesweeper",
+                "brutal+6",
                 "mutator"
             ]
         },
@@ -650,10 +641,10 @@
             "type": "mutator",
             "title": "Missile Command",
             "subtitle": "Mutator",
-            "path": "mutators/missilecommand",
+            "path": "mutators/missile-command",
             "text": "Endless missile bombardments target your structures and must be shot down throughout the mission.",
             "tokens": [
-                "34",
+                "missile-command",
                 "brutal+3",
                 "missilecommand",
                 "mutator"
@@ -663,10 +654,10 @@
             "type": "mutator",
             "title": "Moment of Silence",
             "subtitle": "Mutator",
-            "path": "mutators/momentofsilence",
+            "path": "mutators/moment-of-silence",
             "text": "When a Heroic enemy dies, all player units around it will reflect on their transgressions, leaving them temporarily unable to attack or use abilities.",
             "tokens": [
-                "35",
+                "moment-of-silence",
                 "brutal+2",
                 "momentofsilence",
                 "mutator"
@@ -676,10 +667,10 @@
             "type": "mutator",
             "title": "Mutually Assured Destruction",
             "subtitle": "Mutator",
-            "path": "mutators/mutuallyassureddestruction",
+            "path": "mutators/mutually-assured-destruction",
             "text": "Enemy Hybrid units detonate a Nuke upon death.",
             "tokens": [
-                "36",
+                "mutually-assured-destruction",
                 "brutal+5",
                 "mutuallyassureddestruction",
                 "mutator"
@@ -689,10 +680,10 @@
             "type": "mutator",
             "title": "Naughty List",
             "subtitle": "Mutator",
-            "path": "mutators/naughtylist",
+            "path": "mutators/naughty-list",
             "text": "Player units and structures take increased damage for each enemy they've killed.",
             "tokens": [
-                "37",
+                "naughty-list",
                 "naughtylist",
                 "mutator"
             ]
@@ -701,10 +692,10 @@
             "type": "mutator",
             "title": "Orbital Strike",
             "subtitle": "Mutator",
-            "path": "mutators/orbitalstrike",
+            "path": "mutators/orbital-strike",
             "text": "Enemy Orbital Strikes are periodically fired throughout the map.",
             "tokens": [
-                "38",
+                "orbital-strike",
                 "brutal+1",
                 "orbitalstrike",
                 "mutator"
@@ -717,9 +708,8 @@
             "path": "mutators/outbreak",
             "text": "Continuous waves of the infested horde march against the commanders' bases.",
             "tokens": [
-                "39",
-                "brutal+3",
                 "outbreak",
+                "brutal+3",
                 "mutator"
             ]
         },
@@ -727,10 +717,10 @@
             "type": "mutator",
             "title": "Photon Overload",
             "subtitle": "Mutator",
-            "path": "mutators/photonoverload",
+            "path": "mutators/photon-overload",
             "text": "All enemy structures attack nearby hostile units.",
             "tokens": [
-                "40",
+                "photon-overload",
                 "brutal+1",
                 "photonoverload",
                 "mutator"
@@ -743,9 +733,8 @@
             "path": "mutators/polarity",
             "text": "Each enemy unit is immune to either your units or your ally's units.",
             "tokens": [
-                "41",
-                "brutal+7",
                 "polarity",
+                "brutal+7",
                 "mutator"
             ]
         },
@@ -753,10 +742,10 @@
             "type": "mutator",
             "title": "Power Overwhelming",
             "subtitle": "Mutator",
-            "path": "mutators/poweroverwhelming",
+            "path": "mutators/power-overwhelming",
             "text": "All enemy units have energy and use random abilities.",
             "tokens": [
-                "42",
+                "power-overwhelming",
                 "brutal+5",
                 "poweroverwhelming",
                 "mutator"
@@ -769,9 +758,8 @@
             "path": "mutators/propagators",
             "text": "Reality warping sludges are crawling towards you. Anything they touch is turned into a copy of the sludge.",
             "tokens": [
-                "43",
-                "brutal+8",
                 "propagators",
+                "brutal+8",
                 "mutator"
             ]
         },
@@ -779,10 +767,10 @@
             "type": "mutator",
             "title": "Purifier Beam",
             "subtitle": "Mutator",
-            "path": "mutators/purifierbeam",
+            "path": "mutators/purifier-beam",
             "text": "An enemy Purifier Beam moves across the map toward nearby player units.",
             "tokens": [
-                "44",
+                "purifier-beam",
                 "brutal+2",
                 "purifierbeam",
                 "mutator"
@@ -795,7 +783,6 @@
             "path": "mutators/random",
             "text": "A mutation is randomly assigned.",
             "tokens": [
-                "45",
                 "random",
                 "mutator"
             ]
@@ -804,10 +791,10 @@
             "type": "mutator",
             "title": "Scorched Earth",
             "subtitle": "Mutator",
-            "path": "mutators/scorchedearth",
+            "path": "mutators/scorched-earth",
             "text": "Enemy units set the terrain on fire upon death.",
             "tokens": [
-                "46",
+                "scorched-earth",
                 "brutal+2",
                 "scorchedearth",
                 "mutator"
@@ -817,10 +804,10 @@
             "type": "mutator",
             "title": "Self Destruction",
             "subtitle": "Mutator",
-            "path": "mutators/selfdestruction",
+            "path": "mutators/self-destruction",
             "text": "Enemy units explode and deal damage to friendly player units upon death.",
             "tokens": [
-                "47",
+                "self-destruction",
                 "brutal+3",
                 "selfdestruction",
                 "mutator"
@@ -830,10 +817,10 @@
             "type": "mutator",
             "title": "Sharing is Caring",
             "subtitle": "Mutator",
-            "path": "mutators/sharingiscaring",
+            "path": "mutators/sharing-is-caring",
             "text": "Supply is shared between you and your partner, and units from both armies contribute to your combined supply cap.",
             "tokens": [
-                "48",
+                "sharing-is-caring",
                 "sharingiscaring",
                 "mutator"
             ]
@@ -845,9 +832,8 @@
             "path": "mutators/shortsighted",
             "text": "Player units and structures have reduced vision range.",
             "tokens": [
-                "49",
-                "brutal+1",
                 "shortsighted",
+                "brutal+1",
                 "mutator"
             ]
         },
@@ -855,10 +841,10 @@
             "type": "mutator",
             "title": "Slim Pickings",
             "subtitle": "Mutator",
-            "path": "mutators/slimpickings",
+            "path": "mutators/slim-pickings",
             "text": "Player worker units gather resources at a reduced rate, but resource pickups spawn throughout the map.",
             "tokens": [
-                "50",
+                "slim-pickings",
                 "brutal+5",
                 "slimpickings",
                 "mutator"
@@ -868,10 +854,10 @@
             "type": "mutator",
             "title": "Speed Freaks",
             "subtitle": "Mutator",
-            "path": "mutators/speedfreaks",
+            "path": "mutators/speed-freaks",
             "text": "The enemy moves faster than any unit a player has at their disposal.",
             "tokens": [
-                "51",
+                "speed-freaks",
                 "brutal+2",
                 "speedfreaks",
                 "mutator"
@@ -881,10 +867,10 @@
             "type": "mutator",
             "title": "Temporal Field",
             "subtitle": "Mutator",
-            "path": "mutators/temporalfield",
+            "path": "mutators/temporal-field",
             "text": "Enemy Temporal Fields are periodically deployed throughout the map.",
             "tokens": [
-                "52",
+                "temporal-field",
                 "brutal+1",
                 "temporalfield",
                 "mutator"
@@ -894,10 +880,10 @@
             "type": "mutator",
             "title": "Time Warp",
             "subtitle": "Mutator",
-            "path": "mutators/timewarp",
+            "path": "mutators/time-warp",
             "text": "Enemy Time Warps are periodically deployed throughout the map.",
             "tokens": [
-                "53",
+                "time-warp",
                 "brutal+1",
                 "timewarp",
                 "mutator"
@@ -910,9 +896,8 @@
             "path": "mutators/transmutation",
             "text": "Enemy units have a chance to transform into more powerful units whenever they deal damage.",
             "tokens": [
-                "54",
-                "brutal+7",
                 "transmutation",
+                "brutal+7",
                 "mutator"
             ]
         },
@@ -920,10 +905,10 @@
             "type": "mutator",
             "title": "Trick or Treat",
             "subtitle": "Mutator",
-            "path": "mutators/trickortreat",
+            "path": "mutators/trick-or-treat",
             "text": "Civilians visit your Candy Bowl looking for treats, which are generated by spending minerals. If no treats are available, the civilians randomly transform into enemy units.",
             "tokens": [
-                "55",
+                "trick-or-treat",
                 "trickortreat",
                 "mutator"
             ]
@@ -932,10 +917,10 @@
             "type": "mutator",
             "title": "Turkey Shoot",
             "subtitle": "Mutator",
-            "path": "mutators/turkeyshoot",
+            "path": "mutators/turkey-shoot",
             "text": "Supply can only be generated by killing turkeys that wander throughout the map. Doing so may anger the turkeys that remain.",
             "tokens": [
-                "56",
+                "turkey-shoot",
                 "turkeyshoot",
                 "mutator"
             ]
@@ -947,9 +932,8 @@
             "path": "mutators/twister",
             "text": "Tornadoes move across the map, damaging and knocking back player units in their path.",
             "tokens": [
-                "57",
-                "brutal+2",
                 "twister",
+                "brutal+2",
                 "mutator"
             ]
         },
@@ -960,7 +944,6 @@
             "path": "mutators/vertigo",
             "text": "Your camera randomly changes positions.",
             "tokens": [
-                "58",
                 "vertigo",
                 "mutator"
             ]
@@ -969,10 +952,10 @@
             "type": "mutator",
             "title": "Void Reanimators",
             "subtitle": "Mutator",
-            "path": "mutators/voidreanimators",
+            "path": "mutators/void-reanimators",
             "text": "Void Reanimators wander the battlefield, bringing your enemies back to life.",
             "tokens": [
-                "59",
+                "void-reanimators",
                 "brutal+5",
                 "voidreanimators",
                 "mutator"
@@ -982,10 +965,10 @@
             "type": "mutator",
             "title": "Void Rifts",
             "subtitle": "Mutator",
-            "path": "mutators/voidrifts",
+            "path": "mutators/void-rifts",
             "text": "Void Rifts periodically appear in random locations and spawn enemy units until destroyed.",
             "tokens": [
-                "60",
+                "void-rifts",
                 "brutal+10",
                 "voidrifts",
                 "mutator"
@@ -995,10 +978,10 @@
             "type": "mutator",
             "title": "Walking Infested",
             "subtitle": "Mutator",
-            "path": "mutators/walkinginfested",
+            "path": "mutators/walking-infested",
             "text": "Every enemy unit that commanders destroy will spawn infested terrans. The more life a unit has, the more infested will rise from its corpse.",
             "tokens": [
-                "61",
+                "walking-infested",
                 "brutal+2",
                 "walkinginfested",
                 "mutator"
@@ -1008,10 +991,10 @@
             "type": "mutator",
             "title": "We Move Unseen",
             "subtitle": "Mutator",
-            "path": "mutators/wemoveunseen",
+            "path": "mutators/we-move-unseen",
             "text": "All enemy units are permanently cloaked.",
             "tokens": [
-                "62",
+                "we-move-unseen",
                 "brutal+3",
                 "wemoveunseen",
                 "mutator"
@@ -1021,10 +1004,10 @@
             "type": "mutator",
             "title": "Boom Bots",
             "subtitle": "Mutator",
-            "path": "mutators/boombots",
+            "path": "mutators/boom-bots",
             "text": "Uncaring automatons carry a nuclear payload toward your base. One player must discern the disarming sequence and the other player must enter it.",
             "tokens": [
-                "63",
+                "boom-bots",
                 "brutal+10",
                 "boombots",
                 "mutator"
@@ -12821,7 +12804,7 @@
                     },
                     "1": [
                         {
-                            "v": "1",
+                            "v": "afraid-of-the-dark",
                             "i": 0,
                             "n": 1
                         },
@@ -12855,7 +12838,7 @@
                     },
                     "1": [
                         {
-                            "v": "2",
+                            "v": "aggressive-deployment",
                             "i": 0,
                             "n": 1
                         },
@@ -12894,7 +12877,7 @@
                     },
                     "1": [
                         {
-                            "v": "3",
+                            "v": "alien-incubation",
                             "i": 0,
                             "n": 1
                         },
@@ -12933,7 +12916,7 @@
                     },
                     "1": [
                         {
-                            "v": "4",
+                            "v": "avenger",
                             "i": 0,
                             "n": 1
                         },
@@ -12943,13 +12926,8 @@
                             "n": 1
                         },
                         {
-                            "v": "avenger",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -12972,7 +12950,7 @@
                     },
                     "1": [
                         {
-                            "v": "5",
+                            "v": "barrier",
                             "i": 0,
                             "n": 1
                         },
@@ -12982,13 +12960,8 @@
                             "n": 1
                         },
                         {
-                            "v": "barrier",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -13011,7 +12984,7 @@
                     },
                     "1": [
                         {
-                            "v": "6",
+                            "v": "black-death",
                             "i": 0,
                             "n": 1
                         },
@@ -13050,7 +13023,7 @@
                     },
                     "1": [
                         {
-                            "v": "7",
+                            "v": "blizzard",
                             "i": 0,
                             "n": 1
                         },
@@ -13060,13 +13033,8 @@
                             "n": 1
                         },
                         {
-                            "v": "blizzard",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -13089,7 +13057,7 @@
                     },
                     "1": [
                         {
-                            "v": "8",
+                            "v": "chaos-studios",
                             "i": 0,
                             "n": 1
                         },
@@ -13123,7 +13091,7 @@
                     },
                     "1": [
                         {
-                            "v": "9",
+                            "v": "concussive-attacks",
                             "i": 0,
                             "n": 1
                         },
@@ -13162,7 +13130,7 @@
                     },
                     "1": [
                         {
-                            "v": "10",
+                            "v": "darkness",
                             "i": 0,
                             "n": 1
                         },
@@ -13172,13 +13140,8 @@
                             "n": 1
                         },
                         {
-                            "v": "darkness",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -13201,7 +13164,7 @@
                     },
                     "1": [
                         {
-                            "v": "11",
+                            "v": "diffusion",
                             "i": 0,
                             "n": 1
                         },
@@ -13211,13 +13174,8 @@
                             "n": 1
                         },
                         {
-                            "v": "diffusion",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -13240,7 +13198,7 @@
                     },
                     "1": [
                         {
-                            "v": "12",
+                            "v": "double-edged",
                             "i": 0,
                             "n": 1
                         },
@@ -13279,7 +13237,7 @@
                     },
                     "1": [
                         {
-                            "v": "13",
+                            "v": "eminent-domain",
                             "i": 0,
                             "n": 1
                         },
@@ -13318,7 +13276,7 @@
                     },
                     "1": [
                         {
-                            "v": "14",
+                            "v": "evasive-maneuvers",
                             "i": 0,
                             "n": 1
                         },
@@ -13357,7 +13315,7 @@
                     },
                     "1": [
                         {
-                            "v": "15",
+                            "v": "fatal-attraction",
                             "i": 0,
                             "n": 1
                         },
@@ -13396,7 +13354,7 @@
                     },
                     "1": [
                         {
-                            "v": "16",
+                            "v": "fear",
                             "i": 0,
                             "n": 1
                         },
@@ -13406,13 +13364,8 @@
                             "n": 1
                         },
                         {
-                            "v": "fear",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -13435,18 +13388,13 @@
                     },
                     "1": [
                         {
-                            "v": "17",
+                            "v": "fireworks",
                             "i": 0,
                             "n": 1
                         },
                         {
-                            "v": "fireworks",
-                            "i": 1,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 2,
+                            "i": 1,
                             "n": 1
                         }
                     ],
@@ -13469,7 +13417,7 @@
                     },
                     "1": [
                         {
-                            "v": "18",
+                            "v": "gift-exchange",
                             "i": 0,
                             "n": 1
                         },
@@ -13503,7 +13451,7 @@
                     },
                     "1": [
                         {
-                            "v": "19",
+                            "v": "going-nuclear",
                             "i": 0,
                             "n": 1
                         },
@@ -13542,7 +13490,7 @@
                     },
                     "1": [
                         {
-                            "v": "20",
+                            "v": "hardened-will",
                             "i": 0,
                             "n": 1
                         },
@@ -13581,7 +13529,7 @@
                     },
                     "1": [
                         {
-                            "v": "21",
+                            "v": "heroes-from-the-storm",
                             "i": 0,
                             "n": 1
                         },
@@ -13620,7 +13568,7 @@
                     },
                     "1": [
                         {
-                            "v": "22",
+                            "v": "inspiration",
                             "i": 0,
                             "n": 1
                         },
@@ -13630,13 +13578,8 @@
                             "n": 1
                         },
                         {
-                            "v": "inspiration",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -13659,7 +13602,7 @@
                     },
                     "1": [
                         {
-                            "v": "23",
+                            "v": "just-die",
                             "i": 0,
                             "n": 1
                         },
@@ -13698,7 +13641,7 @@
                     },
                     "1": [
                         {
-                            "v": "24",
+                            "v": "kill-bots",
                             "i": 0,
                             "n": 1
                         },
@@ -13737,7 +13680,7 @@
                     },
                     "1": [
                         {
-                            "v": "25",
+                            "v": "laser-drill",
                             "i": 0,
                             "n": 1
                         },
@@ -13776,7 +13719,7 @@
                     },
                     "1": [
                         {
-                            "v": "26",
+                            "v": "lava-burst",
                             "i": 0,
                             "n": 1
                         },
@@ -13815,7 +13758,7 @@
                     },
                     "1": [
                         {
-                            "v": "27",
+                            "v": "life-leech",
                             "i": 0,
                             "n": 1
                         },
@@ -13854,7 +13797,7 @@
                     },
                     "1": [
                         {
-                            "v": "28",
+                            "v": "long-range",
                             "i": 0,
                             "n": 1
                         },
@@ -13893,7 +13836,7 @@
                     },
                     "1": [
                         {
-                            "v": "29",
+                            "v": "lucky-envelopes",
                             "i": 0,
                             "n": 1
                         },
@@ -13927,7 +13870,7 @@
                     },
                     "1": [
                         {
-                            "v": "30",
+                            "v": "mag-nificent",
                             "i": 0,
                             "n": 1
                         },
@@ -13966,7 +13909,7 @@
                     },
                     "1": [
                         {
-                            "v": "31",
+                            "v": "micro-transactions",
                             "i": 0,
                             "n": 1
                         },
@@ -14005,7 +13948,7 @@
                     },
                     "1": [
                         {
-                            "v": "32",
+                            "v": "mineral-shields",
                             "i": 0,
                             "n": 1
                         },
@@ -14044,7 +13987,7 @@
                     },
                     "1": [
                         {
-                            "v": "33",
+                            "v": "minesweeper",
                             "i": 0,
                             "n": 1
                         },
@@ -14054,13 +13997,8 @@
                             "n": 1
                         },
                         {
-                            "v": "minesweeper",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -14083,7 +14021,7 @@
                     },
                     "1": [
                         {
-                            "v": "34",
+                            "v": "missile-command",
                             "i": 0,
                             "n": 1
                         },
@@ -14122,7 +14060,7 @@
                     },
                     "1": [
                         {
-                            "v": "35",
+                            "v": "moment-of-silence",
                             "i": 0,
                             "n": 1
                         },
@@ -14161,7 +14099,7 @@
                     },
                     "1": [
                         {
-                            "v": "36",
+                            "v": "mutually-assured-destruction",
                             "i": 0,
                             "n": 1
                         },
@@ -14200,7 +14138,7 @@
                     },
                     "1": [
                         {
-                            "v": "37",
+                            "v": "naughty-list",
                             "i": 0,
                             "n": 1
                         },
@@ -14234,7 +14172,7 @@
                     },
                     "1": [
                         {
-                            "v": "38",
+                            "v": "orbital-strike",
                             "i": 0,
                             "n": 1
                         },
@@ -14273,7 +14211,7 @@
                     },
                     "1": [
                         {
-                            "v": "39",
+                            "v": "outbreak",
                             "i": 0,
                             "n": 1
                         },
@@ -14283,13 +14221,8 @@
                             "n": 1
                         },
                         {
-                            "v": "outbreak",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -14312,7 +14245,7 @@
                     },
                     "1": [
                         {
-                            "v": "40",
+                            "v": "photon-overload",
                             "i": 0,
                             "n": 1
                         },
@@ -14351,7 +14284,7 @@
                     },
                     "1": [
                         {
-                            "v": "41",
+                            "v": "polarity",
                             "i": 0,
                             "n": 1
                         },
@@ -14361,13 +14294,8 @@
                             "n": 1
                         },
                         {
-                            "v": "polarity",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -14390,7 +14318,7 @@
                     },
                     "1": [
                         {
-                            "v": "42",
+                            "v": "power-overwhelming",
                             "i": 0,
                             "n": 1
                         },
@@ -14429,7 +14357,7 @@
                     },
                     "1": [
                         {
-                            "v": "43",
+                            "v": "propagators",
                             "i": 0,
                             "n": 1
                         },
@@ -14439,13 +14367,8 @@
                             "n": 1
                         },
                         {
-                            "v": "propagators",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -14468,7 +14391,7 @@
                     },
                     "1": [
                         {
-                            "v": "44",
+                            "v": "purifier-beam",
                             "i": 0,
                             "n": 1
                         },
@@ -14507,18 +14430,13 @@
                     },
                     "1": [
                         {
-                            "v": "45",
+                            "v": "random",
                             "i": 0,
                             "n": 1
                         },
                         {
-                            "v": "random",
-                            "i": 1,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 2,
+                            "i": 1,
                             "n": 1
                         }
                     ],
@@ -14541,7 +14459,7 @@
                     },
                     "1": [
                         {
-                            "v": "46",
+                            "v": "scorched-earth",
                             "i": 0,
                             "n": 1
                         },
@@ -14580,7 +14498,7 @@
                     },
                     "1": [
                         {
-                            "v": "47",
+                            "v": "self-destruction",
                             "i": 0,
                             "n": 1
                         },
@@ -14619,7 +14537,7 @@
                     },
                     "1": [
                         {
-                            "v": "48",
+                            "v": "sharing-is-caring",
                             "i": 0,
                             "n": 1
                         },
@@ -14653,7 +14571,7 @@
                     },
                     "1": [
                         {
-                            "v": "49",
+                            "v": "shortsighted",
                             "i": 0,
                             "n": 1
                         },
@@ -14663,13 +14581,8 @@
                             "n": 1
                         },
                         {
-                            "v": "shortsighted",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -14692,7 +14605,7 @@
                     },
                     "1": [
                         {
-                            "v": "50",
+                            "v": "slim-pickings",
                             "i": 0,
                             "n": 1
                         },
@@ -14731,7 +14644,7 @@
                     },
                     "1": [
                         {
-                            "v": "51",
+                            "v": "speed-freaks",
                             "i": 0,
                             "n": 1
                         },
@@ -14770,7 +14683,7 @@
                     },
                     "1": [
                         {
-                            "v": "52",
+                            "v": "temporal-field",
                             "i": 0,
                             "n": 1
                         },
@@ -14809,7 +14722,7 @@
                     },
                     "1": [
                         {
-                            "v": "53",
+                            "v": "time-warp",
                             "i": 0,
                             "n": 1
                         },
@@ -14848,7 +14761,7 @@
                     },
                     "1": [
                         {
-                            "v": "54",
+                            "v": "transmutation",
                             "i": 0,
                             "n": 1
                         },
@@ -14858,13 +14771,8 @@
                             "n": 1
                         },
                         {
-                            "v": "transmutation",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -14887,7 +14795,7 @@
                     },
                     "1": [
                         {
-                            "v": "55",
+                            "v": "trick-or-treat",
                             "i": 0,
                             "n": 1
                         },
@@ -14921,7 +14829,7 @@
                     },
                     "1": [
                         {
-                            "v": "56",
+                            "v": "turkey-shoot",
                             "i": 0,
                             "n": 1
                         },
@@ -14955,7 +14863,7 @@
                     },
                     "1": [
                         {
-                            "v": "57",
+                            "v": "twister",
                             "i": 0,
                             "n": 1
                         },
@@ -14965,13 +14873,8 @@
                             "n": 1
                         },
                         {
-                            "v": "twister",
-                            "i": 2,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 3,
+                            "i": 2,
                             "n": 1
                         }
                     ],
@@ -14994,18 +14897,13 @@
                     },
                     "1": [
                         {
-                            "v": "58",
+                            "v": "vertigo",
                             "i": 0,
                             "n": 1
                         },
                         {
-                            "v": "vertigo",
-                            "i": 1,
-                            "n": 1
-                        },
-                        {
                             "v": "mutator",
-                            "i": 2,
+                            "i": 1,
                             "n": 1
                         }
                     ],
@@ -15028,7 +14926,7 @@
                     },
                     "1": [
                         {
-                            "v": "59",
+                            "v": "void-reanimators",
                             "i": 0,
                             "n": 1
                         },
@@ -15067,7 +14965,7 @@
                     },
                     "1": [
                         {
-                            "v": "60",
+                            "v": "void-rifts",
                             "i": 0,
                             "n": 1
                         },
@@ -15106,7 +15004,7 @@
                     },
                     "1": [
                         {
-                            "v": "61",
+                            "v": "walking-infested",
                             "i": 0,
                             "n": 1
                         },
@@ -15145,7 +15043,7 @@
                     },
                     "1": [
                         {
-                            "v": "62",
+                            "v": "we-move-unseen",
                             "i": 0,
                             "n": 1
                         },
@@ -15184,7 +15082,7 @@
                     },
                     "1": [
                         {
-                            "v": "63",
+                            "v": "boom-bots",
                             "i": 0,
                             "n": 1
                         },

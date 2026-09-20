@@ -51,8 +51,8 @@ require_once __DIR__ . "/../../../../includes/wrapper.php";
                     </div>
                     <div class="points">(3)</div>
                     <div class="muts">
-                        <div class="icons"><img class="tooltip" src="/images/mutators/orbitalstrike.png" alt="Orbital Strike"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/speedfreaks.png" alt="Speed Freaks"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/orbital-strike.png" alt="Orbital Strike"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/speed-freaks.png" alt="Speed Freaks"></div>
                     </div>
                     <div class="map"><img class="tooltip mission" src="/images/missionthumbnails/oblivionexpress.png" alt="Oblivion Express"><img class="tooltip portrait" src="/images/commanderportraits/alarakportrait.png" alt="Alarak"><img class="tooltip portrait" src="/images/commanderportraits/vorazunportrait.png" alt="Vorazun"></div>
                     <div class="powers"></div>
@@ -65,7 +65,7 @@ require_once __DIR__ . "/../../../../includes/wrapper.php";
                     <div class="points">(3)</div>
                     <div class="muts">
                         <div class="icons"><img class="tooltip" src="/images/mutators/fear.png" alt="Fear"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/lavaburst.png" alt="Lava Burst"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/lava-burst.png" alt="Lava Burst"></div>
                     </div>
                     <div class="map"><img class="tooltip mission" src="/images/missionthumbnails/oblivionexpress.png" alt="Oblivion Express"><img class="tooltip portrait" src="/images/commanderportraits/dehakaportrait.png" alt="Dehaka"><img class="tooltip portrait" src="/images/commanderportraits/novaportrait.png" alt="Nova"></div>
                     <div class="powers"></div>
@@ -85,10 +85,10 @@ require_once __DIR__ . "/../../../../includes/wrapper.php";
                     </div>
                     <div class="points">(6)</div>
                     <div class="muts">
-                        <div class="icons"><img class="tooltip" src="/images/mutators/microtransactions.png" alt="Micro Transactions"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/mineralshields.png" alt="Mineral Shields"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/slimpickings.png" alt="Slim Pickings"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/temporalfield.png" alt="Temporal Field"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/micro-transactions.png" alt="Micro Transactions"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/mineral-shields.png" alt="Mineral Shields"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/slim-pickings.png" alt="Slim Pickings"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/temporal-field.png" alt="Temporal Field"></div>
                     </div>
                     <div class="map"><img class="tooltip mission" src="/images/missionthumbnails/minerevacuation.png" alt="Miner Evacuation"><img class="tooltip portrait" src="/images/commanderportraits/novaportrait.png" alt="Nova"><img class="tooltip portrait" src="/images/commanderportraits/stukovportrait.png" alt="Stukov"></div>
                     <div class="powers"></div>
@@ -100,9 +100,9 @@ require_once __DIR__ . "/../../../../includes/wrapper.php";
                 <td class="mutset2">
                     <div class="points">(6)</div>
                     <div class="muts">
-                        <div class="icons"><img class="tooltip" src="/images/mutators/fatalattraction.png" alt="Fatal Attraction"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/purifierbeam.png" alt="Purifier Beam"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/selfdestruction.png" alt="Self Destruction"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/fatal-attraction.png" alt="Fatal Attraction"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/purifier-beam.png" alt="Purifier Beam"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/self-destruction.png" alt="Self Destruction"></div>
                     </div>
                     <div class="map"><img class="tooltip mission" src="/images/missionthumbnails/voidlaunch.png" alt="Void Launch"><img class="tooltip portrait" src="/images/commanderportraits/alarakportrait.png" alt="Alarak"><img class="tooltip portrait" src="/images/commanderportraits/zagaraportrait.png" alt="Zagara"></div>
                     <div class="powers"></div>
@@ -122,10 +122,10 @@ require_once __DIR__ . "/../../../../includes/wrapper.php";
                     </div>
                     <div class="points">(9)</div>
                     <div class="muts">
-                        <div class="icons"><img class="tooltip" src="/images/mutators/aggressivedeployment.png" alt="Aggressive Deployment"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/alienincubation.png" alt="Alien Incubation"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/blackdeath.png" alt="Black Death"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/walkinginfested.png" alt="Walking Infested"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/aggressive-deployment.png" alt="Aggressive Deployment"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/alien-incubation.png" alt="Alien Incubation"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/black-death.png" alt="Black Death"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/walking-infested.png" alt="Walking Infested"></div>
                     </div>
                     <div class="map"><img class="tooltip mission" src="/images/missionthumbnails/thevermillionproblem.png" alt="The Vermillion Problem"><img class="tooltip portrait" src="/images/commanderportraits/tychusportrait.png" alt="Tychus"><img class="tooltip portrait" src="/images/commanderportraits/zagaraportrait.png" alt="Zagara"></div>
                     <div class="powers"></div>
@@ -139,7 +139,7 @@ require_once __DIR__ . "/../../../../includes/wrapper.php";
                     <div class="muts">
                         <div class="icons"><img class="tooltip" src="/images/mutators/darkness.png" alt="Darkness"></div>
                         <div class="icons"><img class="tooltip" src="/images/mutators/propagators.png" alt="Propagators"></div>
-                        <div class="icons"><img class="tooltip" src="/images/mutators/speedfreaks.png" alt="Speed Freaks"></div>
+                        <div class="icons"><img class="tooltip" src="/images/mutators/speed-freaks.png" alt="Speed Freaks"></div>
                         <div class="icons"><img class="tooltip" src="/images/mutators/twister.png" alt="Twister"></div>
                     </div>
                     <div class="map"><img class="tooltip mission" src="/images/missionthumbnails/thevermillionproblem.png" alt="The Vermillion Problem"><img class="tooltip portrait" src="/images/commanderportraits/swannportrait.png" alt="Swann"><img class="tooltip portrait" src="/images/commanderportraits/vorazunportrait.png" alt="Vorazun"></div>

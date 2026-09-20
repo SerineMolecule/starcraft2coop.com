@@ -53,6 +53,54 @@ Redirect 301 /contact /about/contact
 # 28-mar-2026 menu reorganization
 Redirect 302 /resources/stats /about/stats
 
+# 02-aug-2026 human-ish ids for mutators
+Redirect 302 /mutators/afraidofthedark /mutators/afraid-of-the-dark
+Redirect 302 /mutators/aggressivedeployment /mutators/aggressive-deployment
+Redirect 302 /mutators/alienincubation /mutators/alien-incubation
+Redirect 302 /mutators/blackdeath /mutators/black-death
+Redirect 302 /mutators/boombots /mutators/boom-bots
+Redirect 302 /mutators/chaosstudios /mutators/chaos-studios
+Redirect 302 /mutators/concussiveattacks /mutators/concussive-attacks
+Redirect 302 /mutators/doubleedged /mutators/double-edged
+Redirect 302 /mutators/eminentdomain /mutators/eminent-domain
+Redirect 302 /mutators/evasivemaneuvers /mutators/evasive-maneuvers
+Redirect 302 /mutators/fatalattraction /mutators/fatal-attraction
+Redirect 302 /mutators/giftexchange /mutators/gift-exchange
+Redirect 302 /mutators/goingnuclear /mutators/going-nuclear
+Redirect 302 /mutators/hardenedwill /mutators/hardened-will
+Redirect 302 /mutators/heroesfromthestorm /mutators/heroes-from-the-storm
+Redirect 302 /mutators/justdie /mutators/just-die
+Redirect 302 /mutators/killbots /mutators/kill-bots
+Redirect 302 /mutators/laserdrill /mutators/laser-drill
+Redirect 302 /mutators/lavaburst /mutators/lava-burst
+Redirect 302 /mutators/lifeleech /mutators/life-leech
+Redirect 302 /mutators/longrange /mutators/long-range
+Redirect 302 /mutators/luckyenvelopes /mutators/lucky-envelopes
+Redirect 302 /mutators/magnificent /mutators/mag-nificent
+Redirect 302 /mutators/microtransactions /mutators/micro-transactions
+Redirect 302 /mutators/mineralshields /mutators/mineral-shields
+Redirect 302 /mutators/missilecommand /mutators/missile-command
+Redirect 302 /mutators/momentofsilence /mutators/moment-of-silence
+Redirect 302 /mutators/mutuallyassureddestruction /mutators/mutually-assured-destruction
+Redirect 302 /mutators/naughtylist /mutators/naughty-list
+Redirect 302 /mutators/orbitalstrike /mutators/orbital-strike
+Redirect 302 /mutators/photonoverload /mutators/photon-overload
+Redirect 302 /mutators/poweroverwhelming /mutators/power-overwhelming
+Redirect 302 /mutators/purifierbeam /mutators/purifier-beam
+Redirect 302 /mutators/scorchedearth /mutators/scorched-earth
+Redirect 302 /mutators/selfdestruction /mutators/self-destruction
+Redirect 302 /mutators/sharingiscaring /mutators/sharing-is-caring
+Redirect 302 /mutators/slimpickings /mutators/slim-pickings
+Redirect 302 /mutators/speedfreaks /mutators/speed-freaks
+Redirect 302 /mutators/temporalfield /mutators/temporal-field
+Redirect 302 /mutators/timewarp /mutators/time-warp
+Redirect 302 /mutators/trickortreat /mutators/trick-or-treat
+Redirect 302 /mutators/turkeyshoot /mutators/turkey-shoot
+Redirect 302 /mutators/voidreanimators /mutators/void-reanimators
+Redirect 302 /mutators/voidrifts /mutators/void-rifts
+Redirect 302 /mutators/walkinginfested /mutators/walking-infested
+Redirect 302 /mutators/wemoveunseen /mutators/we-move-unseen
+
 # we probably don't need hotlink protection; server can handle hotlinking
 
 # RewriteCond %{HTTP_REFERER} !^$

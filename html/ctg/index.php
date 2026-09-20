@@ -158,6 +158,10 @@
     </div>
     <script>
         var mutatorsList = JSON.parse($("#mutatorsList").text());
+        var mutatorsById = {};
+        for (var i = 0; i < mutatorsList.length; i++) {
+            mutatorsById[mutatorsList[i].mutatorid] = mutatorsList[i];
+        }
         var mutationsList = JSON.parse($("#mutationsList").text());
         $(".mutation").change(function(){
             var elem = $(this).parent();
@@ -169,30 +173,33 @@
 
             var totalabom = 0;
             if(selectedMutation.mut01 !=null){
-                var mutationFile = "/images/mutators/"+ mutatorsList[selectedMutation.mut01-1].mutatorname.replace(/ /g,'').toLowerCase() +".png";
-                totalabom+=parseInt(mutatorsList[selectedMutation.mut01-1].abomination);
+                var mutator1 = mutatorsById[selectedMutation.mut01];
+                var mutationFile = "/images/mutators/"+ mutator1.mutatorid +".png";
+                totalabom+=parseInt(mutator1.abomination);
                 elem.find(".mut1icon").attr('src', mutationFile);
-                elem.find(".mut1desc").html("<b class='mutname'>" + mutatorsList[selectedMutation.mut01-1].mutatorname + "</b><br>" + mutatorsList[selectedMutation.mut01-1].mutatordescription);
+                elem.find(".mut1desc").html("<b class='mutname'>" + mutator1.mutatorname + "</b><br>" + mutator1.mutatordescription);
             }
             else{
                 elem.find(".mut1icon").attr('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");
                 elem.find(".mut1desc").text("");
             }
             if(selectedMutation.mut02 !=null){
-                var mutationFile = "/images/mutators/"+ mutatorsList[selectedMutation.mut02-1].mutatorname.replace(/ /g,'').toLowerCase() +".png";
+                var mutator2 = mutatorsById[selectedMutation.mut02];
+                var mutationFile = "/images/mutators/"+ mutator2.mutatorid +".png";
                 elem.find(".mut2icon").attr('src', mutationFile);
-                elem.find(".mut2desc").html("<b class='mutname'>" + mutatorsList[selectedMutation.mut02-1].mutatorname + "</b><br>" + mutatorsList[selectedMutation.mut02-1].mutatordescription);
-                totalabom+=parseInt(mutatorsList[selectedMutation.mut02-1].abomination);
+                elem.find(".mut2desc").html("<b class='mutname'>" + mutator2.mutatorname + "</b><br>" + mutator2.mutatordescription);
+                totalabom+=parseInt(mutator2.abomination);
             }
             else{
                 elem.find(".mut2icon").attr('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");
                 elem.find(".mut2desc").text("");
             }
             if(selectedMutation.mut03 !=null){
-                var mutationFile = "/images/mutators/"+ mutatorsList[selectedMutation.mut03-1].mutatorname.replace(/ /g,'').toLowerCase() +".png";
+                var mutator3 = mutatorsById[selectedMutation.mut03];
+                var mutationFile = "/images/mutators/"+ mutator3.mutatorid +".png";
                 elem.find(".mut3icon").attr('src', mutationFile);
-                elem.find(".mut3desc").html("<b class='mutname'>" + mutatorsList[selectedMutation.mut03-1].mutatorname + "</b><br>" + mutatorsList[selectedMutation.mut03-1].mutatordescription);
-                totalabom+=parseInt(mutatorsList[selectedMutation.mut03-1].abomination);
+                elem.find(".mut3desc").html("<b class='mutname'>" + mutator3.mutatorname + "</b><br>" + mutator3.mutatordescription);
+                totalabom+=parseInt(mutator3.abomination);
             }
             else{
                 elem.find(".mut3icon").attr('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");

@@ -33,7 +33,7 @@
                 "mut01": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -44,7 +44,7 @@
                 "mut02": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -54,7 +54,7 @@
                 "mut03": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -64,7 +64,7 @@
                 "mut04": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -74,7 +74,7 @@
                 "mut05": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -84,7 +84,7 @@
                 "mut06": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -94,7 +94,7 @@
                 "mut07": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -104,7 +104,7 @@
                 "mut08": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -114,7 +114,7 @@
                 "mut09": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -124,7 +124,7 @@
                 "mut10": {
                     "anyOf": [
                         {
-                            "$ref": "#/definitions/PositiveInteger"
+                            "$ref": "#/definitions/MutatorId"
                         },
                         {
                             "type": "null"
@@ -160,6 +160,13 @@
         "PositiveInteger": {
             "type": "integer",
             "minimum": 1
+        },
+        "MutatorId": {
+            "$ref": "#/definitions/LowercaseHyphen"
+        },
+        "LowercaseHyphen": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
         }
     }
 }

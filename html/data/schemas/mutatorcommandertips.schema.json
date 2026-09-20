@@ -15,7 +15,7 @@
                     "$ref": "#/definitions/PositiveInteger"
                 },
                 "mutator": {
-                    "$ref": "#/definitions/PositiveInteger"
+                    "$ref": "#/definitions/MutatorId"
                 },
                 "commander": {
                     "type": "string"
@@ -42,6 +42,13 @@
         "PositiveInteger": {
             "type": "integer",
             "minimum": 1
+        },
+        "MutatorId": {
+            "$ref": "#/definitions/LowercaseHyphen"
+        },
+        "LowercaseHyphen": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
         }
     }
 }

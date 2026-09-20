@@ -10,7 +10,7 @@ function homeMissionImageFilename(string $mission): string
 
 function homeMutationMutatorLink(array $mutator): string
 {
-    $filename = token($mutator['mutatorname']);
+    $filename = $mutator['mutatorid'];
     return "<a href=\"/mutators/" . $filename . "\"><img class=\"miniIcon\" src=\"/images/mutators/" .
         $filename . ".png\" alt=\"\">" . $mutator['mutatorname'] . "</a>";
 }
@@ -20,7 +20,8 @@ function homeMutationMutators(array $mutation, array $mutators): string
     $links = [];
     foreach (["mut01", "mut02", "mut03"] as $mutatorKey) {
         if ($mutation[$mutatorKey]) {
-            $links[] = homeMutationMutatorLink($mutators[intval($mutation[$mutatorKey]) - 1]);
+            $mut = get_mutator($mutation[$mutatorKey], $mutators);
+            $links[] = homeMutationMutatorLink($mut);
         } else {
             $links[] = '';
         }

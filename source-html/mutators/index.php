@@ -45,7 +45,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     $mutators = get_mutators();
     usort($mutators, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     foreach ($mutators as $mutator) {
-        $filename = strtolower(str_replace("-", '', str_replace(' ', '', $mutator['mutatorname'])));
+        $filename = $mutator['mutatorid'];
         echo '<li><a href="/mutators/' . $filename . '"><img src="/images/mutators/' . $filename . '.png" alt="" />' . $mutator['mutatorname'] . '</a></li>' . "\n";
     }
     ?>
@@ -56,7 +56,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         </tr>
     <?php
     foreach ($mutators as $mutator) {
-        $filename = strtolower(str_replace("-", '', str_replace(' ', '', $mutator['mutatorname'])));
+        $filename = $mutator['mutatorid'];
         echo '<tr><td style="white-space: nowrap"><a href="/mutators/' . $filename . '" data-no-tooltip><img src="/images/mutators/' . $filename . '.png" alt="" class="miniIcon" />' . $mutator['mutatorname'] . '</a></td><td>' . $mutator['mutatordescription'] . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['customusable'] ? '⚙️' : '') . '</td><td style="font-size: 1.5em;text-align: center">' . ($mutator['chaosrollable'] ? '🎲' : '') . '</td></tr>' . "\n";
     }
     ?>

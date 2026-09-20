@@ -3,87 +3,87 @@
     "mutationid": 1,
     "mutation": "Train of the Dead",
     "map": "Oblivion Express",
-    "mut01": 10,
-    "mut02": 39,
-    "mut03": 61
+    "mut01": "darkness",
+    "mut02": "outbreak",
+    "mut03": "walking-infested"
   },
   {
     "mutationid": 2,
     "mutation": "First Strike",
     "map": "Chain of Ascension",
-    "mut01": 25,
-    "mut02": 28,
-    "mut03": 49
+    "mut01": "laser-drill",
+    "mut02": "long-range",
+    "mut03": "shortsighted"
   },
   {
     "mutationid": 3,
     "mutation": "Time Lock",
     "map": "Lock and Load",
-    "mut01": 30,
-    "mut02": 51,
-    "mut03": 53
+    "mut01": "mag-nificent",
+    "mut02": "speed-freaks",
+    "mut03": "time-warp"
   },
   {
     "mutationid": 4,
     "mutation": "Bad Weather",
     "map": "Rifts to Korhal",
-    "mut01": 57,
-    "mut02": 60,
+    "mut01": "twister",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 5,
     "mutation": "Whiteout",
     "map": "Void Launch",
-    "mut01": 7,
-    "mut02": 50,
+    "mut01": "blizzard",
+    "mut02": "slim-pickings",
     "mut03": null
   },
   {
     "mutationid": 6,
     "mutation": "War Is Hell",
     "map": "Void Thrashing",
-    "mut01": 14,
-    "mut02": 26,
-    "mut03": 46
+    "mut01": "evasive-maneuvers",
+    "mut02": "lava-burst",
+    "mut03": "scorched-earth"
   },
   {
     "mutationid": 7,
     "mutation": "Temple of Pain",
     "map": "Temple of the Past",
-    "mut01": 4,
-    "mut02": 5,
-    "mut03": 32
+    "mut01": "avenger",
+    "mut02": "barrier",
+    "mut03": "mineral-shields"
   },
   {
     "mutationid": 8,
     "mutation": "Spear of Your Doom",
     "map": "Lock and Load",
-    "mut01": 38,
-    "mut02": 44,
-    "mut03": 52
+    "mut01": "orbital-strike",
+    "mut02": "purifier-beam",
+    "mut03": "temporal-field"
   },
   {
     "mutationid": 9,
     "mutation": "Special Delivery",
     "map": "Void Launch",
-    "mut01": 2,
-    "mut02": 3,
-    "mut03": 47
+    "mut01": "aggressive-deployment",
+    "mut02": "alien-incubation",
+    "mut03": "self-destruction"
   },
   {
     "mutationid": 10,
     "mutation": "Urban Warfare",
     "map": "Rifts to Korhal",
-    "mut01": 33,
-    "mut02": 40,
-    "mut03": 62
+    "mut01": "minesweeper",
+    "mut02": "photon-overload",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 11,
     "mutation": "Wheel of Misfortune",
     "map": "Void Thrashing",
-    "mut01": 8,
+    "mut01": "chaos-studios",
     "mut02": null,
     "mut03": null
   },
@@ -91,95 +91,95 @@
     "mutationid": 12,
     "mutation": "Perfect Storm",
     "map": "Chain of Ascension",
-    "mut01": 7,
-    "mut02": 49,
-    "mut03": 57
+    "mut01": "blizzard",
+    "mut02": "shortsighted",
+    "mut03": "twister"
   },
   {
     "mutationid": 13,
     "mutation": "Boom Town",
     "map": "Oblivion Express",
-    "mut01": 16,
-    "mut02": 19,
-    "mut03": 47
+    "mut01": "fear",
+    "mut02": "going-nuclear",
+    "mut03": "self-destruction"
   },
   {
     "mutationid": 14,
     "mutation": "Dark Ritual",
     "map": "Temple of the Past",
-    "mut01": 42,
-    "mut02": 51,
+    "mut01": "power-overwhelming",
+    "mut02": "speed-freaks",
     "mut03": null
   },
   {
     "mutationid": 15,
     "mutation": "Out of Order",
     "map": "The Vermillion Problem",
-    "mut01": 10,
-    "mut02": 31,
-    "mut03": 53
+    "mut01": "darkness",
+    "mut02": "micro-transactions",
+    "mut03": "time-warp"
   },
   {
     "mutationid": 16,
     "mutation": "Burning Legion",
     "map": "Lock and Load",
-    "mut01": 4,
-    "mut02": 46,
-    "mut03": 60
+    "mut01": "avenger",
+    "mut02": "scorched-earth",
+    "mut03": "void-rifts"
   },
   {
     "mutationid": 17,
     "mutation": "Triple Threat",
     "map": "Void Launch",
-    "mut01": 25,
-    "mut02": 38,
-    "mut03": 39
+    "mut01": "laser-drill",
+    "mut02": "orbital-strike",
+    "mut03": "outbreak"
   },
   {
     "mutationid": 18,
     "mutation": "World on Fire",
     "map": "The Vermillion Problem",
-    "mut01": 19,
-    "mut02": 34,
-    "mut03": 44
+    "mut01": "going-nuclear",
+    "mut02": "missile-command",
+    "mut03": "purifier-beam"
   },
   {
     "mutationid": 19,
     "mutation": "Flipping Out",
     "map": "Chain of Ascension",
-    "mut01": 14,
-    "mut02": 16,
-    "mut03": 58
+    "mut01": "evasive-maneuvers",
+    "mut02": "fear",
+    "mut03": "vertigo"
   },
   {
     "mutationid": 20,
     "mutation": "Growing Threat",
     "map": "Mist Opportunities",
-    "mut01": 3,
-    "mut02": 36,
-    "mut03": 54
+    "mut01": "alien-incubation",
+    "mut02": "mutually-assured-destruction",
+    "mut03": "transmutation"
   },
   {
     "mutationid": 21,
     "mutation": "Miner Concerns",
     "map": "Rifts to Korhal",
-    "mut01": 16,
-    "mut02": 30,
-    "mut03": 50
+    "mut01": "fear",
+    "mut02": "mag-nificent",
+    "mut03": "slim-pickings"
   },
   {
     "mutationid": 22,
     "mutation": "Diplomatic Immunity",
     "map": "Oblivion Express",
-    "mut01": 5,
-    "mut02": 14,
-    "mut03": 41
+    "mut01": "barrier",
+    "mut02": "evasive-maneuvers",
+    "mut03": "polarity"
   },
   {
     "mutationid": 23,
     "mutation": "Wheel of Misfortune",
     "map": "Lock and Load",
-    "mut01": 8,
+    "mut01": "chaos-studios",
     "mut02": null,
     "mut03": null
   },
@@ -187,143 +187,143 @@
     "mutationid": 24,
     "mutation": "Breath of Destruction",
     "map": "Mist Opportunities",
-    "mut01": 2,
-    "mut02": 4,
-    "mut03": 51
+    "mut01": "aggressive-deployment",
+    "mut02": "avenger",
+    "mut03": "speed-freaks"
   },
   {
     "mutationid": 25,
     "mutation": "Fright Night",
     "map": "Rifts to Korhal",
-    "mut01": 1,
-    "mut02": 55,
+    "mut01": "afraid-of-the-dark",
+    "mut02": "trick-or-treat",
     "mut03": null
   },
   {
     "mutationid": 26,
     "mutation": "Conflagration",
     "map": "Temple of the Past",
-    "mut01": 3,
-    "mut02": 46,
-    "mut03": 61
+    "mut01": "alien-incubation",
+    "mut02": "scorched-earth",
+    "mut03": "walking-infested"
   },
   {
     "mutationid": 27,
     "mutation": "Explosive Results",
     "map": "Void Thrashing",
-    "mut01": 19,
-    "mut02": 36,
-    "mut03": 47
+    "mut01": "going-nuclear",
+    "mut02": "mutually-assured-destruction",
+    "mut03": "self-destruction"
   },
   {
     "mutationid": 28,
     "mutation": "Fowl Play",
     "map": "Oblivion Express",
-    "mut01": 48,
-    "mut02": 56,
+    "mut01": "sharing-is-caring",
+    "mut02": "turkey-shoot",
     "mut03": null
   },
   {
     "mutationid": 29,
     "mutation": "Power Trip",
     "map": "The Vermillion Problem",
-    "mut01": 28,
-    "mut02": 40,
-    "mut03": 42
+    "mut01": "long-range",
+    "mut02": "photon-overload",
+    "mut03": "power-overwhelming"
   },
   {
     "mutationid": 30,
     "mutation": "Shir Chaos",
     "map": "Chain of Ascension",
-    "mut01": 23,
-    "mut02": 39,
-    "mut03": 51
+    "mut01": "just-die",
+    "mut02": "outbreak",
+    "mut03": "speed-freaks"
   },
   {
     "mutationid": 31,
     "mutation": "Survival of the Fittest",
     "map": "Void Thrashing",
-    "mut01": 5,
-    "mut02": 54,
+    "mut01": "barrier",
+    "mut02": "transmutation",
     "mut03": null
   },
   {
     "mutationid": 32,
     "mutation": "Violent Night",
     "map": "Void Launch",
-    "mut01": 18,
-    "mut02": 37,
+    "mut01": "gift-exchange",
+    "mut02": "naughty-list",
     "mut03": null
   },
   {
     "mutationid": 33,
     "mutation": "Rumble in the Jungle",
     "map": "Mist Opportunities",
-    "mut01": 2,
-    "mut02": 52,
-    "mut03": 62
+    "mut01": "aggressive-deployment",
+    "mut02": "temporal-field",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 34,
     "mutation": "The Ultimate Price",
     "map": "Lock and Load",
-    "mut01": 31,
-    "mut02": 32,
-    "mut03": 34
+    "mut01": "micro-transactions",
+    "mut02": "mineral-shields",
+    "mut03": "missile-command"
   },
   {
     "mutationid": 35,
     "mutation": "Cremation",
     "map": "Miner Evacuation",
-    "mut01": 46,
-    "mut02": 59,
+    "mut01": "scorched-earth",
+    "mut02": "void-reanimators",
     "mut03": null
   },
   {
     "mutationid": 36,
     "mutation": "Shields Up!",
     "map": "Void Launch",
-    "mut01": 11,
-    "mut02": 32,
-    "mut03": 49
+    "mut01": "diffusion",
+    "mut02": "mineral-shields",
+    "mut03": "shortsighted"
   },
   {
     "mutationid": 37,
     "mutation": "Ulnar New Year",
     "map": "Lock and Load",
-    "mut01": 17,
-    "mut02": 29,
+    "mut01": "fireworks",
+    "mut02": "lucky-envelopes",
     "mut03": null
   },
   {
     "mutationid": 38,
     "mutation": "Sick Micro",
     "map": "Mist Opportunities",
-    "mut01": 6,
-    "mut02": 31,
+    "mut01": "black-death",
+    "mut02": "micro-transactions",
     "mut03": null
   },
   {
     "mutationid": 39,
     "mutation": "Blast from the Past",
     "map": "Temple of the Past",
-    "mut01": 13,
-    "mut02": 36,
+    "mut01": "eminent-domain",
+    "mut02": "mutually-assured-destruction",
     "mut03": null
   },
   {
     "mutationid": 40,
     "mutation": "Portal Power",
     "map": "Void Thrashing",
-    "mut01": 42,
-    "mut02": 60,
+    "mut01": "power-overwhelming",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 41,
     "mutation": "Wheel of Misfortune",
     "map": "The Vermillion Problem",
-    "mut01": 8,
+    "mut01": "chaos-studios",
     "mut02": null,
     "mut03": null
   },
@@ -331,63 +331,63 @@
     "mutationid": 42,
     "mutation": "Hostile Takeover",
     "map": "Rifts to Korhal",
-    "mut01": 13,
-    "mut02": 25,
-    "mut03": 34
+    "mut01": "eminent-domain",
+    "mut02": "laser-drill",
+    "mut03": "missile-command"
   },
   {
     "mutationid": 43,
     "mutation": "Grave Danger",
     "map": "Temple of the Past",
-    "mut01": 54,
-    "mut02": 59,
-    "mut03": 61
+    "mut01": "transmutation",
+    "mut02": "void-reanimators",
+    "mut03": "walking-infested"
   },
   {
     "mutationid": 44,
     "mutation": "The Injustice League",
     "map": "Rifts to Korhal",
-    "mut01": 20,
-    "mut02": 21,
-    "mut03": 22
+    "mut01": "hardened-will",
+    "mut02": "heroes-from-the-storm",
+    "mut03": "inspiration"
   },
   {
     "mutationid": 45,
     "mutation": "No Money, More Problems",
     "map": "The Vermillion Problem",
-    "mut01": 47,
-    "mut02": 50,
-    "mut03": 57
+    "mut01": "self-destruction",
+    "mut02": "slim-pickings",
+    "mut03": "twister"
   },
   {
     "mutationid": 46,
     "mutation": "Field of Screams",
     "map": "Mist Opportunities",
-    "mut01": 33,
-    "mut02": 41,
+    "mut01": "minesweeper",
+    "mut02": "polarity",
     "mut03": null
   },
   {
     "mutationid": 47,
     "mutation": "The Quick and the Dead",
     "map": "Dead of Night",
-    "mut01": 6,
-    "mut02": 51,
+    "mut01": "black-death",
+    "mut02": "speed-freaks",
     "mut03": null
   },
   {
     "mutationid": 48,
     "mutation": "Out of Sight",
     "map": "Miner Evacuation",
-    "mut01": 44,
-    "mut02": 62,
+    "mut01": "purifier-beam",
+    "mut02": "we-move-unseen",
     "mut03": null
   },
   {
     "mutationid": 49,
     "mutation": "Wheel of Misfortune",
     "map": "Oblivion Express",
-    "mut01": 8,
+    "mut01": "chaos-studios",
     "mut02": null,
     "mut03": null
   },
@@ -395,111 +395,111 @@
     "mutationid": 50,
     "mutation": "Frostbite",
     "map": "Dead of Night",
-    "mut01": 7,
-    "mut02": 30,
+    "mut01": "blizzard",
+    "mut02": "mag-nificent",
     "mut03": null
   },
   {
     "mutationid": 51,
     "mutation": "Certain Demise",
     "map": "Chain of Ascension",
-    "mut01": 4,
-    "mut02": 59,
+    "mut01": "avenger",
+    "mut02": "void-reanimators",
     "mut03": null
   },
   {
     "mutationid": 52,
     "mutation": "Delivery Guaranteed",
     "map": "Void Launch",
-    "mut01": 5,
-    "mut02": 19,
-    "mut03": 23
+    "mut01": "barrier",
+    "mut02": "going-nuclear",
+    "mut03": "just-die"
   },
   {
     "mutationid": 53,
     "mutation": "Dead Heat",
     "map": "The Vermillion Problem",
-    "mut01": 15,
-    "mut02": 47,
-    "mut03": 61
+    "mut01": "fatal-attraction",
+    "mut02": "self-destruction",
+    "mut03": "walking-infested"
   },
   {
     "mutationid": 54,
     "mutation": "Cold is the Void",
     "map": "Oblivion Express",
-    "mut01": 7,
-    "mut02": 59,
-    "mut03": 60
+    "mut01": "blizzard",
+    "mut02": "void-reanimators",
+    "mut03": "void-rifts"
   },
   {
     "mutationid": 55,
     "mutation": "Futile Resistance",
     "map": "Lock and Load",
-    "mut01": 9,
-    "mut02": 43,
-    "mut03": 52
+    "mut01": "concussive-attacks",
+    "mut02": "propagators",
+    "mut03": "temporal-field"
   },
   {
     "mutationid": 56,
     "mutation": "Hard Target",
     "map": "Void Thrashing",
-    "mut01": 5,
-    "mut02": 20,
-    "mut03": 41
+    "mut01": "barrier",
+    "mut02": "hardened-will",
+    "mut03": "polarity"
   },
   {
     "mutationid": 57,
     "mutation": "Charnel House",
     "map": "Miner Evacuation",
-    "mut01": 6,
-    "mut02": 10,
-    "mut03": 40
+    "mut01": "black-death",
+    "mut02": "darkness",
+    "mut03": "photon-overload"
   },
   {
     "mutationid": 58,
     "mutation": "Slow and Steady",
     "map": "Mist Opportunities",
-    "mut01": 9,
-    "mut02": 51,
-    "mut03": 53
+    "mut01": "concussive-attacks",
+    "mut02": "speed-freaks",
+    "mut03": "time-warp"
   },
   {
     "mutationid": 59,
     "mutation": "Instant Karma",
     "map": "Chain of Ascension",
-    "mut01": 12,
-    "mut02": 36,
-    "mut03": 47
+    "mut01": "double-edged",
+    "mut02": "mutually-assured-destruction",
+    "mut03": "self-destruction"
   },
   {
     "mutationid": 60,
     "mutation": "Worn Out Welcome",
     "map": "Temple of the Past",
-    "mut01": 22,
-    "mut02": 23,
-    "mut03": 28
+    "mut01": "inspiration",
+    "mut02": "just-die",
+    "mut03": "long-range"
   },
   {
     "mutationid": 61,
     "mutation": "Moths to the Flame",
     "map": "Rifts to Korhal",
-    "mut01": 3,
-    "mut02": 15,
-    "mut03": 44
+    "mut01": "alien-incubation",
+    "mut02": "fatal-attraction",
+    "mut03": "purifier-beam"
   },
   {
     "mutationid": 62,
     "mutation": "Fear and Lava",
     "map": "The Vermillion Problem",
-    "mut01": 16,
-    "mut02": 60,
+    "mut01": "fear",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 63,
     "mutation": "Wheel of Misfortune",
     "map": "Void Launch",
-    "mut01": 8,
+    "mut01": "chaos-studios",
     "mut02": null,
     "mut03": null
   },
@@ -507,127 +507,127 @@
     "mutationid": 64,
     "mutation": "Kill Bot Wars",
     "map": "Mist Opportunities",
-    "mut01": 24,
-    "mut02": 35,
+    "mut01": "kill-bots",
+    "mut02": "moment-of-silence",
     "mut03": null
   },
   {
     "mutationid": 65,
     "mutation": "Magnetic Attraction",
     "map": "Void Thrashing",
-    "mut01": 15,
-    "mut02": 30,
-    "mut03": 62
+    "mut01": "fatal-attraction",
+    "mut02": "mag-nificent",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 66,
     "mutation": "Death from Below",
     "map": "Miner Evacuation",
-    "mut01": 26,
-    "mut02": 33,
-    "mut03": 46
+    "mut01": "lava-burst",
+    "mut02": "minesweeper",
+    "mut03": "scorched-earth"
   },
   {
     "mutationid": 67,
     "mutation": "Watch the Skies",
     "map": "Void Launch",
-    "mut01": 2,
-    "mut02": 34,
-    "mut03": 38
+    "mut01": "aggressive-deployment",
+    "mut02": "missile-command",
+    "mut03": "orbital-strike"
   },
   {
     "mutationid": 68,
     "mutation": "Think Fast",
     "map": "Rifts to Korhal",
-    "mut01": 43,
-    "mut02": 51,
+    "mut01": "propagators",
+    "mut02": "speed-freaks",
     "mut03": null
   },
   {
     "mutationid": 69,
     "mutation": "What Goes Around",
     "map": "Scythe of Amon",
-    "mut01": 12,
-    "mut02": 36,
+    "mut01": "double-edged",
+    "mut02": "mutually-assured-destruction",
     "mut03": null
   },
   {
     "mutationid": 70,
     "mutation": "Bannable Offense",
     "map": "Malwarfare",
-    "mut01": 14,
-    "mut02": 42,
+    "mut01": "evasive-maneuvers",
+    "mut02": "power-overwhelming",
     "mut03": null
   },
   {
     "mutationid": 71,
     "mutation": "Masters of Midnight",
     "map": "Part and Parcel",
-    "mut01": 16,
-    "mut02": 27,
-    "mut03": 49
+    "mut01": "fear",
+    "mut02": "life-leech",
+    "mut03": "shortsighted"
   },
   {
     "mutationid": 72,
     "mutation": "Night Drive",
     "map": "Cradle of Death",
-    "mut01": 1,
-    "mut02": 30,
+    "mut01": "afraid-of-the-dark",
+    "mut02": "mag-nificent",
     "mut03": null
   },
   {
     "mutationid": 73,
     "mutation": "Get Out More",
     "map": "Dead of Night",
-    "mut01": 13,
-    "mut02": 32,
-    "mut03": 47
+    "mut01": "eminent-domain",
+    "mut02": "mineral-shields",
+    "mut03": "self-destruction"
   },
   {
     "mutationid": 74,
     "mutation": "Quick Killers",
     "map": "Temple of the Past",
-    "mut01": 22,
-    "mut02": 24,
-    "mut03": 51
+    "mut01": "inspiration",
+    "mut02": "kill-bots",
+    "mut03": "speed-freaks"
   },
   {
     "mutationid": 75,
     "mutation": "Unstable Environment",
     "map": "Scythe of Amon",
-    "mut01": 26,
-    "mut02": 53,
-    "mut03": 57
+    "mut01": "lava-burst",
+    "mut02": "time-warp",
+    "mut03": "twister"
   },
   {
     "mutationid": 76,
     "mutation": "Rest in Peace",
     "map": "Void Thrashing",
-    "mut01": 35,
-    "mut02": 43,
+    "mut01": "moment-of-silence",
+    "mut02": "propagators",
     "mut03": null
   },
   {
     "mutationid": 77,
     "mutation": "Endless Infection",
     "map": "Void Launch",
-    "mut01": 3,
-    "mut02": 6,
-    "mut03": 61
+    "mut01": "alien-incubation",
+    "mut02": "black-death",
+    "mut03": "walking-infested"
   },
   {
     "mutationid": 78,
     "mutation": "Battle Hardened",
     "map": "Chain of Ascension",
-    "mut01": 20,
-    "mut02": 22,
-    "mut03": 34
+    "mut01": "hardened-will",
+    "mut02": "inspiration",
+    "mut03": "missile-command"
   },
   {
     "mutationid": 79,
     "mutation": "Wheel of Misfortune",
     "map": "Cradle of Death",
-    "mut01": 8,
+    "mut01": "chaos-studios",
     "mut02": null,
     "mut03": null
   },
@@ -635,215 +635,215 @@
     "mutationid": 80,
     "mutation": "Chilling Adaptation",
     "map": "Miner Evacuation",
-    "mut01": 7,
-    "mut02": 54,
+    "mut01": "blizzard",
+    "mut02": "transmutation",
     "mut03": null
   },
   {
     "mutationid": 81,
     "mutation": "Fright Night",
     "map": "Rifts to Korhal",
-    "mut01": 1,
-    "mut02": 55,
+    "mut01": "afraid-of-the-dark",
+    "mut02": "trick-or-treat",
     "mut03": null
   },
   {
     "mutationid": 82,
     "mutation": "Price of Progress",
     "map": "Malwarfare",
-    "mut01": 24,
-    "mut02": 31,
+    "mut01": "kill-bots",
+    "mut02": "micro-transactions",
     "mut03": null
   },
   {
     "mutationid": 83,
     "mutation": "Negative Reinforcement",
     "map": "Part and Parcel",
-    "mut01": 4,
-    "mut02": 15,
+    "mut01": "avenger",
+    "mut02": "fatal-attraction",
     "mut03": null
   },
   {
     "mutationid": 84,
     "mutation": "Fowl Play",
     "map": "Oblivion Express",
-    "mut01": 48,
-    "mut02": 56,
+    "mut01": "sharing-is-caring",
+    "mut02": "turkey-shoot",
     "mut03": null
   },
   {
     "mutationid": 85,
     "mutation": "Retribution",
     "map": "Mist Opportunities",
-    "mut01": 12,
-    "mut02": 60,
+    "mut01": "double-edged",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 86,
     "mutation": "Rise from the Ashes",
     "map": "Scythe of Amon",
-    "mut01": 26,
-    "mut02": 47,
-    "mut03": 59
+    "mut01": "lava-burst",
+    "mut02": "self-destruction",
+    "mut03": "void-reanimators"
   },
   {
     "mutationid": 87,
     "mutation": "Warp Zone",
     "map": "Lock and Load",
-    "mut01": 52,
-    "mut02": 53,
-    "mut03": 57
+    "mut01": "temporal-field",
+    "mut02": "time-warp",
+    "mut03": "twister"
   },
   {
     "mutationid": 88,
     "mutation": "Well Trained",
     "map": "Oblivion Express",
-    "mut01": 2,
-    "mut02": 4,
-    "mut03": 22
+    "mut01": "aggressive-deployment",
+    "mut02": "avenger",
+    "mut03": "inspiration"
   },
   {
     "mutationid": 89,
     "mutation": "Violent Night",
     "map": "Void Launch",
-    "mut01": 18,
-    "mut02": 37,
+    "mut01": "gift-exchange",
+    "mut02": "naughty-list",
     "mut03": null
   },
   {
     "mutationid": 90,
     "mutation": "Doomsday Report",
     "map": "The Vermillion Problem",
-    "mut01": 19,
-    "mut02": 38,
-    "mut03": 43
+    "mut01": "going-nuclear",
+    "mut02": "orbital-strike",
+    "mut03": "propagators"
   },
   {
     "mutationid": 91,
     "mutation": "Safety Violation",
     "map": "Miner Evacuation",
-    "mut01": 30,
-    "mut02": 25,
-    "mut03": 47
+    "mut01": "mag-nificent",
+    "mut02": "laser-drill",
+    "mut03": "self-destruction"
   },
   {
     "mutationid": 92,
     "mutation": "Temple of Rebirth",
     "map": "Temple of the Past",
-    "mut01": 5,
-    "mut02": 23,
-    "mut03": 27
+    "mut01": "barrier",
+    "mut02": "just-die",
+    "mut03": "life-leech"
   },
   {
     "mutationid": 93,
     "mutation": "Overclocked",
     "map": "Malwarfare",
-    "mut01": 4,
-    "mut02": 40,
-    "mut03": 51
+    "mut01": "avenger",
+    "mut02": "photon-overload",
+    "mut03": "speed-freaks"
   },
   {
     "mutationid": 94,
     "mutation": "Attrition Warfare",
     "map": "Void Thrashing",
-    "mut01": 11,
-    "mut02": 33,
+    "mut01": "diffusion",
+    "mut02": "minesweeper",
     "mut03": null
   },
   {
     "mutationid": 95,
     "mutation": "Ulnar New Year",
     "map": "Lock and Load",
-    "mut01": 17,
-    "mut02": 29,
+    "mut01": "fireworks",
+    "mut02": "lucky-envelopes",
     "mut03": null
   },
   {
     "mutationid": 96,
     "mutation": "Together Forever",
     "map": "Chain of Ascension",
-    "mut01": 23,
-    "mut02": 41,
+    "mut01": "just-die",
+    "mut02": "polarity",
     "mut03": null
   },
   {
     "mutationid": 97,
     "mutation": "Specter of Death",
     "map": "Part and Parcel",
-    "mut01": 59,
-    "mut02": 62,
+    "mut01": "void-reanimators",
+    "mut02": "we-move-unseen",
     "mut03": null
   },
   {
     "mutationid": 98,
     "mutation": "Distant Threat",
     "map": "Dead of Night",
-    "mut01": 28,
-    "mut02": 44,
-    "mut03": 53
+    "mut01": "long-range",
+    "mut02": "purifier-beam",
+    "mut03": "time-warp"
   },
   {
     "mutationid": 99,
     "mutation": "Radiation Zone",
     "map": "Rifts to Korhal",
-    "mut01": 6,
-    "mut02": 19,
-    "mut03": 39
+    "mut01": "black-death",
+    "mut02": "going-nuclear",
+    "mut03": "outbreak"
   },
   {
     "mutationid": 100,
     "mutation": "Inner Power",
     "map": "Temple of the Past",
-    "mut01": 3,
-    "mut02": 42,
+    "mut01": "alien-incubation",
+    "mut02": "power-overwhelming",
     "mut03": null
   },
   {
     "mutationid": 101,
     "mutation": "Moving Fees",
     "map": "Cradle of Death",
-    "mut01": 31,
-    "mut02": 46,
+    "mut01": "micro-transactions",
+    "mut02": "scorched-earth",
     "mut03": null
   },
   {
     "mutationid": 102,
     "mutation": "Memorable Boss",
     "map": "Void Launch",
-    "mut01": 21,
-    "mut02": 35,
+    "mut01": "heroes-from-the-storm",
+    "mut02": "moment-of-silence",
     "mut03": null
   },
   {
     "mutationid": 103,
     "mutation": "Flip My Base",
     "map": "Mist Opportunities",
-    "mut01": 13,
-    "mut02": 34,
-    "mut03": 44
+    "mut01": "eminent-domain",
+    "mut02": "missile-command",
+    "mut03": "purifier-beam"
   },
   {
     "mutationid": 104,
     "mutation": "Firewall",
     "map": "Malwarfare",
-    "mut01": 5,
-    "mut02": 26,
-    "mut03": 33
+    "mut01": "barrier",
+    "mut02": "lava-burst",
+    "mut03": "minesweeper"
   },
   {
     "mutationid": 105,
     "mutation": "Death and Taxes",
     "map": "Dead of Night",
-    "mut01": 6,
-    "mut02": 31,
-    "mut03": 50
+    "mut01": "black-death",
+    "mut02": "micro-transactions",
+    "mut03": "slim-pickings"
   },
   {
     "mutationid": 106,
     "mutation": "Wheel of Misfortune",
     "map": "Miner Evacuation",
-    "mut01": 8,
+    "mut01": "chaos-studios",
     "mut02": null,
     "mut03": null
   },
@@ -851,624 +851,624 @@
     "mutationid": 107,
     "mutation": "Rubber and Glue",
     "map": "Void Launch",
-    "mut01": 11,
-    "mut02": 12,
-    "mut03": 52
+    "mut01": "diffusion",
+    "mut02": "double-edged",
+    "mut03": "temporal-field"
   },
   {
     "mutationid": 108,
     "mutation": "Hell Train",
     "map": "Oblivion Express",
-    "mut01": 23,
-    "mut02": 46,
+    "mut01": "just-die",
+    "mut02": "scorched-earth",
     "mut03": null
   },
   {
     "mutationid": 109,
     "mutation": "Infection Detected",
     "map": "Malwarfare",
-    "mut01": 3,
-    "mut02": 39,
-    "mut03": 47
+    "mut01": "alien-incubation",
+    "mut02": "outbreak",
+    "mut03": "self-destruction"
   },
   {
     "mutationid": 110,
     "mutation": "Opportunities Unleashed",
     "map": "Mist Opportunities",
-    "mut01": 5,
-    "mut02": 42,
-    "mut03": 51
+    "mut01": "barrier",
+    "mut02": "power-overwhelming",
+    "mut03": "speed-freaks"
   },
   {
     "mutationid": 111,
     "mutation": "One For All",
     "map": "Temple of the Past",
-    "mut01": 20,
-    "mut02": 22,
-    "mut03": 54
+    "mut01": "hardened-will",
+    "mut02": "inspiration",
+    "mut03": "transmutation"
   },
   {
     "mutationid": 112,
     "mutation": "Experimental Artillery",
     "map": "Part and Parcel",
-    "mut01": 25,
-    "mut02": 28,
-    "mut03": 40
+    "mut01": "laser-drill",
+    "mut02": "long-range",
+    "mut03": "photon-overload"
   },
   {
     "mutationid": 113,
     "mutation": "Nuclear Family",
     "map": "Chain of Ascension",
-    "mut01": 20,
-    "mut02": 36,
-    "mut03": 39
+    "mut01": "hardened-will",
+    "mut02": "mutually-assured-destruction",
+    "mut03": "outbreak"
   },
   {
     "mutationid": 114,
     "mutation": "Die Together",
     "map": "Scythe of Amon",
-    "mut01": 23,
-    "mut02": 41,
+    "mut01": "just-die",
+    "mut02": "polarity",
     "mut03": null
   },
   {
     "mutationid": 115,
     "mutation": "Burning Evacuation",
     "map": "Miner Evacuation",
-    "mut01": 4,
-    "mut02": 13,
-    "mut03": 46
+    "mut01": "avenger",
+    "mut02": "eminent-domain",
+    "mut03": "scorched-earth"
   },
   {
     "mutationid": 116,
     "mutation": "Assembly of Vengeance",
     "map": "Temple of the Past",
-    "mut01": 4,
-    "mut02": 21,
+    "mut01": "avenger",
+    "mut02": "heroes-from-the-storm",
     "mut03": null
   },
   {
     "mutationid": 117,
     "mutation": "Railroad Switch",
     "map": "Oblivion Express",
-    "mut01": 23,
-    "mut02": 41,
+    "mut01": "just-die",
+    "mut02": "polarity",
     "mut03": null
   },
   {
     "mutationid": 118,
     "mutation": "Hostile Territory",
     "map": "Dead of Night",
-    "mut01": 5,
-    "mut02": 40,
-    "mut03": 42
+    "mut01": "barrier",
+    "mut02": "photon-overload",
+    "mut03": "power-overwhelming"
   },
   {
     "mutationid": 119,
     "mutation": "Media Blackout",
     "map": "The Vermillion Problem",
-    "mut01": 10,
-    "mut02": 34,
-    "mut03": 62
+    "mut01": "darkness",
+    "mut02": "missile-command",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 120,
     "mutation": "Thunder Dome",
     "map": "Lock and Load",
-    "mut01": 21,
-    "mut02": 30,
+    "mut01": "heroes-from-the-storm",
+    "mut02": "mag-nificent",
     "mut03": null
   },
   {
     "mutationid": 121,
     "mutation": "Dodge This",
     "map": "Scythe of Amon",
-    "mut01": 10,
-    "mut02": 19,
-    "mut03": 38
+    "mut01": "darkness",
+    "mut02": "going-nuclear",
+    "mut03": "orbital-strike"
   },
   {
     "mutationid": 122,
     "mutation": "Binary Choice",
     "map": "Malwarfare",
-    "mut01": 41,
-    "mut02": 59,
+    "mut01": "polarity",
+    "mut02": "void-reanimators",
     "mut03": null
   },
   {
     "mutationid": 123,
     "mutation": "The Ascended",
     "map": "Chain of Ascension",
-    "mut01": 22,
-    "mut02": 54,
+    "mut01": "inspiration",
+    "mut02": "transmutation",
     "mut03": null
   },
   {
     "mutationid": 124,
     "mutation": "Enhanced Defenses",
     "map": "Cradle of Death",
-    "mut01": 5,
-    "mut02": 19,
-    "mut03": 40
+    "mut01": "barrier",
+    "mut02": "going-nuclear",
+    "mut03": "photon-overload"
   },
   {
     "mutationid": 125,
     "mutation": "Double Trouble",
     "map": "Void Launch",
-    "mut01": 24,
-    "mut02": 43,
+    "mut01": "kill-bots",
+    "mut02": "propagators",
     "mut03": null
   },
   {
     "mutationid": 126,
     "mutation": "And Drops And Rifts",
     "map": "Part and Parcel",
-    "mut01": 2,
-    "mut02": 60,
+    "mut01": "aggressive-deployment",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 127,
     "mutation": "Catch the Train",
     "map": "Oblivion Express",
-    "mut01": 1,
-    "mut02": 49,
-    "mut03": 51
+    "mut01": "afraid-of-the-dark",
+    "mut02": "shortsighted",
+    "mut03": "speed-freaks"
   },
   {
     "mutationid": 128,
     "mutation": "Temple of Terror",
     "map": "Temple of the Past",
-    "mut01": 1,
-    "mut02": 3,
-    "mut03": 16
+    "mut01": "afraid-of-the-dark",
+    "mut02": "alien-incubation",
+    "mut03": "fear"
   },
   {
     "mutationid": 129,
     "mutation": "Shining Bright",
     "map": "Mist Opportunities",
-    "mut01": 9,
-    "mut02": 25,
-    "mut03": 44
+    "mut01": "concussive-attacks",
+    "mut02": "laser-drill",
+    "mut03": "purifier-beam"
   },
   {
     "mutationid": 130,
     "mutation": "Endless Sparkles",
     "map": "Miner Evacuation",
-    "mut01": 3,
-    "mut02": 47,
+    "mut01": "alien-incubation",
+    "mut02": "self-destruction",
     "mut03": null
   },
   {
     "mutationid": 131,
     "mutation": "Graveyard Shift",
     "map": "Dead of Night",
-    "mut01": 1,
-    "mut02": 44,
+    "mut01": "afraid-of-the-dark",
+    "mut02": "purifier-beam",
     "mut03": null
   },
   {
     "mutationid": 132,
     "mutation": "Robotic Revival",
     "map": "Part and Parcel",
-    "mut01": 16,
-    "mut02": 23,
-    "mut03": 25
+    "mut01": "fear",
+    "mut02": "just-die",
+    "mut03": "laser-drill"
   },
   {
     "mutationid": 133,
     "mutation": "Secret Storm",
     "map": "Lock and Load",
-    "mut01": 2,
-    "mut02": 57,
-    "mut03": 62
+    "mut01": "aggressive-deployment",
+    "mut02": "twister",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 134,
     "mutation": "Undermined",
     "map": "Rifts to Korhal",
-    "mut01": 33,
-    "mut02": 60,
+    "mut01": "minesweeper",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 135,
     "mutation": "Astigmatism",
     "map": "Malwarfare",
-    "mut01": 28,
-    "mut02": 49,
-    "mut03": 62
+    "mut01": "long-range",
+    "mut02": "shortsighted",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 136,
     "mutation": "Never Say Die",
     "map": "Mist Opportunities",
-    "mut01": 5,
-    "mut02": 23,
-    "mut03": 27
+    "mut01": "barrier",
+    "mut02": "just-die",
+    "mut03": "life-leech"
   },
   {
     "mutationid": 137,
     "mutation": "Medieval Times",
     "map": "Scythe of Amon",
-    "mut01": 6,
-    "mut02": 54,
+    "mut01": "black-death",
+    "mut02": "transmutation",
     "mut03": null
   },
   {
     "mutationid": 138,
     "mutation": "Onslaught",
     "map": "Dead of Night",
-    "mut01": 2,
-    "mut02": 39,
-    "mut03": 59
+    "mut01": "aggressive-deployment",
+    "mut02": "outbreak",
+    "mut03": "void-reanimators"
   },
   {
     "mutationid": 139,
     "mutation": "Equivalent Exchange",
     "map": "Void Thrashing",
-    "mut01": 11,
-    "mut02": 23,
+    "mut01": "diffusion",
+    "mut02": "just-die",
     "mut03": null
   },
   {
     "mutationid": 140,
     "mutation": "Encroaching Madness",
     "map": "Mist Opportunities",
-    "mut01": 13,
-    "mut02": 44,
-    "mut03": 60
+    "mut01": "eminent-domain",
+    "mut02": "purifier-beam",
+    "mut03": "void-rifts"
   },
   {
     "mutationid": 141,
     "mutation": "Season of Giving",
     "map": "Cradle of Death",
-    "mut01": 7,
-    "mut02": 18,
-    "mut03": 37
+    "mut01": "blizzard",
+    "mut02": "gift-exchange",
+    "mut03": "naughty-list"
   },
   {
     "mutationid": 142,
     "mutation": "Choices Choices",
     "map": "Temple of the Past",
-    "mut01": 20,
-    "mut02": 22,
-    "mut03": 36
+    "mut01": "hardened-will",
+    "mut02": "inspiration",
+    "mut03": "mutually-assured-destruction"
   },
   {
     "mutationid": 143,
     "mutation": "Inordinate Response",
     "map": "Scythe of Amon",
-    "mut01": 4,
-    "mut02": 42,
+    "mut01": "avenger",
+    "mut02": "power-overwhelming",
     "mut03": null
   },
   {
     "mutationid": 144,
     "mutation": "By Fire Be Purged",
     "map": "Oblivion Express",
-    "mut01": 19,
-    "mut02": 26,
-    "mut03": 46
+    "mut01": "going-nuclear",
+    "mut02": "lava-burst",
+    "mut03": "scorched-earth"
   },
   {
     "mutationid": 145,
     "mutation": "Timely Reinforcements",
     "map": "Miner Evacuation",
-    "mut01": 52,
-    "mut02": 60,
+    "mut01": "temporal-field",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 146,
     "mutation": "Blind Tribute",
     "map": "Chain of Ascension",
-    "mut01": 24,
-    "mut02": 49,
+    "mut01": "kill-bots",
+    "mut02": "shortsighted",
     "mut03": null
   },
   {
     "mutationid": 147,
     "mutation": "Barrier to Entry",
     "map": "Lock and Load",
-    "mut01": 5,
-    "mut02": 23,
-    "mut03": 32
+    "mut01": "barrier",
+    "mut02": "just-die",
+    "mut03": "mineral-shields"
   },
   {
     "mutationid": 148,
     "mutation": "Like Swatting Insects",
     "map": "Cradle of Death",
-    "mut01": 3,
-    "mut02": 34,
-    "mut03": 39
+    "mut01": "alien-incubation",
+    "mut02": "missile-command",
+    "mut03": "outbreak"
   },
   {
     "mutationid": 149,
     "mutation": "Getting Along",
     "map": "The Vermillion Problem",
-    "mut01": 41,
-    "mut02": 48,
+    "mut01": "polarity",
+    "mut02": "sharing-is-caring",
     "mut03": null
   },
   {
     "mutationid": 150,
     "mutation": "Knock Knock",
     "map": "Dead of Night",
-    "mut01": 4,
-    "mut02": 43,
+    "mut01": "avenger",
+    "mut02": "propagators",
     "mut03": null
   },
   {
     "mutationid": 151,
     "mutation": "Dance Dance Evolution",
     "map": "Mist Opportunities",
-    "mut01": 35,
-    "mut02": 51,
-    "mut03": 54
+    "mut01": "moment-of-silence",
+    "mut02": "speed-freaks",
+    "mut03": "transmutation"
   },
   {
     "mutationid": 152,
     "mutation": "Train of Pain",
     "map": "Oblivion Express",
-    "mut01": 12,
-    "mut02": 19,
-    "mut03": 36
+    "mut01": "double-edged",
+    "mut02": "going-nuclear",
+    "mut03": "mutually-assured-destruction"
   },
   {
     "mutationid": 153,
     "mutation": "Resilient Rifts",
     "map": "Rifts to Korhal",
-    "mut01": 23,
-    "mut02": 60,
+    "mut01": "just-die",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 154,
     "mutation": "Chain Explosion",
     "map": "Chain of Ascension",
-    "mut01": 26,
-    "mut02": 61,
+    "mut01": "lava-burst",
+    "mut02": "walking-infested",
     "mut03": null
   },
   {
     "mutationid": 155,
     "mutation": "Call It a Comeback",
     "map": "Temple of the Past",
-    "mut01": 4,
-    "mut02": 13,
-    "mut03": 23
+    "mut01": "avenger",
+    "mut02": "eminent-domain",
+    "mut03": "just-die"
   },
   {
     "mutationid": 156,
     "mutation": "Explosive Hunt",
     "map": "Part and Parcel",
-    "mut01": 33,
-    "mut02": 50,
+    "mut01": "minesweeper",
+    "mut02": "slim-pickings",
     "mut03": null
   },
   {
     "mutationid": 157,
     "mutation": "Tax Day",
     "map": "Void Launch",
-    "mut01": 16,
-    "mut02": 31,
+    "mut01": "fear",
+    "mut02": "micro-transactions",
     "mut03": null
   },
   {
     "mutationid": 158,
     "mutation": "Aggressive Recruitment",
     "map": "Malwarfare",
-    "mut01": 43,
-    "mut02": 51,
-    "mut03": 62
+    "mut01": "propagators",
+    "mut02": "speed-freaks",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 159,
     "mutation": "Scary Scavengers",
     "map": "Dead of Night",
-    "mut01": 39,
-    "mut02": 50,
+    "mut01": "outbreak",
+    "mut02": "slim-pickings",
     "mut03": null
   },
   {
     "mutationid": 160,
     "mutation": "Call of the Void",
     "map": "Void Thrashing",
-    "mut01": 59,
-    "mut02": 60,
+    "mut01": "void-reanimators",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 161,
     "mutation": "In the Name of Love",
     "map": "Cradle of Death",
-    "mut01": 9,
-    "mut02": 44,
-    "mut03": 53
+    "mut01": "concussive-attacks",
+    "mut02": "purifier-beam",
+    "mut03": "time-warp"
   },
   {
     "mutationid": 162,
     "mutation": "Locked and Loaded",
     "map": "Lock and Load",
-    "mut01": 24,
-    "mut02": 32,
-    "mut03": 52
+    "mut01": "kill-bots",
+    "mut02": "mineral-shields",
+    "mut03": "temporal-field"
   },
   {
     "mutationid": 163,
     "mutation": "Of Mines and Miners",
     "map": "Miner Evacuation",
-    "mut01": 30,
-    "mut02": 33,
-    "mut03": 34
+    "mut01": "mag-nificent",
+    "mut02": "minesweeper",
+    "mut03": "missile-command"
   },
   {
     "mutationid": 164,
     "mutation": "The League of Vermillians",
     "map": "The Vermillion Problem",
-    "mut01": 14,
-    "mut02": 21,
+    "mut01": "evasive-maneuvers",
+    "mut02": "heroes-from-the-storm",
     "mut03": null
   },
   {
     "mutationid": 165,
     "mutation": "Operation Cooperation",
     "map": "Lock and Load",
-    "mut01": 41,
-    "mut02": 43,
+    "mut01": "polarity",
+    "mut02": "propagators",
     "mut03": null
   },
   {
     "mutationid": 166,
     "mutation": "Hot n Cold",
     "map": "Void Launch",
-    "mut01": 7,
-    "mut02": 26,
-    "mut03": 46
+    "mut01": "blizzard",
+    "mut02": "lava-burst",
+    "mut03": "scorched-earth"
   },
   {
     "mutationid": 167,
     "mutation": "What We Do in the Shadows",
     "map": "Void Thrashing",
-    "mut01": 10,
-    "mut02": 49,
-    "mut03": 62
+    "mut01": "darkness",
+    "mut02": "shortsighted",
+    "mut03": "we-move-unseen"
   },
   {
     "mutationid": 168,
     "mutation": "Hardware Malfunction",
     "map": "Malwarfare",
-    "mut01": 24,
-    "mut02": 25,
-    "mut03": 33
+    "mut01": "kill-bots",
+    "mut02": "laser-drill",
+    "mut03": "minesweeper"
   },
   {
     "mutationid": 169,
     "mutation": "Shared Pain",
     "map": "Part and Parcel",
-    "mut01": 11,
-    "mut02": 15,
+    "mut01": "diffusion",
+    "mut02": "fatal-attraction",
     "mut03": null
   },
   {
     "mutationid": 170,
     "mutation": "The Longest Night",
     "map": "Dead of Night",
-    "mut01": 23,
-    "mut02": 28,
-    "mut03": 40
+    "mut01": "just-die",
+    "mut02": "long-range",
+    "mut03": "photon-overload"
   },
   {
     "mutationid": 171,
     "mutation": "The Quick and the Undead",
     "map": "Scythe of Amon",
-    "mut01": 51,
-    "mut02": 59,
+    "mut01": "speed-freaks",
+    "mut02": "void-reanimators",
     "mut03": null
   },
   {
     "mutationid": 172,
     "mutation": "Decade of Decadence",
     "map": "Rifts to Korhal",
-    "mut01": 17,
-    "mut02": 18,
-    "mut03": 29
+    "mut01": "fireworks",
+    "mut02": "gift-exchange",
+    "mut03": "lucky-envelopes"
   },
   {
     "mutationid": 173,
     "mutation": "Bubble Pop",
     "map": "Cradle of Death",
-    "mut01": 5,
-    "mut02": 32,
-    "mut03": 53
+    "mut01": "barrier",
+    "mut02": "mineral-shields",
+    "mut03": "time-warp"
   },
   {
     "mutationid": 174,
     "mutation": "Coordinated Defense",
     "map": "The Vermillion Problem",
-    "mut01": 34,
-    "mut02": 41,
+    "mut01": "missile-command",
+    "mut02": "polarity",
     "mut03": null
   },
   {
     "mutationid": 175,
     "mutation": "Beggars Can't Be Choosers",
     "map": "Lock and Load",
-    "mut01": 30,
-    "mut02": 33,
-    "mut03": 50
+    "mut01": "mag-nificent",
+    "mut02": "minesweeper",
+    "mut03": "slim-pickings"
   },
   {
     "mutationid": 176,
     "mutation": "My Bots",
     "map": "Mist Opportunities",
-    "mut01": 63,
-    "mut02": 24,
+    "mut01": "boom-bots",
+    "mut02": "kill-bots",
     "mut03": null
   },
   {
     "mutationid": 177,
     "mutation": "Multitasking Trainer",
     "map": "Malwarfare",
-    "mut01": 31,
-    "mut02": 60,
+    "mut01": "micro-transactions",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 178,
     "mutation": "Hello My Old Friend",
     "map": "Scythe of Amon",
-    "mut01": 6,
-    "mut02": 10,
-    "mut03": 35
+    "mut01": "black-death",
+    "mut02": "darkness",
+    "mut03": "moment-of-silence"
   },
   {
     "mutationid": 179,
     "mutation": "Of One Mind",
     "map": "Rifts to Korhal",
-    "mut01": 63,
-    "mut02": 41,
-    "mut03": 48
+    "mut01": "boom-bots",
+    "mut02": "polarity",
+    "mut03": "sharing-is-caring"
   },
   {
     "mutationid": 180,
     "mutation": "Blasting Off Again",
     "map": "Void Launch",
-    "mut01": 19,
-    "mut02": 26,
-    "mut03": 42
+    "mut01": "going-nuclear",
+    "mut02": "lava-burst",
+    "mut03": "power-overwhelming"
   },
   {
     "mutationid": 181,
     "mutation": "Enter the Nexus",
     "map": "Cradle of Death",
-    "mut01": 7,
-    "mut02": 21,
+    "mut01": "blizzard",
+    "mut02": "heroes-from-the-storm",
     "mut03": null
   },
   {
     "mutationid": 182,
     "mutation": "Death is Fleeting",
     "map": "Dead of Night",
-    "mut01": 23,
-    "mut02": 59,
+    "mut01": "just-die",
+    "mut02": "void-reanimators",
     "mut03": null
   },
   {
     "mutationid": 183,
     "mutation": "Mass Manufacturing",
     "map": "Part and Parcel",
-    "mut01": 43,
-    "mut02": 60,
+    "mut01": "propagators",
+    "mut02": "void-rifts",
     "mut03": null
   },
   {
     "mutationid": 184,
     "mutation": "Fire in the Hole",
     "map": "Miner Evacuation",
-    "mut01": 63,
-    "mut02": 34,
+    "mut01": "boom-bots",
+    "mut02": "missile-command",
     "mut03": null
   }
 ]

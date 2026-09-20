@@ -10,6 +10,11 @@ export type PositiveInteger = number;
 export type NonNegativeInteger = number;
 export type CommanderPowerRating = 1 | 2 | 3 | 4 | 5;
 export type NumericBoolean = 0 | 1;
+/**
+ * @pattern ^[a-z0-9-]+$
+ */
+export type LowercaseHyphen = string;
+export type MutatorId = LowercaseHyphen;
 
 export interface BrutalPlus {
     /** as in, the X in Brutal+X */
@@ -65,10 +70,10 @@ export interface Commander {
 export type CommanderList = Commander[];
 
 export interface MutatorInteraction {
-    /** ID of the first mutator in the pair */
-    id1: PositiveInteger;
-    /** ID of the second mutator in the pair (id2 > id1) */
-    id2: PositiveInteger;
+    /** ID of the first mutator in the pair, lowercased & without spaces */
+    id1: MutatorId;
+    /** ID of the second mutator in the pair, lowercased & without spaces, id2 > id1 */
+    id2: MutatorId;
     /** Description of how the two mutators interact */
     interaction: string;
 }
@@ -76,7 +81,7 @@ export interface MutatorInteraction {
 export type MutatorInteractionList = MutatorInteraction[];
 
 export interface Mutator {
-    mutatorid: PositiveInteger;
+    mutatorid: MutatorId;
     mutatorname: string;
     /** Mutator difficulty points (see Brutal+ page) */
     abomination: NonNegativeInteger;
@@ -101,16 +106,16 @@ export interface WeeklyMutation {
     link: string | null;
     map: string;
     /** only null for Sudden but Inevitable */
-    mut01: PositiveInteger | null;
-    mut02: PositiveInteger | null;
-    mut03: PositiveInteger | null;
-    mut04: PositiveInteger | null;
-    mut05: PositiveInteger | null;
-    mut06: PositiveInteger | null;
-    mut07: PositiveInteger | null;
-    mut08: PositiveInteger | null;
-    mut09: PositiveInteger | null;
-    mut10: PositiveInteger | null;
+    mut01: MutatorId | null;
+    mut02: MutatorId | null;
+    mut03: MutatorId | null;
+    mut04: MutatorId | null;
+    mut05: MutatorId | null;
+    mut06: MutatorId | null;
+    mut07: MutatorId | null;
+    mut08: MutatorId | null;
+    mut09: MutatorId | null;
+    mut10: MutatorId | null;
     /** no clue what this is; always 0 */
     final: 0;
 }
@@ -121,9 +126,9 @@ export interface MutationCycle {
     mutationid: PositiveInteger;
     mutation: string;
     map: string;
-    mut01: PositiveInteger;
-    mut02: PositiveInteger | null;
-    mut03: PositiveInteger | null;
+    mut01: MutatorId;
+    mut02: MutatorId | null;
+    mut03: MutatorId | null;
 }
 
 export interface MutationCycleWithScore extends MutationCycle {
@@ -245,7 +250,7 @@ export type PatchList = Patch[];
 
 export interface MutatorCommanderTip {
     tipid: PositiveInteger;
-    mutator: PositiveInteger;
+    mutator: MutatorId;
     commander: string;
     tip: string;
     video: string | null;

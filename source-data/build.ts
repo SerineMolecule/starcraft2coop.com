@@ -47,7 +47,7 @@ const mutators: MutatorWithStats[] = await Bun.file('source-data/mutators.json')
 const missions: Mission[] = [];
 
 const missionData: Record<string, Mission> = {};
-const mutatorData: Record<number, MutatorWithStats> = {};
+const mutatorData: Record<string, MutatorWithStats> = {};
 
 for (const missionName of missionNames) {
     missionData[missionName] = { name: missionName, mutationcount: 0 };

@@ -43,7 +43,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     $weeklyMutations = get_weeklymutations();
     $weeklyMutationCount = count($weeklyMutations);
 
-    $woms = array_filter($weeklyMutations, fn($weeklyMutation) => $weeklyMutation['mut01'] == 8);
+    $woms = array_filter($weeklyMutations, fn($weeklyMutation) => $weeklyMutation['mut01'] == 'chaos-studios');
     $WOMCount = count($woms);
 
     $mutators = get_mutators();
@@ -54,10 +54,6 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     $sortedMutators = $mutators;
     usort($sortedMutators, fn($a, $b) => $b['mutationcount'] <=> $a['mutationcount']);
 
-    function statsMutatorToken(string $name): string
-    {
-        return preg_replace('/[^a-z0-9]+/', '', strtolower($name));
-    }
     ?>
     <div id="links">
         <h2>Sections on this Page</h2>
@@ -122,7 +118,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                     continue;
                 }
                 echo("<tr>");
-                $filename = statsMutatorToken($mutator['mutatorname']);
+                $filename = $mutator['mutatorid'];
                 $img = "<img class='miniIcon' src='/images/mutators/" . $filename . ".png' alt=''>";
                 echo("<td><a href='/mutators/" . $filename . "'>$img{$mutator['mutatorname']}</a></td>");
                 echo("<td class=centered>{$mutator['mutationcount']}</td>");

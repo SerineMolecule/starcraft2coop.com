@@ -172,14 +172,14 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
     $mutators = [];
     foreach ($mutatorInfo as $mutator) {
-        $mutators[] = [$mutator['mutatorid'],$mutator['mutatorname']];
+        $mutators[] = [$mutator['mutatorid'], $mutator['mutatorname']];
     }
     ?>
     <form action="mutators.php" method="post">
         <p class="centerAlign">Mutator 1:</p>
         <select name="mut1" id="mut1">
             <?php
-            echo "<option value='0'>-</option>";
+            echo "<option value='NONE'>-</option>\n";
             foreach ($mutators as [$id, $name]) {
                 echo "<option value='$id'>$name</option>\n";
             }
@@ -190,8 +190,8 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <p class="centerAlign" >Mutator 2:</p>
         <select name="mut2" id="mut2">
             <?php
-            echo "<option value='0'>-</option>";
-            echo "<option value='-1'>(show all interactions)</option>";
+            echo "<option value='NONE'>-</option>\n";
+            echo "<option value='ALL'>(show all interactions)</option>\n";
             foreach ($mutators as [$id, $name]) {
                 echo "<option value='$id'>$name</option>\n";
             }
@@ -225,7 +225,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                 }
             });
             $("#mut1 option").each(function () {
-                var val = parseInt(this.value);
+                var val = this.value;
                 var text = $(this).text();
                 mutators[val] = text;
             });
@@ -243,7 +243,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         function getAllInteractions(mut) {
             var interactions = {};
             for (var key in mutators) {
-                var interaction = getInteraction(mut, parseInt(key));
+                var interaction = getInteraction(mut, key);
                 if (interaction) {
                     interactions[key] = interaction;
                 }
@@ -253,16 +253,14 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         function updateInteractions() {
             if (!getInteractions()) return;
             var $mut1 = $("#mut1 option:selected");
-            var mut1 = parseInt($mut1.val());
-            var filename1 = $mut1.text().replace(/ /g,'').toLowerCase();
-            if (mut1 <= 0) filename1 = 'random';
+            var mut1 = $mut1.val();
+            var filename1 = mut1 === "NONE" ? 'random' : mut1;
             var $mut2 = $("#mut2 option:selected");
-            var mut2 = parseInt($mut2.val());
-            var filename2 = $mut2.text().replace(/ /g,'').toLowerCase();
-            if (mut2 <= 0) filename2 = 'random';
+            var mut2 = $mut2.val();
+            var filename2 = mut2 === "NONE" || mut2 === "ALL" ? 'random' : mut2
             $("#mut2 option").each(function () {
-                var val = parseInt(this.value);
-                if (!val || !mut1 || val === -1 || getInteraction(mut1, val)) {
+                var val = this.value;
+                if (mut1 === "NONE" || val === "NONE" || val === "ALL" || getInteraction(mut1, val)) {
                     this.disabled = false;
                 } else {
                     this.disabled = true;
@@ -270,21 +268,21 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             });
             $("#mut1img").attr("src", "/images/mutators/" + filename1 + ".png");
             $("#mut2img").attr("src", "/images/mutators/" + filename2 + ".png");
-            if (mut1 && mut2 === -1) {
+            if (mut1 !== "NONE" && mut2 === "ALL") {
                 var html = "";
                 var interactions = getAllInteractions(mut1);
                 for (var key in interactions) {
-                    var filename = mutators[key].replace(/ /g,'').toLowerCase();
+                    var filename = key;
                     html += "<p><img src=\"/images/mutators/" + filename + ".png\" height=\"25\" width=\"25\" style=\"vertical-align:middle\"> " + mutators[key] + ": " + interactions[key] + "</p>";
                 }
                 $("#interactions").html(html || "No interaction found.");
-            } else if (mut1 && mut2) {
+            } else if (mut1 !== "NONE" && mut2 !== "NONE") {
                 $("#interactions").text(getInteraction(mut1, mut2) || "No interaction found.");
-            } else if (mut1 && !$mut2.length) {
+            } else if (mut1 !== "NONE" && !$mut2.length) {
                 // mut2 has a disabled option selected, which means there's no interaction
                 $("#interactions").text("No interaction found.");
             } else {
-                $("#interactions").text(mut1 || mut2 ? "(Select both mutators)" : "");
+                $("#interactions").text((mut1 === "NONE") !== (mut2 === "NONE") ? "(Select both mutators)" : "");
             }
         }
         $("#mut1").change(function(){
@@ -294,8 +292,8 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             updateInteractions();
         })
         $("#reset").on("click", function(){
-            $("#mut1").val(0);
-            $("#mut2").val(0);
+            $("#mut1").val("NONE");
+            $("#mut2").val("NONE");
             $("#mut1 option").removeAttr("disabled");
             $("#mut2 option").removeAttr("disabled");
             $("#mut1img").attr("src", "/images/mutators/random.png");
@@ -307,69 +305,69 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <p>A list of all of Starcraft II Co-op mutators is shown below. Names, icons, descriptions and mechanics of these mutators are listed. Click the "Details" button to display more information on each mutator. For more numeric data on mutators (as well as mutator information for other difficulty levels), please visit <a href="https://seamaguro.blogspot.com/2017/12/mutator-compendium.html" rel="nofollow">Maguro's Blog</a>.</p>
     <p>Most mutators also have a certain difficulty score associated with them, called an "Abomination Value". These scores are used for selecting different levels of difficulty levels for Brutal+ games. You can find a list of scores and difficulty level breakpoints on the <a href="brutal">Brutal+ Page</a>.</p>
     <p>You may quickly navigate to a mutator by clicking the links below:</p>
-    <p id="navList"> <a href="#row_afraidofthedark">Afraid of the Dark</a> -
-        <a href="#row_aggressivedeployment">Aggressive Deployment</a> -
-        <a href="#row_alienincubation">Alien Incubation</a> -
+    <p id="navList"> <a href="#row_afraid-of-the-dark">Afraid of the Dark</a> -
+        <a href="#row_aggressive-deployment">Aggressive Deployment</a> -
+        <a href="#row_alien-incubation">Alien Incubation</a> -
         <a href="#row_avenger">Avenger</a> -
         <a href="#row_barrier">Barrier</a> -
-        <a href="#row_blackdeath">Black Death</a> -
+        <a href="#row_black-death">Black Death</a> -
         <a href="#row_blizzard">Blizzard</a> -
-        <a href="#row_boombots">Boom Bots</a> -
-        <a href="#row_chaosstudios">Chaos Studios</a> -
-        <a href="#row_concussiveattacks">Concussive Attacks</a> -
+        <a href="#row_boom-bots">Boom Bots</a> -
+        <a href="#row_chaos-studios">Chaos Studios</a> -
+        <a href="#row_concussive-attacks">Concussive Attacks</a> -
         <a href="#row_darkness">Darkness</a> -
         <a href="#row_diffusion">Diffusion</a> -
-        <a href="#row_doubleedged">Double Edged</a> -
-        <a href="#row_eminentdomain">Eminent Domain</a> -
-        <a href="#row_evasivemaneuvers">Evasive Maneuvers</a> -
-        <a href="#row_fatalattraction">Fatal Attraction</a> -
+        <a href="#row_double-edged">Double Edged</a> -
+        <a href="#row_eminent-domain">Eminent Domain</a> -
+        <a href="#row_evasive-maneuvers">Evasive Maneuvers</a> -
+        <a href="#row_fatal-attraction">Fatal Attraction</a> -
         <a href="#row_fear">Fear</a> -
         <a href="#row_fireworks">Fireworks</a> -
-        <a href="#row_giftexchange">Gift Exchange</a> -
-        <a href="#row_goingnuclear">Going Nuclear</a> -
-        <a href="#row_hardenedwill">Hardened Will</a> -
-        <a href="#row_heroesfromthestorm">Heroes From the Storm</a> -
+        <a href="#row_gift-exchange">Gift Exchange</a> -
+        <a href="#row_going-nuclear">Going Nuclear</a> -
+        <a href="#row_hardened-will">Hardened Will</a> -
+        <a href="#row_heroes-from-the-storm">Heroes From the Storm</a> -
         <a href="#row_inspiration">Inspiration</a> -
-        <a href="#row_justdie">Just Die</a> -
-        <a href="#row_killbots">Kill Bots</a> -
-        <a href="#row_laserdrill">Laser Drill</a> -
-        <a href="#row_lavaburst">Lava Burst</a> -
-        <a href="#row_lifeleech">Life Leech</a> -
-        <a href="#row_longrange">Long Range</a> -
-        <a href="#row_luckyenvelopes">Lucky Envelopes</a> -
-        <a href="#row_magnificent">Mag-nificent</a> -
-        <a href="#row_microtransactions">Micro Transactions</a> -
-        <a href="#row_mineralshields">Mineral Shields</a> -
+        <a href="#row_just-die">Just Die</a> -
+        <a href="#row_kill-bots">Kill Bots</a> -
+        <a href="#row_laser-drill">Laser Drill</a> -
+        <a href="#row_lava-burst">Lava Burst</a> -
+        <a href="#row_life-leech">Life Leech</a> -
+        <a href="#row_long-range">Long Range</a> -
+        <a href="#row_lucky-envelopes">Lucky Envelopes</a> -
+        <a href="#row_mag-nificent">Mag-nificent</a> -
+        <a href="#row_micro-transactions">Micro Transactions</a> -
+        <a href="#row_mineral-shields">Mineral Shields</a> -
         <a href="#row_minesweeper">Minesweeper</a> -
-        <a href="#row_missilecommand">Missile Command</a> -
-        <a href="#row_momentofsilence">Moment of Silence</a> -
-        <a href="#row_mutuallyassureddestruction">Mutually Assured Destruction</a> -
-        <a href="#row_naughtylist">Naughty List</a> -
-        <a href="#row_orbitalstrike">Orbital Strike</a> -
+        <a href="#row_missile-command">Missile Command</a> -
+        <a href="#row_moment-of-silence">Moment of Silence</a> -
+        <a href="#row_mutually-assured-destruction">Mutually Assured Destruction</a> -
+        <a href="#row_naughty-list">Naughty List</a> -
+        <a href="#row_orbital-strike">Orbital Strike</a> -
         <a href="#row_outbreak">Outbreak</a> -
-        <a href="#row_photonoverload">Photon Overload</a> -
+        <a href="#row_photon-overload">Photon Overload</a> -
         <a href="#row_polarity">Polarity</a> -
-        <a href="#row_poweroverwhelming">Power Overwhelming</a> -
+        <a href="#row_power-overwhelming">Power Overwhelming</a> -
         <a href="#row_propagators">Propagators</a> -
-        <a href="#row_purifierbeam">Purifier Beam</a> -
+        <a href="#row_purifier-beam">Purifier Beam</a> -
         <a href="#row_random">Random</a> -
-        <a href="#row_scorchedearth">Scorched Earth</a> -
-        <a href="#row_selfdestruction">Self Destruction</a> -
-        <a href="#row_sharingiscaring">Sharing is Caring</a> -
+        <a href="#row_scorched-earth">Scorched Earth</a> -
+        <a href="#row_self-destruction">Self Destruction</a> -
+        <a href="#row_sharing-is-caring">Sharing is Caring</a> -
         <a href="#row_shortsighted">Shortsighted</a> -
-        <a href="#row_slimpickings">Slim Pickings</a> -
-        <a href="#row_speedfreaks">Speed Freaks</a> -
-        <a href="#row_temporalfield">Temporal Field</a> -
-        <a href="#row_timewarp">Time Warp</a> -
+        <a href="#row_slim-pickings">Slim Pickings</a> -
+        <a href="#row_speed-freaks">Speed Freaks</a> -
+        <a href="#row_temporal-field">Temporal Field</a> -
+        <a href="#row_time-warp">Time Warp</a> -
         <a href="#row_transmutation">Transmutation</a> -
-        <a href="#row_trickortreat">Trick or Treat</a> -
-        <a href="#row_turkeyshoot">Turkey Shoot</a> -
+        <a href="#row_trick-or-treat">Trick or Treat</a> -
+        <a href="#row_turkey-shoot">Turkey Shoot</a> -
         <a href="#row_twister">Twister</a> -
         <a href="#row_vertigo">Vertigo</a> -
-        <a href="#row_voidreanimators">Void Reanimators</a> -
-        <a href="#row_voidrifts">Void Rifts</a> -
-        <a href="#row_walkinginfested">Walking Infested</a> -
-        <a href="#row_wemoveunseen">We Move Unseen</a></p>
+        <a href="#row_void-reanimators">Void Reanimators</a> -
+        <a href="#row_void-rifts">Void Rifts</a> -
+        <a href="#row_walking-infested">Walking Infested</a> -
+        <a href="#row_we-move-unseen">We Move Unseen</a></p>
 <?php
 require_once __DIR__ . '/../../includes/queries.php';
 $mutatorInfo = get_mutators();
