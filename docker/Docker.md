@@ -28,11 +28,15 @@ docker compose up --build
 
 ## Generating static pages
 
-For Makefile commands docker, use git-bash if on Windows.
+For Makefile commands with docker, use git-bash if on Windows.
 
 ```shell
 make -f Makefile.docker html
 ```
+
+It's also possible re-generate static pages or run any Makefile command while the app is running, without needing to stop and restart it.
+In one terminal run `docker compose up` and in another terminal run `make -f Makefile.docker html`.
+Refreshing the web page once the build completes will show the changes.
 
 ## Running PHP Code Sniffer
 
@@ -84,4 +88,6 @@ make -f Makefile.docker data
 
 ```shell
 docker run --rm -v ${pwd}:/usr/src/app -w /usr/src/app oven/bun:1 bun source-data/validate
+# or
+make -f Makefile.docker validate-data
 ```

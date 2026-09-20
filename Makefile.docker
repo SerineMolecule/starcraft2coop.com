@@ -1,5 +1,5 @@
 BUN_DOCKER = docker run --rm -v $(PWD):/usr/src/app -w /usr/src/app oven/bun:1
-PHP_RUN = docker compose run --remove-orphans --service-ports -w //var/www php
+PHP_RUN = docker compose run --rm --remove-orphans -w //var/www php
 COMPOSER_DOCKER = docker run --rm -v $(PWD):/app composer:2.7.1
 
 PORT ?= 8000
@@ -33,7 +33,7 @@ html: node_modules
 
 .PHONY: dev
 dev: html
-	docker compose run --remove-orphans --service-ports -v "$(PWD)/dev-router.php:/var/www/dev-router.php" -w //var/www php php -S 0.0.0.0:$(PORT) -t html dev-router.php
+	docker compose run --rm --remove-orphans --service-ports -v "$(PWD)/dev-router.php:/var/www/dev-router.php" -w //var/www php php -S 0.0.0.0:$(PORT) -t html dev-router.php
 
 .PHONY: test
 test: validate-data bun-test check
