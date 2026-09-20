@@ -198,6 +198,7 @@ interface Unit {
     supply: number;
     buildtime: number;
     hp: number;
+    readonly baseHp: number;
     shields: number;
     armor: number;
     shieldarmor: number;
@@ -317,6 +318,7 @@ export class UnitStats extends preact.Component<{
             buildtime: selectedUnit.buildtime,
             supply: selectedUnit.supply,
             hp: selectedUnit.hp,
+            baseHp: selectedUnit.hp,
             shields: selectedUnit.shields,
             armor: selectedUnit.armor,
             shieldarmor: selectedUnit.shieldarmor,
@@ -338,6 +340,7 @@ export class UnitStats extends preact.Component<{
             operationtype?: string | null,
             modifiermode?: string | null,
             modifiertag?: string | null,
+            extra?: string | null,
         },
         unit: Unit,
         level?: number,
@@ -356,7 +359,11 @@ export class UnitStats extends preact.Component<{
                 unit.supply = this.applyModifier(unit.supply, upgrade, level);
                 break;
             case 'HP':
-                unit.hp = this.applyModifier(unit.hp, upgrade, level);
+                if (upgrade.operation === 'multiply' && upgrade.extra == null) {
+                    unit.hp += this.applyModifier(unit.baseHp, upgrade, level) - unit.baseHp;
+                } else {
+                    unit.hp = this.applyModifier(unit.hp, upgrade, level);
+                }
                 break;
             case 'Shields':
                 unit.shields = this.applyModifier(unit.shields, upgrade, level);
