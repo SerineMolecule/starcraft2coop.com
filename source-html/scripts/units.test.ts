@@ -31,6 +31,27 @@ test("Abathur Mutalisk Sundering Glave doubles armored damage", () => {
     expect(mutalisk.modes[""]!.attributedamage!["Armored"]!.damage).toBe(18);
 });
 
+test("HP percentage bonuses stack on base HP after other HP changes", () => {
+    const unit = UnitStats.getUnit(UnitStats.modifiers("tychus", "blaze"))!;
+    UnitStats.applyUpgrade({ modifier: "HP", operation: "add", value: 200 }, unit);
+    UnitStats.applyUpgrade({ modifier: "HP", operation: "multiply", value: 1.25 }, unit);
+    expect(unit.hp).toBe(1450);
+
+    UnitStats.applyUpgrade({
+        modifier: "HP", operation: "multiply", value: 0.005, operationtype: "increase", extra: null,
+    }, unit, 30);
+    expect(unit.hp).toBeCloseTo(1600);
+});
+
+test("Raynor Backwater Marshal doubles total HP including Combat Shield and armor upgrades", () => {
+    const marine = upgradedUnit("raynor", "marine", {
+        upgrades: { "Combat Shield": true },
+        upgradeLevels: { armor: 2 },
+        prestiges: { "Backwater Marshal": true },
+    });
+    expect(marine.hp).toBe(128);
+});
+
 test("Crooked Sam has the expected base cooldown", () => {
     const sam = upgradedUnit("tychus", "crookedsam");
     expect(sam.modes[""]!.attackspeed).toBe(1.1);
