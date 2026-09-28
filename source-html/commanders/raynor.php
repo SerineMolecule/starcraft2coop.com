@@ -365,7 +365,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                 <td>6</td>
             </tr>
             <tr>
-                <th>Advice</th><td>This prestige is particularly useful if you prefer to use air units and rushing Battlecruisers. The lack of tech requirements combined with the gas cost reduction makes Battlecruiser rushing a viable strategy. you may even combine this with the Hyperion cooldown mastery to be able to spam Hyperions much more frequently.</td>
+                <th>Advice</th><td>This prestige is particularly useful if you prefer to use air units and rushing Battlecruisers. The lack of tech requirements combined with the gas cost reduction makes Battlecruiser rushing a viable strategy. You may even combine this with the Hyperion cooldown mastery to be able to spam Hyperions much more frequently.</td>
             </tr>
         </tbody>
     </table>
