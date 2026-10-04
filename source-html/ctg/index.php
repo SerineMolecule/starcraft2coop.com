@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="robots" content="index, follow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
-<link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>Starcraft 2 Co-op - CtG's Mutation Commander List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+    <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Starcraft 2 Co-op - CtG's Mutation Commander List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@348&display=swap" rel="stylesheet">
     <style>
         body{
             background:url("../images/ctg/bg.jpg");
@@ -16,73 +17,66 @@
             font-family:arial;
             color:white;
             font-size:1.15rem;
+            min-height:calc(100vh - 16px);
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
         }
         .box{
             display:inline-block;
-            background:url("../images/ctg/border.png");
-            padding:1rem;
-            width:905px;
-            background-size: 100% 100%;
+            background:url("../images/ctg/border-on-black.png");
+            padding:25px;
+            width:930px;
+            height:361px;
+            box-sizing:border-box;
+            flex-shrink:0;
             background-repeat: no-repeat;
         }
         .pool{
-            display:inline-block;
             background:rgba(30,37,91,0.75);
             padding:1rem;
             border-radius:0.5rem;
             width:1800px;
+            max-width:100%;
+            box-sizing:border-box;
+            margin-top:auto;
             border:5px solid white;
             display:flex;
-            justify-content: space-around;
+            flex-wrap:wrap;
+            gap:0.5rem;
         }
         .pool img{
             cursor:pointer;
             width:75px;
         }
-        .mapcom{
-            padding-top:0.5rem;
-            display:grid;
-            grid-template-columns: 75% 25%;
-        }
         .info{
-            grid-column-start:1;
-            grid-column-end:2;
+            padding: 10px 0;
         }
         .info img{
             display:inline;
             padding-right:1rem;
         }
-        .coms{
-            grid-column-start:2;
-            grid-column-end:3;
-            display:flex;
-            justify-content: space-around;
-        }
-        .coms div{
-            border: 2px solid white;
-            width:75px;
-            height:75px;
-        }
-        .coms img{
-            width:125%;
-        }
         .mutname{
             color:#f5eea6;
         }
-        .mutdata{
-            display:grid;
-            grid-template-columns: 76px calc(100% - 50px - 1rem);
-            align-items:center;
+        .mutdata {
+            height: 72px;
         }
-        .mutdata img{
-            grid-column-start:1;
-            grid-column-end:2;
+        .mutdata img {
+            width: 50px;
+            height: 50px;
+            padding: 2px;
+            border: 2px solid #2772b3;
+            border-radius: 4px;
+            background: black;
+            box-shadow: 0 0 2px #2772b3, 0 0 0 2px black;
+            float: left;
+        }
+        .box img:not([src]) {
+            visibility: hidden;
         }
         .mutdata p{
-            padding-left:1rem;
-            grid-column-start:2;
-            grid-column-end:3;
-            margin:0.5rem;
+            margin: 0 10px 0 68px;
         }
         img{
             display:block;
@@ -91,82 +85,132 @@
         select{
             font-size:1.75rem;
         }
-        .hidden{
-            display:none;
+        .mutation {
+            font-family: "Science Gothic", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 350;
+            font-style: normal;
+            text-transform: uppercase;
+            background: transparent;
+            color: white;
+            border: 0;
+            appearance: none;
+            -webkit-appearance: none;
+            font-variation-settings:
+                "slnt" 0,
+                "wdth" 100,
+                "CTRS" 0;
+            font-size: 32px;
+            line-height: 32px;
+        }
+        .mutation option {
+            background: black;
+            color: white;
+            text-transform: none;
+        }
+        #current-commander {
+            width: 500px;
+            height: 94px;
+            flex-shrink: 0;
+            text-align: right;
+            background: black;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
     </style>
-  </head>
+</head>
 <body>
     <?php
     require_once __DIR__ . '/../../includes/queries.php';
     $mutators = get_mutators();
     $mutations = get_weeklymutations();
-    $mutations = array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden But Inevitable');
+    $mutations = array_values(array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden but Inevitable'));
     foreach ($mutations as &$row) {
         if ($row['map'] == "Lock and Load") {
             $row['map'] = "Lock Load";
         }
     }
     ?>
-    <div id="mutatorsList" class="hidden">
-    <?php
-        echo(json_encode($mutators));
-    ?>
-    </div>
-    <div id="mutationsList" class="hidden">
-        <?php
-            echo(json_encode($mutations));
-        ?>
-    </div>
+
+    <div id="current-commander"></div>
+
     <div id="box1" class="box">
-        <?php include 'selector.php'; ?>
+        <select class="mutation">
+            <option value="NULL">(select a mutation)</option>
+            <?php
+            $index = 0;
+            foreach ($mutations as $mut) {
+                echo "<option value='$index'>{$mut['mutation']}</option>\n";
+                $index++;
+            }
+            ?>
+        </select>
+        <div class="info">
+            <img class="map" width="450" height="50" alt="" />
+            <img class="difficulty" width="170" height="50" alt="" style="float:right" />
+        </div>
+        <div class="mut1 mutdata">
+            <img class="mut1icon" width="50" height="50" alt="" />
+            <p class="mut1desc"></p>
+        </div>
+        <div class="mut2 mutdata">
+            <img class="mut2icon" width="50" height="50" alt="" />
+            <p class="mut2desc"></p>
+        </div>
+        <div class="mut3 mutdata">
+            <img class="mut3icon" width="50" height="50" alt="" />
+            <p class="mut3desc"></p>
+        </div>
     </div>
-    <div id="box2" class="box">
-        <?php include 'selector.php'; ?>
+
+    <div class="pool">
+        <img id="abathur"  src="/images/commanderportraits/abathurportrait.png">
+        <img id="alarak"  src="/images/commanderportraits/alarakportrait.png">
+        <img id="mengsk"  src="/images/commanderportraits/mengskportrait.png">
+        <img id="artanis"  src="/images/commanderportraits/artanisportrait.png">
+        <img id="dehaka"  src="/images/commanderportraits/dehakaportrait.png">
+        <img id="fenix"  src="/images/commanderportraits/fenixportrait.png">
+        <img id="horner"  src="/images/commanderportraits/hornerportrait.png">
+        <img id="karax"  src="/images/commanderportraits/karaxportrait.png">
+        <img id="kerrigan"  src="/images/commanderportraits/kerriganportrait.png">
+        <img id="nova"  src="/images/commanderportraits/novaportrait.png">
+        <img id="raynor" src="/images/commanderportraits/raynorportrait.png">
+        <img id="stetmann"  src="/images/commanderportraits/stetmannportrait.png">
+        <img id="stukov"  src="/images/commanderportraits/stukovportrait.png">
+        <img id="swann"  src="/images/commanderportraits/swannportrait.png">
+        <img id="tychus"  src="/images/commanderportraits/tychusportrait.png">
+        <img id="vorazun"  src="/images/commanderportraits/vorazunportrait.png">
+        <img id="zagara"  src="/images/commanderportraits/zagaraportrait.png">
+        <img id="zeratul"  src="/images/commanderportraits/zeratulportrait.png">
     </div>
-    <div id="box3" class="box">
-        <?php include 'selector.php'; ?>
-    </div>
-    <div id="box4" class="box">
-        <?php include 'selector.php'; ?>
-    </div>
-    <div id="box5" class="box">
-        <?php include 'selector.php'; ?>
-    </div>
-    <div id="box6" class="box">
-        <?php include 'selector.php'; ?>
-    </div>
-    <div class="pool" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img id="raynor" src="/images/commanderportraits/raynorportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="kerrigan"  src="/images/commanderportraits/kerriganportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="artanis"  src="/images/commanderportraits/artanisportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="swann"  src="/images/commanderportraits/swannportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="zagara"  src="/images/commanderportraits/zagaraportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="vorazun"  src="/images/commanderportraits/vorazunportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="karax"  src="/images/commanderportraits/karaxportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="abathur"  src="/images/commanderportraits/abathurportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="alarak"  src="/images/commanderportraits/alarakportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="nova"  src="/images/commanderportraits/novaportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="stukov"  src="/images/commanderportraits/stukovportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="fenix"  src="/images/commanderportraits/fenixportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="dehaka"  src="/images/commanderportraits/dehakaportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="horner"  src="/images/commanderportraits/hornerportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="tychus"  src="/images/commanderportraits/tychusportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="zeratul"  src="/images/commanderportraits/zeratulportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="stetmann"  src="/images/commanderportraits/stetmannportrait.png" draggable="true" ondragstart="drag(event)">
-        <img id="mengsk"  src="/images/commanderportraits/mengskportrait.png" draggable="true" ondragstart="drag(event)">
-    </div>
+
     <script>
-        var mutatorsList = JSON.parse($("#mutatorsList").text());
-        var mutatorsById = {};
-        for (var i = 0; i < mutatorsList.length; i++) {
-            mutatorsById[mutatorsList[i].mutatorid] = mutatorsList[i];
-        }
-        var mutationsList = JSON.parse($("#mutationsList").text());
+        $(".pool img").on("click", function(){
+            $("#current-commander").empty().append($("<img>", {
+                src: "/images/ctg/commanders/" + this.id + ".png",
+                alt: this.id,
+                width: 500,
+                height: 94
+            }));
+        });
+        const mutatorsById = <?= json_encode(
+            array_column($mutators, null, 'mutatorid'),
+            JSON_HEX_TAG | JSON_THROW_ON_ERROR
+        ) ?>;
+        const mutationsList = <?= json_encode(
+            $mutations,
+            JSON_HEX_TAG | JSON_THROW_ON_ERROR
+        ) ?>;
         $(".mutation").change(function(){
             var elem = $(this).parent();
             var mutationIndex = $(this).prop('selectedIndex') - 1;
             var selectedMutation = mutationsList[mutationIndex];
+
+            if (!selectedMutation) {
+                elem.find(".map, .difficulty, .mutdata img").removeAttr("src");
+                elem.find(".mutdata p").empty();
+                return;
+            }
 
             var mapFile = "../images/ctg/" + selectedMutation.map.replace(/ /g,'').toLowerCase() +".png";
             elem.find(".map").attr('src', mapFile);
@@ -180,7 +224,7 @@
                 elem.find(".mut1desc").html("<b class='mutname'>" + mutator1.mutatorname + "</b><br>" + mutator1.mutatordescription);
             }
             else{
-                elem.find(".mut1icon").attr('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");
+                elem.find(".mut1icon").removeAttr("src");
                 elem.find(".mut1desc").text("");
             }
             if(selectedMutation.mut02 !=null){
@@ -191,7 +235,7 @@
                 totalabom+=parseInt(mutator2.abomination);
             }
             else{
-                elem.find(".mut2icon").attr('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");
+                elem.find(".mut2icon").removeAttr("src");
                 elem.find(".mut2desc").text("");
             }
             if(selectedMutation.mut03 !=null){
@@ -202,7 +246,7 @@
                 totalabom+=parseInt(mutator3.abomination);
             }
             else{
-                elem.find(".mut3icon").attr('src', "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");
+                elem.find(".mut3icon").removeAttr("src");
                 elem.find(".mut3desc").text("");
             }
             var brutalfile = "../images/ctg/brutal";
@@ -229,21 +273,6 @@
             }
             elem.find(".difficulty").attr('src', brutalfile);
         })
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-        function allowDrop(ev) {
-          ev.preventDefault();
-        }
-
-        function drop(ev) {
-          ev.preventDefault();
-          var data = ev.dataTransfer.getData("text");
-          if(ev.target.tagName=="IMG" || ev.target.childElementCount==2){
-              return;
-          }
-          ev.target.appendChild(document.getElementById(data));
-        }
     </script>
 </body>
 </html>
