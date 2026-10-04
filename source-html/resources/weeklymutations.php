@@ -635,7 +635,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                     if ($row["mut03"]) {
                         $classVals .= " " . $row["mut03"];
                     }
-                    [$diff, $diffString] = getDiffString($row["brutalplus"]);
+                    [$diff, $diffString] = getDiffString($row["brutalplus"] ?? null);
                     $classVals .= " brutal" . $diff;
                     echo "<tr class='" . $classVals . "'>\n";
                     echo "<td class='ribbon'>" . $row["releasedate"] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
@@ -643,6 +643,13 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                         echo "<td>" . $row["mutation"] . "<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/" . $row["link"] . "'></td>\n";
                     } else {
                         echo "<td>" . $row["mutation"] . "</td>\n";
+                    }
+
+                    if ($row["mutationid"] === 47) {
+                        echo "<td colspan='4'><a href='https://www.reddit.com/r/starcraft/comments/62renx/coop_mutation_47_sudden_but_inevitable/' " .
+                            "title=\"An April Fools' event: 1v1 on Steppes of War with co-op commanders and no mutators\">Steppes of Betrayal</a></td>\n";
+                        echo "</tr>\n";
+                        continue;
                     }
 
                     if ($row["map"]) {
