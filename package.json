@@ -1,5 +1,8 @@
 {
     "dependencies": {
+        "@dnd-kit/collision": "^0.5.0",
+        "@dnd-kit/dom": "^0.5.0",
+        "@dnd-kit/state": "^0.5.0",
         "fuse.js": "^7.4.1",
         "preact": "^10.29.1"
     },
