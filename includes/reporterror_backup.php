@@ -7,7 +7,7 @@
 <div id="errorReport">
     <p id="reportErrorLink">Report an error on this page</p>
     <?php
-    $newPatch = file_get_contents(dirname(__FILE__) . "/newpatch.txt");
+    $newPatch = file_get_contents(dirname(__FILE__) . '/newpatch.txt');
     if ($newPatch) {
         echo '<div id="newPatch">Co-op has recently been updated. Please do not report patch mismatches yet.</div>';
     }

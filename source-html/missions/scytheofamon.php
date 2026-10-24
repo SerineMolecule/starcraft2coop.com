@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Scythe of Amon</title>
@@ -33,7 +33,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Scythe of Amon</h1>
     <p id="missionPlace">Xel'Naga Temple</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -70,7 +70,7 @@ require_once "../../includes/switchergenerator.php";
     <p>A video is below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/9g-vLQou8-w" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     <h2 id="sliverGrowth">Void Sliver Growth</h2>
-    <?php $mission = "scytheofamon"; ?>
+    <?php $mission = 'scytheofamon'; ?>
     <p>Every time a Void Sliver is destroyed, further reinforcements are added to the remaining Void Slivers. Additionally, all other remaining Void Slivers gain 2000 max shields, and their shields refreshed to full. This makes the other slivers more difficult to destroy. The reinforcement growth of each Sliver is shown below.</p>
     <p>All units present will be Void units and will spawn from the Void Rifts around the Sliver before moving into position. These units can be Dominated and Reclaimed, but cannot be Mind-Controlled by Dark Archons.</p>
     <p>Sliver 1:</p>
@@ -279,11 +279,11 @@ require_once "../../includes/switchergenerator.php";
     </div>
     <p>The bonus objective requires you to escort a Warp Prism as it attempts to evacuate people. The stopping points of these prisms are within enemy bases. The bases that will be encountered, in the order of the stopping points (assuming the objective doesn't get shot down) is shown below.</p>
     <p>Stop Point 1:</p>
-    <?php switcher_generator("bonusbase1long") ?>
+    <?php switcher_generator('bonusbase1long') ?>
     <p>Stop Point 2:</p>
-    <?php switcher_generator("bonusbase2") ?>
+    <?php switcher_generator('bonusbase2') ?>
     <p>Stop Point 3:</p>
-    <?php switcher_generator("bonusbase3long") ?>
+    <?php switcher_generator('bonusbase3long') ?>
     <p>It is also important to note that each stopping point will feature a difference race of enemy units. The race will not match the race of the Attack Waves on this map. However, based on the race of the Attack Waves, you can tell what race of enemy units will be present in each of the three Stopping Points above as follows:</p>
     <table class="centered">
         <thead>

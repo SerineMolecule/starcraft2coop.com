@@ -17,7 +17,7 @@ if ($grep_output) {
         }
     }
 } else {
-    echo "Error: Grep had 0 results!";
+    echo 'Error: Grep had 0 results!';
     exit(1);
 }
 

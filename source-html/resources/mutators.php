@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mutator List</title>
@@ -82,7 +82,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <h1>Co-op Mutators List: Names, Icons, Descriptions and Mechanics</h1>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#safetyZones">Safety Zone</a></p>

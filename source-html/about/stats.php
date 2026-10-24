@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Statistics</title>
@@ -92,10 +92,10 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         <tbody>
             <?php
             foreach ($sortedMissions as $mission) {
-                echo("<tr>");
-                echo("<td>{$mission['name']}</td>");
-                echo("<td class=centered>{$mission['mutationcount']}</td>");
-                echo("<tr>\n");
+                echo '<tr>';
+                echo "<td>{$mission['name']}</td>";
+                echo "<td class=centered>{$mission['mutationcount']}</td>";
+                echo "<tr>\n";
             }
             ?>
         </tbody>
@@ -117,12 +117,12 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                 if ($mutator['mutatorname'] === 'Random') {
                     continue;
                 }
-                echo("<tr>");
+                echo '<tr>';
                 $filename = $mutator['mutatorid'];
                 $img = "<img class='miniIcon' src='/images/mutators/" . $filename . ".png' alt=''>";
-                echo("<td><a href='/mutators/" . $filename . "'>$img{$mutator['mutatorname']}</a></td>");
-                echo("<td class=centered>{$mutator['mutationcount']}</td>");
-                echo("<tr>\n");
+                echo "<td><a href='/mutators/" . $filename . "'>$img{$mutator['mutatorname']}</a></td>";
+                echo "<td class=centered>{$mutator['mutationcount']}</td>";
+                echo "<tr>\n";
             }
             ?>
         </tbody>

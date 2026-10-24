@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../../includes/wrapper.php";
+require_once __DIR__ . '/../../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Tournament</title>
@@ -294,9 +294,9 @@ require_once __DIR__ . "/../../../includes/wrapper.php";
     <?php
     $closed = true;
     if ($closed) {
-        include("registrationclosed.php");
+        include 'registrationclosed.php';
     } else {
-        include("registrationopen.php");
+        include 'registrationopen.php';
     }
     ?>
 <?= endContent() ?>

@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Void Launch</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Void Launch</h1>
     <p id="missionPlace">Kaldir</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -60,14 +60,14 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "voidlaunch"; ?>
+    <?php $mission = 'voidlaunch'; ?>
     <p>It is not required to push into enemy bases this map. However, it is highly recommended you do so, as it will simplify the mission in the later stages, where shuttles will spawn from multiple bays at the same time. By clearing enemy bases, you can build static defenses at the bays themselves, and spawn-camp the shuttles.</p>
     <p>The base on the far left is shown below:</p>
-    <?php switcher_generator("leftbaselong") ?>
+    <?php switcher_generator('leftbaselong') ?>
     <p>To the East of this base is a smaller base guarding the middle bay. This is the least heavily defended base present. However, it can only be accessed through one of the other two bases:</p>
-    <?php switcher_generator("midbaselong") ?>
+    <?php switcher_generator('midbaselong') ?>
     <p>The base on the far right is shown below:</p>
-    <?php switcher_generator("rightbaselong") ?>
+    <?php switcher_generator('rightbaselong') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/voidlaunch/researchvessel.jpg" alt="Research Vessel">
@@ -76,11 +76,11 @@ require_once "../../includes/switchergenerator.php";
     </div>
     <p>The bonus objective requires you to escort three Research Vessels to the Xel'Naga Shrines on the map, and defend them against a single attack wave targeting them. The locations of the Xel'Naga Shrines are shown below:</p>
     <p>The first Shrine is guarded by a very small force of enemy units.</p>
-    <?php switcher_generator("shrine1") ?>
+    <?php switcher_generator('shrine1') ?>
     <p>The second Shrine is guarded by a relatively strong force of units.</p>
-    <?php switcher_generator("shrine2") ?>
+    <?php switcher_generator('shrine2') ?>
     <p>The last Shrine is guarded by an enemy camp which will require a significant force to clear.</p>
-    <?php switcher_generator("shrine3long") ?>
+    <?php switcher_generator('shrine3long') ?>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Shuttle Timings, Headings, Escort Strength and Tech Levels for this mission are shown below. Note that wave #7 will occur in one of three different patterns, all listed in the table.</p>

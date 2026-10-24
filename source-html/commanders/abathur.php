@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Guide - Abathur</title>
@@ -21,7 +21,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <div id="tooltip">tooltip</div>
     <h1 data-toc-target="header"><span class="unbold">Commander:</span> Abathur</h1>
     <p id="commanderMotto">Evolution Master</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#header">Commander: Abathur</a></p>

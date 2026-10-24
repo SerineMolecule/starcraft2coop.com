@@ -1,18 +1,18 @@
 <?php
 
 if (!isset($_GET['difficulty'])) {
-    echo("Error!");
+    echo 'Error!';
     die();
 }
 
 if (!ctype_digit($_GET['difficulty'])) {
-    echo("Error!");
+    echo 'Error!';
     die();
 }
 
 $difficulty = intval($_GET['difficulty']);
 if ($difficulty < 1 || $difficulty > 6) {
-    echo("Error!");
+    echo 'Error!';
     die();
 }
 
@@ -25,7 +25,6 @@ $minMutators = $oneBrutal['minmutators'];
 $maxMutators = $oneBrutal['maxmutators'];
 $minPoints = $oneBrutal['minpoints'];
 $maxPoints = $oneBrutal['maxpoints'];
-
 
 $pointCeiling = 10; //highest possible mutator cost
 
@@ -43,8 +42,7 @@ $mutatorCount = getMutatorCount($minMutators, $maxMutators);
 
 //Pick a random template with the selected mutator count from the possibilities that were generated earlier
 $finalTemplate = selectTemplate($mutatorCount);
-echo(json_encode($finalTemplate));
-
+echo json_encode($finalTemplate);
 
 function selectTemplate($mutatorCount)
 {
@@ -69,8 +67,8 @@ function getMutatorCount($minMutators, $maxMutators)
     //This calculates a new weighting to push it closer to the intended target percentage for the number of mutators in the mutation
     //Once the new weightings are calculated, get the randomized mutator count.
 
-    $bugComboArray = [0,0,499, 3541, 5502];
-    $bugTargetPercentage = [0,0,0.48, 0.48, 0.04];
+    $bugComboArray = [0, 0, 499, 3541, 5502];
+    $bugTargetPercentage = [0, 0, 0.48, 0.48, 0.04];
 
     $bugTotalCombos = 0;
     for ($i = $minMutators; $i <= $maxMutators; $i++) {
@@ -102,7 +100,7 @@ function getRandomWeightedElement(array $weightedValues)
 function traverse($template, $index, $totalCost, $totalMutators)
 {
     //Loop Through all possible templates
-    global $countArray,$minMutators, $maxMutators, $minPoints, $maxPoints, $pointCeiling;
+    global $countArray, $minMutators, $maxMutators, $minPoints, $maxPoints, $pointCeiling;
 
     for ($i = 0; $i <= $maxMutators; $i++) {
         $template[$index] = $i;
@@ -153,8 +151,7 @@ function calculateCombos($template)
 
 function nCr($n, $r)
 {
-
-    return (factorial($n) / (factorial($r) * factorial($n - $r)));
+    return factorial($n) / (factorial($r) * factorial($n - $r));
 }
 
 function factorial($number)

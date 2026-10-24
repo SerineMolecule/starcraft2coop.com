@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - The Vermillion Problem</title>
@@ -33,7 +33,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> The Vermillion Problem</h1>
     <p id="missionPlace">Veridia Prime</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -78,7 +78,7 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "thevermillionproblem"; ?>
+    <?php $mission = 'thevermillionproblem'; ?>
     <p>Pushing into enemy bases is a key part of play on The Vermillion Problem, because most crystals will spawn behind enemy lines.</p>
     <p>The first base you will be pushing into will be the one at your expansion. It is guarded by a small force of units, so you will need a small army or a hero unit to clear it.</p>
     <p>Beweare of the small force of units guarding the northern ramp (not shown below). This force of units is based on the race, and consists of the following:</p>
@@ -87,24 +87,24 @@ require_once "../../includes/switchergenerator.php";
         <li><b>Terran:</b> Three Goliaths</li>
         <li><b>Zerg:</b> Two Ravagers and Eight Zerglings</li>
     </ul>
-    <?php switcher_generator("expansionlong") ?>
+    <?php switcher_generator('expansionlong') ?>
     <p>At this point, the bases you will clear will usually depend on where the crystals spawn, rather than a particular order.</p>
     <p>The base to the West is usually the most lightly defended base after the expansion. It is shown below:</p>
-    <?php switcher_generator("wbase") ?>
+    <?php switcher_generator('wbase') ?>
     <p>The next base usually captured is the base to the North. It is slightly more heavily defended, but should be relatively easy to capture.</p>
-    <?php switcher_generator("nbaselong") ?>
+    <?php switcher_generator('nbaselong') ?>
     <p>Due to the flow of the mission, there will be a lava surge by the time this base is cleared. It is usually optimal to continue pushing downwards to the North-East base. Watch out for the Hybrid Dominator in this area.</p>
-    <?php switcher_generator("nebase") ?>
+    <?php switcher_generator('nebase') ?>
     <p>The rest of the bases do require some strong forces in order to clear. The base to the South-West is probably the easiest of the remaining bases that can have crystals near them.</p>
-    <?php switcher_generator("swbaselong") ?>
+    <?php switcher_generator('swbaselong') ?>
     <p>If you choose to push East from this base towards the bonus objective, you'll need to destroy a small enemy camp. Note that the ramp from the opposite side of this island is unguarded and you can reach the bonus objective without fighting enemy units.</p>
-    <?php switcher_generator("bonuscamp") ?>
+    <?php switcher_generator('bonuscamp') ?>
     <p>If you push East from your expansion, there are a patches of enemies present. The first is a camp of units.</p>
-    <?php switcher_generator("ebasecamp") ?>
+    <?php switcher_generator('ebasecamp') ?>
     <p>If you follow the path up North, you'll get to the enemy base.</p>
-    <?php switcher_generator("ebaselong") ?>
+    <?php switcher_generator('ebaselong') ?>
     <p>Just South of this base, there is a small enclave of enemies.</p>
-    <?php switcher_generator("eenclavelong") ?>
+    <?php switcher_generator('eenclavelong') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/thevermillionproblem/moltensalamander.jpg" alt="Molten Salamander">

@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Part and Parcel</title>
@@ -21,7 +21,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Part and Parcel</h1>
     <p id="missionPlace">Moebius Research Station</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -71,27 +71,27 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "partparcel"; ?>
+    <?php $mission = 'partparcel'; ?>
     <p>The expansion on Part and Parcel is guarded by enemy forces, it is usually optimal to first capture the expansion. The expansion is shown below.</p>
-    <?php switcher_generator("expo") ?>
+    <?php switcher_generator('expo') ?>
     <p>The next area that is usually pushed is the bottom left. This is because there are very minimal defenses, and has enough parts that, combined with the expansion, can complete the first main objective.</p>
-    <?php switcher_generator("swbase") ?>
+    <?php switcher_generator('swbase') ?>
     <p>At this point, the first hybrid would have spawned. The path between your main and the hybrid is guarded by tiny patches of enemies (which should have already been cleared on the way to your expansion) and an enemy camp. The enemy camp is shown below.</p>
-    <?php switcher_generator("camp1") ?>
+    <?php switcher_generator('camp1') ?>
     <p>The next camp that would be attacked is the one East of your expansion. This usually lines up with the attack wave that spawns. The camp is shown below.</p>
-    <?php switcher_generator("camp2") ?>
+    <?php switcher_generator('camp2') ?>
     <p>Once this base is cleared, it is usually recommended to clean up the area around this. Watch out for the Hybrid Dominator in this area.</p>
-    <?php switcher_generator("cleanuplong") ?>
+    <?php switcher_generator('cleanuplong') ?>
     <p>With the cleanup done, you can move south and take the camp at the bottom right of the map, right outside the main.</p>
-    <?php switcher_generator("sebase") ?>
+    <?php switcher_generator('sebase') ?>
     <p>By this point, you should have a sufficiently large army to be able to push anywhere you like and gather the remaining parts to finish up the mission. Near the above base, there is an enemy base which has a lot of parts.</p>
-    <?php switcher_generator("eastbaselong") ?>
+    <?php switcher_generator('eastbaselong') ?>
     <p>Just north of this base, there is an alcove with some more parts to collect.</p>
-    <?php switcher_generator("alcove") ?>
+    <?php switcher_generator('alcove') ?>
     <p>At the top left of the map there is a large enemy camp with several parts available for pick up as well.</p>
-    <?php switcher_generator("necamplong") ?>
+    <?php switcher_generator('necamplong') ?>
     <p>The final place you will need to push is the North enemy base. This is the area with most defenses. There is a ramp off to each side as well, if you prefer to attack from the side.</p>
-    <?php switcher_generator("finalbaselong") ?>
+    <?php switcher_generator('finalbaselong') ?>
     <h2 id="hybridAbilities">Hybrid Abilities</h2>
     <img id="hybridExperiment" src="/images/missiondata/partparcel/hybrid.jpg" alt="Moebius Hybrid Experiment">
     <p>The Hybrid that spawns after the containment cell is broken has its own abilities. These are listed below:</p>

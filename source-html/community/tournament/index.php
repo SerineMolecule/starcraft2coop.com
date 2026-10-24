@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../../includes/wrapper.php";
+require_once __DIR__ . '/../../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Tournament</title>
@@ -12,7 +12,7 @@ require_once __DIR__ . "/../../../includes/wrapper.php";
 <?= startContent() ?>
     <h1>The Co-Op Tournament</h1>
     <p>The Co-Op tournament was a tournament in 2019 and again in 2021, back when Aommaster ran this site.</p>
-    <?php include __DIR__ . "/archive.php"; ?>
+    <?php include __DIR__ . '/archive.php'; ?>
     <h1>Signup page</h1>
     <p>If you'd like to see how the <a href="signup">Signup page</a> used to look, it's still there.</p>
 <?= endContent() ?>

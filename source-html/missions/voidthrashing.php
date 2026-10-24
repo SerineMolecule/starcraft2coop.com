@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Void Thrashing</title>
@@ -21,7 +21,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Void Thrashing</h1>
     <p id="missionPlace">Char</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -65,27 +65,27 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "voidthrashing"; ?>
+    <?php $mission = 'voidthrashing'; ?>
     <p>The first Void Thrasher on Void Thrashing is guarded by a very small force of enemy units. This area is shown below.</p>
-    <?php switcher_generator("thrasher1") ?>
+    <?php switcher_generator('thrasher1') ?>
     <p>The path to the second set of Void Thrashers is guarded by an enemy camp. This is shown below:</p>
-    <?php switcher_generator("thrasher2camp") ?>
+    <?php switcher_generator('thrasher2camp') ?>
     <p>Once the camp has been cleared out, the second Set of Void Thrashers are guarded by a strong enemy force.</p>
-    <?php switcher_generator("thrasher2") ?>
+    <?php switcher_generator('thrasher2') ?>
     <p>Once this set of Void Thrashers are cleared, the third set are also guarded by a camp of enemy units.</p>
-    <?php switcher_generator("thrasher3camp") ?>
+    <?php switcher_generator('thrasher3camp') ?>
     <p>Once this camp is cleared, the third Set of Void Thrashers can be cleared.</p>
-    <?php switcher_generator("thrasher3") ?>
+    <?php switcher_generator('thrasher3') ?>
     <p>The Final Set of Void Thrashers are in a heavily fortified enemy base. This is shown below:</p>
-    <?php switcher_generator("thrasher4long") ?>
+    <?php switcher_generator('thrasher4long') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/voidthrashing/archangel.jpg" alt="Archangel">
     </div>
     <p>The bonus objective requires you to destroy the Archangel. The Archangel is an enemy unit with an Area-of-Effect attack. The Archangel is guarded by an enemy force, shown below. The bonus objective is always present on the map, so it will trigger whenever a player gets vision or after a certain amount of time has elapsed.</p>
-    <?php switcher_generator("archangel") ?>
+    <?php switcher_generator('archangel') ?>
     <p>When the Archangel gets to below 50% HP, it will switch to Fighter mode and fly to another area of the map. With high burst damage, it is very possible to destroy the Archangel before it flies away. The below minimap shows where it ends up after flying away.</p>
-    <?php switcher_generator("archangelescape") ?>
+    <?php switcher_generator('archangelescape') ?>
     <p>Note that this can happen several times. The escape location will alternate between the two places until the Archangel is destroyed.</p>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>

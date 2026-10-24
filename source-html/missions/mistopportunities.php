@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Mist Opportunities</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Mist Opportunities</h1>
     <p id="missionPlace">Belshir</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -60,7 +60,7 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "mistopportunities"; ?>
+    <?php $mission = 'mistopportunities'; ?>
     <p>There are a total of five bot waves that will leave the base area to go to harvest Terrazine. The goal of the mission is to protect those bots from enemy attack forces. The number of the bots in the wave increases as the mission progresses. The harvesting locations for each of the waves is shown below.</p>
     <img src="/images/missiondata/mistopportunities/botwaves.jpg" alt="Harvesting Wave Locations">
     <p>Each bot takes 60 seconds to harvest the Terrazine. However, do note that there is a travel time to and from the Terrazine Geyser, where the bots can also be attacked by stray forces and attack waves.</p>
@@ -71,9 +71,9 @@ require_once "../../includes/switchergenerator.php";
     </div>
     <p>The bonus objective requires you to destroy two Terrazine Extraction Devices that are extracting Terrazine from the Belshir Gliders.</p>
     <p>Each extraction device is guarded by a number of enemy forces. The location and guards of the first extraction device is shown below.</p>
-    <?php switcher_generator("extractiondevice1") ?>
+    <?php switcher_generator('extractiondevice1') ?>
     <p>The location and guards of the second extraction device is shown below. These forces are a lot stronger, but are much more clumped up together.</p>
-    <?php switcher_generator("extractiondevice2") ?>
+    <?php switcher_generator('extractiondevice2') ?>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>There are three timings that play a role in Mist Opportunities. These are:</p>

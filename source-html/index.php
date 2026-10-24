@@ -1,24 +1,24 @@
 <?php
 
-require_once __DIR__ . "/../includes/wrapper.php";
-require_once __DIR__ . "/../includes/queries.php";
+require_once __DIR__ . '/../includes/wrapper.php';
+require_once __DIR__ . '/../includes/queries.php';
 
 function homeMissionImageFilename(string $mission): string
 {
-    return str_replace("and", "", str_replace(' ', '', strtolower($mission)));
+    return str_replace('and', '', str_replace(' ', '', strtolower($mission)));
 }
 
 function homeMutationMutatorLink(array $mutator): string
 {
     $filename = $mutator['mutatorid'];
-    return "<a href=\"/mutators/" . $filename . "\"><img class=\"miniIcon\" src=\"/images/mutators/" .
-        $filename . ".png\" alt=\"\">" . $mutator['mutatorname'] . "</a>";
+    return '<a href="/mutators/' . $filename . '"><img class="miniIcon" src="/images/mutators/' .
+        $filename . '.png" alt="">' . $mutator['mutatorname'] . '</a>';
 }
 
 function homeMutationMutators(array $mutation, array $mutators): string
 {
     $links = [];
-    foreach (["mut01", "mut02", "mut03"] as $mutatorKey) {
+    foreach (['mut01', 'mut02', 'mut03'] as $mutatorKey) {
         if ($mutation[$mutatorKey]) {
             $mut = get_mutator($mutation[$mutatorKey], $mutators);
             $links[] = homeMutationMutatorLink($mut);
@@ -31,13 +31,13 @@ function homeMutationMutators(array $mutation, array $mutators): string
 
 function homeMutationRow(string $week, array $mutation, array $mutators): string
 {
-    $missionFilename = homeMissionImageFilename($mutation["map"]);
+    $missionFilename = homeMissionImageFilename($mutation['map']);
     $html = "<tr>\n";
-    $html .= "<td class=\"left-column\">" . $week . "</td>\n";
-    $html .= "<td><strong>" . $mutation["mutation"] . "</strong></td>\n";
-    $html .= "<td><div class=\"mapImg mapImg-" . $missionFilename . "\">" .
-        htmlspecialchars(mapDisplayName($mutation["map"])) . "</div></td>\n";
-    $html .= "<td>" . homeMutationMutators($mutation, $mutators) . "</td>\n";
+    $html .= '<td class="left-column">' . $week . "</td>\n";
+    $html .= '<td><strong>' . $mutation['mutation'] . "</strong></td>\n";
+    $html .= '<td><div class="mapImg mapImg-' . $missionFilename . '">' .
+        htmlspecialchars(mapDisplayName($mutation['map'])) . "</div></td>\n";
+    $html .= '<td>' . homeMutationMutators($mutation, $mutators) . "</td>\n";
     $html .= "</tr>\n";
     return $html;
 }
@@ -107,11 +107,11 @@ $thirdNextWeekStart = $currentWeekStart + (3 * 7 * 24 * 60 * 60);
                 </tr>
             </thead>
             <tbody>
-                <?= homeMutationRow("This week", $cycleList[$currentWeekIndex], $mutators) ?>
+                <?= homeMutationRow('This week', $cycleList[$currentWeekIndex], $mutators) ?>
                 <tr><td colspan="6"><span id="nextMutationCountdown" data-next-mutation-start="<?= $nextWeekStart * 1000 ?>"></span></td></tr>
-                <?= homeMutationRow(date("M j", $nextWeekStart), $cycleList[$nextWeekIndex], $mutators) ?>
-                <?= homeMutationRow(date("M j", $secondNextWeekStart), $cycleList[$secondNextWeekIndex], $mutators) ?>
-                <?= homeMutationRow(date("M j", $thirdNextWeekStart), $cycleList[$thirdNextWeekIndex], $mutators) ?>
+                <?= homeMutationRow(date('M j', $nextWeekStart), $cycleList[$nextWeekIndex], $mutators) ?>
+                <?= homeMutationRow(date('M j', $secondNextWeekStart), $cycleList[$secondNextWeekIndex], $mutators) ?>
+                <?= homeMutationRow(date('M j', $thirdNextWeekStart), $cycleList[$thirdNextWeekIndex], $mutators) ?>
                 <tr><td colspan="6"><p><a href="/resources/weeklymutations#thisweek">More weeks</a></p></td></tr>
             </tbody>
         </table>

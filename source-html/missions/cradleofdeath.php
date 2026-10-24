@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Cradle of Death</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Cradle of Death</h1>
     <p id="missionPlace">Moebius Battle Station</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -51,7 +51,7 @@ require_once "../../includes/switchergenerator.php";
             <li>Escort Artifact Truck to Moebius Research Outpost (2)</li>
         </ul>
     <h2 id="objectiveOrder">Determining Objective Order</h2>
-    <?php $mission = "cradleofdeath"; ?>
+    <?php $mission = 'cradleofdeath'; ?>
     <p>It is first important to understand the order of the objectives before analyzing enemy bases. Cradle of Death is a mission that has a random element to the objectives. The image below shows the objective locations. These names will be used throughout the guide to refer to the specific objectives on the map.</p>
     <img src="/images/missiondata/cradleofdeath/objectivemap.jpg" alt="Objective Map">
     <p>Which objectives you have to do and in which order is determined at the start of the game. Objective orders are as follows:</p>
@@ -117,28 +117,28 @@ require_once "../../includes/switchergenerator.php";
     </div>
     <p>The purpose of the trucks is to not only escort them to a particular beacon on the map. The trucks also disable the Xel'Naga Constructs, scattered on your way to each objective. These Constructs cannot be targeted and deal large amounts of damage until they are disabled by the trucks. Once disabled, they can be targeted and killed.</p>
     <p>The first objective will require you to destroy the Hybrid Facility. This area also contains your expansion, so clearing it as fast as possible is critical for a healthy economy. The area is guarded very lightly.</p>
-    <?php switcher_generator("hybridfacility") ?>
+    <?php switcher_generator('hybridfacility') ?>
     <p>The second or third objective will be the Resource Stockpile (see the section above for details). If it is the second objective, the base will look like the one on the left. If it is the third objective, it will look like the one on the right. Notice the presence of Hybrids and the additional Construct.</p>
-    <?php switcher_generator("resourcestockpilecomparison") ?>
+    <?php switcher_generator('resourcestockpilecomparison') ?>
     <p>If the Xenon Reactor is the third objective, you will need to fight a small camp of enemies before climbing up the ramp.</p>
-    <?php switcher_generator("xenonreactorcamp") ?>
+    <?php switcher_generator('xenonreactorcamp') ?>
     <p>The second or third objective will be the Xenon Reactor (see the section above for details). If it is the second objective, the base will look like the one on the left. If it is the third objective, it will look like the one on the right. Notice the presence of Hybrids and the additional Construct.</p>
-    <?php switcher_generator("xenonreactorcomparison") ?>
+    <?php switcher_generator('xenonreactorcomparison') ?>
     <p>If the last objective is the Terrazine Extraction area, you will need to go South-East to get to it. Notice the Constructs guarding the entrance to the valley there. This area is guarded with a heavy ground presence.</p>
-    <?php switcher_generator("terrazineextractorlong") ?>
+    <?php switcher_generator('terrazineextractorlong') ?>
     <p>If the last objective is the Vespene Refinery area, you will need to go South-West to get to it. This area is guarded with a heavy air presence.</p>
-    <?php switcher_generator("vespenerefinery") ?>
+    <?php switcher_generator('vespenerefinery') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to Move your truck in front of a Moebius Research Outpost, which is guarded by a Construct and an enemy camp.</p>
     <p>There are a total of two bonus objectives present on the map. One will appear when the second main objective activates, and one will appear when the third main objective activates. Additionally, the first bonus objective will always lie in the north of the main objective. The second bonus objective will always lie to the south of the main objective.</p>
     <p>For the Resource Stockpile, the northern bonus area is shown below. This will be the bonus area you will need to clear if the Resource Stockpile is the second main objective.</p>
-    <?php switcher_generator("resourcestockpilebonus1") ?>
+    <?php switcher_generator('resourcestockpilebonus1') ?>
     <p>For the Resource Stockpile, the southern bonus area is shown below. This will be the bonus area you will need to clear if the Resource Stockpile is the third main objective.</p>
-    <?php switcher_generator("resourcestockpilebonus2long") ?>
+    <?php switcher_generator('resourcestockpilebonus2long') ?>
     <p>For the Xenon Reactor, the northern bonus area is shown below. This will be the bonus area you will need to clear if the Xenon Reactor is the second main objective.</p>
-    <?php switcher_generator("xenonreactorbonus1long") ?>
+    <?php switcher_generator('xenonreactorbonus1long') ?>
     <p>For the Xenon Reactor, the southern bonus area is shown below. This will be the bonus area you will need to clear if the Xenon Reactor is the third main objective.</p>
-    <?php switcher_generator("xenonreactorbonus2long") ?>
+    <?php switcher_generator('xenonreactorbonus2long') ?>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Due to the nature of this map, there are two types of attacks on this map:</p>

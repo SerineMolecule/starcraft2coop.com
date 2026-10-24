@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Malwarfare</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Malwarfare</h1>
     <p id="missionPlace">Purifer Facility</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -60,9 +60,9 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "malwarfare"; ?>
+    <?php $mission = 'malwarfare'; ?>
     <p>The first camp you will have to take is positioned over your expansion. The expansions on Malwarfare for both players are defended by static defense and a few units.</p>
-    <?php switcher_generator("expo") ?>
+    <?php switcher_generator('expo') ?>
     <p>Aurana's Transport will move from Terminal to Terminal and she will purify each one. It takes 2:45 to purify the Terminals. Your goal is to defend her transport from attack waves and Suppression Towers. After every terminal has been purified, she heals any damage taken up to 5,000HP.</p>
     <p>Suppression Towers deal 240 damage per volley to Aurana's Transport. That ability has a cooldown of 6 seconds.</p>
     <p>However, there are two additional timers involved as well. When players engage a Suppression Tower, it stops attacking Aurana for 30 seconds before resuming attacks again. Additionally, if players have not destroyed the tower within three minutes of it spawning, it will attack Aurana's transport every 2 seconds.</p>
@@ -85,9 +85,9 @@ require_once "../../includes/switchergenerator.php";
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to download three AI Personalities each from two beacons on the map. This is the only bonus objective that requires resources to complete. Each AI personality costs 350 Minerals/100 Gas to download. Therefore, you will require 1050 minerals/300 Gas to download all personalities for a single objective. The objective will expire exactly 4 minutes after it starts. Each beacon is defended by a force of enemy units and static defense.</p>
     <p>The first beacon is shown below.</p>
-    <?php switcher_generator("beacon1") ?>
+    <?php switcher_generator('beacon1') ?>
     <p>The second beacon is shown below.</p>
-    <?php switcher_generator("beacon2") ?>
+    <?php switcher_generator('beacon2') ?>
     <p>Note that when the first A.I. Personality download has been initiated, three attack waves will spawn to attack and destroy the objective. Once these are cleared, you only require vision in order to complete the rest of the downloads.</p>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>

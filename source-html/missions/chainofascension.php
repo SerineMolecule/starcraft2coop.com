@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Chain of Ascension</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Chain of Ascension</h1>
     <p id="missionPlace">Slayn</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -60,21 +60,21 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "chainofascension"; ?>
+    <?php $mission = 'chainofascension'; ?>
     <p>The first camp you will have to take is positioned over your expansion. The expansions for both players are defended by static defense and a few units. Note the burrowed Ultralisk when facing Zerg compositions.</p>
-    <?php switcher_generator("expo") ?>
+    <?php switcher_generator('expo') ?>
     <p>The next camp that will be captured lies in between the two expansions. This is lightly defended by some static defense and ground units.</p>
-    <?php switcher_generator("camp1") ?>
+    <?php switcher_generator('camp1') ?>
     <p>Soon after this camp is captured, the 1st set of Hybrids will spawn. The base itself is weakly defended. However, the Hybrids will spawn with a protection detail. It is usually recommended to clear this base out <i>before</i> the hybrid wave spawns.</p>
-    <?php switcher_generator("hybrid1") ?>
+    <?php switcher_generator('hybrid1') ?>
     <p>As Ji'Nara moves forward, the second set of Hybrids will spawn. The base has static defense guarding the front and some at the back (however, those are not relevant to clearing the hybrid spawn). The middle is mostly empty. However, the Hybrids will spawn with a protection detail as usual.</p>
-    <?php switcher_generator("hybrid2") ?>
+    <?php switcher_generator('hybrid2') ?>
     <p>The next camp that will have to be cleared is a heavily fortified camp in the middle of the map. This area is filled with spell-casters and high-HP units.</p>
-    <?php switcher_generator("camp2") ?>
+    <?php switcher_generator('camp2') ?>
     <p>Once Ji'Nara is pushed past the camp's center, the third wave of Hybrids will spawn. The base itself is not heavily defended. However, the protection detail that the Hybrids come with is strong. A well-placed AoE can make short work of this area.</p>
-    <?php switcher_generator("hybrid3") ?>
+    <?php switcher_generator('hybrid3') ?>
     <p>The last camp that will need to be dealt with contains high-tech units. However, it is usually easier to engage, due to both players having strong armies.</p>
-    <?php switcher_generator("camp3") ?>
+    <?php switcher_generator('camp3') ?>
     <p>Once this camp is cleared, the last set of Hybrids spawn behind the Pit of Sacrifice once Ji'Nara reaches the trigger location. There is no static defense or guards there, which means it can't be cleared ahead of time. The protection detail, however, is crammed in that area, making it relatively difficult to engage.</p>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">

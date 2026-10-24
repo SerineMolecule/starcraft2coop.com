@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Bugs List</title>
@@ -11,7 +11,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   <link rel="canonical" href="https://starcraft2coop.com/resources/bugs">
   <?= startContent() ?>
     <h1>Starcraft Co-op Bugs List</h1>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#core">Game Core</a></p>

@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Temple of the Past</title>
@@ -26,7 +26,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Temple of the Past</h1>
     <p id="missionPlace">Shakuras</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -69,7 +69,7 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "templeofthepast"; ?>
+    <?php $mission = 'templeofthepast'; ?>
     <p>You are not required to push into enemy bases on Temple of the Past. However, it is highly recommend you do so for the following reasons:</p>
     <ul>
         <li>Destroying the enemy bases prevents them from adding static defenses that will eventually creep up to your ramps.</li>
@@ -79,13 +79,13 @@ require_once "../../includes/switchergenerator.php";
     </ul>
     <p>There are three bases to clear, one for each of the ramps leading to the temple. These are shown below. Note: These are the starting configurations of the enemy bases. As time progresses in the mission, more static defense will be made. It is best to clear them as quickly as possible.</p>
     <p>Middle Base:</p>
-    <?php switcher_generator("basemidlong") ?>
+    <?php switcher_generator('basemidlong') ?>
     <p>Top Base:</p>
-    <?php switcher_generator("basetop") ?>
+    <?php switcher_generator('basetop') ?>
     <p>Bottom Base:</p>
-    <?php switcher_generator("basebottomlong") ?>
+    <?php switcher_generator('basebottomlong') ?>
     <p>If you like, you can also clear the base from which the drops come from. However, there is no advantage to doing so, and you will require to fly units over, or warp/teleport them in at that location.</p>
-    <?php switcher_generator("basedroplong") ?>
+    <?php switcher_generator('basedroplong') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/templeofthepast/zenithstone.jpg" alt="Zenith Stone">

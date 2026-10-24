@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Levels</title>
@@ -56,7 +56,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <h1>Co-op Levels, Experience Requirements, Mastery and Ascension Levels</h1>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#summary">Summary</a></p>
@@ -621,7 +621,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <h2 id="numbers">Some Interesting Numbers</h2>
     <p>Use this calculator to get some interesting numbers regarding your leveling.</p>
     <form action="#">
-        (There are a total of <?php echo(count(scandir("../images/commanderportraits")) - 2); ?> commanders currently)
+        (There are a total of <?php echo count(scandir('../images/commanderportraits')) - 2; ?> commanders currently)
         <br>
         <table id="calcTable">
             <thead>
@@ -1013,7 +1013,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             seaLevelExp = calcExpFromLevel(seaLevel);
 
             totalExp = euComExp + krComExp + naComExp + cnComExp + seaComExp + euLevelExp + krLevelExp + naLevelExp + cnLevelExp + seaLevelExp;
-            bestLevel = calcLevelFromExp(totalExp - <?= count(scandir("../images/commanderportraits")) - 2 ?> * (1045000*4));
+            bestLevel = calcLevelFromExp(totalExp - <?= count(scandir('../images/commanderportraits')) - 2 ?> * (1045000*4));
             maxLevel = calcLevelFromExp(totalExp - 1045000);
 
             casGames = Math.ceil(totalExp / (22000 + 5500));

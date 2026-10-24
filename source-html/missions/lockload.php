@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Lock & Load</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Lock & Load</h1>
     <p id="missionPlace">Ulnar</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -60,7 +60,7 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "lockload"; ?>
+    <?php $mission = 'lockload'; ?>
     <p>The goal of the mission is to capture all the Celestial Locks before they overload. You capture a Lock by moving a unit and an ally's unit near the Lock. It takes 30 seconds to capture a lock.</p>
     <p>When the enemy captures a Lock, an overload ticker will start. When the overload ticker reaches 9000, you will fail the mission. Note that in-game, this is shown as a percentage. The speed of the overload changes depending on how many Locks the enemy has captured. The table below summarizes this information.</p>
     <table class="centered">
@@ -105,28 +105,28 @@ require_once "../../includes/switchergenerator.php";
         </tbody>
     </table>
     <p>The first Lock that is captured is usually the middle lock. This is very lightly defended, and usually a hero unit can clear.</p>
-    <?php switcher_generator("lock_c") ?>
+    <?php switcher_generator('lock_c') ?>
     <p>The next Lock that is captured is usually either the West or the Southern Lock. The Western Lock is shown below. Note the presence of cloaked/burrowed units.</p>
-    <?php switcher_generator("lock_w") ?>
+    <?php switcher_generator('lock_w') ?>
     <p>The Southern Lock is shown below. Note the presence of Capital Ships.</p>
-    <?php switcher_generator("lock_s") ?>
+    <?php switcher_generator('lock_s') ?>
     <p>The Eastern Lock is one of the more difficult Locks to capture, due to the presence of Hybrids and high-HP units. You will need to push up one of the two ramps to get to the Lock.</p>
     <p>If you choose to push from the Southern ramp, there is a small enemy camp in this location as follows. Note the presence of cloaked units.</p>
-    <?php switcher_generator("lock_e_bottomcamp") ?>
+    <?php switcher_generator('lock_e_bottomcamp') ?>
     <p>If you choose to push from the Northern ramp, there is also a camp, but guarded by two Hybrid Destroyers.</p>
-    <?php switcher_generator("lock_e_topcamp") ?>
+    <?php switcher_generator('lock_e_topcamp') ?>
     <p>The Eastern Lock is well-defended by Capital Ships and a Hybrid Dominator.</p>
-    <?php switcher_generator("lock_e") ?>
+    <?php switcher_generator('lock_e') ?>
     <p>The last Lock that has to be captured is the Northern Lock. Like the Eastern Lock, there are two ramps that can be used to access it. The Southern ramp is guarded by a small force of units.</p>
-    <?php switcher_generator("lock_n_rampguard") ?>
+    <?php switcher_generator('lock_n_rampguard') ?>
     <p>If you choose to go up the Eastern ramp, you can bypass the above force entirely.</p>
-    <?php switcher_generator("lock_n") ?>
+    <?php switcher_generator('lock_n') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/lockload/xelnagaconstruct.jpg" alt="Xel'Naga Construct">
     </div>
     <p>The bonus objective requires you to kill the Xel'Naga Construct. The Construct is guarded by a small force of enemy units as shown below.</p>
-    <?php switcher_generator("xelnagaconstruct") ?>
+    <?php switcher_generator('xelnagaconstruct') ?>
     <p>The Xel'Naga Construct can be quite difficult to kill in the early game. Usually, it is much easier to kill it on the way to Northern Lock if that is the last Lock to be captured.</p>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>

@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Miner Evacuation</title>
@@ -15,7 +15,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Miner Evacuation</h1>
     <p id="missionPlace">Jarban</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -41,7 +41,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             <li>Destroy the Eradicators (2)</li>
         </ul>
     <h2 id="evacShip">Evacuation Ship Locations and Order</h2>
-    <?php $mission = "minerevacuation"; ?>
+    <?php $mission = 'minerevacuation'; ?>
     <p>There are no enemy bases on this map, and so, base analysis is not required. However, ships launch in a semi-random order, which requires you to push into small enemy camps.</p>
     <p>There are a total of 9 ships present on the map. The locations of these ships is shown below.</p>
     <img src="/images/missiondata/minerevacuation/evacuationshiplocations.jpg" alt="Locations of Evacuation Ships">

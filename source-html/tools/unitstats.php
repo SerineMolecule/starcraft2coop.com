@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Unit Stats</title>
@@ -215,7 +215,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <h1>A List of Unit Stats for Player and Amon Units</h1>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <h2>Unit Comparison</h2>
     <p>Use the below applet to see single unit stats or compare two units together. Click on a commander, then a unit of theirs to get its stats. To compare two units, select a commander and their unit on the opposite side.</p>
     <p>Notes about the data:</p>
@@ -478,7 +478,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <div id="dataContainer"></div>
     <div id="amonTableContainer">
         <div id="flexContainer">
-            <?php include("../scripts/generatetable.php");?>
+            <?php include '../scripts/generatetable.php'; ?>
         </div>
     </div>
     <script>

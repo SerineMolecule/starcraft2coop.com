@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Rifts to Korhal</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Rifts to Korhal</h1>
     <p id="missionPlace">Korhal</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -60,18 +60,18 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "riftstokorhal"; ?>
+    <?php $mission = 'riftstokorhal'; ?>
     <p>As Void Shards keep spawning, you will need to push into enemy camps and bases to destroy them. The normal order of bases and camps you will face for Void Shard spawns is shown below. A subsequent set of Void Shards will only spawn when the previous set has been destroyed, or all enemies in that area are dead.</p>
     <p>The first Void Shard is guarded by a very small force of enemy units. The defenses are shown below:</p>
-    <?php switcher_generator("shard1") ?>
+    <?php switcher_generator('shard1') ?>
     <p>The second set of Void Shards is guarded by a significantly larger enemy force. The defenses are shown below:</p>
-    <?php switcher_generator("shard2long") ?>
+    <?php switcher_generator('shard2long') ?>
     <p>If you choose to attack the third set of Void Shards with a ground army, you will need to push through an enemy camp. Note that air units can completely bypass this camp. The camp is shown below:</p>
-    <?php switcher_generator("shard3camp") ?>
+    <?php switcher_generator('shard3camp') ?>
     <p>The third set of Void Shards is placed within an enemy base. The base is shown below:</p>
-    <?php switcher_generator("shard3long") ?>
+    <?php switcher_generator('shard3long') ?>
     <p>The last set of Void Shards is located within a much larger enemy base. The base also has a small forward comp. All of this is shown below:</p>
-    <?php switcher_generator("shard4long") ?>
+    <?php switcher_generator('shard4long') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/riftstokorhal/pirateship.jpg" alt="Pirate Ship">
@@ -85,7 +85,7 @@ require_once "../../includes/switchergenerator.php";
         <li><b>Bombing Run:</b> Does a large amount of damage in a straight line. This skill can usually kill an entire army if you are not careful.</li>
     </ul>
     <p>While the first Pirate Ship spawns unguarded, the second spawns behind an enemy base. The base is shown below:</p>
-    <?php switcher_generator("piratebase") ?>
+    <?php switcher_generator('piratebase') ?>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>The Attack Wave Timings for this mission are:</p>

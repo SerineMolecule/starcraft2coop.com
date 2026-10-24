@@ -2,8 +2,8 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
-require_once "../../includes/switchergenerator.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
+require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mission Guide - Oblivion Express</title>
@@ -16,7 +16,7 @@ require_once "../../includes/switchergenerator.php";
 <?= startContent() ?>
     <h1><span class="unbold">Mission:</span> Oblivion Express</h1>
     <p id="missionPlace">Tarsonis</p>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#misSum">Mission Summary</a></p>
@@ -60,14 +60,14 @@ require_once "../../includes/switchergenerator.php";
             })
         </script>
     </div>
-    <?php $mission = "oblivionexpress"; ?>
+    <?php $mission = 'oblivionexpress'; ?>
     <p>During normal playthroughs of Oblivion Express, you are not required to push into enemy bases. However, if you would like to finish the mission in the fastest possible time, or find that you are bored idling, you can push into the two bases on the left of the map to spawn-camp the trains.</p>
     <p>The main objective will either spawn on the top rail or the middle rail. The paths these main objectives will take is shown below.</p>
     <img src="/images/missiondata/oblivionexpress/mainobjectivepath.jpg" alt="Paths Taken by the Main Objectives">
     <p>The top base is shown below.</p>
-    <?php switcher_generator("topbaselong") ?>
+    <?php switcher_generator('topbaselong') ?>
     <p>The bottom base is shown below.</p>
-    <?php switcher_generator("bottombaselong") ?>
+    <?php switcher_generator('bottombaselong') ?>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to kill two fast trains that will spawn on the bottom rail. The path these bonus objectives will take is shown below.</p>
     <img src="/images/missiondata/oblivionexpress/bonusobjectivepath.jpg" alt="Path Taken by the Bonus Objectives">

@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Commander Selection Guide</title>
@@ -106,7 +106,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
 
         $allCommanders = get_commanders();
         foreach ($allCommanders as $row) {
-            echo("<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>");
+            echo "<img src='/images/commanderportraits/{$row['commander']}portrait.png' alt='{$row['commander']}'>";
         }
 
         ?>

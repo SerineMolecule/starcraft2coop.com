@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Enemy Compositions</title>
@@ -77,7 +77,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <h1>Enemy Compositions: Units in Attack Waves and Hybrid Data</h1>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <div id="links">
         <h2>Sections on this Page</h2>
         <p><a href="#genNotes">General Notes</a></p>

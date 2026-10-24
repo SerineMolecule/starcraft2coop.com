@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Brutal+ Difficulty</title>
@@ -51,7 +51,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <h1>Brutal+ Difficulty: Mutation Cost Brackets and Templates</h1>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <p>Brutal+ is considered an "Extended Difficulty". That is, missions will take place on the regular Brutal difficulty. However, in addition to the standard mission mechanics, a certain number of random <a href="mutators">mutators</a> are added to your game. You may queue into random queue on Brutal+ difficulty, as long as the commander you are queueing in with is at Level 15. For Brutal+2 and higher, you will require a person in your party to play.</p>
     <p>To learn more about how Brutal+ difficulty mutators are selected, you may watch the video below. The video goes over what Mutation Templates are, how the different mutator possibility counts are calculated mathematically and then how the weightings are rebalanced to be more in line with Blizzard's design intent.</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/9jfWuM215_c" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -72,7 +72,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
 
             $brutalPlus = get_brutalpluses();
             foreach ($brutalPlus as $row) {
-                echo "<tr><td>" . $row['difficulty'] . "</td><td>" . $row['minpoints'] . "</td><td>" . $row['maxpoints'] . "</td><td>" . $row['minmutators'] . "</td><td>" . $row['maxmutators'] . "</td></tr>";
+                echo '<tr><td>' . $row['difficulty'] . '</td><td>' . $row['minpoints'] . '</td><td>' . $row['maxpoints'] . '</td><td>' . $row['minmutators'] . '</td><td>' . $row['maxmutators'] . '</td></tr>';
             }
             ?>
         </tbody>
@@ -93,13 +93,13 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             $mutatorInfo = get_mutators();
             usort($mutatorInfo, fn($a, $b) => $a['mutatorname'] <=> $b['mutatorname']);
             $mutators = array_fill(0, 11, []);
-//10 is the highest point value
+            // 10 is the highest point value
             $countArray = array_fill(0, 11, 0);
             foreach ($mutatorInfo as $row) {
                 if ($row['abomination'] > 0) {
-                    echo "<tr><td>" . $row['mutatorname'] . "</td><td>" . $row['abomination'] . "</td></tr>";
+                    echo '<tr><td>' . $row['mutatorname'] . '</td><td>' . $row['abomination'] . '</td></tr>';
                     $countArray[$row['abomination']] += 1;
-                    array_push($mutators[$row['abomination']], $row['mutatorname']) ;
+                    array_push($mutators[$row['abomination']], $row['mutatorname']);
                 }
             }
             ?>
@@ -221,7 +221,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
             var cost = 0;
             var totalCost = 0;
             var result = [];
-            const limits = <?php echo(json_encode($countArray))?>;
+            const limits = <?php echo json_encode($countArray) ?>;
             while (!found){
                 totalCost = 0;
                 result = new Array(11).fill(0);
@@ -253,7 +253,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         }
 
         function generateMutation(template){
-            const mutatorArray = <?php echo(json_encode($mutators))?>;
+            const mutatorArray = <?php echo json_encode($mutators) ?>;
             var cost = 0;
             var costString = '';
             $("#randomMutation").empty();

@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Order of Death Prevention Effects</title>
@@ -16,8 +16,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   </style>
   <?= startContent() ?>
     <h1>Order of Death Prevention Effects</h1>
-    <?php
-    include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <h2>Summary</h2>
     <p>Death Prevention Effects are effects that stop a unit from dying. Examples of these are <a href="/commanders/artanis">Artanis' Guardian Shell</a> and <a href="/commanders/kerrigan">Kerrigan's Torrasque Strain Ultralisk Passive</a>. When multiple Death Prevention Effects are active, it is difficult to predict what order they will trigger. The order of Death Prevention Effects is shown in the following section.</p>
     <p>For a little more context, this page was created to act as a supplement to the following video:</p>

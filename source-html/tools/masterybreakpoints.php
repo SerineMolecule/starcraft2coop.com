@@ -2,7 +2,7 @@
 
 /** @generateStatic */
 
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
   <title>Starcraft 2 Co-op - Mastery Breakpoints Calculator</title>
@@ -60,7 +60,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
   <?= startContent() ?>
     <div id="tooltip">tooltip</div>
     <h1>Mastery Breakpoints Calculator</h1>
-    <?php include("../../includes/reporterror.php");?>
+    <?php include '../../includes/reporterror.php'; ?>
     <p>You may use the calculator below to determine what mastery allocation you require to kill various units in Amon's forces. Note that objectives, Infested units and Mutator units are not taken into consideration. Move the slider left and right to allocate mastery points, and the units above the slider will move to show you which can be killed and which can't.</p>
     <div id="input">
         <h2>Select the Ability/Damage Type</h2>

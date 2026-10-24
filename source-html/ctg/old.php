@@ -103,8 +103,8 @@
     $mutations = get_weeklymutations();
     $mutations = array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden But Inevitable');
     foreach ($mutations as &$row) {
-        if ($row['map'] == "Lock and Load") {
-            $row['map'] = "Lock Load";
+        if ($row['map'] == 'Lock and Load') {
+            $row['map'] = 'Lock Load';
         }
     }
     ?>
