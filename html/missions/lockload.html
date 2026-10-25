@@ -171,7 +171,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Lock & Load</h1>
     <p id="missionPlace">Ulnar</p>
@@ -262,20 +262,353 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </tbody>
     </table>
     <p>The first Lock that is captured is usually the middle lock. This is very lightly defended, and usually a hero unit can clear.</p>
-    <div class='switcher'><div class='basePic' id='lock_cdiv'><img id ='lock_c' src=' /images/missiondata/lockload/lock_c_protoss.jpg' alt='lock_c Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_c' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_c' value='terran'>Terran</label><br><label><input type='radio' name='lock_c' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_cminimap.jpg' alt='lock_c Minimap'></div></div></div><script>$("input[name='lock_c']").change(function(){var race= $(this).val();var oldImg = $('#lock_c');var img = new Image();img.src = '/images/missiondata/lockload/lock_c_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_cdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_c');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_c_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_c_terran.jpg');imgList.push('/images/missiondata/lockload/lock_c_zerg.jpg');preload(imgList);</script>    <p>The next Lock that is captured is usually either the West or the Southern Lock. The Western Lock is shown below. Note the presence of cloaked/burrowed units.</p>
-    <div class='switcher'><div class='basePic' id='lock_wdiv'><img id ='lock_w' src=' /images/missiondata/lockload/lock_w_protoss.jpg' alt='lock_w Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_w' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_w' value='terran'>Terran</label><br><label><input type='radio' name='lock_w' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_wminimap.jpg' alt='lock_w Minimap'></div></div></div><script>$("input[name='lock_w']").change(function(){var race= $(this).val();var oldImg = $('#lock_w');var img = new Image();img.src = '/images/missiondata/lockload/lock_w_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_wdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_w');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_w_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_w_terran.jpg');imgList.push('/images/missiondata/lockload/lock_w_zerg.jpg');preload(imgList);</script>    <p>The Southern Lock is shown below. Note the presence of Capital Ships.</p>
-    <div class='switcher'><div class='basePic' id='lock_sdiv'><img id ='lock_s' src=' /images/missiondata/lockload/lock_s_protoss.jpg' alt='lock_s Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_s' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_s' value='terran'>Terran</label><br><label><input type='radio' name='lock_s' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_sminimap.jpg' alt='lock_s Minimap'></div></div></div><script>$("input[name='lock_s']").change(function(){var race= $(this).val();var oldImg = $('#lock_s');var img = new Image();img.src = '/images/missiondata/lockload/lock_s_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_sdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_s');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_s_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_s_terran.jpg');imgList.push('/images/missiondata/lockload/lock_s_zerg.jpg');preload(imgList);</script>    <p>The Eastern Lock is one of the more difficult Locks to capture, due to the presence of Hybrids and high-HP units. You will need to push up one of the two ramps to get to the Lock.</p>
+        <div class="switcher">
+        <div class="basePic" id="lock_cdiv">
+            <img id="lock_c" src=" /images/missiondata/lockload/lock_c_protoss.jpg" alt="lock_c Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_c" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_c" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_c" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_cminimap.jpg" alt="lock_c Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_c']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_c');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_c_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_cdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_c');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_c_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_c_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_c_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The next Lock that is captured is usually either the West or the Southern Lock. The Western Lock is shown below. Note the presence of cloaked/burrowed units.</p>
+        <div class="switcher">
+        <div class="basePic" id="lock_wdiv">
+            <img id="lock_w" src=" /images/missiondata/lockload/lock_w_protoss.jpg" alt="lock_w Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_w" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_w" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_w" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_wminimap.jpg" alt="lock_w Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_w']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_w');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_w_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_wdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_w');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_w_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_w_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_w_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The Southern Lock is shown below. Note the presence of Capital Ships.</p>
+        <div class="switcher">
+        <div class="basePic" id="lock_sdiv">
+            <img id="lock_s" src=" /images/missiondata/lockload/lock_s_protoss.jpg" alt="lock_s Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_s" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_s" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_s" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_sminimap.jpg" alt="lock_s Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_s']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_s');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_s_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_sdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_s');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_s_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_s_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_s_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The Eastern Lock is one of the more difficult Locks to capture, due to the presence of Hybrids and high-HP units. You will need to push up one of the two ramps to get to the Lock.</p>
     <p>If you choose to push from the Southern ramp, there is a small enemy camp in this location as follows. Note the presence of cloaked units.</p>
-    <div class='switcher'><div class='basePic' id='lock_e_bottomcampdiv'><img id ='lock_e_bottomcamp' src=' /images/missiondata/lockload/lock_e_bottomcamp_protoss.jpg' alt='lock_e_bottomcamp Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_e_bottomcamp' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_e_bottomcamp' value='terran'>Terran</label><br><label><input type='radio' name='lock_e_bottomcamp' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_e_bottomcampminimap.jpg' alt='lock_e_bottomcamp Minimap'></div></div></div><script>$("input[name='lock_e_bottomcamp']").change(function(){var race= $(this).val();var oldImg = $('#lock_e_bottomcamp');var img = new Image();img.src = '/images/missiondata/lockload/lock_e_bottomcamp_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_e_bottomcampdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_e_bottomcamp');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_e_bottomcamp_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_e_bottomcamp_terran.jpg');imgList.push('/images/missiondata/lockload/lock_e_bottomcamp_zerg.jpg');preload(imgList);</script>    <p>If you choose to push from the Northern ramp, there is also a camp, but guarded by two Hybrid Destroyers.</p>
-    <div class='switcher'><div class='basePic' id='lock_e_topcampdiv'><img id ='lock_e_topcamp' src=' /images/missiondata/lockload/lock_e_topcamp_protoss.jpg' alt='lock_e_topcamp Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_e_topcamp' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_e_topcamp' value='terran'>Terran</label><br><label><input type='radio' name='lock_e_topcamp' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_e_topcampminimap.jpg' alt='lock_e_topcamp Minimap'></div></div></div><script>$("input[name='lock_e_topcamp']").change(function(){var race= $(this).val();var oldImg = $('#lock_e_topcamp');var img = new Image();img.src = '/images/missiondata/lockload/lock_e_topcamp_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_e_topcampdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_e_topcamp');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_e_topcamp_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_e_topcamp_terran.jpg');imgList.push('/images/missiondata/lockload/lock_e_topcamp_zerg.jpg');preload(imgList);</script>    <p>The Eastern Lock is well-defended by Capital Ships and a Hybrid Dominator.</p>
-    <div class='switcher'><div class='basePic' id='lock_ediv'><img id ='lock_e' src=' /images/missiondata/lockload/lock_e_protoss.jpg' alt='lock_e Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_e' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_e' value='terran'>Terran</label><br><label><input type='radio' name='lock_e' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_eminimap.jpg' alt='lock_e Minimap'></div></div></div><script>$("input[name='lock_e']").change(function(){var race= $(this).val();var oldImg = $('#lock_e');var img = new Image();img.src = '/images/missiondata/lockload/lock_e_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_ediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_e');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_e_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_e_terran.jpg');imgList.push('/images/missiondata/lockload/lock_e_zerg.jpg');preload(imgList);</script>    <p>The last Lock that has to be captured is the Northern Lock. Like the Eastern Lock, there are two ramps that can be used to access it. The Southern ramp is guarded by a small force of units.</p>
-    <div class='switcher'><div class='basePic' id='lock_n_rampguarddiv'><img id ='lock_n_rampguard' src=' /images/missiondata/lockload/lock_n_rampguard_protoss.jpg' alt='lock_n_rampguard Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_n_rampguard' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_n_rampguard' value='terran'>Terran</label><br><label><input type='radio' name='lock_n_rampguard' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_n_rampguardminimap.jpg' alt='lock_n_rampguard Minimap'></div></div></div><script>$("input[name='lock_n_rampguard']").change(function(){var race= $(this).val();var oldImg = $('#lock_n_rampguard');var img = new Image();img.src = '/images/missiondata/lockload/lock_n_rampguard_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_n_rampguarddiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_n_rampguard');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_n_rampguard_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_n_rampguard_terran.jpg');imgList.push('/images/missiondata/lockload/lock_n_rampguard_zerg.jpg');preload(imgList);</script>    <p>If you choose to go up the Eastern ramp, you can bypass the above force entirely.</p>
-    <div class='switcher'><div class='basePic' id='lock_ndiv'><img id ='lock_n' src=' /images/missiondata/lockload/lock_n_protoss.jpg' alt='lock_n Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='lock_n' value='protoss' checked>Protoss</label><br><label><input type='radio' name='lock_n' value='terran'>Terran</label><br><label><input type='radio' name='lock_n' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/lock_nminimap.jpg' alt='lock_n Minimap'></div></div></div><script>$("input[name='lock_n']").change(function(){var race= $(this).val();var oldImg = $('#lock_n');var img = new Image();img.src = '/images/missiondata/lockload/lock_n_'+ race + '.jpg';var newImg = $(img).hide();$('#lock_ndiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'lock_n');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/lock_n_protoss.jpg');imgList.push('/images/missiondata/lockload/lock_n_terran.jpg');imgList.push('/images/missiondata/lockload/lock_n_zerg.jpg');preload(imgList);</script>    <h2 id="bonus">Completing the Bonus Objective</h2>
+        <div class="switcher">
+        <div class="basePic" id="lock_e_bottomcampdiv">
+            <img id="lock_e_bottomcamp" src=" /images/missiondata/lockload/lock_e_bottomcamp_protoss.jpg" alt="lock_e_bottomcamp Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_e_bottomcamp" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_e_bottomcamp" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_e_bottomcamp" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_e_bottomcampminimap.jpg" alt="lock_e_bottomcamp Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_e_bottomcamp']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_e_bottomcamp');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_e_bottomcamp_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_e_bottomcampdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_e_bottomcamp');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_e_bottomcamp_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_e_bottomcamp_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_e_bottomcamp_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>If you choose to push from the Northern ramp, there is also a camp, but guarded by two Hybrid Destroyers.</p>
+        <div class="switcher">
+        <div class="basePic" id="lock_e_topcampdiv">
+            <img id="lock_e_topcamp" src=" /images/missiondata/lockload/lock_e_topcamp_protoss.jpg" alt="lock_e_topcamp Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_e_topcamp" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_e_topcamp" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_e_topcamp" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_e_topcampminimap.jpg" alt="lock_e_topcamp Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_e_topcamp']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_e_topcamp');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_e_topcamp_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_e_topcampdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_e_topcamp');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_e_topcamp_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_e_topcamp_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_e_topcamp_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The Eastern Lock is well-defended by Capital Ships and a Hybrid Dominator.</p>
+        <div class="switcher">
+        <div class="basePic" id="lock_ediv">
+            <img id="lock_e" src=" /images/missiondata/lockload/lock_e_protoss.jpg" alt="lock_e Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_e" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_e" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_e" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_eminimap.jpg" alt="lock_e Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_e']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_e');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_e_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_ediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_e');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_e_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_e_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_e_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The last Lock that has to be captured is the Northern Lock. Like the Eastern Lock, there are two ramps that can be used to access it. The Southern ramp is guarded by a small force of units.</p>
+        <div class="switcher">
+        <div class="basePic" id="lock_n_rampguarddiv">
+            <img id="lock_n_rampguard" src=" /images/missiondata/lockload/lock_n_rampguard_protoss.jpg" alt="lock_n_rampguard Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_n_rampguard" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_n_rampguard" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_n_rampguard" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_n_rampguardminimap.jpg" alt="lock_n_rampguard Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_n_rampguard']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_n_rampguard');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_n_rampguard_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_n_rampguarddiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_n_rampguard');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_n_rampguard_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_n_rampguard_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_n_rampguard_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>If you choose to go up the Eastern ramp, you can bypass the above force entirely.</p>
+        <div class="switcher">
+        <div class="basePic" id="lock_ndiv">
+            <img id="lock_n" src=" /images/missiondata/lockload/lock_n_protoss.jpg" alt="lock_n Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="lock_n" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="lock_n" value="terran">Terran</label><br>
+                <label><input type="radio" name="lock_n" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/lock_nminimap.jpg" alt="lock_n Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='lock_n']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#lock_n');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/lock_n_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#lock_ndiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'lock_n');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/lock_n_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/lock_n_terran.jpg');
+        imgList.push('/images/missiondata/lockload/lock_n_zerg.jpg');
+        preload(imgList);
+    </script>
+        <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/lockload/xelnagaconstruct.jpg" alt="Xel'Naga Construct">
     </div>
     <p>The bonus objective requires you to kill the Xel'Naga Construct. The Construct is guarded by a small force of enemy units as shown below.</p>
-    <div class='switcher'><div class='basePic' id='xelnagaconstructdiv'><img id ='xelnagaconstruct' src=' /images/missiondata/lockload/xelnagaconstruct_protoss.jpg' alt='xelnagaconstruct Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='xelnagaconstruct' value='protoss' checked>Protoss</label><br><label><input type='radio' name='xelnagaconstruct' value='terran'>Terran</label><br><label><input type='radio' name='xelnagaconstruct' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/lockload/xelnagaconstructminimap.jpg' alt='xelnagaconstruct Minimap'></div></div></div><script>$("input[name='xelnagaconstruct']").change(function(){var race= $(this).val();var oldImg = $('#xelnagaconstruct');var img = new Image();img.src = '/images/missiondata/lockload/xelnagaconstruct_'+ race + '.jpg';var newImg = $(img).hide();$('#xelnagaconstructdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'xelnagaconstruct');return false;});var imgList=[];imgList.push('/images/missiondata/lockload/xelnagaconstruct_protoss.jpg');imgList.push('/images/missiondata/lockload/xelnagaconstruct_terran.jpg');imgList.push('/images/missiondata/lockload/xelnagaconstruct_zerg.jpg');preload(imgList);</script>    <p>The Xel'Naga Construct can be quite difficult to kill in the early game. Usually, it is much easier to kill it on the way to Northern Lock if that is the last Lock to be captured.</p>
+        <div class="switcher">
+        <div class="basePic" id="xelnagaconstructdiv">
+            <img id="xelnagaconstruct" src=" /images/missiondata/lockload/xelnagaconstruct_protoss.jpg" alt="xelnagaconstruct Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="xelnagaconstruct" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="xelnagaconstruct" value="terran">Terran</label><br>
+                <label><input type="radio" name="xelnagaconstruct" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/lockload/xelnagaconstructminimap.jpg" alt="xelnagaconstruct Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='xelnagaconstruct']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#xelnagaconstruct');
+            var img = new Image();
+            img.src = '/images/missiondata/lockload/xelnagaconstruct_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#xelnagaconstructdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'xelnagaconstruct');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/lockload/xelnagaconstruct_protoss.jpg');
+        imgList.push('/images/missiondata/lockload/xelnagaconstruct_terran.jpg');
+        imgList.push('/images/missiondata/lockload/xelnagaconstruct_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The Xel'Naga Construct can be quite difficult to kill in the early game. Usually, it is much easier to kill it on the way to Northern Lock if that is the last Lock to be captured.</p>
     <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>Enemy attack waves will target certain Locks first. The first player-captured Lock on their list will be their target. If all the Locks on their list are overloaded (ie. enemy-controlled), they will target your base.</p>
@@ -401,7 +734,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/zagara">Zagara</a>: Build your macro hatcheries at the central Lock for quick reinforcements.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Place a Void Array on each captured Lock to give you the mobility to defend against attack waves.</li>
     </ul>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

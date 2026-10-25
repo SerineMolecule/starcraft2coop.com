@@ -171,7 +171,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Rifts to Korhal</h1>
     <p id="missionPlace">Korhal</p>
@@ -220,11 +220,196 @@ if (document.location.host === 'dev.starcraft2coop.com') {
     </div>
         <p>As Void Shards keep spawning, you will need to push into enemy camps and bases to destroy them. The normal order of bases and camps you will face for Void Shard spawns is shown below. A subsequent set of Void Shards will only spawn when the previous set has been destroyed, or all enemies in that area are dead.</p>
     <p>The first Void Shard is guarded by a very small force of enemy units. The defenses are shown below:</p>
-    <div class='switcher'><div class='basePic' id='shard1div'><img id ='shard1' src=' /images/missiondata/riftstokorhal/shard1_protoss.jpg' alt='shard1 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='shard1' value='protoss' checked>Protoss</label><br><label><input type='radio' name='shard1' value='terran'>Terran</label><br><label><input type='radio' name='shard1' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/riftstokorhal/shard1minimap.jpg' alt='shard1 Minimap'></div></div></div><script>$("input[name='shard1']").change(function(){var race= $(this).val();var oldImg = $('#shard1');var img = new Image();img.src = '/images/missiondata/riftstokorhal/shard1_'+ race + '.jpg';var newImg = $(img).hide();$('#shard1div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'shard1');return false;});var imgList=[];imgList.push('/images/missiondata/riftstokorhal/shard1_protoss.jpg');imgList.push('/images/missiondata/riftstokorhal/shard1_terran.jpg');imgList.push('/images/missiondata/riftstokorhal/shard1_zerg.jpg');preload(imgList);</script>    <p>The second set of Void Shards is guarded by a significantly larger enemy force. The defenses are shown below:</p>
-    <div class='switcher'><div class='long' id='shard2longdiv'><img id ='shard2long' src=' /images/missiondata/riftstokorhal/shard2long_protoss.jpg' alt='shard2long Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='shard2long' value='protoss' checked>Protoss</label><br><label><input type='radio' name='shard2long' value='terran'>Terran</label><br><label><input type='radio' name='shard2long' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/riftstokorhal/shard2longminimap.jpg' alt='shard2long Minimap'></div></div></div><script>$("input[name='shard2long']").change(function(){var race= $(this).val();var oldImg = $('#shard2long');var img = new Image();img.src = '/images/missiondata/riftstokorhal/shard2long_'+ race + '.jpg';var newImg = $(img).hide();$('#shard2longdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'shard2long');return false;});var imgList=[];imgList.push('/images/missiondata/riftstokorhal/shard2long_protoss.jpg');imgList.push('/images/missiondata/riftstokorhal/shard2long_terran.jpg');imgList.push('/images/missiondata/riftstokorhal/shard2long_zerg.jpg');preload(imgList);</script>    <p>If you choose to attack the third set of Void Shards with a ground army, you will need to push through an enemy camp. Note that air units can completely bypass this camp. The camp is shown below:</p>
-    <div class='switcher'><div class='basePic' id='shard3campdiv'><img id ='shard3camp' src=' /images/missiondata/riftstokorhal/shard3camp_protoss.jpg' alt='shard3camp Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='shard3camp' value='protoss' checked>Protoss</label><br><label><input type='radio' name='shard3camp' value='terran'>Terran</label><br><label><input type='radio' name='shard3camp' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/riftstokorhal/shard3campminimap.jpg' alt='shard3camp Minimap'></div></div></div><script>$("input[name='shard3camp']").change(function(){var race= $(this).val();var oldImg = $('#shard3camp');var img = new Image();img.src = '/images/missiondata/riftstokorhal/shard3camp_'+ race + '.jpg';var newImg = $(img).hide();$('#shard3campdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'shard3camp');return false;});var imgList=[];imgList.push('/images/missiondata/riftstokorhal/shard3camp_protoss.jpg');imgList.push('/images/missiondata/riftstokorhal/shard3camp_terran.jpg');imgList.push('/images/missiondata/riftstokorhal/shard3camp_zerg.jpg');preload(imgList);</script>    <p>The third set of Void Shards is placed within an enemy base. The base is shown below:</p>
-    <div class='switcher'><div class='long' id='shard3longdiv'><img id ='shard3long' src=' /images/missiondata/riftstokorhal/shard3long_protoss.jpg' alt='shard3long Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='shard3long' value='protoss' checked>Protoss</label><br><label><input type='radio' name='shard3long' value='terran'>Terran</label><br><label><input type='radio' name='shard3long' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/riftstokorhal/shard3longminimap.jpg' alt='shard3long Minimap'></div></div></div><script>$("input[name='shard3long']").change(function(){var race= $(this).val();var oldImg = $('#shard3long');var img = new Image();img.src = '/images/missiondata/riftstokorhal/shard3long_'+ race + '.jpg';var newImg = $(img).hide();$('#shard3longdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'shard3long');return false;});var imgList=[];imgList.push('/images/missiondata/riftstokorhal/shard3long_protoss.jpg');imgList.push('/images/missiondata/riftstokorhal/shard3long_terran.jpg');imgList.push('/images/missiondata/riftstokorhal/shard3long_zerg.jpg');preload(imgList);</script>    <p>The last set of Void Shards is located within a much larger enemy base. The base also has a small forward comp. All of this is shown below:</p>
-    <div class='switcher'><div class='long' id='shard4longdiv'><img id ='shard4long' src=' /images/missiondata/riftstokorhal/shard4long_protoss.jpg' alt='shard4long Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='shard4long' value='protoss' checked>Protoss</label><br><label><input type='radio' name='shard4long' value='terran'>Terran</label><br><label><input type='radio' name='shard4long' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/riftstokorhal/shard4longminimap.jpg' alt='shard4long Minimap'></div></div></div><script>$("input[name='shard4long']").change(function(){var race= $(this).val();var oldImg = $('#shard4long');var img = new Image();img.src = '/images/missiondata/riftstokorhal/shard4long_'+ race + '.jpg';var newImg = $(img).hide();$('#shard4longdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'shard4long');return false;});var imgList=[];imgList.push('/images/missiondata/riftstokorhal/shard4long_protoss.jpg');imgList.push('/images/missiondata/riftstokorhal/shard4long_terran.jpg');imgList.push('/images/missiondata/riftstokorhal/shard4long_zerg.jpg');preload(imgList);</script>    <h2 id="bonus">Completing the Bonus Objective</h2>
+        <div class="switcher">
+        <div class="basePic" id="shard1div">
+            <img id="shard1" src=" /images/missiondata/riftstokorhal/shard1_protoss.jpg" alt="shard1 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="shard1" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="shard1" value="terran">Terran</label><br>
+                <label><input type="radio" name="shard1" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/riftstokorhal/shard1minimap.jpg" alt="shard1 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='shard1']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#shard1');
+            var img = new Image();
+            img.src = '/images/missiondata/riftstokorhal/shard1_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#shard1div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'shard1');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/riftstokorhal/shard1_protoss.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard1_terran.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard1_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The second set of Void Shards is guarded by a significantly larger enemy force. The defenses are shown below:</p>
+        <div class="switcher">
+        <div class="long" id="shard2longdiv">
+            <img id="shard2long" src=" /images/missiondata/riftstokorhal/shard2long_protoss.jpg" alt="shard2long Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="shard2long" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="shard2long" value="terran">Terran</label><br>
+                <label><input type="radio" name="shard2long" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/riftstokorhal/shard2longminimap.jpg" alt="shard2long Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='shard2long']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#shard2long');
+            var img = new Image();
+            img.src = '/images/missiondata/riftstokorhal/shard2long_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#shard2longdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'shard2long');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/riftstokorhal/shard2long_protoss.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard2long_terran.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard2long_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>If you choose to attack the third set of Void Shards with a ground army, you will need to push through an enemy camp. Note that air units can completely bypass this camp. The camp is shown below:</p>
+        <div class="switcher">
+        <div class="basePic" id="shard3campdiv">
+            <img id="shard3camp" src=" /images/missiondata/riftstokorhal/shard3camp_protoss.jpg" alt="shard3camp Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="shard3camp" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="shard3camp" value="terran">Terran</label><br>
+                <label><input type="radio" name="shard3camp" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/riftstokorhal/shard3campminimap.jpg" alt="shard3camp Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='shard3camp']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#shard3camp');
+            var img = new Image();
+            img.src = '/images/missiondata/riftstokorhal/shard3camp_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#shard3campdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'shard3camp');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/riftstokorhal/shard3camp_protoss.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard3camp_terran.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard3camp_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The third set of Void Shards is placed within an enemy base. The base is shown below:</p>
+        <div class="switcher">
+        <div class="long" id="shard3longdiv">
+            <img id="shard3long" src=" /images/missiondata/riftstokorhal/shard3long_protoss.jpg" alt="shard3long Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="shard3long" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="shard3long" value="terran">Terran</label><br>
+                <label><input type="radio" name="shard3long" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/riftstokorhal/shard3longminimap.jpg" alt="shard3long Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='shard3long']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#shard3long');
+            var img = new Image();
+            img.src = '/images/missiondata/riftstokorhal/shard3long_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#shard3longdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'shard3long');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/riftstokorhal/shard3long_protoss.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard3long_terran.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard3long_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The last set of Void Shards is located within a much larger enemy base. The base also has a small forward comp. All of this is shown below:</p>
+        <div class="switcher">
+        <div class="long" id="shard4longdiv">
+            <img id="shard4long" src=" /images/missiondata/riftstokorhal/shard4long_protoss.jpg" alt="shard4long Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="shard4long" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="shard4long" value="terran">Terran</label><br>
+                <label><input type="radio" name="shard4long" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/riftstokorhal/shard4longminimap.jpg" alt="shard4long Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='shard4long']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#shard4long');
+            var img = new Image();
+            img.src = '/images/missiondata/riftstokorhal/shard4long_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#shard4longdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'shard4long');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/riftstokorhal/shard4long_protoss.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard4long_terran.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/shard4long_zerg.jpg');
+        preload(imgList);
+    </script>
+        <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/riftstokorhal/pirateship.jpg" alt="Pirate Ship">
         <img src="/images/missiondata/riftstokorhal/pirateship.jpg" alt="Pirate Ship">
@@ -237,7 +422,44 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><b>Bombing Run:</b> Does a large amount of damage in a straight line. This skill can usually kill an entire army if you are not careful.</li>
     </ul>
     <p>While the first Pirate Ship spawns unguarded, the second spawns behind an enemy base. The base is shown below:</p>
-    <div class='switcher'><div class='basePic' id='piratebasediv'><img id ='piratebase' src=' /images/missiondata/riftstokorhal/piratebase_protoss.jpg' alt='piratebase Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='piratebase' value='protoss' checked>Protoss</label><br><label><input type='radio' name='piratebase' value='terran'>Terran</label><br><label><input type='radio' name='piratebase' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/riftstokorhal/piratebaseminimap.jpg' alt='piratebase Minimap'></div></div></div><script>$("input[name='piratebase']").change(function(){var race= $(this).val();var oldImg = $('#piratebase');var img = new Image();img.src = '/images/missiondata/riftstokorhal/piratebase_'+ race + '.jpg';var newImg = $(img).hide();$('#piratebasediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'piratebase');return false;});var imgList=[];imgList.push('/images/missiondata/riftstokorhal/piratebase_protoss.jpg');imgList.push('/images/missiondata/riftstokorhal/piratebase_terran.jpg');imgList.push('/images/missiondata/riftstokorhal/piratebase_zerg.jpg');preload(imgList);</script>    <h2 id="timings">Timings</h2>
+        <div class="switcher">
+        <div class="basePic" id="piratebasediv">
+            <img id="piratebase" src=" /images/missiondata/riftstokorhal/piratebase_protoss.jpg" alt="piratebase Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="piratebase" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="piratebase" value="terran">Terran</label><br>
+                <label><input type="radio" name="piratebase" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/riftstokorhal/piratebaseminimap.jpg" alt="piratebase Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='piratebase']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#piratebase');
+            var img = new Image();
+            img.src = '/images/missiondata/riftstokorhal/piratebase_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#piratebasediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'piratebase');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/riftstokorhal/piratebase_protoss.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/piratebase_terran.jpg');
+        imgList.push('/images/missiondata/riftstokorhal/piratebase_zerg.jpg');
+        preload(imgList);
+    </script>
+        <h2 id="timings">Timings</h2>
     <p>Note: Information on Tech and Strength levels can be found on the <a href="/guides/enemycomps">Enemy Compositions</a> page.</p>
     <p>The Attack Wave Timings for this mission are:</p>
     <table class="centered">
@@ -393,7 +615,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/raynor">Raynor</a>: If you use Vultures, place Spider Mines near the exit of the funnel leading to the middle of the map to weaken/destroy attack waves.</li>
         <li><a href="/commanders/swann">Swann</a>: Concentrated Beam can be used to deal with all the attack waves, and can even wipe it out entirely if placed correctly.</li>
     </ul>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

@@ -103,19 +103,19 @@
     $mutations = get_weeklymutations();
     $mutations = array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden But Inevitable');
     foreach ($mutations as &$row) {
-        if ($row['map'] == "Lock and Load") {
-            $row['map'] = "Lock Load";
+        if ($row['map'] == 'Lock and Load') {
+            $row['map'] = 'Lock Load';
         }
     }
     ?>
     <div id="mutatorsList" class="hidden">
     <?php
-        echo(json_encode($mutators));
+    echo json_encode($mutators);
     ?>
     </div>
     <div id="mutationsList" class="hidden">
         <?php
-            echo(json_encode($mutations));
+        echo json_encode($mutations);
         ?>
     </div>
     <div id="box1" class="box">

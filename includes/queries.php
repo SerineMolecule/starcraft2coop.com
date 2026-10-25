@@ -215,10 +215,12 @@ function get_playerupgrades_by_icon(string $commander, string $unit, string $ico
     return array_values(array_map(
         'normalize_playerupgrade_for_calculator',
         array_filter(get_playerupgrades(), function ($upgrade) use ($commander, $unit, $icon) {
-            return $upgrade['commander'] === $commander
-                && $upgrade['unit'] === $unit
-                && $upgrade['icon'] === $icon;
-        })
+            return (
+                $upgrade['commander'] === $commander
+                    && $upgrade['unit'] === $unit
+                    && $upgrade['icon'] === $icon
+            );
+        }),
     ));
 }
 
@@ -233,11 +235,13 @@ function get_mengsk_veterancy_playerupgrades(string $commander, string $unit, in
     return array_values(array_map(
         'normalize_playerupgrade_for_calculator',
         array_filter(get_playerupgrades(), function ($upgrade) use ($commander, $unit, $level) {
-            return $upgrade['commander'] === $commander
-                && $upgrade['unit'] === $unit
-                && $upgrade['icon'] === 'veterancy'
-                && intval($upgrade['name']) <= $level;
-        })
+            return (
+                $upgrade['commander'] === $commander
+                    && $upgrade['unit'] === $unit
+                    && $upgrade['icon'] === 'veterancy'
+                    && intval($upgrade['name']) <= $level
+            );
+        }),
     ));
 }
 

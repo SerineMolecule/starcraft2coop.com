@@ -410,8 +410,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     function weeklyMutationMutatorLink(array $mutator): string
     {
         $filename = $mutator['mutatorid'];
-        return '<a href="/mutators/' . $filename . '"><img class="miniIcon" src="/images/mutators/' .
-            $filename . '.png" alt="">' . $mutator['mutatorname'] . '</a>';
+        return '<a href="/mutators/' . $filename . '"><img class="miniIcon" src="/images/mutators/' . $filename . '.png" alt="">' . $mutator['mutatorname'] . '</a>';
     }
 
     $cycleList = get_mutationcycle();
@@ -476,7 +475,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             $string = str_replace(' ', '', $row['name']);
             $string = str_replace('and', '', $string);
             $string = str_replace('&', '', $string);
-            echo("<option value='" . strtolower($string) . "'>" . $row['name'] . '</option>');
+            echo "<option value='" . strtolower($string) . "'>" . $row['name'] . '</option>';
         }
         ?>
         </select>
@@ -486,7 +485,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     <div id="mutators"><p>Mutators: <select id="mutatorselect">
         <?php
         foreach (get_mutators() as $row) {
-            echo("<option value='" . $row['mutatorid'] . "'>" . $row['mutatorname'] . '</option>');
+            echo "<option value='" . $row['mutatorid'] . "'>" . $row['mutatorname'] . '</option>';
         }
         ?>
         </select>
@@ -496,7 +495,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     <div id="difficultyLevel"><p>Difficulty: <select id="difficultyselect"><option value='0'>?</option>
         <?php
         foreach ($difficultyArray as $row) {
-            echo("<option value='" . $row['difficulty'] . "'>Brutal+" . $row['difficulty'] . '</option>');
+            echo "<option value='" . $row['difficulty'] . "'>Brutal+" . $row['difficulty'] . '</option>';
         }
         ?>
         </select>
@@ -646,8 +645,9 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                     }
 
                     if ($row['mutationid'] === 47) {
-                        echo "<td colspan='4'><a href='https://www.reddit.com/r/starcraft/comments/62renx/coop_mutation_47_sudden_but_inevitable/' " .
-                            "title=\"An April Fools' event: 1v1 on Steppes of War with co-op commanders and no mutators\">Steppes of Betrayal</a></td>\n";
+                        echo
+                            "<td colspan='4'><a href='https://www.reddit.com/r/starcraft/comments/62renx/coop_mutation_47_sudden_but_inevitable/' "
+                                . "title=\"An April Fools' event: 1v1 on Steppes of War with co-op commanders and no mutators\">Steppes of Betrayal</a></td>\n";
                         echo "</tr>\n";
                         continue;
                     }

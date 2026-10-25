@@ -11,8 +11,7 @@ function homeMissionImageFilename(string $mission): string
 function homeMutationMutatorLink(array $mutator): string
 {
     $filename = $mutator['mutatorid'];
-    return '<a href="/mutators/' . $filename . '"><img class="miniIcon" src="/images/mutators/' .
-        $filename . '.png" alt="">' . $mutator['mutatorname'] . '</a>';
+    return '<a href="/mutators/' . $filename . '"><img class="miniIcon" src="/images/mutators/' . $filename . '.png" alt="">' . $mutator['mutatorname'] . '</a>';
 }
 
 function homeMutationMutators(array $mutation, array $mutators): string
@@ -35,8 +34,7 @@ function homeMutationRow(string $week, array $mutation, array $mutators): string
     $html = "<tr>\n";
     $html .= '<td class="left-column">' . $week . "</td>\n";
     $html .= '<td><strong>' . $mutation['mutation'] . "</strong></td>\n";
-    $html .= '<td><div class="mapImg mapImg-' . $missionFilename . '">' .
-        htmlspecialchars(mapDisplayName($mutation['map'])) . "</div></td>\n";
+    $html .= '<td><div class="mapImg mapImg-' . $missionFilename . '">' . htmlspecialchars(mapDisplayName($mutation['map'])) . "</div></td>\n";
     $html .= '<td>' . homeMutationMutators($mutation, $mutators) . "</td>\n";
     $html .= "</tr>\n";
     return $html;

@@ -10,7 +10,7 @@ node_modules: package.json
 	bun install
 	touch -m node_modules
 
-vendor: composer.json
+vendor: composer.json composer.lock
 	composer install --prefer-dist
 	touch -m vendor
 
@@ -42,8 +42,8 @@ bun-test: node_modules
 
 .PHONY: check
 check: vendor
-	./vendor/bin/phpcs --ignore=vendor,.dh-diag,html -n .
+	./vendor/bin/mago fmt --check
 
 .PHONY: fix
 fix: vendor
-	./vendor/bin/phpcbf --ignore=vendor,.dh-diag,html -n .
+	./vendor/bin/mago fmt

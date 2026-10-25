@@ -171,7 +171,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Chain of Ascension</h1>
     <p id="missionPlace">Slayn</p>
@@ -219,13 +219,285 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </script>
     </div>
         <p>The first camp you will have to take is positioned over your expansion. The expansions for both players are defended by static defense and a few units. Note the burrowed Ultralisk when facing Zerg compositions.</p>
-    <div class='switcher'><div class='p1Expo'><img id ='p1Expo' src=' /images/missiondata/chainofascension/p1expo_protoss.jpg' alt='Player 1 Expo'></div><div class = 'expoMinimap'><form action='#'><label><input type='radio' name='expo' value='protoss' checked>Protoss</label><br><label><input type='radio' name='expo' value='terran'>Terran</label><br><label><input type='radio' name='expo' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/chainofascension/expominimap.jpg' alt='Expansion Minimap'></div></div><div class='p2Expo'><img id='p2Expo' src='/images/missiondata/chainofascension/p2expo_protoss.jpg' alt='Player 2 Expo'></div></div><script>$("input[name='expo']").change(function(){var race= $(this).val();var oldImg = $('#p1Expo');var img = new Image();img.src = '/images/missiondata/chainofascension/p1expo_'+ race + '.jpg';var newImg = $(img).hide();$('.p1Expo').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'p1Expo');var oldImg = $('#p2Expo');var img = new Image();img.src = '/images/missiondata/chainofascension/p2expo_'+ race + '.jpg';var newImg = $(img).hide();$('.p2Expo').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'p2Expo');return false;});var imgList=[];imgList.push('/images/missiondata/chainofascension/p1expo_protoss.jpg');imgList.push('/images/missiondata/chainofascension/p1expo_terran.jpg');imgList.push('/images/missiondata/chainofascension/p1expo_zerg.jpg');imgList.push('/images/missiondata/chainofascension/p2expo_protoss.jpg');imgList.push('/images/missiondata/chainofascension/p2expo_terran.jpg');imgList.push('/images/missiondata/chainofascension/p2expo_zerg.jpg');preload(imgList);</script>    <p>The next camp that will be captured lies in between the two expansions. This is lightly defended by some static defense and ground units.</p>
-    <div class='switcher'><div class='basePic' id='camp1div'><img id ='camp1' src=' /images/missiondata/chainofascension/camp1_protoss.jpg' alt='camp1 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='camp1' value='protoss' checked>Protoss</label><br><label><input type='radio' name='camp1' value='terran'>Terran</label><br><label><input type='radio' name='camp1' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/chainofascension/camp1minimap.jpg' alt='camp1 Minimap'></div></div></div><script>$("input[name='camp1']").change(function(){var race= $(this).val();var oldImg = $('#camp1');var img = new Image();img.src = '/images/missiondata/chainofascension/camp1_'+ race + '.jpg';var newImg = $(img).hide();$('#camp1div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'camp1');return false;});var imgList=[];imgList.push('/images/missiondata/chainofascension/camp1_protoss.jpg');imgList.push('/images/missiondata/chainofascension/camp1_terran.jpg');imgList.push('/images/missiondata/chainofascension/camp1_zerg.jpg');preload(imgList);</script>    <p>Soon after this camp is captured, the 1st set of Hybrids will spawn. The base itself is weakly defended. However, the Hybrids will spawn with a protection detail. It is usually recommended to clear this base out <i>before</i> the hybrid wave spawns.</p>
-    <div class='switcher'><div class='basePic' id='hybrid1div'><img id ='hybrid1' src=' /images/missiondata/chainofascension/hybrid1_protoss.jpg' alt='hybrid1 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='hybrid1' value='protoss' checked>Protoss</label><br><label><input type='radio' name='hybrid1' value='terran'>Terran</label><br><label><input type='radio' name='hybrid1' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/chainofascension/hybrid1minimap.jpg' alt='hybrid1 Minimap'></div></div></div><script>$("input[name='hybrid1']").change(function(){var race= $(this).val();var oldImg = $('#hybrid1');var img = new Image();img.src = '/images/missiondata/chainofascension/hybrid1_'+ race + '.jpg';var newImg = $(img).hide();$('#hybrid1div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'hybrid1');return false;});var imgList=[];imgList.push('/images/missiondata/chainofascension/hybrid1_protoss.jpg');imgList.push('/images/missiondata/chainofascension/hybrid1_terran.jpg');imgList.push('/images/missiondata/chainofascension/hybrid1_zerg.jpg');preload(imgList);</script>    <p>As Ji'Nara moves forward, the second set of Hybrids will spawn. The base has static defense guarding the front and some at the back (however, those are not relevant to clearing the hybrid spawn). The middle is mostly empty. However, the Hybrids will spawn with a protection detail as usual.</p>
-    <div class='switcher'><div class='basePic' id='hybrid2div'><img id ='hybrid2' src=' /images/missiondata/chainofascension/hybrid2_protoss.jpg' alt='hybrid2 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='hybrid2' value='protoss' checked>Protoss</label><br><label><input type='radio' name='hybrid2' value='terran'>Terran</label><br><label><input type='radio' name='hybrid2' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/chainofascension/hybrid2minimap.jpg' alt='hybrid2 Minimap'></div></div></div><script>$("input[name='hybrid2']").change(function(){var race= $(this).val();var oldImg = $('#hybrid2');var img = new Image();img.src = '/images/missiondata/chainofascension/hybrid2_'+ race + '.jpg';var newImg = $(img).hide();$('#hybrid2div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'hybrid2');return false;});var imgList=[];imgList.push('/images/missiondata/chainofascension/hybrid2_protoss.jpg');imgList.push('/images/missiondata/chainofascension/hybrid2_terran.jpg');imgList.push('/images/missiondata/chainofascension/hybrid2_zerg.jpg');preload(imgList);</script>    <p>The next camp that will have to be cleared is a heavily fortified camp in the middle of the map. This area is filled with spell-casters and high-HP units.</p>
-    <div class='switcher'><div class='basePic' id='camp2div'><img id ='camp2' src=' /images/missiondata/chainofascension/camp2_protoss.jpg' alt='camp2 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='camp2' value='protoss' checked>Protoss</label><br><label><input type='radio' name='camp2' value='terran'>Terran</label><br><label><input type='radio' name='camp2' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/chainofascension/camp2minimap.jpg' alt='camp2 Minimap'></div></div></div><script>$("input[name='camp2']").change(function(){var race= $(this).val();var oldImg = $('#camp2');var img = new Image();img.src = '/images/missiondata/chainofascension/camp2_'+ race + '.jpg';var newImg = $(img).hide();$('#camp2div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'camp2');return false;});var imgList=[];imgList.push('/images/missiondata/chainofascension/camp2_protoss.jpg');imgList.push('/images/missiondata/chainofascension/camp2_terran.jpg');imgList.push('/images/missiondata/chainofascension/camp2_zerg.jpg');preload(imgList);</script>    <p>Once Ji'Nara is pushed past the camp's center, the third wave of Hybrids will spawn. The base itself is not heavily defended. However, the protection detail that the Hybrids come with is strong. A well-placed AoE can make short work of this area.</p>
-    <div class='switcher'><div class='basePic' id='hybrid3div'><img id ='hybrid3' src=' /images/missiondata/chainofascension/hybrid3_protoss.jpg' alt='hybrid3 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='hybrid3' value='protoss' checked>Protoss</label><br><label><input type='radio' name='hybrid3' value='terran'>Terran</label><br><label><input type='radio' name='hybrid3' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/chainofascension/hybrid3minimap.jpg' alt='hybrid3 Minimap'></div></div></div><script>$("input[name='hybrid3']").change(function(){var race= $(this).val();var oldImg = $('#hybrid3');var img = new Image();img.src = '/images/missiondata/chainofascension/hybrid3_'+ race + '.jpg';var newImg = $(img).hide();$('#hybrid3div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'hybrid3');return false;});var imgList=[];imgList.push('/images/missiondata/chainofascension/hybrid3_protoss.jpg');imgList.push('/images/missiondata/chainofascension/hybrid3_terran.jpg');imgList.push('/images/missiondata/chainofascension/hybrid3_zerg.jpg');preload(imgList);</script>    <p>The last camp that will need to be dealt with contains high-tech units. However, it is usually easier to engage, due to both players having strong armies.</p>
-    <div class='switcher'><div class='basePic' id='camp3div'><img id ='camp3' src=' /images/missiondata/chainofascension/camp3_protoss.jpg' alt='camp3 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='camp3' value='protoss' checked>Protoss</label><br><label><input type='radio' name='camp3' value='terran'>Terran</label><br><label><input type='radio' name='camp3' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/chainofascension/camp3minimap.jpg' alt='camp3 Minimap'></div></div></div><script>$("input[name='camp3']").change(function(){var race= $(this).val();var oldImg = $('#camp3');var img = new Image();img.src = '/images/missiondata/chainofascension/camp3_'+ race + '.jpg';var newImg = $(img).hide();$('#camp3div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'camp3');return false;});var imgList=[];imgList.push('/images/missiondata/chainofascension/camp3_protoss.jpg');imgList.push('/images/missiondata/chainofascension/camp3_terran.jpg');imgList.push('/images/missiondata/chainofascension/camp3_zerg.jpg');preload(imgList);</script>    <p>Once this camp is cleared, the last set of Hybrids spawn behind the Pit of Sacrifice once Ji'Nara reaches the trigger location. There is no static defense or guards there, which means it can't be cleared ahead of time. The protection detail, however, is crammed in that area, making it relatively difficult to engage.</p>
+        <div class="switcher">
+        <div class="p1Expo">
+            <img id="p1Expo" src=" /images/missiondata/chainofascension/p1expo_protoss.jpg" alt="Player 1 Expo">
+        </div><div class="expoMinimap">
+            <form action="#">
+                <label><input type="radio" name="expo" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="expo" value="terran">Terran</label><br>
+                <label><input type="radio" name="expo" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/chainofascension/expominimap.jpg" alt="Expansion Minimap">
+            </div>
+        </div><div class="p2Expo"><img id="p2Expo" src="/images/missiondata/chainofascension/p2expo_protoss.jpg" alt="Player 2 Expo"></div>
+    </div>
+
+    <script>
+        $("input[name='expo']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#p1Expo');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/p1expo_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('.p1Expo').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'p1Expo');
+            var oldImg = $('#p2Expo');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/p2expo_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('.p2Expo').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'p2Expo');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/chainofascension/p1expo_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/p1expo_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/p1expo_zerg.jpg');
+        imgList.push('/images/missiondata/chainofascension/p2expo_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/p2expo_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/p2expo_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The next camp that will be captured lies in between the two expansions. This is lightly defended by some static defense and ground units.</p>
+        <div class="switcher">
+        <div class="basePic" id="camp1div">
+            <img id="camp1" src=" /images/missiondata/chainofascension/camp1_protoss.jpg" alt="camp1 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="camp1" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="camp1" value="terran">Terran</label><br>
+                <label><input type="radio" name="camp1" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/chainofascension/camp1minimap.jpg" alt="camp1 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='camp1']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#camp1');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/camp1_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#camp1div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'camp1');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/chainofascension/camp1_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/camp1_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/camp1_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Soon after this camp is captured, the 1st set of Hybrids will spawn. The base itself is weakly defended. However, the Hybrids will spawn with a protection detail. It is usually recommended to clear this base out <i>before</i> the hybrid wave spawns.</p>
+        <div class="switcher">
+        <div class="basePic" id="hybrid1div">
+            <img id="hybrid1" src=" /images/missiondata/chainofascension/hybrid1_protoss.jpg" alt="hybrid1 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="hybrid1" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="hybrid1" value="terran">Terran</label><br>
+                <label><input type="radio" name="hybrid1" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/chainofascension/hybrid1minimap.jpg" alt="hybrid1 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='hybrid1']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#hybrid1');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/hybrid1_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#hybrid1div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'hybrid1');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/chainofascension/hybrid1_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/hybrid1_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/hybrid1_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>As Ji'Nara moves forward, the second set of Hybrids will spawn. The base has static defense guarding the front and some at the back (however, those are not relevant to clearing the hybrid spawn). The middle is mostly empty. However, the Hybrids will spawn with a protection detail as usual.</p>
+        <div class="switcher">
+        <div class="basePic" id="hybrid2div">
+            <img id="hybrid2" src=" /images/missiondata/chainofascension/hybrid2_protoss.jpg" alt="hybrid2 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="hybrid2" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="hybrid2" value="terran">Terran</label><br>
+                <label><input type="radio" name="hybrid2" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/chainofascension/hybrid2minimap.jpg" alt="hybrid2 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='hybrid2']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#hybrid2');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/hybrid2_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#hybrid2div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'hybrid2');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/chainofascension/hybrid2_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/hybrid2_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/hybrid2_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The next camp that will have to be cleared is a heavily fortified camp in the middle of the map. This area is filled with spell-casters and high-HP units.</p>
+        <div class="switcher">
+        <div class="basePic" id="camp2div">
+            <img id="camp2" src=" /images/missiondata/chainofascension/camp2_protoss.jpg" alt="camp2 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="camp2" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="camp2" value="terran">Terran</label><br>
+                <label><input type="radio" name="camp2" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/chainofascension/camp2minimap.jpg" alt="camp2 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='camp2']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#camp2');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/camp2_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#camp2div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'camp2');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/chainofascension/camp2_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/camp2_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/camp2_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Once Ji'Nara is pushed past the camp's center, the third wave of Hybrids will spawn. The base itself is not heavily defended. However, the protection detail that the Hybrids come with is strong. A well-placed AoE can make short work of this area.</p>
+        <div class="switcher">
+        <div class="basePic" id="hybrid3div">
+            <img id="hybrid3" src=" /images/missiondata/chainofascension/hybrid3_protoss.jpg" alt="hybrid3 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="hybrid3" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="hybrid3" value="terran">Terran</label><br>
+                <label><input type="radio" name="hybrid3" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/chainofascension/hybrid3minimap.jpg" alt="hybrid3 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='hybrid3']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#hybrid3');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/hybrid3_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#hybrid3div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'hybrid3');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/chainofascension/hybrid3_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/hybrid3_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/hybrid3_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The last camp that will need to be dealt with contains high-tech units. However, it is usually easier to engage, due to both players having strong armies.</p>
+        <div class="switcher">
+        <div class="basePic" id="camp3div">
+            <img id="camp3" src=" /images/missiondata/chainofascension/camp3_protoss.jpg" alt="camp3 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="camp3" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="camp3" value="terran">Terran</label><br>
+                <label><input type="radio" name="camp3" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/chainofascension/camp3minimap.jpg" alt="camp3 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='camp3']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#camp3');
+            var img = new Image();
+            img.src = '/images/missiondata/chainofascension/camp3_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#camp3div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'camp3');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/chainofascension/camp3_protoss.jpg');
+        imgList.push('/images/missiondata/chainofascension/camp3_terran.jpg');
+        imgList.push('/images/missiondata/chainofascension/camp3_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Once this camp is cleared, the last set of Hybrids spawn behind the Pit of Sacrifice once Ji'Nara reaches the trigger location. There is no static defense or guards there, which means it can't be cleared ahead of time. The protection detail, however, is crammed in that area, making it relatively difficult to engage.</p>
     <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/chainofascension/slaynelemental.jpg" alt="Slayn Elemental">
@@ -651,7 +923,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/zagara">Zagara</a>: Build a single corruptor to apply Corruption to the Slayn Elemental before you run your Scourge into it.</li>
         <li><a href="/commanders/zagara">Zagara</a>: Build your macro hatcheries at your expansion for quick reinforcements.</li>
     </ul>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

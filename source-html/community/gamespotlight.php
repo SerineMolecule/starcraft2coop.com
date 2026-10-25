@@ -49,42 +49,42 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         <li>Replays should not be too old (more than 2-3 years old) to ensure the Co-op Observer UI works well.</li>
     </ul>
     <?php
-    /* ini_set('file_uploads', 'On');
-        if(isset($_POST['url']) && $_POST['url'] == ''){
-            if(isset($_FILES["file"]) && isset($_POST['recaptcha_response'])){
-
-                include("../scripts/recaptcha.php");
-                if ($recaptchaResult) {
-
-                    $target_dir = "../aommaster_admin/submissions/";
-                    $md5 = md5_file($_FILES["file"]["tmp_name"]);
-                    $description =  escapeshellarg($_POST['desc']);
-                    $target_file = $target_dir . $md5 . ".sc2replay";
-                    $uploadOk = 1;
-                    $fileExtension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                    if ($fileExtension!=="sc2replay"){
-                        echo ('<p><span style="color:red">File format incorrect.</span></p>');
-                        $uploadOk = 0;
-                    }
-                    if (file_exists($target_file)) {
-                        echo ('<p><span style="color:red">File already exists.</span></p>');
-                        $uploadOk = 0;
-                    }
-                    if ($_FILES["file"]["size"] > 600000) {
-                        echo ('<p><span style="color:red">File too large.</span></p>');
-                        $uploadOk = 0;
-                    }
-                    if ($uploadOk !== 0) {
-                        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                            echo ('<p><span style="color:green">Your replay has been submitted successfully!</span></p>');
-                            exec("php ../scripts/addsubmission.php" . " '" .$md5."' ".$description."  'gs'> /dev/null &");
-                        } else {
-                            echo "Sorry, there was an error uploading your file.";
-                        }
-                    }
-                }
-            }
-        } */
+    // ini_set('file_uploads', 'On');
+    // if (isset($_POST['url']) && $_POST['url'] == ''){
+    //     if (isset($_FILES["file"]) && isset($_POST['recaptcha_response'])){
+    //
+    //         include("../scripts/recaptcha.php");
+    //         if ($recaptchaResult) {
+    //
+    //             $target_dir = "../aommaster_admin/submissions/";
+    //             $md5 = md5_file($_FILES["file"]["tmp_name"]);
+    //             $description =  escapeshellarg($_POST['desc']);
+    //             $target_file = $target_dir . $md5 . ".sc2replay";
+    //             $uploadOk = 1;
+    //             $fileExtension = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    //             if ($fileExtension!=="sc2replay"){
+    //                 echo ('<p><span style="color:red">File format incorrect.</span></p>');
+    //                 $uploadOk = 0;
+    //             }
+    //             if (file_exists($target_file)) {
+    //                 echo ('<p><span style="color:red">File already exists.</span></p>');
+    //                 $uploadOk = 0;
+    //             }
+    //             if ($_FILES["file"]["size"] > 600000) {
+    //                 echo ('<p><span style="color:red">File too large.</span></p>');
+    //                 $uploadOk = 0;
+    //             }
+    //             if ($uploadOk !== 0) {
+    //                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+    //                     echo ('<p><span style="color:green">Your replay has been submitted successfully!</span></p>');
+    //                     exec("php ../scripts/addsubmission.php" . " '" .$md5."' ".$description."  'gs'> /dev/null &");
+    //                 } else {
+    //                     echo "Sorry, there was an error uploading your file.";
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     ?>
 
     <form action="gamespotlight.php" name="submissionform" id="gsForm" class="captchaForm" onsubmit="return validate()" method="post" enctype="multipart/form-data">

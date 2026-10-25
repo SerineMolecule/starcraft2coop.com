@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../../includes/wrapper.php";
+require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
     <title>Starcraft 2 Co-op - Weekly Mutations</title>
@@ -394,12 +394,12 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     function getDiffString(?int $brutalPlus): array
     {
         if ($brutalPlus === null) {
-            $diffString = "?";
+            $diffString = '?';
         } else if ($brutalPlus > 6) {
-            $diffString = "&#9760;&#65039;"; // skull and crossbones emoji
+            $diffString = '&#9760;&#65039;'; // skull and crossbones emoji
         } else if ($brutalPlus === 0) {
             // shouldn't ever actually happen
-            $diffString = "&#128522;"; // smiling face with smiling eyes emoji
+            $diffString = '&#128522;'; // smiling face with smiling eyes emoji
         } else {
             $diffString = "$brutalPlus";
         }
@@ -410,8 +410,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     function weeklyMutationMutatorLink(array $mutator): string
     {
         $filename = $mutator['mutatorid'];
-        return "<a href=\"/mutators/" . $filename . "\"><img class=\"miniIcon\" src=\"/images/mutators/" .
-            $filename . ".png\" alt=\"\">" . $mutator['mutatorname'] . "</a>";
+        return '<a href="/mutators/' . $filename . '"><img class="miniIcon" src="/images/mutators/' . $filename . '.png" alt="">' . $mutator['mutatorname'] . '</a>';
     }
 
     $cycleList = get_mutationcycle();
@@ -420,44 +419,44 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     [$currentWeekIndex] = get_currentmutationcycle();
 
     foreach ($cycleList as $rowIndex => $row) {
-        $classVals = str_replace("and", "", str_replace(' ', '', strtolower($row["map"])));
+        $classVals = str_replace('and', '', str_replace(' ', '', strtolower($row['map'])));
         $score = 0;
         $unknown = false;
-        if ($row["mut01"]) {
-            $classVals .= " " . $row["mut01"];
+        if ($row['mut01']) {
+            $classVals .= ' ' . $row['mut01'];
         }
-        if ($row["mut02"]) {
-            $classVals .= " " . $row["mut02"];
+        if ($row['mut02']) {
+            $classVals .= ' ' . $row['mut02'];
         }
-        if ($row["mut03"]) {
-            $classVals .= " " . $row["mut03"];
+        if ($row['mut03']) {
+            $classVals .= ' ' . $row['mut03'];
         }
-        [$diff, $diffString] = getDiffString($row["brutalplus"]);
-        $classVals .= " brutal" . $diff;
+        [$diff, $diffString] = getDiffString($row['brutalplus']);
+        $classVals .= ' brutal' . $diff;
         if ($rowIndex == $currentWeekIndex) {
             $classVals .= " current' id='thisweek";
         }
         echo "<tr class='" . $classVals . "'>\n";
-        echo "<td class='ribbon'>" . $row["mutation"] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
+        echo "<td class='ribbon'>" . $row['mutation'] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
 
-        if ($row["map"]) {
-            echo "<td><div class='mapImg mapImg-" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . "'>" . htmlspecialchars(mapDisplayName($row["map"])) . "</div></td>\n";
+        if ($row['map']) {
+            echo "<td><div class='mapImg mapImg-" . str_replace('and', '', str_replace(' ', '', strtolower($row['map']))) . "'>" . htmlspecialchars(mapDisplayName($row['map'])) . "</div></td>\n";
         } else {
             echo "<td></td>\n";
         }
 
-        if ($row["mut01"]) {
-            echo "<td>" . weeklyMutationMutatorLink(get_mutator($row["mut01"], $mutators)) . "</td>\n";
+        if ($row['mut01']) {
+            echo '<td>' . weeklyMutationMutatorLink(get_mutator($row['mut01'], $mutators)) . "</td>\n";
         } else {
             echo "<td></td>\n";
         }
-        if ($row["mut02"]) {
-            echo "<td>" . weeklyMutationMutatorLink(get_mutator($row["mut02"], $mutators)) . "</td>\n";
+        if ($row['mut02']) {
+            echo '<td>' . weeklyMutationMutatorLink(get_mutator($row['mut02'], $mutators)) . "</td>\n";
         } else {
             echo "<td></td>\n";
         }
-        if ($row["mut03"]) {
-            echo "<td>" . weeklyMutationMutatorLink(get_mutator($row["mut03"], $mutators)) . "</td>\n";
+        if ($row['mut03']) {
+            echo '<td>' . weeklyMutationMutatorLink(get_mutator($row['mut03'], $mutators)) . "</td>\n";
         } else {
             echo "<td></td>\n";
         }
@@ -473,10 +472,10 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <div id="maps"><p>Map: <select id="mapselect">
         <?php
         foreach (get_missions() as $row) {
-            $string = str_replace(" ", "", $row['name']);
-            $string = str_replace("and", "", $string);
-            $string = str_replace("&", "", $string);
-            echo("<option value='" . strtolower($string) . "'>" . $row['name'] . "</option>");
+            $string = str_replace(' ', '', $row['name']);
+            $string = str_replace('and', '', $string);
+            $string = str_replace('&', '', $string);
+            echo "<option value='" . strtolower($string) . "'>" . $row['name'] . '</option>';
         }
         ?>
         </select>
@@ -486,7 +485,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <div id="mutators"><p>Mutators: <select id="mutatorselect">
         <?php
         foreach (get_mutators() as $row) {
-            echo("<option value='" . $row['mutatorid'] . "'>" . $row['mutatorname'] . "</option>");
+            echo "<option value='" . $row['mutatorid'] . "'>" . $row['mutatorname'] . '</option>';
         }
         ?>
         </select>
@@ -496,7 +495,7 @@ require_once __DIR__ . "/../../includes/wrapper.php";
     <div id="difficultyLevel"><p>Difficulty: <select id="difficultyselect"><option value='0'>?</option>
         <?php
         foreach ($difficultyArray as $row) {
-            echo("<option value='" . $row['difficulty'] . "'>Brutal+" . $row['difficulty'] . "</option>");
+            echo "<option value='" . $row['difficulty'] . "'>Brutal+" . $row['difficulty'] . '</option>';
         }
         ?>
         </select>
@@ -625,51 +624,52 @@ require_once __DIR__ . "/../../includes/wrapper.php";
                 <?php
                 $weeklyList = get_weeklymutations();
                 foreach ($weeklyList as $row) {
-                    $classVals = str_replace("and", "", str_replace(' ', '', strtolower($row["map"])));
-                    if ($row["mut01"]) {
-                        $classVals .= " " . $row["mut01"];
+                    $classVals = str_replace('and', '', str_replace(' ', '', strtolower($row['map'])));
+                    if ($row['mut01']) {
+                        $classVals .= ' ' . $row['mut01'];
                     }
-                    if ($row["mut02"]) {
-                        $classVals .= " " . $row["mut02"];
+                    if ($row['mut02']) {
+                        $classVals .= ' ' . $row['mut02'];
                     }
-                    if ($row["mut03"]) {
-                        $classVals .= " " . $row["mut03"];
+                    if ($row['mut03']) {
+                        $classVals .= ' ' . $row['mut03'];
                     }
-                    [$diff, $diffString] = getDiffString($row["brutalplus"] ?? null);
-                    $classVals .= " brutal" . $diff;
+                    [$diff, $diffString] = getDiffString($row['brutalplus'] ?? null);
+                    $classVals .= ' brutal' . $diff;
                     echo "<tr class='" . $classVals . "'>\n";
-                    echo "<td class='ribbon'>" . $row["releasedate"] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
-                    if ($row["link"]) {
-                        echo "<td>" . $row["mutation"] . "<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/" . $row["link"] . "'></td>\n";
+                    echo "<td class='ribbon'>" . $row['releasedate'] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
+                    if ($row['link']) {
+                        echo '<td>' . $row['mutation'] . "<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/" . $row['link'] . "'></td>\n";
                     } else {
-                        echo "<td>" . $row["mutation"] . "</td>\n";
+                        echo '<td>' . $row['mutation'] . "</td>\n";
                     }
 
-                    if ($row["mutationid"] === 47) {
-                        echo "<td colspan='4'><a href='https://www.reddit.com/r/starcraft/comments/62renx/coop_mutation_47_sudden_but_inevitable/' " .
-                            "title=\"An April Fools' event: 1v1 on Steppes of War with co-op commanders and no mutators\">Steppes of Betrayal</a></td>\n";
+                    if ($row['mutationid'] === 47) {
+                        echo
+                            "<td colspan='4'><a href='https://www.reddit.com/r/starcraft/comments/62renx/coop_mutation_47_sudden_but_inevitable/' "
+                                . "title=\"An April Fools' event: 1v1 on Steppes of War with co-op commanders and no mutators\">Steppes of Betrayal</a></td>\n";
                         echo "</tr>\n";
                         continue;
                     }
 
-                    if ($row["map"]) {
-                        echo "<td><div class='mapImg mapImg-" . str_replace("and", "", str_replace(' ', '', strtolower($row["map"]))) . "'>" . htmlspecialchars(mapDisplayName($row["map"])) . "</div></td>\n";
+                    if ($row['map']) {
+                        echo "<td><div class='mapImg mapImg-" . str_replace('and', '', str_replace(' ', '', strtolower($row['map']))) . "'>" . htmlspecialchars(mapDisplayName($row['map'])) . "</div></td>\n";
                     } else {
                         echo "<td></td>\n";
                     }
 
-                    if ($row["mut01"]) {
-                        echo "<td>" . weeklyMutationMutatorLink(get_mutator($row["mut01"], $mutators)) . "</td>\n";
+                    if ($row['mut01']) {
+                        echo '<td>' . weeklyMutationMutatorLink(get_mutator($row['mut01'], $mutators)) . "</td>\n";
                     } else {
                         echo "<td></td>\n";
                     }
-                    if ($row["mut02"]) {
-                        echo "<td>" . weeklyMutationMutatorLink(get_mutator($row["mut02"], $mutators)) . "</td>\n";
+                    if ($row['mut02']) {
+                        echo '<td>' . weeklyMutationMutatorLink(get_mutator($row['mut02'], $mutators)) . "</td>\n";
                     } else {
                         echo "<td></td>\n";
                     }
-                    if ($row["mut03"]) {
-                        echo "<td>" . weeklyMutationMutatorLink(get_mutator($row["mut03"], $mutators)) . "</td>\n";
+                    if ($row['mut03']) {
+                        echo '<td>' . weeklyMutationMutatorLink(get_mutator($row['mut03'], $mutators)) . "</td>\n";
                     } else {
                         echo "<td></td>\n";
                     }
@@ -693,6 +693,6 @@ require_once __DIR__ . "/../../includes/wrapper.php";
         });
     </script>
 
-<script src="/scripts/tooltips.js?v=6496ae"></script>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/tooltips.js?v=7f0a92"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 <?= endContent() ?>

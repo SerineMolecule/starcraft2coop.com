@@ -1,18 +1,18 @@
 <?php
 
 if (!isset($_GET['difficulty'])) {
-    echo("Error!");
+    echo 'Error!';
     die();
 }
 
 if (!ctype_digit($_GET['difficulty'])) {
-    echo("Error!");
+    echo 'Error!';
     die();
 }
 
 $difficulty = intval($_GET['difficulty']);
 if ($difficulty < 1 || $difficulty > 6) {
-    echo("Error!");
+    echo 'Error!';
     die();
 }
 
@@ -25,7 +25,6 @@ $minMutators = $oneBrutal['minmutators'];
 $maxMutators = $oneBrutal['maxmutators'];
 $minPoints = $oneBrutal['minpoints'];
 $maxPoints = $oneBrutal['maxpoints'];
-
 
 $pointCeiling = 10; //highest possible mutator cost
 
@@ -43,8 +42,7 @@ $mutatorCount = getMutatorCount($minMutators, $maxMutators);
 
 //Pick a random template with the selected mutator count from the possibilities that were generated earlier
 $finalTemplate = selectTemplate($mutatorCount);
-echo(json_encode($finalTemplate));
-
+echo json_encode($finalTemplate);
 
 function selectTemplate($mutatorCount)
 {
@@ -56,21 +54,20 @@ function selectTemplate($mutatorCount)
 function getMutatorCount($minMutators, $maxMutators)
 {
     global $templatePossibilities;
-    /*  There is currently a bug in Blizzard's mutator count selection. Possibility count is based on Brutal+1 only and not the selected difficulty
-        As a result a temporary array with the static values (combos) has been added to this function to address the "traverse" function requirements.
-        If this bug is fixed, instead of using the static array, use the $templatePossibilities array that stores the possibilities for each mutator count.
+    // There is currently a bug in Blizzard's mutator count selection. Possibility count is based on Brutal+1 only and not the selected difficulty
+    // As a result a temporary array with the static values (combos) has been added to this function to address the "traverse" function requirements.
+    // If this bug is fixed, instead of using the static array, use the $templatePossibilities array that stores the possibilities for each mutator count.
 
-        TO FIX:
-        1. Change bugComboArray to contain values from the actual templatePossibilitiesArray
-        2. Check to see if bugTargetPercentages change depending on Brutal+1 -> Brutal+4 from the editor itself
-    */
+    // TO FIX:
+    // 1. Change bugComboArray to contain values from the actual templatePossibilitiesArray
+    // 2. Check to see if bugTargetPercentages change depending on Brutal+1 -> Brutal+4 from the editor itself
 
-    //Given that the mutation templates are generated, they may have a vastly different number of possibilities depending on mutation count
-    //This calculates a new weighting to push it closer to the intended target percentage for the number of mutators in the mutation
-    //Once the new weightings are calculated, get the randomized mutator count.
+    // Given that the mutation templates are generated, they may have a vastly different number of possibilities depending on mutation count
+    // This calculates a new weighting to push it closer to the intended target percentage for the number of mutators in the mutation
+    // Once the new weightings are calculated, get the randomized mutator count.
 
-    $bugComboArray = [0,0,499, 3541, 5502];
-    $bugTargetPercentage = [0,0,0.48, 0.48, 0.04];
+    $bugComboArray = [0, 0, 499, 3541, 5502];
+    $bugTargetPercentage = [0, 0, 0.48, 0.48, 0.04];
 
     $bugTotalCombos = 0;
     for ($i = $minMutators; $i <= $maxMutators; $i++) {
@@ -102,11 +99,11 @@ function getRandomWeightedElement(array $weightedValues)
 function traverse($template, $index, $totalCost, $totalMutators)
 {
     //Loop Through all possible templates
-    global $countArray,$minMutators, $maxMutators, $minPoints, $maxPoints, $pointCeiling;
+    global $countArray, $minMutators, $maxMutators, $minPoints, $maxPoints, $pointCeiling;
 
     for ($i = 0; $i <= $maxMutators; $i++) {
         $template[$index] = $i;
-        $newTotalCost = $totalCost + $i * $index;
+        $newTotalCost = $totalCost + ($i * $index);
         $newTotalMutators = $totalMutators + $i;
         if ($newTotalMutators <= $maxMutators && $newTotalCost <= $maxPoints && $i <= $countArray[$index]) {
             if ($newTotalMutators >= $minMutators && $newTotalCost >= $minPoints && $i > 0) {
@@ -153,8 +150,7 @@ function calculateCombos($template)
 
 function nCr($n, $r)
 {
-
-    return (factorial($n) / (factorial($r) * factorial($n - $r)));
+    return factorial($n) / (factorial($r) * factorial($n - $r));
 }
 
 function factorial($number)

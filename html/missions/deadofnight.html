@@ -176,7 +176,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Dead of Night</h1>
     <p id="missionPlace">Chazington</p>
@@ -225,13 +225,309 @@ if (document.location.host === 'dev.starcraft2coop.com') {
     </div>
     <p>Note that the images below show the starting state of the mission. As the mission progresses, Hybrids get added to enemy bases.</p>
         <p>A camp is located to the West of the starting location. It is very lightly defended.</p>
-    <div class='switcher'><div class='basePic' id='wdiv'><img id ='w' src=' /images/missiondata/deadofnight/w_protoss.jpg' alt='w Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='w' value='protoss' checked>Protoss</label><br><label><input type='radio' name='w' value='terran'>Terran</label><br><label><input type='radio' name='w' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/wminimap.jpg' alt='w Minimap'></div></div></div><script>$("input[name='w']").change(function(){var race= $(this).val();var oldImg = $('#w');var img = new Image();img.src = '/images/missiondata/deadofnight/w_'+ race + '.jpg';var newImg = $(img).hide();$('#wdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'w');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/w_protoss.jpg');imgList.push('/images/missiondata/deadofnight/w_terran.jpg');imgList.push('/images/missiondata/deadofnight/w_zerg.jpg');preload(imgList);</script>    <p>Clockwise from the above camp, a small enemy base is located. Linear calldowns are best used here to take advantage of all the enemies that are lined up.</p>
-    <div class='switcher'><div class='long' id='nwlongdiv'><img id ='nwlong' src=' /images/missiondata/deadofnight/nwlong_protoss.jpg' alt='nwlong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='nwlong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='nwlong' value='terran'>Terran</label><br><label><input type='radio' name='nwlong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/nwlongminimap.jpg' alt='nwlong Minimap'></div></div></div><script>$("input[name='nwlong']").change(function(){var race= $(this).val();var oldImg = $('#nwlong');var img = new Image();img.src = '/images/missiondata/deadofnight/nwlong_'+ race + '.jpg';var newImg = $(img).hide();$('#nwlongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'nwlong');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/nwlong_protoss.jpg');imgList.push('/images/missiondata/deadofnight/nwlong_terran.jpg');imgList.push('/images/missiondata/deadofnight/nwlong_zerg.jpg');preload(imgList);</script>    <p>The enemy base at the North of the map is well-defended, and will need a reasonably-sized army to push into.</p>
-    <div class='switcher'><div class='long' id='nlongdiv'><img id ='nlong' src=' /images/missiondata/deadofnight/nlong_protoss.jpg' alt='nlong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='nlong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='nlong' value='terran'>Terran</label><br><label><input type='radio' name='nlong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/nlongminimap.jpg' alt='nlong Minimap'></div></div></div><script>$("input[name='nlong']").change(function(){var race= $(this).val();var oldImg = $('#nlong');var img = new Image();img.src = '/images/missiondata/deadofnight/nlong_'+ race + '.jpg';var newImg = $(img).hide();$('#nlongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'nlong');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/nlong_protoss.jpg');imgList.push('/images/missiondata/deadofnight/nlong_terran.jpg');imgList.push('/images/missiondata/deadofnight/nlong_zerg.jpg');preload(imgList);</script>    <p>The enclave in the North East of the map is a great spot to use large Area of Effect calldowns like Pulse Cannon and Nukes.</p>
-    <div class='switcher'><div class='basePic' id='nediv'><img id ='ne' src=' /images/missiondata/deadofnight/ne_protoss.jpg' alt='ne Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='ne' value='protoss' checked>Protoss</label><br><label><input type='radio' name='ne' value='terran'>Terran</label><br><label><input type='radio' name='ne' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/neminimap.jpg' alt='ne Minimap'></div></div></div><script>$("input[name='ne']").change(function(){var race= $(this).val();var oldImg = $('#ne');var img = new Image();img.src = '/images/missiondata/deadofnight/ne_'+ race + '.jpg';var newImg = $(img).hide();$('#nediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'ne');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/ne_protoss.jpg');imgList.push('/images/missiondata/deadofnight/ne_terran.jpg');imgList.push('/images/missiondata/deadofnight/ne_zerg.jpg');preload(imgList);</script>    <p>The enemy base at the East contains strong defenses, and will need a powerful army to push into.</p>
-    <div class='switcher'><div class='basePic' id='ediv'><img id ='e' src=' /images/missiondata/deadofnight/e_protoss.jpg' alt='e Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='e' value='protoss' checked>Protoss</label><br><label><input type='radio' name='e' value='terran'>Terran</label><br><label><input type='radio' name='e' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/eminimap.jpg' alt='e Minimap'></div></div></div><script>$("input[name='e']").change(function(){var race= $(this).val();var oldImg = $('#e');var img = new Image();img.src = '/images/missiondata/deadofnight/e_'+ race + '.jpg';var newImg = $(img).hide();$('#ediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'e');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/e_protoss.jpg');imgList.push('/images/missiondata/deadofnight/e_terran.jpg');imgList.push('/images/missiondata/deadofnight/e_zerg.jpg');preload(imgList);</script>    <p>The South East base is the largest enemy base on the map. It contains several Hybrids and cloaked units.</p>
-    <div class='switcher'><div class='long' id='selongdiv'><img id ='selong' src=' /images/missiondata/deadofnight/selong_protoss.jpg' alt='selong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='selong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='selong' value='terran'>Terran</label><br><label><input type='radio' name='selong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/selongminimap.jpg' alt='selong Minimap'></div></div></div><script>$("input[name='selong']").change(function(){var race= $(this).val();var oldImg = $('#selong');var img = new Image();img.src = '/images/missiondata/deadofnight/selong_'+ race + '.jpg';var newImg = $(img).hide();$('#selongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'selong');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/selong_protoss.jpg');imgList.push('/images/missiondata/deadofnight/selong_terran.jpg');imgList.push('/images/missiondata/deadofnight/selong_zerg.jpg');preload(imgList);</script>    <p>The South West area is covered by very lightly defended camps and is a great spot to push into after the first night.</p>
-    <div class='switcher'><div class='long' id='slongdiv'><img id ='slong' src=' /images/missiondata/deadofnight/slong_protoss.jpg' alt='slong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='slong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='slong' value='terran'>Terran</label><br><label><input type='radio' name='slong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/slongminimap.jpg' alt='slong Minimap'></div></div></div><script>$("input[name='slong']").change(function(){var race= $(this).val();var oldImg = $('#slong');var img = new Image();img.src = '/images/missiondata/deadofnight/slong_'+ race + '.jpg';var newImg = $(img).hide();$('#slongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'slong');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/slong_protoss.jpg');imgList.push('/images/missiondata/deadofnight/slong_terran.jpg');imgList.push('/images/missiondata/deadofnight/slong_zerg.jpg');preload(imgList);</script>    <div class='switcher'><div class='long' id='swlongdiv'><img id ='swlong' src=' /images/missiondata/deadofnight/swlong_protoss.jpg' alt='swlong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='swlong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='swlong' value='terran'>Terran</label><br><label><input type='radio' name='swlong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/deadofnight/swlongminimap.jpg' alt='swlong Minimap'></div></div></div><script>$("input[name='swlong']").change(function(){var race= $(this).val();var oldImg = $('#swlong');var img = new Image();img.src = '/images/missiondata/deadofnight/swlong_'+ race + '.jpg';var newImg = $(img).hide();$('#swlongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'swlong');return false;});var imgList=[];imgList.push('/images/missiondata/deadofnight/swlong_protoss.jpg');imgList.push('/images/missiondata/deadofnight/swlong_terran.jpg');imgList.push('/images/missiondata/deadofnight/swlong_zerg.jpg');preload(imgList);</script>    <h2 id="dayNight">Day and Night Cycle Information</h2>
+        <div class="switcher">
+        <div class="basePic" id="wdiv">
+            <img id="w" src=" /images/missiondata/deadofnight/w_protoss.jpg" alt="w Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="w" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="w" value="terran">Terran</label><br>
+                <label><input type="radio" name="w" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/wminimap.jpg" alt="w Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='w']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#w');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/w_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#wdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'w');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/w_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/w_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/w_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Clockwise from the above camp, a small enemy base is located. Linear calldowns are best used here to take advantage of all the enemies that are lined up.</p>
+        <div class="switcher">
+        <div class="long" id="nwlongdiv">
+            <img id="nwlong" src=" /images/missiondata/deadofnight/nwlong_protoss.jpg" alt="nwlong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="nwlong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="nwlong" value="terran">Terran</label><br>
+                <label><input type="radio" name="nwlong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/nwlongminimap.jpg" alt="nwlong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='nwlong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#nwlong');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/nwlong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#nwlongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'nwlong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/nwlong_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/nwlong_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/nwlong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The enemy base at the North of the map is well-defended, and will need a reasonably-sized army to push into.</p>
+        <div class="switcher">
+        <div class="long" id="nlongdiv">
+            <img id="nlong" src=" /images/missiondata/deadofnight/nlong_protoss.jpg" alt="nlong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="nlong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="nlong" value="terran">Terran</label><br>
+                <label><input type="radio" name="nlong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/nlongminimap.jpg" alt="nlong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='nlong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#nlong');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/nlong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#nlongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'nlong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/nlong_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/nlong_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/nlong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The enclave in the North East of the map is a great spot to use large Area of Effect calldowns like Pulse Cannon and Nukes.</p>
+        <div class="switcher">
+        <div class="basePic" id="nediv">
+            <img id="ne" src=" /images/missiondata/deadofnight/ne_protoss.jpg" alt="ne Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="ne" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="ne" value="terran">Terran</label><br>
+                <label><input type="radio" name="ne" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/neminimap.jpg" alt="ne Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='ne']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#ne');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/ne_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#nediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'ne');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/ne_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/ne_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/ne_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The enemy base at the East contains strong defenses, and will need a powerful army to push into.</p>
+        <div class="switcher">
+        <div class="basePic" id="ediv">
+            <img id="e" src=" /images/missiondata/deadofnight/e_protoss.jpg" alt="e Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="e" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="e" value="terran">Terran</label><br>
+                <label><input type="radio" name="e" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/eminimap.jpg" alt="e Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='e']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#e');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/e_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#ediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'e');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/e_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/e_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/e_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The South East base is the largest enemy base on the map. It contains several Hybrids and cloaked units.</p>
+        <div class="switcher">
+        <div class="long" id="selongdiv">
+            <img id="selong" src=" /images/missiondata/deadofnight/selong_protoss.jpg" alt="selong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="selong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="selong" value="terran">Terran</label><br>
+                <label><input type="radio" name="selong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/selongminimap.jpg" alt="selong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='selong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#selong');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/selong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#selongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'selong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/selong_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/selong_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/selong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The South West area is covered by very lightly defended camps and is a great spot to push into after the first night.</p>
+        <div class="switcher">
+        <div class="long" id="slongdiv">
+            <img id="slong" src=" /images/missiondata/deadofnight/slong_protoss.jpg" alt="slong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="slong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="slong" value="terran">Terran</label><br>
+                <label><input type="radio" name="slong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/slongminimap.jpg" alt="slong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='slong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#slong');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/slong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#slongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'slong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/slong_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/slong_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/slong_zerg.jpg');
+        preload(imgList);
+    </script>
+            <div class="switcher">
+        <div class="long" id="swlongdiv">
+            <img id="swlong" src=" /images/missiondata/deadofnight/swlong_protoss.jpg" alt="swlong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="swlong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="swlong" value="terran">Terran</label><br>
+                <label><input type="radio" name="swlong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/deadofnight/swlongminimap.jpg" alt="swlong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='swlong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#swlong');
+            var img = new Image();
+            img.src = '/images/missiondata/deadofnight/swlong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#swlongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'swlong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/deadofnight/swlong_protoss.jpg');
+        imgList.push('/images/missiondata/deadofnight/swlong_terran.jpg');
+        imgList.push('/images/missiondata/deadofnight/swlong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <h2 id="dayNight">Day and Night Cycle Information</h2>
     <p>Days are always 3:30 long, whereas nights are 4:00 long. The first few day/night cycles are shown below:</p>
     <table>
         <thead>
@@ -647,7 +943,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/zeratul">Zeratul</a>: Use Shaded Cannons to clear buildings while your army moves on to clear enemy forces.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Zeratul's Purity of Will passive allows him to escape from a Choker stun when the immunity buff is applied to him.</li>
     </ul>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

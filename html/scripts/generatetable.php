@@ -1,7 +1,7 @@
 <?php
 
 error_reporting(E_ALL);
-ini_set("display_errors", 1);
+ini_set('display_errors', 1);
 
 require_once __DIR__ . '/../../includes/queries.php';
 $units = get_amonunits();
@@ -10,7 +10,7 @@ if (!isset($_GET['maxvitality']) && !isset($_GET['minvitality'])) {
     // do nothing
 } else {
     if (!ctype_digit($_GET['maxvitality']) || !ctype_digit($_GET['minvitality'])) {
-        echo("Error!");
+        echo 'Error!';
         die();
     }
     if (strlen($_GET['maxvitality'] > 6)) {
@@ -28,8 +28,8 @@ if (!isset($_GET['maxvitality']) && !isset($_GET['minvitality'])) {
 }
 usort($units, fn($a, $b) => strtolower($a['name']) <=> strtolower($b['name']));
 
-$outputString = "";
+$outputString = '';
 foreach ($units as $row) {
-    $outputString .= "<div class='content " . $row['race'] . "'>" . $row['name'] . "</div>";
+    $outputString .= "<div class='content " . $row['race'] . "'>" . $row['name'] . '</div>';
 }
 echo $outputString;

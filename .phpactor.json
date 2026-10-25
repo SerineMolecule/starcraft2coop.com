@@ -1,4 +1,4 @@
 {
     "$schema": "/phpactor.schema.json",
-    "php_code_sniffer.enabled": false
+    "language_server_mago.enabled": true
 }

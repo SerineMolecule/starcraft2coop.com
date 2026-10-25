@@ -2,7 +2,7 @@
 
 if (isset($_GET['unit'])) {
     if (!is_string($_GET['unit'])) {
-        echo("Error!");
+        echo 'Error!';
         die();
     }
     $unit = $_GET['unit'];
@@ -12,13 +12,13 @@ if (isset($_GET['unit'])) {
         $unitList = array_filter($units, fn($u) => $u['name'] === $unit);
 
         if (count($unitList) !== 1) {
-            echo("Error!");
+            echo 'Error!';
             die();
         }
         $unitList = array_values($unitList);
         $finalString = "<span class='title'>" . $unit . "</span>\n";
 
-        if ($unitList[0]['shields'] !== "0") {
+        if ($unitList[0]['shields'] !== '0') {
             $finalString .= "<span id='unitShields'>Shields: " . $unitList[0]['shields'] . "</span><br>\n";
             $finalString .= "<span id='unitShieldArmor'>Shield Armor: " . $unitList[0]['shieldarmor'] . "</span><br>\n";
         }
@@ -51,8 +51,8 @@ if (isset($_GET['unit'])) {
         }
         echo $finalString;
     } else {
-        echo("Error!");
+        echo 'Error!';
     }
 } else {
-    echo("Error!");
+    echo 'Error!';
 }

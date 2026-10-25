@@ -110,12 +110,12 @@
     ?>
     <div id="mutatorsList" class="hidden">
     <?php
-        echo(json_encode($mutators));
+    echo json_encode($mutators);
     ?>
     </div>
     <div id="mutationsList" class="hidden">
         <?php
-            echo(json_encode($mutations));
+        echo json_encode($mutations);
         ?>
     </div>
     <div id="box1" class="box">

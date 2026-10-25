@@ -8,7 +8,7 @@ Maintained and hosted by Serine, originally written by Aommaster, with contribut
 
 [CC-BY-SA-NC 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-Ads are NOT allowed
+Ads are NOT allowed (Aommaster specifically doesn't want us to have them).
 
 ## Development environment setup
 
@@ -19,6 +19,8 @@ You'll need Bun installed to build the data files, PHP installed to build the st
 If you edit the data files in `/source-data`, you'll need to run `make` to rebuild them into `/html/data`. If you want to change the format of the data files, you'll need to update the types in `/source-data/data-types.ts` and run `make` to build them.
 
 In general, `make` will rebuild and test everything. You can also use `make html` to rebuild without testing, and `make test` to test without rebuilding.
+
+Formatting can be autofixed with `make fix`.
 
 To start a development server, use `make dev`. This rebuilds `html/` and starts a development server at `http://127.0.0.1:8000`. PHP is required but Apache is not. You can override the address with `HOST` and `PORT`, for example: `make dev PORT=8080`.
 

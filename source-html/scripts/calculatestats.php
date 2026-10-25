@@ -219,6 +219,7 @@ function convertStatsToOutput($unitStats)
 
     return $outputString;
 }
+
 function standardizeStatsTemplate($unit, $unitStats)
 {
     $returnArray = [];
@@ -291,7 +292,7 @@ function standardizeStatsTemplate($unit, $unitStats)
                 if ($mode['attackspeed'] == 0) {
                     $dps = 0;
                 } else {
-                    $dps = number_format(floatval($mode['damage'][$index]) * $mode['attacks'] / $mode['attackspeed'], 2);
+                    $dps = number_format((floatval($mode['damage'][$index]) * $mode['attacks']) / $mode['attackspeed'], 2);
                 }
                 $tempArray['damageResult'][] = $dps;
             }
@@ -303,6 +304,7 @@ function standardizeStatsTemplate($unit, $unitStats)
     }
     return $returnArray;
 }
+
 function compareStats($oldStats, &$newStats)
 {
     foreach ($newStats as $key => &$value) {
@@ -393,10 +395,11 @@ function preUpgrade($unitStats, &$upgradesArray)
 
     return $unitStats;
 }
+
 function applyRankUpgrades($unitStats, $level)
 {
-    $unitStats['HP'] = $unitStats['HP'] + $unitStats['hpbonus'] * $level;
-    $unitStats['Armor'] = $unitStats['Armor'] + $unitStats['armorbonus'] * $level;
+    $unitStats['HP'] = $unitStats['HP'] + ($unitStats['hpbonus'] * $level);
+    $unitStats['Armor'] = $unitStats['Armor'] + ($unitStats['armorbonus'] * $level);
     $unitStats['Energy'] = $unitStats['Energy'] + ($unitStats['Energy'] * 0.25 * $level);
     foreach ($unitStats['modes'] as &$mode) {
         foreach ($mode['attribute'] as $index => $attribute) {
@@ -407,17 +410,18 @@ function applyRankUpgrades($unitStats, $level)
     }
     return $unitStats;
 }
+
 function applyShieldUpgrades($unitStats, $commander, $level)
 {
     $legionLeaders = ['Telbrus', 'Zoraya', 'Serdath'];
     global $legionUnits;
-    $unitStats['Shield_Armor'] = $unitStats['Shield_Armor'] + $unitStats['shieldbonus'] * $level;
+    $unitStats['Shield_Armor'] = $unitStats['Shield_Armor'] + ($unitStats['shieldbonus'] * $level);
 
     if ($commander == 'Zeratul') {
         if (in_array($unitStats['unitName'], $legionLeaders)) {
-            $unitStats['Shields'] = $unitStats['Shields'] + 100 * $level;
+            $unitStats['Shields'] = $unitStats['Shields'] + (100 * $level);
             if ($unitStats['Energy'] != 0) {
-                $unitStats['Energy'] = $unitStats['Energy'] + 100 * $level;
+                $unitStats['Energy'] = $unitStats['Energy'] + (100 * $level);
             }
         }
         if (in_array($unitStats['unitName'], $legionUnits)) {
@@ -434,24 +438,26 @@ function applyShieldUpgrades($unitStats, $commander, $level)
                 $initial = 3;
                 $jump = 1;
             }
-            $totalSpawned = $initial + $jump * $level;
+            $totalSpawned = $initial + ($jump * $level);
             $unitStats['mineralCost'] = number_format($unitStats['mineralCost'] / $totalSpawned);
         }
         if ($unitStats['unitName'] == 'Zeratul') {
-            $unitStats['Shields'] = $unitStats['Shields'] + 50 * $level;
+            $unitStats['Shields'] = $unitStats['Shields'] + (50 * $level);
         }
     }
     return $unitStats;
 }
+
 function applyArmorUpgrades($unitStats, $commander, $level)
 {
-    $unitStats['Armor'] = $unitStats['Armor'] + $unitStats['armorbonus'] * $level;
+    $unitStats['Armor'] = $unitStats['Armor'] + ($unitStats['armorbonus'] * $level);
 
     if ($commander == 'Raynor' || $commander == 'Tychus') {
         $unitStats['HP'] += intval($unitStats['hpbonus'] * $level);
     }
     return $unitStats;
 }
+
 function applyAttackUpgrades($unitStats, $level)
 {
     foreach ($unitStats['modes'] as &$mode) {
@@ -460,8 +466,8 @@ function applyAttackUpgrades($unitStats, $level)
                 if ($mode['Attack_Speed'] == 0) {
                     $dps = 0;
                 } else {
-                    $mode['damage'][$index] = $mode['damage'][$index] + $level * $mode['attackbonus'][$index];
-                    $dps = number_format(floatval($mode['damage'][$index]) * $mode['Hits'] / $mode['Attack_Speed'], 2);
+                    $mode['damage'][$index] = $mode['damage'][$index] + ($level * $mode['attackbonus'][$index]);
+                    $dps = number_format((floatval($mode['damage'][$index]) * $mode['Hits']) / $mode['Attack_Speed'], 2);
                 }
                 $mode['damageResult'][$index] = $dps;
             }
@@ -592,7 +598,7 @@ function applyUpgrades($unitStats, $upgradesArray)
                 if ($mode['Attack_Speed'] == 0) {
                     $dps = 0;
                 } else {
-                    $dps = number_format(floatval($mode['damage'][$index]) * $mode['Hits'] / $mode['Attack_Speed'], 2);
+                    $dps = number_format((floatval($mode['damage'][$index]) * $mode['Hits']) / $mode['Attack_Speed'], 2);
                 }
                 $mode['damageResult'][$index] = $dps;
             }
@@ -912,6 +918,7 @@ function getUnitUpgradesOutput($commander, $unit)
     $upgradeString .= '</div>';
     return $upgradeString;
 }
+
 function fixNumber($number)
 {
     if (fmod($number, 1) == 0) {
@@ -920,6 +927,7 @@ function fixNumber($number)
         return $number;
     }
 }
+
 function checkVariable($var, $checktype)
 {
     if (!isset($var)) {

@@ -33,7 +33,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         file_put_contents(
             __DIR__ . '/../../logs/404log.txt',
             "[$errorTime] $ref ===> $cur \n",
-            FILE_APPEND
+            FILE_APPEND,
         );
     }
     $val = rand(1, 3);

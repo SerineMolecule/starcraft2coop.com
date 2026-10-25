@@ -38,7 +38,9 @@ It's also possible re-generate static pages or run any Makefile command while th
 In one terminal run `docker compose up` and in another terminal run `make -f Makefile.docker html`.
 Refreshing the web page once the build completes will show the changes.
 
-## Running PHP Code Sniffer
+## Formatting PHP with Mago
+
+Mago is installed through Composer and uses the project's `mago.toml`. Its first run downloads the binary for the container's platform.
 
 (Replace `${pwd}` with `$(pwd)` if using bash.)
 
@@ -53,7 +55,7 @@ make -f Makefile.docker vendor
 ### Check
 
 ```shell
-docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script ci
+docker run --rm -v ${pwd}:/app composer:2.7.1 ./vendor/bin/mago fmt --check
 # or
 make -f Makefile.docker check
 ```
@@ -61,7 +63,7 @@ make -f Makefile.docker check
 ### Check and Fix
 
 ```shell
-docker run --rm -v ${pwd}:/app composer:2.7.1 composer run-script fix
+docker run --rm -v ${pwd}:/app composer:2.7.1 ./vendor/bin/mago fmt
 # or
 make -f Makefile.docker fix
 ```

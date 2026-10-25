@@ -1,0 +1,16 @@
+#:schema vendor/carthage-software/mago/schema.json
+version = "1"
+php-version = "8.5"
+
+[source]
+paths = ["."]
+excludes = ["vendor", "node_modules", "html", ".dh-diag"]
+
+[formatter]
+# 
+print-width = 10000
+empty-line-after-opening-tag = false
+preserve-breaking-argument-list = true
+preserve-breaking-parameter-list = true
+preserve-breaking-array-like = true
+preserve-breaking-binary-expression = true

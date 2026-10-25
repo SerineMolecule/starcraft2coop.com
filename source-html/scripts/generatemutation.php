@@ -54,18 +54,17 @@ function selectTemplate($mutatorCount)
 function getMutatorCount($minMutators, $maxMutators)
 {
     global $templatePossibilities;
-    /*  There is currently a bug in Blizzard's mutator count selection. Possibility count is based on Brutal+1 only and not the selected difficulty
-        As a result a temporary array with the static values (combos) has been added to this function to address the "traverse" function requirements.
-        If this bug is fixed, instead of using the static array, use the $templatePossibilities array that stores the possibilities for each mutator count.
+    // There is currently a bug in Blizzard's mutator count selection. Possibility count is based on Brutal+1 only and not the selected difficulty
+    // As a result a temporary array with the static values (combos) has been added to this function to address the "traverse" function requirements.
+    // If this bug is fixed, instead of using the static array, use the $templatePossibilities array that stores the possibilities for each mutator count.
 
-        TO FIX:
-        1. Change bugComboArray to contain values from the actual templatePossibilitiesArray
-        2. Check to see if bugTargetPercentages change depending on Brutal+1 -> Brutal+4 from the editor itself
-    */
+    // TO FIX:
+    // 1. Change bugComboArray to contain values from the actual templatePossibilitiesArray
+    // 2. Check to see if bugTargetPercentages change depending on Brutal+1 -> Brutal+4 from the editor itself
 
-    //Given that the mutation templates are generated, they may have a vastly different number of possibilities depending on mutation count
-    //This calculates a new weighting to push it closer to the intended target percentage for the number of mutators in the mutation
-    //Once the new weightings are calculated, get the randomized mutator count.
+    // Given that the mutation templates are generated, they may have a vastly different number of possibilities depending on mutation count
+    // This calculates a new weighting to push it closer to the intended target percentage for the number of mutators in the mutation
+    // Once the new weightings are calculated, get the randomized mutator count.
 
     $bugComboArray = [0, 0, 499, 3541, 5502];
     $bugTargetPercentage = [0, 0, 0.48, 0.48, 0.04];
@@ -104,7 +103,7 @@ function traverse($template, $index, $totalCost, $totalMutators)
 
     for ($i = 0; $i <= $maxMutators; $i++) {
         $template[$index] = $i;
-        $newTotalCost = $totalCost + $i * $index;
+        $newTotalCost = $totalCost + ($i * $index);
         $newTotalMutators = $totalMutators + $i;
         if ($newTotalMutators <= $maxMutators && $newTotalCost <= $maxPoints && $i <= $countArray[$index]) {
             if ($newTotalMutators >= $minMutators && $newTotalCost >= $minPoints && $i > 0) {

@@ -176,7 +176,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Part and Parcel</h1>
     <p id="missionPlace">Moebius Research Station</p>
@@ -230,16 +230,399 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         </script>
     </div>
         <p>The expansion on Part and Parcel is guarded by enemy forces, it is usually optimal to first capture the expansion. The expansion is shown below.</p>
-    <div class='switcher'><div class='p1Expo'><img id ='p1Expo' src=' /images/missiondata/partparcel/p1expo_protoss.jpg' alt='Player 1 Expo'></div><div class = 'expoMinimap'><form action='#'><label><input type='radio' name='expo' value='protoss' checked>Protoss</label><br><label><input type='radio' name='expo' value='terran'>Terran</label><br><label><input type='radio' name='expo' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/expominimap.jpg' alt='Expansion Minimap'></div></div><div class='p2Expo'><img id='p2Expo' src='/images/missiondata/partparcel/p2expo_protoss.jpg' alt='Player 2 Expo'></div></div><script>$("input[name='expo']").change(function(){var race= $(this).val();var oldImg = $('#p1Expo');var img = new Image();img.src = '/images/missiondata/partparcel/p1expo_'+ race + '.jpg';var newImg = $(img).hide();$('.p1Expo').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'p1Expo');var oldImg = $('#p2Expo');var img = new Image();img.src = '/images/missiondata/partparcel/p2expo_'+ race + '.jpg';var newImg = $(img).hide();$('.p2Expo').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'p2Expo');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/p1expo_protoss.jpg');imgList.push('/images/missiondata/partparcel/p1expo_terran.jpg');imgList.push('/images/missiondata/partparcel/p1expo_zerg.jpg');imgList.push('/images/missiondata/partparcel/p2expo_protoss.jpg');imgList.push('/images/missiondata/partparcel/p2expo_terran.jpg');imgList.push('/images/missiondata/partparcel/p2expo_zerg.jpg');preload(imgList);</script>    <p>The next area that is usually pushed is the bottom left. This is because there are very minimal defenses, and has enough parts that, combined with the expansion, can complete the first main objective.</p>
-    <div class='switcher'><div class='basePic' id='swbasediv'><img id ='swbase' src=' /images/missiondata/partparcel/swbase_protoss.jpg' alt='swbase Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='swbase' value='protoss' checked>Protoss</label><br><label><input type='radio' name='swbase' value='terran'>Terran</label><br><label><input type='radio' name='swbase' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/swbaseminimap.jpg' alt='swbase Minimap'></div></div></div><script>$("input[name='swbase']").change(function(){var race= $(this).val();var oldImg = $('#swbase');var img = new Image();img.src = '/images/missiondata/partparcel/swbase_'+ race + '.jpg';var newImg = $(img).hide();$('#swbasediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'swbase');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/swbase_protoss.jpg');imgList.push('/images/missiondata/partparcel/swbase_terran.jpg');imgList.push('/images/missiondata/partparcel/swbase_zerg.jpg');preload(imgList);</script>    <p>At this point, the first hybrid would have spawned. The path between your main and the hybrid is guarded by tiny patches of enemies (which should have already been cleared on the way to your expansion) and an enemy camp. The enemy camp is shown below.</p>
-    <div class='switcher'><div class='basePic' id='camp1div'><img id ='camp1' src=' /images/missiondata/partparcel/camp1_protoss.jpg' alt='camp1 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='camp1' value='protoss' checked>Protoss</label><br><label><input type='radio' name='camp1' value='terran'>Terran</label><br><label><input type='radio' name='camp1' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/camp1minimap.jpg' alt='camp1 Minimap'></div></div></div><script>$("input[name='camp1']").change(function(){var race= $(this).val();var oldImg = $('#camp1');var img = new Image();img.src = '/images/missiondata/partparcel/camp1_'+ race + '.jpg';var newImg = $(img).hide();$('#camp1div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'camp1');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/camp1_protoss.jpg');imgList.push('/images/missiondata/partparcel/camp1_terran.jpg');imgList.push('/images/missiondata/partparcel/camp1_zerg.jpg');preload(imgList);</script>    <p>The next camp that would be attacked is the one East of your expansion. This usually lines up with the attack wave that spawns. The camp is shown below.</p>
-    <div class='switcher'><div class='basePic' id='camp2div'><img id ='camp2' src=' /images/missiondata/partparcel/camp2_protoss.jpg' alt='camp2 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='camp2' value='protoss' checked>Protoss</label><br><label><input type='radio' name='camp2' value='terran'>Terran</label><br><label><input type='radio' name='camp2' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/camp2minimap.jpg' alt='camp2 Minimap'></div></div></div><script>$("input[name='camp2']").change(function(){var race= $(this).val();var oldImg = $('#camp2');var img = new Image();img.src = '/images/missiondata/partparcel/camp2_'+ race + '.jpg';var newImg = $(img).hide();$('#camp2div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'camp2');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/camp2_protoss.jpg');imgList.push('/images/missiondata/partparcel/camp2_terran.jpg');imgList.push('/images/missiondata/partparcel/camp2_zerg.jpg');preload(imgList);</script>    <p>Once this base is cleared, it is usually recommended to clean up the area around this. Watch out for the Hybrid Dominator in this area.</p>
-    <div class='switcher'><div class='long' id='cleanuplongdiv'><img id ='cleanuplong' src=' /images/missiondata/partparcel/cleanuplong_protoss.jpg' alt='cleanuplong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='cleanuplong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='cleanuplong' value='terran'>Terran</label><br><label><input type='radio' name='cleanuplong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/cleanuplongminimap.jpg' alt='cleanuplong Minimap'></div></div></div><script>$("input[name='cleanuplong']").change(function(){var race= $(this).val();var oldImg = $('#cleanuplong');var img = new Image();img.src = '/images/missiondata/partparcel/cleanuplong_'+ race + '.jpg';var newImg = $(img).hide();$('#cleanuplongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'cleanuplong');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/cleanuplong_protoss.jpg');imgList.push('/images/missiondata/partparcel/cleanuplong_terran.jpg');imgList.push('/images/missiondata/partparcel/cleanuplong_zerg.jpg');preload(imgList);</script>    <p>With the cleanup done, you can move south and take the camp at the bottom right of the map, right outside the main.</p>
-    <div class='switcher'><div class='basePic' id='sebasediv'><img id ='sebase' src=' /images/missiondata/partparcel/sebase_protoss.jpg' alt='sebase Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='sebase' value='protoss' checked>Protoss</label><br><label><input type='radio' name='sebase' value='terran'>Terran</label><br><label><input type='radio' name='sebase' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/sebaseminimap.jpg' alt='sebase Minimap'></div></div></div><script>$("input[name='sebase']").change(function(){var race= $(this).val();var oldImg = $('#sebase');var img = new Image();img.src = '/images/missiondata/partparcel/sebase_'+ race + '.jpg';var newImg = $(img).hide();$('#sebasediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'sebase');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/sebase_protoss.jpg');imgList.push('/images/missiondata/partparcel/sebase_terran.jpg');imgList.push('/images/missiondata/partparcel/sebase_zerg.jpg');preload(imgList);</script>    <p>By this point, you should have a sufficiently large army to be able to push anywhere you like and gather the remaining parts to finish up the mission. Near the above base, there is an enemy base which has a lot of parts.</p>
-    <div class='switcher'><div class='long' id='eastbaselongdiv'><img id ='eastbaselong' src=' /images/missiondata/partparcel/eastbaselong_protoss.jpg' alt='eastbaselong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='eastbaselong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='eastbaselong' value='terran'>Terran</label><br><label><input type='radio' name='eastbaselong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/eastbaselongminimap.jpg' alt='eastbaselong Minimap'></div></div></div><script>$("input[name='eastbaselong']").change(function(){var race= $(this).val();var oldImg = $('#eastbaselong');var img = new Image();img.src = '/images/missiondata/partparcel/eastbaselong_'+ race + '.jpg';var newImg = $(img).hide();$('#eastbaselongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'eastbaselong');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/eastbaselong_protoss.jpg');imgList.push('/images/missiondata/partparcel/eastbaselong_terran.jpg');imgList.push('/images/missiondata/partparcel/eastbaselong_zerg.jpg');preload(imgList);</script>    <p>Just north of this base, there is an alcove with some more parts to collect.</p>
-    <div class='switcher'><div class='basePic' id='alcovediv'><img id ='alcove' src=' /images/missiondata/partparcel/alcove_protoss.jpg' alt='alcove Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='alcove' value='protoss' checked>Protoss</label><br><label><input type='radio' name='alcove' value='terran'>Terran</label><br><label><input type='radio' name='alcove' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/alcoveminimap.jpg' alt='alcove Minimap'></div></div></div><script>$("input[name='alcove']").change(function(){var race= $(this).val();var oldImg = $('#alcove');var img = new Image();img.src = '/images/missiondata/partparcel/alcove_'+ race + '.jpg';var newImg = $(img).hide();$('#alcovediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'alcove');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/alcove_protoss.jpg');imgList.push('/images/missiondata/partparcel/alcove_terran.jpg');imgList.push('/images/missiondata/partparcel/alcove_zerg.jpg');preload(imgList);</script>    <p>At the top left of the map there is a large enemy camp with several parts available for pick up as well.</p>
-    <div class='switcher'><div class='long' id='necamplongdiv'><img id ='necamplong' src=' /images/missiondata/partparcel/necamplong_protoss.jpg' alt='necamplong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='necamplong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='necamplong' value='terran'>Terran</label><br><label><input type='radio' name='necamplong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/necamplongminimap.jpg' alt='necamplong Minimap'></div></div></div><script>$("input[name='necamplong']").change(function(){var race= $(this).val();var oldImg = $('#necamplong');var img = new Image();img.src = '/images/missiondata/partparcel/necamplong_'+ race + '.jpg';var newImg = $(img).hide();$('#necamplongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'necamplong');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/necamplong_protoss.jpg');imgList.push('/images/missiondata/partparcel/necamplong_terran.jpg');imgList.push('/images/missiondata/partparcel/necamplong_zerg.jpg');preload(imgList);</script>    <p>The final place you will need to push is the North enemy base. This is the area with most defenses. There is a ramp off to each side as well, if you prefer to attack from the side.</p>
-    <div class='switcher'><div class='long' id='finalbaselongdiv'><img id ='finalbaselong' src=' /images/missiondata/partparcel/finalbaselong_protoss.jpg' alt='finalbaselong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='finalbaselong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='finalbaselong' value='terran'>Terran</label><br><label><input type='radio' name='finalbaselong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/partparcel/finalbaselongminimap.jpg' alt='finalbaselong Minimap'></div></div></div><script>$("input[name='finalbaselong']").change(function(){var race= $(this).val();var oldImg = $('#finalbaselong');var img = new Image();img.src = '/images/missiondata/partparcel/finalbaselong_'+ race + '.jpg';var newImg = $(img).hide();$('#finalbaselongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'finalbaselong');return false;});var imgList=[];imgList.push('/images/missiondata/partparcel/finalbaselong_protoss.jpg');imgList.push('/images/missiondata/partparcel/finalbaselong_terran.jpg');imgList.push('/images/missiondata/partparcel/finalbaselong_zerg.jpg');preload(imgList);</script>    <h2 id="hybridAbilities">Hybrid Abilities</h2>
+        <div class="switcher">
+        <div class="p1Expo">
+            <img id="p1Expo" src=" /images/missiondata/partparcel/p1expo_protoss.jpg" alt="Player 1 Expo">
+        </div><div class="expoMinimap">
+            <form action="#">
+                <label><input type="radio" name="expo" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="expo" value="terran">Terran</label><br>
+                <label><input type="radio" name="expo" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/expominimap.jpg" alt="Expansion Minimap">
+            </div>
+        </div><div class="p2Expo"><img id="p2Expo" src="/images/missiondata/partparcel/p2expo_protoss.jpg" alt="Player 2 Expo"></div>
+    </div>
+
+    <script>
+        $("input[name='expo']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#p1Expo');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/p1expo_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('.p1Expo').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'p1Expo');
+            var oldImg = $('#p2Expo');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/p2expo_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('.p2Expo').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'p2Expo');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/p1expo_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/p1expo_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/p1expo_zerg.jpg');
+        imgList.push('/images/missiondata/partparcel/p2expo_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/p2expo_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/p2expo_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The next area that is usually pushed is the bottom left. This is because there are very minimal defenses, and has enough parts that, combined with the expansion, can complete the first main objective.</p>
+        <div class="switcher">
+        <div class="basePic" id="swbasediv">
+            <img id="swbase" src=" /images/missiondata/partparcel/swbase_protoss.jpg" alt="swbase Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="swbase" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="swbase" value="terran">Terran</label><br>
+                <label><input type="radio" name="swbase" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/swbaseminimap.jpg" alt="swbase Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='swbase']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#swbase');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/swbase_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#swbasediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'swbase');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/swbase_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/swbase_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/swbase_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>At this point, the first hybrid would have spawned. The path between your main and the hybrid is guarded by tiny patches of enemies (which should have already been cleared on the way to your expansion) and an enemy camp. The enemy camp is shown below.</p>
+        <div class="switcher">
+        <div class="basePic" id="camp1div">
+            <img id="camp1" src=" /images/missiondata/partparcel/camp1_protoss.jpg" alt="camp1 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="camp1" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="camp1" value="terran">Terran</label><br>
+                <label><input type="radio" name="camp1" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/camp1minimap.jpg" alt="camp1 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='camp1']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#camp1');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/camp1_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#camp1div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'camp1');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/camp1_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/camp1_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/camp1_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The next camp that would be attacked is the one East of your expansion. This usually lines up with the attack wave that spawns. The camp is shown below.</p>
+        <div class="switcher">
+        <div class="basePic" id="camp2div">
+            <img id="camp2" src=" /images/missiondata/partparcel/camp2_protoss.jpg" alt="camp2 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="camp2" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="camp2" value="terran">Terran</label><br>
+                <label><input type="radio" name="camp2" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/camp2minimap.jpg" alt="camp2 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='camp2']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#camp2');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/camp2_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#camp2div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'camp2');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/camp2_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/camp2_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/camp2_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Once this base is cleared, it is usually recommended to clean up the area around this. Watch out for the Hybrid Dominator in this area.</p>
+        <div class="switcher">
+        <div class="long" id="cleanuplongdiv">
+            <img id="cleanuplong" src=" /images/missiondata/partparcel/cleanuplong_protoss.jpg" alt="cleanuplong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="cleanuplong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="cleanuplong" value="terran">Terran</label><br>
+                <label><input type="radio" name="cleanuplong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/cleanuplongminimap.jpg" alt="cleanuplong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='cleanuplong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#cleanuplong');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/cleanuplong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#cleanuplongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'cleanuplong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/cleanuplong_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/cleanuplong_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/cleanuplong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>With the cleanup done, you can move south and take the camp at the bottom right of the map, right outside the main.</p>
+        <div class="switcher">
+        <div class="basePic" id="sebasediv">
+            <img id="sebase" src=" /images/missiondata/partparcel/sebase_protoss.jpg" alt="sebase Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="sebase" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="sebase" value="terran">Terran</label><br>
+                <label><input type="radio" name="sebase" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/sebaseminimap.jpg" alt="sebase Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='sebase']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#sebase');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/sebase_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#sebasediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'sebase');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/sebase_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/sebase_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/sebase_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>By this point, you should have a sufficiently large army to be able to push anywhere you like and gather the remaining parts to finish up the mission. Near the above base, there is an enemy base which has a lot of parts.</p>
+        <div class="switcher">
+        <div class="long" id="eastbaselongdiv">
+            <img id="eastbaselong" src=" /images/missiondata/partparcel/eastbaselong_protoss.jpg" alt="eastbaselong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="eastbaselong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="eastbaselong" value="terran">Terran</label><br>
+                <label><input type="radio" name="eastbaselong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/eastbaselongminimap.jpg" alt="eastbaselong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='eastbaselong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#eastbaselong');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/eastbaselong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#eastbaselongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'eastbaselong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/eastbaselong_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/eastbaselong_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/eastbaselong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Just north of this base, there is an alcove with some more parts to collect.</p>
+        <div class="switcher">
+        <div class="basePic" id="alcovediv">
+            <img id="alcove" src=" /images/missiondata/partparcel/alcove_protoss.jpg" alt="alcove Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="alcove" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="alcove" value="terran">Terran</label><br>
+                <label><input type="radio" name="alcove" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/alcoveminimap.jpg" alt="alcove Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='alcove']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#alcove');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/alcove_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#alcovediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'alcove');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/alcove_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/alcove_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/alcove_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>At the top left of the map there is a large enemy camp with several parts available for pick up as well.</p>
+        <div class="switcher">
+        <div class="long" id="necamplongdiv">
+            <img id="necamplong" src=" /images/missiondata/partparcel/necamplong_protoss.jpg" alt="necamplong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="necamplong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="necamplong" value="terran">Terran</label><br>
+                <label><input type="radio" name="necamplong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/necamplongminimap.jpg" alt="necamplong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='necamplong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#necamplong');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/necamplong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#necamplongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'necamplong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/necamplong_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/necamplong_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/necamplong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The final place you will need to push is the North enemy base. This is the area with most defenses. There is a ramp off to each side as well, if you prefer to attack from the side.</p>
+        <div class="switcher">
+        <div class="long" id="finalbaselongdiv">
+            <img id="finalbaselong" src=" /images/missiondata/partparcel/finalbaselong_protoss.jpg" alt="finalbaselong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="finalbaselong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="finalbaselong" value="terran">Terran</label><br>
+                <label><input type="radio" name="finalbaselong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/partparcel/finalbaselongminimap.jpg" alt="finalbaselong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='finalbaselong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#finalbaselong');
+            var img = new Image();
+            img.src = '/images/missiondata/partparcel/finalbaselong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#finalbaselongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'finalbaselong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/partparcel/finalbaselong_protoss.jpg');
+        imgList.push('/images/missiondata/partparcel/finalbaselong_terran.jpg');
+        imgList.push('/images/missiondata/partparcel/finalbaselong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <h2 id="hybridAbilities">Hybrid Abilities</h2>
     <img id="hybridExperiment" src="/images/missiondata/partparcel/hybrid.jpg" alt="Moebius Hybrid Experiment">
     <p>The Hybrid that spawns after the containment cell is broken has its own abilities. These are listed below:</p>
     <table>
@@ -441,7 +824,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/zeratul">Zeratul</a>: Zeratul can identify the enemy race at the start of the game. As usual, if creep is present, the enemy race is Zerg. If the enemy is Terran, the four boxes that form a diamond shape will be centered in the expansion area on the minimap. If the diamond is off-center, the enemy race is Protoss. A video is below:</li>
     </ul>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/YkCX8PXqyAc" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

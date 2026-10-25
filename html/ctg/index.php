@@ -126,8 +126,8 @@
     $mutations = get_weeklymutations();
     $mutations = array_values(array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden but Inevitable'));
     foreach ($mutations as &$row) {
-        if ($row['map'] == "Lock and Load") {
-            $row['map'] = "Lock Load";
+        if ($row['map'] == 'Lock and Load') {
+            $row['map'] = 'Lock Load';
         }
     }
     ?>
@@ -195,11 +195,11 @@
         });
         const mutatorsById = <?= json_encode(
             array_column($mutators, null, 'mutatorid'),
-            JSON_HEX_TAG | JSON_THROW_ON_ERROR
+            JSON_HEX_TAG | JSON_THROW_ON_ERROR,
         ) ?>;
         const mutationsList = <?= json_encode(
             $mutations,
-            JSON_HEX_TAG | JSON_THROW_ON_ERROR
+            JSON_HEX_TAG | JSON_THROW_ON_ERROR,
         ) ?>;
         $(".mutation").change(function(){
             var elem = $(this).parent();

@@ -637,43 +637,43 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             <tbody>
                 <tr>
                     <td>Ascension Levels</td>
-                    <td><input type="text" name="krLevel" id="krLevel" maxlength="4" size="4" value=<?=$levelInfo['Asia'][0] = $levelInfo['Asia'][0] ?? '0'?>></td>
-                    <td><input type="text" name="cnLevel" id="cnLevel" maxlength="4" size="4" value=<?=$levelInfo['CN'][0] = $levelInfo['CN'][0] ?? '0'?>></td>
-                    <td><input type="text" name="euLevel" id="euLevel" maxlength="4" size="4" value=<?=$levelInfo['EU'][0] = $levelInfo['EU'][0] ?? '0'?>></td>
-                    <td><input type="text" name="naLevel" id="naLevel" maxlength="4" size="4" value=<?=$levelInfo['NA'][0] = $levelInfo['NA'][0] ?? '0'?>></td>
-                    <td><input type="text" name="seaLevel" id="seaLevel" maxlength="4" size="4" value=<?=$levelInfo['SEA'][0] = $levelInfo['SEA'][0] ?? '0'?>></td>
+                    <td><input type="text" name="krLevel" id="krLevel" maxlength="4" size="4" value=<?= $levelInfo['Asia'][0] = $levelInfo['Asia'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="cnLevel" id="cnLevel" maxlength="4" size="4" value=<?= $levelInfo['CN'][0] = $levelInfo['CN'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="euLevel" id="euLevel" maxlength="4" size="4" value=<?= $levelInfo['EU'][0] = $levelInfo['EU'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="naLevel" id="naLevel" maxlength="4" size="4" value=<?= $levelInfo['NA'][0] = $levelInfo['NA'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="seaLevel" id="seaLevel" maxlength="4" size="4" value=<?= $levelInfo['SEA'][0] = $levelInfo['SEA'][0] ?? '0' ?>></td>
                 </tr>
                 <tr>
                     <td>0 Prestige Lvl. 15 Commanders</td>
-                    <td><input type="text" name="krComs0" id="krComs0" maxlength="2" size="2" value=<?=$prestigeInfo['Asia'][0] = $prestigeInfo['Asia'][0] ?? '0'?>></td>
-                    <td><input type="text" name="cnComs0" id="cnComs0" maxlength="2" size="2" value=<?=$prestigeInfo['CN'][0] = $prestigeInfo['CN'][0] ?? '0'?>></td>
-                    <td><input type="text" name="euComs0" id="euComs0" maxlength="2" size="2" value=<?=$prestigeInfo['EU'][0] = $prestigeInfo['EU'][0] ?? '0'?>></td>
-                    <td><input type="text" name="naComs0" id="naComs0" maxlength="2" size="2" value=<?=$prestigeInfo['NA'][0] = $prestigeInfo['NA'][0] ?? '0'?>></td>
-                    <td><input type="text" name="seaComs0" id="seaComs0" maxlength="2" size="2" value=<?=$prestigeInfo['SEA'][0] = $prestigeInfo['SEA'][0] ?? '0'?>></td>
+                    <td><input type="text" name="krComs0" id="krComs0" maxlength="2" size="2" value=<?= $prestigeInfo['Asia'][0] = $prestigeInfo['Asia'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="cnComs0" id="cnComs0" maxlength="2" size="2" value=<?= $prestigeInfo['CN'][0] = $prestigeInfo['CN'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="euComs0" id="euComs0" maxlength="2" size="2" value=<?= $prestigeInfo['EU'][0] = $prestigeInfo['EU'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="naComs0" id="naComs0" maxlength="2" size="2" value=<?= $prestigeInfo['NA'][0] = $prestigeInfo['NA'][0] ?? '0' ?>></td>
+                    <td><input type="text" name="seaComs0" id="seaComs0" maxlength="2" size="2" value=<?= $prestigeInfo['SEA'][0] = $prestigeInfo['SEA'][0] ?? '0' ?>></td>
                 </tr>
                 <tr>
                     <td>1 Prestige Lvl. 15 Commanders</td>
-                    <td><input type="text" name="krComs1" id="krComs1" maxlength="2" size="2" value=<?=$prestigeInfo['Asia'][1] = $prestigeInfo['Asia'][1] ?? '0'?>></td>
-                    <td><input type="text" name="cnComs1" id="cnComs1" maxlength="2" size="2" value=<?=$prestigeInfo['CN'][1] = $prestigeInfo['CN'][1] ?? '0'?>></td>
-                    <td><input type="text" name="euComs1" id="euComs1" maxlength="2" size="2" value=<?=$prestigeInfo['EU'][1] = $prestigeInfo['EU'][1] ?? '0'?>></td>
-                    <td><input type="text" name="naComs1" id="naComs1" maxlength="2" size="2" value=<?=$prestigeInfo['NA'][1] = $prestigeInfo['NA'][1] ?? '0'?>></td>
-                    <td><input type="text" name="seaComs1" id="seaComs1" maxlength="2" size="2" value=<?=$prestigeInfo['SEA'][1] = $prestigeInfo['SEA'][1] ?? '0'?>></td>
+                    <td><input type="text" name="krComs1" id="krComs1" maxlength="2" size="2" value=<?= $prestigeInfo['Asia'][1] = $prestigeInfo['Asia'][1] ?? '0' ?>></td>
+                    <td><input type="text" name="cnComs1" id="cnComs1" maxlength="2" size="2" value=<?= $prestigeInfo['CN'][1] = $prestigeInfo['CN'][1] ?? '0' ?>></td>
+                    <td><input type="text" name="euComs1" id="euComs1" maxlength="2" size="2" value=<?= $prestigeInfo['EU'][1] = $prestigeInfo['EU'][1] ?? '0' ?>></td>
+                    <td><input type="text" name="naComs1" id="naComs1" maxlength="2" size="2" value=<?= $prestigeInfo['NA'][1] = $prestigeInfo['NA'][1] ?? '0' ?>></td>
+                    <td><input type="text" name="seaComs1" id="seaComs1" maxlength="2" size="2" value=<?= $prestigeInfo['SEA'][1] = $prestigeInfo['SEA'][1] ?? '0' ?>></td>
                 </tr>
                 <tr>
                     <td>2 Prestige Lvl. 15 Commanders</td>
-                    <td><input type="text" name="krComs2" id="krComs2" maxlength="2" size="2" value=<?=$prestigeInfo['Asia'][2] = $prestigeInfo['Asia'][2] ?? '0'?>></td>
-                    <td><input type="text" name="cnComs2" id="cnComs2" maxlength="2" size="2" value=<?=$prestigeInfo['CN'][2] = $prestigeInfo['CN'][2] ?? '0'?>></td>
-                    <td><input type="text" name="euComs2" id="euComs2" maxlength="2" size="2" value=<?=$prestigeInfo['EU'][2] = $prestigeInfo['EU'][2] ?? '0'?>></td>
-                    <td><input type="text" name="naComs2" id="naComs2" maxlength="2" size="2" value=<?=$prestigeInfo['NA'][2] = $prestigeInfo['NA'][2] ?? '0'?>></td>
-                    <td><input type="text" name="seaComs2" id="seaComs2" maxlength="2" size="2" value=<?=$prestigeInfo['SEA'][2] = $prestigeInfo['SEA'][2] ?? '0'?>></td>
+                    <td><input type="text" name="krComs2" id="krComs2" maxlength="2" size="2" value=<?= $prestigeInfo['Asia'][2] = $prestigeInfo['Asia'][2] ?? '0' ?>></td>
+                    <td><input type="text" name="cnComs2" id="cnComs2" maxlength="2" size="2" value=<?= $prestigeInfo['CN'][2] = $prestigeInfo['CN'][2] ?? '0' ?>></td>
+                    <td><input type="text" name="euComs2" id="euComs2" maxlength="2" size="2" value=<?= $prestigeInfo['EU'][2] = $prestigeInfo['EU'][2] ?? '0' ?>></td>
+                    <td><input type="text" name="naComs2" id="naComs2" maxlength="2" size="2" value=<?= $prestigeInfo['NA'][2] = $prestigeInfo['NA'][2] ?? '0' ?>></td>
+                    <td><input type="text" name="seaComs2" id="seaComs2" maxlength="2" size="2" value=<?= $prestigeInfo['SEA'][2] = $prestigeInfo['SEA'][2] ?? '0' ?>></td>
                 </tr>
                 <tr>
                     <td>3 Prestige Lvl. 15 Commanders</td>
-                    <td><input type="text" name="krComs3" id="krComs3" maxlength="2" size="2" value=<?=$prestigeInfo['Asia'][3] = $prestigeInfo['Asia'][3] ?? '0'?>></td>
-                    <td><input type="text" name="cnComs3" id="cnComs3" maxlength="2" size="2" value=<?=$prestigeInfo['CN'][3] = $prestigeInfo['CN'][3] ?? '0'?>></td>
-                    <td><input type="text" name="euComs3" id="euComs3" maxlength="2" size="2" value=<?=$prestigeInfo['EU'][3] = $prestigeInfo['EU'][3] ?? '0'?>></td>
-                    <td><input type="text" name="naComs3" id="naComs3" maxlength="2" size="2" value=<?=$prestigeInfo['NA'][3] = $prestigeInfo['NA'][3] ?? '0'?>></td>
-                    <td><input type="text" name="seaComs3" id="seaComs3" maxlength="2" size="2" value=<?=$prestigeInfo['SEA'][3] = $prestigeInfo['SEA'][3] ?? '0'?>></td>
+                    <td><input type="text" name="krComs3" id="krComs3" maxlength="2" size="2" value=<?= $prestigeInfo['Asia'][3] = $prestigeInfo['Asia'][3] ?? '0' ?>></td>
+                    <td><input type="text" name="cnComs3" id="cnComs3" maxlength="2" size="2" value=<?= $prestigeInfo['CN'][3] = $prestigeInfo['CN'][3] ?? '0' ?>></td>
+                    <td><input type="text" name="euComs3" id="euComs3" maxlength="2" size="2" value=<?= $prestigeInfo['EU'][3] = $prestigeInfo['EU'][3] ?? '0' ?>></td>
+                    <td><input type="text" name="naComs3" id="naComs3" maxlength="2" size="2" value=<?= $prestigeInfo['NA'][3] = $prestigeInfo['NA'][3] ?? '0' ?>></td>
+                    <td><input type="text" name="seaComs3" id="seaComs3" maxlength="2" size="2" value=<?= $prestigeInfo['SEA'][3] = $prestigeInfo['SEA'][3] ?? '0' ?>></td>
                 </tr>
             </tbody>
         </table>

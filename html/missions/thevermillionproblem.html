@@ -188,7 +188,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> The Vermillion Problem</h1>
     <p id="missionPlace">Veridia Prime</p>
@@ -244,16 +244,349 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><b>Terran:</b> Three Goliaths</li>
         <li><b>Zerg:</b> Two Ravagers and Eight Zerglings</li>
     </ul>
-    <div class='switcher'><div class='long' id='expansionlongdiv'><img id ='expansionlong' src=' /images/missiondata/thevermillionproblem/expansionlong_protoss.jpg' alt='expansionlong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='expansionlong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='expansionlong' value='terran'>Terran</label><br><label><input type='radio' name='expansionlong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/expansionlongminimap.jpg' alt='expansionlong Minimap'></div></div></div><script>$("input[name='expansionlong']").change(function(){var race= $(this).val();var oldImg = $('#expansionlong');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/expansionlong_'+ race + '.jpg';var newImg = $(img).hide();$('#expansionlongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'expansionlong');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/expansionlong_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/expansionlong_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/expansionlong_zerg.jpg');preload(imgList);</script>    <p>At this point, the bases you will clear will usually depend on where the crystals spawn, rather than a particular order.</p>
+        <div class="switcher">
+        <div class="long" id="expansionlongdiv">
+            <img id="expansionlong" src=" /images/missiondata/thevermillionproblem/expansionlong_protoss.jpg" alt="expansionlong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="expansionlong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="expansionlong" value="terran">Terran</label><br>
+                <label><input type="radio" name="expansionlong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/expansionlongminimap.jpg" alt="expansionlong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='expansionlong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#expansionlong');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/expansionlong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#expansionlongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'expansionlong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/expansionlong_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/expansionlong_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/expansionlong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>At this point, the bases you will clear will usually depend on where the crystals spawn, rather than a particular order.</p>
     <p>The base to the West is usually the most lightly defended base after the expansion. It is shown below:</p>
-    <div class='switcher'><div class='basePic' id='wbasediv'><img id ='wbase' src=' /images/missiondata/thevermillionproblem/wbase_protoss.jpg' alt='wbase Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='wbase' value='protoss' checked>Protoss</label><br><label><input type='radio' name='wbase' value='terran'>Terran</label><br><label><input type='radio' name='wbase' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/wbaseminimap.jpg' alt='wbase Minimap'></div></div></div><script>$("input[name='wbase']").change(function(){var race= $(this).val();var oldImg = $('#wbase');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/wbase_'+ race + '.jpg';var newImg = $(img).hide();$('#wbasediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'wbase');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/wbase_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/wbase_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/wbase_zerg.jpg');preload(imgList);</script>    <p>The next base usually captured is the base to the North. It is slightly more heavily defended, but should be relatively easy to capture.</p>
-    <div class='switcher'><div class='long' id='nbaselongdiv'><img id ='nbaselong' src=' /images/missiondata/thevermillionproblem/nbaselong_protoss.jpg' alt='nbaselong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='nbaselong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='nbaselong' value='terran'>Terran</label><br><label><input type='radio' name='nbaselong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/nbaselongminimap.jpg' alt='nbaselong Minimap'></div></div></div><script>$("input[name='nbaselong']").change(function(){var race= $(this).val();var oldImg = $('#nbaselong');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/nbaselong_'+ race + '.jpg';var newImg = $(img).hide();$('#nbaselongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'nbaselong');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/nbaselong_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/nbaselong_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/nbaselong_zerg.jpg');preload(imgList);</script>    <p>Due to the flow of the mission, there will be a lava surge by the time this base is cleared. It is usually optimal to continue pushing downwards to the North-East base. Watch out for the Hybrid Dominator in this area.</p>
-    <div class='switcher'><div class='basePic' id='nebasediv'><img id ='nebase' src=' /images/missiondata/thevermillionproblem/nebase_protoss.jpg' alt='nebase Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='nebase' value='protoss' checked>Protoss</label><br><label><input type='radio' name='nebase' value='terran'>Terran</label><br><label><input type='radio' name='nebase' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/nebaseminimap.jpg' alt='nebase Minimap'></div></div></div><script>$("input[name='nebase']").change(function(){var race= $(this).val();var oldImg = $('#nebase');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/nebase_'+ race + '.jpg';var newImg = $(img).hide();$('#nebasediv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'nebase');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/nebase_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/nebase_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/nebase_zerg.jpg');preload(imgList);</script>    <p>The rest of the bases do require some strong forces in order to clear. The base to the South-West is probably the easiest of the remaining bases that can have crystals near them.</p>
-    <div class='switcher'><div class='long' id='swbaselongdiv'><img id ='swbaselong' src=' /images/missiondata/thevermillionproblem/swbaselong_protoss.jpg' alt='swbaselong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='swbaselong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='swbaselong' value='terran'>Terran</label><br><label><input type='radio' name='swbaselong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/swbaselongminimap.jpg' alt='swbaselong Minimap'></div></div></div><script>$("input[name='swbaselong']").change(function(){var race= $(this).val();var oldImg = $('#swbaselong');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/swbaselong_'+ race + '.jpg';var newImg = $(img).hide();$('#swbaselongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'swbaselong');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/swbaselong_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/swbaselong_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/swbaselong_zerg.jpg');preload(imgList);</script>    <p>If you choose to push East from this base towards the bonus objective, you'll need to destroy a small enemy camp. Note that the ramp from the opposite side of this island is unguarded and you can reach the bonus objective without fighting enemy units.</p>
-    <div class='switcher'><div class='basePic' id='bonuscampdiv'><img id ='bonuscamp' src=' /images/missiondata/thevermillionproblem/bonuscamp_protoss.jpg' alt='bonuscamp Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='bonuscamp' value='protoss' checked>Protoss</label><br><label><input type='radio' name='bonuscamp' value='terran'>Terran</label><br><label><input type='radio' name='bonuscamp' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/bonuscampminimap.jpg' alt='bonuscamp Minimap'></div></div></div><script>$("input[name='bonuscamp']").change(function(){var race= $(this).val();var oldImg = $('#bonuscamp');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/bonuscamp_'+ race + '.jpg';var newImg = $(img).hide();$('#bonuscampdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'bonuscamp');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/bonuscamp_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/bonuscamp_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/bonuscamp_zerg.jpg');preload(imgList);</script>    <p>If you push East from your expansion, there are a patches of enemies present. The first is a camp of units.</p>
-    <div class='switcher'><div class='basePic' id='ebasecampdiv'><img id ='ebasecamp' src=' /images/missiondata/thevermillionproblem/ebasecamp_protoss.jpg' alt='ebasecamp Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='ebasecamp' value='protoss' checked>Protoss</label><br><label><input type='radio' name='ebasecamp' value='terran'>Terran</label><br><label><input type='radio' name='ebasecamp' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/ebasecampminimap.jpg' alt='ebasecamp Minimap'></div></div></div><script>$("input[name='ebasecamp']").change(function(){var race= $(this).val();var oldImg = $('#ebasecamp');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/ebasecamp_'+ race + '.jpg';var newImg = $(img).hide();$('#ebasecampdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'ebasecamp');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/ebasecamp_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/ebasecamp_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/ebasecamp_zerg.jpg');preload(imgList);</script>    <p>If you follow the path up North, you'll get to the enemy base.</p>
-    <div class='switcher'><div class='long' id='ebaselongdiv'><img id ='ebaselong' src=' /images/missiondata/thevermillionproblem/ebaselong_protoss.jpg' alt='ebaselong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='ebaselong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='ebaselong' value='terran'>Terran</label><br><label><input type='radio' name='ebaselong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/ebaselongminimap.jpg' alt='ebaselong Minimap'></div></div></div><script>$("input[name='ebaselong']").change(function(){var race= $(this).val();var oldImg = $('#ebaselong');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/ebaselong_'+ race + '.jpg';var newImg = $(img).hide();$('#ebaselongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'ebaselong');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/ebaselong_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/ebaselong_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/ebaselong_zerg.jpg');preload(imgList);</script>    <p>Just South of this base, there is a small enclave of enemies.</p>
-    <div class='switcher'><div class='long' id='eenclavelongdiv'><img id ='eenclavelong' src=' /images/missiondata/thevermillionproblem/eenclavelong_protoss.jpg' alt='eenclavelong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='eenclavelong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='eenclavelong' value='terran'>Terran</label><br><label><input type='radio' name='eenclavelong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/thevermillionproblem/eenclavelongminimap.jpg' alt='eenclavelong Minimap'></div></div></div><script>$("input[name='eenclavelong']").change(function(){var race= $(this).val();var oldImg = $('#eenclavelong');var img = new Image();img.src = '/images/missiondata/thevermillionproblem/eenclavelong_'+ race + '.jpg';var newImg = $(img).hide();$('#eenclavelongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'eenclavelong');return false;});var imgList=[];imgList.push('/images/missiondata/thevermillionproblem/eenclavelong_protoss.jpg');imgList.push('/images/missiondata/thevermillionproblem/eenclavelong_terran.jpg');imgList.push('/images/missiondata/thevermillionproblem/eenclavelong_zerg.jpg');preload(imgList);</script>    <h2 id="bonus">Completing the Bonus Objective</h2>
+        <div class="switcher">
+        <div class="basePic" id="wbasediv">
+            <img id="wbase" src=" /images/missiondata/thevermillionproblem/wbase_protoss.jpg" alt="wbase Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="wbase" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="wbase" value="terran">Terran</label><br>
+                <label><input type="radio" name="wbase" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/wbaseminimap.jpg" alt="wbase Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='wbase']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#wbase');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/wbase_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#wbasediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'wbase');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/wbase_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/wbase_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/wbase_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The next base usually captured is the base to the North. It is slightly more heavily defended, but should be relatively easy to capture.</p>
+        <div class="switcher">
+        <div class="long" id="nbaselongdiv">
+            <img id="nbaselong" src=" /images/missiondata/thevermillionproblem/nbaselong_protoss.jpg" alt="nbaselong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="nbaselong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="nbaselong" value="terran">Terran</label><br>
+                <label><input type="radio" name="nbaselong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/nbaselongminimap.jpg" alt="nbaselong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='nbaselong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#nbaselong');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/nbaselong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#nbaselongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'nbaselong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/nbaselong_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/nbaselong_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/nbaselong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Due to the flow of the mission, there will be a lava surge by the time this base is cleared. It is usually optimal to continue pushing downwards to the North-East base. Watch out for the Hybrid Dominator in this area.</p>
+        <div class="switcher">
+        <div class="basePic" id="nebasediv">
+            <img id="nebase" src=" /images/missiondata/thevermillionproblem/nebase_protoss.jpg" alt="nebase Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="nebase" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="nebase" value="terran">Terran</label><br>
+                <label><input type="radio" name="nebase" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/nebaseminimap.jpg" alt="nebase Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='nebase']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#nebase');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/nebase_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#nebasediv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'nebase');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/nebase_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/nebase_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/nebase_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The rest of the bases do require some strong forces in order to clear. The base to the South-West is probably the easiest of the remaining bases that can have crystals near them.</p>
+        <div class="switcher">
+        <div class="long" id="swbaselongdiv">
+            <img id="swbaselong" src=" /images/missiondata/thevermillionproblem/swbaselong_protoss.jpg" alt="swbaselong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="swbaselong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="swbaselong" value="terran">Terran</label><br>
+                <label><input type="radio" name="swbaselong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/swbaselongminimap.jpg" alt="swbaselong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='swbaselong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#swbaselong');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/swbaselong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#swbaselongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'swbaselong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/swbaselong_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/swbaselong_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/swbaselong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>If you choose to push East from this base towards the bonus objective, you'll need to destroy a small enemy camp. Note that the ramp from the opposite side of this island is unguarded and you can reach the bonus objective without fighting enemy units.</p>
+        <div class="switcher">
+        <div class="basePic" id="bonuscampdiv">
+            <img id="bonuscamp" src=" /images/missiondata/thevermillionproblem/bonuscamp_protoss.jpg" alt="bonuscamp Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="bonuscamp" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="bonuscamp" value="terran">Terran</label><br>
+                <label><input type="radio" name="bonuscamp" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/bonuscampminimap.jpg" alt="bonuscamp Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='bonuscamp']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#bonuscamp');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/bonuscamp_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#bonuscampdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'bonuscamp');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/bonuscamp_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/bonuscamp_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/bonuscamp_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>If you push East from your expansion, there are a patches of enemies present. The first is a camp of units.</p>
+        <div class="switcher">
+        <div class="basePic" id="ebasecampdiv">
+            <img id="ebasecamp" src=" /images/missiondata/thevermillionproblem/ebasecamp_protoss.jpg" alt="ebasecamp Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="ebasecamp" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="ebasecamp" value="terran">Terran</label><br>
+                <label><input type="radio" name="ebasecamp" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/ebasecampminimap.jpg" alt="ebasecamp Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='ebasecamp']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#ebasecamp');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/ebasecamp_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#ebasecampdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'ebasecamp');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/ebasecamp_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/ebasecamp_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/ebasecamp_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>If you follow the path up North, you'll get to the enemy base.</p>
+        <div class="switcher">
+        <div class="long" id="ebaselongdiv">
+            <img id="ebaselong" src=" /images/missiondata/thevermillionproblem/ebaselong_protoss.jpg" alt="ebaselong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="ebaselong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="ebaselong" value="terran">Terran</label><br>
+                <label><input type="radio" name="ebaselong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/ebaselongminimap.jpg" alt="ebaselong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='ebaselong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#ebaselong');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/ebaselong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#ebaselongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'ebaselong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/ebaselong_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/ebaselong_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/ebaselong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Just South of this base, there is a small enclave of enemies.</p>
+        <div class="switcher">
+        <div class="long" id="eenclavelongdiv">
+            <img id="eenclavelong" src=" /images/missiondata/thevermillionproblem/eenclavelong_protoss.jpg" alt="eenclavelong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="eenclavelong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="eenclavelong" value="terran">Terran</label><br>
+                <label><input type="radio" name="eenclavelong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/thevermillionproblem/eenclavelongminimap.jpg" alt="eenclavelong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='eenclavelong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#eenclavelong');
+            var img = new Image();
+            img.src = '/images/missiondata/thevermillionproblem/eenclavelong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#eenclavelongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'eenclavelong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/thevermillionproblem/eenclavelong_protoss.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/eenclavelong_terran.jpg');
+        imgList.push('/images/missiondata/thevermillionproblem/eenclavelong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <h2 id="bonus">Completing the Bonus Objective</h2>
     <div id="objectiveImages">
         <img src="/images/missiondata/thevermillionproblem/moltensalamander.jpg" alt="Molten Salamander">
     </div>
@@ -407,7 +740,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/zagara">Zagara</a>: Build your macro hatcheries at your expansion for quick reinforcements.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: Place a Void Array on each of the islands to help you intercept attack waves and crystals in a timely manner.</li>
     </ul>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

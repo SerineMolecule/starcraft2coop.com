@@ -1,5 +1,5 @@
 {
     "require-dev": {
-        "squizlabs/php_codesniffer": "*"
+        "carthage-software/mago": "^1.54.0"
     }
 }

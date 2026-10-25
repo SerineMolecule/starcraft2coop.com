@@ -171,7 +171,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Oblivion Express</h1>
     <p id="missionPlace">Tarsonis</p>
@@ -222,8 +222,82 @@ if (document.location.host === 'dev.starcraft2coop.com') {
     <p>The main objective will either spawn on the top rail or the middle rail. The paths these main objectives will take is shown below.</p>
     <img src="/images/missiondata/oblivionexpress/mainobjectivepath.jpg" alt="Paths Taken by the Main Objectives">
     <p>The top base is shown below.</p>
-    <div class='switcher'><div class='long' id='topbaselongdiv'><img id ='topbaselong' src=' /images/missiondata/oblivionexpress/topbaselong_protoss.jpg' alt='topbaselong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='topbaselong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='topbaselong' value='terran'>Terran</label><br><label><input type='radio' name='topbaselong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/oblivionexpress/topbaselongminimap.jpg' alt='topbaselong Minimap'></div></div></div><script>$("input[name='topbaselong']").change(function(){var race= $(this).val();var oldImg = $('#topbaselong');var img = new Image();img.src = '/images/missiondata/oblivionexpress/topbaselong_'+ race + '.jpg';var newImg = $(img).hide();$('#topbaselongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'topbaselong');return false;});var imgList=[];imgList.push('/images/missiondata/oblivionexpress/topbaselong_protoss.jpg');imgList.push('/images/missiondata/oblivionexpress/topbaselong_terran.jpg');imgList.push('/images/missiondata/oblivionexpress/topbaselong_zerg.jpg');preload(imgList);</script>    <p>The bottom base is shown below.</p>
-    <div class='switcher'><div class='long' id='bottombaselongdiv'><img id ='bottombaselong' src=' /images/missiondata/oblivionexpress/bottombaselong_protoss.jpg' alt='bottombaselong Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='bottombaselong' value='protoss' checked>Protoss</label><br><label><input type='radio' name='bottombaselong' value='terran'>Terran</label><br><label><input type='radio' name='bottombaselong' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/oblivionexpress/bottombaselongminimap.jpg' alt='bottombaselong Minimap'></div></div></div><script>$("input[name='bottombaselong']").change(function(){var race= $(this).val();var oldImg = $('#bottombaselong');var img = new Image();img.src = '/images/missiondata/oblivionexpress/bottombaselong_'+ race + '.jpg';var newImg = $(img).hide();$('#bottombaselongdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'bottombaselong');return false;});var imgList=[];imgList.push('/images/missiondata/oblivionexpress/bottombaselong_protoss.jpg');imgList.push('/images/missiondata/oblivionexpress/bottombaselong_terran.jpg');imgList.push('/images/missiondata/oblivionexpress/bottombaselong_zerg.jpg');preload(imgList);</script>    <h2 id="bonus">Completing the Bonus Objective</h2>
+        <div class="switcher">
+        <div class="long" id="topbaselongdiv">
+            <img id="topbaselong" src=" /images/missiondata/oblivionexpress/topbaselong_protoss.jpg" alt="topbaselong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="topbaselong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="topbaselong" value="terran">Terran</label><br>
+                <label><input type="radio" name="topbaselong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/oblivionexpress/topbaselongminimap.jpg" alt="topbaselong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='topbaselong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#topbaselong');
+            var img = new Image();
+            img.src = '/images/missiondata/oblivionexpress/topbaselong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#topbaselongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'topbaselong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/oblivionexpress/topbaselong_protoss.jpg');
+        imgList.push('/images/missiondata/oblivionexpress/topbaselong_terran.jpg');
+        imgList.push('/images/missiondata/oblivionexpress/topbaselong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>The bottom base is shown below.</p>
+        <div class="switcher">
+        <div class="long" id="bottombaselongdiv">
+            <img id="bottombaselong" src=" /images/missiondata/oblivionexpress/bottombaselong_protoss.jpg" alt="bottombaselong Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="bottombaselong" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="bottombaselong" value="terran">Terran</label><br>
+                <label><input type="radio" name="bottombaselong" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/oblivionexpress/bottombaselongminimap.jpg" alt="bottombaselong Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='bottombaselong']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#bottombaselong');
+            var img = new Image();
+            img.src = '/images/missiondata/oblivionexpress/bottombaselong_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#bottombaselongdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'bottombaselong');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/oblivionexpress/bottombaselong_protoss.jpg');
+        imgList.push('/images/missiondata/oblivionexpress/bottombaselong_terran.jpg');
+        imgList.push('/images/missiondata/oblivionexpress/bottombaselong_zerg.jpg');
+        preload(imgList);
+    </script>
+        <h2 id="bonus">Completing the Bonus Objective</h2>
     <p>The bonus objective requires you to kill two fast trains that will spawn on the bottom rail. The path these bonus objectives will take is shown below.</p>
     <img src="/images/missiondata/oblivionexpress/bonusobjectivepath.jpg" alt="Path Taken by the Bonus Objectives">
     <h2 id="timings">Timings</h2>
@@ -411,7 +485,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/swann">Swann</a>: A properly positioned Concentrated Beam with full points into the Width mastery can 1-shot the first train and all the escorts.</li>
         <li><a href="/commanders/tychus">Tychus</a>: Crooked Sam can place a demolition charge on each train carriage, making him a fantastic source of DPS.</li>
     </ul>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

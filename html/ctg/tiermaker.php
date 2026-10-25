@@ -350,14 +350,17 @@
     $prestigeNames = [];
     foreach (get_commanders() as $commander) {
         $prestigeNames[$commander['commander']] = array_map('trim', [
-            $commander['motto'], $commander['prestige1'], $commander['prestige2'], $commander['prestige3'],
+            $commander['motto'],
+            $commander['prestige1'],
+            $commander['prestige2'],
+            $commander['prestige3'],
         ]);
     }
     $mutations = get_weeklymutations();
     $mutations = array_values(array_filter($mutations, fn($mutation) => $mutation['mutation'] != 'Sudden but Inevitable'));
     foreach ($mutations as &$row) {
-        if ($row['map'] == "Lock and Load") {
-            $row['map'] = "Lock Load";
+        if ($row['map'] == 'Lock and Load') {
+            $row['map'] = 'Lock Load';
         }
     }
     ?>
@@ -367,9 +370,9 @@
     <script>
         window.tiermakerData = <?= json_encode(
             ['mutators' => array_column($mutators, null, 'mutatorid'), 'mutations' => $mutations, 'prestigeNames' => $prestigeNames],
-            JSON_HEX_TAG | JSON_THROW_ON_ERROR
+            JSON_HEX_TAG | JSON_THROW_ON_ERROR,
         ) ?>;
     </script>
-    <script src="/scripts/tiermaker.js?v=b291e4" defer></script>
+    <script src="/scripts/tiermaker.js?v=f1a706" defer></script>
 </body>
 </html>

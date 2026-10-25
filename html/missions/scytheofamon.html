@@ -188,7 +188,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=b20bd2" defer></script>
+<script src="/scripts/search.js?v=a1c520" defer></script>
 <div id="content">
         <h1><span class="unbold">Mission:</span> Scythe of Amon</h1>
     <p id="missionPlace">Xel'Naga Temple</p>
@@ -436,9 +436,120 @@ if (document.location.host === 'dev.starcraft2coop.com') {
     </div>
     <p>The bonus objective requires you to escort a Warp Prism as it attempts to evacuate people. The stopping points of these prisms are within enemy bases. The bases that will be encountered, in the order of the stopping points (assuming the objective doesn't get shot down) is shown below.</p>
     <p>Stop Point 1:</p>
-    <div class='switcher'><div class='long' id='bonusbase1longdiv'><img id ='bonusbase1long' src=' /images/missiondata/scytheofamon/bonusbase1long_protoss.jpg' alt='bonusbase1long Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='bonusbase1long' value='protoss' checked>Protoss</label><br><label><input type='radio' name='bonusbase1long' value='terran'>Terran</label><br><label><input type='radio' name='bonusbase1long' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/scytheofamon/bonusbase1longminimap.jpg' alt='bonusbase1long Minimap'></div></div></div><script>$("input[name='bonusbase1long']").change(function(){var race= $(this).val();var oldImg = $('#bonusbase1long');var img = new Image();img.src = '/images/missiondata/scytheofamon/bonusbase1long_'+ race + '.jpg';var newImg = $(img).hide();$('#bonusbase1longdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'bonusbase1long');return false;});var imgList=[];imgList.push('/images/missiondata/scytheofamon/bonusbase1long_protoss.jpg');imgList.push('/images/missiondata/scytheofamon/bonusbase1long_terran.jpg');imgList.push('/images/missiondata/scytheofamon/bonusbase1long_zerg.jpg');preload(imgList);</script>    <p>Stop Point 2:</p>
-    <div class='switcher'><div class='basePic' id='bonusbase2div'><img id ='bonusbase2' src=' /images/missiondata/scytheofamon/bonusbase2_protoss.jpg' alt='bonusbase2 Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='bonusbase2' value='protoss' checked>Protoss</label><br><label><input type='radio' name='bonusbase2' value='terran'>Terran</label><br><label><input type='radio' name='bonusbase2' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/scytheofamon/bonusbase2minimap.jpg' alt='bonusbase2 Minimap'></div></div></div><script>$("input[name='bonusbase2']").change(function(){var race= $(this).val();var oldImg = $('#bonusbase2');var img = new Image();img.src = '/images/missiondata/scytheofamon/bonusbase2_'+ race + '.jpg';var newImg = $(img).hide();$('#bonusbase2div').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'bonusbase2');return false;});var imgList=[];imgList.push('/images/missiondata/scytheofamon/bonusbase2_protoss.jpg');imgList.push('/images/missiondata/scytheofamon/bonusbase2_terran.jpg');imgList.push('/images/missiondata/scytheofamon/bonusbase2_zerg.jpg');preload(imgList);</script>    <p>Stop Point 3:</p>
-    <div class='switcher'><div class='long' id='bonusbase3longdiv'><img id ='bonusbase3long' src=' /images/missiondata/scytheofamon/bonusbase3long_protoss.jpg' alt='bonusbase3long Picture'></div><div class = 'baseMinimap'><form action='#'><label><input type='radio' name='bonusbase3long' value='protoss' checked>Protoss</label><br><label><input type='radio' name='bonusbase3long' value='terran'>Terran</label><br><label><input type='radio' name='bonusbase3long' value='zerg'>Zerg</label><br></form><br><br><div><img src='/images/missiondata/scytheofamon/bonusbase3longminimap.jpg' alt='bonusbase3long Minimap'></div></div></div><script>$("input[name='bonusbase3long']").change(function(){var race= $(this).val();var oldImg = $('#bonusbase3long');var img = new Image();img.src = '/images/missiondata/scytheofamon/bonusbase3long_'+ race + '.jpg';var newImg = $(img).hide();$('#bonusbase3longdiv').append(img);oldImg.stop(true).fadeOut(500, function() {   $(this).remove();});newImg.fadeIn(500);newImg.attr('id', 'bonusbase3long');return false;});var imgList=[];imgList.push('/images/missiondata/scytheofamon/bonusbase3long_protoss.jpg');imgList.push('/images/missiondata/scytheofamon/bonusbase3long_terran.jpg');imgList.push('/images/missiondata/scytheofamon/bonusbase3long_zerg.jpg');preload(imgList);</script>    <p>It is also important to note that each stopping point will feature a difference race of enemy units. The race will not match the race of the Attack Waves on this map. However, based on the race of the Attack Waves, you can tell what race of enemy units will be present in each of the three Stopping Points above as follows:</p>
+        <div class="switcher">
+        <div class="long" id="bonusbase1longdiv">
+            <img id="bonusbase1long" src=" /images/missiondata/scytheofamon/bonusbase1long_protoss.jpg" alt="bonusbase1long Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="bonusbase1long" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="bonusbase1long" value="terran">Terran</label><br>
+                <label><input type="radio" name="bonusbase1long" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/scytheofamon/bonusbase1longminimap.jpg" alt="bonusbase1long Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='bonusbase1long']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#bonusbase1long');
+            var img = new Image();
+            img.src = '/images/missiondata/scytheofamon/bonusbase1long_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#bonusbase1longdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'bonusbase1long');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/scytheofamon/bonusbase1long_protoss.jpg');
+        imgList.push('/images/missiondata/scytheofamon/bonusbase1long_terran.jpg');
+        imgList.push('/images/missiondata/scytheofamon/bonusbase1long_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Stop Point 2:</p>
+        <div class="switcher">
+        <div class="basePic" id="bonusbase2div">
+            <img id="bonusbase2" src=" /images/missiondata/scytheofamon/bonusbase2_protoss.jpg" alt="bonusbase2 Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="bonusbase2" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="bonusbase2" value="terran">Terran</label><br>
+                <label><input type="radio" name="bonusbase2" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/scytheofamon/bonusbase2minimap.jpg" alt="bonusbase2 Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='bonusbase2']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#bonusbase2');
+            var img = new Image();
+            img.src = '/images/missiondata/scytheofamon/bonusbase2_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#bonusbase2div').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'bonusbase2');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/scytheofamon/bonusbase2_protoss.jpg');
+        imgList.push('/images/missiondata/scytheofamon/bonusbase2_terran.jpg');
+        imgList.push('/images/missiondata/scytheofamon/bonusbase2_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>Stop Point 3:</p>
+        <div class="switcher">
+        <div class="long" id="bonusbase3longdiv">
+            <img id="bonusbase3long" src=" /images/missiondata/scytheofamon/bonusbase3long_protoss.jpg" alt="bonusbase3long Picture">
+        </div><div class="baseMinimap">
+            <form action="#">
+                <label><input type="radio" name="bonusbase3long" value="protoss" checked>Protoss</label><br>
+                <label><input type="radio" name="bonusbase3long" value="terran">Terran</label><br>
+                <label><input type="radio" name="bonusbase3long" value="zerg">Zerg</label><br>
+            </form>
+            <br><br>
+            <div>
+                <img src="/images/missiondata/scytheofamon/bonusbase3longminimap.jpg" alt="bonusbase3long Minimap">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input[name='bonusbase3long']").change(function () {
+            var race = $(this).val();
+            var oldImg = $('#bonusbase3long');
+            var img = new Image();
+            img.src = '/images/missiondata/scytheofamon/bonusbase3long_' + race + '.jpg';
+            var newImg = $(img).hide();
+            $('#bonusbase3longdiv').append(img);
+            oldImg.stop(true).fadeOut(500, function () {
+                $(this).remove();
+            });
+            newImg.fadeIn(500);
+            newImg.attr('id', 'bonusbase3long');
+            return false;
+        });
+        var imgList = [];
+        imgList.push('/images/missiondata/scytheofamon/bonusbase3long_protoss.jpg');
+        imgList.push('/images/missiondata/scytheofamon/bonusbase3long_terran.jpg');
+        imgList.push('/images/missiondata/scytheofamon/bonusbase3long_zerg.jpg');
+        preload(imgList);
+    </script>
+        <p>It is also important to note that each stopping point will feature a difference race of enemy units. The race will not match the race of the Attack Waves on this map. However, based on the race of the Attack Waves, you can tell what race of enemy units will be present in each of the three Stopping Points above as follows:</p>
     <table class="centered">
         <thead>
             <tr>
@@ -659,7 +770,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li><a href="/commanders/vorazun">Vorazun</a>: Place Dark Pylons on each side of the map so you can intercept Attack Waves.</li>
         <li><a href="/commanders/zeratul">Zeratul</a>: The Void Suppression Crystal can be used to interrupt and disable all Void Sliver abilities.</li>
     </ul>
-<script src="/scripts/nav.js?v=d64b61"></script>
+<script src="/scripts/nav.js?v=5aa415"></script>
 </div>
 
 <div id="footer">

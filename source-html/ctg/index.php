@@ -195,11 +195,11 @@
         });
         const mutatorsById = <?= json_encode(
             array_column($mutators, null, 'mutatorid'),
-            JSON_HEX_TAG | JSON_THROW_ON_ERROR
+            JSON_HEX_TAG | JSON_THROW_ON_ERROR,
         ) ?>;
         const mutationsList = <?= json_encode(
             $mutations,
-            JSON_HEX_TAG | JSON_THROW_ON_ERROR
+            JSON_HEX_TAG | JSON_THROW_ON_ERROR,
         ) ?>;
         $(".mutation").change(function(){
             var elem = $(this).parent();
