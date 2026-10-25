@@ -32,7 +32,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         $errorTime = date('Y-m-d H:i:s');
         file_put_contents(
             __DIR__ . '/../../logs/404log.txt',
-            "[$errorTime] $ref ===> $cur \n",
+            "[{$errorTime}] {$ref} ===> {$cur} \n",
             FILE_APPEND,
         );
     }

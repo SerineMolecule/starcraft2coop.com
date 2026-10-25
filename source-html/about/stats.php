@@ -119,8 +119,8 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 }
                 echo '<tr>';
                 $filename = $mutator['mutatorid'];
-                $img = "<img class='miniIcon' src='/images/mutators/" . $filename . ".png' alt=''>";
-                echo "<td><a href='/mutators/" . $filename . "'>$img{$mutator['mutatorname']}</a></td>";
+                $img = "<img class='miniIcon' src='/images/mutators/{$filename}.png' alt=''>";
+                echo "<td><a href='/mutators/{$filename}'>{$img}{$mutator['mutatorname']}</a></td>";
                 echo "<td class=centered>{$mutator['mutationcount']}</td>";
                 echo "<tr>\n";
             }

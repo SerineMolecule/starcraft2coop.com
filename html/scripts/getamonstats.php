@@ -16,14 +16,14 @@ if (isset($_GET['unit'])) {
             die();
         }
         $unitList = array_values($unitList);
-        $finalString = "<span class='title'>" . $unit . "</span>\n";
+        $finalString = "<span class='title'>{$unit}</span>\n";
 
         if ($unitList[0]['shields'] !== '0') {
-            $finalString .= "<span id='unitShields'>Shields: " . $unitList[0]['shields'] . "</span><br>\n";
-            $finalString .= "<span id='unitShieldArmor'>Shield Armor: " . $unitList[0]['shieldarmor'] . "</span><br>\n";
+            $finalString .= "<span id='unitShields'>Shields: {$unitList[0]['shields']}</span><br>\n";
+            $finalString .= "<span id='unitShieldArmor'>Shield Armor: {$unitList[0]['shieldarmor']}</span><br>\n";
         }
-        $finalString .= "<span id='unitHP'>HP: " . $unitList[0]['hp'] . "</span><br>\n";
-        $finalString .= "<span id='unitArmor'>Armor: " . $unitList[0]['armor'] . "</span><br>\n";
+        $finalString .= "<span id='unitHP'>HP: {$unitList[0]['hp']}</span><br>\n";
+        $finalString .= "<span id='unitArmor'>Armor: {$unitList[0]['armor']}</span><br>\n";
         $finalString .= "<span class='title'>Tags</span><br>\n";
         if ($unitList[0]['light']) {
             $finalString .= "Light<br>\n";

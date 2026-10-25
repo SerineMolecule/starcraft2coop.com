@@ -72,7 +72,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 
             $brutalPlus = get_brutalpluses();
             foreach ($brutalPlus as $row) {
-                echo '<tr><td>' . $row['difficulty'] . '</td><td>' . $row['minpoints'] . '</td><td>' . $row['maxpoints'] . '</td><td>' . $row['minmutators'] . '</td><td>' . $row['maxmutators'] . '</td></tr>';
+                echo "<tr><td>{$row['difficulty']}</td><td>{$row['minpoints']}</td><td>{$row['maxpoints']}</td><td>{$row['minmutators']}</td><td>{$row['maxmutators']}</td></tr>";
             }
             ?>
         </tbody>
@@ -97,7 +97,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             $countArray = array_fill(0, 11, 0);
             foreach ($mutatorInfo as $row) {
                 if ($row['abomination'] > 0) {
-                    echo '<tr><td>' . $row['mutatorname'] . '</td><td>' . $row['abomination'] . '</td></tr>';
+                    echo "<tr><td>{$row['mutatorname']}</td><td>{$row['abomination']}</td></tr>";
                     $countArray[$row['abomination']] += 1;
                     array_push($mutators[$row['abomination']], $row['mutatorname']);
                 }

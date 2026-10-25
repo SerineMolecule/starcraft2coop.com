@@ -11,6 +11,7 @@ services:
       - ./source-data:/var/www/source-data
       - ./source-html:/var/www/source-html
       - ./includes:/var/www/includes
+      - ./tests:/var/www/tests:ro
       - ./generate-static.php:/var/www/generate-static.php
       - ./generate-html-dir.ts:/var/www/generate-html-dir.ts
 

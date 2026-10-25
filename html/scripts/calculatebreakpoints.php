@@ -4,6 +4,12 @@ if (isset($_POST['ability'])) {
     $ability = $_POST['ability'];
     $returnArray = [];
     $abilityFound = false;
+    $air = 0;
+    $structure = 0;
+    $spammable = 0;
+    $affectedByArmor = 0;
+    $baseDmg = 0;
+    $dmgIncrease = 0.0;
     // 0 => Spammable
     // 1 => Affected by armor
     // 2 => Base damage
@@ -177,7 +183,7 @@ if (isset($_POST['ability'])) {
         $returnArray[] = $baseDmg;
         $returnArray[] = $dmgIncrease;
         $returnArray[] = $unitArray;
-        print json_encode($returnArray);
+        print json_encode($returnArray, JSON_THROW_ON_ERROR);
     } else {
         print 'Error!';
     }

@@ -34,15 +34,27 @@ dev: html
 	@php -S $(HOST):$(PORT) -t html dev-router.php
 
 .PHONY: test
-test: validate-data bun-test check
+test: validate-data bun-test php-test check lint analyze
 
 .PHONY: bun-test
 bun-test: node_modules
 	bun test --dots
 
+.PHONY: php-test
+php-test:
+	php ./tests/calculatestats.php
+
 .PHONY: check
 check: vendor
 	./vendor/bin/mago fmt --check
+
+.PHONY: lint
+lint: vendor
+	./vendor/bin/mago lint
+
+.PHONY: analyze
+analyze: vendor
+	./vendor/bin/mago analyze
 
 .PHONY: fix
 fix: vendor

@@ -26,21 +26,21 @@ require_once __DIR__ . '/../../includes/queries.php';
 switch ($mode) {
     case 1:
         //Mode:1    [commander] : Commander was clicked -> Generate a list of units for that commander
-        $commander = $_GET['commander'];
+        $commander = $_GET['commander'] ?? null;
         checkVariable($commander, 'text');
 
         $unitsList = "<ul>\n";
 
         foreach (get_playerunit_basenames($commander) as $basename) {
-            $unitsList .= '<li>' . $basename . "</li>\n";
+            $unitsList .= "<li>{$basename}</li>\n";
         }
         $unitsList .= '</ul>';
         echo $unitsList;
         return;
     case 2:
         //Mode:2    [commander, unit] : Unit was clicked -> Get basic stats for that unit
-        $commander = $_GET['commander'];
-        $unit = $_GET['unit'];
+        $commander = $_GET['commander'] ?? null;
+        $unit = $_GET['unit'] ?? null;
         checkVariable($commander, 'text');
         checkVariable($unit, 'text');
 
@@ -53,7 +53,7 @@ switch ($mode) {
             return;
         }
         $unitStats = standardizeStatsTemplate($unit, $unitStats);
-        if ($commander == 'Zeratul' && in_array($unitStats['unitName'], $legionUnits)) {
+        if ($commander == 'Zeratul' && in_array($unitStats['unitName'], $legionUnits, strict: true)) {
             $unitStats = applyShieldUpgrades($unitStats, $commander, 0);
         }
         $unitStatsString = convertStatsToOutput($unitStats);
@@ -61,13 +61,13 @@ switch ($mode) {
 
         $upgradesString = getUnitUpgradesOutput($commander, $unit);
         $returnArray[1] = $upgradesString;
-        print json_encode($returnArray);
+        print json_encode($returnArray, JSON_THROW_ON_ERROR);
         return;
 
     case 3:
         //Mode:3    [commander, selectedUnit, upgrades, [ranklevel]/[attacklevel] : Recalculate was clicked -> Get basic stats for that unit, apply the upgrades, find stats that changed
-        $commander = $_GET['commander'];
-        $unit = $_GET['selectedUnit'];
+        $commander = $_GET['commander'] ?? null;
+        $unit = $_GET['selectedUnit'] ?? null;
         if (isset($_GET['upgrades'])) {
             $upgrades = $_GET['upgrades'];
         } else {
@@ -133,15 +133,15 @@ switch ($mode) {
             $newUnitStats = applyArmorUpgrades($newUnitStats, $commander, $armorLevel);
             $newUnitStats = applyShieldUpgrades($newUnitStats, $commander, $shieldLevel);
         } else {
-            $attackLevel = $_GET['attacklevel'];
-            $armorLevel = $_GET['armorlevel'];
+            $attackLevel = $_GET['attacklevel'] ?? null;
+            $armorLevel = $_GET['armorlevel'] ?? null;
             checkVariable($attackLevel, 'number');
             checkVariable($armorLevel, 'number');
             $newUnitStats = applyAttackUpgrades($newUnitStats, $attackLevel);
             $newUnitStats = applyArmorUpgrades($newUnitStats, $commander, $armorLevel);
 
-            if (in_array($commander, $shieldCommanders)) {
-                $shieldLevel = $_GET['shieldlevel'];
+            if (in_array($commander, $shieldCommanders, strict: true)) {
+                $shieldLevel = $_GET['shieldlevel'] ?? null;
                 checkVariable($shieldLevel, 'number');
                 $newUnitStats = applyShieldUpgrades($newUnitStats, $commander, $shieldLevel);
             }
@@ -173,19 +173,22 @@ function convertStatsToOutput($unitStats)
     $standardStats = ['Shields', 'Shield_Armor', 'HP', 'Armor', 'Energy', 'Move_Speed', 'Vision'];
     $modeStats = ['Armor', 'Move_Speed', 'Vision', 'Range', 'Attack_Speed', 'Hits', 'Damage'];
     $outputString = '';
-    $outputString .= "<span class='title'>" . $unitStats['unitName'] . "</span>\n";
-    $outputString .= "<span style='text-align:center;display:block'><img src='/images/commanderdata/unitupgrades/iconmineral.png' alt='Minerals'>/<img src='/images/commanderdata/unitupgrades/icongas_" . strtolower($unitStats['race']) . ".png' alt='Gas'><br>";
+    $raceFilename = strtolower($unitStats['race']);
+    $outputString .= "<span class='title'>{$unitStats['unitName']}</span>\n";
+    $outputString .= "<span style='text-align:center;display:block'><img src='/images/commanderdata/unitupgrades/iconmineral.png' alt='Minerals'>/<img src='/images/commanderdata/unitupgrades/icongas_{$raceFilename}.png' alt='Gas'><br>";
     $outputString .= "{$unitStats['mineralCost']}/{$unitStats['vespeneCost']}</span><br>";
-    $outputString .= "<span style='display:block'><img style='margin-right:5px;' src='/images/commanderdata/unitupgrades/icontime_" . strtolower($unitStats['race']) . ".png' alt='Build Time'>{$unitStats['time']}</span><br>";
-    $outputString .= "<span style='display:block'><img style='margin-right:5px;' src='/images/commanderdata/unitupgrades/iconsupply_" . strtolower($unitStats['race']) . ".png' alt='Supply'>{$unitStats['supply']}</span><br>";
+    $outputString .= "<span style='display:block'><img style='margin-right:5px;' src='/images/commanderdata/unitupgrades/icontime_{$raceFilename}.png' alt='Build Time'>{$unitStats['time']}</span><br>";
+    $outputString .= "<span style='display:block'><img style='margin-right:5px;' src='/images/commanderdata/unitupgrades/iconsupply_{$raceFilename}.png' alt='Supply'>{$unitStats['supply']}</span><br>";
 
     foreach ($standardStats as $stat) {
-        if (isset($unitStats[$stat])) {
-            if ($unitStats[$stat] != 0 || strpos($unitStats[$stat], 'modified') !== false) {
-                $statClass = str_replace('_', '', $stat);
-                $statTitle = str_replace('_', ' ', $stat);
-                $outputString .= "<span id='unit{$statClass}'>$statTitle: {$unitStats[$stat]}</span><br>\n";
-            }
+        if (!isset($unitStats[$stat])) {
+            continue;
+        }
+
+        if ($unitStats[$stat] != 0 || str_contains($unitStats[$stat], 'modified')) {
+            $statClass = str_replace('_', '', $stat);
+            $statTitle = str_replace('_', ' ', $stat);
+            $outputString .= "<span id='unit{$statClass}'>{$statTitle}: {$unitStats[$stat]}</span><br>\n";
         }
     }
 
@@ -197,7 +200,7 @@ function convertStatsToOutput($unitStats)
             if (isset($mode[$stat])) {
                 $statClass = str_replace('_', '', $stat);
                 $statTitle = str_replace('_', ' ', $stat);
-                $outputString .= "<span id='unit{$statClass}'>$statTitle: {$mode[$stat]}</span><br>\n";
+                $outputString .= "<span id='unit{$statClass}'>{$statTitle}: {$mode[$stat]}</span><br>\n";
             }
         }
         if (isset($mode['attribute'])) {
@@ -205,10 +208,10 @@ function convertStatsToOutput($unitStats)
                 if ($attribute == 'None') {
                     $attributeString = 'Damage: ';
                 } else {
-                    $attributeString = "(vs.$attribute): ";
+                    $attributeString = "(vs.{$attribute}): ";
                 }
 
-                $outputString .= $attributeString . $mode['damage'][$index] . ' (' . $mode['damageResult'][$index] . " DPS)<br>\n";
+                $outputString .= "{$attributeString}{$mode['damage'][$index]} ({$mode['damageResult'][$index]} DPS)<br>\n";
             }
         }
     }
@@ -307,16 +310,16 @@ function standardizeStatsTemplate($unit, $unitStats)
 
 function compareStats($oldStats, &$newStats)
 {
-    foreach ($newStats as $key => &$value) {
+    foreach ($newStats as $key => $value) {
         if (is_array($value)) {
-            compareStats($oldStats[$key], $value);
+            $newStats[$key] = compareStats($oldStats[$key], $value);
         } else {
             if (isset($oldStats[$key])) {
                 if ($oldStats[$key] != $value) {
-                    $value = "<span class='modified'>$value</span>";
+                    $newStats[$key] = "<span class='modified'>{$value}</span>";
                 }
             } else {
-                $value = "<span class='modified'>$value</span>";
+                $newStats[$key] = "<span class='modified'>{$value}</span>";
             }
         }
     }
@@ -329,11 +332,11 @@ function handlePostExceptions($unitStats, &$upgradesArray)
         if ($upgrade['name'] == 'Advanced Siege Tech') {
             $armorValue = $unitStats['Armor'];
             unset($unitStats['Armor']);
-            foreach ($unitStats['modes'] as &$mode) {
+            foreach ($unitStats['modes'] as $i => $mode) {
                 if ($mode['modeName'] == '(Siege Mode)') {
-                    $mode['Armor'] = $armorValue + 3;
+                    $unitStats['modes'][$i]['Armor'] = $armorValue + 3;
                 } else {
-                    $mode['Armor'] = $armorValue;
+                    $unitStats['modes'][$i]['Armor'] = $armorValue;
                 }
             }
         }
@@ -341,11 +344,11 @@ function handlePostExceptions($unitStats, &$upgradesArray)
             if ($upgrade['unit'] == 'Shock Division' && $upgrade['modifier'] == 'Vision') {
                 $visionValue = $unitStats['Vision'];
                 unset($unitStats['Vision']);
-                foreach ($unitStats['modes'] as &$mode) {
+                foreach ($unitStats['modes'] as $i => $mode) {
                     if ($mode['modeName'] == '(Siege Mode)') {
-                        $mode['Vision'] = $visionValue + 2;
+                        $unitStats['modes'][$i]['Vision'] = $visionValue + 2;
                     } else {
-                        $mode['Vision'] = $visionValue;
+                        $unitStats['modes'][$i]['Vision'] = $visionValue;
                     }
                 }
             }
@@ -364,19 +367,22 @@ function handlePreExceptions($unitStats, $level)
     $skyFuryArray = ['attribute', 'damage', 'damageResult', 'attackbonus'];
     //At Rank 1: Sky Fury has the Armored weapon removed from the fighter mode. Basic weapon damage also changes
     if ($unitStats['unitName'] == 'Sky Fury' and $level >= 1) {
-        foreach ($unitStats['modes'] as &$mode) {
-            if ($mode['modeName'] == '(Fighter Mode)') {
-                foreach ($mode['attribute'] as $index => $attribute) {
-                    if ($attribute == 'Armored') {
-                        foreach ($skyFuryArray as $element) {
-                            unset($mode[$element][$index]);
-                            $mode[$element] = array_values($mode[$element]);
-                        }
-                    } else {
-                        $mode['damage'][$index] = 21;
+        foreach ($unitStats['modes'] as $i => $mode) {
+            if ($mode['modeName'] != '(Fighter Mode)') {
+                continue;
+            }
+
+            foreach ($mode['attribute'] as $index => $attribute) {
+                if ($attribute == 'Armored') {
+                    foreach ($skyFuryArray as $element) {
+                        unset($mode[$element][$index]);
+                        $mode[$element] = array_values($mode[$element]);
                     }
+                } else {
+                    $mode['damage'][$index] = 21;
                 }
             }
+            $unitStats['modes'][$i] = $mode;
         }
     }
     return $unitStats;
@@ -391,22 +397,21 @@ function preUpgrade($unitStats, &$upgradesArray)
             unset($upgradesArray[$key]);
         }
     }
-    $unitStats = applyUpgrades($unitStats, $preupgradesArray);
-
-    return $unitStats;
+    return applyUpgrades($unitStats, $preupgradesArray);
 }
 
 function applyRankUpgrades($unitStats, $level)
 {
-    $unitStats['HP'] = $unitStats['HP'] + ($unitStats['hpbonus'] * $level);
-    $unitStats['Armor'] = $unitStats['Armor'] + ($unitStats['armorbonus'] * $level);
-    $unitStats['Energy'] = $unitStats['Energy'] + ($unitStats['Energy'] * 0.25 * $level);
-    foreach ($unitStats['modes'] as &$mode) {
+    $unitStats['HP'] += $unitStats['hpbonus'] * $level;
+    $unitStats['Armor'] += $unitStats['armorbonus'] * $level;
+    $unitStats['Energy'] += $unitStats['Energy'] * 0.25 * $level;
+    foreach ($unitStats['modes'] as $i => $mode) {
         foreach ($mode['attribute'] as $index => $attribute) {
-            $mode['damage'][$index] = $mode['damage'][$index] * (1 + ($level * 0.25));
+            $mode['damage'][$index] *= 1 + ($level * 0.25);
             $dps = number_format((floatval($mode['damage'][$index]) * $mode['Hits']) / $mode['Attack_Speed'], 2);
             $mode['damageResult'][$index] = $dps;
         }
+        $unitStats['modes'][$i] = $mode;
     }
     return $unitStats;
 }
@@ -415,16 +420,16 @@ function applyShieldUpgrades($unitStats, $commander, $level)
 {
     $legionLeaders = ['Telbrus', 'Zoraya', 'Serdath'];
     global $legionUnits;
-    $unitStats['Shield_Armor'] = $unitStats['Shield_Armor'] + ($unitStats['shieldbonus'] * $level);
+    $unitStats['Shield_Armor'] += $unitStats['shieldbonus'] * $level;
 
     if ($commander == 'Zeratul') {
-        if (in_array($unitStats['unitName'], $legionLeaders)) {
-            $unitStats['Shields'] = $unitStats['Shields'] + (100 * $level);
+        if (in_array($unitStats['unitName'], $legionLeaders, strict: true)) {
+            $unitStats['Shields'] += 100 * $level;
             if ($unitStats['Energy'] != 0) {
-                $unitStats['Energy'] = $unitStats['Energy'] + (100 * $level);
+                $unitStats['Energy'] += 100 * $level;
             }
         }
-        if (in_array($unitStats['unitName'], $legionUnits)) {
+        if (in_array($unitStats['unitName'], $legionUnits, strict: true)) {
             if ($level == 3) {
                 $level = 2;
             }
@@ -442,7 +447,7 @@ function applyShieldUpgrades($unitStats, $commander, $level)
             $unitStats['mineralCost'] = number_format($unitStats['mineralCost'] / $totalSpawned);
         }
         if ($unitStats['unitName'] == 'Zeratul') {
-            $unitStats['Shields'] = $unitStats['Shields'] + (50 * $level);
+            $unitStats['Shields'] += 50 * $level;
         }
     }
     return $unitStats;
@@ -450,7 +455,7 @@ function applyShieldUpgrades($unitStats, $commander, $level)
 
 function applyArmorUpgrades($unitStats, $commander, $level)
 {
-    $unitStats['Armor'] = $unitStats['Armor'] + ($unitStats['armorbonus'] * $level);
+    $unitStats['Armor'] += $unitStats['armorbonus'] * $level;
 
     if ($commander == 'Raynor' || $commander == 'Tychus') {
         $unitStats['HP'] += intval($unitStats['hpbonus'] * $level);
@@ -460,18 +465,21 @@ function applyArmorUpgrades($unitStats, $commander, $level)
 
 function applyAttackUpgrades($unitStats, $level)
 {
-    foreach ($unitStats['modes'] as &$mode) {
-        if (isset($mode['attribute'])) {
-            foreach ($mode['attribute'] as $index => $attribute) {
-                if ($mode['Attack_Speed'] == 0) {
-                    $dps = 0;
-                } else {
-                    $mode['damage'][$index] = $mode['damage'][$index] + ($level * $mode['attackbonus'][$index]);
-                    $dps = number_format((floatval($mode['damage'][$index]) * $mode['Hits']) / $mode['Attack_Speed'], 2);
-                }
-                $mode['damageResult'][$index] = $dps;
-            }
+    foreach ($unitStats['modes'] as $i => $mode) {
+        if (!isset($mode['attribute'])) {
+            continue;
         }
+
+        foreach ($mode['attribute'] as $index => $attribute) {
+            if ($mode['Attack_Speed'] == 0) {
+                $dps = 0;
+            } else {
+                $mode['damage'][$index] += $level * $mode['attackbonus'][$index];
+                $dps = number_format((floatval($mode['damage'][$index]) * $mode['Hits']) / $mode['Attack_Speed'], 2);
+            }
+            $mode['damageResult'][$index] = $dps;
+        }
+        $unitStats['modes'][$i] = $mode;
     }
     return $unitStats;
 }
@@ -479,27 +487,21 @@ function applyAttackUpgrades($unitStats, $level)
 function applyUpgradeUpgrades($upgradesArray, $upgradeUpgradesArray)
 {
     foreach ($upgradeUpgradesArray as $upgrade) {
-        foreach ($upgradesArray as &$item) {
-            if ($item['name'] == $upgrade['modifier2'] && $item['modifier'] == $upgrade['modifier']) {
-                switch ($upgrade['operation']) {
-                    case 'add':
-                        $operation = '+';
-                        break;
-                    case 'multiply':
-                        $operation = '*';
-                        break;
-                    case 'set':
-                        $operation = '=';
-                        break;
-                    default:
-                        return $entry;
-                }
+        foreach ($upgradesArray as $i => $item) {
+            if ($item['name'] != $upgrade['modifier2'] || $item['modifier'] != $upgrade['modifier']) {
+                continue;
+            }
 
-                if ($operation != '=') {
-                    $item['value'] = eval('return ' . $item['value'] . "$operation" . $upgrade['value'] . ';');
-                } else {
-                    $item['value'] = $upgrade['value'];
-                }
+            switch ($upgrade['operation']) {
+                case 'add':
+                    $upgradesArray[$i]['value'] += $upgrade['value'];
+                    break;
+                case 'multiply':
+                    $upgradesArray[$i]['value'] *= $upgrade['value'];
+                    break;
+                case 'set':
+                    $upgradesArray[$i]['value'] = $upgrade['value'];
+                    break;
             }
         }
     }
@@ -522,15 +524,15 @@ function applyUpgrades($unitStats, $upgradesArray)
                 if (isset($unitStats[$upgrade['modifier']])) {
                     $unitStats[$upgrade['modifier']] = applyUpgrade($unitStats[$upgrade['modifier']], $upgrade, $unitStats);
                 } else {
-                    foreach ($unitStats['modes'] as &$mode) {
+                    foreach ($unitStats['modes'] as $i => $mode) {
                         if (isset($mode[$upgrade['modifier']])) {
-                            $mode[$upgrade['modifier']] = applyUpgrade($mode[$upgrade['modifier']], $upgrade, $unitStats);
+                            $unitStats['modes'][$i][$upgrade['modifier']] = applyUpgrade($mode[$upgrade['modifier']], $upgrade, $unitStats);
                         }
                     }
                 }
             } else {
                 //Apply upgrade to all modes single attribute only
-                foreach ($unitStats['modes'] as &$mode) {
+                foreach ($unitStats['modes'] as $i => $mode) {
                     $found = false;
                     foreach ($mode['attribute'] as $index => $attribute) {
                         if ($attribute == $upgrade['modifier3']) {
@@ -547,62 +549,65 @@ function applyUpgrades($unitStats, $upgradesArray)
                         $mode['damageResult'][] = 0;
                         $mode[$upgrade['modifier']][$count] = applyUpgrade($mode[$upgrade['modifier']][$count], $upgrade, $unitStats);
                     }
+                    $unitStats['modes'][$i] = $mode;
                 }
             }
         } else {
             if ($upgrade['modifier3'] == '') {
                 //Apply upgrade to a single mode
-                foreach ($unitStats['modes'] as &$mode) {
-                    if ($mode['modeName'] == $upgrade['modifier2']) {
-                        if (isset($mode[$upgrade['modifier']])) {
-                            $mode[$upgrade['modifier']] = applyUpgrade($mode[$upgrade['modifier']], $upgrade, $unitStats);
-                        } else {
-                            foreach ($unitStats['modes'] as &$mode) {
-                                if (isset($mode[$upgrade['modifier']])) {
-                                    $mode[$upgrade['modifier']] = applyUpgrade($mode[$upgrade['modifier']], $upgrade, $unitStats);
-                                }
-                            }
-                        }
+                foreach ($unitStats['modes'] as $i => $mode) {
+                    if ($mode['modeName'] != $upgrade['modifier2']) {
+                        continue;
+                    }
+
+                    if (isset($mode[$upgrade['modifier']])) {
+                        $unitStats['modes'][$i][$upgrade['modifier']] = applyUpgrade($mode[$upgrade['modifier']], $upgrade, $unitStats);
                     }
                 }
             } else {
                 //Apply upgrade to a single attribute in a single mode
-                foreach ($unitStats['modes'] as &$mode) {
-                    if ($mode['modeName'] == $upgrade['modifier2']) {
-                        $found = false;
-                        foreach ($mode['attribute'] as $index => $attribute) {
-                            if ($attribute == $upgrade['modifier3']) {
-                                $found = true;
-                                $mode[$upgrade['modifier']][$index] = applyUpgrade($mode[$upgrade['modifier']][$index], $upgrade, $unitStats);
-                            }
-                        }
-                        //It is possible that the attribute did not exist, so add it
-                        if (!$found) {
-                            $count = count($mode['attribute']);
-                            $mode['attribute'][] = $upgrade['modifier3'];
-                            $mode['damage'][] = $mode['damage'][0];
-                            $mode['attackbonus'][] = $mode['attackbonus'][0];
-                            $mode['damageResult'][] = 0;
-                            $mode[$upgrade['modifier']][$count] = applyUpgrade($mode[$upgrade['modifier']][$count], $upgrade, $unitStats);
+                foreach ($unitStats['modes'] as $i => $mode) {
+                    if ($mode['modeName'] != $upgrade['modifier2']) {
+                        continue;
+                    }
+
+                    $found = false;
+                    foreach ($mode['attribute'] as $index => $attribute) {
+                        if ($attribute == $upgrade['modifier3']) {
+                            $found = true;
+                            $mode[$upgrade['modifier']][$index] = applyUpgrade($mode[$upgrade['modifier']][$index], $upgrade, $unitStats);
                         }
                     }
+                    //It is possible that the attribute did not exist, so add it
+                    if (!$found) {
+                        $count = count($mode['attribute']);
+                        $mode['attribute'][] = $upgrade['modifier3'];
+                        $mode['damage'][] = $mode['damage'][0];
+                        $mode['attackbonus'][] = $mode['attackbonus'][0];
+                        $mode['damageResult'][] = 0;
+                        $mode[$upgrade['modifier']][$count] = applyUpgrade($mode[$upgrade['modifier']][$count], $upgrade, $unitStats);
+                    }
+                    $unitStats['modes'][$i] = $mode;
                 }
             }
         }
     }
 
     //DPS values might have changed, so recalculate them
-    foreach ($unitStats['modes'] as &$mode) {
-        if (isset($mode['attribute'])) {
-            foreach ($mode['attribute'] as $index => $attribute) {
-                if ($mode['Attack_Speed'] == 0) {
-                    $dps = 0;
-                } else {
-                    $dps = number_format((floatval($mode['damage'][$index]) * $mode['Hits']) / $mode['Attack_Speed'], 2);
-                }
-                $mode['damageResult'][$index] = $dps;
-            }
+    foreach ($unitStats['modes'] as $i => $mode) {
+        if (!isset($mode['attribute'])) {
+            continue;
         }
+
+        foreach ($mode['attribute'] as $index => $attribute) {
+            if ($mode['Attack_Speed'] == 0) {
+                $dps = 0;
+            } else {
+                $dps = number_format((floatval($mode['damage'][$index]) * $mode['Hits']) / $mode['Attack_Speed'], 2);
+            }
+            $mode['damageResult'][$index] = $dps;
+        }
+        $unitStats['modes'][$i] = $mode;
     }
 
     return $unitStats;
@@ -633,42 +638,44 @@ function applyUpgrade($entry, $upgrade, $fullUnitData)
         $upgrade['value'] = 2 / 3;
     }
     //Set up the result precision
-    if (in_array($upgrade['modifier'], $round2)) {
+    if (in_array($upgrade['modifier'], $round2, strict: true)) {
         $decimalSize = 2;
     } else {
         $decimalSize = 0;
     }
     if (is_array($entry)) {
         //Looping through attribute damages
-        foreach ($entry as &$stat) {
+        foreach ($entry as $i => $stat) {
             if ($operation != '=') {
-                $tempVal = eval('return ' . $stat . "$operation" . $upgrade['value'] . ';');
-                $stat = number_format($tempVal, $decimalSize);
+                $tempVal = $operation == '+' ? $stat + $upgrade['value'] : $stat * $upgrade['value'];
+                $entry[$i] = number_format($tempVal, $decimalSize);
             } else {
-                $stat = number_format($upgrade['value'], $decimalSize);
+                $entry[$i] = number_format($upgrade['value'], $decimalSize);
             }
         }
     } else {
         if ($operation != '=') {
             //Handle Attack speeds differently
             if ($upgrade['modifier'] == 'Attack_Speed') {
-                $tempVal = eval('return 1/(' . (1 / $entry) . "$operation" . $upgrade['value'] . ');');
+                $attackRate = 1 / $entry;
+                $attackRate = $operation == '+' ? $attackRate + $upgrade['value'] : $attackRate * $upgrade['value'];
+                $tempVal = 1 / $attackRate;
             } elseif ($upgrade['modifier'] == 'HP') {
                 if ($upgrade['operation'] == 'multiply') {
                     //If operation is multiply it can multiply on the total HP or the base
                     if (isset($upgrade['extra'])) {
-                        $tempVal = eval('return ' . $entry . "$operation" . $upgrade['value'] . ';');
+                        $tempVal = $entry * $upgrade['value'];
                     } else {
                         //Use baseHP
-                        $upgrade['value'] = $upgrade['value'] - 1;
-                        $tempVal = $entry + eval('return ' . $fullUnitData['baseHP'] . "$operation" . $upgrade['value'] . ';');
+                        $upgrade['value'] -= 1;
+                        $tempVal = $entry + ($fullUnitData['baseHP'] * $upgrade['value']);
                     }
                 } else {
-                    $tempVal = eval('return ' . $entry . "$operation" . $upgrade['value'] . ';');
+                    $tempVal = $entry + $upgrade['value'];
                 }
             } else {
                 $entry = floatval(str_replace(',', '', $entry));
-                $tempVal = eval('return ' . $entry . "$operation" . $upgrade['value'] . ';');
+                $tempVal = $operation == '+' ? $entry + $upgrade['value'] : $entry * $upgrade['value'];
             }
             $entry = number_format($tempVal, $decimalSize);
         } else {
@@ -683,24 +690,26 @@ function generateMasteryUpgradeUpgradesArray($commander, $unit, $masteries)
     $upgradesList = [];
 
     foreach ($masteries as $value) {
-        if ($value[1] > 0) {
-            checkVariable($value[0], 'text');
-            $rows = get_playertalents_for_calculator($commander, $unit, [
-                'nameid' => $value[0],
-                'target' => 'upgrade',
-            ]);
-            foreach ($rows as $row) {
-                if ($row['operation'] == 'multiply') {
-                    if ($row['operationtype'] == 'increase') {
-                        $row['value'] = ($row['value'] * $value[1]) + 1;
-                    } else {
-                        $row['value'] = 1 - ($row['value'] * $value[1]);
-                    }
+        if ($value[1] <= 0) {
+            continue;
+        }
+
+        checkVariable($value[0], 'text');
+        $rows = get_playertalents_for_calculator($commander, $unit, [
+            'nameid' => $value[0],
+            'target' => 'upgrade',
+        ]);
+        foreach ($rows as $row) {
+            if ($row['operation'] == 'multiply') {
+                if ($row['operationtype'] == 'increase') {
+                    $row['value'] = ($row['value'] * $value[1]) + 1;
                 } else {
-                    $row['value'] = $row['value'] * $value[1];
+                    $row['value'] = 1 - ($row['value'] * $value[1]);
                 }
-                $upgradesList[] = $row;
+            } else {
+                $row['value'] *= $value[1];
             }
+            $upgradesList[] = $row;
         }
     }
     return $upgradesList;
@@ -748,32 +757,34 @@ function generateMasteriesArray($commander, $unit, $masteries)
     $upgradesList = [];
 
     foreach ($masteries as $value) {
-        if ($value[1] > 0) {
-            checkVariable($value[0], 'text');
-            $rows = get_playertalents_for_calculator($commander, $unit, [
-                'nameid' => $value[0],
-                'target' => 'unit',
-                'talenttype' => 'mastery',
-            ]);
-            foreach ($rows as $row) {
-                //Fix 1/3 and 2/3 stuff
-                if ($row['value'] == 0.0066) {
-                    $row['value'] = 2 / 300;
-                }
-                if ($row['value'] == 0.0333) {
-                    $row['value'] = 1 / 30;
-                }
-                if ($row['operation'] == 'multiply') {
-                    if ($row['operationtype'] == 'increase') {
-                        $row['value'] = ($row['value'] * $value[1]) + 1;
-                    } else {
-                        $row['value'] = 1 - ($row['value'] * $value[1]);
-                    }
-                } else {
-                    $row['value'] = $row['value'] * $value[1];
-                }
-                $upgradesList[] = $row;
+        if ($value[1] <= 0) {
+            continue;
+        }
+
+        checkVariable($value[0], 'text');
+        $rows = get_playertalents_for_calculator($commander, $unit, [
+            'nameid' => $value[0],
+            'target' => 'unit',
+            'talenttype' => 'mastery',
+        ]);
+        foreach ($rows as $row) {
+            //Fix 1/3 and 2/3 stuff
+            if ($row['value'] == 0.0066) {
+                $row['value'] = 2 / 300;
             }
+            if ($row['value'] == 0.0333) {
+                $row['value'] = 1 / 30;
+            }
+            if ($row['operation'] == 'multiply') {
+                if ($row['operationtype'] == 'increase') {
+                    $row['value'] = ($row['value'] * $value[1]) + 1;
+                } else {
+                    $row['value'] = 1 - ($row['value'] * $value[1]);
+                }
+            } else {
+                $row['value'] *= $value[1];
+            }
+            $upgradesList[] = $row;
         }
     }
     return $upgradesList;
@@ -842,7 +853,7 @@ function getUnitUpgradesOutput($commander, $unit)
             }
             //Ignore the veterancy upgrades... these will be automatically applied
             if ($value['icon'] !== 'veterancy') {
-                $upgradeString .= "<img class='upgradeIcon' src='/images/commanderdata/$path/" . strtolower($commander) . '/' . $value['icon'] . ".png' alt='" . $value['name'] . ':' . $value['effect'] . "'>";
+                $upgradeString .= "<img class='upgradeIcon' src='/images/commanderdata/{$path}/" . strtolower($commander) . "/{$value['icon']}.png' alt='{$value['name']}:{$value['effect']}'>";
                 $upgradeCount += 1;
             }
         }
@@ -856,14 +867,14 @@ function getUnitUpgradesOutput($commander, $unit)
     $elementNames = [];
     $elementCount = 3;
     //Set up Radio Buttons for output
-    if ($commander == 'Mengsk' && in_array($unit, $royalGuard)) {
+    if ($commander == 'Mengsk' && in_array($unit, $royalGuard, strict: true)) {
         $elementNames[] = 'Rank';
     } elseif ($commander == 'Zeratul') {
         $elementNames[] = 'Fragments Collected';
     } else {
         $elementNames[] = 'Attack Upgrade Level';
         $elementNames[] = 'Armor Upgrade Level';
-        if (in_array($commander, $shieldCommanders)) {
+        if (in_array($commander, $shieldCommanders, strict: true)) {
             $elementNames[] = 'Shield Upgrade Level';
         }
     }
@@ -872,15 +883,15 @@ function getUnitUpgradesOutput($commander, $unit)
     }
 
     $upgradeString .= '<form action="#">';
-    $upgradeString .= '<input type="hidden" class="commander" value=' . $commander . '>';
+    $upgradeString .= "<input type=\"hidden\" class=\"commander\" value={$commander}>";
     $upgradeString .= '<input type="hidden" class="unit" value=' . rawurlencode($unit) . '>';
 
     foreach ($elementNames as $elementName) {
         $divName = strtolower(str_replace(' ', '', $elementName));
-        $upgradeString .= "<br><p>$elementName:</p>";
-        $upgradeString .= '<label><input type="radio" name="' . $divName . '" value="0" checked>0</label>';
+        $upgradeString .= "<br><p>{$elementName}:</p>";
+        $upgradeString .= "<label><input type=\"radio\" name=\"{$divName}\" value=\"0\" checked>0</label>";
         for ($i = 1; $i <= $elementCount; $i++) {
-            $upgradeString .= '<label><input type="radio" name="' . $divName . '" value="' . $i . '">' . $i . '</label>';
+            $upgradeString .= "<label><input type=\"radio\" name=\"{$divName}\" value=\"{$i}\">{$i}</label>";
         }
     }
 
@@ -890,7 +901,7 @@ function getUnitUpgradesOutput($commander, $unit)
         $counter = 0;
         foreach ($masteryList as $mastery) {
             $upgradeString .= "<br><p>{$mastery['name']}</p>";
-            $upgradeString .= "<div class='rangeContainer'><input type='range' min='0' max='30' value='0' class='masterySlider' name='{$mastery['nameid']}' id='mastery$counter'><span id='range$counter'>0</span></div>";
+            $upgradeString .= "<div class='rangeContainer'><input type='range' min='0' max='30' value='0' class='masterySlider' name='{$mastery['nameid']}' id='mastery{$counter}'><span id='range{$counter}'>0</span></div>";
             $counter += 1;
         }
         $upgradeString .= '</div>';
@@ -901,14 +912,16 @@ function getUnitUpgradesOutput($commander, $unit)
         $upgradeString .= '<u>Prestiges:</u>';
         $counter = 1;
         $motto = strtolower(str_replace([' ', '-', '(', ')'], '', $basePrestige));
-        $upgradeString .= "<br><label><input type='radio' name='{$commander}Prestige' value='$motto' checked>$basePrestige</label>";
+        $upgradeString .= "<br><label><input type='radio' name='{$commander}Prestige' value='{$motto}' checked>{$basePrestige}</label>";
         foreach ($commanderPrestiges as $prestigeName) {
-            if (isset($prestigeList[str_replace(' ', '', $prestigeName)])) {
-                $nameid = $prestigeList[str_replace(' ', '', $prestigeName)]['nameid'];
-                $name = $prestigeList[str_replace(' ', '', $prestigeName)]['name'];
-                $upgradeString .= "<br><label><input type='radio' name='{$commander}Prestige' value='$nameid'>$name</label>";
-                $counter += 1;
+            if (!isset($prestigeList[str_replace(' ', '', $prestigeName)])) {
+                continue;
             }
+
+            $nameid = $prestigeList[str_replace(' ', '', $prestigeName)]['nameid'];
+            $name = $prestigeList[str_replace(' ', '', $prestigeName)]['name'];
+            $upgradeString .= "<br><label><input type='radio' name='{$commander}Prestige' value='{$nameid}'>{$name}</label>";
+            $counter += 1;
         }
         $upgradeString .= '</div>';
     }
@@ -928,9 +941,10 @@ function fixNumber($number)
     }
 }
 
+/** @phpstan-assert string $var */
 function checkVariable($var, $checktype)
 {
-    if (!isset($var)) {
+    if (!is_string($var)) {
         echo 'Error!';
         die();
     }
@@ -940,7 +954,7 @@ function checkVariable($var, $checktype)
             die();
         }
     } else {
-        if (ctype_digit($var) == false) {
+        if (!ctype_digit($var)) {
             echo 'Error!';
             die();
         }

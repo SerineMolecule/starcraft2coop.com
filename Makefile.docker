@@ -36,15 +36,27 @@ dev: html
 	docker compose run --rm --remove-orphans --service-ports -v "$(PWD)/dev-router.php:/var/www/dev-router.php" -w //var/www php php -S 0.0.0.0:$(PORT) -t html dev-router.php
 
 .PHONY: test
-test: validate-data bun-test check
+test: validate-data bun-test php-test check lint analyze
 
 .PHONY: bun-test
 bun-test: node_modules
 	$(BUN_DOCKER) bun test --dots
 
+.PHONY: php-test
+php-test:
+	$(PHP_RUN) php ./tests/calculatestats.php
+
 .PHONY: check
 check: vendor
 	$(COMPOSER_DOCKER) ./vendor/bin/mago fmt --check
+
+.PHONY: lint
+lint: vendor
+	$(COMPOSER_DOCKER) ./vendor/bin/mago lint
+
+.PHONY: analyze
+analyze: vendor
+	$(COMPOSER_DOCKER) ./vendor/bin/mago analyze
 
 .PHONY: fix
 fix: vendor

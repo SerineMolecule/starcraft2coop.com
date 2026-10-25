@@ -5,7 +5,7 @@ if (!isset($_GET['difficulty'])) {
     die();
 }
 
-if (!ctype_digit($_GET['difficulty'])) {
+if (!is_string($_GET['difficulty']) || !ctype_digit($_GET['difficulty'])) {
     echo 'Error!';
     die();
 }

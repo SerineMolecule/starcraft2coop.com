@@ -32,34 +32,34 @@ set_error_handler(function (int $severity, string $message, string $file, int $l
 $all_errors = [];
 $to_delete = [];
 foreach ($pages as $page) {
-    $_SERVER['REQUEST_URI'] = "$page";
-    $_SERVER['PHP_SELF'] = "$page.php";
+    $_SERVER['REQUEST_URI'] = "{$page}";
+    $_SERVER['PHP_SELF'] = "{$page}.php";
     $pageDir = $HTML_DIR . dirname($page);
     chdir($pageDir);
 
     ob_start();
     try {
-        require $HTML_DIR . "$page.php";
+        require "{$HTML_DIR}{$page}.php";
     } catch (ErrorException $e) {
         $all_errors[] = "Captured an exception in {$e->getFile()}: {$e->getMessage()} (line {$e->getLine()})";
     }
     $html = ob_get_clean();
     $html = str_replace("\r\n", "\n", $html);
 
-    $result = file_put_contents($HTML_DIR . "$page.html", $html);
+    $result = file_put_contents("{$HTML_DIR}{$page}.html", $html);
     if (!$result) {
-        $all_errors[] = "Error writing $page.html";
+        $all_errors[] = "Error writing {$page}.html";
         break;
     } else {
-        $to_delete[] = $HTML_DIR . "$page.php";
-        echo "Generated $page.html ($result bytes)\n";
+        $to_delete[] = "{$HTML_DIR}{$page}.php";
+        echo "Generated {$page}.html ({$result} bytes)\n";
     }
 }
 
 array_map('unlink', $to_delete);
 
 foreach ($all_errors as $error) {
-    echo "$error\n";
+    echo "{$error}\n";
 }
 
 exit(empty($all_errors) ? 0 : 1);

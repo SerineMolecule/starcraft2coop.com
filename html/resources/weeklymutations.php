@@ -401,7 +401,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             // shouldn't ever actually happen
             $diffString = '&#128522;'; // smiling face with smiling eyes emoji
         } else {
-            $diffString = "$brutalPlus";
+            $diffString = "{$brutalPlus}";
         }
 
         return [$brutalPlus ?? 0, $diffString];
@@ -410,7 +410,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     function weeklyMutationMutatorLink(array $mutator): string
     {
         $filename = $mutator['mutatorid'];
-        return '<a href="/mutators/' . $filename . '"><img class="miniIcon" src="/images/mutators/' . $filename . '.png" alt="">' . $mutator['mutatorname'] . '</a>';
+        return "<a href=\"/mutators/{$filename}\"><img class=\"miniIcon\" src=\"/images/mutators/{$filename}.png\" alt=\"\">{$mutator['mutatorname']}</a>";
     }
 
     $cycleList = get_mutationcycle();
@@ -423,21 +423,21 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         $score = 0;
         $unknown = false;
         if ($row['mut01']) {
-            $classVals .= ' ' . $row['mut01'];
+            $classVals .= " {$row['mut01']}";
         }
         if ($row['mut02']) {
-            $classVals .= ' ' . $row['mut02'];
+            $classVals .= " {$row['mut02']}";
         }
         if ($row['mut03']) {
-            $classVals .= ' ' . $row['mut03'];
+            $classVals .= " {$row['mut03']}";
         }
         [$diff, $diffString] = getDiffString($row['brutalplus']);
-        $classVals .= ' brutal' . $diff;
+        $classVals .= " brutal{$diff}";
         if ($rowIndex == $currentWeekIndex) {
             $classVals .= " current' id='thisweek";
         }
-        echo "<tr class='" . $classVals . "'>\n";
-        echo "<td class='ribbon'>" . $row['mutation'] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
+        echo "<tr class='{$classVals}'>\n";
+        echo "<td class='ribbon'>{$row['mutation']}<div class='ribbon{$diff}'>{$diffString}</div></td>\n";
 
         if ($row['map']) {
             echo "<td><div class='mapImg mapImg-" . str_replace('and', '', str_replace(' ', '', strtolower($row['map']))) . "'>" . htmlspecialchars(mapDisplayName($row['map'])) . "</div></td>\n";
@@ -475,7 +475,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             $string = str_replace(' ', '', $row['name']);
             $string = str_replace('and', '', $string);
             $string = str_replace('&', '', $string);
-            echo "<option value='" . strtolower($string) . "'>" . $row['name'] . '</option>';
+            echo "<option value='" . strtolower($string) . "'>{$row['name']}</option>";
         }
         ?>
         </select>
@@ -485,7 +485,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     <div id="mutators"><p>Mutators: <select id="mutatorselect">
         <?php
         foreach (get_mutators() as $row) {
-            echo "<option value='" . $row['mutatorid'] . "'>" . $row['mutatorname'] . '</option>';
+            echo "<option value='{$row['mutatorid']}'>{$row['mutatorname']}</option>";
         }
         ?>
         </select>
@@ -495,7 +495,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     <div id="difficultyLevel"><p>Difficulty: <select id="difficultyselect"><option value='0'>?</option>
         <?php
         foreach ($difficultyArray as $row) {
-            echo "<option value='" . $row['difficulty'] . "'>Brutal+" . $row['difficulty'] . '</option>';
+            echo "<option value='{$row['difficulty']}'>Brutal+{$row['difficulty']}</option>";
         }
         ?>
         </select>
@@ -626,22 +626,22 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 foreach ($weeklyList as $row) {
                     $classVals = str_replace('and', '', str_replace(' ', '', strtolower($row['map'])));
                     if ($row['mut01']) {
-                        $classVals .= ' ' . $row['mut01'];
+                        $classVals .= " {$row['mut01']}";
                     }
                     if ($row['mut02']) {
-                        $classVals .= ' ' . $row['mut02'];
+                        $classVals .= " {$row['mut02']}";
                     }
                     if ($row['mut03']) {
-                        $classVals .= ' ' . $row['mut03'];
+                        $classVals .= " {$row['mut03']}";
                     }
                     [$diff, $diffString] = getDiffString($row['brutalplus'] ?? null);
-                    $classVals .= ' brutal' . $diff;
-                    echo "<tr class='" . $classVals . "'>\n";
-                    echo "<td class='ribbon'>" . $row['releasedate'] . "<div class='ribbon" . $diff . "'>" . $diffString . "</div></td>\n";
+                    $classVals .= " brutal{$diff}";
+                    echo "<tr class='{$classVals}'>\n";
+                    echo "<td class='ribbon'>{$row['releasedate']}<div class='ribbon{$diff}'>{$diffString}</div></td>\n";
                     if ($row['link']) {
-                        echo '<td>' . $row['mutation'] . "<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/" . $row['link'] . "'></td>\n";
+                        echo "<td>{$row['mutation']}<img class='cast' src='/images/weeklymutations/casticon.png' alt='https://www.youtube.com/embed/{$row['link']}'></td>\n";
                     } else {
-                        echo '<td>' . $row['mutation'] . "</td>\n";
+                        echo "<td>{$row['mutation']}</td>\n";
                     }
 
                     if ($row['mutationid'] === 47) {

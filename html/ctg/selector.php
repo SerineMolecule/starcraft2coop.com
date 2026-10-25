@@ -3,9 +3,10 @@
         <select class="mutation">
             <option value="NULL"> </option>
             <?php
+            /** @var array $mutations */
             $index = 0;
             foreach ($mutations as $mut) {
-                echo "<option value='$index'>{$mut['mutation']}</option>\n";
+                echo "<option value='{$index}'>{$mut['mutation']}</option>\n";
                 $index++;
             }
             ?>

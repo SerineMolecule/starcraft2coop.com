@@ -9,16 +9,21 @@ $units = get_amonunits();
 if (!isset($_GET['maxvitality']) && !isset($_GET['minvitality'])) {
     // do nothing
 } else {
-    if (!ctype_digit($_GET['maxvitality']) || !ctype_digit($_GET['minvitality'])) {
+    if (
+        !is_string($_GET['maxvitality'] ?? null)
+        || !is_string($_GET['minvitality'] ?? null)
+        || !ctype_digit($_GET['maxvitality'])
+        || !ctype_digit($_GET['minvitality'])
+    ) {
         echo 'Error!';
         die();
     }
-    if (strlen($_GET['maxvitality'] > 6)) {
+    if (strlen($_GET['maxvitality']) > 6) {
         $maxVitality = intval(substr($_GET['maxvitality'], 0, 5));
     } else {
         $maxVitality = intval($_GET['maxvitality']);
     }
-    if (strlen($_GET['minvitality'] > 6)) {
+    if (strlen($_GET['minvitality']) > 6) {
         $minVitality = intval(substr($_GET['minvitality'], 0, 5));
     } else {
         $minVitality = intval($_GET['minvitality']);
@@ -30,6 +35,6 @@ usort($units, fn($a, $b) => strtolower($a['name']) <=> strtolower($b['name']));
 
 $outputString = '';
 foreach ($units as $row) {
-    $outputString .= "<div class='content " . $row['race'] . "'>" . $row['name'] . '</div>';
+    $outputString .= "<div class='content {$row['race']}'>{$row['name']}</div>";
 }
 echo $outputString;

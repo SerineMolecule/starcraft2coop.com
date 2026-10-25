@@ -1670,7 +1670,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     }
     // very confused how the old code achieved this order
     foreach (['Protoss', 'Terran', 'Zerg', 'Hybrid'] as $race) {
-        echo '<li><b>' . $race . ':</b> ' . implode(', ', $out[$race]) . '</li>';
+        echo "<li><b>{$race}:</b> " . implode(', ', $out[$race]) . '</li>';
     }
     ?>
 

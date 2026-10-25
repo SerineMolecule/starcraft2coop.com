@@ -6,12 +6,12 @@ function switcher_generator($info)
     if ($info == 'expo') {
         return switcher_expo_generator($info, $mission);
     }
-    if (strpos($info, 'comparison') !== false) {
+    if (str_contains($info, 'comparison')) {
         return switcher_comparison_generator($info, $mission);
     }
 
-    $missionpath = '/images/missiondata/' . $mission . '/';
-    $imageClass = strpos($info, 'long') !== false ? 'long' : 'basePic';
+    $missionpath = "/images/missiondata/{$mission}/";
+    $imageClass = str_contains($info, 'long') ? 'long' : 'basePic';
     // Keep column boundary tags adjacent to avoid gaps between inline-blocks.
     ?>
     <div class="switcher">
@@ -56,7 +56,7 @@ function switcher_generator($info)
 
 function switcher_expo_generator($info, $mission)
 {
-    $missionpath = '/images/missiondata/' . $mission . '/';
+    $missionpath = "/images/missiondata/{$mission}/";
     ?>
     <div class="switcher">
         <div class="p1Expo">
@@ -113,7 +113,7 @@ function switcher_expo_generator($info, $mission)
 
 function switcher_comparison_generator($info, $mission)
 {
-    $missionpath = '/images/missiondata/' . $mission . '/';
+    $missionpath = "/images/missiondata/{$mission}/";
     ?>
     <div class="switcher">
         <div class="basePic1" id="<?= $info ?>div1">

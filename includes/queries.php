@@ -2,7 +2,10 @@
 
 function token(string $name): string
 {
-    return preg_replace('/[^a-z0-9]+/', '-', strtolower($name));
+    return (
+        preg_replace('/[^a-z0-9]+/', '-', strtolower($name))
+            ?? throw new RuntimeException(preg_last_error_msg())
+    );
 }
 
 /**
@@ -51,7 +54,7 @@ function get_brutalpluses(): array
  */
 function get_brutalplus(int $difficulty): array
 {
-    $json = file_get_contents(__DIR__ . '/../html/data/brutalplus/' . $difficulty . '.json');
+    $json = file_get_contents(__DIR__ . "/../html/data/brutalplus/{$difficulty}.json");
     return json_decode($json, true);
 }
 
@@ -74,14 +77,18 @@ function get_mutators(): array
 }
 
 /**
- * @param string $token Token/Slug of the Mutator
+ * @param string $mutatorId ID/Slug of the Mutator
  * @param array $mutators Array of all Mutators
- * @return array|null Single Mutator info if found
+ * @return array Single Mutator info.
+ * @throws OutOfBoundsException If the ID is missing from the mutator list.
  */
-function get_mutator(string $token, array $mutators): ?array
+function get_mutator(string $mutatorId, array $mutators): array
 {
-    // TODO: maybe get_mutators() should return an assoc array of assoc arrays, with token as key
-    return array_find($mutators, fn($value) => $value['mutatorid'] === $token);
+    // TODO: maybe get_mutators() should return an assoc array of assoc arrays, with mutator ID as key
+    return (
+        array_find($mutators, fn($value) => $value['mutatorid'] === $mutatorId)
+            ?? throw new OutOfBoundsException("Unknown mutator ID: {$mutatorId}")
+    );
 }
 
 /**
@@ -214,13 +221,14 @@ function get_playerupgrades_by_icon(string $commander, string $unit, string $ico
 {
     return array_values(array_map(
         'normalize_playerupgrade_for_calculator',
-        array_filter(get_playerupgrades(), function ($upgrade) use ($commander, $unit, $icon) {
-            return (
+        array_filter(
+            get_playerupgrades(),
+            fn($upgrade) => (
                 $upgrade['commander'] === $commander
-                    && $upgrade['unit'] === $unit
-                    && $upgrade['icon'] === $icon
-            );
-        }),
+                && $upgrade['unit'] === $unit
+                && $upgrade['icon'] === $icon
+            ),
+        ),
     ));
 }
 
@@ -234,14 +242,15 @@ function get_mengsk_veterancy_playerupgrades(string $commander, string $unit, in
 {
     return array_values(array_map(
         'normalize_playerupgrade_for_calculator',
-        array_filter(get_playerupgrades(), function ($upgrade) use ($commander, $unit, $level) {
-            return (
+        array_filter(
+            get_playerupgrades(),
+            fn($upgrade) => (
                 $upgrade['commander'] === $commander
-                    && $upgrade['unit'] === $unit
-                    && $upgrade['icon'] === 'veterancy'
-                    && intval($upgrade['name']) <= $level
-            );
-        }),
+                && $upgrade['unit'] === $unit
+                && $upgrade['icon'] === 'veterancy'
+                && intval($upgrade['name']) <= $level
+            ),
+        ),
     ));
 }
 
@@ -265,9 +274,7 @@ function get_playerupgrade_display_list(string $commander, string $unit): array
             'effect' => $upgrade['effect'],
         ];
     }
-    usort($upgrades, function ($a, $b) {
-        return $a['name'] <=> $b['name'];
-    });
+    usort($upgrades, fn($a, $b) => $a['name'] <=> $b['name']);
     return array_values($upgrades);
 }
 
@@ -313,9 +320,7 @@ function get_playertalent_display_list(string $commander, string $unit): array
             'talenttype' => $talent['talenttype'],
         ];
     }
-    usort($talents, function ($a, $b) {
-        return $a['name'] <=> $b['name'];
-    });
+    usort($talents, fn($a, $b) => $a['name'] <=> $b['name']);
     return array_values($talents);
 }
 

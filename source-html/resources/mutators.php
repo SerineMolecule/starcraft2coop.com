@@ -181,7 +181,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             <?php
             echo "<option value='NONE'>-</option>\n";
             foreach ($mutators as [$id, $name]) {
-                echo "<option value='$id'>$name</option>\n";
+                echo "<option value='{$id}'>{$name}</option>\n";
             }
             ?>
         </select>
@@ -193,7 +193,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             echo "<option value='NONE'>-</option>\n";
             echo "<option value='ALL'>(show all interactions)</option>\n";
             foreach ($mutators as [$id, $name]) {
-                echo "<option value='$id'>$name</option>\n";
+                echo "<option value='{$id}'>{$name}</option>\n";
             }
             ?>
         </select>

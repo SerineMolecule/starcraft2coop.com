@@ -7,10 +7,55 @@ paths = ["."]
 excludes = ["vendor", "node_modules", "html", ".dh-diag"]
 
 [formatter]
-# 
 print-width = 10000
 empty-line-after-opening-tag = false
 preserve-breaking-argument-list = true
 preserve-breaking-parameter-list = true
 preserve-breaking-array-like = true
 preserve-breaking-binary-expression = true
+
+[analyzer]
+# Keep analysis useful without adding detailed types throughout the PHP codebase.
+ignore = [
+    "mixed-argument",
+    "mixed-array-access",
+    "mixed-array-assignment",
+    "mixed-array-index",
+    "mixed-assignment",
+    "mixed-clone",
+    "mixed-destructuring-shape",
+    "mixed-method-access",
+    "mixed-operand",
+    "mixed-property-access",
+    "mixed-property-type-coercion",
+    "mixed-return-statement",
+    "invalid-iterator",
+    "less-specific-nested-argument-type",
+    "possibly-invalid-argument",
+    "mismatched-array-index",
+    "array-to-string-conversion",
+    "possibly-false-argument",
+    "possibly-false-operand",
+]
+
+[linter.rules]
+literal-named-argument = { enabled = false }
+no-else-clause = { enabled = false }
+prefer-early-continue = { enabled = false }
+function-name = { enabled = false }
+no-ini-set = { enabled = false }
+tagged-todo = { enabled = false }
+no-redundant-file = { enabled = false }
+# TODO: revisit later
+no-global = { enabled = false }
+# TODO: revisit later
+strict-types = { enabled = false }
+# TODO: revisit later
+identity-comparison = { enabled = false }
+no-isset = { enabled = false }
+no-empty = { enabled = false }
+no-shorthand-ternary = { enabled = false }
+cyclomatic-complexity = { enabled = false }
+halstead = { enabled = false }
+kan-defect = { enabled = false }
+excessive-nesting = { enabled = false }

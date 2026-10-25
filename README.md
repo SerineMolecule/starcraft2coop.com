@@ -12,7 +12,9 @@ Ads are NOT allowed (Aommaster specifically doesn't want us to have them).
 
 ## Development environment setup
 
-You'll need Bun installed to build the data files, PHP installed to build the static files, and Composer installed to autoformat the PHP files.
+Prod runs on PHP 8.5, so feel free to use features as new as that.
+
+You'll need Bun installed to build the data files, PHP 8.5+ installed to build the static files, and Composer installed to format and lint the PHP files.
 
 `html/` contains generated files and should not be edited directly - instead, edit `source-html/` and then run `make` to update `html/`. The exceptions are `html/images/` and `html/files/`, which were too big to store in `source-html/`.
 

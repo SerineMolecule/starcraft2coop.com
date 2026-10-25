@@ -3,6 +3,8 @@
 $docroot = realpath(__DIR__ . '/html');
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+// Mago bug, '' is in fact possible
+// @mago-expect analysis:redundant-comparison,redundant-logical-operation
 if (!is_string($path) || $path === '') {
     $path = '/';
 }

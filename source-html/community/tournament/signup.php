@@ -293,6 +293,7 @@ require_once __DIR__ . '/../../../includes/wrapper.php';
     <h3>Registration</h3>
     <?php
     $closed = true;
+    // @mago-expect analysis:redundant-condition,unreachable-else-clause
     if ($closed) {
         include 'registrationclosed.php';
     } else {
