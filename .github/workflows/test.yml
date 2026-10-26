@@ -17,6 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - uses: oven-sh/setup-bun@main
+    - name: Set up PHP 8.5
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.5'
+        coverage: none
 
     # - name: Validate composer.json and composer.lock
     #   run: composer validate --strict
@@ -32,9 +37,6 @@ jobs:
 
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress && touch -m vendor
-
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Check PHP formatting with Mago
       run: make check
@@ -56,3 +58,9 @@ jobs:
 
     - name: Validate JSON schemas
       run: bun ./source-data/validate.ts
+
+    - name: Run Bun tests
+      run: make bun-test
+
+    - name: Run PHP calculator tests
+      run: make php-test
