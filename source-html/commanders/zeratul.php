@@ -425,7 +425,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 <td>1</td>
             </tr>
             <tr>
-                <th>Advice</th><td>This prestige sacrifices the third artifact set of upgrades (as well as the Avatars) for a more versatile hero unit. This prestige works best on shorter maps and missions where hyper-aggressive hero play is rewarded, as a lot of the units will not have the defensive upgrades that are provided with the third Artifact Fragment. This prestige works well against certain <a href="/resources/mutators">mutators</a> like Minesweeper, as the Tornadoes can damage burrowed units without the need for any detection.</td>
+                <th>Advice</th><td>This prestige sacrifices the third artifact set of upgrades (as well as the Avatars) for a more versatile hero unit. This prestige works best on shorter maps and missions where hyper-aggressive hero play is rewarded, as a lot of the units will not have the defensive upgrades that are provided with the third Artifact Fragment. This prestige works well against certain <a href="/mutators/">mutators</a> like Minesweeper, as the Tornadoes can damage burrowed units without the need for any detection.</td>
             </tr>
         </tbody>
     </table>
@@ -952,7 +952,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             </table>
         </div>
     </div>
-    <p>Devolve will Devolve all non-heroic, non-MapBoss enemy units within 10 range of the Avatar of Essence. For Heroic units, Attack speed and Movement speed are reduced by 50%. Devolve works in a very similar way to the Transmutation <a href="/resources/mutators">Mutator</a>. All units caught within the Devolve wave will Devolve to one tier lower. The tier list is shown below:</p>
+    <p>Devolve will Devolve all non-heroic, non-MapBoss enemy units within 10 range of the Avatar of Essence. For Heroic units, Attack speed and Movement speed are reduced by 50%. Devolve works in a very similar way to the Transmutation <a href="/mutators/">Mutator</a>. All units caught within the Devolve wave will Devolve to one tier lower. The tier list is shown below:</p>
     <table>
         <thead>
             <tr>

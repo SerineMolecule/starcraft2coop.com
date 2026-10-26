@@ -378,7 +378,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 <td>1</td>
             </tr>
             <tr>
-                <th>Advice</th><td>This prestige vastly improves the hero unit's power level such that she can solo some enemy bases without the help of her army. The Deep Tunnel ability provides Zagara with extreme mobility that is particular useful when trying to deal with <a href="/resources/mutators">mutators</a> such as Void Rifts. However, the downside is fairly impactful. Players that take a lot of inefficient trades may find themselves starved of resources. As such, they'll need to be more careful with how they choose to engage attack waves and push into enemy bases. Avoid using this prestige on sub-mastery Zagara, as the increase in the Energy Regeneration is still not enough to allow Zagara to remain in sustained combat.</td>
+                <th>Advice</th><td>This prestige vastly improves the hero unit's power level such that she can solo some enemy bases without the help of her army. The Deep Tunnel ability provides Zagara with extreme mobility that is particular useful when trying to deal with <a href="/mutators/">mutators</a> such as Void Rifts. However, the downside is fairly impactful. Players that take a lot of inefficient trades may find themselves starved of resources. As such, they'll need to be more careful with how they choose to engage attack waves and push into enemy bases. Avoid using this prestige on sub-mastery Zagara, as the increase in the Energy Regeneration is still not enough to allow Zagara to remain in sustained combat.</td>
             </tr>
         </tbody>
     </table>

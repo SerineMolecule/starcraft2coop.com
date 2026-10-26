@@ -354,7 +354,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         </tbody>
     </table>
     <p>Completing a Weekly Mutation on a difficulty level will unlock the bounties for all difficulties below. For example, completing a Weekly Mutation on Brutal difficulty (commonly known as a "Brutation"), will give you 185,000. You can only earn each weekly bounty once.</p>
-    <p>For a brief description of each mutator, hover over its icon. For details, please go to the <a href="/resources/mutators">Mutators</a> page.</p>
+    <p>For a brief description of each mutator, hover over its icon. For details, please go to the <a href="/mutators/">Mutators</a> page.</p>
     <ul>
     </ul>
 

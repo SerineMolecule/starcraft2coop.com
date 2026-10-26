@@ -89,5 +89,5 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         updateTable();
     </script>
     <script src="/scripts/tooltips.js"></script>
-    <p>If you prefer the old layout with everything on one page, <a href="/resources/mutators">it's still available</a>.</p>
+    <p>If you prefer <a href="/mutators/old">the old Mutators page with everything on one page, it's still available</a>.</p>
 <?= endContent() ?>

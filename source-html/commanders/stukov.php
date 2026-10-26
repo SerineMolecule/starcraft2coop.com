@@ -355,7 +355,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 <td>1</td>
             </tr>
             <tr>
-                <th>Advice</th><td>This prestige converts Bunkers from static defense structures to Infested Trooper generators. Bunkers lose the loaded troopers functionality, but they generate Infested units at a highly accelerated rate. For players that prefer a mass Bunker strategy, this prestige is better than having no prestige talents selected. The prestige works well with the Infested Duration mastery, and on maps where you are required to push in a single direction. Missions like Temple of the Past will provide a little more challenge for players using this Prestige. It can be very effective against <a href="/resources/mutators">mutators</a> such as Boom Bots, Black Death and Kill Bots</td>
+                <th>Advice</th><td>This prestige converts Bunkers from static defense structures to Infested Trooper generators. Bunkers lose the loaded troopers functionality, but they generate Infested units at a highly accelerated rate. For players that prefer a mass Bunker strategy, this prestige is better than having no prestige talents selected. The prestige works well with the Infested Duration mastery, and on maps where you are required to push in a single direction. Missions like Temple of the Past will provide a little more challenge for players using this Prestige. It can be very effective against <a href="/mutators/">mutators</a> such as Boom Bots, Black Death and Kill Bots</td>
             </tr>
         </tbody>
     </table>

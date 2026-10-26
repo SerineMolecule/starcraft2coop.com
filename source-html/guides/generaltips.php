@@ -114,8 +114,8 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         <li>Commander Passives</li>
     </ul>
     <h3 id="attacktypes">Note the Different Attack Types</h3>
-    <p>In Co-op, Point Defense Drones and Point Defense Missiles frequently appear, which can affect your effectiveness in a mission, especially when dealing with <a href="/resources/mutators">Mutators</a>. It is important to be aware of what Hitscan and Projectile attacks are and what the difference between them is.</p>
-    <p>These terms refer to the types of attack a unit has and may be a factor in unit selection against certain <a href="/resources/mutators">mutators</a> such as Missile Command.</p>
+    <p>In Co-op, Point Defense Drones and Point Defense Missiles frequently appear, which can affect your effectiveness in a mission, especially when dealing with <a href="/mutators/">Mutators</a>. It is important to be aware of what Hitscan and Projectile attacks are and what the difference between them is.</p>
+    <p>These terms refer to the types of attack a unit has and may be a factor in unit selection against certain <a href="/mutators/">mutators</a> such as Missile Command.</p>
     <p>In short, a Hitscan attack deals damage as soon as it is fired. A Projectile attack has a physcial projectile that must travel to its target to deal damage. For more details on the differences, you can watch the video below:</p>
     <iframe width="475" height="268" src="https://www.youtube.com/embed/OKg_hJ-ldD8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     <h3 id="workercounts">Worker Counts</h3>

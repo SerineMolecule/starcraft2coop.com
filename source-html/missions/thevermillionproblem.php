@@ -204,7 +204,7 @@ require_once '../../includes/switchergenerator.php';
     <img src="/images/missiondata/thevermillionproblem/sattackwavespawn.jpg" alt="South Attack Wave Spawn">
     <p>Crystals also have certain spawn locations. However, at each collection stage, crystals can spawn in more than 10 individual locations, making it infeasible to list them all out individually. Addtionally, spawn locations are randomized as the mission progresses.</p>
     <h2 id="crystalSpawn">Crystal Spawn Order</h2>
-    <p>The spawn order and locations of the Xenon Crystals can be viewed below. This may be useful when playing against <a href="/resources/mutators">mutators</a> that hide the crystal locations on the minimap, such as Darkness.</p>
+    <p>The spawn order and locations of the Xenon Crystals can be viewed below. This may be useful when playing against <a href="/mutators/">mutators</a> that hide the crystal locations on the minimap, such as Darkness.</p>
     <div id="spawnView">
         <img id="base"  src="/images/missiondata/thevermillionproblem/mapbase.jpg" alt="Terrain">
         <img id="spawn" src="/images/missiondata/thevermillionproblem/spawn_01.png" alt="Spawn Overlay">

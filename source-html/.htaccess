@@ -21,6 +21,10 @@ RewriteRule ^(.*)$ https://starcraft2coop.com/$1 [R=302,L]
 RewriteCond %{ENV:REDIRECT_STATUS} !=410
 RewriteRule ^account(\.html)?$ - [G,L]
 
+# Old page URLs now lead to the redesigned pages; legacy layouts live at /units/old and /mutators/old.
+RewriteRule ^tools/(unitstats|units)(\.(html|php))?/?$ /units/ [R=301,L]
+RewriteRule ^resources/mutators(\.(html|php))?/?$ /mutators/ [R=301,L]
+
 # Extensionless URLs - prefer .html, fall back to .php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -33,7 +37,6 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [L]
 
 # Permanent Redirects for link shortening and Youtube links
-# Redirect 301 /mutators /resources/mutators
 Redirect 301 /weeklymutations /resources/weeklymutations
 Redirect 301 /rockslappingchampions /community/rockslappingchampions
 Redirect 301 /gamespotlight /community/gamespotlight

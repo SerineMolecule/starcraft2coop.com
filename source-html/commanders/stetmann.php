@@ -291,7 +291,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 <td>1</td>
             </tr>
             <tr>
-                <th>Advice</th><td>The disadvantage for this Prestige only takes effect at level 5, which means below Stetmann level 5, this prestige provides purely a positive benefit to the player. However, the loss of Super Gary can be a huge disadvantage, as Super Gary is responsible for Stetmann's overall strength as a commander. This prestige works well against <a href="/resources/mutators">mutators</a> like Propagators, as Stetellites can no longer be converted by Propagators. Additionally, this prestige also favours mass Infestor-style play, as that style of play does not rely much on Super Gary as a hero unit.</td>
+                <th>Advice</th><td>The disadvantage for this Prestige only takes effect at level 5, which means below Stetmann level 5, this prestige provides purely a positive benefit to the player. However, the loss of Super Gary can be a huge disadvantage, as Super Gary is responsible for Stetmann's overall strength as a commander. This prestige works well against <a href="/mutators/">mutators</a> like Propagators, as Stetellites can no longer be converted by Propagators. Additionally, this prestige also favours mass Infestor-style play, as that style of play does not rely much on Super Gary as a hero unit.</td>
             </tr>
         </tbody>
     </table>
