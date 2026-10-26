@@ -228,6 +228,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <tbody>
             <tr><td>1</td><td>4</td><td>6</td><td>2</td><td>3</td></tr><tr><td>2</td><td>7</td><td>8</td><td>2</td><td>3</td></tr><tr><td>3</td><td>9</td><td>10</td><td>2</td><td>3</td></tr><tr><td>4</td><td>11</td><td>12</td><td>2</td><td>3</td></tr><tr><td>5</td><td>15</td><td>16</td><td>2</td><td>4</td></tr><tr><td>6</td><td>19</td><td>20</td><td>2</td><td>4</td></tr>        </tbody>
     </table>
+    <h2>Mutator Costs</h2>
     <p>Each mutator in the game is assigned a point cost that corresponds to its difficulty level. For more information on mutators, you may check the <a href="mutators">Mutators page</a>, which contains a lot of mutator-specific information such as their internal mechanics and also provide some commander-specific tips on how to handle them. The list of mutators and their associated point costs are shown below.</p>
     <p>Click the column headers to sort Ascending/Descending by that column. Click a row to toggle that row and calculate the total cost of a selected set of mutators.</p>
 
@@ -311,7 +312,8 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
         function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
     </script>
-    <p>You may use the demo below to simulate random mutator templates at different difficulty levels. Simply select your intended Brutal+ difficulty level and press Go. The algorithm used very closely matches the algorithm that the Starcraft II engine uses to generate the mutations, with a few optimizations to speed up the code, given that this is coded in PHP and not Galaxy. When a mutation set has been provided, you will also be given the total point cost of all the mutators in your set.</p>
+    <h2>Brutal+ Simulator</h2>
+    <p>The button below can simulate what mutators you might get when starting a Brutal+ game. The algorithm is the same one used in the Starcraft II engine.</p>
     <form action='#'>
         <select id="difficultyLevel">
             <option value="1">Brutal+1</option>
@@ -321,7 +323,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
             <option value="5">Brutal+5</option>
             <option value="6">Brutal+6</option>
         </select>
-        <input type="submit" value="Go" id="generateMutation">
+        <input type="submit" value="Simulate New Brutal+ Game" id="generateMutation">
     </form>
     <div id="tooltip">tooltip</div>
     <div id="mutationBox">
@@ -401,7 +403,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
                         costString += i + ' + ';
                         var randomIndex = Math.floor(Math.random() *  mutatorArray[i].length);
                         var selectedMutator = mutatorArray[i][randomIndex];
-                        var selectedMutatorSlug = selectedMutator.toLowerCase().replace(/[^a-z0-9]+/g, '');
+                        var selectedMutatorSlug = selectedMutator.toLowerCase().replace(/[^a-z0-9]+/g, '-');
                         mutatorArray[i]=mutatorArray[i].slice(0, randomIndex).concat(mutatorArray[i].slice(randomIndex + 1, mutatorArray[i].length));
                         $("#randomMutation").append('<a href="/mutators/' + selectedMutatorSlug + '"><img class="tooltip" src="/images/mutators/' + selectedMutatorSlug + '.png" alt=""></a>')
                     }
