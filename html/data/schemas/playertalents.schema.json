@@ -46,7 +46,12 @@
                     "type": "number"
                 },
                 "operation": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "add",
+                        "set",
+                        "multiply"
+                    ]
                 },
                 "operationtype": {
                     "type": [

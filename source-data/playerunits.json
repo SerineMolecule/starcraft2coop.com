@@ -147,7 +147,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": "Bounce Damage:<br>{5,3,[3,1,1]}<br>Damage Upgrade:<br>{0.333,0.111,[0,0,0]}"
+    "aoe": "Bounces to up to 2 additional enemies, within radius 3 of the previous target. Base bounce damage: 5, 3; gains 0.333 and 0.111 per weapon upgrade.",
+    "notes": ""
   },
   {
     "unitid": 6,
@@ -417,7 +418,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "",
+    "aoe": "Cleave in a 270-degree arc with radius 2; secondary ground targets take 100% damage."
   },
   {
     "unitid": 15,
@@ -683,6 +685,7 @@
     "attacks": 8,
     "attribute": null,
     "damage": 8,
+    "aoe": "Four projectiles land in a cross, 0.75 from the target. Each hits twice with circular splash of radius 1.2.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -953,6 +956,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 25,
+    "aoe": "Circular splash around the target: 100% damage within radius 0.25, 50% from 0.25 to 0.5, and 25% from 0.5 to 1.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -983,6 +987,7 @@
     "attacks": 1,
     "attribute": "Biological",
     "damage": 35,
+    "aoe": "Circular splash around the target: 100% damage within radius 0.25, 50% from 0.25 to 0.5, and 25% from 0.5 to 1.",
     "attackbonus": 4,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -1073,6 +1078,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 100,
+    "aoe": "Scarab explosion: full damage to the primary target; splash deals 80% within radius 0.25, 60% from 0.25 to 0.5, 50% from 0.5 to 1, and 25% from 1 to 1.5.",
     "attackbonus": 5,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -1103,6 +1109,7 @@
     "attacks": 1,
     "attribute": "Structure",
     "damage": 150,
+    "aoe": "Scarab explosion: full damage to the primary target; splash deals 80% within radius 0.25, 60% from 0.25 to 0.5, 50% from 0.5 to 1, and 25% from 1 to 1.5.",
     "attackbonus": 10,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -1287,7 +1294,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": "Bounce Damage:<br>\r\n1 Bounce: 1<br>\r\n2 Bounces: 1 (+1 vs. Armored)<br>\r\n3 Bounces: 1 (+2 vs. Armored)<br>\r\nNo upgrade bonus"
+    "aoe": "Splits from the primary target to 1, 2, or 3 additional enemies within radius 5 as the beam charges. Secondary hits deal 1 damage, with +0, +1, or +2 vs. Armored at the corresponding charge level. Secondary damage does not increase with weapon upgrades.",
+    "notes": ""
   },
   {
     "unitid": 44,
@@ -1317,7 +1325,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": "Bounce Damage:<br>\r\n1 Bounce: 1<br>\r\n2 Bounces: 1 (+1 vs. Armored)<br>\r\n3 Bounces: 1 (+2 vs. Armored)<br>\r\nNo upgrade bonus"
+    "aoe": "Splits from the primary target to 1, 2, or 3 additional enemies within radius 5 as the beam charges. Secondary hits deal 1 damage, with +0, +1, or +2 vs. Armored at the corresponding charge level. Secondary damage does not increase with weapon upgrades.",
+    "notes": ""
   },
   {
     "unitid": 45,
@@ -1347,6 +1356,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": 0,
+    "aoe": "During Overpowered (commander level 11), attacks during Empower Me cleave ground enemies in a 180-degree arc of radius 2. Cleave deals 30 base damage, increased by Alarak Attack Damage mastery and Empower Me.",
     "notes": ""
   },
   {
@@ -1497,7 +1507,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "",
+    "aoe": "Flame breath in a 45-degree cone in front of the Igniter. Ground enemies within weapon range (base 2, accounting for unit size) take full damage."
   },
   {
     "unitid": 51,
@@ -1587,7 +1598,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": "(Standard)<br>Bounce Damage:<br>{5,2}<br>Damage Upgrade:<br>{0.555,0.222}<br><br>(Slicing Glaive Air)<br>Bounce Damage:<br>{9,3}<br>Damage Upgrade:<br>{1,0.5}"
+    "aoe": "Bounces to up to 2 additional ground enemies, within radius 3 of the previous target. Base bounce damage: 5, 2; gains 0.555 and 0.222 per weapon upgrade.",
+    "notes": ""
   },
   {
     "unitid": 54,
@@ -1767,6 +1779,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Explodes, dealing full damage to ground enemies within radius 2.2 of the Creeper.",
     "notes": "Primal Contender stat changes only apply to those spawned by Murvar"
   },
   {
@@ -1797,6 +1810,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Explodes, dealing full damage to ground enemies within radius 2.2 of the Creeper.",
     "notes": "Primal Contender stat changes only apply to those spawned by Murvar"
   },
   {
@@ -1827,6 +1841,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Cleave in a 180-degree arc of radius 2 at the primary target, accounting for unit size. Secondary ground targets take 5 damage; cleave damage does not increase with weapon upgrades.",
     "notes": ""
   },
   {
@@ -1857,6 +1872,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Cleave in a 180-degree arc of radius 2 at the primary target, accounting for unit size. Secondary ground targets take 5 damage; cleave damage does not increase with weapon upgrades.",
     "notes": ""
   },
   {
@@ -1947,6 +1963,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Circular splash around the target: full damage to enemies within radius 1.",
     "notes": ""
   },
   {
@@ -2213,6 +2230,7 @@
     "attacks": 2,
     "attribute": null,
     "damage": 15,
+    "aoe": "Two sweeping beams perpendicular to the attack direction, extending 1.25 to each side of the target. Each beam hits in circles of radius 0.15 along its path (0.3 wide).",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -2577,7 +2595,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "",
+    "aoe": "Two sweeping beams perpendicular to the attack direction, extending 2.5 to each side of the target. Each beam hits in circles of radius 0.3 along its path (0.6 wide)."
   },
   {
     "unitid": 87,
@@ -2757,6 +2776,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
+    "aoe": "Each Interdictor bomb deals full damage to ground enemies within radius 0.5 of its impact.",
     "notes": "Clolarion has 8 Interceptors and 2 Interdictors."
   },
   {
@@ -3057,7 +3077,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": "Deals 125 (+35 vs. shields) damage to the primary target and 40 (+40 vs. shields) damage to other targets in a radius of 2, with a cooldown of 29 and a range of 5."
+    "aoe": "Sentinel Missile deals 40 damage (+40 vs. shields) to other enemy ground and air units within radius 2.625 of the primary target; ignores armor and excludes structures.",
+    "notes": "Deals 125 (+35 vs. shields) damage to the primary target, with a cooldown of 29 and a range of 5."
   },
   {
     "unitid": 103,
@@ -3143,6 +3164,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 18,
+    "aoe": "Flame splash in a 45-degree cone in front of the Hellbat. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -3173,6 +3195,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 30,
+    "aoe": "Flame splash in a 45-degree cone in front of the Hellbat. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -3503,6 +3526,7 @@
     "attacks": 2,
     "attribute": null,
     "damage": 15,
+    "aoe": "Two sweeping beams perpendicular to the attack direction, extending 1.25 to each side of the target. Each beam hits in circles of radius 0.15 along its path (0.3 wide).",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -3773,6 +3797,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 20,
+    "aoe": "Spines travel in a straight line along the attack direction while burrowed. Each spike hits within radius 0.625 (1.25 wide); splash searches stop at weapon range.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -3803,6 +3828,7 @@
     "attacks": 1,
     "attribute": "Armored",
     "damage": 30,
+    "aoe": "Spines travel in a straight line along the attack direction while burrowed. Each spike hits within radius 0.625 (1.25 wide); splash searches stop at weapon range.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -3833,6 +3859,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 35,
+    "aoe": "Cleave in a 180-degree arc of radius 2 at the primary target, accounting for unit size. Secondary ground targets take 5 damage, plus 1 per weapon upgrade.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -3867,7 +3894,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": "Bounce Damage:<br>{5,3,[3,1,1]}<br>\r\nSevering Glave:<br>{9,9,[9,9,9]}<br>Damage Upgrade:<br>{0.333,0.111,[0,0,0]}"
+    "aoe": "Bounces to up to 2 additional enemies, within radius 3 of the previous target. Base bounce damage: 5, 3; gains 0.333 and 0.111 per weapon upgrade.",
+    "notes": ""
   },
   {
     "unitid": 130,
@@ -4133,6 +4161,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 27,
+    "aoe": "Flame splash in a 45-degree cone in front of the Hellbat. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -4163,6 +4192,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 45,
+    "aoe": "Flame splash in a 45-degree cone in front of the Hellbat. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -4193,6 +4223,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 12,
+    "aoe": "Linear splash along the attack direction, in a rectangle 6.65 long and 0.3 wide.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -4223,6 +4254,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 21,
+    "aoe": "Linear splash along the attack direction, in a rectangle 6.65 long and 0.3 wide.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -4403,6 +4435,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 55,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25.",
     "attackbonus": 5,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -4433,6 +4466,7 @@
     "attacks": 1,
     "attribute": "Armored",
     "damage": 75,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25.",
     "attackbonus": 7,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -4463,6 +4497,7 @@
     "attacks": 2,
     "attribute": null,
     "damage": 13,
+    "aoe": "Circular splash around the target: full damage to air enemies within radius 1.5.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -4617,6 +4652,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Shotgun attacks deal full damage to ground enemies in a circle of radius 1.5 around the target.",
     "notes": ""
   },
   {
@@ -4647,6 +4683,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Shotgun attacks deal full damage to ground enemies in a circle of radius 1.5 around the target.",
     "notes": ""
   },
   {
@@ -4763,6 +4800,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 8,
+    "aoe": "Flames hit a line 1.2 wide in front of the Firebat. Ground enemies within weapon range (base 4, accounting for unit size) take full damage.",
     "attackbonus": 1,
     "hpbonus": 10.00,
     "armorbonus": 1,
@@ -4793,6 +4831,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 12,
+    "aoe": "Flames hit a line 1.2 wide in front of the Firebat. Ground enemies within weapon range (base 4, accounting for unit size) take full damage.",
     "attackbonus": 1,
     "hpbonus": 10.00,
     "armorbonus": 1,
@@ -4973,6 +5012,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 35,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25.",
     "attackbonus": 3,
     "hpbonus": 16.00,
     "armorbonus": 1,
@@ -5003,6 +5043,7 @@
     "attacks": 1,
     "attribute": "Armored",
     "damage": 50,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25.",
     "attackbonus": 5,
     "hpbonus": 16.00,
     "armorbonus": 1,
@@ -5217,6 +5258,7 @@
     "hpbonus": 200.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Secondary guns independently fire at a random enemy within radius 6 of the Hyperion, extended by unit size, every 0.1 seconds. These shots deal full weapon damage to one target each.",
     "notes": ""
   },
   {
@@ -5247,6 +5289,7 @@
     "hpbonus": 200.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Secondary guns independently fire at a random enemy within radius 6 of the Hyperion, extended by unit size, every 0.1 seconds. These shots deal full weapon damage to one target each.",
     "notes": ""
   },
   {
@@ -5277,6 +5320,7 @@
     "hpbonus": 17.50,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Missile bursts damage ground enemies along a line extending 2 beyond the primary target, hitting units within 0.5 of the line for full damage.",
     "notes": ""
   },
   {
@@ -5397,7 +5441,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Volatile Infested benefit from the Infested Siege Tank Acidic Enzymes upgrade and from infantry upgrades, not vehicle upgrades. This applies whether they are launched by an Infested Siege Tank or spawned by the Volatile Infested Spawn Chance mastery.",
+    "aoe": "Explodes, dealing circular splash damage to ground enemies within radius 2.2."
   },
   {
     "unitid": 181,
@@ -5427,7 +5472,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Volatile Infested benefit from the Infested Siege Tank Acidic Enzymes upgrade and from infantry upgrades, not vehicle upgrades. This applies whether they are launched by an Infested Siege Tank or spawned by the Volatile Infested Spawn Chance mastery.",
+    "aoe": "Explodes, dealing circular splash damage to ground enemies within radius 2.2."
   },
   {
     "unitid": 182,
@@ -5607,6 +5653,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Launched Volatile Infested explode, dealing full damage to ground enemies within radius 2.2 of the Infested.",
     "notes": "Tentacle Damage is affected by Armory upgrades. Volatile damage is affected by Engineering Bay upgrades."
   },
   {
@@ -5637,6 +5684,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Launched Volatile Infested explode, dealing full damage to ground enemies within radius 2.2 of the Infested.",
     "notes": "Tentacle Damage is affected by Armory upgrades. Volatile damage is affected by Engineering Bay upgrades."
   },
   {
@@ -5723,6 +5771,7 @@
     "attacks": 5,
     "attribute": null,
     "damage": 10,
+    "aoe": "Circular splash around the target, with radius 1.5, dealing damage over time to air enemies. Viral Contamination only increases damage to the primary target.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -5847,6 +5896,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Cleave in a 180-degree arc of radius 3 at the primary target, accounting for unit size. Secondary ground targets take 20 damage (25% of the primary hit).",
     "notes": ""
   },
   {
@@ -5933,6 +5983,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 18,
+    "aoe": "Flame splash in a 45-degree cone in front of the Hellbat. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -5963,6 +6014,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 30,
+    "aoe": "Flame splash in a 45-degree cone in front of the Hellbat. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6143,6 +6195,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 35,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25. Maelstrom Rounds adds 40 damage to the primary target only.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6173,6 +6226,7 @@
     "attacks": 1,
     "attribute": "Armored",
     "damage": 50,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25. Maelstrom Rounds adds 40 damage to the primary target only.",
     "attackbonus": 5,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6233,6 +6287,7 @@
     "attacks": 4,
     "attribute": null,
     "damage": 6,
+    "aoe": "Circular splash to air units within radius 0.5 of the target.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6263,6 +6318,7 @@
     "attacks": 4,
     "attribute": "Light",
     "damage": 12,
+    "aoe": "Circular splash to air units within radius 0.5 of the target.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6323,6 +6379,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 8,
+    "aoe": "Linear splash along the attack direction, in a rectangle 6.65 long and 0.3 wide.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6353,6 +6410,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 14,
+    "aoe": "Linear splash along the attack direction, in a rectangle 6.65 long and 0.3 wide.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6623,6 +6681,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 36,
+    "aoe": "Flames hit a line 2 wide in front of Blaze. Ground enemies within weapon range (base 3, accounting for unit size) take full damage.",
     "attackbonus": 4,
     "hpbonus": 100.00,
     "armorbonus": 1,
@@ -6653,6 +6712,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 53,
+    "aoe": "Flames hit a line 2 wide in front of Blaze. Ground enemies within weapon range (base 3, accounting for unit size) take full damage.",
     "attackbonus": 5,
     "hpbonus": 100.00,
     "armorbonus": 1,
@@ -6953,6 +7013,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 18,
+    "aoe": "Circular splash around the target: 100% damage within radius 0.25, 50% from 0.25 to 0.5, and 25% from 0.5 to 1.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -6983,6 +7044,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 5,
+    "aoe": "Circular splash around the target: full damage to air enemies within radius 1.25.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -7013,6 +7075,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 10,
+    "aoe": "Circular splash around the target: full damage to air enemies within radius 1.25.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -7343,6 +7406,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 40,
+    "aoe": "Circular splash within radius 2.2. Corrosive Acid only increases damage to the primary target.",
     "attackbonus": 4,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -7373,6 +7437,7 @@
     "attacks": 1,
     "attribute": "Structure",
     "damage": 80,
+    "aoe": "Circular splash within radius 2.2. Corrosive Acid only increases damage to the primary target.",
     "attackbonus": 8,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -7403,6 +7468,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 5,
+    "aoe": "Circular splash within radius 2.2 of the Baneling Spawn on detonation. Corrosive Acid only increases damage to the primary target.",
     "attackbonus": 1,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -7433,6 +7499,7 @@
     "attacks": 1,
     "attribute": "Structure",
     "damage": 10,
+    "aoe": "Circular splash within radius 2.2 of the Baneling Spawn on detonation. Corrosive Acid only increases damage to the primary target.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -7943,6 +8010,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 100,
+    "aoe": "Purification Nova explodes on contact or after 3 seconds, dealing full damage to ground enemies in a circle of radius 1.5 around the nova.",
     "attackbonus": 10,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -8183,6 +8251,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 18,
+    "aoe": "Circular splash around the target: 100% damage within radius 0.25, 50% from 0.25 to 0.5, and 25% from 0.5 to 1.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -8217,6 +8286,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
+    "aoe": "Circular splash around the target: 100% damage within radius 0.25, 50% from 0.25 to 0.5, and 25% from 0.5 to 1.",
     "notes": "Each artifact fragment collected adds +100 Shields."
   },
   {
@@ -8787,6 +8857,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Piercing attacks deal full damage to ground enemies in a rectangle 6.8 long and 0.3 wide along the attack direction.",
     "notes": ""
   },
   {
@@ -9117,6 +9188,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Flames sweep a line in front of the turret, hitting ground enemies in circles of radius 0.6 at intervals of 0.5, extending 6 from the turret. Each enemy takes full damage once per attack.",
     "notes": ""
   },
   {
@@ -9147,6 +9219,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Flames sweep a line in front of the turret, hitting ground enemies in circles of radius 0.6 at intervals of 0.5, extending 6 from the turret. Each enemy takes full damage once per attack.",
     "notes": ""
   },
   {
@@ -9207,6 +9280,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Each secondary missile deals full damage to air enemies within radius 1.5 of its impact.",
     "notes": ""
   },
   {
@@ -9957,6 +10031,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
+    "aoe": "Circular splash around the target: full damage to enemies within radius 3. Secondary targets exclude structures and units immune to control effects.",
     "notes": ""
   },
   {
@@ -10107,6 +10182,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
+    "aoe": "Attacks have a 10% chance to create a storm of radius 0.75 at the target, dealing 5 damage per tick to enemy ground and air units. The storm lasts about 3.4 seconds and excludes structures.",
     "notes": ""
   },
   {
@@ -10137,7 +10213,8 @@
     "hpbonus": 300.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "",
+    "aoe": "Circular splash around the target: full damage to air enemies within radius 1.5."
   },
   {
     "unitid": 339,
@@ -10167,7 +10244,8 @@
     "hpbonus": 300.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "",
+    "aoe": "Circular splash around the target: full damage to ground enemies within radius 1."
   },
   {
     "unitid": 340,
@@ -10197,7 +10275,8 @@
     "hpbonus": 300.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "",
+    "aoe": "Circular splash around the target: full damage to ground enemies within radius 1."
   },
   {
     "unitid": 341,
@@ -10437,6 +10516,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Each bile projectile deals full damage to enemies within radius 2 of its impact.",
     "notes": ""
   },
   {
@@ -10523,6 +10603,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 40,
+    "aoe": "Circular splash on detonation: full damage to ground enemies within radius 2.2 of the Mecha Baneling.",
     "attackbonus": 4,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -10553,6 +10634,7 @@
     "attacks": 1,
     "attribute": "Structure",
     "damage": 80,
+    "aoe": "Circular splash on detonation: full damage to ground enemies within radius 2.2 of the Mecha Baneling.",
     "attackbonus": 8,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -10613,6 +10695,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 20,
+    "aoe": "Spines travel in a straight line along the attack direction while burrowed. Each spike hits within radius 0.625 (1.25 wide); splash searches stop at weapon range.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -10643,6 +10726,7 @@
     "attacks": 1,
     "attribute": "Armored",
     "damage": 30,
+    "aoe": "Spines travel in a straight line along the attack direction while burrowed. Each spike hits within radius 0.625 (1.25 wide); splash searches stop at weapon range.",
     "attackbonus": 3,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -10913,6 +10997,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 35,
+    "aoe": "Cleave in a 180-degree arc with radius 2; secondary ground targets take 100% damage.",
     "attackbonus": 4,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -11217,6 +11302,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "With Heavy Weapons Specialist (P1) only: circular splash dealing full damage to enemies within radius 1.5 of the target.",
     "notes": ""
   },
   {
@@ -11247,6 +11333,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "With Heavy Weapons Specialist (P1) only: circular splash dealing full damage to enemies within radius 1.5 of the target.",
     "notes": ""
   },
   {
@@ -11277,6 +11364,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "With Heavy Weapons Specialist (P1) only: circular splash dealing full damage to enemies within radius 1.5 of the target.",
     "notes": ""
   },
   {
@@ -11337,7 +11425,8 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
-    "notes": "Weapon stats listed are for its ability and not its equipped weapon.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33."
+    "aoe": "Circular explosion against ground units: 100% damage within radius 0.9687, 50% from 0.9687 to 1.2812, and 25% from 1.2812 to 1.75, accounting for unit size. Excludes structures.",
+    "notes": "Weapon stats listed are for its ability and not its equipped weapon."
   },
   {
     "unitid": 379,
@@ -11367,7 +11456,8 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
-    "notes": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33."
+    "aoe": "Circular explosion against ground units: 100% damage within radius 0.9687, 50% from 0.9687 to 1.2812, and 25% from 1.2812 to 1.75, accounting for unit size. Excludes structures.",
+    "notes": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three."
   },
   {
     "unitid": 380,
@@ -11453,6 +11543,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 16,
+    "aoe": "Flames hit a line 1.2 wide in front of the trooper. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -11483,6 +11574,7 @@
     "attacks": 1,
     "attribute": "Light",
     "damage": 24,
+    "aoe": "Flames hit a line 1.2 wide in front of the trooper. Ground enemies within weapon range (base 2, accounting for unit size) take full damage.",
     "attackbonus": 2,
     "hpbonus": 0.00,
     "armorbonus": 1,
@@ -11783,6 +11875,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 40,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25.",
     "attackbonus": 0,
     "hpbonus": 90.00,
     "armorbonus": 1,
@@ -11813,6 +11906,7 @@
     "attacks": 1,
     "attribute": "Armored",
     "damage": 70,
+    "aoe": "Circular splash: 100% damage within radius 0.47, 50% from 0.47 to 0.78, and 25% from 0.78 to 1.25.",
     "attackbonus": 0,
     "hpbonus": 90.00,
     "armorbonus": 1,
@@ -11843,6 +11937,7 @@
     "attacks": 4,
     "attribute": null,
     "damage": 9,
+    "aoe": "Circular splash to air units within radius 0.5 of the target.",
     "attackbonus": 0,
     "hpbonus": 150.00,
     "armorbonus": 1,
@@ -11873,6 +11968,7 @@
     "attacks": 4,
     "attribute": "Light",
     "damage": 18,
+    "aoe": "Circular splash to air units within radius 0.5 of the target.",
     "attackbonus": 0,
     "hpbonus": 150.00,
     "armorbonus": 1,
@@ -11933,6 +12029,7 @@
     "attacks": 1,
     "attribute": null,
     "damage": 8,
+    "aoe": "Circular splash to air units within radius 0.5 of the target.",
     "attackbonus": 0,
     "hpbonus": 150.00,
     "armorbonus": 1,
@@ -12057,6 +12154,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "While carrying a sieged Shock Division, its anti-air shots deal circular splash: 100% within radius 0.4687, 50% to 0.7812, and 25% to 1.25. With a rank 3 Shock Division, these radii increase to 0.6562, 1.0937, and 1.75.",
     "notes": "This unit has no rank."
   },
   {
@@ -12177,6 +12275,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
+    "aoe": "Each artillery shell deals full damage to ground enemies in a circle of radius 3 at its impact.",
     "notes": "Up to 4 Conscripts can be loaded into the structure, each increasing the number of volleys in 30 seconds by 1."
   },
   {
@@ -12267,7 +12366,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": "Bounce Damage:<br>{3,1}<br>Damage Upgrade:<br>{0.333,0.111}"
+    "aoe": "Bounces to up to 2 additional enemies, within radius 3 of the previous target. Base bounce damage: 3, 1; gains 0.333 and 0.111 per weapon upgrade.",
+    "notes": ""
   },
   {
     "unitid": 410,
@@ -12507,7 +12607,8 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": "(Standard)<br>Bounce Damage:<br>{5,2}<br>Damage Upgrade:<br>{0.555,0.222}<br><br>(Slicing Glaive Air)<br>Bounce Damage:<br>{9,3}<br>Damage Upgrade:<br>{1,0.5}"
+    "aoe": "Bounces to up to 2 additional ground enemies, within radius 3 of the previous target. Base bounce damage: 5, 2; gains 0.555 and 0.222 per weapon upgrade.",
+    "notes": ""
   },
   {
     "unitid": 418,
@@ -12537,6 +12638,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": null,
+    "aoe": "Explodes on contact with an air target, dealing full damage to air enemies within radius 2.2 of the Creeper.",
     "notes": ""
   },
   {
@@ -12627,6 +12729,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": 0,
+    "aoe": "Circular splash around the target: 100% damage within radius 0.25, 50% from 0.25 to 0.5, and 25% from 0.5 to 1.",
     "notes": "Starts at 3/3/3 upgrade level"
   },
   {
@@ -12657,6 +12760,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": 0,
+    "aoe": "Circular splash around the target: 100% damage within radius 0.25, 50% from 0.25 to 0.5, and 25% from 0.5 to 1.",
     "notes": "Starts at 3/3/3 upgrade level"
   },
   {

@@ -228,6 +228,7 @@ interface UnitMode {
     atkrange?: number;
     attackspeed?: number;
     attacks?: number;
+    aoe?: string;
     /** Tags that this unit deals damage to */
     attributedamage?: { [tag: string]: { damage: number, bonus: number } };
 }
@@ -303,9 +304,10 @@ export class UnitStats extends preact.Component<{
                 if (selected.movementspeed !== selectedUnit.movementspeed) unitMode.movementspeed = selected.movementspeed;
                 if (selected.sightrange !== selectedUnit.sightrange) unitMode.sightrange = selected.sightrange;
                 if (selected.tags !== selectedUnit.tags) unitMode.tags = selected.tags;
-                if (selected.atkrange) unitMode.atkrange = selected.atkrange;
+                unitMode.atkrange = selected.atkrange;
                 if (selected.attackspeed) unitMode.attackspeed = selected.attackspeed;
                 if (selected.attacks) unitMode.attacks = selected.attacks;
+                if (selected.aoe) unitMode.aoe = selected.aoe;
                 if (selected.damage) {
                     unitMode.attributedamage = {
                         '': { damage: selected.damage, bonus: selected.attackbonus },
@@ -340,15 +342,29 @@ export class UnitStats extends preact.Component<{
     }
     static applyUpgrade(
         upgrade: {
-            modifier: string, operation: string, value: number,
+            modifier: string, operation: 'add' | 'set' | 'multiply', value: number,
             operationtype?: string | null,
             modifiermode?: string | null,
             modifiertag?: string | null,
             extra?: string | null,
+        } | {
+            modifier: 'aoe', operation: 'replace', value: string,
+            modifiermode?: string | null,
+        } | {
+            modifier: null, operation: 'none', value: null,
         },
         unit: Unit,
         level?: number,
     ) {
+        if (upgrade.operation === 'none') return;
+        if (upgrade.operation === 'replace') {
+            for (const mode of Object.values(unit.modes)) {
+                if (!upgrade.modifiermode || mode.modeName === upgrade.modifiermode) {
+                    mode.aoe = upgrade.value;
+                }
+            }
+            return;
+        }
         switch (upgrade.modifier) {
             case 'mineralCost':
                 unit.mcost = this.applyModifier(unit.mcost, upgrade, level);
@@ -559,7 +575,7 @@ export class UnitStats extends preact.Component<{
             if (modifiers.commander !== token(upgrade.commander)) continue;
             if (upgrade.upgradetype !== 'upgrade') continue;
 
-            if (metaUpgrades[upgrade.name]) {
+            if (upgrade.operation !== 'replace' && upgrade.operation !== 'none' && metaUpgrades[upgrade.name]) {
                 upgrade = { ...upgrade };
                 for (const [metaUpgrade, level] of metaUpgrades[upgrade.name]!) {
                     if (upgrade.modifier !== metaUpgrade.modifier) continue;
@@ -579,6 +595,24 @@ export class UnitStats extends preact.Component<{
         }
         if (modifiers.upgrades['Redline Power Cells']) {
             upgradedUnit.modes['']!.attributedamage!['']!.damage += 60;
+        }
+        if (modifiers.unit === 'mutalisk' && ['abathur', 'kerrigan'].includes(modifiers.commander) &&
+            (levels.weapon || modifiers.upgrades['Vicious Glave'] || modifiers.upgrades['Severing Glave'] || modifiers.upgrades['Sundering Glave'])) {
+            // Both bounce upgrades replace AoE text. Compose them here, after the
+            // generic replacements, so neither upgrade can erase the other's effect.
+            const vicious = modifiers.upgrades['Vicious Glave'];
+            const severing = modifiers.commander === 'kerrigan' && modifiers.upgrades['Severing Glave'];
+            const bounceCount = vicious ? 5 : 2;
+            const radius = vicious ? (modifiers.commander === 'kerrigan' ? 6 : 4) : 3;
+            const baseDamage = severing ? [9, 9, 9, 9, 9] : [5, 3, 3, 1, 1];
+            const damage = baseDamage.slice(0, bounceCount).map((amount, index) =>
+                Number((amount + (levels.weapon || 0) * ([0.333, 0.111][index] || 0)).toFixed(3))
+            );
+            let aoe = `Bounces to up to ${bounceCount} additional enemies, within radius ${radius} of the previous target. Bounce damage: ${damage.join(', ')}.`;
+            if (modifiers.commander === 'abathur' && modifiers.upgrades['Sundering Glave']) {
+                aoe += ' Bounces deal double damage vs. Armored.';
+            }
+            upgradedUnit.modes['']!.aoe = aoe;
         }
 
         return upgradedUnit;
@@ -633,10 +667,15 @@ export class UnitStats extends preact.Component<{
             playerUpgrades.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit)
                 .map((u) => [u.name, { tooltip: `upgrades/${token(u.commander)}/${u.icon}`, icon: u.icon, unit: u.unit }])
         );
+        const selectableUpgrades = new Set(
+            playerUpgrades.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit && u.operation !== 'none')
+                .map((u) => u.name)
+        );
         const upgradeIcon = (upgrade: string) => {
             const data = upgradeData.get(upgrade);
             const commander = modifiers.commander;
-            const dir = commander !== 'tychus' && token(data?.unit ?? "") === commander ? "hero" : "unitupgrades";
+            const isHero = token(data?.unit ?? "") === commander || (commander === 'fenix' && data?.unit.startsWith('Fenix '));
+            const dir = commander !== 'tychus' && isHero ? "hero" : "unitupgrades";
             return `/images/commanderdata/${dir}/${commander}/${data?.icon}.png`;
         };
 
@@ -644,7 +683,15 @@ export class UnitStats extends preact.Component<{
             <form class="units-modifiers">
                 {!!upgrades.length && (<fieldset>
                     <legend>Upgrades</legend>
-                    {upgrades.map((upgrade) => <div><label data-tooltip={upgradeData.get(upgrade)?.tooltip}><input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> <img src={upgradeIcon(upgrade)} alt="" width={20} height={20} /> {upgrade}</label></div>)}
+                    {upgrades.map((upgrade) => {
+                        const selectable = selectableUpgrades.has(upgrade);
+                        const UpgradeLabel = selectable ? 'label' : 'span';
+                        const iconSrc = upgradeIcon(upgrade);
+                        return <div><UpgradeLabel class={selectable ? undefined : "units-upgrade-passive"} data-tooltip={upgradeData.get(upgrade)?.tooltip}>
+                            <span class="units-upgrade-marker">{selectable ? <input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> : <span class="unbold" aria-hidden="true">•</span>}</span>{' '}
+                            <img key={iconSrc} src={iconSrc} alt="" width={20} height={20} /> {upgrade}
+                        </UpgradeLabel></div>;
+                    })}
                 </fieldset>)}
                 {'weapon' in modifiers.upgradeLevels && (<fieldset>
                     <legend>Weapons</legend>
@@ -785,43 +832,44 @@ export class UnitStats extends preact.Component<{
                     })}
                     {(mode.attacks! > 1 || baseMode.attacks! > 1) && <li><span class="unbold">Hits:</span> {this.renderValue(mode.attacks!, baseMode.attacks!)}</li>}
                     <li><span class="unbold">Cooldown:</span> {this.renderValue(mode.attackspeed!, baseMode.attackspeed!)}</li>
-                    <li><span class="unbold">Range:</span> {this.renderValue(mode.atkrange!, baseMode.atkrange!)}</li>
+                    <li><span class="unbold">Range:</span> {mode.atkrange === 0 ? "(Melee)" : this.renderValue(mode.atkrange!, baseMode.atkrange!)}</li>
                 </>}
+                {mode.aoe && <li><span class="unbold">AoE:</span> {mode.aoe !== baseMode.aoe ? <strong class="units-modified">{mode.aoe}</strong> : mode.aoe}</li>}
                 {mode.armor !== undefined && <li><span class="unbold">Armor:</span> {this.renderValue(mode.armor, baseMode.armor ?? baseUnit.armor)}</li>}
                 {mode.movementspeed !== undefined && <li><span class="unbold">Move speed:</span> {this.renderValue(mode.movementspeed, baseMode.movementspeed ?? baseUnit.movementspeed)}</li>}
                 {mode.sightrange !== undefined && <li><span class="unbold">Vision:</span> {this.renderValue(mode.sightrange, baseMode.sightrange ?? baseUnit.sightrange)}</li>}
             </ul>
         </>;
     }
-    renderImage(selected: Unit) {
+    getImageSrc(selected: Unit) {
         const { commander, unit } = this.props.modifiers!;
         if (!commander || !unit) return null;
 
         if (unit.startsWith('enthralled')) {
-            return <img src={`/images/comps/unitimages/${unit.slice(10)}.png`} alt="" class="units-portrait" />;
+            return `/images/comps/unitimages/${unit.slice(10)}.png`;
         }
         if (unit === 'flamingbetty' || unit === 'blasterbilly' || unit === 'spinningdizzy' || unit === 'khaydarinmonolith' || unit === 'shieldbattery' || (commander === 'karax' && unit === 'photoncannon')) {
-            return <img src={`/images/commanderdata/guides/${commander}/${unit}.jpg`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/guides/${commander}/${unit}.jpg`;
         }
         if (
             unit === 'observer' || unit === 'broodling' || unit === 'overlord' || unit === 'overseer' ||
             unit === 'missileturret' || unit === 'photoncannon' || (commander === 'zeratul' && unit === 'voidray') ||
             unit === 'spinecrawler' || unit === 'sporecrawler' || unit === 'spidermine' || unit === 'bunker'
         ) {
-            return <img src={`/images/comps/unitimages/${unit}.png`} alt="" class="units-portrait" />;
+            return `/images/comps/unitimages/${unit}.png`;
         }
 
         if (unit === 'mechaoverlord' || unit === 'mechaoverseer' || unit === 'xelnagawatcher' || unit === 'banelingspawn') {
             return null;
         }
         if (unit?.startsWith('fenix')) {
-            return <img src={`/images/commanderdata/abilities/fenix/${unit.slice(5)}.jpg`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/abilities/fenix/${unit.slice(5)}.jpg`;
         }
         if (
             unit === 'alarak' || unit === 'kerrigan' || unit === 'zagara' || unit === 'nova' || unit === 'zeratul' ||
             unit === 'gary' || unit === 'supergary' || unit === 'dehaka'
         ) {
-            return <img src={`/images/commanderdata/hero/${commander}/${unit}.jpg`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/hero/${commander}/${unit}.jpg`;
         }
         if (
             unit === 'hyperion' || unit === 'mothership' || unit === 'destroyer' || unit === 'shadowguard' ||
@@ -829,7 +877,7 @@ export class UnitStats extends preact.Component<{
             unit === 'serdath' || unit === 'telbrus' || unit === 'apocalisk' ||
             unit === 'avatarofform' || unit === 'avatarofessence'
         ) {
-            return <img src={`/images/commanderdata/abilities/${commander}/${unit}.jpg`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/abilities/${commander}/${unit}.jpg`;
         }
         const replaceAbilities: Record<string, string> = {
             duskwings: 'bansheeairstrike.png', unboundfanatic: 'fanatic.png', ares: 'combatdrop.png',
@@ -838,37 +886,37 @@ export class UnitStats extends preact.Component<{
             tesseractmonolith: 'deploytesseractmonolith.png',
         };
         if (unit in replaceAbilities) {
-            return <img src={`/images/commanderdata/abilities/${commander}/${replaceAbilities[unit]}`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/abilities/${commander}/${replaceAbilities[unit]}`;
         }
         if (commander === 'zagara' && (unit === 'hunterkiller' || unit === 'roach')) {
             const replace: Record<string, string> = {
                 hunterkiller: 'spawnhunterkillers.png', roach: 'infesteddrop.png',
             };
-            return <img src={`/images/commanderdata/hero/${commander}/${replace[unit]}`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/hero/${commander}/${replace[unit]}`;
         }
         if (commander === 'zeratul' && (unit === 'zealot' || unit === 'darkarchon')) {
-            return <img src={`/images/commanderdata/abilities/${commander}/${unit}.jpg`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/abilities/${commander}/${unit}.jpg`;
         }
         const replaceUnitSkills: Record<string, string> = {
             locust: 'spawnlocusts.png', primallocust: 'spawnprimallocusts.png', explosivecreeper: 'spawnexplosivecreeper.png',
             mechabroodling: 'readymechabroodling.png', mecharoach: 'roachesaway.png', railgunturret: 'buildrailgunturret.png',
         };
         if (unit in replaceUnitSkills) {
-            return <img src={`/images/commanderdata/unitskills/${commander}/${replaceUnitSkills[unit]}`} alt="" class="units-portrait" />;
+            return `/images/commanderdata/unitskills/${commander}/${replaceUnitSkills[unit]}`;
         }
         const replaceUnitUpgrades: Record<string, string> = {
             hangarbay: 'installdronehangar.png', mecharavager: 'bonusravager.png',
         };
         if (unit in replaceUnitUpgrades) {
-            return <img src={`/images/commanderdata/unitupgrades/${commander}/${replaceUnitUpgrades[unit]}`} alt="" width="100" height="100" />;
+            return `/images/commanderdata/unitupgrades/${commander}/${replaceUnitUpgrades[unit]}`;
         }
         if (unit === 'flyingbroodling') {
-            return <img src={`/images/commanderdata/unitskills/stukov/spawnbroodlings.png`} alt="" width="100" height="100" />;
+            return `/images/commanderdata/unitskills/stukov/spawnbroodlings.png`;
         }
 
         const replaceUnit: Record<string, string> = { infestedtrooper: 'infestedmarine' };
         if (selected.tags.includes("Structure")) return null;
-        return <img src={`/images/commanderdata/units/${commander}/${replaceUnit[unit] || unit}.jpg`} alt="" width="100" height="100" />;
+        return `/images/commanderdata/units/${commander}/${replaceUnit[unit] || unit}.jpg`;
     }
     override render() {
         const modifiers = this.props.modifiers;
@@ -883,7 +931,7 @@ export class UnitStats extends preact.Component<{
         }
         const unit = UnitStats.getUpgradedUnit(baseUnit, modifiers);
         const race = token(unit.race);
-        const image = this.renderImage(unit);
+        const imageSrc = this.getImageSrc(unit);
 
         return (
             <td class="units-unit">
@@ -893,7 +941,7 @@ export class UnitStats extends preact.Component<{
                 </div>
                 <h2 class="units-name">{unit.name}</h2>
                 <div class="units-identity">
-                    {image && <div class="units-art">{image}</div>}
+                    {imageSrc && <div class="units-art"><img key={imageSrc} src={imageSrc} alt="" class="units-portrait" /></div>}
                     <div class="units-identity-text">
                         {(unit.mcost || unit.vcost || unit.buildtime || unit.supply) ? <p class="units-costs">
                             <span><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals:" /> {this.renderValue(unit.mcost, baseUnit.mcost)}</span>

@@ -5202,7 +5202,7 @@
             "subtitle": "Abathur unit",
             "commander": "Abathur",
             "path": "units/#abathur/mutalisk",
-            "text": "Bounce Damage:<br>{5,3,[3,1,1]}<br>Damage Upgrade:<br>{0.333,0.111,[0,0,0]}",
+            "text": "",
             "tokens": [
                 "Zerg",
                 "Light,Biological",
@@ -5547,7 +5547,7 @@
             "subtitle": "Alarak unit",
             "commander": "Alarak",
             "path": "units/#alarak/destroyer",
-            "text": "Bounce Damage:<br>\r\n1 Bounce: 1<br>\r\n2 Bounces: 1 (+1 vs. Armored)<br>\r\n3 Bounces: 1 (+2 vs. Armored)<br>\r\nNo upgrade bonus",
+            "text": "",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical",
@@ -5667,7 +5667,7 @@
             "subtitle": "Dehaka unit",
             "commander": "Dehaka",
             "path": "units/#dehaka/primalmutalisk",
-            "text": "(Standard)<br>Bounce Damage:<br>{5,2}<br>Damage Upgrade:<br>{0.555,0.222}<br><br>(Slicing Glaive Air)<br>Bounce Damage:<br>{9,3}<br>Damage Upgrade:<br>{1,0.5}",
+            "text": "",
             "tokens": [
                 "Zerg",
                 "Light,Biological",
@@ -6147,7 +6147,7 @@
             "subtitle": "Horner unit",
             "commander": "Horner",
             "path": "units/#horner/widowmine",
-            "text": "Deals 125 (+35 vs. shields) damage to the primary target and 40 (+40 vs. shields) damage to other targets in a radius of 2, with a cooldown of 29 and a range of 5.",
+            "text": "Deals 125 (+35 vs. shields) damage to the primary target, with a cooldown of 29 and a range of 5.",
             "tokens": [
                 "Terran",
                 "Light,Mechanical",
@@ -6417,7 +6417,7 @@
             "subtitle": "Kerrigan unit",
             "commander": "Kerrigan",
             "path": "units/#kerrigan/mutalisk",
-            "text": "Bounce Damage:<br>{5,3,[3,1,1]}<br>\r\nSevering Glave:<br>{9,9,[9,9,9]}<br>Damage Upgrade:<br>{0.333,0.111,[0,0,0]}",
+            "text": "",
             "tokens": [
                 "Zerg",
                 "Light,Biological",
@@ -6852,7 +6852,7 @@
             "subtitle": "Stukov unit",
             "commander": "Stukov",
             "path": "units/#stukov/volatileinfested",
-            "text": "",
+            "text": "Volatile Infested benefit from the Infested Siege Tank Acidic Enzymes upgrade and from infantry upgrades, not vehicle upgrades. This applies whether they are launched by an Infested Siege Tank or spawned by the Volatile Infested Spawn Chance mastery.",
             "tokens": [
                 "Zerg",
                 "Light,Biological",
@@ -8711,7 +8711,7 @@
             "subtitle": "Raynor structure",
             "commander": "Raynor",
             "path": "units/#raynor/spidermine",
-            "text": "Weapon stats listed are for its ability and not its equipped weapon.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33.",
+            "text": "Weapon stats listed are for its ability and not its equipped weapon.",
             "tokens": [
                 "Terran",
                 "Light,Mechanical,Structure",
@@ -8726,7 +8726,7 @@
             "subtitle": "Nova structure",
             "commander": "Nova",
             "path": "units/#nova/spidermine",
-            "text": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33.",
+            "text": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three.",
             "tokens": [
                 "Terran",
                 "Light,Mechanical,Structure",
@@ -8981,7 +8981,7 @@
             "subtitle": "Mengsk unit",
             "commander": "Mengsk",
             "path": "units/#mengsk/enthralledmutalisk",
-            "text": "Bounce Damage:<br>{3,1}<br>Damage Upgrade:<br>{0.333,0.111}",
+            "text": "",
             "tokens": [
                 "Terran",
                 "Light,Biological",
@@ -29611,10 +29611,6 @@
                     "3": {
                         "v": "Abathur",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "Bounce Damage:<br>{5,3,[3,1,1]}<br>Damage Upgrade:<br>{0.333,0.111,[0,0,0]}",
-                        "n": 0.577
                     }
                 }
             },
@@ -30635,10 +30631,6 @@
                     "3": {
                         "v": "Alarak",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "Bounce Damage:<br>\r\n1 Bounce: 1<br>\r\n2 Bounces: 1 (+1 vs. Armored)<br>\r\n3 Bounces: 1 (+2 vs. Armored)<br>\r\nNo upgrade bonus",
-                        "n": 0.25
                     }
                 }
             },
@@ -31003,10 +30995,6 @@
                     "3": {
                         "v": "Dehaka",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "(Standard)<br>Bounce Damage:<br>{5,2}<br>Damage Upgrade:<br>{0.555,0.222}<br><br>(Slicing Glaive Air)<br>Bounce Damage:<br>{9,3}<br>Damage Upgrade:<br>{1,0.5}",
-                        "n": 0.378
                     }
                 }
             },
@@ -32441,8 +32429,8 @@
                         "n": 1
                     },
                     "4": {
-                        "v": "Deals 125 (+35 vs. shields) damage to the primary target and 40 (+40 vs. shields) damage to other targets in a radius of 2, with a cooldown of 29 and a range of 5.",
-                        "n": 0.171
+                        "v": "Deals 125 (+35 vs. shields) damage to the primary target, with a cooldown of 29 and a range of 5.",
+                        "n": 0.224
                     }
                 }
             },
@@ -33239,10 +33227,6 @@
                     "3": {
                         "v": "Kerrigan",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "Bounce Damage:<br>{5,3,[3,1,1]}<br>\r\nSevering Glave:<br>{9,9,[9,9,9]}<br>Damage Upgrade:<br>{0.333,0.111,[0,0,0]}",
-                        "n": 0.5
                     }
                 }
             },
@@ -34523,6 +34507,10 @@
                     "3": {
                         "v": "Stukov",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Volatile Infested benefit from the Infested Siege Tank Acidic Enzymes upgrade and from infantry upgrades, not vehicle upgrades. This applies whether they are launched by an Infested Siege Tank or spawned by the Volatile Infested Spawn Chance mastery.",
+                        "n": 0.162
                     }
                 }
             },
@@ -40008,8 +39996,8 @@
                         "n": 1
                     },
                     "4": {
-                        "v": "Weapon stats listed are for its ability and not its equipped weapon.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33.",
-                        "n": 0.204
+                        "v": "Weapon stats listed are for its ability and not its equipped weapon.",
+                        "n": 0.289
                     }
                 }
             },
@@ -40056,8 +40044,8 @@
                         "n": 1
                     },
                     "4": {
-                        "v": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three.<br>Explosion: 50% splash up to radius 1.7, 25% splash up to radius 2.33.",
-                        "n": 0.186
+                        "v": "Weapon stats listed are for its ability and not its equipped weapon. Dropped in sets of three.",
+                        "n": 0.243
                     }
                 }
             },
@@ -40818,10 +40806,6 @@
                     "3": {
                         "v": "Mengsk",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "Bounce Damage:<br>{3,1}<br>Damage Upgrade:<br>{0.333,0.111}",
-                        "n": 0.577
                     }
                 }
             },

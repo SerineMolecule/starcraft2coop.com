@@ -70,4 +70,27 @@ $expected = $unitStats;
 $expected['modes'][1]['Range'] = '6.00';
 expectCalculatorResult(applyUpgrades($unitStats, [$upgrade, $otherUpgrade]), $expected, 'Following upgrade applies only to its own mode');
 
-echo "20 PHP calculator checks passed\n";
+$textUpgrade = ['operation' => 'replace', 'modifier' => 'aoe', 'modifier2' => 'Target', 'value' => 'Radius < 3.3'];
+$expected = $unitStats;
+$expected['modes'][0]['aoe'] = 'Radius &lt; 3.3';
+expectCalculatorResult(applyUpgrades($unitStats, [$textUpgrade]), $expected, 'Text replacement adds AoE only to the selected mode');
+
+$textUpgrade['modifier2'] = '';
+$expected['modes'][1]['aoe'] = 'Radius &lt; 3.3';
+expectCalculatorResult(applyUpgrades($unitStats, [$textUpgrade]), $expected, 'Text replacement without mode applies to all modes');
+
+$textUpgrade['value'] = 'Radius 2.2';
+$replaced = $expected;
+$replaced['modes'][0]['aoe'] = 'Radius 2.2';
+$replaced['modes'][1]['aoe'] = 'Radius 2.2';
+expectCalculatorResult(applyUpgrades($expected, [$textUpgrade]), $replaced, 'Text replacement overwrites the entire description');
+
+expectCalculatorResult(
+    applyUpgrades($unitStats, [
+        ['operation' => 'none', 'modifier' => null, 'value' => null],
+    ]),
+    $unitStats,
+    'Informational upgrades do not modify stats',
+);
+
+echo "24 PHP calculator checks passed\n";

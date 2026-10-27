@@ -171,7 +171,7 @@ switch ($mode) {
 function convertStatsToOutput($unitStats)
 {
     $standardStats = ['Shields', 'Shield_Armor', 'HP', 'Armor', 'Energy', 'Move_Speed', 'Vision'];
-    $modeStats = ['Armor', 'Move_Speed', 'Vision', 'Range', 'Attack_Speed', 'Hits', 'Damage'];
+    $modeStats = ['Armor', 'Move_Speed', 'Vision', 'Range', 'Attack_Speed', 'Hits', 'Damage', 'aoe'];
     $outputString = '';
     $raceFilename = strtolower($unitStats['race']);
     $outputString .= "<span class='title'>{$unitStats['unitName']}</span>\n";
@@ -199,7 +199,7 @@ function convertStatsToOutput($unitStats)
         foreach ($modeStats as $stat) {
             if (isset($mode[$stat])) {
                 $statClass = str_replace('_', '', $stat);
-                $statTitle = str_replace('_', ' ', $stat);
+                $statTitle = $stat === 'aoe' ? 'AoE' : str_replace('_', ' ', $stat);
                 $outputString .= "<span id='unit{$statClass}'>{$statTitle}: {$mode[$stat]}</span><br>\n";
             }
         }
@@ -286,6 +286,9 @@ function standardizeStatsTemplate($unit, $unitStats)
             $tempArray['Range'] = $mode['atkrange'];
             $tempArray['Attack_Speed'] = $mode['attackspeed'];
             $tempArray['Hits'] = $mode['attacks'];
+            if (isset($mode['aoe'])) {
+                $tempArray['aoe'] = htmlspecialchars($mode['aoe']);
+            }
             $tempArray['damageResult'] = [];
             $tempArray['attribute'] = $mode['attribute'];
             $tempArray['damage'] = $mode['damage'];
@@ -512,6 +515,17 @@ function applyUpgrades($unitStats, $upgradesArray)
 {
     $variableStats = ['Move_Speed', 'Vision'];
     foreach ($upgradesArray as $upgrade) {
+        if ($upgrade['operation'] === 'none') {
+            continue;
+        }
+        if ($upgrade['operation'] === 'replace' && $upgrade['modifier'] === 'aoe') {
+            foreach ($unitStats['modes'] as $i => $mode) {
+                if (empty($upgrade['modifier2']) || $mode['modeName'] === $upgrade['modifier2']) {
+                    $unitStats['modes'][$i]['aoe'] = htmlspecialchars($upgrade['value']);
+                }
+            }
+            continue;
+        }
         if (!isset($upgrade['modifier2'])) {
             $upgrade['modifier2'] = '';
         }
@@ -846,7 +860,7 @@ function getUnitUpgradesOutput($commander, $unit)
         $upgradeCount = 0;
         foreach ($upgradeList as $value) {
             //Pick the correct icon location: if it's a hero upgrade, it's in the hero folder, otherwise, in unitupgrades
-            if ($value['unit'] !== $commander) {
+            if ($value['unit'] !== $commander && !($commander === 'Fenix' && str_starts_with($value['unit'], 'Fenix '))) {
                 $path = 'unitupgrades';
             } else {
                 $path = 'hero';

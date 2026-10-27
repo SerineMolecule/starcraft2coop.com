@@ -98,7 +98,8 @@ function showUpgradeTooltip(target: HTMLElement): void {
 
     const tooltip = prepareTooltip();
     const icon = document.createElement("img");
-    const dir = token(upgrade.commander) !== 'tychus' && token(upgrade.unit) === token(upgrade.commander) ? "hero" : "unitupgrades";
+    const isHero = token(upgrade.unit) === token(upgrade.commander) || (upgrade.commander === 'Fenix' && upgrade.unit.startsWith('Fenix '));
+    const dir = token(upgrade.commander) !== 'tychus' && isHero ? "hero" : "unitupgrades";
     icon.src = `/images/commanderdata/${dir}/${token(upgrade.commander)}/${upgrade.icon}.png`;
     icon.alt = "";
     icon.width = 50;

@@ -9,77 +9,214 @@
             }
         },
         "PlayerUpgrade": {
-            "type": "object",
-            "properties": {
-                "upgradeid": {
-                    "$ref": "#/definitions/PositiveInteger"
-                },
-                "unit": {
-                    "type": "string"
-                },
-                "commander": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "icon": {
-                    "type": "string"
-                },
-                "effect": {
-                    "type": "string"
-                },
-                "modifier": {
-                    "type": "string"
-                },
-                "modifiermode": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "which mode does it apply to? (e.g. Siege Mode)"
-                },
-                "modifiertag": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "which target tag does it apply to? (e.g. vs. Armored)"
-                },
-                "value": {
-                    "type": "number"
-                },
-                "operation": {
-                    "type": "string",
-                    "enum": [
-                        "add",
-                        "set",
-                        "multiply"
+            "anyOf": [
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "modifier": {
+                            "type": "string"
+                        },
+                        "modifiertag": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "which target tag does it apply to? (e.g. vs. Armored)"
+                        },
+                        "value": {
+                            "type": "number"
+                        },
+                        "operation": {
+                            "type": "string",
+                            "enum": [
+                                "add",
+                                "set",
+                                "multiply"
+                            ]
+                        },
+                        "upgradeid": {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        "unit": {
+                            "type": "string"
+                        },
+                        "commander": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "icon": {
+                            "type": "string"
+                        },
+                        "effect": {
+                            "type": "string"
+                        },
+                        "modifiermode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "which mode does it apply to? (e.g. Siege Mode)"
+                        },
+                        "upgradetype": {
+                            "type": "string",
+                            "enum": [
+                                "preupgrade",
+                                "upgrade"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "commander",
+                        "effect",
+                        "icon",
+                        "modifier",
+                        "modifiermode",
+                        "modifiertag",
+                        "name",
+                        "operation",
+                        "unit",
+                        "upgradeid",
+                        "upgradetype",
+                        "value"
                     ]
                 },
-                "upgradetype": {
-                    "type": "string",
-                    "enum": [
-                        "preupgrade",
-                        "upgrade"
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "modifier": {
+                            "type": "string",
+                            "const": "aoe"
+                        },
+                        "modifiertag": {
+                            "type": "null"
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "Replaces the entire plain-text description, rather than matching a substring."
+                        },
+                        "operation": {
+                            "type": "string",
+                            "const": "replace"
+                        },
+                        "upgradeid": {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        "unit": {
+                            "type": "string"
+                        },
+                        "commander": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "icon": {
+                            "type": "string"
+                        },
+                        "effect": {
+                            "type": "string"
+                        },
+                        "modifiermode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "which mode does it apply to? (e.g. Siege Mode)"
+                        },
+                        "upgradetype": {
+                            "type": "string",
+                            "enum": [
+                                "preupgrade",
+                                "upgrade"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "commander",
+                        "effect",
+                        "icon",
+                        "modifier",
+                        "modifiermode",
+                        "modifiertag",
+                        "name",
+                        "operation",
+                        "unit",
+                        "upgradeid",
+                        "upgradetype",
+                        "value"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "modifier": {
+                            "type": "null"
+                        },
+                        "modifiertag": {
+                            "type": "null"
+                        },
+                        "value": {
+                            "type": "null"
+                        },
+                        "operation": {
+                            "type": "string",
+                            "const": "none",
+                            "description": "Informational upgrade with no effect on the displayed stats."
+                        },
+                        "upgradeid": {
+                            "$ref": "#/definitions/PositiveInteger"
+                        },
+                        "unit": {
+                            "type": "string"
+                        },
+                        "commander": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "icon": {
+                            "type": "string"
+                        },
+                        "effect": {
+                            "type": "string"
+                        },
+                        "modifiermode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "which mode does it apply to? (e.g. Siege Mode)"
+                        },
+                        "upgradetype": {
+                            "type": "string",
+                            "enum": [
+                                "preupgrade",
+                                "upgrade"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "commander",
+                        "effect",
+                        "icon",
+                        "modifier",
+                        "modifiermode",
+                        "modifiertag",
+                        "name",
+                        "operation",
+                        "unit",
+                        "upgradeid",
+                        "upgradetype",
+                        "value"
                     ]
                 }
-            },
-            "required": [
-                "upgradeid",
-                "unit",
-                "commander",
-                "name",
-                "icon",
-                "effect",
-                "modifier",
-                "modifiermode",
-                "modifiertag",
-                "value",
-                "operation",
-                "upgradetype"
-            ],
-            "additionalProperties": false
+            ]
         },
         "PositiveInteger": {
             "type": "integer",

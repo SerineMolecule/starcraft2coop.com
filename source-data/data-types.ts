@@ -192,6 +192,8 @@ export interface PlayerUnit {
     /** Tags that this unit deals bonus damage to */
     attribute: string | null;
     damage: NonNegativeInteger;
+    /** Text description of weapon area-of-effect */
+    aoe?: string;
     attackbonus: NonNegativeInteger;
     hpbonus: number;
     armorbonus: NonNegativeInteger;
@@ -212,7 +214,7 @@ export interface PlayerTalent {
     modifierupgrade: string | null;
     extra: string | null;
     value: number;
-    operation: string;
+    operation: 'add' | 'set' | 'multiply';
     operationtype: 'increase' | 'decrease' | null;
     talenttype: 'mastery' | 'prestige' | 'post';
     target: string;
@@ -220,22 +222,37 @@ export interface PlayerTalent {
 
 export type PlayerTalentList = PlayerTalent[];
 
-export interface PlayerUpgrade {
+export interface PlayerUpgradeBase {
     upgradeid: PositiveInteger;
     unit: string;
     commander: string;
     name: string;
     icon: string;
     effect: string;
-    modifier: string;
     /** which mode does it apply to? (e.g. Siege Mode) */
     modifiermode: string | null;
+    upgradetype: 'preupgrade' | 'upgrade';
+}
+
+export type PlayerUpgrade = PlayerUpgradeBase & ({
+    modifier: string;
     /** which target tag does it apply to? (e.g. vs. Armored) */
     modifiertag: string | null;
     value: number;
     operation: 'add' | 'set' | 'multiply';
-    upgradetype: 'preupgrade' | 'upgrade';
-}
+} | {
+    modifier: 'aoe';
+    modifiertag: null;
+    /** Replaces the entire plain-text description, rather than matching a substring. */
+    value: string;
+    operation: 'replace';
+} | {
+    modifier: null;
+    modifiertag: null;
+    value: null;
+    /** Informational upgrade with no effect on the displayed stats. */
+    operation: 'none';
+});
 
 export type PlayerUpgradeList = PlayerUpgrade[];
 

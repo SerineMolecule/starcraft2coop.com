@@ -146,7 +146,7 @@ function addUpgrades(documents: SearchDocument[], upgrades: PlayerUpgradeList): 
             commander: upgrade.commander,
             path: `upgrades/${token(upgrade.commander)}/${upgrade.icon}`,
             text: upgrade.effect,
-            tokens: [upgrade.unit, upgrade.upgradetype, upgrade.modifier, upgrade.modifiermode || '', upgrade.modifiertag || ''],
+            tokens: [upgrade.unit, upgrade.upgradetype, upgrade.modifier || '', upgrade.modifiermode || '', upgrade.modifiertag || ''],
         });
     }
 }

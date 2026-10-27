@@ -233,6 +233,18 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             padding: 2px 2px 4px;
             color: #a2a5d4;
         }
+        .units-upgrade-passive {
+            cursor: help;
+            white-space: nowrap;
+        }
+        .units-upgrade-marker {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+        }
+        .units-upgrade-marker input {
+            margin: 0;
+        }
         .units-mastery-name {
             padding-left: 4px;
         }
