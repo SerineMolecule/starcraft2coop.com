@@ -261,14 +261,18 @@ export class UnitStats extends preact.Component<{
         ].filter(Boolean);
         return (
             <td class="units-unit">
-                <p><strong>{amonUnit.name}</strong></p>
+                <h2 class="units-name">{amonUnit.name}</h2>
+                <div class="units-identity">
+                    <div class="units-identity-text">
+                        <p class="units-tags">{tags.join(" · ") || "(No tags)"}</p>
+                    </div>
+                </div>
                 <p>
                     (Amon unit)
                 </p>
                 <ul class="units-stats">
                     <li class="units-hp"><span class="unbold">HP:</span> {amonUnit.hp} {!!amonUnit.armor && <><span class="unbold">| Armor: </span>{amonUnit.armor}</>}</li>
                     {!!amonUnit.shields && <li class="units-shields"><span class="unbold">Shields:</span> {amonUnit.shields} {!!amonUnit.shieldarmor && <><span class="unbold">| Shield Armor: </span>{amonUnit.shieldarmor}</>}</li>}
-                    <li><span class="unbold">Tags:</span> {tags.join(", ")}</li>
                 </ul>
             </td>
         );
@@ -662,12 +666,18 @@ export class UnitStats extends preact.Component<{
                     <legend>Artifact fragments collected</legend>
                     {upgradeLevels.map(level => <label><input type="radio" name={`artifacts-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.artifacts === level} /> {level}</label>)}
                 </fieldset>)}
-                {!!masteries.length && (<fieldset>
+                {!!masteries.length && (<fieldset class="units-masteries">
                     <legend>Masteries</legend>
-                    {masteries.map((talent) => <div><label>
-                        <input type="range" name={talent} value={modifiers.masteries[talent]} onInput={this.onChangeMastery} min={0} max={30} step={1} /><br />
-                        <input type="number" name={talent} value={this.state.masteryInputs?.[talent] ?? modifiers.masteries[talent]} onInput={this.onInputMastery} onBlur={this.onBlurMastery} min={0} max={30} step={1} /> {talent}
-                    </label></div>)}
+                    {masteries.map((talent) => {
+                        const id = `mastery-${this.props.formKey}-${token(talent)}`;
+                        return <div>
+                            <label class="units-mastery-name" id={`${id}-label`} htmlFor={id}>{talent}</label><br />
+                            <span class="units-mastery-controls">
+                                <input type="range" name={talent} aria-labelledby={`${id}-label`} value={modifiers.masteries[talent]} onInput={this.onChangeMastery} min={0} max={30} step={1} />
+                                <span class="units-mastery-value"><input type="number" id={id} name={talent} value={this.state.masteryInputs?.[talent] ?? modifiers.masteries[talent]} onInput={this.onInputMastery} onBlur={this.onBlurMastery} min={0} max={30} step={1} /><small class="unbold">/30</small></span>
+                            </span>
+                        </div>;
+                    })}
                 </fieldset>)}
                 {!!prestiges.length && (<fieldset>
                     <legend>Prestiges</legend>
@@ -761,6 +771,7 @@ export class UnitStats extends preact.Component<{
         return <>
             <p class="units-head">{mode.modeName || "Weapon"}</p>
             <ul class="units-mode-stats">
+                {!mode.attributedamage && <li class="unbold">(No weapon)</li>}
                 {!!mode.attributedamage && <>
                     {Object.entries(mode.attributedamage || {}).map(([attribute, damage]) => {
                         const dps = UnitStats.calculateDps(damage.damage, mode.attacks!, mode.attackspeed!);
@@ -872,21 +883,29 @@ export class UnitStats extends preact.Component<{
         }
         const unit = UnitStats.getUpgradedUnit(baseUnit, modifiers);
         const race = token(unit.race);
+        const image = this.renderImage(unit);
 
         return (
             <td class="units-unit">
-                {this.props.onClickClose && <button type="button" class="units-sidebutton" onClick={this.props.onClickClose}>&times;</button>}
-                {this.props.onClickCompare && <button type="button" class="units-sidebutton" onClick={this.props.onClickCompare}>Compare →</button>}
-                {this.renderImage(unit)}
-                <p><strong>{unit.name}</strong></p>
-                {(unit.mcost || unit.vcost || unit.buildtime || unit.supply) ? <p>
-                    <img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals:" /> {this.renderValue(unit.mcost, baseUnit.mcost)} { }
-                    <img src={`/images/commanderdata/unitupgrades/icongas_${race}.png`} alt="Gas:" /> {this.renderValue(unit.vcost, baseUnit.vcost)} { }
-                    <img src={`/images/commanderdata/unitupgrades/icontime_${race}.png`} alt="Build Time:" /> {this.renderValue(unit.buildtime, baseUnit.buildtime)} { }
-                    <img src={`/images/commanderdata/unitupgrades/iconsupply_${race}.png`} alt="Supply:" /> {this.renderValue(unit.supply, baseUnit.supply)}
-                </p> : <p>
-                    (No cost)
-                </p>}
+                <div class={`units-actions${this.props.onClickCompare ? " units-actions-compare" : ""}`}>
+                    {this.props.onClickClose && <button type="button" onClick={this.props.onClickClose} aria-label="Close comparison">&times;</button>}
+                    {this.props.onClickCompare && <button type="button" onClick={this.props.onClickCompare}>Compare →</button>}
+                </div>
+                <h2 class="units-name">{unit.name}</h2>
+                <div class="units-identity">
+                    {image && <div class="units-art">{image}</div>}
+                    <div class="units-identity-text">
+                        {(unit.mcost || unit.vcost || unit.buildtime || unit.supply) ? <p class="units-costs">
+                            <span><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals:" /> {this.renderValue(unit.mcost, baseUnit.mcost)}</span>
+                            <span><img src={`/images/commanderdata/unitupgrades/icongas_${race}.png`} alt="Gas:" /> {this.renderValue(unit.vcost, baseUnit.vcost)}</span>
+                            <span><img src={`/images/commanderdata/unitupgrades/icontime_${race}.png`} alt="Build Time:" /> {this.renderValue(unit.buildtime, baseUnit.buildtime)}</span>
+                            <span><img src={`/images/commanderdata/unitupgrades/iconsupply_${race}.png`} alt="Supply:" /> {this.renderValue(unit.supply, baseUnit.supply)}</span>
+                        </p> : <p class="units-costs">
+                            (No cost)
+                        </p>}
+                        <p class="units-tags">{unit.tags.join(" · ") || "(No tags)"}</p>
+                    </div>
+                </div>
                 <ul class="units-stats">
                     <li class="units-hp">
                         <span class="unbold">HP:</span> {this.renderValue(unit.hp, baseUnit.hp)}
@@ -899,7 +918,6 @@ export class UnitStats extends preact.Component<{
                     {!!unit.energy && <li class="units-energy"><span class="unbold">Energy:</span> {this.renderValue(unit.energy, baseUnit.energy)}</li>}
                     <li><span class="unbold">Move speed:</span> {this.renderValue(unit.movementspeed, baseUnit.movementspeed)}</li>
                     <li><span class="unbold">Vision:</span> {this.renderValue(unit.sightrange, baseUnit.sightrange)}</li>
-                    <li><span class="unbold">Tags:</span> {unit.tags.join(", ") || "(None)"}</li>
                 </ul>
                 {Object.values(unit.modes).map((mode) => this.renderMode(mode, baseUnit.modes[mode.modeName || '']!, baseUnit))}
                 {unit.notes && <p><span class="unbold">Notes:</span><br />{unit.notes.split("<br>").map((note) => <div>{note}</div>)}</p>}
