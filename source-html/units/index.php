@@ -105,6 +105,10 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         .units-unit-selector a[aria-selected="true"] {
             /* Also bridge the 10px gap to the primary stat box. */
             margin-right: -16px;
+            background-image: linear-gradient(to right, #708bc526 60%, transparent),
+                linear-gradient(#0c102970, #0c102970),
+                linear-gradient(rgb(30, 37, 91), rgb(10, 13, 33));
+            background-attachment: scroll, fixed, fixed;
         }
         .units-unit {
             position: relative;
@@ -112,6 +116,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             width: 360px;
             min-width: 280px;
             border-color: var(--units-line);
+            background: #0c102970;
         }
         .units-unit + .units-unit {
             border-color: #53578a;
@@ -237,6 +242,35 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             cursor: help;
             white-space: nowrap;
         }
+        .units-skill {
+            cursor: help;
+            font-weight: normal;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .units-skill-label {
+            min-width: 0;
+        }
+        .units-skill-costs {
+            display: inline-flex;
+            flex: none;
+            gap: 6px;
+            margin-left: auto;
+        }
+        .units-skill-cost {
+            white-space: nowrap;
+        }
+        .units-skills li + li {
+            margin-top: 3px;
+        }
+        .units-skills + .units-head {
+            margin-top: 10px;
+        }
+        .units-skill:focus-visible {
+            outline: 2px solid var(--units-accent);
+            outline-offset: 2px;
+        }
         .units-upgrade-marker {
             display: inline-block;
             width: 20px;
@@ -244,6 +278,10 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         }
         .units-upgrade-marker input {
             margin: 0;
+        }
+        .units-ranks label {
+            display: block;
+            white-space: normal;
         }
         .units-mastery-name {
             padding-left: 4px;
@@ -277,12 +315,12 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 
     <h3>Notes about the data</h3>
     <ul>
-        <li>Data only shows base stats and upgrades that affect those base stats. Upgrades that affect skill cooldowns are not displayed.</li>
+        <li>Skill tooltips show base descriptions, costs, and cooldowns. These do not change with selected upgrades, masteries, or prestiges.</li>
         <li>All evolutions (e.g. Abathur's Devourer, Dehaka's Primal Combat units) build times only includes the evolution time, and not the build time of the parent units.</li>
         <li>Any units with charge-based production (e.g. Artanis) uses the charge cooldown time as the build time. For Stukov, the unit's build time is displayed, and not the charge time.</li>
         <li>For multiple-spawned units (e.g. Zerglings), resource costs are divided by the number of units spawned.</li>
         <li>For buffs that have multiple stacks (e.g. Biomass), the maximum buff value will be calculated.</li>
-        <li>Only upgrades that change the units weapon stats are listed. For this reason, damage reduction like Fenix's Network Administrator is not shown.</li>
+        <li>Upgrades that do not change the displayed unit stats are listed without a checkbox.</li>
         <li>Since numbers are calculated, there may be small rounding errors.</li>
     </ul>
     <p>

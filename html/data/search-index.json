@@ -5442,7 +5442,7 @@
             "subtitle": "Artanis unit",
             "commander": "Artanis",
             "path": "units/#artanis/hightemplar",
-            "text": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+            "text": "",
             "tokens": [
                 "Protoss",
                 "Light,Biological,Psionic",
@@ -5922,7 +5922,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/disruptor",
-            "text": "Purification Nova: Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures. Cooldown: 20 seconds.",
+            "text": "",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical",
@@ -30315,10 +30315,6 @@
                     "3": {
                         "v": "Artanis",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
-                        "n": 0.183
                     }
                 }
             },
@@ -31751,10 +31747,6 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "Purification Nova: Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures. Cooldown: 20 seconds.",
-                        "n": 0.177
                     }
                 }
             },

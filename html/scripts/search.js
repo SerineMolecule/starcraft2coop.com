@@ -42,7 +42,7 @@
     elements.results.innerHTML = '<p class="site-search-message">Loading search...</p>';
     rendererLoading = new Promise((resolve, reject) => {
       const script = document.createElement("script");
-      script.src = "/scripts/search-results.js?v=fe2b64";
+      script.src = "/scripts/search-results.js?v=f0839e";
       script.async = true;
       script.onload = () => {
         if (!window.mountSearchResults) {

@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/UnitSkillList",
+    "definitions": {
+        "UnitSkillList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/UnitSkill"
+            }
+        },
+        "UnitSkill": {
+            "type": "object",
+            "properties": {
+                "commander": {
+                    "type": "string"
+                },
+                "unit": {
+                    "type": "string",
+                    "description": "PlayerUnit.basename where available; some overview units have no stats entry yet."
+                },
+                "name": {
+                    "type": "string"
+                },
+                "icons": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Site-relative image paths, in overview order. Empty when no icon is supplied."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Plain text, with line breaks preserved."
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "autocast",
+                        "passive"
+                    ]
+                },
+                "requiresupgrade": {
+                    "type": "boolean",
+                    "description": "The overview marks this skill as requiring an upgrade (unlockable)."
+                },
+                "cooldown": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Overview text, preserving variable cooldowns, charges, and initial cooldowns."
+                },
+                "energycost": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Overview text; null means unspecified, whereas \"0\" means explicitly free."
+                },
+                "charges": {
+                    "$ref": "#/definitions/PositiveInteger",
+                    "description": "Maximum stored charges, when the skill can store more than one use."
+                },
+                "rankrequired": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/NonNegativeInteger"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mode": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prestige": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "requirements": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Other stated prerequisites, such as artifacts or skill points, and exclusions."
+                }
+            },
+            "required": [
+                "commander",
+                "unit",
+                "name",
+                "icons",
+                "description",
+                "type",
+                "requiresupgrade",
+                "cooldown",
+                "energycost",
+                "rankrequired",
+                "mode",
+                "prestige",
+                "requirements"
+            ],
+            "additionalProperties": false,
+            "description": "Skills transcribed from the commander overviews, including hero and summoned-unit skills."
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "NonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
+        }
+    }
+}

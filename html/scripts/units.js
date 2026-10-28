@@ -1314,7 +1314,7 @@
       hpbonus: 0,
       armorbonus: 1,
       shieldbonus: 1,
-      notes: "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units."
+      notes: ""
     },
     {
       unitid: 32,
@@ -2649,7 +2649,7 @@
       hpbonus: 0,
       armorbonus: 1,
       shieldbonus: 1,
-      notes: "Purification Nova: Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures. Cooldown: 20 seconds."
+      notes: ""
     },
     {
       unitid: 76,
@@ -27308,6 +27308,7 @@ Drains 0.9 energy per second.`,
       commander: "Mengsk",
       name: "High-Grade Stimpacks",
       icon: "highgradestimpacks",
+      rank: 3,
       effect: "Increases attack speed by 200% for 10 seconds.",
       modifier: "Attack_Speed",
       modifiermode: null,
@@ -28652,6 +28653,7 @@ Drains 0.9 energy per second.`,
       commander: "Mengsk",
       name: "Tactical Realignment",
       icon: "tacticalrealignment",
+      rank: 2,
       effect: "After transforming, this unit gains 50% increased attack damage for 5 seconds. Cannot occur more than once every 15 seconds.",
       modifier: "damage",
       modifiermode: null,
@@ -32707,6 +32709,5972 @@ Drains 0.9 energy per second.`,
       upgradetype: "upgrade"
     }
   ];
+
+  // html/scripts/unit-ranks.ts
+  var rankUpgrades = new Map;
+  var effects = new Map;
+  for (const upgrade of playerupgrades_default) {
+    if (upgrade.commander !== "Mengsk")
+      continue;
+    const rank = upgrade.rank ?? (/^[123]$/.test(upgrade.name) ? Number(upgrade.name) : null);
+    if (rank === null)
+      continue;
+    const unit = upgrade.unit.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    const key = `ranks/mengsk/${unit}/${rank}`;
+    const rankEffects = effects.get(key) ?? new Set;
+    rankEffects.add(upgrade.effect);
+    effects.set(key, rankEffects);
+    const previous = rankUpgrades.get(key);
+    rankUpgrades.set(key, {
+      commander: upgrade.commander,
+      unit: upgrade.unit,
+      name: upgrade.rank ? `Rank ${rank}: ${upgrade.name}` : previous?.name ?? `Rank ${rank}`,
+      icon: upgrade.rank ? upgrade.icon : previous?.icon ?? "veterancy",
+      effect: [...rankEffects].join(`
+`)
+    });
+  }
+
+  // source-data/unitskills.json
+  var unitskills_default = [
+    {
+      commander: "Abathur",
+      unit: "Brutalisk",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+      ],
+      description: "Quickly burrow to target location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Brutalisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Brutalisk",
+      name: "Symbiote",
+      icons: [
+        "/images/commanderdata/unitupgrades/abathur/symbiote.png"
+      ],
+      description: "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
+    },
+    {
+      commander: "Abathur",
+      unit: "Devourer",
+      name: "Corrosive Acid",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/corrosiveacid.png"
+      ],
+      description: "Launches acid at all enemy units in the target area, reducing their attack speed by 12.5% and armor by 3. Stacks 3 times.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "45s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Leviathan",
+      name: "Symbiote",
+      icons: [
+        "/images/commanderdata/unitupgrades/abathur/symbiote.png"
+      ],
+      description: "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
+    },
+    {
+      commander: "Abathur",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Ravager",
+      name: "Corrosive Bile",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/corrosivebile.png"
+      ],
+      description: `Launch a missile at the target location, dealing 60 damage to enemy units in the area upon impact.
+Can destroy Protoss Force Fields.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Host",
+      name: "Spawn Locusts",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/spawnlocusts.png"
+      ],
+      description: "Sends Locusts to target location.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Host",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+      ],
+      description: "Quickly burrow to a target visible location.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Queen",
+      name: "Spawn Creep Tumor",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/spawncreeptumor.png"
+      ],
+      description: `A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.
+Bonus: Zerg move faster on creep.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "3s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Queen",
+      name: "Rapid Transfusion",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/rapidtransfusion.png"
+      ],
+      description: "Heals a biological unit or structure for 25 life over time.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3s",
+      energycost: "10",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Abduct",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/abduct.png"
+      ],
+      description: "Pulls target unit to the Viper. Enemy is stunned for 1 second.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Disabling Cloud",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/disablingcloud.png"
+      ],
+      description: "Creates a cloud that slows movement speed (-50%) and prevents enemy units and structures from attacking and using energy-based abilities. Lasts for 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Consumption",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/consumption.png"
+      ],
+      description: "Drains up to 75 life from a friendly Zerg unit and gives the Viper 2 energy for each point of life drained.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Parasitic Bomb",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/parasiticbomb.png"
+      ],
+      description: `Creates a parasitic cloud of radius 3 that deals 90 damage over 10 seconds to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.
+Cannot target ground units or structures.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "125",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Deadly Charge",
+      icons: [
+        "/images/commanderdata/hero/alarak/deadlycharge.png"
+      ],
+      description: "Alarak intercepts target enemy unit and strikes it for 200 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Destruction Wave",
+      icons: [
+        "/images/commanderdata/hero/alarak/destructionwave.png"
+      ],
+      description: "Unleashes a massive wave of force in a straight line, dealing 50 damage to enemies in its path and knocking them back.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Empower Me",
+      icons: [
+        "/images/commanderdata/hero/alarak/empowerme.png"
+      ],
+      description: `Alarak's attacks and abilities deal increased damage for each allied unit nearby. Mechanical units grant him double the power. Resets the cooldown of Deadly Charge and Destruction Wave.
+Biological units provide a 5% damage bonus per supply up to 100 supply, and then provide 2.5% per supply onwards. Mechanical units provide 10% damage bonus per supply up to 100 supply, and then provide 5% per supply onwards.
+Supply count is additive, with biological units favored first. So if you have 100 supply in bio and 1 supply in mechanical units, the mechanical units will provide the reduced rate of 5%.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "240 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Soul Absorption",
+      icons: [
+        "/images/commanderdata/progression/alarak/alarak_01.png"
+      ],
+      description: "Nearby enemy deaths restore 20 life and shields per supply of the slain unit. When near death, sacrifices nearby units you control to heal himself; Supplicants are consumed first. Sacrificing allies has no cooldown.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Ascendant",
+      name: "Psionic Orb",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/psionicorb.png"
+      ],
+      description: "Unleashes a traveling Psionic Orb that deals 10 damage per second to all enemies along its path.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "2s",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Ascendant",
+      name: "Mind Blast",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/mindblast.png"
+      ],
+      description: `Deals 200 damage to target enemy unit.
+Can target ground and air units.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8s",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Ascendant",
+      name: "Sacrifice",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/sacrifice.png"
+      ],
+      description: `Sacrifices a Supplicant to fully restore the Ascendant's energy.
+Can only target Supplicants.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Target Lock",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/targetlock.png"
+      ],
+      description: "Increases damage dealt to target enemy unit by 15%. Effect lasts as long as the Havoc remains locked onto the target.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Force Field",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/forcefield.png"
+      ],
+      description: `Creates a solid barrier that lasts for 15 seconds and impedes movement of ground units.
+Massive units shatter Force Fields on contact. (3 charges max).`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Cloaking Module",
+      icons: [
+        "/images/commanderdata/unitupgrades/alarak/cloakingmodule.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Cloaking Module research at the Cybernetics Core."
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Squad Sight",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/squadsight.png"
+      ],
+      description: "Friendly units within a radius of 4 gain 2 additional range on non-melee attacks.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Mothership",
+      name: "Thermal Lance",
+      icons: [
+        "/images/commanderdata/abilities/alarak/thermallance.png"
+      ],
+      description: "Deals 20 damage to all enemies in a straight line up to 10 range away.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "1 second",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Mothership",
+      name: "Mass Teleport",
+      icons: [
+        "/images/commanderdata/abilities/alarak/massteleport.png"
+      ],
+      description: "Teleports the Mothership and all nearby units you control to target friendly unit or structure's location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds*",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Slayer",
+      name: "Phase Blink",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/phaseblink.png"
+      ],
+      description: "Teleports the Slayer to a nearby target location. Ability can only be used once every 8 seconds. After using Phase Blink, the Slayer's next attack within 8 seconds will deal double damage.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Slayer",
+      name: "Phasing Armor",
+      icons: [
+        "/images/commanderdata/unitupgrades/alarak/phasingarmor.png"
+      ],
+      description: "After being attacked, becomes immune to damage for 2 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Alarak level 4 and Phasing Armor research at the Death Council."
+    },
+    {
+      commander: "Alarak",
+      unit: "Supplicant",
+      name: "Devotion",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/devotion.png"
+      ],
+      description: "Alarak sacrifices Supplicants before other nearby units to heal himself when near death.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Wrathwalker",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Archon",
+      name: "Feedback",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/feedback.png"
+      ],
+      description: "Drains all energy from the target. Deals 1 damage per point of energy.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Archon",
+      name: "Psionic Storm",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/psionicstorm.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "2s",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "High Templar",
+      name: "Feedback",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/feedback.png"
+      ],
+      description: "Drains all energy from the target. Deals 1 damage per point of energy.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "High Templar",
+      name: "Psionic Storm",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/psionicstorm.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "2s",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Immortal",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Observer",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Observer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Phoenix",
+      name: "Graviton Beam",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/gravitonbeam.png"
+      ],
+      description: `Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.
+Massive units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Reaver",
+      name: "Create Scarab",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/createscarab.png"
+      ],
+      description: `Builds Scarabs that automatically launch at the Reaver's target and explode for area damage.
+Can attack ground units. (5 max).`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "8s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Tempest",
+      name: "Disintegration",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/disintegration.png"
+      ],
+      description: "Deals 500 damage over 20 seconds to target enemy unit or structure.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "90 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Zealot",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/charge.png"
+      ],
+      description: "Intercepts enemy ground units and increases movement speed.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Zealot",
+      name: "Whirlwind",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/whirlwind.png"
+      ],
+      description: "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Creeper Host",
+      name: "Spawn Explosive Creeper",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper.png"
+      ],
+      description: `Siege unit that attacks by spawning Explosive Creepers. Creepers last 25 seconds.
+Creepers can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dakrun",
+      name: "Brutal Charge",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/brutalcharge.png"
+      ],
+      description: "Charge to a target location knocking back units in the area and dealing 200 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dakrun",
+      name: "Greater Spiked Hide",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/greaterspikedhide.png"
+      ],
+      description: "When damaged, fires a spine at the attacker that deals 20 damage.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Dehaka level 10."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Leap",
+      icons: [
+        "/images/commanderdata/hero/dehaka/leap.png"
+      ],
+      description: "Dehaka leaps to the target location, dealing 145 damage to nearby enemy ground units. Each enemy hit grants Dehaka 1 armour for 2 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Intimidating Roar",
+      icons: [
+        "/images/commanderdata/hero/dehaka/intimidatingroar.png"
+      ],
+      description: `Dehaka terrifies nearby enemies, reducing their movement speed by 75% and attack speed by 25% for 15 seconds.
+Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot use abilities that cost energy.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Devour",
+      icons: [
+        "/images/commanderdata/hero/dehaka/devour.png"
+      ],
+      description: "Instantly kill the target enemy unit to heal 5% Life and gain passive abilities based on the enemy type for 25 seconds. The cooldown is based on the amount of life the enemy has when killed.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "~ seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Scorching Breath",
+      icons: [
+        "/images/commanderdata/hero/dehaka/scorchingbreath.png"
+      ],
+      description: "Dehaka's fiery breath scorches the earth, dealing weapon damage to all enemy units in its path. 3 charges max.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3.",
+      charges: 3
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/deeptunnel.png"
+      ],
+      description: "Quickly burrow to any visible location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Primal Regeneration",
+      icons: [
+        "/images/commanderdata/hero/dehaka/primalregeneration.png"
+      ],
+      description: `Dehaka passively heals all allied units nearby.
+Level 2 - 2 life per second.
+Level 3 - 3 life per second.`,
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Keen Senses",
+      icons: [
+        "/images/commanderdata/hero/dehaka/keensenses.png"
+      ],
+      description: "Allows Dehaka to detect cloaked, burrowed, and hallucinated units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Chitinous Plating",
+      icons: [
+        "/images/commanderdata/hero/dehaka/chitinousplating.png"
+      ],
+      description: "Increases Dehaka's armor by 3.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Deadly Reach",
+      icons: [
+        "/images/commanderdata/hero/dehaka/deadlyreach.png"
+      ],
+      description: "Allows Dehaka to attack air units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Glevig",
+      name: "Incendiary Acid",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/incendiaryacid.png"
+      ],
+      description: "Carpets the ground in fire. Enemy units in the area take 500 damage over 5 seconds. Can be set to Autocast.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "6 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Glevig",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/deeptunnel.png"
+      ],
+      description: "Glevig burrows to the target location and erupts, dealing damage to units in the area and knocking them back.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Greater Primal Wurm",
+      name: "Greater Bile Stream",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/greaterbilestream.png"
+      ],
+      description: "Deals 70 damage per second to the target unit for 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Greater Primal Wurm",
+      name: "Greater Deep Tunnel",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/greaterdeeptunnel.png"
+      ],
+      description: "Quickly burrow to any visible location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Greater Primal Wurm",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Murvar",
+      name: "Spawn Swarm",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/spawnswarm.png"
+      ],
+      description: "Spawns 6 Primal Locusts and 6 Explosive Creepers that fight for 25 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Murvar",
+      name: "Oppressive Stench",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/oppressivestench.png"
+      ],
+      description: "Creates a cloud that slows enemy movement speed and prevents enemy units and structures from attacking or using energy-based abilities. Lasts for 5 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Guardian",
+      name: "Explosive Spores",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/explosivespores.png"
+      ],
+      description: "Fires an Explosive Spore at the target, causing the target and all nearby enemy ground units to take 50 damage.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Host",
+      name: "Spawn Primal Locusts",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/spawnprimallocusts.png"
+      ],
+      description: `Siege unit that attacks by spawning Primal Locusts. Primal Locusts last 25 seconds.
+Primal Locusts can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Mutalisk",
+      name: "Primal Reconstitution",
+      icons: [
+        "/images/commanderdata/unitupgrades/dehaka/primalreconstitution.png"
+      ],
+      description: "Returns to life shortly after being killed.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Dehaka level 7 and Primal Reconstitution research at Murvar's Den."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Ultralisk",
+      name: "Brutal Charge",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/brutalcharge.png"
+      ],
+      description: "Charge to target location knocking back units in the area and dealing 25 damage.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Wurm",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Tyrannozor",
+      name: "Barrage of Spikes",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/barrageofspikes.png"
+      ],
+      description: "Unleash a Barrage of Spikes, dealing 100 damage to enemy ground and air units around the Tyrannozor.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Tyrannozor",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Tyrannozor",
+      name: "Tyrant's Protection",
+      icons: [
+        "/images/commanderdata/unitupgrades/dehaka/tyrantsprotection.png"
+      ],
+      description: "Grants nearby friendly units 2 additional armor.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Tyrant's Protection research at Dakrun's Den."
+    },
+    {
+      commander: "Fenix",
+      unit: "Carrier",
+      name: "Build Interceptor",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/buildinterceptor.png"
+      ],
+      description: `Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.
+Can attack ground and air units. 8 Interceptors max.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Clolarion",
+      name: "Build Interceptor",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/buildinterceptor.png"
+      ],
+      description: `Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.
+Can attack ground and air units. 8 Interceptors max.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Clolarion",
+      name: "Build Interdictor",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/buildinterdictor.png"
+      ],
+      description: `Builds Interdictors that automatically bomb enemy ground units for 12 damage.
+Can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Colossus",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Conservator",
+      name: "Protective Field",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/protectivefield.png"
+      ],
+      description: "Creates a shield that reduces all incoming attack damage to friendly units by 35%. Lasts 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Disruptor",
+      name: "Purification Nova",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/purificationnova.png"
+      ],
+      description: "Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Disruptor",
+      name: "Cloaking Module",
+      icons: [
+        "/images/commanderdata/unitupgrades/fenix/cloakingmodule.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Cloaking Module research at the Robotics Bay."
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Stasis Field",
+      icons: [
+        "/images/commanderdata/abilities/fenix/stasisfield.png"
+      ],
+      description: "Places enemy units in target area into stasis for 15 seconds. Units in stasis cannot move, attack, be attacked or be affected by abilities.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Enable Cloaking Field",
+      icons: [
+        "/images/commanderdata/abilities/fenix/cloakingfield.png"
+      ],
+      description: "Enable Cloaking Field, cloaking friendly units near Fenix. Costs 5 Energy per second to maintain.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "5",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Recall",
+      icons: [
+        "/images/commanderdata/abilities/fenix/recall.png"
+      ],
+      description: "Teleports all friendly units in the target area to the location of the Arbiter.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Observation Protocol",
+      icons: [
+        "/images/commanderdata/hero/fenix/observationprotocol.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Fenix level 6 and Observation Protocol research at the Forge."
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Praetor Armor",
+      name: "Thunderous Charge",
+      icons: [
+        "/images/commanderdata/abilities/fenix/thunderouscharge.png"
+      ],
+      description: "Fenix charges at the target location, dealing 50 damage and stunning all enemies for 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Praetor Armor",
+      name: "Whirlwind",
+      icons: [
+        "/images/commanderdata/abilities/fenix/whirlwind.png"
+      ],
+      description: "All nearby enemies take 70 damage per second for 3 seconds. Fenix can move while Whirlwind is active.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Praetor Armor",
+      name: "Shield Capacitor",
+      icons: [
+        "/images/commanderdata/abilities/fenix/shieldcapacitor.png"
+      ],
+      description: "Fully restores Fenix's shields. autocasting activates Shield Capacitor when Fenix's shields have been depleted.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Solarite Dragoon",
+      name: "Solar Cannon",
+      icons: [
+        "/images/commanderdata/abilities/fenix/solarcannon.png"
+      ],
+      description: "Fires a piercing beam that deals 100 damage to all enemy ground units in its path.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "6 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Solarite Dragoon",
+      name: "Solarite Flare",
+      icons: [
+        "/images/commanderdata/abilities/fenix/solariteflare.png"
+      ],
+      description: "Fires an air bursting flare that deals 100 damage to enemy air units.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Solarite Dragoon",
+      name: "Arsenal Overcharge",
+      icons: [
+        "/images/commanderdata/abilities/fenix/arsenalovercharge.png"
+      ],
+      description: "Activating Arsenal Overcharge causes your damaging abilities to have no cooldown for 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Immortal",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Kaldalis",
+      name: "Engage",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/engage.png"
+      ],
+      description: "Kaldalis intercepts the target unit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Legionnaire",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/charge.png"
+      ],
+      description: "Intercepts enemy ground units and increases movement speed.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Mojo",
+      name: "Suppression Procedure",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/suppressionprocedure.png"
+      ],
+      description: "Fire a barrage of Anti-Matter Missiles, dealing 6 (12 vs Armored) area damage and stunning nearby enemy air units for 1 second.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Observer",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Observer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Taldarin",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/barrier.png"
+      ],
+      description: "Absorbs up to 200 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Talis",
+      name: "Ricochet Glaive",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/ricochetglaive.png"
+      ],
+      description: "An amplified Glaive that ricochets and hits up to 3 enemy units for 25 (35 vs Light) damage each.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Warbringer",
+      name: "Purification Blast",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/purificationblast.png"
+      ],
+      description: "Fire a devastating blast that deals 150 damage the target unit.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Warbringer",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/horner/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Trigger Override",
+      icons: [
+        "/images/commanderdata/unitupgrades/horner/triggeroverride.png"
+      ],
+      description: `Wraith attack speed increases by 10% with each attack, up to a maximum of 100%.
+Passive ability.`,
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Unregistered Cloaking System",
+      icons: [
+        "/images/commanderdata/unitupgrades/horner/unregisteredcloakingsystem.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Unregistered Cloaking System research at the Dominion Starport Tech Lab."
+    },
+    {
+      commander: "Horner",
+      unit: "Deimos Viking",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Deimos Viking",
+      name: "W.I.L.D. Missiles",
+      icons: [
+        "/images/commanderdata/unitskills/horner/wildmissiles.png"
+      ],
+      description: "Launches 5 rockets at the target unit. Each rocket deals 25 (40 vs armored) damage.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Hellion",
+      name: "Tar Bombs",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tarbombs.png"
+      ],
+      description: "Launches a tar bomb that deals 20 damage to the target unit. Nearby enemies have their movement speed reduced by 75% and attack range reduced by 3 for 5 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Reaper",
+      name: "KD8 Charge",
+      icons: [
+        "/images/commanderdata/unitskills/horner/kd8charge.png"
+      ],
+      description: "Explodes after a short delay, doing 10 area damage and knocking back nearby units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Sovereign Battlecruiser",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Analyze Weakness",
+      icons: [
+        "/images/commanderdata/unitskills/horner/analyzeweakness.png"
+      ],
+      description: "All Melee and Ranged attacks against Analyzed units do 3 bonus damage. Effect lasts as long as the Raven remains locked onto the target.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Imaging Radar",
+      icons: [
+        "/images/commanderdata/unitskills/horner/imagingradar.png"
+      ],
+      description: "Shows the locations of enemy units through the fog of war within a radius of 40. Radar contacts do not grant vision or detection.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Carrier",
+      name: "Build Interceptor",
+      icons: [
+        "/images/commanderdata/unitskills/karax/buildinterceptor.png"
+      ],
+      description: `Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.
+Can attack ground and air units. 8 Interceptors max.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Carrier",
+      name: "Repair Drones",
+      icons: [
+        "/images/commanderdata/unitupgrades/karax/repairdrones.png"
+      ],
+      description: "Two repair drones automatically restore life to nearby friendly mechanical units.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Karax level 14 and Repair Drones research at the Fleet Beacon."
+    },
+    {
+      commander: "Karax",
+      unit: "Colossus",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Energizer",
+      name: "Chrono Beam",
+      icons: [
+        "/images/commanderdata/unitskills/karax/chronobeam.png"
+      ],
+      description: "Friendly target gains 25% attack speed and 50% movement speed for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "3",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Energizer",
+      name: "Reclamation",
+      icons: [
+        "/images/commanderdata/unitskills/karax/reclamation.png"
+      ],
+      description: "Temporarily takes control of target enemy mechanical unit. Reclaimed units self-destruct after 120 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "120 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Immortal",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/karax/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Immortal",
+      name: "Shadow Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/karax/shadowcannon.png"
+      ],
+      description: `Deal 320 damage to target unit or structure.
+Can target ground and air units.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Mirage",
+      name: "Graviton Beam",
+      icons: [
+        "/images/commanderdata/unitskills/karax/gravitonbeam.png"
+      ],
+      description: `Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.
+Massive units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Mirage",
+      name: "Phasing Armor",
+      icons: [
+        "/images/commanderdata/unitupgrades/karax/phasingarmor.png"
+      ],
+      description: "After being attacked, becomes immune to damage for 2 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Karax level 14 and Phasing Armor research at the Fleet Beacon."
+    },
+    {
+      commander: "Karax",
+      unit: "Observer",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Observer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Sentinel",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/unitskills/karax/charge.png"
+      ],
+      description: "Intercepts enemy ground units and increases movement speed.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Sentinel",
+      name: "Reconstruction",
+      icons: [
+        "/images/commanderdata/unitupgrades/karax/reconstruction.png"
+      ],
+      description: "After fatal damage, rebuilds itself over 5 seconds, returning with full life and shields.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Karax level 4 and Reconstruction research at the Twilight Council."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Hydralisk",
+      name: "Frenzy",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/frenzy.png"
+      ],
+      description: "Attack speed increased by 50% for 15 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Leaping Strike",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/leapingstrike.png"
+      ],
+      description: "Kerrigan leaps to her target and deals 300 damage. Can be used without a target to travel quickly.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Psionic Shift",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/psionicshift.png"
+      ],
+      description: "Kerrigan dashes through enemies, dealing 100 damage to all enemies in her path.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Assimilation Aura",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/assimilationaura.png"
+      ],
+      description: "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Immobilization Wave",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/immobilizationwave.png"
+      ],
+      description: `Deals 100 damage to enemies in a large area around Kerrigan (27 range) and stuns them for 10 seconds.
+Heroic units are slowed.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 180 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Kinetic Blast",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/kineticblast.png"
+      ],
+      description: "Kerrigan deals 300 damage to target unit or structure from long range.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Crushing Grip",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/crushinggrip.png"
+      ],
+      description: "Enemies in target area are stunned and take 50 damage over 5 seconds. Heroic units are slowed.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Assimilation Aura",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/assimilationaura.png"
+      ],
+      description: "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Immobilization Wave",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/immobilizationwave.png"
+      ],
+      description: `Deals 100 damage to enemies in a large area around Kerrigan and stuns them for 10 seconds.
+Heroic units are slowed.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 180 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Mutating Carapace",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/mutatingcarapace.png"
+      ],
+      description: "Generates temporary protective life equal to 30% of damage dealt, up to 200. This protection decays over time.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Fury",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/fury.png"
+      ],
+      description: "Each attack increases attack speed by 10%, stacking up to five times for a 50% bonus. The bonus expires after 5 seconds without attacking.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Kerrigan level 10."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Queen",
+      name: "Spawn Creep Tumor",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/spawncreeptumor.png"
+      ],
+      description: `A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.
+Bonus: Zerg move faster on creep.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Queen",
+      name: "Spawn Larva",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/spawnlarva.png"
+      ],
+      description: "Target Hatchery, Lair, or Hive spawns 4 Larvae in 40 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "25 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Queen",
+      name: "Transfusion",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/transfusion.png"
+      ],
+      description: "Instantly restores 125 life to target biological unit or structure.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Burrow Charge",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/burrowcharge.png"
+      ],
+      description: "Ultralisk burrows and charges toward units. When the Ultralisk unburrows, all enemy units nearby are knocked back and stunned for 2 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Reincarnation",
+      icons: [
+        "/images/deathprevention/torrasqueultralisk.png"
+      ],
+      description: "On death, forms a cocoon and returns with full life after 10 seconds. Destroying the cocoon kills the Ultralisk.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Kerrigan level 14 (Torrasque strain)."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Tissue Assimilation",
+      icons: [
+        "/images/commanderdata/unitupgrades/kerrigan/tissueassimilation.png"
+      ],
+      description: "Restores life equal to 40% of damage dealt by its normal attacks.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Tissue Assimilation research at the Ultralisk Cavern."
+    },
+    {
+      commander: "Mengsk",
+      unit: "Aegis Guard",
+      name: "High-Grade Stimpacks",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/highgradestimpacks.png"
+      ],
+      description: "Increases attack speed by 200% for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: 3,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "Pyrokinetic Immolation",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/pyrokineticimmolation.png"
+      ],
+      description: "Immolates a target Biological enemy for 20 seconds, dealing 20 damage per second to themselves and nearby Biological enemies. Can be set to Autocast. Requires 75 energy.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "EMP Blast",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/empblast.png"
+      ],
+      description: "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for 1 second. Cloaked units are revealed for 10 seconds after being hit. Can be set to Autocast. Requires 75 energy.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "Labyrinth Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/labyrinthcloak.png"
+      ],
+      description: "Prevents the Emperor's Shadow from taking any damage for 10 seconds after being attacked. Cannot occur more than once every 30 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: 1,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "Tactical Missile Strike",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/tacticalmissilestrike.png"
+      ],
+      description: `Calls down a Tactical Missile Strike at a target location. Tactical Missiles take 4 seconds to land, but they deal up to 150 (+100 vs. structures) damage to enemies in a small radius. (100% damage within 1.5 range of the hit, 50% from 1.5 to 2.0 range)
+Cooldown is time to build one missile.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "90 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Enthralled Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Imperial Intercessor",
+      name: "Heal",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/heal.png"
+      ],
+      description: `Heals a friendly biological target.
+Heals 9 life per 3 energy.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Imperial Intercessor",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 70% for 8 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Imperial Witness",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Pride of Augustgrad",
+      name: "Yamato Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/yamatocannon.png"
+      ],
+      description: "Blasts a target with a devastating plasma cannon, causing 300 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Pride of Augustgrad",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Battlecruiser is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Covert Banshee",
+      name: "Rocket Barrage",
+      icons: [
+        "/images/commanderdata/unitskills/nova/rocketbarrage.png"
+      ],
+      description: "Deals 75 damage to enemy ground units in the target area.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Covert Banshee",
+      name: "Advanced Cloaking Field",
+      icons: [
+        "/images/commanderdata/unitupgrades/nova/advancedcloakingfield.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Advanced Cloaking Field research at a Starport Tech Lab."
+    },
+    {
+      commander: "Nova",
+      unit: "Elite Marine",
+      name: "Super Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/nova/superstimpack.png"
+      ],
+      description: "Heals the Elite Marine for 2 life per second and increases its attack speed by 50% and movement speed by 50% for 15 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Heavy Siege Tank",
+      name: "Deploy Spider Mines",
+      icons: [
+        "/images/commanderdata/unitskills/nova/deployspidermines.png"
+      ],
+      description: "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy detectors. (Costs 50 minerals).",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Hellbat Ranger",
+      name: "Jump Jet Assault",
+      icons: [
+        "/images/commanderdata/unitskills/nova/jumpjetassault.png"
+      ],
+      description: "Launches the Hellbat Ranger toward nearby enemy ground units. Briefly stuns enemy units on impact and gains +4 armor.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Marauder Commando",
+      name: "Magrail Munitions",
+      icons: [
+        "/images/commanderdata/unitskills/nova/magrailmunitions.png"
+      ],
+      description: "Deals 90 damage to target enemy unit.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Snipe",
+      icons: [
+        "/images/commanderdata/hero/nova/snipe.png"
+      ],
+      description: `Deals 200 damage to target enemy ground or air unit from long range (10).
+Can target biological and mechanical units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Sabotage Drone",
+      icons: [
+        "/images/commanderdata/hero/nova/sabotagedrone.png"
+      ],
+      description: "Deploys an undetectable explosive drone that deals 200 damage (400 vs Structure) to enemy ground units in the target area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Tac Nuke Strike",
+      icons: [
+        "/images/commanderdata/hero/nova/tacnukestrike.png"
+      ],
+      description: "Calls down a Nuclear Strike at the target location, dealing 600 damage in a large radius after 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 420 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Penetrating Blast",
+      icons: [
+        "/images/commanderdata/hero/nova/penetratingblast.png"
+      ],
+      description: `Deals 50 (100 vs Light) damage to enemy ground units in a wide arc.
+Does not damage friendly units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: "Assault Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/hero/nova/blink.png"
+      ],
+      description: `Teleports Nova to a nearby location. Nova gains a temporary shield that absorbs up to 200 damage for 8 seconds.
+Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: "Assault Mode",
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Holo Decoy",
+      icons: [
+        "/images/commanderdata/hero/nova/holodecoy.png"
+      ],
+      description: "Deploys a holographic duplicate of Nova that automatically attacks enemy units. The holo decoy lasts for 60 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 420 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: "Assault Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Ghost Visor",
+      icons: [
+        "/images/commanderdata/hero/nova/ghostvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Ghost Visor research at the Ghost Academy."
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Build Railgun Turret",
+      icons: [
+        "/images/commanderdata/unitskills/nova/buildrailgunturret.png"
+      ],
+      description: `Automated defensive turret. Damages all enemy ground units in a straight line. Lasts for 60 seconds.
+Can attack ground units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Deploy Bio-Mechanical Repair Drone",
+      icons: [
+        "/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone.png"
+      ],
+      description: "Heals nearby biological and mechanical units. Lasts for 30 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Predator Missile",
+      icons: [
+        "/images/commanderdata/unitskills/nova/predatormissile.png"
+      ],
+      description: "Deploys a missile that pursues target enemy unit, dealing 100 (+35 vs. shields) damage in a wide radius upon contact.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Spec Ops Ghost",
+      name: "Snipe",
+      icons: [
+        "/images/commanderdata/unitskills/nova/snipe.png"
+      ],
+      description: `Deals 170 damage to target enemy biological unit.
+Mechanical units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Spec Ops Ghost",
+      name: "EMP Round",
+      icons: [
+        "/images/commanderdata/unitskills/nova/empround.png"
+      ],
+      description: "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Cloaked units are revealed for 10 seconds after being hit.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Spec Ops Ghost",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/nova/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Banshee",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Banshees also have their range increased by 2.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Banshee",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Battlecruiser",
+      name: "Yamato Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/yamatocannon.png"
+      ],
+      description: "Blasts a target with a devastating plasma cannon, causing 300 damage.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Battlecruiser",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Battlecruiser is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Battlecruiser",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Firebat",
+      name: "Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/stimpack.png"
+      ],
+      description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Hyperion",
+      name: "Hyperjump",
+      icons: [
+        "/images/commanderdata/abilities/raynor/hyperjump.png"
+      ],
+      description: "Hyperjump to the targeted location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Hyperion",
+      name: "Yamato Cannon",
+      icons: [
+        "/images/commanderdata/abilities/raynor/yamatocannon.png"
+      ],
+      description: "Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Hyperion",
+      name: "Point Defense Drone",
+      icons: [
+        "/images/commanderdata/abilities/raynor/pointdefensedrone.png"
+      ],
+      description: `Uses a laser to shoot down enemy missiles.
+Cannot target special attacks.
+Times out after 180 seconds.
+Each shot consumes 10 energy. (4 charges max)`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 4
+    },
+    {
+      commander: "Raynor",
+      unit: "Marauder",
+      name: "Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/stimpack.png"
+      ],
+      description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Marine",
+      name: "Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/stimpack.png"
+      ],
+      description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the unit's life.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Medic",
+      name: "Heal",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/heal.png"
+      ],
+      description: `Heals a friendly biological target.
+Heals 9 life per 3 energy per second.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Siege Tank",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Viking",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Vulture",
+      name: "Deploy Spider Mine",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/deployspidermine.png"
+      ],
+      description: "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy Detectors. (3 charges max).",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Raynor",
+      unit: "Vulture",
+      name: "Replenishable Magazine",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/replenishspidermine.png"
+      ],
+      description: `Constructs a new Spider Mine to replace those used at a cost of 15 minerals each.
+A Vulture can only carry 3 Spider Mines at a time.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "6 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Vulture",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Gary",
+      name: "E-Gorb",
+      icons: [
+        "/images/commanderdata/hero/stetmann/egorb.png"
+      ],
+      description: "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Gary",
+      name: "Stetellite Overcharge",
+      icons: [
+        "/images/commanderdata/hero/stetmann/so1.png",
+        "/images/commanderdata/hero/stetmann/so2.png",
+        "/images/commanderdata/hero/stetmann/so3.png"
+      ],
+      description: `Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds, and a Stetellite is invulnerable while overcharged.
+F.A.S.T. Overload grants 20% increased attack speed for 45 seconds.
+H.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.
+J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
+(The Stetellite is overcharged for 30 seconds but grants a 45-second buff.)`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Gary",
+      name: "Semi-Stable Mass Transportation",
+      icons: [
+        "/images/commanderdata/hero/stetmann/ssmt.png"
+      ],
+      description: "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "180 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Baneling",
+      name: "Anti-Centripetal Rocket Servos",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/anticentripetalrocketservos.png"
+      ],
+      description: "Increases the movement speed of this unit by 15% and allows it to leap onto enemy units.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "1",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Battlecarrier Lord",
+      name: "Ready Mecha Broodling",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/readymechabroodling.png"
+      ],
+      description: "Builds Mecha Broodlings that can attack ground units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3 seconds",
+      energycost: "5",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Battlecarrier Lord",
+      name: "Build Mecha Locusceptor",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/buildmechalocusceptor.png"
+      ],
+      description: `Builds Mecha Locusceptors that automatically attack the Mecha Battlecarrier Lord's target.
+Can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Battlecarrier Lord",
+      name: "Stetmato Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/stetmatocannon.png"
+      ],
+      description: "Blasts a target with a devastating plasma cannon causing 300 damage and delusions of grandeur.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Corruptor",
+      name: "Cluster Busters",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/clusterbusters.png"
+      ],
+      description: "Fires a barrage of missiles dealing 50 (+30 vs. light) damage to enemy air units in a target area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Corruptor",
+      name: "Terraclean Solvent",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/terracleansolvent.png"
+      ],
+      description: `Emits a solvent stream that deals 10 damage per second for 3 seconds, then increases to 50 damage per second.
+Channeled ability. Can target enemy ground units and structures.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Infestor",
+      name: "Roaches Away!",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/roachesaway.png"
+      ],
+      description: "Spawn 2 Mecha Roaches. Spawned units last 45 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "250",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Infestor",
+      name: "UMI-C Charging Protocol",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/umicchargingprotocol.png"
+      ],
+      description: "The Mecha Infestor launches a mechanical nerve cord at a friendly unit, restoring 150 life, 50 Egonergy, and 50 energy instantly. An additional 600 life, 200 Egonergy, and 200 energy regenerates over 20 seconds. The unit's ability cooldown rate is increased by 25%",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Infestor",
+      name: "Deconstructive Roach-nites",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/deconstructiveroachnites.png"
+      ],
+      description: "Infests target enemy structure, dealing 500 damage over 10 seconds and disabling it for the duration of the effect. If the structure is destroyed while under the effects of Deconstructive Roach-nites, it will spawn 2 Mecha Roaches.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Lurker",
+      name: "Tunnel of TERROR Algorithm",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/tunnelofterroralgorithm.png"
+      ],
+      description: "Tunnels to a nearby target location, dealing 60 damage to enemies along the way.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Lurker",
+      name: "Focused Strike Algorithm",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/focusedstrikealgorithm.png"
+      ],
+      description: "The Mecha Lurker concentrates its fire on a target unit, dealing 50 damage to a small area around that unit for 10 seconds or until the unit is destroyed.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Ultralisk",
+      name: "Vectored Burrow Charge",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/vectoredburrowcharge.png"
+      ],
+      description: "Burrow and charge towards a unit. Upon unburrowing, all enemy units in the vicinity are knocked back and dealt 50 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Ultralisk",
+      name: "Mecha Mooch Module",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/mechamoochmodule.png"
+      ],
+      description: "Absorbs 25 health from a nearby enemy or friendly mechanical unit, healing for that amount.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "2 seconds",
+      energycost: "5",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "E-Gorb",
+      icons: [
+        "/images/commanderdata/hero/stetmann/egorb.png"
+      ],
+      description: "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 2
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Stetellite Overcharge",
+      icons: [
+        "/images/commanderdata/hero/stetmann/so1.png",
+        "/images/commanderdata/hero/stetmann/so2.png",
+        "/images/commanderdata/hero/stetmann/so3.png"
+      ],
+      description: `Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds.
+- F.A.S.T. Overload grants 20% increased attack speed for 45 seconds.
+- H.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.
+- J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 2
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Semi-Stable Mass Transportation",
+      icons: [
+        "/images/commanderdata/hero/stetmann/ssmt.png"
+      ],
+      description: "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "180 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 2
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Gary Zone",
+      icons: [
+        "/images/commanderdata/hero/stetmann/garyzone1.png",
+        "/images/commanderdata/hero/stetmann/garyzone2.png",
+        "/images/commanderdata/hero/stetmann/garyzone3.png"
+      ],
+      description: "Generates a Stetzone around Super Gary for 30 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "The Best Oil",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/thebestoil.png"
+      ],
+      description: "When Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. Can stack up to 20 times.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Apocalisk",
+      name: "Cluster Rockets",
+      icons: [
+        "/images/commanderdata/abilities/stukov/clusterrockets.png"
+      ],
+      description: "Fires a salvo of 5 missiles at the target enemy air unit, dealing a total 100 damage. (40 missiles max)",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds/5 missiles",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Apocalisk",
+      name: "Burrow Charge",
+      icons: [
+        "/images/commanderdata/abilities/stukov/burrowcharge.png"
+      ],
+      description: "Burrow and charge at the target location dealing 150 damage and stunning non-heroic enemies for 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Apocalisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Brood Queen",
+      name: "Ocular Symbiote",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/ocularsymbiote.png"
+      ],
+      description: "Increases a friendly unit's sight range by 5 and grants it the ability to detect cloaked and burrowed units for 180 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Brood Queen",
+      name: "Spawn Broodlings",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/spawnbroodlings.png"
+      ],
+      description: "Deals 300 damage to a target enemy unit. When the unit dies, it will spawn 2 Broodlings from its corpse.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Brood Queen",
+      name: "Fungal Growth",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/fungalgrowth.png"
+      ],
+      description: "Immobilizes enemy units and deals 80 damage over 4 seconds. Reveals cloaked and burrowed units.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Infested Banshees also have their range increased by 2.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Burrow",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/burrow.png"
+      ],
+      description: "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Rapid Hibernation",
+      icons: [
+        "/images/commanderdata/unitupgrades/stukov/rapidhibernation.png"
+      ],
+      description: "Restores 20 life and energy per second while burrowed.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Burrowed",
+      prestige: null,
+      requirements: "Requires Rapid Hibernation research at an Infested Starport Tech Lab."
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Bunker",
+      name: "Spawning Chamber",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/spawningchamber.png"
+      ],
+      description: "While rooted, regenerates life and creates an Infested Trooper every 30 seconds. Troopers fill empty cargo slots; once full, new Troopers deploy outside. Deployed Troopers have a 30-second lifetime.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Diamondback",
+      name: "Fungal Snare",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/fungalsnare.png"
+      ],
+      description: "Brings a target enemy air unit to the ground, allowing units to attack it as if it were a ground unit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Diamondback",
+      name: "Caustic Mucus",
+      icons: [
+        "/images/commanderdata/unitupgrades/stukov/causticmucus.png"
+      ],
+      description: "Leaves an acid trail while moving, dealing 20 damage per second to enemy ground units in the trail.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Caustic Mucus research at an Infested Factory Tech Lab."
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Siege Tank",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/deeptunnel.png"
+      ],
+      description: "Can travel quickly to any visible location with creep.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Siege Tank",
+      name: "Volatile Biomass",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/volatilebiomass.png"
+      ],
+      description: "Consumes a nearby Infested Civilian or Infested Trooper to restore 20 life and gain one round of ammunition. Stores up to 8 rounds.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: "2.5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Siege Tank",
+      name: "Automated Mitosis",
+      icons: [
+        "/images/commanderdata/unitupgrades/stukov/automatedmitosis.png"
+      ],
+      description: "Automatically generates one round of Volatile Biomass every 30 seconds, up to a maximum of 8 stored rounds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Automated Mitosis research at an Infested Factory Tech Lab."
+    },
+    {
+      commander: "Stukov",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Cyclone",
+      name: "Lock On",
+      icons: [
+        "/images/commanderdata/unitskills/swann/lockon.png"
+      ],
+      description: "Locks the Cyclone's weapons on the target unit, dealing 500 damage over 20 seconds. Can move while firing. Cancels if target moves out of range.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "6 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Hercules",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/swann/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Hercules is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Nano-Repair",
+      icons: [
+        "/images/commanderdata/unitskills/swann/nanorepair.png"
+      ],
+      description: `Heals a friendly mechanical unit.
+Heals 3 life per 1 energy.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Irradiate",
+      icons: [
+        "/images/commanderdata/unitskills/swann/irradiate.png"
+      ],
+      description: "Damages an enemy biological unit and adjacent enemy biological units, dealing 250 damage over 25 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Defensive Matrix",
+      icons: [
+        "/images/commanderdata/unitskills/swann/defensivematrix.png"
+      ],
+      description: "Surrounds the target with a shield that can absorb up to 200 damage. Effect lasts for 20 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Spinning Dizzy",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Thor",
+      name: "330mm Barrage Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/swann/330mmbarragecannon.png"
+      ],
+      description: "Stuns all enemies in a small area. Deals 500 damage over 3 seconds in a larger area.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Wraith",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/swann/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "AutoTurret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Crooked Sam",
+      name: "Demolition Charge",
+      icons: [
+        "/images/commanderdata/abilities/tychus/demolitioncharge.png"
+      ],
+      description: "Marks a target unit, dealing 500 damage after 5 seconds. Holds up to 3 charges.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "James Sirius Sykes",
+      name: "Deploy Warhound Turret",
+      icons: [
+        "/images/commanderdata/abilities/tychus/deploywarhoundturret.png"
+      ],
+      description: `Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.
+Can attack ground and air units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 5
+    },
+    {
+      commander: "Tychus",
+      unit: "Kev Rattlesnake West",
+      name: "Deploy Revitalizer",
+      icons: [
+        "/images/commanderdata/abilities/tychus/deployrevitalizer.png"
+      ],
+      description: "Places a structure on the ground that heals all friendly units in an area around the structure for 2% of their life every second. 3 charges max.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "Reinvigorating Burst",
+      icons: [
+        "/images/commanderdata/abilities/tychus/reinvigoratingburst.png"
+      ],
+      description: "Instantly heals friendly units in an area around Lt. Nikara for 200 life and grants them 25% increased attack and ability damage. Regenerates an additional 10 life per second over 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "Super Heal",
+      icons: [
+        "/images/commanderdata/unitskills/tychus/superheal.png"
+      ],
+      description: "Restores 30 life per second to a friendly biological or mechanical unit. Can heal one target at a time before gear upgrades.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "XM-77 Matrix Generator",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/xm77matrixgenerator.png"
+      ],
+      description: "Grants a friendly unit a barrier that absorbs up to 400 damage for 20 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires purchase of XM-77 Matrix Generator gear."
+    },
+    {
+      commander: "Tychus",
+      unit: "Miles Blaze Lewis",
+      name: "Oil Spill",
+      icons: [
+        "/images/commanderdata/abilities/tychus/oilspill.png"
+      ],
+      description: "Douses enemy ground units in oil, reducing attack and movement speed by 75% and preventing them from cloaking. When a unit under the effect of Oil Spill is hit by a fire attack, it takes 5 (5 vs Light) damage per second over 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Nux",
+      name: "Ultrasonic Pulse",
+      icons: [
+        "/images/commanderdata/abilities/tychus/ultrasonicpulse.png"
+      ],
+      description: "Fires pulses of ultrasonic energy that lasts 6 seconds, causing 20 damage per second to enemy units in the target area. Does not damage friendly units. Holds up to 3 charges.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "Nux",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
+    },
+    {
+      commander: "Tychus",
+      unit: "Odin",
+      name: "Barrage",
+      icons: [
+        "/images/commanderdata/abilities/tychus/barrage.png"
+      ],
+      description: "Stuns all enemies and deals 1000 damage over 5 seconds in a large area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Odin",
+      name: "Big Red Button",
+      icons: [
+        "/images/commanderdata/abilities/tychus/bigredbutton.png"
+      ],
+      description: "Calls down a Nuclear Strike at a target location. Nukes take 3 seconds to land, but they deal up to 1000 damage in a large area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Odin",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Rob Cannonball Boswell",
+      name: "Heavy Impact",
+      icons: [
+        "/images/commanderdata/abilities/tychus/heavyimpact.png"
+      ],
+      description: "Cannonball pulls himself to the target location, dealing 20 damage and stunning enemy units on impact.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Rob Cannonball Boswell",
+      name: "Critical Response System",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/criticalresponsesystem.png"
+      ],
+      description: "When taking fatal damage, restores all life and becomes immune to damage for 5 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires purchase of Critical Response System gear."
+    },
+    {
+      commander: "Tychus",
+      unit: "Tychus Findlay",
+      name: "Shredder Grenade",
+      icons: [
+        "/images/commanderdata/abilities/tychus/shreddergrenade.png"
+      ],
+      description: "Deals 75 damage to enemy units in the target area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Vega",
+      name: "Dominate",
+      icons: [
+        "/images/commanderdata/abilities/tychus/dominate.png"
+      ],
+      description: "Temporarily take control of target enemy unit and increases its damage by 50%. Dominated units self-destruct after 240 seconds. Holds up to 3 charges.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "Vega",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
+    },
+    {
+      commander: "Tychus",
+      unit: "Warhound Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Centurion",
+      name: "Shadow Charge",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/shadowcharge.png"
+      ],
+      description: `Intercepts nearby enemies and increases the Centurion's movement speed. Ability can only be used once every 10 seconds.
+Briefly cloaks the Centurion and allows it to move through other units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Centurion",
+      name: "Darkcoil",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/darkcoil.png"
+      ],
+      description: `Stuns nearby enemy ground units for 2.5 seconds. Also temporarily grants the Centurion 100 additional shields for 2 seconds.
+Massive units are slowed.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Corsair",
+      name: "Disruption Web",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/disruptionweb.png"
+      ],
+      description: "Creates a web of energy on the ground that prevents enemy structures and ground units from attacking for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Corsair",
+      name: "Stealth Drive",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/stealthdrive.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Archon",
+      name: "Confusion",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/confusion.png"
+      ],
+      description: `Forces enemy units in the target area to attack each other for 10 seconds.
+Heroic units are immune.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Archon",
+      name: "Mind Control",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/mindcontrol.png"
+      ],
+      description: `Permanently takes control of a target enemy unit.
+Heroic units are immune.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "150",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Pylon",
+      name: "Recall",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/recall.png"
+      ],
+      description: "Teleports all friendly units in the target area to the location of the Dark Pylon.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Shadow Fury",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/shadowfury.png"
+      ],
+      description: "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times. Invulnerable for the entire duration.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/dtblink.png"
+      ],
+      description: "Teleport to a nearby target location.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Void Stasis",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/voidstasis.png"
+      ],
+      description: `Places target unit or structure in stasis for 10 seconds, disabling the unit for the duration of the effect. Units and structures in stasis cannot be attacked or affected by abilities.
+Can target structures or ground units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/mutatordata/amonheroes/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Pulsar Beam",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/pulsarbeam.png"
+      ],
+      description: `Charges the Oracle's Pulsar Beam and allows it to attack enemy ground units.
+Drains 1.4 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "4 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Stasis Ward",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/stasisward.png"
+      ],
+      description: "Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for 15 seconds. Trapped units cannot be attacked or affected by abilities.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Stealth Drive",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/stealthdrive.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Shadow Fury",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/shadowfury.png"
+      ],
+      description: "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/dtblink.png"
+      ],
+      description: "Teleport to a nearby target location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Void Stasis",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/voidstasis.png"
+      ],
+      description: `Places target unit or structure in stasis for 10 seconds, disabling the unit for the duration of the effect. Units and structures in stasis cannot be attacked or affected by abilities.
+Can target structures or ground units.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/mutatordata/amonheroes/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Stalker",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/blink.png"
+      ],
+      description: "Teleports the Stalker to a nearby target location. Ability can only be used once every 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Aberration",
+      name: "Towering",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/towering.png"
+      ],
+      description: "Can walk over smaller ground units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Aberration",
+      name: "Protective Cover",
+      icons: [
+        "/images/commanderdata/unitupgrades/zagara/protectivecover.png"
+      ],
+      description: "Friendly units underneath the Aberration take 50% less damage.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zagara level 9 and Protective Cover research at the Evolution Chamber."
+    },
+    {
+      commander: "Zagara",
+      unit: "Aberration",
+      name: "Incubate Banelings",
+      icons: [
+        "/images/commanderdata/progression/zagara/zagara_08.png"
+      ],
+      description: "Spawns two Banelings when killed.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zagara level 8."
+    },
+    {
+      commander: "Zagara",
+      unit: "Bile Launcher",
+      name: "Bombardment",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/bombardment.png"
+      ],
+      description: "Constantly blasts a target area, repeatedly dealing 75 damage to enemy ground and air units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Corruptor",
+      name: "Corruption",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/corruption.png"
+      ],
+      description: "Covers the target enemy unit in Zerg slime, increasing the damage taken by 35% for 30 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Corruptor",
+      name: "Incubate Scourge",
+      icons: [
+        "/images/commanderdata/progression/zagara/zagara_08.png"
+      ],
+      description: "Spawns two Scourge when killed.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zagara level 8."
+    },
+    {
+      commander: "Zagara",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Queen",
+      name: "Spawn Creep Tumor",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/spawncreeptumor.png"
+      ],
+      description: `A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.
+Bonus: Zerg move faster on creep.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Queen",
+      name: "Spawn Larva",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/spawnlarva.png"
+      ],
+      description: "Target Hatchery, Lair, or Hive spawns 8 Larvae in 40 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "25 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Queen",
+      name: "Transfusion",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/transfusion.png"
+      ],
+      description: "Instantly restores 125 life to target biological unit or structure.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Baneling Barrage",
+      icons: [
+        "/images/commanderdata/hero/zagara/banelingbarrage.png"
+      ],
+      description: "Launches 6 Banelings towards the target point. Each Baneling explodes for 40 damage (80 vs structures).",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Spawn Hunter Killers",
+      icons: [
+        "/images/commanderdata/hero/zagara/spawnhunterkillers.png"
+      ],
+      description: "Spawns 6 Hunter Killers at the target point that last 20 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "30",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Mass Frenzy",
+      icons: [
+        "/images/commanderdata/hero/zagara/massfrenzy.png"
+      ],
+      description: "Grants all friendly units on the map 25% attack speed and 25% movement speed for 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "90 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Infested Drop",
+      icons: [
+        "/images/commanderdata/hero/zagara/infesteddrop.png"
+      ],
+      description: "Calls down 10 drop-pods onto the target area, dealing 50 damage with each drop-pod and spawning a total of 20 Roaches that last 30 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 180 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Essence",
+      name: "Devolution Wave",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/devolutionwave.png"
+      ],
+      description: "Transforms all enemy units in a large area around the Avatar of Essence into a lower evolutionary form.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Form",
+      name: "Summon Charged Crystals",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/summonchargedcrystals.png"
+      ],
+      description: `Marks a target area on the ground. After 2 seconds, the Avatar of Form deals 100 damage and summons 10 Xel'Naga Charged Crystals at the target location.
+Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each attack, dealing 40 damage to all enemy units in a small area over 4 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "25 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Form",
+      name: "Psionic Gale",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/psionicgale.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, dealing 160 damage to all enemy units in a large target area. Does not damage friendly units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Form",
+      name: "Psionic Blast",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/psionicblast.png"
+      ],
+      description: "Charges up, dealing 500 damage to a target unit after 3 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Dark Archon",
+      name: "Mind Control",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/mindcontrol.png"
+      ],
+      description: `Temporarily grants Zeratul control of a target enemy unit. Controlled units self-destruct after 120 seconds.
+Heroic units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "150",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Dark Archon",
+      name: "Maelstrom",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/maelstrom.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Temporarily stuns enemy units and structures in an area of effect for 3 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Serdath",
+      name: "Mind Control",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/mindcontrol.png"
+      ],
+      description: `Temporarily grants Zeratul control of a target enemy unit. Controlled units self-destruct after 120 seconds.
+Heroic units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "150",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Serdath",
+      name: "Maelstrom",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/maelstrom.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Temporarily stuns enemy units in an area of effect for 3 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Telbrus",
+      name: "Psionic Storm",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/psionicstorm.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 112 damage to all enemy units and restoring 112 shields to all friendly units in a large target area.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "2.5 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Telbrus",
+      name: "Feedback",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/feedback.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Drains all energy from the target. Deals 1 damage per point of energy.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Monolith",
+      name: "Shade Projection",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/shadeprojection.png"
+      ],
+      description: `Requirements: Core Forge and 2nd Xel'Naga Artifact Fragment
+Projects the Tesseract Monolith to a target location for 60 seconds, transferring all of its shields and its weapon. The Tesseract Monolith is deactivated while this ability is active.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Core Forge and 2nd Xel'Naga Artifact Fragment"
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Monolith",
+      name: "Shade Barrier",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/shadebarrier.png"
+      ],
+      description: `Requirements: Core Forge and 3rd Xel'Naga Artifact Fragment
+Absorbs up to 100 damage. Lasts for 10 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Core Forge and 3rd Xel'Naga Artifact Fragment"
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Monolith",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Templar",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/dtblink.png"
+      ],
+      description: "Allows the Void Templar to teleport to a nearby target location.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Templar",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/mutatordata/amonheroes/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Templar",
+      name: "Back to the Shadows",
+      icons: [
+        "/images/commanderdata/unitupgrades/zeratul/backtotheshadows.png"
+      ],
+      description: "On taking fatal damage, retreats into the Void and restores its life and shields over 10 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "180 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zeratul level 11, a Void Shrine, and three Artifact Fragments. Unavailable with Herald of the Void."
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Abrogator",
+      name: "Purification Nova",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/purificationnova.png"
+      ],
+      description: "Shoots out a ball of energy that detonates 3 seconds or on contact with an enemy unit, dealing 100 splash damage to nearby ground units and structures. The Xel'Naga Abrogator is immobile while this is active.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "12 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Ambusher",
+      name: "Predictive Blink",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/predictiveblink.png"
+      ],
+      description: "Teleports this unit to a nearby target location.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Enforcer",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Shieldguard",
+      name: "Shield Recharge",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/shieldrecharge.png"
+      ],
+      description: `Recharges the shields of a friendly Protoss unit.
+Restores 4 shields per 1 energy.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Shieldguard",
+      name: "Reflection Shield",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/reflectionshield.png"
+      ],
+      description: "Creates an aura that reflects 50% of all projectiles back to enemy attackers. Lasts 15 seconds. Can be set to Autocast.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "180 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Watcher",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Watcher",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zealot",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/charge.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Intercepts enemy ground units and increases movement speed.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zealot",
+      name: "Whirlwind",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/whirlwind.png"
+      ],
+      description: "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/hero/zeratul/blink.png"
+      ],
+      description: "Teleports Zeratul to a nearby location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Summon Void Seeker",
+      icons: [
+        "/images/commanderdata/hero/zeratul/summonvoidseeker.png"
+      ],
+      description: "Transports Zeratul to a target location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Shadow Cleave",
+      icons: [
+        "/images/commanderdata/hero/zeratul/shadowcleave.png"
+      ],
+      description: "Deals 100 damage to nearby enemies.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "12 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Prophetic Vision",
+      icons: [
+        "/images/commanderdata/hero/zeratul/propheticvision.png"
+      ],
+      description: "Shows the location of or unearths a hidden Xel'Naga Artifact Fragment.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `10 seconds if Fragment is not found
+Remaining seconds until next Fragment spawns if found.`,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "One With the Shadows",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/onewiththeshadows.png"
+      ],
+      description: "Zeratul is permanently cloaked. He becomes immune to damage for 0.5 seconds after being attacked. Cannot occur more than once every 5 seconds.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    }
+  ];
+
+  // html/scripts/unit-skills.ts
+  function skillKey(skill) {
+    return "skills/" + [skill.commander, skill.unit, skill.name, skill.mode ?? "", skill.prestige ?? ""].map((part) => encodeURIComponent(part)).join("/");
+  }
+  var unitSkills = new Map(unitskills_default.map((skill) => [skillKey(skill), skill]));
+  function skillCooldown(skill) {
+    if (!skill.cooldown)
+      return null;
+    const cooldown = skill.cooldown.match(/Cooldown:\s*([^\n]+)/i)?.[1] ?? skill.cooldown;
+    const seconds = cooldown.match(/^(\d+(?:\.\d+)?)\s*(?:seconds?|s)(.*)$/s);
+    if (!seconds)
+      return "?";
+    if (Number(seconds[1]) === 0)
+      return null;
+    return seconds[1] + (seconds[2]?.trim() ? "*" : "");
+  }
+  function skillCosts(skill, race) {
+    const costs = [];
+    if (skill.energycost !== null && Number(skill.energycost) > 0) {
+      costs.push({ icon: "/images/commanderdata/unitupgrades/iconenergy.png", label: "Energy:", value: skill.energycost });
+    }
+    const cooldown = skillCooldown(skill);
+    if (cooldown !== null) {
+      costs.push({ icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: "Cooldown (seconds):", value: cooldown });
+    }
+    return costs;
+  }
+  function skillDetails(skill) {
+    const details = [skill.description];
+    if (skill.cooldown && !/^\d+(?:\.\d+)?\s*(?:seconds?|s)$/.test(skill.cooldown)) {
+      details.push(/\bCool(?:down|up):/i.test(skill.cooldown) ? skill.cooldown : `Cooldown: ${skill.cooldown}`);
+    }
+    if (skill.requiresupgrade)
+      details.push("Requires an upgrade.");
+    if (skill.rankrequired !== null)
+      details.push(`Requires rank ${skill.rankrequired}.`);
+    if (skill.mode)
+      details.push(`Mode: ${skill.mode}`);
+    if (skill.prestige)
+      details.push(`Prestige: ${skill.prestige}`);
+    if (skill.requirements)
+      details.push(skill.requirements);
+    return details;
+  }
   // node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
   var f2 = 0;
   function u2(e, t, n, o, i, u) {
@@ -33457,11 +39425,115 @@ Drains 0.9 energy per second.`,
       }
       return { commander, unit: selectedUnit, upgrades, upgradeLevels, masteries, prestiges };
     }
+    renderSkills() {
+      const { commander, unit } = this.props.modifiers;
+      const skills = [...unitSkills].filter(([, skill]) => token(skill.commander) === commander && token(skill.unit) === unit);
+      if (!skills.length)
+        return null;
+      const race = token(UnitStats.getUnit(this.props.modifiers).race);
+      const groups = [
+        { title: "Skills", skills: skills.filter(([, skill]) => skill.type !== "passive") },
+        { title: "Passives", skills: skills.filter(([, skill]) => skill.type === "passive") }
+      ].filter((group) => group.skills.length);
+      return groups.map((group) => /* @__PURE__ */ u2(S, {
+        children: [
+          /* @__PURE__ */ u2("p", {
+            class: "units-head",
+            children: group.title
+          }, undefined, false, undefined, this),
+          /* @__PURE__ */ u2("ul", {
+            class: "units-mode-stats units-skills",
+            children: group.skills.map(([key, skill]) => {
+              const costs = skillCosts(skill, race);
+              return /* @__PURE__ */ u2("li", {
+                children: /* @__PURE__ */ u2("span", {
+                  class: "units-skill",
+                  "data-tooltip": key,
+                  "data-race": race,
+                  tabIndex: 0,
+                  children: [
+                    /* @__PURE__ */ u2("span", {
+                      class: "units-skill-label",
+                      children: [
+                        skill.icons.map((icon) => /* @__PURE__ */ u2("img", {
+                          src: icon,
+                          alt: "",
+                          width: 20,
+                          height: 20
+                        }, icon, false, undefined, this)),
+                        " ",
+                        skill.name,
+                        /* @__PURE__ */ u2("span", {
+                          class: "unbold",
+                          children: [
+                            skill.prestige && /* @__PURE__ */ u2(S, {
+                              children: [
+                                " (",
+                                skill.prestige,
+                                ")"
+                              ]
+                            }, undefined, true, undefined, this),
+                            !!skill.charges && /* @__PURE__ */ u2(S, {
+                              children: [
+                                " ",
+                                /* @__PURE__ */ u2("span", {
+                                  class: "units-skill-cost",
+                                  children: [
+                                    "(",
+                                    skill.charges,
+                                    " charges)"
+                                  ]
+                                }, undefined, true, undefined, this)
+                              ]
+                            }, undefined, true, undefined, this),
+                            skill.type === "autocast" && /* @__PURE__ */ u2(S, {
+                              children: " (autocast)"
+                            }, undefined, false, undefined, this)
+                          ]
+                        }, undefined, true, undefined, this)
+                      ]
+                    }, undefined, true, undefined, this),
+                    !!costs.length && /* @__PURE__ */ u2(S, {
+                      children: [
+                        " ",
+                        /* @__PURE__ */ u2("span", {
+                          class: "units-skill-costs unbold",
+                          children: costs.map((cost, index) => /* @__PURE__ */ u2(S, {
+                            children: [
+                              index > 0 && " ",
+                              /* @__PURE__ */ u2("span", {
+                                class: "units-skill-cost",
+                                children: [
+                                  /* @__PURE__ */ u2("img", {
+                                    src: cost.icon,
+                                    alt: cost.label,
+                                    width: 20,
+                                    height: 20
+                                  }, undefined, false, undefined, this),
+                                  " ",
+                                  cost.value
+                                ]
+                              }, undefined, true, undefined, this)
+                            ]
+                          }, cost.label, true, undefined, this))
+                        }, undefined, false, undefined, this)
+                      ]
+                    }, undefined, true, undefined, this)
+                  ]
+                }, undefined, true, undefined, this)
+              }, key, false, undefined, this);
+            })
+          }, undefined, false, undefined, this)
+        ]
+      }, group.title, true, undefined, this));
+    }
     renderUpgrades() {
       const modifiers = this.props.modifiers;
       const upgrades = Object.keys(modifiers.upgrades).filter((upgrade) => !/^[123]$/.test(upgrade));
       const masteries = Object.keys(modifiers.masteries);
       const prestiges = Object.keys(modifiers.prestiges);
+      const commanderSummary = commandersummaries_default.find((commander) => commander.commander === modifiers.commander);
+      const prestigeNames = [commanderSummary?.prestige1, commanderSummary?.prestige2, commanderSummary?.prestige3].map((name) => name?.trim());
       const upgradeLevels = [0, 1, 2, 3, 4, 5].slice(0, modifiers.commander === "tychus" ? 6 : 4);
       const upgradeData = new Map(playerupgrades_default.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit).map((u) => [u.name, { tooltip: `upgrades/${token(u.commander)}/${u.icon}`, icon: u.icon, unit: u.unit }]));
       const selectableUpgrades = new Set(playerupgrades_default.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit && u.operation !== "none").map((u) => u.name));
@@ -33578,23 +39650,40 @@ Drains 0.9 energy per second.`,
             ]
           }, undefined, true, undefined, this),
           "rank" in modifiers.upgradeLevels && /* @__PURE__ */ u2("fieldset", {
+            class: "units-ranks",
             children: [
               /* @__PURE__ */ u2("legend", {
                 children: "Rank"
               }, undefined, false, undefined, this),
-              upgradeLevels.map((level) => /* @__PURE__ */ u2("label", {
-                children: [
-                  /* @__PURE__ */ u2("input", {
-                    type: "radio",
-                    name: `rank-${this.props.formKey}`,
-                    value: level,
-                    onChange: this.onCheckUpgradeLevel,
-                    checked: modifiers.upgradeLevels.rank === level
-                  }, undefined, false, undefined, this),
-                  " ",
-                  level
-                ]
-              }, undefined, true, undefined, this))
+              upgradeLevels.map((level) => {
+                const key = `ranks/${modifiers.commander}/${modifiers.unit}/${level}`;
+                const upgrade = rankUpgrades.get(key);
+                const iconSrc = `/images/commanderdata/unitupgrades/${modifiers.commander}/${upgrade?.icon ?? "veterancy"}.png`;
+                return /* @__PURE__ */ u2("label", {
+                  "data-tooltip": upgrade ? key : undefined,
+                  children: [
+                    /* @__PURE__ */ u2("span", {
+                      class: "units-upgrade-marker",
+                      children: /* @__PURE__ */ u2("input", {
+                        type: "radio",
+                        name: `rank-${this.props.formKey}`,
+                        value: level,
+                        onChange: this.onCheckUpgradeLevel,
+                        checked: modifiers.upgradeLevels.rank === level
+                      }, undefined, false, undefined, this)
+                    }, undefined, false, undefined, this),
+                    " ",
+                    /* @__PURE__ */ u2("img", {
+                      src: iconSrc,
+                      alt: "",
+                      width: 20,
+                      height: 20
+                    }, iconSrc, false, undefined, this),
+                    " ",
+                    upgrade?.name ?? `Rank ${level}`
+                  ]
+                }, undefined, true, undefined, this);
+              })
             ]
           }, undefined, true, undefined, this),
           "artifacts" in modifiers.upgradeLevels && /* @__PURE__ */ u2("fieldset", {
@@ -33688,7 +39777,9 @@ Drains 0.9 energy per second.`,
                       onChange: this.onCheckPrestige,
                       checked: modifiers.prestiges[talent]
                     }, undefined, false, undefined, this),
-                    " ",
+                    " P",
+                    prestigeNames.indexOf(talent) + 1,
+                    ": ",
                     talent
                   ]
                 }, undefined, true, undefined, this)
@@ -34173,6 +40264,7 @@ Drains 0.9 energy per second.`,
             ]
           }, undefined, true, undefined, this),
           Object.values(unit.modes).map((mode) => this.renderMode(mode, baseUnit.modes[mode.modeName || ""], baseUnit)),
+          this.renderSkills(),
           unit.notes && /* @__PURE__ */ u2("p", {
             children: [
               /* @__PURE__ */ u2("span", {
@@ -34195,5 +40287,5 @@ Drains 0.9 energy per second.`,
   }
 })();
 
-//# debugId=4C806ED84192519764756E2164756E21
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vbm9kZV9tb2R1bGVzL3ByZWFjdC9kaXN0L3ByZWFjdC5tb2R1bGUuanMiLCAiLi4vLi4vbm9kZV9tb2R1bGVzL3ByZWFjdC9qc3gtcnVudGltZS9kaXN0L2pzeFJ1bnRpbWUubW9kdWxlLmpzIiwgInVuaXRzLnRzeCJdLAogICJzb3VyY2VzQ29udGVudCI6IFsKICAgICJ2YXIgbixsLHUsdCxpLHIsbyxlLGYsYyxzLGEsaCxwLHYseSxkPXt9LHc9W10sXz0vYWNpdHxleCg/OnN8Z3xufHB8JCl8cnBofGdyaWR8b3dzfG1uY3xudHd8aW5lW2NoXXx6b298Xm9yZHxpdGVyYS9pLGc9QXJyYXkuaXNBcnJheTtmdW5jdGlvbiBtKG4sbCl7Zm9yKHZhciB1IGluIGwpblt1XT1sW3VdO3JldHVybiBufWZ1bmN0aW9uIGIobil7biYmbi5wYXJlbnROb2RlJiZuLnBhcmVudE5vZGUucmVtb3ZlQ2hpbGQobil9ZnVuY3Rpb24gayhsLHUsdCl7dmFyIGkscixvLGU9e307Zm9yKG8gaW4gdSlcImtleVwiPT1vP2k9dVtvXTpcInJlZlwiPT1vP3I9dVtvXTplW29dPXVbb107aWYoYXJndW1lbnRzLmxlbmd0aD4yJiYoZS5jaGlsZHJlbj1hcmd1bWVudHMubGVuZ3RoPjM/bi5jYWxsKGFyZ3VtZW50cywyKTp0KSxcImZ1bmN0aW9uXCI9PXR5cGVvZiBsJiZudWxsIT1sLmRlZmF1bHRQcm9wcylmb3IobyBpbiBsLmRlZmF1bHRQcm9wcyl2b2lkIDA9PT1lW29dJiYoZVtvXT1sLmRlZmF1bHRQcm9wc1tvXSk7cmV0dXJuIHgobCxlLGkscixudWxsKX1mdW5jdGlvbiB4KG4sdCxpLHIsbyl7dmFyIGU9e3R5cGU6bixwcm9wczp0LGtleTppLHJlZjpyLF9fazpudWxsLF9fOm51bGwsX19iOjAsX19lOm51bGwsX19jOm51bGwsY29uc3RydWN0b3I6dm9pZCAwLF9fdjpudWxsPT1vPysrdTpvLF9faTotMSxfX3U6MH07cmV0dXJuIG51bGw9PW8mJm51bGwhPWwudm5vZGUmJmwudm5vZGUoZSksZX1mdW5jdGlvbiBNKCl7cmV0dXJue2N1cnJlbnQ6bnVsbH19ZnVuY3Rpb24gUyhuKXtyZXR1cm4gbi5jaGlsZHJlbn1mdW5jdGlvbiBDKG4sbCl7dGhpcy5wcm9wcz1uLHRoaXMuY29udGV4dD1sfWZ1bmN0aW9uICQobixsKXtpZihudWxsPT1sKXJldHVybiBuLl9fPyQobi5fXyxuLl9faSsxKTpudWxsO2Zvcih2YXIgdTtsPG4uX19rLmxlbmd0aDtsKyspaWYobnVsbCE9KHU9bi5fX2tbbF0pJiZudWxsIT11Ll9fZSlyZXR1cm4gdS5fX2U7cmV0dXJuXCJmdW5jdGlvblwiPT10eXBlb2Ygbi50eXBlPyQobik6bnVsbH1mdW5jdGlvbiBJKG4pe2lmKG4uX19QJiZuLl9fZCl7dmFyIHU9bi5fX3YsdD11Ll9fZSxpPVtdLHI9W10sbz1tKHt9LHUpO28uX192PXUuX192KzEsbC52bm9kZSYmbC52bm9kZShvKSxxKG4uX19QLG8sdSxuLl9fbixuLl9fUC5uYW1lc3BhY2VVUkksMzImdS5fX3U/W3RdOm51bGwsaSxudWxsPT10PyQodSk6dCwhISgzMiZ1Ll9fdSksciksby5fX3Y9dS5fX3Ysby5fXy5fX2tbby5fX2ldPW8sRChpLG8sciksdS5fX2U9dS5fXz1udWxsLG8uX19lIT10JiZQKG8pfX1mdW5jdGlvbiBQKG4pe2lmKG51bGwhPShuPW4uX18pJiZudWxsIT1uLl9fYylyZXR1cm4gbi5fX2U9bi5fX2MuYmFzZT1udWxsLG4uX19rLnNvbWUoZnVuY3Rpb24obCl7aWYobnVsbCE9bCYmbnVsbCE9bC5fX2UpcmV0dXJuIG4uX19lPW4uX19jLmJhc2U9bC5fX2V9KSxQKG4pfWZ1bmN0aW9uIEEobil7KCFuLl9fZCYmKG4uX19kPSEwKSYmaS5wdXNoKG4pJiYhSC5fX3IrK3x8ciE9bC5kZWJvdW5jZVJlbmRlcmluZykmJigocj1sLmRlYm91bmNlUmVuZGVyaW5nKXx8bykoSCl9ZnVuY3Rpb24gSCgpe3RyeXtmb3IodmFyIG4sbD0xO2kubGVuZ3RoOylpLmxlbmd0aD5sJiZpLnNvcnQoZSksbj1pLnNoaWZ0KCksbD1pLmxlbmd0aCxJKG4pfWZpbmFsbHl7aS5sZW5ndGg9SC5fX3I9MH19ZnVuY3Rpb24gTChuLGwsdSx0LGkscixvLGUsZixjLHMpe3ZhciBhLGgscCx2LHksXyxnLG09dCYmdC5fX2t8fHcsYj1sLmxlbmd0aDtmb3IoZj1UKHUsbCxtLGYsYiksYT0wO2E8YjthKyspbnVsbCE9KHA9dS5fX2tbYV0pJiYoaD0tMSE9cC5fX2kmJm1bcC5fX2ldfHxkLHAuX19pPWEsXz1xKG4scCxoLGkscixvLGUsZixjLHMpLHY9cC5fX2UscC5yZWYmJmgucmVmIT1wLnJlZiYmKGgucmVmJiZKKGgucmVmLG51bGwscCkscy5wdXNoKHAucmVmLHAuX19jfHx2LHApKSxudWxsPT15JiZudWxsIT12JiYoeT12KSwoZz0hISg0JnAuX191KSl8fGguX19rPT09cC5fX2s/KGY9aihwLGYsbixnKSxnJiZoLl9fZSYmKGguX19lPW51bGwpKTpcImZ1bmN0aW9uXCI9PXR5cGVvZiBwLnR5cGUmJnZvaWQgMCE9PV8/Zj1fOnYmJihmPXYubmV4dFNpYmxpbmcpLHAuX191Jj0tNyk7cmV0dXJuIHUuX19lPXksZn1mdW5jdGlvbiBUKG4sbCx1LHQsaSl7dmFyIHIsbyxlLGYsYyxzPXUubGVuZ3RoLGE9cyxoPTA7Zm9yKG4uX19rPW5ldyBBcnJheShpKSxyPTA7cjxpO3IrKyludWxsIT0obz1sW3JdKSYmXCJib29sZWFuXCIhPXR5cGVvZiBvJiZcImZ1bmN0aW9uXCIhPXR5cGVvZiBvPyhcInN0cmluZ1wiPT10eXBlb2Ygb3x8XCJudW1iZXJcIj09dHlwZW9mIG98fFwiYmlnaW50XCI9PXR5cGVvZiBvfHxvLmNvbnN0cnVjdG9yPT1TdHJpbmc/bz1uLl9fa1tyXT14KG51bGwsbyxudWxsLG51bGwsbnVsbCk6ZyhvKT9vPW4uX19rW3JdPXgoUyx7Y2hpbGRyZW46b30sbnVsbCxudWxsLG51bGwpOnZvaWQgMD09PW8uY29uc3RydWN0b3ImJm8uX19iPjA/bz1uLl9fa1tyXT14KG8udHlwZSxvLnByb3BzLG8ua2V5LG8ucmVmP28ucmVmOm51bGwsby5fX3YpOm4uX19rW3JdPW8sZj1yK2gsby5fXz1uLG8uX19iPW4uX19iKzEsZT1udWxsLC0xIT0oYz1vLl9faT1PKG8sdSxmLGEpKSYmKGEtLSwoZT11W2NdKSYmKGUuX191fD0yKSksbnVsbD09ZXx8bnVsbD09ZS5fX3Y/KC0xPT1jJiYoaT5zP2gtLTppPHMmJmgrKyksXCJmdW5jdGlvblwiIT10eXBlb2Ygby50eXBlJiYoby5fX3V8PTQpKTpjIT1mJiYoYz09Zi0xP2gtLTpjPT1mKzE/aCsrOihjPmY/aC0tOmgrKyxvLl9fdXw9NCkpKTpuLl9fa1tyXT1udWxsO2lmKGEpZm9yKHI9MDtyPHM7cisrKW51bGwhPShlPXVbcl0pJiYwPT0oMiZlLl9fdSkmJihlLl9fZT09dCYmKHQ9JChlKSksSyhlLGUpKTtyZXR1cm4gdH1mdW5jdGlvbiBqKG4sbCx1LHQpe3ZhciBpLHI7aWYoXCJmdW5jdGlvblwiPT10eXBlb2Ygbi50eXBlKXtmb3IoaT1uLl9fayxyPTA7aSYmcjxpLmxlbmd0aDtyKyspaVtyXSYmKGlbcl0uX189bixsPWooaVtyXSxsLHUsdCkpO3JldHVybiBsfW4uX19lIT1sJiYodCYmKGwmJm4udHlwZSYmIWwucGFyZW50Tm9kZSYmKGw9JChuKSksdS5pbnNlcnRCZWZvcmUobi5fX2UsbHx8bnVsbCkpLGw9bi5fX2UpO2Rve2w9bCYmbC5uZXh0U2libGluZ313aGlsZShudWxsIT1sJiY4PT1sLm5vZGVUeXBlKTtyZXR1cm4gbH1mdW5jdGlvbiBGKG4sbCl7cmV0dXJuIGw9bHx8W10sbnVsbD09bnx8XCJib29sZWFuXCI9PXR5cGVvZiBufHwoZyhuKT9uLnNvbWUoZnVuY3Rpb24obil7RihuLGwpfSk6bC5wdXNoKG4pKSxsfWZ1bmN0aW9uIE8obixsLHUsdCl7dmFyIGkscixvLGU9bi5rZXksZj1uLnR5cGUsYz1sW3VdLHM9bnVsbCE9YyYmMD09KDImYy5fX3UpO2lmKG51bGw9PT1jJiZudWxsPT1lfHxzJiZlPT1jLmtleSYmZj09Yy50eXBlKXJldHVybiB1O2lmKHQ+KHM/MTowKSlmb3IoaT11LTEscj11KzE7aT49MHx8cjxsLmxlbmd0aDspaWYobnVsbCE9KGM9bFtvPWk+PTA/aS0tOnIrK10pJiYwPT0oMiZjLl9fdSkmJmU9PWMua2V5JiZmPT1jLnR5cGUpcmV0dXJuIG87cmV0dXJuLTF9ZnVuY3Rpb24geihuLGwsdSl7XCItXCI9PWxbMF0/bi5zZXRQcm9wZXJ0eShsLG51bGw9PXU/XCJcIjp1KTpuW2xdPW51bGw9PXU/XCJcIjpcIm51bWJlclwiIT10eXBlb2YgdXx8Xy50ZXN0KGwpP3U6dStcInB4XCJ9ZnVuY3Rpb24gTihuLGwsdSx0LGkpe3ZhciByLG87bjppZihcInN0eWxlXCI9PWwpaWYoXCJzdHJpbmdcIj09dHlwZW9mIHUpbi5zdHlsZS5jc3NUZXh0PXU7ZWxzZXtpZihcInN0cmluZ1wiPT10eXBlb2YgdCYmKG4uc3R5bGUuY3NzVGV4dD10PVwiXCIpLHQpZm9yKGwgaW4gdCl1JiZsIGluIHV8fHoobi5zdHlsZSxsLFwiXCIpO2lmKHUpZm9yKGwgaW4gdSl0JiZ1W2xdPT10W2xdfHx6KG4uc3R5bGUsbCx1W2xdKX1lbHNlIGlmKFwib1wiPT1sWzBdJiZcIm5cIj09bFsxXSlyPWwhPShsPWwucmVwbGFjZShhLFwiJDFcIikpLG89bC50b0xvd2VyQ2FzZSgpLGw9byBpbiBufHxcIm9uRm9jdXNPdXRcIj09bHx8XCJvbkZvY3VzSW5cIj09bD9vLnNsaWNlKDIpOmwuc2xpY2UoMiksbi5sfHwobi5sPXt9KSxuLmxbbCtyXT11LHU/dD91W3NdPXRbc106KHVbc109aCxuLmFkZEV2ZW50TGlzdGVuZXIobCxyP3Y6cCxyKSk6bi5yZW1vdmVFdmVudExpc3RlbmVyKGwscj92OnAscik7ZWxzZXtpZihcImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCI9PWkpbD1sLnJlcGxhY2UoL3hsaW5rKEh8OmgpLyxcImhcIikucmVwbGFjZSgvc05hbWUkLyxcInNcIik7ZWxzZSBpZihcIndpZHRoXCIhPWwmJlwiaGVpZ2h0XCIhPWwmJlwiaHJlZlwiIT1sJiZcImxpc3RcIiE9bCYmXCJmb3JtXCIhPWwmJlwidGFiSW5kZXhcIiE9bCYmXCJkb3dubG9hZFwiIT1sJiZcInJvd1NwYW5cIiE9bCYmXCJjb2xTcGFuXCIhPWwmJlwicm9sZVwiIT1sJiZcInBvcG92ZXJcIiE9bCYmbCBpbiBuKXRyeXtuW2xdPW51bGw9PXU/XCJcIjp1O2JyZWFrIG59Y2F0Y2gobil7fVwiZnVuY3Rpb25cIj09dHlwZW9mIHV8fChudWxsPT11fHwhMT09PXUmJlwiLVwiIT1sWzRdP24ucmVtb3ZlQXR0cmlidXRlKGwpOm4uc2V0QXR0cmlidXRlKGwsXCJwb3BvdmVyXCI9PWwmJjE9PXU/XCJcIjp1KSl9fWZ1bmN0aW9uIFYobil7cmV0dXJuIGZ1bmN0aW9uKHUpe2lmKHRoaXMubCl7dmFyIHQ9dGhpcy5sW3UudHlwZStuXTtpZihudWxsPT11W2NdKXVbY109aCsrO2Vsc2UgaWYodVtjXTx0W3NdKXJldHVybjtyZXR1cm4gdChsLmV2ZW50P2wuZXZlbnQodSk6dSl9fX1mdW5jdGlvbiBxKG4sdSx0LGkscixvLGUsZixjLHMpe3ZhciBhLGgscCx2LHksZCxfLGsseCxNLCQsSSxQLEEsSCxUPXUudHlwZTtpZih2b2lkIDAhPT11LmNvbnN0cnVjdG9yKXJldHVybiBudWxsOzEyOCZ0Ll9fdSYmKGM9ISEoMzImdC5fX3UpLG89W2Y9dS5fX2U9dC5fX2VdKSwoYT1sLl9fYikmJmEodSk7bjppZihcImZ1bmN0aW9uXCI9PXR5cGVvZiBUKXRyeXtpZihrPXUucHJvcHMseD1ULnByb3RvdHlwZSYmVC5wcm90b3R5cGUucmVuZGVyLE09KGE9VC5jb250ZXh0VHlwZSkmJmlbYS5fX2NdLCQ9YT9NP00ucHJvcHMudmFsdWU6YS5fXzppLHQuX19jP189KGg9dS5fX2M9dC5fX2MpLl9fPWguX19FOih4P3UuX19jPWg9bmV3IFQoaywkKToodS5fX2M9aD1uZXcgQyhrLCQpLGguY29uc3RydWN0b3I9VCxoLnJlbmRlcj1RKSxNJiZNLnN1YihoKSxoLnN0YXRlfHwoaC5zdGF0ZT17fSksaC5fX249aSxwPWguX19kPSEwLGguX19oPVtdLGguX3NiPVtdKSx4JiZudWxsPT1oLl9fcyYmKGguX19zPWguc3RhdGUpLHgmJm51bGwhPVQuZ2V0RGVyaXZlZFN0YXRlRnJvbVByb3BzJiYoaC5fX3M9PWguc3RhdGUmJihoLl9fcz1tKHt9LGguX19zKSksbShoLl9fcyxULmdldERlcml2ZWRTdGF0ZUZyb21Qcm9wcyhrLGguX19zKSkpLHY9aC5wcm9wcyx5PWguc3RhdGUsaC5fX3Y9dSxwKXgmJm51bGw9PVQuZ2V0RGVyaXZlZFN0YXRlRnJvbVByb3BzJiZudWxsIT1oLmNvbXBvbmVudFdpbGxNb3VudCYmaC5jb21wb25lbnRXaWxsTW91bnQoKSx4JiZudWxsIT1oLmNvbXBvbmVudERpZE1vdW50JiZoLl9faC5wdXNoKGguY29tcG9uZW50RGlkTW91bnQpO2Vsc2V7aWYoeCYmbnVsbD09VC5nZXREZXJpdmVkU3RhdGVGcm9tUHJvcHMmJmshPT12JiZudWxsIT1oLmNvbXBvbmVudFdpbGxSZWNlaXZlUHJvcHMmJmguY29tcG9uZW50V2lsbFJlY2VpdmVQcm9wcyhrLCQpLHUuX192PT10Ll9fdnx8IWguX19lJiZudWxsIT1oLnNob3VsZENvbXBvbmVudFVwZGF0ZSYmITE9PT1oLnNob3VsZENvbXBvbmVudFVwZGF0ZShrLGguX19zLCQpKXt1Ll9fdiE9dC5fX3YmJihoLnByb3BzPWssaC5zdGF0ZT1oLl9fcyxoLl9fZD0hMSksdS5fX2U9dC5fX2UsdS5fX2s9dC5fX2ssdS5fX2suc29tZShmdW5jdGlvbihuKXtuJiYobi5fXz11KX0pLHcucHVzaC5hcHBseShoLl9faCxoLl9zYiksaC5fc2I9W10saC5fX2gubGVuZ3RoJiZlLnB1c2goaCk7YnJlYWsgbn1udWxsIT1oLmNvbXBvbmVudFdpbGxVcGRhdGUmJmguY29tcG9uZW50V2lsbFVwZGF0ZShrLGguX19zLCQpLHgmJm51bGwhPWguY29tcG9uZW50RGlkVXBkYXRlJiZoLl9faC5wdXNoKGZ1bmN0aW9uKCl7aC5jb21wb25lbnREaWRVcGRhdGUodix5LGQpfSl9aWYoaC5jb250ZXh0PSQsaC5wcm9wcz1rLGguX19QPW4saC5fX2U9ITEsST1sLl9fcixQPTAseCloLnN0YXRlPWguX19zLGguX19kPSExLEkmJkkodSksYT1oLnJlbmRlcihoLnByb3BzLGguc3RhdGUsaC5jb250ZXh0KSx3LnB1c2guYXBwbHkoaC5fX2gsaC5fc2IpLGguX3NiPVtdO2Vsc2UgZG97aC5fX2Q9ITEsSSYmSSh1KSxhPWgucmVuZGVyKGgucHJvcHMsaC5zdGF0ZSxoLmNvbnRleHQpLGguc3RhdGU9aC5fX3N9d2hpbGUoaC5fX2QmJisrUDwyNSk7aC5zdGF0ZT1oLl9fcyxudWxsIT1oLmdldENoaWxkQ29udGV4dCYmKGk9bShtKHt9LGkpLGguZ2V0Q2hpbGRDb250ZXh0KCkpKSx4JiYhcCYmbnVsbCE9aC5nZXRTbmFwc2hvdEJlZm9yZVVwZGF0ZSYmKGQ9aC5nZXRTbmFwc2hvdEJlZm9yZVVwZGF0ZSh2LHkpKSxBPW51bGwhPWEmJmEudHlwZT09PVMmJm51bGw9PWEua2V5P0UoYS5wcm9wcy5jaGlsZHJlbik6YSxmPUwobixnKEEpP0E6W0FdLHUsdCxpLHIsbyxlLGYsYyxzKSxoLmJhc2U9dS5fX2UsdS5fX3UmPS0xNjEsaC5fX2gubGVuZ3RoJiZlLnB1c2goaCksXyYmKGguX19FPWguX189bnVsbCl9Y2F0Y2gobil7aWYodS5fX3Y9bnVsbCxjfHxudWxsIT1vKWlmKG4udGhlbil7Zm9yKHUuX191fD1jPzE2MDoxMjg7ZiYmOD09Zi5ub2RlVHlwZSYmZi5uZXh0U2libGluZzspZj1mLm5leHRTaWJsaW5nO29bby5pbmRleE9mKGYpXT1udWxsLHUuX19lPWZ9ZWxzZXtmb3IoSD1vLmxlbmd0aDtILS07KWIob1tIXSk7Qih1KX1lbHNlIHUuX19lPXQuX19lLHUuX19rPXQuX19rLG4udGhlbnx8Qih1KTtsLl9fZShuLHUsdCl9ZWxzZSBudWxsPT1vJiZ1Ll9fdj09dC5fX3Y/KHUuX19rPXQuX19rLHUuX19lPXQuX19lKTpmPXUuX19lPUcodC5fX2UsdSx0LGkscixvLGUsYyxzKTtyZXR1cm4oYT1sLmRpZmZlZCkmJmEodSksMTI4JnUuX191P3ZvaWQgMDpmfWZ1bmN0aW9uIEIobil7biYmKG4uX19jJiYobi5fX2MuX19lPSEwKSxuLl9fayYmbi5fX2suc29tZShCKSl9ZnVuY3Rpb24gRChuLHUsdCl7Zm9yKHZhciBpPTA7aTx0Lmxlbmd0aDtpKyspSih0W2ldLHRbKytpXSx0WysraV0pO2wuX19jJiZsLl9fYyh1LG4pLG4uc29tZShmdW5jdGlvbih1KXt0cnl7bj11Ll9faCx1Ll9faD1bXSxuLnNvbWUoZnVuY3Rpb24obil7bi5jYWxsKHUpfSl9Y2F0Y2gobil7bC5fX2Uobix1Ll9fdil9fSl9ZnVuY3Rpb24gRShuKXtyZXR1cm5cIm9iamVjdFwiIT10eXBlb2Ygbnx8bnVsbD09bnx8bi5fX2I+MD9uOmcobik/bi5tYXAoRSk6bSh7fSxuKX1mdW5jdGlvbiBHKHUsdCxpLHIsbyxlLGYsYyxzKXt2YXIgYSxoLHAsdix5LHcsXyxtPWkucHJvcHN8fGQsaz10LnByb3BzLHg9dC50eXBlO2lmKFwic3ZnXCI9PXg/bz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCI6XCJtYXRoXCI9PXg/bz1cImh0dHA6Ly93d3cudzMub3JnLzE5OTgvTWF0aC9NYXRoTUxcIjpvfHwobz1cImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWxcIiksbnVsbCE9ZSlmb3IoYT0wO2E8ZS5sZW5ndGg7YSsrKWlmKCh5PWVbYV0pJiZcInNldEF0dHJpYnV0ZVwiaW4geT09ISF4JiYoeD95LmxvY2FsTmFtZT09eDozPT15Lm5vZGVUeXBlKSl7dT15LGVbYV09bnVsbDticmVha31pZihudWxsPT11KXtpZihudWxsPT14KXJldHVybiBkb2N1bWVudC5jcmVhdGVUZXh0Tm9kZShrKTt1PWRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUyhvLHgsay5pcyYmayksYyYmKGwuX19tJiZsLl9fbSh0LGUpLGM9ITEpLGU9bnVsbH1pZihudWxsPT14KW09PT1rfHxjJiZ1LmRhdGE9PWt8fCh1LmRhdGE9ayk7ZWxzZXtpZihlPWUmJm4uY2FsbCh1LmNoaWxkTm9kZXMpLCFjJiZudWxsIT1lKWZvcihtPXt9LGE9MDthPHUuYXR0cmlidXRlcy5sZW5ndGg7YSsrKW1bKHk9dS5hdHRyaWJ1dGVzW2FdKS5uYW1lXT15LnZhbHVlO2ZvcihhIGluIG0peT1tW2FdLFwiZGFuZ2Vyb3VzbHlTZXRJbm5lckhUTUxcIj09YT9wPXk6XCJjaGlsZHJlblwiPT1hfHxhIGluIGt8fFwidmFsdWVcIj09YSYmXCJkZWZhdWx0VmFsdWVcImluIGt8fFwiY2hlY2tlZFwiPT1hJiZcImRlZmF1bHRDaGVja2VkXCJpbiBrfHxOKHUsYSxudWxsLHksbyk7Zm9yKGEgaW4gayl5PWtbYV0sXCJjaGlsZHJlblwiPT1hP3Y9eTpcImRhbmdlcm91c2x5U2V0SW5uZXJIVE1MXCI9PWE/aD15OlwidmFsdWVcIj09YT93PXk6XCJjaGVja2VkXCI9PWE/Xz15OmMmJlwiZnVuY3Rpb25cIiE9dHlwZW9mIHl8fG1bYV09PT15fHxOKHUsYSx5LG1bYV0sbyk7aWYoaCljfHxwJiYoaC5fX2h0bWw9PXAuX19odG1sfHxoLl9faHRtbD09dS5pbm5lckhUTUwpfHwodS5pbm5lckhUTUw9aC5fX2h0bWwpLHQuX19rPVtdO2Vsc2UgaWYocCYmKHUuaW5uZXJIVE1MPVwiXCIpLEwoXCJ0ZW1wbGF0ZVwiPT10LnR5cGU/dS5jb250ZW50OnUsZyh2KT92Olt2XSx0LGkscixcImZvcmVpZ25PYmplY3RcIj09eD9cImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWxcIjpvLGUsZixlP2VbMF06aS5fX2smJiQoaSwwKSxjLHMpLG51bGwhPWUpZm9yKGE9ZS5sZW5ndGg7YS0tOyliKGVbYV0pO2N8fChhPVwidmFsdWVcIixcInByb2dyZXNzXCI9PXgmJm51bGw9PXc/dS5yZW1vdmVBdHRyaWJ1dGUoXCJ2YWx1ZVwiKTpudWxsIT13JiYodyE9PXVbYV18fFwicHJvZ3Jlc3NcIj09eCYmIXd8fFwib3B0aW9uXCI9PXgmJnchPW1bYV0pJiZOKHUsYSx3LG1bYV0sbyksYT1cImNoZWNrZWRcIixudWxsIT1fJiZfIT11W2FdJiZOKHUsYSxfLG1bYV0sbykpfXJldHVybiB1fWZ1bmN0aW9uIEoobix1LHQpe3RyeXtpZihcImZ1bmN0aW9uXCI9PXR5cGVvZiBuKXt2YXIgaT1cImZ1bmN0aW9uXCI9PXR5cGVvZiBuLl9fdTtpJiZuLl9fdSgpLGkmJm51bGw9PXV8fChuLl9fdT1uKHUpKX1lbHNlIG4uY3VycmVudD11fWNhdGNoKG4pe2wuX19lKG4sdCl9fWZ1bmN0aW9uIEsobix1LHQpe3ZhciBpLHI7aWYobC51bm1vdW50JiZsLnVubW91bnQobiksKGk9bi5yZWYpJiYoaS5jdXJyZW50JiZpLmN1cnJlbnQhPW4uX19lfHxKKGksbnVsbCx1KSksbnVsbCE9KGk9bi5fX2MpKXtpZihpLmNvbXBvbmVudFdpbGxVbm1vdW50KXRyeXtpLmNvbXBvbmVudFdpbGxVbm1vdW50KCl9Y2F0Y2gobil7bC5fX2Uobix1KX1pLmJhc2U9aS5fX1A9bnVsbH1pZihpPW4uX19rKWZvcihyPTA7cjxpLmxlbmd0aDtyKyspaVtyXSYmSyhpW3JdLHUsdHx8XCJmdW5jdGlvblwiIT10eXBlb2Ygbi50eXBlKTt0fHxiKG4uX19lKSxuLl9fYz1uLl9fPW4uX19lPXZvaWQgMH1mdW5jdGlvbiBRKG4sbCx1KXtyZXR1cm4gdGhpcy5jb25zdHJ1Y3RvcihuLHUpfWZ1bmN0aW9uIFIodSx0LGkpe3ZhciByLG8sZSxmO3Q9PWRvY3VtZW50JiYodD1kb2N1bWVudC5kb2N1bWVudEVsZW1lbnQpLGwuX18mJmwuX18odSx0KSxvPShyPVwiZnVuY3Rpb25cIj09dHlwZW9mIGkpP251bGw6aSYmaS5fX2t8fHQuX19rLGU9W10sZj1bXSxxKHQsdT0oIXImJml8fHQpLl9faz1rKFMsbnVsbCxbdV0pLG98fGQsZCx0Lm5hbWVzcGFjZVVSSSwhciYmaT9baV06bz9udWxsOnQuZmlyc3RDaGlsZD9uLmNhbGwodC5jaGlsZE5vZGVzKTpudWxsLGUsIXImJmk/aTpvP28uX19lOnQuZmlyc3RDaGlsZCxyLGYpLEQoZSx1LGYpfWZ1bmN0aW9uIFUobixsKXtSKG4sbCxVKX1mdW5jdGlvbiBXKGwsdSx0KXt2YXIgaSxyLG8sZSxmPW0oe30sbC5wcm9wcyk7Zm9yKG8gaW4gbC50eXBlJiZsLnR5cGUuZGVmYXVsdFByb3BzJiYoZT1sLnR5cGUuZGVmYXVsdFByb3BzKSx1KVwia2V5XCI9PW8/aT11W29dOlwicmVmXCI9PW8/cj11W29dOmZbb109dm9pZCAwPT09dVtvXSYmbnVsbCE9ZT9lW29dOnVbb107cmV0dXJuIGFyZ3VtZW50cy5sZW5ndGg+MiYmKGYuY2hpbGRyZW49YXJndW1lbnRzLmxlbmd0aD4zP24uY2FsbChhcmd1bWVudHMsMik6dCkseChsLnR5cGUsZixpfHxsLmtleSxyfHxsLnJlZixudWxsKX1mdW5jdGlvbiBYKG4pe2Z1bmN0aW9uIGwobil7dmFyIHUsdDtyZXR1cm4gdGhpcy5nZXRDaGlsZENvbnRleHR8fCh1PW5ldyBTZXQsKHQ9e30pW2wuX19jXT10aGlzLHRoaXMuZ2V0Q2hpbGRDb250ZXh0PWZ1bmN0aW9uKCl7cmV0dXJuIHR9LHRoaXMuY29tcG9uZW50V2lsbFVubW91bnQ9ZnVuY3Rpb24oKXt1PW51bGx9LHRoaXMuc2hvdWxkQ29tcG9uZW50VXBkYXRlPWZ1bmN0aW9uKG4pe3RoaXMucHJvcHMudmFsdWUhPW4udmFsdWUmJnUuZm9yRWFjaChmdW5jdGlvbihuKXtuLl9fZT0hMCxBKG4pfSl9LHRoaXMuc3ViPWZ1bmN0aW9uKG4pe3UuYWRkKG4pO3ZhciBsPW4uY29tcG9uZW50V2lsbFVubW91bnQ7bi5jb21wb25lbnRXaWxsVW5tb3VudD1mdW5jdGlvbigpe3UmJnUuZGVsZXRlKG4pLGwmJmwuY2FsbChuKX19KSxuLmNoaWxkcmVufXJldHVybiBsLl9fYz1cIl9fY0NcIit5KyssbC5fXz1uLGwuUHJvdmlkZXI9bC5fX2w9KGwuQ29uc3VtZXI9ZnVuY3Rpb24obixsKXtyZXR1cm4gbi5jaGlsZHJlbihsKX0pLmNvbnRleHRUeXBlPWwsbH1uPXcuc2xpY2UsbD17X19lOmZ1bmN0aW9uKG4sbCx1LHQpe2Zvcih2YXIgaSxyLG87bD1sLl9fOylpZigoaT1sLl9fYykmJiFpLl9fKXRyeXtpZigocj1pLmNvbnN0cnVjdG9yKSYmbnVsbCE9ci5nZXREZXJpdmVkU3RhdGVGcm9tRXJyb3ImJihpLnNldFN0YXRlKHIuZ2V0RGVyaXZlZFN0YXRlRnJvbUVycm9yKG4pKSxvPWkuX19kKSxudWxsIT1pLmNvbXBvbmVudERpZENhdGNoJiYoaS5jb21wb25lbnREaWRDYXRjaChuLHR8fHt9KSxvPWkuX19kKSxvKXJldHVybiBpLl9fRT1pfWNhdGNoKGwpe249bH10aHJvdyBufX0sdT0wLHQ9ZnVuY3Rpb24obil7cmV0dXJuIG51bGwhPW4mJnZvaWQgMD09PW4uY29uc3RydWN0b3J9LEMucHJvdG90eXBlLnNldFN0YXRlPWZ1bmN0aW9uKG4sbCl7dmFyIHU7dT1udWxsIT10aGlzLl9fcyYmdGhpcy5fX3MhPXRoaXMuc3RhdGU/dGhpcy5fX3M6dGhpcy5fX3M9bSh7fSx0aGlzLnN0YXRlKSxcImZ1bmN0aW9uXCI9PXR5cGVvZiBuJiYobj1uKG0oe30sdSksdGhpcy5wcm9wcykpLG4mJm0odSxuKSxudWxsIT1uJiZ0aGlzLl9fdiYmKGwmJnRoaXMuX3NiLnB1c2gobCksQSh0aGlzKSl9LEMucHJvdG90eXBlLmZvcmNlVXBkYXRlPWZ1bmN0aW9uKG4pe3RoaXMuX192JiYodGhpcy5fX2U9ITAsbiYmdGhpcy5fX2gucHVzaChuKSxBKHRoaXMpKX0sQy5wcm90b3R5cGUucmVuZGVyPVMsaT1bXSxvPVwiZnVuY3Rpb25cIj09dHlwZW9mIFByb21pc2U/UHJvbWlzZS5wcm90b3R5cGUudGhlbi5iaW5kKFByb21pc2UucmVzb2x2ZSgpKTpzZXRUaW1lb3V0LGU9ZnVuY3Rpb24obixsKXtyZXR1cm4gbi5fX3YuX19iLWwuX192Ll9fYn0sSC5fX3I9MCxmPU1hdGgucmFuZG9tKCkudG9TdHJpbmcoOCksYz1cIl9fZFwiK2Yscz1cIl9fYVwiK2YsYT0vKFBvaW50ZXJDYXB0dXJlKSR8Q2FwdHVyZSQvaSxoPTAscD1WKCExKSx2PVYoITApLHk9MDtleHBvcnR7QyBhcyBDb21wb25lbnQsUyBhcyBGcmFnbWVudCxXIGFzIGNsb25lRWxlbWVudCxYIGFzIGNyZWF0ZUNvbnRleHQsayBhcyBjcmVhdGVFbGVtZW50LE0gYXMgY3JlYXRlUmVmLGsgYXMgaCxVIGFzIGh5ZHJhdGUsdCBhcyBpc1ZhbGlkRWxlbWVudCxsIGFzIG9wdGlvbnMsUiBhcyByZW5kZXIsRiBhcyB0b0NoaWxkQXJyYXl9O1xuLy8jIHNvdXJjZU1hcHBpbmdVUkw9cHJlYWN0Lm1vZHVsZS5qcy5tYXBcbiIsCiAgICAiaW1wb3J0e29wdGlvbnMgYXMgcixGcmFnbWVudCBhcyBlfWZyb21cInByZWFjdFwiO2V4cG9ydHtGcmFnbWVudH1mcm9tXCJwcmVhY3RcIjt2YXIgdD0vW1wiJjxdLztmdW5jdGlvbiBuKHIpe2lmKDA9PT1yLmxlbmd0aHx8ITE9PT10LnRlc3QocikpcmV0dXJuIHI7Zm9yKHZhciBlPTAsbj0wLG89XCJcIixmPVwiXCI7bjxyLmxlbmd0aDtuKyspe3N3aXRjaChyLmNoYXJDb2RlQXQobikpe2Nhc2UgMzQ6Zj1cIiZxdW90O1wiO2JyZWFrO2Nhc2UgMzg6Zj1cIiZhbXA7XCI7YnJlYWs7Y2FzZSA2MDpmPVwiJmx0O1wiO2JyZWFrO2RlZmF1bHQ6Y29udGludWV9biE9PWUmJihvKz1yLnNsaWNlKGUsbikpLG8rPWYsZT1uKzF9cmV0dXJuIG4hPT1lJiYobys9ci5zbGljZShlLG4pKSxvfXZhciBvPS9hY2l0fGV4KD86c3xnfG58cHwkKXxycGh8Z3JpZHxvd3N8bW5jfG50d3xpbmVbY2hdfHpvb3xeb3JkfGl0ZXJhL2ksZj0wLGk9QXJyYXkuaXNBcnJheTtmdW5jdGlvbiB1KGUsdCxuLG8saSx1KXt0fHwodD17fSk7dmFyIGEsYyxwPXQ7aWYoXCJyZWZcImluIHApZm9yKGMgaW4gcD17fSx0KVwicmVmXCI9PWM/YT10W2NdOnBbY109dFtjXTt2YXIgbD17dHlwZTplLHByb3BzOnAsa2V5Om4scmVmOmEsX19rOm51bGwsX186bnVsbCxfX2I6MCxfX2U6bnVsbCxfX2M6bnVsbCxjb25zdHJ1Y3Rvcjp2b2lkIDAsX192Oi0tZixfX2k6LTEsX191OjAsX19zb3VyY2U6aSxfX3NlbGY6dX07aWYoXCJmdW5jdGlvblwiPT10eXBlb2YgZSYmKGE9ZS5kZWZhdWx0UHJvcHMpKWZvcihjIGluIGEpdm9pZCAwPT09cFtjXSYmKHBbY109YVtjXSk7cmV0dXJuIHIudm5vZGUmJnIudm5vZGUobCksbH1mdW5jdGlvbiBhKHIpe3ZhciB0PXUoZSx7dHBsOnIsZXhwcnM6W10uc2xpY2UuY2FsbChhcmd1bWVudHMsMSl9KTtyZXR1cm4gdC5rZXk9dC5fX3YsdH12YXIgYz17fSxwPS9bQS1aXS9nO2Z1bmN0aW9uIGwoZSx0KXtpZihyLmF0dHIpe3ZhciBmPXIuYXR0cihlLHQpO2lmKFwic3RyaW5nXCI9PXR5cGVvZiBmKXJldHVybiBmfWlmKHQ9ZnVuY3Rpb24ocil7cmV0dXJuIG51bGwhPT1yJiZcIm9iamVjdFwiPT10eXBlb2YgciYmXCJmdW5jdGlvblwiPT10eXBlb2Ygci52YWx1ZU9mP3IudmFsdWVPZigpOnJ9KHQpLFwicmVmXCI9PT1lfHxcImtleVwiPT09ZSlyZXR1cm5cIlwiO2lmKFwic3R5bGVcIj09PWUmJlwib2JqZWN0XCI9PXR5cGVvZiB0KXt2YXIgaT1cIlwiO2Zvcih2YXIgdSBpbiB0KXt2YXIgYT10W3VdO2lmKG51bGwhPWEmJlwiXCIhPT1hKXt2YXIgbD1cIi1cIj09dVswXT91OmNbdV18fChjW3VdPXUucmVwbGFjZShwLFwiLSQmXCIpLnRvTG93ZXJDYXNlKCkpLHM9XCI7XCI7XCJudW1iZXJcIiE9dHlwZW9mIGF8fGwuc3RhcnRzV2l0aChcIi0tXCIpfHxvLnRlc3QobCl8fChzPVwicHg7XCIpLGk9aStsK1wiOlwiK2Erc319cmV0dXJuIGUrJz1cIicrbihpKSsnXCInfXJldHVybiBudWxsPT10fHwhMT09PXR8fFwiZnVuY3Rpb25cIj09dHlwZW9mIHR8fFwib2JqZWN0XCI9PXR5cGVvZiB0P1wiXCI6ITA9PT10P2U6ZSsnPVwiJytuKFwiXCIrdCkrJ1wiJ31mdW5jdGlvbiBzKHIpe2lmKG51bGw9PXJ8fFwiYm9vbGVhblwiPT10eXBlb2Ygcnx8XCJmdW5jdGlvblwiPT10eXBlb2YgcilyZXR1cm4gbnVsbDtpZihcIm9iamVjdFwiPT10eXBlb2Ygcil7aWYodm9pZCAwPT09ci5jb25zdHJ1Y3RvcilyZXR1cm4gcjtpZihpKHIpKXtmb3IodmFyIGU9MDtlPHIubGVuZ3RoO2UrKylyW2VdPXMocltlXSk7cmV0dXJuIHJ9fXJldHVybiBuKFwiXCIrcil9ZXhwb3J0e3UgYXMganN4LGwgYXMganN4QXR0cix1IGFzIGpzeERFVixzIGFzIGpzeEVzY2FwZSxhIGFzIGpzeFRlbXBsYXRlLHUgYXMganN4c307XG4vLyMgc291cmNlTWFwcGluZ1VSTD1qc3hSdW50aW1lLm1vZHVsZS5qcy5tYXBcbiIsCiAgICAiLyoqIEBqc3hJbXBvcnRTb3VyY2UgcHJlYWN0ICovXG5pbXBvcnQgKiBhcyBwcmVhY3QgZnJvbSBcInByZWFjdFwiO1xuXG5pbXBvcnQgcGxheWVyVW5pdHMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVuaXRzLmpzb25cIjtcbmltcG9ydCBhbW9uVW5pdHMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL2Ftb251bml0cy5qc29uXCI7XG5pbXBvcnQgY29tbWFuZGVyc3VtbWFyaWVzIGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9jb21tYW5kZXJzdW1tYXJpZXMuanNvblwiO1xuaW1wb3J0IHBsYXllclRhbGVudHMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnRhbGVudHMuanNvblwiO1xuaW1wb3J0IHBsYXllclVwZ3JhZGVzIGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9wbGF5ZXJ1cGdyYWRlcy5qc29uXCI7XG5pbXBvcnQgdHlwZSB7IFBsYXllclRhbGVudCwgUGxheWVyVW5pdCwgUGxheWVyVXBncmFkZSB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5cbmNvbnN0IEFNT05fVU5JVF9UWVBFUyA9IFtcbiAgICBcIlByb3Rvc3NcIixcbiAgICBcIlRlcnJhblwiLFxuICAgIFwiWmVyZ1wiLFxuICAgIFwiSHlicmlkXCIsXG4gICAgXCJJbmZlc3RlZFwiLFxuICAgIFwiT2JqZWN0aXZlXCIsXG4gICAgXCJNdXRhdG9yXCJcbl07XG5cbmZ1bmN0aW9uIHRva2VuKHRleHQ6IHN0cmluZyk6IFRva2VuIHtcbiAgICBpZiAodGV4dCA9PT0gXCJEb20uIFRyb29wZXJcIikgcmV0dXJuICdkb21pbmlvbnRyb29wZXInO1xuICAgIGlmICh0ZXh0ID09PSBcIkRvbS4gQXNzYXVsdCBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb25hc3NhdWx0dHJvb3Blcic7XG4gICAgaWYgKHRleHQgPT09IFwiRG9tLiBGbGFtZSBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb25mbGFtZXRyb29wZXInO1xuICAgIGlmICh0ZXh0ID09PSBcIkRvbS4gUm9ja2V0IFRyb29wZXJcIikgcmV0dXJuICdkb21pbmlvbnJvY2tldHRyb29wZXInO1xuICAgIGlmICh0ZXh0ID09PSBcIlR5Y2h1cyBGaW5kbGF5XCIpIHJldHVybiAndHljaHVzJztcbiAgICBpZiAodGV4dCA9PT0gXCJKYW1lcyBTaXJpdXMgU3lrZXNcIikgcmV0dXJuICdzaXJpdXMnO1xuICAgIGlmICh0ZXh0ID09PSBcIk1pbGVzIEJsYXplIExld2lzXCIpIHJldHVybiAnYmxhemUnO1xuICAgIGlmICh0ZXh0ID09PSBcIlJvYiBDYW5ub25iYWxsIEJvc3dlbGxcIikgcmV0dXJuICdjYW5ub25iYWxsJztcbiAgICBpZiAodGV4dCA9PT0gXCJMdCBMYXluYSBOaWthcmFcIikgcmV0dXJuICduaWthcmEnO1xuICAgIGlmICh0ZXh0ID09PSBcIktldiBSYXR0bGVzbmFrZSBXZXN0XCIpIHJldHVybiAncmF0dGxlc25ha2UnO1xuXG4gICAgcmV0dXJuIHRleHQudG9Mb3dlckNhc2UoKS5yZXBsYWNlKC9bXmEtejAtOV0rL2csIFwiXCIpIGFzIFRva2VuO1xufVxuZXhwb3J0IHR5cGUgVG9rZW4gPSBMb3dlcmNhc2U8c3RyaW5nPjtcblxuaW50ZXJmYWNlIFVuaXRNb2RpZmllcnMge1xuICAgIGNvbW1hbmRlcjogVG9rZW47XG4gICAgdW5pdDogVG9rZW47XG4gICAgdXBncmFkZXM6IFJlY29yZDxzdHJpbmcsIGJvb2xlYW4+O1xuICAgIG1hc3RlcmllczogUmVjb3JkPHN0cmluZywgbnVtYmVyPjtcbiAgICBwcmVzdGlnZXM6IFJlY29yZDxzdHJpbmcsIGJvb2xlYW4+O1xuICAgIHVwZ3JhZGVMZXZlbHM6IHsgd2VhcG9uPzogbnVtYmVyLCBhcm1vcj86IG51bWJlciwgc2hpZWxkcz86IG51bWJlciwgYXJ0aWZhY3RzPzogbnVtYmVyLCByYW5rPzogbnVtYmVyIH07XG59XG5cbmNsYXNzIFVuaXRzIGV4dGVuZHMgcHJlYWN0LkNvbXBvbmVudCB7XG4gICAgb3ZlcnJpZGUgc3RhdGU6IHtcbiAgICAgICAgY29tbWFuZGVyOiBUb2tlbiB8IG51bGwsXG4gICAgICAgIHVuaXQ6IFRva2VuIHwgbnVsbCxcbiAgICAgICAgbW9kaWZpZXJzOiBVbml0TW9kaWZpZXJzIHwgbnVsbCxcbiAgICAgICAgY29tcGFyZU1vZGlmaWVyczogVW5pdE1vZGlmaWVycyB8IG51bGwsXG4gICAgICAgIGVycm9yPzogc3RyaW5nLFxuICAgIH0gPSB7XG4gICAgICAgICAgICBjb21tYW5kZXI6IG51bGwsXG4gICAgICAgICAgICB1bml0OiBudWxsLFxuICAgICAgICAgICAgbW9kaWZpZXJzOiBudWxsLFxuICAgICAgICAgICAgY29tcGFyZU1vZGlmaWVyczogbnVsbCxcbiAgICAgICAgfTtcbiAgICBvdmVycmlkZSBjb21wb25lbnREaWRNb3VudCgpIHtcbiAgICAgICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoXCJoYXNoY2hhbmdlXCIsICgpID0+IHtcbiAgICAgICAgICAgIHRoaXMudXBkYXRlU3RhdGVGcm9tSGFzaCgpO1xuICAgICAgICB9KTtcbiAgICAgICAgdGhpcy51cGRhdGVTdGF0ZUZyb21IYXNoKCk7XG4gICAgfVxuICAgIHVwZGF0ZVN0YXRlRnJvbUhhc2goKTogdm9pZCB7XG4gICAgICAgIGNvbnN0IGhhc2ggPSB3aW5kb3cubG9jYXRpb24uaGFzaC5zbGljZSgxKTtcbiAgICAgICAgY29uc3QgW2NvbW1hbmRlciwgdW5pdF0gPSBoYXNoLnNwbGl0KFwiL1wiKTtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IGNvbW1hbmRlcjogY29tbWFuZGVyIHx8IG51bGwsIHVuaXQ6IHVuaXQgfHwgbnVsbCB9KTtcbiAgICAgICAgaWYgKGNvbW1hbmRlciAmJiB1bml0KSB7XG4gICAgICAgICAgICB0aGlzLnNldFN0YXRlKHsgbW9kaWZpZXJzOiBVbml0U3RhdHMubW9kaWZpZXJzKGNvbW1hbmRlciBhcyBUb2tlbiwgdW5pdCBhcyBUb2tlbikgfSk7XG4gICAgICAgIH1cbiAgICB9XG4gICAgb25TZXRNb2RpZmllcnMgPSAobW9kaWZpZXJzOiBQYXJ0aWFsPFVuaXRNb2RpZmllcnM+KSA9PiB7XG4gICAgICAgIHRoaXMuc2V0U3RhdGUoeyBtb2RpZmllcnM6IHsgLi4udGhpcy5zdGF0ZS5tb2RpZmllcnMsIC4uLm1vZGlmaWVycyB9IH0pO1xuICAgIH07XG4gICAgb25TZXRDb21wYXJlTW9kaWZpZXJzID0gKGNvbXBhcmVNb2RpZmllcnM6IFBhcnRpYWw8VW5pdE1vZGlmaWVycz4pID0+IHtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IGNvbXBhcmVNb2RpZmllcnM6IHsgLi4udGhpcy5zdGF0ZS5jb21wYXJlTW9kaWZpZXJzLCAuLi5jb21wYXJlTW9kaWZpZXJzIH0gfSk7XG4gICAgfTtcbiAgICBvbkNsaWNrQ29tcGFyZSA9ICgpID0+IHtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IGNvbXBhcmVNb2RpZmllcnM6IHsgLi4udGhpcy5zdGF0ZS5tb2RpZmllcnMgfSB9KTtcbiAgICB9O1xuICAgIG9uQ2xpY2tDbG9zZSA9ICgpID0+IHtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IGNvbXBhcmVNb2RpZmllcnM6IG51bGwgfSk7XG4gICAgfTtcbiAgICBzdGF0aWMgb3ZlcnJpZGUgZ2V0RGVyaXZlZFN0YXRlRnJvbUVycm9yKGVycm9yOiBFcnJvcik6IHsgZXJyb3I6IHN0cmluZyB9IHtcbiAgICAgICAgcmV0dXJuIHsgZXJyb3I6IGVycm9yLnN0YWNrIHx8IGVycm9yLm1lc3NhZ2UsIH07XG4gICAgfVxuICAgIG92ZXJyaWRlIHJlbmRlcigpIHtcbiAgICAgICAgaWYgKHRoaXMuc3RhdGUuZXJyb3IpIHtcbiAgICAgICAgICAgIHJldHVybiA8cD5FcnJvcjogPHByZSBzdHlsZT1cImNvbG9yOiAjZmY2NjMzO1wiPnt0aGlzLnN0YXRlLmVycm9yfTwvcHJlPjwvcD47XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDx0YWJsZSBjbGFzcz1cInVuaXRzXCI+XG4gICAgICAgICAgICAgICAgPHRyPlxuICAgICAgICAgICAgICAgICAgICA8Q29tbWFuZGVyU2VsZWN0b3IgY29tbWFuZGVyPXt0aGlzLnN0YXRlLmNvbW1hbmRlcn0gLz5cbiAgICAgICAgICAgICAgICAgICAgPFVuaXRTZWxlY3RvciBjb21tYW5kZXI9e3RoaXMuc3RhdGUuY29tbWFuZGVyfSB1bml0PXt0aGlzLnN0YXRlLnVuaXR9IC8+XG4gICAgICAgICAgICAgICAgICAgIHt0aGlzLnN0YXRlLmNvbW1hbmRlciAmJiA8VW5pdFN0YXRzIG1vZGlmaWVycz17dGhpcy5zdGF0ZS5tb2RpZmllcnN9IG9uU2V0TW9kaWZpZXJzPXt0aGlzLm9uU2V0TW9kaWZpZXJzfSBvbkNsaWNrQ29tcGFyZT17dGhpcy5vbkNsaWNrQ29tcGFyZX0gZm9ybUtleT1cIjFcIiAvPn1cbiAgICAgICAgICAgICAgICAgICAge3RoaXMuc3RhdGUuY29tcGFyZU1vZGlmaWVycyAmJiA8VW5pdFN0YXRzIG1vZGlmaWVycz17dGhpcy5zdGF0ZS5jb21wYXJlTW9kaWZpZXJzfSBvblNldE1vZGlmaWVycz17dGhpcy5vblNldENvbXBhcmVNb2RpZmllcnN9IG9uQ2xpY2tDbG9zZT17dGhpcy5vbkNsaWNrQ2xvc2V9IGZvcm1LZXk9XCIyXCIgLz59XG4gICAgICAgICAgICAgICAgPC90cj5cbiAgICAgICAgICAgIDwvdGFibGU+XG4gICAgICAgICk7XG4gICAgfVxufVxuXG5jbGFzcyBDb21tYW5kZXJTZWxlY3RvciBleHRlbmRzIHByZWFjdC5Db21wb25lbnQ8eyBjb21tYW5kZXI6IHN0cmluZyB8IG51bGwgfT4ge1xuICAgIGlzU2VsZWN0ZWQobmFtZTogc3RyaW5nKTogYm9vbGVhbiB8IHVuZGVmaW5lZCB7XG4gICAgICAgIHJldHVybiB0aGlzLnByb3BzLmNvbW1hbmRlciA9PT0gdG9rZW4obmFtZSkgPyB0cnVlIDogdW5kZWZpbmVkO1xuICAgIH1cbiAgICBvdmVycmlkZSByZW5kZXIoKSB7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8dGQgY2xhc3M9XCJ1bml0cy1jb21tYW5kZXItc2VsZWN0b3JcIj5cbiAgICAgICAgICAgICAgICA8cCBjbGFzcz1cInVuaXRzLWhlYWRcIj48ZW0+Q29tbWFuZGVyczwvZW0+PC9wPlxuICAgICAgICAgICAgICAgIDx1bCBjbGFzcz1cInVuaXRzLW5hdlwiPlxuICAgICAgICAgICAgICAgICAgICB7Y29tbWFuZGVyc3VtbWFyaWVzLm1hcCgoY29tbWFuZGVyKSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj17YCMke3Rva2VuKGNvbW1hbmRlci5jb21tYW5kZXIpfWB9IGFyaWEtc2VsZWN0ZWQ9e3RoaXMuaXNTZWxlY3RlZChjb21tYW5kZXIuY29tbWFuZGVyKX0+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9e2AvaW1hZ2VzL2NvbW1hbmRlcnBvcnRyYWl0cy8ke3Rva2VuKGNvbW1hbmRlci5jb21tYW5kZXIpfXBvcnRyYWl0LnBuZ2B9IGFsdD1cIlwiIHdpZHRoPVwiMjFcIiBoZWlnaHQ9XCIyMVwiIHN0eWxlPVwibWFyZ2luLXJpZ2h0OjNweFwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAge2NvbW1hbmRlci5mdWxsbmFtZX1cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvYT48L2xpPlxuICAgICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICA8L3VsPlxuICAgICAgICAgICAgICAgIDxwIGNsYXNzPVwidW5pdHMtaGVhZFwiPjxlbT5BbW9uPC9lbT48L3A+XG4gICAgICAgICAgICAgICAgPHVsIGNsYXNzPVwidW5pdHMtbmF2XCI+XG4gICAgICAgICAgICAgICAgICAgIHtBTU9OX1VOSVRfVFlQRVMubWFwKCh0eXBlKSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj17YCMke3Rva2VuKHR5cGUpfWB9IGFyaWEtc2VsZWN0ZWQ9e3RoaXMuaXNTZWxlY3RlZCh0eXBlKX0+e3R5cGV9PC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgICA8L3RkPlxuICAgICAgICApO1xuICAgIH1cbn1cblxuY2xhc3MgVW5pdFNlbGVjdG9yIGV4dGVuZHMgcHJlYWN0LkNvbXBvbmVudDx7IGNvbW1hbmRlcjogVG9rZW4gfCBudWxsLCB1bml0OiBUb2tlbiB8IG51bGwgfT4ge1xuICAgIGlzU2VsZWN0ZWQobmFtZTogc3RyaW5nKTogYm9vbGVhbiB8IHVuZGVmaW5lZCB7XG4gICAgICAgIHJldHVybiB0aGlzLnByb3BzLnVuaXQgPT09IHRva2VuKG5hbWUpID8gdHJ1ZSA6IHVuZGVmaW5lZDtcbiAgICB9XG4gICAgb3ZlcnJpZGUgcmVuZGVyKCkge1xuICAgICAgICBpZiAodGhpcy5wcm9wcy5jb21tYW5kZXIgPT09IG51bGwpIHtcbiAgICAgICAgICAgIHJldHVybiA8dGQgY2xhc3M9XCJ1bml0cy11bml0LXNlbGVjdG9yXCI+XG4gICAgICAgICAgICAgICAgPHA+PGJpZz4mbGFycjs8L2JpZz4gU2VsZWN0IGEgY29tbWFuZGVyPC9wPlxuICAgICAgICAgICAgPC90ZD47XG4gICAgICAgIH1cbiAgICAgICAgY29uc3Qgbm9ybWFsVW5pdHMgPSBbXTtcbiAgICAgICAgY29uc3QgaGVyb2VzID0gW107XG4gICAgICAgIGNvbnN0IHN0cnVjdHVyZXMgPSBbXTtcblxuICAgICAgICBjb25zdCB1c2VkVW5pdHMgPSBuZXcgU2V0PHN0cmluZz4oKTtcbiAgICAgICAgZm9yIChjb25zdCBwbGF5ZXJVbml0IG9mIHBsYXllclVuaXRzLmZpbHRlcigodW5pdCkgPT4gdG9rZW4odW5pdC5jb21tYW5kZXIpID09PSB0aGlzLnByb3BzLmNvbW1hbmRlcikpIHtcbiAgICAgICAgICAgIGlmICh1c2VkVW5pdHMuaGFzKHBsYXllclVuaXQuYmFzZW5hbWUpKSBjb250aW51ZTtcbiAgICAgICAgICAgIHVzZWRVbml0cy5hZGQocGxheWVyVW5pdC5iYXNlbmFtZSk7XG4gICAgICAgICAgICBpZiAocGxheWVyVW5pdC50YWdzLmluY2x1ZGVzKFwiU3RydWN0dXJlXCIpKSB7XG4gICAgICAgICAgICAgICAgc3RydWN0dXJlcy5wdXNoKHBsYXllclVuaXQuYmFzZW5hbWUpXG4gICAgICAgICAgICB9IGVsc2UgaWYgKHBsYXllclVuaXQudGFncy5pbmNsdWRlcyhcIkhlcm9pY1wiKSkge1xuICAgICAgICAgICAgICAgIGhlcm9lcy5wdXNoKHBsYXllclVuaXQuYmFzZW5hbWUpXG4gICAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgICAgIG5vcm1hbFVuaXRzLnB1c2gocGxheWVyVW5pdC5iYXNlbmFtZSlcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBmb3IgKGNvbnN0IGFtb25Vbml0IG9mIGFtb25Vbml0cy5maWx0ZXIoKHVuaXQpID0+IHRva2VuKHVuaXQucmFjZSkgPT09IHRoaXMucHJvcHMuY29tbWFuZGVyKSkge1xuICAgICAgICAgICAgaWYgKGFtb25Vbml0LnN0cnVjdHVyZSkge1xuICAgICAgICAgICAgICAgIHN0cnVjdHVyZXMucHVzaChhbW9uVW5pdC5uYW1lKVxuICAgICAgICAgICAgfSBlbHNlIGlmIChhbW9uVW5pdC5oZXJvaWMpIHtcbiAgICAgICAgICAgICAgICBoZXJvZXMucHVzaChhbW9uVW5pdC5uYW1lKVxuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICBub3JtYWxVbml0cy5wdXNoKGFtb25Vbml0Lm5hbWUpXG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDx0ZCBjbGFzcz1cInVuaXRzLXVuaXQtc2VsZWN0b3JcIj5cbiAgICAgICAgICAgICAgICB7ISFub3JtYWxVbml0cy5sZW5ndGggJiYgPHAgY2xhc3M9XCJ1bml0cy1oZWFkXCI+PGVtPlVuaXRzPC9lbT48L3A+fVxuICAgICAgICAgICAgICAgIHshIW5vcm1hbFVuaXRzLmxlbmd0aCAmJiA8dWwgY2xhc3M9XCJ1bml0cy1uYXZcIj5cbiAgICAgICAgICAgICAgICAgICAge25vcm1hbFVuaXRzLm1hcCgodW5pdCkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxhIGhyZWY9e2AjJHt0b2tlbih0aGlzLnByb3BzLmNvbW1hbmRlciEpfS8ke3Rva2VuKHVuaXQpfWB9IGFyaWEtc2VsZWN0ZWQ9e3RoaXMuaXNTZWxlY3RlZCh1bml0KX0+e3VuaXR9PC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgIDwvdWw+fVxuICAgICAgICAgICAgICAgIHshIWhlcm9lcy5sZW5ndGggJiYgPHAgY2xhc3M9XCJ1bml0cy1oZWFkXCI+PGVtPkhlcm9lczwvZW0+PC9wPn1cbiAgICAgICAgICAgICAgICB7ISFoZXJvZXMubGVuZ3RoICYmIDx1bCBjbGFzcz1cInVuaXRzLW5hdlwiPlxuICAgICAgICAgICAgICAgICAgICB7aGVyb2VzLm1hcCgoaGVybykgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxhIGhyZWY9e2AjJHt0b2tlbih0aGlzLnByb3BzLmNvbW1hbmRlciEpfS8ke3Rva2VuKGhlcm8pfWB9IGFyaWEtc2VsZWN0ZWQ9e3RoaXMuaXNTZWxlY3RlZChoZXJvKX0+e2hlcm99PC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgIDwvdWw+fVxuICAgICAgICAgICAgICAgIHshIXN0cnVjdHVyZXMubGVuZ3RoICYmIDxwIGNsYXNzPVwidW5pdHMtaGVhZFwiPjxlbT5TdHJ1Y3R1cmVzPC9lbT48L3A+fVxuICAgICAgICAgICAgICAgIHshIXN0cnVjdHVyZXMubGVuZ3RoICYmIDx1bCBjbGFzcz1cInVuaXRzLW5hdlwiPlxuICAgICAgICAgICAgICAgICAgICB7c3RydWN0dXJlcy5tYXAoKHN0cnVjdHVyZSkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxhIGhyZWY9e2AjJHt0b2tlbih0aGlzLnByb3BzLmNvbW1hbmRlciEpfS8ke3Rva2VuKHN0cnVjdHVyZSl9YH0gYXJpYS1zZWxlY3RlZD17dGhpcy5pc1NlbGVjdGVkKHN0cnVjdHVyZSl9PntzdHJ1Y3R1cmV9PC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgIDwvdWw+fVxuICAgICAgICAgICAgPC90ZD5cbiAgICAgICAgKTtcbiAgICB9XG59XG5cbmludGVyZmFjZSBVbml0IHtcbiAgICBuYW1lOiBzdHJpbmc7XG4gICAgY29tbWFuZGVyOiBzdHJpbmc7XG4gICAgcmFjZTogc3RyaW5nO1xuICAgIG1jb3N0OiBudW1iZXI7XG4gICAgdmNvc3Q6IG51bWJlcjtcbiAgICBzdXBwbHk6IG51bWJlcjtcbiAgICBidWlsZHRpbWU6IG51bWJlcjtcbiAgICBocDogbnVtYmVyO1xuICAgIHJlYWRvbmx5IGJhc2VIcDogbnVtYmVyO1xuICAgIHNoaWVsZHM6IG51bWJlcjtcbiAgICBhcm1vcjogbnVtYmVyO1xuICAgIHNoaWVsZGFybW9yOiBudW1iZXI7XG4gICAgZW5lcmd5OiBudW1iZXI7XG4gICAgbW92ZW1lbnRzcGVlZDogbnVtYmVyO1xuICAgIHNpZ2h0cmFuZ2U6IG51bWJlcjtcbiAgICB0YWdzOiBzdHJpbmdbXTtcblxuICAgIG1vZGVzOiBSZWNvcmQ8c3RyaW5nLCBVbml0TW9kZT47XG4gICAgaHBib251czogbnVtYmVyO1xuICAgIGFybW9yYm9udXM6IG51bWJlcjtcbiAgICBzaGllbGRib251czogbnVtYmVyIHwgbnVsbDtcbiAgICBub3Rlczogc3RyaW5nO1xufVxuLyoqIHBhcnRpYWwgb2YgUGxheWVyVW5pdCAqL1xuaW50ZXJmYWNlIFVuaXRNb2RlIHtcbiAgICBtb2RlTmFtZTogc3RyaW5nIHwgbnVsbDtcblxuICAgIC8vIGRlZmVuc2l2ZVxuICAgIGFybW9yPzogbnVtYmVyO1xuICAgIHNoaWVsZGFybW9yPzogbnVtYmVyO1xuICAgIG1vdmVtZW50c3BlZWQ/OiBudW1iZXI7XG4gICAgc2lnaHRyYW5nZT86IG51bWJlcjtcbiAgICB0YWdzPzogc3RyaW5nO1xuXG4gICAgLy8gb2ZmZW5zaXZlXG4gICAgYXRrcmFuZ2U/OiBudW1iZXI7XG4gICAgYXR0YWNrc3BlZWQ/OiBudW1iZXI7XG4gICAgYXR0YWNrcz86IG51bWJlcjtcbiAgICBhb2U/OiBzdHJpbmc7XG4gICAgLyoqIFRhZ3MgdGhhdCB0aGlzIHVuaXQgZGVhbHMgZGFtYWdlIHRvICovXG4gICAgYXR0cmlidXRlZGFtYWdlPzogeyBbdGFnOiBzdHJpbmddOiB7IGRhbWFnZTogbnVtYmVyLCBib251czogbnVtYmVyIH0gfTtcbn1cblxuZXhwb3J0IGNsYXNzIFVuaXRTdGF0cyBleHRlbmRzIHByZWFjdC5Db21wb25lbnQ8e1xuICAgIG1vZGlmaWVyczogVW5pdE1vZGlmaWVycyB8IG51bGwsXG4gICAgb25TZXRNb2RpZmllcnM6IChtb2RpZmllcnM6IFBhcnRpYWw8VW5pdE1vZGlmaWVycz4pID0+IHZvaWQsXG4gICAgb25DbGlja0Nsb3NlPzogKCkgPT4gdm9pZCwgb25DbGlja0NvbXBhcmU/OiAoKSA9PiB2b2lkLFxuICAgIGZvcm1LZXk6IHN0cmluZyxcbn0+IHtcbiAgICBvdmVycmlkZSBzdGF0ZToge1xuICAgICAgICBtYXN0ZXJ5SW5wdXRzPzogUmVjb3JkPHN0cmluZywgc3RyaW5nPiB8IG51bGw7XG4gICAgfSA9IHt9O1xuICAgIHJlbmRlckFtb25Vbml0KCk6IHByZWFjdC5Db21wb25lbnRDaGlsZHJlbiB7XG4gICAgICAgIGNvbnN0IGFtb25Vbml0ID0gYW1vblVuaXRzLmZpbmQodW5pdCA9PiB0b2tlbih1bml0Lm5hbWUpID09PSB0aGlzLnByb3BzLm1vZGlmaWVycyEudW5pdCk7XG4gICAgICAgIGlmICghYW1vblVuaXQpIHtcbiAgICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICAgICAgPHRkPlVuaXQgbm90IGZvdW5kPC90ZD5cbiAgICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgdGFncyA9IFtcbiAgICAgICAgICAgIGFtb25Vbml0LmxpZ2h0ID8gXCJMaWdodFwiIDogbnVsbCxcbiAgICAgICAgICAgIGFtb25Vbml0LmFybW9yZWQgPyBcIkFybW9yZWRcIiA6IG51bGwsXG4gICAgICAgICAgICBhbW9uVW5pdC5iaW9sb2dpY2FsID8gXCJCaW9sb2dpY2FsXCIgOiBudWxsLFxuICAgICAgICAgICAgYW1vblVuaXQubWVjaGFuaWNhbCA/IFwiTWVjaGFuaWNhbFwiIDogbnVsbCxcbiAgICAgICAgICAgIGFtb25Vbml0LnBzaW9uaWMgPyBcIlBzaW9uaWNcIiA6IG51bGwsXG4gICAgICAgICAgICBhbW9uVW5pdC5oZXJvaWMgPyBcIkhlcm9pY1wiIDogbnVsbCxcbiAgICAgICAgICAgIGFtb25Vbml0Lm1hc3NpdmUgPyBcIk1hc3NpdmVcIiA6IG51bGwsXG4gICAgICAgICAgICBhbW9uVW5pdC5zdHJ1Y3R1cmUgPyBcIlN0cnVjdHVyZVwiIDogbnVsbCxcbiAgICAgICAgICAgIC8vIGFtb25Vbml0LmZseWVyID8gXCJGbHllclwiIDogbnVsbCxcbiAgICAgICAgXS5maWx0ZXIoQm9vbGVhbik7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8dGQgY2xhc3M9XCJ1bml0cy11bml0XCI+XG4gICAgICAgICAgICAgICAgPGgyIGNsYXNzPVwidW5pdHMtbmFtZVwiPnthbW9uVW5pdC5uYW1lfTwvaDI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cInVuaXRzLWlkZW50aXR5XCI+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJ1bml0cy1pZGVudGl0eS10ZXh0XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzcz1cInVuaXRzLXRhZ3NcIj57dGFncy5qb2luKFwiIMK3IFwiKSB8fCBcIihObyB0YWdzKVwifTwvcD5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPHA+XG4gICAgICAgICAgICAgICAgICAgIChBbW9uIHVuaXQpXG4gICAgICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgICAgIDx1bCBjbGFzcz1cInVuaXRzLXN0YXRzXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz1cInVuaXRzLWhwXCI+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5IUDo8L3NwYW4+IHthbW9uVW5pdC5ocH0geyEhYW1vblVuaXQuYXJtb3IgJiYgPD48c3BhbiBjbGFzcz1cInVuYm9sZFwiPnwgQXJtb3I6IDwvc3Bhbj57YW1vblVuaXQuYXJtb3J9PC8+fTwvbGk+XG4gICAgICAgICAgICAgICAgICAgIHshIWFtb25Vbml0LnNoaWVsZHMgJiYgPGxpIGNsYXNzPVwidW5pdHMtc2hpZWxkc1wiPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+U2hpZWxkczo8L3NwYW4+IHthbW9uVW5pdC5zaGllbGRzfSB7ISFhbW9uVW5pdC5zaGllbGRhcm1vciAmJiA8PjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+fCBTaGllbGQgQXJtb3I6IDwvc3Bhbj57YW1vblVuaXQuc2hpZWxkYXJtb3J9PC8+fTwvbGk+fVxuICAgICAgICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgICA8L3RkPlxuICAgICAgICApO1xuICAgIH1cbiAgICBzdGF0aWMgZ2V0VW5pdChtb2RpZmllcnM6IFVuaXRNb2RpZmllcnMpOiBVbml0IHwgbnVsbCB7XG4gICAgICAgIGNvbnN0IHNlbGVjdGVkVW5pdHMgPSBwbGF5ZXJVbml0cy5maWx0ZXIoKHVuaXQpID0+IHRva2VuKHVuaXQuY29tbWFuZGVyKSA9PT0gbW9kaWZpZXJzLmNvbW1hbmRlciAmJiB0b2tlbih1bml0LmJhc2VuYW1lKSA9PT0gbW9kaWZpZXJzLnVuaXQpIGFzIFBsYXllclVuaXRbXTtcbiAgICAgICAgY29uc3Qgc2VsZWN0ZWRVbml0ID0gc2VsZWN0ZWRVbml0c1swXTtcbiAgICAgICAgaWYgKCFzZWxlY3RlZFVuaXQpIHtcbiAgICAgICAgICAgIHJldHVybiBudWxsO1xuICAgICAgICB9XG4gICAgICAgIGNvbnN0IG1vZGVzOiBSZWNvcmQ8c3RyaW5nLCBVbml0TW9kZT4gPSB7fTtcbiAgICAgICAgZm9yIChjb25zdCBzZWxlY3RlZCBvZiBzZWxlY3RlZFVuaXRzKSB7XG4gICAgICAgICAgICBjb25zdCBtb2RlID0gc2VsZWN0ZWQubmFtZS5yZXBsYWNlKHNlbGVjdGVkLmJhc2VuYW1lLCAnJykudHJpbSgpIHx8IFwiXCI7XG4gICAgICAgICAgICBpZiAobW9kZXNbbW9kZV0pIHtcbiAgICAgICAgICAgICAgICBpZiAoIXNlbGVjdGVkLmF0dHJpYnV0ZSkgdGhyb3cgbmV3IEVycm9yKGBkdXBsaWNhdGUgZW50cnkgJHtzZWxlY3RlZC5uYW1lfWApO1xuICAgICAgICAgICAgICAgIG1vZGVzW21vZGVdLmF0dHJpYnV0ZWRhbWFnZSB8fD0ge307XG4gICAgICAgICAgICAgICAgbW9kZXNbbW9kZV0uYXR0cmlidXRlZGFtYWdlW3NlbGVjdGVkLmF0dHJpYnV0ZV0gPSB7XG4gICAgICAgICAgICAgICAgICAgIGRhbWFnZTogc2VsZWN0ZWQuZGFtYWdlLCBib251czogc2VsZWN0ZWQuYXR0YWNrYm9udXMsXG4gICAgICAgICAgICAgICAgfTtcbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLmF0dHJpYnV0ZSkgdGhyb3cgbmV3IEVycm9yKGBmaXJzdCAke3NlbGVjdGVkLm5hbWV9IG11c3Qgbm90IGhhdmUgYXR0cmlidXRlYCk7XG5cbiAgICAgICAgICAgICAgICBjb25zdCB1bml0TW9kZTogVW5pdE1vZGUgPSBtb2Rlc1ttb2RlXSA9IHtcbiAgICAgICAgICAgICAgICAgICAgbW9kZU5hbWU6IG1vZGUgfHwgbnVsbCxcbiAgICAgICAgICAgICAgICB9O1xuICAgICAgICAgICAgICAgIGlmIChzZWxlY3RlZC5hcm1vciAhPT0gc2VsZWN0ZWRVbml0LmFybW9yKSB1bml0TW9kZS5hcm1vciA9IHNlbGVjdGVkLmFybW9yO1xuICAgICAgICAgICAgICAgIGlmIChzZWxlY3RlZC5zaGllbGRhcm1vciAhPT0gc2VsZWN0ZWRVbml0LnNoaWVsZGFybW9yKSB1bml0TW9kZS5zaGllbGRhcm1vciA9IHNlbGVjdGVkLnNoaWVsZGFybW9yO1xuICAgICAgICAgICAgICAgIGlmIChzZWxlY3RlZC5tb3ZlbWVudHNwZWVkICE9PSBzZWxlY3RlZFVuaXQubW92ZW1lbnRzcGVlZCkgdW5pdE1vZGUubW92ZW1lbnRzcGVlZCA9IHNlbGVjdGVkLm1vdmVtZW50c3BlZWQ7XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLnNpZ2h0cmFuZ2UgIT09IHNlbGVjdGVkVW5pdC5zaWdodHJhbmdlKSB1bml0TW9kZS5zaWdodHJhbmdlID0gc2VsZWN0ZWQuc2lnaHRyYW5nZTtcbiAgICAgICAgICAgICAgICBpZiAoc2VsZWN0ZWQudGFncyAhPT0gc2VsZWN0ZWRVbml0LnRhZ3MpIHVuaXRNb2RlLnRhZ3MgPSBzZWxlY3RlZC50YWdzO1xuICAgICAgICAgICAgICAgIHVuaXRNb2RlLmF0a3JhbmdlID0gc2VsZWN0ZWQuYXRrcmFuZ2U7XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLmF0dGFja3NwZWVkKSB1bml0TW9kZS5hdHRhY2tzcGVlZCA9IHNlbGVjdGVkLmF0dGFja3NwZWVkO1xuICAgICAgICAgICAgICAgIGlmIChzZWxlY3RlZC5hdHRhY2tzKSB1bml0TW9kZS5hdHRhY2tzID0gc2VsZWN0ZWQuYXR0YWNrcztcbiAgICAgICAgICAgICAgICBpZiAoc2VsZWN0ZWQuYW9lKSB1bml0TW9kZS5hb2UgPSBzZWxlY3RlZC5hb2U7XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLmRhbWFnZSkge1xuICAgICAgICAgICAgICAgICAgICB1bml0TW9kZS5hdHRyaWJ1dGVkYW1hZ2UgPSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAnJzogeyBkYW1hZ2U6IHNlbGVjdGVkLmRhbWFnZSwgYm9udXM6IHNlbGVjdGVkLmF0dGFja2JvbnVzIH0sXG4gICAgICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIGNvbnN0IHVuaXQ6IFVuaXQgPSB7XG4gICAgICAgICAgICBuYW1lOiBzZWxlY3RlZFVuaXQuYmFzZW5hbWUsXG4gICAgICAgICAgICBjb21tYW5kZXI6IHNlbGVjdGVkVW5pdC5jb21tYW5kZXIsXG4gICAgICAgICAgICByYWNlOiBzZWxlY3RlZFVuaXQucmFjZSxcbiAgICAgICAgICAgIG1jb3N0OiBzZWxlY3RlZFVuaXQubWNvc3QsXG4gICAgICAgICAgICB2Y29zdDogc2VsZWN0ZWRVbml0LnZjb3N0LFxuICAgICAgICAgICAgYnVpbGR0aW1lOiBzZWxlY3RlZFVuaXQuYnVpbGR0aW1lLFxuICAgICAgICAgICAgc3VwcGx5OiBzZWxlY3RlZFVuaXQuc3VwcGx5LFxuICAgICAgICAgICAgaHA6IHNlbGVjdGVkVW5pdC5ocCxcbiAgICAgICAgICAgIGJhc2VIcDogc2VsZWN0ZWRVbml0LmhwLFxuICAgICAgICAgICAgc2hpZWxkczogc2VsZWN0ZWRVbml0LnNoaWVsZHMsXG4gICAgICAgICAgICBhcm1vcjogc2VsZWN0ZWRVbml0LmFybW9yLFxuICAgICAgICAgICAgc2hpZWxkYXJtb3I6IHNlbGVjdGVkVW5pdC5zaGllbGRhcm1vcixcbiAgICAgICAgICAgIGVuZXJneTogc2VsZWN0ZWRVbml0LmVuZXJneSxcbiAgICAgICAgICAgIG1vdmVtZW50c3BlZWQ6IHNlbGVjdGVkVW5pdC5tb3ZlbWVudHNwZWVkLFxuICAgICAgICAgICAgc2lnaHRyYW5nZTogc2VsZWN0ZWRVbml0LnNpZ2h0cmFuZ2UsXG4gICAgICAgICAgICB0YWdzOiBzZWxlY3RlZFVuaXQudGFncy5zcGxpdCgnLCcpLFxuICAgICAgICAgICAgbW9kZXMsXG4gICAgICAgICAgICBocGJvbnVzOiBzZWxlY3RlZFVuaXQuaHBib251cyxcbiAgICAgICAgICAgIGFybW9yYm9udXM6IHNlbGVjdGVkVW5pdC5hcm1vcmJvbnVzLFxuICAgICAgICAgICAgc2hpZWxkYm9udXM6IHNlbGVjdGVkVW5pdC5zaGllbGRib251cyxcbiAgICAgICAgICAgIG5vdGVzOiBzZWxlY3RlZFVuaXQubm90ZXMsXG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIHVuaXQ7XG4gICAgfVxuICAgIHN0YXRpYyBhcHBseVVwZ3JhZGUoXG4gICAgICAgIHVwZ3JhZGU6IHtcbiAgICAgICAgICAgIG1vZGlmaWVyOiBzdHJpbmcsIG9wZXJhdGlvbjogJ2FkZCcgfCAnc2V0JyB8ICdtdWx0aXBseScsIHZhbHVlOiBudW1iZXIsXG4gICAgICAgICAgICBvcGVyYXRpb250eXBlPzogc3RyaW5nIHwgbnVsbCxcbiAgICAgICAgICAgIG1vZGlmaWVybW9kZT86IHN0cmluZyB8IG51bGwsXG4gICAgICAgICAgICBtb2RpZmllcnRhZz86IHN0cmluZyB8IG51bGwsXG4gICAgICAgICAgICBleHRyYT86IHN0cmluZyB8IG51bGwsXG4gICAgICAgIH0gfCB7XG4gICAgICAgICAgICBtb2RpZmllcjogJ2FvZScsIG9wZXJhdGlvbjogJ3JlcGxhY2UnLCB2YWx1ZTogc3RyaW5nLFxuICAgICAgICAgICAgbW9kaWZpZXJtb2RlPzogc3RyaW5nIHwgbnVsbCxcbiAgICAgICAgfSB8IHtcbiAgICAgICAgICAgIG1vZGlmaWVyOiBudWxsLCBvcGVyYXRpb246ICdub25lJywgdmFsdWU6IG51bGwsXG4gICAgICAgIH0sXG4gICAgICAgIHVuaXQ6IFVuaXQsXG4gICAgICAgIGxldmVsPzogbnVtYmVyLFxuICAgICkge1xuICAgICAgICBpZiAodXBncmFkZS5vcGVyYXRpb24gPT09ICdub25lJykgcmV0dXJuO1xuICAgICAgICBpZiAodXBncmFkZS5vcGVyYXRpb24gPT09ICdyZXBsYWNlJykge1xuICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICBpZiAoIXVwZ3JhZGUubW9kaWZpZXJtb2RlIHx8IG1vZGUubW9kZU5hbWUgPT09IHVwZ3JhZGUubW9kaWZpZXJtb2RlKSB7XG4gICAgICAgICAgICAgICAgICAgIG1vZGUuYW9lID0gdXBncmFkZS52YWx1ZTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICByZXR1cm47XG4gICAgICAgIH1cbiAgICAgICAgc3dpdGNoICh1cGdyYWRlLm1vZGlmaWVyKSB7XG4gICAgICAgICAgICBjYXNlICdtaW5lcmFsQ29zdCc6XG4gICAgICAgICAgICAgICAgdW5pdC5tY29zdCA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0Lm1jb3N0LCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICd2ZXNwZW5lQ29zdCc6XG4gICAgICAgICAgICAgICAgdW5pdC52Y29zdCA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LnZjb3N0LCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICd0aW1lJzpcbiAgICAgICAgICAgICAgICB1bml0LmJ1aWxkdGltZSA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LmJ1aWxkdGltZSwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnc3VwcGx5JzpcbiAgICAgICAgICAgICAgICB1bml0LnN1cHBseSA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LnN1cHBseSwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnSFAnOlxuICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm9wZXJhdGlvbiA9PT0gJ211bHRpcGx5JyAmJiB1cGdyYWRlLmV4dHJhID09IG51bGwpIHtcbiAgICAgICAgICAgICAgICAgICAgdW5pdC5ocCArPSB0aGlzLmFwcGx5TW9kaWZpZXIodW5pdC5iYXNlSHAsIHVwZ3JhZGUsIGxldmVsKSAtIHVuaXQuYmFzZUhwO1xuICAgICAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgICAgIHVuaXQuaHAgPSB0aGlzLmFwcGx5TW9kaWZpZXIodW5pdC5ocCwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ1NoaWVsZHMnOlxuICAgICAgICAgICAgICAgIHVuaXQuc2hpZWxkcyA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LnNoaWVsZHMsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ0FybW9yJzpcbiAgICAgICAgICAgICAgICBpZiAoIXVwZ3JhZGUubW9kaWZpZXJtb2RlKSB7XG4gICAgICAgICAgICAgICAgICAgIHVuaXQuYXJtb3IgPSB0aGlzLmFwcGx5TW9kaWZpZXIodW5pdC5hcm1vciwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcm1vZGUgPyBtb2RlLm1vZGVOYW1lID09PSB1cGdyYWRlLm1vZGlmaWVybW9kZSA6IG1vZGUuYXJtb3IgIT09IHVuZGVmaW5lZCkge1xuICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5hcm1vciA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLmFybW9yID8/IHVuaXQuYXJtb3IsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ1NoaWVsZF9Bcm1vcic6XG4gICAgICAgICAgICAgICAgaWYgKCF1cGdyYWRlLm1vZGlmaWVybW9kZSkge1xuICAgICAgICAgICAgICAgICAgICB1bml0LnNoaWVsZGFybW9yID0gdGhpcy5hcHBseU1vZGlmaWVyKHVuaXQuc2hpZWxkYXJtb3IsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUubW9kaWZpZXJtb2RlID8gbW9kZS5tb2RlTmFtZSA9PT0gdXBncmFkZS5tb2RpZmllcm1vZGUgOiBtb2RlLnNoaWVsZGFybW9yICE9PSB1bmRlZmluZWQpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuc2hpZWxkYXJtb3IgPSB0aGlzLmFwcGx5TW9kaWZpZXIobW9kZS5zaGllbGRhcm1vciA/PyB1bml0LnNoaWVsZGFybW9yLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICdNb3ZlX1NwZWVkJzpcbiAgICAgICAgICAgICAgICBpZiAoIXVwZ3JhZGUubW9kaWZpZXJtb2RlKSB7XG4gICAgICAgICAgICAgICAgICAgIHVuaXQubW92ZW1lbnRzcGVlZCA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0Lm1vdmVtZW50c3BlZWQsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUubW9kaWZpZXJtb2RlID8gbW9kZS5tb2RlTmFtZSA9PT0gdXBncmFkZS5tb2RpZmllcm1vZGUgOiBtb2RlLm1vdmVtZW50c3BlZWQgIT09IHVuZGVmaW5lZCkge1xuICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5tb3ZlbWVudHNwZWVkID0gdGhpcy5hcHBseU1vZGlmaWVyKG1vZGUubW92ZW1lbnRzcGVlZCA/PyB1bml0Lm1vdmVtZW50c3BlZWQsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ1Zpc2lvbic6XG4gICAgICAgICAgICAgICAgaWYgKCF1cGdyYWRlLm1vZGlmaWVybW9kZSkge1xuICAgICAgICAgICAgICAgICAgICB1bml0LnNpZ2h0cmFuZ2UgPSB0aGlzLmFwcGx5TW9kaWZpZXIodW5pdC5zaWdodHJhbmdlLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGZvciAoY29uc3QgbW9kZSBvZiBPYmplY3QudmFsdWVzKHVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm1vZGlmaWVybW9kZSA/IG1vZGUubW9kZU5hbWUgPT09IHVwZ3JhZGUubW9kaWZpZXJtb2RlIDogbW9kZS5zaWdodHJhbmdlICE9PSB1bmRlZmluZWQpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuc2lnaHRyYW5nZSA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLnNpZ2h0cmFuZ2UgPz8gdW5pdC5zaWdodHJhbmdlLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICdkYW1hZ2UnOlxuICAgICAgICAgICAgICAgIGZvciAoY29uc3QgbW9kZSBvZiBPYmplY3QudmFsdWVzKHVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm1vZGlmaWVybW9kZSA/IG1vZGUubW9kZU5hbWUgPT09IHVwZ3JhZGUubW9kaWZpZXJtb2RlIDogdHJ1ZSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUubW9kaWZpZXJ0YWcpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb2RlLmF0dHJpYnV0ZWRhbWFnZSFbdXBncmFkZS5tb2RpZmllcnRhZ10gfHw9IHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLi4ubW9kZS5hdHRyaWJ1dGVkYW1hZ2UhWycnXSEsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgfTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb2RlLmF0dHJpYnV0ZWRhbWFnZSFbdXBncmFkZS5tb2RpZmllcnRhZ10hLmRhbWFnZSA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLmF0dHJpYnV0ZWRhbWFnZSFbdXBncmFkZS5tb2RpZmllcnRhZ10hLmRhbWFnZSwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IGRhbWFnZSBvZiBPYmplY3QudmFsdWVzKG1vZGUuYXR0cmlidXRlZGFtYWdlIHx8PSB7ICcnOiB7IGRhbWFnZTogMCwgYm9udXM6IDAgfSB9KSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYW1hZ2UuZGFtYWdlID0gdGhpcy5hcHBseU1vZGlmaWVyKGRhbWFnZS5kYW1hZ2UsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICdhdHRhY2tib251cyc6XG4gICAgICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUubW9kaWZpZXJtb2RlID8gbW9kZS5tb2RlTmFtZSA9PT0gdXBncmFkZS5tb2RpZmllcm1vZGUgOiB0cnVlKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcnRhZykge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuYXR0cmlidXRlZGFtYWdlIVt1cGdyYWRlLm1vZGlmaWVydGFnXSB8fD0ge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAuLi5tb2RlLmF0dHJpYnV0ZWRhbWFnZSFbJyddISxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9O1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuYXR0cmlidXRlZGFtYWdlIVt1cGdyYWRlLm1vZGlmaWVydGFnXSEuYm9udXMgPSB0aGlzLmFwcGx5TW9kaWZpZXIobW9kZS5hdHRyaWJ1dGVkYW1hZ2UhW3VwZ3JhZGUubW9kaWZpZXJ0YWddIS5ib251cywgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IGRhbWFnZSBvZiBPYmplY3QudmFsdWVzKG1vZGUuYXR0cmlidXRlZGFtYWdlIHx8PSB7ICcnOiB7IGRhbWFnZTogMCwgYm9udXM6IDAgfSB9KSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYW1hZ2UuYm9udXMgPSB0aGlzLmFwcGx5TW9kaWZpZXIoZGFtYWdlLmJvbnVzLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnSGl0cyc6XG4gICAgICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUubW9kaWZpZXJtb2RlID8gbW9kZS5tb2RlTmFtZSA9PT0gdXBncmFkZS5tb2RpZmllcm1vZGUgOiB0cnVlKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBtb2RlLmF0dGFja3MgPSB0aGlzLmFwcGx5TW9kaWZpZXIobW9kZS5hdHRhY2tzISwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnQXR0YWNrX1NwZWVkJzpcbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcm1vZGUgPyBtb2RlLm1vZGVOYW1lID09PSB1cGdyYWRlLm1vZGlmaWVybW9kZSA6IHRydWUpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuYXR0YWNrc3BlZWQgPSB0aGlzLmFwcGx5TW9kaWZpZXIobW9kZS5hdHRhY2tzcGVlZCEsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ1JhbmdlJzpcbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcm1vZGUgPyBtb2RlLm1vZGVOYW1lID09PSB1cGdyYWRlLm1vZGlmaWVybW9kZSA6IHRydWUpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuYXRrcmFuZ2UgPSB0aGlzLmFwcGx5TW9kaWZpZXIobW9kZS5hdGtyYW5nZSEsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgfVxuICAgIH1cbiAgICBzdGF0aWMgZ2V0VXBncmFkZWRVbml0KHVuaXQ6IFVuaXQsIG1vZGlmaWVyczogVW5pdE1vZGlmaWVycykge1xuICAgICAgICBjb25zdCB1cGdyYWRlZFVuaXQgPSBKU09OLnBhcnNlKEpTT04uc3RyaW5naWZ5KHVuaXQpKSBhcyBVbml0O1xuXG4gICAgICAgIC8vIHByZXVwZ3JhZGUgLT4gbWFzdGVyeSAtPiBwcmVzdGlnZSAtPiBnZW5lcmljIHVwZ3JhZGUgLT4gdXBncmFkZSAtPiBwb3N0LXByZXN0aWdlXG5cbiAgICAgICAgY29uc3QgbWV0YVVwZ3JhZGVzOiB7IFt1cGdyYWRlOiBzdHJpbmddOiBbUGxheWVyVGFsZW50LCBsZXZlbDogbnVtYmVyIHwgbnVsbF1bXSB9ID0ge307XG5cbiAgICAgICAgaWYgKHVuaXQubmFtZSA9PT0gJ1NreSBGdXJ5Jykge1xuICAgICAgICAgICAgZGVsZXRlIHVwZ3JhZGVkVW5pdC5tb2Rlc1snKEZpZ2h0ZXIgTW9kZSknXSEuYXR0cmlidXRlZGFtYWdlIVsnQXJtb3JlZCddO1xuICAgICAgICAgICAgdXBncmFkZWRVbml0Lm1vZGVzWycoRmlnaHRlciBNb2RlKSddIS5hdHRyaWJ1dGVkYW1hZ2UhWycnXSEuZGFtYWdlID0gMjE7XG4gICAgICAgIH1cbiAgICAgICAgZm9yIChjb25zdCB1cGdyYWRlIG9mIHBsYXllclVwZ3JhZGVzIGFzIFBsYXllclVwZ3JhZGVbXSkge1xuICAgICAgICAgICAgaWYgKCFtb2RpZmllcnMudXBncmFkZXNbdXBncmFkZS5uYW1lXSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLnVuaXQgIT09IHRva2VuKHVwZ3JhZGUudW5pdCkpIGNvbnRpbnVlO1xuICAgICAgICAgICAgaWYgKG1vZGlmaWVycy5jb21tYW5kZXIgIT09IHRva2VuKHVwZ3JhZGUuY29tbWFuZGVyKSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAodXBncmFkZS51cGdyYWRldHlwZSAhPT0gJ3ByZXVwZ3JhZGUnKSBjb250aW51ZTtcblxuICAgICAgICAgICAgdGhpcy5hcHBseVVwZ3JhZGUodXBncmFkZSwgdXBncmFkZWRVbml0KTtcbiAgICAgICAgfVxuICAgICAgICBmb3IgKGNvbnN0IHRhbGVudCBvZiBwbGF5ZXJUYWxlbnRzIGFzIFBsYXllclRhbGVudFtdKSB7XG4gICAgICAgICAgICBpZiAodGFsZW50LnRhbGVudHR5cGUgIT09ICdtYXN0ZXJ5JykgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLnVuaXQgIT09IHRva2VuKHRhbGVudC51bml0KSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLmNvbW1hbmRlciAhPT0gdG9rZW4odGFsZW50LmNvbW1hbmRlcikpIGNvbnRpbnVlO1xuICAgICAgICAgICAgY29uc3QgbGV2ZWwgPSBtb2RpZmllcnMubWFzdGVyaWVzW3RhbGVudC5uYW1lXTtcbiAgICAgICAgICAgIGlmICghbGV2ZWwpIGNvbnRpbnVlO1xuICAgICAgICAgICAgaWYgKHRhbGVudC5tb2RpZmllcnVwZ3JhZGUpIHtcbiAgICAgICAgICAgICAgICBpZiAoIW1vZGlmaWVycy51cGdyYWRlc1t0YWxlbnQubW9kaWZpZXJ1cGdyYWRlXSkgY29udGludWU7XG4gICAgICAgICAgICAgICAgKG1ldGFVcGdyYWRlc1t0YWxlbnQubW9kaWZpZXJ1cGdyYWRlXSB8fD0gW10pLnB1c2goW3RhbGVudCwgbGV2ZWxdKTtcbiAgICAgICAgICAgICAgICBjb250aW51ZTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgdGhpcy5hcHBseVVwZ3JhZGUodGFsZW50LCB1cGdyYWRlZFVuaXQsIGxldmVsKTtcbiAgICAgICAgfVxuICAgICAgICBmb3IgKGNvbnN0IHRhbGVudCBvZiBwbGF5ZXJUYWxlbnRzIGFzIFBsYXllclRhbGVudFtdKSB7XG4gICAgICAgICAgICBpZiAodGFsZW50LnRhbGVudHR5cGUgIT09ICdwcmVzdGlnZScpIGNvbnRpbnVlO1xuICAgICAgICAgICAgaWYgKCFtb2RpZmllcnMucHJlc3RpZ2VzW3RhbGVudC5uYW1lXSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLnVuaXQgIT09IHRva2VuKHRhbGVudC51bml0KSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLmNvbW1hbmRlciAhPT0gdG9rZW4odGFsZW50LmNvbW1hbmRlcikpIGNvbnRpbnVlO1xuICAgICAgICAgICAgaWYgKHRhbGVudC5tb2RpZmllcnVwZ3JhZGUpIHtcbiAgICAgICAgICAgICAgICBpZiAoIW1vZGlmaWVycy51cGdyYWRlc1t0YWxlbnQubW9kaWZpZXJ1cGdyYWRlXSkgY29udGludWU7XG4gICAgICAgICAgICAgICAgKG1ldGFVcGdyYWRlc1t0YWxlbnQubW9kaWZpZXJ1cGdyYWRlXSB8fD0gW10pLnB1c2goW3RhbGVudCwgbnVsbF0pO1xuICAgICAgICAgICAgICAgIGNvbnRpbnVlO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICB0aGlzLmFwcGx5VXBncmFkZSh0YWxlbnQsIHVwZ3JhZGVkVW5pdCk7XG4gICAgICAgIH1cblxuICAgICAgICBjb25zdCBsZXZlbHMgPSBtb2RpZmllcnMudXBncmFkZUxldmVscztcbiAgICAgICAgY29uc3Qgd2VhcG9uVXBncmFkZXMgPSBsZXZlbHMud2VhcG9uID8/IGxldmVscy5yYW5rID8/IGxldmVscy5hcnRpZmFjdHM7XG4gICAgICAgIGlmICh3ZWFwb25VcGdyYWRlcykge1xuICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModXBncmFkZWRVbml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgIGZvciAoY29uc3QgYXR0YWNrIG9mIE9iamVjdC52YWx1ZXMobW9kZS5hdHRyaWJ1dGVkYW1hZ2UgfHwge30pKSB7XG4gICAgICAgICAgICAgICAgICAgIGlmIChsZXZlbHMucmFuaykgYXR0YWNrLmJvbnVzIHx8PSBhdHRhY2suZGFtYWdlICogMC4yNTtcbiAgICAgICAgICAgICAgICAgICAgYXR0YWNrLmRhbWFnZSArPSB3ZWFwb25VcGdyYWRlcyAqIGF0dGFjay5ib251cztcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgYXJtb3JVcGdyYWRlcyA9IGxldmVscy5hcm1vciA/PyBsZXZlbHMucmFuayA/PyBsZXZlbHMuYXJ0aWZhY3RzO1xuICAgICAgICBpZiAoYXJtb3JVcGdyYWRlcykge1xuICAgICAgICAgICAgdXBncmFkZWRVbml0LmFybW9yICs9IGFybW9yVXBncmFkZXMgKiB1cGdyYWRlZFVuaXQuYXJtb3Jib251cztcbiAgICAgICAgICAgIHVwZ3JhZGVkVW5pdC5ocCArPSBhcm1vclVwZ3JhZGVzICogdXBncmFkZWRVbml0LmhwYm9udXM7XG4gICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1cGdyYWRlZFVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgaWYgKG1vZGUuYXJtb3IgIT09IHVuZGVmaW5lZCkge1xuICAgICAgICAgICAgICAgICAgICBtb2RlLmFybW9yICs9IGFybW9yVXBncmFkZXMgKiB1cGdyYWRlZFVuaXQuYXJtb3Jib251cztcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgY29uc3Qgc2hpZWxkVXBncmFkZXMgPSBsZXZlbHMuc2hpZWxkcyA/PyBsZXZlbHMucmFuayA/PyBsZXZlbHMuYXJ0aWZhY3RzO1xuICAgICAgICBpZiAoc2hpZWxkVXBncmFkZXMpIHtcbiAgICAgICAgICAgIHVwZ3JhZGVkVW5pdC5zaGllbGRhcm1vciArPSBzaGllbGRVcGdyYWRlcyAqIHVwZ3JhZGVkVW5pdC5zaGllbGRib251cyE7XG4gICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1cGdyYWRlZFVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgaWYgKG1vZGUuc2hpZWxkYXJtb3IgIT09IHVuZGVmaW5lZCkge1xuICAgICAgICAgICAgICAgICAgICBtb2RlLnNoaWVsZGFybW9yICs9IHNoaWVsZFVwZ3JhZGVzICogdXBncmFkZWRVbml0LnNoaWVsZGJvbnVzITtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgaWYgKGxldmVscy5hcnRpZmFjdHMpIHtcbiAgICAgICAgICAgIGlmICh0b2tlbih1bml0Lm5hbWUpID09PSAnemVyYXR1bCcpIHtcbiAgICAgICAgICAgICAgICB1cGdyYWRlZFVuaXQuc2hpZWxkcyArPSBsZXZlbHMuYXJ0aWZhY3RzICogNTA7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBpZiAoWyd0ZWxicnVzJywgJ3pvcmF5YScsICdzZXJkYXRoJ10uaW5jbHVkZXModG9rZW4odW5pdC5uYW1lKSkpIHtcbiAgICAgICAgICAgICAgICB1cGdyYWRlZFVuaXQuc2hpZWxkcyArPSBsZXZlbHMuYXJ0aWZhY3RzICogMTAwO1xuICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlZFVuaXQuZW5lcmd5KSB1cGdyYWRlZFVuaXQuZW5lcmd5ICs9IGxldmVscy5hcnRpZmFjdHMgKiAxMDA7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICBmb3IgKGxldCB1cGdyYWRlIG9mIHBsYXllclVwZ3JhZGVzIGFzIFBsYXllclVwZ3JhZGVbXSkge1xuICAgICAgICAgICAgaWYgKCFtb2RpZmllcnMudXBncmFkZXNbdXBncmFkZS5uYW1lXSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLnVuaXQgIT09IHRva2VuKHVwZ3JhZGUudW5pdCkpIGNvbnRpbnVlO1xuICAgICAgICAgICAgaWYgKG1vZGlmaWVycy5jb21tYW5kZXIgIT09IHRva2VuKHVwZ3JhZGUuY29tbWFuZGVyKSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAodXBncmFkZS51cGdyYWRldHlwZSAhPT0gJ3VwZ3JhZGUnKSBjb250aW51ZTtcblxuICAgICAgICAgICAgaWYgKHVwZ3JhZGUub3BlcmF0aW9uICE9PSAncmVwbGFjZScgJiYgdXBncmFkZS5vcGVyYXRpb24gIT09ICdub25lJyAmJiBtZXRhVXBncmFkZXNbdXBncmFkZS5uYW1lXSkge1xuICAgICAgICAgICAgICAgIHVwZ3JhZGUgPSB7IC4uLnVwZ3JhZGUgfTtcbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IFttZXRhVXBncmFkZSwgbGV2ZWxdIG9mIG1ldGFVcGdyYWRlc1t1cGdyYWRlLm5hbWVdISkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllciAhPT0gbWV0YVVwZ3JhZGUubW9kaWZpZXIpIGNvbnRpbnVlO1xuICAgICAgICAgICAgICAgICAgICB1cGdyYWRlLnZhbHVlID0gdGhpcy5hcHBseU1vZGlmaWVyKHVwZ3JhZGUudmFsdWUsIG1ldGFVcGdyYWRlLCBsZXZlbCwgZmFsc2UpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIHRoaXMuYXBwbHlVcGdyYWRlKHVwZ3JhZGUsIHVwZ3JhZGVkVW5pdCk7XG4gICAgICAgIH1cbiAgICAgICAgZm9yIChjb25zdCB0YWxlbnQgb2YgcGxheWVyVGFsZW50cyBhcyBQbGF5ZXJUYWxlbnRbXSkge1xuICAgICAgICAgICAgaWYgKHRhbGVudC50YWxlbnR0eXBlICE9PSAncG9zdCcpIGNvbnRpbnVlO1xuICAgICAgICAgICAgaWYgKCFtb2RpZmllcnMucHJlc3RpZ2VzW3RhbGVudC5uYW1lXSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLnVuaXQgIT09IHRva2VuKHRhbGVudC51bml0KSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLmNvbW1hbmRlciAhPT0gdG9rZW4odGFsZW50LmNvbW1hbmRlcikpIGNvbnRpbnVlO1xuICAgICAgICAgICAgaWYgKHRhbGVudC5tb2RpZmllcnVwZ3JhZGUgJiYgIW1vZGlmaWVycy51cGdyYWRlc1t0YWxlbnQubW9kaWZpZXJ1cGdyYWRlXSkgY29udGludWU7XG5cbiAgICAgICAgICAgIHRoaXMuYXBwbHlVcGdyYWRlKHRhbGVudCwgdXBncmFkZWRVbml0KTtcbiAgICAgICAgfVxuICAgICAgICBpZiAobW9kaWZpZXJzLnVwZ3JhZGVzWydSZWRsaW5lIFBvd2VyIENlbGxzJ10pIHtcbiAgICAgICAgICAgIHVwZ3JhZGVkVW5pdC5tb2Rlc1snJ10hLmF0dHJpYnV0ZWRhbWFnZSFbJyddIS5kYW1hZ2UgKz0gNjA7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKG1vZGlmaWVycy51bml0ID09PSAnbXV0YWxpc2snICYmIFsnYWJhdGh1cicsICdrZXJyaWdhbiddLmluY2x1ZGVzKG1vZGlmaWVycy5jb21tYW5kZXIpICYmXG4gICAgICAgICAgICAobGV2ZWxzLndlYXBvbiB8fCBtb2RpZmllcnMudXBncmFkZXNbJ1ZpY2lvdXMgR2xhdmUnXSB8fCBtb2RpZmllcnMudXBncmFkZXNbJ1NldmVyaW5nIEdsYXZlJ10gfHwgbW9kaWZpZXJzLnVwZ3JhZGVzWydTdW5kZXJpbmcgR2xhdmUnXSkpIHtcbiAgICAgICAgICAgIC8vIEJvdGggYm91bmNlIHVwZ3JhZGVzIHJlcGxhY2UgQW9FIHRleHQuIENvbXBvc2UgdGhlbSBoZXJlLCBhZnRlciB0aGVcbiAgICAgICAgICAgIC8vIGdlbmVyaWMgcmVwbGFjZW1lbnRzLCBzbyBuZWl0aGVyIHVwZ3JhZGUgY2FuIGVyYXNlIHRoZSBvdGhlcidzIGVmZmVjdC5cbiAgICAgICAgICAgIGNvbnN0IHZpY2lvdXMgPSBtb2RpZmllcnMudXBncmFkZXNbJ1ZpY2lvdXMgR2xhdmUnXTtcbiAgICAgICAgICAgIGNvbnN0IHNldmVyaW5nID0gbW9kaWZpZXJzLmNvbW1hbmRlciA9PT0gJ2tlcnJpZ2FuJyAmJiBtb2RpZmllcnMudXBncmFkZXNbJ1NldmVyaW5nIEdsYXZlJ107XG4gICAgICAgICAgICBjb25zdCBib3VuY2VDb3VudCA9IHZpY2lvdXMgPyA1IDogMjtcbiAgICAgICAgICAgIGNvbnN0IHJhZGl1cyA9IHZpY2lvdXMgPyAobW9kaWZpZXJzLmNvbW1hbmRlciA9PT0gJ2tlcnJpZ2FuJyA/IDYgOiA0KSA6IDM7XG4gICAgICAgICAgICBjb25zdCBiYXNlRGFtYWdlID0gc2V2ZXJpbmcgPyBbOSwgOSwgOSwgOSwgOV0gOiBbNSwgMywgMywgMSwgMV07XG4gICAgICAgICAgICBjb25zdCBkYW1hZ2UgPSBiYXNlRGFtYWdlLnNsaWNlKDAsIGJvdW5jZUNvdW50KS5tYXAoKGFtb3VudCwgaW5kZXgpID0+XG4gICAgICAgICAgICAgICAgTnVtYmVyKChhbW91bnQgKyAobGV2ZWxzLndlYXBvbiB8fCAwKSAqIChbMC4zMzMsIDAuMTExXVtpbmRleF0gfHwgMCkpLnRvRml4ZWQoMykpXG4gICAgICAgICAgICApO1xuICAgICAgICAgICAgbGV0IGFvZSA9IGBCb3VuY2VzIHRvIHVwIHRvICR7Ym91bmNlQ291bnR9IGFkZGl0aW9uYWwgZW5lbWllcywgd2l0aGluIHJhZGl1cyAke3JhZGl1c30gb2YgdGhlIHByZXZpb3VzIHRhcmdldC4gQm91bmNlIGRhbWFnZTogJHtkYW1hZ2Uuam9pbignLCAnKX0uYDtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMuY29tbWFuZGVyID09PSAnYWJhdGh1cicgJiYgbW9kaWZpZXJzLnVwZ3JhZGVzWydTdW5kZXJpbmcgR2xhdmUnXSkge1xuICAgICAgICAgICAgICAgIGFvZSArPSAnIEJvdW5jZXMgZGVhbCBkb3VibGUgZGFtYWdlIHZzLiBBcm1vcmVkLic7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICB1cGdyYWRlZFVuaXQubW9kZXNbJyddIS5hb2UgPSBhb2U7XG4gICAgICAgIH1cblxuICAgICAgICByZXR1cm4gdXBncmFkZWRVbml0O1xuICAgIH1cbiAgICBzdGF0aWMgbW9kaWZpZXJzKGNvbW1hbmRlcjogVG9rZW4sIHNlbGVjdGVkVW5pdDogVG9rZW4pOiBVbml0TW9kaWZpZXJzIHtcbiAgICAgICAgY29uc3QgdXBncmFkZXNMaXN0ID0gcGxheWVyVXBncmFkZXMuZmlsdGVyKCh1KSA9PiB0b2tlbih1LmNvbW1hbmRlcikgPT09IGNvbW1hbmRlciAmJiB0b2tlbih1LnVuaXQpID09PSBzZWxlY3RlZFVuaXQpO1xuICAgICAgICBjb25zdCB0YWxlbnRzTGlzdCA9IHBsYXllclRhbGVudHMuZmlsdGVyKCh1KSA9PiB0b2tlbih1LmNvbW1hbmRlcikgPT09IGNvbW1hbmRlciAmJiB0b2tlbih1LnVuaXQpID09PSBzZWxlY3RlZFVuaXQpO1xuXG4gICAgICAgIGNvbnN0IHVwZ3JhZGVzOiBVbml0TW9kaWZpZXJzWyd1cGdyYWRlcyddID0ge307XG4gICAgICAgIGNvbnN0IG1hc3RlcmllczogVW5pdE1vZGlmaWVyc1snbWFzdGVyaWVzJ10gPSB7fTtcbiAgICAgICAgY29uc3QgcHJlc3RpZ2VzOiBVbml0TW9kaWZpZXJzWydwcmVzdGlnZXMnXSA9IHt9O1xuICAgICAgICBsZXQgdXBncmFkZUxldmVsczogVW5pdE1vZGlmaWVyc1sndXBncmFkZUxldmVscyddID0ge307XG4gICAgICAgIGZvciAoY29uc3QgdXBncmFkZSBvZiB1cGdyYWRlc0xpc3QpIHtcbiAgICAgICAgICAgIHVwZ3JhZGVzW3VwZ3JhZGUubmFtZV0gPSBmYWxzZTtcbiAgICAgICAgfVxuICAgICAgICBmb3IgKGNvbnN0IHRhbGVudCBvZiB0YWxlbnRzTGlzdCkge1xuICAgICAgICAgICAgaWYgKHRhbGVudC50YWxlbnR0eXBlID09PSAnbWFzdGVyeScpIHtcbiAgICAgICAgICAgICAgICBtYXN0ZXJpZXNbdGFsZW50Lm5hbWVdID0gMDtcbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgcHJlc3RpZ2VzW3RhbGVudC5uYW1lXSA9IGZhbHNlO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgY29uc3QgdW5pdCA9IHBsYXllclVuaXRzLmZpbmQoKHUpID0+IHRva2VuKHUuY29tbWFuZGVyKSA9PT0gY29tbWFuZGVyICYmIHRva2VuKHUuYmFzZW5hbWUpID09PSBzZWxlY3RlZFVuaXQpO1xuICAgICAgICBpZiAodW5pdD8uYXJtb3Jib251cyB8fCB1bml0Py5ocGJvbnVzKSB7XG4gICAgICAgICAgICB1cGdyYWRlTGV2ZWxzLmFybW9yID0gMDtcbiAgICAgICAgfVxuICAgICAgICBpZiAodW5pdD8uc2hpZWxkYm9udXMpIHtcbiAgICAgICAgICAgIHVwZ3JhZGVMZXZlbHMuc2hpZWxkcyA9IDA7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKHVuaXQ/LmF0dGFja2JvbnVzKSB7XG4gICAgICAgICAgICB1cGdyYWRlTGV2ZWxzLndlYXBvbiA9IDA7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKGNvbW1hbmRlciA9PT0gJ3plcmF0dWwnKSB7XG4gICAgICAgICAgICBpZiAoT2JqZWN0LmtleXModXBncmFkZUxldmVscykubGVuZ3RoKSB1cGdyYWRlTGV2ZWxzID0geyBhcnRpZmFjdHM6IDAgfTtcbiAgICAgICAgfVxuICAgICAgICBpZiAoY29tbWFuZGVyID09PSAnbWVuZ3NrJykge1xuICAgICAgICAgICAgY29uc3QgUkcgPSBbJ2FlZ2lzZ3VhcmQnLCAnYmxhY2toYW1tZXInLCAnZW1wZXJvcnNzaGFkb3cnLCAncHJpZGVvZmF1Z3VzdGdyYWQnLCAnc2hvY2tkaXZpc2lvbicsICdza3lmdXJ5J107XG4gICAgICAgICAgICBpZiAoUkcuaW5jbHVkZXMoc2VsZWN0ZWRVbml0KSkgdXBncmFkZUxldmVscyA9IHsgcmFuazogMCB9O1xuICAgICAgICB9XG4gICAgICAgIHJldHVybiB7IGNvbW1hbmRlciwgdW5pdDogc2VsZWN0ZWRVbml0LCB1cGdyYWRlcywgdXBncmFkZUxldmVscywgbWFzdGVyaWVzLCBwcmVzdGlnZXMgfTtcbiAgICB9XG4gICAgcmVuZGVyVXBncmFkZXMoKTogcHJlYWN0LkNvbXBvbmVudENoaWxkcmVuIHtcbiAgICAgICAgY29uc3QgbW9kaWZpZXJzID0gdGhpcy5wcm9wcy5tb2RpZmllcnMhO1xuICAgICAgICAvLyBmaWx0ZXIgb3V0IE1lbmdzayBSb3lhbCBHdWFyZCByYW5rIHVwZ3JhZGVzXG4gICAgICAgIGNvbnN0IHVwZ3JhZGVzID0gT2JqZWN0LmtleXMobW9kaWZpZXJzLnVwZ3JhZGVzKS5maWx0ZXIodXBncmFkZSA9PiAhL15bMTIzXSQvLnRlc3QodXBncmFkZSkpO1xuICAgICAgICBjb25zdCBtYXN0ZXJpZXMgPSBPYmplY3Qua2V5cyhtb2RpZmllcnMubWFzdGVyaWVzKTtcbiAgICAgICAgY29uc3QgcHJlc3RpZ2VzID0gT2JqZWN0LmtleXMobW9kaWZpZXJzLnByZXN0aWdlcyk7XG4gICAgICAgIGNvbnN0IHVwZ3JhZGVMZXZlbHMgPSBbMCwgMSwgMiwgMywgNCwgNV0uc2xpY2UoMCwgbW9kaWZpZXJzLmNvbW1hbmRlciA9PT0gJ3R5Y2h1cycgPyA2IDogNCk7XG5cbiAgICAgICAgY29uc3QgdXBncmFkZURhdGEgPSBuZXcgTWFwKFxuICAgICAgICAgICAgcGxheWVyVXBncmFkZXMuZmlsdGVyKCh1KSA9PiB0b2tlbih1LmNvbW1hbmRlcikgPT09IG1vZGlmaWVycy5jb21tYW5kZXIgJiYgdG9rZW4odS51bml0KSA9PT0gbW9kaWZpZXJzLnVuaXQpXG4gICAgICAgICAgICAgICAgLm1hcCgodSkgPT4gW3UubmFtZSwgeyB0b29sdGlwOiBgdXBncmFkZXMvJHt0b2tlbih1LmNvbW1hbmRlcil9LyR7dS5pY29ufWAsIGljb246IHUuaWNvbiwgdW5pdDogdS51bml0IH1dKVxuICAgICAgICApO1xuICAgICAgICBjb25zdCBzZWxlY3RhYmxlVXBncmFkZXMgPSBuZXcgU2V0KFxuICAgICAgICAgICAgcGxheWVyVXBncmFkZXMuZmlsdGVyKCh1KSA9PiB0b2tlbih1LmNvbW1hbmRlcikgPT09IG1vZGlmaWVycy5jb21tYW5kZXIgJiYgdG9rZW4odS51bml0KSA9PT0gbW9kaWZpZXJzLnVuaXQgJiYgdS5vcGVyYXRpb24gIT09ICdub25lJylcbiAgICAgICAgICAgICAgICAubWFwKCh1KSA9PiB1Lm5hbWUpXG4gICAgICAgICk7XG4gICAgICAgIGNvbnN0IHVwZ3JhZGVJY29uID0gKHVwZ3JhZGU6IHN0cmluZykgPT4ge1xuICAgICAgICAgICAgY29uc3QgZGF0YSA9IHVwZ3JhZGVEYXRhLmdldCh1cGdyYWRlKTtcbiAgICAgICAgICAgIGNvbnN0IGNvbW1hbmRlciA9IG1vZGlmaWVycy5jb21tYW5kZXI7XG4gICAgICAgICAgICBjb25zdCBpc0hlcm8gPSB0b2tlbihkYXRhPy51bml0ID8/IFwiXCIpID09PSBjb21tYW5kZXIgfHwgKGNvbW1hbmRlciA9PT0gJ2Zlbml4JyAmJiBkYXRhPy51bml0LnN0YXJ0c1dpdGgoJ0Zlbml4ICcpKTtcbiAgICAgICAgICAgIGNvbnN0IGRpciA9IGNvbW1hbmRlciAhPT0gJ3R5Y2h1cycgJiYgaXNIZXJvID8gXCJoZXJvXCIgOiBcInVuaXR1cGdyYWRlc1wiO1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvJHtkaXJ9LyR7Y29tbWFuZGVyfS8ke2RhdGE/Lmljb259LnBuZ2A7XG4gICAgICAgIH07XG5cbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxmb3JtIGNsYXNzPVwidW5pdHMtbW9kaWZpZXJzXCI+XG4gICAgICAgICAgICAgICAgeyEhdXBncmFkZXMubGVuZ3RoICYmICg8ZmllbGRzZXQ+XG4gICAgICAgICAgICAgICAgICAgIDxsZWdlbmQ+VXBncmFkZXM8L2xlZ2VuZD5cbiAgICAgICAgICAgICAgICAgICAge3VwZ3JhZGVzLm1hcCgodXBncmFkZSkgPT4ge1xuICAgICAgICAgICAgICAgICAgICAgICAgY29uc3Qgc2VsZWN0YWJsZSA9IHNlbGVjdGFibGVVcGdyYWRlcy5oYXModXBncmFkZSk7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBVcGdyYWRlTGFiZWwgPSBzZWxlY3RhYmxlID8gJ2xhYmVsJyA6ICdzcGFuJztcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IGljb25TcmMgPSB1cGdyYWRlSWNvbih1cGdyYWRlKTtcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8ZGl2PjxVcGdyYWRlTGFiZWwgY2xhc3M9e3NlbGVjdGFibGUgPyB1bmRlZmluZWQgOiBcInVuaXRzLXVwZ3JhZGUtcGFzc2l2ZVwifSBkYXRhLXRvb2x0aXA9e3VwZ3JhZGVEYXRhLmdldCh1cGdyYWRlKT8udG9vbHRpcH0+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9XCJ1bml0cy11cGdyYWRlLW1hcmtlclwiPntzZWxlY3RhYmxlID8gPGlucHV0IHR5cGU9XCJjaGVja2JveFwiIHZhbHVlPXt1cGdyYWRlfSBvbkNoYW5nZT17dGhpcy5vbkNoZWNrVXBncmFkZX0gY2hlY2tlZD17bW9kaWZpZXJzLnVwZ3JhZGVzW3VwZ3JhZGVdfSAvPiA6IDxzcGFuIGNsYXNzPVwidW5ib2xkXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+4oCiPC9zcGFuPn08L3NwYW4+eycgJ31cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW1nIGtleT17aWNvblNyY30gc3JjPXtpY29uU3JjfSBhbHQ9XCJcIiB3aWR0aD17MjB9IGhlaWdodD17MjB9IC8+IHt1cGdyYWRlfVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9VcGdyYWRlTGFiZWw+PC9kaXY+O1xuICAgICAgICAgICAgICAgICAgICB9KX1cbiAgICAgICAgICAgICAgICA8L2ZpZWxkc2V0Pil9XG4gICAgICAgICAgICAgICAgeyd3ZWFwb24nIGluIG1vZGlmaWVycy51cGdyYWRlTGV2ZWxzICYmICg8ZmllbGRzZXQ+XG4gICAgICAgICAgICAgICAgICAgIDxsZWdlbmQ+V2VhcG9uczwvbGVnZW5kPlxuICAgICAgICAgICAgICAgICAgICB7dXBncmFkZUxldmVscy5tYXAobGV2ZWwgPT4gPGxhYmVsPjxpbnB1dCB0eXBlPVwicmFkaW9cIiBuYW1lPXtgd2VhcG9uLSR7dGhpcy5wcm9wcy5mb3JtS2V5fWB9IHZhbHVlPXtsZXZlbH0gb25DaGFuZ2U9e3RoaXMub25DaGVja1VwZ3JhZGVMZXZlbH0gY2hlY2tlZD17bW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMud2VhcG9uID09PSBsZXZlbH0gLz4ge2xldmVsfTwvbGFiZWw+KX1cbiAgICAgICAgICAgICAgICA8L2ZpZWxkc2V0Pil9XG4gICAgICAgICAgICAgICAgeydhcm1vcicgaW4gbW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMgJiYgKDxmaWVsZHNldD5cbiAgICAgICAgICAgICAgICAgICAgPGxlZ2VuZD5Bcm1vcjwvbGVnZW5kPlxuICAgICAgICAgICAgICAgICAgICB7dXBncmFkZUxldmVscy5tYXAobGV2ZWwgPT4gPGxhYmVsPjxpbnB1dCB0eXBlPVwicmFkaW9cIiBuYW1lPXtgYXJtb3ItJHt0aGlzLnByb3BzLmZvcm1LZXl9YH0gdmFsdWU9e2xldmVsfSBvbkNoYW5nZT17dGhpcy5vbkNoZWNrVXBncmFkZUxldmVsfSBjaGVja2VkPXttb2RpZmllcnMudXBncmFkZUxldmVscy5hcm1vciA9PT0gbGV2ZWx9IC8+IHtsZXZlbH08L2xhYmVsPil9XG4gICAgICAgICAgICAgICAgPC9maWVsZHNldD4pfVxuICAgICAgICAgICAgICAgIHsnc2hpZWxkcycgaW4gbW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMgJiYgKDxmaWVsZHNldD5cbiAgICAgICAgICAgICAgICAgICAgPGxlZ2VuZD5TaGllbGRzPC9sZWdlbmQ+XG4gICAgICAgICAgICAgICAgICAgIHt1cGdyYWRlTGV2ZWxzLm1hcChsZXZlbCA9PiA8bGFiZWw+PGlucHV0IHR5cGU9XCJyYWRpb1wiIG5hbWU9e2BzaGllbGRzLSR7dGhpcy5wcm9wcy5mb3JtS2V5fWB9IHZhbHVlPXtsZXZlbH0gb25DaGFuZ2U9e3RoaXMub25DaGVja1VwZ3JhZGVMZXZlbH0gY2hlY2tlZD17bW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMuc2hpZWxkcyA9PT0gbGV2ZWx9IC8+IHtsZXZlbH08L2xhYmVsPil9XG4gICAgICAgICAgICAgICAgPC9maWVsZHNldD4pfVxuICAgICAgICAgICAgICAgIHsncmFuaycgaW4gbW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMgJiYgKDxmaWVsZHNldD5cbiAgICAgICAgICAgICAgICAgICAgPGxlZ2VuZD5SYW5rPC9sZWdlbmQ+XG4gICAgICAgICAgICAgICAgICAgIHt1cGdyYWRlTGV2ZWxzLm1hcChsZXZlbCA9PiA8bGFiZWw+PGlucHV0IHR5cGU9XCJyYWRpb1wiIG5hbWU9e2ByYW5rLSR7dGhpcy5wcm9wcy5mb3JtS2V5fWB9IHZhbHVlPXtsZXZlbH0gb25DaGFuZ2U9e3RoaXMub25DaGVja1VwZ3JhZGVMZXZlbH0gY2hlY2tlZD17bW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMucmFuayA9PT0gbGV2ZWx9IC8+IHtsZXZlbH08L2xhYmVsPil9XG4gICAgICAgICAgICAgICAgPC9maWVsZHNldD4pfVxuICAgICAgICAgICAgICAgIHsnYXJ0aWZhY3RzJyBpbiBtb2RpZmllcnMudXBncmFkZUxldmVscyAmJiAoPGZpZWxkc2V0PlxuICAgICAgICAgICAgICAgICAgICA8bGVnZW5kPkFydGlmYWN0IGZyYWdtZW50cyBjb2xsZWN0ZWQ8L2xlZ2VuZD5cbiAgICAgICAgICAgICAgICAgICAge3VwZ3JhZGVMZXZlbHMubWFwKGxldmVsID0+IDxsYWJlbD48aW5wdXQgdHlwZT1cInJhZGlvXCIgbmFtZT17YGFydGlmYWN0cy0ke3RoaXMucHJvcHMuZm9ybUtleX1gfSB2YWx1ZT17bGV2ZWx9IG9uQ2hhbmdlPXt0aGlzLm9uQ2hlY2tVcGdyYWRlTGV2ZWx9IGNoZWNrZWQ9e21vZGlmaWVycy51cGdyYWRlTGV2ZWxzLmFydGlmYWN0cyA9PT0gbGV2ZWx9IC8+IHtsZXZlbH08L2xhYmVsPil9XG4gICAgICAgICAgICAgICAgPC9maWVsZHNldD4pfVxuICAgICAgICAgICAgICAgIHshIW1hc3Rlcmllcy5sZW5ndGggJiYgKDxmaWVsZHNldCBjbGFzcz1cInVuaXRzLW1hc3Rlcmllc1wiPlxuICAgICAgICAgICAgICAgICAgICA8bGVnZW5kPk1hc3RlcmllczwvbGVnZW5kPlxuICAgICAgICAgICAgICAgICAgICB7bWFzdGVyaWVzLm1hcCgodGFsZW50KSA9PiB7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBpZCA9IGBtYXN0ZXJ5LSR7dGhpcy5wcm9wcy5mb3JtS2V5fS0ke3Rva2VuKHRhbGVudCl9YDtcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8ZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsYWJlbCBjbGFzcz1cInVuaXRzLW1hc3RlcnktbmFtZVwiIGlkPXtgJHtpZH0tbGFiZWxgfSBodG1sRm9yPXtpZH0+e3RhbGVudH08L2xhYmVsPjxiciAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPVwidW5pdHMtbWFzdGVyeS1jb250cm9sc1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT1cInJhbmdlXCIgbmFtZT17dGFsZW50fSBhcmlhLWxhYmVsbGVkYnk9e2Ake2lkfS1sYWJlbGB9IHZhbHVlPXttb2RpZmllcnMubWFzdGVyaWVzW3RhbGVudF19IG9uSW5wdXQ9e3RoaXMub25DaGFuZ2VNYXN0ZXJ5fSBtaW49ezB9IG1heD17MzB9IHN0ZXA9ezF9IC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPVwidW5pdHMtbWFzdGVyeS12YWx1ZVwiPjxpbnB1dCB0eXBlPVwibnVtYmVyXCIgaWQ9e2lkfSBuYW1lPXt0YWxlbnR9IHZhbHVlPXt0aGlzLnN0YXRlLm1hc3RlcnlJbnB1dHM/Llt0YWxlbnRdID8/IG1vZGlmaWVycy5tYXN0ZXJpZXNbdGFsZW50XX0gb25JbnB1dD17dGhpcy5vbklucHV0TWFzdGVyeX0gb25CbHVyPXt0aGlzLm9uQmx1ck1hc3Rlcnl9IG1pbj17MH0gbWF4PXszMH0gc3RlcD17MX0gLz48c21hbGwgY2xhc3M9XCJ1bmJvbGRcIj4vMzA8L3NtYWxsPjwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj47XG4gICAgICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgICAgIDwvZmllbGRzZXQ+KX1cbiAgICAgICAgICAgICAgICB7ISFwcmVzdGlnZXMubGVuZ3RoICYmICg8ZmllbGRzZXQ+XG4gICAgICAgICAgICAgICAgICAgIDxsZWdlbmQ+UHJlc3RpZ2VzPC9sZWdlbmQ+XG4gICAgICAgICAgICAgICAgICAgIHtwcmVzdGlnZXMubWFwKCh0YWxlbnQpID0+IDxkaXY+PGxhYmVsPjxpbnB1dCB0eXBlPVwiY2hlY2tib3hcIiB2YWx1ZT17dGFsZW50fSBvbkNoYW5nZT17dGhpcy5vbkNoZWNrUHJlc3RpZ2V9IGNoZWNrZWQ9e21vZGlmaWVycy5wcmVzdGlnZXNbdGFsZW50XX0gLz4ge3RhbGVudH08L2xhYmVsPjwvZGl2Pil9XG4gICAgICAgICAgICAgICAgPC9maWVsZHNldD4pfVxuICAgICAgICAgICAgPC9mb3JtPlxuICAgICAgICApO1xuICAgIH1cbiAgICBvbkNoZWNrVXBncmFkZSA9IChlOiBFdmVudCkgPT4ge1xuICAgICAgICBjb25zdCB0YXJnZXQgPSBlLnRhcmdldCBhcyBIVE1MSW5wdXRFbGVtZW50O1xuICAgICAgICB0aGlzLnByb3BzLm9uU2V0TW9kaWZpZXJzKHsgdXBncmFkZXM6IHsgLi4udGhpcy5wcm9wcy5tb2RpZmllcnMhLnVwZ3JhZGVzLCBbdGFyZ2V0LnZhbHVlXTogdGFyZ2V0LmNoZWNrZWQgfSB9KTtcbiAgICB9O1xuICAgIG9uQ2hlY2tVcGdyYWRlTGV2ZWwgPSAoZTogRXZlbnQpID0+IHtcbiAgICAgICAgY29uc3QgdGFyZ2V0ID0gZS50YXJnZXQgYXMgSFRNTElucHV0RWxlbWVudDtcbiAgICAgICAgY29uc3QgdXBncmFkZSA9IHRhcmdldC5uYW1lLnNwbGl0KCctJylbMF0gYXMgVG9rZW47XG4gICAgICAgIGNvbnN0IHZhbHVlID0gcGFyc2VJbnQodGFyZ2V0LnZhbHVlKTtcbiAgICAgICAgY29uc3QgbW9kaWZpZXJzID0gdGhpcy5wcm9wcy5tb2RpZmllcnMhO1xuICAgICAgICBpZiAodXBncmFkZSA9PT0gJ3JhbmsnKSB7XG4gICAgICAgICAgICBjb25zdCB1cGdyYWRlcyA9IHsgLi4ubW9kaWZpZXJzLnVwZ3JhZGVzIH07XG4gICAgICAgICAgICBpZiAoJzEnIGluIHVwZ3JhZGVzKSB1cGdyYWRlc1snMSddID0gdmFsdWUgPj0gMTtcbiAgICAgICAgICAgIGlmICgnMicgaW4gdXBncmFkZXMpIHVwZ3JhZGVzWycyJ10gPSB2YWx1ZSA+PSAyO1xuICAgICAgICAgICAgaWYgKCczJyBpbiB1cGdyYWRlcykgdXBncmFkZXNbJzMnXSA9IHZhbHVlID49IDM7XG4gICAgICAgICAgICB0aGlzLnByb3BzLm9uU2V0TW9kaWZpZXJzKHsgdXBncmFkZUxldmVsczogeyAuLi5tb2RpZmllcnMudXBncmFkZUxldmVscywgW3VwZ3JhZGVdOiB2YWx1ZSB9LCB1cGdyYWRlcyB9KTtcbiAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgIHRoaXMucHJvcHMub25TZXRNb2RpZmllcnMoeyB1cGdyYWRlTGV2ZWxzOiB7IC4uLm1vZGlmaWVycy51cGdyYWRlTGV2ZWxzLCBbdXBncmFkZV06IHZhbHVlIH0gfSk7XG4gICAgICAgIH1cbiAgICB9O1xuICAgIG9uQ2hlY2tQcmVzdGlnZSA9IChlOiBFdmVudCkgPT4ge1xuICAgICAgICBjb25zdCB0YXJnZXQgPSBlLnRhcmdldCBhcyBIVE1MSW5wdXRFbGVtZW50O1xuICAgICAgICBjb25zdCBuZXdQcmVzdGlnZXMgPSBPYmplY3QuZnJvbUVudHJpZXMoT2JqZWN0LmtleXModGhpcy5wcm9wcy5tb2RpZmllcnMhLnByZXN0aWdlcykubWFwKChwcmVzdGlnZSkgPT4gW3ByZXN0aWdlLCBmYWxzZV0pKTtcbiAgICAgICAgdGhpcy5wcm9wcy5vblNldE1vZGlmaWVycyh7IHByZXN0aWdlczogeyAuLi5uZXdQcmVzdGlnZXMsIFt0YXJnZXQudmFsdWVdOiB0YXJnZXQuY2hlY2tlZCB9IH0pO1xuICAgIH07XG4gICAgb25DaGFuZ2VNYXN0ZXJ5ID0gKGU6IEV2ZW50KSA9PiB7XG4gICAgICAgIGNvbnN0IHRhcmdldCA9IGUudGFyZ2V0IGFzIEhUTUxJbnB1dEVsZW1lbnQ7XG4gICAgICAgIHRoaXMucHJvcHMub25TZXRNb2RpZmllcnMoe1xuICAgICAgICAgICAgbWFzdGVyaWVzOiB7IC4uLnRoaXMucHJvcHMubW9kaWZpZXJzIS5tYXN0ZXJpZXMsIFt0YXJnZXQubmFtZV06IHBhcnNlSW50KHRhcmdldC52YWx1ZSkgfHwgMCB9LFxuICAgICAgICB9KTtcbiAgICB9O1xuICAgIG9uSW5wdXRNYXN0ZXJ5ID0gKGU6IEV2ZW50KSA9PiB7XG4gICAgICAgIGNvbnN0IHRhcmdldCA9IGUudGFyZ2V0IGFzIEhUTUxJbnB1dEVsZW1lbnQ7XG4gICAgICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgICAgICAgbWFzdGVyeUlucHV0czogeyBbdGFyZ2V0Lm5hbWVdOiB0YXJnZXQudmFsdWUgfVxuICAgICAgICB9KTtcbiAgICAgICAgdGhpcy5wcm9wcy5vblNldE1vZGlmaWVycyh7XG4gICAgICAgICAgICBtYXN0ZXJpZXM6IHsgLi4udGhpcy5wcm9wcy5tb2RpZmllcnMhLm1hc3RlcmllcywgW3RhcmdldC5uYW1lXTogcGFyc2VJbnQodGFyZ2V0LnZhbHVlKSB8fCAwIH0sXG4gICAgICAgIH0pO1xuICAgIH07XG4gICAgb25CbHVyTWFzdGVyeSA9IChlOiBFdmVudCkgPT4ge1xuICAgICAgICB0aGlzLnNldFN0YXRlKHtcbiAgICAgICAgICAgIG1hc3RlcnlJbnB1dHM6IG51bGxcbiAgICAgICAgfSk7XG4gICAgfTtcbiAgICBzdGF0aWMgYXBwbHlNb2RpZmllcihcbiAgICAgICAgdmFsdWU6IG51bWJlcixcbiAgICAgICAgdXBncmFkZTogeyBtb2RpZmllcjogc3RyaW5nLCBvcGVyYXRpb246IHN0cmluZywgdmFsdWU6IG51bWJlciwgb3BlcmF0aW9udHlwZT86IHN0cmluZyB8IG51bGwgfSxcbiAgICAgICAgbGV2ZWw/OiBudW1iZXIgfCBudWxsLFxuICAgICAgICByZXZlcnNlQXR0YWNrU3BlZWQgPSB0cnVlLFxuICAgICk6IG51bWJlciB7XG4gICAgICAgIGxldCB1cGdyYWRlVmFsdWUgPSB1cGdyYWRlLnZhbHVlO1xuICAgICAgICBpZiAodXBncmFkZS5vcGVyYXRpb24gPT09ICdtdWx0aXBseScpIHtcbiAgICAgICAgICAgIC8vIG9ubHkgdXNlZCBmb3IgbWFzdGVyaWVzXG4gICAgICAgICAgICBpZiAodXBncmFkZS5vcGVyYXRpb250eXBlID09PSAnaW5jcmVhc2UnKSB7XG4gICAgICAgICAgICAgICAgdXBncmFkZVZhbHVlID0gKDEgKyB1cGdyYWRlLnZhbHVlICogbGV2ZWwhKTtcbiAgICAgICAgICAgIH0gZWxzZSBpZiAodXBncmFkZS5vcGVyYXRpb250eXBlID09PSAnZGVjcmVhc2UnKSB7XG4gICAgICAgICAgICAgICAgdXBncmFkZVZhbHVlID0gKDEgLSB1cGdyYWRlLnZhbHVlICogbGV2ZWwhKTtcbiAgICAgICAgICAgIH0gZWxzZSBpZiAobGV2ZWwpIHtcbiAgICAgICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYFVua25vd24gb3BlcmF0aW9uOiAke3VwZ3JhZGUub3BlcmF0aW9ufSA6ICR7dXBncmFkZS5vcGVyYXRpb250eXBlfWApO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIHN3aXRjaCAodXBncmFkZS5vcGVyYXRpb24pIHtcbiAgICAgICAgICAgIGNhc2UgJ2FkZCc6XG4gICAgICAgICAgICAgICAgcmV0dXJuIHZhbHVlICsgdXBncmFkZVZhbHVlICogKGxldmVsID8/IDEpO1xuICAgICAgICAgICAgY2FzZSAnbXVsdGlwbHknOlxuICAgICAgICAgICAgICAgIGNvbnN0IHJldmVyc2UgPSByZXZlcnNlQXR0YWNrU3BlZWQgJiYgdXBncmFkZS5tb2RpZmllciA9PT0gJ0F0dGFja19TcGVlZCc7XG4gICAgICAgICAgICAgICAgcmV0dXJuIHJldmVyc2UgPyB2YWx1ZSAvIHVwZ3JhZGVWYWx1ZSA6IHZhbHVlICogdXBncmFkZVZhbHVlO1xuICAgICAgICAgICAgY2FzZSAnc2V0JzpcbiAgICAgICAgICAgICAgICBpZiAobGV2ZWwpIHRocm93IG5ldyBFcnJvcihgTGV2ZWwgY2FuJ3QgYmUgc2V0IGZvciB0aGlzIHVwZ3JhZGVgKTtcbiAgICAgICAgICAgICAgICByZXR1cm4gdXBncmFkZVZhbHVlO1xuICAgICAgICAgICAgZGVmYXVsdDpcbiAgICAgICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYFVua25vd24gb3BlcmF0aW9uOiAke3VwZ3JhZGUub3BlcmF0aW9ufWApO1xuICAgICAgICB9XG4gICAgfVxuICAgIHJlbmRlclZhbHVlKHZhbHVlOiBudW1iZXIsIGJhc2VWYWx1ZTogbnVtYmVyKTogcHJlYWN0LkNvbXBvbmVudENoaWxkcmVuIHtcbiAgICAgICAgaWYgKHZhbHVlICE9PSBiYXNlVmFsdWUpIHJldHVybiA8c3Ryb25nIGNsYXNzPVwidW5pdHMtbW9kaWZpZWRcIj57TnVtYmVyKHZhbHVlLnRvRml4ZWQoMikpfTwvc3Ryb25nPlxuICAgICAgICByZXR1cm4gdmFsdWU7XG4gICAgfVxuICAgIHN0YXRpYyBjYWxjdWxhdGVEcHMoZGFtYWdlOiBudW1iZXIsIGF0dGFja3M6IG51bWJlciwgYXR0YWNrc3BlZWQ6IG51bWJlcik6IG51bWJlciB7XG4gICAgICAgIHJldHVybiBkYW1hZ2UgKiBhdHRhY2tzIC8gYXR0YWNrc3BlZWQ7XG4gICAgfVxuICAgIHJlbmRlck1vZGUobW9kZTogVW5pdE1vZGUsIGJhc2VNb2RlOiBVbml0TW9kZSwgYmFzZVVuaXQ6IFVuaXQpIHtcbiAgICAgICAgcmV0dXJuIDw+XG4gICAgICAgICAgICA8cCBjbGFzcz1cInVuaXRzLWhlYWRcIj57bW9kZS5tb2RlTmFtZSB8fCBcIldlYXBvblwifTwvcD5cbiAgICAgICAgICAgIDx1bCBjbGFzcz1cInVuaXRzLW1vZGUtc3RhdHNcIj5cbiAgICAgICAgICAgICAgICB7IW1vZGUuYXR0cmlidXRlZGFtYWdlICYmIDxsaSBjbGFzcz1cInVuYm9sZFwiPihObyB3ZWFwb24pPC9saT59XG4gICAgICAgICAgICAgICAgeyEhbW9kZS5hdHRyaWJ1dGVkYW1hZ2UgJiYgPD5cbiAgICAgICAgICAgICAgICAgICAge09iamVjdC5lbnRyaWVzKG1vZGUuYXR0cmlidXRlZGFtYWdlIHx8IHt9KS5tYXAoKFthdHRyaWJ1dGUsIGRhbWFnZV0pID0+IHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IGRwcyA9IFVuaXRTdGF0cy5jYWxjdWxhdGVEcHMoZGFtYWdlLmRhbWFnZSwgbW9kZS5hdHRhY2tzISwgbW9kZS5hdHRhY2tzcGVlZCEpO1xuICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgYmFzZURhbWFnZSA9IGJhc2VNb2RlLmF0dHJpYnV0ZWRhbWFnZT8uW2F0dHJpYnV0ZV0/LmRhbWFnZSA/PyBiYXNlTW9kZS5hdHRyaWJ1dGVkYW1hZ2U/LlsnJ10/LmRhbWFnZSA/PyAwO1xuICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgYmFzZURwcyA9IFVuaXRTdGF0cy5jYWxjdWxhdGVEcHMoYmFzZURhbWFnZSwgYmFzZU1vZGUuYXR0YWNrcyEsIGJhc2VNb2RlLmF0dGFja3NwZWVkISk7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBub0RwcyA9IFsnQmFuZWxpbmcnLCAnQmFuZWxpbmcgU3Bhd24nLCAnU2NvdXJnZScsICdWb2xhdGlsZSBJbmZlc3RlZCcsICdTcGlkZXIgTWluZScsICdFeHBsb3NpdmUgQ3JlZXBlciddO1xuICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgZHBzTWVzc2FnZSA9ICghbm9EcHMuaW5jbHVkZXMoYmFzZVVuaXQubmFtZSkpID8gPD4gKHt0aGlzLnJlbmRlclZhbHVlKCtkcHMudG9GaXhlZCgyKSwgK2Jhc2VEcHMudG9GaXhlZCgyKSl9IERQUyk8Lz4gOiAnJztcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8bGk+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj57YXR0cmlidXRlID8gYHZzLiAke2F0dHJpYnV0ZX06YCA6ICdEYW1hZ2U6J308L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKGRhbWFnZS5kYW1hZ2UsIGJhc2VEYW1hZ2UpfXtkcHNNZXNzYWdlfVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9saT47XG4gICAgICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgICAgICAgICB7KG1vZGUuYXR0YWNrcyEgPiAxIHx8IGJhc2VNb2RlLmF0dGFja3MhID4gMSkgJiYgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+SGl0czo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKG1vZGUuYXR0YWNrcyEsIGJhc2VNb2RlLmF0dGFja3MhKX08L2xpPn1cbiAgICAgICAgICAgICAgICAgICAgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+Q29vbGRvd246PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZShtb2RlLmF0dGFja3NwZWVkISwgYmFzZU1vZGUuYXR0YWNrc3BlZWQhKX08L2xpPlxuICAgICAgICAgICAgICAgICAgICA8bGk+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5SYW5nZTo8L3NwYW4+IHttb2RlLmF0a3JhbmdlID09PSAwID8gXCIoTWVsZWUpXCIgOiB0aGlzLnJlbmRlclZhbHVlKG1vZGUuYXRrcmFuZ2UhLCBiYXNlTW9kZS5hdGtyYW5nZSEpfTwvbGk+XG4gICAgICAgICAgICAgICAgPC8+fVxuICAgICAgICAgICAgICAgIHttb2RlLmFvZSAmJiA8bGk+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5Bb0U6PC9zcGFuPiB7bW9kZS5hb2UgIT09IGJhc2VNb2RlLmFvZSA/IDxzdHJvbmcgY2xhc3M9XCJ1bml0cy1tb2RpZmllZFwiPnttb2RlLmFvZX08L3N0cm9uZz4gOiBtb2RlLmFvZX08L2xpPn1cbiAgICAgICAgICAgICAgICB7bW9kZS5hcm1vciAhPT0gdW5kZWZpbmVkICYmIDxsaT48c3BhbiBjbGFzcz1cInVuYm9sZFwiPkFybW9yOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUobW9kZS5hcm1vciwgYmFzZU1vZGUuYXJtb3IgPz8gYmFzZVVuaXQuYXJtb3IpfTwvbGk+fVxuICAgICAgICAgICAgICAgIHttb2RlLm1vdmVtZW50c3BlZWQgIT09IHVuZGVmaW5lZCAmJiA8bGk+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5Nb3ZlIHNwZWVkOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUobW9kZS5tb3ZlbWVudHNwZWVkLCBiYXNlTW9kZS5tb3ZlbWVudHNwZWVkID8/IGJhc2VVbml0Lm1vdmVtZW50c3BlZWQpfTwvbGk+fVxuICAgICAgICAgICAgICAgIHttb2RlLnNpZ2h0cmFuZ2UgIT09IHVuZGVmaW5lZCAmJiA8bGk+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5WaXNpb246PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZShtb2RlLnNpZ2h0cmFuZ2UsIGJhc2VNb2RlLnNpZ2h0cmFuZ2UgPz8gYmFzZVVuaXQuc2lnaHRyYW5nZSl9PC9saT59XG4gICAgICAgICAgICA8L3VsPlxuICAgICAgICA8Lz47XG4gICAgfVxuICAgIGdldEltYWdlU3JjKHNlbGVjdGVkOiBVbml0KSB7XG4gICAgICAgIGNvbnN0IHsgY29tbWFuZGVyLCB1bml0IH0gPSB0aGlzLnByb3BzLm1vZGlmaWVycyE7XG4gICAgICAgIGlmICghY29tbWFuZGVyIHx8ICF1bml0KSByZXR1cm4gbnVsbDtcblxuICAgICAgICBpZiAodW5pdC5zdGFydHNXaXRoKCdlbnRocmFsbGVkJykpIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21wcy91bml0aW1hZ2VzLyR7dW5pdC5zbGljZSgxMCl9LnBuZ2A7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKHVuaXQgPT09ICdmbGFtaW5nYmV0dHknIHx8IHVuaXQgPT09ICdibGFzdGVyYmlsbHknIHx8IHVuaXQgPT09ICdzcGlubmluZ2Rpenp5JyB8fCB1bml0ID09PSAna2hheWRhcmlubW9ub2xpdGgnIHx8IHVuaXQgPT09ICdzaGllbGRiYXR0ZXJ5JyB8fCAoY29tbWFuZGVyID09PSAna2FyYXgnICYmIHVuaXQgPT09ICdwaG90b25jYW5ub24nKSkge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvZ3VpZGVzLyR7Y29tbWFuZGVyfS8ke3VuaXR9LmpwZ2A7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKFxuICAgICAgICAgICAgdW5pdCA9PT0gJ29ic2VydmVyJyB8fCB1bml0ID09PSAnYnJvb2RsaW5nJyB8fCB1bml0ID09PSAnb3ZlcmxvcmQnIHx8IHVuaXQgPT09ICdvdmVyc2VlcicgfHxcbiAgICAgICAgICAgIHVuaXQgPT09ICdtaXNzaWxldHVycmV0JyB8fCB1bml0ID09PSAncGhvdG9uY2Fubm9uJyB8fCAoY29tbWFuZGVyID09PSAnemVyYXR1bCcgJiYgdW5pdCA9PT0gJ3ZvaWRyYXknKSB8fFxuICAgICAgICAgICAgdW5pdCA9PT0gJ3NwaW5lY3Jhd2xlcicgfHwgdW5pdCA9PT0gJ3Nwb3JlY3Jhd2xlcicgfHwgdW5pdCA9PT0gJ3NwaWRlcm1pbmUnIHx8IHVuaXQgPT09ICdidW5rZXInXG4gICAgICAgICkge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbXBzL3VuaXRpbWFnZXMvJHt1bml0fS5wbmdgO1xuICAgICAgICB9XG5cbiAgICAgICAgaWYgKHVuaXQgPT09ICdtZWNoYW92ZXJsb3JkJyB8fCB1bml0ID09PSAnbWVjaGFvdmVyc2VlcicgfHwgdW5pdCA9PT0gJ3hlbG5hZ2F3YXRjaGVyJyB8fCB1bml0ID09PSAnYmFuZWxpbmdzcGF3bicpIHtcbiAgICAgICAgICAgIHJldHVybiBudWxsO1xuICAgICAgICB9XG4gICAgICAgIGlmICh1bml0Py5zdGFydHNXaXRoKCdmZW5peCcpKSB7XG4gICAgICAgICAgICByZXR1cm4gYC9pbWFnZXMvY29tbWFuZGVyZGF0YS9hYmlsaXRpZXMvZmVuaXgvJHt1bml0LnNsaWNlKDUpfS5qcGdgO1xuICAgICAgICB9XG4gICAgICAgIGlmIChcbiAgICAgICAgICAgIHVuaXQgPT09ICdhbGFyYWsnIHx8IHVuaXQgPT09ICdrZXJyaWdhbicgfHwgdW5pdCA9PT0gJ3phZ2FyYScgfHwgdW5pdCA9PT0gJ25vdmEnIHx8IHVuaXQgPT09ICd6ZXJhdHVsJyB8fFxuICAgICAgICAgICAgdW5pdCA9PT0gJ2dhcnknIHx8IHVuaXQgPT09ICdzdXBlcmdhcnknIHx8IHVuaXQgPT09ICdkZWhha2EnXG4gICAgICAgICkge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvaGVyby8ke2NvbW1hbmRlcn0vJHt1bml0fS5qcGdgO1xuICAgICAgICB9XG4gICAgICAgIGlmIChcbiAgICAgICAgICAgIHVuaXQgPT09ICdoeXBlcmlvbicgfHwgdW5pdCA9PT0gJ21vdGhlcnNoaXAnIHx8IHVuaXQgPT09ICdkZXN0cm95ZXInIHx8IHVuaXQgPT09ICdzaGFkb3dndWFyZCcgfHxcbiAgICAgICAgICAgIHVuaXQgPT09ICdnbGV2aWcnIHx8IHVuaXQgPT09ICdtdXJ2YXInIHx8IHVuaXQgPT09ICdkYWtydW4nIHx8IHVuaXQgPT09ICdncmVhdGVycHJpbWFsd3VybScgfHxcbiAgICAgICAgICAgIHVuaXQgPT09ICdzZXJkYXRoJyB8fCB1bml0ID09PSAndGVsYnJ1cycgfHwgdW5pdCA9PT0gJ2Fwb2NhbGlzaycgfHxcbiAgICAgICAgICAgIHVuaXQgPT09ICdhdmF0YXJvZmZvcm0nIHx8IHVuaXQgPT09ICdhdmF0YXJvZmVzc2VuY2UnXG4gICAgICAgICkge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvYWJpbGl0aWVzLyR7Y29tbWFuZGVyfS8ke3VuaXR9LmpwZ2A7XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgcmVwbGFjZUFiaWxpdGllczogUmVjb3JkPHN0cmluZywgc3RyaW5nPiA9IHtcbiAgICAgICAgICAgIGR1c2t3aW5nczogJ2JhbnNoZWVhaXJzdHJpa2UucG5nJywgdW5ib3VuZGZhbmF0aWM6ICdmYW5hdGljLnBuZycsIGFyZXM6ICdjb21iYXRkcm9wLnBuZycsXG4gICAgICAgICAgICBob2xvZGVjb3k6ICdob2xvZGVjb3kucG5nJywgYWxla3NhbmRlcjogJ2FsZWtzYW5kZXIucG5nJywgZHJha2tlbmxhc2VyZHJpbGw6ICdkcmFra2VubGFzZXJkcmlsbGF0dGFjay5wbmcnLFxuICAgICAgICAgICAgem9yYXlhOiAnem9yYXlhbGVnaW9uLnBuZycsIGNoYXJnZWRjcnlzdGFsOiAnc3VtbW9uY2hhcmdlZGNyeXN0YWxzLnBuZycsIHdhcmhvdW5kdHVycmV0OiAnZGVwbG95d2FyaG91bmR0dXJyZXQucG5nJyxcbiAgICAgICAgICAgIHRlc3NlcmFjdG1vbm9saXRoOiAnZGVwbG95dGVzc2VyYWN0bW9ub2xpdGgucG5nJyxcbiAgICAgICAgfTtcbiAgICAgICAgaWYgKHVuaXQgaW4gcmVwbGFjZUFiaWxpdGllcykge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvYWJpbGl0aWVzLyR7Y29tbWFuZGVyfS8ke3JlcGxhY2VBYmlsaXRpZXNbdW5pdF19YDtcbiAgICAgICAgfVxuICAgICAgICBpZiAoY29tbWFuZGVyID09PSAnemFnYXJhJyAmJiAodW5pdCA9PT0gJ2h1bnRlcmtpbGxlcicgfHwgdW5pdCA9PT0gJ3JvYWNoJykpIHtcbiAgICAgICAgICAgIGNvbnN0IHJlcGxhY2U6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7XG4gICAgICAgICAgICAgICAgaHVudGVya2lsbGVyOiAnc3Bhd25odW50ZXJraWxsZXJzLnBuZycsIHJvYWNoOiAnaW5mZXN0ZWRkcm9wLnBuZycsXG4gICAgICAgICAgICB9O1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvaGVyby8ke2NvbW1hbmRlcn0vJHtyZXBsYWNlW3VuaXRdfWA7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKGNvbW1hbmRlciA9PT0gJ3plcmF0dWwnICYmICh1bml0ID09PSAnemVhbG90JyB8fCB1bml0ID09PSAnZGFya2FyY2hvbicpKSB7XG4gICAgICAgICAgICByZXR1cm4gYC9pbWFnZXMvY29tbWFuZGVyZGF0YS9hYmlsaXRpZXMvJHtjb21tYW5kZXJ9LyR7dW5pdH0uanBnYDtcbiAgICAgICAgfVxuICAgICAgICBjb25zdCByZXBsYWNlVW5pdFNraWxsczogUmVjb3JkPHN0cmluZywgc3RyaW5nPiA9IHtcbiAgICAgICAgICAgIGxvY3VzdDogJ3NwYXdubG9jdXN0cy5wbmcnLCBwcmltYWxsb2N1c3Q6ICdzcGF3bnByaW1hbGxvY3VzdHMucG5nJywgZXhwbG9zaXZlY3JlZXBlcjogJ3NwYXduZXhwbG9zaXZlY3JlZXBlci5wbmcnLFxuICAgICAgICAgICAgbWVjaGFicm9vZGxpbmc6ICdyZWFkeW1lY2hhYnJvb2RsaW5nLnBuZycsIG1lY2hhcm9hY2g6ICdyb2FjaGVzYXdheS5wbmcnLCByYWlsZ3VudHVycmV0OiAnYnVpbGRyYWlsZ3VudHVycmV0LnBuZycsXG4gICAgICAgIH07XG4gICAgICAgIGlmICh1bml0IGluIHJlcGxhY2VVbml0U2tpbGxzKSB7XG4gICAgICAgICAgICByZXR1cm4gYC9pbWFnZXMvY29tbWFuZGVyZGF0YS91bml0c2tpbGxzLyR7Y29tbWFuZGVyfS8ke3JlcGxhY2VVbml0U2tpbGxzW3VuaXRdfWA7XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgcmVwbGFjZVVuaXRVcGdyYWRlczogUmVjb3JkPHN0cmluZywgc3RyaW5nPiA9IHtcbiAgICAgICAgICAgIGhhbmdhcmJheTogJ2luc3RhbGxkcm9uZWhhbmdhci5wbmcnLCBtZWNoYXJhdmFnZXI6ICdib251c3JhdmFnZXIucG5nJyxcbiAgICAgICAgfTtcbiAgICAgICAgaWYgKHVuaXQgaW4gcmVwbGFjZVVuaXRVcGdyYWRlcykge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzLyR7Y29tbWFuZGVyfS8ke3JlcGxhY2VVbml0VXBncmFkZXNbdW5pdF19YDtcbiAgICAgICAgfVxuICAgICAgICBpZiAodW5pdCA9PT0gJ2ZseWluZ2Jyb29kbGluZycpIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXRza2lsbHMvc3R1a292L3NwYXduYnJvb2RsaW5ncy5wbmdgO1xuICAgICAgICB9XG5cbiAgICAgICAgY29uc3QgcmVwbGFjZVVuaXQ6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7IGluZmVzdGVkdHJvb3BlcjogJ2luZmVzdGVkbWFyaW5lJyB9O1xuICAgICAgICBpZiAoc2VsZWN0ZWQudGFncy5pbmNsdWRlcyhcIlN0cnVjdHVyZVwiKSkgcmV0dXJuIG51bGw7XG4gICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXRzLyR7Y29tbWFuZGVyfS8ke3JlcGxhY2VVbml0W3VuaXRdIHx8IHVuaXR9LmpwZ2A7XG4gICAgfVxuICAgIG92ZXJyaWRlIHJlbmRlcigpIHtcbiAgICAgICAgY29uc3QgbW9kaWZpZXJzID0gdGhpcy5wcm9wcy5tb2RpZmllcnM7XG4gICAgICAgIGlmICghbW9kaWZpZXJzKSB7XG4gICAgICAgICAgICByZXR1cm4gPHRkIGNsYXNzPVwidW5pdHMtdW5pdFwiPlxuICAgICAgICAgICAgICAgIDxwPjxiaWc+JmxhcnI7PC9iaWc+IFNlbGVjdCBhIHVuaXQ8L3A+XG4gICAgICAgICAgICA8L3RkPjtcbiAgICAgICAgfVxuICAgICAgICBjb25zdCBiYXNlVW5pdCA9IFVuaXRTdGF0cy5nZXRVbml0KG1vZGlmaWVycyk7XG4gICAgICAgIGlmICghYmFzZVVuaXQpIHtcbiAgICAgICAgICAgIHJldHVybiB0aGlzLnJlbmRlckFtb25Vbml0KCk7XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgdW5pdCA9IFVuaXRTdGF0cy5nZXRVcGdyYWRlZFVuaXQoYmFzZVVuaXQsIG1vZGlmaWVycyk7XG4gICAgICAgIGNvbnN0IHJhY2UgPSB0b2tlbih1bml0LnJhY2UpO1xuICAgICAgICBjb25zdCBpbWFnZVNyYyA9IHRoaXMuZ2V0SW1hZ2VTcmModW5pdCk7XG5cbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDx0ZCBjbGFzcz1cInVuaXRzLXVuaXRcIj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPXtgdW5pdHMtYWN0aW9ucyR7dGhpcy5wcm9wcy5vbkNsaWNrQ29tcGFyZSA/IFwiIHVuaXRzLWFjdGlvbnMtY29tcGFyZVwiIDogXCJcIn1gfT5cbiAgICAgICAgICAgICAgICAgICAge3RoaXMucHJvcHMub25DbGlja0Nsb3NlICYmIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIG9uQ2xpY2s9e3RoaXMucHJvcHMub25DbGlja0Nsb3NlfSBhcmlhLWxhYmVsPVwiQ2xvc2UgY29tcGFyaXNvblwiPiZ0aW1lczs8L2J1dHRvbj59XG4gICAgICAgICAgICAgICAgICAgIHt0aGlzLnByb3BzLm9uQ2xpY2tDb21wYXJlICYmIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIG9uQ2xpY2s9e3RoaXMucHJvcHMub25DbGlja0NvbXBhcmV9PkNvbXBhcmUg4oaSPC9idXR0b24+fVxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxoMiBjbGFzcz1cInVuaXRzLW5hbWVcIj57dW5pdC5uYW1lfTwvaDI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cInVuaXRzLWlkZW50aXR5XCI+XG4gICAgICAgICAgICAgICAgICAgIHtpbWFnZVNyYyAmJiA8ZGl2IGNsYXNzPVwidW5pdHMtYXJ0XCI+PGltZyBrZXk9e2ltYWdlU3JjfSBzcmM9e2ltYWdlU3JjfSBhbHQ9XCJcIiBjbGFzcz1cInVuaXRzLXBvcnRyYWl0XCIgLz48L2Rpdj59XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJ1bml0cy1pZGVudGl0eS10ZXh0XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7KHVuaXQubWNvc3QgfHwgdW5pdC52Y29zdCB8fCB1bml0LmJ1aWxkdGltZSB8fCB1bml0LnN1cHBseSkgPyA8cCBjbGFzcz1cInVuaXRzLWNvc3RzXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+PGltZyBzcmM9XCIvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzL2ljb25taW5lcmFsLnBuZ1wiIGFsdD1cIk1pbmVyYWxzOlwiIC8+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQubWNvc3QsIGJhc2VVbml0Lm1jb3N0KX08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+PGltZyBzcmM9e2AvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzL2ljb25nYXNfJHtyYWNlfS5wbmdgfSBhbHQ9XCJHYXM6XCIgLz4ge3RoaXMucmVuZGVyVmFsdWUodW5pdC52Y29zdCwgYmFzZVVuaXQudmNvc3QpfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3Bhbj48aW1nIHNyYz17YC9pbWFnZXMvY29tbWFuZGVyZGF0YS91bml0dXBncmFkZXMvaWNvbnRpbWVfJHtyYWNlfS5wbmdgfSBhbHQ9XCJCdWlsZCBUaW1lOlwiIC8+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQuYnVpbGR0aW1lLCBiYXNlVW5pdC5idWlsZHRpbWUpfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3Bhbj48aW1nIHNyYz17YC9pbWFnZXMvY29tbWFuZGVyZGF0YS91bml0dXBncmFkZXMvaWNvbnN1cHBseV8ke3JhY2V9LnBuZ2B9IGFsdD1cIlN1cHBseTpcIiAvPiB7dGhpcy5yZW5kZXJWYWx1ZSh1bml0LnN1cHBseSwgYmFzZVVuaXQuc3VwcGx5KX08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3A+IDogPHAgY2xhc3M9XCJ1bml0cy1jb3N0c1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIChObyBjb3N0KVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9wPn1cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzPVwidW5pdHMtdGFnc1wiPnt1bml0LnRhZ3Muam9pbihcIiDCtyBcIikgfHwgXCIoTm8gdGFncylcIn08L3A+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDx1bCBjbGFzcz1cInVuaXRzLXN0YXRzXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz1cInVuaXRzLWhwXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz1cInVuYm9sZFwiPkhQOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUodW5pdC5ocCwgYmFzZVVuaXQuaHApfVxuICAgICAgICAgICAgICAgICAgICAgICAgeyEhdW5pdC5hcm1vciAmJiA8PiA8c3BhbiBjbGFzcz1cInVuYm9sZFwiPnwgQXJtb3I6PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZSh1bml0LmFybW9yLCBiYXNlVW5pdC5hcm1vcil9PC8+fVxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgICAgICAgICB7ISF1bml0LnNoaWVsZHMgJiYgPGxpIGNsYXNzPVwidW5pdHMtc2hpZWxkc1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5TaGllbGRzOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUodW5pdC5zaGllbGRzLCBiYXNlVW5pdC5zaGllbGRzKX1cbiAgICAgICAgICAgICAgICAgICAgICAgIHshIXVuaXQuc2hpZWxkYXJtb3IgJiYgPD4gPHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj58IFNoaWVsZCBBcm1vcjo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQuc2hpZWxkYXJtb3IsIGJhc2VVbml0LnNoaWVsZGFybW9yKX08Lz59XG4gICAgICAgICAgICAgICAgICAgIDwvbGk+fVxuICAgICAgICAgICAgICAgICAgICB7ISF1bml0LmVuZXJneSAmJiA8bGkgY2xhc3M9XCJ1bml0cy1lbmVyZ3lcIj48c3BhbiBjbGFzcz1cInVuYm9sZFwiPkVuZXJneTo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQuZW5lcmd5LCBiYXNlVW5pdC5lbmVyZ3kpfTwvbGk+fVxuICAgICAgICAgICAgICAgICAgICA8bGk+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5Nb3ZlIHNwZWVkOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUodW5pdC5tb3ZlbWVudHNwZWVkLCBiYXNlVW5pdC5tb3ZlbWVudHNwZWVkKX08L2xpPlxuICAgICAgICAgICAgICAgICAgICA8bGk+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5WaXNpb246PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZSh1bml0LnNpZ2h0cmFuZ2UsIGJhc2VVbml0LnNpZ2h0cmFuZ2UpfTwvbGk+XG4gICAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgICAgICB7T2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKS5tYXAoKG1vZGUpID0+IHRoaXMucmVuZGVyTW9kZShtb2RlLCBiYXNlVW5pdC5tb2Rlc1ttb2RlLm1vZGVOYW1lIHx8ICcnXSEsIGJhc2VVbml0KSl9XG4gICAgICAgICAgICAgICAge3VuaXQubm90ZXMgJiYgPHA+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5Ob3Rlczo8L3NwYW4+PGJyIC8+e3VuaXQubm90ZXMuc3BsaXQoXCI8YnI+XCIpLm1hcCgobm90ZSkgPT4gPGRpdj57bm90ZX08L2Rpdj4pfTwvcD59XG4gICAgICAgICAgICAgICAge3RoaXMucmVuZGVyVXBncmFkZXMoKX1cbiAgICAgICAgICAgIDwvdGQ+XG4gICAgICAgICk7XG4gICAgfVxufVxuXG5pZiAodHlwZW9mIGRvY3VtZW50ICE9PSBcInVuZGVmaW5lZFwiKSB7XG4gICAgcHJlYWN0LnJlbmRlcig8VW5pdHMgLz4sIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwidW5pdHNcIikhKTtcbn1cbiIKICBdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7RUFBQSxJQUFJO0FBQUEsRUFBSixJQUFNO0FBQUEsRUFBTixJQUFRO0FBQUEsRUFBUixJQUFVO0FBQUEsRUFBVixJQUFZO0FBQUEsRUFBWixJQUFjO0FBQUEsRUFBZCxJQUFnQjtBQUFBLEVBQWhCLElBQWtCO0FBQUEsRUFBbEIsSUFBb0I7QUFBQSxFQUFwQixJQUFzQjtBQUFBLEVBQXRCLElBQXdCO0FBQUEsRUFBeEIs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QUUsQ0FBQyxJQUFFLEdBQUUsQ0FBQyxFQUFFLEtBQUcsRUFBRSxNQUFLLENBQUMsR0FBRSxFQUFFLE1BQUksRUFBRSxLQUFJLEVBQUUsR0FBRyxJQUFJLEVBQUUsT0FBSyxHQUFFLEVBQUUsR0FBRSxHQUFFLENBQUMsR0FBRSxFQUFFLE1BQUksRUFBRSxLQUFHLE1BQUssRUFBRSxPQUFLLEtBQUcsRUFBRSxDQUFDO0FBQUEsSUFBQztBQUFBO0FBQUEsRUFBRSxTQUFTLENBQUMsQ0FBQyxHQUFFO0FBQUEsSUFBQyxLQUFVLElBQUUsRUFBRSxPQUFYLFFBQXNCLEVBQUUsT0FBUjtBQUFBLE1BQVksT0FBTyxFQUFFLE1BQUksRUFBRSxJQUFJLE9BQUssTUFBSyxFQUFFLElBQUksS0FBSyxRQUFRLENBQUMsR0FBRTtBQUFBLFFBQUMsSUFBUyxLQUFOLFFBQWUsRUFBRSxPQUFSO0FBQUEsVUFBWSxPQUFPLEVBQUUsTUFBSSxFQUFFLElBQUksT0FBSyxFQUFFO0FBQUEsT0FBSSxHQUFFLEVBQUUsQ0FBQztBQUFBO0FBQUEsRUFBRSxTQUFTLENBQUMsQ0FBQyxHQUFFO0FBQUEsS0FBRSxDQUFDLEVBQUUsUUFBTSxFQUFFLE1BQUksU0FBSyxFQUFFLEtBQUssQ0FBQyxLQUFHLENBQUMsRUFBRSxTQUFPLEtBQUcsRUFBRSx3QkFBc0IsSUFBRSxFQUFFLHNCQUFvQixHQUFHLENBQUM7QUFBQTtBQUFBLEVBQUUsU0FBUyxDQUFDLEdBQUU7QUFBQSxJQUFDLElBQUc7QUFBQSxNQUFDLFNBQVEsR0FBRSxJQUFFLEVBQUUsRUFBRTtBQUFBLFFBQVEsRUFBRSxTQUFPLEtBQUcsRUFBRSxLQUFLLENBQUMsR0FBRSxJQUFFLEVBQUUsTUFBTSxHQUFFLElBQUUsRUFBRSxRQUFPLEVBQUUsQ0FBQztBQUFBLE1BQUUsUUFBTztBQUFBLE1BQUMsRUFBRSxTQUFPLEVBQUUsTUFBSTtBQUFBO0FBQUE7QUFBQSxFQUFHLFNBQVMsQ0FBQyxDQUFDLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdB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YUFBRTtBQUFBO0FBQUEsVUFBRSxJQUFHLEVBQUUsVUFBUSxHQUFFLEVBQUUsUUFBTSxHQUFFLEVBQUUsTUFBSSxHQUFFLEVBQUUsTUFBSSxPQUFHLElBQUUsRUFBRSxLQUFJLElBQUUsR0FBRTtBQUFBLFlBQUUsRUFBRSxRQUFNLEVBQUUsS0FBSSxFQUFFLE1BQUksT0FBRyxLQUFHLEVBQUUsQ0FBQyxHQUFFLElBQUUsRUFBRSxPQUFPLEVBQUUsT0FBTSxFQUFFLE9BQU0sRUFBRSxPQUFPLEdBQUUsRUFBRSxLQUFLLE1BQU0sRUFBRSxLQUFJLEVBQUUsR0FBRyxHQUFFLEVBQUUsTUFBSSxDQUFDO0FBQUEsVUFBRTtBQUFBLFlBQUssR0FBRTtBQUFBLGNBQUMsRUFBRSxNQUFJLE9BQUcsS0FBRyxFQUFFLENBQUMsR0FBRSxJQUFFLEVBQUUsT0FBTyxFQUFFLE9BQU0sRUFBRSxPQUFNLEVBQUUsT0FBTyxHQUFFLEVBQUUsUUFBTSxFQUFFO0FBQUEsWUFBRyxTQUFPLEVBQUUsT0FBSyxFQUFFLElBQUU7QUFBQSxVQUFJLEVBQUUsUUFBTSxFQUFFLEtBQVUsRUFBRSxtQkFBUixTQUEwQixJQUFFLEVBQUUsRUFBRSxDQUFDLEdBQUUsQ0FBQyxHQUFFLEVBQUUsZ0JBQWdCLENBQUMsSUFBRyxLQUFHLENBQUMsS0FBUyxFQUFFLDJCQUFSLFNBQWtDLElBQUUsRUFBRSx3QkFBd0IsR0FBRSxDQUFDLElBQUcsSUFBUSxLQUFOLFFBQVMsRUFBRSxTQUFPLEtBQVMsRUFBRSxPQUFSLE9BQVksRUFBRSxFQUFFLE1BQU0sUUFBUSxJQUFFLEdBQUUsSUFBRSxFQUFFLEdBQUUsRUFBRSxDQUFDLElBQUUsSUFBRSxDQUFDLENBQUMsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsQ0FBQyxHQUFFLEVBQUUsT0FBSyxFQUFFLEtBQUksRUFBRSxPQUFLLE1BQUssRUFBRSxJQUFJLFVBQVEsRUFBRSxLQUFLLENBQUMsR0FBRSxNQUFJLEVBQUUsTUFBSSxFQUFFLEtBQUc7QUFBQSxVQUFNLE9BQU0sR0FBRTtBQUFBLFVBQUMsSUFBRyxFQUFFLE1BQUksTUFBSyxLQUFTLEtBQU47QUFBQSxZQUFRLElBQUcsRUFBRSxNQUFLO0FBQUEsY0FBQyxLQUFJLEVBQUUsT0FBSyxJQUFFLE1BQUksSUFBSSxLQUFNLEVBQUUsWUFBTCxLQUFlLEVBQUU7QUFBQSxnQkFBYSxJQUFFLEVBQUU7QUFBQSxjQUFZLEVBQUUsRUFBRSxRQUFRLENBQUMsS0FBRyxNQUFLLEVBQUUsTUFBSTtBQUFBLFlBQUMsRUFBQyxLQUFJO0FBQUEsY0FBQyxLQUFJLElBQUUsRUFBRSxPQUFPO0FBQUEsZ0JBQUssRUFBRSxFQUFFLEVBQUU7QUFBQSxjQUFFLEVBQUUsQ0FBQztBQUFBO0FBQUEsVUFBRTtBQUFBLFlBQUssRUFBRSxNQUFJLEVBQUUsS0FBSSxFQUFFLE1BQUksRUFBRSxLQUFJLEVBQUUsUUFBTSxFQUFFLENBQUM7QUFBQSxVQUFFLEVBQUUsSUFBSSxHQUFFLEdBQUUsQ0FBQztBQUFBO0FBQUEsTUFBRTtBQUFBLFFBQVcsS0FBTixRQUFTLEVBQUUsT0FBSyxFQUFFLE9BQUssRUFBRSxNQUFJLEVBQUUsS0FBSSxFQUFFLE1BQUksRUFBRSxPQUFLLElBQUUsRUFBRSxNQUFJLEVBQUUsRUFBRSxLQUFJLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsQ0FBQztBQUFBLElBQUUsUUFBTyxJQUFFLEVBQUUsV0FBUyxFQUFFLENBQUMsR0FBRSxNQUFJLEVBQUUsTUFBUyxZQUFFO0FBQUE7QUFBQSxFQUFFLFNBQVMsQ0FBQyxDQUFDLEdBQUU7QUFBQSxJQUFDLE1BQUksRUFBRSxRQUFNLEVBQUUsSUFBSSxNQUFJLE9BQUksRUFBRSxPQUFLLEVBQUUsSUFBSSxLQUFLLENBQUM7QUFBQTtBQUFBLEVBQUcsU0FBUyxDQUFDLENBQUMsR0FBRSxHQUFFLEdBQUU7QUFBQSxJQUFDLFNBQVEsSUFBRSxFQUFFLElBQUUsRUFBRSxRQUFPO0FBQUEsTUFBSSxFQUFFLEVBQUUsSUFBRyxFQUFFLEVBQUUsSUFBRyxFQUFFLEVBQUUs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STtBQUFBLEtBQUksRUFBRSxVQUFVLFNBQU8sR0FBRSxJQUFFLENBQUMsR0FBRSxJQUFjLE9BQU8sV0FBbkIsYUFBMkIsUUFBUSxVQUFVLEtBQUssS0FBSyxRQUFRLFFBQVEsQ0FBQyxJQUFFLFlBQVcsSUFBRSxRQUFRLENBQUMsR0FBRSxHQUFFO0FBQUEsSUFBQyxPQUFPLEVBQUUsSUFBSSxNQUFJLEVBQUUsSUFBSTtBQUFBLEtBQUssRUFBRSxNQUFJLEdBQUUsSUFBRSxLQUFLLE9BQU8sRUFBRSxTQUFTLENBQUMsR0FBRSxJQUFFLFFBQU0sR0FBRSxJQUFFLFFBQU0sR0FBRSxJQUFFLCtCQUE4QixJQUFFLEdBQUUsSUFBRSxFQUFFLEtBQUUsR0FBRSxJQUFFLEVBQUUsSUFBRSxHQUFFLElBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7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RDtBQUFBLGdCQUFJLE9BQU07QUFBQSxnQkFBVixVQUErRztBQUFBLGtDQUF0RixHQUFDLFFBQUQ7QUFBQSxvQkFBTSxPQUFNO0FBQUEsb0JBQVo7QUFBQSxzREFBOEI7QUFBQSxrQkFBdkQ7QUFBQSxrQkFBOEQsS0FBSyxZQUFZLEtBQUssUUFBUSxTQUFTLE1BQU07QUFBQTtBQUFBLGlCQUEzRyxnQ0FBK0c7QUFBQSw4QkFDakksR0FBQyxNQUFEO0FBQUEsMEJBQTRHO0FBQUEsa0NBQXhHLEdBQUMsUUFBRDtBQUFBLG9CQUFNLE9BQU07QUFBQSxvQkFBWjtBQUFBLHNEQUFrQztBQUFBLGtCQUF0QztBQUFBLGtCQUE2QyxLQUFLLFlBQVksS0FBSyxlQUFlLFNBQVMsYUFBYTtBQUFBO0FBQUEsaUJBQXhHLGdDQUE0RztBQUFBLDhCQUM1RyxHQUFDLE1BQUQ7QUFBQSwwQkFBa0c7QUFBQSxrQ0FBOUYsR0FBQyxRQUFEO0FBQUEsb0JBQU0sT0FBTTtBQUFBLG9CQUFaO0FBQUEsc0RBQThCO0FBQUEsa0JBQWxDO0FBQUEsa0JBQXlDLEtBQUssWUFBWSxLQUFLLFlBQVksU0FBUyxVQUFVO0FBQUE7QUFBQSxpQkFBOUYsZ0NBQWtHO0FBQUE7QUFBQSxhQVh0RyxnQ0FZRTtBQUFBLFVBQ0QsT0FBTyxPQUFPLEtBQUssS0FBSyxFQUFFLElBQUksQ0FBQyxTQUFTLEtBQUssV0FBVyxNQUFNLFNBQVMsTUFBTSxLQUFLLFlBQVksS0FBTSxRQUFRLENBQUM7QUFBQSxVQUM3RyxLQUFLLHlCQUFTLEdBQUMsS0FBRDtBQUFBLHNCQUF3RztBQUFBLDhCQUFyRyxHQUFDLFFBQUQ7QUFBQSxnQkFBTSxPQUFNO0FBQUEsZ0JBQVo7QUFBQSxrREFBNkI7QUFBQSw4QkFBSyxHQUFDLE1BQUQscUNBQUk7QUFBQSxjQUFHLEtBQUssTUFBTSxNQUFNLE1BQU0sRUFBRSxJQUFJLENBQUMseUJBQVMsR0FBQyxPQUFEO0FBQUEsMEJBQU07QUFBQSxpQkFBTixpQ0FBYSxDQUFJO0FBQUE7QUFBQSxhQUFwRyxnQ0FBd0c7QUFBQSxVQUN0SCxLQUFLLGVBQWU7QUFBQTtBQUFBLFNBbkN6QixnQ0FvQ0U7QUFBQTtBQUFBLEVBR2Q7QUFBQSxFQUVBLElBQUksT0FBTyxhQUFhLGFBQWE7QUFBQSxJQUMxQixrQkFBTyxHQUFDLE9BQUQscUNBQU8sR0FBSSxTQUFTLGVBQWUsT0FBTyxDQUFFO0FBQUEsRUFDOUQ7IiwKICAiZGVidWdJZCI6ICI0QzgwNkVEODQxOTI1MTk3NjQ3NTZFMjE2NDc1NkUyMSIsCiAgIm5hbWVzIjogW10KfQ==
+//# debugId=54938A1BB7C7114664756E2164756E21
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vbm9kZV9tb2R1bGVzL3ByZWFjdC9kaXN0L3ByZWFjdC5tb2R1bGUuanMiLCAidW5pdC1yYW5rcy50cyIsICJ1bml0LXNraWxscy50cyIsICIuLi8uLi9ub2RlX21vZHVsZXMvcHJlYWN0L2pzeC1ydW50aW1lL2Rpc3QvanN4UnVudGltZS5tb2R1bGUuanMiLCAidW5pdHMudHN4Il0sCiAgInNvdXJjZXNDb250ZW50IjogWwogICAgInZhciBuLGwsdSx0LGkscixvLGUsZixjLHMsYSxoLHAsdix5LGQ9e30sdz1bXSxfPS9hY2l0fGV4KD86c3xnfG58cHwkKXxycGh8Z3JpZHxvd3N8bW5jfG50d3xpbmVbY2hdfHpvb3xeb3JkfGl0ZXJhL2ksZz1BcnJheS5pc0FycmF5O2Z1bmN0aW9uIG0obixsKXtmb3IodmFyIHUgaW4gbCluW3VdPWxbdV07cmV0dXJuIG59ZnVuY3Rpb24gYihuKXtuJiZuLnBhcmVudE5vZGUmJm4ucGFyZW50Tm9kZS5yZW1vdmVDaGlsZChuKX1mdW5jdGlvbiBrKGwsdSx0KXt2YXIgaSxyLG8sZT17fTtmb3IobyBpbiB1KVwia2V5XCI9PW8/aT11W29dOlwicmVmXCI9PW8/cj11W29dOmVbb109dVtvXTtpZihhcmd1bWVudHMubGVuZ3RoPjImJihlLmNoaWxkcmVuPWFyZ3VtZW50cy5sZW5ndGg+Mz9uLmNhbGwoYXJndW1lbnRzLDIpOnQpLFwiZnVuY3Rpb25cIj09dHlwZW9mIGwmJm51bGwhPWwuZGVmYXVsdFByb3BzKWZvcihvIGluIGwuZGVmYXVsdFByb3BzKXZvaWQgMD09PWVbb10mJihlW29dPWwuZGVmYXVsdFByb3BzW29dKTtyZXR1cm4geChsLGUsaSxyLG51bGwpfWZ1bmN0aW9uIHgobix0LGkscixvKXt2YXIgZT17dHlwZTpuLHByb3BzOnQsa2V5OmkscmVmOnIsX19rOm51bGwsX186bnVsbCxfX2I6MCxfX2U6bnVsbCxfX2M6bnVsbCxjb25zdHJ1Y3Rvcjp2b2lkIDAsX192Om51bGw9PW8/Kyt1Om8sX19pOi0xLF9fdTowfTtyZXR1cm4gbnVsbD09byYmbnVsbCE9bC52bm9kZSYmbC52bm9kZShlKSxlfWZ1bmN0aW9uIE0oKXtyZXR1cm57Y3VycmVudDpudWxsfX1mdW5jdGlvbiBTKG4pe3JldHVybiBuLmNoaWxkcmVufWZ1bmN0aW9uIEMobixsKXt0aGlzLnByb3BzPW4sdGhpcy5jb250ZXh0PWx9ZnVuY3Rpb24gJChuLGwpe2lmKG51bGw9PWwpcmV0dXJuIG4uX18/JChuLl9fLG4uX19pKzEpOm51bGw7Zm9yKHZhciB1O2w8bi5fX2subGVuZ3RoO2wrKylpZihudWxsIT0odT1uLl9fa1tsXSkmJm51bGwhPXUuX19lKXJldHVybiB1Ll9fZTtyZXR1cm5cImZ1bmN0aW9uXCI9PXR5cGVvZiBuLnR5cGU/JChuKTpudWxsfWZ1bmN0aW9uIEkobil7aWYobi5fX1AmJm4uX19kKXt2YXIgdT1uLl9fdix0PXUuX19lLGk9W10scj1bXSxvPW0oe30sdSk7by5fX3Y9dS5fX3YrMSxsLnZub2RlJiZsLnZub2RlKG8pLHEobi5fX1Asbyx1LG4uX19uLG4uX19QLm5hbWVzcGFjZVVSSSwzMiZ1Ll9fdT9bdF06bnVsbCxpLG51bGw9PXQ/JCh1KTp0LCEhKDMyJnUuX191KSxyKSxvLl9fdj11Ll9fdixvLl9fLl9fa1tvLl9faV09byxEKGksbyxyKSx1Ll9fZT11Ll9fPW51bGwsby5fX2UhPXQmJlAobyl9fWZ1bmN0aW9uIFAobil7aWYobnVsbCE9KG49bi5fXykmJm51bGwhPW4uX19jKXJldHVybiBuLl9fZT1uLl9fYy5iYXNlPW51bGwsbi5fX2suc29tZShmdW5jdGlvbihsKXtpZihudWxsIT1sJiZudWxsIT1sLl9fZSlyZXR1cm4gbi5fX2U9bi5fX2MuYmFzZT1sLl9fZX0pLFAobil9ZnVuY3Rpb24gQShuKXsoIW4uX19kJiYobi5fX2Q9ITApJiZpLnB1c2gobikmJiFILl9fcisrfHxyIT1sLmRlYm91bmNlUmVuZGVyaW5nKSYmKChyPWwuZGVib3VuY2VSZW5kZXJpbmcpfHxvKShIKX1mdW5jdGlvbiBIKCl7dHJ5e2Zvcih2YXIgbixsPTE7aS5sZW5ndGg7KWkubGVuZ3RoPmwmJmkuc29ydChlKSxuPWkuc2hpZnQoKSxsPWkubGVuZ3RoLEkobil9ZmluYWxseXtpLmxlbmd0aD1ILl9fcj0wfX1mdW5jdGlvbiBMKG4sbCx1LHQsaSxyLG8sZSxmLGMscyl7dmFyIGEsaCxwLHYseSxfLGcsbT10JiZ0Ll9fa3x8dyxiPWwubGVuZ3RoO2ZvcihmPVQodSxsLG0sZixiKSxhPTA7YTxiO2ErKyludWxsIT0ocD11Ll9fa1thXSkmJihoPS0xIT1wLl9faSYmbVtwLl9faV18fGQscC5fX2k9YSxfPXEobixwLGgsaSxyLG8sZSxmLGMscyksdj1wLl9fZSxwLnJlZiYmaC5yZWYhPXAucmVmJiYoaC5yZWYmJkooaC5yZWYsbnVsbCxwKSxzLnB1c2gocC5yZWYscC5fX2N8fHYscCkpLG51bGw9PXkmJm51bGwhPXYmJih5PXYpLChnPSEhKDQmcC5fX3UpKXx8aC5fX2s9PT1wLl9faz8oZj1qKHAsZixuLGcpLGcmJmguX19lJiYoaC5fX2U9bnVsbCkpOlwiZnVuY3Rpb25cIj09dHlwZW9mIHAudHlwZSYmdm9pZCAwIT09Xz9mPV86diYmKGY9di5uZXh0U2libGluZykscC5fX3UmPS03KTtyZXR1cm4gdS5fX2U9eSxmfWZ1bmN0aW9uIFQobixsLHUsdCxpKXt2YXIgcixvLGUsZixjLHM9dS5sZW5ndGgsYT1zLGg9MDtmb3Iobi5fX2s9bmV3IEFycmF5KGkpLHI9MDtyPGk7cisrKW51bGwhPShvPWxbcl0pJiZcImJvb2xlYW5cIiE9dHlwZW9mIG8mJlwiZnVuY3Rpb25cIiE9dHlwZW9mIG8/KFwic3RyaW5nXCI9PXR5cGVvZiBvfHxcIm51bWJlclwiPT10eXBlb2Ygb3x8XCJiaWdpbnRcIj09dHlwZW9mIG98fG8uY29uc3RydWN0b3I9PVN0cmluZz9vPW4uX19rW3JdPXgobnVsbCxvLG51bGwsbnVsbCxudWxsKTpnKG8pP289bi5fX2tbcl09eChTLHtjaGlsZHJlbjpvfSxudWxsLG51bGwsbnVsbCk6dm9pZCAwPT09by5jb25zdHJ1Y3RvciYmby5fX2I+MD9vPW4uX19rW3JdPXgoby50eXBlLG8ucHJvcHMsby5rZXksby5yZWY/by5yZWY6bnVsbCxvLl9fdik6bi5fX2tbcl09byxmPXIraCxvLl9fPW4sby5fX2I9bi5fX2IrMSxlPW51bGwsLTEhPShjPW8uX19pPU8obyx1LGYsYSkpJiYoYS0tLChlPXVbY10pJiYoZS5fX3V8PTIpKSxudWxsPT1lfHxudWxsPT1lLl9fdj8oLTE9PWMmJihpPnM/aC0tOmk8cyYmaCsrKSxcImZ1bmN0aW9uXCIhPXR5cGVvZiBvLnR5cGUmJihvLl9fdXw9NCkpOmMhPWYmJihjPT1mLTE/aC0tOmM9PWYrMT9oKys6KGM+Zj9oLS06aCsrLG8uX191fD00KSkpOm4uX19rW3JdPW51bGw7aWYoYSlmb3Iocj0wO3I8cztyKyspbnVsbCE9KGU9dVtyXSkmJjA9PSgyJmUuX191KSYmKGUuX19lPT10JiYodD0kKGUpKSxLKGUsZSkpO3JldHVybiB0fWZ1bmN0aW9uIGoobixsLHUsdCl7dmFyIGkscjtpZihcImZ1bmN0aW9uXCI9PXR5cGVvZiBuLnR5cGUpe2ZvcihpPW4uX19rLHI9MDtpJiZyPGkubGVuZ3RoO3IrKylpW3JdJiYoaVtyXS5fXz1uLGw9aihpW3JdLGwsdSx0KSk7cmV0dXJuIGx9bi5fX2UhPWwmJih0JiYobCYmbi50eXBlJiYhbC5wYXJlbnROb2RlJiYobD0kKG4pKSx1Lmluc2VydEJlZm9yZShuLl9fZSxsfHxudWxsKSksbD1uLl9fZSk7ZG97bD1sJiZsLm5leHRTaWJsaW5nfXdoaWxlKG51bGwhPWwmJjg9PWwubm9kZVR5cGUpO3JldHVybiBsfWZ1bmN0aW9uIEYobixsKXtyZXR1cm4gbD1sfHxbXSxudWxsPT1ufHxcImJvb2xlYW5cIj09dHlwZW9mIG58fChnKG4pP24uc29tZShmdW5jdGlvbihuKXtGKG4sbCl9KTpsLnB1c2gobikpLGx9ZnVuY3Rpb24gTyhuLGwsdSx0KXt2YXIgaSxyLG8sZT1uLmtleSxmPW4udHlwZSxjPWxbdV0scz1udWxsIT1jJiYwPT0oMiZjLl9fdSk7aWYobnVsbD09PWMmJm51bGw9PWV8fHMmJmU9PWMua2V5JiZmPT1jLnR5cGUpcmV0dXJuIHU7aWYodD4ocz8xOjApKWZvcihpPXUtMSxyPXUrMTtpPj0wfHxyPGwubGVuZ3RoOylpZihudWxsIT0oYz1sW289aT49MD9pLS06cisrXSkmJjA9PSgyJmMuX191KSYmZT09Yy5rZXkmJmY9PWMudHlwZSlyZXR1cm4gbztyZXR1cm4tMX1mdW5jdGlvbiB6KG4sbCx1KXtcIi1cIj09bFswXT9uLnNldFByb3BlcnR5KGwsbnVsbD09dT9cIlwiOnUpOm5bbF09bnVsbD09dT9cIlwiOlwibnVtYmVyXCIhPXR5cGVvZiB1fHxfLnRlc3QobCk/dTp1K1wicHhcIn1mdW5jdGlvbiBOKG4sbCx1LHQsaSl7dmFyIHIsbztuOmlmKFwic3R5bGVcIj09bClpZihcInN0cmluZ1wiPT10eXBlb2YgdSluLnN0eWxlLmNzc1RleHQ9dTtlbHNle2lmKFwic3RyaW5nXCI9PXR5cGVvZiB0JiYobi5zdHlsZS5jc3NUZXh0PXQ9XCJcIiksdClmb3IobCBpbiB0KXUmJmwgaW4gdXx8eihuLnN0eWxlLGwsXCJcIik7aWYodSlmb3IobCBpbiB1KXQmJnVbbF09PXRbbF18fHoobi5zdHlsZSxsLHVbbF0pfWVsc2UgaWYoXCJvXCI9PWxbMF0mJlwiblwiPT1sWzFdKXI9bCE9KGw9bC5yZXBsYWNlKGEsXCIkMVwiKSksbz1sLnRvTG93ZXJDYXNlKCksbD1vIGluIG58fFwib25Gb2N1c091dFwiPT1sfHxcIm9uRm9jdXNJblwiPT1sP28uc2xpY2UoMik6bC5zbGljZSgyKSxuLmx8fChuLmw9e30pLG4ubFtsK3JdPXUsdT90P3Vbc109dFtzXToodVtzXT1oLG4uYWRkRXZlbnRMaXN0ZW5lcihsLHI/djpwLHIpKTpuLnJlbW92ZUV2ZW50TGlzdGVuZXIobCxyP3Y6cCxyKTtlbHNle2lmKFwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIj09aSlsPWwucmVwbGFjZSgveGxpbmsoSHw6aCkvLFwiaFwiKS5yZXBsYWNlKC9zTmFtZSQvLFwic1wiKTtlbHNlIGlmKFwid2lkdGhcIiE9bCYmXCJoZWlnaHRcIiE9bCYmXCJocmVmXCIhPWwmJlwibGlzdFwiIT1sJiZcImZvcm1cIiE9bCYmXCJ0YWJJbmRleFwiIT1sJiZcImRvd25sb2FkXCIhPWwmJlwicm93U3BhblwiIT1sJiZcImNvbFNwYW5cIiE9bCYmXCJyb2xlXCIhPWwmJlwicG9wb3ZlclwiIT1sJiZsIGluIG4pdHJ5e25bbF09bnVsbD09dT9cIlwiOnU7YnJlYWsgbn1jYXRjaChuKXt9XCJmdW5jdGlvblwiPT10eXBlb2YgdXx8KG51bGw9PXV8fCExPT09dSYmXCItXCIhPWxbNF0/bi5yZW1vdmVBdHRyaWJ1dGUobCk6bi5zZXRBdHRyaWJ1dGUobCxcInBvcG92ZXJcIj09bCYmMT09dT9cIlwiOnUpKX19ZnVuY3Rpb24gVihuKXtyZXR1cm4gZnVuY3Rpb24odSl7aWYodGhpcy5sKXt2YXIgdD10aGlzLmxbdS50eXBlK25dO2lmKG51bGw9PXVbY10pdVtjXT1oKys7ZWxzZSBpZih1W2NdPHRbc10pcmV0dXJuO3JldHVybiB0KGwuZXZlbnQ/bC5ldmVudCh1KTp1KX19fWZ1bmN0aW9uIHEobix1LHQsaSxyLG8sZSxmLGMscyl7dmFyIGEsaCxwLHYseSxkLF8sayx4LE0sJCxJLFAsQSxILFQ9dS50eXBlO2lmKHZvaWQgMCE9PXUuY29uc3RydWN0b3IpcmV0dXJuIG51bGw7MTI4JnQuX191JiYoYz0hISgzMiZ0Ll9fdSksbz1bZj11Ll9fZT10Ll9fZV0pLChhPWwuX19iKSYmYSh1KTtuOmlmKFwiZnVuY3Rpb25cIj09dHlwZW9mIFQpdHJ5e2lmKGs9dS5wcm9wcyx4PVQucHJvdG90eXBlJiZULnByb3RvdHlwZS5yZW5kZXIsTT0oYT1ULmNvbnRleHRUeXBlKSYmaVthLl9fY10sJD1hP00/TS5wcm9wcy52YWx1ZTphLl9fOmksdC5fX2M/Xz0oaD11Ll9fYz10Ll9fYykuX189aC5fX0U6KHg/dS5fX2M9aD1uZXcgVChrLCQpOih1Ll9fYz1oPW5ldyBDKGssJCksaC5jb25zdHJ1Y3Rvcj1ULGgucmVuZGVyPVEpLE0mJk0uc3ViKGgpLGguc3RhdGV8fChoLnN0YXRlPXt9KSxoLl9fbj1pLHA9aC5fX2Q9ITAsaC5fX2g9W10saC5fc2I9W10pLHgmJm51bGw9PWguX19zJiYoaC5fX3M9aC5zdGF0ZSkseCYmbnVsbCE9VC5nZXREZXJpdmVkU3RhdGVGcm9tUHJvcHMmJihoLl9fcz09aC5zdGF0ZSYmKGguX19zPW0oe30saC5fX3MpKSxtKGguX19zLFQuZ2V0RGVyaXZlZFN0YXRlRnJvbVByb3BzKGssaC5fX3MpKSksdj1oLnByb3BzLHk9aC5zdGF0ZSxoLl9fdj11LHApeCYmbnVsbD09VC5nZXREZXJpdmVkU3RhdGVGcm9tUHJvcHMmJm51bGwhPWguY29tcG9uZW50V2lsbE1vdW50JiZoLmNvbXBvbmVudFdpbGxNb3VudCgpLHgmJm51bGwhPWguY29tcG9uZW50RGlkTW91bnQmJmguX19oLnB1c2goaC5jb21wb25lbnREaWRNb3VudCk7ZWxzZXtpZih4JiZudWxsPT1ULmdldERlcml2ZWRTdGF0ZUZyb21Qcm9wcyYmayE9PXYmJm51bGwhPWguY29tcG9uZW50V2lsbFJlY2VpdmVQcm9wcyYmaC5jb21wb25lbnRXaWxsUmVjZWl2ZVByb3BzKGssJCksdS5fX3Y9PXQuX192fHwhaC5fX2UmJm51bGwhPWguc2hvdWxkQ29tcG9uZW50VXBkYXRlJiYhMT09PWguc2hvdWxkQ29tcG9uZW50VXBkYXRlKGssaC5fX3MsJCkpe3UuX192IT10Ll9fdiYmKGgucHJvcHM9ayxoLnN0YXRlPWguX19zLGguX19kPSExKSx1Ll9fZT10Ll9fZSx1Ll9faz10Ll9fayx1Ll9fay5zb21lKGZ1bmN0aW9uKG4pe24mJihuLl9fPXUpfSksdy5wdXNoLmFwcGx5KGguX19oLGguX3NiKSxoLl9zYj1bXSxoLl9faC5sZW5ndGgmJmUucHVzaChoKTticmVhayBufW51bGwhPWguY29tcG9uZW50V2lsbFVwZGF0ZSYmaC5jb21wb25lbnRXaWxsVXBkYXRlKGssaC5fX3MsJCkseCYmbnVsbCE9aC5jb21wb25lbnREaWRVcGRhdGUmJmguX19oLnB1c2goZnVuY3Rpb24oKXtoLmNvbXBvbmVudERpZFVwZGF0ZSh2LHksZCl9KX1pZihoLmNvbnRleHQ9JCxoLnByb3BzPWssaC5fX1A9bixoLl9fZT0hMSxJPWwuX19yLFA9MCx4KWguc3RhdGU9aC5fX3MsaC5fX2Q9ITEsSSYmSSh1KSxhPWgucmVuZGVyKGgucHJvcHMsaC5zdGF0ZSxoLmNvbnRleHQpLHcucHVzaC5hcHBseShoLl9faCxoLl9zYiksaC5fc2I9W107ZWxzZSBkb3toLl9fZD0hMSxJJiZJKHUpLGE9aC5yZW5kZXIoaC5wcm9wcyxoLnN0YXRlLGguY29udGV4dCksaC5zdGF0ZT1oLl9fc313aGlsZShoLl9fZCYmKytQPDI1KTtoLnN0YXRlPWguX19zLG51bGwhPWguZ2V0Q2hpbGRDb250ZXh0JiYoaT1tKG0oe30saSksaC5nZXRDaGlsZENvbnRleHQoKSkpLHgmJiFwJiZudWxsIT1oLmdldFNuYXBzaG90QmVmb3JlVXBkYXRlJiYoZD1oLmdldFNuYXBzaG90QmVmb3JlVXBkYXRlKHYseSkpLEE9bnVsbCE9YSYmYS50eXBlPT09UyYmbnVsbD09YS5rZXk/RShhLnByb3BzLmNoaWxkcmVuKTphLGY9TChuLGcoQSk/QTpbQV0sdSx0LGkscixvLGUsZixjLHMpLGguYmFzZT11Ll9fZSx1Ll9fdSY9LTE2MSxoLl9faC5sZW5ndGgmJmUucHVzaChoKSxfJiYoaC5fX0U9aC5fXz1udWxsKX1jYXRjaChuKXtpZih1Ll9fdj1udWxsLGN8fG51bGwhPW8paWYobi50aGVuKXtmb3IodS5fX3V8PWM/MTYwOjEyODtmJiY4PT1mLm5vZGVUeXBlJiZmLm5leHRTaWJsaW5nOylmPWYubmV4dFNpYmxpbmc7b1tvLmluZGV4T2YoZildPW51bGwsdS5fX2U9Zn1lbHNle2ZvcihIPW8ubGVuZ3RoO0gtLTspYihvW0hdKTtCKHUpfWVsc2UgdS5fX2U9dC5fX2UsdS5fX2s9dC5fX2ssbi50aGVufHxCKHUpO2wuX19lKG4sdSx0KX1lbHNlIG51bGw9PW8mJnUuX192PT10Ll9fdj8odS5fX2s9dC5fX2ssdS5fX2U9dC5fX2UpOmY9dS5fX2U9Ryh0Ll9fZSx1LHQsaSxyLG8sZSxjLHMpO3JldHVybihhPWwuZGlmZmVkKSYmYSh1KSwxMjgmdS5fX3U/dm9pZCAwOmZ9ZnVuY3Rpb24gQihuKXtuJiYobi5fX2MmJihuLl9fYy5fX2U9ITApLG4uX19rJiZuLl9fay5zb21lKEIpKX1mdW5jdGlvbiBEKG4sdSx0KXtmb3IodmFyIGk9MDtpPHQubGVuZ3RoO2krKylKKHRbaV0sdFsrK2ldLHRbKytpXSk7bC5fX2MmJmwuX19jKHUsbiksbi5zb21lKGZ1bmN0aW9uKHUpe3RyeXtuPXUuX19oLHUuX19oPVtdLG4uc29tZShmdW5jdGlvbihuKXtuLmNhbGwodSl9KX1jYXRjaChuKXtsLl9fZShuLHUuX192KX19KX1mdW5jdGlvbiBFKG4pe3JldHVyblwib2JqZWN0XCIhPXR5cGVvZiBufHxudWxsPT1ufHxuLl9fYj4wP246ZyhuKT9uLm1hcChFKTptKHt9LG4pfWZ1bmN0aW9uIEcodSx0LGkscixvLGUsZixjLHMpe3ZhciBhLGgscCx2LHksdyxfLG09aS5wcm9wc3x8ZCxrPXQucHJvcHMseD10LnR5cGU7aWYoXCJzdmdcIj09eD9vPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIjpcIm1hdGhcIj09eD9vPVwiaHR0cDovL3d3dy53My5vcmcvMTk5OC9NYXRoL01hdGhNTFwiOm98fChvPVwiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbFwiKSxudWxsIT1lKWZvcihhPTA7YTxlLmxlbmd0aDthKyspaWYoKHk9ZVthXSkmJlwic2V0QXR0cmlidXRlXCJpbiB5PT0hIXgmJih4P3kubG9jYWxOYW1lPT14OjM9PXkubm9kZVR5cGUpKXt1PXksZVthXT1udWxsO2JyZWFrfWlmKG51bGw9PXUpe2lmKG51bGw9PXgpcmV0dXJuIGRvY3VtZW50LmNyZWF0ZVRleHROb2RlKGspO3U9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKG8seCxrLmlzJiZrKSxjJiYobC5fX20mJmwuX19tKHQsZSksYz0hMSksZT1udWxsfWlmKG51bGw9PXgpbT09PWt8fGMmJnUuZGF0YT09a3x8KHUuZGF0YT1rKTtlbHNle2lmKGU9ZSYmbi5jYWxsKHUuY2hpbGROb2RlcyksIWMmJm51bGwhPWUpZm9yKG09e30sYT0wO2E8dS5hdHRyaWJ1dGVzLmxlbmd0aDthKyspbVsoeT11LmF0dHJpYnV0ZXNbYV0pLm5hbWVdPXkudmFsdWU7Zm9yKGEgaW4gbSl5PW1bYV0sXCJkYW5nZXJvdXNseVNldElubmVySFRNTFwiPT1hP3A9eTpcImNoaWxkcmVuXCI9PWF8fGEgaW4ga3x8XCJ2YWx1ZVwiPT1hJiZcImRlZmF1bHRWYWx1ZVwiaW4ga3x8XCJjaGVja2VkXCI9PWEmJlwiZGVmYXVsdENoZWNrZWRcImluIGt8fE4odSxhLG51bGwseSxvKTtmb3IoYSBpbiBrKXk9a1thXSxcImNoaWxkcmVuXCI9PWE/dj15OlwiZGFuZ2Vyb3VzbHlTZXRJbm5lckhUTUxcIj09YT9oPXk6XCJ2YWx1ZVwiPT1hP3c9eTpcImNoZWNrZWRcIj09YT9fPXk6YyYmXCJmdW5jdGlvblwiIT10eXBlb2YgeXx8bVthXT09PXl8fE4odSxhLHksbVthXSxvKTtpZihoKWN8fHAmJihoLl9faHRtbD09cC5fX2h0bWx8fGguX19odG1sPT11LmlubmVySFRNTCl8fCh1LmlubmVySFRNTD1oLl9faHRtbCksdC5fX2s9W107ZWxzZSBpZihwJiYodS5pbm5lckhUTUw9XCJcIiksTChcInRlbXBsYXRlXCI9PXQudHlwZT91LmNvbnRlbnQ6dSxnKHYpP3Y6W3ZdLHQsaSxyLFwiZm9yZWlnbk9iamVjdFwiPT14P1wiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbFwiOm8sZSxmLGU/ZVswXTppLl9fayYmJChpLDApLGMscyksbnVsbCE9ZSlmb3IoYT1lLmxlbmd0aDthLS07KWIoZVthXSk7Y3x8KGE9XCJ2YWx1ZVwiLFwicHJvZ3Jlc3NcIj09eCYmbnVsbD09dz91LnJlbW92ZUF0dHJpYnV0ZShcInZhbHVlXCIpOm51bGwhPXcmJih3IT09dVthXXx8XCJwcm9ncmVzc1wiPT14JiYhd3x8XCJvcHRpb25cIj09eCYmdyE9bVthXSkmJk4odSxhLHcsbVthXSxvKSxhPVwiY2hlY2tlZFwiLG51bGwhPV8mJl8hPXVbYV0mJk4odSxhLF8sbVthXSxvKSl9cmV0dXJuIHV9ZnVuY3Rpb24gSihuLHUsdCl7dHJ5e2lmKFwiZnVuY3Rpb25cIj09dHlwZW9mIG4pe3ZhciBpPVwiZnVuY3Rpb25cIj09dHlwZW9mIG4uX191O2kmJm4uX191KCksaSYmbnVsbD09dXx8KG4uX191PW4odSkpfWVsc2Ugbi5jdXJyZW50PXV9Y2F0Y2gobil7bC5fX2Uobix0KX19ZnVuY3Rpb24gSyhuLHUsdCl7dmFyIGkscjtpZihsLnVubW91bnQmJmwudW5tb3VudChuKSwoaT1uLnJlZikmJihpLmN1cnJlbnQmJmkuY3VycmVudCE9bi5fX2V8fEooaSxudWxsLHUpKSxudWxsIT0oaT1uLl9fYykpe2lmKGkuY29tcG9uZW50V2lsbFVubW91bnQpdHJ5e2kuY29tcG9uZW50V2lsbFVubW91bnQoKX1jYXRjaChuKXtsLl9fZShuLHUpfWkuYmFzZT1pLl9fUD1udWxsfWlmKGk9bi5fX2spZm9yKHI9MDtyPGkubGVuZ3RoO3IrKylpW3JdJiZLKGlbcl0sdSx0fHxcImZ1bmN0aW9uXCIhPXR5cGVvZiBuLnR5cGUpO3R8fGIobi5fX2UpLG4uX19jPW4uX189bi5fX2U9dm9pZCAwfWZ1bmN0aW9uIFEobixsLHUpe3JldHVybiB0aGlzLmNvbnN0cnVjdG9yKG4sdSl9ZnVuY3Rpb24gUih1LHQsaSl7dmFyIHIsbyxlLGY7dD09ZG9jdW1lbnQmJih0PWRvY3VtZW50LmRvY3VtZW50RWxlbWVudCksbC5fXyYmbC5fXyh1LHQpLG89KHI9XCJmdW5jdGlvblwiPT10eXBlb2YgaSk/bnVsbDppJiZpLl9fa3x8dC5fX2ssZT1bXSxmPVtdLHEodCx1PSghciYmaXx8dCkuX19rPWsoUyxudWxsLFt1XSksb3x8ZCxkLHQubmFtZXNwYWNlVVJJLCFyJiZpP1tpXTpvP251bGw6dC5maXJzdENoaWxkP24uY2FsbCh0LmNoaWxkTm9kZXMpOm51bGwsZSwhciYmaT9pOm8/by5fX2U6dC5maXJzdENoaWxkLHIsZiksRChlLHUsZil9ZnVuY3Rpb24gVShuLGwpe1IobixsLFUpfWZ1bmN0aW9uIFcobCx1LHQpe3ZhciBpLHIsbyxlLGY9bSh7fSxsLnByb3BzKTtmb3IobyBpbiBsLnR5cGUmJmwudHlwZS5kZWZhdWx0UHJvcHMmJihlPWwudHlwZS5kZWZhdWx0UHJvcHMpLHUpXCJrZXlcIj09bz9pPXVbb106XCJyZWZcIj09bz9yPXVbb106ZltvXT12b2lkIDA9PT11W29dJiZudWxsIT1lP2Vbb106dVtvXTtyZXR1cm4gYXJndW1lbnRzLmxlbmd0aD4yJiYoZi5jaGlsZHJlbj1hcmd1bWVudHMubGVuZ3RoPjM/bi5jYWxsKGFyZ3VtZW50cywyKTp0KSx4KGwudHlwZSxmLGl8fGwua2V5LHJ8fGwucmVmLG51bGwpfWZ1bmN0aW9uIFgobil7ZnVuY3Rpb24gbChuKXt2YXIgdSx0O3JldHVybiB0aGlzLmdldENoaWxkQ29udGV4dHx8KHU9bmV3IFNldCwodD17fSlbbC5fX2NdPXRoaXMsdGhpcy5nZXRDaGlsZENvbnRleHQ9ZnVuY3Rpb24oKXtyZXR1cm4gdH0sdGhpcy5jb21wb25lbnRXaWxsVW5tb3VudD1mdW5jdGlvbigpe3U9bnVsbH0sdGhpcy5zaG91bGRDb21wb25lbnRVcGRhdGU9ZnVuY3Rpb24obil7dGhpcy5wcm9wcy52YWx1ZSE9bi52YWx1ZSYmdS5mb3JFYWNoKGZ1bmN0aW9uKG4pe24uX19lPSEwLEEobil9KX0sdGhpcy5zdWI9ZnVuY3Rpb24obil7dS5hZGQobik7dmFyIGw9bi5jb21wb25lbnRXaWxsVW5tb3VudDtuLmNvbXBvbmVudFdpbGxVbm1vdW50PWZ1bmN0aW9uKCl7dSYmdS5kZWxldGUobiksbCYmbC5jYWxsKG4pfX0pLG4uY2hpbGRyZW59cmV0dXJuIGwuX19jPVwiX19jQ1wiK3krKyxsLl9fPW4sbC5Qcm92aWRlcj1sLl9fbD0obC5Db25zdW1lcj1mdW5jdGlvbihuLGwpe3JldHVybiBuLmNoaWxkcmVuKGwpfSkuY29udGV4dFR5cGU9bCxsfW49dy5zbGljZSxsPXtfX2U6ZnVuY3Rpb24obixsLHUsdCl7Zm9yKHZhciBpLHIsbztsPWwuX187KWlmKChpPWwuX19jKSYmIWkuX18pdHJ5e2lmKChyPWkuY29uc3RydWN0b3IpJiZudWxsIT1yLmdldERlcml2ZWRTdGF0ZUZyb21FcnJvciYmKGkuc2V0U3RhdGUoci5nZXREZXJpdmVkU3RhdGVGcm9tRXJyb3IobikpLG89aS5fX2QpLG51bGwhPWkuY29tcG9uZW50RGlkQ2F0Y2gmJihpLmNvbXBvbmVudERpZENhdGNoKG4sdHx8e30pLG89aS5fX2QpLG8pcmV0dXJuIGkuX19FPWl9Y2F0Y2gobCl7bj1sfXRocm93IG59fSx1PTAsdD1mdW5jdGlvbihuKXtyZXR1cm4gbnVsbCE9biYmdm9pZCAwPT09bi5jb25zdHJ1Y3Rvcn0sQy5wcm90b3R5cGUuc2V0U3RhdGU9ZnVuY3Rpb24obixsKXt2YXIgdTt1PW51bGwhPXRoaXMuX19zJiZ0aGlzLl9fcyE9dGhpcy5zdGF0ZT90aGlzLl9fczp0aGlzLl9fcz1tKHt9LHRoaXMuc3RhdGUpLFwiZnVuY3Rpb25cIj09dHlwZW9mIG4mJihuPW4obSh7fSx1KSx0aGlzLnByb3BzKSksbiYmbSh1LG4pLG51bGwhPW4mJnRoaXMuX192JiYobCYmdGhpcy5fc2IucHVzaChsKSxBKHRoaXMpKX0sQy5wcm90b3R5cGUuZm9yY2VVcGRhdGU9ZnVuY3Rpb24obil7dGhpcy5fX3YmJih0aGlzLl9fZT0hMCxuJiZ0aGlzLl9faC5wdXNoKG4pLEEodGhpcykpfSxDLnByb3RvdHlwZS5yZW5kZXI9UyxpPVtdLG89XCJmdW5jdGlvblwiPT10eXBlb2YgUHJvbWlzZT9Qcm9taXNlLnByb3RvdHlwZS50aGVuLmJpbmQoUHJvbWlzZS5yZXNvbHZlKCkpOnNldFRpbWVvdXQsZT1mdW5jdGlvbihuLGwpe3JldHVybiBuLl9fdi5fX2ItbC5fX3YuX19ifSxILl9fcj0wLGY9TWF0aC5yYW5kb20oKS50b1N0cmluZyg4KSxjPVwiX19kXCIrZixzPVwiX19hXCIrZixhPS8oUG9pbnRlckNhcHR1cmUpJHxDYXB0dXJlJC9pLGg9MCxwPVYoITEpLHY9VighMCkseT0wO2V4cG9ydHtDIGFzIENvbXBvbmVudCxTIGFzIEZyYWdtZW50LFcgYXMgY2xvbmVFbGVtZW50LFggYXMgY3JlYXRlQ29udGV4dCxrIGFzIGNyZWF0ZUVsZW1lbnQsTSBhcyBjcmVhdGVSZWYsayBhcyBoLFUgYXMgaHlkcmF0ZSx0IGFzIGlzVmFsaWRFbGVtZW50LGwgYXMgb3B0aW9ucyxSIGFzIHJlbmRlcixGIGFzIHRvQ2hpbGRBcnJheX07XG4vLyMgc291cmNlTWFwcGluZ1VSTD1wcmVhY3QubW9kdWxlLmpzLm1hcFxuIiwKICAgICJpbXBvcnQgcGxheWVyVXBncmFkZXMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVwZ3JhZGVzLmpzb25cIjtcbmltcG9ydCB0eXBlIHsgUGxheWVyVXBncmFkZSB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5cbnR5cGUgUmFua1VwZ3JhZGUgPSBQaWNrPFBsYXllclVwZ3JhZGUsICdjb21tYW5kZXInIHwgJ3VuaXQnIHwgJ25hbWUnIHwgJ2ljb24nIHwgJ2VmZmVjdCc+O1xuXG4vKiogVW5pdC1zcGVjaWZpYyBrZXlzIHByZXZlbnQgZGlmZmVyZW50IFZldGVyYW5jeSBlZmZlY3RzIHNoYXJpbmcgb25lIHRvb2x0aXAuICovXG5leHBvcnQgY29uc3QgcmFua1VwZ3JhZGVzID0gbmV3IE1hcDxzdHJpbmcsIFJhbmtVcGdyYWRlPigpO1xuY29uc3QgZWZmZWN0cyA9IG5ldyBNYXA8c3RyaW5nLCBTZXQ8c3RyaW5nPj4oKTtcblxuZm9yIChjb25zdCB1cGdyYWRlIG9mIHBsYXllclVwZ3JhZGVzIGFzIFBsYXllclVwZ3JhZGVbXSkge1xuICAgIGlmICh1cGdyYWRlLmNvbW1hbmRlciAhPT0gJ01lbmdzaycpIGNvbnRpbnVlO1xuICAgIGNvbnN0IHJhbmsgPSB1cGdyYWRlLnJhbmsgPz8gKC9eWzEyM10kLy50ZXN0KHVwZ3JhZGUubmFtZSkgPyBOdW1iZXIodXBncmFkZS5uYW1lKSA6IG51bGwpO1xuICAgIGlmIChyYW5rID09PSBudWxsKSBjb250aW51ZTtcbiAgICBjb25zdCB1bml0ID0gdXBncmFkZS51bml0LnRvTG93ZXJDYXNlKCkucmVwbGFjZSgvW15hLXowLTldKy9nLCAnJyk7XG4gICAgY29uc3Qga2V5ID0gYHJhbmtzL21lbmdzay8ke3VuaXR9LyR7cmFua31gO1xuICAgIGNvbnN0IHJhbmtFZmZlY3RzID0gZWZmZWN0cy5nZXQoa2V5KSA/PyBuZXcgU2V0PHN0cmluZz4oKTtcbiAgICByYW5rRWZmZWN0cy5hZGQodXBncmFkZS5lZmZlY3QpO1xuICAgIGVmZmVjdHMuc2V0KGtleSwgcmFua0VmZmVjdHMpO1xuICAgIGNvbnN0IHByZXZpb3VzID0gcmFua1VwZ3JhZGVzLmdldChrZXkpO1xuICAgIHJhbmtVcGdyYWRlcy5zZXQoa2V5LCB7XG4gICAgICAgIGNvbW1hbmRlcjogdXBncmFkZS5jb21tYW5kZXIsXG4gICAgICAgIHVuaXQ6IHVwZ3JhZGUudW5pdCxcbiAgICAgICAgbmFtZTogdXBncmFkZS5yYW5rID8gYFJhbmsgJHtyYW5rfTogJHt1cGdyYWRlLm5hbWV9YCA6IHByZXZpb3VzPy5uYW1lID8/IGBSYW5rICR7cmFua31gLFxuICAgICAgICBpY29uOiB1cGdyYWRlLnJhbmsgPyB1cGdyYWRlLmljb24gOiBwcmV2aW91cz8uaWNvbiA/PyAndmV0ZXJhbmN5JyxcbiAgICAgICAgZWZmZWN0OiBbLi4ucmFua0VmZmVjdHNdLmpvaW4oJ1xcbicpLFxuICAgIH0pO1xufVxuIiwKICAgICJpbXBvcnQgc2tpbGxzSlNPTiBmcm9tIFwiLi4vLi4vc291cmNlLWRhdGEvdW5pdHNraWxscy5qc29uXCI7XG5pbXBvcnQgdHlwZSB7IFVuaXRTa2lsbCB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5cbmV4cG9ydCBmdW5jdGlvbiBza2lsbEtleShza2lsbDogVW5pdFNraWxsKTogc3RyaW5nIHtcbiAgICByZXR1cm4gJ3NraWxscy8nICsgW3NraWxsLmNvbW1hbmRlciwgc2tpbGwudW5pdCwgc2tpbGwubmFtZSwgc2tpbGwubW9kZSA/PyAnJywgc2tpbGwucHJlc3RpZ2UgPz8gJyddXG4gICAgICAgIC5tYXAocGFydCA9PiBlbmNvZGVVUklDb21wb25lbnQocGFydCkpLmpvaW4oJy8nKTtcbn1cblxuZXhwb3J0IGNvbnN0IHVuaXRTa2lsbHMgPSBuZXcgTWFwKChza2lsbHNKU09OIGFzIFVuaXRTa2lsbFtdKS5tYXAoc2tpbGwgPT4gW3NraWxsS2V5KHNraWxsKSwgc2tpbGxdKSk7XG5cbmV4cG9ydCBmdW5jdGlvbiBza2lsbENvb2xkb3duKHNraWxsOiBVbml0U2tpbGwpOiBzdHJpbmcgfCBudWxsIHtcbiAgICBpZiAoIXNraWxsLmNvb2xkb3duKSByZXR1cm4gbnVsbDtcbiAgICAvLyBJbml0aWFsIGNvb2xkb3ducyBhcmUga2VwdCBpbiB0aGUgdG9vbHRpcDsgdGhlIHJvdyBzaG93cyB0aGUgcmVwZWF0IGNvb2xkb3duLlxuICAgIGNvbnN0IGNvb2xkb3duID0gc2tpbGwuY29vbGRvd24ubWF0Y2goL0Nvb2xkb3duOlxccyooW15cXG5dKykvaSk/LlsxXSA/PyBza2lsbC5jb29sZG93bjtcbiAgICBjb25zdCBzZWNvbmRzID0gY29vbGRvd24ubWF0Y2goL14oXFxkKyg/OlxcLlxcZCspPylcXHMqKD86c2Vjb25kcz98cykoLiopJC9zKTtcbiAgICBpZiAoIXNlY29uZHMpIHJldHVybiAnPyc7XG4gICAgaWYgKE51bWJlcihzZWNvbmRzWzFdKSA9PT0gMCkgcmV0dXJuIG51bGw7XG4gICAgcmV0dXJuIHNlY29uZHNbMV0hICsgKHNlY29uZHNbMl0/LnRyaW0oKSA/ICcqJyA6ICcnKTtcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHNraWxsQ29zdHMoc2tpbGw6IFVuaXRTa2lsbCwgcmFjZTogc3RyaW5nKTogeyBpY29uOiBzdHJpbmcsIGxhYmVsOiBzdHJpbmcsIHZhbHVlOiBzdHJpbmcgfVtdIHtcbiAgICBjb25zdCBjb3N0cyA9IFtdO1xuICAgIGlmIChza2lsbC5lbmVyZ3ljb3N0ICE9PSBudWxsICYmIE51bWJlcihza2lsbC5lbmVyZ3ljb3N0KSA+IDApIHtcbiAgICAgICAgY29zdHMucHVzaCh7IGljb246ICcvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzL2ljb25lbmVyZ3kucG5nJywgbGFiZWw6ICdFbmVyZ3k6JywgdmFsdWU6IHNraWxsLmVuZXJneWNvc3QgfSk7XG4gICAgfVxuICAgIGNvbnN0IGNvb2xkb3duID0gc2tpbGxDb29sZG93bihza2lsbCk7XG4gICAgaWYgKGNvb2xkb3duICE9PSBudWxsKSB7XG4gICAgICAgIGNvc3RzLnB1c2goeyBpY29uOiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXR1cGdyYWRlcy9pY29udGltZV8ke3JhY2V9LnBuZ2AsIGxhYmVsOiAnQ29vbGRvd24gKHNlY29uZHMpOicsIHZhbHVlOiBjb29sZG93biB9KTtcbiAgICB9XG4gICAgcmV0dXJuIGNvc3RzO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gc2tpbGxEZXRhaWxzKHNraWxsOiBVbml0U2tpbGwpOiBzdHJpbmdbXSB7XG4gICAgY29uc3QgZGV0YWlscyA9IFtza2lsbC5kZXNjcmlwdGlvbl07XG4gICAgLy8gT3JkaW5hcnkgY29zdHMgYXJlIGluIHRoZSBoZWFkaW5nOyByZXRhaW4gaW5pdGlhbCBhbmQgY29uZGl0aW9uYWwgdGltaW5ncyBoZXJlLlxuICAgIGlmIChza2lsbC5jb29sZG93biAmJiAhL15cXGQrKD86XFwuXFxkKyk/XFxzKig/OnNlY29uZHM/fHMpJC8udGVzdChza2lsbC5jb29sZG93bikpIHtcbiAgICAgICAgZGV0YWlscy5wdXNoKC9cXGJDb29sKD86ZG93bnx1cCk6L2kudGVzdChza2lsbC5jb29sZG93bikgPyBza2lsbC5jb29sZG93biA6IGBDb29sZG93bjogJHtza2lsbC5jb29sZG93bn1gKTtcbiAgICB9XG4gICAgaWYgKHNraWxsLnJlcXVpcmVzdXBncmFkZSkgZGV0YWlscy5wdXNoKCdSZXF1aXJlcyBhbiB1cGdyYWRlLicpO1xuICAgIGlmIChza2lsbC5yYW5rcmVxdWlyZWQgIT09IG51bGwpIGRldGFpbHMucHVzaChgUmVxdWlyZXMgcmFuayAke3NraWxsLnJhbmtyZXF1aXJlZH0uYCk7XG4gICAgaWYgKHNraWxsLm1vZGUpIGRldGFpbHMucHVzaChgTW9kZTogJHtza2lsbC5tb2RlfWApO1xuICAgIGlmIChza2lsbC5wcmVzdGlnZSkgZGV0YWlscy5wdXNoKGBQcmVzdGlnZTogJHtza2lsbC5wcmVzdGlnZX1gKTtcbiAgICBpZiAoc2tpbGwucmVxdWlyZW1lbnRzKSBkZXRhaWxzLnB1c2goc2tpbGwucmVxdWlyZW1lbnRzKTtcbiAgICByZXR1cm4gZGV0YWlscztcbn1cbiIsCiAgICAiaW1wb3J0e29wdGlvbnMgYXMgcixGcmFnbWVudCBhcyBlfWZyb21cInByZWFjdFwiO2V4cG9ydHtGcmFnbWVudH1mcm9tXCJwcmVhY3RcIjt2YXIgdD0vW1wiJjxdLztmdW5jdGlvbiBuKHIpe2lmKDA9PT1yLmxlbmd0aHx8ITE9PT10LnRlc3QocikpcmV0dXJuIHI7Zm9yKHZhciBlPTAsbj0wLG89XCJcIixmPVwiXCI7bjxyLmxlbmd0aDtuKyspe3N3aXRjaChyLmNoYXJDb2RlQXQobikpe2Nhc2UgMzQ6Zj1cIiZxdW90O1wiO2JyZWFrO2Nhc2UgMzg6Zj1cIiZhbXA7XCI7YnJlYWs7Y2FzZSA2MDpmPVwiJmx0O1wiO2JyZWFrO2RlZmF1bHQ6Y29udGludWV9biE9PWUmJihvKz1yLnNsaWNlKGUsbikpLG8rPWYsZT1uKzF9cmV0dXJuIG4hPT1lJiYobys9ci5zbGljZShlLG4pKSxvfXZhciBvPS9hY2l0fGV4KD86c3xnfG58cHwkKXxycGh8Z3JpZHxvd3N8bW5jfG50d3xpbmVbY2hdfHpvb3xeb3JkfGl0ZXJhL2ksZj0wLGk9QXJyYXkuaXNBcnJheTtmdW5jdGlvbiB1KGUsdCxuLG8saSx1KXt0fHwodD17fSk7dmFyIGEsYyxwPXQ7aWYoXCJyZWZcImluIHApZm9yKGMgaW4gcD17fSx0KVwicmVmXCI9PWM/YT10W2NdOnBbY109dFtjXTt2YXIgbD17dHlwZTplLHByb3BzOnAsa2V5Om4scmVmOmEsX19rOm51bGwsX186bnVsbCxfX2I6MCxfX2U6bnVsbCxfX2M6bnVsbCxjb25zdHJ1Y3Rvcjp2b2lkIDAsX192Oi0tZixfX2k6LTEsX191OjAsX19zb3VyY2U6aSxfX3NlbGY6dX07aWYoXCJmdW5jdGlvblwiPT10eXBlb2YgZSYmKGE9ZS5kZWZhdWx0UHJvcHMpKWZvcihjIGluIGEpdm9pZCAwPT09cFtjXSYmKHBbY109YVtjXSk7cmV0dXJuIHIudm5vZGUmJnIudm5vZGUobCksbH1mdW5jdGlvbiBhKHIpe3ZhciB0PXUoZSx7dHBsOnIsZXhwcnM6W10uc2xpY2UuY2FsbChhcmd1bWVudHMsMSl9KTtyZXR1cm4gdC5rZXk9dC5fX3YsdH12YXIgYz17fSxwPS9bQS1aXS9nO2Z1bmN0aW9uIGwoZSx0KXtpZihyLmF0dHIpe3ZhciBmPXIuYXR0cihlLHQpO2lmKFwic3RyaW5nXCI9PXR5cGVvZiBmKXJldHVybiBmfWlmKHQ9ZnVuY3Rpb24ocil7cmV0dXJuIG51bGwhPT1yJiZcIm9iamVjdFwiPT10eXBlb2YgciYmXCJmdW5jdGlvblwiPT10eXBlb2Ygci52YWx1ZU9mP3IudmFsdWVPZigpOnJ9KHQpLFwicmVmXCI9PT1lfHxcImtleVwiPT09ZSlyZXR1cm5cIlwiO2lmKFwic3R5bGVcIj09PWUmJlwib2JqZWN0XCI9PXR5cGVvZiB0KXt2YXIgaT1cIlwiO2Zvcih2YXIgdSBpbiB0KXt2YXIgYT10W3VdO2lmKG51bGwhPWEmJlwiXCIhPT1hKXt2YXIgbD1cIi1cIj09dVswXT91OmNbdV18fChjW3VdPXUucmVwbGFjZShwLFwiLSQmXCIpLnRvTG93ZXJDYXNlKCkpLHM9XCI7XCI7XCJudW1iZXJcIiE9dHlwZW9mIGF8fGwuc3RhcnRzV2l0aChcIi0tXCIpfHxvLnRlc3QobCl8fChzPVwicHg7XCIpLGk9aStsK1wiOlwiK2Erc319cmV0dXJuIGUrJz1cIicrbihpKSsnXCInfXJldHVybiBudWxsPT10fHwhMT09PXR8fFwiZnVuY3Rpb25cIj09dHlwZW9mIHR8fFwib2JqZWN0XCI9PXR5cGVvZiB0P1wiXCI6ITA9PT10P2U6ZSsnPVwiJytuKFwiXCIrdCkrJ1wiJ31mdW5jdGlvbiBzKHIpe2lmKG51bGw9PXJ8fFwiYm9vbGVhblwiPT10eXBlb2Ygcnx8XCJmdW5jdGlvblwiPT10eXBlb2YgcilyZXR1cm4gbnVsbDtpZihcIm9iamVjdFwiPT10eXBlb2Ygcil7aWYodm9pZCAwPT09ci5jb25zdHJ1Y3RvcilyZXR1cm4gcjtpZihpKHIpKXtmb3IodmFyIGU9MDtlPHIubGVuZ3RoO2UrKylyW2VdPXMocltlXSk7cmV0dXJuIHJ9fXJldHVybiBuKFwiXCIrcil9ZXhwb3J0e3UgYXMganN4LGwgYXMganN4QXR0cix1IGFzIGpzeERFVixzIGFzIGpzeEVzY2FwZSxhIGFzIGpzeFRlbXBsYXRlLHUgYXMganN4c307XG4vLyMgc291cmNlTWFwcGluZ1VSTD1qc3hSdW50aW1lLm1vZHVsZS5qcy5tYXBcbiIsCiAgICAiLyoqIEBqc3hJbXBvcnRTb3VyY2UgcHJlYWN0ICovXG5pbXBvcnQgKiBhcyBwcmVhY3QgZnJvbSBcInByZWFjdFwiO1xuXG5pbXBvcnQgcGxheWVyVW5pdHMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVuaXRzLmpzb25cIjtcbmltcG9ydCBhbW9uVW5pdHMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL2Ftb251bml0cy5qc29uXCI7XG5pbXBvcnQgY29tbWFuZGVyc3VtbWFyaWVzIGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9jb21tYW5kZXJzdW1tYXJpZXMuanNvblwiO1xuaW1wb3J0IHBsYXllclRhbGVudHMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnRhbGVudHMuanNvblwiO1xuaW1wb3J0IHBsYXllclVwZ3JhZGVzIGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9wbGF5ZXJ1cGdyYWRlcy5qc29uXCI7XG5pbXBvcnQgdHlwZSB7IFBsYXllclRhbGVudCwgUGxheWVyVW5pdCwgUGxheWVyVXBncmFkZSB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5pbXBvcnQgeyByYW5rVXBncmFkZXMgfSBmcm9tIFwiLi91bml0LXJhbmtzXCI7XG5pbXBvcnQgeyBza2lsbENvc3RzLCB1bml0U2tpbGxzIH0gZnJvbSBcIi4vdW5pdC1za2lsbHNcIjtcblxuY29uc3QgQU1PTl9VTklUX1RZUEVTID0gW1xuICAgIFwiUHJvdG9zc1wiLFxuICAgIFwiVGVycmFuXCIsXG4gICAgXCJaZXJnXCIsXG4gICAgXCJIeWJyaWRcIixcbiAgICBcIkluZmVzdGVkXCIsXG4gICAgXCJPYmplY3RpdmVcIixcbiAgICBcIk11dGF0b3JcIlxuXTtcblxuZnVuY3Rpb24gdG9rZW4odGV4dDogc3RyaW5nKTogVG9rZW4ge1xuICAgIGlmICh0ZXh0ID09PSBcIkRvbS4gVHJvb3BlclwiKSByZXR1cm4gJ2RvbWluaW9udHJvb3Blcic7XG4gICAgaWYgKHRleHQgPT09IFwiRG9tLiBBc3NhdWx0IFRyb29wZXJcIikgcmV0dXJuICdkb21pbmlvbmFzc2F1bHR0cm9vcGVyJztcbiAgICBpZiAodGV4dCA9PT0gXCJEb20uIEZsYW1lIFRyb29wZXJcIikgcmV0dXJuICdkb21pbmlvbmZsYW1ldHJvb3Blcic7XG4gICAgaWYgKHRleHQgPT09IFwiRG9tLiBSb2NrZXQgVHJvb3BlclwiKSByZXR1cm4gJ2RvbWluaW9ucm9ja2V0dHJvb3Blcic7XG4gICAgaWYgKHRleHQgPT09IFwiVHljaHVzIEZpbmRsYXlcIikgcmV0dXJuICd0eWNodXMnO1xuICAgIGlmICh0ZXh0ID09PSBcIkphbWVzIFNpcml1cyBTeWtlc1wiKSByZXR1cm4gJ3Npcml1cyc7XG4gICAgaWYgKHRleHQgPT09IFwiTWlsZXMgQmxhemUgTGV3aXNcIikgcmV0dXJuICdibGF6ZSc7XG4gICAgaWYgKHRleHQgPT09IFwiUm9iIENhbm5vbmJhbGwgQm9zd2VsbFwiKSByZXR1cm4gJ2Nhbm5vbmJhbGwnO1xuICAgIGlmICh0ZXh0ID09PSBcIkx0IExheW5hIE5pa2FyYVwiKSByZXR1cm4gJ25pa2FyYSc7XG4gICAgaWYgKHRleHQgPT09IFwiS2V2IFJhdHRsZXNuYWtlIFdlc3RcIikgcmV0dXJuICdyYXR0bGVzbmFrZSc7XG5cbiAgICByZXR1cm4gdGV4dC50b0xvd2VyQ2FzZSgpLnJlcGxhY2UoL1teYS16MC05XSsvZywgXCJcIikgYXMgVG9rZW47XG59XG5leHBvcnQgdHlwZSBUb2tlbiA9IExvd2VyY2FzZTxzdHJpbmc+O1xuXG5pbnRlcmZhY2UgVW5pdE1vZGlmaWVycyB7XG4gICAgY29tbWFuZGVyOiBUb2tlbjtcbiAgICB1bml0OiBUb2tlbjtcbiAgICB1cGdyYWRlczogUmVjb3JkPHN0cmluZywgYm9vbGVhbj47XG4gICAgbWFzdGVyaWVzOiBSZWNvcmQ8c3RyaW5nLCBudW1iZXI+O1xuICAgIHByZXN0aWdlczogUmVjb3JkPHN0cmluZywgYm9vbGVhbj47XG4gICAgdXBncmFkZUxldmVsczogeyB3ZWFwb24/OiBudW1iZXIsIGFybW9yPzogbnVtYmVyLCBzaGllbGRzPzogbnVtYmVyLCBhcnRpZmFjdHM/OiBudW1iZXIsIHJhbms/OiBudW1iZXIgfTtcbn1cblxuY2xhc3MgVW5pdHMgZXh0ZW5kcyBwcmVhY3QuQ29tcG9uZW50IHtcbiAgICBvdmVycmlkZSBzdGF0ZToge1xuICAgICAgICBjb21tYW5kZXI6IFRva2VuIHwgbnVsbCxcbiAgICAgICAgdW5pdDogVG9rZW4gfCBudWxsLFxuICAgICAgICBtb2RpZmllcnM6IFVuaXRNb2RpZmllcnMgfCBudWxsLFxuICAgICAgICBjb21wYXJlTW9kaWZpZXJzOiBVbml0TW9kaWZpZXJzIHwgbnVsbCxcbiAgICAgICAgZXJyb3I/OiBzdHJpbmcsXG4gICAgfSA9IHtcbiAgICAgICAgICAgIGNvbW1hbmRlcjogbnVsbCxcbiAgICAgICAgICAgIHVuaXQ6IG51bGwsXG4gICAgICAgICAgICBtb2RpZmllcnM6IG51bGwsXG4gICAgICAgICAgICBjb21wYXJlTW9kaWZpZXJzOiBudWxsLFxuICAgICAgICB9O1xuICAgIG92ZXJyaWRlIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgICAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcihcImhhc2hjaGFuZ2VcIiwgKCkgPT4ge1xuICAgICAgICAgICAgdGhpcy51cGRhdGVTdGF0ZUZyb21IYXNoKCk7XG4gICAgICAgIH0pO1xuICAgICAgICB0aGlzLnVwZGF0ZVN0YXRlRnJvbUhhc2goKTtcbiAgICB9XG4gICAgdXBkYXRlU3RhdGVGcm9tSGFzaCgpOiB2b2lkIHtcbiAgICAgICAgY29uc3QgaGFzaCA9IHdpbmRvdy5sb2NhdGlvbi5oYXNoLnNsaWNlKDEpO1xuICAgICAgICBjb25zdCBbY29tbWFuZGVyLCB1bml0XSA9IGhhc2guc3BsaXQoXCIvXCIpO1xuICAgICAgICB0aGlzLnNldFN0YXRlKHsgY29tbWFuZGVyOiBjb21tYW5kZXIgfHwgbnVsbCwgdW5pdDogdW5pdCB8fCBudWxsIH0pO1xuICAgICAgICBpZiAoY29tbWFuZGVyICYmIHVuaXQpIHtcbiAgICAgICAgICAgIHRoaXMuc2V0U3RhdGUoeyBtb2RpZmllcnM6IFVuaXRTdGF0cy5tb2RpZmllcnMoY29tbWFuZGVyIGFzIFRva2VuLCB1bml0IGFzIFRva2VuKSB9KTtcbiAgICAgICAgfVxuICAgIH1cbiAgICBvblNldE1vZGlmaWVycyA9IChtb2RpZmllcnM6IFBhcnRpYWw8VW5pdE1vZGlmaWVycz4pID0+IHtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IG1vZGlmaWVyczogeyAuLi50aGlzLnN0YXRlLm1vZGlmaWVycywgLi4ubW9kaWZpZXJzIH0gfSk7XG4gICAgfTtcbiAgICBvblNldENvbXBhcmVNb2RpZmllcnMgPSAoY29tcGFyZU1vZGlmaWVyczogUGFydGlhbDxVbml0TW9kaWZpZXJzPikgPT4ge1xuICAgICAgICB0aGlzLnNldFN0YXRlKHsgY29tcGFyZU1vZGlmaWVyczogeyAuLi50aGlzLnN0YXRlLmNvbXBhcmVNb2RpZmllcnMsIC4uLmNvbXBhcmVNb2RpZmllcnMgfSB9KTtcbiAgICB9O1xuICAgIG9uQ2xpY2tDb21wYXJlID0gKCkgPT4ge1xuICAgICAgICB0aGlzLnNldFN0YXRlKHsgY29tcGFyZU1vZGlmaWVyczogeyAuLi50aGlzLnN0YXRlLm1vZGlmaWVycyB9IH0pO1xuICAgIH07XG4gICAgb25DbGlja0Nsb3NlID0gKCkgPT4ge1xuICAgICAgICB0aGlzLnNldFN0YXRlKHsgY29tcGFyZU1vZGlmaWVyczogbnVsbCB9KTtcbiAgICB9O1xuICAgIHN0YXRpYyBvdmVycmlkZSBnZXREZXJpdmVkU3RhdGVGcm9tRXJyb3IoZXJyb3I6IEVycm9yKTogeyBlcnJvcjogc3RyaW5nIH0ge1xuICAgICAgICByZXR1cm4geyBlcnJvcjogZXJyb3Iuc3RhY2sgfHwgZXJyb3IubWVzc2FnZSwgfTtcbiAgICB9XG4gICAgb3ZlcnJpZGUgcmVuZGVyKCkge1xuICAgICAgICBpZiAodGhpcy5zdGF0ZS5lcnJvcikge1xuICAgICAgICAgICAgcmV0dXJuIDxwPkVycm9yOiA8cHJlIHN0eWxlPVwiY29sb3I6ICNmZjY2MzM7XCI+e3RoaXMuc3RhdGUuZXJyb3J9PC9wcmU+PC9wPjtcbiAgICAgICAgfVxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPHRhYmxlIGNsYXNzPVwidW5pdHNcIj5cbiAgICAgICAgICAgICAgICA8dHI+XG4gICAgICAgICAgICAgICAgICAgIDxDb21tYW5kZXJTZWxlY3RvciBjb21tYW5kZXI9e3RoaXMuc3RhdGUuY29tbWFuZGVyfSAvPlxuICAgICAgICAgICAgICAgICAgICA8VW5pdFNlbGVjdG9yIGNvbW1hbmRlcj17dGhpcy5zdGF0ZS5jb21tYW5kZXJ9IHVuaXQ9e3RoaXMuc3RhdGUudW5pdH0gLz5cbiAgICAgICAgICAgICAgICAgICAge3RoaXMuc3RhdGUuY29tbWFuZGVyICYmIDxVbml0U3RhdHMgbW9kaWZpZXJzPXt0aGlzLnN0YXRlLm1vZGlmaWVyc30gb25TZXRNb2RpZmllcnM9e3RoaXMub25TZXRNb2RpZmllcnN9IG9uQ2xpY2tDb21wYXJlPXt0aGlzLm9uQ2xpY2tDb21wYXJlfSBmb3JtS2V5PVwiMVwiIC8+fVxuICAgICAgICAgICAgICAgICAgICB7dGhpcy5zdGF0ZS5jb21wYXJlTW9kaWZpZXJzICYmIDxVbml0U3RhdHMgbW9kaWZpZXJzPXt0aGlzLnN0YXRlLmNvbXBhcmVNb2RpZmllcnN9IG9uU2V0TW9kaWZpZXJzPXt0aGlzLm9uU2V0Q29tcGFyZU1vZGlmaWVyc30gb25DbGlja0Nsb3NlPXt0aGlzLm9uQ2xpY2tDbG9zZX0gZm9ybUtleT1cIjJcIiAvPn1cbiAgICAgICAgICAgICAgICA8L3RyPlxuICAgICAgICAgICAgPC90YWJsZT5cbiAgICAgICAgKTtcbiAgICB9XG59XG5cbmNsYXNzIENvbW1hbmRlclNlbGVjdG9yIGV4dGVuZHMgcHJlYWN0LkNvbXBvbmVudDx7IGNvbW1hbmRlcjogc3RyaW5nIHwgbnVsbCB9PiB7XG4gICAgaXNTZWxlY3RlZChuYW1lOiBzdHJpbmcpOiBib29sZWFuIHwgdW5kZWZpbmVkIHtcbiAgICAgICAgcmV0dXJuIHRoaXMucHJvcHMuY29tbWFuZGVyID09PSB0b2tlbihuYW1lKSA/IHRydWUgOiB1bmRlZmluZWQ7XG4gICAgfVxuICAgIG92ZXJyaWRlIHJlbmRlcigpIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDx0ZCBjbGFzcz1cInVuaXRzLWNvbW1hbmRlci1zZWxlY3RvclwiPlxuICAgICAgICAgICAgICAgIDxwIGNsYXNzPVwidW5pdHMtaGVhZFwiPjxlbT5Db21tYW5kZXJzPC9lbT48L3A+XG4gICAgICAgICAgICAgICAgPHVsIGNsYXNzPVwidW5pdHMtbmF2XCI+XG4gICAgICAgICAgICAgICAgICAgIHtjb21tYW5kZXJzdW1tYXJpZXMubWFwKChjb21tYW5kZXIpID0+IChcbiAgICAgICAgICAgICAgICAgICAgICAgIDxsaT48YSBocmVmPXtgIyR7dG9rZW4oY29tbWFuZGVyLmNvbW1hbmRlcil9YH0gYXJpYS1zZWxlY3RlZD17dGhpcy5pc1NlbGVjdGVkKGNvbW1hbmRlci5jb21tYW5kZXIpfT5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz17YC9pbWFnZXMvY29tbWFuZGVycG9ydHJhaXRzLyR7dG9rZW4oY29tbWFuZGVyLmNvbW1hbmRlcil9cG9ydHJhaXQucG5nYH0gYWx0PVwiXCIgd2lkdGg9XCIyMVwiIGhlaWdodD1cIjIxXCIgc3R5bGU9XCJtYXJnaW4tcmlnaHQ6M3B4XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y29tbWFuZGVyLmZ1bGxuYW1lfVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgICAgICAgPHAgY2xhc3M9XCJ1bml0cy1oZWFkXCI+PGVtPkFtb248L2VtPjwvcD5cbiAgICAgICAgICAgICAgICA8dWwgY2xhc3M9XCJ1bml0cy1uYXZcIj5cbiAgICAgICAgICAgICAgICAgICAge0FNT05fVU5JVF9UWVBFUy5tYXAoKHR5cGUpID0+IChcbiAgICAgICAgICAgICAgICAgICAgICAgIDxsaT48YSBocmVmPXtgIyR7dG9rZW4odHlwZSl9YH0gYXJpYS1zZWxlY3RlZD17dGhpcy5pc1NlbGVjdGVkKHR5cGUpfT57dHlwZX08L2E+PC9saT5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgIDwvdGQ+XG4gICAgICAgICk7XG4gICAgfVxufVxuXG5jbGFzcyBVbml0U2VsZWN0b3IgZXh0ZW5kcyBwcmVhY3QuQ29tcG9uZW50PHsgY29tbWFuZGVyOiBUb2tlbiB8IG51bGwsIHVuaXQ6IFRva2VuIHwgbnVsbCB9PiB7XG4gICAgaXNTZWxlY3RlZChuYW1lOiBzdHJpbmcpOiBib29sZWFuIHwgdW5kZWZpbmVkIHtcbiAgICAgICAgcmV0dXJuIHRoaXMucHJvcHMudW5pdCA9PT0gdG9rZW4obmFtZSkgPyB0cnVlIDogdW5kZWZpbmVkO1xuICAgIH1cbiAgICBvdmVycmlkZSByZW5kZXIoKSB7XG4gICAgICAgIGlmICh0aGlzLnByb3BzLmNvbW1hbmRlciA9PT0gbnVsbCkge1xuICAgICAgICAgICAgcmV0dXJuIDx0ZCBjbGFzcz1cInVuaXRzLXVuaXQtc2VsZWN0b3JcIj5cbiAgICAgICAgICAgICAgICA8cD48YmlnPiZsYXJyOzwvYmlnPiBTZWxlY3QgYSBjb21tYW5kZXI8L3A+XG4gICAgICAgICAgICA8L3RkPjtcbiAgICAgICAgfVxuICAgICAgICBjb25zdCBub3JtYWxVbml0cyA9IFtdO1xuICAgICAgICBjb25zdCBoZXJvZXMgPSBbXTtcbiAgICAgICAgY29uc3Qgc3RydWN0dXJlcyA9IFtdO1xuXG4gICAgICAgIGNvbnN0IHVzZWRVbml0cyA9IG5ldyBTZXQ8c3RyaW5nPigpO1xuICAgICAgICBmb3IgKGNvbnN0IHBsYXllclVuaXQgb2YgcGxheWVyVW5pdHMuZmlsdGVyKCh1bml0KSA9PiB0b2tlbih1bml0LmNvbW1hbmRlcikgPT09IHRoaXMucHJvcHMuY29tbWFuZGVyKSkge1xuICAgICAgICAgICAgaWYgKHVzZWRVbml0cy5oYXMocGxheWVyVW5pdC5iYXNlbmFtZSkpIGNvbnRpbnVlO1xuICAgICAgICAgICAgdXNlZFVuaXRzLmFkZChwbGF5ZXJVbml0LmJhc2VuYW1lKTtcbiAgICAgICAgICAgIGlmIChwbGF5ZXJVbml0LnRhZ3MuaW5jbHVkZXMoXCJTdHJ1Y3R1cmVcIikpIHtcbiAgICAgICAgICAgICAgICBzdHJ1Y3R1cmVzLnB1c2gocGxheWVyVW5pdC5iYXNlbmFtZSlcbiAgICAgICAgICAgIH0gZWxzZSBpZiAocGxheWVyVW5pdC50YWdzLmluY2x1ZGVzKFwiSGVyb2ljXCIpKSB7XG4gICAgICAgICAgICAgICAgaGVyb2VzLnB1c2gocGxheWVyVW5pdC5iYXNlbmFtZSlcbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgbm9ybWFsVW5pdHMucHVzaChwbGF5ZXJVbml0LmJhc2VuYW1lKVxuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIGZvciAoY29uc3QgYW1vblVuaXQgb2YgYW1vblVuaXRzLmZpbHRlcigodW5pdCkgPT4gdG9rZW4odW5pdC5yYWNlKSA9PT0gdGhpcy5wcm9wcy5jb21tYW5kZXIpKSB7XG4gICAgICAgICAgICBpZiAoYW1vblVuaXQuc3RydWN0dXJlKSB7XG4gICAgICAgICAgICAgICAgc3RydWN0dXJlcy5wdXNoKGFtb25Vbml0Lm5hbWUpXG4gICAgICAgICAgICB9IGVsc2UgaWYgKGFtb25Vbml0Lmhlcm9pYykge1xuICAgICAgICAgICAgICAgIGhlcm9lcy5wdXNoKGFtb25Vbml0Lm5hbWUpXG4gICAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgICAgIG5vcm1hbFVuaXRzLnB1c2goYW1vblVuaXQubmFtZSlcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPHRkIGNsYXNzPVwidW5pdHMtdW5pdC1zZWxlY3RvclwiPlxuICAgICAgICAgICAgICAgIHshIW5vcm1hbFVuaXRzLmxlbmd0aCAmJiA8cCBjbGFzcz1cInVuaXRzLWhlYWRcIj48ZW0+VW5pdHM8L2VtPjwvcD59XG4gICAgICAgICAgICAgICAgeyEhbm9ybWFsVW5pdHMubGVuZ3RoICYmIDx1bCBjbGFzcz1cInVuaXRzLW5hdlwiPlxuICAgICAgICAgICAgICAgICAgICB7bm9ybWFsVW5pdHMubWFwKCh1bml0KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj17YCMke3Rva2VuKHRoaXMucHJvcHMuY29tbWFuZGVyISl9LyR7dG9rZW4odW5pdCl9YH0gYXJpYS1zZWxlY3RlZD17dGhpcy5pc1NlbGVjdGVkKHVuaXQpfT57dW5pdH08L2E+PC9saT5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgPC91bD59XG4gICAgICAgICAgICAgICAgeyEhaGVyb2VzLmxlbmd0aCAmJiA8cCBjbGFzcz1cInVuaXRzLWhlYWRcIj48ZW0+SGVyb2VzPC9lbT48L3A+fVxuICAgICAgICAgICAgICAgIHshIWhlcm9lcy5sZW5ndGggJiYgPHVsIGNsYXNzPVwidW5pdHMtbmF2XCI+XG4gICAgICAgICAgICAgICAgICAgIHtoZXJvZXMubWFwKChoZXJvKSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj17YCMke3Rva2VuKHRoaXMucHJvcHMuY29tbWFuZGVyISl9LyR7dG9rZW4oaGVybyl9YH0gYXJpYS1zZWxlY3RlZD17dGhpcy5pc1NlbGVjdGVkKGhlcm8pfT57aGVyb308L2E+PC9saT5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgPC91bD59XG4gICAgICAgICAgICAgICAgeyEhc3RydWN0dXJlcy5sZW5ndGggJiYgPHAgY2xhc3M9XCJ1bml0cy1oZWFkXCI+PGVtPlN0cnVjdHVyZXM8L2VtPjwvcD59XG4gICAgICAgICAgICAgICAgeyEhc3RydWN0dXJlcy5sZW5ndGggJiYgPHVsIGNsYXNzPVwidW5pdHMtbmF2XCI+XG4gICAgICAgICAgICAgICAgICAgIHtzdHJ1Y3R1cmVzLm1hcCgoc3RydWN0dXJlKSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj17YCMke3Rva2VuKHRoaXMucHJvcHMuY29tbWFuZGVyISl9LyR7dG9rZW4oc3RydWN0dXJlKX1gfSBhcmlhLXNlbGVjdGVkPXt0aGlzLmlzU2VsZWN0ZWQoc3RydWN0dXJlKX0+e3N0cnVjdHVyZX08L2E+PC9saT5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgPC91bD59XG4gICAgICAgICAgICA8L3RkPlxuICAgICAgICApO1xuICAgIH1cbn1cblxuaW50ZXJmYWNlIFVuaXQge1xuICAgIG5hbWU6IHN0cmluZztcbiAgICBjb21tYW5kZXI6IHN0cmluZztcbiAgICByYWNlOiBzdHJpbmc7XG4gICAgbWNvc3Q6IG51bWJlcjtcbiAgICB2Y29zdDogbnVtYmVyO1xuICAgIHN1cHBseTogbnVtYmVyO1xuICAgIGJ1aWxkdGltZTogbnVtYmVyO1xuICAgIGhwOiBudW1iZXI7XG4gICAgcmVhZG9ubHkgYmFzZUhwOiBudW1iZXI7XG4gICAgc2hpZWxkczogbnVtYmVyO1xuICAgIGFybW9yOiBudW1iZXI7XG4gICAgc2hpZWxkYXJtb3I6IG51bWJlcjtcbiAgICBlbmVyZ3k6IG51bWJlcjtcbiAgICBtb3ZlbWVudHNwZWVkOiBudW1iZXI7XG4gICAgc2lnaHRyYW5nZTogbnVtYmVyO1xuICAgIHRhZ3M6IHN0cmluZ1tdO1xuXG4gICAgbW9kZXM6IFJlY29yZDxzdHJpbmcsIFVuaXRNb2RlPjtcbiAgICBocGJvbnVzOiBudW1iZXI7XG4gICAgYXJtb3Jib251czogbnVtYmVyO1xuICAgIHNoaWVsZGJvbnVzOiBudW1iZXIgfCBudWxsO1xuICAgIG5vdGVzOiBzdHJpbmc7XG59XG4vKiogcGFydGlhbCBvZiBQbGF5ZXJVbml0ICovXG5pbnRlcmZhY2UgVW5pdE1vZGUge1xuICAgIG1vZGVOYW1lOiBzdHJpbmcgfCBudWxsO1xuXG4gICAgLy8gZGVmZW5zaXZlXG4gICAgYXJtb3I/OiBudW1iZXI7XG4gICAgc2hpZWxkYXJtb3I/OiBudW1iZXI7XG4gICAgbW92ZW1lbnRzcGVlZD86IG51bWJlcjtcbiAgICBzaWdodHJhbmdlPzogbnVtYmVyO1xuICAgIHRhZ3M/OiBzdHJpbmc7XG5cbiAgICAvLyBvZmZlbnNpdmVcbiAgICBhdGtyYW5nZT86IG51bWJlcjtcbiAgICBhdHRhY2tzcGVlZD86IG51bWJlcjtcbiAgICBhdHRhY2tzPzogbnVtYmVyO1xuICAgIGFvZT86IHN0cmluZztcbiAgICAvKiogVGFncyB0aGF0IHRoaXMgdW5pdCBkZWFscyBkYW1hZ2UgdG8gKi9cbiAgICBhdHRyaWJ1dGVkYW1hZ2U/OiB7IFt0YWc6IHN0cmluZ106IHsgZGFtYWdlOiBudW1iZXIsIGJvbnVzOiBudW1iZXIgfSB9O1xufVxuXG5leHBvcnQgY2xhc3MgVW5pdFN0YXRzIGV4dGVuZHMgcHJlYWN0LkNvbXBvbmVudDx7XG4gICAgbW9kaWZpZXJzOiBVbml0TW9kaWZpZXJzIHwgbnVsbCxcbiAgICBvblNldE1vZGlmaWVyczogKG1vZGlmaWVyczogUGFydGlhbDxVbml0TW9kaWZpZXJzPikgPT4gdm9pZCxcbiAgICBvbkNsaWNrQ2xvc2U/OiAoKSA9PiB2b2lkLCBvbkNsaWNrQ29tcGFyZT86ICgpID0+IHZvaWQsXG4gICAgZm9ybUtleTogc3RyaW5nLFxufT4ge1xuICAgIG92ZXJyaWRlIHN0YXRlOiB7XG4gICAgICAgIG1hc3RlcnlJbnB1dHM/OiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+IHwgbnVsbDtcbiAgICB9ID0ge307XG4gICAgcmVuZGVyQW1vblVuaXQoKTogcHJlYWN0LkNvbXBvbmVudENoaWxkcmVuIHtcbiAgICAgICAgY29uc3QgYW1vblVuaXQgPSBhbW9uVW5pdHMuZmluZCh1bml0ID0+IHRva2VuKHVuaXQubmFtZSkgPT09IHRoaXMucHJvcHMubW9kaWZpZXJzIS51bml0KTtcbiAgICAgICAgaWYgKCFhbW9uVW5pdCkge1xuICAgICAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgICAgICA8dGQ+VW5pdCBub3QgZm91bmQ8L3RkPlxuICAgICAgICAgICAgKTtcbiAgICAgICAgfVxuICAgICAgICBjb25zdCB0YWdzID0gW1xuICAgICAgICAgICAgYW1vblVuaXQubGlnaHQgPyBcIkxpZ2h0XCIgOiBudWxsLFxuICAgICAgICAgICAgYW1vblVuaXQuYXJtb3JlZCA/IFwiQXJtb3JlZFwiIDogbnVsbCxcbiAgICAgICAgICAgIGFtb25Vbml0LmJpb2xvZ2ljYWwgPyBcIkJpb2xvZ2ljYWxcIiA6IG51bGwsXG4gICAgICAgICAgICBhbW9uVW5pdC5tZWNoYW5pY2FsID8gXCJNZWNoYW5pY2FsXCIgOiBudWxsLFxuICAgICAgICAgICAgYW1vblVuaXQucHNpb25pYyA/IFwiUHNpb25pY1wiIDogbnVsbCxcbiAgICAgICAgICAgIGFtb25Vbml0Lmhlcm9pYyA/IFwiSGVyb2ljXCIgOiBudWxsLFxuICAgICAgICAgICAgYW1vblVuaXQubWFzc2l2ZSA/IFwiTWFzc2l2ZVwiIDogbnVsbCxcbiAgICAgICAgICAgIGFtb25Vbml0LnN0cnVjdHVyZSA/IFwiU3RydWN0dXJlXCIgOiBudWxsLFxuICAgICAgICAgICAgLy8gYW1vblVuaXQuZmx5ZXIgPyBcIkZseWVyXCIgOiBudWxsLFxuICAgICAgICBdLmZpbHRlcihCb29sZWFuKTtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDx0ZCBjbGFzcz1cInVuaXRzLXVuaXRcIj5cbiAgICAgICAgICAgICAgICA8aDIgY2xhc3M9XCJ1bml0cy1uYW1lXCI+e2Ftb25Vbml0Lm5hbWV9PC9oMj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPVwidW5pdHMtaWRlbnRpdHlcIj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cInVuaXRzLWlkZW50aXR5LXRleHRcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzPVwidW5pdHMtdGFnc1wiPnt0YWdzLmpvaW4oXCIgwrcgXCIpIHx8IFwiKE5vIHRhZ3MpXCJ9PC9wPlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8cD5cbiAgICAgICAgICAgICAgICAgICAgKEFtb24gdW5pdClcbiAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgPHVsIGNsYXNzPVwidW5pdHMtc3RhdHNcIj5cbiAgICAgICAgICAgICAgICAgICAgPGxpIGNsYXNzPVwidW5pdHMtaHBcIj48c3BhbiBjbGFzcz1cInVuYm9sZFwiPkhQOjwvc3Bhbj4ge2Ftb25Vbml0LmhwfSB7ISFhbW9uVW5pdC5hcm1vciAmJiA8PjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+fCBBcm1vcjogPC9zcGFuPnthbW9uVW5pdC5hcm1vcn08Lz59PC9saT5cbiAgICAgICAgICAgICAgICAgICAgeyEhYW1vblVuaXQuc2hpZWxkcyAmJiA8bGkgY2xhc3M9XCJ1bml0cy1zaGllbGRzXCI+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5TaGllbGRzOjwvc3Bhbj4ge2Ftb25Vbml0LnNoaWVsZHN9IHshIWFtb25Vbml0LnNoaWVsZGFybW9yICYmIDw+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj58IFNoaWVsZCBBcm1vcjogPC9zcGFuPnthbW9uVW5pdC5zaGllbGRhcm1vcn08Lz59PC9saT59XG4gICAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgIDwvdGQ+XG4gICAgICAgICk7XG4gICAgfVxuICAgIHN0YXRpYyBnZXRVbml0KG1vZGlmaWVyczogVW5pdE1vZGlmaWVycyk6IFVuaXQgfCBudWxsIHtcbiAgICAgICAgY29uc3Qgc2VsZWN0ZWRVbml0cyA9IHBsYXllclVuaXRzLmZpbHRlcigodW5pdCkgPT4gdG9rZW4odW5pdC5jb21tYW5kZXIpID09PSBtb2RpZmllcnMuY29tbWFuZGVyICYmIHRva2VuKHVuaXQuYmFzZW5hbWUpID09PSBtb2RpZmllcnMudW5pdCkgYXMgUGxheWVyVW5pdFtdO1xuICAgICAgICBjb25zdCBzZWxlY3RlZFVuaXQgPSBzZWxlY3RlZFVuaXRzWzBdO1xuICAgICAgICBpZiAoIXNlbGVjdGVkVW5pdCkge1xuICAgICAgICAgICAgcmV0dXJuIG51bGw7XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgbW9kZXM6IFJlY29yZDxzdHJpbmcsIFVuaXRNb2RlPiA9IHt9O1xuICAgICAgICBmb3IgKGNvbnN0IHNlbGVjdGVkIG9mIHNlbGVjdGVkVW5pdHMpIHtcbiAgICAgICAgICAgIGNvbnN0IG1vZGUgPSBzZWxlY3RlZC5uYW1lLnJlcGxhY2Uoc2VsZWN0ZWQuYmFzZW5hbWUsICcnKS50cmltKCkgfHwgXCJcIjtcbiAgICAgICAgICAgIGlmIChtb2Rlc1ttb2RlXSkge1xuICAgICAgICAgICAgICAgIGlmICghc2VsZWN0ZWQuYXR0cmlidXRlKSB0aHJvdyBuZXcgRXJyb3IoYGR1cGxpY2F0ZSBlbnRyeSAke3NlbGVjdGVkLm5hbWV9YCk7XG4gICAgICAgICAgICAgICAgbW9kZXNbbW9kZV0uYXR0cmlidXRlZGFtYWdlIHx8PSB7fTtcbiAgICAgICAgICAgICAgICBtb2Rlc1ttb2RlXS5hdHRyaWJ1dGVkYW1hZ2Vbc2VsZWN0ZWQuYXR0cmlidXRlXSA9IHtcbiAgICAgICAgICAgICAgICAgICAgZGFtYWdlOiBzZWxlY3RlZC5kYW1hZ2UsIGJvbnVzOiBzZWxlY3RlZC5hdHRhY2tib251cyxcbiAgICAgICAgICAgICAgICB9O1xuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICBpZiAoc2VsZWN0ZWQuYXR0cmlidXRlKSB0aHJvdyBuZXcgRXJyb3IoYGZpcnN0ICR7c2VsZWN0ZWQubmFtZX0gbXVzdCBub3QgaGF2ZSBhdHRyaWJ1dGVgKTtcblxuICAgICAgICAgICAgICAgIGNvbnN0IHVuaXRNb2RlOiBVbml0TW9kZSA9IG1vZGVzW21vZGVdID0ge1xuICAgICAgICAgICAgICAgICAgICBtb2RlTmFtZTogbW9kZSB8fCBudWxsLFxuICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLmFybW9yICE9PSBzZWxlY3RlZFVuaXQuYXJtb3IpIHVuaXRNb2RlLmFybW9yID0gc2VsZWN0ZWQuYXJtb3I7XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLnNoaWVsZGFybW9yICE9PSBzZWxlY3RlZFVuaXQuc2hpZWxkYXJtb3IpIHVuaXRNb2RlLnNoaWVsZGFybW9yID0gc2VsZWN0ZWQuc2hpZWxkYXJtb3I7XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLm1vdmVtZW50c3BlZWQgIT09IHNlbGVjdGVkVW5pdC5tb3ZlbWVudHNwZWVkKSB1bml0TW9kZS5tb3ZlbWVudHNwZWVkID0gc2VsZWN0ZWQubW92ZW1lbnRzcGVlZDtcbiAgICAgICAgICAgICAgICBpZiAoc2VsZWN0ZWQuc2lnaHRyYW5nZSAhPT0gc2VsZWN0ZWRVbml0LnNpZ2h0cmFuZ2UpIHVuaXRNb2RlLnNpZ2h0cmFuZ2UgPSBzZWxlY3RlZC5zaWdodHJhbmdlO1xuICAgICAgICAgICAgICAgIGlmIChzZWxlY3RlZC50YWdzICE9PSBzZWxlY3RlZFVuaXQudGFncykgdW5pdE1vZGUudGFncyA9IHNlbGVjdGVkLnRhZ3M7XG4gICAgICAgICAgICAgICAgdW5pdE1vZGUuYXRrcmFuZ2UgPSBzZWxlY3RlZC5hdGtyYW5nZTtcbiAgICAgICAgICAgICAgICBpZiAoc2VsZWN0ZWQuYXR0YWNrc3BlZWQpIHVuaXRNb2RlLmF0dGFja3NwZWVkID0gc2VsZWN0ZWQuYXR0YWNrc3BlZWQ7XG4gICAgICAgICAgICAgICAgaWYgKHNlbGVjdGVkLmF0dGFja3MpIHVuaXRNb2RlLmF0dGFja3MgPSBzZWxlY3RlZC5hdHRhY2tzO1xuICAgICAgICAgICAgICAgIGlmIChzZWxlY3RlZC5hb2UpIHVuaXRNb2RlLmFvZSA9IHNlbGVjdGVkLmFvZTtcbiAgICAgICAgICAgICAgICBpZiAoc2VsZWN0ZWQuZGFtYWdlKSB7XG4gICAgICAgICAgICAgICAgICAgIHVuaXRNb2RlLmF0dHJpYnV0ZWRhbWFnZSA9IHtcbiAgICAgICAgICAgICAgICAgICAgICAgICcnOiB7IGRhbWFnZTogc2VsZWN0ZWQuZGFtYWdlLCBib251czogc2VsZWN0ZWQuYXR0YWNrYm9udXMgfSxcbiAgICAgICAgICAgICAgICAgICAgfTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgdW5pdDogVW5pdCA9IHtcbiAgICAgICAgICAgIG5hbWU6IHNlbGVjdGVkVW5pdC5iYXNlbmFtZSxcbiAgICAgICAgICAgIGNvbW1hbmRlcjogc2VsZWN0ZWRVbml0LmNvbW1hbmRlcixcbiAgICAgICAgICAgIHJhY2U6IHNlbGVjdGVkVW5pdC5yYWNlLFxuICAgICAgICAgICAgbWNvc3Q6IHNlbGVjdGVkVW5pdC5tY29zdCxcbiAgICAgICAgICAgIHZjb3N0OiBzZWxlY3RlZFVuaXQudmNvc3QsXG4gICAgICAgICAgICBidWlsZHRpbWU6IHNlbGVjdGVkVW5pdC5idWlsZHRpbWUsXG4gICAgICAgICAgICBzdXBwbHk6IHNlbGVjdGVkVW5pdC5zdXBwbHksXG4gICAgICAgICAgICBocDogc2VsZWN0ZWRVbml0LmhwLFxuICAgICAgICAgICAgYmFzZUhwOiBzZWxlY3RlZFVuaXQuaHAsXG4gICAgICAgICAgICBzaGllbGRzOiBzZWxlY3RlZFVuaXQuc2hpZWxkcyxcbiAgICAgICAgICAgIGFybW9yOiBzZWxlY3RlZFVuaXQuYXJtb3IsXG4gICAgICAgICAgICBzaGllbGRhcm1vcjogc2VsZWN0ZWRVbml0LnNoaWVsZGFybW9yLFxuICAgICAgICAgICAgZW5lcmd5OiBzZWxlY3RlZFVuaXQuZW5lcmd5LFxuICAgICAgICAgICAgbW92ZW1lbnRzcGVlZDogc2VsZWN0ZWRVbml0Lm1vdmVtZW50c3BlZWQsXG4gICAgICAgICAgICBzaWdodHJhbmdlOiBzZWxlY3RlZFVuaXQuc2lnaHRyYW5nZSxcbiAgICAgICAgICAgIHRhZ3M6IHNlbGVjdGVkVW5pdC50YWdzLnNwbGl0KCcsJyksXG4gICAgICAgICAgICBtb2RlcyxcbiAgICAgICAgICAgIGhwYm9udXM6IHNlbGVjdGVkVW5pdC5ocGJvbnVzLFxuICAgICAgICAgICAgYXJtb3Jib251czogc2VsZWN0ZWRVbml0LmFybW9yYm9udXMsXG4gICAgICAgICAgICBzaGllbGRib251czogc2VsZWN0ZWRVbml0LnNoaWVsZGJvbnVzLFxuICAgICAgICAgICAgbm90ZXM6IHNlbGVjdGVkVW5pdC5ub3RlcyxcbiAgICAgICAgfVxuICAgICAgICByZXR1cm4gdW5pdDtcbiAgICB9XG4gICAgc3RhdGljIGFwcGx5VXBncmFkZShcbiAgICAgICAgdXBncmFkZToge1xuICAgICAgICAgICAgbW9kaWZpZXI6IHN0cmluZywgb3BlcmF0aW9uOiAnYWRkJyB8ICdzZXQnIHwgJ211bHRpcGx5JywgdmFsdWU6IG51bWJlcixcbiAgICAgICAgICAgIG9wZXJhdGlvbnR5cGU/OiBzdHJpbmcgfCBudWxsLFxuICAgICAgICAgICAgbW9kaWZpZXJtb2RlPzogc3RyaW5nIHwgbnVsbCxcbiAgICAgICAgICAgIG1vZGlmaWVydGFnPzogc3RyaW5nIHwgbnVsbCxcbiAgICAgICAgICAgIGV4dHJhPzogc3RyaW5nIHwgbnVsbCxcbiAgICAgICAgfSB8IHtcbiAgICAgICAgICAgIG1vZGlmaWVyOiAnYW9lJywgb3BlcmF0aW9uOiAncmVwbGFjZScsIHZhbHVlOiBzdHJpbmcsXG4gICAgICAgICAgICBtb2RpZmllcm1vZGU/OiBzdHJpbmcgfCBudWxsLFxuICAgICAgICB9IHwge1xuICAgICAgICAgICAgbW9kaWZpZXI6IG51bGwsIG9wZXJhdGlvbjogJ25vbmUnLCB2YWx1ZTogbnVsbCxcbiAgICAgICAgfSxcbiAgICAgICAgdW5pdDogVW5pdCxcbiAgICAgICAgbGV2ZWw/OiBudW1iZXIsXG4gICAgKSB7XG4gICAgICAgIGlmICh1cGdyYWRlLm9wZXJhdGlvbiA9PT0gJ25vbmUnKSByZXR1cm47XG4gICAgICAgIGlmICh1cGdyYWRlLm9wZXJhdGlvbiA9PT0gJ3JlcGxhY2UnKSB7XG4gICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgIGlmICghdXBncmFkZS5tb2RpZmllcm1vZGUgfHwgbW9kZS5tb2RlTmFtZSA9PT0gdXBncmFkZS5tb2RpZmllcm1vZGUpIHtcbiAgICAgICAgICAgICAgICAgICAgbW9kZS5hb2UgPSB1cGdyYWRlLnZhbHVlO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIHJldHVybjtcbiAgICAgICAgfVxuICAgICAgICBzd2l0Y2ggKHVwZ3JhZGUubW9kaWZpZXIpIHtcbiAgICAgICAgICAgIGNhc2UgJ21pbmVyYWxDb3N0JzpcbiAgICAgICAgICAgICAgICB1bml0Lm1jb3N0ID0gdGhpcy5hcHBseU1vZGlmaWVyKHVuaXQubWNvc3QsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ3Zlc3BlbmVDb3N0JzpcbiAgICAgICAgICAgICAgICB1bml0LnZjb3N0ID0gdGhpcy5hcHBseU1vZGlmaWVyKHVuaXQudmNvc3QsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ3RpbWUnOlxuICAgICAgICAgICAgICAgIHVuaXQuYnVpbGR0aW1lID0gdGhpcy5hcHBseU1vZGlmaWVyKHVuaXQuYnVpbGR0aW1lLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICdzdXBwbHknOlxuICAgICAgICAgICAgICAgIHVuaXQuc3VwcGx5ID0gdGhpcy5hcHBseU1vZGlmaWVyKHVuaXQuc3VwcGx5LCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICdIUCc6XG4gICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUub3BlcmF0aW9uID09PSAnbXVsdGlwbHknICYmIHVwZ3JhZGUuZXh0cmEgPT0gbnVsbCkge1xuICAgICAgICAgICAgICAgICAgICB1bml0LmhwICs9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LmJhc2VIcCwgdXBncmFkZSwgbGV2ZWwpIC0gdW5pdC5iYXNlSHA7XG4gICAgICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgdW5pdC5ocCA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LmhwLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnU2hpZWxkcyc6XG4gICAgICAgICAgICAgICAgdW5pdC5zaGllbGRzID0gdGhpcy5hcHBseU1vZGlmaWVyKHVuaXQuc2hpZWxkcywgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnQXJtb3InOlxuICAgICAgICAgICAgICAgIGlmICghdXBncmFkZS5tb2RpZmllcm1vZGUpIHtcbiAgICAgICAgICAgICAgICAgICAgdW5pdC5hcm1vciA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LmFybW9yLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGZvciAoY29uc3QgbW9kZSBvZiBPYmplY3QudmFsdWVzKHVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm1vZGlmaWVybW9kZSA/IG1vZGUubW9kZU5hbWUgPT09IHVwZ3JhZGUubW9kaWZpZXJtb2RlIDogbW9kZS5hcm1vciAhPT0gdW5kZWZpbmVkKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBtb2RlLmFybW9yID0gdGhpcy5hcHBseU1vZGlmaWVyKG1vZGUuYXJtb3IgPz8gdW5pdC5hcm1vciwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnU2hpZWxkX0FybW9yJzpcbiAgICAgICAgICAgICAgICBpZiAoIXVwZ3JhZGUubW9kaWZpZXJtb2RlKSB7XG4gICAgICAgICAgICAgICAgICAgIHVuaXQuc2hpZWxkYXJtb3IgPSB0aGlzLmFwcGx5TW9kaWZpZXIodW5pdC5zaGllbGRhcm1vciwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcm1vZGUgPyBtb2RlLm1vZGVOYW1lID09PSB1cGdyYWRlLm1vZGlmaWVybW9kZSA6IG1vZGUuc2hpZWxkYXJtb3IgIT09IHVuZGVmaW5lZCkge1xuICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5zaGllbGRhcm1vciA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLnNoaWVsZGFybW9yID8/IHVuaXQuc2hpZWxkYXJtb3IsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ01vdmVfU3BlZWQnOlxuICAgICAgICAgICAgICAgIGlmICghdXBncmFkZS5tb2RpZmllcm1vZGUpIHtcbiAgICAgICAgICAgICAgICAgICAgdW5pdC5tb3ZlbWVudHNwZWVkID0gdGhpcy5hcHBseU1vZGlmaWVyKHVuaXQubW92ZW1lbnRzcGVlZCwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcm1vZGUgPyBtb2RlLm1vZGVOYW1lID09PSB1cGdyYWRlLm1vZGlmaWVybW9kZSA6IG1vZGUubW92ZW1lbnRzcGVlZCAhPT0gdW5kZWZpbmVkKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBtb2RlLm1vdmVtZW50c3BlZWQgPSB0aGlzLmFwcGx5TW9kaWZpZXIobW9kZS5tb3ZlbWVudHNwZWVkID8/IHVuaXQubW92ZW1lbnRzcGVlZCwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnVmlzaW9uJzpcbiAgICAgICAgICAgICAgICBpZiAoIXVwZ3JhZGUubW9kaWZpZXJtb2RlKSB7XG4gICAgICAgICAgICAgICAgICAgIHVuaXQuc2lnaHRyYW5nZSA9IHRoaXMuYXBwbHlNb2RpZmllcih1bml0LnNpZ2h0cmFuZ2UsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUubW9kaWZpZXJtb2RlID8gbW9kZS5tb2RlTmFtZSA9PT0gdXBncmFkZS5tb2RpZmllcm1vZGUgOiBtb2RlLnNpZ2h0cmFuZ2UgIT09IHVuZGVmaW5lZCkge1xuICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5zaWdodHJhbmdlID0gdGhpcy5hcHBseU1vZGlmaWVyKG1vZGUuc2lnaHRyYW5nZSA/PyB1bml0LnNpZ2h0cmFuZ2UsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ2RhbWFnZSc6XG4gICAgICAgICAgICAgICAgZm9yIChjb25zdCBtb2RlIG9mIE9iamVjdC52YWx1ZXModW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGUubW9kaWZpZXJtb2RlID8gbW9kZS5tb2RlTmFtZSA9PT0gdXBncmFkZS5tb2RpZmllcm1vZGUgOiB0cnVlKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcnRhZykge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuYXR0cmlidXRlZGFtYWdlIVt1cGdyYWRlLm1vZGlmaWVydGFnXSB8fD0ge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAuLi5tb2RlLmF0dHJpYnV0ZWRhbWFnZSFbJyddISxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9O1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuYXR0cmlidXRlZGFtYWdlIVt1cGdyYWRlLm1vZGlmaWVydGFnXSEuZGFtYWdlID0gdGhpcy5hcHBseU1vZGlmaWVyKG1vZGUuYXR0cmlidXRlZGFtYWdlIVt1cGdyYWRlLm1vZGlmaWVydGFnXSEuZGFtYWdlLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvciAoY29uc3QgZGFtYWdlIG9mIE9iamVjdC52YWx1ZXMobW9kZS5hdHRyaWJ1dGVkYW1hZ2UgfHw9IHsgJyc6IHsgZGFtYWdlOiAwLCBib251czogMCB9IH0pKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRhbWFnZS5kYW1hZ2UgPSB0aGlzLmFwcGx5TW9kaWZpZXIoZGFtYWdlLmRhbWFnZSwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgIGNhc2UgJ2F0dGFja2JvbnVzJzpcbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcm1vZGUgPyBtb2RlLm1vZGVOYW1lID09PSB1cGdyYWRlLm1vZGlmaWVybW9kZSA6IHRydWUpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm1vZGlmaWVydGFnKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5hdHRyaWJ1dGVkYW1hZ2UhW3VwZ3JhZGUubW9kaWZpZXJ0YWddIHx8PSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC4uLm1vZGUuYXR0cmlidXRlZGFtYWdlIVsnJ10hLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5hdHRyaWJ1dGVkYW1hZ2UhW3VwZ3JhZGUubW9kaWZpZXJ0YWddIS5ib251cyA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLmF0dHJpYnV0ZWRhbWFnZSFbdXBncmFkZS5tb2RpZmllcnRhZ10hLmJvbnVzLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvciAoY29uc3QgZGFtYWdlIG9mIE9iamVjdC52YWx1ZXMobW9kZS5hdHRyaWJ1dGVkYW1hZ2UgfHw9IHsgJyc6IHsgZGFtYWdlOiAwLCBib251czogMCB9IH0pKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRhbWFnZS5ib251cyA9IHRoaXMuYXBwbHlNb2RpZmllcihkYW1hZ2UuYm9udXMsIHVwZ3JhZGUsIGxldmVsKTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICdIaXRzJzpcbiAgICAgICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1bml0Lm1vZGVzKSkge1xuICAgICAgICAgICAgICAgICAgICBpZiAodXBncmFkZS5tb2RpZmllcm1vZGUgPyBtb2RlLm1vZGVOYW1lID09PSB1cGdyYWRlLm1vZGlmaWVybW9kZSA6IHRydWUpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIG1vZGUuYXR0YWNrcyA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLmF0dGFja3MhLCB1cGdyYWRlLCBsZXZlbCk7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICBjYXNlICdBdHRhY2tfU3BlZWQnOlxuICAgICAgICAgICAgICAgIGZvciAoY29uc3QgbW9kZSBvZiBPYmplY3QudmFsdWVzKHVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm1vZGlmaWVybW9kZSA/IG1vZGUubW9kZU5hbWUgPT09IHVwZ3JhZGUubW9kaWZpZXJtb2RlIDogdHJ1ZSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5hdHRhY2tzcGVlZCA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLmF0dGFja3NwZWVkISwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgY2FzZSAnUmFuZ2UnOlxuICAgICAgICAgICAgICAgIGZvciAoY29uc3QgbW9kZSBvZiBPYmplY3QudmFsdWVzKHVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm1vZGlmaWVybW9kZSA/IG1vZGUubW9kZU5hbWUgPT09IHVwZ3JhZGUubW9kaWZpZXJtb2RlIDogdHJ1ZSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgbW9kZS5hdGtyYW5nZSA9IHRoaXMuYXBwbHlNb2RpZmllcihtb2RlLmF0a3JhbmdlISwgdXBncmFkZSwgbGV2ZWwpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICB9XG4gICAgfVxuICAgIHN0YXRpYyBnZXRVcGdyYWRlZFVuaXQodW5pdDogVW5pdCwgbW9kaWZpZXJzOiBVbml0TW9kaWZpZXJzKSB7XG4gICAgICAgIGNvbnN0IHVwZ3JhZGVkVW5pdCA9IEpTT04ucGFyc2UoSlNPTi5zdHJpbmdpZnkodW5pdCkpIGFzIFVuaXQ7XG5cbiAgICAgICAgLy8gcHJldXBncmFkZSAtPiBtYXN0ZXJ5IC0+IHByZXN0aWdlIC0+IGdlbmVyaWMgdXBncmFkZSAtPiB1cGdyYWRlIC0+IHBvc3QtcHJlc3RpZ2VcblxuICAgICAgICBjb25zdCBtZXRhVXBncmFkZXM6IHsgW3VwZ3JhZGU6IHN0cmluZ106IFtQbGF5ZXJUYWxlbnQsIGxldmVsOiBudW1iZXIgfCBudWxsXVtdIH0gPSB7fTtcblxuICAgICAgICBpZiAodW5pdC5uYW1lID09PSAnU2t5IEZ1cnknKSB7XG4gICAgICAgICAgICBkZWxldGUgdXBncmFkZWRVbml0Lm1vZGVzWycoRmlnaHRlciBNb2RlKSddIS5hdHRyaWJ1dGVkYW1hZ2UhWydBcm1vcmVkJ107XG4gICAgICAgICAgICB1cGdyYWRlZFVuaXQubW9kZXNbJyhGaWdodGVyIE1vZGUpJ10hLmF0dHJpYnV0ZWRhbWFnZSFbJyddIS5kYW1hZ2UgPSAyMTtcbiAgICAgICAgfVxuICAgICAgICBmb3IgKGNvbnN0IHVwZ3JhZGUgb2YgcGxheWVyVXBncmFkZXMgYXMgUGxheWVyVXBncmFkZVtdKSB7XG4gICAgICAgICAgICBpZiAoIW1vZGlmaWVycy51cGdyYWRlc1t1cGdyYWRlLm5hbWVdKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMudW5pdCAhPT0gdG9rZW4odXBncmFkZS51bml0KSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLmNvbW1hbmRlciAhPT0gdG9rZW4odXBncmFkZS5jb21tYW5kZXIpKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmICh1cGdyYWRlLnVwZ3JhZGV0eXBlICE9PSAncHJldXBncmFkZScpIGNvbnRpbnVlO1xuXG4gICAgICAgICAgICB0aGlzLmFwcGx5VXBncmFkZSh1cGdyYWRlLCB1cGdyYWRlZFVuaXQpO1xuICAgICAgICB9XG4gICAgICAgIGZvciAoY29uc3QgdGFsZW50IG9mIHBsYXllclRhbGVudHMgYXMgUGxheWVyVGFsZW50W10pIHtcbiAgICAgICAgICAgIGlmICh0YWxlbnQudGFsZW50dHlwZSAhPT0gJ21hc3RlcnknKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMudW5pdCAhPT0gdG9rZW4odGFsZW50LnVuaXQpKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMuY29tbWFuZGVyICE9PSB0b2tlbih0YWxlbnQuY29tbWFuZGVyKSkgY29udGludWU7XG4gICAgICAgICAgICBjb25zdCBsZXZlbCA9IG1vZGlmaWVycy5tYXN0ZXJpZXNbdGFsZW50Lm5hbWVdO1xuICAgICAgICAgICAgaWYgKCFsZXZlbCkgY29udGludWU7XG4gICAgICAgICAgICBpZiAodGFsZW50Lm1vZGlmaWVydXBncmFkZSkge1xuICAgICAgICAgICAgICAgIGlmICghbW9kaWZpZXJzLnVwZ3JhZGVzW3RhbGVudC5tb2RpZmllcnVwZ3JhZGVdKSBjb250aW51ZTtcbiAgICAgICAgICAgICAgICAobWV0YVVwZ3JhZGVzW3RhbGVudC5tb2RpZmllcnVwZ3JhZGVdIHx8PSBbXSkucHVzaChbdGFsZW50LCBsZXZlbF0pO1xuICAgICAgICAgICAgICAgIGNvbnRpbnVlO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICB0aGlzLmFwcGx5VXBncmFkZSh0YWxlbnQsIHVwZ3JhZGVkVW5pdCwgbGV2ZWwpO1xuICAgICAgICB9XG4gICAgICAgIGZvciAoY29uc3QgdGFsZW50IG9mIHBsYXllclRhbGVudHMgYXMgUGxheWVyVGFsZW50W10pIHtcbiAgICAgICAgICAgIGlmICh0YWxlbnQudGFsZW50dHlwZSAhPT0gJ3ByZXN0aWdlJykgY29udGludWU7XG4gICAgICAgICAgICBpZiAoIW1vZGlmaWVycy5wcmVzdGlnZXNbdGFsZW50Lm5hbWVdKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMudW5pdCAhPT0gdG9rZW4odGFsZW50LnVuaXQpKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMuY29tbWFuZGVyICE9PSB0b2tlbih0YWxlbnQuY29tbWFuZGVyKSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAodGFsZW50Lm1vZGlmaWVydXBncmFkZSkge1xuICAgICAgICAgICAgICAgIGlmICghbW9kaWZpZXJzLnVwZ3JhZGVzW3RhbGVudC5tb2RpZmllcnVwZ3JhZGVdKSBjb250aW51ZTtcbiAgICAgICAgICAgICAgICAobWV0YVVwZ3JhZGVzW3RhbGVudC5tb2RpZmllcnVwZ3JhZGVdIHx8PSBbXSkucHVzaChbdGFsZW50LCBudWxsXSk7XG4gICAgICAgICAgICAgICAgY29udGludWU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIHRoaXMuYXBwbHlVcGdyYWRlKHRhbGVudCwgdXBncmFkZWRVbml0KTtcbiAgICAgICAgfVxuXG4gICAgICAgIGNvbnN0IGxldmVscyA9IG1vZGlmaWVycy51cGdyYWRlTGV2ZWxzO1xuICAgICAgICBjb25zdCB3ZWFwb25VcGdyYWRlcyA9IGxldmVscy53ZWFwb24gPz8gbGV2ZWxzLnJhbmsgPz8gbGV2ZWxzLmFydGlmYWN0cztcbiAgICAgICAgaWYgKHdlYXBvblVwZ3JhZGVzKSB7XG4gICAgICAgICAgICBmb3IgKGNvbnN0IG1vZGUgb2YgT2JqZWN0LnZhbHVlcyh1cGdyYWRlZFVuaXQubW9kZXMpKSB7XG4gICAgICAgICAgICAgICAgZm9yIChjb25zdCBhdHRhY2sgb2YgT2JqZWN0LnZhbHVlcyhtb2RlLmF0dHJpYnV0ZWRhbWFnZSB8fCB7fSkpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKGxldmVscy5yYW5rKSBhdHRhY2suYm9udXMgfHw9IGF0dGFjay5kYW1hZ2UgKiAwLjI1O1xuICAgICAgICAgICAgICAgICAgICBhdHRhY2suZGFtYWdlICs9IHdlYXBvblVwZ3JhZGVzICogYXR0YWNrLmJvbnVzO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBjb25zdCBhcm1vclVwZ3JhZGVzID0gbGV2ZWxzLmFybW9yID8/IGxldmVscy5yYW5rID8/IGxldmVscy5hcnRpZmFjdHM7XG4gICAgICAgIGlmIChhcm1vclVwZ3JhZGVzKSB7XG4gICAgICAgICAgICB1cGdyYWRlZFVuaXQuYXJtb3IgKz0gYXJtb3JVcGdyYWRlcyAqIHVwZ3JhZGVkVW5pdC5hcm1vcmJvbnVzO1xuICAgICAgICAgICAgdXBncmFkZWRVbml0LmhwICs9IGFybW9yVXBncmFkZXMgKiB1cGdyYWRlZFVuaXQuaHBib251cztcbiAgICAgICAgICAgIGZvciAoY29uc3QgbW9kZSBvZiBPYmplY3QudmFsdWVzKHVwZ3JhZGVkVW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICBpZiAobW9kZS5hcm1vciAhPT0gdW5kZWZpbmVkKSB7XG4gICAgICAgICAgICAgICAgICAgIG1vZGUuYXJtb3IgKz0gYXJtb3JVcGdyYWRlcyAqIHVwZ3JhZGVkVW5pdC5hcm1vcmJvbnVzO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBjb25zdCBzaGllbGRVcGdyYWRlcyA9IGxldmVscy5zaGllbGRzID8/IGxldmVscy5yYW5rID8/IGxldmVscy5hcnRpZmFjdHM7XG4gICAgICAgIGlmIChzaGllbGRVcGdyYWRlcykge1xuICAgICAgICAgICAgdXBncmFkZWRVbml0LnNoaWVsZGFybW9yICs9IHNoaWVsZFVwZ3JhZGVzICogdXBncmFkZWRVbml0LnNoaWVsZGJvbnVzITtcbiAgICAgICAgICAgIGZvciAoY29uc3QgbW9kZSBvZiBPYmplY3QudmFsdWVzKHVwZ3JhZGVkVW5pdC5tb2RlcykpIHtcbiAgICAgICAgICAgICAgICBpZiAobW9kZS5zaGllbGRhcm1vciAhPT0gdW5kZWZpbmVkKSB7XG4gICAgICAgICAgICAgICAgICAgIG1vZGUuc2hpZWxkYXJtb3IgKz0gc2hpZWxkVXBncmFkZXMgKiB1cGdyYWRlZFVuaXQuc2hpZWxkYm9udXMhO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBpZiAobGV2ZWxzLmFydGlmYWN0cykge1xuICAgICAgICAgICAgaWYgKHRva2VuKHVuaXQubmFtZSkgPT09ICd6ZXJhdHVsJykge1xuICAgICAgICAgICAgICAgIHVwZ3JhZGVkVW5pdC5zaGllbGRzICs9IGxldmVscy5hcnRpZmFjdHMgKiA1MDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGlmIChbJ3RlbGJydXMnLCAnem9yYXlhJywgJ3NlcmRhdGgnXS5pbmNsdWRlcyh0b2tlbih1bml0Lm5hbWUpKSkge1xuICAgICAgICAgICAgICAgIHVwZ3JhZGVkVW5pdC5zaGllbGRzICs9IGxldmVscy5hcnRpZmFjdHMgKiAxMDA7XG4gICAgICAgICAgICAgICAgaWYgKHVwZ3JhZGVkVW5pdC5lbmVyZ3kpIHVwZ3JhZGVkVW5pdC5lbmVyZ3kgKz0gbGV2ZWxzLmFydGlmYWN0cyAqIDEwMDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgIGZvciAobGV0IHVwZ3JhZGUgb2YgcGxheWVyVXBncmFkZXMgYXMgUGxheWVyVXBncmFkZVtdKSB7XG4gICAgICAgICAgICBpZiAoIW1vZGlmaWVycy51cGdyYWRlc1t1cGdyYWRlLm5hbWVdKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMudW5pdCAhPT0gdG9rZW4odXBncmFkZS51bml0KSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAobW9kaWZpZXJzLmNvbW1hbmRlciAhPT0gdG9rZW4odXBncmFkZS5jb21tYW5kZXIpKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmICh1cGdyYWRlLnVwZ3JhZGV0eXBlICE9PSAndXBncmFkZScpIGNvbnRpbnVlO1xuXG4gICAgICAgICAgICBpZiAodXBncmFkZS5vcGVyYXRpb24gIT09ICdyZXBsYWNlJyAmJiB1cGdyYWRlLm9wZXJhdGlvbiAhPT0gJ25vbmUnICYmIG1ldGFVcGdyYWRlc1t1cGdyYWRlLm5hbWVdKSB7XG4gICAgICAgICAgICAgICAgdXBncmFkZSA9IHsgLi4udXBncmFkZSB9O1xuICAgICAgICAgICAgICAgIGZvciAoY29uc3QgW21ldGFVcGdyYWRlLCBsZXZlbF0gb2YgbWV0YVVwZ3JhZGVzW3VwZ3JhZGUubmFtZV0hKSB7XG4gICAgICAgICAgICAgICAgICAgIGlmICh1cGdyYWRlLm1vZGlmaWVyICE9PSBtZXRhVXBncmFkZS5tb2RpZmllcikgY29udGludWU7XG4gICAgICAgICAgICAgICAgICAgIHVwZ3JhZGUudmFsdWUgPSB0aGlzLmFwcGx5TW9kaWZpZXIodXBncmFkZS52YWx1ZSwgbWV0YVVwZ3JhZGUsIGxldmVsLCBmYWxzZSk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgdGhpcy5hcHBseVVwZ3JhZGUodXBncmFkZSwgdXBncmFkZWRVbml0KTtcbiAgICAgICAgfVxuICAgICAgICBmb3IgKGNvbnN0IHRhbGVudCBvZiBwbGF5ZXJUYWxlbnRzIGFzIFBsYXllclRhbGVudFtdKSB7XG4gICAgICAgICAgICBpZiAodGFsZW50LnRhbGVudHR5cGUgIT09ICdwb3N0JykgY29udGludWU7XG4gICAgICAgICAgICBpZiAoIW1vZGlmaWVycy5wcmVzdGlnZXNbdGFsZW50Lm5hbWVdKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMudW5pdCAhPT0gdG9rZW4odGFsZW50LnVuaXQpKSBjb250aW51ZTtcbiAgICAgICAgICAgIGlmIChtb2RpZmllcnMuY29tbWFuZGVyICE9PSB0b2tlbih0YWxlbnQuY29tbWFuZGVyKSkgY29udGludWU7XG4gICAgICAgICAgICBpZiAodGFsZW50Lm1vZGlmaWVydXBncmFkZSAmJiAhbW9kaWZpZXJzLnVwZ3JhZGVzW3RhbGVudC5tb2RpZmllcnVwZ3JhZGVdKSBjb250aW51ZTtcblxuICAgICAgICAgICAgdGhpcy5hcHBseVVwZ3JhZGUodGFsZW50LCB1cGdyYWRlZFVuaXQpO1xuICAgICAgICB9XG4gICAgICAgIGlmIChtb2RpZmllcnMudXBncmFkZXNbJ1JlZGxpbmUgUG93ZXIgQ2VsbHMnXSkge1xuICAgICAgICAgICAgdXBncmFkZWRVbml0Lm1vZGVzWycnXSEuYXR0cmlidXRlZGFtYWdlIVsnJ10hLmRhbWFnZSArPSA2MDtcbiAgICAgICAgfVxuICAgICAgICBpZiAobW9kaWZpZXJzLnVuaXQgPT09ICdtdXRhbGlzaycgJiYgWydhYmF0aHVyJywgJ2tlcnJpZ2FuJ10uaW5jbHVkZXMobW9kaWZpZXJzLmNvbW1hbmRlcikgJiZcbiAgICAgICAgICAgIChsZXZlbHMud2VhcG9uIHx8IG1vZGlmaWVycy51cGdyYWRlc1snVmljaW91cyBHbGF2ZSddIHx8IG1vZGlmaWVycy51cGdyYWRlc1snU2V2ZXJpbmcgR2xhdmUnXSB8fCBtb2RpZmllcnMudXBncmFkZXNbJ1N1bmRlcmluZyBHbGF2ZSddKSkge1xuICAgICAgICAgICAgLy8gQm90aCBib3VuY2UgdXBncmFkZXMgcmVwbGFjZSBBb0UgdGV4dC4gQ29tcG9zZSB0aGVtIGhlcmUsIGFmdGVyIHRoZVxuICAgICAgICAgICAgLy8gZ2VuZXJpYyByZXBsYWNlbWVudHMsIHNvIG5laXRoZXIgdXBncmFkZSBjYW4gZXJhc2UgdGhlIG90aGVyJ3MgZWZmZWN0LlxuICAgICAgICAgICAgY29uc3QgdmljaW91cyA9IG1vZGlmaWVycy51cGdyYWRlc1snVmljaW91cyBHbGF2ZSddO1xuICAgICAgICAgICAgY29uc3Qgc2V2ZXJpbmcgPSBtb2RpZmllcnMuY29tbWFuZGVyID09PSAna2VycmlnYW4nICYmIG1vZGlmaWVycy51cGdyYWRlc1snU2V2ZXJpbmcgR2xhdmUnXTtcbiAgICAgICAgICAgIGNvbnN0IGJvdW5jZUNvdW50ID0gdmljaW91cyA/IDUgOiAyO1xuICAgICAgICAgICAgY29uc3QgcmFkaXVzID0gdmljaW91cyA/IChtb2RpZmllcnMuY29tbWFuZGVyID09PSAna2VycmlnYW4nID8gNiA6IDQpIDogMztcbiAgICAgICAgICAgIGNvbnN0IGJhc2VEYW1hZ2UgPSBzZXZlcmluZyA/IFs5LCA5LCA5LCA5LCA5XSA6IFs1LCAzLCAzLCAxLCAxXTtcbiAgICAgICAgICAgIGNvbnN0IGRhbWFnZSA9IGJhc2VEYW1hZ2Uuc2xpY2UoMCwgYm91bmNlQ291bnQpLm1hcCgoYW1vdW50LCBpbmRleCkgPT5cbiAgICAgICAgICAgICAgICBOdW1iZXIoKGFtb3VudCArIChsZXZlbHMud2VhcG9uIHx8IDApICogKFswLjMzMywgMC4xMTFdW2luZGV4XSB8fCAwKSkudG9GaXhlZCgzKSlcbiAgICAgICAgICAgICk7XG4gICAgICAgICAgICBsZXQgYW9lID0gYEJvdW5jZXMgdG8gdXAgdG8gJHtib3VuY2VDb3VudH0gYWRkaXRpb25hbCBlbmVtaWVzLCB3aXRoaW4gcmFkaXVzICR7cmFkaXVzfSBvZiB0aGUgcHJldmlvdXMgdGFyZ2V0LiBCb3VuY2UgZGFtYWdlOiAke2RhbWFnZS5qb2luKCcsICcpfS5gO1xuICAgICAgICAgICAgaWYgKG1vZGlmaWVycy5jb21tYW5kZXIgPT09ICdhYmF0aHVyJyAmJiBtb2RpZmllcnMudXBncmFkZXNbJ1N1bmRlcmluZyBHbGF2ZSddKSB7XG4gICAgICAgICAgICAgICAgYW9lICs9ICcgQm91bmNlcyBkZWFsIGRvdWJsZSBkYW1hZ2UgdnMuIEFybW9yZWQuJztcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIHVwZ3JhZGVkVW5pdC5tb2Rlc1snJ10hLmFvZSA9IGFvZTtcbiAgICAgICAgfVxuXG4gICAgICAgIHJldHVybiB1cGdyYWRlZFVuaXQ7XG4gICAgfVxuICAgIHN0YXRpYyBtb2RpZmllcnMoY29tbWFuZGVyOiBUb2tlbiwgc2VsZWN0ZWRVbml0OiBUb2tlbik6IFVuaXRNb2RpZmllcnMge1xuICAgICAgICBjb25zdCB1cGdyYWRlc0xpc3QgPSBwbGF5ZXJVcGdyYWRlcy5maWx0ZXIoKHUpID0+IHRva2VuKHUuY29tbWFuZGVyKSA9PT0gY29tbWFuZGVyICYmIHRva2VuKHUudW5pdCkgPT09IHNlbGVjdGVkVW5pdCk7XG4gICAgICAgIGNvbnN0IHRhbGVudHNMaXN0ID0gcGxheWVyVGFsZW50cy5maWx0ZXIoKHUpID0+IHRva2VuKHUuY29tbWFuZGVyKSA9PT0gY29tbWFuZGVyICYmIHRva2VuKHUudW5pdCkgPT09IHNlbGVjdGVkVW5pdCk7XG5cbiAgICAgICAgY29uc3QgdXBncmFkZXM6IFVuaXRNb2RpZmllcnNbJ3VwZ3JhZGVzJ10gPSB7fTtcbiAgICAgICAgY29uc3QgbWFzdGVyaWVzOiBVbml0TW9kaWZpZXJzWydtYXN0ZXJpZXMnXSA9IHt9O1xuICAgICAgICBjb25zdCBwcmVzdGlnZXM6IFVuaXRNb2RpZmllcnNbJ3ByZXN0aWdlcyddID0ge307XG4gICAgICAgIGxldCB1cGdyYWRlTGV2ZWxzOiBVbml0TW9kaWZpZXJzWyd1cGdyYWRlTGV2ZWxzJ10gPSB7fTtcbiAgICAgICAgZm9yIChjb25zdCB1cGdyYWRlIG9mIHVwZ3JhZGVzTGlzdCkge1xuICAgICAgICAgICAgdXBncmFkZXNbdXBncmFkZS5uYW1lXSA9IGZhbHNlO1xuICAgICAgICB9XG4gICAgICAgIGZvciAoY29uc3QgdGFsZW50IG9mIHRhbGVudHNMaXN0KSB7XG4gICAgICAgICAgICBpZiAodGFsZW50LnRhbGVudHR5cGUgPT09ICdtYXN0ZXJ5Jykge1xuICAgICAgICAgICAgICAgIG1hc3Rlcmllc1t0YWxlbnQubmFtZV0gPSAwO1xuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICBwcmVzdGlnZXNbdGFsZW50Lm5hbWVdID0gZmFsc2U7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICBjb25zdCB1bml0ID0gcGxheWVyVW5pdHMuZmluZCgodSkgPT4gdG9rZW4odS5jb21tYW5kZXIpID09PSBjb21tYW5kZXIgJiYgdG9rZW4odS5iYXNlbmFtZSkgPT09IHNlbGVjdGVkVW5pdCk7XG4gICAgICAgIGlmICh1bml0Py5hcm1vcmJvbnVzIHx8IHVuaXQ/LmhwYm9udXMpIHtcbiAgICAgICAgICAgIHVwZ3JhZGVMZXZlbHMuYXJtb3IgPSAwO1xuICAgICAgICB9XG4gICAgICAgIGlmICh1bml0Py5zaGllbGRib251cykge1xuICAgICAgICAgICAgdXBncmFkZUxldmVscy5zaGllbGRzID0gMDtcbiAgICAgICAgfVxuICAgICAgICBpZiAodW5pdD8uYXR0YWNrYm9udXMpIHtcbiAgICAgICAgICAgIHVwZ3JhZGVMZXZlbHMud2VhcG9uID0gMDtcbiAgICAgICAgfVxuICAgICAgICBpZiAoY29tbWFuZGVyID09PSAnemVyYXR1bCcpIHtcbiAgICAgICAgICAgIGlmIChPYmplY3Qua2V5cyh1cGdyYWRlTGV2ZWxzKS5sZW5ndGgpIHVwZ3JhZGVMZXZlbHMgPSB7IGFydGlmYWN0czogMCB9O1xuICAgICAgICB9XG4gICAgICAgIGlmIChjb21tYW5kZXIgPT09ICdtZW5nc2snKSB7XG4gICAgICAgICAgICBjb25zdCBSRyA9IFsnYWVnaXNndWFyZCcsICdibGFja2hhbW1lcicsICdlbXBlcm9yc3NoYWRvdycsICdwcmlkZW9mYXVndXN0Z3JhZCcsICdzaG9ja2RpdmlzaW9uJywgJ3NreWZ1cnknXTtcbiAgICAgICAgICAgIGlmIChSRy5pbmNsdWRlcyhzZWxlY3RlZFVuaXQpKSB1cGdyYWRlTGV2ZWxzID0geyByYW5rOiAwIH07XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIHsgY29tbWFuZGVyLCB1bml0OiBzZWxlY3RlZFVuaXQsIHVwZ3JhZGVzLCB1cGdyYWRlTGV2ZWxzLCBtYXN0ZXJpZXMsIHByZXN0aWdlcyB9O1xuICAgIH1cbiAgICByZW5kZXJTa2lsbHMoKTogcHJlYWN0LkNvbXBvbmVudENoaWxkcmVuIHtcbiAgICAgICAgY29uc3QgeyBjb21tYW5kZXIsIHVuaXQgfSA9IHRoaXMucHJvcHMubW9kaWZpZXJzITtcbiAgICAgICAgY29uc3Qgc2tpbGxzID0gWy4uLnVuaXRTa2lsbHNdLmZpbHRlcigoWywgc2tpbGxdKSA9PiB0b2tlbihza2lsbC5jb21tYW5kZXIpID09PSBjb21tYW5kZXIgJiYgdG9rZW4oc2tpbGwudW5pdCkgPT09IHVuaXQpO1xuICAgICAgICBpZiAoIXNraWxscy5sZW5ndGgpIHJldHVybiBudWxsO1xuICAgICAgICBjb25zdCByYWNlID0gdG9rZW4oVW5pdFN0YXRzLmdldFVuaXQodGhpcy5wcm9wcy5tb2RpZmllcnMhKSEucmFjZSk7XG4gICAgICAgIGNvbnN0IGdyb3VwcyA9IFtcbiAgICAgICAgICAgIHsgdGl0bGU6ICdTa2lsbHMnLCBza2lsbHM6IHNraWxscy5maWx0ZXIoKFssIHNraWxsXSkgPT4gc2tpbGwudHlwZSAhPT0gJ3Bhc3NpdmUnKSB9LFxuICAgICAgICAgICAgeyB0aXRsZTogJ1Bhc3NpdmVzJywgc2tpbGxzOiBza2lsbHMuZmlsdGVyKChbLCBza2lsbF0pID0+IHNraWxsLnR5cGUgPT09ICdwYXNzaXZlJykgfSxcbiAgICAgICAgXS5maWx0ZXIoZ3JvdXAgPT4gZ3JvdXAuc2tpbGxzLmxlbmd0aCk7XG4gICAgICAgIHJldHVybiBncm91cHMubWFwKGdyb3VwID0+IDxwcmVhY3QuRnJhZ21lbnQga2V5PXtncm91cC50aXRsZX0+XG4gICAgICAgICAgICA8cCBjbGFzcz1cInVuaXRzLWhlYWRcIj57Z3JvdXAudGl0bGV9PC9wPlxuICAgICAgICAgICAgPHVsIGNsYXNzPVwidW5pdHMtbW9kZS1zdGF0cyB1bml0cy1za2lsbHNcIj5cbiAgICAgICAgICAgICAgICB7Z3JvdXAuc2tpbGxzLm1hcCgoW2tleSwgc2tpbGxdKSA9PiB7XG4gICAgICAgICAgICAgICAgICAgIGNvbnN0IGNvc3RzID0gc2tpbGxDb3N0cyhza2lsbCwgcmFjZSk7XG4gICAgICAgICAgICAgICAgICAgIHJldHVybiA8bGkga2V5PXtrZXl9PlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9XCJ1bml0cy1za2lsbFwiIGRhdGEtdG9vbHRpcD17a2V5fSBkYXRhLXJhY2U9e3JhY2V9IHRhYkluZGV4PXswfT5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz1cInVuaXRzLXNraWxsLWxhYmVsXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtza2lsbC5pY29ucy5tYXAoaWNvbiA9PiA8aW1nIGtleT17aWNvbn0gc3JjPXtpY29ufSBhbHQ9XCJcIiB3aWR0aD17MjB9IGhlaWdodD17MjB9IC8+KX17JyAnfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7c2tpbGwubmFtZX08c3BhbiBjbGFzcz1cInVuYm9sZFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3NraWxsLnByZXN0aWdlICYmIDw+ICh7c2tpbGwucHJlc3RpZ2V9KTwvPn1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHshIXNraWxsLmNoYXJnZXMgJiYgPD4gPHNwYW4gY2xhc3M9XCJ1bml0cy1za2lsbC1jb3N0XCI+KHtza2lsbC5jaGFyZ2VzfSBjaGFyZ2VzKTwvc3Bhbj48Lz59XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7c2tpbGwudHlwZSA9PT0gJ2F1dG9jYXN0JyAmJiA8PiAoYXV0b2Nhc3QpPC8+fVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHshIWNvc3RzLmxlbmd0aCAmJiA8PiA8c3BhbiBjbGFzcz1cInVuaXRzLXNraWxsLWNvc3RzIHVuYm9sZFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Y29zdHMubWFwKChjb3N0LCBpbmRleCkgPT4gPHByZWFjdC5GcmFnbWVudCBrZXk9e2Nvc3QubGFiZWx9PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge2luZGV4ID4gMCAmJiAnICd9PHNwYW4gY2xhc3M9XCJ1bml0cy1za2lsbC1jb3N0XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9e2Nvc3QuaWNvbn0gYWx0PXtjb3N0LmxhYmVsfSB3aWR0aD17MjB9IGhlaWdodD17MjB9IC8+IHtjb3N0LnZhbHVlfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3ByZWFjdC5GcmFnbWVudD4pfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvc3Bhbj48Lz59XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgIDwvbGk+O1xuICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgPC91bD5cbiAgICAgICAgPC9wcmVhY3QuRnJhZ21lbnQ+KTtcbiAgICB9XG4gICAgcmVuZGVyVXBncmFkZXMoKTogcHJlYWN0LkNvbXBvbmVudENoaWxkcmVuIHtcbiAgICAgICAgY29uc3QgbW9kaWZpZXJzID0gdGhpcy5wcm9wcy5tb2RpZmllcnMhO1xuICAgICAgICAvLyBmaWx0ZXIgb3V0IE1lbmdzayBSb3lhbCBHdWFyZCByYW5rIHVwZ3JhZGVzXG4gICAgICAgIGNvbnN0IHVwZ3JhZGVzID0gT2JqZWN0LmtleXMobW9kaWZpZXJzLnVwZ3JhZGVzKS5maWx0ZXIodXBncmFkZSA9PiAhL15bMTIzXSQvLnRlc3QodXBncmFkZSkpO1xuICAgICAgICBjb25zdCBtYXN0ZXJpZXMgPSBPYmplY3Qua2V5cyhtb2RpZmllcnMubWFzdGVyaWVzKTtcbiAgICAgICAgY29uc3QgcHJlc3RpZ2VzID0gT2JqZWN0LmtleXMobW9kaWZpZXJzLnByZXN0aWdlcyk7XG4gICAgICAgIGNvbnN0IGNvbW1hbmRlclN1bW1hcnkgPSBjb21tYW5kZXJzdW1tYXJpZXMuZmluZChjb21tYW5kZXIgPT4gY29tbWFuZGVyLmNvbW1hbmRlciA9PT0gbW9kaWZpZXJzLmNvbW1hbmRlcik7XG4gICAgICAgIGNvbnN0IHByZXN0aWdlTmFtZXMgPSBbY29tbWFuZGVyU3VtbWFyeT8ucHJlc3RpZ2UxLCBjb21tYW5kZXJTdW1tYXJ5Py5wcmVzdGlnZTIsIGNvbW1hbmRlclN1bW1hcnk/LnByZXN0aWdlM10ubWFwKG5hbWUgPT4gbmFtZT8udHJpbSgpKTtcbiAgICAgICAgY29uc3QgdXBncmFkZUxldmVscyA9IFswLCAxLCAyLCAzLCA0LCA1XS5zbGljZSgwLCBtb2RpZmllcnMuY29tbWFuZGVyID09PSAndHljaHVzJyA/IDYgOiA0KTtcblxuICAgICAgICBjb25zdCB1cGdyYWRlRGF0YSA9IG5ldyBNYXAoXG4gICAgICAgICAgICBwbGF5ZXJVcGdyYWRlcy5maWx0ZXIoKHUpID0+IHRva2VuKHUuY29tbWFuZGVyKSA9PT0gbW9kaWZpZXJzLmNvbW1hbmRlciAmJiB0b2tlbih1LnVuaXQpID09PSBtb2RpZmllcnMudW5pdClcbiAgICAgICAgICAgICAgICAubWFwKCh1KSA9PiBbdS5uYW1lLCB7IHRvb2x0aXA6IGB1cGdyYWRlcy8ke3Rva2VuKHUuY29tbWFuZGVyKX0vJHt1Lmljb259YCwgaWNvbjogdS5pY29uLCB1bml0OiB1LnVuaXQgfV0pXG4gICAgICAgICk7XG4gICAgICAgIGNvbnN0IHNlbGVjdGFibGVVcGdyYWRlcyA9IG5ldyBTZXQoXG4gICAgICAgICAgICBwbGF5ZXJVcGdyYWRlcy5maWx0ZXIoKHUpID0+IHRva2VuKHUuY29tbWFuZGVyKSA9PT0gbW9kaWZpZXJzLmNvbW1hbmRlciAmJiB0b2tlbih1LnVuaXQpID09PSBtb2RpZmllcnMudW5pdCAmJiB1Lm9wZXJhdGlvbiAhPT0gJ25vbmUnKVxuICAgICAgICAgICAgICAgIC5tYXAoKHUpID0+IHUubmFtZSlcbiAgICAgICAgKTtcbiAgICAgICAgY29uc3QgdXBncmFkZUljb24gPSAodXBncmFkZTogc3RyaW5nKSA9PiB7XG4gICAgICAgICAgICBjb25zdCBkYXRhID0gdXBncmFkZURhdGEuZ2V0KHVwZ3JhZGUpO1xuICAgICAgICAgICAgY29uc3QgY29tbWFuZGVyID0gbW9kaWZpZXJzLmNvbW1hbmRlcjtcbiAgICAgICAgICAgIGNvbnN0IGlzSGVybyA9IHRva2VuKGRhdGE/LnVuaXQgPz8gXCJcIikgPT09IGNvbW1hbmRlciB8fCAoY29tbWFuZGVyID09PSAnZmVuaXgnICYmIGRhdGE/LnVuaXQuc3RhcnRzV2l0aCgnRmVuaXggJykpO1xuICAgICAgICAgICAgY29uc3QgZGlyID0gY29tbWFuZGVyICE9PSAndHljaHVzJyAmJiBpc0hlcm8gPyBcImhlcm9cIiA6IFwidW5pdHVwZ3JhZGVzXCI7XG4gICAgICAgICAgICByZXR1cm4gYC9pbWFnZXMvY29tbWFuZGVyZGF0YS8ke2Rpcn0vJHtjb21tYW5kZXJ9LyR7ZGF0YT8uaWNvbn0ucG5nYDtcbiAgICAgICAgfTtcblxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPGZvcm0gY2xhc3M9XCJ1bml0cy1tb2RpZmllcnNcIj5cbiAgICAgICAgICAgICAgICB7ISF1cGdyYWRlcy5sZW5ndGggJiYgKDxmaWVsZHNldD5cbiAgICAgICAgICAgICAgICAgICAgPGxlZ2VuZD5VcGdyYWRlczwvbGVnZW5kPlxuICAgICAgICAgICAgICAgICAgICB7dXBncmFkZXMubWFwKCh1cGdyYWRlKSA9PiB7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBzZWxlY3RhYmxlID0gc2VsZWN0YWJsZVVwZ3JhZGVzLmhhcyh1cGdyYWRlKTtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IFVwZ3JhZGVMYWJlbCA9IHNlbGVjdGFibGUgPyAnbGFiZWwnIDogJ3NwYW4nO1xuICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgaWNvblNyYyA9IHVwZ3JhZGVJY29uKHVwZ3JhZGUpO1xuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxkaXY+PFVwZ3JhZGVMYWJlbCBjbGFzcz17c2VsZWN0YWJsZSA/IHVuZGVmaW5lZCA6IFwidW5pdHMtdXBncmFkZS1wYXNzaXZlXCJ9IGRhdGEtdG9vbHRpcD17dXBncmFkZURhdGEuZ2V0KHVwZ3JhZGUpPy50b29sdGlwfT5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz1cInVuaXRzLXVwZ3JhZGUtbWFya2VyXCI+e3NlbGVjdGFibGUgPyA8aW5wdXQgdHlwZT1cImNoZWNrYm94XCIgdmFsdWU9e3VwZ3JhZGV9IG9uQ2hhbmdlPXt0aGlzLm9uQ2hlY2tVcGdyYWRlfSBjaGVja2VkPXttb2RpZmllcnMudXBncmFkZXNbdXBncmFkZV19IC8+IDogPHNwYW4gY2xhc3M9XCJ1bmJvbGRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj7igKI8L3NwYW4+fTwvc3Bhbj57JyAnfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxpbWcga2V5PXtpY29uU3JjfSBzcmM9e2ljb25TcmN9IGFsdD1cIlwiIHdpZHRoPXsyMH0gaGVpZ2h0PXsyMH0gLz4ge3VwZ3JhZGV9XG4gICAgICAgICAgICAgICAgICAgICAgICA8L1VwZ3JhZGVMYWJlbD48L2Rpdj47XG4gICAgICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgICAgIDwvZmllbGRzZXQ+KX1cbiAgICAgICAgICAgICAgICB7J3dlYXBvbicgaW4gbW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMgJiYgKDxmaWVsZHNldD5cbiAgICAgICAgICAgICAgICAgICAgPGxlZ2VuZD5XZWFwb25zPC9sZWdlbmQ+XG4gICAgICAgICAgICAgICAgICAgIHt1cGdyYWRlTGV2ZWxzLm1hcChsZXZlbCA9PiA8bGFiZWw+PGlucHV0IHR5cGU9XCJyYWRpb1wiIG5hbWU9e2B3ZWFwb24tJHt0aGlzLnByb3BzLmZvcm1LZXl9YH0gdmFsdWU9e2xldmVsfSBvbkNoYW5nZT17dGhpcy5vbkNoZWNrVXBncmFkZUxldmVsfSBjaGVja2VkPXttb2RpZmllcnMudXBncmFkZUxldmVscy53ZWFwb24gPT09IGxldmVsfSAvPiB7bGV2ZWx9PC9sYWJlbD4pfVxuICAgICAgICAgICAgICAgIDwvZmllbGRzZXQ+KX1cbiAgICAgICAgICAgICAgICB7J2FybW9yJyBpbiBtb2RpZmllcnMudXBncmFkZUxldmVscyAmJiAoPGZpZWxkc2V0PlxuICAgICAgICAgICAgICAgICAgICA8bGVnZW5kPkFybW9yPC9sZWdlbmQ+XG4gICAgICAgICAgICAgICAgICAgIHt1cGdyYWRlTGV2ZWxzLm1hcChsZXZlbCA9PiA8bGFiZWw+PGlucHV0IHR5cGU9XCJyYWRpb1wiIG5hbWU9e2Bhcm1vci0ke3RoaXMucHJvcHMuZm9ybUtleX1gfSB2YWx1ZT17bGV2ZWx9IG9uQ2hhbmdlPXt0aGlzLm9uQ2hlY2tVcGdyYWRlTGV2ZWx9IGNoZWNrZWQ9e21vZGlmaWVycy51cGdyYWRlTGV2ZWxzLmFybW9yID09PSBsZXZlbH0gLz4ge2xldmVsfTwvbGFiZWw+KX1cbiAgICAgICAgICAgICAgICA8L2ZpZWxkc2V0Pil9XG4gICAgICAgICAgICAgICAgeydzaGllbGRzJyBpbiBtb2RpZmllcnMudXBncmFkZUxldmVscyAmJiAoPGZpZWxkc2V0PlxuICAgICAgICAgICAgICAgICAgICA8bGVnZW5kPlNoaWVsZHM8L2xlZ2VuZD5cbiAgICAgICAgICAgICAgICAgICAge3VwZ3JhZGVMZXZlbHMubWFwKGxldmVsID0+IDxsYWJlbD48aW5wdXQgdHlwZT1cInJhZGlvXCIgbmFtZT17YHNoaWVsZHMtJHt0aGlzLnByb3BzLmZvcm1LZXl9YH0gdmFsdWU9e2xldmVsfSBvbkNoYW5nZT17dGhpcy5vbkNoZWNrVXBncmFkZUxldmVsfSBjaGVja2VkPXttb2RpZmllcnMudXBncmFkZUxldmVscy5zaGllbGRzID09PSBsZXZlbH0gLz4ge2xldmVsfTwvbGFiZWw+KX1cbiAgICAgICAgICAgICAgICA8L2ZpZWxkc2V0Pil9XG4gICAgICAgICAgICAgICAgeydyYW5rJyBpbiBtb2RpZmllcnMudXBncmFkZUxldmVscyAmJiAoPGZpZWxkc2V0IGNsYXNzPVwidW5pdHMtcmFua3NcIj5cbiAgICAgICAgICAgICAgICAgICAgPGxlZ2VuZD5SYW5rPC9sZWdlbmQ+XG4gICAgICAgICAgICAgICAgICAgIHt1cGdyYWRlTGV2ZWxzLm1hcChsZXZlbCA9PiB7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBrZXkgPSBgcmFua3MvJHttb2RpZmllcnMuY29tbWFuZGVyfS8ke21vZGlmaWVycy51bml0fS8ke2xldmVsfWA7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zdCB1cGdyYWRlID0gcmFua1VwZ3JhZGVzLmdldChrZXkpO1xuICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgaWNvblNyYyA9IGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzLyR7bW9kaWZpZXJzLmNvbW1hbmRlcn0vJHt1cGdyYWRlPy5pY29uID8/ICd2ZXRlcmFuY3knfS5wbmdgO1xuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxsYWJlbCBkYXRhLXRvb2x0aXA9e3VwZ3JhZGUgPyBrZXkgOiB1bmRlZmluZWR9PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPVwidW5pdHMtdXBncmFkZS1tYXJrZXJcIj48aW5wdXQgdHlwZT1cInJhZGlvXCIgbmFtZT17YHJhbmstJHt0aGlzLnByb3BzLmZvcm1LZXl9YH0gdmFsdWU9e2xldmVsfSBvbkNoYW5nZT17dGhpcy5vbkNoZWNrVXBncmFkZUxldmVsfSBjaGVja2VkPXttb2RpZmllcnMudXBncmFkZUxldmVscy5yYW5rID09PSBsZXZlbH0gLz48L3NwYW4+eycgJ31cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW1nIGtleT17aWNvblNyY30gc3JjPXtpY29uU3JjfSBhbHQ9XCJcIiB3aWR0aD17MjB9IGhlaWdodD17MjB9IC8+IHt1cGdyYWRlPy5uYW1lID8/IGBSYW5rICR7bGV2ZWx9YH1cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGFiZWw+O1xuICAgICAgICAgICAgICAgICAgICB9KX1cbiAgICAgICAgICAgICAgICA8L2ZpZWxkc2V0Pil9XG4gICAgICAgICAgICAgICAgeydhcnRpZmFjdHMnIGluIG1vZGlmaWVycy51cGdyYWRlTGV2ZWxzICYmICg8ZmllbGRzZXQ+XG4gICAgICAgICAgICAgICAgICAgIDxsZWdlbmQ+QXJ0aWZhY3QgZnJhZ21lbnRzIGNvbGxlY3RlZDwvbGVnZW5kPlxuICAgICAgICAgICAgICAgICAgICB7dXBncmFkZUxldmVscy5tYXAobGV2ZWwgPT4gPGxhYmVsPjxpbnB1dCB0eXBlPVwicmFkaW9cIiBuYW1lPXtgYXJ0aWZhY3RzLSR7dGhpcy5wcm9wcy5mb3JtS2V5fWB9IHZhbHVlPXtsZXZlbH0gb25DaGFuZ2U9e3RoaXMub25DaGVja1VwZ3JhZGVMZXZlbH0gY2hlY2tlZD17bW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMuYXJ0aWZhY3RzID09PSBsZXZlbH0gLz4ge2xldmVsfTwvbGFiZWw+KX1cbiAgICAgICAgICAgICAgICA8L2ZpZWxkc2V0Pil9XG4gICAgICAgICAgICAgICAgeyEhbWFzdGVyaWVzLmxlbmd0aCAmJiAoPGZpZWxkc2V0IGNsYXNzPVwidW5pdHMtbWFzdGVyaWVzXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsZWdlbmQ+TWFzdGVyaWVzPC9sZWdlbmQ+XG4gICAgICAgICAgICAgICAgICAgIHttYXN0ZXJpZXMubWFwKCh0YWxlbnQpID0+IHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IGlkID0gYG1hc3RlcnktJHt0aGlzLnByb3BzLmZvcm1LZXl9LSR7dG9rZW4odGFsZW50KX1gO1xuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxkaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxhYmVsIGNsYXNzPVwidW5pdHMtbWFzdGVyeS1uYW1lXCIgaWQ9e2Ake2lkfS1sYWJlbGB9IGh0bWxGb3I9e2lkfT57dGFsZW50fTwvbGFiZWw+PGJyIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9XCJ1bml0cy1tYXN0ZXJ5LWNvbnRyb2xzXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwicmFuZ2VcIiBuYW1lPXt0YWxlbnR9IGFyaWEtbGFiZWxsZWRieT17YCR7aWR9LWxhYmVsYH0gdmFsdWU9e21vZGlmaWVycy5tYXN0ZXJpZXNbdGFsZW50XX0gb25JbnB1dD17dGhpcy5vbkNoYW5nZU1hc3Rlcnl9IG1pbj17MH0gbWF4PXszMH0gc3RlcD17MX0gLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9XCJ1bml0cy1tYXN0ZXJ5LXZhbHVlXCI+PGlucHV0IHR5cGU9XCJudW1iZXJcIiBpZD17aWR9IG5hbWU9e3RhbGVudH0gdmFsdWU9e3RoaXMuc3RhdGUubWFzdGVyeUlucHV0cz8uW3RhbGVudF0gPz8gbW9kaWZpZXJzLm1hc3Rlcmllc1t0YWxlbnRdfSBvbklucHV0PXt0aGlzLm9uSW5wdXRNYXN0ZXJ5fSBvbkJsdXI9e3RoaXMub25CbHVyTWFzdGVyeX0gbWluPXswfSBtYXg9ezMwfSBzdGVwPXsxfSAvPjxzbWFsbCBjbGFzcz1cInVuYm9sZFwiPi8zMDwvc21hbGw+PC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PjtcbiAgICAgICAgICAgICAgICAgICAgfSl9XG4gICAgICAgICAgICAgICAgPC9maWVsZHNldD4pfVxuICAgICAgICAgICAgICAgIHshIXByZXN0aWdlcy5sZW5ndGggJiYgKDxmaWVsZHNldD5cbiAgICAgICAgICAgICAgICAgICAgPGxlZ2VuZD5QcmVzdGlnZXM8L2xlZ2VuZD5cbiAgICAgICAgICAgICAgICAgICAge3ByZXN0aWdlcy5tYXAoKHRhbGVudCkgPT4gPGRpdj48bGFiZWw+PGlucHV0IHR5cGU9XCJjaGVja2JveFwiIHZhbHVlPXt0YWxlbnR9IG9uQ2hhbmdlPXt0aGlzLm9uQ2hlY2tQcmVzdGlnZX0gY2hlY2tlZD17bW9kaWZpZXJzLnByZXN0aWdlc1t0YWxlbnRdfSAvPiBQe3ByZXN0aWdlTmFtZXMuaW5kZXhPZih0YWxlbnQpICsgMX06IHt0YWxlbnR9PC9sYWJlbD48L2Rpdj4pfVxuICAgICAgICAgICAgICAgIDwvZmllbGRzZXQ+KX1cbiAgICAgICAgICAgIDwvZm9ybT5cbiAgICAgICAgKTtcbiAgICB9XG4gICAgb25DaGVja1VwZ3JhZGUgPSAoZTogRXZlbnQpID0+IHtcbiAgICAgICAgY29uc3QgdGFyZ2V0ID0gZS50YXJnZXQgYXMgSFRNTElucHV0RWxlbWVudDtcbiAgICAgICAgdGhpcy5wcm9wcy5vblNldE1vZGlmaWVycyh7IHVwZ3JhZGVzOiB7IC4uLnRoaXMucHJvcHMubW9kaWZpZXJzIS51cGdyYWRlcywgW3RhcmdldC52YWx1ZV06IHRhcmdldC5jaGVja2VkIH0gfSk7XG4gICAgfTtcbiAgICBvbkNoZWNrVXBncmFkZUxldmVsID0gKGU6IEV2ZW50KSA9PiB7XG4gICAgICAgIGNvbnN0IHRhcmdldCA9IGUudGFyZ2V0IGFzIEhUTUxJbnB1dEVsZW1lbnQ7XG4gICAgICAgIGNvbnN0IHVwZ3JhZGUgPSB0YXJnZXQubmFtZS5zcGxpdCgnLScpWzBdIGFzIFRva2VuO1xuICAgICAgICBjb25zdCB2YWx1ZSA9IHBhcnNlSW50KHRhcmdldC52YWx1ZSk7XG4gICAgICAgIGNvbnN0IG1vZGlmaWVycyA9IHRoaXMucHJvcHMubW9kaWZpZXJzITtcbiAgICAgICAgaWYgKHVwZ3JhZGUgPT09ICdyYW5rJykge1xuICAgICAgICAgICAgY29uc3QgdXBncmFkZXMgPSB7IC4uLm1vZGlmaWVycy51cGdyYWRlcyB9O1xuICAgICAgICAgICAgaWYgKCcxJyBpbiB1cGdyYWRlcykgdXBncmFkZXNbJzEnXSA9IHZhbHVlID49IDE7XG4gICAgICAgICAgICBpZiAoJzInIGluIHVwZ3JhZGVzKSB1cGdyYWRlc1snMiddID0gdmFsdWUgPj0gMjtcbiAgICAgICAgICAgIGlmICgnMycgaW4gdXBncmFkZXMpIHVwZ3JhZGVzWyczJ10gPSB2YWx1ZSA+PSAzO1xuICAgICAgICAgICAgdGhpcy5wcm9wcy5vblNldE1vZGlmaWVycyh7IHVwZ3JhZGVMZXZlbHM6IHsgLi4ubW9kaWZpZXJzLnVwZ3JhZGVMZXZlbHMsIFt1cGdyYWRlXTogdmFsdWUgfSwgdXBncmFkZXMgfSk7XG4gICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICB0aGlzLnByb3BzLm9uU2V0TW9kaWZpZXJzKHsgdXBncmFkZUxldmVsczogeyAuLi5tb2RpZmllcnMudXBncmFkZUxldmVscywgW3VwZ3JhZGVdOiB2YWx1ZSB9IH0pO1xuICAgICAgICB9XG4gICAgfTtcbiAgICBvbkNoZWNrUHJlc3RpZ2UgPSAoZTogRXZlbnQpID0+IHtcbiAgICAgICAgY29uc3QgdGFyZ2V0ID0gZS50YXJnZXQgYXMgSFRNTElucHV0RWxlbWVudDtcbiAgICAgICAgY29uc3QgbmV3UHJlc3RpZ2VzID0gT2JqZWN0LmZyb21FbnRyaWVzKE9iamVjdC5rZXlzKHRoaXMucHJvcHMubW9kaWZpZXJzIS5wcmVzdGlnZXMpLm1hcCgocHJlc3RpZ2UpID0+IFtwcmVzdGlnZSwgZmFsc2VdKSk7XG4gICAgICAgIHRoaXMucHJvcHMub25TZXRNb2RpZmllcnMoeyBwcmVzdGlnZXM6IHsgLi4ubmV3UHJlc3RpZ2VzLCBbdGFyZ2V0LnZhbHVlXTogdGFyZ2V0LmNoZWNrZWQgfSB9KTtcbiAgICB9O1xuICAgIG9uQ2hhbmdlTWFzdGVyeSA9IChlOiBFdmVudCkgPT4ge1xuICAgICAgICBjb25zdCB0YXJnZXQgPSBlLnRhcmdldCBhcyBIVE1MSW5wdXRFbGVtZW50O1xuICAgICAgICB0aGlzLnByb3BzLm9uU2V0TW9kaWZpZXJzKHtcbiAgICAgICAgICAgIG1hc3RlcmllczogeyAuLi50aGlzLnByb3BzLm1vZGlmaWVycyEubWFzdGVyaWVzLCBbdGFyZ2V0Lm5hbWVdOiBwYXJzZUludCh0YXJnZXQudmFsdWUpIHx8IDAgfSxcbiAgICAgICAgfSk7XG4gICAgfTtcbiAgICBvbklucHV0TWFzdGVyeSA9IChlOiBFdmVudCkgPT4ge1xuICAgICAgICBjb25zdCB0YXJnZXQgPSBlLnRhcmdldCBhcyBIVE1MSW5wdXRFbGVtZW50O1xuICAgICAgICB0aGlzLnNldFN0YXRlKHtcbiAgICAgICAgICAgIG1hc3RlcnlJbnB1dHM6IHsgW3RhcmdldC5uYW1lXTogdGFyZ2V0LnZhbHVlIH1cbiAgICAgICAgfSk7XG4gICAgICAgIHRoaXMucHJvcHMub25TZXRNb2RpZmllcnMoe1xuICAgICAgICAgICAgbWFzdGVyaWVzOiB7IC4uLnRoaXMucHJvcHMubW9kaWZpZXJzIS5tYXN0ZXJpZXMsIFt0YXJnZXQubmFtZV06IHBhcnNlSW50KHRhcmdldC52YWx1ZSkgfHwgMCB9LFxuICAgICAgICB9KTtcbiAgICB9O1xuICAgIG9uQmx1ck1hc3RlcnkgPSAoZTogRXZlbnQpID0+IHtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgICAgICBtYXN0ZXJ5SW5wdXRzOiBudWxsXG4gICAgICAgIH0pO1xuICAgIH07XG4gICAgc3RhdGljIGFwcGx5TW9kaWZpZXIoXG4gICAgICAgIHZhbHVlOiBudW1iZXIsXG4gICAgICAgIHVwZ3JhZGU6IHsgbW9kaWZpZXI6IHN0cmluZywgb3BlcmF0aW9uOiBzdHJpbmcsIHZhbHVlOiBudW1iZXIsIG9wZXJhdGlvbnR5cGU/OiBzdHJpbmcgfCBudWxsIH0sXG4gICAgICAgIGxldmVsPzogbnVtYmVyIHwgbnVsbCxcbiAgICAgICAgcmV2ZXJzZUF0dGFja1NwZWVkID0gdHJ1ZSxcbiAgICApOiBudW1iZXIge1xuICAgICAgICBsZXQgdXBncmFkZVZhbHVlID0gdXBncmFkZS52YWx1ZTtcbiAgICAgICAgaWYgKHVwZ3JhZGUub3BlcmF0aW9uID09PSAnbXVsdGlwbHknKSB7XG4gICAgICAgICAgICAvLyBvbmx5IHVzZWQgZm9yIG1hc3Rlcmllc1xuICAgICAgICAgICAgaWYgKHVwZ3JhZGUub3BlcmF0aW9udHlwZSA9PT0gJ2luY3JlYXNlJykge1xuICAgICAgICAgICAgICAgIHVwZ3JhZGVWYWx1ZSA9ICgxICsgdXBncmFkZS52YWx1ZSAqIGxldmVsISk7XG4gICAgICAgICAgICB9IGVsc2UgaWYgKHVwZ3JhZGUub3BlcmF0aW9udHlwZSA9PT0gJ2RlY3JlYXNlJykge1xuICAgICAgICAgICAgICAgIHVwZ3JhZGVWYWx1ZSA9ICgxIC0gdXBncmFkZS52YWx1ZSAqIGxldmVsISk7XG4gICAgICAgICAgICB9IGVsc2UgaWYgKGxldmVsKSB7XG4gICAgICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBVbmtub3duIG9wZXJhdGlvbjogJHt1cGdyYWRlLm9wZXJhdGlvbn0gOiAke3VwZ3JhZGUub3BlcmF0aW9udHlwZX1gKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBzd2l0Y2ggKHVwZ3JhZGUub3BlcmF0aW9uKSB7XG4gICAgICAgICAgICBjYXNlICdhZGQnOlxuICAgICAgICAgICAgICAgIHJldHVybiB2YWx1ZSArIHVwZ3JhZGVWYWx1ZSAqIChsZXZlbCA/PyAxKTtcbiAgICAgICAgICAgIGNhc2UgJ211bHRpcGx5JzpcbiAgICAgICAgICAgICAgICBjb25zdCByZXZlcnNlID0gcmV2ZXJzZUF0dGFja1NwZWVkICYmIHVwZ3JhZGUubW9kaWZpZXIgPT09ICdBdHRhY2tfU3BlZWQnO1xuICAgICAgICAgICAgICAgIHJldHVybiByZXZlcnNlID8gdmFsdWUgLyB1cGdyYWRlVmFsdWUgOiB2YWx1ZSAqIHVwZ3JhZGVWYWx1ZTtcbiAgICAgICAgICAgIGNhc2UgJ3NldCc6XG4gICAgICAgICAgICAgICAgaWYgKGxldmVsKSB0aHJvdyBuZXcgRXJyb3IoYExldmVsIGNhbid0IGJlIHNldCBmb3IgdGhpcyB1cGdyYWRlYCk7XG4gICAgICAgICAgICAgICAgcmV0dXJuIHVwZ3JhZGVWYWx1ZTtcbiAgICAgICAgICAgIGRlZmF1bHQ6XG4gICAgICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBVbmtub3duIG9wZXJhdGlvbjogJHt1cGdyYWRlLm9wZXJhdGlvbn1gKTtcbiAgICAgICAgfVxuICAgIH1cbiAgICByZW5kZXJWYWx1ZSh2YWx1ZTogbnVtYmVyLCBiYXNlVmFsdWU6IG51bWJlcik6IHByZWFjdC5Db21wb25lbnRDaGlsZHJlbiB7XG4gICAgICAgIGlmICh2YWx1ZSAhPT0gYmFzZVZhbHVlKSByZXR1cm4gPHN0cm9uZyBjbGFzcz1cInVuaXRzLW1vZGlmaWVkXCI+e051bWJlcih2YWx1ZS50b0ZpeGVkKDIpKX08L3N0cm9uZz5cbiAgICAgICAgcmV0dXJuIHZhbHVlO1xuICAgIH1cbiAgICBzdGF0aWMgY2FsY3VsYXRlRHBzKGRhbWFnZTogbnVtYmVyLCBhdHRhY2tzOiBudW1iZXIsIGF0dGFja3NwZWVkOiBudW1iZXIpOiBudW1iZXIge1xuICAgICAgICByZXR1cm4gZGFtYWdlICogYXR0YWNrcyAvIGF0dGFja3NwZWVkO1xuICAgIH1cbiAgICByZW5kZXJNb2RlKG1vZGU6IFVuaXRNb2RlLCBiYXNlTW9kZTogVW5pdE1vZGUsIGJhc2VVbml0OiBVbml0KSB7XG4gICAgICAgIHJldHVybiA8PlxuICAgICAgICAgICAgPHAgY2xhc3M9XCJ1bml0cy1oZWFkXCI+e21vZGUubW9kZU5hbWUgfHwgXCJXZWFwb25cIn08L3A+XG4gICAgICAgICAgICA8dWwgY2xhc3M9XCJ1bml0cy1tb2RlLXN0YXRzXCI+XG4gICAgICAgICAgICAgICAgeyFtb2RlLmF0dHJpYnV0ZWRhbWFnZSAmJiA8bGkgY2xhc3M9XCJ1bmJvbGRcIj4oTm8gd2VhcG9uKTwvbGk+fVxuICAgICAgICAgICAgICAgIHshIW1vZGUuYXR0cmlidXRlZGFtYWdlICYmIDw+XG4gICAgICAgICAgICAgICAgICAgIHtPYmplY3QuZW50cmllcyhtb2RlLmF0dHJpYnV0ZWRhbWFnZSB8fCB7fSkubWFwKChbYXR0cmlidXRlLCBkYW1hZ2VdKSA9PiB7XG4gICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBkcHMgPSBVbml0U3RhdHMuY2FsY3VsYXRlRHBzKGRhbWFnZS5kYW1hZ2UsIG1vZGUuYXR0YWNrcyEsIG1vZGUuYXR0YWNrc3BlZWQhKTtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IGJhc2VEYW1hZ2UgPSBiYXNlTW9kZS5hdHRyaWJ1dGVkYW1hZ2U/LlthdHRyaWJ1dGVdPy5kYW1hZ2UgPz8gYmFzZU1vZGUuYXR0cmlidXRlZGFtYWdlPy5bJyddPy5kYW1hZ2UgPz8gMDtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IGJhc2VEcHMgPSBVbml0U3RhdHMuY2FsY3VsYXRlRHBzKGJhc2VEYW1hZ2UsIGJhc2VNb2RlLmF0dGFja3MhLCBiYXNlTW9kZS5hdHRhY2tzcGVlZCEpO1xuICAgICAgICAgICAgICAgICAgICAgICAgY29uc3Qgbm9EcHMgPSBbJ0JhbmVsaW5nJywgJ0JhbmVsaW5nIFNwYXduJywgJ1Njb3VyZ2UnLCAnVm9sYXRpbGUgSW5mZXN0ZWQnLCAnU3BpZGVyIE1pbmUnLCAnRXhwbG9zaXZlIENyZWVwZXInXTtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IGRwc01lc3NhZ2UgPSAoIW5vRHBzLmluY2x1ZGVzKGJhc2VVbml0Lm5hbWUpKSA/IDw+ICh7dGhpcy5yZW5kZXJWYWx1ZSgrZHBzLnRvRml4ZWQoMiksICtiYXNlRHBzLnRvRml4ZWQoMikpfSBEUFMpPC8+IDogJyc7XG4gICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gPGxpPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPVwidW5ib2xkXCI+e2F0dHJpYnV0ZSA/IGB2cy4gJHthdHRyaWJ1dGV9OmAgOiAnRGFtYWdlOid9PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZShkYW1hZ2UuZGFtYWdlLCBiYXNlRGFtYWdlKX17ZHBzTWVzc2FnZX1cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGk+O1xuICAgICAgICAgICAgICAgICAgICB9KX1cbiAgICAgICAgICAgICAgICAgICAgeyhtb2RlLmF0dGFja3MhID4gMSB8fCBiYXNlTW9kZS5hdHRhY2tzISA+IDEpICYmIDxsaT48c3BhbiBjbGFzcz1cInVuYm9sZFwiPkhpdHM6PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZShtb2RlLmF0dGFja3MhLCBiYXNlTW9kZS5hdHRhY2tzISl9PC9saT59XG4gICAgICAgICAgICAgICAgICAgIDxsaT48c3BhbiBjbGFzcz1cInVuYm9sZFwiPkNvb2xkb3duOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUobW9kZS5hdHRhY2tzcGVlZCEsIGJhc2VNb2RlLmF0dGFja3NwZWVkISl9PC9saT5cbiAgICAgICAgICAgICAgICAgICAgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+UmFuZ2U6PC9zcGFuPiB7bW9kZS5hdGtyYW5nZSA9PT0gMCA/IFwiKE1lbGVlKVwiIDogdGhpcy5yZW5kZXJWYWx1ZShtb2RlLmF0a3JhbmdlISwgYmFzZU1vZGUuYXRrcmFuZ2UhKX08L2xpPlxuICAgICAgICAgICAgICAgIDwvPn1cbiAgICAgICAgICAgICAgICB7bW9kZS5hb2UgJiYgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+QW9FOjwvc3Bhbj4ge21vZGUuYW9lICE9PSBiYXNlTW9kZS5hb2UgPyA8c3Ryb25nIGNsYXNzPVwidW5pdHMtbW9kaWZpZWRcIj57bW9kZS5hb2V9PC9zdHJvbmc+IDogbW9kZS5hb2V9PC9saT59XG4gICAgICAgICAgICAgICAge21vZGUuYXJtb3IgIT09IHVuZGVmaW5lZCAmJiA8bGk+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5Bcm1vcjo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKG1vZGUuYXJtb3IsIGJhc2VNb2RlLmFybW9yID8/IGJhc2VVbml0LmFybW9yKX08L2xpPn1cbiAgICAgICAgICAgICAgICB7bW9kZS5tb3ZlbWVudHNwZWVkICE9PSB1bmRlZmluZWQgJiYgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+TW92ZSBzcGVlZDo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKG1vZGUubW92ZW1lbnRzcGVlZCwgYmFzZU1vZGUubW92ZW1lbnRzcGVlZCA/PyBiYXNlVW5pdC5tb3ZlbWVudHNwZWVkKX08L2xpPn1cbiAgICAgICAgICAgICAgICB7bW9kZS5zaWdodHJhbmdlICE9PSB1bmRlZmluZWQgJiYgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+VmlzaW9uOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUobW9kZS5zaWdodHJhbmdlLCBiYXNlTW9kZS5zaWdodHJhbmdlID8/IGJhc2VVbml0LnNpZ2h0cmFuZ2UpfTwvbGk+fVxuICAgICAgICAgICAgPC91bD5cbiAgICAgICAgPC8+O1xuICAgIH1cbiAgICBnZXRJbWFnZVNyYyhzZWxlY3RlZDogVW5pdCkge1xuICAgICAgICBjb25zdCB7IGNvbW1hbmRlciwgdW5pdCB9ID0gdGhpcy5wcm9wcy5tb2RpZmllcnMhO1xuICAgICAgICBpZiAoIWNvbW1hbmRlciB8fCAhdW5pdCkgcmV0dXJuIG51bGw7XG5cbiAgICAgICAgaWYgKHVuaXQuc3RhcnRzV2l0aCgnZW50aHJhbGxlZCcpKSB7XG4gICAgICAgICAgICByZXR1cm4gYC9pbWFnZXMvY29tcHMvdW5pdGltYWdlcy8ke3VuaXQuc2xpY2UoMTApfS5wbmdgO1xuICAgICAgICB9XG4gICAgICAgIGlmICh1bml0ID09PSAnZmxhbWluZ2JldHR5JyB8fCB1bml0ID09PSAnYmxhc3RlcmJpbGx5JyB8fCB1bml0ID09PSAnc3Bpbm5pbmdkaXp6eScgfHwgdW5pdCA9PT0gJ2toYXlkYXJpbm1vbm9saXRoJyB8fCB1bml0ID09PSAnc2hpZWxkYmF0dGVyeScgfHwgKGNvbW1hbmRlciA9PT0gJ2thcmF4JyAmJiB1bml0ID09PSAncGhvdG9uY2Fubm9uJykpIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL2d1aWRlcy8ke2NvbW1hbmRlcn0vJHt1bml0fS5qcGdgO1xuICAgICAgICB9XG4gICAgICAgIGlmIChcbiAgICAgICAgICAgIHVuaXQgPT09ICdvYnNlcnZlcicgfHwgdW5pdCA9PT0gJ2Jyb29kbGluZycgfHwgdW5pdCA9PT0gJ292ZXJsb3JkJyB8fCB1bml0ID09PSAnb3ZlcnNlZXInIHx8XG4gICAgICAgICAgICB1bml0ID09PSAnbWlzc2lsZXR1cnJldCcgfHwgdW5pdCA9PT0gJ3Bob3RvbmNhbm5vbicgfHwgKGNvbW1hbmRlciA9PT0gJ3plcmF0dWwnICYmIHVuaXQgPT09ICd2b2lkcmF5JykgfHxcbiAgICAgICAgICAgIHVuaXQgPT09ICdzcGluZWNyYXdsZXInIHx8IHVuaXQgPT09ICdzcG9yZWNyYXdsZXInIHx8IHVuaXQgPT09ICdzcGlkZXJtaW5lJyB8fCB1bml0ID09PSAnYnVua2VyJ1xuICAgICAgICApIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21wcy91bml0aW1hZ2VzLyR7dW5pdH0ucG5nYDtcbiAgICAgICAgfVxuXG4gICAgICAgIGlmICh1bml0ID09PSAnbWVjaGFvdmVybG9yZCcgfHwgdW5pdCA9PT0gJ21lY2hhb3ZlcnNlZXInIHx8IHVuaXQgPT09ICd4ZWxuYWdhd2F0Y2hlcicgfHwgdW5pdCA9PT0gJ2JhbmVsaW5nc3Bhd24nKSB7XG4gICAgICAgICAgICByZXR1cm4gbnVsbDtcbiAgICAgICAgfVxuICAgICAgICBpZiAodW5pdD8uc3RhcnRzV2l0aCgnZmVuaXgnKSkge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvYWJpbGl0aWVzL2Zlbml4LyR7dW5pdC5zbGljZSg1KX0uanBnYDtcbiAgICAgICAgfVxuICAgICAgICBpZiAoXG4gICAgICAgICAgICB1bml0ID09PSAnYWxhcmFrJyB8fCB1bml0ID09PSAna2VycmlnYW4nIHx8IHVuaXQgPT09ICd6YWdhcmEnIHx8IHVuaXQgPT09ICdub3ZhJyB8fCB1bml0ID09PSAnemVyYXR1bCcgfHxcbiAgICAgICAgICAgIHVuaXQgPT09ICdnYXJ5JyB8fCB1bml0ID09PSAnc3VwZXJnYXJ5JyB8fCB1bml0ID09PSAnZGVoYWthJ1xuICAgICAgICApIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL2hlcm8vJHtjb21tYW5kZXJ9LyR7dW5pdH0uanBnYDtcbiAgICAgICAgfVxuICAgICAgICBpZiAoXG4gICAgICAgICAgICB1bml0ID09PSAnaHlwZXJpb24nIHx8IHVuaXQgPT09ICdtb3RoZXJzaGlwJyB8fCB1bml0ID09PSAnZGVzdHJveWVyJyB8fCB1bml0ID09PSAnc2hhZG93Z3VhcmQnIHx8XG4gICAgICAgICAgICB1bml0ID09PSAnZ2xldmlnJyB8fCB1bml0ID09PSAnbXVydmFyJyB8fCB1bml0ID09PSAnZGFrcnVuJyB8fCB1bml0ID09PSAnZ3JlYXRlcnByaW1hbHd1cm0nIHx8XG4gICAgICAgICAgICB1bml0ID09PSAnc2VyZGF0aCcgfHwgdW5pdCA9PT0gJ3RlbGJydXMnIHx8IHVuaXQgPT09ICdhcG9jYWxpc2snIHx8XG4gICAgICAgICAgICB1bml0ID09PSAnYXZhdGFyb2Zmb3JtJyB8fCB1bml0ID09PSAnYXZhdGFyb2Zlc3NlbmNlJ1xuICAgICAgICApIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL2FiaWxpdGllcy8ke2NvbW1hbmRlcn0vJHt1bml0fS5qcGdgO1xuICAgICAgICB9XG4gICAgICAgIGNvbnN0IHJlcGxhY2VBYmlsaXRpZXM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7XG4gICAgICAgICAgICBkdXNrd2luZ3M6ICdiYW5zaGVlYWlyc3RyaWtlLnBuZycsIHVuYm91bmRmYW5hdGljOiAnZmFuYXRpYy5wbmcnLCBhcmVzOiAnY29tYmF0ZHJvcC5wbmcnLFxuICAgICAgICAgICAgaG9sb2RlY295OiAnaG9sb2RlY295LnBuZycsIGFsZWtzYW5kZXI6ICdhbGVrc2FuZGVyLnBuZycsIGRyYWtrZW5sYXNlcmRyaWxsOiAnZHJha2tlbmxhc2VyZHJpbGxhdHRhY2sucG5nJyxcbiAgICAgICAgICAgIHpvcmF5YTogJ3pvcmF5YWxlZ2lvbi5wbmcnLCBjaGFyZ2VkY3J5c3RhbDogJ3N1bW1vbmNoYXJnZWRjcnlzdGFscy5wbmcnLCB3YXJob3VuZHR1cnJldDogJ2RlcGxveXdhcmhvdW5kdHVycmV0LnBuZycsXG4gICAgICAgICAgICB0ZXNzZXJhY3Rtb25vbGl0aDogJ2RlcGxveXRlc3NlcmFjdG1vbm9saXRoLnBuZycsXG4gICAgICAgIH07XG4gICAgICAgIGlmICh1bml0IGluIHJlcGxhY2VBYmlsaXRpZXMpIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL2FiaWxpdGllcy8ke2NvbW1hbmRlcn0vJHtyZXBsYWNlQWJpbGl0aWVzW3VuaXRdfWA7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKGNvbW1hbmRlciA9PT0gJ3phZ2FyYScgJiYgKHVuaXQgPT09ICdodW50ZXJraWxsZXInIHx8IHVuaXQgPT09ICdyb2FjaCcpKSB7XG4gICAgICAgICAgICBjb25zdCByZXBsYWNlOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0ge1xuICAgICAgICAgICAgICAgIGh1bnRlcmtpbGxlcjogJ3NwYXduaHVudGVya2lsbGVycy5wbmcnLCByb2FjaDogJ2luZmVzdGVkZHJvcC5wbmcnLFxuICAgICAgICAgICAgfTtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL2hlcm8vJHtjb21tYW5kZXJ9LyR7cmVwbGFjZVt1bml0XX1gO1xuICAgICAgICB9XG4gICAgICAgIGlmIChjb21tYW5kZXIgPT09ICd6ZXJhdHVsJyAmJiAodW5pdCA9PT0gJ3plYWxvdCcgfHwgdW5pdCA9PT0gJ2RhcmthcmNob24nKSkge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvYWJpbGl0aWVzLyR7Y29tbWFuZGVyfS8ke3VuaXR9LmpwZ2A7XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgcmVwbGFjZVVuaXRTa2lsbHM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7XG4gICAgICAgICAgICBsb2N1c3Q6ICdzcGF3bmxvY3VzdHMucG5nJywgcHJpbWFsbG9jdXN0OiAnc3Bhd25wcmltYWxsb2N1c3RzLnBuZycsIGV4cGxvc2l2ZWNyZWVwZXI6ICdzcGF3bmV4cGxvc2l2ZWNyZWVwZXIucG5nJyxcbiAgICAgICAgICAgIG1lY2hhYnJvb2RsaW5nOiAncmVhZHltZWNoYWJyb29kbGluZy5wbmcnLCBtZWNoYXJvYWNoOiAncm9hY2hlc2F3YXkucG5nJywgcmFpbGd1bnR1cnJldDogJ2J1aWxkcmFpbGd1bnR1cnJldC5wbmcnLFxuICAgICAgICB9O1xuICAgICAgICBpZiAodW5pdCBpbiByZXBsYWNlVW5pdFNraWxscykge1xuICAgICAgICAgICAgcmV0dXJuIGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHNraWxscy8ke2NvbW1hbmRlcn0vJHtyZXBsYWNlVW5pdFNraWxsc1t1bml0XX1gO1xuICAgICAgICB9XG4gICAgICAgIGNvbnN0IHJlcGxhY2VVbml0VXBncmFkZXM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7XG4gICAgICAgICAgICBoYW5nYXJiYXk6ICdpbnN0YWxsZHJvbmVoYW5nYXIucG5nJywgbWVjaGFyYXZhZ2VyOiAnYm9udXNyYXZhZ2VyLnBuZycsXG4gICAgICAgIH07XG4gICAgICAgIGlmICh1bml0IGluIHJlcGxhY2VVbml0VXBncmFkZXMpIHtcbiAgICAgICAgICAgIHJldHVybiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXR1cGdyYWRlcy8ke2NvbW1hbmRlcn0vJHtyZXBsYWNlVW5pdFVwZ3JhZGVzW3VuaXRdfWA7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKHVuaXQgPT09ICdmbHlpbmdicm9vZGxpbmcnKSB7XG4gICAgICAgICAgICByZXR1cm4gYC9pbWFnZXMvY29tbWFuZGVyZGF0YS91bml0c2tpbGxzL3N0dWtvdi9zcGF3bmJyb29kbGluZ3MucG5nYDtcbiAgICAgICAgfVxuXG4gICAgICAgIGNvbnN0IHJlcGxhY2VVbml0OiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0geyBpbmZlc3RlZHRyb29wZXI6ICdpbmZlc3RlZG1hcmluZScgfTtcbiAgICAgICAgaWYgKHNlbGVjdGVkLnRhZ3MuaW5jbHVkZXMoXCJTdHJ1Y3R1cmVcIikpIHJldHVybiBudWxsO1xuICAgICAgICByZXR1cm4gYC9pbWFnZXMvY29tbWFuZGVyZGF0YS91bml0cy8ke2NvbW1hbmRlcn0vJHtyZXBsYWNlVW5pdFt1bml0XSB8fCB1bml0fS5qcGdgO1xuICAgIH1cbiAgICBvdmVycmlkZSByZW5kZXIoKSB7XG4gICAgICAgIGNvbnN0IG1vZGlmaWVycyA9IHRoaXMucHJvcHMubW9kaWZpZXJzO1xuICAgICAgICBpZiAoIW1vZGlmaWVycykge1xuICAgICAgICAgICAgcmV0dXJuIDx0ZCBjbGFzcz1cInVuaXRzLXVuaXRcIj5cbiAgICAgICAgICAgICAgICA8cD48YmlnPiZsYXJyOzwvYmlnPiBTZWxlY3QgYSB1bml0PC9wPlxuICAgICAgICAgICAgPC90ZD47XG4gICAgICAgIH1cbiAgICAgICAgY29uc3QgYmFzZVVuaXQgPSBVbml0U3RhdHMuZ2V0VW5pdChtb2RpZmllcnMpO1xuICAgICAgICBpZiAoIWJhc2VVbml0KSB7XG4gICAgICAgICAgICByZXR1cm4gdGhpcy5yZW5kZXJBbW9uVW5pdCgpO1xuICAgICAgICB9XG4gICAgICAgIGNvbnN0IHVuaXQgPSBVbml0U3RhdHMuZ2V0VXBncmFkZWRVbml0KGJhc2VVbml0LCBtb2RpZmllcnMpO1xuICAgICAgICBjb25zdCByYWNlID0gdG9rZW4odW5pdC5yYWNlKTtcbiAgICAgICAgY29uc3QgaW1hZ2VTcmMgPSB0aGlzLmdldEltYWdlU3JjKHVuaXQpO1xuXG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8dGQgY2xhc3M9XCJ1bml0cy11bml0XCI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzcz17YHVuaXRzLWFjdGlvbnMke3RoaXMucHJvcHMub25DbGlja0NvbXBhcmUgPyBcIiB1bml0cy1hY3Rpb25zLWNvbXBhcmVcIiA6IFwiXCJ9YH0+XG4gICAgICAgICAgICAgICAgICAgIHt0aGlzLnByb3BzLm9uQ2xpY2tDbG9zZSAmJiA8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBvbkNsaWNrPXt0aGlzLnByb3BzLm9uQ2xpY2tDbG9zZX0gYXJpYS1sYWJlbD1cIkNsb3NlIGNvbXBhcmlzb25cIj4mdGltZXM7PC9idXR0b24+fVxuICAgICAgICAgICAgICAgICAgICB7dGhpcy5wcm9wcy5vbkNsaWNrQ29tcGFyZSAmJiA8YnV0dG9uIHR5cGU9XCJidXR0b25cIiBvbkNsaWNrPXt0aGlzLnByb3BzLm9uQ2xpY2tDb21wYXJlfT5Db21wYXJlIOKGkjwvYnV0dG9uPn1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8aDIgY2xhc3M9XCJ1bml0cy1uYW1lXCI+e3VuaXQubmFtZX08L2gyPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJ1bml0cy1pZGVudGl0eVwiPlxuICAgICAgICAgICAgICAgICAgICB7aW1hZ2VTcmMgJiYgPGRpdiBjbGFzcz1cInVuaXRzLWFydFwiPjxpbWcga2V5PXtpbWFnZVNyY30gc3JjPXtpbWFnZVNyY30gYWx0PVwiXCIgY2xhc3M9XCJ1bml0cy1wb3J0cmFpdFwiIC8+PC9kaXY+fVxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPVwidW5pdHMtaWRlbnRpdHktdGV4dFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgeyh1bml0Lm1jb3N0IHx8IHVuaXQudmNvc3QgfHwgdW5pdC5idWlsZHRpbWUgfHwgdW5pdC5zdXBwbHkpID8gPHAgY2xhc3M9XCJ1bml0cy1jb3N0c1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPjxpbWcgc3JjPVwiL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXR1cGdyYWRlcy9pY29ubWluZXJhbC5wbmdcIiBhbHQ9XCJNaW5lcmFsczpcIiAvPiB7dGhpcy5yZW5kZXJWYWx1ZSh1bml0Lm1jb3N0LCBiYXNlVW5pdC5tY29zdCl9PC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPjxpbWcgc3JjPXtgL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXR1cGdyYWRlcy9pY29uZ2FzXyR7cmFjZX0ucG5nYH0gYWx0PVwiR2FzOlwiIC8+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQudmNvc3QsIGJhc2VVbml0LnZjb3N0KX08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+PGltZyBzcmM9e2AvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzL2ljb250aW1lXyR7cmFjZX0ucG5nYH0gYWx0PVwiQnVpbGQgVGltZTpcIiAvPiB7dGhpcy5yZW5kZXJWYWx1ZSh1bml0LmJ1aWxkdGltZSwgYmFzZVVuaXQuYnVpbGR0aW1lKX08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+PGltZyBzcmM9e2AvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzL2ljb25zdXBwbHlfJHtyYWNlfS5wbmdgfSBhbHQ9XCJTdXBwbHk6XCIgLz4ge3RoaXMucmVuZGVyVmFsdWUodW5pdC5zdXBwbHksIGJhc2VVbml0LnN1cHBseSl9PC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9wPiA6IDxwIGNsYXNzPVwidW5pdHMtY29zdHNcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAoTm8gY29zdClcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD59XG4gICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzcz1cInVuaXRzLXRhZ3NcIj57dW5pdC50YWdzLmpvaW4oXCIgwrcgXCIpIHx8IFwiKE5vIHRhZ3MpXCJ9PC9wPlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8dWwgY2xhc3M9XCJ1bml0cy1zdGF0c1wiPlxuICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3M9XCJ1bml0cy1ocFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5IUDo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQuaHAsIGJhc2VVbml0LmhwKX1cbiAgICAgICAgICAgICAgICAgICAgICAgIHshIXVuaXQuYXJtb3IgJiYgPD4gPHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj58IEFybW9yOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUodW5pdC5hcm1vciwgYmFzZVVuaXQuYXJtb3IpfTwvPn1cbiAgICAgICAgICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICAgICAgICAgICAgeyEhdW5pdC5zaGllbGRzICYmIDxsaSBjbGFzcz1cInVuaXRzLXNoaWVsZHNcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPVwidW5ib2xkXCI+U2hpZWxkczo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQuc2hpZWxkcywgYmFzZVVuaXQuc2hpZWxkcyl9XG4gICAgICAgICAgICAgICAgICAgICAgICB7ISF1bml0LnNoaWVsZGFybW9yICYmIDw+IDxzcGFuIGNsYXNzPVwidW5ib2xkXCI+fCBTaGllbGQgQXJtb3I6PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZSh1bml0LnNoaWVsZGFybW9yLCBiYXNlVW5pdC5zaGllbGRhcm1vcil9PC8+fVxuICAgICAgICAgICAgICAgICAgICA8L2xpPn1cbiAgICAgICAgICAgICAgICAgICAgeyEhdW5pdC5lbmVyZ3kgJiYgPGxpIGNsYXNzPVwidW5pdHMtZW5lcmd5XCI+PHNwYW4gY2xhc3M9XCJ1bmJvbGRcIj5FbmVyZ3k6PC9zcGFuPiB7dGhpcy5yZW5kZXJWYWx1ZSh1bml0LmVuZXJneSwgYmFzZVVuaXQuZW5lcmd5KX08L2xpPn1cbiAgICAgICAgICAgICAgICAgICAgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+TW92ZSBzcGVlZDo8L3NwYW4+IHt0aGlzLnJlbmRlclZhbHVlKHVuaXQubW92ZW1lbnRzcGVlZCwgYmFzZVVuaXQubW92ZW1lbnRzcGVlZCl9PC9saT5cbiAgICAgICAgICAgICAgICAgICAgPGxpPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+VmlzaW9uOjwvc3Bhbj4ge3RoaXMucmVuZGVyVmFsdWUodW5pdC5zaWdodHJhbmdlLCBiYXNlVW5pdC5zaWdodHJhbmdlKX08L2xpPlxuICAgICAgICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgICAgICAge09iamVjdC52YWx1ZXModW5pdC5tb2RlcykubWFwKChtb2RlKSA9PiB0aGlzLnJlbmRlck1vZGUobW9kZSwgYmFzZVVuaXQubW9kZXNbbW9kZS5tb2RlTmFtZSB8fCAnJ10hLCBiYXNlVW5pdCkpfVxuICAgICAgICAgICAgICAgIHt0aGlzLnJlbmRlclNraWxscygpfVxuICAgICAgICAgICAgICAgIHt1bml0Lm5vdGVzICYmIDxwPjxzcGFuIGNsYXNzPVwidW5ib2xkXCI+Tm90ZXM6PC9zcGFuPjxiciAvPnt1bml0Lm5vdGVzLnNwbGl0KFwiPGJyPlwiKS5tYXAoKG5vdGUpID0+IDxkaXY+e25vdGV9PC9kaXY+KX08L3A+fVxuICAgICAgICAgICAgICAgIHt0aGlzLnJlbmRlclVwZ3JhZGVzKCl9XG4gICAgICAgICAgICA8L3RkPlxuICAgICAgICApO1xuICAgIH1cbn1cblxuaWYgKHR5cGVvZiBkb2N1bWVudCAhPT0gXCJ1bmRlZmluZWRcIikge1xuICAgIHByZWFjdC5yZW5kZXIoPFVuaXRzIC8+LCBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInVuaXRzXCIpISk7XG59XG4iCiAgXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0VBQUEsSUFBSTtBQUFBLEVBQUosSUFBTTtBQUFBLEVBQU4sSUFBUTtBQUFBLEVBQVIsSUFBVTtBQUFBLEVBQVYsSUFBWTtBQUFBLEVBQVosSUFBYztBQUFBLEVBQWQsSUFBZ0I7QUFBQSxFQUFoQixJQUFrQjtBQUFBLEVBQWxCLElBQW9CO0FBQUEsRUFBcEIsSUFBc0I7QUFBQSxFQUF0QixJQUF3QjtBQUFBLEVBQXhCLElBQTBCO0FBQUEsRUFBMUIsSUFBNEI7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RUFBRSxLQUFHLEVBQUUsTUFBSyxDQUFDLEdBQUUsRUFBRSxNQUFJLEVBQUUsS0FBSSxFQUFFLEdBQUcsSUFBSSxFQUFFLE9BQUssR0FBRSxFQUFFLEdBQUUsR0FBRSxDQUFDLEdBQUUsRUFBRSxNQUFJLEVBQUUsS0FBRyxNQUFLLEVBQUUsT0FBSyxLQUFHLEVBQUUsQ0FBQztBQUFBLElBQUM7QUFBQTtBQUFBLEVBQUUsU0FBUyxDQUFDLENBQUMsR0FBRTtBQUFBLElBQUMsS0FBVSxJQUFFLEVBQUUsT0FBWCxRQUFzQixFQUFFLE9BQVI7QUFBQSxNQUFZLE9BQU8sRUFBRSxNQUFJLEVBQUUsSUFBSSxPQUFLLE1BQUssRUFBRSxJQUFJLEtBQUssUUFBUSxDQUFDLEdBQUU7QUFBQSxRQUFDLElBQVMsS0FBTixRQUFlLEVBQUUsT0FBUjtBQUFBLFVBQVksT0FBTyxFQUFFLE1BQUksRUFBRSxJQUFJLE9BQUssRUFBRTtBQUFBLE9BQUksR0FBRSxFQUFFLENBQUM7QUFBQTtBQUFBLEVBQUUsU0FBUyxDQUFDLENBQUMsR0FBRTtBQUFBLEtBQUUsQ0FBQyxFQUFFLFFBQU0sRUFBRSxNQUFJLFNBQUssRUFBRSxLQUFLLENBQUMsS0FBRyxDQUFDLEVBQUUsU0FBTyxLQUFHLEVBQUUsd0JBQXNCLElBQUUsRUFBRSxzQkFBb0IsR0FBRyxDQUFDO0FBQUE7QUFBQSxFQUFFLFNBQVMsQ0FBQyxHQUFFO0FBQUEsSUFBQyxJQUFHO0FBQUEsTUFBQyxTQUFRLEdBQUUsSUFBRSxFQUFFLEVBQUU7QUFBQSxRQUFRLEVBQUUsU0FBTyxLQUFHLEVBQUUsS0FBSyxDQUFDLEdBQUUsSUFBRSxFQUFFLE1BQU0sR0FBRSxJQUFFLEVBQUUsUUFBTyxFQUFFLENBQUM7QUFBQSxNQUFFLFFBQU87QUFBQSxNQUFDLEVBQUUsU0FBTyxFQUFFLE1BQUk7QUFBQTtBQUFBO0FBQUEsRUFBRyxTQUFTLENBQUMsQ0FBQyxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUU7QUFBQSxJQUFDLElBQUksR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxJQUFFLEtBQUcsRUFBRSxPQUFLLEdBQUUsSUFBRSxFQUFFO0FBQUEsSUFBTyxLQUFJLElBQUUsRUFBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLENBQUMsR0FBRSxJQUFFLEVBQUUsSUFBRSxHQUFFO0FBQUEsT0FBVyxJQUFFLEVBQUUsSUFBSSxPQUFmLFNBQXFCLElBQU0sRUFBRSxPQUFOLE1BQVcsRUFBRSxFQUFFLFFBQU0sR0FBRSxFQUFFLE1BQUksR0FBRSxJQUFFLEVBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsQ0FBQyxHQUFFLElBQUUsRUFBRSxLQUFJLEVBQUUsT0FBSyxFQUFFLE9BQUssRUFBRSxRQUFNLEVBQUUsT0FBSyxFQUFFLEVBQUUsS0FBSSxNQUFLLENBQUMsR0FBRSxFQUFFLEtBQUssRUFBRSxLQUFJLEVBQUUsT0FBSyxHQUFFLENBQUMsSUFBUyxLQUFOLFFBQWUsS0FBTixTQUFVLElBQUUsS0FBSSxJQUFFLENBQUMsRUFBRSxJQUFFLEVBQUUsU0FBTyxFQUFFLFFBQU0sRUFBRSxPQUFLLElBQUUsRUFBRSxHQUFFLEdBQUUsR0FBRSxDQUFDLEdBQUUsS0FBRyxFQUFFLFFBQU0sRUFBRSxNQUFJLFNBQW1CLE9BQU8sRUFBRSxRQUFyQixjQUFvQyxNQUFKLFlBQU0sSUFBRSxJQUFFLE1BQUksSUFBRSxFQUFFLGNBQWEsRUFBRSxPQUFLO0FBQUEsSUFBSSxPQUFPLEVBQUUsTUFBSSxHQUFFO0FBQUE7QUFBQSxFQUFFLFNBQVMsQ0FBQyxDQUFDLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRTtBQUFBLElBQUMsSUFBSSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsSUFBRSxFQUFFLFFBQU8sSUFBRSxHQUFFLElBQUU7QUFBQSxJQUFFLEtBQUksRUFBRSxNQUFJLElBQUksTUFBTSxDQUFDLEdBQUUsSUFBRSxFQUFFLElBQUUsR0FBRTtBQUFBLE9BQVcsSUFBRSxFQUFFLE9BQVgsUUFBMkIsT0FBTyxLQUFsQixhQUFpQyxPQUFPLEtBQW5CLGNBQWdDLE9BQU8sS0FBakIsWUFBOEIsT0FBTyxLQUFqQixZQUE4QixPQUFPLEtBQWpCLFlBQW9CLEVBQUUsZUFBYSxTQUFPLElBQUUsRUFBRSxJQUFJLEtBQUcsRUFBRSxNQUFLLEdBQUUsTUFBSyxNQUFLLElBQUksSUFBRSxFQUFFLENBQUMsSUFBRSxJQUFFLEVBQUUsSUFBSSxLQUFHLEVBQUUsR0FBRSxFQUFDLFVBQVMsRUFBQyxHQUFFLE1BQUssTUFBSyxJQUFJLElBQVcsRUFBRSxnQkFBTixhQUFtQixFQUFFLE1BQUksSUFBRSxJQUFFLEVBQUUsSUFBSSxLQUFHLEVBQUUsRUFBRSxNQUFLLEVBQUUsT0FBTSxFQUFFLEtBQUksRUFBRSxNQUFJLEVBQUUsTUFBSSxNQUFLLEVBQUUsR0FBRyxJQUFFLEVBQUUsSUFBSSxLQUFHLEdBQUUsSUFBRSxJQUFFLEdBQUUsRUFBRSxLQUFHLEdBQUUsRUFBRSxNQUFJLEVBQUUsTUFBSSxHQUFFLElBQUUsT0FBVSxJQUFFLEVBQUUsTUFBSSxFQUFFLEdBQUUsR0FBRSxHQUFFLENBQUMsTUFBdEIsT0FBMkIsTUFBSyxJQUFFLEVBQUUsUUFBTSxFQUFFLE9BQUssS0FBVSxLQUFOLFFBQWUsRUFBRSxPQUFSLFFBQWlCLEtBQUosT0FBUSxJQUFFLElBQUUsTUFBSSxJQUFFLEtBQUcsTUFBaUIsT0FBTyxFQUFFLFFBQXJCLGVBQTRCLEVBQUUsT0FBSyxNQUFJLEtBQUcsTUFBSSxLQUFHLElBQUUsSUFBRSxNQUFJLEtBQUcsSUFBRSxJQUFFLE9BQUssSUFBRSxJQUFFLE1BQUksS0FBSSxFQUFFLE9BQUssT0FBSyxFQUFFLElBQUksS0FBRztBQUFBLElBQUssSUFBRztBQUFBLE1BQUUsS0FBSSxJQUFFLEVBQUUsSUFBRSxHQUFFO0FBQUEsU0FBVyxJQUFFLEVBQUUsT0FBWCxTQUFvQixJQUFFLEVBQUUsUUFBUixNQUFlLEVBQUUsT0FBSyxNQUFJLElBQUUsRUFBRSxDQUFDLElBQUcsRUFBRSxHQUFFLENBQUM7QUFBQSxJQUFHLE9BQU87QUFBQTtBQUFBLEVBQUUsU0FBUyxDQUFDLENBQUMsR0FBRSxHQUFFLEdBQUUsR0FBRTtBQUFBLElBQUMsSUFBSSxHQUFFO0FBQUEsSUFBRSxJQUFlLE9BQU8sRUFBRSxRQUFyQixZQUEwQjtBQUFBLE1BQUMsS0FBSSxJQUFFLEVBQUUsS0FBSSxJQUFFLEVBQUUsS0FBRyxJQUFFLEVBQUUsUUFBTztBQUFBLFFBQUksRUFBRSxPQUFLLEVBQUUsR0FBRyxLQUFHLEdBQUUsSUFBRSxFQUFFLEVBQUUsSUFBRyxHQUFFLEdBQUUsQ0FBQztBQUFBLE1BQUcsT0FBTztBQUFBLElBQUM7QUFBQSxJQUFDLEVBQUUsT0FBSyxNQUFJLE1BQUksS0FBRyxFQUFFLFFBQU0sQ0FBQyxFQUFFLGVBQWEsSUFBRSxFQUFFLENBQUMsSUFBRyxFQUFFLGFBQWEsRUFBRSxLQUFJLEtBQUcsSUFBSSxJQUFHLElBQUUsRUFBRTtBQUFBLElBQUssR0FBRTtBQUFBLE1BQUMsSUFBRSxLQUFHLEVBQUU7QUFBQSxJQUFXLFNBQWEsS0FBTixRQUFZLEVBQUUsWUFBTDtBQUFBLElBQWUsT0FBTztBQUFBO0VBQThHLFNBQVMsQ0FBQyxDQUFDLEdBQUUsR0FBRSxHQUFFLEdBQUU7QUFBQSxJQUFDLElBQUksR0FBRSxHQUFFLEtBQU0sS0FBSixHQUFZLE1BQUosTUFBRSxHQUFPLElBQUUsRUFBRSxJQUFHLElBQVEsS0FBTixTQUFhLElBQUUsRUFBRSxRQUFSO0FBQUEsSUFBYSxJQUFVLE1BQVAsUUFBZ0IsS0FBTixRQUFTLEtBQUcsS0FBRyxFQUFFLE9BQUssS0FBRyxFQUFFO0FBQUEsTUFBSyxPQUFPO0FBQUEsSUFBRSxJQUFHLEtBQUcsSUFBRSxJQUFFO0FBQUEsTUFBRyxLQUFJLElBQUUsSUFBRSxHQUFFLElBQUUsSUFBRSxFQUFFLEtBQUcsS0FBRyxJQUFFLEVBQUU7QUFBQSxRQUFRLEtBQVUsSUFBRSxFQUFFLElBQUUsS0FBRyxJQUFFLE1BQUksU0FBdEIsU0FBaUMsSUFBRSxFQUFFLFFBQVIsS0FBYyxLQUFHLEVBQUUsT0FBSyxLQUFHLEVBQUU7QUFBQSxVQUFLLE9BQU87QUFBQTtBQUFBLElBQUUsT0FBTTtBQUFBO0FBQUEsRUFBRyxTQUFTLENBQUMsQ0FBQyxHQUFFLEdBQUUsR0FBRTtBQUFBLElBQU0sRUFBRSxNQUFQLE1BQVUsRUFBRSxZQUFZLEdBQVEsS0FBTixPQUFRLEtBQUcsQ0FBQyxJQUFFLEVBQUUsS0FBUyxLQUFOLE9BQVEsS0FBYSxPQUFPLEtBQWpCLFlBQW9CLEVBQUUsS0FBSyxDQUFDLElBQUUsSUFBRSxJQUFFO0FBQUE7QUFBQSxFQUFLLFNBQVMsQ0FBQyxDQUFDLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRTtBQUFBLElBQUMsSUFBSSxHQUFFO0FBQUEsSUFBRTtBQUFBLE1BQUUsSUFBWSxLQUFUO0FBQUEsUUFBVyxJQUFhLE9BQU8sS0FBakI7QUFBQSxVQUFtQixFQUFFLE1BQU0sVUFBUTtBQUFBLFFBQUUsS0FBSTtBQUFBLFVBQUMsSUFBYSxPQUFPLEtBQWpCLGFBQXFCLEVBQUUsTUFBTSxVQUFRLElBQUUsS0FBSTtBQUFBLFlBQUUsS0FBSSxLQUFLO0FBQUEsY0FBRSxLQUFHLEtBQUssS0FBRyxFQUFFLEVBQUUsT0FBTSxHQUFFLEVBQUU7QUFBQSxVQUFFLElBQUc7QUFBQSxZQUFFLEtBQUksS0FBSztBQUFBLGNBQUUsS0FBRyxFQUFFLE1BQUksRUFBRSxNQUFJLEVBQUUsRUFBRSxPQUFNLEdBQUUsRUFBRSxFQUFFO0FBQUE7QUFBQSxNQUFFLEtBQUssSUFBUSxFQUFFLE1BQVAsT0FBZ0IsRUFBRSxNQUFQO0FBQUEsUUFBVSxJQUFFLE1BQUksSUFBRSxFQUFFLFFBQVEsR0FBRSxJQUFJLElBQUcsSUFBRSxFQUFFLFlBQVksR0FBRSxJQUFFLEtBQUssS0FBaUIsS0FBZCxnQkFBOEIsS0FBYixjQUFlLEVBQUUsTUFBTSxDQUFDLElBQUUsRUFBRSxNQUFNLENBQUMsR0FBRSxFQUFFLE1BQUksRUFBRSxJQUFFLENBQUMsSUFBRyxFQUFFLEVBQUUsSUFBRSxLQUFHLEdBQUUsSUFBRSxJQUFFLEVBQUUsS0FBRyxFQUFFLE1BQUksRUFBRSxLQUFHLEdBQUUsRUFBRSxpQkFBaUIsR0FBRSxJQUFFLElBQUUsR0FBRSxDQUFDLEtBQUcsRUFBRSxvQkFBb0IsR0FBRSxJQUFFLElBQUUsR0FBRSxDQUFDO0FBQUEsTUFBRSxLQUFJO0FBQUEsUUFBQyxJQUFpQyxLQUE5QjtBQUFBLFVBQWdDLElBQUUsRUFBRSxRQUFRLGVBQWMsR0FBRyxFQUFFLFFBQVEsVUFBUyxHQUFHO0FBQUEsUUFBRSxLQUFLLElBQVksS0FBVCxXQUFzQixLQUFWLFlBQXFCLEtBQVIsVUFBbUIsS0FBUixVQUFtQixLQUFSLFVBQXVCLEtBQVosY0FBMkIsS0FBWixjQUEwQixLQUFYLGFBQXlCLEtBQVgsYUFBc0IsS0FBUixVQUFzQixLQUFYLGFBQWMsS0FBSztBQUFBLFVBQUUsSUFBRztBQUFBLFlBQUMsRUFBRSxLQUFTLEtBQU4sT0FBUSxLQUFHO0FBQUEsWUFBRTtBQUFBLFlBQVEsT0FBTSxHQUFFO0FBQUEsUUFBYyxPQUFPLEtBQW5CLGVBQTZCLEtBQU4sUUFBYyxNQUFMLFNBQWEsRUFBRSxNQUFQLE1BQVUsRUFBRSxnQkFBZ0IsQ0FBQyxJQUFFLEVBQUUsYUFBYSxHQUFhLEtBQVgsYUFBaUIsS0FBSCxJQUFLLEtBQUcsQ0FBQztBQUFBO0FBQUE7QUFBQSxFQUFJLFNBQVMsQ0FBQyxDQUFDLEdBQUU7QUFBQSxJQUFDLE9BQU8sUUFBUSxDQUFDLEdBQUU7QUFBQSxNQUFDLElBQUcsS0FBSyxHQUFFO0FBQUEsUUFBQyxJQUFJLElBQUUsS0FBSyxFQUFFLEVBQUUsT0FBSztBQUFBLFFBQUcsSUFBUyxFQUFFLE1BQVI7QUFBQSxVQUFXLEVBQUUsS0FBRztBQUFBLFFBQUksS0FBSyxJQUFHLEVBQUUsS0FBRyxFQUFFO0FBQUEsVUFBRztBQUFBLFFBQU8sT0FBTyxFQUFFLEVBQUUsUUFBTSxFQUFFLE1BQU0sQ0FBQyxJQUFFLENBQUM7QUFBQSxNQUFDO0FBQUE7QUFBQTtBQUFBLEVBQUcsU0FBUyxDQUFDLENBQUMsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRTtBQUFBLElBQUMsSUFBSSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxJQUFFLEVBQUU7QUFBQSxJQUFLLElBQVksRUFBRSxnQkFBTjtBQUFBLE1BQWtCLE9BQU87QUFBQSxJQUFLLE1BQUksRUFBRSxRQUFNLElBQUUsQ0FBQyxFQUFFLEtBQUcsRUFBRSxNQUFLLElBQUUsQ0FBQyxJQUFFLEVBQUUsTUFBSSxFQUFFLEdBQUcsS0FBSSxJQUFFLEVBQUUsUUFBTSxFQUFFLENBQUM7QUFBQSxJQUFFO0FBQUEsTUFBRSxJQUFlLE9BQU8sS0FBbkI7QUFBQSxRQUFxQixJQUFHO0FBQUEsVUFBQyxJQUFHLElBQUUsRUFBRSxPQUFNLElBQUUsRUFBRSxhQUFXLEVBQUUsVUFBVSxRQUFPLEtBQUcsSUFBRSxFQUFFLGdCQUFjLEVBQUUsRUFBRSxNQUFLLElBQUUsSUFBRSxJQUFFLEVBQUUsTUFBTSxRQUFNLEVBQUUsS0FBRyxHQUFFLEVBQUUsTUFBSSxLQUFHLElBQUUsRUFBRSxNQUFJLEVBQUUsS0FBSyxLQUFHLEVBQUUsT0FBSyxJQUFFLEVBQUUsTUFBSSxJQUFFLElBQUksRUFBRSxHQUFFLENBQUMsS0FBRyxFQUFFLE1BQUksSUFBRSxJQUFJLEVBQUUsR0FBRSxDQUFDLEdBQUUsRUFBRSxjQUFZLEdBQUUsRUFBRSxTQUFPLElBQUcsS0FBRyxFQUFFLElBQUksQ0FBQyxHQUFFLEVBQUUsVUFBUSxFQUFFLFFBQU0sQ0FBQyxJQUFHLEVBQUUsTUFBSSxHQUFFLElBQUUsRUFBRSxNQUFJLE1BQUcsRUFBRSxNQUFJLENBQUMsR0FBRSxFQUFFLE1BQUksQ0FBQyxJQUFHLEtBQVMsRUFBRSxPQUFSLFNBQWMsRUFBRSxNQUFJLEVBQUUsUUFBTyxLQUFTLEVBQUUsNEJBQVIsU0FBbUMsRUFBRSxPQUFLLEVBQUUsVUFBUSxFQUFFLE1BQUksRUFBRSxDQUFDLEdBQUUsRUFBRSxHQUFHLElBQUcsRUFBRSxFQUFFLEtBQUksRUFBRSx5QkFBeUIsR0FBRSxFQUFFLEdBQUcsQ0FBQyxJQUFHLElBQUUsRUFBRSxPQUFNLElBQUUsRUFBRSxPQUFNLEVBQUUsTUFBSSxHQUFFO0FBQUEsWUFBRSxLQUFTLEVBQUUsNEJBQVIsUUFBd0MsRUFBRSxzQkFBUixRQUE0QixFQUFFLG1CQUFtQixHQUFFLEtBQVMsRUFBRSxxQkFBUixRQUEyQixFQUFFLElBQUksS0FBSyxFQUFFLGlCQUFpQjtBQUFBLFVBQUUsS0FBSTtBQUFBLFlBQUMsSUFBRyxLQUFTLEVBQUUsNEJBQVIsUUFBa0MsTUFBSSxLQUFTLEVBQUUsNkJBQVIsUUFBbUMsRUFBRSwwQkFBMEIsR0FBRSxDQUFDLEdBQUUsRUFBRSxPQUFLLEVBQUUsT0FBSyxDQUFDLEVBQUUsT0FBVyxFQUFFLHlCQUFSLFFBQW9DLEVBQUUsc0JBQXNCLEdBQUUsRUFBRSxLQUFJLENBQUMsTUFBdEMsT0FBd0M7QUFBQSxjQUFDLEVBQUUsT0FBSyxFQUFFLFFBQU0sRUFBRSxRQUFNLEdBQUUsRUFBRSxRQUFNLEVBQUUsS0FBSSxFQUFFLE1BQUksUUFBSSxFQUFFLE1BQUksRUFBRSxLQUFJLEVBQUUsTUFBSSxFQUFFLEtBQUksRUFBRSxJQUFJLEtBQUssUUFBUSxDQUFDLEdBQUU7QUFBQSxnQkFBQyxNQUFJLEVBQUUsS0FBRztBQUFBLGVBQUcsR0FBRSxFQUFFLEtBQUssTUFBTSxFQUFFLEtBQUksRUFBRSxHQUFHLEdBQUUsRUFBRSxNQUFJLENBQUMsR0FBRSxFQUFFLElBQUksVUFBUSxFQUFFLEtBQUssQ0FBQztBQUFBLGNBQUU7QUFBQSxZQUFPO0FBQUEsWUFBTyxFQUFFLHVCQUFSLFFBQTZCLEVBQUUsb0JBQW9CLEdBQUUsRUFBRSxLQUFJLENBQUMsR0FBRSxLQUFTLEVBQUUsc0JBQVIsUUFBNEIsRUFBRSxJQUFJLEtBQUssUUFBUSxHQUFFO0FBQUEsY0FBQyxFQUFFLG1CQUFtQixHQUFFLEdBQUUsQ0FBQztBQUFBLGFBQUU7QUFBQTtBQUFBLFVBQUUsSUFBRyxFQUFFLFVBQVEsR0FBRSxFQUFFLFFBQU0sR0FBRSxFQUFFLE1BQUksR0FBRSxFQUFFLE1BQUksT0FBRyxJQUFFLEVBQUUsS0FBSSxJQUFFLEdBQUU7QUFBQSxZQUFFLEVBQUUsUUFBTSxFQUFFLEtBQUksRUFBRSxNQUFJLE9BQUcsS0FBRyxFQUFFLENBQUMsR0FBRSxJQUFFLEVBQUUsT0FBTyxFQUFFLE9BQU0sRUFBRSxPQUFNLEVBQUUsT0FBTyxHQUFFLEVBQUUsS0FBSyxNQUFNLEVBQUUsS0FBSSxFQUFFLEdBQUcsR0FBRSxFQUFFLE1BQUksQ0FBQztBQUFBLFVBQUU7QUFBQSxZQUFLLEdBQUU7QUFBQSxjQUFDLEVBQUUsTUFBSSxPQUFHLEtBQUcsRUFBRSxDQUFDLEdBQUUsSUFBRSxFQUFFLE9BQU8sRUFBRSxPQUFNLEVBQUUsT0FBTSxFQUFFLE9BQU8sR0FBRSxFQUFFLFFBQU0sRUFBRTtBQUFBLFlBQUcsU0FBTyxFQUFFLE9BQUssRUFBRSxJQUFFO0FBQUEsVUFBSSxFQUFFLFFBQU0sRUFBRSxLQUFVLEVBQUUsbUJBQVIsU0FBMEIsSUFBRSxFQUFFLEVBQUUsQ0FBQyxHQUFFLENBQUMsR0FBRSxFQUFFLGdCQUFnQixDQUFDLElBQUcsS0FBRyxDQUFDLEtBQVMsRUFBRSwyQkFBUixTQUFrQyxJQUFFLEVBQUUsd0JBQXdCLEdBQUUsQ0FBQyxJQUFHLElBQVEsS0FBTixRQUFTLEVBQUUsU0FBTyxLQUFTLEVBQUUsT0FBUixPQUFZLEVBQUUsRUFBRSxNQUFNLFFBQVEsSUFBRSxHQUFFLElBQUUsRUFBRSxHQUFFLEVBQUUsQ0FBQyxJQUFFLElBQUUsQ0FBQyxDQUFDLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLENBQUMsR0FBRSxFQUFFLE9BQUssRUFBRSxLQUFJLEVBQUUsT0FBSyxNQUFLLEVBQUUsSUFBSSxVQUFRLEVBQUUsS0FBSyxDQUFDLEdBQUUsTUFBSSxFQUFFLE1BQUksRUFBRSxLQUFHO0FBQUEsVUFBTSxPQUFNLEdBQUU7QUFBQSxVQUFDLElBQUcsRUFBRSxNQUFJLE1BQUssS0FBUyxLQUFOO0FBQUEsWUFBUSxJQUFHLEVBQUUsTUFBSztBQUFBLGNBQUMsS0FBSSxFQUFFLE9BQUssSUFBRSxNQUFJLElBQUksS0FBTSxFQUFFLFlBQUwsS0FBZSxFQUFFO0FBQUEsZ0JBQWEsSUFBRSxFQUFFO0FBQUEsY0FBWSxFQUFFLEVBQUUsUUFBUSxDQUFDLEtBQUcsTUFBSyxFQUFFLE1BQUk7QUFBQSxZQUFDLEVBQUMsS0FBSTtBQUFBLGNBQUMsS0FBSSxJQUFFLEVBQUUsT0FBTztBQUFBLGdCQUFLLEVBQUUsRUFBRSxFQUFFO0FBQUEsY0FBRSxFQUFFLENBQUM7QUFBQTtBQUFBLFVBQUU7QUFBQSxZQUFLLEVBQUUsTUFBSSxFQUFFLEtBQUksRUFBRSxNQUFJLEVBQUUsS0FBSSxFQUFFLFFBQU0sRUFBRSxDQUFDO0FBQUEsVUFBRSxFQUFFLElBQUksR0FBRSxHQUFFLENBQUM7QUFBQTtBQUFBLE1BQUU7QUFBQSxRQUFXLEtBQU4sUUFBUyxFQUFFLE9BQUssRUFBRSxPQUFLLEVBQUUsTUFBSSxFQUFFLEtBQUksRUFBRSxNQUFJLEVBQUUsT0FBSyxJQUFFLEVBQUUsTUFBSSxFQUFFLEVBQUUsS0FBSSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLENBQUM7QUFBQSxJQUFFLFFBQU8sSUFBRSxFQUFFLFdBQVMsRUFBRSxDQUFDLEdBQUUsTUFBSSxFQUFFLE1BQVMsWUFBRTtBQUFBO0FBQUEsRUFBRSxTQUFTLENBQUMsQ0FBQyxHQUFFO0FBQUEsSUFBQyxNQUFJLEVBQUUsUUFBTSxFQUFFLElBQUksTUFBSSxPQUFJLEVBQUUsT0FBSyxFQUFFLElBQUksS0FBSyxDQUFDO0FBQUE7QUFBQSxFQUFHLFNBQVMsQ0FBQyxDQUFDLEdBQUUsR0FBRSxHQUFFO0FBQUEsSUFBQyxTQUFRLElBQUUsRUFBRSxJQUFFLEVBQUUsUUFBTztBQUFBLE1BQUksRUFBRSxFQUFFLElBQUcsRUFBRSxFQUFFLElBQUcsRUFBRSxFQUFFLEVBQUU7QUFBQSxJQUFFLEVBQUUsT0FB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LGFBQVcsRUFBRSxLQUFLLEVBQUUsVUFBVSxJQUFFLE1BQUssR0FBRSxDQUFDLEtBQUcsSUFBRSxJQUFFLElBQUUsRUFBRSxNQUFJLEVBQUUsWUFBVyxHQUFFLENBQUMsR0FBRSxFQUFFLEdBQUUsR0FBRSxDQUFDO0FBQUE7RUFBbVUsU0FBUyxDQUFDLENBQUMsR0FBRTtBQUFBLElBQUMsU0FBUyxDQUFDLENBQUMsR0FBRTtBQUFBLE1BQUMsSUFBSSxHQUFFO0FBQUEsTUFBRSxPQUFPLEtBQUssb0JBQWtCLElBQUUsSUFBSSxNQUFLLElBQUUsQ0FBQyxHQUFHLEVBQUUsT0FBSyxNQUFLLEtBQUssa0JBQWdCLFFBQVEsR0FBRTtBQUFBLFFBQUMsT0FBTztBQUFBLFNBQUcsS0FBSyx1QkFBcUIsUUFBUSxHQUFFO0FBQUEsUUFBQyxJQUFFO0FBQUEsU0FBTSxLQUFLLHdCQUFzQixRQUFRLENBQUMsR0FBRTtBQUFBLFFBQUMsS0FBSyxNQUFNLFNBQU8sRUFBRSxTQUFPLEVBQUUsUUFBUSxRQUFRLENBQUMsR0FBRTtBQUFBLFVBQUMsRUFBRSxNQUFJLE1BQUcsRUFBRSxDQUFDO0FBQUEsU0FBRTtBQUFBLFNBQUcsS0FBSyxNQUFJLFFBQVEsQ0FBQyxHQUFFO0FBQUEsUUFBQyxFQUFFLElBQUksQ0FBQztBQUFBLFFBQUUsSUFBSSxJQUFFLEVBQUU7QUFBQSxRQUFxQixFQUFFLHVCQUFxQixRQUFRLEdBQUU7QUFBQSxVQUFDLEtBQUcsRUFBRSxPQUFPLENBQUMsR0FBRSxLQUFHLEVBQUUsS0FBSyxDQUFDO0FBQUE7QUFBQSxVQUFLLEVBQUU7QUFBQTtBQUFBLElBQVMsT0FBTyxFQUFFLE1BQUksU0FBTyxLQUFJLEVBQUUsS0FBRyxHQUFFLEVBQUUsV0FBUyxFQUFFLE9BQUssRUFBRSxXQUFTLFFBQVEsQ0FBQyxHQUFFLEdBQUU7QUFBQSxNQUFDLE9BQU8sRUFBRSxTQUFTLENBQUM7QUFBQSxPQUFJLGNBQVksR0FBRTtBQUFBO0FBQUEsRUFBRSxJQUFFLEVBQUUsT0FBTSxJQUFFLEVBQUMsS0FBSSxRQUFRLENBQUMsR0FBRSxHQUFFLEdBQUUsR0FBRTtBQUFBLElBQUMsU0FBUSxHQUFFLEdBQUUsRUFBRSxJQUFFLEVBQUU7QUFBQSxNQUFJLEtBQUksSUFBRSxFQUFFLFFBQU0sQ0FBQyxFQUFFO0FBQUEsUUFBRyxJQUFHO0FBQUEsVUFBQyxLQUFJLElBQUUsRUFBRSxnQkFBb0IsRUFBRSw0QkFBUixTQUFtQyxFQUFFLFNBQVMsRUFBRSx5QkFBeUIsQ0FBQyxDQUFDLEdBQUUsSUFBRSxFQUFFLE1BQVcsRUFBRSxxQkFBUixTQUE0QixFQUFFLGtCQUFrQixHQUFFLEtBQUcsQ0FBQyxDQUFDLEdBQUUsSUFBRSxFQUFFLE1BQUs7QUFBQSxZQUFFLE9BQU8sRUFBRSxNQUFJO0FBQUEsVUFBRSxPQUFNLEdBQUU7QUFBQSxVQUFDLElBQUU7QUFBQTtBQUFBLElBQUUsTUFBTTtBQUFBLElBQUUsR0FBRSxJQUFFLEdBQUUsSUFBRSxRQUFRLENBQUMsR0FBRTtBQUFBLElBQUMsT0FBYSxLQUFOLFFBQWtCLEVBQUUsZ0JBQU47QUFBQSxLQUFtQixFQUFFLFVBQVUsV0FBUyxRQUFRLENBQUMsR0FBRSxHQUFFO0FBQUEsSUFBQyxJQUFJO0FBQUEsSUFBRSxJQUFRLEtBQUssT0FBWCxRQUFnQixLQUFLLE9BQUssS0FBSyxRQUFNLEtBQUssTUFBSSxLQUFLLE1BQUksRUFBRSxDQUFDLEdBQUUsS0FBSyxLQUFLLEdBQWMsT0FBTyxLQUFuQixlQUF1QixJQUFFLEVBQUUsRUFBRSxDQUFDLEdBQUUsQ0FBQyxHQUFFLEtBQUssS0FBSyxJQUFHLEtBQUcsRUFBRSxHQUFFLENBQUMsR0FBUSxLQUFOLFFBQVMsS0FBSyxRQUFNLEtBQUcsS0FBSyxJQUFJLEtBQUssQ0FBQyxHQUFFLEVBQUUsSUFBSTtBQUFBLEtBQUksRUFBRSxVQUFVLGNBQVksUUFBUSxDQUFDLEdBQUU7QUFBQSxJQUFDLEtBQUssUUFBTSxLQUFLLE1BQUksTUFBRyxLQUFHLEtBQUssSUFBSSxLQUFLLENBQUMsR0FBRSxFQUFFLElBQUk7QUFBQSxLQUFJLEVBQUUsVUFBVSxTQUFPLEdBQUUsSUFBRSxDQUFDLEdBQUUsSUFBYyxPQUFPLFdBQW5CLGFBQTJCLFFBQVEsVUFBVSxLQUFLLEtBQUssUUFBUSxRQUFRLENBQUMsSUFBRSxZQUFXLElBQUUsUUFBUSxDQUFDLEdBQUUsR0FBRTtBQUFBLElBQUMsT0FBTyxFQUFFLElBQUksTUFBSSxFQUFFLElBQUk7QUFBQSxLQUFLLEVBQUUsTUFBSSxHQUFFLElBQUUsS0FBSyxPQUFPLEVBQUUsU0FBUyxDQUFDLEdBQUUsSUFBRSxRQUFNLEdBQUUsSUFBRSxRQUFNLEdBQUUsSUFBRSwrQkFBOEIsSUFBRSxHQUFFLElBQUUsRUFBRSxLQUFFLEdBQUUsSUFBRSxFQUFFLElBQUUsR0FBRSxJQUFFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0VDTWpqVyxJQUFNLGVBQWUsSUFBSTtBQUFBLEVBQ2hDLElBQU0sVUFBVSxJQUFJO0FBQUEsRUFFcEIsV0FBVyxXQUFXLHdCQUFtQztBQUFBLElBQ3JELElBQUksUUFBUSxjQUFjO0FBQUEsTUFBVTtBQUFBLElBQ3BDLE1BQU0sT0FBTyxRQUFRLFNBQVMsVUFBVSxLQUFLLFFBQVEsSUFBSSxJQUFJLE9BQU8sUUFBUSxJQUFJLElBQUk7QUFBQSxJQUNwRixJQUFJLFNBQVM7QUFBQSxNQUFNO0FBQUEsSUFDbkIsTUFBTSxPQUFPLFFBQVEsS0FBSyxZQUFZLEVBQUUsUUFBUSxlQUFlLEVBQUU7QUFBQSxJQUNqRSxNQUFNLE1BQU0sZ0JBQWdCLFFBQVE7QUFBQSxJQUNwQyxNQUFNLGNBQWMsUUFBUSxJQUFJLEdBQUcsS0FBSyxJQUFJO0FBQUEsSUFDNUMsWUFBWSxJQUFJLFFBQVEsTUFBTTtBQUFBLElBQzlCLFFBQVEsSUFBSSxLQUFLLFdBQVc7QUFBQSxJQUM1QixNQUFNLFdBQVcsYUFBYSxJQUFJLEdBQUc7QUFBQSxJQUNyQyxhQUFhLElBQUksS0FBSztBQUFBLE1BQ2xCLFdBQVcsUUFBUTtBQUFBLE1BQ25CLE1BQU0sUUFBUTtBQUFBLE1BQ2QsTUFBTSxRQUFRLE9BQU8sUUFBUSxTQUFTLFFBQVEsU0FBUyxVQUFVLFFBQVEsUUFBUTtBQUFBLE1BQ2pGLE1BQU0sUUFBUSxPQUFPLFFBQVEsT0FBTyxVQUFVLFFBQVE7QUFBQSxNQUN0RCxRQUFRLENBQUMsR0FBRyxXQUFXLEVBQUUsS0FBSztBQUFBLENBQUk7QUFBQSxJQUN0QyxDQUFDO0FBQUEsRUFDTDs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztFQ3ZCTyxTQUFTLFFBQVEsQ0FBQyxPQUEwQjtBQUFBLElBQy9DLE9BQU8sWUFBWSxDQUFDLE1BQU0sV0FBVyxNQUFNLE1BQU0sTUFBTSxNQUFNLE1BQU0sUUFBUSxJQUFJLE1BQU0sWUFBWSxFQUFFLEVBQzlGLElBQUksVUFBUSxtQkFBbUIsSUFBSSxDQUFDLEVBQUUsS0FBSyxHQUFHO0FBQUE7QUFBQSxFQUdoRCxJQUFNLGFBQWEsSUFBSSxJQUFLLG1CQUEyQixJQUFJLFdBQVMsQ0FBQyxTQUFTLEtBQUssR0FBRyxLQUFLLENBQUMsQ0FBQztBQUFBLEVBRTdGLFNBQVMsYUFBYSxDQUFDLE9BQWlDO0FBQUEsSUFDM0QsSUFBSSxDQUFDLE1BQU07QUFBQSxNQUFVLE9BQU87QUFBQSxJQUU1QixNQUFNLFdBQVcsTUFBTSxTQUFTLE1BQU0sdUJBQXVCLElBQUksTUFBTSxNQUFNO0FBQUEsSUFDN0UsTUFBTSxVQUFVLFNBQVMsTUFBTSx5Q0FBeUM7QUFBQSxJQUN4RSxJQUFJLENBQUM7QUFBQSxNQUFTLE9BQU87QUFBQSxJQUNyQixJQUFJLE9BQU8sUUFBUSxFQUFFLE1BQU07QUFBQSxNQUFHLE9BQU87QUFBQSxJQUNyQyxPQUFPLFFBQVEsTUFBTyxRQUFRLElBQUksS0FBSyxJQUFJLE1BQU07QUFBQTtBQUFBLEVBRzlDLFNBQVMsVUFBVSxDQUFDLE9BQWtCLE1BQWdFO0FBQUEsSUFDekcsTUFBTSxRQUFRLENBQUM7QUFBQSxJQUNmLElBQUksTUFBTSxlQUFlLFFBQVEsT0FBTyxNQUFNLFVBQVUsSUFBSSxHQUFHO0FBQUEsTUFDM0QsTUFBTSxLQUFLLEVBQUUsTUFBTSxxREFBcUQsT0FBTyxXQUFXLE9BQU8sTUFBTSxXQUFXLENBQUM7QUFBQSxJQUN2SDtBQUFBLElBQ0EsTUFBTSxXQUFXLGNBQWMsS0FBSztBQUFBLElBQ3BDLElBQUksYUFBYSxNQUFNO0FBQUEsTUFDbkIsTUFBTSxLQUFLLEVBQUUsTUFBTSwrQ0FBK0MsWUFBWSxPQUFPLHVCQUF1QixPQUFPLFNBQVMsQ0FBQztBQUFBLElBQ2pJO0FBQUEsSUFDQSxPQUFPO0FBQUE7QUFBQSxFQUdKLFNBQVMsWUFBWSxDQUFDLE9BQTRCO0FBQUEsSUFDckQsTUFBTSxVQUFVLENBQUMsTUFBTSxXQUFXO0FBQUEsSUFFbEMsSUFBSSxNQUFNLFlBQVksQ0FBQyxtQ0FBbUMsS0FBSyxNQUFNLFFBQVEsR0FBRztBQUFBLE1BQzVFLFFBQVEsS0FBSyxzQkFBc0IsS0FBSyxNQUFNLFFBQVEsSUFBSSxNQUFNLFdBQVcsYUFBYSxNQUFNLFVBQVU7QUFBQSxJQUM1RztBQUFBLElBQ0EsSUFBSSxNQUFNO0FBQUEsTUFBaUIsUUFBUSxLQUFLLHNCQUFzQjtBQUFBLElBQzlELElBQUksTUFBTSxpQkFBaUI7QUFBQSxNQUFNLFFBQVEsS0FBSyxpQkFBaUIsTUFBTSxlQUFlO0FBQUEsSUFDcEYsSUFBSSxNQUFNO0FBQUEsTUFBTSxRQUFRLEtBQUssU0FBUyxNQUFNLE1BQU07QUFBQSxJQUNsRCxJQUFJLE1BQU07QUFBQSxNQUFVLFFBQVEsS0FBSyxhQUFhLE1BQU0sVUFBVTtBQUFBLElBQzlELElBQUksTUFBTTtBQUFBLE1BQWMsUUFBUSxLQUFLLE1BQU0sWUFBWTtBQUFBLElBQ3ZELE9BQU87QUFBQTs7RUMzQ3VXLElBQTBFLEtBQUU7RUFBa0IsU0FBUyxFQUFDLENBQUMsR0FBRSxHQUFFLEdBQUUsR0FBRSxHQUFFLEdBQUU7QUFBQSxJQUFDLE1BQUksSUFBRSxDQUFDO0FBQUEsSUFBRyxJQUFJLEdBQUUsR0FBRSxJQUFFO0FBQUEsSUFBRSxJQUFHLFNBQVE7QUFBQSxNQUFFLEtBQUksS0FBSyxJQUFFLENBQUMsR0FBRTtBQUFBLFFBQVMsS0FBUCxRQUFTLElBQUUsRUFBRSxLQUFHLEVBQUUsS0FBRyxFQUFFO0FBQUEsSUFBRyxJQUFJLEtBQUUsRUFBQyxNQUFLLEdBQUUsT0FBTSxHQUFFLEtBQUksR0FBRSxLQUFJLEdBQUUsS0FBSSxNQUFLLElBQUcsTUFBSyxLQUFJLEdBQUUsS0FBSSxNQUFLLEtBQUksTUFBSyxhQUFpQixXQUFFLEtBQUksRUFBRSxJQUFFLEtBQUksSUFBRyxLQUFJLEdBQUUsVUFBUyxHQUFFLFFBQU8sRUFBQztBQUFBLElBQUUsSUFBZSxPQUFPLEtBQW5CLGVBQXVCLElBQUUsRUFBRTtBQUFBLE1BQWMsS0FBSSxLQUFLO0FBQUEsUUFBVyxFQUFFLE9BQU4sY0FBVyxFQUFFLEtBQUcsRUFBRTtBQUFBLElBQUksT0FBTyxFQUFFLFNBQU8sRUFBRSxNQUFNLEVBQUMsR0FBRTtBQUFBOzs7RUNZMXlCLElBQU0sa0JBQWtCO0FBQUEsSUFDcEI7QUFBQSxJQUNBO0FBQUEsSUFDQTtBQUFBLElBQ0E7QUFBQSxJQUNBO0FBQUEsSUFDQTtBQUFBLElBQ0E7QUFBQSxFQUNKO0FBQUEsRUFFQSxTQUFTLEtBQUssQ0FBQyxNQUFxQjtBQUFBLElBQ2hDLElBQUksU0FBUztBQUFBLE1BQWdCLE9BQU87QUFBQSxJQUNwQyxJQUFJLFNBQVM7QUFBQSxNQUF3QixPQUFPO0FBQUEsSUFDNUMsSUFBSSxTQUFTO0FBQUEsTUFBc0IsT0FBTztBQUFBLElBQzFDLElBQUksU0FBUztBQUFBLE1BQXVCLE9BQU87QUFBQSxJQUMzQyxJQUFJLFNBQVM7QUFBQSxNQUFrQixPQUFPO0FBQUEsSUFDdEMsSUFBSSxTQUFTO0FBQUEsTUFBc0IsT0FBTztBQUFBLElBQzFDLElBQUksU0FBUztBQUFBLE1BQXFCLE9BQU87QUFBQSxJQUN6QyxJQUFJLFNBQVM7QUFBQSxNQUEwQixPQUFPO0FBQUEsSUFDOUMsSUFBSSxTQUFTO0FBQUEsTUFBbUIsT0FBTztBQUFBLElBQ3ZDLElBQUksU0FBUztBQUFBLE1BQXdCLE9BQU87QUFBQSxJQUU1QyxPQUFPLEtBQUssWUFBWSxFQUFFLFFBQVEsZUFBZSxFQUFFO0FBQUE7QUFBQTtBQUFBLEVBYXZELE1BQU0sY0FBcUIsRUFBVTtBQUFBLElBQ3hCLFFBTUw7QUFBQSxNQUNJLFdBQVc7QUFBQSxNQUNYLE1BQU07QUFBQSxNQUNOLFdBQVc7QUFBQSxNQUNYLGtCQUFrQjtBQUFBLElBQ3RCO0FBQUEsSUFDSyxpQkFBaUIsR0FBRztBQUFBLE1BQ3pCLE9BQU8saUJBQWlCLGNBQWMsTUFBTTtBQUFBLFFBQ3hDLEtBQUssb0JBQW9CO0FBQUEsT0FDNUI7QUFBQSxNQUNELEtBQUssb0JBQW9CO0FBQUE7QUFBQSxJQUU3QixtQkFBbUIsR0FBUztBQUFBLE1BQ3hCLE1BQU0sT0FBTyxPQUFPLFNBQVMsS0FBSyxNQUFNLENBQUM7QUFBQSxNQUN6QyxPQUFPLFdBQVcsUUFBUSxLQUFLLE1BQU0sR0FBRztBQUFBLE1BQ3hDLEtBQUssU0FBUyxFQUFFLFdBQVcsYUFBYSxNQUFNLE1BQU0sUUFBUSxLQUFLLENBQUM7QUFBQSxNQUNsRSxJQUFJLGFBQWEsTUFBTTtBQUFBLFFBQ25CLEtBQUssU0FBUyxFQUFFLFdBQVcsVUFBVSxVQUFVLFdBQW9CLElBQWEsRUFBRSxDQUFDO0FBQUEsTUFDdkY7QUFBQTtBQUFBLElBRUosaUJBQWlCLENBQUMsY0FBc0M7QUFBQSxNQUNwRCxLQUFLLFNBQVMsRUFBRSxXQUFXLEtBQUssS0FBSyxNQUFNLGNBQWMsVUFBVSxFQUFFLENBQUM7QUFBQTtBQUFBLElBRTFFLHdCQUF3QixDQUFDLHFCQUE2QztBQUFBLE1BQ2xFLEtBQUssU0FBUyxFQUFFLGtCQUFrQixLQUFLLEtBQUssTUFBTSxxQkFBcUIsaUJBQWlCLEVBQUUsQ0FBQztBQUFBO0FBQUEsSUFFL0YsaUJBQWlCLE1BQU07QUFBQSxNQUNuQixLQUFLLFNBQVMsRUFBRSxrQkFBa0IsS0FBSyxLQUFLLE1BQU0sVUFBVSxFQUFFLENBQUM7QUFBQTtBQUFBLElBRW5FLGVBQWUsTUFBTTtBQUFBLE1BQ2pCLEtBQUssU0FBUyxFQUFFLGtCQUFrQixLQUFLLENBQUM7QUFBQTtBQUFBLFdBRTVCLHdCQUF3QixDQUFDLE9BQWlDO0FBQUEsTUFDdEUsT0FBTyxFQUFFLE9BQU8sTUFBTSxTQUFTLE1BQU0sUUFBUztBQUFBO0FBQUEsSUFFekMsTUFBTSxHQUFHO0FBQUEsTUFDZCxJQUFJLEtBQUssTUFBTSxPQUFPO0FBQUEsUUFDbEIsdUJBQU8sR0FBQyxLQUFEO0FBQUEsb0JBQWlFO0FBQUEsWUFBakU7QUFBQSw0QkFBVSxHQUFDLE9BQUQ7QUFBQSxjQUFLLE9BQU07QUFBQSxjQUFYLFVBQThCLEtBQUssTUFBTTtBQUFBLGVBQXpDLGlDQUFpRDtBQUFBO0FBQUEsV0FBM0QsZ0NBQWlFO0FBQUEsTUFDNUU7QUFBQSxNQUNBLHVCQUNJLEdBQUMsU0FBRDtBQUFBLFFBQU8sT0FBTTtBQUFBLFFBQWIsMEJBQ0ksR0FBQyxNQUFEO0FBQUEsb0JBS0U7QUFBQSw0QkFKRSxHQUFDLG1CQUFEO0FBQUEsY0FBbUIsV0FBVyxLQUFLLE1BQU07QUFBQSxlQUF6QyxpQ0FBb0Q7QUFBQSw0QkFDcEQsR0FBQyxjQUFEO0FBQUEsY0FBYyxXQUFXLEtBQUssTUFBTTtBQUFBLGNBQVcsTUFBTSxLQUFLLE1BQU07QUFBQSxlQUFoRSxpQ0FBc0U7QUFBQSxZQUNyRSxLQUFLLE1BQU0sNkJBQWEsR0FBQyxXQUFEO0FBQUEsY0FBVyxXQUFXLEtBQUssTUFBTTtBQUFBLGNBQVcsZ0JBQWdCLEtBQUs7QUFBQSxjQUFnQixnQkFBZ0IsS0FBSztBQUFBLGNBQWdCLFNBQVE7QUFBQSxlQUE5SCxpQ0FBa0k7QUFBQSxZQUMxSixLQUFLLE1BQU0sb0NBQW9CLEdBQUMsV0FBRDtBQUFBLGNBQVcsV0FBVyxLQUFLLE1BQU07QUFBQSxjQUFrQixnQkFBZ0IsS0FBSztBQUFBLGNBQXVCLGNBQWMsS0FBSztBQUFBLGNBQWMsU0FBUTtBQUFBLGVBQXhJLGlDQUE0STtBQUFBO0FBQUEsV0FKaEwsZ0NBS0U7QUFBQSxTQU5OLGlDQU9FO0FBQUE7QUFBQSxFQUdkO0FBQUE7QUFBQSxFQUVBLE1BQU0sMEJBQWlDLEVBQXdDO0FBQUEsSUFDM0UsVUFBVSxDQUFDLE1BQW1DO0FBQUEsTUFDMUMsT0FBTyxLQUFLLE1BQU0sY0FBYyxNQUFNLElBQUksSUFBSSxPQUFPO0FBQUE7QUFBQSxJQUVoRCxNQUFNLEdBQUc7QUFBQSxNQUNkLHVCQUNJLEdBQUMsTUFBRDtBQUFBLFFBQUksT0FBTTtBQUFBLFFBQVYsVUFnQkU7QUFBQSwwQkFmRSxHQUFDLEtBQUQ7QUFBQSxZQUFHLE9BQU07QUFBQSxZQUFULDBCQUFzQixHQUFDLE1BQUQ7QUFBQTtBQUFBLGdEQUFnQjtBQUFBLGFBQXRDLGlDQUEyQztBQUFBLDBCQUMzQyxHQUFDLE1BQUQ7QUFBQSxZQUFJLE9BQU07QUFBQSxZQUFWLFVBQ0ssMkJBQW1CLElBQUksQ0FBQyw4QkFDckIsR0FBQyxNQUFEO0FBQUEsd0NBQUksR0FBQyxLQUFEO0FBQUEsZ0JBQUcsTUFBTSxJQUFJLE1BQU0sVUFBVSxTQUFTO0FBQUEsZ0JBQUssaUJBQWUsS0FBSyxXQUFXLFVBQVUsU0FBUztBQUFBLGdCQUE3RixVQUdGO0FBQUEsa0NBRkUsR0FBQyxPQUFEO0FBQUEsb0JBQUssS0FBSyw4QkFBOEIsTUFBTSxVQUFVLFNBQVM7QUFBQSxvQkFBaUIsS0FBSTtBQUFBLG9CQUFHLE9BQU07QUFBQSxvQkFBSyxRQUFPO0FBQUEsb0JBQUssT0FBTTtBQUFBLHFCQUF0SCxpQ0FBeUk7QUFBQSxrQkFDeEksVUFBVTtBQUFBO0FBQUEsaUJBRlgsZ0NBR0Y7QUFBQSxlQUhGLGlDQUdNLENBQ1Q7QUFBQSxhQU5MLGlDQU9FO0FBQUEsMEJBQ0YsR0FBQyxLQUFEO0FBQUEsWUFBRyxPQUFNO0FBQUEsWUFBVCwwQkFBc0IsR0FBQyxNQUFEO0FBQUE7QUFBQSxnREFBVTtBQUFBLGFBQWhDLGlDQUFxQztBQUFBLDBCQUNyQyxHQUFDLE1BQUQ7QUFBQSxZQUFJLE9BQU07QUFBQSxZQUFWLFVBQ0ssZ0JBQWdCLElBQUksQ0FBQyx5QkFDbEIsR0FBQyxNQUFEO0FBQUEsd0NBQUksR0FBQyxLQUFEO0FBQUEsZ0JBQUcsTUFBTSxJQUFJLE1BQU0sSUFBSTtBQUFBLGdCQUFLLGlCQUFlLEtBQUssV0FBVyxJQUFJO0FBQUEsZ0JBQS9ELFVBQW1FO0FBQUEsaUJBQW5FLGlDQUEwRTtBQUFBLGVBQTlFLGlDQUFrRixDQUNyRjtBQUFBLGFBSEwsaUNBSUU7QUFBQTtBQUFBLFNBZk4sZ0NBZ0JFO0FBQUE7QUFBQSxFQUdkO0FBQUE7QUFBQSxFQUVBLE1BQU0scUJBQTRCLEVBQTJEO0FBQUEsSUFDekYsVUFBVSxDQUFDLE1BQW1DO0FBQUEsTUFDMUMsT0FBTyxLQUFLLE1BQU0sU0FBUyxNQUFNLElBQUksSUFBSSxPQUFPO0FBQUE7QUFBQSxJQUUzQyxNQUFNLEdBQUc7QUFBQSxNQUNkLElBQUksS0FBSyxNQUFNLGNBQWMsTUFBTTtBQUFBLFFBQy9CLHVCQUFPLEdBQUMsTUFBRDtBQUFBLFVBQUksT0FBTTtBQUFBLFVBQVYsMEJBQ0gsR0FBQyxLQUFEO0FBQUEsc0JBQXlDO0FBQUEsOEJBQXRDLEdBQUMsT0FBRDtBQUFBO0FBQUEsa0RBQWE7QUFBQSxjQUFoQjtBQUFBO0FBQUEsNkNBQXlDO0FBQUEsV0FEdEMsaUNBRUw7QUFBQSxNQUNOO0FBQUEsTUFDQSxNQUFNLGNBQWMsQ0FBQztBQUFBLE1BQ3JCLE1BQU0sU0FBUyxDQUFDO0FBQUEsTUFDaEIsTUFBTSxhQUFhLENBQUM7QUFBQSxNQUVwQixNQUFNLFlBQVksSUFBSTtBQUFBLE1BQ3RCLFdBQVcsY0FBYyxvQkFBWSxPQUFPLENBQUMsU0FBUyxNQUFNLEtBQUssU0FBUyxNQUFNLEtBQUssTUFBTSxTQUFTLEdBQUc7QUFBQSxRQUNuRyxJQUFJLFVBQVUsSUFBSSxXQUFXLFFBQVE7QUFBQSxVQUFHO0FBQUEsUUFDeEMsVUFBVSxJQUFJLFdBQVcsUUFBUTtBQUFBLFFBQ2pDLElBQUksV0FBVyxLQUFLLFNBQVMsV0FBVyxHQUFHO0FBQUEsVUFDdkMsV0FBVyxLQUFLLFdBQVcsUUFBUTtBQUFBLFFBQ3ZDLEVBQUUsS0FBSyxJQUFJLFdBQVcsS0FBSyxTQUFTLFFBQVEsR0FBRztBQUFBLFVBQzNDLE9BQU8sS0FBSyxXQUFXLFFBQVE7QUFBQSxRQUNuQyxFQUFFLEtBQUs7QUFBQSxVQUNILFlBQVksS0FBSyxXQUFXLFFBQVE7QUFBQTtBQUFBLE1BRTVDO0FBQUEsTUFDQSxXQUFXLFlBQVksa0JBQVUsT0FBTyxDQUFDLFNBQVMsTUFBTSxLQUFLLElBQUksTUFBTSxLQUFLLE1BQU0sU0FBUyxHQUFHO0FBQUEsUUFDMUYsSUFBSSxTQUFTLFdBQVc7QUFBQSxVQUNwQixXQUFXLEtBQUssU0FBUyxJQUFJO0FBQUEsUUFDakMsRUFBRSxLQUFLLElBQUksU0FBUyxRQUFRO0FBQUEsVUFDeEIsT0FBTyxLQUFLLFNBQVMsSUFBSTtBQUFBLFFBQzdCLEVBQUUsS0FBSztBQUFBLFVBQ0gsWUFBWSxLQUFLLFNBQVMsSUFBSTtBQUFBO0FBQUEsTUFFdEM7QUFBQSxNQUNBLHVCQUNJLEdBQUMsTUFBRDtBQUFBLFFBQUksT0FBTTtBQUFBLFFBQVYsVUFtQkU7QUFBQSxVQWxCRyxDQUFDLENBQUMsWUFBWSwwQkFBVSxHQUFDLEtBQUQ7QUFBQSxZQUFHLE9BQU07QUFBQSxZQUFULDBCQUFzQixHQUFDLE1BQUQ7QUFBQTtBQUFBLGdEQUFXO0FBQUEsYUFBakMsaUNBQXNDO0FBQUEsVUFDOUQsQ0FBQyxDQUFDLFlBQVksMEJBQVUsR0FBQyxNQUFEO0FBQUEsWUFBSSxPQUFNO0FBQUEsWUFBVixVQUNwQixZQUFZLElBQUksQ0FBQyx5QkFDZCxHQUFDLE1BQUQ7QUFBQSx3Q0FBSSxHQUFDLEtBQUQ7QUFBQSxnQkFBRyxNQUFNLElBQUksTUFBTSxLQUFLLE1BQU0sU0FBVSxLQUFLLE1BQU0sSUFBSTtBQUFBLGdCQUFLLGlCQUFlLEtBQUssV0FBVyxJQUFJO0FBQUEsZ0JBQS9GLFVBQW1HO0FBQUEsaUJBQW5HLGlDQUEwRztBQUFBLGVBQTlHLGlDQUFrSCxDQUNySDtBQUFBLGFBSG9CLGlDQUl2QjtBQUFBLFVBQ0QsQ0FBQyxDQUFDLE9BQU8sMEJBQVUsR0FBQyxLQUFEO0FBQUEsWUFBRyxPQUFNO0FBQUEsWUFBVCwwQkFBc0IsR0FBQyxNQUFEO0FBQUE7QUFBQSxnREFBWTtBQUFBLGFBQWxDLGlDQUF1QztBQUFBLFVBQzFELENBQUMsQ0FBQyxPQUFPLDBCQUFVLEdBQUMsTUFBRDtBQUFBLFlBQUksT0FBTTtBQUFBLFlBQVYsVUFDZixPQUFPLElBQUksQ0FBQyx5QkFDVCxHQUFDLE1BQUQ7QUFBQSx3Q0FBSSxHQUFDLEtBQUQ7QUFBQSxnQkFBRyxNQUFNLElBQUksTUFBTSxLQUFLLE1BQU0sU0FBVSxLQUFLLE1BQU0sSUFBSTtBQUFBLGdCQUFLLGlCQUFlLEtBQUssV0FBVyxJQUFJO0FBQUEsZ0JBQS9GLFVBQW1HO0FBQUEsaUJBQW5HLGlDQUEwRztBQUFBLGVBQTlHLGlDQUFrSCxDQUNySDtBQUFBLGFBSGUsaUNBSWxCO0FBQUEsVUFDRCxDQUFDLENBQUMsV0FBVywwQkFBVSxHQUFDLEtBQUQ7QUFBQSxZQUFHLE9BQU07QUFBQSxZQUFULDBCQUFzQixHQUFDLE1BQUQ7QUFBQTtBQUFBLGdEQUFnQjtBQUFBLGFBQXRDLGlDQUEyQztBQUFBLFVBQ2xFLENBQUMsQ0FBQyxXQUFXLDBCQUFVLEdBQUMsTUFBRDtBQUFBLFlBQUksT0FBTTtBQUFBLFlBQVYsVUFDbkIsV0FBVyxJQUFJLENBQUMsOEJBQ2IsR0FBQyxNQUFEO0FBQUEsd0NBQUksR0FBQyxLQUFEO0FBQUEsZ0JBQUcsTUFBTSxJQUFJLE1BQU0sS0FBSyxNQUFNLFNBQVUsS0FBSyxNQUFNLFNBQVM7QUFBQSxnQkFBSyxpQkFBZSxLQUFLLFdBQVcsU0FBUztBQUFBLGdCQUF6RyxVQUE2RztBQUFBLGlCQUE3RyxpQ0FBeUg7QUFBQSxlQUE3SCxpQ0FBaUksQ0FDcEk7QUFBQSxhQUhtQixpQ0FJdEI7QUFBQTtBQUFBLFNBbEJOLGdDQW1CRTtBQUFBO0FBQUEsRUFHZDtBQUFBO0FBQUEsRUE4Q08sTUFBTSxrQkFBeUIsRUFLbkM7QUFBQSxJQUNVLFFBRUwsQ0FBQztBQUFBLElBQ0wsY0FBYyxHQUE2QjtBQUFBLE1BQ3ZDLE1BQU0sV0FBVyxrQkFBVSxLQUFLLFVBQVEsTUFBTSxLQUFLLElBQUksTUFBTSxLQUFLLE1BQU0sVUFBVyxJQUFJO0FBQUEsTUFDdkYsSUFBSSxDQUFDLFVBQVU7QUFBQSxRQUNYLHVCQUNJLEdBQUMsTUFBRDtBQUFBO0FBQUEsNENBQW9CO0FBQUEsTUFFNUI7QUFBQSxNQUNBLE1BQU0sT0FBTztBQUFBLFFBQ1QsU0FBUyxRQUFRLFVBQVU7QUFBQSxRQUMzQixTQUFTLFVBQVUsWUFBWTtBQUFBLFFBQy9CLFNBQVMsYUFBYSxlQUFlO0FBQUEsUUFDckMsU0FBUyxhQUFhLGVBQWU7QUFBQSxRQUNyQyxTQUFTLFVBQVUsWUFBWTtBQUFBLFFBQy9CLFNBQVMsU0FBUyxXQUFXO0FBQUEsUUFDN0IsU0FBUyxVQUFVLFlBQVk7QUFBQSxRQUMvQixTQUFTLFlBQVksY0FBYztBQUFBLE1BRXZDLEVBQUUsT0FBTyxPQUFPO0FBQUEsTUFDaEIsdUJBQ0ksR0FBQyxNQUFEO0FBQUEsUUFBSSxPQUFNO0FBQUEsUUFBVixVQWNFO0FBQUEsMEJBYkUsR0FBQyxNQUFEO0FBQUEsWUFBSSxPQUFNO0FBQUEsWUFBVixVQUF3QixTQUFTO0FBQUEsYUFBakMsaUNBQXdDO0FBQUEsMEJBQ3hDLEdBQUMsT0FBRDtBQUFBLFlBQUssT0FBTTtBQUFBLFlBQVgsMEJBQ0ksR0FBQyxPQUFEO0FBQUEsY0FBSyxPQUFNO0FBQUEsY0FBWCwwQkFDSSxHQUFDLEtBQUQ7QUFBQSxnQkFBRyxPQUFNO0FBQUEsZ0JBQVQsVUFBdUIsS0FBSyxLQUFLLEtBQUssS0FBSztBQUFBLGlCQUEzQyxpQ0FBeUQ7QUFBQSxlQUQ3RCxpQ0FFRTtBQUFBLGFBSE4saUNBSUU7QUFBQSwwQkFDRixHQUFDLEtBQUQ7QUFBQTtBQUFBLDhDQUVFO0FBQUEsMEJBQ0YsR0FBQyxNQUFEO0FBQUEsWUFBSSxPQUFNO0FBQUEsWUFBVixVQUdFO0FBQUEsOEJBRkUsR0FBQyxNQUFEO0FBQUEsZ0JBQUksT0FBTTtBQUFBLGdCQUFWLFVBQXFKO0FBQUEsa0NBQWhJLEdBQUMsUUFBRDtBQUFBLG9CQUFNLE9BQU07QUFBQSxvQkFBWjtBQUFBLHNEQUEwQjtBQUFBLGtCQUEvQztBQUFBLGtCQUFzRCxTQUFTO0FBQUEsa0JBQS9EO0FBQUEsa0JBQW9FLENBQUMsQ0FBQyxTQUFTLHlCQUFTO0FBQUEsOEJBQXlEO0FBQUEsc0NBQXZELEdBQUMsUUFBRDtBQUFBLHdCQUFNLE9BQU07QUFBQSx3QkFBWjtBQUFBLDBEQUFnQztBQUFBLHNCQUFNLFNBQVM7QUFBQTtBQUFBLHFCQUFqRCxnQ0FBeUQ7QUFBQTtBQUFBLGlCQUFqSixnQ0FBcUo7QUFBQSxjQUNwSixDQUFDLENBQUMsU0FBUywyQkFBVyxHQUFDLE1BQUQ7QUFBQSxnQkFBSSxPQUFNO0FBQUEsZ0JBQVYsVUFBdUw7QUFBQSxrQ0FBN0osR0FBQyxRQUFEO0FBQUEsb0JBQU0sT0FBTTtBQUFBLG9CQUFaO0FBQUEsc0RBQStCO0FBQUEsa0JBQXpEO0FBQUEsa0JBQWdFLFNBQVM7QUFBQSxrQkFBekU7QUFBQSxrQkFBbUYsQ0FBQyxDQUFDLFNBQVMsK0JBQWU7QUFBQSw4QkFBc0U7QUFBQSxzQ0FBcEUsR0FBQyxRQUFEO0FBQUEsd0JBQU0sT0FBTTtBQUFBLHdCQUFaO0FBQUEsMERBQXVDO0FBQUEsc0JBQU0sU0FBUztBQUFBO0FBQUEscUJBQXhELGdDQUFzRTtBQUFBO0FBQUEsaUJBQW5MLGdDQUF1TDtBQUFBO0FBQUEsYUFGbE4sZ0NBR0U7QUFBQTtBQUFBLFNBYk4sZ0NBY0U7QUFBQTtBQUFBLFdBR0gsT0FBTyxDQUFDLFdBQXVDO0FBQUEsTUFDbEQsTUFBTSxnQkFBZ0Isb0JBQVksT0FBTyxDQUFDLFNBQVMsTUFBTSxLQUFLLFNBQVMsTUFBTSxVQUFVLGFBQWEsTUFBTSxLQUFLLFFBQVEsTUFBTSxVQUFVLElBQUk7QUFBQSxNQUMzSSxNQUFNLGVBQWUsY0FBYztBQUFBLE1BQ25DLElBQUksQ0FBQyxjQUFjO0FBQUEsUUFDZixPQUFPO0FBQUEsTUFDWDtBQUFBLE1BQ0EsTUFBTSxRQUFrQyxDQUFDO0FBQUEsTUFDekMsV0FBVyxZQUFZLGVBQWU7QUFBQSxRQUNsQyxNQUFNLE9BQU8sU0FBUyxLQUFLLFFBQVEsU0FBUyxVQUFVLEVBQUUsRUFBRSxLQUFLLEtBQUs7QUFBQSxRQUNwRSxJQUFJLE1BQU0sT0FBTztBQUFBLFVBQ2IsSUFBSSxDQUFDLFNBQVM7QUFBQSxZQUFXLE1BQU0sSUFBSSxNQUFNLG1CQUFtQixTQUFTLE1BQU07QUFBQSxVQUMzRSxNQUFNLE1BQU0sb0JBQW9CLENBQUM7QUFBQSxVQUNqQyxNQUFNLE1BQU0sZ0JBQWdCLFNBQVMsYUFBYTtBQUFBLFlBQzlDLFFBQVEsU0FBUztBQUFBLFlBQVEsT0FBTyxTQUFTO0FBQUEsVUFDN0M7QUFBQSxRQUNKLEVBQUUsS0FBSztBQUFBLFVBQ0gsSUFBSSxTQUFTO0FBQUEsWUFBVyxNQUFNLElBQUksTUFBTSxTQUFTLFNBQVMsOEJBQThCO0FBQUEsVUFFeEYsTUFBTSxXQUFxQixNQUFNLFFBQVE7QUFBQSxZQUNyQyxVQUFVLFFBQVE7QUFBQSxVQUN0QjtBQUFBLFVBQ0EsSUFBSSxTQUFTLFVBQVUsYUFBYTtBQUFBLFlBQU8sU0FBUyxRQUFRLFNBQVM7QUFBQSxVQUNyRSxJQUFJLFNBQVMsZ0JBQWdCLGFBQWE7QUFBQSxZQUFhLFNBQVMsY0FBYyxTQUFTO0FBQUEsVUFDdkYsSUFBSSxTQUFTLGtCQUFrQixhQUFhO0FBQUEsWUFBZSxTQUFTLGdCQUFnQixTQUFTO0FBQUEsVUFDN0YsSUFBSSxTQUFTLGVBQWUsYUFBYTtBQUFBLFlBQVksU0FBUyxhQUFhLFNBQVM7QUFBQSxVQUNwRixJQUFJLFNBQVMsU0FBUyxhQUFhO0FBQUEsWUFBTSxTQUFTLE9BQU8sU0FBUztBQUFBLFVBQ2xFLFNBQVMsV0FBVyxTQUFTO0FBQUEsVUFDN0IsSUFBSSxTQUFTO0FBQUEsWUFBYSxTQUFTLGNBQWMsU0FBUztBQUFBLFVBQzFELElBQUksU0FBUztBQUFBLFlBQVMsU0FBUyxVQUFVLFNBQVM7QUFBQSxVQUNsRCxJQUFJLFNBQVM7QUFBQSxZQUFLLFNBQVMsTUFBTSxTQUFTO0FBQUEsVUFDMUMsSUFBSSxTQUFTLFFBQVE7QUFBQSxZQUNqQixTQUFTLGtCQUFrQjtBQUFBLGNBQ3ZCLElBQUksRUFBRSxRQUFRLFNBQVMsUUFBUSxPQUFPLFNBQVMsWUFBWTtBQUFBLFlBQy9EO0FBQUEsVUFDSjtBQUFBO0FBQUEsTUFFUjtBQUFBLE1BQ0EsTUFBTSxPQUFhO0FBQUEsUUFDZixNQUFNLGFBQWE7QUFBQSxRQUNuQixXQUFXLGFBQWE7QUFBQSxRQUN4QixNQUFNLGFBQWE7QUFBQSxRQUNuQixPQUFPLGFBQWE7QUFBQSxRQUNwQixPQUFPLGFBQWE7QUFBQSxRQUNwQixXQUFXLGFBQWE7QUFBQSxRQUN4QixRQUFRLGFBQWE7QUFBQSxRQUNyQixJQUFJLGFBQWE7QUFBQSxRQUNqQixRQUFRLGFBQWE7QUFBQSxRQUNyQixTQUFTLGFBQWE7QUFBQSxRQUN0QixPQUFPLGFBQWE7QUFBQSxRQUNwQixhQUFhLGFBQWE7QUFBQSxRQUMxQixRQUFRLGFBQWE7QUFBQSxRQUNyQixlQUFlLGFBQWE7QUFBQSxRQUM1QixZQUFZLGFBQWE7QUFBQSxRQUN6QixNQUFNLGFBQWEsS0FBSyxNQUFNLEdBQUc7QUFBQSxRQUNqQztBQUFBLFFBQ0EsU0FBUyxhQUFhO0FBQUEsUUFDdEIsWUFBWSxhQUFhO0FBQUEsUUFDekIsYUFBYSxhQUFhO0FBQUEsUUFDMUIsT0FBTyxhQUFhO0FBQUEsTUFDeEI7QUFBQSxNQUNBLE9BQU87QUFBQTtBQUFBLFdBRUosWUFBWSxDQUNmLFNBWUEsTUFDQSxPQUNGO0FBQUEsTUFDRSxJQUFJLFFBQVEsY0FBYztBQUFBLFFBQVE7QUFBQSxNQUNsQyxJQUFJLFFBQVEsY0FBYyxXQUFXO0FBQUEsUUFDakMsV0FBVyxRQUFRLE9BQU8sT0FBTyxLQUFLLEtBQUssR0FBRztBQUFBLFVBQzFDLElBQUksQ0FBQyxRQUFRLGdCQUFnQixLQUFLLGFBQWEsUUFBUSxjQUFjO0FBQUEsWUFDakUsS0FBSyxNQUFNLFFBQVE7QUFBQSxVQUN2QjtBQUFBLFFBQ0o7QUFBQSxRQUNBO0FBQUEsTUFDSjtBQUFBLE1BQ0EsUUFBUSxRQUFRO0FBQUEsUUFDWixLQUFLO0FBQUEsVUFDRCxLQUFLLFFBQVEsS0FBSyxjQUFjLEtBQUssT0FBTyxTQUFTLEtBQUs7QUFBQSxVQUMxRDtBQUFBLFFBQ0osS0FBSztBQUFBLFVBQ0QsS0FBSyxRQUFRLEtBQUssY0FBYyxLQUFLLE9BQU8sU0FBUyxLQUFLO0FBQUEsVUFDMUQ7QUFBQSxRQUNKLEtBQUs7QUFBQSxVQUNELEtBQUssWUFBWSxLQUFLLGNBQWMsS0FBSyxXQUFXLFNBQVMsS0FBSztBQUFBLFVBQ2xFO0FBQUEsUUFDSixLQUFLO0FBQUEsVUFDRCxLQUFLLFNBQVMsS0FBSyxjQUFjLEtBQUssUUFBUSxTQUFTLEtBQUs7QUFBQSxVQUM1RDtBQUFBLFFBQ0osS0FBSztBQUFBLFVBQ0QsSUFBSSxRQUFRLGNBQWMsY0FBYyxRQUFRLFNBQVMsTUFBTTtBQUFBLFlBQzNELEtBQUssTUFBTSxLQUFLLGNBQWMsS0FBSyxRQUFRLFNBQVMsS0FBSyxJQUFJLEtBQUs7QUFBQSxVQUN0RSxFQUFFLEtBQUs7QUFBQSxZQUNILEtBQUssS0FBSyxLQUFLLGNBQWMsS0FBSyxJQUFJLFNBQVMsS0FBSztBQUFBO0FBQUEsVUFFeEQ7QUFBQSxRQUNKLEtBQUs7QUFBQSxVQUNELEtBQUssVUFBVSxLQUFLLGNBQWMsS0FBSyxTQUFTLFNBQVMsS0FBSztBQUFBLFVBQzlEO0FBQUEsUUFDSixLQUFLO0FBQUEsVUFDRCxJQUFJLENBQUMsUUFBUSxjQUFjO0FBQUEsWUFDdkIsS0FBSyxRQUFRLEtBQUssY0FBYyxLQUFLLE9BQU8sU0FBUyxLQUFLO0FBQUEsVUFDOUQ7QUFBQSxVQUNBLFdBQVcsUUFBUSxPQUFPLE9BQU8sS0FBSyxLQUFLLEdBQUc7QUFBQSxZQUMxQyxJQUFJLFFBQVEsZUFBZSxLQUFLLGFBQWEsUUFBUSxlQUFlLEtBQUssVUFBVSxXQUFXO0FBQUEsY0FDMUYsS0FBSyxRQUFRLEtBQUssY0FBYyxLQUFLLFNBQVMsS0FBSyxPQUFPLFNBQVMsS0FBSztBQUFBLFlBQzVFO0FBQUEsVUFDSjtBQUFBLFVBQ0E7QUFBQSxRQUNKLEtBQUs7QUFBQSxVQUNELElBQUksQ0FBQyxRQUFRLGNBQWM7QUFBQSxZQUN2QixLQUFLLGNBQWMsS0FBSyxjQUFjLEtBQUssYUFBYSxTQUFTLEtBQUs7QUFBQSxVQUMxRTtBQUFBLFVBQ0EsV0FBVyxRQUFRLE9BQU8sT0FBTyxLQUFLLEtBQUssR0FBRztBQUFBLFlBQzFDLElBQUksUUFBUSxlQUFlLEtBQUssYUFBYSxRQUFRLGVBQWUsS0FBSyxnQkFBZ0IsV0FBVztBQUFBLGNBQ2hHLEtBQUssY0FBYyxLQUFLLGNBQWMsS0FBSyxlQUFlLEtBQUssYUFBYSxTQUFTLEtBQUs7QUFBQSxZQUM5RjtBQUFBLFVBQ0o7QUFBQSxVQUNBO0FBQUEsUUFDSixLQUFLO0FBQUEsVUFDRCxJQUFJLENBQUMsUUFBUSxjQUFjO0FBQUEsWUFDdkIsS0FBSyxnQkFBZ0IsS0FBSyxjQUFjLEtBQUssZUFBZSxTQUFTLEtBQUs7QUFBQSxVQUM5RTtBQUFBLFVBQ0EsV0FBVyxRQUFRLE9BQU8sT0FBTyxLQUFLLEtBQUssR0FBRztBQUFBLFlBQzFDLElBQUksUUFBUSxlQUFlLEtBQUssYUFBYSxRQUFRLGVBQWUsS0FBSyxrQkFBa0IsV0FBVztBQUFBLGNBQ2xHLEtBQUssZ0JBQWdCLEtBQUssY0FBYyxLQUFLLGlCQUFpQixLQUFLLGVBQWUsU0FBUyxLQUFLO0FBQUEsWUFDcEc7QUFBQSxVQUNKO0FBQUEsVUFDQTtBQUFBLFFBQ0osS0FBSztBQUFBLFVBQ0QsSUFBSSxDQUFDLFFBQVEsY0FBYztBQUFBLFlBQ3ZCLEtBQUssYUFBYSxLQUFLLGNBQWMsS0FBSyxZQUFZLFNBQVMsS0FBSztBQUFBLFVBQ3hFO0FBQUEsVUFDQSxXQUFXLFFBQVEsT0FBTyxPQUFPLEtBQUssS0FBSyxHQUFHO0FBQUEsWUFDMUMsSUFBSSxRQUFRLGVBQWUsS0FBSyxhQUFhLFFBQVEsZUFBZSxLQUFLLGVBQWUsV0FBVztBQUFBLGNBQy9GLEtBQUssYUFBYSxLQUFLLGNBQWMsS0FBSyxjQUFjLEtBQUssWUFBWSxTQUFTLEtBQUs7QUFBQSxZQUMzRjtBQUFBLFVBQ0o7QUFBQSxVQUNBO0FBQUEsUUFDSixLQUFLO0FBQUEsVUFDRCxXQUFXLFFBQVEsT0FBTyxPQUFPLEtBQUssS0FBSyxHQUFHO0FBQUEsWUFDMUMsSUFBSSxRQUFRLGVBQWUsS0FBSyxhQUFhLFFBQVEsZUFBZSxNQUFNO0FBQUEsY0FDdEUsSUFBSSxRQUFRLGFBQWE7QUFBQSxnQkFDckIsS0FBSyxnQkFBaUIsUUFBUSxpQkFBaUI7QUFBQSxxQkFDeEMsS0FBSyxnQkFBaUI7QUFBQSxnQkFDN0I7QUFBQSxnQkFDQSxLQUFLLGdCQUFpQixRQUFRLGFBQWMsU0FBUyxLQUFLLGNBQWMsS0FBSyxnQkFBaUIsUUFBUSxhQUFjLFFBQVEsU0FBUyxLQUFLO0FBQUEsY0FDOUksRUFBRSxLQUFLO0FBQUEsZ0JBQ0gsV0FBVyxVQUFVLE9BQU8sT0FBTyxLQUFLLG9CQUFvQixFQUFFLElBQUksRUFBRSxRQUFRLEdBQUcsT0FBTyxFQUFFLEVBQUUsQ0FBQyxHQUFHO0FBQUEsa0JBQzFGLE9BQU8sU0FBUyxLQUFLLGNBQWMsT0FBTyxRQUFRLFNBQVMsS0FBSztBQUFBLGdCQUNwRTtBQUFBO0FBQUEsWUFFUjtBQUFBLFVBQ0o7QUFBQSxVQUNBO0FBQUEsUUFDSixLQUFLO0FBQUEsVUFDRCxXQUFXLFFBQVEsT0FBTyxPQUFPLEtBQUssS0FBSyxHQUFHO0FBQUEsWUFDMUMsSUFBSSxRQUFRLGVBQWUsS0FBSyxhQUFhLFFBQVEsZUFBZSxNQUFNO0FBQUEsY0FDdEUsSUFBSSxRQUFRLGFBQWE7QUFBQSxnQkFDckIsS0FBSyxnQkFBaUIsUUFBUSxpQkFBaUI7QUFBQSxxQkFDeEMsS0FBSyxnQkFBaUI7QUFBQSxnQkFDN0I7QUFBQSxnQkFDQSxLQUFLLGdCQUFpQixRQUFRLGFBQWMsUUFBUSxLQUFLLGNBQWMsS0FBSyxnQkFBaUIsUUFBUSxhQUFjLE9BQU8sU0FBUyxLQUFLO0FBQUEsY0FDNUksRUFBRSxLQUFLO0FBQUEsZ0JBQ0gsV0FBVyxVQUFVLE9BQU8sT0FBTyxLQUFLLG9CQUFvQixFQUFFLElBQUksRUFBRSxRQUFRLEdBQUcsT0FBTyxFQUFFLEVBQUUsQ0FBQyxHQUFHO0FBQUEsa0JBQzFGLE9BQU8sUUFBUSxLQUFLLGNBQWMsT0FBTyxPQUFPLFNBQVMsS0FBSztBQUFBLGdCQUNsRTtBQUFBO0FBQUEsWUFFUjtBQUFBLFVBQ0o7QUFBQSxVQUNBO0FBQUEsUUFDSixLQUFLO0FBQUEsVUFDRCxXQUFXLFFBQVEsT0FBTyxPQUFPLEtBQUssS0FBSyxHQUFHO0FBQUEsWUFDMUMsSUFBSSxRQUFRLGVBQWUsS0FBSyxhQUFhLFFBQVEsZUFBZSxNQUFNO0FBQUEsY0FDdEUsS0FBSyxVQUFVLEtBQUssY0FBYyxLQUFLLFNBQVUsU0FBUyxLQUFLO0FBQUEsWUFDbkU7QUFBQSxVQUNKO0FBQUEsVUFDQTtBQUFBLFFBQ0osS0FBSztBQUFBLFVBQ0QsV0FBVyxRQUFRLE9BQU8sT0FBTyxLQUFLLEtBQUssR0FBRztBQUFBLFlBQzFDLElBQUksUUFBUSxlQUFlLEtBQUssYUFBYSxRQUFRLGVBQWUsTUFBTTtBQUFBLGNBQ3RFLEtBQUssY0FBYyxLQUFLLGNBQWMsS0FBSyxhQUFjLFNBQVMsS0FBSztBQUFBLFlBQzNFO0FBQUEsVUFDSjtBQUFBLFVBQ0E7QUFBQSxRQUNKLEtBQUs7QUFBQSxVQUNELFdBQVcsUUFBUSxPQUFPLE9BQU8sS0FBSyxLQUFLLEdBQUc7QUFBQSxZQUMxQyxJQUFJLFFBQVEsZUFBZSxLQUFLLGFBQWEsUUFBUSxlQUFlLE1BQU07QUFBQSxjQUN0RSxLQUFLLFdBQVcsS0FBSyxjQUFjLEtBQUssVUFBVyxTQUFTLEtBQUs7QUFBQSxZQUNyRTtBQUFBLFVBQ0o7QUFBQSxVQUNBO0FBQUE7QUFBQTtBQUFBLFdBR0wsZUFBZSxDQUFDLE1BQVksV0FBMEI7QUFBQSxNQUN6RCxNQUFNLGVBQWUsS0FBSyxNQUFNLEtBQUssVUFBVSxJQUFJLENBQUM7QUFBQSxNQUlwRCxNQUFNLGVBQThFLENBQUM7QUFBQSxNQUVyRixJQUFJLEtBQUssU0FBUyxZQUFZO0FBQUEsUUFDMUIsT0FBTyxhQUFhLE1BQU0sa0JBQW1CLGdCQUFpQjtBQUFBLFFBQzlELGFBQWEsTUFBTSxrQkFBbUIsZ0JBQWlCLElBQUssU0FBUztBQUFBLE1BQ3pFO0FBQUEsTUFDQSxXQUFXLFdBQVcsd0JBQW1DO0FBQUEsUUFDckQsSUFBSSxDQUFDLFVBQVUsU0FBUyxRQUFRO0FBQUEsVUFBTztBQUFBLFFBQ3ZDLElBQUksVUFBVSxTQUFTLE1BQU0sUUFBUSxJQUFJO0FBQUEsVUFBRztBQUFBLFFBQzVDLElBQUksVUFBVSxjQUFjLE1BQU0sUUFBUSxTQUFTO0FBQUEsVUFBRztBQUFBLFFBQ3RELElBQUksUUFBUSxnQkFBZ0I7QUFBQSxVQUFjO0FBQUEsUUFFMUMsS0FBSyxhQUFhLFNBQVMsWUFBWTtBQUFBLE1BQzNDO0FBQUEsTUFDQSxXQUFXLFVBQVUsdUJBQWlDO0FBQUEsUUFDbEQsSUFBSSxPQUFPLGVBQWU7QUFBQSxVQUFXO0FBQUEsUUFDckMsSUFBSSxVQUFVLFNBQVMsTUFBTSxPQUFPLElBQUk7QUFBQSxVQUFHO0FBQUEsUUFDM0MsSUFBSSxVQUFVLGNBQWMsTUFBTSxPQUFPLFNBQVM7QUFBQSxVQUFHO0FBQUEsUUFDckQsTUFBTSxRQUFRLFVBQVUsVUFBVSxPQUFPO0FBQUEsUUFDekMsSUFBSSxDQUFDO0FBQUEsVUFBTztBQUFBLFFBQ1osSUFBSSxPQUFPLGlCQUFpQjtBQUFBLFVBQ3hCLElBQUksQ0FBQyxVQUFVLFNBQVMsT0FBTztBQUFBLFlBQWtCO0FBQUEsV0FDaEQsYUFBYSxPQUFPLHFCQUFxQixDQUFDLEdBQUcsS0FBSyxDQUFDLFFBQVEsS0FBSyxDQUFDO0FBQUEsVUFDbEU7QUFBQSxRQUNKO0FBQUEsUUFFQSxLQUFLLGFBQWEsUUFBUSxjQUFjLEtBQUs7QUFBQSxNQUNqRDtBQUFBLE1BQ0EsV0FBVyxVQUFVLHVCQUFpQztBQUFBLFFBQ2xELElBQUksT0FBTyxlQUFlO0FBQUEsVUFBWTtBQUFBLFFBQ3RDLElBQUksQ0FBQyxVQUFVLFVBQVUsT0FBTztBQUFBLFVBQU87QUFBQSxRQUN2QyxJQUFJLFVBQVUsU0FBUyxNQUFNLE9BQU8sSUFBSTtBQUFBLFVBQUc7QUFBQSxRQUMzQyxJQUFJLFVBQVUsY0FBYyxNQUFNLE9BQU8sU0FBUztBQUFBLFVBQUc7QUFBQSxRQUNyRCxJQUFJLE9BQU8saUJBQWlCO0FBQUEsVUFDeEIsSUFBSSxDQUFDLFVBQVUsU0FBUyxPQUFPO0FBQUEsWUFBa0I7QUFBQSxXQUNoRCxhQUFhLE9BQU8scUJBQXFCLENBQUMsR0FBRyxLQUFLLENBQUMsUUFBUSxJQUFJLENBQUM7QUFBQSxVQUNqRTtBQUFBLFFBQ0o7QUFBQSxRQUVBLEtBQUssYUFBYSxRQUFRLFlBQVk7QUFBQSxNQUMxQztBQUFBLE1BRUEsTUFBTSxTQUFTLFVBQVU7QUFBQSxNQUN6QixNQUFNLGlCQUFpQixPQUFPLFVBQVUsT0FBTyxRQUFRLE9BQU87QUFBQSxNQUM5RCxJQUFJLGdCQUFnQjtBQUFBLFFBQ2hCLFdBQVcsUUFBUSxPQUFPLE9BQU8sYUFBYSxLQUFLLEdBQUc7QUFBQSxVQUNsRCxXQUFXLFVBQVUsT0FBTyxPQUFPLEtBQUssbUJBQW1CLENBQUMsQ0FBQyxHQUFHO0FBQUEsWUFDNUQsSUFBSSxPQUFPO0FBQUEsY0FBTSxPQUFPLFVBQVUsT0FBTyxTQUFTO0FBQUEsWUFDbEQsT0FBTyxVQUFVLGlCQUFpQixPQUFPO0FBQUEsVUFDN0M7QUFBQSxRQUNKO0FBQUEsTUFDSjtBQUFBLE1BQ0EsTUFBTSxnQkFBZ0IsT0FBTyxTQUFTLE9BQU8sUUFBUSxPQUFPO0FBQUEsTUFDNUQsSUFBSSxlQUFlO0FBQUEsUUFDZixhQUFhLFNBQVMsZ0JBQWdCLGFBQWE7QUFBQSxRQUNuRCxhQUFhLE1BQU0sZ0JBQWdCLGFBQWE7QUFBQSxRQUNoRCxXQUFXLFFBQVEsT0FBTyxPQUFPLGFBQWEsS0FBSyxHQUFHO0FBQUEsVUFDbEQsSUFBSSxLQUFLLFVBQVUsV0FBVztBQUFBLFlBQzFCLEtBQUssU0FBUyxnQkFBZ0IsYUFBYTtBQUFBLFVBQy9DO0FBQUEsUUFDSjtBQUFBLE1BQ0o7QUFBQSxNQUNBLE1BQU0saUJBQWlCLE9BQU8sV0FBVyxPQUFPLFFBQVEsT0FBTztBQUFBLE1BQy9ELElBQUksZ0JBQWdCO0FBQUEsUUFDaEIsYUFBYSxlQUFlLGlCQUFpQixhQUFhO0FBQUEsUUFDMUQsV0FBVyxRQUFRLE9BQU8sT0FBTyxhQUFhLEtBQUssR0FBRztBQUFBLFVBQ2xELElBQUksS0FBSyxnQkFBZ0IsV0FBVztBQUFBLFlBQ2hDLEtBQUssZUFBZSxpQkFBaUIsYUFBYTtBQUFBLFVBQ3REO0FBQUEsUUFDSjtBQUFBLE1BQ0o7QUFBQSxNQUNBLElBQUksT0FBTyxXQUFXO0FBQUEsUUFDbEIsSUFBSSxNQUFNLEtBQUssSUFBSSxNQUFNLFdBQVc7QUFBQSxVQUNoQyxhQUFhLFdBQVcsT0FBTyxZQUFZO0FBQUEsUUFDL0M7QUFBQSxRQUNBLElBQUksQ0FBQyxXQUFXLFVBQVUsU0FBUyxFQUFFLFNBQVMsTUFBTSxLQUFLLElBQUksQ0FBQyxHQUFHO0FBQUEsVUFDN0QsYUFBYSxXQUFXLE9BQU8sWUFBWTtBQUFBLFVBQzNDLElBQUksYUFBYTtBQUFBLFlBQVEsYUFBYSxVQUFVLE9BQU8sWUFBWTtBQUFBLFFBQ3ZFO0FBQUEsTUFDSjtBQUFBLE1BRUEsU0FBUyxXQUFXLHdCQUFtQztBQUFBLFFBQ25ELElBQUksQ0FBQyxVQUFVLFNBQVMsUUFBUTtBQUFBLFVBQU87QUFBQSxRQUN2QyxJQUFJLFVBQVUsU0FBUyxNQUFNLFFBQVEsSUFBSTtBQUFBLFVBQUc7QUFBQSxRQUM1QyxJQUFJLFVBQVUsY0FBYyxNQUFNLFFBQVEsU0FBUztBQUFBLFVBQUc7QUFBQSxRQUN0RCxJQUFJLFFBQVEsZ0JBQWdCO0FBQUEsVUFBVztBQUFBLFFBRXZDLElBQUksUUFBUSxjQUFjLGFBQWEsUUFBUSxjQUFjLFVBQVUsYUFBYSxRQUFRLE9BQU87QUFBQSxVQUMvRixVQUFVLEtBQUssUUFBUTtBQUFBLFVBQ3ZCLFlBQVksYUFBYSxVQUFVLGFBQWEsUUFBUSxPQUFRO0FBQUEsWUFDNUQsSUFBSSxRQUFRLGFBQWEsWUFBWTtBQUFBLGNBQVU7QUFBQSxZQUMvQyxRQUFRLFFBQVEsS0FBSyxjQUFjLFFBQVEsT0FBTyxhQUFhLE9BQU8sS0FBSztBQUFBLFVBQy9FO0FBQUEsUUFDSjtBQUFBLFFBQ0EsS0FBSyxhQUFhLFNBQVMsWUFBWTtBQUFBLE1BQzNDO0FBQUEsTUFDQSxXQUFXLFVBQVUsdUJBQWlDO0FBQUEsUUFDbEQsSUFBSSxPQUFPLGVBQWU7QUFBQSxVQUFRO0FBQUEsUUFDbEMsSUFBSSxDQUFDLFVBQVUsVUFBVSxPQUFPO0FBQUEsVUFBTztBQUFBLFFBQ3ZDLElBQUksVUFBVSxTQUFTLE1BQU0sT0FBTyxJQUFJO0FBQUEsVUFBRztBQUFBLFFBQzNDLElBQUksVUFBVSxjQUFjLE1BQU0sT0FBTyxTQUFTO0FBQUEsVUFBRztBQUFBLFFBQ3JELElBQUksT0FBTyxtQkFBbUIsQ0FBQyxVQUFVLFNBQVMsT0FBTztBQUFBLFVBQWtCO0FBQUEsUUFFM0UsS0FBSyxhQUFhLFFBQVEsWUFBWTtBQUFBLE1BQzFDO0FBQUEsTUFDQSxJQUFJLFVBQVUsU0FBUyx3QkFBd0I7QUFBQSxRQUMzQyxhQUFhLE1BQU0sSUFBSyxnQkFBaUIsSUFBSyxVQUFVO0FBQUEsTUFDNUQ7QUFBQSxNQUNBLElBQUksVUFBVSxTQUFTLGNBQWMsQ0FBQyxXQUFXLFVBQVUsRUFBRSxTQUFTLFVBQVUsU0FBUyxNQUNwRixPQUFPLFVBQVUsVUFBVSxTQUFTLG9CQUFvQixVQUFVLFNBQVMscUJBQXFCLFVBQVUsU0FBUyxxQkFBcUI7QUFBQSxRQUd6SSxNQUFNLFVBQVUsVUFBVSxTQUFTO0FBQUEsUUFDbkMsTUFBTSxXQUFXLFVBQVUsY0FBYyxjQUFjLFVBQVUsU0FBUztBQUFBLFFBQzFFLE1BQU0sY0FBYyxVQUFVLElBQUk7QUFBQSxRQUNsQyxNQUFNLFNBQVMsVUFBVyxVQUFVLGNBQWMsYUFBYSxJQUFJLElBQUs7QUFBQSxRQUN4RSxNQUFNLGFBQWEsV0FBVyxDQUFDLEdBQUcsR0FBRyxHQUFHLEdBQUcsQ0FBQyxJQUFJLENBQUMsR0FBRyxHQUFHLEdBQUcsR0FBRyxDQUFDO0FBQUEsUUFDOUQsTUFBTSxTQUFTLFdBQVcsTUFBTSxHQUFHLFdBQVcsRUFBRSxJQUFJLENBQUMsUUFBUSxVQUN6RCxRQUFRLFVBQVUsT0FBTyxVQUFVLE1BQU0sQ0FBQyxPQUFPLEtBQUssRUFBRSxVQUFVLElBQUksUUFBUSxDQUFDLENBQUMsQ0FDcEY7QUFBQSxRQUNBLElBQUksTUFBTSxvQkFBb0IsaURBQWlELGlEQUFpRCxPQUFPLEtBQUssSUFBSTtBQUFBLFFBQ2hKLElBQUksVUFBVSxjQUFjLGFBQWEsVUFBVSxTQUFTLG9CQUFvQjtBQUFBLFVBQzVFLE9BQU87QUFBQSxRQUNYO0FBQUEsUUFDQSxhQUFhLE1BQU0sSUFBSyxNQUFNO0FBQUEsTUFDbEM7QUFBQSxNQUVBLE9BQU87QUFBQTtBQUFBLFdBRUosU0FBUyxDQUFDLFdBQWtCLGNBQW9DO0FBQUEsTUFDbkUsTUFBTSxlQUFlLHVCQUFlLE9BQU8sQ0FBQyxNQUFNLE1BQU0sRUFBRSxTQUFTLE1BQU0sYUFBYSxNQUFNLEVBQUUsSUFBSSxNQUFNLFlBQVk7QUFBQSxNQUNwSCxNQUFNLGNBQWMsc0JBQWMsT0FBTyxDQUFDLE1BQU0sTUFBTSxFQUFFLFNBQVMsTUFBTSxhQUFhLE1BQU0sRUFBRSxJQUFJLE1BQU0sWUFBWTtBQUFBLE1BRWxILE1BQU0sV0FBc0MsQ0FBQztBQUFBLE1BQzdDLE1BQU0sWUFBd0MsQ0FBQztBQUFBLE1BQy9DLE1BQU0sWUFBd0MsQ0FBQztBQUFBLE1BQy9DLElBQUksZ0JBQWdELENBQUM7QUFBQSxNQUNyRCxXQUFXLFdBQVcsY0FBYztBQUFBLFFBQ2hDLFNBQVMsUUFBUSxRQUFRO0FBQUEsTUFDN0I7QUFBQSxNQUNBLFdBQVcsVUFBVSxhQUFhO0FBQUEsUUFDOUIsSUFBSSxPQUFPLGVBQWUsV0FBVztBQUFBLFVBQ2pDLFVBQVUsT0FBTyxRQUFRO0FBQUEsUUFDN0IsRUFBRSxLQUFLO0FBQUEsVUFDSCxVQUFVLE9BQU8sUUFBUTtBQUFBO0FBQUEsTUFFakM7QUFBQSxNQUVBLE1BQU0sT0FBTyxvQkFBWSxLQUFLLENBQUMsTUFBTSxNQUFNLEVBQUUsU0FBUyxNQUFNLGFBQWEsTUFBTSxFQUFFLFFBQVEsTUFBTSxZQUFZO0FBQUEsTUFDM0csSUFBSSxNQUFNLGNBQWMsTUFBTSxTQUFTO0FBQUEsUUFDbkMsY0FBYyxRQUFRO0FBQUEsTUFDMUI7QUFBQSxNQUNBLElBQUksTUFBTSxhQUFhO0FBQUEsUUFDbkIsY0FBYyxVQUFVO0FBQUEsTUFDNUI7QUFBQSxNQUNBLElBQUksTUFBTSxhQUFhO0FBQUEsUUFDbkIsY0FBYyxTQUFTO0FBQUEsTUFDM0I7QUFBQSxNQUNBLElBQUksY0FBYyxXQUFXO0FBQUEsUUFDekIsSUFBSSxPQUFPLEtBQUssYUFBYSxFQUFFO0FBQUEsVUFBUSxnQkFBZ0IsRUFBRSxXQUFXLEVBQUU7QUFBQSxNQUMxRTtBQUFBLE1BQ0EsSUFBSSxjQUFjLFVBQVU7QUFBQSxRQUN4QixNQUFNLEtBQUssQ0FBQyxjQUFjLGVBQWUsa0JBQWtCLHFCQUFxQixpQkFBaUIsU0FBUztBQUFBLFFBQzFHLElBQUksR0FBRyxTQUFTLFlBQVk7QUFBQSxVQUFHLGdCQUFnQixFQUFFLE1BQU0sRUFBRTtBQUFBLE1BQzdEO0FBQUEsTUFDQSxPQUFPLEVBQUUsV0FBVyxNQUFNLGNBQWMsVUFBVSxlQUFlLFdBQVcsVUFBVTtBQUFBO0FBQUEsSUFFMUYsWUFBWSxHQUE2QjtBQUFBLE1BQ3JDLFFBQVEsV0FBVyxTQUFTLEtBQUssTUFBTTtBQUFBLE1BQ3ZDLE1BQU0sU0FBUyxDQUFDLEdBQUcsVUFBVSxFQUFFLE9BQU8sSUFBSSxXQUFXLE1BQU0sTUFBTSxTQUFTLE1BQU0sYUFBYSxNQUFNLE1BQU0sSUFBSSxNQUFNLElBQUk7QUFBQSxNQUN2SCxJQUFJLENBQUMsT0FBTztBQUFBLFFBQVEsT0FBTztBQUFBLE1BQzNCLE1BQU0sT0FBTyxNQUFNLFVBQVUsUUFBUSxLQUFLLE1BQU0sU0FBVSxFQUFHLElBQUk7QUFBQSxNQUNqRSxNQUFNLFNBQVM7QUFBQSxRQUNYLEVBQUUsT0FBTyxVQUFVLFFBQVEsT0FBTyxPQUFPLElBQUksV0FBVyxNQUFNLFNBQVMsU0FBUyxFQUFFO0FBQUEsUUFDbEYsRUFBRSxPQUFPLFlBQVksUUFBUSxPQUFPLE9BQU8sSUFBSSxXQUFXLE1BQU0sU0FBUyxTQUFTLEVBQUU7QUFBQSxNQUN4RixFQUFFLE9BQU8sV0FBUyxNQUFNLE9BQU8sTUFBTTtBQUFBLE1BQ3JDLE9BQU8sT0FBTyxJQUFJLDJCQUFTLEdBQVEsR0FBUjtBQUFBLGtCQTBCekI7QUFBQSwwQkF6QkUsR0FBQyxLQUFEO0FBQUEsWUFBRyxPQUFNO0FBQUEsWUFBVCxVQUF1QixNQUFNO0FBQUEsYUFBN0IsaUNBQXFDO0FBQUEsMEJBQ3JDLEdBQUMsTUFBRDtBQUFBLFlBQUksT0FBTTtBQUFBLFlBQVYsVUFDSyxNQUFNLE9BQU8sSUFBSSxFQUFFLEtBQUssV0FBVztBQUFBLGNBQ2hDLE1BQU0sUUFBUSxXQUFXLE9BQU8sSUFBSTtBQUFBLGNBQ3BDLHVCQUFPLEdBQUMsTUFBRDtBQUFBLDBDQUNILEdBQUMsUUFBRDtBQUFBLGtCQUFNLE9BQU07QUFBQSxrQkFBYyxnQkFBYztBQUFBLGtCQUFLLGFBQVc7QUFBQSxrQkFBTSxVQUFVO0FBQUEsa0JBQXhFLFVBZ0JFO0FBQUEsb0NBZkUsR0FBQyxRQUFEO0FBQUEsc0JBQU0sT0FBTTtBQUFBLHNCQUFaLFVBT0U7QUFBQSx3QkFORyxNQUFNLE1BQU0sSUFBSSwwQkFBUSxHQUFDLE9BQUQ7QUFBQSwwQkFBZ0IsS0FBSztBQUFBLDBCQUFNLEtBQUk7QUFBQSwwQkFBRyxPQUFPO0FBQUEsMEJBQUksUUFBUTtBQUFBLDJCQUEzQyxNQUFWLHNCQUF5RCxDQUFFO0FBQUEsd0JBQUc7QUFBQSx3QkFDdEYsTUFBTTtBQUFBLHdDQUFLLEdBQUMsUUFBRDtBQUFBLDBCQUFNLE9BQU07QUFBQSwwQkFBWixVQUlWO0FBQUEsNEJBSEcsTUFBTSw0QkFBWTtBQUFBLHdDQUF1QjtBQUFBLGdDQUF2QjtBQUFBLGdDQUFLLE1BQU07QUFBQSxnQ0FBWDtBQUFBO0FBQUEsK0RBQXVCO0FBQUEsNEJBQ3pDLENBQUMsQ0FBQyxNQUFNLDJCQUFXO0FBQUEsd0NBQW9FO0FBQUEsZ0NBQXBFO0FBQUEsZ0RBQUcsR0FBQyxRQUFEO0FBQUEsa0NBQU0sT0FBTTtBQUFBLGtDQUFaLFVBQTBEO0FBQUEsb0NBQTFEO0FBQUEsb0NBQWlDLE1BQU07QUFBQSxvQ0FBdkM7QUFBQTtBQUFBLG1FQUEwRDtBQUFBO0FBQUEsK0JBQTdELGdDQUFvRTtBQUFBLDRCQUN2RixNQUFNLFNBQVMsOEJBQWM7QUFBQTtBQUFBLGdFQUFlO0FBQUE7QUFBQSwyQkFIckMsZ0NBSVY7QUFBQTtBQUFBLHVCQU5OLGdDQU9FO0FBQUEsb0JBQ0QsQ0FBQyxDQUFDLE1BQU0sMEJBQVU7QUFBQSxnQ0FNVjtBQUFBLHdCQU5VO0FBQUEsd0NBQUcsR0FBQyxRQUFEO0FBQUEsMEJBQU0sT0FBTTtBQUFBLDBCQUFaLFVBQ2pCLE1BQU0sSUFBSSxDQUFDLE1BQU0sMEJBQVUsR0FBUSxHQUFSO0FBQUEsc0NBSTFCO0FBQUEsOEJBSEcsUUFBUSxLQUFLO0FBQUEsOENBQUksR0FBQyxRQUFEO0FBQUEsZ0NBQU0sT0FBTTtBQUFBLGdDQUFaLFVBRWhCO0FBQUEsa0RBREUsR0FBQyxPQUFEO0FBQUEsb0NBQUssS0FBSyxLQUFLO0FBQUEsb0NBQU0sS0FBSyxLQUFLO0FBQUEsb0NBQU8sT0FBTztBQUFBLG9DQUFJLFFBQVE7QUFBQSxxQ0FBekQsaUNBQTZEO0FBQUEsa0NBRC9DO0FBQUEsa0NBQ21ELEtBQUs7QUFBQTtBQUFBLGlDQUR4RCxnQ0FFaEI7QUFBQTtBQUFBLDZCQUg0QyxLQUFLLE9BQTNCLHFCQUkxQixDQUFnQjtBQUFBLDJCQUxBLGlDQU1wQjtBQUFBO0FBQUEsdUJBTmlCLGdDQU1WO0FBQUE7QUFBQSxtQkFmYixnQ0FnQkU7QUFBQSxpQkFqQlUsS0FBVCxzQkFrQkw7QUFBQSxhQUNMO0FBQUEsYUF0QkwsaUNBdUJFO0FBQUE7QUFBQSxTQXpCMkMsTUFBTSxPQUE1QixxQkEwQnpCLENBQWdCO0FBQUE7QUFBQSxJQUV0QixjQUFjLEdBQTZCO0FBQUEsTUFDdkMsTUFBTSxZQUFZLEtBQUssTUFBTTtBQUFBLE1BRTdCLE1BQU0sV0FBVyxPQUFPLEtBQUssVUFBVSxRQUFRLEVBQUUsT0FBTyxhQUFXLENBQUMsVUFBVSxLQUFLLE9BQU8sQ0FBQztBQUFBLE1BQzNGLE1BQU0sWUFBWSxPQUFPLEtBQUssVUFBVSxTQUFTO0FBQUEsTUFDakQsTUFBTSxZQUFZLE9BQU8sS0FBSyxVQUFVLFNBQVM7QUFBQSxNQUNqRCxNQUFNLG1CQUFtQiwyQkFBbUIsS0FBSyxlQUFhLFVBQVUsY0FBYyxVQUFVLFNBQVM7QUFBQSxNQUN6RyxNQUFNLGdCQUFnQixDQUFDLGtCQUFrQixXQUFXLGtCQUFrQixXQUFXLGtCQUFrQixTQUFTLEVBQUUsSUFBSSxVQUFRLE1BQU0sS0FBSyxDQUFDO0FBQUEsTUFDdEksTUFBTSxnQkFBZ0IsQ0FBQyxHQUFHLEdBQUcsR0FBRyxHQUFHLEdBQUcsQ0FBQyxFQUFFLE1BQU0sR0FBRyxVQUFVLGNBQWMsV0FBVyxJQUFJLENBQUM7QUFBQSxNQUUxRixNQUFNLGNBQWMsSUFBSSxJQUNwQix1QkFBZSxPQUFPLENBQUMsTUFBTSxNQUFNLEVBQUUsU0FBUyxNQUFNLFVBQVUsYUFBYSxNQUFNLEVBQUUsSUFBSSxNQUFNLFVBQVUsSUFBSSxFQUN0RyxJQUFJLENBQUMsTUFBTSxDQUFDLEVBQUUsTUFBTSxFQUFFLFNBQVMsWUFBWSxNQUFNLEVBQUUsU0FBUyxLQUFLLEVBQUUsUUFBUSxNQUFNLEVBQUUsTUFBTSxNQUFNLEVBQUUsS0FBSyxDQUFDLENBQUMsQ0FDakg7QUFBQSxNQUNBLE1BQU0scUJBQXFCLElBQUksSUFDM0IsdUJBQWUsT0FBTyxDQUFDLE1BQU0sTUFBTSxFQUFFLFNBQVMsTUFBTSxVQUFVLGFBQWEsTUFBTSxFQUFFLElBQUksTUFBTSxVQUFVLFFBQVEsRUFBRSxjQUFjLE1BQU0sRUFDaEksSUFBSSxDQUFDLE1BQU0sRUFBRSxJQUFJLENBQzFCO0FBQUEsTUFDQSxNQUFNLGNBQWMsQ0FBQyxZQUFvQjtBQUFBLFFBQ3JDLE1BQU0sT0FBTyxZQUFZLElBQUksT0FBTztBQUFBLFFBQ3BDLE1BQU0sWUFBWSxVQUFVO0FBQUEsUUFDNUIsTUFBTSxTQUFTLE1BQU0sTUFBTSxRQUFRLEVBQUUsTUFBTSxhQUFjLGNBQWMsV0FBVyxNQUFNLEtBQUssV0FBVyxRQUFRO0FBQUEsUUFDaEgsTUFBTSxNQUFNLGNBQWMsWUFBWSxTQUFTLFNBQVM7QUFBQSxRQUN4RCxPQUFPLHlCQUF5QixPQUFPLGFBQWEsTUFBTTtBQUFBO0FBQUEsTUFHOUQsdUJBQ0ksR0FBQyxRQUFEO0FBQUEsUUFBTSxPQUFNO0FBQUEsUUFBWixVQTBERTtBQUFBLFVBekRHLENBQUMsQ0FBQyxTQUFTLDBCQUFXLEdBQUMsWUFBRDtBQUFBLHNCQVdyQjtBQUFBLDhCQVZFLEdBQUMsVUFBRDtBQUFBO0FBQUEsa0RBQWtCO0FBQUEsY0FDakIsU0FBUyxJQUFJLENBQUMsWUFBWTtBQUFBLGdCQUN2QixNQUFNLGFBQWEsbUJBQW1CLElBQUksT0FBTztBQUFBLGdCQUNqRCxNQUFNLGVBQWUsYUFBYSxVQUFVO0FBQUEsZ0JBQzVDLE1BQU0sVUFBVSxZQUFZLE9BQU87QUFBQSxnQkFDbkMsdUJBQU8sR0FBQyxPQUFEO0FBQUEsNENBQUssR0FBQyxjQUFEO0FBQUEsb0JBQWMsT0FBTyxhQUFhLFlBQVk7QUFBQSxvQkFBeUIsZ0JBQWMsWUFBWSxJQUFJLE9BQU8sR0FBRztBQUFBLG9CQUEvRyxVQUdWO0FBQUEsc0NBRkUsR0FBQyxRQUFEO0FBQUEsd0JBQU0sT0FBTTtBQUFBLHdCQUFaLFVBQW9DLDZCQUFhLEdBQUMsU0FBRDtBQUFBLDBCQUFPLE1BQUs7QUFBQSwwQkFBVyxPQUFPO0FBQUEsMEJBQVMsVUFBVSxLQUFLO0FBQUEsMEJBQWdCLFNBQVMsVUFBVSxTQUFTO0FBQUEsMkJBQWxHLGlDQUE0RyxvQkFBSyxHQUFDLFFBQUQ7QUFBQSwwQkFBTSxPQUFNO0FBQUEsMEJBQVMsZUFBWTtBQUFBLDBCQUFqQztBQUFBLDREQUEyQztBQUFBLHlCQUE3TSxpQ0FBcU47QUFBQSxzQkFBTTtBQUFBLHNDQUMzTixHQUFDLE9BQUQ7QUFBQSx3QkFBbUIsS0FBSztBQUFBLHdCQUFTLEtBQUk7QUFBQSx3QkFBRyxPQUFPO0FBQUEsd0JBQUksUUFBUTtBQUFBLHlCQUFqRCxTQUFWLHNCQUErRDtBQUFBLHNCQUZ2RDtBQUFBLHNCQUUyRDtBQUFBO0FBQUEscUJBRjNELGdDQUdWO0FBQUEsbUJBSEssaUNBR1U7QUFBQSxlQUNwQjtBQUFBO0FBQUEsYUFWa0IsZ0NBV3JCO0FBQUEsVUFDRCxZQUFZLFVBQVUsaUNBQWtCLEdBQUMsWUFBRDtBQUFBLHNCQUd2QztBQUFBLDhCQUZFLEdBQUMsVUFBRDtBQUFBO0FBQUEsa0RBQWlCO0FBQUEsY0FDaEIsY0FBYyxJQUFJLDJCQUFTLEdBQUMsU0FBRDtBQUFBLDBCQUFrTDtBQUFBLGtDQUEzSyxHQUFDLFNBQUQ7QUFBQSxvQkFBTyxNQUFLO0FBQUEsb0JBQVEsTUFBTSxVQUFVLEtBQUssTUFBTTtBQUFBLG9CQUFXLE9BQU87QUFBQSxvQkFBTyxVQUFVLEtBQUs7QUFBQSxvQkFBcUIsU0FBUyxVQUFVLGNBQWMsV0FBVztBQUFBLHFCQUF4SixpQ0FBK0o7QUFBQSxrQkFBdEs7QUFBQSxrQkFBMEs7QUFBQTtBQUFBLGlCQUExSyxnQ0FBa0wsQ0FBTTtBQUFBO0FBQUEsYUFGL0ssZ0NBR3ZDO0FBQUEsVUFDRCxXQUFXLFVBQVUsaUNBQWtCLEdBQUMsWUFBRDtBQUFBLHNCQUd0QztBQUFBLDhCQUZFLEdBQUMsVUFBRDtBQUFBO0FBQUEsa0RBQWU7QUFBQSxjQUNkLGNBQWMsSUFBSSwyQkFBUyxHQUFDLFNBQUQ7QUFBQSwwQkFBZ0w7QUFBQSxrQ0FBekssR0FBQyxTQUFEO0FBQUEsb0JBQU8sTUFBSztBQUFBLG9CQUFRLE1BQU0sU0FBUyxLQUFLLE1BQU07QUFBQSxvQkFBVyxPQUFPO0FBQUEsb0JBQU8sVUFBVSxLQUFLO0FBQUEsb0JBQXFCLFNBQVMsVUFBVSxjQUFjLFVBQVU7QUFBQSxxQkFBdEosaUNBQTZKO0FBQUEsa0JBQXBLO0FBQUEsa0JBQXdLO0FBQUE7QUFBQSxpQkFBeEssZ0NBQWdMLENBQU07QUFBQTtBQUFBLGFBRjlLLGdDQUd0QztBQUFBLFVBQ0QsYUFBYSxVQUFVLGlDQUFrQixHQUFDLFlBQUQ7QUFBQSxzQkFHeEM7QUFBQSw4QkFGRSxHQUFDLFVBQUQ7QUFBQTtBQUFBLGtEQUFpQjtBQUFBLGNBQ2hCLGNBQWMsSUFBSSwyQkFBUyxHQUFDLFNBQUQ7QUFBQSwwQkFBb0w7QUFBQSxrQ0FBN0ssR0FBQyxTQUFEO0FBQUEsb0JBQU8sTUFBSztBQUFBLG9CQUFRLE1BQU0sV0FBVyxLQUFLLE1BQU07QUFBQSxvQkFBVyxPQUFPO0FBQUEsb0JBQU8sVUFBVSxLQUFLO0FBQUEsb0JBQXFCLFNBQVMsVUFBVSxjQUFjLFlBQVk7QUFBQSxxQkFBMUosaUNBQWlLO0FBQUEsa0JBQXhLO0FBQUEsa0JBQTRLO0FBQUE7QUFBQSxpQkFBNUssZ0NBQW9MLENBQU07QUFBQTtBQUFBLGFBRmhMLGdDQUd4QztBQUFBLFVBQ0QsVUFBVSxVQUFVLGlDQUFrQixHQUFDLFlBQUQ7QUFBQSxZQUFVLE9BQU07QUFBQSxZQUFoQixVQVdyQztBQUFBLDhCQVZFLEdBQUMsVUFBRDtBQUFBO0FBQUEsa0RBQWM7QUFBQSxjQUNiLGNBQWMsSUFBSSxXQUFTO0FBQUEsZ0JBQ3hCLE1BQU0sTUFBTSxTQUFTLFVBQVUsYUFBYSxVQUFVLFFBQVE7QUFBQSxnQkFDOUQsTUFBTSxVQUFVLGFBQWEsSUFBSSxHQUFHO0FBQUEsZ0JBQ3BDLE1BQU0sVUFBVSxzQ0FBc0MsVUFBVSxhQUFhLFNBQVMsUUFBUTtBQUFBLGdCQUM5Rix1QkFBTyxHQUFDLFNBQUQ7QUFBQSxrQkFBTyxnQkFBYyxVQUFVLE1BQU07QUFBQSxrQkFBckMsVUFHTDtBQUFBLG9DQUZFLEdBQUMsUUFBRDtBQUFBLHNCQUFNLE9BQU07QUFBQSxzQkFBWiwwQkFBbUMsR0FBQyxTQUFEO0FBQUEsd0JBQU8sTUFBSztBQUFBLHdCQUFRLE1BQU0sUUFBUSxLQUFLLE1BQU07QUFBQSx3QkFBVyxPQUFPO0FBQUEsd0JBQU8sVUFBVSxLQUFLO0FBQUEsd0JBQXFCLFNBQVMsVUFBVSxjQUFjLFNBQVM7QUFBQSx5QkFBcEosaUNBQTJKO0FBQUEsdUJBQTlMLGlDQUFrTTtBQUFBLG9CQUFNO0FBQUEsb0NBQ3hNLEdBQUMsT0FBRDtBQUFBLHNCQUFtQixLQUFLO0FBQUEsc0JBQVMsS0FBSTtBQUFBLHNCQUFHLE9BQU87QUFBQSxzQkFBSSxRQUFRO0FBQUEsdUJBQWpELFNBQVYsc0JBQStEO0FBQUEsb0JBRjVEO0FBQUEsb0JBRWdFLFNBQVMsUUFBUSxRQUFRO0FBQUE7QUFBQSxtQkFGekYsZ0NBR0w7QUFBQSxlQUNMO0FBQUE7QUFBQSxhQVZrQyxnQ0FXckM7QUFBQSxVQUNELGVBQWUsVUFBVSxpQ0FBa0IsR0FBQyxZQUFEO0FBQUEsc0JBRzFDO0FBQUEsOEJBRkUsR0FBQyxVQUFEO0FBQUE7QUFBQSxrREFBc0M7QUFBQSxjQUNyQyxjQUFjLElBQUksMkJBQVMsR0FBQyxTQUFEO0FBQUEsMEJBQXdMO0FBQUEsa0NBQWpMLEdBQUMsU0FBRDtBQUFBLG9CQUFPLE1BQUs7QUFBQSxvQkFBUSxNQUFNLGFBQWEsS0FBSyxNQUFNO0FBQUEsb0JBQVcsT0FBTztBQUFBLG9CQUFPLFVBQVUsS0FBSztBQUFBLG9CQUFxQixTQUFTLFVBQVUsY0FBYyxjQUFjO0FBQUEscUJBQTlKLGlDQUFxSztBQUFBLGtCQUE1SztBQUFBLGtCQUFnTDtBQUFBO0FBQUEsaUJBQWhMLGdDQUF3TCxDQUFNO0FBQUE7QUFBQSxhQUZsTCxnQ0FHMUM7QUFBQSxVQUNELENBQUMsQ0FBQyxVQUFVLDBCQUFXLEdBQUMsWUFBRDtBQUFBLFlBQVUsT0FBTTtBQUFBLFlBQWhCLFVBWXRCO0FBQUEsOEJBWEUsR0FBQyxVQUFEO0FBQUE7QUFBQSxrREFBbUI7QUFBQSxjQUNsQixVQUFVLElBQUksQ0FBQyxXQUFXO0FBQUEsZ0JBQ3ZCLE1BQU0sS0FBSyxXQUFXLEtBQUssTUFBTSxXQUFXLE1BQU0sTUFBTTtBQUFBLGdCQUN4RCx1QkFBTyxHQUFDLE9BQUQ7QUFBQSw0QkFNTDtBQUFBLG9DQUxFLEdBQUMsU0FBRDtBQUFBLHNCQUFPLE9BQU07QUFBQSxzQkFBcUIsSUFBSSxHQUFHO0FBQUEsc0JBQVksU0FBUztBQUFBLHNCQUE5RCxVQUFtRTtBQUFBLHVCQUFuRSxpQ0FBNEU7QUFBQSxvQ0FBTSxHQUFDLE1BQUQscUNBQUk7QUFBQSxvQ0FDdEYsR0FBQyxRQUFEO0FBQUEsc0JBQU0sT0FBTTtBQUFBLHNCQUFaLFVBR0U7QUFBQSx3Q0FGRSxHQUFDLFNBQUQ7QUFBQSwwQkFBTyxNQUFLO0FBQUEsMEJBQVEsTUFBTTtBQUFBLDBCQUFRLG1CQUFpQixHQUFHO0FBQUEsMEJBQVksT0FBTyxVQUFVLFVBQVU7QUFBQSwwQkFBUyxTQUFTLEtBQUs7QUFBQSwwQkFBaUIsS0FBSztBQUFBLDBCQUFHLEtBQUs7QUFBQSwwQkFBSSxNQUFNO0FBQUEsMkJBQTVKLGlDQUErSjtBQUFBLHdDQUMvSixHQUFDLFFBQUQ7QUFBQSwwQkFBTSxPQUFNO0FBQUEsMEJBQVosVUFBZ1I7QUFBQSw0Q0FBOU8sR0FBQyxTQUFEO0FBQUEsOEJBQU8sTUFBSztBQUFBLDhCQUFTO0FBQUEsOEJBQVEsTUFBTTtBQUFBLDhCQUFRLE9BQU8sS0FBSyxNQUFNLGdCQUFnQixXQUFXLFVBQVUsVUFBVTtBQUFBLDhCQUFTLFNBQVMsS0FBSztBQUFBLDhCQUFnQixRQUFRLEtBQUs7QUFBQSw4QkFBZSxLQUFLO0FBQUEsOEJBQUcsS0FBSztBQUFBLDhCQUFJLE1BQU07QUFBQSwrQkFBdE0saUNBQXlNO0FBQUEsNENBQUUsR0FBQyxTQUFEO0FBQUEsOEJBQU8sT0FBTTtBQUFBLDhCQUFiO0FBQUEsZ0VBQTJCO0FBQUE7QUFBQSwyQkFBeFEsZ0NBQWdSO0FBQUE7QUFBQSx1QkFGcFIsZ0NBR0U7QUFBQTtBQUFBLG1CQUxDLGdDQU1MO0FBQUEsZUFDTDtBQUFBO0FBQUEsYUFYbUIsZ0NBWXRCO0FBQUEsVUFDRCxDQUFDLENBQUMsVUFBVSwwQkFBVyxHQUFDLFlBQUQ7QUFBQSxzQkFHdEI7QUFBQSw4QkFGRSxHQUFDLFVBQUQ7QUFBQTtBQUFBLGtEQUFtQjtBQUFBLGNBQ2xCLFVBQVUsSUFBSSxDQUFDLDJCQUFXLEdBQUMsT0FBRDtBQUFBLDBDQUFLLEdBQUMsU0FBRDtBQUFBLDRCQUFzSztBQUFBLG9DQUEvSixHQUFDLFNBQUQ7QUFBQSxzQkFBTyxNQUFLO0FBQUEsc0JBQVcsT0FBTztBQUFBLHNCQUFRLFVBQVUsS0FBSztBQUFBLHNCQUFpQixTQUFTLFVBQVUsVUFBVTtBQUFBLHVCQUFuRyxpQ0FBNEc7QUFBQSxvQkFBbkg7QUFBQSxvQkFBd0gsY0FBYyxRQUFRLE1BQU0sSUFBSTtBQUFBLG9CQUF4SjtBQUFBLG9CQUE2SjtBQUFBO0FBQUEsbUJBQTdKLGdDQUFzSztBQUFBLGlCQUEzSyxpQ0FBbUwsQ0FBSTtBQUFBO0FBQUEsYUFGOUwsZ0NBR3RCO0FBQUE7QUFBQSxTQXpETixnQ0EwREU7QUFBQTtBQUFBLElBR1YsaUJBQWlCLENBQUMsTUFBYTtBQUFBLE1BQzNCLE1BQU0sU0FBUyxFQUFFO0FBQUEsTUFDakIsS0FBSyxNQUFNLGVBQWUsRUFBRSxVQUFVLEtBQUssS0FBSyxNQUFNLFVBQVcsV0FBVyxPQUFPLFFBQVEsT0FBTyxRQUFRLEVBQUUsQ0FBQztBQUFBO0FBQUEsSUFFakgsc0JBQXNCLENBQUMsTUFBYTtBQUFBLE1BQ2hDLE1BQU0sU0FBUyxFQUFFO0FBQUEsTUFDakIsTUFBTSxVQUFVLE9BQU8sS0FBSyxNQUFNLEdBQUcsRUFBRTtBQUFBLE1BQ3ZDLE1BQU0sUUFBUSxTQUFTLE9BQU8sS0FBSztBQUFBLE1BQ25DLE1BQU0sWUFBWSxLQUFLLE1BQU07QUFBQSxNQUM3QixJQUFJLFlBQVksUUFBUTtBQUFBLFFBQ3BCLE1BQU0sV0FBVyxLQUFLLFVBQVUsU0FBUztBQUFBLFFBQ3pDLElBQUksT0FBTztBQUFBLFVBQVUsU0FBUyxPQUFPLFNBQVM7QUFBQSxRQUM5QyxJQUFJLE9BQU87QUFBQSxVQUFVLFNBQVMsT0FBTyxTQUFTO0FBQUEsUUFDOUMsSUFBSSxPQUFPO0FBQUEsVUFBVSxTQUFTLE9BQU8sU0FBUztBQUFBLFFBQzlDLEtBQUssTUFBTSxlQUFlLEVBQUUsZUFBZSxLQUFLLFVBQVUsZ0JBQWdCLFVBQVUsTUFBTSxHQUFHLFNBQVMsQ0FBQztBQUFBLE1BQzNHLEVBQUUsS0FBSztBQUFBLFFBQ0gsS0FBSyxNQUFNLGVBQWUsRUFBRSxlQUFlLEtBQUssVUFBVSxnQkFBZ0IsVUFBVSxNQUFNLEVBQUUsQ0FBQztBQUFBO0FBQUE7QUFBQSxJQUdyRyxrQkFBa0IsQ0FBQyxNQUFhO0FBQUEsTUFDNUIsTUFBTSxTQUFTLEVBQUU7QUFBQSxNQUNqQixNQUFNLGVBQWUsT0FBTyxZQUFZLE9BQU8sS0FBSyxLQUFLLE1BQU0sVUFBVyxTQUFTLEVBQUUsSUFBSSxDQUFDLGFBQWEsQ0FBQyxVQUFVLEtBQUssQ0FBQyxDQUFDO0FBQUEsTUFDekgsS0FBSyxNQUFNLGVBQWUsRUFBRSxXQUFXLEtBQUssZUFBZSxPQUFPLFFBQVEsT0FBTyxRQUFRLEVBQUUsQ0FBQztBQUFBO0FBQUEsSUFFaEcsa0JBQWtCLENBQUMsTUFBYTtBQUFBLE1BQzVCLE1BQU0sU0FBUyxFQUFFO0FBQUEsTUFDakIsS0FBSyxNQUFNLGVBQWU7QUFBQSxRQUN0QixXQUFXLEtBQUssS0FBSyxNQUFNLFVBQVcsWUFBWSxPQUFPLE9BQU8sU0FBUyxPQUFPLEtBQUssS0FBSyxFQUFFO0FBQUEsTUFDaEcsQ0FBQztBQUFBO0FBQUEsSUFFTCxpQkFBaUIsQ0FBQyxNQUFhO0FBQUEsTUFDM0IsTUFBTSxTQUFTLEVBQUU7QUFBQSxNQUNqQixLQUFLLFNBQVM7QUFBQSxRQUNWLGVBQWUsR0FBRyxPQUFPLE9BQU8sT0FBTyxNQUFNO0FBQUEsTUFDakQsQ0FBQztBQUFBLE1BQ0QsS0FBSyxNQUFNLGVBQWU7QUFBQSxRQUN0QixXQUFXLEtBQUssS0FBSyxNQUFNLFVBQVcsWUFBWSxPQUFPLE9BQU8sU0FBUyxPQUFPLEtBQUssS0FBSyxFQUFFO0FBQUEsTUFDaEcsQ0FBQztBQUFBO0FBQUEsSUFFTCxnQkFBZ0IsQ0FBQyxNQUFhO0FBQUEsTUFDMUIsS0FBSyxTQUFTO0FBQUEsUUFDVixlQUFlO0FBQUEsTUFDbkIsQ0FBQztBQUFBO0FBQUEsV0FFRSxhQUFhLENBQ2hCLE9BQ0EsU0FDQSxPQUNBLHFCQUFxQixNQUNmO0FBQUEsTUFDTixJQUFJLGVBQWUsUUFBUTtBQUFBLE1BQzNCLElBQUksUUFBUSxjQUFjLFlBQVk7QUFBQSxRQUVsQyxJQUFJLFFBQVEsa0JBQWtCLFlBQVk7QUFBQSxVQUN0QyxlQUFnQixJQUFJLFFBQVEsUUFBUTtBQUFBLFFBQ3hDLEVBQUUsS0FBSyxJQUFJLFFBQVEsa0JBQWtCLFlBQVk7QUFBQSxVQUM3QyxlQUFnQixJQUFJLFFBQVEsUUFBUTtBQUFBLFFBQ3hDLEVBQUUsS0FBSyxJQUFJLE9BQU87QUFBQSxVQUNkLE1BQU0sSUFBSSxNQUFNLHNCQUFzQixRQUFRLGVBQWUsUUFBUSxlQUFlO0FBQUEsUUFDeEY7QUFBQSxNQUNKO0FBQUEsTUFDQSxRQUFRLFFBQVE7QUFBQSxRQUNaLEtBQUs7QUFBQSxVQUNELE9BQU8sUUFBUSxnQkFBZ0IsU0FBUztBQUFBLFFBQzVDLEtBQUs7QUFBQSxVQUNELE1BQU0sVUFBVSxzQkFBc0IsUUFBUSxhQUFhO0FBQUEsVUFDM0QsT0FBTyxVQUFVLFFBQVEsZUFBZSxRQUFRO0FBQUEsUUFDcEQsS0FBSztBQUFBLFVBQ0QsSUFBSTtBQUFBLFlBQU8sTUFBTSxJQUFJLE1BQU0scUNBQXFDO0FBQUEsVUFDaEUsT0FBTztBQUFBLFFBQ1g7QUFBQSxVQUNJLE1BQU0sSUFBSSxNQUFNLHNCQUFzQixRQUFRLFdBQVc7QUFBQTtBQUFBO0FBQUEsSUFHckUsV0FBVyxDQUFDLE9BQWUsV0FBNkM7QUFBQSxNQUNwRSxJQUFJLFVBQVU7QUFBQSxRQUFXLHVCQUFPLEdBQUMsVUFBRDtBQUFBLFVBQVEsT0FBTTtBQUFBLFVBQWQsVUFBZ0MsT0FBTyxNQUFNLFFBQVEsQ0FBQyxDQUFDO0FBQUEsV0FBdkQsaUNBQTJEO0FBQUEsTUFDM0YsT0FBTztBQUFBO0FBQUEsV0FFSixZQUFZLENBQUMsUUFBZ0IsU0FBaUIsYUFBNkI7QUFBQSxNQUM5RSxPQUFPLFNBQVMsVUFBVTtBQUFBO0FBQUEsSUFFOUIsVUFBVSxDQUFDLE1BQWdCLFVBQW9CLFVBQWdCO0FBQUEsTUFDM0QsdUJBQU87QUFBQSxrQkF3Qkw7QUFBQSwwQkF2QkUsR0FBQyxLQUFEO0FBQUEsWUFBRyxPQUFNO0FBQUEsWUFBVCxVQUF1QixLQUFLLFlBQVk7QUFBQSxhQUF4QyxpQ0FBbUQ7QUFBQSwwQkFDbkQsR0FBQyxNQUFEO0FBQUEsWUFBSSxPQUFNO0FBQUEsWUFBVixVQXFCRTtBQUFBLGNBcEJHLENBQUMsS0FBSyxtQ0FBbUIsR0FBQyxNQUFEO0FBQUEsZ0JBQUksT0FBTTtBQUFBLGdCQUFWO0FBQUEsa0RBQWdDO0FBQUEsY0FDekQsQ0FBQyxDQUFDLEtBQUssbUNBQW1CO0FBQUEsMEJBY3pCO0FBQUEsa0JBYkcsT0FBTyxRQUFRLEtBQUssbUJBQW1CLENBQUMsQ0FBQyxFQUFFLElBQUksRUFBRSxXQUFXLFlBQVk7QUFBQSxvQkFDckUsTUFBTSxNQUFNLFVBQVUsYUFBYSxPQUFPLFFBQVEsS0FBSyxTQUFVLEtBQUssV0FBWTtBQUFBLG9CQUNsRixNQUFNLGFBQWEsU0FBUyxrQkFBa0IsWUFBWSxVQUFVLFNBQVMsa0JBQWtCLEtBQUssVUFBVTtBQUFBLG9CQUM5RyxNQUFNLFVBQVUsVUFBVSxhQUFhLFlBQVksU0FBUyxTQUFVLFNBQVMsV0FBWTtBQUFBLG9CQUMzRixNQUFNLFFBQVEsQ0FBQyxZQUFZLGtCQUFrQixXQUFXLHFCQUFxQixlQUFlLG1CQUFtQjtBQUFBLG9CQUMvRyxNQUFNLGFBQWMsQ0FBQyxNQUFNLFNBQVMsU0FBUyxJQUFJLG9CQUFLO0FBQUEsZ0NBQW1FO0FBQUEsd0JBQW5FO0FBQUEsd0JBQUssS0FBSyxZQUFZLENBQUMsSUFBSSxRQUFRLENBQUMsR0FBRyxDQUFDLFFBQVEsUUFBUSxDQUFDLENBQUM7QUFBQSx3QkFBMUQ7QUFBQTtBQUFBLHVEQUFtRSxJQUFJO0FBQUEsb0JBQzdILHVCQUFPLEdBQUMsTUFBRDtBQUFBLGdDQUVMO0FBQUEsd0NBREUsR0FBQyxRQUFEO0FBQUEsMEJBQU0sT0FBTTtBQUFBLDBCQUFaLFVBQXNCLFlBQVksT0FBTyxlQUFlO0FBQUEsMkJBQXhELGlDQUFvRTtBQUFBLHdCQURqRTtBQUFBLHdCQUN3RSxLQUFLLFlBQVksT0FBTyxRQUFRLFVBQVU7QUFBQSx3QkFBRztBQUFBO0FBQUEsdUJBRHJILGdDQUVMO0FBQUEsbUJBQ0w7QUFBQSxtQkFDQyxLQUFLLFVBQVcsS0FBSyxTQUFTLFVBQVcsc0JBQU0sR0FBQyxNQUFEO0FBQUEsOEJBQTRGO0FBQUEsc0NBQXhGLEdBQUMsUUFBRDtBQUFBLHdCQUFNLE9BQU07QUFBQSx3QkFBWjtBQUFBLDBEQUE0QjtBQUFBLHNCQUFoQztBQUFBLHNCQUF1QyxLQUFLLFlBQVksS0FBSyxTQUFVLFNBQVMsT0FBUTtBQUFBO0FBQUEscUJBQXhGLGdDQUE0RjtBQUFBLGtDQUM3SSxHQUFDLE1BQUQ7QUFBQSw4QkFBd0c7QUFBQSxzQ0FBcEcsR0FBQyxRQUFEO0FBQUEsd0JBQU0sT0FBTTtBQUFBLHdCQUFaO0FBQUEsMERBQWdDO0FBQUEsc0JBQXBDO0FBQUEsc0JBQTJDLEtBQUssWUFBWSxLQUFLLGFBQWMsU0FBUyxXQUFZO0FBQUE7QUFBQSxxQkFBcEcsZ0NBQXdHO0FBQUEsa0NBQ3hHLEdBQUMsTUFBRDtBQUFBLDhCQUFpSTtBQUFBLHNDQUE3SCxHQUFDLFFBQUQ7QUFBQSx3QkFBTSxPQUFNO0FBQUEsd0JBQVo7QUFBQSwwREFBNkI7QUFBQSxzQkFBakM7QUFBQSxzQkFBd0MsS0FBSyxhQUFhLElBQUksWUFBWSxLQUFLLFlBQVksS0FBSyxVQUFXLFNBQVMsUUFBUztBQUFBO0FBQUEscUJBQTdILGdDQUFpSTtBQUFBO0FBQUEsaUJBYjFHLGdDQWN6QjtBQUFBLGNBQ0QsS0FBSyx1QkFBTyxHQUFDLE1BQUQ7QUFBQSwwQkFBa0k7QUFBQSxrQ0FBOUgsR0FBQyxRQUFEO0FBQUEsb0JBQU0sT0FBTTtBQUFBLG9CQUFaO0FBQUEsc0RBQTJCO0FBQUEsa0JBQS9CO0FBQUEsa0JBQXNDLEtBQUssUUFBUSxTQUFTLHNCQUFNLEdBQUMsVUFBRDtBQUFBLG9CQUFRLE9BQU07QUFBQSxvQkFBZCxVQUFnQyxLQUFLO0FBQUEscUJBQXJDLGlDQUEyQyxJQUFVLEtBQUs7QUFBQTtBQUFBLGlCQUE1SCxnQ0FBa0k7QUFBQSxjQUM5SSxLQUFLLFVBQVUsNkJBQWEsR0FBQyxNQUFEO0FBQUEsMEJBQXlHO0FBQUEsa0NBQXJHLEdBQUMsUUFBRDtBQUFBLG9CQUFNLE9BQU07QUFBQSxvQkFBWjtBQUFBLHNEQUE2QjtBQUFBLGtCQUFqQztBQUFBLGtCQUF3QyxLQUFLLFlBQVksS0FBSyxPQUFPLFNBQVMsU0FBUyxTQUFTLEtBQUs7QUFBQTtBQUFBLGlCQUFyRyxnQ0FBeUc7QUFBQSxjQUNySSxLQUFLLGtCQUFrQiw2QkFBYSxHQUFDLE1BQUQ7QUFBQSwwQkFBc0k7QUFBQSxrQ0FBbEksR0FBQyxRQUFEO0FBQUEsb0JBQU0sT0FBTTtBQUFBLG9CQUFaO0FBQUEsc0RBQWtDO0FBQUEsa0JBQXRDO0FBQUEsa0JBQTZDLEtBQUssWUFBWSxLQUFLLGVBQWUsU0FBUyxpQkFBaUIsU0FBUyxhQUFhO0FBQUE7QUFBQSxpQkFBbEksZ0NBQXNJO0FBQUEsY0FDMUssS0FBSyxlQUFlLDZCQUFhLEdBQUMsTUFBRDtBQUFBLDBCQUF5SDtBQUFBLGtDQUFySCxHQUFDLFFBQUQ7QUFBQSxvQkFBTSxPQUFNO0FBQUEsb0JBQVo7QUFBQSxzREFBOEI7QUFBQSxrQkFBbEM7QUFBQSxrQkFBeUMsS0FBSyxZQUFZLEtBQUssWUFBWSxTQUFTLGNBQWMsU0FBUyxVQUFVO0FBQUE7QUFBQSxpQkFBckgsZ0NBQXlIO0FBQUE7QUFBQSxhQXBCL0osZ0NBcUJFO0FBQUE7QUFBQSxTQXZCQyxnQ0F3Qkw7QUFBQTtBQUFBLElBRU4sV0FBVyxDQUFDLFVBQWdCO0FBQUEsTUFDeEIsUUFBUSxXQUFXLFNBQVMsS0FBSyxNQUFNO0FBQUEsTUFDdkMsSUFBSSxDQUFDLGFBQWEsQ0FBQztBQUFBLFFBQU0sT0FBTztBQUFBLE1BRWhDLElBQUksS0FBSyxXQUFXLFlBQVksR0FBRztBQUFBLFFBQy9CLE9BQU8sNEJBQTRCLEtBQUssTUFBTSxFQUFFO0FBQUEsTUFDcEQ7QUFBQSxNQUNBLElBQUksU0FBUyxrQkFBa0IsU0FBUyxrQkFBa0IsU0FBUyxtQkFBbUIsU0FBUyx1QkFBdUIsU0FBUyxtQkFBb0IsY0FBYyxXQUFXLFNBQVMsZ0JBQWlCO0FBQUEsUUFDbE0sT0FBTyxnQ0FBZ0MsYUFBYTtBQUFBLE1BQ3hEO0FBQUEsTUFDQSxJQUNJLFNBQVMsY0FBYyxTQUFTLGVBQWUsU0FBUyxjQUFjLFNBQVMsY0FDL0UsU0FBUyxtQkFBbUIsU0FBUyxrQkFBbUIsY0FBYyxhQUFhLFNBQVMsYUFDNUYsU0FBUyxrQkFBa0IsU0FBUyxrQkFBa0IsU0FBUyxnQkFBZ0IsU0FBUyxVQUMxRjtBQUFBLFFBQ0UsT0FBTyw0QkFBNEI7QUFBQSxNQUN2QztBQUFBLE1BRUEsSUFBSSxTQUFTLG1CQUFtQixTQUFTLG1CQUFtQixTQUFTLG9CQUFvQixTQUFTLGlCQUFpQjtBQUFBLFFBQy9HLE9BQU87QUFBQSxNQUNYO0FBQUEsTUFDQSxJQUFJLE1BQU0sV0FBVyxPQUFPLEdBQUc7QUFBQSxRQUMzQixPQUFPLHlDQUF5QyxLQUFLLE1BQU0sQ0FBQztBQUFBLE1BQ2hFO0FBQUEsTUFDQSxJQUNJLFNBQVMsWUFBWSxTQUFTLGNBQWMsU0FBUyxZQUFZLFNBQVMsVUFBVSxTQUFTLGFBQzdGLFNBQVMsVUFBVSxTQUFTLGVBQWUsU0FBUyxVQUN0RDtBQUFBLFFBQ0UsT0FBTyw4QkFBOEIsYUFBYTtBQUFBLE1BQ3REO0FBQUEsTUFDQSxJQUNJLFNBQVMsY0FBYyxTQUFTLGdCQUFnQixTQUFTLGVBQWUsU0FBUyxpQkFDakYsU0FBUyxZQUFZLFNBQVMsWUFBWSxTQUFTLFlBQVksU0FBUyx1QkFDeEUsU0FBUyxhQUFhLFNBQVMsYUFBYSxTQUFTLGVBQ3JELFNBQVMsa0JBQWtCLFNBQVMsbUJBQ3RDO0FBQUEsUUFDRSxPQUFPLG1DQUFtQyxhQUFhO0FBQUEsTUFDM0Q7QUFBQSxNQUNBLE1BQU0sbUJBQTJDO0FBQUEsUUFDN0MsV0FBVztBQUFBLFFBQXdCLGdCQUFnQjtBQUFBLFFBQWUsTUFBTTtBQUFBLFFBQ3hFLFdBQVc7QUFBQSxRQUFpQixZQUFZO0FBQUEsUUFBa0IsbUJBQW1CO0FBQUEsUUFDN0UsUUFBUTtBQUFBLFFBQW9CLGdCQUFnQjtBQUFBLFFBQTZCLGdCQUFnQjtBQUFBLFFBQ3pGLG1CQUFtQjtBQUFBLE1BQ3ZCO0FBQUEsTUFDQSxJQUFJLFFBQVEsa0JBQWtCO0FBQUEsUUFDMUIsT0FBTyxtQ0FBbUMsYUFBYSxpQkFBaUI7QUFBQSxNQUM1RTtBQUFBLE1BQ0EsSUFBSSxjQUFjLGFBQWEsU0FBUyxrQkFBa0IsU0FBUyxVQUFVO0FBQUEsUUFDekUsTUFBTSxVQUFrQztBQUFBLFVBQ3BDLGNBQWM7QUFBQSxVQUEwQixPQUFPO0FBQUEsUUFDbkQ7QUFBQSxRQUNBLE9BQU8sOEJBQThCLGFBQWEsUUFBUTtBQUFBLE1BQzlEO0FBQUEsTUFDQSxJQUFJLGNBQWMsY0FBYyxTQUFTLFlBQVksU0FBUyxlQUFlO0FBQUEsUUFDekUsT0FBTyxtQ0FBbUMsYUFBYTtBQUFBLE1BQzNEO0FBQUEsTUFDQSxNQUFNLG9CQUE0QztBQUFBLFFBQzlDLFFBQVE7QUFBQSxRQUFvQixjQUFjO0FBQUEsUUFBMEIsa0JBQWtCO0FBQUEsUUFDdEYsZ0JBQWdCO0FBQUEsUUFBMkIsWUFBWTtBQUFBLFFBQW1CLGVBQWU7QUFBQSxNQUM3RjtBQUFBLE1BQ0EsSUFBSSxRQUFRLG1CQUFtQjtBQUFBLFFBQzNCLE9BQU8sb0NBQW9DLGFBQWEsa0JBQWtCO0FBQUEsTUFDOUU7QUFBQSxNQUNBLE1BQU0sc0JBQThDO0FBQUEsUUFDaEQsV0FBVztBQUFBLFFBQTBCLGNBQWM7QUFBQSxNQUN2RDtBQUFBLE1BQ0EsSUFBSSxRQUFRLHFCQUFxQjtBQUFBLFFBQzdCLE9BQU8sc0NBQXNDLGFBQWEsb0JBQW9CO0FBQUEsTUFDbEY7QUFBQSxNQUNBLElBQUksU0FBUyxtQkFBbUI7QUFBQSxRQUM1QixPQUFPO0FBQUEsTUFDWDtBQUFBLE1BRUEsTUFBTSxjQUFzQyxFQUFFLGlCQUFpQixpQkFBaUI7QUFBQSxNQUNoRixJQUFJLFNBQVMsS0FBSyxTQUFTLFdBQVc7QUFBQSxRQUFHLE9BQU87QUFBQSxNQUNoRCxPQUFPLCtCQUErQixhQUFhLFlBQVksU0FBUztBQUFBO0FBQUEsSUFFbkUsTUFBTSxHQUFHO0FBQUEsTUFDZCxNQUFNLFlBQVksS0FBSyxNQUFNO0FBQUEsTUFDN0IsSUFBSSxDQUFDLFdBQVc7QUFBQSxRQUNaLHVCQUFPLEdBQUMsTUFBRDtBQUFBLFVBQUksT0FBTTtBQUFBLFVBQVYsMEJBQ0gsR0FBQyxLQUFEO0FBQUEsc0JBQW9DO0FBQUEsOEJBQWpDLEdBQUMsT0FBRDtBQUFBO0FBQUEsa0RBQWE7QUFBQSxjQUFoQjtBQUFBO0FBQUEsNkNBQW9DO0FBQUEsV0FEakMsaUNBRUw7QUFBQSxNQUNOO0FBQUEsTUFDQSxNQUFNLFdBQVcsVUFBVSxRQUFRLFNBQVM7QUFBQSxNQUM1QyxJQUFJLENBQUMsVUFBVTtBQUFBLFFBQ1gsT0FBTyxLQUFLLGVBQWU7QUFBQSxNQUMvQjtBQUFBLE1BQ0EsTUFBTSxPQUFPLFVBQVUsZ0JBQWdCLFVBQVUsU0FBUztBQUFBLE1BQzFELE1BQU0sT0FBTyxNQUFNLEtBQUssSUFBSTtBQUFBLE1BQzVCLE1BQU0sV0FBVyxLQUFLLFlBQVksSUFBSTtBQUFBLE1BRXRDLHVCQUNJLEdBQUMsTUFBRDtBQUFBLFFBQUksT0FBTTtBQUFBLFFBQVYsVUFxQ0U7QUFBQSwwQkFwQ0UsR0FBQyxPQUFEO0FBQUEsWUFBSyxPQUFPLGdCQUFnQixLQUFLLE1BQU0saUJBQWlCLDJCQUEyQjtBQUFBLFlBQW5GLFVBR0U7QUFBQSxjQUZHLEtBQUssTUFBTSxnQ0FBZ0IsR0FBQyxVQUFEO0FBQUEsZ0JBQVEsTUFBSztBQUFBLGdCQUFTLFNBQVMsS0FBSyxNQUFNO0FBQUEsZ0JBQWMsY0FBVztBQUFBLGdCQUFuRTtBQUFBLGtEQUErRjtBQUFBLGNBQzFILEtBQUssTUFBTSxrQ0FBa0IsR0FBQyxVQUFEO0FBQUEsZ0JBQVEsTUFBSztBQUFBLGdCQUFTLFNBQVMsS0FBSyxNQUFNO0FBQUEsZ0JBQTFDO0FBQUEsa0RBQXFFO0FBQUE7QUFBQSxhQUZ2RyxnQ0FHRTtBQUFBLDBCQUNGLEdBQUMsTUFBRDtBQUFBLFlBQUksT0FBTTtBQUFBLFlBQVYsVUFBd0IsS0FBSztBQUFBLGFBQTdCLGlDQUFvQztBQUFBLDBCQUNwQyxHQUFDLE9BQUQ7QUFBQSxZQUFLLE9BQU07QUFBQSxZQUFYLFVBYUU7QUFBQSxjQVpHLDRCQUFZLEdBQUMsT0FBRDtBQUFBLGdCQUFLLE9BQU07QUFBQSxnQkFBWCwwQkFBdUIsR0FBQyxPQUFEO0FBQUEsa0JBQW9CLEtBQUs7QUFBQSxrQkFBVSxLQUFJO0FBQUEsa0JBQUcsT0FBTTtBQUFBLG1CQUF0QyxVQUFWLHNCQUFpRTtBQUFBLGlCQUF4RixpQ0FBNEY7QUFBQSw4QkFDekcsR0FBQyxPQUFEO0FBQUEsZ0JBQUssT0FBTTtBQUFBLGdCQUFYLFVBVUU7QUFBQSxrQkFUSSxLQUFLLFNBQVMsS0FBSyxTQUFTLEtBQUssYUFBYSxLQUFLLHlCQUFVLEdBQUMsS0FBRDtBQUFBLG9CQUFHLE9BQU07QUFBQSxvQkFBVCxVQUs3RDtBQUFBLHNDQUpFLEdBQUMsUUFBRDtBQUFBLGtDQUF1STtBQUFBLDBDQUFqSSxHQUFDLE9BQUQ7QUFBQSw0QkFBSyxLQUFJO0FBQUEsNEJBQXFELEtBQUk7QUFBQSw2QkFBbEUsaUNBQThFO0FBQUEsMEJBQXBGO0FBQUEsMEJBQXdGLEtBQUssWUFBWSxLQUFLLE9BQU8sU0FBUyxLQUFLO0FBQUE7QUFBQSx5QkFBbkksZ0NBQXVJO0FBQUEsc0NBQ3ZJLEdBQUMsUUFBRDtBQUFBLGtDQUF3STtBQUFBLDBDQUFsSSxHQUFDLE9BQUQ7QUFBQSw0QkFBSyxLQUFLLDhDQUE4QztBQUFBLDRCQUFZLEtBQUk7QUFBQSw2QkFBeEUsaUNBQStFO0FBQUEsMEJBQXJGO0FBQUEsMEJBQXlGLEtBQUssWUFBWSxLQUFLLE9BQU8sU0FBUyxLQUFLO0FBQUE7QUFBQSx5QkFBcEksZ0NBQXdJO0FBQUEsc0NBQ3hJLEdBQUMsUUFBRDtBQUFBLGtDQUF3SjtBQUFBLDBDQUFsSixHQUFDLE9BQUQ7QUFBQSw0QkFBSyxLQUFLLCtDQUErQztBQUFBLDRCQUFZLEtBQUk7QUFBQSw2QkFBekUsaUNBQXVGO0FBQUEsMEJBQTdGO0FBQUEsMEJBQWlHLEtBQUssWUFBWSxLQUFLLFdBQVcsU0FBUyxTQUFTO0FBQUE7QUFBQSx5QkFBcEosZ0NBQXdKO0FBQUEsc0NBQ3hKLEdBQUMsUUFBRDtBQUFBLGtDQUFnSjtBQUFBLDBDQUExSSxHQUFDLE9BQUQ7QUFBQSw0QkFBSyxLQUFLLGlEQUFpRDtBQUFBLDRCQUFZLEtBQUk7QUFBQSw2QkFBM0UsaUNBQXFGO0FBQUEsMEJBQTNGO0FBQUEsMEJBQStGLEtBQUssWUFBWSxLQUFLLFFBQVEsU0FBUyxNQUFNO0FBQUE7QUFBQSx5QkFBNUksZ0NBQWdKO0FBQUE7QUFBQSxxQkFKckYsZ0NBSzdELG9CQUFLLEdBQUMsS0FBRDtBQUFBLG9CQUFHLE9BQU07QUFBQSxvQkFBVDtBQUFBLHNEQUVMO0FBQUEsa0NBQ0YsR0FBQyxLQUFEO0FBQUEsb0JBQUcsT0FBTTtBQUFBLG9CQUFULFVBQXVCLEtBQUssS0FBSyxLQUFLLEtBQUssS0FBSztBQUFBLHFCQUFoRCxpQ0FBOEQ7QUFBQTtBQUFBLGlCQVRsRSxnQ0FVRTtBQUFBO0FBQUEsYUFaTixnQ0FhRTtBQUFBLDBCQUNGLEdBQUMsTUFBRDtBQUFBLFlBQUksT0FBTTtBQUFBLFlBQVYsVUFZRTtBQUFBLDhCQVhFLEdBQUMsTUFBRDtBQUFBLGdCQUFJLE9BQU07QUFBQSxnQkFBVixVQUdFO0FBQUEsa0NBRkUsR0FBQyxRQUFEO0FBQUEsb0JBQU0sT0FBTTtBQUFBLG9CQUFaO0FBQUEsc0RBQTBCO0FBQUEsa0JBRDlCO0FBQUEsa0JBQ3FDLEtBQUssWUFBWSxLQUFLLElBQUksU0FBUyxFQUFFO0FBQUEsa0JBQ3JFLENBQUMsQ0FBQyxLQUFLLHlCQUFTO0FBQUEsOEJBQXdGO0FBQUEsc0JBQXhGO0FBQUEsc0NBQUcsR0FBQyxRQUFEO0FBQUEsd0JBQU0sT0FBTTtBQUFBLHdCQUFaO0FBQUEsMERBQStCO0FBQUEsc0JBQWxDO0FBQUEsc0JBQXlDLEtBQUssWUFBWSxLQUFLLE9BQU8sU0FBUyxLQUFLO0FBQUE7QUFBQSxxQkFBcEYsZ0NBQXdGO0FBQUE7QUFBQSxpQkFGN0csZ0NBR0U7QUFBQSxjQUNELENBQUMsQ0FBQyxLQUFLLDJCQUFXLEdBQUMsTUFBRDtBQUFBLGdCQUFJLE9BQU07QUFBQSxnQkFBVixVQUdqQjtBQUFBLGtDQUZFLEdBQUMsUUFBRDtBQUFBLG9CQUFNLE9BQU07QUFBQSxvQkFBWjtBQUFBLHNEQUErQjtBQUFBLGtCQURoQjtBQUFBLGtCQUN1QixLQUFLLFlBQVksS0FBSyxTQUFTLFNBQVMsT0FBTztBQUFBLGtCQUNwRixDQUFDLENBQUMsS0FBSywrQkFBZTtBQUFBLDhCQUEyRztBQUFBLHNCQUEzRztBQUFBLHNDQUFHLEdBQUMsUUFBRDtBQUFBLHdCQUFNLE9BQU07QUFBQSx3QkFBWjtBQUFBLDBEQUFzQztBQUFBLHNCQUF6QztBQUFBLHNCQUFnRCxLQUFLLFlBQVksS0FBSyxhQUFhLFNBQVMsV0FBVztBQUFBO0FBQUEscUJBQXZHLGdDQUEyRztBQUFBO0FBQUEsaUJBRm5ILGdDQUdqQjtBQUFBLGNBQ0QsQ0FBQyxDQUFDLEtBQUssMEJBQVUsR0FBQyxNQUFEO0FBQUEsZ0JBQUksT0FBTTtBQUFBLGdCQUFWLFVBQStHO0FBQUEsa0NBQXRGLEdBQUMsUUFBRDtBQUFBLG9CQUFNLE9BQU07QUFBQSxvQkFBWjtBQUFBLHNEQUE4QjtBQUFBLGtCQUF2RDtBQUFBLGtCQUE4RCxLQUFLLFlBQVksS0FBSyxRQUFRLFNBQVMsTUFBTTtBQUFBO0FBQUEsaUJBQTNHLGdDQUErRztBQUFBLDhCQUNqSSxHQUFDLE1BQUQ7QUFBQSwwQkFBNEc7QUFBQSxrQ0FBeEcsR0FBQyxRQUFEO0FBQUEsb0JBQU0sT0FBTTtBQUFBLG9CQUFaO0FBQUEsc0RBQWtDO0FBQUEsa0JBQXRDO0FBQUEsa0JBQTZDLEtBQUssWUFBWSxLQUFLLGVBQWUsU0FBUyxhQUFhO0FBQUE7QUFBQSxpQkFBeEcsZ0NBQTRHO0FBQUEsOEJBQzVHLEdBQUMsTUFBRDtBQUFBLDBCQUFrRztBQUFBLGtDQUE5RixHQUFDLFFBQUQ7QUFBQSxvQkFBTSxPQUFNO0FBQUEsb0JBQVo7QUFBQSxzREFBOEI7QUFBQSxrQkFBbEM7QUFBQSxrQkFBeUMsS0FBSyxZQUFZLEtBQUssWUFBWSxTQUFTLFVBQVU7QUFBQTtBQUFBLGlCQUE5RixnQ0FBa0c7QUFBQTtBQUFBLGFBWHRHLGdDQVlFO0FBQUEsVUFDRCxPQUFPLE9BQU8sS0FBSyxLQUFLLEVBQUUsSUFBSSxDQUFDLFNBQVMsS0FBSyxXQUFXLE1BQU0sU0FBUyxNQUFNLEtBQUssWUFBWSxLQUFNLFFBQVEsQ0FBQztBQUFBLFVBQzdHLEtBQUssYUFBYTtBQUFBLFVBQ2xCLEtBQUsseUJBQVMsR0FBQyxLQUFEO0FBQUEsc0JBQXdHO0FBQUEsOEJBQXJHLEdBQUMsUUFBRDtBQUFBLGdCQUFNLE9BQU07QUFBQSxnQkFBWjtBQUFBLGtEQUE2QjtBQUFBLDhCQUFLLEdBQUMsTUFBRCxxQ0FBSTtBQUFBLGNBQUcsS0FBSyxNQUFNLE1BQU0sTUFBTSxFQUFFLElBQUksQ0FBQyx5QkFBUyxHQUFDLE9BQUQ7QUFBQSwwQkFBTTtBQUFBLGlCQUFOLGlDQUFhLENBQUk7QUFBQTtBQUFBLGFBQXBHLGdDQUF3RztBQUFBLFVBQ3RILEtBQUssZUFBZTtBQUFBO0FBQUEsU0FwQ3pCLGdDQXFDRTtBQUFBO0FBQUEsRUFHZDtBQUFBLEVBRUEsSUFBSSxPQUFPLGFBQWEsYUFBYTtBQUFBLElBQzFCLGtCQUFPLEdBQUMsT0FBRCxxQ0FBTyxHQUFJLFNBQVMsZUFBZSxPQUFPLENBQUU7QUFBQSxFQUM5RDsiLAogICJkZWJ1Z0lkIjogIjU0OTM4QTFCQjdDNzExNDY2NDc1NkUyMTY0NzU2RTIxIiwKICAibmFtZXMiOiBbXQp9

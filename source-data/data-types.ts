@@ -203,6 +203,34 @@ export interface PlayerUnit {
 
 export type PlayerUnitList = PlayerUnit[];
 
+/** Skills transcribed from the commander overviews, including hero and summoned-unit skills. */
+export interface UnitSkill {
+    commander: string;
+    /** PlayerUnit.basename where available; some overview units have no stats entry yet. */
+    unit: string;
+    name: string;
+    /** Site-relative image paths, in overview order. Empty when no icon is supplied. */
+    icons: string[];
+    /** Plain text, with line breaks preserved. */
+    description: string;
+    type: 'active' | 'autocast' | 'passive';
+    /** The overview marks this skill as requiring an upgrade (unlockable). */
+    requiresupgrade: boolean;
+    /** Overview text, preserving variable cooldowns, charges, and initial cooldowns. */
+    cooldown: string | null;
+    /** Overview text; null means unspecified, whereas "0" means explicitly free. */
+    energycost: string | null;
+    /** Maximum stored charges, when the skill can store more than one use. */
+    charges?: PositiveInteger;
+    rankrequired: NonNegativeInteger | null;
+    mode: string | null;
+    prestige: string | null;
+    /** Other stated prerequisites, such as artifacts or skill points, and exclusions. */
+    requirements: string | null;
+}
+
+export type UnitSkillList = UnitSkill[];
+
 export interface PlayerTalent {
     talentid: PositiveInteger;
     unit: string;
@@ -228,6 +256,8 @@ export interface PlayerUpgradeBase {
     commander: string;
     name: string;
     icon: string;
+    /** Royal Guard rank that unlocks this named ability. */
+    rank?: 1 | 2 | 3;
     effect: string;
     /** which mode does it apply to? (e.g. Siege Mode) */
     modifiermode: string | null;

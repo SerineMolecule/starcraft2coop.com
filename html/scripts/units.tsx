@@ -7,6 +7,8 @@ import commandersummaries from "../../source-data/commandersummaries.json";
 import playerTalents from "../../source-data/playertalents.json";
 import playerUpgrades from "../../source-data/playerupgrades.json";
 import type { PlayerTalent, PlayerUnit, PlayerUpgrade } from "../../source-data/data-types";
+import { rankUpgrades } from "./unit-ranks";
+import { skillCosts, unitSkills } from "./unit-skills";
 
 const AMON_UNIT_TYPES = [
     "Protoss",
@@ -655,12 +657,51 @@ export class UnitStats extends preact.Component<{
         }
         return { commander, unit: selectedUnit, upgrades, upgradeLevels, masteries, prestiges };
     }
+    renderSkills(): preact.ComponentChildren {
+        const { commander, unit } = this.props.modifiers!;
+        const skills = [...unitSkills].filter(([, skill]) => token(skill.commander) === commander && token(skill.unit) === unit);
+        if (!skills.length) return null;
+        const race = token(UnitStats.getUnit(this.props.modifiers!)!.race);
+        const groups = [
+            { title: 'Skills', skills: skills.filter(([, skill]) => skill.type !== 'passive') },
+            { title: 'Passives', skills: skills.filter(([, skill]) => skill.type === 'passive') },
+        ].filter(group => group.skills.length);
+        return groups.map(group => <preact.Fragment key={group.title}>
+            <p class="units-head">{group.title}</p>
+            <ul class="units-mode-stats units-skills">
+                {group.skills.map(([key, skill]) => {
+                    const costs = skillCosts(skill, race);
+                    return <li key={key}>
+                        <span class="units-skill" data-tooltip={key} data-race={race} tabIndex={0}>
+                            <span class="units-skill-label">
+                                {skill.icons.map(icon => <img key={icon} src={icon} alt="" width={20} height={20} />)}{' '}
+                                {skill.name}<span class="unbold">
+                                    {skill.prestige && <> ({skill.prestige})</>}
+                                    {!!skill.charges && <> <span class="units-skill-cost">({skill.charges} charges)</span></>}
+                                    {skill.type === 'autocast' && <> (autocast)</>}
+                                </span>
+                            </span>
+                            {!!costs.length && <> <span class="units-skill-costs unbold">
+                                {costs.map((cost, index) => <preact.Fragment key={cost.label}>
+                                    {index > 0 && ' '}<span class="units-skill-cost">
+                                        <img src={cost.icon} alt={cost.label} width={20} height={20} /> {cost.value}
+                                    </span>
+                                </preact.Fragment>)}
+                            </span></>}
+                        </span>
+                    </li>;
+                })}
+            </ul>
+        </preact.Fragment>);
+    }
     renderUpgrades(): preact.ComponentChildren {
         const modifiers = this.props.modifiers!;
         // filter out Mengsk Royal Guard rank upgrades
         const upgrades = Object.keys(modifiers.upgrades).filter(upgrade => !/^[123]$/.test(upgrade));
         const masteries = Object.keys(modifiers.masteries);
         const prestiges = Object.keys(modifiers.prestiges);
+        const commanderSummary = commandersummaries.find(commander => commander.commander === modifiers.commander);
+        const prestigeNames = [commanderSummary?.prestige1, commanderSummary?.prestige2, commanderSummary?.prestige3].map(name => name?.trim());
         const upgradeLevels = [0, 1, 2, 3, 4, 5].slice(0, modifiers.commander === 'tychus' ? 6 : 4);
 
         const upgradeData = new Map(
@@ -705,9 +746,17 @@ export class UnitStats extends preact.Component<{
                     <legend>Shields</legend>
                     {upgradeLevels.map(level => <label><input type="radio" name={`shields-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.shields === level} /> {level}</label>)}
                 </fieldset>)}
-                {'rank' in modifiers.upgradeLevels && (<fieldset>
+                {'rank' in modifiers.upgradeLevels && (<fieldset class="units-ranks">
                     <legend>Rank</legend>
-                    {upgradeLevels.map(level => <label><input type="radio" name={`rank-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.rank === level} /> {level}</label>)}
+                    {upgradeLevels.map(level => {
+                        const key = `ranks/${modifiers.commander}/${modifiers.unit}/${level}`;
+                        const upgrade = rankUpgrades.get(key);
+                        const iconSrc = `/images/commanderdata/unitupgrades/${modifiers.commander}/${upgrade?.icon ?? 'veterancy'}.png`;
+                        return <label data-tooltip={upgrade ? key : undefined}>
+                            <span class="units-upgrade-marker"><input type="radio" name={`rank-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.rank === level} /></span>{' '}
+                            <img key={iconSrc} src={iconSrc} alt="" width={20} height={20} /> {upgrade?.name ?? `Rank ${level}`}
+                        </label>;
+                    })}
                 </fieldset>)}
                 {'artifacts' in modifiers.upgradeLevels && (<fieldset>
                     <legend>Artifact fragments collected</legend>
@@ -728,7 +777,7 @@ export class UnitStats extends preact.Component<{
                 </fieldset>)}
                 {!!prestiges.length && (<fieldset>
                     <legend>Prestiges</legend>
-                    {prestiges.map((talent) => <div><label><input type="checkbox" value={talent} onChange={this.onCheckPrestige} checked={modifiers.prestiges[talent]} /> {talent}</label></div>)}
+                    {prestiges.map((talent) => <div><label><input type="checkbox" value={talent} onChange={this.onCheckPrestige} checked={modifiers.prestiges[talent]} /> P{prestigeNames.indexOf(talent) + 1}: {talent}</label></div>)}
                 </fieldset>)}
             </form>
         );
@@ -968,6 +1017,7 @@ export class UnitStats extends preact.Component<{
                     <li><span class="unbold">Vision:</span> {this.renderValue(unit.sightrange, baseUnit.sightrange)}</li>
                 </ul>
                 {Object.values(unit.modes).map((mode) => this.renderMode(mode, baseUnit.modes[mode.modeName || '']!, baseUnit))}
+                {this.renderSkills()}
                 {unit.notes && <p><span class="unbold">Notes:</span><br />{unit.notes.split("<br>").map((note) => <div>{note}</div>)}</p>}
                 {this.renderUpgrades()}
             </td>

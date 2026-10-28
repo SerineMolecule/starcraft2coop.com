@@ -2700,6 +2700,7 @@ Drains 0.9 energy per second.`,
       commander: "Mengsk",
       name: "High-Grade Stimpacks",
       icon: "highgradestimpacks",
+      rank: 3,
       effect: "Increases attack speed by 200% for 10 seconds.",
       modifier: "Attack_Speed",
       modifiermode: null,
@@ -4044,6 +4045,7 @@ Drains 0.9 energy per second.`,
       commander: "Mengsk",
       name: "Tactical Realignment",
       icon: "tacticalrealignment",
+      rank: 2,
       effect: "After transforming, this unit gains 50% increased attack damage for 5 seconds. Cannot occur more than once every 15 seconds.",
       modifier: "damage",
       modifiermode: null,
@@ -8100,6 +8102,5972 @@ Drains 0.9 energy per second.`,
     }
   ];
 
+  // html/scripts/unit-ranks.ts
+  var rankUpgrades = new Map;
+  var effects = new Map;
+  for (const upgrade of playerupgrades_default) {
+    if (upgrade.commander !== "Mengsk")
+      continue;
+    const rank = upgrade.rank ?? (/^[123]$/.test(upgrade.name) ? Number(upgrade.name) : null);
+    if (rank === null)
+      continue;
+    const unit = upgrade.unit.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    const key = `ranks/mengsk/${unit}/${rank}`;
+    const rankEffects = effects.get(key) ?? new Set;
+    rankEffects.add(upgrade.effect);
+    effects.set(key, rankEffects);
+    const previous = rankUpgrades.get(key);
+    rankUpgrades.set(key, {
+      commander: upgrade.commander,
+      unit: upgrade.unit,
+      name: upgrade.rank ? `Rank ${rank}: ${upgrade.name}` : previous?.name ?? `Rank ${rank}`,
+      icon: upgrade.rank ? upgrade.icon : previous?.icon ?? "veterancy",
+      effect: [...rankEffects].join(`
+`)
+    });
+  }
+
+  // source-data/unitskills.json
+  var unitskills_default = [
+    {
+      commander: "Abathur",
+      unit: "Brutalisk",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+      ],
+      description: "Quickly burrow to target location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Brutalisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Brutalisk",
+      name: "Symbiote",
+      icons: [
+        "/images/commanderdata/unitupgrades/abathur/symbiote.png"
+      ],
+      description: "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
+    },
+    {
+      commander: "Abathur",
+      unit: "Devourer",
+      name: "Corrosive Acid",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/corrosiveacid.png"
+      ],
+      description: "Launches acid at all enemy units in the target area, reducing their attack speed by 12.5% and armor by 3. Stacks 3 times.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "45s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Leviathan",
+      name: "Symbiote",
+      icons: [
+        "/images/commanderdata/unitupgrades/abathur/symbiote.png"
+      ],
+      description: "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
+    },
+    {
+      commander: "Abathur",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Ravager",
+      name: "Corrosive Bile",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/corrosivebile.png"
+      ],
+      description: `Launch a missile at the target location, dealing 60 damage to enemy units in the area upon impact.
+Can destroy Protoss Force Fields.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Host",
+      name: "Spawn Locusts",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/spawnlocusts.png"
+      ],
+      description: "Sends Locusts to target location.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Host",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+      ],
+      description: "Quickly burrow to a target visible location.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Queen",
+      name: "Spawn Creep Tumor",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/spawncreeptumor.png"
+      ],
+      description: `A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.
+Bonus: Zerg move faster on creep.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "3s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Queen",
+      name: "Rapid Transfusion",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/rapidtransfusion.png"
+      ],
+      description: "Heals a biological unit or structure for 25 life over time.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3s",
+      energycost: "10",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Abduct",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/abduct.png"
+      ],
+      description: "Pulls target unit to the Viper. Enemy is stunned for 1 second.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Disabling Cloud",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/disablingcloud.png"
+      ],
+      description: "Creates a cloud that slows movement speed (-50%) and prevents enemy units and structures from attacking and using energy-based abilities. Lasts for 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Consumption",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/consumption.png"
+      ],
+      description: "Drains up to 75 life from a friendly Zerg unit and gives the Viper 2 energy for each point of life drained.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Parasitic Bomb",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/parasiticbomb.png"
+      ],
+      description: `Creates a parasitic cloud of radius 3 that deals 90 damage over 10 seconds to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.
+Cannot target ground units or structures.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "125",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Deadly Charge",
+      icons: [
+        "/images/commanderdata/hero/alarak/deadlycharge.png"
+      ],
+      description: "Alarak intercepts target enemy unit and strikes it for 200 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Destruction Wave",
+      icons: [
+        "/images/commanderdata/hero/alarak/destructionwave.png"
+      ],
+      description: "Unleashes a massive wave of force in a straight line, dealing 50 damage to enemies in its path and knocking them back.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Empower Me",
+      icons: [
+        "/images/commanderdata/hero/alarak/empowerme.png"
+      ],
+      description: `Alarak's attacks and abilities deal increased damage for each allied unit nearby. Mechanical units grant him double the power. Resets the cooldown of Deadly Charge and Destruction Wave.
+Biological units provide a 5% damage bonus per supply up to 100 supply, and then provide 2.5% per supply onwards. Mechanical units provide 10% damage bonus per supply up to 100 supply, and then provide 5% per supply onwards.
+Supply count is additive, with biological units favored first. So if you have 100 supply in bio and 1 supply in mechanical units, the mechanical units will provide the reduced rate of 5%.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "240 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Alarak",
+      name: "Soul Absorption",
+      icons: [
+        "/images/commanderdata/progression/alarak/alarak_01.png"
+      ],
+      description: "Nearby enemy deaths restore 20 life and shields per supply of the slain unit. When near death, sacrifices nearby units you control to heal himself; Supplicants are consumed first. Sacrificing allies has no cooldown.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Ascendant",
+      name: "Psionic Orb",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/psionicorb.png"
+      ],
+      description: "Unleashes a traveling Psionic Orb that deals 10 damage per second to all enemies along its path.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "2s",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Ascendant",
+      name: "Mind Blast",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/mindblast.png"
+      ],
+      description: `Deals 200 damage to target enemy unit.
+Can target ground and air units.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8s",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Ascendant",
+      name: "Sacrifice",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/sacrifice.png"
+      ],
+      description: `Sacrifices a Supplicant to fully restore the Ascendant's energy.
+Can only target Supplicants.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Target Lock",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/targetlock.png"
+      ],
+      description: "Increases damage dealt to target enemy unit by 15%. Effect lasts as long as the Havoc remains locked onto the target.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Force Field",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/forcefield.png"
+      ],
+      description: `Creates a solid barrier that lasts for 15 seconds and impedes movement of ground units.
+Massive units shatter Force Fields on contact. (3 charges max).`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Cloaking Module",
+      icons: [
+        "/images/commanderdata/unitupgrades/alarak/cloakingmodule.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Cloaking Module research at the Cybernetics Core."
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Havoc",
+      name: "Squad Sight",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/squadsight.png"
+      ],
+      description: "Friendly units within a radius of 4 gain 2 additional range on non-melee attacks.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Mothership",
+      name: "Thermal Lance",
+      icons: [
+        "/images/commanderdata/abilities/alarak/thermallance.png"
+      ],
+      description: "Deals 20 damage to all enemies in a straight line up to 10 range away.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "1 second",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Mothership",
+      name: "Mass Teleport",
+      icons: [
+        "/images/commanderdata/abilities/alarak/massteleport.png"
+      ],
+      description: "Teleports the Mothership and all nearby units you control to target friendly unit or structure's location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds*",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Slayer",
+      name: "Phase Blink",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/phaseblink.png"
+      ],
+      description: "Teleports the Slayer to a nearby target location. Ability can only be used once every 8 seconds. After using Phase Blink, the Slayer's next attack within 8 seconds will deal double damage.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Slayer",
+      name: "Phasing Armor",
+      icons: [
+        "/images/commanderdata/unitupgrades/alarak/phasingarmor.png"
+      ],
+      description: "After being attacked, becomes immune to damage for 2 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Alarak level 4 and Phasing Armor research at the Death Council."
+    },
+    {
+      commander: "Alarak",
+      unit: "Supplicant",
+      name: "Devotion",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/devotion.png"
+      ],
+      description: "Alarak sacrifices Supplicants before other nearby units to heal himself when near death.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Alarak",
+      unit: "Wrathwalker",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Archon",
+      name: "Feedback",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/feedback.png"
+      ],
+      description: "Drains all energy from the target. Deals 1 damage per point of energy.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Archon",
+      name: "Psionic Storm",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/psionicstorm.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "2s",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "High Templar",
+      name: "Feedback",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/feedback.png"
+      ],
+      description: "Drains all energy from the target. Deals 1 damage per point of energy.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "High Templar",
+      name: "Psionic Storm",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/psionicstorm.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "2s",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Immortal",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Observer",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Observer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Phoenix",
+      name: "Graviton Beam",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/gravitonbeam.png"
+      ],
+      description: `Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.
+Massive units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Reaver",
+      name: "Create Scarab",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/createscarab.png"
+      ],
+      description: `Builds Scarabs that automatically launch at the Reaver's target and explode for area damage.
+Can attack ground units. (5 max).`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "8s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Tempest",
+      name: "Disintegration",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/disintegration.png"
+      ],
+      description: "Deals 500 damage over 20 seconds to target enemy unit or structure.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "90 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Zealot",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/charge.png"
+      ],
+      description: "Intercepts enemy ground units and increases movement speed.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Artanis",
+      unit: "Zealot",
+      name: "Whirlwind",
+      icons: [
+        "/images/commanderdata/unitskills/artanis/whirlwind.png"
+      ],
+      description: "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Creeper Host",
+      name: "Spawn Explosive Creeper",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper.png"
+      ],
+      description: `Siege unit that attacks by spawning Explosive Creepers. Creepers last 25 seconds.
+Creepers can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dakrun",
+      name: "Brutal Charge",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/brutalcharge.png"
+      ],
+      description: "Charge to a target location knocking back units in the area and dealing 200 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dakrun",
+      name: "Greater Spiked Hide",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/greaterspikedhide.png"
+      ],
+      description: "When damaged, fires a spine at the attacker that deals 20 damage.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Dehaka level 10."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Leap",
+      icons: [
+        "/images/commanderdata/hero/dehaka/leap.png"
+      ],
+      description: "Dehaka leaps to the target location, dealing 145 damage to nearby enemy ground units. Each enemy hit grants Dehaka 1 armour for 2 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Intimidating Roar",
+      icons: [
+        "/images/commanderdata/hero/dehaka/intimidatingroar.png"
+      ],
+      description: `Dehaka terrifies nearby enemies, reducing their movement speed by 75% and attack speed by 25% for 15 seconds.
+Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot use abilities that cost energy.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Devour",
+      icons: [
+        "/images/commanderdata/hero/dehaka/devour.png"
+      ],
+      description: "Instantly kill the target enemy unit to heal 5% Life and gain passive abilities based on the enemy type for 25 seconds. The cooldown is based on the amount of life the enemy has when killed.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "~ seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Scorching Breath",
+      icons: [
+        "/images/commanderdata/hero/dehaka/scorchingbreath.png"
+      ],
+      description: "Dehaka's fiery breath scorches the earth, dealing weapon damage to all enemy units in its path. 3 charges max.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points; values shown at level 3.",
+      charges: 3
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/deeptunnel.png"
+      ],
+      description: "Quickly burrow to any visible location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Primal Regeneration",
+      icons: [
+        "/images/commanderdata/hero/dehaka/primalregeneration.png"
+      ],
+      description: `Dehaka passively heals all allied units nearby.
+Level 2 - 2 life per second.
+Level 3 - 3 life per second.`,
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Keen Senses",
+      icons: [
+        "/images/commanderdata/hero/dehaka/keensenses.png"
+      ],
+      description: "Allows Dehaka to detect cloaked, burrowed, and hallucinated units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Chitinous Plating",
+      icons: [
+        "/images/commanderdata/hero/dehaka/chitinousplating.png"
+      ],
+      description: "Increases Dehaka's armor by 3.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Dehaka",
+      name: "Deadly Reach",
+      icons: [
+        "/images/commanderdata/hero/dehaka/deadlyreach.png"
+      ],
+      description: "Allows Dehaka to attack air units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires skill points."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Glevig",
+      name: "Incendiary Acid",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/incendiaryacid.png"
+      ],
+      description: "Carpets the ground in fire. Enemy units in the area take 500 damage over 5 seconds. Can be set to Autocast.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "6 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Glevig",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/deeptunnel.png"
+      ],
+      description: "Glevig burrows to the target location and erupts, dealing damage to units in the area and knocking them back.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Greater Primal Wurm",
+      name: "Greater Bile Stream",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/greaterbilestream.png"
+      ],
+      description: "Deals 70 damage per second to the target unit for 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Greater Primal Wurm",
+      name: "Greater Deep Tunnel",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/greaterdeeptunnel.png"
+      ],
+      description: "Quickly burrow to any visible location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Greater Primal Wurm",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Murvar",
+      name: "Spawn Swarm",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/spawnswarm.png"
+      ],
+      description: "Spawns 6 Primal Locusts and 6 Explosive Creepers that fight for 25 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Murvar",
+      name: "Oppressive Stench",
+      icons: [
+        "/images/commanderdata/abilities/dehaka/oppressivestench.png"
+      ],
+      description: "Creates a cloud that slows enemy movement speed and prevents enemy units and structures from attacking or using energy-based abilities. Lasts for 5 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Guardian",
+      name: "Explosive Spores",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/explosivespores.png"
+      ],
+      description: "Fires an Explosive Spore at the target, causing the target and all nearby enemy ground units to take 50 damage.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Host",
+      name: "Spawn Primal Locusts",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/spawnprimallocusts.png"
+      ],
+      description: `Siege unit that attacks by spawning Primal Locusts. Primal Locusts last 25 seconds.
+Primal Locusts can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Mutalisk",
+      name: "Primal Reconstitution",
+      icons: [
+        "/images/commanderdata/unitupgrades/dehaka/primalreconstitution.png"
+      ],
+      description: "Returns to life shortly after being killed.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Dehaka level 7 and Primal Reconstitution research at Murvar's Den."
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Ultralisk",
+      name: "Brutal Charge",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/brutalcharge.png"
+      ],
+      description: "Charge to target location knocking back units in the area and dealing 25 damage.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Wurm",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Tyrannozor",
+      name: "Barrage of Spikes",
+      icons: [
+        "/images/commanderdata/unitskills/dehaka/barrageofspikes.png"
+      ],
+      description: "Unleash a Barrage of Spikes, dealing 100 damage to enemy ground and air units around the Tyrannozor.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Tyrannozor",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Tyrannozor",
+      name: "Tyrant's Protection",
+      icons: [
+        "/images/commanderdata/unitupgrades/dehaka/tyrantsprotection.png"
+      ],
+      description: "Grants nearby friendly units 2 additional armor.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Tyrant's Protection research at Dakrun's Den."
+    },
+    {
+      commander: "Fenix",
+      unit: "Carrier",
+      name: "Build Interceptor",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/buildinterceptor.png"
+      ],
+      description: `Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.
+Can attack ground and air units. 8 Interceptors max.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Clolarion",
+      name: "Build Interceptor",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/buildinterceptor.png"
+      ],
+      description: `Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.
+Can attack ground and air units. 8 Interceptors max.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Clolarion",
+      name: "Build Interdictor",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/buildinterdictor.png"
+      ],
+      description: `Builds Interdictors that automatically bomb enemy ground units for 12 damage.
+Can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Colossus",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Conservator",
+      name: "Protective Field",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/protectivefield.png"
+      ],
+      description: "Creates a shield that reduces all incoming attack damage to friendly units by 35%. Lasts 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Disruptor",
+      name: "Purification Nova",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/purificationnova.png"
+      ],
+      description: "Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Disruptor",
+      name: "Cloaking Module",
+      icons: [
+        "/images/commanderdata/unitupgrades/fenix/cloakingmodule.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Cloaking Module research at the Robotics Bay."
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Stasis Field",
+      icons: [
+        "/images/commanderdata/abilities/fenix/stasisfield.png"
+      ],
+      description: "Places enemy units in target area into stasis for 15 seconds. Units in stasis cannot move, attack, be attacked or be affected by abilities.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Enable Cloaking Field",
+      icons: [
+        "/images/commanderdata/abilities/fenix/cloakingfield.png"
+      ],
+      description: "Enable Cloaking Field, cloaking friendly units near Fenix. Costs 5 Energy per second to maintain.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "5",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Recall",
+      icons: [
+        "/images/commanderdata/abilities/fenix/recall.png"
+      ],
+      description: "Teleports all friendly units in the target area to the location of the Arbiter.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Cybros Arbiter",
+      name: "Observation Protocol",
+      icons: [
+        "/images/commanderdata/hero/fenix/observationprotocol.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Fenix level 6 and Observation Protocol research at the Forge."
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Praetor Armor",
+      name: "Thunderous Charge",
+      icons: [
+        "/images/commanderdata/abilities/fenix/thunderouscharge.png"
+      ],
+      description: "Fenix charges at the target location, dealing 50 damage and stunning all enemies for 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Praetor Armor",
+      name: "Whirlwind",
+      icons: [
+        "/images/commanderdata/abilities/fenix/whirlwind.png"
+      ],
+      description: "All nearby enemies take 70 damage per second for 3 seconds. Fenix can move while Whirlwind is active.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Praetor Armor",
+      name: "Shield Capacitor",
+      icons: [
+        "/images/commanderdata/abilities/fenix/shieldcapacitor.png"
+      ],
+      description: "Fully restores Fenix's shields. autocasting activates Shield Capacitor when Fenix's shields have been depleted.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Solarite Dragoon",
+      name: "Solar Cannon",
+      icons: [
+        "/images/commanderdata/abilities/fenix/solarcannon.png"
+      ],
+      description: "Fires a piercing beam that deals 100 damage to all enemy ground units in its path.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "6 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Solarite Dragoon",
+      name: "Solarite Flare",
+      icons: [
+        "/images/commanderdata/abilities/fenix/solariteflare.png"
+      ],
+      description: "Fires an air bursting flare that deals 100 damage to enemy air units.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Fenix Solarite Dragoon",
+      name: "Arsenal Overcharge",
+      icons: [
+        "/images/commanderdata/abilities/fenix/arsenalovercharge.png"
+      ],
+      description: "Activating Arsenal Overcharge causes your damaging abilities to have no cooldown for 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Immortal",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Kaldalis",
+      name: "Engage",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/engage.png"
+      ],
+      description: "Kaldalis intercepts the target unit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Legionnaire",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/charge.png"
+      ],
+      description: "Intercepts enemy ground units and increases movement speed.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Mojo",
+      name: "Suppression Procedure",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/suppressionprocedure.png"
+      ],
+      description: "Fire a barrage of Anti-Matter Missiles, dealing 6 (12 vs Armored) area damage and stunning nearby enemy air units for 1 second.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5s",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Observer",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Observer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Taldarin",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/barrier.png"
+      ],
+      description: "Absorbs up to 200 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Talis",
+      name: "Ricochet Glaive",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/ricochetglaive.png"
+      ],
+      description: "An amplified Glaive that ricochets and hits up to 3 enemy units for 25 (35 vs Light) damage each.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Warbringer",
+      name: "Purification Blast",
+      icons: [
+        "/images/commanderdata/unitskills/fenix/purificationblast.png"
+      ],
+      description: "Fire a devastating blast that deals 150 damage the target unit.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Fenix",
+      unit: "Warbringer",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/horner/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Trigger Override",
+      icons: [
+        "/images/commanderdata/unitupgrades/horner/triggeroverride.png"
+      ],
+      description: `Wraith attack speed increases by 10% with each attack, up to a maximum of 100%.
+Passive ability.`,
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Asteria Wraith",
+      name: "Unregistered Cloaking System",
+      icons: [
+        "/images/commanderdata/unitupgrades/horner/unregisteredcloakingsystem.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Unregistered Cloaking System research at the Dominion Starport Tech Lab."
+    },
+    {
+      commander: "Horner",
+      unit: "Deimos Viking",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Deimos Viking",
+      name: "W.I.L.D. Missiles",
+      icons: [
+        "/images/commanderdata/unitskills/horner/wildmissiles.png"
+      ],
+      description: "Launches 5 rockets at the target unit. Each rocket deals 25 (40 vs armored) damage.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Hellion",
+      name: "Tar Bombs",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tarbombs.png"
+      ],
+      description: "Launches a tar bomb that deals 20 damage to the target unit. Nearby enemies have their movement speed reduced by 75% and attack range reduced by 3 for 5 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Reaper",
+      name: "KD8 Charge",
+      icons: [
+        "/images/commanderdata/unitskills/horner/kd8charge.png"
+      ],
+      description: "Explodes after a short delay, doing 10 area damage and knocking back nearby units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Sovereign Battlecruiser",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/horner/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Aircraft is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Analyze Weakness",
+      icons: [
+        "/images/commanderdata/unitskills/horner/analyzeweakness.png"
+      ],
+      description: "All Melee and Ranged attacks against Analyzed units do 3 bonus damage. Effect lasts as long as the Raven remains locked onto the target.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Theia Raven",
+      name: "Imaging Radar",
+      icons: [
+        "/images/commanderdata/unitskills/horner/imagingradar.png"
+      ],
+      description: "Shows the locations of enemy units through the fog of war within a radius of 40. Radar contacts do not grant vision or detection.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Carrier",
+      name: "Build Interceptor",
+      icons: [
+        "/images/commanderdata/unitskills/karax/buildinterceptor.png"
+      ],
+      description: `Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.
+Can attack ground and air units. 8 Interceptors max.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Carrier",
+      name: "Repair Drones",
+      icons: [
+        "/images/commanderdata/unitupgrades/karax/repairdrones.png"
+      ],
+      description: "Two repair drones automatically restore life to nearby friendly mechanical units.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Karax level 14 and Repair Drones research at the Fleet Beacon."
+    },
+    {
+      commander: "Karax",
+      unit: "Colossus",
+      name: "Cliff Walk",
+      icons: [
+        "/images/commanderdata/unitskills/common/cliffwalk.png"
+      ],
+      description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Energizer",
+      name: "Chrono Beam",
+      icons: [
+        "/images/commanderdata/unitskills/karax/chronobeam.png"
+      ],
+      description: "Friendly target gains 25% attack speed and 50% movement speed for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "3",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Energizer",
+      name: "Reclamation",
+      icons: [
+        "/images/commanderdata/unitskills/karax/reclamation.png"
+      ],
+      description: "Temporarily takes control of target enemy mechanical unit. Reclaimed units self-destruct after 120 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "120 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Immortal",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/karax/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Immortal",
+      name: "Shadow Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/karax/shadowcannon.png"
+      ],
+      description: `Deal 320 damage to target unit or structure.
+Can target ground and air units.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Mirage",
+      name: "Graviton Beam",
+      icons: [
+        "/images/commanderdata/unitskills/karax/gravitonbeam.png"
+      ],
+      description: `Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.
+Massive units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Mirage",
+      name: "Phasing Armor",
+      icons: [
+        "/images/commanderdata/unitupgrades/karax/phasingarmor.png"
+      ],
+      description: "After being attacked, becomes immune to damage for 2 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Karax level 14 and Phasing Armor research at the Fleet Beacon."
+    },
+    {
+      commander: "Karax",
+      unit: "Observer",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Observer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Sentinel",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/unitskills/karax/charge.png"
+      ],
+      description: "Intercepts enemy ground units and increases movement speed.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Karax",
+      unit: "Sentinel",
+      name: "Reconstruction",
+      icons: [
+        "/images/commanderdata/unitupgrades/karax/reconstruction.png"
+      ],
+      description: "After fatal damage, rebuilds itself over 5 seconds, returning with full life and shields.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Karax level 4 and Reconstruction research at the Twilight Council."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Hydralisk",
+      name: "Frenzy",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/frenzy.png"
+      ],
+      description: "Attack speed increased by 50% for 15 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Leaping Strike",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/leapingstrike.png"
+      ],
+      description: "Kerrigan leaps to her target and deals 300 damage. Can be used without a target to travel quickly.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Psionic Shift",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/psionicshift.png"
+      ],
+      description: "Kerrigan dashes through enemies, dealing 100 damage to all enemies in her path.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Assimilation Aura",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/assimilationaura.png"
+      ],
+      description: "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Immobilization Wave",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/immobilizationwave.png"
+      ],
+      description: `Deals 100 damage to enemies in a large area around Kerrigan (27 range) and stuns them for 10 seconds.
+Heroic units are slowed.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 180 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Unavailable with Desolate Queen."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Kinetic Blast",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/kineticblast.png"
+      ],
+      description: "Kerrigan deals 300 damage to target unit or structure from long range.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Crushing Grip",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/crushinggrip.png"
+      ],
+      description: "Enemies in target area are stunned and take 50 damage over 5 seconds. Heroic units are slowed.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Assimilation Aura",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/assimilationaura.png"
+      ],
+      description: "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Immobilization Wave",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/immobilizationwave.png"
+      ],
+      description: `Deals 100 damage to enemies in a large area around Kerrigan and stuns them for 10 seconds.
+Heroic units are slowed.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 180 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: "Desolate Queen",
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Mutating Carapace",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/mutatingcarapace.png"
+      ],
+      description: "Generates temporary protective life equal to 30% of damage dealt, up to 200. This protection decays over time.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Kerrigan",
+      name: "Fury",
+      icons: [
+        "/images/commanderdata/hero/kerrigan/fury.png"
+      ],
+      description: "Each attack increases attack speed by 10%, stacking up to five times for a 50% bonus. The bonus expires after 5 seconds without attacking.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Kerrigan level 10."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Queen",
+      name: "Spawn Creep Tumor",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/spawncreeptumor.png"
+      ],
+      description: `A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.
+Bonus: Zerg move faster on creep.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Queen",
+      name: "Spawn Larva",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/spawnlarva.png"
+      ],
+      description: "Target Hatchery, Lair, or Hive spawns 4 Larvae in 40 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "25 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Queen",
+      name: "Transfusion",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/transfusion.png"
+      ],
+      description: "Instantly restores 125 life to target biological unit or structure.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Burrow Charge",
+      icons: [
+        "/images/commanderdata/unitskills/kerrigan/burrowcharge.png"
+      ],
+      description: "Ultralisk burrows and charges toward units. When the Ultralisk unburrows, all enemy units nearby are knocked back and stunned for 2 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Reincarnation",
+      icons: [
+        "/images/deathprevention/torrasqueultralisk.png"
+      ],
+      description: "On death, forms a cocoon and returns with full life after 10 seconds. Destroying the cocoon kills the Ultralisk.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Kerrigan level 14 (Torrasque strain)."
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Ultralisk",
+      name: "Tissue Assimilation",
+      icons: [
+        "/images/commanderdata/unitupgrades/kerrigan/tissueassimilation.png"
+      ],
+      description: "Restores life equal to 40% of damage dealt by its normal attacks.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Tissue Assimilation research at the Ultralisk Cavern."
+    },
+    {
+      commander: "Mengsk",
+      unit: "Aegis Guard",
+      name: "High-Grade Stimpacks",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/highgradestimpacks.png"
+      ],
+      description: "Increases attack speed by 200% for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: 3,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "Pyrokinetic Immolation",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/pyrokineticimmolation.png"
+      ],
+      description: "Immolates a target Biological enemy for 20 seconds, dealing 20 damage per second to themselves and nearby Biological enemies. Can be set to Autocast. Requires 75 energy.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "EMP Blast",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/empblast.png"
+      ],
+      description: "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for 1 second. Cloaked units are revealed for 10 seconds after being hit. Can be set to Autocast. Requires 75 energy.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "Labyrinth Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/labyrinthcloak.png"
+      ],
+      description: "Prevents the Emperor's Shadow from taking any damage for 10 seconds after being attacked. Cannot occur more than once every 30 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: 1,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperors Shadow",
+      name: "Tactical Missile Strike",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/tacticalmissilestrike.png"
+      ],
+      description: `Calls down a Tactical Missile Strike at a target location. Tactical Missiles take 4 seconds to land, but they deal up to 150 (+100 vs. structures) damage to enemies in a small radius. (100% damage within 1.5 range of the hit, 50% from 1.5 to 2.0 range)
+Cooldown is time to build one missile.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "90 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Enthralled Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Imperial Intercessor",
+      name: "Heal",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/heal.png"
+      ],
+      description: `Heals a friendly biological target.
+Heals 9 life per 3 energy.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Imperial Intercessor",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 70% for 8 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Imperial Witness",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Pride of Augustgrad",
+      name: "Yamato Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/yamatocannon.png"
+      ],
+      description: "Blasts a target with a devastating plasma cannon, causing 300 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Pride of Augustgrad",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Battlecruiser is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: 0,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Covert Banshee",
+      name: "Rocket Barrage",
+      icons: [
+        "/images/commanderdata/unitskills/nova/rocketbarrage.png"
+      ],
+      description: "Deals 75 damage to enemy ground units in the target area.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Covert Banshee",
+      name: "Advanced Cloaking Field",
+      icons: [
+        "/images/commanderdata/unitupgrades/nova/advancedcloakingfield.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Advanced Cloaking Field research at a Starport Tech Lab."
+    },
+    {
+      commander: "Nova",
+      unit: "Elite Marine",
+      name: "Super Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/nova/superstimpack.png"
+      ],
+      description: "Heals the Elite Marine for 2 life per second and increases its attack speed by 50% and movement speed by 50% for 15 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Heavy Siege Tank",
+      name: "Deploy Spider Mines",
+      icons: [
+        "/images/commanderdata/unitskills/nova/deployspidermines.png"
+      ],
+      description: "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy detectors. (Costs 50 minerals).",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Hellbat Ranger",
+      name: "Jump Jet Assault",
+      icons: [
+        "/images/commanderdata/unitskills/nova/jumpjetassault.png"
+      ],
+      description: "Launches the Hellbat Ranger toward nearby enemy ground units. Briefly stuns enemy units on impact and gains +4 armor.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Marauder Commando",
+      name: "Magrail Munitions",
+      icons: [
+        "/images/commanderdata/unitskills/nova/magrailmunitions.png"
+      ],
+      description: "Deals 90 damage to target enemy unit.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Snipe",
+      icons: [
+        "/images/commanderdata/hero/nova/snipe.png"
+      ],
+      description: `Deals 200 damage to target enemy ground or air unit from long range (10).
+Can target biological and mechanical units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Sabotage Drone",
+      icons: [
+        "/images/commanderdata/hero/nova/sabotagedrone.png"
+      ],
+      description: "Deploys an undetectable explosive drone that deals 200 damage (400 vs Structure) to enemy ground units in the target area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Tac Nuke Strike",
+      icons: [
+        "/images/commanderdata/hero/nova/tacnukestrike.png"
+      ],
+      description: "Calls down a Nuclear Strike at the target location, dealing 600 damage in a large radius after 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 420 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Penetrating Blast",
+      icons: [
+        "/images/commanderdata/hero/nova/penetratingblast.png"
+      ],
+      description: `Deals 50 (100 vs Light) damage to enemy ground units in a wide arc.
+Does not damage friendly units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: "Assault Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/hero/nova/blink.png"
+      ],
+      description: `Teleports Nova to a nearby location. Nova gains a temporary shield that absorbs up to 200 damage for 8 seconds.
+Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: "Assault Mode",
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Holo Decoy",
+      icons: [
+        "/images/commanderdata/hero/nova/holodecoy.png"
+      ],
+      description: "Deploys a holographic duplicate of Nova that automatically attacks enemy units. The holo decoy lasts for 60 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 420 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: "Assault Mode",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Ghost Visor",
+      icons: [
+        "/images/commanderdata/hero/nova/ghostvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Ghost Visor research at the Ghost Academy."
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Build Railgun Turret",
+      icons: [
+        "/images/commanderdata/unitskills/nova/buildrailgunturret.png"
+      ],
+      description: `Automated defensive turret. Damages all enemy ground units in a straight line. Lasts for 60 seconds.
+Can attack ground units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Deploy Bio-Mechanical Repair Drone",
+      icons: [
+        "/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone.png"
+      ],
+      description: "Heals nearby biological and mechanical units. Lasts for 30 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Predator Missile",
+      icons: [
+        "/images/commanderdata/unitskills/nova/predatormissile.png"
+      ],
+      description: "Deploys a missile that pursues target enemy unit, dealing 100 (+35 vs. shields) damage in a wide radius upon contact.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type II",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Spec Ops Ghost",
+      name: "Snipe",
+      icons: [
+        "/images/commanderdata/unitskills/nova/snipe.png"
+      ],
+      description: `Deals 170 damage to target enemy biological unit.
+Mechanical units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Spec Ops Ghost",
+      name: "EMP Round",
+      icons: [
+        "/images/commanderdata/unitskills/nova/empround.png"
+      ],
+      description: "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Cloaked units are revealed for 10 seconds after being hit.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Spec Ops Ghost",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/nova/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Banshee",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Banshees also have their range increased by 2.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Banshee",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Battlecruiser",
+      name: "Yamato Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/yamatocannon.png"
+      ],
+      description: "Blasts a target with a devastating plasma cannon, causing 300 damage.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Battlecruiser",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Battlecruiser is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Battlecruiser",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Firebat",
+      name: "Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/stimpack.png"
+      ],
+      description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Hyperion",
+      name: "Hyperjump",
+      icons: [
+        "/images/commanderdata/abilities/raynor/hyperjump.png"
+      ],
+      description: "Hyperjump to the targeted location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Hyperion",
+      name: "Yamato Cannon",
+      icons: [
+        "/images/commanderdata/abilities/raynor/yamatocannon.png"
+      ],
+      description: "Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Hyperion",
+      name: "Point Defense Drone",
+      icons: [
+        "/images/commanderdata/abilities/raynor/pointdefensedrone.png"
+      ],
+      description: `Uses a laser to shoot down enemy missiles.
+Cannot target special attacks.
+Times out after 180 seconds.
+Each shot consumes 10 energy. (4 charges max)`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 4
+    },
+    {
+      commander: "Raynor",
+      unit: "Marauder",
+      name: "Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/stimpack.png"
+      ],
+      description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Marine",
+      name: "Stimpack",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/stimpack.png"
+      ],
+      description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the unit's life.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Medic",
+      name: "Heal",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/heal.png"
+      ],
+      description: `Heals a friendly biological target.
+Heals 9 life per 3 energy per second.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Siege Tank",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Viking",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Vulture",
+      name: "Deploy Spider Mine",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/deployspidermine.png"
+      ],
+      description: "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy Detectors. (3 charges max).",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Raynor",
+      unit: "Vulture",
+      name: "Replenishable Magazine",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/replenishspidermine.png"
+      ],
+      description: `Constructs a new Spider Mine to replace those used at a cost of 15 minerals each.
+A Vulture can only carry 3 Spider Mines at a time.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "6 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Raynor",
+      unit: "Vulture",
+      name: "Ignite Afterburners",
+      icons: [
+        "/images/commanderdata/unitskills/raynor/igniteafterburners.png"
+      ],
+      description: "Increases this unit's movement speed by 100% for 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Gary",
+      name: "E-Gorb",
+      icons: [
+        "/images/commanderdata/hero/stetmann/egorb.png"
+      ],
+      description: "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Gary",
+      name: "Stetellite Overcharge",
+      icons: [
+        "/images/commanderdata/hero/stetmann/so1.png",
+        "/images/commanderdata/hero/stetmann/so2.png",
+        "/images/commanderdata/hero/stetmann/so3.png"
+      ],
+      description: `Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds, and a Stetellite is invulnerable while overcharged.
+F.A.S.T. Overload grants 20% increased attack speed for 45 seconds.
+H.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.
+J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
+(The Stetellite is overcharged for 30 seconds but grants a 45-second buff.)`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Gary",
+      name: "Semi-Stable Mass Transportation",
+      icons: [
+        "/images/commanderdata/hero/stetmann/ssmt.png"
+      ],
+      description: "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "180 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Baneling",
+      name: "Anti-Centripetal Rocket Servos",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/anticentripetalrocketservos.png"
+      ],
+      description: "Increases the movement speed of this unit by 15% and allows it to leap onto enemy units.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "1",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Battlecarrier Lord",
+      name: "Ready Mecha Broodling",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/readymechabroodling.png"
+      ],
+      description: "Builds Mecha Broodlings that can attack ground units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "3 seconds",
+      energycost: "5",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Battlecarrier Lord",
+      name: "Build Mecha Locusceptor",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/buildmechalocusceptor.png"
+      ],
+      description: `Builds Mecha Locusceptors that automatically attack the Mecha Battlecarrier Lord's target.
+Can attack ground units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Battlecarrier Lord",
+      name: "Stetmato Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/stetmatocannon.png"
+      ],
+      description: "Blasts a target with a devastating plasma cannon causing 300 damage and delusions of grandeur.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Corruptor",
+      name: "Cluster Busters",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/clusterbusters.png"
+      ],
+      description: "Fires a barrage of missiles dealing 50 (+30 vs. light) damage to enemy air units in a target area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Corruptor",
+      name: "Terraclean Solvent",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/terracleansolvent.png"
+      ],
+      description: `Emits a solvent stream that deals 10 damage per second for 3 seconds, then increases to 50 damage per second.
+Channeled ability. Can target enemy ground units and structures.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Infestor",
+      name: "Roaches Away!",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/roachesaway.png"
+      ],
+      description: "Spawn 2 Mecha Roaches. Spawned units last 45 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "250",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Infestor",
+      name: "UMI-C Charging Protocol",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/umicchargingprotocol.png"
+      ],
+      description: "The Mecha Infestor launches a mechanical nerve cord at a friendly unit, restoring 150 life, 50 Egonergy, and 50 energy instantly. An additional 600 life, 200 Egonergy, and 200 energy regenerates over 20 seconds. The unit's ability cooldown rate is increased by 25%",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "5 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Infestor",
+      name: "Deconstructive Roach-nites",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/deconstructiveroachnites.png"
+      ],
+      description: "Infests target enemy structure, dealing 500 damage over 10 seconds and disabling it for the duration of the effect. If the structure is destroyed while under the effects of Deconstructive Roach-nites, it will spawn 2 Mecha Roaches.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Lurker",
+      name: "Tunnel of TERROR Algorithm",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/tunnelofterroralgorithm.png"
+      ],
+      description: "Tunnels to a nearby target location, dealing 60 damage to enemies along the way.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Lurker",
+      name: "Focused Strike Algorithm",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/focusedstrikealgorithm.png"
+      ],
+      description: "The Mecha Lurker concentrates its fire on a target unit, dealing 50 damage to a small area around that unit for 10 seconds or until the unit is destroyed.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Ultralisk",
+      name: "Vectored Burrow Charge",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/vectoredburrowcharge.png"
+      ],
+      description: "Burrow and charge towards a unit. Upon unburrowing, all enemy units in the vicinity are knocked back and dealt 50 damage.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "5 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Ultralisk",
+      name: "Mecha Mooch Module",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/mechamoochmodule.png"
+      ],
+      description: "Absorbs 25 health from a nearby enemy or friendly mechanical unit, healing for that amount.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "2 seconds",
+      energycost: "5",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Ultralisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "E-Gorb",
+      icons: [
+        "/images/commanderdata/hero/stetmann/egorb.png"
+      ],
+      description: "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 2
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Stetellite Overcharge",
+      icons: [
+        "/images/commanderdata/hero/stetmann/so1.png",
+        "/images/commanderdata/hero/stetmann/so2.png",
+        "/images/commanderdata/hero/stetmann/so3.png"
+      ],
+      description: `Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds.
+- F.A.S.T. Overload grants 20% increased attack speed for 45 seconds.
+- H.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.
+- J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 2
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Semi-Stable Mass Transportation",
+      icons: [
+        "/images/commanderdata/hero/stetmann/ssmt.png"
+      ],
+      description: "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "180 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 2
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Gary Zone",
+      icons: [
+        "/images/commanderdata/hero/stetmann/garyzone1.png",
+        "/images/commanderdata/hero/stetmann/garyzone2.png",
+        "/images/commanderdata/hero/stetmann/garyzone3.png"
+      ],
+      description: "Generates a Stetzone around Super Gary for 30 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "The Best Oil",
+      icons: [
+        "/images/commanderdata/unitskills/stetmann/thebestoil.png"
+      ],
+      description: "When Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. Can stack up to 20 times.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Super Gary",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Apocalisk",
+      name: "Cluster Rockets",
+      icons: [
+        "/images/commanderdata/abilities/stukov/clusterrockets.png"
+      ],
+      description: "Fires a salvo of 5 missiles at the target enemy air unit, dealing a total 100 damage. (40 missiles max)",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds/5 missiles",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Apocalisk",
+      name: "Burrow Charge",
+      icons: [
+        "/images/commanderdata/abilities/stukov/burrowcharge.png"
+      ],
+      description: "Burrow and charge at the target location dealing 150 damage and stunning non-heroic enemies for 5 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Apocalisk",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Brood Queen",
+      name: "Ocular Symbiote",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/ocularsymbiote.png"
+      ],
+      description: "Increases a friendly unit's sight range by 5 and grants it the ability to detect cloaked and burrowed units for 180 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Brood Queen",
+      name: "Spawn Broodlings",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/spawnbroodlings.png"
+      ],
+      description: "Deals 300 damage to a target enemy unit. When the unit dies, it will spawn 2 Broodlings from its corpse.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "100",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Brood Queen",
+      name: "Fungal Growth",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/fungalgrowth.png"
+      ],
+      description: "Immobilizes enemy units and deals 80 damage over 4 seconds. Reveals cloaked and burrowed units.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Infested Banshees also have their range increased by 2.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Burrow",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/burrow.png"
+      ],
+      description: "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Rapid Hibernation",
+      icons: [
+        "/images/commanderdata/unitupgrades/stukov/rapidhibernation.png"
+      ],
+      description: "Restores 20 life and energy per second while burrowed.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Burrowed",
+      prestige: null,
+      requirements: "Requires Rapid Hibernation research at an Infested Starport Tech Lab."
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Bunker",
+      name: "Spawning Chamber",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/spawningchamber.png"
+      ],
+      description: "While rooted, regenerates life and creates an Infested Trooper every 30 seconds. Troopers fill empty cargo slots; once full, new Troopers deploy outside. Deployed Troopers have a 30-second lifetime.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Diamondback",
+      name: "Fungal Snare",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/fungalsnare.png"
+      ],
+      description: "Brings a target enemy air unit to the ground, allowing units to attack it as if it were a ground unit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "45 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Diamondback",
+      name: "Caustic Mucus",
+      icons: [
+        "/images/commanderdata/unitupgrades/stukov/causticmucus.png"
+      ],
+      description: "Leaves an acid trail while moving, dealing 20 damage per second to enemy ground units in the trail.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Caustic Mucus research at an Infested Factory Tech Lab."
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Missile Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Siege Tank",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/deeptunnel.png"
+      ],
+      description: "Can travel quickly to any visible location with creep.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Siege Tank",
+      name: "Volatile Biomass",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/volatilebiomass.png"
+      ],
+      description: "Consumes a nearby Infested Civilian or Infested Trooper to restore 20 life and gain one round of ammunition. Stores up to 8 rounds.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: "2.5 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Siege Tank",
+      name: "Automated Mitosis",
+      icons: [
+        "/images/commanderdata/unitupgrades/stukov/automatedmitosis.png"
+      ],
+      description: "Automatically generates one round of Volatile Biomass every 30 seconds, up to a maximum of 8 stored rounds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Automated Mitosis research at an Infested Factory Tech Lab."
+    },
+    {
+      commander: "Stukov",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Cyclone",
+      name: "Lock On",
+      icons: [
+        "/images/commanderdata/unitskills/swann/lockon.png"
+      ],
+      description: "Locks the Cyclone's weapons on the target unit, dealing 500 damage over 20 seconds. Can move while firing. Cancels if target moves out of range.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "6 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Hercules",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/swann/tacticaljump.png"
+      ],
+      description: "Warps to the target location. Hercules is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Nano-Repair",
+      icons: [
+        "/images/commanderdata/unitskills/swann/nanorepair.png"
+      ],
+      description: `Heals a friendly mechanical unit.
+Heals 3 life per 1 energy.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Irradiate",
+      icons: [
+        "/images/commanderdata/unitskills/swann/irradiate.png"
+      ],
+      description: "Damages an enemy biological unit and adjacent enemy biological units, dealing 250 damage over 25 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Defensive Matrix",
+      icons: [
+        "/images/commanderdata/unitskills/swann/defensivematrix.png"
+      ],
+      description: "Surrounds the target with a shield that can absorb up to 200 damage. Effect lasts for 20 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "20 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Spinning Dizzy",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Thor",
+      name: "330mm Barrage Cannon",
+      icons: [
+        "/images/commanderdata/unitskills/swann/330mmbarragecannon.png"
+      ],
+      description: "Stuns all enemies in a small area. Deals 500 damage over 3 seconds in a larger area.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Wraith",
+      name: "Cloak",
+      icons: [
+        "/images/commanderdata/unitskills/swann/cloak.png"
+      ],
+      description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.
+Drains 0.9 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "AutoTurret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Crooked Sam",
+      name: "Demolition Charge",
+      icons: [
+        "/images/commanderdata/abilities/tychus/demolitioncharge.png"
+      ],
+      description: "Marks a target unit, dealing 500 damage after 5 seconds. Holds up to 3 charges.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "James Sirius Sykes",
+      name: "Deploy Warhound Turret",
+      icons: [
+        "/images/commanderdata/abilities/tychus/deploywarhoundturret.png"
+      ],
+      description: `Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.
+Can attack ground and air units.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 5
+    },
+    {
+      commander: "Tychus",
+      unit: "Kev Rattlesnake West",
+      name: "Deploy Revitalizer",
+      icons: [
+        "/images/commanderdata/abilities/tychus/deployrevitalizer.png"
+      ],
+      description: "Places a structure on the ground that heals all friendly units in an area around the structure for 2% of their life every second. 3 charges max.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "Reinvigorating Burst",
+      icons: [
+        "/images/commanderdata/abilities/tychus/reinvigoratingburst.png"
+      ],
+      description: "Instantly heals friendly units in an area around Lt. Nikara for 200 life and grants them 25% increased attack and ability damage. Regenerates an additional 10 life per second over 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "Super Heal",
+      icons: [
+        "/images/commanderdata/unitskills/tychus/superheal.png"
+      ],
+      description: "Restores 30 life per second to a friendly biological or mechanical unit. Can heal one target at a time before gear upgrades.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt Layna Nikara",
+      name: "XM-77 Matrix Generator",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/xm77matrixgenerator.png"
+      ],
+      description: "Grants a friendly unit a barrier that absorbs up to 400 damage for 20 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires purchase of XM-77 Matrix Generator gear."
+    },
+    {
+      commander: "Tychus",
+      unit: "Miles Blaze Lewis",
+      name: "Oil Spill",
+      icons: [
+        "/images/commanderdata/abilities/tychus/oilspill.png"
+      ],
+      description: "Douses enemy ground units in oil, reducing attack and movement speed by 75% and preventing them from cloaking. When a unit under the effect of Oil Spill is hit by a fire attack, it takes 5 (5 vs Light) damage per second over 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Nux",
+      name: "Ultrasonic Pulse",
+      icons: [
+        "/images/commanderdata/abilities/tychus/ultrasonicpulse.png"
+      ],
+      description: "Fires pulses of ultrasonic energy that lasts 6 seconds, causing 20 damage per second to enemy units in the target area. Does not damage friendly units. Holds up to 3 charges.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "Nux",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
+    },
+    {
+      commander: "Tychus",
+      unit: "Odin",
+      name: "Barrage",
+      icons: [
+        "/images/commanderdata/abilities/tychus/barrage.png"
+      ],
+      description: "Stuns all enemies and deals 1000 damage over 5 seconds in a large area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Odin",
+      name: "Big Red Button",
+      icons: [
+        "/images/commanderdata/abilities/tychus/bigredbutton.png"
+      ],
+      description: "Calls down a Nuclear Strike at a target location. Nukes take 3 seconds to land, but they deal up to 1000 damage in a large area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Odin",
+      name: "Frenzied",
+      icons: [
+        "/images/commanderdata/unitskills/common/frenzied.png"
+      ],
+      description: "Immune to slows, snares, and stuns.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Rob Cannonball Boswell",
+      name: "Heavy Impact",
+      icons: [
+        "/images/commanderdata/abilities/tychus/heavyimpact.png"
+      ],
+      description: "Cannonball pulls himself to the target location, dealing 20 damage and stunning enemy units on impact.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Rob Cannonball Boswell",
+      name: "Critical Response System",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/criticalresponsesystem.png"
+      ],
+      description: "When taking fatal damage, restores all life and becomes immune to damage for 5 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires purchase of Critical Response System gear."
+    },
+    {
+      commander: "Tychus",
+      unit: "Tychus Findlay",
+      name: "Shredder Grenade",
+      icons: [
+        "/images/commanderdata/abilities/tychus/shreddergrenade.png"
+      ],
+      description: "Deals 75 damage to enemy units in the target area.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Tychus",
+      unit: "Vega",
+      name: "Dominate",
+      icons: [
+        "/images/commanderdata/abilities/tychus/dominate.png"
+      ],
+      description: "Temporarily take control of target enemy unit and increases its damage by 50%. Dominated units self-destruct after 240 seconds. Holds up to 3 charges.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      charges: 3
+    },
+    {
+      commander: "Tychus",
+      unit: "Vega",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
+    },
+    {
+      commander: "Tychus",
+      unit: "Warhound Turret",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Centurion",
+      name: "Shadow Charge",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/shadowcharge.png"
+      ],
+      description: `Intercepts nearby enemies and increases the Centurion's movement speed. Ability can only be used once every 10 seconds.
+Briefly cloaks the Centurion and allows it to move through other units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Centurion",
+      name: "Darkcoil",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/darkcoil.png"
+      ],
+      description: `Stuns nearby enemy ground units for 2.5 seconds. Also temporarily grants the Centurion 100 additional shields for 2 seconds.
+Massive units are slowed.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Corsair",
+      name: "Disruption Web",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/disruptionweb.png"
+      ],
+      description: "Creates a web of energy on the ground that prevents enemy structures and ground units from attacking for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Corsair",
+      name: "Stealth Drive",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/stealthdrive.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Archon",
+      name: "Confusion",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/confusion.png"
+      ],
+      description: `Forces enemy units in the target area to attack each other for 10 seconds.
+Heroic units are immune.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Archon",
+      name: "Mind Control",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/mindcontrol.png"
+      ],
+      description: `Permanently takes control of a target enemy unit.
+Heroic units are immune.`,
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "30 seconds",
+      energycost: "150",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Pylon",
+      name: "Recall",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/recall.png"
+      ],
+      description: "Teleports all friendly units in the target area to the location of the Dark Pylon.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Shadow Fury",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/shadowfury.png"
+      ],
+      description: "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times. Invulnerable for the entire duration.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/dtblink.png"
+      ],
+      description: "Teleport to a nearby target location.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "10 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Void Stasis",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/voidstasis.png"
+      ],
+      description: `Places target unit or structure in stasis for 10 seconds, disabling the unit for the duration of the effect. Units and structures in stasis cannot be attacked or affected by abilities.
+Can target structures or ground units.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Dark Templar",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/mutatordata/amonheroes/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Pulsar Beam",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/pulsarbeam.png"
+      ],
+      description: `Charges the Oracle's Pulsar Beam and allows it to attack enemy ground units.
+Drains 1.4 energy per second.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "4 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Stasis Ward",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/stasisward.png"
+      ],
+      description: "Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for 15 seconds. Trapped units cannot be attacked or affected by abilities.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Stealth Drive",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/stealthdrive.png"
+      ],
+      description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
+    },
+    {
+      commander: "Vorazun",
+      unit: "Oracle",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Photon Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Shadow Fury",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/shadowfury.png"
+      ],
+      description: "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/dtblink.png"
+      ],
+      description: "Teleport to a nearby target location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Void Stasis",
+      icons: [
+        "/images/commanderdata/abilities/vorazun/voidstasis.png"
+      ],
+      description: `Places target unit or structure in stasis for 10 seconds, disabling the unit for the duration of the effect. Units and structures in stasis cannot be attacked or affected by abilities.
+Can target structures or ground units.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Shadow Guard",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/mutatordata/amonheroes/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Vorazun",
+      unit: "Stalker",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/blink.png"
+      ],
+      description: "Teleports the Stalker to a nearby target location. Ability can only be used once every 8 seconds.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Aberration",
+      name: "Towering",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/towering.png"
+      ],
+      description: "Can walk over smaller ground units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Aberration",
+      name: "Protective Cover",
+      icons: [
+        "/images/commanderdata/unitupgrades/zagara/protectivecover.png"
+      ],
+      description: "Friendly units underneath the Aberration take 50% less damage.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zagara level 9 and Protective Cover research at the Evolution Chamber."
+    },
+    {
+      commander: "Zagara",
+      unit: "Aberration",
+      name: "Incubate Banelings",
+      icons: [
+        "/images/commanderdata/progression/zagara/zagara_08.png"
+      ],
+      description: "Spawns two Banelings when killed.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zagara level 8."
+    },
+    {
+      commander: "Zagara",
+      unit: "Bile Launcher",
+      name: "Bombardment",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/bombardment.png"
+      ],
+      description: "Constantly blasts a target area, repeatedly dealing 75 damage to enemy ground and air units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Corruptor",
+      name: "Corruption",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/corruption.png"
+      ],
+      description: "Covers the target enemy unit in Zerg slime, increasing the damage taken by 35% for 30 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Corruptor",
+      name: "Incubate Scourge",
+      icons: [
+        "/images/commanderdata/progression/zagara/zagara_08.png"
+      ],
+      description: "Spawns two Scourge when killed.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zagara level 8."
+    },
+    {
+      commander: "Zagara",
+      unit: "Overseer",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Queen",
+      name: "Spawn Creep Tumor",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/spawncreeptumor.png"
+      ],
+      description: `A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.
+Bonus: Zerg move faster on creep.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Queen",
+      name: "Spawn Larva",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/spawnlarva.png"
+      ],
+      description: "Target Hatchery, Lair, or Hive spawns 8 Larvae in 40 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "25 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Queen",
+      name: "Transfusion",
+      icons: [
+        "/images/commanderdata/unitskills/zagara/transfusion.png"
+      ],
+      description: "Instantly restores 125 life to target biological unit or structure.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "0 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Spore Crawler",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Rooted",
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Baneling Barrage",
+      icons: [
+        "/images/commanderdata/hero/zagara/banelingbarrage.png"
+      ],
+      description: "Launches 6 Banelings towards the target point. Each Baneling explodes for 40 damage (80 vs structures).",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Spawn Hunter Killers",
+      icons: [
+        "/images/commanderdata/hero/zagara/spawnhunterkillers.png"
+      ],
+      description: "Spawns 6 Hunter Killers at the target point that last 20 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "30 seconds",
+      energycost: "30",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Mass Frenzy",
+      icons: [
+        "/images/commanderdata/hero/zagara/massfrenzy.png"
+      ],
+      description: "Grants all friendly units on the map 25% attack speed and 25% movement speed for 15 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "90 seconds",
+      energycost: "25",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Infested Drop",
+      icons: [
+        "/images/commanderdata/hero/zagara/infesteddrop.png"
+      ],
+      description: "Calls down 10 drop-pods onto the target area, dealing 50 damage with each drop-pod and spawning a total of 20 Roaches that last 30 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `Coolup: 600 seconds
+Cooldown: 180 seconds`,
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Essence",
+      name: "Devolution Wave",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/devolutionwave.png"
+      ],
+      description: "Transforms all enemy units in a large area around the Avatar of Essence into a lower evolutionary form.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "20 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Form",
+      name: "Summon Charged Crystals",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/summonchargedcrystals.png"
+      ],
+      description: `Marks a target area on the ground. After 2 seconds, the Avatar of Form deals 100 damage and summons 10 Xel'Naga Charged Crystals at the target location.
+Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each attack, dealing 40 damage to all enemy units in a small area over 4 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "25 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Form",
+      name: "Psionic Gale",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/psionicgale.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, dealing 160 damage to all enemy units in a large target area. Does not damage friendly units.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Avatar of Form",
+      name: "Psionic Blast",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/psionicblast.png"
+      ],
+      description: "Charges up, dealing 500 damage to a target unit after 3 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Dark Archon",
+      name: "Mind Control",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/mindcontrol.png"
+      ],
+      description: `Temporarily grants Zeratul control of a target enemy unit. Controlled units self-destruct after 120 seconds.
+Heroic units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "150",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Dark Archon",
+      name: "Maelstrom",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/maelstrom.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Temporarily stuns enemy units and structures in an area of effect for 3 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Serdath",
+      name: "Mind Control",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/mindcontrol.png"
+      ],
+      description: `Temporarily grants Zeratul control of a target enemy unit. Controlled units self-destruct after 120 seconds.
+Heroic units are immune.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "150",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Serdath",
+      name: "Maelstrom",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/maelstrom.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Temporarily stuns enemy units in an area of effect for 3 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "15 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Telbrus",
+      name: "Psionic Storm",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/psionicstorm.png"
+      ],
+      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 112 damage to all enemy units and restoring 112 shields to all friendly units in a large target area.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "2.5 seconds",
+      energycost: "75",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Telbrus",
+      name: "Feedback",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/feedback.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Drains all energy from the target. Deals 1 damage per point of energy.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: "50",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Cannon",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Monolith",
+      name: "Shade Projection",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/shadeprojection.png"
+      ],
+      description: `Requirements: Core Forge and 2nd Xel'Naga Artifact Fragment
+Projects the Tesseract Monolith to a target location for 60 seconds, transferring all of its shields and its weapon. The Tesseract Monolith is deactivated while this ability is active.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Core Forge and 2nd Xel'Naga Artifact Fragment"
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Monolith",
+      name: "Shade Barrier",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/shadebarrier.png"
+      ],
+      description: `Requirements: Core Forge and 3rd Xel'Naga Artifact Fragment
+Absorbs up to 100 damage. Lasts for 10 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "60 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Core Forge and 3rd Xel'Naga Artifact Fragment"
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Monolith",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Templar",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/dtblink.png"
+      ],
+      description: "Allows the Void Templar to teleport to a nearby target location.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: "8 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Templar",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/mutatordata/amonheroes/permanentlycloaked.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Templar",
+      name: "Back to the Shadows",
+      icons: [
+        "/images/commanderdata/unitupgrades/zeratul/backtotheshadows.png"
+      ],
+      description: "On taking fatal damage, retreats into the Void and restores its life and shields over 10 seconds.",
+      type: "passive",
+      requiresupgrade: true,
+      cooldown: "180 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Zeratul level 11, a Void Shrine, and three Artifact Fragments. Unavailable with Herald of the Void."
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Abrogator",
+      name: "Purification Nova",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/purificationnova.png"
+      ],
+      description: "Shoots out a ball of energy that detonates 3 seconds or on contact with an enemy unit, dealing 100 splash damage to nearby ground units and structures. The Xel'Naga Abrogator is immobile while this is active.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "12 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Ambusher",
+      name: "Predictive Blink",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/predictiveblink.png"
+      ],
+      description: "Teleports this unit to a nearby target location.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Enforcer",
+      name: "Barrier",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/barrier.png"
+      ],
+      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "60 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Shieldguard",
+      name: "Shield Recharge",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/shieldrecharge.png"
+      ],
+      description: `Recharges the shields of a friendly Protoss unit.
+Restores 4 shields per 1 energy.`,
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "0 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Shieldguard",
+      name: "Reflection Shield",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/reflectionshield.png"
+      ],
+      description: "Creates an aura that reflects 50% of all projectiles back to enemy attackers. Lasts 15 seconds. Can be set to Autocast.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: "180 seconds",
+      energycost: "0",
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Watcher",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
+      ],
+      description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "XelNaga Watcher",
+      name: "Detector",
+      icons: [
+        "/images/commanderdata/unitskills/common/detector.png"
+      ],
+      description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zealot",
+      name: "Charge",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/charge.png"
+      ],
+      description: `Requirements: 3rd Xel'Naga Artifact.
+Intercepts enemy ground units and increases movement speed.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zealot",
+      name: "Whirlwind",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/whirlwind.png"
+      ],
+      description: "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: "10 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Blink",
+      icons: [
+        "/images/commanderdata/hero/zeratul/blink.png"
+      ],
+      description: "Teleports Zeratul to a nearby location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "8 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Summon Void Seeker",
+      icons: [
+        "/images/commanderdata/hero/zeratul/summonvoidseeker.png"
+      ],
+      description: "Transports Zeratul to a target location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "120 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Shadow Cleave",
+      icons: [
+        "/images/commanderdata/hero/zeratul/shadowcleave.png"
+      ],
+      description: "Deals 100 damage to nearby enemies.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: "12 seconds",
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "Prophetic Vision",
+      icons: [
+        "/images/commanderdata/hero/zeratul/propheticvision.png"
+      ],
+      description: "Shows the location of or unearths a hidden Xel'Naga Artifact Fragment.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: `10 seconds if Fragment is not found
+Remaining seconds until next Fragment spawns if found.`,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zeratul",
+      name: "One With the Shadows",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/onewiththeshadows.png"
+      ],
+      description: "Zeratul is permanently cloaked. He becomes immune to damage for 0.5 seconds after being attacked. Cannot occur more than once every 5 seconds.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null
+    }
+  ];
+
+  // html/scripts/unit-skills.ts
+  function skillKey(skill) {
+    return "skills/" + [skill.commander, skill.unit, skill.name, skill.mode ?? "", skill.prestige ?? ""].map((part) => encodeURIComponent(part)).join("/");
+  }
+  var unitSkills = new Map(unitskills_default.map((skill) => [skillKey(skill), skill]));
+  function skillCooldown(skill) {
+    if (!skill.cooldown)
+      return null;
+    const cooldown = skill.cooldown.match(/Cooldown:\s*([^\n]+)/i)?.[1] ?? skill.cooldown;
+    const seconds = cooldown.match(/^(\d+(?:\.\d+)?)\s*(?:seconds?|s)(.*)$/s);
+    if (!seconds)
+      return "?";
+    if (Number(seconds[1]) === 0)
+      return null;
+    return seconds[1] + (seconds[2]?.trim() ? "*" : "");
+  }
+  function skillCosts(skill, race) {
+    const costs = [];
+    if (skill.energycost !== null && Number(skill.energycost) > 0) {
+      costs.push({ icon: "/images/commanderdata/unitupgrades/iconenergy.png", label: "Energy:", value: skill.energycost });
+    }
+    const cooldown = skillCooldown(skill);
+    if (cooldown !== null) {
+      costs.push({ icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: "Cooldown (seconds):", value: cooldown });
+    }
+    return costs;
+  }
+  function skillDetails(skill) {
+    const details = [skill.description];
+    if (skill.cooldown && !/^\d+(?:\.\d+)?\s*(?:seconds?|s)$/.test(skill.cooldown)) {
+      details.push(/\bCool(?:down|up):/i.test(skill.cooldown) ? skill.cooldown : `Cooldown: ${skill.cooldown}`);
+    }
+    if (skill.requiresupgrade)
+      details.push("Requires an upgrade.");
+    if (skill.rankrequired !== null)
+      details.push(`Requires rank ${skill.rankrequired}.`);
+    if (skill.mode)
+      details.push(`Mode: ${skill.mode}`);
+    if (skill.prestige)
+      details.push(`Prestige: ${skill.prestige}`);
+    if (skill.requirements)
+      details.push(skill.requirements);
+    return details;
+  }
+
   // html/scripts/tooltips.ts
   function token(name) {
     if (name === "Dom. Trooper")
@@ -8163,6 +14131,11 @@ Drains 0.9 energy per second.`,
       tooltip.style.top = "auto";
       tooltip.style.bottom = `${window.innerHeight - rect.top + gap}px`;
     }
+    const bounds = tooltip.getBoundingClientRect();
+    if (bounds.top < gap || bounds.bottom > window.innerHeight - gap) {
+      tooltip.style.top = `${Math.max(gap, Math.min(bounds.top, window.innerHeight - bounds.height - gap))}px`;
+      tooltip.style.bottom = "auto";
+    }
     tooltip.style.visibility = "visible";
   }
   function prepareTooltip() {
@@ -8197,7 +14170,7 @@ Drains 0.9 energy per second.`,
     const key = target.dataset.tooltip;
     if (!key)
       return;
-    const upgrade = upgradeData.get(key);
+    const upgrade = rankUpgrades.get(key) ?? upgradeData.get(key);
     if (!upgrade)
       return;
     const tooltip = prepareTooltip();
@@ -8218,6 +14191,54 @@ Drains 0.9 energy per second.`,
     activeTooltipTarget = target;
     setTooltipPosition(target);
   }
+  function showSkillTooltip(target) {
+    const skill = unitSkills.get(target.dataset.tooltip ?? "");
+    if (!skill)
+      return;
+    const tooltip = prepareTooltip();
+    const icons = document.createElement("div");
+    icons.style.cssText = "float: left; display: grid; gap: 3px";
+    for (const src of skill.icons) {
+      const icon = document.createElement("img");
+      icon.src = src;
+      icon.alt = "";
+      icon.width = 50;
+      icon.height = 50;
+      icons.append(icon);
+    }
+    const text = document.createElement("div");
+    if (skill.icons.length)
+      text.style.marginLeft = "55px";
+    text.style.whiteSpace = "pre-line";
+    const heading = document.createElement("span");
+    heading.className = "skill-tooltip-heading";
+    heading.style.fontWeight = "normal";
+    const name = document.createElement("b");
+    name.textContent = skill.name;
+    heading.append(name);
+    if (skill.charges)
+      heading.append(` (${skill.charges} charges)`);
+    for (const cost of skillCosts(skill, target.dataset.race ?? "terran")) {
+      const value = document.createElement("span");
+      value.style.whiteSpace = "nowrap";
+      const icon = document.createElement("img");
+      icon.src = cost.icon;
+      icon.alt = cost.label;
+      icon.width = 16;
+      icon.height = 16;
+      value.append(icon, ` ${cost.value}`);
+      heading.append(" ", value);
+    }
+    if (skill.type !== "active")
+      heading.append(` (${skill.type})`);
+    text.append(heading);
+    for (const detail of skillDetails(skill)) {
+      text.append(document.createElement("br"), detail);
+    }
+    tooltip.replaceChildren(icons, text);
+    activeTooltipTarget = target;
+    setTooltipPosition(target);
+  }
   function hideTooltip() {
     activeTooltipTarget = null;
     tooltipElement().style.display = "none";
@@ -8228,7 +14249,9 @@ Drains 0.9 energy per second.`,
     return target.closest("[data-tooltip], a[href]:not([data-no-tooltip])");
   }
   function showTooltip(target) {
-    if (target.dataset.tooltip) {
+    if (target.dataset.tooltip?.startsWith("skills/")) {
+      showSkillTooltip(target);
+    } else if (target.dataset.tooltip) {
       showUpgradeTooltip(target);
     } else if (target instanceof HTMLAnchorElement) {
       showMutatorTooltip(target);
@@ -8260,5 +14283,5 @@ Drains 0.9 energy per second.`,
   });
 })();
 
-//# debugId=DEE989E63D29A3AA64756E2164756E21
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidG9vbHRpcHMudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbCiAgICAiaW1wb3J0IG11dGF0b3JzIGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9tdXRhdG9ycy5qc29uXCI7XG5pbXBvcnQgcGxheWVyVXBncmFkZXMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVwZ3JhZGVzLmpzb25cIjtcblxuZnVuY3Rpb24gdG9rZW4obmFtZTogc3RyaW5nKTogc3RyaW5nIHtcbiAgICBpZiAobmFtZSA9PT0gXCJEb20uIFRyb29wZXJcIikgcmV0dXJuICdkb21pbmlvbnRyb29wZXInO1xuICAgIGlmIChuYW1lID09PSBcIkRvbS4gQXNzYXVsdCBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb25hc3NhdWx0dHJvb3Blcic7XG4gICAgaWYgKG5hbWUgPT09IFwiRG9tLiBGbGFtZSBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb25mbGFtZXRyb29wZXInO1xuICAgIGlmIChuYW1lID09PSBcIkRvbS4gUm9ja2V0IFRyb29wZXJcIikgcmV0dXJuICdkb21pbmlvbnJvY2tldHRyb29wZXInO1xuICAgIGlmIChuYW1lID09PSBcIlR5Y2h1cyBGaW5kbGF5XCIpIHJldHVybiAndHljaHVzJztcbiAgICBpZiAobmFtZSA9PT0gXCJKYW1lcyBTaXJpdXMgU3lrZXNcIikgcmV0dXJuICdzaXJpdXMnO1xuICAgIGlmIChuYW1lID09PSBcIk1pbGVzIEJsYXplIExld2lzXCIpIHJldHVybiAnYmxhemUnO1xuICAgIGlmIChuYW1lID09PSBcIlJvYiBDYW5ub25iYWxsIEJvc3dlbGxcIikgcmV0dXJuICdjYW5ub25iYWxsJztcbiAgICBpZiAobmFtZSA9PT0gXCJMdCBMYXluYSBOaWthcmFcIikgcmV0dXJuICduaWthcmEnO1xuICAgIGlmIChuYW1lID09PSBcIktldiBSYXR0bGVzbmFrZSBXZXN0XCIpIHJldHVybiAncmF0dGxlc25ha2UnO1xuXG4gICAgcmV0dXJuIG5hbWUudG9Mb3dlckNhc2UoKS5yZXBsYWNlKC9bXmEtejAtOV0rL2csIFwiXCIpO1xufVxuXG5jb25zdCBtdXRhdG9yRGF0YSA9IG5ldyBNYXAobXV0YXRvcnMubWFwKG11dGF0b3IgPT4gW211dGF0b3IubXV0YXRvcmlkLCBtdXRhdG9yXSkpO1xuY29uc3QgdXBncmFkZURhdGEgPSBuZXcgTWFwKHBsYXllclVwZ3JhZGVzLm1hcCh1cGdyYWRlID0+IFtgdXBncmFkZXMvJHt0b2tlbih1cGdyYWRlLmNvbW1hbmRlcil9LyR7dXBncmFkZS5pY29ufWAsIHVwZ3JhZGVdKSk7XG5sZXQgYWN0aXZlVG9vbHRpcFRhcmdldDogSFRNTEVsZW1lbnQgfCBudWxsID0gbnVsbDtcblxuZnVuY3Rpb24gdG9vbHRpcEVsZW1lbnQoKTogSFRNTEVsZW1lbnQge1xuICAgIGxldCB0b29sdGlwID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJ0b29sdGlwXCIpO1xuICAgIGlmICghdG9vbHRpcCkge1xuICAgICAgICB0b29sdGlwID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICAgICAgdG9vbHRpcC5pZCA9IFwidG9vbHRpcFwiO1xuICAgICAgICBkb2N1bWVudC5ib2R5LmFwcGVuZCh0b29sdGlwKTtcbiAgICB9XG4gICAgcmV0dXJuIHRvb2x0aXA7XG59XG5cbmZ1bmN0aW9uIG11dGF0b3JTbHVnKGxpbms6IEhUTUxBbmNob3JFbGVtZW50KTogc3RyaW5nIHwgbnVsbCB7XG4gICAgY29uc3QgdXJsID0gbmV3IFVSTChsaW5rLmhyZWYsIHdpbmRvdy5sb2NhdGlvbi5ocmVmKTtcbiAgICBpZiAodXJsLm9yaWdpbiAhPT0gd2luZG93LmxvY2F0aW9uLm9yaWdpbikgcmV0dXJuIG51bGw7XG4gICAgY29uc3QgbWF0Y2ggPSB1cmwucGF0aG5hbWUubWF0Y2goL15cXC9tdXRhdG9yc1xcLyhbYS16MC05LV0rKVxcLz8kLyk7XG4gICAgcmV0dXJuIG1hdGNoPy5bMV0gPz8gbnVsbDtcbn1cblxuZnVuY3Rpb24gc2V0VG9vbHRpcFBvc2l0aW9uKHRhcmdldDogSFRNTEVsZW1lbnQpOiB2b2lkIHtcbiAgICBjb25zdCB0b29sdGlwID0gdG9vbHRpcEVsZW1lbnQoKTtcbiAgICBjb25zdCByZWN0ID0gdGFyZ2V0LmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpO1xuICAgIGNvbnN0IGdhcCA9IDg7XG4gICAgY29uc3Qgdmlld3BvcnRXaWR0aCA9IGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5jbGllbnRXaWR0aDtcbiAgICBjb25zdCB0b29sdGlwV2lkdGggPSB0b29sdGlwLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpLndpZHRoO1xuICAgIGlmICh2aWV3cG9ydFdpZHRoIC0gdG9vbHRpcFdpZHRoIC0gZ2FwIDwgcmVjdC5sZWZ0KSB7XG4gICAgICAgIHRvb2x0aXAuc3R5bGUubGVmdCA9IFwiYXV0b1wiO1xuICAgICAgICB0b29sdGlwLnN0eWxlLnJpZ2h0ID0gYCR7Z2FwfXB4YDtcbiAgICB9IGVsc2Uge1xuICAgICAgICB0b29sdGlwLnN0eWxlLmxlZnQgPSBgJHtyZWN0LmxlZnR9cHhgO1xuICAgICAgICB0b29sdGlwLnN0eWxlLnJpZ2h0ID0gXCJhdXRvXCI7XG4gICAgfVxuXG4gICAgaWYgKHJlY3QudG9wIDwgMjAwKSB7XG4gICAgICAgIHRvb2x0aXAuc3R5bGUudG9wID0gYCR7cmVjdC5ib3R0b20gKyBnYXB9cHhgO1xuICAgICAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IFwiYXV0b1wiO1xuICAgIH0gZWxzZSB7XG4gICAgICAgIHRvb2x0aXAuc3R5bGUudG9wID0gXCJhdXRvXCI7XG4gICAgICAgIHRvb2x0aXAuc3R5bGUuYm90dG9tID0gYCR7d2luZG93LmlubmVySGVpZ2h0IC0gcmVjdC50b3AgKyBnYXB9cHhgO1xuICAgIH1cbiAgICB0b29sdGlwLnN0eWxlLnZpc2liaWxpdHkgPSBcInZpc2libGVcIjtcbn1cblxuZnVuY3Rpb24gcHJlcGFyZVRvb2x0aXAoKTogSFRNTEVsZW1lbnQge1xuICAgIGNvbnN0IHRvb2x0aXAgPSB0b29sdGlwRWxlbWVudCgpO1xuICAgIHRvb2x0aXAuc3R5bGUuZGlzcGxheSA9IFwiYmxvY2tcIjtcbiAgICB0b29sdGlwLnN0eWxlLnZpc2liaWxpdHkgPSBcImhpZGRlblwiO1xuICAgIHRvb2x0aXAuc3R5bGUucG9zaXRpb24gPSBcImZpeGVkXCI7XG4gICAgdG9vbHRpcC5zdHlsZS50b3AgPSBcIjBcIjtcbiAgICB0b29sdGlwLnN0eWxlLmxlZnQgPSBcIjBcIjtcbiAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IFwiYXV0b1wiO1xuICAgIHRvb2x0aXAuc3R5bGUucmlnaHQgPSBcImF1dG9cIjtcbiAgICB0b29sdGlwLnN0eWxlLndpZHRoID0gXCJtYXgtY29udGVudFwiO1xuICAgIHRvb2x0aXAuc3R5bGUuYm94U2l6aW5nID0gXCJib3JkZXItYm94XCI7XG4gICAgdG9vbHRpcC5zdHlsZS5tYXhXaWR0aCA9IGAke01hdGgubWluKDQwMCwgZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LmNsaWVudFdpZHRoKX1weGA7XG4gICAgcmV0dXJuIHRvb2x0aXA7XG59XG5cbmZ1bmN0aW9uIHNob3dNdXRhdG9yVG9vbHRpcChsaW5rOiBIVE1MQW5jaG9yRWxlbWVudCk6IHZvaWQge1xuICAgIGNvbnN0IHNsdWcgPSBtdXRhdG9yU2x1ZyhsaW5rKTtcbiAgICBpZiAoIXNsdWcpIHJldHVybjtcbiAgICBjb25zdCBtdXRhdG9yID0gbXV0YXRvckRhdGEuZ2V0KHNsdWcpO1xuICAgIGlmICghbXV0YXRvcikgcmV0dXJuO1xuXG4gICAgY29uc3QgdG9vbHRpcCA9IHByZXBhcmVUb29sdGlwKCk7XG4gICAgY29uc3QgbmFtZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiXCIpO1xuICAgIG5hbWUudGV4dENvbnRlbnQgPSBtdXRhdG9yLm11dGF0b3JuYW1lO1xuICAgIHRvb2x0aXAucmVwbGFjZUNoaWxkcmVuKG5hbWUsIGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiclwiKSwgbXV0YXRvci5tdXRhdG9yZGVzY3JpcHRpb24pO1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSBsaW5rO1xuICAgIHNldFRvb2x0aXBQb3NpdGlvbihsaW5rKTtcbn1cblxuZnVuY3Rpb24gc2hvd1VwZ3JhZGVUb29sdGlwKHRhcmdldDogSFRNTEVsZW1lbnQpOiB2b2lkIHtcbiAgICBjb25zdCBrZXkgPSB0YXJnZXQuZGF0YXNldC50b29sdGlwO1xuICAgIGlmICgha2V5KSByZXR1cm47XG4gICAgY29uc3QgdXBncmFkZSA9IHVwZ3JhZGVEYXRhLmdldChrZXkpO1xuICAgIGlmICghdXBncmFkZSkgcmV0dXJuO1xuXG4gICAgY29uc3QgdG9vbHRpcCA9IHByZXBhcmVUb29sdGlwKCk7XG4gICAgY29uc3QgaWNvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJpbWdcIik7XG4gICAgY29uc3QgaXNIZXJvID0gdG9rZW4odXBncmFkZS51bml0KSA9PT0gdG9rZW4odXBncmFkZS5jb21tYW5kZXIpIHx8ICh1cGdyYWRlLmNvbW1hbmRlciA9PT0gJ0Zlbml4JyAmJiB1cGdyYWRlLnVuaXQuc3RhcnRzV2l0aCgnRmVuaXggJykpO1xuICAgIGNvbnN0IGRpciA9IHRva2VuKHVwZ3JhZGUuY29tbWFuZGVyKSAhPT0gJ3R5Y2h1cycgJiYgaXNIZXJvID8gXCJoZXJvXCIgOiBcInVuaXR1cGdyYWRlc1wiO1xuICAgIGljb24uc3JjID0gYC9pbWFnZXMvY29tbWFuZGVyZGF0YS8ke2Rpcn0vJHt0b2tlbih1cGdyYWRlLmNvbW1hbmRlcil9LyR7dXBncmFkZS5pY29ufS5wbmdgO1xuICAgIGljb24uYWx0ID0gXCJcIjtcbiAgICBpY29uLndpZHRoID0gNTA7XG4gICAgaWNvbi5oZWlnaHQgPSA1MDtcbiAgICBpY29uLnN0eWxlLmZsb2F0ID0gXCJsZWZ0XCI7XG4gICAgY29uc3QgdGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgdGV4dC5zdHlsZS5tYXJnaW5MZWZ0ID0gXCI1NXB4XCI7XG4gICAgY29uc3QgbmFtZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiXCIpO1xuICAgIG5hbWUudGV4dENvbnRlbnQgPSB1cGdyYWRlLm5hbWU7XG4gICAgdGV4dC5yZXBsYWNlQ2hpbGRyZW4obmFtZSwgZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImJyXCIpLCB1cGdyYWRlLmVmZmVjdCk7XG4gICAgdG9vbHRpcC5yZXBsYWNlQ2hpbGRyZW4oaWNvbiwgdGV4dCk7XG4gICAgYWN0aXZlVG9vbHRpcFRhcmdldCA9IHRhcmdldDtcbiAgICBzZXRUb29sdGlwUG9zaXRpb24odGFyZ2V0KTtcbn1cblxuZnVuY3Rpb24gaGlkZVRvb2x0aXAoKTogdm9pZCB7XG4gICAgYWN0aXZlVG9vbHRpcFRhcmdldCA9IG51bGw7XG4gICAgdG9vbHRpcEVsZW1lbnQoKS5zdHlsZS5kaXNwbGF5ID0gXCJub25lXCI7XG59XG5cbmZ1bmN0aW9uIGNsb3Nlc3RUb29sdGlwVGFyZ2V0KHRhcmdldDogRXZlbnRUYXJnZXQgfCBudWxsKTogSFRNTEVsZW1lbnQgfCBudWxsIHtcbiAgICBpZiAoISh0YXJnZXQgaW5zdGFuY2VvZiBFbGVtZW50KSkgcmV0dXJuIG51bGw7XG4gICAgcmV0dXJuIHRhcmdldC5jbG9zZXN0PEhUTUxFbGVtZW50PihcIltkYXRhLXRvb2x0aXBdLCBhW2hyZWZdOm5vdChbZGF0YS1uby10b29sdGlwXSlcIik7XG59XG5cbmZ1bmN0aW9uIHNob3dUb29sdGlwKHRhcmdldDogSFRNTEVsZW1lbnQpOiB2b2lkIHtcbiAgICBpZiAodGFyZ2V0LmRhdGFzZXQudG9vbHRpcCkge1xuICAgICAgICBzaG93VXBncmFkZVRvb2x0aXAodGFyZ2V0KTtcbiAgICB9IGVsc2UgaWYgKHRhcmdldCBpbnN0YW5jZW9mIEhUTUxBbmNob3JFbGVtZW50KSB7XG4gICAgICAgIHNob3dNdXRhdG9yVG9vbHRpcCh0YXJnZXQpO1xuICAgIH1cbn1cblxuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcihcIm1vdXNlb3ZlclwiLCBldmVudCA9PiB7XG4gICAgY29uc3QgdGFyZ2V0ID0gY2xvc2VzdFRvb2x0aXBUYXJnZXQoZXZlbnQudGFyZ2V0KTtcbiAgICBpZiAodGFyZ2V0KSBzaG93VG9vbHRpcCh0YXJnZXQpO1xufSk7XG5cbmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoXCJtb3VzZW91dFwiLCBldmVudCA9PiB7XG4gICAgaWYgKCFhY3RpdmVUb29sdGlwVGFyZ2V0KSByZXR1cm47XG4gICAgaWYgKGV2ZW50LnJlbGF0ZWRUYXJnZXQgJiYgYWN0aXZlVG9vbHRpcFRhcmdldC5jb250YWlucyhldmVudC5yZWxhdGVkVGFyZ2V0IGFzIE5vZGUpKSByZXR1cm47XG4gICAgaGlkZVRvb2x0aXAoKTtcbn0pO1xuXG5kb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKFwiZm9jdXNpblwiLCBldmVudCA9PiB7XG4gICAgY29uc3QgdGFyZ2V0ID0gY2xvc2VzdFRvb2x0aXBUYXJnZXQoZXZlbnQudGFyZ2V0KTtcbiAgICBpZiAodGFyZ2V0KSBzaG93VG9vbHRpcCh0YXJnZXQpO1xufSk7XG5cbmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoXCJmb2N1c291dFwiLCBldmVudCA9PiB7XG4gICAgaWYgKCFhY3RpdmVUb29sdGlwVGFyZ2V0KSByZXR1cm47XG4gICAgaWYgKGV2ZW50LnJlbGF0ZWRUYXJnZXQgJiYgYWN0aXZlVG9vbHRpcFRhcmdldC5jb250YWlucyhldmVudC5yZWxhdGVkVGFyZ2V0IGFzIE5vZGUpKSByZXR1cm47XG4gICAgaGlkZVRvb2x0aXAoKTtcbn0pO1xuIgogIF0sCiAgIm1hcHBpbmdzIjogIjs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0VBR0EsU0FBUyxLQUFLLENBQUMsTUFBc0I7QUFBQSxJQUNqQyxJQUFJLFNBQVM7QUFBQSxNQUFnQixPQUFPO0FBQUEsSUFDcEMsSUFBSSxTQUFTO0FBQUEsTUFBd0IsT0FBTztBQUFBLElBQzVDLElBQUksU0FBUztBQUFBLE1BQXNCLE9BQU87QUFBQSxJQUMxQyxJQUFJLFNB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S0FBSyxRQUFRO0FBQUEsSUFDYixLQUFLLFNBQVM7QUFBQSxJQUNkLEtBQUssTUFBTSxRQUFRO0FBQUEsSUFDbkIsTUFBTSxPQUFPLFNBQVMsY0FBYyxLQUFLO0FBQUEsSUFDekMsS0FBSyxNQUFNLGFBQWE7QUFBQSxJQUN4QixNQUFNLE9BQU8sU0FBUyxjQUFjLEdBQUc7QUFBQSxJQUN2QyxLQUFLLGNBQWMsUUFBUTtBQUFBLElBQzNCLEtBQUssZ0JBQWdCLE1BQU0sU0FBUyxjQUFjLElBQUksR0FBRyxRQUFRLE1BQU07QUFBQSxJQUN2RSxRQUFRLGdCQUFnQixNQUFNLElBQUk7QUFBQSxJQUNsQyxzQkFBc0I7QUFBQSxJQUN0QixtQkFBbUIsTUFBTTtBQUFBO0FBQUEsRUFHN0IsU0FBUyxXQUFXLEdBQVM7QUFBQSxJQUN6QixzQkFBc0I7QUFBQSxJQUN0QixlQUFlLEVBQUUsTUFBTSxVQUFVO0FBQUE7QUFBQSxFQUdyQyxTQUFTLG9CQUFvQixDQUFDLFFBQWdEO0FBQUEsSUFDMUUsSUFBSSxFQUFFLGtCQUFrQjtBQUFBLE1BQVUsT0FBTztBQUFBLElBQ3pDLE9BQU8sT0FBTyxRQUFxQixnREFBZ0Q7QUFBQTtBQUFBLEVBR3ZGLFNBQVMsV0FBVyxDQUFDLFFBQTJCO0FBQUEsSUFDNUMsSUFBSSxPQUFPLFFBQVEsU0FBUztBQUFBLE1BQ3hCLG1CQUFtQixNQUFNO0FBQUEsSUFDN0IsRUFBRSxLQUFLLElBQUksa0JBQWtCLG1CQUFtQjtBQUFBLE1BQzVDLG1CQUFtQixNQUFNO0FBQUEsSUFDN0I7QUFBQTtBQUFBLEVBR0osU0FBUyxpQkFBaUIsYUFBYSxXQUFTO0FBQUEsSUFDNUMsTUFBTSxTQUFTLHFCQUFxQixNQUFNLE1BQU07QUFBQSxJQUNoRCxJQUFJO0FBQUEsTUFBUSxZQUFZLE1BQU07QUFBQSxHQUNqQztBQUFBLEVBRUQsU0FBUyxpQkFBaUIsWUFBWSxXQUFTO0FBQUEsSUFDM0MsSUFBSSxDQUFDO0FBQUEsTUFBcUI7QUFBQSxJQUMxQixJQUFJLE1BQU0saUJBQWlCLG9CQUFvQixTQUFTLE1BQU0sYUFBcUI7QUFBQSxNQUFHO0FBQUEsSUFDdEYsWUFBWTtBQUFBLEdBQ2Y7QUFBQSxFQUVELFNBQVMsaUJBQWlCLFdBQVcsV0FBUztBQUFBLElBQzFDLE1BQU0sU0FBUyxxQkFBcUIsTUFBTSxNQUFNO0FBQUEsSUFDaEQsSUFBSTtBQUFBLE1BQVEsWUFBWSxNQUFNO0FBQUEsR0FDakM7QUFBQSxFQUVELFNBQVMsaUJBQWlCLFlBQVksV0FBUztBQUFBLElBQzNDLElBQUksQ0FBQztBQUFBLE1BQXFCO0FBQUEsSUFDMUIsSUFBSSxNQUFNLGlCQUFpQixvQkFBb0IsU0FBUyxNQUFNLGFBQXFCO0FBQUEsTUFBRztBQUFBLElBQ3RGLFlBQVk7QUFBQSxHQUNmOyIsCiAgImRlYnVnSWQiOiAiREVFOTg5RTYzRDI5QTNBQTY0NzU2RTIxNjQ3NTZFMjEiLAogICJuYW1lcyI6IFtdCn0=
+//# debugId=BA82832E9F23007164756E2164756E21
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidW5pdC1yYW5rcy50cyIsICJ1bml0LXNraWxscy50cyIsICJ0b29sdGlwcy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsKICAgICJpbXBvcnQgcGxheWVyVXBncmFkZXMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVwZ3JhZGVzLmpzb25cIjtcbmltcG9ydCB0eXBlIHsgUGxheWVyVXBncmFkZSB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5cbnR5cGUgUmFua1VwZ3JhZGUgPSBQaWNrPFBsYXllclVwZ3JhZGUsICdjb21tYW5kZXInIHwgJ3VuaXQnIHwgJ25hbWUnIHwgJ2ljb24nIHwgJ2VmZmVjdCc+O1xuXG4vKiogVW5pdC1zcGVjaWZpYyBrZXlzIHByZXZlbnQgZGlmZmVyZW50IFZldGVyYW5jeSBlZmZlY3RzIHNoYXJpbmcgb25lIHRvb2x0aXAuICovXG5leHBvcnQgY29uc3QgcmFua1VwZ3JhZGVzID0gbmV3IE1hcDxzdHJpbmcsIFJhbmtVcGdyYWRlPigpO1xuY29uc3QgZWZmZWN0cyA9IG5ldyBNYXA8c3RyaW5nLCBTZXQ8c3RyaW5nPj4oKTtcblxuZm9yIChjb25zdCB1cGdyYWRlIG9mIHBsYXllclVwZ3JhZGVzIGFzIFBsYXllclVwZ3JhZGVbXSkge1xuICAgIGlmICh1cGdyYWRlLmNvbW1hbmRlciAhPT0gJ01lbmdzaycpIGNvbnRpbnVlO1xuICAgIGNvbnN0IHJhbmsgPSB1cGdyYWRlLnJhbmsgPz8gKC9eWzEyM10kLy50ZXN0KHVwZ3JhZGUubmFtZSkgPyBOdW1iZXIodXBncmFkZS5uYW1lKSA6IG51bGwpO1xuICAgIGlmIChyYW5rID09PSBudWxsKSBjb250aW51ZTtcbiAgICBjb25zdCB1bml0ID0gdXBncmFkZS51bml0LnRvTG93ZXJDYXNlKCkucmVwbGFjZSgvW15hLXowLTldKy9nLCAnJyk7XG4gICAgY29uc3Qga2V5ID0gYHJhbmtzL21lbmdzay8ke3VuaXR9LyR7cmFua31gO1xuICAgIGNvbnN0IHJhbmtFZmZlY3RzID0gZWZmZWN0cy5nZXQoa2V5KSA/PyBuZXcgU2V0PHN0cmluZz4oKTtcbiAgICByYW5rRWZmZWN0cy5hZGQodXBncmFkZS5lZmZlY3QpO1xuICAgIGVmZmVjdHMuc2V0KGtleSwgcmFua0VmZmVjdHMpO1xuICAgIGNvbnN0IHByZXZpb3VzID0gcmFua1VwZ3JhZGVzLmdldChrZXkpO1xuICAgIHJhbmtVcGdyYWRlcy5zZXQoa2V5LCB7XG4gICAgICAgIGNvbW1hbmRlcjogdXBncmFkZS5jb21tYW5kZXIsXG4gICAgICAgIHVuaXQ6IHVwZ3JhZGUudW5pdCxcbiAgICAgICAgbmFtZTogdXBncmFkZS5yYW5rID8gYFJhbmsgJHtyYW5rfTogJHt1cGdyYWRlLm5hbWV9YCA6IHByZXZpb3VzPy5uYW1lID8/IGBSYW5rICR7cmFua31gLFxuICAgICAgICBpY29uOiB1cGdyYWRlLnJhbmsgPyB1cGdyYWRlLmljb24gOiBwcmV2aW91cz8uaWNvbiA/PyAndmV0ZXJhbmN5JyxcbiAgICAgICAgZWZmZWN0OiBbLi4ucmFua0VmZmVjdHNdLmpvaW4oJ1xcbicpLFxuICAgIH0pO1xufVxuIiwKICAgICJpbXBvcnQgc2tpbGxzSlNPTiBmcm9tIFwiLi4vLi4vc291cmNlLWRhdGEvdW5pdHNraWxscy5qc29uXCI7XG5pbXBvcnQgdHlwZSB7IFVuaXRTa2lsbCB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5cbmV4cG9ydCBmdW5jdGlvbiBza2lsbEtleShza2lsbDogVW5pdFNraWxsKTogc3RyaW5nIHtcbiAgICByZXR1cm4gJ3NraWxscy8nICsgW3NraWxsLmNvbW1hbmRlciwgc2tpbGwudW5pdCwgc2tpbGwubmFtZSwgc2tpbGwubW9kZSA/PyAnJywgc2tpbGwucHJlc3RpZ2UgPz8gJyddXG4gICAgICAgIC5tYXAocGFydCA9PiBlbmNvZGVVUklDb21wb25lbnQocGFydCkpLmpvaW4oJy8nKTtcbn1cblxuZXhwb3J0IGNvbnN0IHVuaXRTa2lsbHMgPSBuZXcgTWFwKChza2lsbHNKU09OIGFzIFVuaXRTa2lsbFtdKS5tYXAoc2tpbGwgPT4gW3NraWxsS2V5KHNraWxsKSwgc2tpbGxdKSk7XG5cbmV4cG9ydCBmdW5jdGlvbiBza2lsbENvb2xkb3duKHNraWxsOiBVbml0U2tpbGwpOiBzdHJpbmcgfCBudWxsIHtcbiAgICBpZiAoIXNraWxsLmNvb2xkb3duKSByZXR1cm4gbnVsbDtcbiAgICAvLyBJbml0aWFsIGNvb2xkb3ducyBhcmUga2VwdCBpbiB0aGUgdG9vbHRpcDsgdGhlIHJvdyBzaG93cyB0aGUgcmVwZWF0IGNvb2xkb3duLlxuICAgIGNvbnN0IGNvb2xkb3duID0gc2tpbGwuY29vbGRvd24ubWF0Y2goL0Nvb2xkb3duOlxccyooW15cXG5dKykvaSk/LlsxXSA/PyBza2lsbC5jb29sZG93bjtcbiAgICBjb25zdCBzZWNvbmRzID0gY29vbGRvd24ubWF0Y2goL14oXFxkKyg/OlxcLlxcZCspPylcXHMqKD86c2Vjb25kcz98cykoLiopJC9zKTtcbiAgICBpZiAoIXNlY29uZHMpIHJldHVybiAnPyc7XG4gICAgaWYgKE51bWJlcihzZWNvbmRzWzFdKSA9PT0gMCkgcmV0dXJuIG51bGw7XG4gICAgcmV0dXJuIHNlY29uZHNbMV0hICsgKHNlY29uZHNbMl0/LnRyaW0oKSA/ICcqJyA6ICcnKTtcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHNraWxsQ29zdHMoc2tpbGw6IFVuaXRTa2lsbCwgcmFjZTogc3RyaW5nKTogeyBpY29uOiBzdHJpbmcsIGxhYmVsOiBzdHJpbmcsIHZhbHVlOiBzdHJpbmcgfVtdIHtcbiAgICBjb25zdCBjb3N0cyA9IFtdO1xuICAgIGlmIChza2lsbC5lbmVyZ3ljb3N0ICE9PSBudWxsICYmIE51bWJlcihza2lsbC5lbmVyZ3ljb3N0KSA+IDApIHtcbiAgICAgICAgY29zdHMucHVzaCh7IGljb246ICcvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzL2ljb25lbmVyZ3kucG5nJywgbGFiZWw6ICdFbmVyZ3k6JywgdmFsdWU6IHNraWxsLmVuZXJneWNvc3QgfSk7XG4gICAgfVxuICAgIGNvbnN0IGNvb2xkb3duID0gc2tpbGxDb29sZG93bihza2lsbCk7XG4gICAgaWYgKGNvb2xkb3duICE9PSBudWxsKSB7XG4gICAgICAgIGNvc3RzLnB1c2goeyBpY29uOiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXR1cGdyYWRlcy9pY29udGltZV8ke3JhY2V9LnBuZ2AsIGxhYmVsOiAnQ29vbGRvd24gKHNlY29uZHMpOicsIHZhbHVlOiBjb29sZG93biB9KTtcbiAgICB9XG4gICAgcmV0dXJuIGNvc3RzO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gc2tpbGxEZXRhaWxzKHNraWxsOiBVbml0U2tpbGwpOiBzdHJpbmdbXSB7XG4gICAgY29uc3QgZGV0YWlscyA9IFtza2lsbC5kZXNjcmlwdGlvbl07XG4gICAgLy8gT3JkaW5hcnkgY29zdHMgYXJlIGluIHRoZSBoZWFkaW5nOyByZXRhaW4gaW5pdGlhbCBhbmQgY29uZGl0aW9uYWwgdGltaW5ncyBoZXJlLlxuICAgIGlmIChza2lsbC5jb29sZG93biAmJiAhL15cXGQrKD86XFwuXFxkKyk/XFxzKig/OnNlY29uZHM/fHMpJC8udGVzdChza2lsbC5jb29sZG93bikpIHtcbiAgICAgICAgZGV0YWlscy5wdXNoKC9cXGJDb29sKD86ZG93bnx1cCk6L2kudGVzdChza2lsbC5jb29sZG93bikgPyBza2lsbC5jb29sZG93biA6IGBDb29sZG93bjogJHtza2lsbC5jb29sZG93bn1gKTtcbiAgICB9XG4gICAgaWYgKHNraWxsLnJlcXVpcmVzdXBncmFkZSkgZGV0YWlscy5wdXNoKCdSZXF1aXJlcyBhbiB1cGdyYWRlLicpO1xuICAgIGlmIChza2lsbC5yYW5rcmVxdWlyZWQgIT09IG51bGwpIGRldGFpbHMucHVzaChgUmVxdWlyZXMgcmFuayAke3NraWxsLnJhbmtyZXF1aXJlZH0uYCk7XG4gICAgaWYgKHNraWxsLm1vZGUpIGRldGFpbHMucHVzaChgTW9kZTogJHtza2lsbC5tb2RlfWApO1xuICAgIGlmIChza2lsbC5wcmVzdGlnZSkgZGV0YWlscy5wdXNoKGBQcmVzdGlnZTogJHtza2lsbC5wcmVzdGlnZX1gKTtcbiAgICBpZiAoc2tpbGwucmVxdWlyZW1lbnRzKSBkZXRhaWxzLnB1c2goc2tpbGwucmVxdWlyZW1lbnRzKTtcbiAgICByZXR1cm4gZGV0YWlscztcbn1cbiIsCiAgICAiaW1wb3J0IG11dGF0b3JzIGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9tdXRhdG9ycy5qc29uXCI7XG5pbXBvcnQgcGxheWVyVXBncmFkZXMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVwZ3JhZGVzLmpzb25cIjtcbmltcG9ydCB7IHJhbmtVcGdyYWRlcyB9IGZyb20gXCIuL3VuaXQtcmFua3NcIjtcbmltcG9ydCB7IHNraWxsQ29zdHMsIHNraWxsRGV0YWlscywgdW5pdFNraWxscyB9IGZyb20gXCIuL3VuaXQtc2tpbGxzXCI7XG5cbmZ1bmN0aW9uIHRva2VuKG5hbWU6IHN0cmluZyk6IHN0cmluZyB7XG4gICAgaWYgKG5hbWUgPT09IFwiRG9tLiBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb250cm9vcGVyJztcbiAgICBpZiAobmFtZSA9PT0gXCJEb20uIEFzc2F1bHQgVHJvb3BlclwiKSByZXR1cm4gJ2RvbWluaW9uYXNzYXVsdHRyb29wZXInO1xuICAgIGlmIChuYW1lID09PSBcIkRvbS4gRmxhbWUgVHJvb3BlclwiKSByZXR1cm4gJ2RvbWluaW9uZmxhbWV0cm9vcGVyJztcbiAgICBpZiAobmFtZSA9PT0gXCJEb20uIFJvY2tldCBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb25yb2NrZXR0cm9vcGVyJztcbiAgICBpZiAobmFtZSA9PT0gXCJUeWNodXMgRmluZGxheVwiKSByZXR1cm4gJ3R5Y2h1cyc7XG4gICAgaWYgKG5hbWUgPT09IFwiSmFtZXMgU2lyaXVzIFN5a2VzXCIpIHJldHVybiAnc2lyaXVzJztcbiAgICBpZiAobmFtZSA9PT0gXCJNaWxlcyBCbGF6ZSBMZXdpc1wiKSByZXR1cm4gJ2JsYXplJztcbiAgICBpZiAobmFtZSA9PT0gXCJSb2IgQ2Fubm9uYmFsbCBCb3N3ZWxsXCIpIHJldHVybiAnY2Fubm9uYmFsbCc7XG4gICAgaWYgKG5hbWUgPT09IFwiTHQgTGF5bmEgTmlrYXJhXCIpIHJldHVybiAnbmlrYXJhJztcbiAgICBpZiAobmFtZSA9PT0gXCJLZXYgUmF0dGxlc25ha2UgV2VzdFwiKSByZXR1cm4gJ3JhdHRsZXNuYWtlJztcblxuICAgIHJldHVybiBuYW1lLnRvTG93ZXJDYXNlKCkucmVwbGFjZSgvW15hLXowLTldKy9nLCBcIlwiKTtcbn1cblxuY29uc3QgbXV0YXRvckRhdGEgPSBuZXcgTWFwKG11dGF0b3JzLm1hcChtdXRhdG9yID0+IFttdXRhdG9yLm11dGF0b3JpZCwgbXV0YXRvcl0pKTtcbmNvbnN0IHVwZ3JhZGVEYXRhID0gbmV3IE1hcChwbGF5ZXJVcGdyYWRlcy5tYXAodXBncmFkZSA9PiBbYHVwZ3JhZGVzLyR7dG9rZW4odXBncmFkZS5jb21tYW5kZXIpfS8ke3VwZ3JhZGUuaWNvbn1gLCB1cGdyYWRlXSkpO1xubGV0IGFjdGl2ZVRvb2x0aXBUYXJnZXQ6IEhUTUxFbGVtZW50IHwgbnVsbCA9IG51bGw7XG5cbmZ1bmN0aW9uIHRvb2x0aXBFbGVtZW50KCk6IEhUTUxFbGVtZW50IHtcbiAgICBsZXQgdG9vbHRpcCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwidG9vbHRpcFwiKTtcbiAgICBpZiAoIXRvb2x0aXApIHtcbiAgICAgICAgdG9vbHRpcCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgICAgIHRvb2x0aXAuaWQgPSBcInRvb2x0aXBcIjtcbiAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmQodG9vbHRpcCk7XG4gICAgfVxuICAgIHJldHVybiB0b29sdGlwO1xufVxuXG5mdW5jdGlvbiBtdXRhdG9yU2x1ZyhsaW5rOiBIVE1MQW5jaG9yRWxlbWVudCk6IHN0cmluZyB8IG51bGwge1xuICAgIGNvbnN0IHVybCA9IG5ldyBVUkwobGluay5ocmVmLCB3aW5kb3cubG9jYXRpb24uaHJlZik7XG4gICAgaWYgKHVybC5vcmlnaW4gIT09IHdpbmRvdy5sb2NhdGlvbi5vcmlnaW4pIHJldHVybiBudWxsO1xuICAgIGNvbnN0IG1hdGNoID0gdXJsLnBhdGhuYW1lLm1hdGNoKC9eXFwvbXV0YXRvcnNcXC8oW2EtejAtOS1dKylcXC8/JC8pO1xuICAgIHJldHVybiBtYXRjaD8uWzFdID8/IG51bGw7XG59XG5cbmZ1bmN0aW9uIHNldFRvb2x0aXBQb3NpdGlvbih0YXJnZXQ6IEhUTUxFbGVtZW50KTogdm9pZCB7XG4gICAgY29uc3QgdG9vbHRpcCA9IHRvb2x0aXBFbGVtZW50KCk7XG4gICAgY29uc3QgcmVjdCA9IHRhcmdldC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcbiAgICBjb25zdCBnYXAgPSA4O1xuICAgIGNvbnN0IHZpZXdwb3J0V2lkdGggPSBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuY2xpZW50V2lkdGg7XG4gICAgY29uc3QgdG9vbHRpcFdpZHRoID0gdG9vbHRpcC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS53aWR0aDtcbiAgICBpZiAodmlld3BvcnRXaWR0aCAtIHRvb2x0aXBXaWR0aCAtIGdhcCA8IHJlY3QubGVmdCkge1xuICAgICAgICB0b29sdGlwLnN0eWxlLmxlZnQgPSBcImF1dG9cIjtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5yaWdodCA9IGAke2dhcH1weGA7XG4gICAgfSBlbHNlIHtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5sZWZ0ID0gYCR7cmVjdC5sZWZ0fXB4YDtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5yaWdodCA9IFwiYXV0b1wiO1xuICAgIH1cblxuICAgIGlmIChyZWN0LnRvcCA8IDIwMCkge1xuICAgICAgICB0b29sdGlwLnN0eWxlLnRvcCA9IGAke3JlY3QuYm90dG9tICsgZ2FwfXB4YDtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5ib3R0b20gPSBcImF1dG9cIjtcbiAgICB9IGVsc2Uge1xuICAgICAgICB0b29sdGlwLnN0eWxlLnRvcCA9IFwiYXV0b1wiO1xuICAgICAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IGAke3dpbmRvdy5pbm5lckhlaWdodCAtIHJlY3QudG9wICsgZ2FwfXB4YDtcbiAgICB9XG4gICAgLy8gTG9uZyBza2lsbCBkZXNjcmlwdGlvbnMgY2FuIG5lZWQgbW9yZSByb29tIHRoYW4gdGhlIHNwYWNlIGFib3ZlIHRoZSByb3cuXG4gICAgY29uc3QgYm91bmRzID0gdG9vbHRpcC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcbiAgICBpZiAoYm91bmRzLnRvcCA8IGdhcCB8fCBib3VuZHMuYm90dG9tID4gd2luZG93LmlubmVySGVpZ2h0IC0gZ2FwKSB7XG4gICAgICAgIHRvb2x0aXAuc3R5bGUudG9wID0gYCR7TWF0aC5tYXgoZ2FwLCBNYXRoLm1pbihib3VuZHMudG9wLCB3aW5kb3cuaW5uZXJIZWlnaHQgLSBib3VuZHMuaGVpZ2h0IC0gZ2FwKSl9cHhgO1xuICAgICAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IFwiYXV0b1wiO1xuICAgIH1cbiAgICB0b29sdGlwLnN0eWxlLnZpc2liaWxpdHkgPSBcInZpc2libGVcIjtcbn1cblxuZnVuY3Rpb24gcHJlcGFyZVRvb2x0aXAoKTogSFRNTEVsZW1lbnQge1xuICAgIGNvbnN0IHRvb2x0aXAgPSB0b29sdGlwRWxlbWVudCgpO1xuICAgIHRvb2x0aXAuc3R5bGUuZGlzcGxheSA9IFwiYmxvY2tcIjtcbiAgICB0b29sdGlwLnN0eWxlLnZpc2liaWxpdHkgPSBcImhpZGRlblwiO1xuICAgIHRvb2x0aXAuc3R5bGUucG9zaXRpb24gPSBcImZpeGVkXCI7XG4gICAgdG9vbHRpcC5zdHlsZS50b3AgPSBcIjBcIjtcbiAgICB0b29sdGlwLnN0eWxlLmxlZnQgPSBcIjBcIjtcbiAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IFwiYXV0b1wiO1xuICAgIHRvb2x0aXAuc3R5bGUucmlnaHQgPSBcImF1dG9cIjtcbiAgICB0b29sdGlwLnN0eWxlLndpZHRoID0gXCJtYXgtY29udGVudFwiO1xuICAgIHRvb2x0aXAuc3R5bGUuYm94U2l6aW5nID0gXCJib3JkZXItYm94XCI7XG4gICAgdG9vbHRpcC5zdHlsZS5tYXhXaWR0aCA9IGAke01hdGgubWluKDQwMCwgZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LmNsaWVudFdpZHRoKX1weGA7XG4gICAgcmV0dXJuIHRvb2x0aXA7XG59XG5cbmZ1bmN0aW9uIHNob3dNdXRhdG9yVG9vbHRpcChsaW5rOiBIVE1MQW5jaG9yRWxlbWVudCk6IHZvaWQge1xuICAgIGNvbnN0IHNsdWcgPSBtdXRhdG9yU2x1ZyhsaW5rKTtcbiAgICBpZiAoIXNsdWcpIHJldHVybjtcbiAgICBjb25zdCBtdXRhdG9yID0gbXV0YXRvckRhdGEuZ2V0KHNsdWcpO1xuICAgIGlmICghbXV0YXRvcikgcmV0dXJuO1xuXG4gICAgY29uc3QgdG9vbHRpcCA9IHByZXBhcmVUb29sdGlwKCk7XG4gICAgY29uc3QgbmFtZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiXCIpO1xuICAgIG5hbWUudGV4dENvbnRlbnQgPSBtdXRhdG9yLm11dGF0b3JuYW1lO1xuICAgIHRvb2x0aXAucmVwbGFjZUNoaWxkcmVuKG5hbWUsIGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiclwiKSwgbXV0YXRvci5tdXRhdG9yZGVzY3JpcHRpb24pO1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSBsaW5rO1xuICAgIHNldFRvb2x0aXBQb3NpdGlvbihsaW5rKTtcbn1cblxuZnVuY3Rpb24gc2hvd1VwZ3JhZGVUb29sdGlwKHRhcmdldDogSFRNTEVsZW1lbnQpOiB2b2lkIHtcbiAgICBjb25zdCBrZXkgPSB0YXJnZXQuZGF0YXNldC50b29sdGlwO1xuICAgIGlmICgha2V5KSByZXR1cm47XG4gICAgY29uc3QgdXBncmFkZSA9IHJhbmtVcGdyYWRlcy5nZXQoa2V5KSA/PyB1cGdyYWRlRGF0YS5nZXQoa2V5KTtcbiAgICBpZiAoIXVwZ3JhZGUpIHJldHVybjtcblxuICAgIGNvbnN0IHRvb2x0aXAgPSBwcmVwYXJlVG9vbHRpcCgpO1xuICAgIGNvbnN0IGljb24gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiaW1nXCIpO1xuICAgIGNvbnN0IGlzSGVybyA9IHRva2VuKHVwZ3JhZGUudW5pdCkgPT09IHRva2VuKHVwZ3JhZGUuY29tbWFuZGVyKSB8fCAodXBncmFkZS5jb21tYW5kZXIgPT09ICdGZW5peCcgJiYgdXBncmFkZS51bml0LnN0YXJ0c1dpdGgoJ0Zlbml4ICcpKTtcbiAgICBjb25zdCBkaXIgPSB0b2tlbih1cGdyYWRlLmNvbW1hbmRlcikgIT09ICd0eWNodXMnICYmIGlzSGVybyA/IFwiaGVyb1wiIDogXCJ1bml0dXBncmFkZXNcIjtcbiAgICBpY29uLnNyYyA9IGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvJHtkaXJ9LyR7dG9rZW4odXBncmFkZS5jb21tYW5kZXIpfS8ke3VwZ3JhZGUuaWNvbn0ucG5nYDtcbiAgICBpY29uLmFsdCA9IFwiXCI7XG4gICAgaWNvbi53aWR0aCA9IDUwO1xuICAgIGljb24uaGVpZ2h0ID0gNTA7XG4gICAgaWNvbi5zdHlsZS5mbG9hdCA9IFwibGVmdFwiO1xuICAgIGNvbnN0IHRleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpO1xuICAgIHRleHQuc3R5bGUubWFyZ2luTGVmdCA9IFwiNTVweFwiO1xuICAgIGNvbnN0IG5hbWUgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiYlwiKTtcbiAgICBuYW1lLnRleHRDb250ZW50ID0gdXBncmFkZS5uYW1lO1xuICAgIHRleHQucmVwbGFjZUNoaWxkcmVuKG5hbWUsIGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiclwiKSwgdXBncmFkZS5lZmZlY3QpO1xuICAgIHRvb2x0aXAucmVwbGFjZUNoaWxkcmVuKGljb24sIHRleHQpO1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSB0YXJnZXQ7XG4gICAgc2V0VG9vbHRpcFBvc2l0aW9uKHRhcmdldCk7XG59XG5cbmZ1bmN0aW9uIHNob3dTa2lsbFRvb2x0aXAodGFyZ2V0OiBIVE1MRWxlbWVudCk6IHZvaWQge1xuICAgIGNvbnN0IHNraWxsID0gdW5pdFNraWxscy5nZXQodGFyZ2V0LmRhdGFzZXQudG9vbHRpcCA/PyAnJyk7XG4gICAgaWYgKCFza2lsbCkgcmV0dXJuO1xuXG4gICAgY29uc3QgdG9vbHRpcCA9IHByZXBhcmVUb29sdGlwKCk7XG4gICAgY29uc3QgaWNvbnMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICBpY29ucy5zdHlsZS5jc3NUZXh0ID0gJ2Zsb2F0OiBsZWZ0OyBkaXNwbGF5OiBncmlkOyBnYXA6IDNweCc7XG4gICAgZm9yIChjb25zdCBzcmMgb2Ygc2tpbGwuaWNvbnMpIHtcbiAgICAgICAgY29uc3QgaWNvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2ltZycpO1xuICAgICAgICBpY29uLnNyYyA9IHNyYztcbiAgICAgICAgaWNvbi5hbHQgPSAnJztcbiAgICAgICAgaWNvbi53aWR0aCA9IDUwO1xuICAgICAgICBpY29uLmhlaWdodCA9IDUwO1xuICAgICAgICBpY29ucy5hcHBlbmQoaWNvbik7XG4gICAgfVxuICAgIGNvbnN0IHRleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICBpZiAoc2tpbGwuaWNvbnMubGVuZ3RoKSB0ZXh0LnN0eWxlLm1hcmdpbkxlZnQgPSAnNTVweCc7XG4gICAgdGV4dC5zdHlsZS53aGl0ZVNwYWNlID0gJ3ByZS1saW5lJztcbiAgICBjb25zdCBoZWFkaW5nID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc3BhbicpO1xuICAgIGhlYWRpbmcuY2xhc3NOYW1lID0gJ3NraWxsLXRvb2x0aXAtaGVhZGluZyc7XG4gICAgaGVhZGluZy5zdHlsZS5mb250V2VpZ2h0ID0gJ25vcm1hbCc7XG4gICAgY29uc3QgbmFtZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2InKTtcbiAgICBuYW1lLnRleHRDb250ZW50ID0gc2tpbGwubmFtZTtcbiAgICBoZWFkaW5nLmFwcGVuZChuYW1lKTtcbiAgICBpZiAoc2tpbGwuY2hhcmdlcykgaGVhZGluZy5hcHBlbmQoYCAoJHtza2lsbC5jaGFyZ2VzfSBjaGFyZ2VzKWApO1xuICAgIGZvciAoY29uc3QgY29zdCBvZiBza2lsbENvc3RzKHNraWxsLCB0YXJnZXQuZGF0YXNldC5yYWNlID8/ICd0ZXJyYW4nKSkge1xuICAgICAgICBjb25zdCB2YWx1ZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NwYW4nKTtcbiAgICAgICAgdmFsdWUuc3R5bGUud2hpdGVTcGFjZSA9ICdub3dyYXAnO1xuICAgICAgICBjb25zdCBpY29uID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnaW1nJyk7XG4gICAgICAgIGljb24uc3JjID0gY29zdC5pY29uO1xuICAgICAgICBpY29uLmFsdCA9IGNvc3QubGFiZWw7XG4gICAgICAgIGljb24ud2lkdGggPSAxNjtcbiAgICAgICAgaWNvbi5oZWlnaHQgPSAxNjtcbiAgICAgICAgdmFsdWUuYXBwZW5kKGljb24sIGAgJHtjb3N0LnZhbHVlfWApO1xuICAgICAgICBoZWFkaW5nLmFwcGVuZCgnICcsIHZhbHVlKTtcbiAgICB9XG4gICAgaWYgKHNraWxsLnR5cGUgIT09ICdhY3RpdmUnKSBoZWFkaW5nLmFwcGVuZChgICgke3NraWxsLnR5cGV9KWApO1xuICAgIHRleHQuYXBwZW5kKGhlYWRpbmcpO1xuICAgIGZvciAoY29uc3QgZGV0YWlsIG9mIHNraWxsRGV0YWlscyhza2lsbCkpIHtcbiAgICAgICAgdGV4dC5hcHBlbmQoZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYnInKSwgZGV0YWlsKTtcbiAgICB9XG4gICAgdG9vbHRpcC5yZXBsYWNlQ2hpbGRyZW4oaWNvbnMsIHRleHQpO1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSB0YXJnZXQ7XG4gICAgc2V0VG9vbHRpcFBvc2l0aW9uKHRhcmdldCk7XG59XG5cbmZ1bmN0aW9uIGhpZGVUb29sdGlwKCk6IHZvaWQge1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSBudWxsO1xuICAgIHRvb2x0aXBFbGVtZW50KCkuc3R5bGUuZGlzcGxheSA9IFwibm9uZVwiO1xufVxuXG5mdW5jdGlvbiBjbG9zZXN0VG9vbHRpcFRhcmdldCh0YXJnZXQ6IEV2ZW50VGFyZ2V0IHwgbnVsbCk6IEhUTUxFbGVtZW50IHwgbnVsbCB7XG4gICAgaWYgKCEodGFyZ2V0IGluc3RhbmNlb2YgRWxlbWVudCkpIHJldHVybiBudWxsO1xuICAgIHJldHVybiB0YXJnZXQuY2xvc2VzdDxIVE1MRWxlbWVudD4oXCJbZGF0YS10b29sdGlwXSwgYVtocmVmXTpub3QoW2RhdGEtbm8tdG9vbHRpcF0pXCIpO1xufVxuXG5mdW5jdGlvbiBzaG93VG9vbHRpcCh0YXJnZXQ6IEhUTUxFbGVtZW50KTogdm9pZCB7XG4gICAgaWYgKHRhcmdldC5kYXRhc2V0LnRvb2x0aXA/LnN0YXJ0c1dpdGgoJ3NraWxscy8nKSkge1xuICAgICAgICBzaG93U2tpbGxUb29sdGlwKHRhcmdldCk7XG4gICAgfSBlbHNlIGlmICh0YXJnZXQuZGF0YXNldC50b29sdGlwKSB7XG4gICAgICAgIHNob3dVcGdyYWRlVG9vbHRpcCh0YXJnZXQpO1xuICAgIH0gZWxzZSBpZiAodGFyZ2V0IGluc3RhbmNlb2YgSFRNTEFuY2hvckVsZW1lbnQpIHtcbiAgICAgICAgc2hvd011dGF0b3JUb29sdGlwKHRhcmdldCk7XG4gICAgfVxufVxuXG5kb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKFwibW91c2VvdmVyXCIsIGV2ZW50ID0+IHtcbiAgICBjb25zdCB0YXJnZXQgPSBjbG9zZXN0VG9vbHRpcFRhcmdldChldmVudC50YXJnZXQpO1xuICAgIGlmICh0YXJnZXQpIHNob3dUb29sdGlwKHRhcmdldCk7XG59KTtcblxuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcihcIm1vdXNlb3V0XCIsIGV2ZW50ID0+IHtcbiAgICBpZiAoIWFjdGl2ZVRvb2x0aXBUYXJnZXQpIHJldHVybjtcbiAgICBpZiAoZXZlbnQucmVsYXRlZFRhcmdldCAmJiBhY3RpdmVUb29sdGlwVGFyZ2V0LmNvbnRhaW5zKGV2ZW50LnJlbGF0ZWRUYXJnZXQgYXMgTm9kZSkpIHJldHVybjtcbiAgICBoaWRlVG9vbHRpcCgpO1xufSk7XG5cbmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoXCJmb2N1c2luXCIsIGV2ZW50ID0+IHtcbiAgICBjb25zdCB0YXJnZXQgPSBjbG9zZXN0VG9vbHRpcFRhcmdldChldmVudC50YXJnZXQpO1xuICAgIGlmICh0YXJnZXQpIHNob3dUb29sdGlwKHRhcmdldCk7XG59KTtcblxuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcihcImZvY3Vzb3V0XCIsIGV2ZW50ID0+IHtcbiAgICBpZiAoIWFjdGl2ZVRvb2x0aXBUYXJnZXQpIHJldHVybjtcbiAgICBpZiAoZXZlbnQucmVsYXRlZFRhcmdldCAmJiBhY3RpdmVUb29sdGlwVGFyZ2V0LmNvbnRhaW5zKGV2ZW50LnJlbGF0ZWRUYXJnZXQgYXMgTm9kZSkpIHJldHVybjtcbiAgICBoaWRlVG9vbHRpcCgpO1xufSk7XG4iCiAgXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7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Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0VDdkJPLFNBQVMsUUFBUSxDQUFDLE9BQTBCO0FBQUEsSUFDL0MsT0FBTyxZQUFZLENBQUMsTUFBTSxXQUFXLE1B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

@@ -50,6 +50,15 @@
                         "icon": {
                             "type": "string"
                         },
+                        "rank": {
+                            "type": "number",
+                            "enum": [
+                                1,
+                                2,
+                                3
+                            ],
+                            "description": "Royal Guard rank that unlocks this named ability."
+                        },
                         "effect": {
                             "type": "string"
                         },
@@ -117,6 +126,15 @@
                         "icon": {
                             "type": "string"
                         },
+                        "rank": {
+                            "type": "number",
+                            "enum": [
+                                1,
+                                2,
+                                3
+                            ],
+                            "description": "Royal Guard rank that unlocks this named ability."
+                        },
                         "effect": {
                             "type": "string"
                         },
@@ -182,6 +200,15 @@
                         },
                         "icon": {
                             "type": "string"
+                        },
+                        "rank": {
+                            "type": "number",
+                            "enum": [
+                                1,
+                                2,
+                                3
+                            ],
+                            "description": "Royal Guard rank that unlocks this named ability."
                         },
                         "effect": {
                             "type": "string"

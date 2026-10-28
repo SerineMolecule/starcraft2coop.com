@@ -2,6 +2,58 @@
 
 Data is converted from starcraft_coop.sql (in html/files/, also visible in https://starcraft2coop.com/files/ ), which was provided by Aommaster.
 
+## Unit skills
+
+The initial `unitskills.json` entries preserve the skill tables in `source-html/commanders/`, plus a few passives described in the surrounding prose. Those tables are not complete ability lists. The supplementary pass on 2026-10-28 adds 96 passive entries and Nikara's two missing autocast abilities, using the wiki's co-op sections and the pinned game-data snapshot linked below. This is a broad supplement, not an exhaustive passive audit. Repeated abilities such as Detector and Frenzied have separate entries for each applicable commander/unit.
+
+Include innate abilities and research-unlocked abilities, with prerequisites in `requirements` and `requiresupgrade`. Ordinary stat upgrades and modifications to an existing ability stay in `playerupgrades.json`; weapon splash and bounces stay in weapon AoE. Skill descriptions are base values, as explained on the units page, and do not change with selected upgrades, mastery, or prestige. Empty `icons` arrays mean the correct asset has not yet been obtained.
+
+| Subject | Sources and checks |
+| --- | --- |
+| Sentinel Reconstruction | [Sentinel](https://starcraft.fandom.com/wiki/Sentinel), co-op section: 5-second rebuild, 120-second cooldown, level 4 and Twilight Council research. Do not use the campaign's 10-second reconstruction time. |
+| Frenzied | [Torrasque](https://starcraft.fandom.com/wiki/Torrasque_%28StarCraft_II%29), [Tyrannozor](https://starcraft.fandom.com/wiki/Tyrannozor), and [Enthralled Ultralisk](https://starcraft.fandom.com/wiki/Enthralled_ultralisk). `Frenzy` behaviors confirm the additional Brutalisk, Apocalisk, Odin, and Mecha Ultralisk entries. [Blizzard's 4.11.0 notes](https://news.blizzard.com/en-us/article/23227811/starcraft-ii-4-11-0-patch-notes) explicitly remove mind-control immunity in co-op; do not copy the multiplayer description. |
+| Nikara | [Layna Nikara](https://starcraft.fandom.com/wiki/Layna_Nikara). `Commanders/CommanderTychus.xml`: `TychusMedivacHealPlusMech` and `TychusMedicDefensiveMatrix` both have AutoCast enabled. `TychusMedicHeal` restores 30 life/second; Matrix has a 15-second cooldown and absorbs 400 damage for 20 seconds. These are autocast abilities, not passives. |
+| Permanent cloaking | [Dark Templar](https://starcraft.fandom.com/wiki/Dark_templar_%28StarCraft_II%29), [Void Templar](https://starcraft.fandom.com/wiki/Void_templar), [Observer](https://starcraft.fandom.com/wiki/Observer_%28StarCraft_II%29), [Xel'naga Watcher](https://starcraft.fandom.com/wiki/Xel%27naga_watcher), [Cloaking](https://starcraft.fandom.com/wiki/Cloaking), [Covert Banshee](https://starcraft.fandom.com/wiki/Covert_banshee), and [Asteria Wraith](https://starcraft.fandom.com/wiki/Asteria_wraith). Research requirements are retained for Havoc, Disruptor, Wraith, Banshee, Corsair, and Oracle. Dusk Wings use a toggled Cloak and are not permanently cloaked passives. |
+| Detection and cliff movement | [Detector](https://starcraft.fandom.com/wiki/Detector), [Colossus](https://starcraft.fandom.com/wiki/Colossus), [Havoc](https://starcraft.fandom.com/wiki/Havoc), [Infested Missile Turret](https://starcraft.fandom.com/wiki/Infested_missile_turret), and unit `Detector*` behaviors. Crawlers and Infested Missile Turrets detect only while rooted. The Fixers require Flashforce GDM Visor research; Nova requires Ghost Visor; Fenix's Arbiter requires [Observation Protocol](https://starcraft.fandom.com/wiki/Cybros_arbiter). Khaydarin Monolith is not a detector. |
+| Revival and defensive passives | [Torrasque](https://starcraft.fandom.com/wiki/Torrasque_%28StarCraft_II%29), [Primal Mutalisk](https://starcraft.fandom.com/wiki/Primal_mutalisk), [Void Templar](https://starcraft.fandom.com/wiki/Void_templar), [Mirage](https://starcraft.fandom.com/wiki/Mirage), [Slayer](https://starcraft.fandom.com/wiki/Slayer), and [Cannonball](https://starcraft.fandom.com/wiki/Rob_Boswell). Research and commander/artifact unlocks are distinct from innate passives. |
+| Healing and support | [Symbiote](https://starcraft.fandom.com/wiki/Symbiote), [Alarak](https://starcraft.fandom.com/wiki/Alarak_%28Co-op_Missions%29), [Havoc](https://starcraft.fandom.com/wiki/Havoc), [Kerrigan](https://starcraft.fandom.com/wiki/Sarah_Kerrigan_%28Co-op_Missions%29), [Fleet Beacon](https://starcraft.fandom.com/wiki/Fleet_beacon), [Tyrannozor](https://starcraft.fandom.com/wiki/Tyrannozor), [Dakrun](https://starcraft.fandom.com/wiki/Dakrun), and [Theia Raven](https://starcraft.fandom.com/wiki/Theia_raven). Co-op's `Button/Tooltip/SoulAbsorption` specifies healing per supply of the slain enemy; the wiki omits this qualifier. `SymbioteStab` and `SymbioteCarapace` establish base damage, duration, and cooldown without mastery. |
+| Death effects and infested mechanics | [Aberration](https://starcraft.fandom.com/wiki/Aberration), [Zagara](https://starcraft.fandom.com/wiki/Zagara_%28Co-op_Missions%29), [Infested Bunker](https://starcraft.fandom.com/wiki/Infested_bunker), and [Infested Siege Tank](https://starcraft.fandom.com/wiki/Infested_siege_tank), supplemented by the existing Stukov research descriptions. Volatile Biomass is presented as a passive on the tank's command card, although its internal consumption ability autocasts. |
+
+The catalog candidate scan follows parent units and passive command-card buttons, but candidates must be checked against co-op requirements. For example, Fenix's Legionnaire inherits Sentinel reconstruction data without having Karax's research, and campaign Hardened Shield/Regeneration Aura entries are not proof of available co-op skills.
+
+### Skill icons
+
+The 13 previously missing skill icons were obtained on 2026-10-28 from [SC2Mapster Asset Explorer](https://asset-explorer.sc2arcade.com/) using its [button index](https://github.com/sc2-arcade-watcher/asset-explorer/blob/main/site/list/buttons.json). Match textures against `CButton/Icon` in the [pinned game-data snapshot](https://github.com/SC2Mapster/SC2GameData/tree/6dd323aae4209a01f110719a00b4e8f7a88389bc), rather than guessing from the asset name: the collection also includes community-created assets.
+
+Download originals from `https://dist.sc2arcade.com/star-assets/buttons/<texture>.dds`. These assets are Blizzard game textures. Decode the DDS originals with Pillow rather than using the collection's preconverted PNGs, which can differ in size and colors. Shared abilities reuse the same file.
+
+Prerender the PNGs on a 76×76 canvas using the exact alpha channel from `html/images/commanderdata/unitskills/kerrigan/burrowcharge.png`. This reproduces the existing icons' inset rounded rectangle (roughly 6 pixels of padding), including its softened edges. Textures that already have inset artwork and black backing retain their RGB pixels and replace only the outer frame's alpha channel, without adding another inset. Detector and Frenzied are unframed white masks (`TintRacially=1` in the game): resize each complete DDS image to 64×64 with Lanczos, composite it at (6, 6) over opaque black on the 76×76 canvas, then apply the same reference alpha channel. Their artwork remains white. Use the same compositing procedure for unframed colored cutouts. Save as lossless RGBA PNG; no CSS background or clipping is needed.
+
+| Skill | Game button ID | Texture filename (without `.dds`) |
+| --- | --- | --- |
+| Detector | `Detector` | `btn-status-detector` |
+| Frenzied | `Frenzy` | `btn-ability-zerg-frenzy` |
+| Cliff Walk | `CliffWalk` | `btn-ability-protoss-cliffwalk-color` |
+| Squad Sight | `SquadSight` | `btn-ability-protoss-squadsight` |
+| Super Heal | `TychusMedicHeal` | `btn-ability-terran-heal-color` |
+| Devotion | `AlarakACMyLifefortheHighlord` | `btn-ability-protoss-soulabsorbtion` |
+| Greater Spiked Hide | `DehakaDakrunThornsPassive` | `btn-ability-zerg-kraith-thornsaura` |
+| Imaging Radar | `HHSuperRadar` | `btn-ability-hornerhan-raven-radar` |
+| Spawning Chamber | `SIInfestedBunkerInfestedMarineSpawner` | `btn-upgrade-zerg-stukov-bunkerformliferegen` |
+| Volatile Biomass | `StukovInfestedSiegeTankAmmo` | `btn-upgrade-zerg-stukov-siegetankvolatileammo` |
+| Towering | `AberrationTowering` | `btn-ability-zerg-towering` |
+| The Best Oil | `GaryStetmannTheBestOil` | `btn-ability-stetmann-garyattackandregen` |
+| One With the Shadows | `ZeratulShadowPhase` | `btn-ability-protoss-permanentlycloaked-darktemplar-color` |
+| Permanently Cloaked (Observers and Xel'Naga Watcher) | `PermanentlyCloakedObserver`, `PermanentlyCloakedZeratulObserver` | `btn-ability-protoss-permanentlycloaked-observer-color` |
+| Permanently Cloaked (Spec Ops Ghost) | `PermanentlyCloakedGhost` | `btn-ability-terran-cloak-color` |
+| Mutating Carapace | `KerriganAssimilation` | `btn-upgrade-zerg-tissueassimilation` |
+| Ready Mecha Broodling | `BroodLordStetmannBroodlings` | `btn-unit-collection-symbiote-mecha` |
+| Build Mecha Locusceptor | `BroodLordStetmannBombers` | `btn-unit-collection-creeperhostspawnflyer-mecha` |
+
+Button catalogs are in `mods/liberty.sc2mod` (Detector, Frenzied, Cliff Walk), `campaigns/swarm.sc2campaign` (Towering), `campaigns/void.sc2campaign` (Squad Sight), and `mods/starcoop/starcoop.sc2mod` (Devotion, Greater Spiked Hide, Imaging Radar, Spawning Chamber, Volatile Biomass). Super Heal is in that co-op mod's `Commanders/CommanderTychus.xml`, One With the Shadows in `Commanders/FutureCommanders.xml`, and The Best Oil in `mods/starcoop/commanders/egonstetmann.sc2mod`.
+
+The game uses `btn-upgrade-zerg-stukov-bunkerformliferegen` for the Spawning Chamber passive; the wiki shows the separate Spawn Infested Trooper button. Super Heal uses the colored heal texture. These choices follow the actual game button definitions.
+
 ## Weapon AoE data
 
 The `aoe` strings in `source-data/playerunits.json` and replacement values in `source-data/playerupgrades.json` come [from SC2Mapster](https://github.com/SC2Mapster/SC2GameData/tree/6dd323aae4209a01f110719a00b4e8f7a88389bc). Make sure to pay attention to campaign inheritance and co-op overrides.

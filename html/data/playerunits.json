@@ -930,7 +930,7 @@
         "hpbonus": 0,
         "armorbonus": 1,
         "shieldbonus": 1,
-        "notes": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units."
+        "notes": ""
     },
     {
         "unitid": 32,
@@ -2265,7 +2265,7 @@
         "hpbonus": 0,
         "armorbonus": 1,
         "shieldbonus": 1,
-        "notes": "Purification Nova: Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures. Cooldown: 20 seconds."
+        "notes": ""
     },
     {
         "unitid": 76,

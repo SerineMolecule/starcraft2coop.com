@@ -8,6 +8,40 @@ import type { PlayerUpgrade } from "../../source-data/data-types";
 
 import { UnitStats } from "./units";
 import type { Token } from "./units";
+import { rankUpgrades } from "./unit-ranks";
+import { skillCooldown, skillCosts, skillDetails, unitSkills } from "./unit-skills";
+
+test("Royal Guard ranks render named radio rows with unit-specific tooltips and fallback icons", () => {
+    for (const formKey of ['1', '2']) {
+        const modifiers = UnitStats.modifiers('mengsk', 'aegisguard');
+        const component = new UnitStats({ modifiers, formKey, onSetModifiers: () => {} });
+        const fieldset = renderedElements(component.renderUpgrades()).find(node => node.props.class === 'units-ranks')!;
+        const labels = renderedElements(fieldset).filter(node => node.type === 'label');
+        expect(labels).toHaveLength(4);
+        for (const [rank, label] of labels.entries()) {
+            const input = renderedElements(label).find(node => node.type === 'input')!;
+            expect(input.props.type).toBe('radio');
+            expect(input.props.name).toBe(`rank-${formKey}`);
+            expect(input.props.value).toBe(rank);
+            expect(input.props.checked).toBe(rank === 0);
+        }
+        expect(toChildArray(labels[0]!.props.children)).toContain('Rank 0');
+        expect(labels[0]!.props['data-tooltip']).toBeUndefined();
+        expect(renderedElements(labels[0]).find(node => node.type === 'img')!.props.src).toEndWith('/veterancy.png');
+        expect(toChildArray(labels[3]!.props.children)).toContain('Rank 3: High-Grade Stimpacks');
+        expect(labels[3]!.props['data-tooltip']).toBe('ranks/mengsk/aegisguard/3');
+        expect(renderedElements(labels[3]).find(node => node.type === 'img')!.props.src).toEndWith('/highgradestimpacks.png');
+    }
+});
+
+test("Veterancy tooltips distinguish units and deduplicate effects shared by multiple stat modifiers", () => {
+    const shock = rankUpgrades.get('ranks/mengsk/shockdivision/2')!;
+    const hammer = rankUpgrades.get('ranks/mengsk/blackhammer/2')!;
+    expect(shock.effect).toBe('Increases vision and attack range by 2 in Siege Mode.');
+    expect(hammer.effect).toBe('Increases the range of Overwatch Mode by 2.');
+    expect(shock.icon).toBe('veterancy');
+    expect(rankUpgrades.get('ranks/mengsk/skyfury/2')!.name).toBe('Rank 2: Tactical Realignment');
+});
 
 function renderedElements(node: ComponentChildren): VNode[] {
     if (Array.isArray(node)) return node.flatMap(renderedElements);
@@ -15,6 +49,112 @@ function renderedElements(node: ComponentChildren): VNode[] {
     const children = (node.props as { children?: ComponentChildren }).children;
     return [node, ...renderedElements(children)];
 }
+
+test("Skills render for each comparison unit with icons, type labels, and no controls", () => {
+    for (const [commander, unit, formKey, name, type] of [
+        ['abathur', 'devourer', '1', 'Corrosive Acid', 'autocast'],
+        ['stetmann', 'supergary', '2', 'The Best Oil', 'passive'],
+        ['nova', 'nova', '1', 'Snipe', 'active'],
+    ] as const) {
+        const modifiers = UnitStats.modifiers(commander, unit);
+        const component = new UnitStats({ modifiers, formKey, onSetModifiers: () => {} });
+        const elements = renderedElements(component.renderSkills());
+        const rows = elements.filter(node => node.props['data-tooltip']);
+        expect(rows.length).toBeGreaterThan(0);
+        for (const row of rows) {
+            const skill = unitSkills.get(row.props['data-tooltip'])!;
+            expect(skill.commander.toLowerCase()).toBe(commander);
+            expect(row.props.tabIndex).toBe(0);
+            expect(renderedElements(row).filter(node => node.type === 'img' && node.props.alt === '').map(node => node.props.src)).toEqual(skill.icons);
+        }
+        const row = rows.find(node => unitSkills.get(node.props['data-tooltip'])!.name === name)!;
+        expect(row).toBeDefined();
+        expect(renderedText(row).includes('(autocast)')).toBe(type === 'autocast');
+        expect(renderedText(row)).not.toContain('(passive)');
+        const sections = toChildArray(component.renderSkills()).filter(isValidElement) as VNode[];
+        for (const section of sections) {
+            const sectionElements = renderedElements(section);
+            const title = sectionElements.find(node => node.props.class === 'units-head')!.props.children;
+            const sectionRows = sectionElements.filter(node => node.props['data-tooltip']);
+            expect(sectionRows.length).toBeGreaterThan(0);
+            expect(sectionRows.every(node => (unitSkills.get(node.props['data-tooltip'])!.type === 'passive') === (title === 'Passives'))).toBe(true);
+        }
+        expect(elements.some(node => node.type === 'input')).toBe(false);
+    }
+    const empty = new UnitStats({ modifiers: UnitStats.modifiers('artanis', 'dragoon'), formKey: '1', onSetModifiers: () => {} });
+    expect(empty.renderSkills()).toBeNull();
+});
+
+function renderedText(node: ComponentChildren): string {
+    if (Array.isArray(node)) return node.map(renderedText).join('');
+    if (!isValidElement(node)) return typeof node === 'string' || typeof node === 'number' ? String(node) : '';
+    if (node.type === 'img') return node.props.alt ?? '';
+    return renderedText(node.props.children);
+}
+
+test("Skill rows keep charges and autocast with the name and put costs in a separate group", () => {
+    for (const [commander, unit, name, expected] of [
+        ['nova', 'nova', 'Snipe', 'Snipe Energy: 50'],
+        ['nova', 'nova', 'Sabotage Drone', 'Sabotage Drone Energy: 100 Cooldown (seconds): 45'],
+        ['nova', 'nova', 'Blink', 'Blink (3 charges) Cooldown (seconds): 8'],
+        ['nova', 'nova', 'Tac Nuke Strike', 'Tac Nuke Strike Cooldown (seconds): 420'],
+        ['abathur', 'devourer', 'Corrosive Acid', 'Corrosive Acid (autocast) Cooldown (seconds): 45'],
+        ['stetmann', 'supergary', 'E-Gorb', 'E-Gorb (2 charges) Cooldown (seconds): 30'],
+        ['stetmann', 'supergary', 'The Best Oil', 'The Best Oil'],
+        ['raynor', 'vulture', 'Deploy Spider Mine', 'Deploy Spider Mine (3 charges)'],
+    ] as const) {
+        const component = new UnitStats({ modifiers: UnitStats.modifiers(commander, unit), formKey: '1', onSetModifiers: () => {} });
+        const row = renderedElements(component.renderSkills()).find(node => unitSkills.get(node.props['data-tooltip'])?.name === name)!;
+        expect(renderedText(row).trim().replace(/\s+/g, ' ')).toBe(expected);
+        expect(renderedElements(row).some(node => node.type === 'b' || node.type === 'strong')).toBe(false);
+        const label = renderedElements(row).find(node => node.props.class === 'units-skill-label')!;
+        expect(renderedElements(label).some(node => node.type === 'img' && node.props.alt)).toBe(false);
+        if (name === 'Corrosive Acid') expect(renderedText(label)).toContain('(autocast)');
+        for (const icon of renderedElements(row).filter(node => node.type === 'img' && node.props.alt)) {
+            expect(icon.props.src).toBe(icon.props.alt === 'Energy:' ?
+                '/images/commanderdata/unitupgrades/iconenergy.png' :
+                `/images/commanderdata/unitupgrades/icontime_${commander === 'abathur' || commander === 'stetmann' ? 'zerg' : 'terran'}.png`);
+        }
+    }
+});
+
+test("Cooldown summaries retain fractions and flag conditional values while preserving tooltip details", () => {
+    const skills = [...unitSkills.values()];
+    for (const skill of skills) {
+        if (skill.cooldown === '2.5 seconds') expect(skillCooldown(skill)).toBe('2.5');
+        if (skill.cooldown === '~ seconds') expect(skillCooldown(skill)).toBe('?');
+        if (skill.cooldown?.startsWith('10 seconds if')) expect(skillCooldown(skill)).toBe('10*');
+        if (skill.cooldown === '10 seconds/5 missiles') expect(skillCooldown(skill)).toBe('10*');
+    }
+    const wave = skills.find(skill => skill.name === 'Immobilization Wave')!;
+    expect(skillCooldown(wave)).toBe('180');
+    expect(skillDetails(wave)).toContain('Coolup: 600 seconds\nCooldown: 180 seconds');
+});
+
+test("Skill tooltips distinguish commander, unit, and prestige variants", () => {
+    const tunnels = [...unitSkills].filter(([, skill]) => skill.name === 'Deep Tunnel');
+    expect(tunnels.length).toBeGreaterThan(1);
+    expect(new Set(tunnels.map(([key]) => key)).size).toBe(tunnels.length);
+    const auras = [...unitSkills].filter(([, skill]) => skill.commander === 'Kerrigan' && skill.name === 'Assimilation Aura');
+    expect(auras).toHaveLength(2);
+    expect(auras[0]![0]).not.toBe(auras[1]![0]);
+    expect(skillDetails(auras[0]![1])).toContain('Unavailable with Desolate Queen.');
+    expect(skillDetails(auras[1]![1])).toContain('Prestige: Desolate Queen');
+});
+
+test("Skill tooltip details preserve prerequisites and complex timing without repeating heading costs", () => {
+    const skills = [...unitSkills.values()];
+    const stim = skills.find(skill => skill.name === 'High-Grade Stimpacks')!;
+    expect(skillDetails(stim)).toEqual([stim.description, 'Requires rank 3.']);
+    expect(skillCosts(stim, 'terran').map(cost => [cost.label, cost.value])).toEqual([['Cooldown (seconds):', '30']]);
+    const whirlwind = skills.find(skill => skill.commander === 'Artanis' && skill.name === 'Whirlwind')!;
+    expect(skillCosts(whirlwind, 'protoss').some(cost => cost.label === 'Energy:')).toBe(false);
+    expect(skillDetails(whirlwind)).toContain('Requires an upgrade.');
+    const snipe = skills.find(skill => skill.commander === 'Nova' && skill.name === 'Snipe')!;
+    expect(skillDetails(snipe)).toContain('Mode: Stealth Mode');
+    const wave = skills.find(skill => skill.name === 'Immobilization Wave')!;
+    expect(skillDetails(wave)).toContain('Coolup: 600 seconds\nCooldown: 180 seconds');
+});
 
 test("Informational upgrades keep their label, icon, and tooltip without a checkbox or stat effect", () => {
     const informational: PlayerUpgrade = {

@@ -1,5 +1,7 @@
 import mutators from "../../source-data/mutators.json";
 import playerUpgrades from "../../source-data/playerupgrades.json";
+import { rankUpgrades } from "./unit-ranks";
+import { skillCosts, skillDetails, unitSkills } from "./unit-skills";
 
 function token(name: string): string {
     if (name === "Dom. Trooper") return 'dominiontrooper';
@@ -58,6 +60,12 @@ function setTooltipPosition(target: HTMLElement): void {
         tooltip.style.top = "auto";
         tooltip.style.bottom = `${window.innerHeight - rect.top + gap}px`;
     }
+    // Long skill descriptions can need more room than the space above the row.
+    const bounds = tooltip.getBoundingClientRect();
+    if (bounds.top < gap || bounds.bottom > window.innerHeight - gap) {
+        tooltip.style.top = `${Math.max(gap, Math.min(bounds.top, window.innerHeight - bounds.height - gap))}px`;
+        tooltip.style.bottom = "auto";
+    }
     tooltip.style.visibility = "visible";
 }
 
@@ -93,7 +101,7 @@ function showMutatorTooltip(link: HTMLAnchorElement): void {
 function showUpgradeTooltip(target: HTMLElement): void {
     const key = target.dataset.tooltip;
     if (!key) return;
-    const upgrade = upgradeData.get(key);
+    const upgrade = rankUpgrades.get(key) ?? upgradeData.get(key);
     if (!upgrade) return;
 
     const tooltip = prepareTooltip();
@@ -115,6 +123,52 @@ function showUpgradeTooltip(target: HTMLElement): void {
     setTooltipPosition(target);
 }
 
+function showSkillTooltip(target: HTMLElement): void {
+    const skill = unitSkills.get(target.dataset.tooltip ?? '');
+    if (!skill) return;
+
+    const tooltip = prepareTooltip();
+    const icons = document.createElement('div');
+    icons.style.cssText = 'float: left; display: grid; gap: 3px';
+    for (const src of skill.icons) {
+        const icon = document.createElement('img');
+        icon.src = src;
+        icon.alt = '';
+        icon.width = 50;
+        icon.height = 50;
+        icons.append(icon);
+    }
+    const text = document.createElement('div');
+    if (skill.icons.length) text.style.marginLeft = '55px';
+    text.style.whiteSpace = 'pre-line';
+    const heading = document.createElement('span');
+    heading.className = 'skill-tooltip-heading';
+    heading.style.fontWeight = 'normal';
+    const name = document.createElement('b');
+    name.textContent = skill.name;
+    heading.append(name);
+    if (skill.charges) heading.append(` (${skill.charges} charges)`);
+    for (const cost of skillCosts(skill, target.dataset.race ?? 'terran')) {
+        const value = document.createElement('span');
+        value.style.whiteSpace = 'nowrap';
+        const icon = document.createElement('img');
+        icon.src = cost.icon;
+        icon.alt = cost.label;
+        icon.width = 16;
+        icon.height = 16;
+        value.append(icon, ` ${cost.value}`);
+        heading.append(' ', value);
+    }
+    if (skill.type !== 'active') heading.append(` (${skill.type})`);
+    text.append(heading);
+    for (const detail of skillDetails(skill)) {
+        text.append(document.createElement('br'), detail);
+    }
+    tooltip.replaceChildren(icons, text);
+    activeTooltipTarget = target;
+    setTooltipPosition(target);
+}
+
 function hideTooltip(): void {
     activeTooltipTarget = null;
     tooltipElement().style.display = "none";
@@ -126,7 +180,9 @@ function closestTooltipTarget(target: EventTarget | null): HTMLElement | null {
 }
 
 function showTooltip(target: HTMLElement): void {
-    if (target.dataset.tooltip) {
+    if (target.dataset.tooltip?.startsWith('skills/')) {
+        showSkillTooltip(target);
+    } else if (target.dataset.tooltip) {
         showUpgradeTooltip(target);
     } else if (target instanceof HTMLAnchorElement) {
         showMutatorTooltip(target);
