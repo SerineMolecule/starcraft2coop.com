@@ -140,7 +140,7 @@
     "unit": "Swarm Host",
     "name": "Spawn Locusts",
     "icons": [
-      "/images/commanderdata/unitskills/abathur/spawnlocusts.png"
+      "/images/commanderdata/unitskills/abathur/spawnlocusts-framed.png"
     ],
     "description": "Sends Locusts to target location.",
     "type": "autocast",
@@ -174,7 +174,7 @@
     "unit": "Swarm Queen",
     "name": "Spawn Creep Tumor",
     "icons": [
-      "/images/commanderdata/unitskills/abathur/spawncreeptumor.png"
+      "/images/commanderdata/unitskills/abathur/spawncreeptumor-framed.png"
     ],
     "description": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.\nBonus: Zerg move faster on creep.",
     "type": "active",
@@ -327,7 +327,7 @@
     "unit": "Alarak",
     "name": "Soul Absorption",
     "icons": [
-      "/images/commanderdata/progression/alarak/alarak_01.png"
+      "/images/commanderdata/unitskills/alarak/soulabsorption.png"
     ],
     "description": "Nearby enemy deaths restore 20 life and shields per supply of the slain unit. When near death, sacrifices nearby units you control to heal himself; Supplicants are consumed first. Sacrificing allies has no cooldown.",
     "type": "passive",
@@ -821,7 +821,7 @@
     "unit": "Creeper Host",
     "name": "Spawn Explosive Creeper",
     "icons": [
-      "/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper.png"
+      "/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper-framed.png"
     ],
     "description": "Siege unit that attacks by spawning Explosive Creepers. Creepers last 25 seconds.\nCreepers can attack ground units.",
     "type": "autocast",
@@ -916,7 +916,7 @@
     "rankrequired": null,
     "mode": null,
     "prestige": null,
-    "requirements": "Requires skill points; values shown at level 3."
+    "requirements": "Requires skill points; values shown at level 3. With Devouring One (P1), Devour also grants its benefits to friendly units within range 10."
   },
   {
     "commander": "Dehaka",
@@ -933,7 +933,7 @@
     "rankrequired": null,
     "mode": null,
     "prestige": null,
-    "requirements": "Requires skill points; values shown at level 3.",
+    "requirements": "Requires skill points; values shown at level 3. Unavailable with Devouring One (P1).",
     "charges": 3
   },
   {
@@ -1162,7 +1162,7 @@
     "unit": "Primal Host",
     "name": "Spawn Primal Locusts",
     "icons": [
-      "/images/commanderdata/unitskills/dehaka/spawnprimallocusts.png"
+      "/images/commanderdata/unitskills/dehaka/spawnprimallocusts-framed.png"
     ],
     "description": "Siege unit that attacks by spawning Primal Locusts. Primal Locusts last 25 seconds.\nPrimal Locusts can attack ground units.",
     "type": "autocast",
@@ -1298,7 +1298,7 @@
     "unit": "Carrier",
     "name": "Build Interceptor",
     "icons": [
-      "/images/commanderdata/unitskills/fenix/buildinterceptor.png"
+      "/images/commanderdata/unitskills/fenix/buildinterceptor-framed.png"
     ],
     "description": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.\nCan attack ground and air units. 8 Interceptors max.",
     "type": "autocast",
@@ -1315,7 +1315,7 @@
     "unit": "Clolarion",
     "name": "Build Interceptor",
     "icons": [
-      "/images/commanderdata/unitskills/fenix/buildinterceptor.png"
+      "/images/commanderdata/unitskills/fenix/buildinterceptor-framed.png"
     ],
     "description": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.\nCan attack ground and air units. 8 Interceptors max.",
     "type": "autocast",
@@ -1332,7 +1332,7 @@
     "unit": "Clolarion",
     "name": "Build Interdictor",
     "icons": [
-      "/images/commanderdata/unitskills/fenix/buildinterdictor.png"
+      "/images/commanderdata/unitskills/fenix/buildinterdictor-framed.png"
     ],
     "description": "Builds Interdictors that automatically bomb enemy ground units for 12 damage.\nCan attack ground units.",
     "type": "autocast",
@@ -2012,7 +2012,7 @@
     "unit": "Carrier",
     "name": "Build Interceptor",
     "icons": [
-      "/images/commanderdata/unitskills/karax/buildinterceptor.png"
+      "/images/commanderdata/unitskills/karax/buildinterceptor-framed.png"
     ],
     "description": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.\nCan attack ground and air units. 8 Interceptors max.",
     "type": "autocast",
@@ -2454,7 +2454,7 @@
     "unit": "Queen",
     "name": "Spawn Creep Tumor",
     "icons": [
-      "/images/commanderdata/unitskills/kerrigan/spawncreeptumor.png"
+      "/images/commanderdata/unitskills/kerrigan/spawncreeptumor-framed.png"
     ],
     "description": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.\nBonus: Zerg move faster on creep.",
     "type": "active",
@@ -2471,7 +2471,7 @@
     "unit": "Queen",
     "name": "Spawn Larva",
     "icons": [
-      "/images/commanderdata/unitskills/kerrigan/spawnlarva.png"
+      "/images/commanderdata/unitskills/kerrigan/spawnlarva-framed.png"
     ],
     "description": "Target Hatchery, Lair, or Hive spawns 4 Larvae in 40 seconds.",
     "type": "active",
@@ -2930,7 +2930,7 @@
     "unit": "Nova",
     "name": "Sabotage Drone",
     "icons": [
-      "/images/commanderdata/hero/nova/sabotagedrone.png"
+      "/images/commanderdata/hero/nova/sabotagedrone-framed.png"
     ],
     "description": "Deploys an undetectable explosive drone that deals 200 damage (400 vs Structure) to enemy ground units in the target area.",
     "type": "active",
@@ -3033,7 +3033,7 @@
     "unit": "Raven Type II",
     "name": "Build Railgun Turret",
     "icons": [
-      "/images/commanderdata/unitskills/nova/buildrailgunturret.png"
+      "/images/commanderdata/unitskills/nova/buildrailgunturret-framed.png"
     ],
     "description": "Automated defensive turret. Damages all enemy ground units in a straight line. Lasts for 60 seconds.\nCan attack ground units.",
     "type": "active",
@@ -3050,7 +3050,7 @@
     "unit": "Raven Type II",
     "name": "Deploy Bio-Mechanical Repair Drone",
     "icons": [
-      "/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone.png"
+      "/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone-framed.png"
     ],
     "description": "Heals nearby biological and mechanical units. Lasts for 30 seconds.",
     "type": "autocast",
@@ -4371,7 +4371,7 @@
     "unit": "James Sirius Sykes",
     "name": "Deploy Warhound Turret",
     "icons": [
-      "/images/commanderdata/abilities/tychus/deploywarhoundturret.png"
+      "/images/commanderdata/abilities/tychus/deploywarhoundturret-framed.png"
     ],
     "description": "Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.\nCan attack ground and air units.",
     "type": "active",
@@ -5072,7 +5072,7 @@
     "unit": "Aberration",
     "name": "Incubate Banelings",
     "icons": [
-      "/images/commanderdata/progression/zagara/zagara_08.png"
+      "/images/commanderdata/unitskills/zagara/incubatebanelings.png"
     ],
     "description": "Spawns two Banelings when killed.",
     "type": "passive",
@@ -5123,7 +5123,7 @@
     "unit": "Corruptor",
     "name": "Incubate Scourge",
     "icons": [
-      "/images/commanderdata/progression/zagara/zagara_08.png"
+      "/images/commanderdata/unitskills/zagara/incubatescourge.png"
     ],
     "description": "Spawns two Scourge when killed.",
     "type": "passive",
@@ -5157,7 +5157,7 @@
     "unit": "Queen",
     "name": "Spawn Creep Tumor",
     "icons": [
-      "/images/commanderdata/unitskills/zagara/spawncreeptumor.png"
+      "/images/commanderdata/unitskills/zagara/spawncreeptumor-framed.png"
     ],
     "description": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.\nBonus: Zerg move faster on creep.",
     "type": "active",
@@ -5174,7 +5174,7 @@
     "unit": "Queen",
     "name": "Spawn Larva",
     "icons": [
-      "/images/commanderdata/unitskills/zagara/spawnlarva.png"
+      "/images/commanderdata/unitskills/zagara/spawnlarva-framed.png"
     ],
     "description": "Target Hatchery, Lair, or Hive spawns 8 Larvae in 40 seconds.",
     "type": "active",
@@ -5225,7 +5225,7 @@
     "unit": "Zagara",
     "name": "Baneling Barrage",
     "icons": [
-      "/images/commanderdata/hero/zagara/banelingbarrage.png"
+      "/images/commanderdata/hero/zagara/banelingbarrage-framed.png"
     ],
     "description": "Launches 6 Banelings towards the target point. Each Baneling explodes for 40 damage (80 vs structures).",
     "type": "active",
@@ -5242,7 +5242,7 @@
     "unit": "Zagara",
     "name": "Spawn Hunter Killers",
     "icons": [
-      "/images/commanderdata/hero/zagara/spawnhunterkillers.png"
+      "/images/commanderdata/hero/zagara/spawnhunterkillers-framed.png"
     ],
     "description": "Spawns 6 Hunter Killers at the target point that last 20 seconds.",
     "type": "active",

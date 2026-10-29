@@ -21,19 +21,22 @@ for (const pattern of ['**/*.test.{ts,tsx,js,jsx}', '**/*.spec.{ts,tsx,js,jsx}']
 await $`./source-data/build.ts`;
 await $`./source-data/build-mutators.ts`;
 
-await Bun.build({
-    entrypoints: [
-        './html/scripts/nav.ts',
-        './html/scripts/search.ts',
-        './html/scripts/search-results.tsx',
-        './html/scripts/tooltips.ts',
-        './html/scripts/units.tsx',
-        './html/scripts/tiermaker.tsx',
-    ],
-    outdir: './html/scripts',
-    format: 'iife',
-    sourcemap: 'inline',
-});
+// Build independently so updates to unrelated files don't change all the search cachebusters.
+for (const entrypoint of [
+    './html/scripts/nav.ts',
+    './html/scripts/search.ts',
+    './html/scripts/search-results.tsx',
+    './html/scripts/tooltips.ts',
+    './html/scripts/units.tsx',
+    './html/scripts/tiermaker.tsx',
+]) {
+    await Bun.build({
+        entrypoints: [entrypoint],
+        outdir: './html/scripts',
+        format: 'iife',
+        sourcemap: 'inline',
+    });
+}
 
 const assetPattern = /\/(?!\/)[^"'`<>\s?#)]+\.(?:js|css)/g;
 

@@ -401,14 +401,14 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         </thead>
         <tbody>
             <tr>
-                <td><img src="/images/commanderdata/hero/zagara/banelingbarrage.png" alt = "Baneling Barrage"></td>
+                <td><img src="/images/commanderdata/hero/zagara/banelingbarrage-framed.png" alt = "Baneling Barrage"></td>
                 <td>Baneling Barrage</td>
                 <td>Launches 6 Banelings towards the target point. Each Baneling explodes for 40 damage (80 vs structures).</td>
                 <td>10 seconds</td>
                 <td>25</td>
             </tr>
             <tr>
-                <td><img src="/images/commanderdata/hero/zagara/spawnhunterkillers.png" alt = "Spawn Hunter Killers"></td>
+                <td><img src="/images/commanderdata/hero/zagara/spawnhunterkillers-framed.png" alt = "Spawn Hunter Killers"></td>
                 <td>Spawn Hunter Killers</td>
                 <td>Spawns 6 Hunter Killers at the target point that last 20 seconds.</td>
                 <td>30 seconds</td>
@@ -486,14 +486,14 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="/images/commanderdata/unitskills/zagara/spawncreeptumor.png" alt="Spawn Creep Tumor"></td>
+                        <td><img src="/images/commanderdata/unitskills/zagara/spawncreeptumor-framed.png" alt="Spawn Creep Tumor"></td>
                         <td>Spawn Creep Tumor</td>
                         <td>A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.<br><br>Bonus: Zerg move faster on creep.</td>
                         <td>15 seconds</td>
                         <td>25</td>
                     </tr>
                     <tr>
-                        <td><img src="/images/commanderdata/unitskills/zagara/spawnlarva.png" alt="Spawn Larva"></td>
+                        <td><img src="/images/commanderdata/unitskills/zagara/spawnlarva-framed.png" alt="Spawn Larva"></td>
                         <td>Spawn Larva</td>
                         <td>Target Hatchery, Lair, or Hive spawns 8 Larvae in 40 seconds.</td>
                         <td>25 seconds</td>

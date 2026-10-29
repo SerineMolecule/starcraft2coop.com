@@ -26,6 +26,10 @@
                 "nameid": {
                     "type": "string"
                 },
+                "temporary": {
+                    "type": "boolean",
+                    "description": "Directly applies a temporary effect. Omitted means false."
+                },
                 "modifier": {
                     "type": "string"
                 },

@@ -1,11 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16">
   <defs>
-    <linearGradient id="energy" x1="0" y1="0" x2="0" y2="1">
-      <stop stop-color="#ffe2ff"/>
-      <stop offset=".45" stop-color="#ef3fff"/>
-      <stop offset="1" stop-color="#b51ce7"/>
-    </linearGradient>
+    <filter id="energy-glow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation=".55" result="blur"/>
+      <feFlood flood-color="#c900ed"/>
+      <feComposite operator="in" in2="blur"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <polygon points="3,1 10.5,1 14,9 10.5,9 14,14 3.5,6 6,6"
-    fill="url(#energy)" stroke="#7c169c" stroke-width=".7" stroke-linejoin="round"/>
+  <polygon points="3,1 10,1 14,9 9.5,9 12,14 4,6 8,6"
+    fill="#ef00ff" stroke="#fff2ff" stroke-width=".55" stroke-linejoin="round" filter="url(#energy-glow)"/>
 </svg>

@@ -1,4 +1,7 @@
 import { expect, test } from "bun:test";
+import { existsSync } from "node:fs";
+import playerUnits from "../../source-data/playerunits.json";
+import amonUnits from "../../source-data/amonunits.json";
 import { isValidElement, toChildArray } from "preact";
 import type { ComponentChildren, VNode } from "preact";
 import Ajv from "ajv";
@@ -6,10 +9,180 @@ import playerUpgrades from "../../source-data/playerupgrades.json";
 import upgradeSchema from "../../html/data/schemas/playerupgrades.schema.json";
 import type { PlayerUpgrade } from "../../source-data/data-types";
 
-import { UnitStats } from "./units";
+import { UnitStats, applyUnitSettings, readUnitSettings, saveUnitSettings } from "./units";
 import type { Token } from "./units";
 import { rankUpgrades } from "./unit-ranks";
+
+test("Unit portraits resolve existing assets for every commander unit and available Amon portrait", () => {
+    for (const unit of playerUnits) {
+        const src = UnitStats.getImageSrc(unit.commander, unit.basename);
+        expect(src, `${unit.commander}: ${unit.basename}`).toBeTruthy();
+        expect(existsSync(new URL(`../../html${src}`, import.meta.url)), src!).toBe(true);
+    }
+    for (const unit of amonUnits) {
+        const src = UnitStats.getImageSrc(unit.race, unit.name);
+        expect(src).toBe(unit.image ?? null);
+        if (src) expect(existsSync(new URL(`../../html${src}`, import.meta.url)), src).toBe(true);
+    }
+});
+
+test("Bulk settings independently change permanent upgrades, temporary upgrades, and levels", () => {
+    const marine = UnitStats.modifiers('raynor', 'marine');
+    marine.masteries['Speed for Dropped Units'] = 17;
+    marine.prestiges['Backwater Marshal'] = true;
+    const upgraded = applyUnitSettings(marine, { maxUpgrades: true });
+    expect(upgraded.upgrades['Combat Shield']).toBe(true);
+    expect(upgraded.upgrades.Stimpack).toBe(false);
+    expect(marine.upgrades['Combat Shield']).toBe(false);
+    const active = applyUnitSettings(upgraded, { maxTemporaryStatuses: true });
+    expect(active.upgrades.Stimpack).toBe(true);
+    expect(active.upgrades['Combat Shield']).toBe(true);
+    expect(active.masteries).toEqual(marine.masteries);
+    expect(active.prestiges).toEqual(marine.prestiges);
+    const leveled = applyUnitSettings(active, { maxUpgradeLevels: true });
+    expect(leveled.upgradeLevels).toEqual({ weapon: 3, armor: 3 });
+    const disabled = applyUnitSettings(leveled, { maxUpgrades: false });
+    expect(disabled.upgrades['Combat Shield']).toBe(false);
+    expect(disabled.upgrades.Stimpack).toBe(true);
+    expect(disabled.upgradeLevels).toEqual(leveled.upgradeLevels);
+    expect(applyUnitSettings(disabled, { maxTemporaryStatuses: false }).upgrades.Stimpack).toBe(false);
+    const oil = UnitStats.modifiers('stetmann', 'mechazergling');
+    expect(applyUnitSettings(oil, { maxTemporaryStatuses: true }).prestiges['Oil Baron']).toBe(false);
+    const havoc = applyUnitSettings(UnitStats.modifiers('alarak', 'havoc'), { maxUpgrades: true });
+    expect(Object.values(havoc.upgrades).every(value => value === false)).toBe(true);
+});
+
+test("Maximum level settings respect special caps and synchronize Royal Guard rank upgrades", () => {
+    for (const [commander, unit, expected] of [
+        ['tychus', 'tychus', { weapon: 5, armor: 5 }],
+        ['zeratul', 'zeratul', { artifacts: 3 }],
+        ['dehaka', 'dehaka', { hero: 15 }],
+        ['abathur', 'roach', { weapon: 3, armor: 3, biomass: 100 }],
+        ['mengsk', 'aegisguard', { rank: 3 }],
+    ] as const) {
+        const base = UnitStats.modifiers(commander, unit);
+        const max = applyUnitSettings(base, { maxUpgradeLevels: true });
+        expect(max.upgradeLevels).toEqual(expected);
+        expect(applyUnitSettings(max, { maxUpgradeLevels: false }).upgradeLevels).toEqual(base.upgradeLevels);
+        if (commander === 'mengsk') {
+            const ranks = ['1', '2', '3'].filter(rank => rank in base.upgrades);
+            expect(ranks.length).toBeGreaterThan(0);
+            for (const rank of ranks) expect(max.upgrades[rank]).toBe(true);
+            expect(max.upgrades['High-Grade Stimpacks']).toBe(false);
+        }
+    }
+    const dehaka = UnitStats.modifiers('dehaka', 'dehaka');
+    dehaka.prestiges['Devouring One'] = true;
+    expect(applyUnitSettings(dehaka, { maxUpgradeLevels: true }).upgradeLevels.hero).toBe(11);
+    const roach = UnitStats.modifiers('abathur', 'roach');
+    roach.prestiges['The Limitless'] = true;
+    expect(applyUnitSettings(roach, { maxUpgradeLevels: true }).upgradeLevels.biomass).toBe(200);
+});
+
+test("Unit settings persist boolean defaults and tolerate unavailable or malformed storage", () => {
+    let saved = '';
+    const storage = { getItem: () => saved, setItem: (_key: string, value: string) => { saved = value; } };
+    const defaults = { maxUpgrades: false, maxUpgradeLevels: false, maxTemporaryStatuses: false };
+    expect(readUnitSettings(storage)).toEqual(defaults);
+    const settings = { ...defaults, maxUpgrades: true, maxUpgradeLevels: true };
+    saveUnitSettings(settings, storage);
+    expect(readUnitSettings(storage)).toEqual(settings);
+    const fresh = applyUnitSettings(UnitStats.modifiers('raynor', 'marine'), readUnitSettings(storage));
+    expect(fresh.upgrades['Combat Shield']).toBe(true);
+    expect(fresh.upgrades.Stimpack).toBe(false);
+    expect(fresh.upgradeLevels.weapon).toBe(3);
+    saved = '{broken';
+    expect(readUnitSettings(storage)).toEqual(defaults);
+    saved = '{"maxUpgrades":"true","maxUpgradeLevels":1,"maxTemporaryStatuses":true}';
+    expect(readUnitSettings(storage)).toEqual({ ...defaults, maxTemporaryStatuses: true });
+    expect(readUnitSettings({ getItem: () => { throw new Error('Blocked'); } })).toEqual(defaults);
+    expect(() => saveUnitSettings(settings, { setItem: () => { throw new Error('Blocked'); } })).not.toThrow();
+});
+
+test("Temporary effects have one checkbox in Upgrades with a muted temporary label", () => {
+    const modifiers = UnitStats.modifiers('raynor', 'marine');
+    const component = new UnitStats({ modifiers, formKey: '1', onSetModifiers: update => Object.assign(modifiers, update) });
+    const fieldsets = renderedElements(component.renderUpgrades()).filter(node => node.type === 'fieldset');
+    const titles = fieldsets.map(node => renderedText(renderedElements(node).find(child => child.type === 'legend')));
+    expect(titles[0]).toBe('Upgrades');
+    expect(titles).not.toContain('Temporary');
+    const upgrades = renderedElements(fieldsets[0]);
+    const checkbox = upgrades.find(node => node.type === 'input' && node.props.value === 'Stimpack')!;
+    expect(upgrades.filter(node => node.type === 'input' && node.props.value === 'Stimpack')).toHaveLength(1);
+    expect(checkbox.props.checked).toBe(false);
+    const label = upgrades.find(node => node.type === 'label' && renderedText(node).includes('Stimpack'))!;
+    expect(label.props['data-tooltip']).toBe('upgrades/raynor/stimpack');
+    expect(renderedElements(label).some(node => node.props.class?.split(' ').includes('unbold') && renderedText(node) === ' (temporary)')).toBe(true);
+    const permanent = upgrades.find(node => node.type === 'label' && renderedText(node).includes('Combat Shield'))!;
+    expect(renderedText(permanent)).not.toContain('(temporary)');
+    expect(upgrades.some(node => node.type === 'input' && node.props.value === 'Combat Shield')).toBe(true);
+    checkbox.props.onChange({ target: { value: 'Stimpack', checked: true } });
+    expect(modifiers.upgrades.Stimpack).toBe(true);
+    const base = UnitStats.getUnit(modifiers)!;
+    expect(UnitStats.getUpgradedUnit(base, modifiers).movementspeed).toBeCloseTo(base.movementspeed * 1.5);
+    const plain = new UnitStats({ modifiers: UnitStats.modifiers('artanis', 'dragoon'), formKey: '2', onSetModifiers: () => {} });
+    expect(renderedElements(plain.renderUpgrades()).some(node => node.type === 'legend' && renderedText(node) === 'Temporary')).toBe(false);
+});
+
+test("Masteries distinguish temporary speed buffs from permanent bonuses", () => {
+    for (const [commander, unit, name, temporary] of [
+        ['artanis', 'dragoon', 'Speed for Warped Units', true],
+        ['raynor', 'vulture', 'Speed for Dropped Units', true],
+        ['raynor', 'vulture', 'Mech Attack Speed', false],
+    ] as const) {
+        const component = new UnitStats({ modifiers: UnitStats.modifiers(commander, unit), formKey: '1', onSetModifiers: () => {} });
+        const label = renderedElements(component.renderUpgrades()).find(node => node.props.class === 'units-mastery-name' && renderedText(node).startsWith(name))!;
+        expect(renderedText(label)).toBe(name + (temporary ? ' (temporary)' : ''));
+        expect(renderedElements(label).some(node => node.props.class?.split(' ').includes('unbold') && renderedText(node) === ' (temporary)')).toBe(temporary);
+    }
+});
+
+test("Oil Baron is marked temporary only when the control applies its attack-speed buff", () => {
+    for (const [unit, temporary] of [['mechazergling', true], ['mechabaneling', false]] as const) {
+        const component = new UnitStats({ modifiers: UnitStats.modifiers('stetmann', unit), formKey: '1', onSetModifiers: () => {} });
+        const label = renderedElements(component.renderUpgrades()).find(node => node.type === 'label' && renderedText(node).includes('Oil Baron'))!;
+        expect(renderedText(label)).toContain('P3: Oil Baron');
+        expect(renderedElements(label).some(node => node.props.class?.split(' ').includes('unbold') && renderedText(node) === ' (temporary)')).toBe(temporary);
+    }
+});
+
+test("Temporary upgrade metadata is optional, boolean, and consistent across a control's modifiers", () => {
+    const validate = new Ajv().compile(upgradeSchema);
+    const upgrade = playerUpgrades[0]!;
+    expect(validate([upgrade])).toBe(true);
+    expect(validate([{ ...upgrade, temporary: true }])).toBe(true);
+    expect(validate([{ ...upgrade, temporary: false }])).toBe(true);
+    expect(validate([{ ...upgrade, temporary: 'true' }])).toBe(false);
+
+    const flags = new Map<string, boolean>();
+    for (const entry of playerUpgrades as PlayerUpgrade[]) {
+        const key = JSON.stringify([entry.commander, entry.unit, entry.name]);
+        if (flags.has(key)) expect(entry.temporary ?? false, key).toBe(flags.get(key)!);
+        flags.set(key, entry.temporary ?? false);
+    }
+    for (const name of ['Stimpack', 'Frenzy', 'Avenging Protocol', 'High-Grade Stimpacks']) {
+        expect((playerUpgrades as PlayerUpgrade[]).filter(entry => entry.name === name).every(entry => entry.temporary === true)).toBe(true);
+    }
+    for (const name of ['Combat Shield', 'Charge', 'Maximum Biomass', 'Power Overwhelming']) {
+        expect((playerUpgrades as PlayerUpgrade[]).filter(entry => entry.name === name).every(entry => !entry.temporary)).toBe(true);
+    }
+});
 import { skillCooldown, skillCosts, skillDetails, unitSkills } from "./unit-skills";
+
+test("Sky Fury only replaces its armored fighter weapon after reaching Rank 1", () => {
+    const modifiers = UnitStats.modifiers('mengsk', 'skyfury');
+    const base = UnitStats.getUnit(modifiers)!;
+    const rankZero = UnitStats.getUpgradedUnit(base, modifiers);
+    expect(rankZero.modes['(Fighter Mode)']).toEqual(base.modes['(Fighter Mode)']);
+    expect(rankZero.modes['(Fighter Mode)']!.attributedamage!['']!.damage).toBe(15);
+    expect(rankZero.modes['(Fighter Mode)']!.attributedamage!.Armored!.damage).toBe(21);
+    modifiers.upgradeLevels.rank = 1;
+    modifiers.upgrades['1'] = true;
+    const rankOne = UnitStats.getUpgradedUnit(base, modifiers);
+    expect(rankOne.modes['(Fighter Mode)']!.attributedamage!.Armored).toBeUndefined();
+    expect(rankOne.modes['(Fighter Mode)']!.attributedamage!['']!.damage).toBe(26.25);
+    expect(base.modes['(Fighter Mode)']!.attributedamage!['']!.damage).toBe(15);
+});
 
 test("Royal Guard ranks render named radio rows with unit-specific tooltips and fallback icons", () => {
     for (const formKey of ['1', '2']) {
@@ -204,7 +377,7 @@ function upgradedUnit(
         upgrades?: Record<string, boolean>,
         masteries?: Record<string, number>,
         prestiges?: Record<string, boolean>,
-        upgradeLevels?: Partial<Record<"weapon" | "armor" | "shields" | "artifacts" | "rank", number>>,
+        upgradeLevels?: Partial<Record<"weapon" | "armor" | "shields" | "artifacts" | "rank" | "hero" | "biomass", number>>,
     } = {},
 ) {
     const modifiers = UnitStats.modifiers(commander, unitToken);
@@ -216,6 +389,79 @@ function upgradedUnit(
     const baseUnit = UnitStats.getUnit(modifiers)!;
     return UnitStats.getUpgradedUnit(baseUnit, modifiers);
 }
+
+test("Dehaka hero level updates damage and estimates HP from minimum Essence", () => {
+    let modifiers = UnitStats.modifiers('dehaka', 'dehaka');
+    expect(modifiers.upgradeLevels).toEqual({ hero: 1 });
+    const base = UnitStats.getUnit(modifiers)!;
+    const component = new UnitStats({
+        modifiers, formKey: '1',
+        onSetModifiers: update => {
+            modifiers = { ...modifiers, ...update };
+            component.props = { ...component.props, modifiers };
+        },
+    });
+    for (const [input, level, damage, hp] of [['2', 2, 30, 611.25], ['8', 8, 90, 915], ['15', 15, 160, 1781.25], ['0', 1, 20, 600], ['99', 15, 160, 1781.25], ['', 1, 20, 600]] as const) {
+        component.onChangeUnitLevel({ target: { name: 'hero', type: 'range', value: input } } as unknown as Event);
+        expect(modifiers.upgradeLevels.hero).toBe(level);
+        const unit = UnitStats.getUpgradedUnit(base, modifiers);
+        expect(unit.modes['']!.attributedamage!['']!.damage).toBe(damage);
+        expect(unit.hp).toBe(hp);
+    }
+    expect(base.modes['']!.attributedamage!['']!.damage).toBe(20);
+    expect(base.hp).toBe(600);
+    expect(UnitStats.modifiers('dehaka', 'primalzergling').upgradeLevels).not.toHaveProperty('hero');
+});
+
+test("Dehaka mastery and P1 compose with armor upgrades and clamp hero level without hiding skills", () => {
+    let modifiers = UnitStats.modifiers('dehaka', 'dehaka');
+    expect(modifiers.masteries).toEqual({ 'Dehaka Attack Speed': 0 });
+    expect(modifiers.prestiges).toEqual({ 'Devouring One': false });
+    modifiers.upgradeLevels.hero = 15;
+    modifiers.masteries['Dehaka Attack Speed'] = 30;
+    const base = UnitStats.getUnit(modifiers)!;
+    const component = new UnitStats({
+        modifiers, formKey: '1',
+        onSetModifiers: update => {
+            modifiers = { ...modifiers, ...update };
+            component.props = { ...component.props, modifiers };
+        },
+    });
+    const skillNames = () => renderedElements(component.renderSkills())
+        .filter(node => node.props.class === 'units-skill-label')
+        .flatMap(node => toChildArray(node.props.children).filter(child => typeof child === 'string'));
+    expect(skillNames()).toContain('Chitinous Plating');
+    expect(skillNames()).toContain('Scorching Breath');
+    component.onCheckPrestige({ target: { value: 'Devouring One', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.hero).toBe(11);
+    const heroInputs = renderedElements(component.renderUpgrades()).filter(node => node.type === 'input' && node.props.name === 'hero');
+    expect(heroInputs).toHaveLength(2);
+    for (const input of heroInputs) expect(input.props.max).toBe(11);
+    component.onChangeUnitLevel({ target: { name: 'hero', type: 'number', value: '15' } } as unknown as Event);
+    expect(modifiers.upgradeLevels.hero).toBe(11);
+    const p1 = UnitStats.getUpgradedUnit(base, modifiers);
+    expect(p1.armor).toBe(0);
+    expect(p1.hp).toBe(1218.75);
+    expect(p1.modes['']!.attributedamage!['']!.damage).toBe(120);
+    expect(p1.modes['']!.attackspeed).toBeCloseTo(2 / 1.3);
+    expect(skillNames()).toContain('Scorching Breath');
+    expect(skillNames()).toContain('Chitinous Plating');
+    // Even a saved/out-of-range modifier must obey the prestige cap.
+    expect(UnitStats.getUpgradedUnit(base, { ...modifiers, upgradeLevels: { hero: 15 } }).hp).toBe(1218.75);
+    component.onCheckUpgrade({ target: { value: 'Chitinous Plating', checked: true } } as unknown as Event);
+    expect(UnitStats.getUpgradedUnit(base, modifiers).armor).toBe(3);
+    component.onCheckPrestige({ target: { value: 'Devouring One', checked: false } } as unknown as Event);
+    expect(UnitStats.heroLevelLimit(modifiers)).toBe(15);
+    expect(modifiers.upgradeLevels.hero).toBe(11);
+    component.onChangeUnitLevel({ target: { name: 'hero', type: 'range', value: '15' } } as unknown as Event);
+    const normal = UnitStats.getUpgradedUnit(base, modifiers);
+    expect(normal.armor).toBe(4);
+    expect(normal.hp).toBe(1781.25);
+    expect(normal.modes['']!.attributedamage!['']!.damage).toBe(160);
+    expect(normal.modes['']!.attackspeed).toBeCloseTo(2 / 1.3);
+    expect(base.armor).toBe(1);
+    expect(base.modes['']!.attackspeed).toBe(2);
+});
 
 test("Fenix armor upgrades use hero icons and informational upgrades have no checkbox", () => {
     const modifiers = UnitStats.modifiers("fenix", "fenixcybrosarbiter");
@@ -249,6 +495,50 @@ test("Abathur Mutalisk Sundering Glave doubles armored damage", () => {
     });
     expect(mutalisk.modes[""]!.attributedamage![""]!.damage).toBe(9);
     expect(mutalisk.modes[""]!.attributedamage!["Armored"]!.damage).toBe(18);
+});
+
+test("Biomass scales bonuses by the selected amount and prestige", () => {
+    for (const [biomass, prestige, hp, armor, speed] of [
+        [0, '', 145, 1, 2],
+        [50, '', 362.5, 3.5, 2 / 1.5],
+        [100, '', 580, 6, 1],
+        [100, 'Essence Hoarder', 580, 6, 1],
+        [125, 'Essence Hoarder', 688.75, 7.25, 2 / 2.25],
+        [100, 'The Limitless', 362.5, 3.5, 2 / 1.5],
+        [200, 'The Limitless', 580, 6, 1],
+    ] as const) {
+        const unit = upgradedUnit('abathur', 'roach', {
+            upgradeLevels: { biomass }, prestiges: prestige ? { [prestige]: true } : {},
+        });
+        expect(unit.hp).toBeCloseTo(hp);
+        expect(unit.armor).toBeCloseTo(armor);
+        expect(unit.modes['']!.attackspeed).toBeCloseTo(speed);
+    }
+    const armored = upgradedUnit('abathur', 'roach', { upgradeLevels: { biomass: 50, armor: 3 } });
+    expect(armored.armor).toBeCloseTo(6.5);
+    expect(upgradedUnit('abathur', 'locust', { upgradeLevels: { biomass: 50 } }).hp).toBeCloseTo(162.5);
+    expect(upgradedUnit('abathur', 'swarmhost', { upgradeLevels: { biomass: 50 } }).modes['']!.attackspeed).toBe(10);
+});
+
+test("Biomass replaces its checkbox and clamps when changing prestige", () => {
+    let modifiers = UnitStats.modifiers('abathur', 'roach');
+    expect(modifiers.upgrades).not.toHaveProperty('Maximum Biomass');
+    expect(modifiers.upgradeLevels.biomass).toBe(0);
+    const component = new UnitStats({
+        modifiers, formKey: '1',
+        onSetModifiers: update => {
+            modifiers = { ...modifiers, ...update };
+            component.props = { ...component.props, modifiers };
+        },
+    });
+    component.onCheckPrestige({ target: { value: 'The Limitless', checked: true } } as unknown as Event);
+    component.onChangeUnitLevel({ target: { name: 'biomass', type: 'range', value: '200' } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(200);
+    component.onCheckPrestige({ target: { value: 'Essence Hoarder', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(125);
+    component.onCheckPrestige({ target: { value: 'Essence Hoarder', checked: false } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(100);
+    expect(UnitStats.modifiers('abathur', 'brutalisk').upgradeLevels).not.toHaveProperty('biomass');
 });
 
 test("HP percentage bonuses stack on base HP after other HP changes", () => {

@@ -82,8 +82,8 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             <img class="tooltip unselected" src="/images/commanderdata/hero/nova/snipe.png" alt="Nova's Snipe">
             <img class="tooltip unselected" id="penBlast1" src="/images/commanderdata/hero/nova/penetratingblast.png" alt="Nova's Penetrating Blast">
             <img class="tooltip unselected" id="penBlast2" src="/images/commanderdata/hero/nova/stancedanceswitch.png" alt="Nova's Penetrating Blast with Stance Dance">
-            <img class="tooltip unselected" id="sabotageDrone" src="/images/commanderdata/hero/nova/sabotagedrone.png" alt="Nova's Sabotage Drone">
-            <img class="tooltip unselected" id="banelingBarrage" src="/images/commanderdata/hero/zagara/banelingbarrage.png" alt="Zagara's Baneling Barrage (per Baneling hit)">
+            <img class="tooltip unselected" id="sabotageDrone" src="/images/commanderdata/hero/nova/sabotagedrone-framed.png" alt="Nova's Sabotage Drone">
+            <img class="tooltip unselected" id="banelingBarrage" src="/images/commanderdata/hero/zagara/banelingbarrage-framed.png" alt="Zagara's Baneling Barrage (per Baneling hit)">
             <br>
             <img class="tooltip unselected" src="/images/commanderportraits/kerriganportrait.png" alt="Kerrigan's Hero Unit Attack Damage">
             <img class="tooltip unselected" src="/images/commanderportraits/zagaraportrait.png" alt="Zagara's Hero Unit Attack Damage">

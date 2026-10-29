@@ -846,7 +846,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr class="autocast">
-                        <td><img src="/images/commanderdata/unitskills/karax/buildinterceptor.png" alt="Build Interceptor"></td>
+                        <td><img src="/images/commanderdata/unitskills/karax/buildinterceptor-framed.png" alt="Build Interceptor"></td>
                         <td>Build Interceptor</td>
                         <td>Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<br><br>Can attack ground and air units. 8 Interceptors max.</td>
                         <td>10 seconds</td>

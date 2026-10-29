@@ -520,7 +520,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="/images/commanderdata/unitupgrades/horner/installdronehangar.png" alt="Install Drone Hangar"></td>
+                        <td><img src="/images/commanderdata/unitupgrades/horner/installdronehangar-framed.png" alt="Install Drone Hangar"></td>
                         <td>Install Drone Hangar</td>
                         <td>Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones.<br><br>Assault Drones can attack ground and air units.</td>
                         <td>150/200</td>

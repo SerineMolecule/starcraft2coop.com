@@ -933,7 +933,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr class="autocast">
-                        <td><img src="/images/commanderdata/unitskills/fenix/buildinterceptor.png" alt="Build Interceptor"></td>
+                        <td><img src="/images/commanderdata/unitskills/fenix/buildinterceptor-framed.png" alt="Build Interceptor"></td>
                         <td>Build Interceptor</td>
                         <td>Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<br><br>Can attack ground and air units. 8 Interceptors max.</td>
                         <td>15s</td>
@@ -1283,14 +1283,14 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr class="autocast">
-                        <td><img src="/images/commanderdata/unitskills/fenix/buildinterceptor.png" alt="Build Interceptor"></td>
+                        <td><img src="/images/commanderdata/unitskills/fenix/buildinterceptor-framed.png" alt="Build Interceptor"></td>
                         <td>Build Interceptor</td>
                         <td>Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<br><br>Can attack ground and air units. 8 Interceptors max.</td>
                         <td>15s</td>
                         <td>0</td>
                     </tr>
                     <tr class="unlockable autocast">
-                        <td><img src="/images/commanderdata/unitskills/fenix/buildinterdictor.png" alt="Build Interdictor"></td>
+                        <td><img src="/images/commanderdata/unitskills/fenix/buildinterdictor-framed.png" alt="Build Interdictor"></td>
                         <td>Build Interdictor</td>
                         <td>Builds Interdictors that automatically bomb enemy ground units for 12 damage.<br><br>Can attack ground units.</td>
                         <td>15s</td>

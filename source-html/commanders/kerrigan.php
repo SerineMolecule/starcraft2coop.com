@@ -587,14 +587,14 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="/images/commanderdata/unitskills/kerrigan/spawncreeptumor.png" alt="Spawn Creep Tumor"></td>
+                        <td><img src="/images/commanderdata/unitskills/kerrigan/spawncreeptumor-framed.png" alt="Spawn Creep Tumor"></td>
                         <td>Spawn Creep Tumor</td>
                         <td>A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.<br><br>Bonus: Zerg move faster on creep.</td>
                         <td>15 seconds</td>
                         <td>25</td>
                     </tr>
                     <tr>
-                        <td><img src="/images/commanderdata/unitskills/kerrigan/spawnlarva.png" alt="Spawn Larva"></td>
+                        <td><img src="/images/commanderdata/unitskills/kerrigan/spawnlarva-framed.png" alt="Spawn Larva"></td>
                         <td>Spawn Larva</td>
                         <td>Target Hatchery, Lair, or Hive spawns 4 Larvae in 40 seconds.</td>
                         <td>25 seconds</td>

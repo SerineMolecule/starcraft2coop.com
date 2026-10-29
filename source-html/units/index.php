@@ -11,7 +11,8 @@ require_once __DIR__ . '/../../includes/wrapper.php';
     <link rel="canonical" href="https://starcraft2coop.com/units/">
     <style>
         #content {
-            max-width: 1180px;
+            /* Fit both 360px cards, navigation, padding, borders, and column gaps. */
+            max-width: 1185px;
         }
         #content .units {
             font-size: 16px;
@@ -72,6 +73,17 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         .units-commander-selector a {
             margin-right: -3px;
         }
+        .units-commander-selector a:has(img) {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            padding-left: 0;
+        }
+        .units-commander-selector a img {
+            flex: none;
+            margin-block: -1px;
+            object-fit: contain;
+        }
         .units-unit-selector a {
             margin-right: -13px;
         }
@@ -112,6 +124,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         }
         .units-unit {
             position: relative;
+            scroll-margin: 24px 10px;
             padding: 10px;
             width: 360px;
             min-width: 280px;
@@ -120,6 +133,16 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         }
         .units-unit + .units-unit {
             border-color: #53578a;
+        }
+        .units-unit-content {
+            position: relative;
+            display: flow-root;
+        }
+        @media (min-width: 701px) {
+            .units-unit-content {
+                position: sticky;
+                top: 22px;
+            }
         }
         .units-portrait {
             background: black;
@@ -149,13 +172,13 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         }
         .units-actions {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 0;
+            right: 0;
             z-index: 2;
         }
         .units-actions-compare {
-            top: -16px;
-            right: -11px;
+            top: -26px;
+            right: -21px;
         }
         .units-actions:not(.units-actions-compare) + .units-name {
             /* Leave room for the close button without lowering the name. */
@@ -238,6 +261,27 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             padding: 2px 2px 4px;
             color: #a2a5d4;
         }
+        .units-upgrade-levels {
+            white-space: nowrap;
+        }
+        .units-upgrade-level-name {
+            display: inline-block;
+            width: 4.5em;
+            padding-left: 4px;
+            padding-right: 2px;
+        }
+        .units-level-options {
+            display: inline-flex;
+            gap: 7px;
+        }
+        .units-level-options label {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+        }
+        .units-level-options input {
+            margin: 0;
+        }
         .units-upgrade-passive {
             cursor: help;
             white-space: nowrap;
@@ -260,6 +304,9 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         }
         .units-skill-cost {
             white-space: nowrap;
+        }
+        .units-annotation {
+            font-size: 14px;
         }
         .units-skills li + li {
             margin-top: 3px;
@@ -285,6 +332,12 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         }
         .units-mastery-name {
             padding-left: 4px;
+        }
+        .units-settings {
+            font-size: 16px;
+        }
+        .units-settings label {
+            display: block;
         }
         .units-mastery-controls {
             display: flex;
@@ -319,7 +372,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         <li>All evolutions (e.g. Abathur's Devourer, Dehaka's Primal Combat units) build times only includes the evolution time, and not the build time of the parent units.</li>
         <li>Any units with charge-based production (e.g. Artanis) uses the charge cooldown time as the build time. For Stukov, the unit's build time is displayed, and not the charge time.</li>
         <li>For multiple-spawned units (e.g. Zerglings), resource costs are divided by the number of units spawned.</li>
-        <li>For buffs that have multiple stacks (e.g. Biomass), the maximum buff value will be calculated.</li>
+        <li>Biomass uses the selected amount. Other buffs with multiple stacks use their maximum value.</li>
         <li>Upgrades that do not change the displayed unit stats are listed without a checkbox.</li>
         <li>Since numbers are calculated, there may be small rounding errors.</li>
     </ul>

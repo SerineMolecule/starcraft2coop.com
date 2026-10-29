@@ -5457,7 +5457,7 @@
             "subtitle": "Artanis unit",
             "commander": "Artanis",
             "path": "units/#artanis/archon",
-            "text": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+            "text": "",
             "tokens": [
                 "Protoss",
                 "Psionic,Massive",
@@ -5562,7 +5562,7 @@
             "subtitle": "Alarak unit",
             "commander": "Alarak",
             "path": "units/#alarak/alarak",
-            "text": "",
+            "text": "Spawns at 4:00. Respawns in 1:00.",
             "tokens": [
                 "Protoss",
                 "Biological,Psionic,Heroic",
@@ -5967,7 +5967,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/kaldalis",
-            "text": "",
+            "text": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
             "tokens": [
                 "Protoss",
                 "Light,Mechanical,Heroic",
@@ -5982,7 +5982,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/talis",
-            "text": "",
+            "text": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
             "tokens": [
                 "Protoss",
                 "Light,Mechanical,Heroic",
@@ -5997,7 +5997,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/taldarin",
-            "text": "",
+            "text": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical,Heroic",
@@ -6012,7 +6012,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/warbringer",
-            "text": "",
+            "text": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical,Massive,Heroic",
@@ -6027,7 +6027,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/mojo",
-            "text": "",
+            "text": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical,Heroic",
@@ -6042,7 +6042,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/clolarion",
-            "text": "Clolarion has 8 Interceptors and 2 Interdictors.",
+            "text": "Clolarion has 8 Interceptors and 2 Interdictors. Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical,Massive,Heroic",
@@ -6057,7 +6057,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/fenixpraetorarmor",
-            "text": "",
+            "text": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown.",
             "tokens": [
                 "Protoss",
                 "Mechanical,Heroic",
@@ -6072,7 +6072,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/fenixsolaritedragoon",
-            "text": "",
+            "text": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown.",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical,Heroic",
@@ -6087,7 +6087,7 @@
             "subtitle": "Fenix unit",
             "commander": "Fenix",
             "path": "units/#fenix/fenixcybrosarbiter",
-            "text": "",
+            "text": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown.",
             "tokens": [
                 "Protoss",
                 "Armored,Mechanical,Heroic",
@@ -6462,7 +6462,7 @@
             "subtitle": "Kerrigan unit",
             "commander": "Kerrigan",
             "path": "units/#kerrigan/kerrigan",
-            "text": "",
+            "text": "Spawns at 4:00. Respawns in 1:00.",
             "tokens": [
                 "Zerg",
                 "Biological,Psionic,Heroic",
@@ -6627,7 +6627,7 @@
             "subtitle": "Nova unit",
             "commander": "Nova",
             "path": "units/#nova/nova",
-            "text": "",
+            "text": "Spawns at 4:00. Respawns in 1:30; Instant Regeneration can revive her immediately for minerals.",
             "tokens": [
                 "Terran",
                 "Biological,Psionic,Heroic",
@@ -7122,7 +7122,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/tychus",
-            "text": "",
+            "text": "Spawns at 3:00. Revived at Joeyray's Bar in 0:25 for 250 minerals. Calling down the Odin also revives Tychus, except with Dutiful Dogwalker (P3).",
             "tokens": [
                 "Terran",
                 "Biological,Heroic",
@@ -7137,7 +7137,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/crookedsam",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Light,Biological,Heroic",
@@ -7152,7 +7152,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/sirius",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Armored,Mechanical,Heroic",
@@ -7167,7 +7167,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/blaze",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Armored,Biological,Heroic",
@@ -7182,7 +7182,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/cannonball",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Biological,Heroic",
@@ -7197,7 +7197,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/vega",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Biological,Psionic,Heroic",
@@ -7212,7 +7212,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/nux",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Biological,Psionic,Heroic",
@@ -7227,7 +7227,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/nikara",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Light,Biological,Heroic",
@@ -7482,7 +7482,7 @@
             "subtitle": "Zagara unit",
             "commander": "Zagara",
             "path": "units/#zagara/zagara",
-            "text": "",
+            "text": "Spawns at 4:00. Respawns in 1:00.",
             "tokens": [
                 "Zerg",
                 "Biological,Psionic,Heroic",
@@ -7707,7 +7707,7 @@
             "subtitle": "Zeratul unit",
             "commander": "Zeratul",
             "path": "units/#zeratul/zeratul",
-            "text": "",
+            "text": "Spawns at 4:00. Respawns in 1:00.",
             "tokens": [
                 "Protoss",
                 "Light,Biological,Psionic,Heroic",
@@ -8247,7 +8247,7 @@
             "subtitle": "Tychus unit",
             "commander": "Tychus",
             "path": "units/#tychus/rattlesnake",
-            "text": "",
+            "text": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
             "tokens": [
                 "Terran",
                 "Armored,Biological,Heroic",
@@ -8621,7 +8621,7 @@
             "subtitle": "Stetmann unit",
             "commander": "Stetmann",
             "path": "units/#stetmann/gary",
-            "text": "",
+            "text": "Spawns at 4:00. Respawns in 1:00.",
             "tokens": [
                 "Zerg",
                 "Armored,Mechanical,Heroic",
@@ -8636,7 +8636,7 @@
             "subtitle": "Stetmann unit",
             "commander": "Stetmann",
             "path": "units/#stetmann/supergary",
-            "text": "",
+            "text": "Gary spawns at 4:00 and must be upgraded to Super Gary. Respawns in 1:00.",
             "tokens": [
                 "Zerg",
                 "Armored,Mechanical,Heroic",
@@ -9078,6 +9078,21 @@
                 "combat unit",
                 "primalwarden",
                 "dehakastructure"
+            ]
+        },
+        {
+            "type": "playerunit",
+            "title": "Dehaka",
+            "subtitle": "Dehaka unit",
+            "commander": "Dehaka",
+            "path": "units/#dehaka/dehaka",
+            "text": "HP scales with essence, even past level cap (HP shown is the minimum for the level). Spawns at 1:00. Respawns in 1:30; consuming Primal Drones shortens the respawn timer.",
+            "tokens": [
+                "Zerg",
+                "Biological,Heroic",
+                "combat unit",
+                "dehaka",
+                "dehakaunit"
             ]
         },
         {
@@ -30359,10 +30374,6 @@
                     "3": {
                         "v": "Artanis",
                         "n": 1
-                    },
-                    "4": {
-                        "v": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
-                        "n": 0.183
                     }
                 }
             },
@@ -30671,6 +30682,10 @@
                     "3": {
                         "v": "Alarak",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Spawns at 4:00. Respawns in 1:00.",
+                        "n": 0.408
                     }
                 }
             },
@@ -31883,6 +31898,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
+                        "n": 0.186
                     }
                 }
             },
@@ -31927,6 +31946,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
+                        "n": 0.186
                     }
                 }
             },
@@ -31971,6 +31994,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
+                        "n": 0.186
                     }
                 }
             },
@@ -32015,6 +32042,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
+                        "n": 0.186
                     }
                 }
             },
@@ -32059,6 +32090,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
+                        "n": 0.186
                     }
                 }
             },
@@ -32105,8 +32140,8 @@
                         "n": 1
                     },
                     "4": {
-                        "v": "Clolarion has 8 Interceptors and 2 Interdictors.",
-                        "n": 0.378
+                        "v": "Clolarion has 8 Interceptors and 2 Interdictors. Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
+                        "n": 0.167
                     }
                 }
             },
@@ -32151,6 +32186,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown.",
+                        "n": 0.218
                     }
                 }
             },
@@ -32195,6 +32234,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown.",
+                        "n": 0.218
                     }
                 }
             },
@@ -32239,6 +32282,10 @@
                     "3": {
                         "v": "Fenix",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown.",
+                        "n": 0.218
                     }
                 }
             },
@@ -33355,6 +33402,10 @@
                     "3": {
                         "v": "Kerrigan",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Spawns at 4:00. Respawns in 1:00.",
+                        "n": 0.408
                     }
                 }
             },
@@ -33839,6 +33890,10 @@
                     "3": {
                         "v": "Nova",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Spawns at 4:00. Respawns in 1:30; Instant Regeneration can revive her immediately for minerals.",
+                        "n": 0.267
                     }
                 }
             },
@@ -35303,6 +35358,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Spawns at 3:00. Revived at Joeyray's Bar in 0:25 for 250 minerals. Calling down the Odin also revives Tychus, except with Dutiful Dogwalker (P3).",
+                        "n": 0.204
                     }
                 }
             },
@@ -35347,6 +35406,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -35391,6 +35454,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -35435,6 +35502,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -35479,6 +35550,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -35523,6 +35598,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -35567,6 +35646,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -35611,6 +35694,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -36359,6 +36446,10 @@
                     "3": {
                         "v": "Zagara",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Spawns at 4:00. Respawns in 1:00.",
+                        "n": 0.408
                     }
                 }
             },
@@ -37031,6 +37122,10 @@
                     "3": {
                         "v": "Zeratul",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Spawns at 4:00. Respawns in 1:00.",
+                        "n": 0.408
                     }
                 }
             },
@@ -38615,6 +38710,10 @@
                     "3": {
                         "v": "Tychus",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
+                        "n": 0.229
                     }
                 }
             },
@@ -39718,6 +39817,10 @@
                     "3": {
                         "v": "Stetmann",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Spawns at 4:00. Respawns in 1:00.",
+                        "n": 0.408
                     }
                 }
             },
@@ -39762,6 +39865,10 @@
                     "3": {
                         "v": "Stetmann",
                         "n": 1
+                    },
+                    "4": {
+                        "v": "Gary spawns at 4:00 and must be upgraded to Super Gary. Respawns in 1:00.",
+                        "n": 0.267
                     }
                 }
             },
@@ -41073,6 +41180,54 @@
                 "i": 588,
                 "$": {
                     "0": {
+                        "v": "Dehaka",
+                        "n": 1
+                    },
+                    "1": [
+                        {
+                            "v": "Zerg",
+                            "i": 0,
+                            "n": 1
+                        },
+                        {
+                            "v": "Biological,Heroic",
+                            "i": 1,
+                            "n": 1
+                        },
+                        {
+                            "v": "combat unit",
+                            "i": 2,
+                            "n": 0.707
+                        },
+                        {
+                            "v": "dehaka",
+                            "i": 3,
+                            "n": 1
+                        },
+                        {
+                            "v": "dehakaunit",
+                            "i": 4,
+                            "n": 1
+                        }
+                    ],
+                    "2": {
+                        "v": "Dehaka unit",
+                        "n": 0.707
+                    },
+                    "3": {
+                        "v": "Dehaka",
+                        "n": 1
+                    },
+                    "4": {
+                        "v": "HP scales with essence, even past level cap (HP shown is the minimum for the level). Spawns at 1:00. Respawns in 1:30; consuming Primal Drones shortens the respawn timer.",
+                        "n": 0.186
+                    }
+                }
+            },
+            {
+                "i": 589,
+                "$": {
+                    "0": {
                         "v": "Zealot",
                         "n": 1
                     },
@@ -41119,7 +41274,7 @@
                 }
             },
             {
-                "i": 589,
+                "i": 590,
                 "$": {
                     "0": {
                         "v": "Adept",
@@ -41168,7 +41323,7 @@
                 }
             },
             {
-                "i": 590,
+                "i": 591,
                 "$": {
                     "0": {
                         "v": "Sentry",
@@ -41222,7 +41377,7 @@
                 }
             },
             {
-                "i": 591,
+                "i": 592,
                 "$": {
                     "0": {
                         "v": "Stalker",
@@ -41271,7 +41426,7 @@
                 }
             },
             {
-                "i": 592,
+                "i": 593,
                 "$": {
                     "0": {
                         "v": "Disruptor",
@@ -41320,7 +41475,7 @@
                 }
             },
             {
-                "i": 593,
+                "i": 594,
                 "$": {
                     "0": {
                         "v": "Reaver",
@@ -41374,7 +41529,7 @@
                 }
             },
             {
-                "i": 594,
+                "i": 595,
                 "$": {
                     "0": {
                         "v": "Immortal",
@@ -41423,7 +41578,7 @@
                 }
             },
             {
-                "i": 595,
+                "i": 596,
                 "$": {
                     "0": {
                         "v": "Colossus",
@@ -41477,7 +41632,7 @@
                 }
             },
             {
-                "i": 596,
+                "i": 597,
                 "$": {
                     "0": {
                         "v": "High Templar",
@@ -41531,7 +41686,7 @@
                 }
             },
             {
-                "i": 597,
+                "i": 598,
                 "$": {
                     "0": {
                         "v": "Dark Templar",
@@ -41585,7 +41740,7 @@
                 }
             },
             {
-                "i": 598,
+                "i": 599,
                 "$": {
                     "0": {
                         "v": "Phoenix",
@@ -41639,7 +41794,7 @@
                 }
             },
             {
-                "i": 599,
+                "i": 600,
                 "$": {
                     "0": {
                         "v": "Archon",
@@ -41688,7 +41843,7 @@
                 }
             },
             {
-                "i": 600,
+                "i": 601,
                 "$": {
                     "0": {
                         "v": "Void Ray",
@@ -41742,7 +41897,7 @@
                 }
             },
             {
-                "i": 601,
+                "i": 602,
                 "$": {
                     "0": {
                         "v": "Tempest",
@@ -41801,7 +41956,7 @@
                 }
             },
             {
-                "i": 602,
+                "i": 603,
                 "$": {
                     "0": {
                         "v": "Carrier",
@@ -41860,7 +42015,7 @@
                 }
             },
             {
-                "i": 603,
+                "i": 604,
                 "$": {
                     "0": {
                         "v": "Gatekeeper Construct 1",
@@ -41914,7 +42069,7 @@
                 }
             },
             {
-                "i": 604,
+                "i": 605,
                 "$": {
                     "0": {
                         "v": "Gatekeeper Construct 2",
@@ -41968,7 +42123,7 @@
                 }
             },
             {
-                "i": 605,
+                "i": 606,
                 "$": {
                     "0": {
                         "v": "Gatekeeper Construct 3",
@@ -42022,7 +42177,7 @@
                 }
             },
             {
-                "i": 606,
+                "i": 607,
                 "$": {
                     "0": {
                         "v": "Gatekeeper Construct 4",
@@ -42076,7 +42231,7 @@
                 }
             },
             {
-                "i": 607,
+                "i": 608,
                 "$": {
                     "0": {
                         "v": "Scout",
@@ -42130,7 +42285,7 @@
                 }
             },
             {
-                "i": 608,
+                "i": 609,
                 "$": {
                     "0": {
                         "v": "Oracle",
@@ -42189,7 +42344,7 @@
                 }
             },
             {
-                "i": 609,
+                "i": 610,
                 "$": {
                     "0": {
                         "v": "Warp Prism",
@@ -42248,7 +42403,7 @@
                 }
             },
             {
-                "i": 610,
+                "i": 611,
                 "$": {
                     "0": {
                         "v": "Hybrid Dominator",
@@ -42312,7 +42467,7 @@
                 }
             },
             {
-                "i": 611,
+                "i": 612,
                 "$": {
                     "0": {
                         "v": "Hybrid Behemoth",
@@ -42371,7 +42526,7 @@
                 }
             },
             {
-                "i": 612,
+                "i": 613,
                 "$": {
                     "0": {
                         "v": "Hybrid Reaver",
@@ -42425,7 +42580,7 @@
                 }
             },
             {
-                "i": 613,
+                "i": 614,
                 "$": {
                     "0": {
                         "v": "Marine",
@@ -42474,7 +42629,7 @@
                 }
             },
             {
-                "i": 614,
+                "i": 615,
                 "$": {
                     "0": {
                         "v": "Medic",
@@ -42523,7 +42678,7 @@
                 }
             },
             {
-                "i": 615,
+                "i": 616,
                 "$": {
                     "0": {
                         "v": "Marauder",
@@ -42572,7 +42727,7 @@
                 }
             },
             {
-                "i": 616,
+                "i": 617,
                 "$": {
                     "0": {
                         "v": "Firebat",
@@ -42621,7 +42776,7 @@
                 }
             },
             {
-                "i": 617,
+                "i": 618,
                 "$": {
                     "0": {
                         "v": "Siege Tank",
@@ -42670,7 +42825,7 @@
                 }
             },
             {
-                "i": 618,
+                "i": 619,
                 "$": {
                     "0": {
                         "v": "Goliath",
@@ -42719,7 +42874,7 @@
                 }
             },
             {
-                "i": 619,
+                "i": 620,
                 "$": {
                     "0": {
                         "v": "Cyclone",
@@ -42768,7 +42923,7 @@
                 }
             },
             {
-                "i": 620,
+                "i": 621,
                 "$": {
                     "0": {
                         "v": "Reaper",
@@ -42817,7 +42972,7 @@
                 }
             },
             {
-                "i": 621,
+                "i": 622,
                 "$": {
                     "0": {
                         "v": "Thor",
@@ -42871,7 +43026,7 @@
                 }
             },
             {
-                "i": 622,
+                "i": 623,
                 "$": {
                     "0": {
                         "v": "Hellbat",
@@ -42925,7 +43080,7 @@
                 }
             },
             {
-                "i": 623,
+                "i": 624,
                 "$": {
                     "0": {
                         "v": "Hellion",
@@ -42974,7 +43129,7 @@
                 }
             },
             {
-                "i": 624,
+                "i": 625,
                 "$": {
                     "0": {
                         "v": "Viking",
@@ -43023,7 +43178,7 @@
                 }
             },
             {
-                "i": 625,
+                "i": 626,
                 "$": {
                     "0": {
                         "v": "Science Vessel",
@@ -43082,7 +43237,7 @@
                 }
             },
             {
-                "i": 626,
+                "i": 627,
                 "$": {
                     "0": {
                         "v": "Ghost",
@@ -43131,7 +43286,7 @@
                 }
             },
             {
-                "i": 627,
+                "i": 628,
                 "$": {
                     "0": {
                         "v": "Banshee",
@@ -43185,7 +43340,7 @@
                 }
             },
             {
-                "i": 628,
+                "i": 629,
                 "$": {
                     "0": {
                         "v": "Medivac",
@@ -43239,7 +43394,7 @@
                 }
             },
             {
-                "i": 629,
+                "i": 630,
                 "$": {
                     "0": {
                         "v": "Raven",
@@ -43298,7 +43453,7 @@
                 }
             },
             {
-                "i": 630,
+                "i": 631,
                 "$": {
                     "0": {
                         "v": "Vulture",
@@ -43347,7 +43502,7 @@
                 }
             },
             {
-                "i": 631,
+                "i": 632,
                 "$": {
                     "0": {
                         "v": "Liberator",
@@ -43401,7 +43556,7 @@
                 }
             },
             {
-                "i": 632,
+                "i": 633,
                 "$": {
                     "0": {
                         "v": "Battlecruiser",
@@ -43460,7 +43615,7 @@
                 }
             },
             {
-                "i": 633,
+                "i": 634,
                 "$": {
                     "0": {
                         "v": "Widow Mine",
@@ -43509,7 +43664,7 @@
                 }
             },
             {
-                "i": 634,
+                "i": 635,
                 "$": {
                     "0": {
                         "v": "Hybrid Nemesis",
@@ -43563,7 +43718,7 @@
                 }
             },
             {
-                "i": 635,
+                "i": 636,
                 "$": {
                     "0": {
                         "v": "Warhound",
@@ -43612,7 +43767,7 @@
                 }
             },
             {
-                "i": 636,
+                "i": 637,
                 "$": {
                     "0": {
                         "v": "Shuttle",
@@ -43666,7 +43821,7 @@
                 }
             },
             {
-                "i": 637,
+                "i": 638,
                 "$": {
                     "0": {
                         "v": "Loki",
@@ -43725,7 +43880,7 @@
                 }
             },
             {
-                "i": 638,
+                "i": 639,
                 "$": {
                     "0": {
                         "v": "Diamondback",
@@ -43774,7 +43929,7 @@
                 }
             },
             {
-                "i": 639,
+                "i": 640,
                 "$": {
                     "0": {
                         "v": "Slayn Elemental 1",
@@ -43833,7 +43988,7 @@
                 }
             },
             {
-                "i": 640,
+                "i": 641,
                 "$": {
                     "0": {
                         "v": "Slayn Elemental 2",
@@ -43892,7 +44047,7 @@
                 }
             },
             {
-                "i": 641,
+                "i": 642,
                 "$": {
                     "0": {
                         "v": "Hybrid Destroyer",
@@ -43946,7 +44101,7 @@
                 }
             },
             {
-                "i": 642,
+                "i": 643,
                 "$": {
                     "0": {
                         "v": "Brutalisk",
@@ -44005,7 +44160,7 @@
                 }
             },
             {
-                "i": 643,
+                "i": 644,
                 "$": {
                     "0": {
                         "v": "Leviathan",
@@ -44059,7 +44214,7 @@
                 }
             },
             {
-                "i": 644,
+                "i": 645,
                 "$": {
                     "0": {
                         "v": "Void Shard",
@@ -44113,7 +44268,7 @@
                 }
             },
             {
-                "i": 645,
+                "i": 646,
                 "$": {
                     "0": {
                         "v": "Pirate Capital Ship",
@@ -44172,7 +44327,7 @@
                 }
             },
             {
-                "i": 646,
+                "i": 647,
                 "$": {
                     "0": {
                         "v": "Extraction Device",
@@ -44221,7 +44376,7 @@
                 }
             },
             {
-                "i": 647,
+                "i": 648,
                 "$": {
                     "0": {
                         "v": "Mothership",
@@ -44285,7 +44440,7 @@
                 }
             },
             {
-                "i": 648,
+                "i": 649,
                 "$": {
                     "0": {
                         "v": "Zergling",
@@ -44334,7 +44489,7 @@
                 }
             },
             {
-                "i": 649,
+                "i": 650,
                 "$": {
                     "0": {
                         "v": "Roach",
@@ -44383,7 +44538,7 @@
                 }
             },
             {
-                "i": 650,
+                "i": 651,
                 "$": {
                     "0": {
                         "v": "Hydralisk",
@@ -44432,7 +44587,7 @@
                 }
             },
             {
-                "i": 651,
+                "i": 652,
                 "$": {
                     "0": {
                         "v": "Baneling",
@@ -44476,7 +44631,7 @@
                 }
             },
             {
-                "i": 652,
+                "i": 653,
                 "$": {
                     "0": {
                         "v": "Aberration",
@@ -44530,7 +44685,7 @@
                 }
             },
             {
-                "i": 653,
+                "i": 654,
                 "$": {
                     "0": {
                         "v": "Lurker",
@@ -44579,7 +44734,7 @@
                 }
             },
             {
-                "i": 654,
+                "i": 655,
                 "$": {
                     "0": {
                         "v": "Swarm Host",
@@ -44628,7 +44783,7 @@
                 }
             },
             {
-                "i": 655,
+                "i": 656,
                 "$": {
                     "0": {
                         "v": "Ultralisk",
@@ -44682,7 +44837,7 @@
                 }
             },
             {
-                "i": 656,
+                "i": 657,
                 "$": {
                     "0": {
                         "v": "Mutalisk",
@@ -44736,7 +44891,7 @@
                 }
             },
             {
-                "i": 657,
+                "i": 658,
                 "$": {
                     "0": {
                         "v": "Brood Lord",
@@ -44795,7 +44950,7 @@
                 }
             },
             {
-                "i": 658,
+                "i": 659,
                 "$": {
                     "0": {
                         "v": "Viper",
@@ -44854,7 +45009,7 @@
                 }
             },
             {
-                "i": 659,
+                "i": 660,
                 "$": {
                     "0": {
                         "v": "Scourge",
@@ -44908,7 +45063,7 @@
                 }
             },
             {
-                "i": 660,
+                "i": 661,
                 "$": {
                     "0": {
                         "v": "Corruptor",
@@ -44962,7 +45117,7 @@
                 }
             },
             {
-                "i": 661,
+                "i": 662,
                 "$": {
                     "0": {
                         "v": "Ravager",
@@ -45006,7 +45161,7 @@
                 }
             },
             {
-                "i": 662,
+                "i": 663,
                 "$": {
                     "0": {
                         "v": "Infestor",
@@ -45060,7 +45215,7 @@
                 }
             },
             {
-                "i": 663,
+                "i": 664,
                 "$": {
                     "0": {
                         "v": "Gatekeeper Construct Bonus",
@@ -45114,7 +45269,7 @@
                 }
             },
             {
-                "i": 664,
+                "i": 665,
                 "$": {
                     "0": {
                         "v": "Infested Terran DoN",
@@ -45163,7 +45318,7 @@
                 }
             },
             {
-                "i": 665,
+                "i": 666,
                 "$": {
                     "0": {
                         "v": "Infested Marine DON",
@@ -45212,7 +45367,7 @@
                 }
             },
             {
-                "i": 666,
+                "i": 667,
                 "$": {
                     "0": {
                         "v": "Kaboomer",
@@ -45266,7 +45421,7 @@
                 }
             },
             {
-                "i": 667,
+                "i": 668,
                 "$": {
                     "0": {
                         "v": "Spotter",
@@ -45320,7 +45475,7 @@
                 }
             },
             {
-                "i": 668,
+                "i": 669,
                 "$": {
                     "0": {
                         "v": "Hunterling",
@@ -45374,7 +45529,7 @@
                 }
             },
             {
-                "i": 669,
+                "i": 670,
                 "$": {
                     "0": {
                         "v": "Choker",
@@ -45428,7 +45583,7 @@
                 }
             },
             {
-                "i": 670,
+                "i": 671,
                 "$": {
                     "0": {
                         "v": "Stank",
@@ -45487,7 +45642,7 @@
                 }
             },
             {
-                "i": 671,
+                "i": 672,
                 "$": {
                     "0": {
                         "v": "XelNaga Construct",
@@ -45541,7 +45696,7 @@
                 }
             },
             {
-                "i": 672,
+                "i": 673,
                 "$": {
                     "0": {
                         "v": "Suppression Tower 1",
@@ -45590,7 +45745,7 @@
                 }
             },
             {
-                "i": 673,
+                "i": 674,
                 "$": {
                     "0": {
                         "v": "Suppression Tower 2",
@@ -45639,7 +45794,7 @@
                 }
             },
             {
-                "i": 674,
+                "i": 675,
                 "$": {
                     "0": {
                         "v": "Eradicator",
@@ -45693,7 +45848,7 @@
                 }
             },
             {
-                "i": 675,
+                "i": 676,
                 "$": {
                     "0": {
                         "v": "Blightbringer",
@@ -45752,7 +45907,7 @@
                 }
             },
             {
-                "i": 676,
+                "i": 677,
                 "$": {
                     "0": {
                         "v": "Moebius Train 1",
@@ -45811,7 +45966,7 @@
                 }
             },
             {
-                "i": 677,
+                "i": 678,
                 "$": {
                     "0": {
                         "v": "Moebius Train 2",
@@ -45870,7 +46025,7 @@
                 }
             },
             {
-                "i": 678,
+                "i": 679,
                 "$": {
                     "0": {
                         "v": "Moebius Train 3",
@@ -45929,7 +46084,7 @@
                 }
             },
             {
-                "i": 679,
+                "i": 680,
                 "$": {
                     "0": {
                         "v": "Moebius Train OE Bonus 1",
@@ -45988,7 +46143,7 @@
                 }
             },
             {
-                "i": 680,
+                "i": 681,
                 "$": {
                     "0": {
                         "v": "Moebius Train 4",
@@ -46047,7 +46202,7 @@
                 }
             },
             {
-                "i": 681,
+                "i": 682,
                 "$": {
                     "0": {
                         "v": "Moebius Train 5",
@@ -46106,7 +46261,7 @@
                 }
             },
             {
-                "i": 682,
+                "i": 683,
                 "$": {
                     "0": {
                         "v": "Moebius Train 6",
@@ -46165,7 +46320,7 @@
                 }
             },
             {
-                "i": 683,
+                "i": 684,
                 "$": {
                     "0": {
                         "v": "Moebius Train OE Bonus 2",
@@ -46224,7 +46379,7 @@
                 }
             },
             {
-                "i": 684,
+                "i": 685,
                 "$": {
                     "0": {
                         "v": "Moebius Train 7",
@@ -46283,7 +46438,7 @@
                 }
             },
             {
-                "i": 685,
+                "i": 686,
                 "$": {
                     "0": {
                         "v": "Moebius Train 8",
@@ -46342,7 +46497,7 @@
                 }
             },
             {
-                "i": 686,
+                "i": 687,
                 "$": {
                     "0": {
                         "v": "Moebius Train PP Bonus 1",
@@ -46401,7 +46556,7 @@
                 }
             },
             {
-                "i": 687,
+                "i": 688,
                 "$": {
                     "0": {
                         "v": "Moebius Train PP Bonus 2",
@@ -46460,7 +46615,7 @@
                 }
             },
             {
-                "i": 688,
+                "i": 689,
                 "$": {
                     "0": {
                         "v": "Zenith Stone",
@@ -46509,7 +46664,7 @@
                 }
             },
             {
-                "i": 689,
+                "i": 690,
                 "$": {
                     "0": {
                         "v": "Void Thrasher TotP 1",
@@ -46568,7 +46723,7 @@
                 }
             },
             {
-                "i": 690,
+                "i": 691,
                 "$": {
                     "0": {
                         "v": "Void Thrasher TotP 2",
@@ -46627,7 +46782,7 @@
                 }
             },
             {
-                "i": 691,
+                "i": 692,
                 "$": {
                     "0": {
                         "v": "Void Thrasher TotP 3",
@@ -46686,7 +46841,7 @@
                 }
             },
             {
-                "i": 692,
+                "i": 693,
                 "$": {
                     "0": {
                         "v": "Void Thrasher TotP 4",
@@ -46745,7 +46900,7 @@
                 }
             },
             {
-                "i": 693,
+                "i": 694,
                 "$": {
                     "0": {
                         "v": "Void Rift",
@@ -46799,7 +46954,7 @@
                 }
             },
             {
-                "i": 694,
+                "i": 695,
                 "$": {
                     "0": {
                         "v": "Void Sliver 1",
@@ -46853,7 +47008,7 @@
                 }
             },
             {
-                "i": 695,
+                "i": 696,
                 "$": {
                     "0": {
                         "v": "Void Sliver 2",
@@ -46907,7 +47062,7 @@
                 }
             },
             {
-                "i": 696,
+                "i": 697,
                 "$": {
                     "0": {
                         "v": "Void Sliver 3",
@@ -46961,7 +47116,7 @@
                 }
             },
             {
-                "i": 697,
+                "i": 698,
                 "$": {
                     "0": {
                         "v": "Void Sliver 4",
@@ -47015,7 +47170,7 @@
                 }
             },
             {
-                "i": 698,
+                "i": 699,
                 "$": {
                     "0": {
                         "v": "Void Sliver 5",
@@ -47069,7 +47224,7 @@
                 }
             },
             {
-                "i": 699,
+                "i": 700,
                 "$": {
                     "0": {
                         "v": "Death Grip Crystal",
@@ -47113,7 +47268,7 @@
                 }
             },
             {
-                "i": 700,
+                "i": 701,
                 "$": {
                     "0": {
                         "v": "Molten Salamander",
@@ -47172,7 +47327,7 @@
                 }
             },
             {
-                "i": 701,
+                "i": 702,
                 "$": {
                     "0": {
                         "v": "Void Thrasher VT",
@@ -47231,7 +47386,7 @@
                 }
             },
             {
-                "i": 702,
+                "i": 703,
                 "$": {
                     "0": {
                         "v": "Archangel",
@@ -47285,7 +47440,7 @@
                 }
             },
             {
-                "i": 703,
+                "i": 704,
                 "$": {
                     "0": {
                         "v": "Hybrid Experiment 1 A626 ",
@@ -47329,7 +47484,7 @@
                 }
             },
             {
-                "i": 704,
+                "i": 705,
                 "$": {
                     "0": {
                         "v": "Hybrid Experiment 2 9E57",
@@ -47373,7 +47528,7 @@
                 }
             },
             {
-                "i": 705,
+                "i": 706,
                 "$": {
                     "0": {
                         "v": "Hybrid Experiment 3 523I",
@@ -47417,7 +47572,7 @@
                 }
             },
             {
-                "i": 706,
+                "i": 707,
                 "$": {
                     "0": {
                         "v": "Infested Marine ME",
@@ -47466,7 +47621,7 @@
                 }
             },
             {
-                "i": 707,
+                "i": 708,
                 "$": {
                     "0": {
                         "v": "Infested Terran ME",
@@ -47515,7 +47670,7 @@
                 }
             },
             {
-                "i": 708,
+                "i": 709,
                 "$": {
                     "0": {
                         "v": "Volatile Infested ME",
@@ -47564,7 +47719,7 @@
                 }
             },
             {
-                "i": 709,
+                "i": 710,
                 "$": {
                     "0": {
                         "v": "Infested Siege Tank",
@@ -47618,7 +47773,7 @@
                 }
             },
             {
-                "i": 710,
+                "i": 711,
                 "$": {
                     "0": {
                         "v": "Infested Banshee",
@@ -47677,7 +47832,7 @@
                 }
             },
             {
-                "i": 711,
+                "i": 712,
                 "$": {
                     "0": {
                         "v": "Infested Hammer Securities",
@@ -47726,7 +47881,7 @@
                 }
             },
             {
-                "i": 712,
+                "i": 713,
                 "$": {
                     "0": {
                         "v": "HERC",
@@ -47775,7 +47930,7 @@
                 }
             },
             {
-                "i": 713,
+                "i": 714,
                 "$": {
                     "0": {
                         "v": "Infested War Pig",
@@ -47824,7 +47979,7 @@
                 }
             },
             {
-                "i": 714,
+                "i": 715,
                 "$": {
                     "0": {
                         "v": "Brood Queen",
@@ -47883,7 +48038,7 @@
                 }
             },
             {
-                "i": 715,
+                "i": 716,
                 "$": {
                     "0": {
                         "v": "Volatile Infested DoN",
@@ -47932,7 +48087,7 @@
                 }
             },
             {
-                "i": 716,
+                "i": 717,
                 "$": {
                     "0": {
                         "v": "Infested Death Head",
@@ -47981,7 +48136,7 @@
                 }
             },
             {
-                "i": 717,
+                "i": 718,
                 "$": {
                     "0": {
                         "v": "Wraith",
@@ -48035,7 +48190,7 @@
                 }
             },
             {
-                "i": 718,
+                "i": 719,
                 "$": {
                     "0": {
                         "v": "Corsair",
@@ -48089,7 +48244,7 @@
                 }
             },
             {
-                "i": 719,
+                "i": 720,
                 "$": {
                     "0": {
                         "v": "Arbiter",
@@ -48148,7 +48303,7 @@
                 }
             },
             {
-                "i": 720,
+                "i": 721,
                 "$": {
                     "0": {
                         "v": "Guardian",
@@ -48207,7 +48362,7 @@
                 }
             },
             {
-                "i": 721,
+                "i": 722,
                 "$": {
                     "0": {
                         "v": "Devourer",
@@ -48266,7 +48421,7 @@
                 }
             },
             {
-                "i": 722,
+                "i": 723,
                 "$": {
                     "0": {
                         "v": "Hammer Securities",
@@ -48315,7 +48470,7 @@
                 }
             },
             {
-                "i": 723,
+                "i": 724,
                 "$": {
                     "0": {
                         "v": "Shock Division",
@@ -48364,7 +48519,7 @@
                 }
             },
             {
-                "i": 724,
+                "i": 725,
                 "$": {
                     "0": {
                         "v": "Outback Hunter",
@@ -48413,7 +48568,7 @@
                 }
             },
             {
-                "i": 725,
+                "i": 726,
                 "$": {
                     "0": {
                         "v": "Jacksons Revenge",
@@ -48467,7 +48622,7 @@
                 }
             },
             {
-                "i": 726,
+                "i": 727,
                 "$": {
                     "0": {
                         "v": "Spartan Company",
@@ -48516,7 +48671,7 @@
                 }
             },
             {
-                "i": 727,
+                "i": 728,
                 "$": {
                     "0": {
                         "v": "Death Head",
@@ -48565,7 +48720,7 @@
                 }
             },
             {
-                "i": 728,
+                "i": 729,
                 "$": {
                     "0": {
                         "v": "Siege Breaker",
@@ -48614,7 +48769,7 @@
                 }
             },
             {
-                "i": 729,
+                "i": 730,
                 "$": {
                     "0": {
                         "v": "Dusk Wings",
@@ -48663,7 +48818,7 @@
                 }
             },
             {
-                "i": 730,
+                "i": 731,
                 "$": {
                     "0": {
                         "v": "Devil Dog",
@@ -48712,7 +48867,7 @@
                 }
             },
             {
-                "i": 731,
+                "i": 732,
                 "$": {
                     "0": {
                         "v": "Hels Angel",
@@ -48761,7 +48916,7 @@
                 }
             },
             {
-                "i": 732,
+                "i": 733,
                 "$": {
                     "0": {
                         "v": "Skibis Angel",
@@ -48810,7 +48965,7 @@
                 }
             },
             {
-                "i": 733,
+                "i": 734,
                 "$": {
                     "0": {
                         "v": "War Pig",
@@ -48859,7 +49014,7 @@
                 }
             },
             {
-                "i": 734,
+                "i": 735,
                 "$": {
                     "0": {
                         "v": "Field Response Theta",
@@ -48908,7 +49063,7 @@
                 }
             },
             {
-                "i": 735,
+                "i": 736,
                 "$": {
                     "0": {
                         "v": "Sentry Bot",
@@ -48957,7 +49112,7 @@
                 }
             },
             {
-                "i": 736,
+                "i": 737,
                 "$": {
                     "0": {
                         "v": "Pride of Augustgrad",
@@ -49011,7 +49166,7 @@
                 }
             },
             {
-                "i": 737,
+                "i": 738,
                 "$": {
                     "0": {
                         "v": "Night Wolf",
@@ -49060,7 +49215,7 @@
                 }
             },
             {
-                "i": 738,
+                "i": 739,
                 "$": {
                     "0": {
                         "v": "Turkey",
@@ -49104,7 +49259,7 @@
                 }
             },
             {
-                "i": 739,
+                "i": 740,
                 "$": {
                     "0": {
                         "v": "Infested Turkey",
@@ -49148,7 +49303,7 @@
                 }
             },
             {
-                "i": 740,
+                "i": 741,
                 "$": {
                     "0": {
                         "v": "Turking",
@@ -49197,7 +49352,7 @@
                 }
             },
             {
-                "i": 741,
+                "i": 742,
                 "$": {
                     "0": {
                         "v": "Moebius Corps Laser Drill",
@@ -49256,7 +49411,7 @@
                 }
             },
             {
-                "i": 742,
+                "i": 743,
                 "$": {
                     "0": {
                         "v": "Void Reanimator",
@@ -49291,7 +49446,7 @@
                 }
             },
             {
-                "i": 743,
+                "i": 744,
                 "$": {
                     "0": {
                         "v": "Propagator",
@@ -49335,7 +49490,7 @@
                 }
             },
             {
-                "i": 744,
+                "i": 745,
                 "$": {
                     "0": {
                         "v": "Standard Missile",
@@ -49379,7 +49534,7 @@
                 }
             },
             {
-                "i": 745,
+                "i": 746,
                 "$": {
                     "0": {
                         "v": "Splitter Missile",
@@ -49423,7 +49578,7 @@
                 }
             },
             {
-                "i": 746,
+                "i": 747,
                 "$": {
                     "0": {
                         "v": "Point Defense Missile",
@@ -49467,7 +49622,7 @@
                 }
             },
             {
-                "i": 747,
+                "i": 748,
                 "$": {
                     "0": {
                         "v": "Missile Nuke",
@@ -49511,7 +49666,7 @@
                 }
             },
             {
-                "i": 748,
+                "i": 749,
                 "$": {
                     "0": {
                         "v": "Artanis",
@@ -49565,7 +49720,7 @@
                 }
             },
             {
-                "i": 749,
+                "i": 750,
                 "$": {
                     "0": {
                         "v": "Dehaka",
@@ -49614,7 +49769,7 @@
                 }
             },
             {
-                "i": 750,
+                "i": 751,
                 "$": {
                     "0": {
                         "v": "Dehaka Spawn",
@@ -49663,7 +49818,7 @@
                 }
             },
             {
-                "i": 751,
+                "i": 752,
                 "$": {
                     "0": {
                         "v": "Karax",
@@ -49712,7 +49867,7 @@
                 }
             },
             {
-                "i": 752,
+                "i": 753,
                 "$": {
                     "0": {
                         "v": "Kerrigan",
@@ -49766,7 +49921,7 @@
                 }
             },
             {
-                "i": 753,
+                "i": 754,
                 "$": {
                     "0": {
                         "v": "Nova",
@@ -49820,7 +49975,7 @@
                 }
             },
             {
-                "i": 754,
+                "i": 755,
                 "$": {
                     "0": {
                         "v": "Raynor",
@@ -49869,7 +50024,7 @@
                 }
             },
             {
-                "i": 755,
+                "i": 756,
                 "$": {
                     "0": {
                         "v": "Tychus",
@@ -49918,7 +50073,7 @@
                 }
             },
             {
-                "i": 756,
+                "i": 757,
                 "$": {
                     "0": {
                         "v": "Zagara",
@@ -49972,7 +50127,7 @@
                 }
             },
             {
-                "i": 757,
+                "i": 758,
                 "$": {
                     "0": {
                         "v": "Zeratul",
@@ -50031,7 +50186,7 @@
                 }
             },
             {
-                "i": 758,
+                "i": 759,
                 "$": {
                     "0": {
                         "v": "Bunker",
@@ -50085,7 +50240,7 @@
                 }
             },
             {
-                "i": 759,
+                "i": 760,
                 "$": {
                     "0": {
                         "v": "Missile Turret",
@@ -50139,7 +50294,7 @@
                 }
             },
             {
-                "i": 760,
+                "i": 761,
                 "$": {
                     "0": {
                         "v": "Spore Crawler",
@@ -50193,7 +50348,7 @@
                 }
             },
             {
-                "i": 761,
+                "i": 762,
                 "$": {
                     "0": {
                         "v": "Spine Crawler",
@@ -50247,7 +50402,7 @@
                 }
             },
             {
-                "i": 762,
+                "i": 763,
                 "$": {
                     "0": {
                         "v": "Photon Cannon",
@@ -50301,7 +50456,7 @@
                 }
             },
             {
-                "i": 763,
+                "i": 764,
                 "$": {
                     "0": {
                         "v": "Pylon",
@@ -50355,7 +50510,7 @@
                 }
             },
             {
-                "i": 764,
+                "i": 765,
                 "$": {
                     "0": {
                         "v": "Infested Bunker",
@@ -50409,7 +50564,7 @@
                 }
             },
             {
-                "i": 765,
+                "i": 766,
                 "$": {
                     "0": {
                         "v": "Infested Missile Turret",
@@ -50463,7 +50618,7 @@
                 }
             },
             {
-                "i": 766,
+                "i": 767,
                 "$": {
                     "0": {
                         "v": "Widow Mine Mutator",
@@ -50512,7 +50667,7 @@
                 }
             },
             {
-                "i": 767,
+                "i": 768,
                 "$": {
                     "0": {
                         "v": "Spider Mine",
@@ -50561,7 +50716,7 @@
                 }
             },
             {
-                "i": 768,
+                "i": 769,
                 "$": {
                     "0": {
                         "v": "Dragoon",
@@ -50610,7 +50765,7 @@
                 }
             },
             {
-                "i": 769,
+                "i": 770,
                 "$": {
                     "0": {
                         "v": "Swarm Queen",
@@ -50664,7 +50819,7 @@
                 }
             },
             {
-                "i": 770,
+                "i": 771,
                 "$": {
                     "0": {
                         "v": "Queen",
@@ -50718,7 +50873,7 @@
                 }
             },
             {
-                "i": 771,
+                "i": 772,
                 "$": {
                     "0": {
                         "v": "Overseer",
@@ -50772,7 +50927,7 @@
                 }
             },
             {
-                "i": 772,
+                "i": 773,
                 "$": {
                     "0": {
                         "v": "Overlord",
@@ -50826,7 +50981,7 @@
                 }
             },
             {
-                "i": 773,
+                "i": 774,
                 "$": {
                     "0": {
                         "v": "Observer",
@@ -50880,7 +51035,7 @@
                 }
             },
             {
-                "i": 774,
+                "i": 775,
                 "$": {
                     "0": {
                         "v": "Combat Shield Marine",
@@ -50929,7 +51084,7 @@
                 }
             },
             {
-                "i": 775,
+                "i": 776,
                 "$": {
                     "0": {
                         "v": "MULE",
@@ -50978,7 +51133,7 @@
                 }
             },
             {
-                "i": 776,
+                "i": 777,
                 "$": {
                     "0": {
                         "v": "Locust",
@@ -51027,7 +51182,7 @@
                 }
             },
             {
-                "i": 777,
+                "i": 778,
                 "$": {
                     "0": {
                         "v": "Defense Bot",
@@ -51076,7 +51231,7 @@
                 }
             },
             {
-                "i": 778,
+                "i": 779,
                 "$": {
                     "0": {
                         "v": "Virophage",
@@ -51135,7 +51290,7 @@
                 }
             },
             {
-                "i": 779,
+                "i": 780,
                 "$": {
                     "0": {
                         "v": "Hunter Killer",
@@ -51184,7 +51339,7 @@
                 }
             },
             {
-                "i": 780,
+                "i": 781,
                 "$": {
                     "0": {
                         "v": "Aegis Guard",
@@ -51233,7 +51388,7 @@
                 }
             },
             {
-                "i": 781,
+                "i": 782,
                 "$": {
                     "0": {
                         "v": "Imperial Intercessor",
@@ -51282,7 +51437,7 @@
                 }
             },
             {
-                "i": 782,
+                "i": 783,
                 "$": {
                     "0": {
                         "v": "Sky Fury",
@@ -51331,7 +51486,7 @@
                 }
             },
             {
-                "i": 783,
+                "i": 784,
                 "$": {
                     "0": {
                         "v": "Imperial Witness",
@@ -51375,7 +51530,7 @@
                 }
             },
             {
-                "i": 784,
+                "i": 785,
                 "$": {
                     "0": {
                         "v": "Dominion Trooper",
@@ -51424,7 +51579,7 @@
                 }
             },
             {
-                "i": 785,
+                "i": 786,
                 "$": {
                     "0": {
                         "v": "Infested Diamondback",
@@ -51478,7 +51633,7 @@
                 }
             },
             {
-                "i": 786,
+                "i": 787,
                 "$": {
                     "0": {
                         "v": "Infested Liberator",
@@ -51532,7 +51687,7 @@
                 }
             },
             {
-                "i": 787,
+                "i": 788,
                 "$": {
                     "0": {
                         "v": "Broodling",

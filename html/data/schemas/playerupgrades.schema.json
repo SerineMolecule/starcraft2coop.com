@@ -50,6 +50,10 @@
                         "icon": {
                             "type": "string"
                         },
+                        "temporary": {
+                            "type": "boolean",
+                            "description": "Applies an active temporary effect rather than permanent research. Omitted means false."
+                        },
                         "rank": {
                             "type": "number",
                             "enum": [
@@ -126,6 +130,10 @@
                         "icon": {
                             "type": "string"
                         },
+                        "temporary": {
+                            "type": "boolean",
+                            "description": "Applies an active temporary effect rather than permanent research. Omitted means false."
+                        },
                         "rank": {
                             "type": "number",
                             "enum": [
@@ -200,6 +208,10 @@
                         },
                         "icon": {
                             "type": "string"
+                        },
+                        "temporary": {
+                            "type": "boolean",
+                            "description": "Applies an active temporary effect rather than permanent research. Omitted means false."
                         },
                         "rank": {
                             "type": "number",

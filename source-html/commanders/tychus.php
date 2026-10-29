@@ -714,7 +714,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="/images/commanderdata/abilities/tychus/deploywarhoundturret.png" alt="Deploy Warhound Turret"></td>
+                        <td><img src="/images/commanderdata/abilities/tychus/deploywarhoundturret-framed.png" alt="Deploy Warhound Turret"></td>
                         <td>Deploy Warhound Turret</td>
                         <td>Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.<br><br>Can attack ground and air units.</td>
                         <td>15 seconds</td>

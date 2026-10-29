@@ -148,6 +148,8 @@ export interface Mission {
 export interface AmonUnit {
     amonid: PositiveInteger;
     name: string;
+    /** Site-relative portrait URL; omit when no suitable image is available. */
+    image?: string;
     race: string;
     hp: NonNegativeInteger;
     armor: NonNegativeInteger;
@@ -237,6 +239,8 @@ export interface PlayerTalent {
     commander: string;
     name: string;
     nameid: string;
+    /** Directly applies a temporary effect. Omitted means false. */
+    temporary?: boolean;
     modifier: string;
     /** which upgrade needs to be enabled for this to have an effect? */
     modifierupgrade: string | null;
@@ -256,6 +260,8 @@ export interface PlayerUpgradeBase {
     commander: string;
     name: string;
     icon: string;
+    /** Applies an active temporary effect rather than permanent research. Omitted means false. */
+    temporary?: boolean;
     /** Royal Guard rank that unlocks this named ability. */
     rank?: 1 | 2 | 3;
     effect: string;

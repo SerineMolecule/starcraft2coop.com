@@ -42,21 +42,85 @@ interface UnitModifiers {
     upgrades: Record<string, boolean>;
     masteries: Record<string, number>;
     prestiges: Record<string, boolean>;
-    upgradeLevels: { weapon?: number, armor?: number, shields?: number, artifacts?: number, rank?: number };
+    upgradeLevels: { weapon?: number, armor?: number, shields?: number, artifacts?: number, rank?: number, hero?: number, biomass?: number };
+}
+
+export interface UnitSettings {
+    maxUpgrades: boolean;
+    maxUpgradeLevels: boolean;
+    maxTemporaryStatuses: boolean;
+}
+const UNIT_SETTINGS_KEY = 'unit-stats-settings';
+const UNIT_SETTINGS_LABELS: Record<keyof UnitSettings, string> = {
+    maxUpgrades: 'max upgrades',
+    maxUpgradeLevels: 'max upgrade levels',
+    maxTemporaryStatuses: 'max temporary statuses',
+};
+
+export function readUnitSettings(storage?: Pick<Storage, 'getItem'>): UnitSettings {
+    const settings = { maxUpgrades: false, maxUpgradeLevels: false, maxTemporaryStatuses: false };
+    try {
+        const saved = JSON.parse((storage ?? window.localStorage).getItem(UNIT_SETTINGS_KEY) ?? '{}');
+        for (const key of Object.keys(settings) as (keyof UnitSettings)[]) {
+            settings[key] = saved?.[key] === true;
+        }
+    } catch { /* Storage may be unavailable or contain invalid JSON. */ }
+    return settings;
+}
+
+export function saveUnitSettings(settings: UnitSettings, storage?: Pick<Storage, 'setItem'>): void {
+    try {
+        (storage ?? window.localStorage).setItem(UNIT_SETTINGS_KEY, JSON.stringify(settings));
+    } catch { /* Settings still work for this visit when storage is unavailable. */ }
+}
+
+export function applyUnitSettings(modifiers: UnitModifiers, settings: Partial<UnitSettings>): UnitModifiers {
+    const next = {
+        ...modifiers,
+        upgrades: { ...modifiers.upgrades },
+        masteries: { ...modifiers.masteries },
+        prestiges: { ...modifiers.prestiges },
+        upgradeLevels: { ...modifiers.upgradeLevels },
+    };
+    const upgrades = (playerUpgrades as PlayerUpgrade[]).filter(u => token(u.commander) === next.commander && token(u.unit) === next.unit);
+    for (const name of Object.keys(next.upgrades)) {
+        if (/^[123]$/.test(name)) continue; // Royal Guard ranks are handled with upgrade levels.
+        const entries = upgrades.filter(u => u.name === name);
+        if (!entries.some(u => u.operation !== 'none')) continue;
+        const enabled = entries.some(u => u.temporary) ? settings.maxTemporaryStatuses : settings.maxUpgrades;
+        if (enabled !== undefined) next.upgrades[name] = enabled;
+    }
+    if (settings.maxUpgradeLevels !== undefined) {
+        for (const kind of Object.keys(next.upgradeLevels) as (keyof UnitModifiers['upgradeLevels'])[]) {
+            const max = kind === 'hero' ? UnitStats.heroLevelLimit(next) : kind === 'biomass' ? UnitStats.biomassLimit(next) :
+                next.commander === 'tychus' && (kind === 'weapon' || kind === 'armor') ? 5 : 3;
+            next.upgradeLevels[kind] = settings.maxUpgradeLevels ? max : kind === 'hero' ? 1 : 0;
+        }
+        if ('rank' in next.upgradeLevels) {
+            for (const rank of ['1', '2', '3']) {
+                if (rank in next.upgrades) next.upgrades[rank] = settings.maxUpgradeLevels;
+            }
+        }
+    }
+    return next;
 }
 
 class Units extends preact.Component {
+    table = preact.createRef<HTMLTableElement>();
+    scrollAfterSelection = false;
     override state: {
         commander: Token | null,
         unit: Token | null,
         modifiers: UnitModifiers | null,
         compareModifiers: UnitModifiers | null,
+        settings: UnitSettings,
         error?: string,
     } = {
             commander: null,
             unit: null,
             modifiers: null,
             compareModifiers: null,
+            settings: readUnitSettings(),
         };
     override componentDidMount() {
         window.addEventListener("hashchange", () => {
@@ -69,9 +133,27 @@ class Units extends preact.Component {
         const [commander, unit] = hash.split("/");
         this.setState({ commander: commander || null, unit: unit || null });
         if (commander && unit) {
-            this.setState({ modifiers: UnitStats.modifiers(commander as Token, unit as Token) });
+            this.setState({ modifiers: applyUnitSettings(UnitStats.modifiers(commander as Token, unit as Token), this.state.settings) }, () => {
+                if (this.scrollAfterSelection) {
+                    this.scrollAfterSelection = false;
+                    this.scrollToUnit();
+                }
+            });
         }
     }
+    scrollToUnit = () => {
+        this.table.current?.querySelector('.units-unit')?.scrollIntoView({ block: 'start', inline: 'start' });
+    };
+    onClickUnit = (event: MouseEvent) => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+            !window.matchMedia('(max-width: 700px)').matches) return;
+        // A repeated selection has no hashchange event; new selections scroll after rendering.
+        if ((event.currentTarget as HTMLAnchorElement).hash === window.location.hash) {
+            this.scrollToUnit();
+        } else {
+            this.scrollAfterSelection = true;
+        }
+    };
     onSetModifiers = (modifiers: Partial<UnitModifiers>) => {
         this.setState({ modifiers: { ...this.state.modifiers, ...modifiers } });
     };
@@ -84,6 +166,18 @@ class Units extends preact.Component {
     onClickClose = () => {
         this.setState({ compareModifiers: null });
     };
+    onChangeSetting = (event: Event) => {
+        const target = event.currentTarget as HTMLInputElement;
+        const key = target.name as keyof UnitSettings;
+        const change = { [key]: target.checked };
+        const settings = { ...this.state.settings, ...change };
+        saveUnitSettings(settings);
+        this.setState(state => ({
+            settings,
+            modifiers: state.modifiers && applyUnitSettings(state.modifiers, change),
+            compareModifiers: state.compareModifiers && applyUnitSettings(state.compareModifiers, change),
+        }));
+    };
     static override getDerivedStateFromError(error: Error): { error: string } {
         return { error: error.stack || error.message, };
     }
@@ -92,14 +186,22 @@ class Units extends preact.Component {
             return <p>Error: <pre style="color: #ff6633;">{this.state.error}</pre></p>;
         }
         return (
-            <table class="units">
+            <>
+            <table class="units" ref={this.table}>
                 <tr>
                     <CommanderSelector commander={this.state.commander} />
-                    <UnitSelector commander={this.state.commander} unit={this.state.unit} />
+                    <UnitSelector commander={this.state.commander} unit={this.state.unit} onClickUnit={this.onClickUnit} />
                     {this.state.commander && <UnitStats modifiers={this.state.modifiers} onSetModifiers={this.onSetModifiers} onClickCompare={this.onClickCompare} formKey="1" />}
                     {this.state.compareModifiers && <UnitStats modifiers={this.state.compareModifiers} onSetModifiers={this.onSetCompareModifiers} onClickClose={this.onClickClose} formKey="2" />}
                 </tr>
             </table>
+            <h3>Settings</h3>
+            <div class="units-settings">
+                {(Object.keys(UNIT_SETTINGS_LABELS) as (keyof UnitSettings)[]).map(key => <label>
+                    <input type="checkbox" name={key} checked={this.state.settings[key]} onChange={this.onChangeSetting} /> {UNIT_SETTINGS_LABELS[key]}
+                </label>)}
+            </div>
+            </>
         );
     }
 }
@@ -115,7 +217,7 @@ class CommanderSelector extends preact.Component<{ commander: string | null }> {
                 <ul class="units-nav">
                     {commandersummaries.map((commander) => (
                         <li><a href={`#${token(commander.commander)}`} aria-selected={this.isSelected(commander.commander)}>
-                            <img src={`/images/commanderportraits/${token(commander.commander)}portrait.png`} alt="" width="21" height="21" style="margin-right:3px" />
+                            <img src={`/images/commanderportraits/${token(commander.commander)}portrait.png`} alt="" width="25" height="25" />
                             {commander.fullname}
                         </a></li>
                     ))}
@@ -131,9 +233,16 @@ class CommanderSelector extends preact.Component<{ commander: string | null }> {
     }
 }
 
-class UnitSelector extends preact.Component<{ commander: Token | null, unit: Token | null }> {
+class UnitSelector extends preact.Component<{ commander: Token | null, unit: Token | null, onClickUnit: (event: MouseEvent) => void }> {
     isSelected(name: string): boolean | undefined {
         return this.props.unit === token(name) ? true : undefined;
+    }
+    renderLink(name: string): preact.ComponentChildren {
+        const commander = this.props.commander!;
+        const unit = token(name);
+        return <li key={unit}><a href={`#${commander}/${unit}`} aria-selected={this.isSelected(name)} onClick={this.props.onClickUnit}>
+            {name}
+        </a></li>;
     }
     override render() {
         if (this.props.commander === null) {
@@ -170,21 +279,15 @@ class UnitSelector extends preact.Component<{ commander: Token | null, unit: Tok
             <td class="units-unit-selector">
                 {!!normalUnits.length && <p class="units-head"><em>Units</em></p>}
                 {!!normalUnits.length && <ul class="units-nav">
-                    {normalUnits.map((unit) => (
-                        <li><a href={`#${token(this.props.commander!)}/${token(unit)}`} aria-selected={this.isSelected(unit)}>{unit}</a></li>
-                    ))}
+                    {normalUnits.map(unit => this.renderLink(unit))}
                 </ul>}
                 {!!heroes.length && <p class="units-head"><em>Heroes</em></p>}
                 {!!heroes.length && <ul class="units-nav">
-                    {heroes.map((hero) => (
-                        <li><a href={`#${token(this.props.commander!)}/${token(hero)}`} aria-selected={this.isSelected(hero)}>{hero}</a></li>
-                    ))}
+                    {heroes.map(hero => this.renderLink(hero))}
                 </ul>}
                 {!!structures.length && <p class="units-head"><em>Structures</em></p>}
                 {!!structures.length && <ul class="units-nav">
-                    {structures.map((structure) => (
-                        <li><a href={`#${token(this.props.commander!)}/${token(structure)}`} aria-selected={this.isSelected(structure)}>{structure}</a></li>
-                    ))}
+                    {structures.map(structure => this.renderLink(structure))}
                 </ul>}
             </td>
         );
@@ -235,6 +338,61 @@ interface UnitMode {
     attributedamage?: { [tag: string]: { damage: number, bonus: number } };
 }
 
+/** Keep long cards readable in either scroll direction, using the page's scrollbar. */
+class UnitContent extends preact.Component<{ selection: string, children: preact.ComponentChildren }> {
+    static readonly topInset = 22;
+    content = preact.createRef<HTMLDivElement>();
+    observer?: ResizeObserver;
+    frame = 0;
+    lastScrollY = 0;
+    lastTop = UnitContent.topInset;
+    resetPosition = true;
+
+    override componentDidMount() {
+        this.lastScrollY = window.scrollY;
+        window.addEventListener('scroll', this.schedulePosition, { passive: true });
+        window.addEventListener('resize', this.schedulePosition);
+        this.observer = new ResizeObserver(this.schedulePosition);
+        this.observer.observe(this.content.current!);
+        this.observer.observe(this.content.current!.parentElement!);
+        this.updatePosition();
+    }
+    override componentDidUpdate(previous: Readonly<typeof this.props>) {
+        if (previous.selection !== this.props.selection) this.resetPosition = true;
+        this.schedulePosition();
+    }
+    override componentWillUnmount() {
+        window.removeEventListener('scroll', this.schedulePosition);
+        window.removeEventListener('resize', this.schedulePosition);
+        this.observer?.disconnect();
+        cancelAnimationFrame(this.frame);
+    }
+    schedulePosition = () => {
+        if (!this.frame) this.frame = requestAnimationFrame(this.updatePosition);
+    };
+    updatePosition = () => {
+        this.frame = 0;
+        const content = this.content.current!;
+        const scrollY = window.scrollY;
+        if (window.matchMedia('(min-width: 701px)').matches) {
+            const topInset = UnitContent.topInset;
+            const bottomLimit = Math.min(topInset, window.innerHeight - 24 - content.getBoundingClientRect().height);
+            // Follow the page between the two edges; clamp only when an edge is reached.
+            const top = this.resetPosition ? topInset : Math.max(bottomLimit, Math.min(topInset, this.lastTop - (scrollY - this.lastScrollY)));
+            content.style.top = `${top}px`;
+            this.lastTop = content.getBoundingClientRect().top;
+            this.resetPosition = false;
+        } else {
+            content.style.removeProperty('top');
+            this.resetPosition = true;
+        }
+        this.lastScrollY = scrollY;
+    };
+    override render() {
+        return <div class="units-unit-content" ref={this.content}>{this.props.children}</div>;
+    }
+}
+
 export class UnitStats extends preact.Component<{
     modifiers: UnitModifiers | null,
     onSetModifiers: (modifiers: Partial<UnitModifiers>) => void,
@@ -243,6 +401,7 @@ export class UnitStats extends preact.Component<{
 }> {
     override state: {
         masteryInputs?: Record<string, string> | null;
+        levelInputs?: Record<string, string> | null;
     } = {};
     renderAmonUnit(): preact.ComponentChildren {
         const amonUnit = amonUnits.find(unit => token(unit.name) === this.props.modifiers!.unit);
@@ -264,8 +423,10 @@ export class UnitStats extends preact.Component<{
         ].filter(Boolean);
         return (
             <td class="units-unit">
+                <UnitContent selection={`${this.props.modifiers!.commander}/${this.props.modifiers!.unit}`}>
                 <h2 class="units-name">{amonUnit.name}</h2>
                 <div class="units-identity">
+                    {amonUnit.image && <div class="units-art"><img key={amonUnit.image} src={amonUnit.image} alt="" class="units-portrait" /></div>}
                     <div class="units-identity-text">
                         <p class="units-tags">{tags.join(" · ") || "(No tags)"}</p>
                     </div>
@@ -277,6 +438,7 @@ export class UnitStats extends preact.Component<{
                     <li class="units-hp"><span class="unbold">HP:</span> {amonUnit.hp} {!!amonUnit.armor && <><span class="unbold">| Armor: </span>{amonUnit.armor}</>}</li>
                     {!!amonUnit.shields && <li class="units-shields"><span class="unbold">Shields:</span> {amonUnit.shields} {!!amonUnit.shieldarmor && <><span class="unbold">| Shield Armor: </span>{amonUnit.shieldarmor}</>}</li>}
                 </ul>
+                </UnitContent>
             </td>
         );
     }
@@ -488,11 +650,20 @@ export class UnitStats extends preact.Component<{
     static getUpgradedUnit(unit: Unit, modifiers: UnitModifiers) {
         const upgradedUnit = JSON.parse(JSON.stringify(unit)) as Unit;
 
+        if (modifiers.commander === 'dehaka' && modifiers.unit === 'dehaka') {
+            const level = Math.max(1, Math.min(UnitStats.heroLevelLimit(modifiers), Math.trunc(modifiers.upgradeLevels.hero ?? 1)));
+            upgradedUnit.modes['']!.attributedamage!['']!.damage = (level + 1) * 10;
+            // Each level requires 15 more Essence than the previous one:
+            // 15 + 30 + ... + 15 * (level - 1). Use that minimum for the HP estimate.
+            const minimumEssence = 15 * level * (level - 1) / 2;
+            upgradedUnit.hp += minimumEssence * 0.75;
+        }
+
         // preupgrade -> mastery -> prestige -> generic upgrade -> upgrade -> post-prestige
 
         const metaUpgrades: { [upgrade: string]: [PlayerTalent, level: number | null][] } = {};
 
-        if (unit.name === 'Sky Fury') {
+        if (unit.name === 'Sky Fury' && (modifiers.upgradeLevels.rank ?? 0) >= 1) {
             delete upgradedUnit.modes['(Fighter Mode)']!.attributedamage!['Armored'];
             upgradedUnit.modes['(Fighter Mode)']!.attributedamage!['']!.damage = 21;
         }
@@ -572,10 +743,21 @@ export class UnitStats extends preact.Component<{
         }
 
         for (let upgrade of playerUpgrades as PlayerUpgrade[]) {
-            if (!modifiers.upgrades[upgrade.name]) continue;
+            const biomassUpgrade = modifiers.commander === 'abathur' && upgrade.name === 'Maximum Biomass' && levels.biomass !== undefined;
+            if (!biomassUpgrade && !modifiers.upgrades[upgrade.name]) continue;
             if (modifiers.unit !== token(upgrade.unit)) continue;
             if (modifiers.commander !== token(upgrade.commander)) continue;
             if (upgrade.upgradetype !== 'upgrade') continue;
+
+            if (biomassUpgrade && (upgrade.operation === 'multiply' || upgrade.operation === 'add')) {
+                const biomass = Math.max(0, Math.min(UnitStats.biomassLimit(modifiers), levels.biomass!));
+                const fraction = biomass / (modifiers.prestiges['The Limitless'] ? 200 : 100);
+                // The data rows describe 100 Biomass. Scale their bonus, not the
+                // entire multiplier; P1 raises capacity rather than bonus strength.
+                const value = upgrade.operation === 'multiply' ? 1 + (upgrade.value - 1) * fraction : upgrade.value * fraction;
+                this.applyUpgrade({ ...upgrade, value }, upgradedUnit);
+                continue;
+            }
 
             if (upgrade.operation !== 'replace' && upgrade.operation !== 'none' && metaUpgrades[upgrade.name]) {
                 upgrade = { ...upgrade };
@@ -655,7 +837,32 @@ export class UnitStats extends preact.Component<{
             const RG = ['aegisguard', 'blackhammer', 'emperorsshadow', 'prideofaugustgrad', 'shockdivision', 'skyfury'];
             if (RG.includes(selectedUnit)) upgradeLevels = { rank: 0 };
         }
+        if (commander === 'dehaka' && selectedUnit === 'dehaka') {
+            upgradeLevels = { hero: 1 };
+        }
+        if (commander === 'abathur' && 'Maximum Biomass' in upgrades) {
+            delete upgrades['Maximum Biomass'];
+            upgradeLevels.biomass = 0;
+            prestiges['The Limitless'] = false;
+        }
         return { commander, unit: selectedUnit, upgrades, upgradeLevels, masteries, prestiges };
+    }
+    static heroLevelLimit(modifiers: UnitModifiers): number {
+        return modifiers.prestiges['Devouring One'] ? 11 : 15;
+    }
+    static biomassLimit(modifiers: UnitModifiers): number {
+        return modifiers.prestiges['The Limitless'] ? 200 : modifiers.prestiges['Essence Hoarder'] ? 125 : 100;
+    }
+    renderLevelSlider(kind: 'hero' | 'biomass', label: string, min: number, max: number): preact.ComponentChildren {
+        const modifiers = this.props.modifiers!;
+        const id = `${kind}-${this.props.formKey}`;
+        return <fieldset class="units-masteries">
+            <legend id={`${id}-label`}>{label}</legend>
+            <span class="units-mastery-controls">
+                <input type="range" name={kind} aria-labelledby={`${id}-label`} value={modifiers.upgradeLevels[kind]} onInput={this.onChangeUnitLevel} min={min} max={max} step={1} />
+                <span class="units-mastery-value"><input type="number" name={kind} aria-labelledby={`${id}-label`} value={this.state.levelInputs?.[kind] ?? modifiers.upgradeLevels[kind]} onInput={this.onChangeUnitLevel} onBlur={() => this.setState({ levelInputs: null })} min={min} max={max} step={1} /><small class="unbold">/{max}</small></span>
+            </span>
+        </fieldset>;
     }
     renderSkills(): preact.ComponentChildren {
         const { commander, unit } = this.props.modifiers!;
@@ -677,8 +884,8 @@ export class UnitStats extends preact.Component<{
                                 {skill.icons.map(icon => <img key={icon} src={icon} alt="" width={20} height={20} />)}{' '}
                                 {skill.name}<span class="unbold">
                                     {skill.prestige && <> ({skill.prestige})</>}
-                                    {!!skill.charges && <> <span class="units-skill-cost">({skill.charges} charges)</span></>}
-                                    {skill.type === 'autocast' && <> (autocast)</>}
+                                    {!!skill.charges && <> <span class="units-skill-cost units-annotation">({skill.charges} charges)</span></>}
+                                    {skill.type === 'autocast' && <span class="units-annotation"> (autocast)</span>}
                                 </span>
                             </span>
                             {!!costs.length && <> <span class="units-skill-costs unbold">
@@ -703,15 +910,22 @@ export class UnitStats extends preact.Component<{
         const commanderSummary = commandersummaries.find(commander => commander.commander === modifiers.commander);
         const prestigeNames = [commanderSummary?.prestige1, commanderSummary?.prestige2, commanderSummary?.prestige3].map(name => name?.trim());
         const upgradeLevels = [0, 1, 2, 3, 4, 5].slice(0, modifiers.commander === 'tychus' ? 6 : 4);
+        const genericUpgrades = ([['weapon', 'Weapons'], ['armor', 'Armor'], ['shields', 'Shields']] as const)
+            .filter(([kind]) => kind in modifiers.upgradeLevels);
 
+        const unitUpgrades = (playerUpgrades as PlayerUpgrade[]).filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit);
         const upgradeData = new Map(
-            playerUpgrades.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit)
+            unitUpgrades
                 .map((u) => [u.name, { tooltip: `upgrades/${token(u.commander)}/${u.icon}`, icon: u.icon, unit: u.unit }])
         );
         const selectableUpgrades = new Set(
-            playerUpgrades.filter((u) => token(u.commander) === modifiers.commander && token(u.unit) === modifiers.unit && u.operation !== 'none')
+            unitUpgrades.filter((u) => u.operation !== 'none')
                 .map((u) => u.name)
         );
+        const temporaryUpgrades = new Set(unitUpgrades.filter(u => u.temporary).map(u => u.name));
+        const temporaryTalents = new Set((playerTalents as PlayerTalent[])
+            .filter(t => token(t.commander) === modifiers.commander && token(t.unit) === modifiers.unit && t.temporary)
+            .map(t => t.name));
         const upgradeIcon = (upgrade: string) => {
             const data = upgradeData.get(upgrade);
             const commander = modifiers.commander;
@@ -722,7 +936,9 @@ export class UnitStats extends preact.Component<{
 
         return (
             <form class="units-modifiers">
-                {!!upgrades.length && (<fieldset>
+                {'hero' in modifiers.upgradeLevels && this.renderLevelSlider('hero', 'Hero level', 1, UnitStats.heroLevelLimit(modifiers))}
+                {'biomass' in modifiers.upgradeLevels && this.renderLevelSlider('biomass', modifiers.unit === 'locust' ? 'Parent Swarm Host biomass' : 'Biomass', 0, UnitStats.biomassLimit(modifiers))}
+                {!!(upgrades.length || genericUpgrades.length) && (<fieldset>
                     <legend>Upgrades</legend>
                     {upgrades.map((upgrade) => {
                         const selectable = selectableUpgrades.has(upgrade);
@@ -730,21 +946,13 @@ export class UnitStats extends preact.Component<{
                         const iconSrc = upgradeIcon(upgrade);
                         return <div><UpgradeLabel class={selectable ? undefined : "units-upgrade-passive"} data-tooltip={upgradeData.get(upgrade)?.tooltip}>
                             <span class="units-upgrade-marker">{selectable ? <input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> : <span class="unbold" aria-hidden="true">•</span>}</span>{' '}
-                            <img key={iconSrc} src={iconSrc} alt="" width={20} height={20} /> {upgrade}
+                            <img key={iconSrc} src={iconSrc} alt="" width={20} height={20} /> {upgrade}{temporaryUpgrades.has(upgrade) && <span class="unbold units-annotation"> (temporary)</span>}
                         </UpgradeLabel></div>;
                     })}
-                </fieldset>)}
-                {'weapon' in modifiers.upgradeLevels && (<fieldset>
-                    <legend>Weapons</legend>
-                    {upgradeLevels.map(level => <label><input type="radio" name={`weapon-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.weapon === level} /> {level}</label>)}
-                </fieldset>)}
-                {'armor' in modifiers.upgradeLevels && (<fieldset>
-                    <legend>Armor</legend>
-                    {upgradeLevels.map(level => <label><input type="radio" name={`armor-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.armor === level} /> {level}</label>)}
-                </fieldset>)}
-                {'shields' in modifiers.upgradeLevels && (<fieldset>
-                    <legend>Shields</legend>
-                    {upgradeLevels.map(level => <label><input type="radio" name={`shields-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.shields === level} /> {level}</label>)}
+                    {genericUpgrades.map(([kind, title]) => <div class="units-upgrade-levels" role="radiogroup" aria-label={title}>
+                        <span class="units-upgrade-level-name">{title}</span>
+                        <span class="units-level-options">{upgradeLevels.map(level => <label><input type="radio" name={`${kind}-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels[kind] === level} /><span>{level}</span></label>)}</span>
+                    </div>)}
                 </fieldset>)}
                 {'rank' in modifiers.upgradeLevels && (<fieldset class="units-ranks">
                     <legend>Rank</legend>
@@ -767,7 +975,7 @@ export class UnitStats extends preact.Component<{
                     {masteries.map((talent) => {
                         const id = `mastery-${this.props.formKey}-${token(talent)}`;
                         return <div>
-                            <label class="units-mastery-name" id={`${id}-label`} htmlFor={id}>{talent}</label><br />
+                            <label class="units-mastery-name" id={`${id}-label`} htmlFor={id}>{talent}{temporaryTalents.has(talent) && <span class="unbold units-annotation"> (temporary)</span>}</label><br />
                             <span class="units-mastery-controls">
                                 <input type="range" name={talent} aria-labelledby={`${id}-label`} value={modifiers.masteries[talent]} onInput={this.onChangeMastery} min={0} max={30} step={1} />
                                 <span class="units-mastery-value"><input type="number" id={id} name={talent} value={this.state.masteryInputs?.[talent] ?? modifiers.masteries[talent]} onInput={this.onInputMastery} onBlur={this.onBlurMastery} min={0} max={30} step={1} /><small class="unbold">/30</small></span>
@@ -777,11 +985,21 @@ export class UnitStats extends preact.Component<{
                 </fieldset>)}
                 {!!prestiges.length && (<fieldset>
                     <legend>Prestiges</legend>
-                    {prestiges.map((talent) => <div><label><input type="checkbox" value={talent} onChange={this.onCheckPrestige} checked={modifiers.prestiges[talent]} /> P{prestigeNames.indexOf(talent) + 1}: {talent}</label></div>)}
+                    {prestiges.map((talent) => <div><label><input type="checkbox" value={talent} onChange={this.onCheckPrestige} checked={modifiers.prestiges[talent]} /> P{prestigeNames.indexOf(talent) + 1}: {talent}{temporaryTalents.has(talent) && <span class="unbold units-annotation"> (temporary)</span>}</label></div>)}
                 </fieldset>)}
             </form>
         );
     }
+    onChangeUnitLevel = (e: Event) => {
+        const target = e.target as HTMLInputElement;
+        const kind = target.name as 'hero' | 'biomass';
+        const modifiers = this.props.modifiers!;
+        const min = kind === 'hero' ? 1 : 0;
+        const max = kind === 'hero' ? UnitStats.heroLevelLimit(modifiers) : UnitStats.biomassLimit(modifiers);
+        this.setState({ levelInputs: target.type === 'number' ? { [kind]: target.value } : null });
+        const value = Math.max(min, Math.min(max, parseInt(target.value) || min));
+        this.props.onSetModifiers({ upgradeLevels: { ...modifiers.upgradeLevels, [kind]: value } });
+    };
     onCheckUpgrade = (e: Event) => {
         const target = e.target as HTMLInputElement;
         this.props.onSetModifiers({ upgrades: { ...this.props.modifiers!.upgrades, [target.value]: target.checked } });
@@ -803,8 +1021,19 @@ export class UnitStats extends preact.Component<{
     };
     onCheckPrestige = (e: Event) => {
         const target = e.target as HTMLInputElement;
-        const newPrestiges = Object.fromEntries(Object.keys(this.props.modifiers!.prestiges).map((prestige) => [prestige, false]));
-        this.props.onSetModifiers({ prestiges: { ...newPrestiges, [target.value]: target.checked } });
+        const modifiers = this.props.modifiers!;
+        const newPrestiges = Object.fromEntries(Object.keys(modifiers.prestiges).map((prestige) => [prestige, false]));
+        const prestiges = { ...newPrestiges, [target.value]: target.checked };
+        const upgradeLevels = { ...modifiers.upgradeLevels };
+        if (upgradeLevels.hero !== undefined) {
+            upgradeLevels.hero = Math.min(upgradeLevels.hero, UnitStats.heroLevelLimit({ ...modifiers, prestiges }));
+            this.setState({ levelInputs: null });
+        }
+        if (upgradeLevels.biomass !== undefined) {
+            upgradeLevels.biomass = Math.min(upgradeLevels.biomass, UnitStats.biomassLimit({ ...modifiers, prestiges }));
+            this.setState({ levelInputs: null });
+        }
+        this.props.onSetModifiers({ prestiges, upgradeLevels });
     };
     onChangeMastery = (e: Event) => {
         const target = e.target as HTMLInputElement;
@@ -890,82 +1119,46 @@ export class UnitStats extends preact.Component<{
             </ul>
         </>;
     }
-    getImageSrc(selected: Unit) {
-        const { commander, unit } = this.props.modifiers!;
+    static getImageSrc(commander: string, unit: string) {
+        commander = token(commander);
+        unit = token(unit);
         if (!commander || !unit) return null;
+        if (AMON_UNIT_TYPES.some(type => token(type) === commander)) {
+            return amonUnits.find(entry => token(entry.race) === commander && token(entry.name) === unit)?.image ?? null;
+        }
 
         if (unit.startsWith('enthralled')) {
             return `/images/comps/unitimages/${unit.slice(10)}.png`;
         }
-        if (unit === 'flamingbetty' || unit === 'blasterbilly' || unit === 'spinningdizzy' || unit === 'khaydarinmonolith' || unit === 'shieldbattery' || (commander === 'karax' && unit === 'photoncannon')) {
-            return `/images/commanderdata/guides/${commander}/${unit}.jpg`;
+        if (commander === 'karax' && unit === 'photoncannon') {
+            return `/images/commanderdata/guides/karax/photoncannon.jpg`;
         }
-        if (
-            unit === 'observer' || unit === 'broodling' || unit === 'overlord' || unit === 'overseer' ||
-            unit === 'missileturret' || unit === 'photoncannon' || (commander === 'zeratul' && unit === 'voidray') ||
-            unit === 'spinecrawler' || unit === 'sporecrawler' || unit === 'spidermine' || unit === 'bunker'
-        ) {
+        if (['observer', 'broodling', 'overlord', 'overseer', 'missileturret', 'photoncannon',
+            'spinecrawler', 'sporecrawler', 'spidermine', 'bunker'].includes(unit) ||
+            (commander === 'zeratul' && unit === 'voidray')) {
             return `/images/comps/unitimages/${unit}.png`;
         }
-
-        if (unit === 'mechaoverlord' || unit === 'mechaoverseer' || unit === 'xelnagawatcher' || unit === 'banelingspawn') {
-            return null;
-        }
-        if (unit?.startsWith('fenix')) {
+        if (unit.startsWith('fenix')) {
             return `/images/commanderdata/abilities/fenix/${unit.slice(5)}.jpg`;
         }
-        if (
-            unit === 'alarak' || unit === 'kerrigan' || unit === 'zagara' || unit === 'nova' || unit === 'zeratul' ||
-            unit === 'gary' || unit === 'supergary' || unit === 'dehaka'
-        ) {
-            return `/images/commanderdata/hero/${commander}/${unit}.jpg`;
+        // No verified whole-unit replacement for the drill has been found yet.
+        if (unit === 'drakkenlaserdrill') {
+            return `/images/commanderdata/abilities/${commander}/drakkenlaserdrillattack.png`;
         }
-        if (
-            unit === 'hyperion' || unit === 'mothership' || unit === 'destroyer' || unit === 'shadowguard' ||
-            unit === 'glevig' || unit === 'murvar' || unit === 'dakrun' || unit === 'greaterprimalwurm' ||
-            unit === 'serdath' || unit === 'telbrus' || unit === 'apocalisk' ||
-            unit === 'avatarofform' || unit === 'avatarofessence'
-        ) {
-            return `/images/commanderdata/abilities/${commander}/${unit}.jpg`;
-        }
-        const replaceAbilities: Record<string, string> = {
-            duskwings: 'bansheeairstrike.png', unboundfanatic: 'fanatic.png', ares: 'combatdrop.png',
-            holodecoy: 'holodecoy.png', aleksander: 'aleksander.png', drakkenlaserdrill: 'drakkenlaserdrillattack.png',
-            zoraya: 'zorayalegion.png', chargedcrystal: 'summonchargedcrystals.png', warhoundturret: 'deploywarhoundturret.png',
-            tesseractmonolith: 'deploytesseractmonolith.png',
-        };
-        if (unit in replaceAbilities) {
-            return `/images/commanderdata/abilities/${commander}/${replaceAbilities[unit]}`;
-        }
-        if (commander === 'zagara' && (unit === 'hunterkiller' || unit === 'roach')) {
-            const replace: Record<string, string> = {
-                hunterkiller: 'spawnhunterkillers.png', roach: 'infesteddrop.png',
-            };
-            return `/images/commanderdata/hero/${commander}/${replace[unit]}`;
-        }
-        if (commander === 'zeratul' && (unit === 'zealot' || unit === 'darkarchon')) {
-            return `/images/commanderdata/abilities/${commander}/${unit}.jpg`;
-        }
-        const replaceUnitSkills: Record<string, string> = {
-            locust: 'spawnlocusts.png', primallocust: 'spawnprimallocusts.png', explosivecreeper: 'spawnexplosivecreeper.png',
-            mechabroodling: 'readymechabroodling.png', mecharoach: 'roachesaway.png', railgunturret: 'buildrailgunturret.png',
-        };
-        if (unit in replaceUnitSkills) {
-            return `/images/commanderdata/unitskills/${commander}/${replaceUnitSkills[unit]}`;
-        }
-        const replaceUnitUpgrades: Record<string, string> = {
-            hangarbay: 'installdronehangar.png', mecharavager: 'bonusravager.png',
-        };
-        if (unit in replaceUnitUpgrades) {
-            return `/images/commanderdata/unitupgrades/${commander}/${replaceUnitUpgrades[unit]}`;
-        }
-        if (unit === 'flyingbroodling') {
-            return `/images/commanderdata/unitskills/stukov/spawnbroodlings.png`;
+        if (commander === 'zeratul' && ['zealot', 'darkarchon'].includes(unit)) {
+            return `/images/commanderdata/abilities/zeratul/${unit}.jpg`;
         }
 
-        const replaceUnit: Record<string, string> = { infestedtrooper: 'infestedmarine' };
-        if (selected.tags.includes("Structure")) return null;
-        return `/images/commanderdata/units/${commander}/${replaceUnit[unit] || unit}.jpg`;
+        const portraitFolders: Record<string, readonly string[]> = {
+            guides: ['flamingbetty', 'blasterbilly', 'spinningdizzy', 'khaydarinmonolith', 'shieldbattery'],
+            hero: ['alarak', 'kerrigan', 'zagara', 'nova', 'zeratul', 'gary', 'supergary', 'dehaka'],
+            abilities: ['hyperion', 'mothership', 'destroyer', 'shadowguard', 'glevig', 'murvar', 'dakrun',
+                'greaterprimalwurm', 'serdath', 'telbrus', 'apocalisk', 'avatarofform', 'avatarofessence'],
+        };
+        for (const [folder, units] of Object.entries(portraitFolders)) {
+            if (units.includes(unit)) return `/images/commanderdata/${folder}/${commander}/${unit}.jpg`;
+        }
+        return `/images/commanderdata/units/${commander}/${unit === 'infestedtrooper' ? 'infestedmarine' : unit}.jpg`;
     }
     override render() {
         const modifiers = this.props.modifiers;
@@ -980,10 +1173,11 @@ export class UnitStats extends preact.Component<{
         }
         const unit = UnitStats.getUpgradedUnit(baseUnit, modifiers);
         const race = token(unit.race);
-        const imageSrc = this.getImageSrc(unit);
+        const imageSrc = UnitStats.getImageSrc(modifiers.commander, modifiers.unit);
 
         return (
             <td class="units-unit">
+                <UnitContent selection={`${modifiers.commander}/${modifiers.unit}`}>
                 <div class={`units-actions${this.props.onClickCompare ? " units-actions-compare" : ""}`}>
                     {this.props.onClickClose && <button type="button" onClick={this.props.onClickClose} aria-label="Close comparison">&times;</button>}
                     {this.props.onClickCompare && <button type="button" onClick={this.props.onClickCompare}>Compare →</button>}
@@ -1005,8 +1199,8 @@ export class UnitStats extends preact.Component<{
                 </div>
                 <ul class="units-stats">
                     <li class="units-hp">
-                        <span class="unbold">HP:</span> {this.renderValue(unit.hp, baseUnit.hp)}
-                        {!!unit.armor && <> <span class="unbold">| Armor:</span> {this.renderValue(unit.armor, baseUnit.armor)}</>}
+                        <span class="unbold">HP:</span> {this.renderValue(unit.hp, baseUnit.hp)}{modifiers.commander === 'dehaka' && modifiers.unit === 'dehaka' && '+'}
+                        {(!!unit.armor || !!baseUnit.armor) && <> <span class="unbold">| Armor:</span> {this.renderValue(unit.armor, baseUnit.armor)}</>}
                     </li>
                     {!!unit.shields && <li class="units-shields">
                         <span class="unbold">Shields:</span> {this.renderValue(unit.shields, baseUnit.shields)}
@@ -1020,6 +1214,7 @@ export class UnitStats extends preact.Component<{
                 {this.renderSkills()}
                 {unit.notes && <p><span class="unbold">Notes:</span><br />{unit.notes.split("<br>").map((note) => <div>{note}</div>)}</p>}
                 {this.renderUpgrades()}
+                </UnitContent>
             </td>
         );
     }

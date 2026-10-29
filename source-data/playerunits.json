@@ -961,7 +961,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": "Psionic Storm: Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units."
+    "notes": ""
   },
   {
     "unitid": 33,
@@ -1357,7 +1357,7 @@
     "armorbonus": 0,
     "shieldbonus": 0,
     "aoe": "During Overpowered (commander level 11), attacks during Empower Me cleave ground enemies in a 180-degree arc of radius 2. Cleave deals 30 base damage, increased by Alarak Attack Damage mastery and Empower Me.",
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:00."
   },
   {
     "unitid": 46,
@@ -1387,7 +1387,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": 0,
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:00."
   },
   {
     "unitid": 47,
@@ -2445,7 +2445,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 82,
@@ -2475,7 +2475,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 83,
@@ -2505,7 +2505,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 84,
@@ -2535,7 +2535,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 85,
@@ -2565,7 +2565,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 86,
@@ -2595,7 +2595,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": "",
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced.",
     "aoe": "Two sweeping beams perpendicular to the attack direction, extending 2.5 to each side of the target. Each beam hits in circles of radius 0.3 along its path (0.6 wide)."
   },
   {
@@ -2626,7 +2626,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 88,
@@ -2656,7 +2656,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 89,
@@ -2686,7 +2686,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 90,
@@ -2716,7 +2716,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 91,
@@ -2746,7 +2746,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": "Clolarion has 8 Interceptors and 2 Interdictors."
+    "notes": "Clolarion has 8 Interceptors and 2 Interdictors. Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 92,
@@ -2777,7 +2777,7 @@
     "armorbonus": 1,
     "shieldbonus": 1,
     "aoe": "Each Interdictor bomb deals full damage to ground enemies within radius 0.5 of its impact.",
-    "notes": "Clolarion has 8 Interceptors and 2 Interdictors."
+    "notes": "Clolarion has 8 Interceptors and 2 Interdictors. Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 93,
@@ -2807,7 +2807,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": "Clolarion has 8 Interceptors and 2 Interdictors."
+    "notes": "Clolarion has 8 Interceptors and 2 Interdictors. Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 94,
@@ -2837,7 +2837,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": "Clolarion has 8 Interceptors and 2 Interdictors."
+    "notes": "Clolarion has 8 Interceptors and 2 Interdictors. Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 95,
@@ -2867,7 +2867,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": 0,
-    "notes": ""
+    "notes": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown."
   },
   {
     "unitid": 96,
@@ -2897,7 +2897,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": 0,
-    "notes": ""
+    "notes": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown."
   },
   {
     "unitid": 97,
@@ -2927,7 +2927,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": 0,
-    "notes": ""
+    "notes": "Available at 4:00. A destroyed suit takes 3:00 to recover; other suits remain available. Normal suit switching has a 0:15 cooldown."
   },
   {
     "unitid": 98,
@@ -3985,7 +3985,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:00."
   },
   {
     "unitid": 133,
@@ -4622,7 +4622,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:30; Instant Regeneration can revive her immediately for minerals."
   },
   {
     "unitid": 154,
@@ -4653,7 +4653,7 @@
     "armorbonus": 0,
     "shieldbonus": null,
     "aoe": "Shotgun attacks deal full damage to ground enemies in a circle of radius 1.5 around the target.",
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:30; Instant Regeneration can revive her immediately for minerals."
   },
   {
     "unitid": 155,
@@ -4684,7 +4684,7 @@
     "armorbonus": 0,
     "shieldbonus": null,
     "aoe": "Shotgun attacks deal full damage to ground enemies in a circle of radius 1.5 around the target.",
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:30; Instant Regeneration can revive her immediately for minerals."
   },
   {
     "unitid": 156,
@@ -6595,7 +6595,7 @@
     "hpbonus": 60.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Spawns at 3:00. Revived at Joeyray's Bar in 0:25 for 250 minerals. Calling down the Odin also revives Tychus, except with Dutiful Dogwalker (P3)."
   },
   {
     "unitid": 219,
@@ -6625,7 +6625,7 @@
     "hpbonus": 37.50,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 220,
@@ -6655,7 +6655,7 @@
     "hpbonus": 65.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 221,
@@ -6686,7 +6686,7 @@
     "hpbonus": 100.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 222,
@@ -6717,7 +6717,7 @@
     "hpbonus": 100.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 223,
@@ -6747,7 +6747,7 @@
     "hpbonus": 100.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 224,
@@ -6777,7 +6777,7 @@
     "hpbonus": 50.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 225,
@@ -6807,7 +6807,7 @@
     "hpbonus": 50.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 226,
@@ -6837,7 +6837,7 @@
     "hpbonus": 50.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 227,
@@ -6867,7 +6867,7 @@
     "hpbonus": 45.00,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 228,
@@ -7684,7 +7684,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:00."
   },
   {
     "unitid": 255,
@@ -8317,7 +8317,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:00."
   },
   {
     "unitid": 276,
@@ -8347,7 +8347,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:00."
   },
   {
     "unitid": 277,
@@ -10062,7 +10062,7 @@
     "hpbonus": 62.50,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 334,
@@ -10092,7 +10092,7 @@
     "hpbonus": 62.50,
     "armorbonus": 1,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals."
   },
   {
     "unitid": 335,
@@ -11032,7 +11032,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Spawns at 4:00. Respawns in 1:00."
   },
   {
     "unitid": 366,
@@ -11062,7 +11062,7 @@
     "hpbonus": 0.00,
     "armorbonus": 0,
     "shieldbonus": null,
-    "notes": ""
+    "notes": "Gary spawns at 4:00 and must be upgraded to Super Gary. Respawns in 1:00."
   },
   {
     "unitid": 367,
@@ -12669,7 +12669,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 420,
@@ -12699,7 +12699,7 @@
     "hpbonus": 0.00,
     "armorbonus": 1,
     "shieldbonus": 1,
-    "notes": ""
+    "notes": "Automatically spawns into any available host shell after being researched. On death, transfers into any available host shell. If none are available, spawns into the next host shell produced."
   },
   {
     "unitid": 421,
@@ -12852,5 +12852,35 @@
     "armorbonus": 1,
     "shieldbonus": null,
     "notes": ""
+  },
+  {
+    "unitid": 426,
+    "basename": "Dehaka",
+    "name": "Dehaka",
+    "commander": "Dehaka",
+    "race": "Zerg",
+    "combatunit": 1,
+    "mcost": 0,
+    "vcost": 0,
+    "supply": 0,
+    "buildtime": 0,
+    "hp": 600,
+    "shields": 0,
+    "armor": 1,
+    "shieldarmor": 0,
+    "energy": 0,
+    "movementspeed": 3,
+    "sightrange": 10,
+    "tags": "Biological,Heroic",
+    "atkrange": 1,
+    "attackspeed": 2,
+    "attacks": 1,
+    "attribute": null,
+    "damage": 20,
+    "attackbonus": 0,
+    "hpbonus": 0,
+    "armorbonus": 0,
+    "shieldbonus": null,
+    "notes": "HP scales with essence, even past level cap (HP shown is the minimum for the level). Spawns at 1:00. Respawns in 1:30; consuming Primal Drones shortens the respawn timer."
   }
 ]

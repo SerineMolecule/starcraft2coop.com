@@ -17,6 +17,10 @@
                 "name": {
                     "type": "string"
                 },
+                "image": {
+                    "type": "string",
+                    "description": "Site-relative portrait URL; omit when no suitable image is available."
+                },
                 "race": {
                     "type": "string"
                 },

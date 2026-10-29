@@ -17,7 +17,8 @@
     <link rel="canonical" href="https://starcraft2coop.com/units/">
     <style>
         #content {
-            max-width: 1180px;
+            /* Fit both 360px cards, navigation, padding, borders, and column gaps. */
+            max-width: 1185px;
         }
         #content .units {
             font-size: 16px;
@@ -78,6 +79,17 @@
         .units-commander-selector a {
             margin-right: -3px;
         }
+        .units-commander-selector a:has(img) {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            padding-left: 0;
+        }
+        .units-commander-selector a img {
+            flex: none;
+            margin-block: -1px;
+            object-fit: contain;
+        }
         .units-unit-selector a {
             margin-right: -13px;
         }
@@ -118,6 +130,7 @@
         }
         .units-unit {
             position: relative;
+            scroll-margin: 24px 10px;
             padding: 10px;
             width: 360px;
             min-width: 280px;
@@ -126,6 +139,16 @@
         }
         .units-unit + .units-unit {
             border-color: #53578a;
+        }
+        .units-unit-content {
+            position: relative;
+            display: flow-root;
+        }
+        @media (min-width: 701px) {
+            .units-unit-content {
+                position: sticky;
+                top: 22px;
+            }
         }
         .units-portrait {
             background: black;
@@ -155,13 +178,13 @@
         }
         .units-actions {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 0;
+            right: 0;
             z-index: 2;
         }
         .units-actions-compare {
-            top: -16px;
-            right: -11px;
+            top: -26px;
+            right: -21px;
         }
         .units-actions:not(.units-actions-compare) + .units-name {
             /* Leave room for the close button without lowering the name. */
@@ -244,6 +267,27 @@
             padding: 2px 2px 4px;
             color: #a2a5d4;
         }
+        .units-upgrade-levels {
+            white-space: nowrap;
+        }
+        .units-upgrade-level-name {
+            display: inline-block;
+            width: 4.5em;
+            padding-left: 4px;
+            padding-right: 2px;
+        }
+        .units-level-options {
+            display: inline-flex;
+            gap: 7px;
+        }
+        .units-level-options label {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+        }
+        .units-level-options input {
+            margin: 0;
+        }
         .units-upgrade-passive {
             cursor: help;
             white-space: nowrap;
@@ -266,6 +310,9 @@
         }
         .units-skill-cost {
             white-space: nowrap;
+        }
+        .units-annotation {
+            font-size: 14px;
         }
         .units-skills li + li {
             margin-top: 3px;
@@ -291,6 +338,12 @@
         }
         .units-mastery-name {
             padding-left: 4px;
+        }
+        .units-settings {
+            font-size: 16px;
+        }
+        .units-settings label {
+            display: block;
         }
         .units-mastery-controls {
             display: flex;
@@ -466,12 +519,12 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         }
     })(jQuery);
 </script>
-<script src="/scripts/search.js?v=e23a58" defer></script>
+<script src="/scripts/search.js?v=3ca59f" defer></script>
 <div id="content">
         <h1>Units</h1>
     <div id="units"></div>
-    <script src="/scripts/units.js?v=b7cdeb?v2.1" defer></script>
-    <script src="/scripts/tooltips.js?v=da75e1" defer></script>
+    <script src="/scripts/units.js?v=8abc7c?v2.1" defer></script>
+    <script src="/scripts/tooltips.js?v=e45a34" defer></script>
 
     <h3>Notes about the data</h3>
     <ul>
@@ -479,7 +532,7 @@ if (document.location.host === 'dev.starcraft2coop.com') {
         <li>All evolutions (e.g. Abathur's Devourer, Dehaka's Primal Combat units) build times only includes the evolution time, and not the build time of the parent units.</li>
         <li>Any units with charge-based production (e.g. Artanis) uses the charge cooldown time as the build time. For Stukov, the unit's build time is displayed, and not the charge time.</li>
         <li>For multiple-spawned units (e.g. Zerglings), resource costs are divided by the number of units spawned.</li>
-        <li>For buffs that have multiple stacks (e.g. Biomass), the maximum buff value will be calculated.</li>
+        <li>Biomass uses the selected amount. Other buffs with multiple stacks use their maximum value.</li>
         <li>Upgrades that do not change the displayed unit stats are listed without a checkbox.</li>
         <li>Since numbers are calculated, there may be small rounding errors.</li>
     </ul>

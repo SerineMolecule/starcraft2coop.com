@@ -502,7 +502,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 <td>50</td>
             </tr>
             <tr>
-                <td><img src="/images/commanderdata/hero/nova/sabotagedrone.png" alt = "Sabotage Drone"></td>
+                <td><img src="/images/commanderdata/hero/nova/sabotagedrone-framed.png" alt = "Sabotage Drone"></td>
                 <td>Sabotage Drone</td>
                 <td>Deploys an undetectable explosive drone that deals 200 damage (400 vs Structure) to enemy ground units in the target area.</td>
                 <td>45 seconds</td>
@@ -1134,14 +1134,14 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="/images/commanderdata/unitskills/nova/buildrailgunturret.png" alt="Build Railgun Turret"></td>
+                        <td><img src="/images/commanderdata/unitskills/nova/buildrailgunturret-framed.png" alt="Build Railgun Turret"></td>
                         <td>Build Railgun Turret</td>
                         <td>Automated defensive turret. Damages all enemy ground units in a straight line. Lasts for 60 seconds.<br><br>Can attack ground units.</td>
                         <td>30 seconds</td>
                         <td>0</td>
                     </tr>
                     <tr class="autocast">
-                        <td><img src="/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone.png" alt="Deploy Bio-Mechanical Repair Drone"></td>
+                        <td><img src="/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone-framed.png" alt="Deploy Bio-Mechanical Repair Drone"></td>
                         <td>Deploy Bio-Mechanical Repair Drone</td>
                         <td>Heals nearby biological and mechanical units. Lasts for 30 seconds.</td>
                         <td>60 seconds</td>

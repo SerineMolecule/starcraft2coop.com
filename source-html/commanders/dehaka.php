@@ -1095,7 +1095,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr class="autocast">
-                        <td><img src="/images/commanderdata/unitskills/dehaka/spawnprimallocusts.png" alt="Spawn Primal Locusts"></td>
+                        <td><img src="/images/commanderdata/unitskills/dehaka/spawnprimallocusts-framed.png" alt="Spawn Primal Locusts"></td>
                         <td>Spawn Primal Locusts</td>
                         <td>Siege unit that attacks by spawning Primal Locusts. Primal Locusts last 25 seconds.<br><br>Primal Locusts can attack ground units.</td>
                         <td>30 seconds</td>
@@ -1137,7 +1137,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr class="autocast">
-                        <td><img src="/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper.png" alt="Spawn Explosive Creeper"></td>
+                        <td><img src="/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper-framed.png" alt="Spawn Explosive Creeper"></td>
                         <td>Spawn Explosive Creeper</td>
                         <td>Siege unit that attacks by spawning Explosive Creepers. Creepers last 25 seconds.<br><br>Creepers can attack ground units.</td>
                         <td>30 seconds</td>

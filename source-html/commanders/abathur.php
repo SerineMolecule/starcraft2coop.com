@@ -619,7 +619,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr class="autocast">
-                        <td><img src="/images/commanderdata/unitskills/abathur/spawnlocusts.png" alt="Spawn Locusts"></td>
+                        <td><img src="/images/commanderdata/unitskills/abathur/spawnlocusts-framed.png" alt="Spawn Locusts"></td>
                         <td>Spawn Locusts</td>
                         <td>Sends Locusts to target location.</td>
                         <td>15s</td>
@@ -923,7 +923,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="/images/commanderdata/unitskills/abathur/spawncreeptumor.png" alt="Spawn Creep Tumor"></td>
+                        <td><img src="/images/commanderdata/unitskills/abathur/spawncreeptumor-framed.png" alt="Spawn Creep Tumor"></td>
                         <td>Spawn Creep Tumor</td>
                         <td>A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.<br><br>Bonus: Zerg move faster on creep.</td>
                         <td>3s</td>
