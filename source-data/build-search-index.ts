@@ -29,11 +29,11 @@ function token(text: string): string {
     if (text === 'Dom. Flame Trooper') return 'dominionflametrooper';
     if (text === 'Dom. Rocket Trooper') return 'dominionrockettrooper';
     if (text === 'Tychus Findlay') return 'tychus';
-    if (text === 'James Sirius Sykes') return 'sirius';
-    if (text === 'Miles Blaze Lewis') return 'blaze';
-    if (text === 'Rob Cannonball Boswell') return 'cannonball';
-    if (text === 'Lt Layna Nikara') return 'nikara';
-    if (text === 'Kev Rattlesnake West') return 'rattlesnake';
+    if (text === "James \"Sirius\" Sykes" || text === "James Sirius Sykes") return 'sirius';
+    if (text === "Miles \"Blaze\" Lewis" || text === "Miles Blaze Lewis") return 'blaze';
+    if (text === "Rob \"Cannonball\" Boswell" || text === "Rob Cannonball Boswell") return 'cannonball';
+    if (text === "Lt. Layna Nikara" || text === "Lt Layna Nikara") return 'nikara';
+    if (text === "Kev \"Rattlesnake\" West" || text === "Kev Rattlesnake West") return 'rattlesnake';
     if (text === 'Lock and Load') return 'lockload';
     if (text === 'Part and Parcel') return 'partparcel';
 
@@ -185,17 +185,17 @@ function addPrestiges(documents: SearchDocument[], commanders: CommanderList): v
 function addPlayerUnits(documents: SearchDocument[], playerUnits: PlayerUnitList): void {
     const seen = new Set<string>();
     for (const unit of playerUnits) {
-        const key = `${token(unit.commander)}/${token(unit.basename)}`;
+        const key = `${token(unit.commander)}/${token(unit.name)}`;
         if (seen.has(key)) continue;
         seen.add(key);
         addDocument(documents, {
             type: 'playerunit',
-            title: unit.basename,
+            title: unit.name,
             subtitle: `${unit.commander} ${unit.tags.includes('Structure') ? 'structure' : 'unit'}`,
             commander: unit.commander,
             path: `units/#${key}`,
             text: unit.notes,
-            tokens: [unit.race, unit.tags, unit.combatunit ? 'combat unit' : 'structure'],
+            tokens: [unit.race, ...unit.tags, unit.combatunit ? 'combat unit' : 'structure'],
         });
     }
 }
@@ -206,21 +206,11 @@ function addAmonUnits(documents: SearchDocument[], amonUnits: AmonUnitList): voi
         const key = `${token(unit.race)}/${token(unit.name)}`;
         if (seen.has(key)) continue;
         seen.add(key);
-        const tags = [
-            unit.light ? 'Light' : '',
-            unit.armored ? 'Armored' : '',
-            unit.biological ? 'Biological' : '',
-            unit.mechanical ? 'Mechanical' : '',
-            unit.psionic ? 'Psionic' : '',
-            unit.heroic ? 'Heroic' : '',
-            unit.massive ? 'Massive' : '',
-            unit.structure ? 'Structure' : '',
-            unit.flyer ? 'Flyer' : '',
-        ].filter(Boolean);
+        const tags = [...unit.tags, ...(unit.movement === 'Air' ? ['Flyer'] : [])];
         addDocument(documents, {
             type: 'amonunit',
             title: unit.name,
-            subtitle: `Amon ${unit.race} ${unit.structure ? 'structure' : 'unit'}`,
+            subtitle: `Amon ${unit.race} ${unit.tags.includes('Structure') ? 'structure' : 'unit'}`,
             path: `units/#${key}`,
             text: tags.join(' '),
             tokens: [`${unit.amonid}`, unit.race, ...tags],

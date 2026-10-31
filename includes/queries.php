@@ -136,7 +136,7 @@ function get_currentmutationcycle(): array
  */
 function get_amonunits(): array
 {
-    $json = file_get_contents(__DIR__ . '/../html/data/amonunits.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/legacy/amonunits.json');
     return json_decode($json, true);
 }
 
@@ -145,7 +145,7 @@ function get_amonunits(): array
  */
 function get_playerunits(): array
 {
-    $json = file_get_contents(__DIR__ . '/../html/data/playerunits.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/legacy/playerunits.json');
     return json_decode($json, true);
 }
 
@@ -154,7 +154,7 @@ function get_playerunits(): array
  */
 function get_playerupgrades(): array
 {
-    $json = file_get_contents(__DIR__ . '/../html/data/playerupgrades.json');
+    $json = file_get_contents(__DIR__ . '/../html/data/legacy/playerupgrades.json');
     return json_decode($json, true);
 }
 

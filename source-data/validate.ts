@@ -7,6 +7,8 @@ import type {
     MutatorInteractionList,
     MutatorList,
     PlayerUnitList,
+    PlayerUpgradeList,
+    AmonUnitList,
     WeeklyMutationList,
 } from './data-types';
 
@@ -27,7 +29,8 @@ const files: [`${string}.json`, string][] = [
     ['mutatorcommandertips.json', 'MutatorCommanderTipList'],
 ];
 
-const ajv = new Ajv();
+// Ajv's short-circuit required check skips empty-string keys; allErrors checks them correctly.
+const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 for (const [file, type] of files) {
     const fileContent = await Bun.file(`source-data/${file}`).json();
 
@@ -126,21 +129,37 @@ for (const [i, entry] of mutatorCommanderTips.entries()) {
     validateMutatorReference(entry.mutator, `mutatorcommandertips.json[${i}].mutator`);
 }
 
-// amonunits in order // <- missing 155
-// const amonunits: AmonUnitList = await Bun.file('source-data/amonunits.json').json();
-// for (const [i, entry] of amonunits.entries()) {
-//     if (entry.amonid !== i + 1) {
-//         console.error(`amonunits.json[${i}]: id (${entry.amonid}) must be equal to ${i + 1}`);
-//         process.exit(1);
-//     }
-// }
-
-// playerunits in order
+// Stable IDs may have gaps after consolidating old weapon/attribute rows.
 const playerunits: PlayerUnitList = await Bun.file('source-data/playerunits.json').json();
-for (const [i, entry] of playerunits.entries()) {
-    if (entry.unitid !== i + 1) {
-        console.error(`playerunits.json[${i}]: id (${entry.unitid}) must be equal to ${i + 1}`);
-        process.exit(1);
+const amonunits: AmonUnitList = await Bun.file('source-data/amonunits.json').json();
+function unique(values: unknown[], location: string): void {
+    if (new Set(values).size !== values.length) throw new Error(`${location}: duplicate identities`);
+}
+unique(playerunits.map(unit => unit.unitid), 'playerunits.unitid');
+unique(playerunits.map(unit => `${unit.commander}/${unit.name}`), 'playerunits');
+unique(amonunits.map(unit => unit.amonid), 'amonunits.amonid');
+for (const unit of [...playerunits, ...amonunits]) {
+    unique(unit.tags, `${unit.name}.tags`);
+    if (!Object.keys(unit.modes).length) throw new Error(`${unit.name}: missing default or named modes`);
+    for (const [id, mode] of Object.entries(unit.modes)) {
+        if (mode.tags) unique(mode.tags, `${unit.name}/${id}.tags`);
+        if (mode.damage && !Object.hasOwn(mode.damage, '')) throw new Error(`${unit.name}/${id}: missing default damage`);
+        if (mode.damage && !mode.kind && [mode.hits, mode.cooldown, mode.range].some(value => value === undefined)) {
+            throw new Error(`${unit.name}/${id}: incomplete ordinary weapon`);
+        }
+    }
+}
+
+const playerupgrades: PlayerUpgradeList = await Bun.file('source-data/playerupgrades.json').json();
+for (const upgrade of playerupgrades) {
+    for (const mode of upgrade.unlocksModes ?? []) {
+        const unit = playerunits.find(unit => unit.commander === upgrade.commander && unit.name === upgrade.unit);
+        if (!unit || !Object.hasOwn(unit.modes, mode)) throw new Error(`${upgrade.commander}/${upgrade.unit}/${upgrade.name}: unknown unlocked mode ${mode}`);
+    }
+    if (upgrade.weapon === undefined) continue;
+    const unit = playerunits.find(unit => unit.commander === upgrade.commander && unit.name === upgrade.unit);
+    if ((!unit || !Object.hasOwn(unit.modes, upgrade.weapon)) || upgrade.modifiermode) {
+        throw new Error(`${upgrade.commander}/${upgrade.unit}/${upgrade.name}: invalid or ambiguous weapon selector`);
     }
 }
 

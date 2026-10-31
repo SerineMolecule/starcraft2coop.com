@@ -14,11 +14,12 @@
                 "unitid": {
                     "$ref": "#/definitions/PositiveInteger"
                 },
-                "basename": {
-                    "type": "string"
-                },
                 "name": {
                     "type": "string"
+                },
+                "hideFromUnitList": {
+                    "type": "boolean",
+                    "description": "Keep existing direct links and legacy data, but omit this entry from the new Units selector."
                 },
                 "commander": {
                     "type": "string"
@@ -40,6 +41,10 @@
                 },
                 "buildtime": {
                     "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "buildTimeIsAdditional": {
+                    "type": "boolean",
+                    "description": "This is only the morph/merge time after obtaining the parent unit(s). Display it with a leading +."
                 },
                 "hp": {
                     "$ref": "#/definitions/NonNegativeInteger"
@@ -63,33 +68,34 @@
                     "type": "number"
                 },
                 "tags": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/UnitTag"
+                    }
                 },
-                "atkrange": {
-                    "type": "number"
-                },
-                "attackspeed": {
-                    "type": "number"
-                },
-                "attacks": {
-                    "$ref": "#/definitions/NonNegativeInteger"
-                },
-                "attribute": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "Tags that this unit deals bonus damage to"
-                },
-                "damage": {
-                    "$ref": "#/definitions/NonNegativeInteger"
-                },
-                "aoe": {
+                "movement": {
                     "type": "string",
-                    "description": "Text description of weapon area-of-effect"
+                    "enum": [
+                        "Ground",
+                        "Air"
+                    ],
+                    "description": "Movement plane, when established by the source data."
                 },
-                "attackbonus": {
-                    "$ref": "#/definitions/NonNegativeInteger"
+                "targetable": {
+                    "type": "string",
+                    "enum": [
+                        "Ground",
+                        "Air",
+                        "Ground,Air"
+                    ],
+                    "description": "Incoming weapon target planes when different from movement (e.g. Colossus)."
+                },
+                "modes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/UnitModeData"
+                    },
+                    "description": "Stable mode/attack keys; the empty key is the default."
                 },
                 "hpbonus": {
                     "type": "number"
@@ -104,12 +110,12 @@
                     ]
                 },
                 "notes": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unit-wide mechanics; attack-specific details belong in modes."
                 }
             },
             "required": [
                 "unitid",
-                "basename",
                 "name",
                 "commander",
                 "race",
@@ -126,12 +132,7 @@
                 "movementspeed",
                 "sightrange",
                 "tags",
-                "atkrange",
-                "attackspeed",
-                "attacks",
-                "attribute",
-                "damage",
-                "attackbonus",
+                "modes",
                 "hpbonus",
                 "armorbonus",
                 "shieldbonus",
@@ -153,6 +154,245 @@
         "NonNegativeInteger": {
             "type": "integer",
             "minimum": 0
+        },
+        "UnitTag": {
+            "type": "string",
+            "enum": [
+                "Light",
+                "Armored",
+                "Biological",
+                "Mechanical",
+                "Psionic",
+                "Heroic",
+                "Massive",
+                "Structure"
+            ]
+        },
+        "UnitModeData": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Display label, e.g. Air or Siege Mode. Omit for the default attack."
+                },
+                "weaponName": {
+                    "type": "string"
+                },
+                "targets": {
+                    "type": "string",
+                    "enum": [
+                        "Ground",
+                        "Air",
+                        "Ground,Air"
+                    ],
+                    "description": "Omitted when the existing data has not established its target planes."
+                },
+                "kind": {
+                    "type": "string",
+                    "enum": [
+                        "ability",
+                        "spawn"
+                    ],
+                    "description": "Omitted for ordinary weapons. Ability/spawn entries may have incomplete numeric data."
+                },
+                "damage": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Light": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "Armored": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "Biological": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "Mechanical": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "Psionic": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "Heroic": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "Massive": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "Structure": {
+                            "$ref": "#/definitions/TargetDamage"
+                        },
+                        "": {
+                            "$ref": "#/definitions/TargetDamage"
+                        }
+                    },
+                    "required": [
+                        ""
+                    ],
+                    "description": "Target-specific totals; the empty key is the default. Omit when unarmed or unknown."
+                },
+                "hits": {
+                    "$ref": "#/definitions/PositiveInteger"
+                },
+                "cooldown": {
+                    "type": "number",
+                    "description": "Time between attacks in game seconds; channeling or scripted orders can delay attacks."
+                },
+                "tickInterval": {
+                    "type": "number",
+                    "description": "Game seconds between damage ticks in a persistent area, separate from attack cooldown. Damage is per tick, not per weapon volley."
+                },
+                "range": {
+                    "type": "number"
+                },
+                "minimumRange": {
+                    "type": "number"
+                },
+                "upgradeLevel": {
+                    "type": "number",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "description": "Default weapon upgrade level, e.g. Amon's Brutal +1. Omitted means 0; damage is always stored at level 0."
+                },
+                "aoe": {
+                    "type": "string"
+                },
+                "shieldDamage": {
+                    "type": "number"
+                },
+                "ignoresArmor": {
+                    "type": "boolean"
+                },
+                "targetFilters": {
+                    "type": "string",
+                    "description": "Catalog filters preserve restrictions beyond air/ground, e.g. structures."
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "Details specific to this attack or form, excluding facts already in its stats or AoE."
+                },
+                "source": {
+                    "type": "object",
+                    "properties": {
+                        "unit": {
+                            "type": "string"
+                        },
+                        "weapon": {
+                            "type": "string"
+                        },
+                        "ability": {
+                            "type": "string"
+                        },
+                        "effect": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "unit",
+                        "effect"
+                    ],
+                    "additionalProperties": false,
+                    "description": "SC2Mapster catalog IDs, including the actual projectile unit if applicable."
+                },
+                "hp": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "shields": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "armor": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "shieldarmor": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "buildtime": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "movementspeed": {
+                    "type": "number"
+                },
+                "sightrange": {
+                    "type": "number"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/UnitTag"
+                    }
+                },
+                "movement": {
+                    "type": "string",
+                    "enum": [
+                        "Ground",
+                        "Air"
+                    ]
+                },
+                "targetable": {
+                    "type": "string",
+                    "enum": [
+                        "Ground",
+                        "Air",
+                        "Ground,Air"
+                    ],
+                    "description": "Incoming weapon target planes. Inherits the unit override, otherwise defaults to movement."
+                },
+                "statsource": {
+                    "$ref": "#/definitions/UnitStatSource"
+                }
+            },
+            "additionalProperties": false,
+            "description": "An attack, alternative form, or deployed subunit. Mode-specific stats override the unit's stats; omitted stats inherit from the unit. Unarmed forms omit attack fields, and unknown ability damage is omitted rather than guessed."
+        },
+        "TargetDamage": {
+            "type": "object",
+            "properties": {
+                "damage": {
+                    "type": "number",
+                    "description": "Total damage at weapon upgrade level 0, including any attribute bonus."
+                },
+                "damagePerUpgrade": {
+                    "type": "number",
+                    "description": "Total additional damage per weapon upgrade level against this target type."
+                }
+            },
+            "required": [
+                "damage",
+                "damagePerUpgrade"
+            ],
+            "additionalProperties": false,
+            "description": "Damage per hit (or tick) against one target type, before armor."
+        },
+        "UnitStatSource": {
+            "type": "object",
+            "properties": {
+                "unit": {
+                    "type": "string"
+                },
+                "mover": {
+                    "type": "string",
+                    "description": "Missile mover, when applicable."
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "Mission-script overrides and other exceptions to catalog stats."
+                },
+                "urls": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Sources documenting those overrides and exceptions."
+                }
+            },
+            "required": [
+                "unit"
+            ],
+            "additionalProperties": false,
+            "description": "Catalog identity and exceptions used to obtain movement speed and sight range. The catalog import uses SC2Mapster/SC2GameData at: https://github.com/SC2Mapster/SC2GameData/tree/6dd323aae4209a01f110719a00b4e8f7a88389bc"
         }
     }
 }

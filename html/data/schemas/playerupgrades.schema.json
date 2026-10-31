@@ -54,6 +54,18 @@
                             "type": "boolean",
                             "description": "Applies an active temporary effect rather than permanent research. Omitted means false."
                         },
+                        "cost": {
+                            "$ref": "#/definitions/ResourceCost",
+                            "description": "Purchase/research cost before optional mastery or prestige modifiers. Omit for free unlocks and effects without a purchase."
+                        },
+                        "researchTime": {
+                            "$ref": "#/definitions/NonNegativeInteger",
+                            "description": "Base research duration in game seconds. Omit for instant purchases and non-researched unlocks."
+                        },
+                        "buildTimeIsAdditional": {
+                            "type": "boolean",
+                            "description": "Selecting this upgrade makes the unit's displayed build time an additional installation/morph time."
+                        },
                         "rank": {
                             "type": "number",
                             "enum": [
@@ -66,12 +78,93 @@
                         "effect": {
                             "type": "string"
                         },
+                        "skillModifiers": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "skill": {
+                                                "type": "string"
+                                            },
+                                            "skillMode": {
+                                                "type": "string"
+                                            },
+                                            "modifier": {
+                                                "type": "string",
+                                                "pattern": "^(cooldown|initialCooldown|energycost|charges|values\\..+)$"
+                                            },
+                                            "operation": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "add",
+                                                    "multiply",
+                                                    "set"
+                                                ]
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "modifier",
+                                            "operation",
+                                            "skill",
+                                            "value"
+                                        ]
+                                    },
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "skill": {
+                                                "type": "string"
+                                            },
+                                            "skillMode": {
+                                                "type": "string"
+                                            },
+                                            "modifier": {
+                                                "type": "string",
+                                                "pattern": "^(description|requirements|cooldown|initialCooldown|energycost|values\\..+)$"
+                                            },
+                                            "operation": {
+                                                "type": "string",
+                                                "const": "replace"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "modifier",
+                                            "operation",
+                                            "skill",
+                                            "value"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "description": "Changes to this unit's skills, applied by the same upgrade checkbox as its unit-stat effect. Unlock-only research stays informational: skills remain listed with their prerequisites."
+                        },
+                        "unlocksModes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Mode/attack keys on this unit enabled by selecting this upgrade in the new Units UI."
+                        },
+                        "weapon": {
+                            "type": "string",
+                            "description": "Mode/attack key for an upgrade affecting one entry; an empty string selects the default. Omitted applies to all eligible attacks."
+                        },
                         "modifiermode": {
                             "type": [
                                 "string",
                                 "null"
                             ],
-                            "description": "which mode does it apply to? (e.g. Siege Mode)"
+                            "description": "Mode label for form-specific unit stat changes (e.g. Siege Mode)."
                         },
                         "upgradetype": {
                             "type": "string",
@@ -102,7 +195,10 @@
                     "properties": {
                         "modifier": {
                             "type": "string",
-                            "const": "aoe"
+                            "enum": [
+                                "aoe",
+                                "weaponName"
+                            ]
                         },
                         "modifiertag": {
                             "type": "null"
@@ -134,6 +230,18 @@
                             "type": "boolean",
                             "description": "Applies an active temporary effect rather than permanent research. Omitted means false."
                         },
+                        "cost": {
+                            "$ref": "#/definitions/ResourceCost",
+                            "description": "Purchase/research cost before optional mastery or prestige modifiers. Omit for free unlocks and effects without a purchase."
+                        },
+                        "researchTime": {
+                            "$ref": "#/definitions/NonNegativeInteger",
+                            "description": "Base research duration in game seconds. Omit for instant purchases and non-researched unlocks."
+                        },
+                        "buildTimeIsAdditional": {
+                            "type": "boolean",
+                            "description": "Selecting this upgrade makes the unit's displayed build time an additional installation/morph time."
+                        },
                         "rank": {
                             "type": "number",
                             "enum": [
@@ -146,12 +254,93 @@
                         "effect": {
                             "type": "string"
                         },
+                        "skillModifiers": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "skill": {
+                                                "type": "string"
+                                            },
+                                            "skillMode": {
+                                                "type": "string"
+                                            },
+                                            "modifier": {
+                                                "type": "string",
+                                                "pattern": "^(cooldown|initialCooldown|energycost|charges|values\\..+)$"
+                                            },
+                                            "operation": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "add",
+                                                    "multiply",
+                                                    "set"
+                                                ]
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "modifier",
+                                            "operation",
+                                            "skill",
+                                            "value"
+                                        ]
+                                    },
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "skill": {
+                                                "type": "string"
+                                            },
+                                            "skillMode": {
+                                                "type": "string"
+                                            },
+                                            "modifier": {
+                                                "type": "string",
+                                                "pattern": "^(description|requirements|cooldown|initialCooldown|energycost|values\\..+)$"
+                                            },
+                                            "operation": {
+                                                "type": "string",
+                                                "const": "replace"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "modifier",
+                                            "operation",
+                                            "skill",
+                                            "value"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "description": "Changes to this unit's skills, applied by the same upgrade checkbox as its unit-stat effect. Unlock-only research stays informational: skills remain listed with their prerequisites."
+                        },
+                        "unlocksModes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Mode/attack keys on this unit enabled by selecting this upgrade in the new Units UI."
+                        },
+                        "weapon": {
+                            "type": "string",
+                            "description": "Mode/attack key for an upgrade affecting one entry; an empty string selects the default. Omitted applies to all eligible attacks."
+                        },
                         "modifiermode": {
                             "type": [
                                 "string",
                                 "null"
                             ],
-                            "description": "which mode does it apply to? (e.g. Siege Mode)"
+                            "description": "Mode label for form-specific unit stat changes (e.g. Siege Mode)."
                         },
                         "upgradetype": {
                             "type": "string",
@@ -192,7 +381,7 @@
                         "operation": {
                             "type": "string",
                             "const": "none",
-                            "description": "Informational upgrade with no effect on the displayed stats."
+                            "description": "No direct unit-stat effect. Informational unless skillModifiers or unlocksModes supplies an effect."
                         },
                         "upgradeid": {
                             "$ref": "#/definitions/PositiveInteger"
@@ -213,6 +402,18 @@
                             "type": "boolean",
                             "description": "Applies an active temporary effect rather than permanent research. Omitted means false."
                         },
+                        "cost": {
+                            "$ref": "#/definitions/ResourceCost",
+                            "description": "Purchase/research cost before optional mastery or prestige modifiers. Omit for free unlocks and effects without a purchase."
+                        },
+                        "researchTime": {
+                            "$ref": "#/definitions/NonNegativeInteger",
+                            "description": "Base research duration in game seconds. Omit for instant purchases and non-researched unlocks."
+                        },
+                        "buildTimeIsAdditional": {
+                            "type": "boolean",
+                            "description": "Selecting this upgrade makes the unit's displayed build time an additional installation/morph time."
+                        },
                         "rank": {
                             "type": "number",
                             "enum": [
@@ -225,12 +426,93 @@
                         "effect": {
                             "type": "string"
                         },
+                        "skillModifiers": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "skill": {
+                                                "type": "string"
+                                            },
+                                            "skillMode": {
+                                                "type": "string"
+                                            },
+                                            "modifier": {
+                                                "type": "string",
+                                                "pattern": "^(cooldown|initialCooldown|energycost|charges|values\\..+)$"
+                                            },
+                                            "operation": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "add",
+                                                    "multiply",
+                                                    "set"
+                                                ]
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "modifier",
+                                            "operation",
+                                            "skill",
+                                            "value"
+                                        ]
+                                    },
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "skill": {
+                                                "type": "string"
+                                            },
+                                            "skillMode": {
+                                                "type": "string"
+                                            },
+                                            "modifier": {
+                                                "type": "string",
+                                                "pattern": "^(description|requirements|cooldown|initialCooldown|energycost|values\\..+)$"
+                                            },
+                                            "operation": {
+                                                "type": "string",
+                                                "const": "replace"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "modifier",
+                                            "operation",
+                                            "skill",
+                                            "value"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "description": "Changes to this unit's skills, applied by the same upgrade checkbox as its unit-stat effect. Unlock-only research stays informational: skills remain listed with their prerequisites."
+                        },
+                        "unlocksModes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Mode/attack keys on this unit enabled by selecting this upgrade in the new Units UI."
+                        },
+                        "weapon": {
+                            "type": "string",
+                            "description": "Mode/attack key for an upgrade affecting one entry; an empty string selects the default. Omitted applies to all eligible attacks."
+                        },
                         "modifiermode": {
                             "type": [
                                 "string",
                                 "null"
                             ],
-                            "description": "which mode does it apply to? (e.g. Siege Mode)"
+                            "description": "Mode label for form-specific unit stat changes (e.g. Siege Mode)."
                         },
                         "upgradetype": {
                             "type": "string",
@@ -260,6 +542,29 @@
         "PositiveInteger": {
             "type": "integer",
             "minimum": 1
+        },
+        "ResourceCost": {
+            "type": "object",
+            "properties": {
+                "minerals": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "gas": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "supply": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                }
+            },
+            "required": [
+                "minerals",
+                "gas"
+            ],
+            "additionalProperties": false
+        },
+        "NonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
         }
     }
 }

@@ -16,7 +16,7 @@
                 },
                 "unit": {
                     "type": "string",
-                    "description": "PlayerUnit.basename where available; some overview units have no stats entry yet."
+                    "description": "PlayerUnit.name where available; some overview units have no stats entry yet."
                 },
                 "name": {
                     "type": "string"
@@ -30,7 +30,17 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Plain text, with line breaks preserved."
+                    "description": "Plain text, with line breaks preserved. {name} placeholders reference values and are filled after modifiers."
+                },
+                "values": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": [
+                            "number",
+                            "string"
+                        ]
+                    },
+                    "description": "Custom description values. Unknown placeholders/keys throw; add/multiply require numbers, never numeric strings. Modifiers address these as values.name. Substitutions are literal text, not HTML or nested templates. Numbers display rounded to two decimal places, without changing their stored precision."
                 },
                 "type": {
                     "type": "string",
@@ -46,17 +56,34 @@
                 },
                 "cooldown": {
                     "type": [
+                        "number",
                         "string",
                         "null"
                     ],
-                    "description": "Overview text, preserving variable cooldowns, charges, and initial cooldowns."
+                    "description": "Repeat cooldown in game seconds, or text for a conditional timing. Numeric modifiers must reject text."
+                },
+                "initialCooldown": {
+                    "type": [
+                        "number",
+                        "string"
+                    ],
+                    "description": "Initial cooldown in game seconds, independent of the repeat cooldown. Omitted means unspecified."
+                },
+                "cost": {
+                    "$ref": "#/definitions/ResourceCost",
+                    "description": "Resources consumed by a construction, morph, installation, or other paid command. Morph/merge costs exclude the parent units; supply is the additional supply required."
+                },
+                "buildTime": {
+                    "$ref": "#/definitions/NonNegativeInteger",
+                    "description": "Time to finish construction, morphing, or installation, in game seconds; excludes parent production and repeat cooldown."
                 },
                 "energycost": {
                     "type": [
+                        "number",
                         "string",
                         "null"
                     ],
-                    "description": "Overview text; null means unspecified, whereas \"0\" means explicitly free."
+                    "description": "Energy cost, or text for a conditional cost. Null means unspecified; 0 means explicitly free."
                 },
                 "charges": {
                     "$ref": "#/definitions/PositiveInteger",
@@ -82,7 +109,23 @@
                     "type": [
                         "string",
                         "null"
-                    ]
+                    ],
+                    "description": "Only show this variant when the named prestige is selected; null is unrestricted."
+                },
+                "excludedPrestiges": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Hide this skill when any of these prestiges is selected."
+                },
+                "showWithUpgrade": {
+                    "type": "string",
+                    "description": "Only show this skill while the named per-unit upgrade is selected. Unlike requiresupgrade, this controls visibility."
+                },
+                "hideWithUpgrade": {
+                    "type": "string",
+                    "description": "Hide this skill once the named per-unit upgrade is selected (e.g. a completed installation command)."
                 },
                 "requirements": {
                     "type": [
@@ -110,13 +153,32 @@
             "additionalProperties": false,
             "description": "Skills transcribed from the commander overviews, including hero and summoned-unit skills."
         },
-        "PositiveInteger": {
-            "type": "integer",
-            "minimum": 1
+        "ResourceCost": {
+            "type": "object",
+            "properties": {
+                "minerals": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "gas": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                },
+                "supply": {
+                    "$ref": "#/definitions/NonNegativeInteger"
+                }
+            },
+            "required": [
+                "minerals",
+                "gas"
+            ],
+            "additionalProperties": false
         },
         "NonNegativeInteger": {
             "type": "integer",
             "minimum": 0
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
         }
     }
 }

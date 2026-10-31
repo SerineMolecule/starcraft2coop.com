@@ -584,7 +584,12 @@
       modifiertag: null,
       value: 0.75,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 110
     },
     {
       upgradeid: 2,
@@ -598,7 +603,12 @@
       modifiertag: "Light",
       value: 8,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 110
     },
     {
       upgradeid: 3,
@@ -612,7 +622,12 @@
       modifiertag: "Armored",
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 4,
@@ -626,7 +641,12 @@
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 90
     },
     {
       upgradeid: 5,
@@ -640,7 +660,12 @@
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 6,
@@ -654,7 +679,12 @@
       modifiertag: null,
       value: 25,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 7,
@@ -668,7 +698,12 @@
       modifiertag: "Armored",
       value: 7,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 8,
@@ -682,7 +717,12 @@
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 9,
@@ -696,7 +736,12 @@
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 10,
@@ -710,7 +755,12 @@
       modifiertag: null,
       value: 20,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 11,
@@ -724,7 +774,12 @@
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 12,
@@ -738,7 +793,12 @@
       modifiertag: "Armored",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 13,
@@ -752,7 +812,12 @@
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 14,
@@ -766,7 +831,12 @@
       modifiertag: null,
       value: 0.7,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 15,
@@ -780,7 +850,12 @@
       modifiertag: null,
       value: 0.55,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 16,
@@ -794,7 +869,12 @@
       modifiertag: "Light",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 17,
@@ -808,7 +888,12 @@
       modifiertag: null,
       value: 0.56,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 18,
@@ -822,7 +907,12 @@
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 19,
@@ -836,7 +926,12 @@
       modifiertag: null,
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 20,
@@ -850,7 +945,12 @@
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 21,
@@ -860,11 +960,17 @@
       icon: "combatsensorarray",
       effect: "Scouts gain +3 air attack range and +1 ground attack range.",
       modifier: "Range",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 22,
@@ -874,11 +980,17 @@
       icon: "combatsensorarray",
       effect: "Scouts gain +3 air attack range and +1 ground attack range.",
       modifier: "Range",
-      modifiermode: "(Ground)",
+      modifiermode: null,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "ground",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 23,
@@ -888,11 +1000,17 @@
       icon: "combatsensorarray",
       effect: "Scouts gain +3 air attack range and +1 ground attack range.",
       modifier: "Range",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 24,
@@ -902,11 +1020,17 @@
       icon: "combatsensorarray",
       effect: "Scouts gain +3 air attack range and +1 ground attack range.",
       modifier: "Range",
-      modifiermode: "(Ground)",
+      modifiermode: null,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "ground",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 25,
@@ -920,7 +1044,12 @@
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 26,
@@ -935,7 +1064,12 @@
       modifiertag: null,
       value: 1.55,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 29,
@@ -949,7 +1083,12 @@
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 30,
@@ -963,7 +1102,12 @@
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 31,
@@ -977,7 +1121,12 @@
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 32,
@@ -992,7 +1141,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 200,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 33,
@@ -1006,7 +1160,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.6,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 34,
@@ -1020,7 +1179,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 10,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 35,
@@ -1034,7 +1198,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 36,
@@ -1048,7 +1217,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 37,
@@ -1062,7 +1236,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 20,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 38,
@@ -1076,7 +1255,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 39,
@@ -1090,7 +1274,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 40,
@@ -1104,7 +1293,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.75,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 41,
@@ -1118,7 +1312,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 42,
@@ -1132,7 +1331,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 43,
@@ -1147,7 +1351,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 44,
@@ -1162,7 +1371,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 45,
@@ -1176,7 +1390,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: "Light",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 46,
@@ -1190,7 +1409,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: "Light",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 47,
@@ -1200,11 +1424,17 @@ Life-regeneration rate increased by 100%.`,
       icon: "aresclasstargetingsystem",
       effect: "Increases the Strike Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
       modifier: "Range",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 48,
@@ -1214,11 +1444,17 @@ Life-regeneration rate increased by 100%.`,
       icon: "aresclasstargetingsystem",
       effect: "Increases the Strike Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
       modifier: "Range",
-      modifiermode: "(Ground)",
+      modifiermode: null,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "ground",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 49,
@@ -1262,7 +1498,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 10,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 52,
@@ -1336,7 +1577,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 100,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 57,
@@ -1350,7 +1596,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 58,
@@ -1364,7 +1615,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 59,
@@ -1379,7 +1635,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 60,
@@ -1393,7 +1654,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 61,
@@ -1408,7 +1674,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 62,
@@ -1418,11 +1689,17 @@ Life-regeneration rate increased by 100%.`,
       icon: "phobosweaponssystem",
       effect: "Viking weapons system upgrade. Increases air attack range by 2 and ground attack range by 1.",
       modifier: "Range",
-      modifiermode: "(Assault Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "assault-mode",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 63,
@@ -1432,11 +1709,17 @@ Life-regeneration rate increased by 100%.`,
       icon: "phobosweaponssystem",
       effect: "Viking weapons system upgrade. Increases air attack range by 2 and ground attack range by 1.",
       modifier: "Range",
-      modifiermode: "(Fighter Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "fighter-mode",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 64,
@@ -1450,7 +1733,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 65,
@@ -1465,7 +1753,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 66,
@@ -1479,7 +1772,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 67,
@@ -1494,7 +1792,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 68,
@@ -1508,7 +1811,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 69,
@@ -1523,7 +1831,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 70,
@@ -1540,7 +1853,12 @@ Passive ability.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 71,
@@ -1550,11 +1868,17 @@ Passive ability.`,
       icon: "graduatingrange",
       effect: "Increases the Heavy Siege Tanks attack range by 1 every 3 seconds while in Siege Mode, up to a maximum of 5 additional range.",
       modifier: "Range",
-      modifiermode: "(Siege Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 5,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "siege-mode",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 72,
@@ -1568,7 +1892,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 73,
@@ -1582,7 +1911,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 74,
@@ -1596,7 +1930,12 @@ Passive ability.`,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 75,
@@ -1610,7 +1949,12 @@ Passive ability.`,
       modifiertag: "Armored",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 76,
@@ -1624,7 +1968,12 @@ Passive ability.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 77,
@@ -1638,7 +1987,12 @@ Passive ability.`,
       modifiertag: null,
       value: 100,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 78,
@@ -1652,7 +2006,12 @@ Passive ability.`,
       modifiertag: "Light",
       value: 10,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 79,
@@ -1666,7 +2025,12 @@ Passive ability.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 80,
@@ -1680,7 +2044,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 81,
@@ -1690,11 +2059,17 @@ Passive ability.`,
       icon: "aresclasstargetingsystem",
       effect: "Increases the Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
       modifier: "Range",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 82,
@@ -1704,11 +2079,17 @@ Passive ability.`,
       icon: "aresclasstargetingsystem",
       effect: "Increases the Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
       modifier: "Range",
-      modifiermode: "(Ground)",
+      modifiermode: null,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "ground",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 83,
@@ -1722,7 +2103,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 84,
@@ -1732,11 +2118,17 @@ Passive ability.`,
       icon: "maelstromrounds",
       effect: "Siege Tanks gain +40 attack damage while in Siege Mode. Splash damage remains the same.",
       modifier: "damage",
-      modifiermode: "(Siege Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 40,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "siege-mode",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 85,
@@ -1750,7 +2142,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 86,
@@ -1764,7 +2161,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 87,
@@ -1778,7 +2180,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 88,
@@ -1788,11 +2195,17 @@ Passive ability.`,
       icon: "pulseamplifier",
       effect: "Increases the damage of Gemini Missiles by 100% and Burst Lasers by 300% while the Wraith is moving.",
       modifier: "damage",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 89,
@@ -1802,11 +2215,17 @@ Passive ability.`,
       icon: "pulseamplifier",
       effect: "Increases the damage of Gemini Missiles by 100% and Burst Lasers by 300% while the Wraith is moving.",
       modifier: "damage",
-      modifiermode: "(Ground)",
+      modifiermode: null,
       modifiertag: null,
       value: 4,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "ground",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 90,
@@ -1820,7 +2239,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 91,
@@ -1834,7 +2258,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 92,
@@ -1848,11 +2277,16 @@ Passive ability.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 93,
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       commander: "Tychus",
       name: "ITCE Triggers",
       icon: "itcetriggers",
@@ -1862,11 +2296,16 @@ Passive ability.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 94,
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       commander: "Tychus",
       name: "Endurance Supplements",
       icon: "endurancesupplements",
@@ -1876,11 +2315,16 @@ Passive ability.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 95,
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       commander: "Tychus",
       name: "Endurance Supplements",
       icon: "endurancesupplements",
@@ -1890,11 +2334,16 @@ Passive ability.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 96,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "Endurance Supplements",
       icon: "endurancesupplements",
@@ -1904,7 +2353,12 @@ Passive ability.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 97,
@@ -1918,7 +2372,12 @@ Passive ability.`,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 98,
@@ -1933,7 +2392,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 200,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 99,
@@ -1947,7 +2411,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.6,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 100,
@@ -1961,7 +2430,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 10,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 101,
@@ -1975,7 +2449,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.4,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 102,
@@ -1989,7 +2468,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.4,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 103,
@@ -2003,7 +2487,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 0.45,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 104,
@@ -2017,7 +2506,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 0.45,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 105,
@@ -2031,7 +2525,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 40,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 106,
@@ -2045,7 +2544,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 5,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 107,
@@ -2059,11 +2563,16 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: -25,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 108,
-      unit: "XelNaga Abrogator",
+      unit: "Xel'Naga Abrogator",
       commander: "Zeratul",
       name: "Nova Battery",
       icon: "novabattery",
@@ -2073,15 +2582,23 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Purification Nova",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.5
+        }
+      ]
     },
     {
       upgradeid: 109,
-      unit: "XelNaga Watcher",
+      unit: "Xel'Naga Watcher",
       commander: "Zeratul",
       name: "Gravitic Boosters",
       icon: "graviticboosters",
-      effect: "Increases the movement speed of XelNaga Watchers by 50%.",
+      effect: "Increases the movement speed of Xel'Naga Watchers by 50%.",
       modifier: "Move_Speed",
       modifiermode: null,
       modifiertag: null,
@@ -2091,11 +2608,11 @@ Life-regeneration rate increased by 100%.`,
     },
     {
       upgradeid: 110,
-      unit: "XelNaga Watcher",
+      unit: "Xel'Naga Watcher",
       commander: "Zeratul",
       name: "Sensor Array",
       icon: "sensorarray",
-      effect: "Increases the sight radius of XelNaga Watchers by 50%.",
+      effect: "Increases the sight radius of Xel'Naga Watchers by 50%.",
       modifier: "Vision",
       modifiermode: null,
       modifiertag: null,
@@ -2115,7 +2632,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 112,
@@ -2129,7 +2651,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 113,
@@ -2143,7 +2670,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 114,
@@ -2157,7 +2689,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 115,
@@ -2171,7 +2708,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 116,
@@ -2185,7 +2727,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 117,
@@ -2199,7 +2746,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 118,
@@ -2213,7 +2765,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 119,
@@ -2227,7 +2784,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: "Light",
       value: 10,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 120,
@@ -2241,7 +2803,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 121,
@@ -2255,7 +2822,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 122,
@@ -2269,7 +2841,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 123,
@@ -2283,7 +2860,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 124,
@@ -2297,7 +2879,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 125,
@@ -2311,7 +2898,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 126,
@@ -2325,7 +2917,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 127,
@@ -2339,7 +2936,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 128,
@@ -2353,7 +2955,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 129,
@@ -2367,7 +2974,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 130,
@@ -2381,7 +2993,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 131,
@@ -2395,7 +3012,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 132,
@@ -2409,7 +3031,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 133,
@@ -2423,7 +3050,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 134,
@@ -2437,7 +3069,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1.25,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 135,
@@ -2451,7 +3088,11 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 113,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 136,
@@ -2465,7 +3106,11 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 14,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 137,
@@ -2479,7 +3124,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: "Structure",
       value: 40,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 138,
@@ -2493,7 +3143,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: "Structure",
       value: 5,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 139,
@@ -2507,7 +3162,20 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 10,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Bombardment",
+          modifier: "values.range",
+          operation: "add",
+          value: 10
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 140,
@@ -2521,7 +3189,20 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 5,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Bombardment",
+          modifier: "values.interval",
+          operation: "set",
+          value: 5
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 141,
@@ -2535,7 +3216,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: "Armored",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 142,
@@ -2549,7 +3235,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 3,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 143,
@@ -2563,7 +3254,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 0,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 144,
@@ -2577,7 +3273,12 @@ Life-regeneration rate increased by 100%.`,
       modifiertag: null,
       value: 1,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 145,
@@ -2611,7 +3312,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 147,
@@ -2625,7 +3331,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.6,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 148,
@@ -2639,7 +3350,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 149,
@@ -2653,7 +3369,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.15,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 150,
@@ -2667,7 +3388,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 151,
@@ -2677,11 +3403,17 @@ Drains 0.9 energy per second.`,
       icon: "tyrclasstargetingsystem",
       effect: "Increases the Mecha Hydralisks anti-air weapon range by 3.",
       modifier: "Range",
-      modifiermode: "(Erudition Missiles)",
+      modifiermode: null,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "erudition-missiles",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 152,
@@ -2695,7 +3427,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 153,
@@ -2710,7 +3447,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 154,
@@ -2736,11 +3478,12 @@ Drains 0.9 energy per second.`,
       icon: "veterancy",
       effect: "Increases vision and attack range by 2 in Siege Mode.",
       modifier: "Range",
-      modifiermode: "(Siege Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "siege-mode"
     },
     {
       upgradeid: 156,
@@ -2750,11 +3493,12 @@ Drains 0.9 energy per second.`,
       icon: "veterancy",
       effect: "Increases the range of Overwatch Mode by 2.",
       modifier: "Range",
-      modifiermode: "(Overwatch Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "overwatch-mode"
     },
     {
       upgradeid: 157,
@@ -2764,11 +3508,12 @@ Drains 0.9 energy per second.`,
       icon: "veterancy",
       effect: "Increases attack speed in Overwatch Mode by 33%.",
       modifier: "Attack_Speed",
-      modifiermode: "(Overwatch Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 1.33,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "overwatch-mode"
     },
     {
       upgradeid: 158,
@@ -2782,7 +3527,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.5,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 159,
@@ -2811,7 +3561,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 200,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 161,
@@ -2825,7 +3580,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 162,
@@ -2839,7 +3599,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 200,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 163,
@@ -2853,7 +3618,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 164,
@@ -2867,7 +3637,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 25,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 165,
@@ -2881,7 +3656,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 100,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 166,
@@ -2895,7 +3675,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 167,
@@ -2909,7 +3694,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 3.38,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 168,
@@ -2923,7 +3713,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 100,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 169,
@@ -2937,7 +3732,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 170,
@@ -2951,7 +3751,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 42
     },
     {
       upgradeid: 171,
@@ -2965,7 +3770,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 172,
@@ -2979,7 +3789,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 173,
@@ -2993,11 +3808,16 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 5,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 175,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "Secret Stash Stimpack",
       icon: "secretstashstimpack",
@@ -3008,11 +3828,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 176,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "Secret Stash Stimpack",
       icon: "secretstashstimpack",
@@ -3023,7 +3847,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.47,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 178,
@@ -3037,7 +3865,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0.75,
       operation: "add",
-      upgradetype: "preupgrade"
+      upgradetype: "preupgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 179,
@@ -3051,7 +3884,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0.25,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 180,
@@ -3065,7 +3903,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0.25,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 181,
@@ -3079,7 +3922,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0.25,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 182,
@@ -3093,7 +3941,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0.25,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 183,
@@ -3107,7 +3960,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2.25,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 184,
@@ -3117,11 +3975,17 @@ Drains 0.9 energy per second.`,
       icon: "slicingglaive",
       effect: "Primal Mutalisks deal 100% increased damage against air units.",
       modifier: "damage",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 186,
@@ -3135,7 +3999,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 200,
       operation: "set",
-      upgradetype: "preupgrade"
+      upgradetype: "preupgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 63
     },
     {
       upgradeid: 187,
@@ -3149,7 +4018,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "set",
-      upgradetype: "preupgrade"
+      upgradetype: "preupgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 63
     },
     {
       upgradeid: 188,
@@ -3163,7 +4037,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 20,
       operation: "set",
-      upgradetype: "preupgrade"
+      upgradetype: "preupgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 63
     },
     {
       upgradeid: 189,
@@ -3173,11 +4052,17 @@ Drains 0.9 energy per second.`,
       icon: "aerialburstsacs",
       effect: "Allows the Creeper Hosts Creepers to target air units and increases their movement speed.",
       modifier: "damage",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 110,
       operation: "set",
-      upgradetype: "preupgrade"
+      upgradetype: "preupgrade",
+      weapon: "air",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 192,
@@ -3187,11 +4072,17 @@ Drains 0.9 energy per second.`,
       icon: "aerialburstsacs",
       effect: "Allows the Creeper Hosts Creepers to target air units and increases their movement speed.",
       modifier: "attackbonus",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: 5,
       operation: "set",
-      upgradetype: "preupgrade"
+      upgradetype: "preupgrade",
+      weapon: "air",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 193,
@@ -3205,7 +4096,12 @@ Drains 0.9 energy per second.`,
       modifiertag: "Structure",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 194,
@@ -3215,11 +4111,17 @@ Drains 0.9 energy per second.`,
       icon: "acidicenzymes",
       effect: "Infested Siege Tanks deal an additional +15 damage to armored units and structures in both modes.",
       modifier: "damage",
-      modifiermode: "(Rooted)",
+      modifiermode: null,
       modifiertag: "Structure",
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "rooted",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 195,
@@ -3247,7 +4149,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Cloak",
+          modifier: "values.evasion",
+          operation: "replace",
+          value: "While cloaked, moves 20% faster and evades 20% of incoming attacks."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 197,
@@ -3261,7 +4176,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 198,
@@ -3276,7 +4196,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 199,
@@ -3291,7 +4216,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 200,
@@ -3306,7 +4236,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 201,
@@ -3321,7 +4256,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 202,
@@ -3336,7 +4276,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 203,
@@ -3800,7 +4745,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.5,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 236,
@@ -4013,7 +4963,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 251,
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       commander: "Tychus",
       name: "Redline Power Cells",
       icon: "redlinepowercells",
@@ -4024,7 +4974,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.8,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 253,
@@ -4038,7 +4992,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1.8,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 254,
@@ -4052,7 +5010,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 3,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 255,
@@ -4081,7 +5044,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 6,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 110
     },
     {
       upgradeid: 257,
@@ -4111,7 +5079,44 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1000,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Psionic Orb",
+          modifier: "values.damage",
+          operation: "multiply",
+          value: 3.5
+        },
+        {
+          skill: "Psionic Orb",
+          modifier: "values.stacks",
+          operation: "replace",
+          value: "Damage shown at 10 Sacrifice stacks."
+        },
+        {
+          skill: "Mind Blast",
+          modifier: "values.damage",
+          operation: "multiply",
+          value: 3.5
+        },
+        {
+          skill: "Mind Blast",
+          modifier: "values.stacks",
+          operation: "replace",
+          value: "Damage shown at 10 Sacrifice stacks."
+        },
+        {
+          skill: "Sacrifice",
+          modifier: "values.bonus",
+          operation: "replace",
+          value: "Each sacrifice permanently grants +25% ability damage and +100 shields, stacking up to 10 times."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 259,
@@ -4125,11 +5130,16 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 260,
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       commander: "Tychus",
       name: "Flashforce GDM Visor",
       icon: "flashforcegdmvisor",
@@ -4139,7 +5149,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 261,
@@ -4153,7 +5168,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 0,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 262,
@@ -4163,11 +5183,17 @@ Drains 0.9 energy per second.`,
       icon: "armamentstabilizers",
       effect: "Allows Shock Divisions in Siege Mode to fire at air units at a reduced rate while being carried by an Imperial Intercessor.",
       modifier: "Attack_Speed",
-      modifiermode: "(Siege Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: 0.67,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "siege-mode",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 263,
@@ -4269,7 +5295,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 270,
-      unit: "Raven Type II",
+      unit: "Raven Type-II",
       commander: "Nova",
       name: "Soldier of Fortune",
       icon: "soldieroffortune",
@@ -4339,7 +5365,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 275,
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4353,7 +5379,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 276,
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4367,7 +5393,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 277,
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4381,7 +5407,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 278,
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4395,7 +5421,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 279,
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4409,7 +5435,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 280,
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4479,7 +5505,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 285,
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4493,7 +5519,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 286,
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4507,7 +5533,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 287,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4521,7 +5547,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 288,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
@@ -4603,7 +5629,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 1,
       operation: "set",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 294,
@@ -4618,7 +5649,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 4,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 295,
@@ -4642,11 +5678,20 @@ Drains 0.9 energy per second.`,
       icon: "tacticaldataweb",
       effect: "Interdictor damage is increased by 3 for each networked Carrier (up to 10 damage).",
       modifier: "damage",
-      modifiermode: "(Interdictor)",
+      modifiermode: null,
       modifiertag: null,
       value: 10,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "interdictor",
+      skillModifiers: [
+        {
+          skill: "Build Interdictor",
+          modifier: "values.damage",
+          operation: "add",
+          value: 10
+        }
+      ]
     },
     {
       upgradeid: 298,
@@ -4660,7 +5705,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 299,
@@ -4674,7 +5724,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 15,
       operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 300,
@@ -4689,7 +5744,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: 2,
       operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 301,
@@ -4703,7 +5763,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Circular splash within radius 3.3. Corrosive Acid only increases damage to the primary target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 302,
@@ -4717,7 +5782,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Circular splash within radius 3.3 of the Baneling Spawn on detonation. Corrosive Acid only increases damage to the primary target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 303,
@@ -4731,7 +5801,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Fires at up to three additional enemies. With a primary target less than 3 away, searches a 90-degree cone of radius 5 in front of Zagara; otherwise, searches a circle of radius 3 around the primary target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 304,
@@ -4745,7 +5820,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Scarab explosion: full damage to the primary target; circular splash deals 80% within radius 0.5, 60% from 0.5 to 1, 50% from 1 to 1.5, and 25% from 1.5 to 2.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 305,
@@ -4759,7 +5839,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Four projectiles land in a cross, 0.75 from the target. Each hits twice with circular splash of radius 1.8.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 306,
@@ -4773,7 +5858,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Flames hit a line 1.68 wide in front of the Firebat. Ground enemies within weapon range (base 4, accounting for unit size) take full damage.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 307,
@@ -4797,11 +5887,12 @@ Drains 0.9 energy per second.`,
       icon: "veterancy",
       effect: "Increases the splash radius of attacks in Siege Mode by 40%.",
       modifier: "aoe",
-      modifiermode: "(Siege Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: "Circular splash: 100% damage within radius 0.66, 50% from 0.66 to 1.09, and 25% from 1.09 to 1.75.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "siege-mode"
     },
     {
       upgradeid: 309,
@@ -4811,15 +5902,16 @@ Drains 0.9 energy per second.`,
       icon: "veterancy",
       effect: "Increases the splash radius of Overwatch Mode by 50%.",
       modifier: "aoe",
-      modifiermode: "(Overwatch Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: "Circular splash to air units within radius 0.75 of the target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "overwatch-mode"
     },
     {
       upgradeid: 310,
-      unit: "XelNaga Abrogator",
+      unit: "Xel'Naga Abrogator",
       commander: "Zeratul",
       name: "Cluster Nova",
       icon: "clusternova",
@@ -4829,7 +5921,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Purification Nova deals full damage to ground enemies in a circle of radius 1.5, then releases three smaller novas. Each small nova deals 50 damage to ground enemies it contacts.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Purification Nova",
+          modifier: "values.cluster",
+          operation: "replace",
+          value: "Releases three smaller novas on detonation, each dealing 50 damage to ground enemies it contacts."
+        }
+      ]
     },
     {
       upgradeid: 311,
@@ -4843,7 +5943,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "While the Liberator attacks in cloud form, its target deals damage over time to enemy air units in a circle of radius 1.5 around it as it moves. Viral Contamination only increases damage to the primary target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 312,
@@ -4857,7 +5962,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 110
     },
     {
       upgradeid: 313,
@@ -4871,7 +5981,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Corrosive Bile",
+          modifier: "values.radius",
+          operation: "set",
+          value: 1.5
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 314,
@@ -4885,7 +6008,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Corrosive Bile",
+          modifier: "values.damage",
+          operation: "add",
+          value: 40
+        }
+      ],
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 315,
@@ -4899,7 +6035,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 316,
@@ -4913,7 +6054,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 317,
@@ -4927,7 +6073,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 318,
@@ -4941,7 +6092,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 319,
@@ -4955,7 +6111,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Bounces to up to 5 additional enemies, within radius 4 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 320,
@@ -4969,7 +6130,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Circular splash around the target: full damage to air enemies within radius 1.5.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 90
     },
     {
       upgradeid: 321,
@@ -4983,7 +6149,38 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Abduct",
+          modifier: "values.range",
+          operation: "add",
+          value: 4
+        },
+        {
+          skill: "Consumption",
+          modifier: "values.range",
+          operation: "add",
+          value: 4
+        },
+        {
+          skill: "Disabling Cloud",
+          modifier: "values.range",
+          operation: "add",
+          value: 4
+        },
+        {
+          skill: "Parasitic Bomb",
+          modifier: "values.range",
+          operation: "add",
+          value: 4
+        }
+      ],
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 322,
@@ -4997,7 +6194,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Abduct",
+          modifier: "values.stun",
+          operation: "add",
+          value: 5
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 323,
@@ -5011,7 +6221,26 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Rapid Transfusion",
+          modifier: "values.healing",
+          operation: "add",
+          value: 10
+        },
+        {
+          skill: "Rapid Transfusion",
+          modifier: "values.targets",
+          operation: "replace",
+          value: "biological or mechanical"
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 324,
@@ -5025,7 +6254,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 325,
@@ -5039,7 +6273,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 326,
@@ -5053,7 +6292,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Destruction Wave",
+          modifier: "values.knockback",
+          operation: "replace",
+          value: "knocking them back twice as far"
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 327,
@@ -5067,7 +6319,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 328,
@@ -5081,7 +6338,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 329,
@@ -5095,7 +6357,32 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Target Lock",
+          modifier: "values.range",
+          operation: "add",
+          value: 3
+        },
+        {
+          skill: "Force Field",
+          modifier: "values.range",
+          operation: "add",
+          value: 3
+        },
+        {
+          skill: "Squad Sight",
+          modifier: "values.radius",
+          operation: "add",
+          value: 3
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 330,
@@ -5109,7 +6396,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Target Lock",
+          modifier: "values.bonus",
+          operation: "add",
+          value: 15
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 331,
@@ -5123,7 +6423,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 332,
@@ -5137,7 +6442,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Psionic Orb",
+          modifier: "values.distance",
+          operation: "multiply",
+          value: 1.25
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 333,
@@ -5151,7 +6469,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 334,
@@ -5165,7 +6488,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 335,
@@ -5179,7 +6507,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 336,
@@ -5193,7 +6526,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 337,
@@ -5207,7 +6545,38 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Psionic Storm",
+          modifier: "values.radius",
+          operation: "add",
+          value: 0.8
+        },
+        {
+          skill: "Psionic Storm",
+          modifier: "values.range",
+          operation: "add",
+          value: 2
+        },
+        {
+          skill: "Psionic Storm",
+          modifier: "description",
+          operation: "replace",
+          value: `Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.
+
+Radius: {radius}.
+
+Cast range: {range}.
+
+Restores {shieldRestoration} shields to friendly units in the target area.`
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 338,
@@ -5221,7 +6590,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 339,
@@ -5235,7 +6609,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 340,
@@ -5249,7 +6628,38 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Psionic Storm",
+          modifier: "values.radius",
+          operation: "add",
+          value: 0.8
+        },
+        {
+          skill: "Psionic Storm",
+          modifier: "values.range",
+          operation: "add",
+          value: 2
+        },
+        {
+          skill: "Psionic Storm",
+          modifier: "description",
+          operation: "replace",
+          value: `Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.
+
+Radius: {radius}.
+
+Cast range: {range}.
+
+Restores {shieldRestoration} shields to friendly units in the target area.`
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 341,
@@ -5263,7 +6673,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Barrier",
+          modifier: "values.absorption",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 342,
@@ -5277,7 +6700,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Create Scarab",
+          modifier: "values.capacity",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 343,
@@ -5291,7 +6727,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Graviton Beam",
+          modifier: "values.targets",
+          operation: "replace",
+          value: "Can lift two enemies at once."
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 344,
@@ -5305,7 +6754,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 345,
@@ -5319,7 +6773,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 346,
@@ -5333,7 +6792,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 347,
@@ -5347,7 +6811,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 348,
@@ -5361,7 +6830,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 349,
@@ -5375,7 +6849,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Spawn Explosive Creeper",
+          modifier: "values.targets",
+          operation: "replace",
+          value: "ground and air"
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 350,
@@ -5389,7 +6876,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 351,
@@ -5403,7 +6895,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 352,
@@ -5417,7 +6914,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 353,
@@ -5431,7 +6933,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 354,
@@ -5445,7 +6952,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 355,
@@ -5459,7 +6971,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 356,
@@ -5473,7 +6990,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 357,
@@ -5487,7 +7009,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 358,
@@ -5501,7 +7028,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 13,
+        gas: 13
+      },
+      researchTime: 10
     },
     {
       upgradeid: 359,
@@ -5515,7 +7047,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 13,
+        gas: 13
+      },
+      researchTime: 10
     },
     {
       upgradeid: 360,
@@ -5529,7 +7066,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 13,
+        gas: 13
+      },
+      researchTime: 10
     },
     {
       upgradeid: 361,
@@ -5543,7 +7085,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 362,
@@ -5557,7 +7104,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Protective Field",
+          modifier: "values.duration",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 363,
@@ -5571,7 +7131,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 364,
@@ -5585,7 +7150,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Purification Nova",
+          modifier: "values.echo",
+          operation: "replace",
+          value: "Explodes again after 2 seconds, dealing 75 damage in a larger area."
+        }
+      ],
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 365,
@@ -5599,7 +7177,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 80
     },
     {
       upgradeid: 366,
@@ -5613,7 +7196,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Adds cleave in a 180-degree arc of radius 1.25 at the primary target. Cleave deals 9 base damage per hit, plus 1 per weapon upgrade; Tactical Data Web also increases cleave damage.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 367,
@@ -5627,7 +7215,26 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Ricochet Glaive",
+          modifier: "values.targets",
+          operation: "add",
+          value: 5
+        },
+        {
+          skill: "Ricochet Glaive",
+          modifier: "values.debilitation",
+          operation: "replace",
+          value: "Targets hit take 5 additional damage for 5 seconds."
+        }
+      ],
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 368,
@@ -5641,7 +7248,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Attacks store 25% of their damage on the target. When it dies, it releases that damage in a circular explosion with base radius 1, extended to account for unit size.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 369,
@@ -5655,7 +7267,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90
     },
     {
       upgradeid: 370,
@@ -5664,11 +7281,43 @@ Drains 0.9 energy per second.`,
       name: "Install Drone Hangar",
       icon: "installdronehangar-framed",
       effect: "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
-      modifier: null,
+      modifier: "supply",
       modifiermode: null,
       modifiertag: null,
-      value: null,
-      operation: "none",
+      value: 3,
+      operation: "add",
+      upgradetype: "upgrade",
+      unlocksModes: [
+        "assault-drones"
+      ],
+      buildTimeIsAdditional: true
+    },
+    {
+      upgradeid: 556,
+      unit: "Assault Galleon",
+      commander: "Horner",
+      name: "Install Drone Hangar",
+      icon: "installdronehangar-framed",
+      effect: "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
+      modifier: "mineralCost",
+      modifiermode: null,
+      modifiertag: null,
+      value: 150,
+      operation: "add",
+      upgradetype: "upgrade"
+    },
+    {
+      upgradeid: 557,
+      unit: "Assault Galleon",
+      commander: "Horner",
+      name: "Install Drone Hangar",
+      icon: "installdronehangar-framed",
+      effect: "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
+      modifier: "vespeneCost",
+      modifiermode: null,
+      modifiertag: null,
+      value: 200,
+      operation: "add",
       upgradetype: "upgrade"
     },
     {
@@ -5683,7 +7332,26 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "KD8 Charge",
+          modifier: "cooldown",
+          operation: "add",
+          value: -10
+        },
+        {
+          skill: "KD8 Charge",
+          modifier: "values.death",
+          operation: "replace",
+          value: "When killed, the Reaper throws multiple grenades toward its killer."
+        }
+      ],
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 42
     },
     {
       upgradeid: 372,
@@ -5692,12 +7360,18 @@ Drains 0.9 energy per second.`,
       name: "Executioner Missiles",
       icon: "executionermissiles",
       effect: "Reduces the Widow Mine's Sentinel Missile cooldown by 20 seconds. When Widow Mines are killed, they launch 5 Sentinel Missiles at random nearby targets that deal 10 (+10 vs. shields) damage within radius 2.625 of each impact.",
-      modifier: null,
+      modifier: "Attack_Speed",
       modifiermode: null,
       modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      value: -20,
+      operation: "add",
+      upgradetype: "upgrade",
+      weapon: "",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 42
     },
     {
       upgradeid: 373,
@@ -5706,12 +7380,18 @@ Drains 0.9 energy per second.`,
       name: "Black Market Launchers",
       icon: "blackmarketlaunchers",
       effect: "Widow Mines range is increased by 50%, and can burrow and unburrow much faster (almost instantly).",
-      modifier: null,
+      modifier: "Range",
       modifiermode: null,
       modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      value: 2.5,
+      operation: "add",
+      upgradetype: "upgrade",
+      weapon: "",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 374,
@@ -5725,7 +7405,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 42
     },
     {
       upgradeid: 375,
@@ -5739,7 +7424,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 376,
@@ -5753,7 +7443,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 42
     },
     {
       upgradeid: 377,
@@ -5767,7 +7462,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 378,
@@ -5781,7 +7481,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 379,
@@ -5795,7 +7500,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 63
     },
     {
       upgradeid: 380,
@@ -5809,7 +7519,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 381,
@@ -5819,11 +7534,17 @@ Drains 0.9 energy per second.`,
       icon: "shredderrounds",
       effect: "Attacks from Vikings in Assault Mode pierce, dealing damage to enemy units behind the target. Viking transform time reduced by 75%.",
       modifier: "aoe",
-      modifiermode: "(Assault)",
+      modifiermode: null,
       modifiertag: null,
       value: "Piercing attacks deal full damage to ground enemies in a rectangle 7 long and 1.5 wide along the attack direction, including enemies behind the primary target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "assault",
+      cost: {
+        minerals: 200,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 382,
@@ -5837,7 +7558,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 63
     },
     {
       upgradeid: 383,
@@ -5851,7 +7577,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Analyze Weakness",
+          modifier: "values.targets",
+          operation: "set",
+          value: 4
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63
     },
     {
       upgradeid: 384,
@@ -5865,7 +7604,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 63
     },
     {
       upgradeid: 385,
@@ -5879,7 +7623,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 386,
@@ -5893,7 +7642,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 387,
@@ -5907,7 +7661,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 120
     },
     {
       upgradeid: 388,
@@ -5921,7 +7680,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 389,
@@ -5935,7 +7699,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 390,
@@ -5949,7 +7718,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 391,
@@ -5963,7 +7737,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 392,
@@ -5977,7 +7756,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 393,
@@ -5991,7 +7775,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 394,
@@ -6005,7 +7794,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Attacks bounce to up to 4 additional enemies, dealing 10 damage to each. Each jump searches within radius 4 of the previous target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 395,
@@ -6019,7 +7813,50 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Leaping Strike",
+          modifier: "energycost",
+          operation: "multiply",
+          value: 0.8
+        },
+        {
+          skill: "Psionic Shift",
+          modifier: "energycost",
+          operation: "multiply",
+          value: 0.8
+        },
+        {
+          skill: "Kinetic Blast",
+          modifier: "energycost",
+          operation: "multiply",
+          value: 0.8
+        },
+        {
+          skill: "Crushing Grip",
+          modifier: "energycost",
+          operation: "multiply",
+          value: 0.8
+        },
+        {
+          skill: "Assimilation Aura",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.8
+        },
+        {
+          skill: "Immobilization Wave",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.8
+        }
+      ],
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 396,
@@ -6033,7 +7870,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 397,
@@ -6047,7 +7889,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 398,
@@ -6061,7 +7908,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 399,
@@ -6075,7 +7927,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60
     },
     {
       upgradeid: 400,
@@ -6089,7 +7946,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Bounces to up to 5 additional enemies, within radius 6 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 401,
@@ -6103,7 +7965,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Bounces to up to 2 additional enemies, within radius 3 of the previous target. Base bounce damage: 9, 9; gains 0.333 and 0.111 per weapon upgrade.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 402,
@@ -6117,11 +7984,16 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 403,
-      unit: "Emperors Shadow",
+      unit: "Emperor's Shadow",
       commander: "Mengsk",
       name: "Sovereign Tactical Missiles",
       icon: "sovereigntacticalmissiles",
@@ -6131,7 +8003,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Tactical Missile Strike",
+          modifier: "values.channel",
+          operation: "replace",
+          value: "Does not require channeling."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 404,
@@ -6145,7 +8030,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 405,
@@ -6159,7 +8049,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 406,
@@ -6173,7 +8068,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 407,
@@ -6187,7 +8087,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 408,
@@ -6201,7 +8106,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Heal",
+          modifier: "values.targets",
+          operation: "replace",
+          value: "Can heal two targets at the same time."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 409,
@@ -6215,7 +8133,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 410,
@@ -6229,7 +8152,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 411,
@@ -6243,7 +8171,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 412,
@@ -6257,7 +8190,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 413,
@@ -6271,7 +8209,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Snipe",
+          modifier: "values.refund",
+          operation: "replace",
+          value: "Refunds 50% of its energy cost when Snipe kills its target."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 414,
@@ -6285,7 +8236,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Penetrating Blast",
+          modifier: "values.range",
+          operation: "add",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 415,
@@ -6299,7 +8263,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 416,
@@ -6313,7 +8282,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 417,
@@ -6327,7 +8301,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 418,
@@ -6341,7 +8320,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Snipe",
+          modifier: "values.shots",
+          operation: "replace",
+          value: "Fires 2 additional shots, each dealing 85 damage."
+        }
+      ],
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 419,
@@ -6355,7 +8347,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 420,
@@ -6369,7 +8366,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 421,
@@ -6383,7 +8385,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 422,
@@ -6397,7 +8404,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 423,
@@ -6411,11 +8423,16 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 30
     },
     {
       upgradeid: 424,
-      unit: "Raven Type II",
+      unit: "Raven Type-II",
       commander: "Nova",
       name: "Covert Triage",
       icon: "coverttriage",
@@ -6425,11 +8442,30 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Bio-Mechanical Repair Drone",
+          modifier: "values.healing",
+          operation: "multiply",
+          value: 1.25
+        },
+        {
+          skill: "Deploy Bio-Mechanical Repair Drone",
+          modifier: "values.cloak",
+          operation: "replace",
+          value: "Cloaks units while healing them."
+        }
+      ],
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 425,
-      unit: "Raven Type II",
+      unit: "Raven Type-II",
       commander: "Nova",
       name: "Enhanced Manufacturing",
       icon: "enhancedmanufacturing",
@@ -6439,7 +8475,32 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Build Railgun Turret",
+          modifier: "charges",
+          operation: "set",
+          value: 3
+        },
+        {
+          skill: "Deploy Bio-Mechanical Repair Drone",
+          modifier: "charges",
+          operation: "set",
+          value: 3
+        },
+        {
+          skill: "Predator Missile",
+          modifier: "charges",
+          operation: "set",
+          value: 3
+        }
+      ],
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45
     },
     {
       upgradeid: 426,
@@ -6453,7 +8514,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 427,
@@ -6467,7 +8533,32 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Heal",
+          modifier: "values.targets",
+          operation: "replace",
+          value: "biological or mechanical"
+        },
+        {
+          skill: "Heal",
+          modifier: "values.healing",
+          operation: "set",
+          value: 12
+        },
+        {
+          skill: "Heal",
+          modifier: "values.protection",
+          operation: "replace",
+          value: "Units being healed take 25% less damage."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 428,
@@ -6481,7 +8572,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60
     },
     {
       upgradeid: 429,
@@ -6495,7 +8591,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Spider Mine",
+          modifier: "values.radius",
+          operation: "replace",
+          value: "Blast and trigger radii are increased by 33%."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 430,
@@ -6505,11 +8614,17 @@ Drains 0.9 energy per second.`,
       icon: "ripwavemissiles",
       effect: "Upgrades the Viking's missiles to deal area damage.",
       modifier: "aoe",
-      modifiermode: "(Fighter Mode)",
+      modifiermode: null,
       modifiertag: null,
       value: "Circular splash damage to air enemies around the target: 100% within radius 0.3, 50% from 0.3 to 0.6, and 25% from 0.6 to 1.2.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "fighter-mode",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 431,
@@ -6523,7 +8638,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Missile bursts damage enemies along a line extending 2 beyond the primary target, hitting units within 0.5 of the line.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 432,
@@ -6537,7 +8657,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 433,
@@ -6551,7 +8676,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 434,
@@ -6565,7 +8695,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 435,
@@ -6579,7 +8714,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 436,
@@ -6593,7 +8733,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 437,
@@ -6607,7 +8752,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Tunnel of TERROR Algorithm",
+          modifier: "values.range",
+          operation: "add",
+          value: 6
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 438,
@@ -6621,7 +8779,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 439,
@@ -6635,7 +8798,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Cluster Busters",
+          modifier: "values.radius",
+          operation: "set",
+          value: 3
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 440,
@@ -6649,7 +8825,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 441,
@@ -6663,7 +8844,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 442,
@@ -6677,7 +8863,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 443,
@@ -6691,7 +8882,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 444,
@@ -6705,7 +8901,26 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Roaches Away!",
+          modifier: "values.ravager",
+          operation: "replace",
+          value: "Also spawns one Mecha Ravager."
+        },
+        {
+          skill: "Deconstructive Roach-nites",
+          modifier: "values.ravager",
+          operation: "replace",
+          value: "Also spawns one Mecha Ravager."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 445,
@@ -6719,7 +8934,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Vectored Burrow Charge",
+          modifier: "values.stun",
+          operation: "replace",
+          value: "Stuns enemy mechanical ground units in a large area."
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 446,
@@ -6733,7 +8961,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 447,
@@ -6747,7 +8980,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 448,
@@ -6761,7 +8999,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 449,
@@ -6775,7 +9018,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 450,
@@ -6789,7 +9037,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 451,
@@ -6803,7 +9056,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 452,
@@ -6817,7 +9075,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 453,
@@ -6831,7 +9094,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 454,
@@ -6845,7 +9113,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 455,
@@ -6859,7 +9132,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Fungal Snare",
+          modifier: "cooldown",
+          operation: "add",
+          value: -15
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 456,
@@ -6873,7 +9159,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 457,
@@ -6887,7 +9178,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 458,
@@ -6901,7 +9197,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 459,
@@ -6915,7 +9216,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 460,
@@ -6929,7 +9235,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 461,
@@ -6943,7 +9254,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 462,
@@ -6957,7 +9273,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 463,
@@ -6971,7 +9292,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 464,
@@ -6985,7 +9311,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 465,
@@ -6999,7 +9330,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 466,
@@ -7013,7 +9349,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Lock On",
+          modifier: "values.range",
+          operation: "add",
+          value: 3
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 467,
@@ -7027,7 +9376,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Lock On",
+          modifier: "values.damage",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90
     },
     {
       upgradeid: 468,
@@ -7041,7 +9403,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 469,
@@ -7055,7 +9422,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 470,
@@ -7069,7 +9441,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 471,
@@ -7083,7 +9460,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 472,
@@ -7097,7 +9479,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 473,
@@ -7111,7 +9498,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Nano-Repair",
+          modifier: "values.energy",
+          operation: "set",
+          value: 0
+        }
+      ],
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 474,
@@ -7125,7 +9525,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 475,
@@ -7139,7 +9544,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 476,
@@ -7153,7 +9563,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 477,
@@ -7167,7 +9582,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 478,
@@ -7181,7 +9601,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 479,
@@ -7195,7 +9620,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Shredder Grenade",
+          modifier: "values.implosion",
+          operation: "replace",
+          value: "Pulls affected units to the center and stuns them for 2 seconds."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 480,
@@ -7209,7 +9646,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Shredder Grenade",
+          modifier: "values.damage",
+          operation: "add",
+          value: 50
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 481,
@@ -7223,7 +9672,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 482,
@@ -7237,7 +9690,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Demolition Charge",
+          modifier: "values.damage",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 483,
@@ -7251,7 +9716,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Demolition Charge",
+          modifier: "values.restraint",
+          operation: "replace",
+          value: "Stuns the target and disables its detection until the charge explodes."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 484,
@@ -7265,7 +9742,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 485,
@@ -7279,11 +9760,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Demolition Charge",
+          modifier: "values.recharge",
+          operation: "replace",
+          value: "Each attack reduces the remaining charge-up time by 3 seconds."
+        }
+      ],
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 486,
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       commander: "Tychus",
       name: "SA-55 Thunderbolt Missiles",
       icon: "sa55thunderboltmissiles",
@@ -7293,7 +9786,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Warhound Turret",
+          modifier: "values.missiles",
+          operation: "replace",
+          value: "Turrets fire missiles at up to 2 air targets, dealing 100 damage to each."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 487,
@@ -7307,11 +9812,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 488,
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       commander: "Tychus",
       name: "Moebius M34 Terror Rounds",
       icon: "moebiusm34terrorrounds",
@@ -7321,7 +9830,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Warhound Turret",
+          modifier: "values.fear",
+          operation: "replace",
+          value: "Turret attacks have a 3% chance to cause Fear in a small area for 3 seconds."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 489,
@@ -7335,11 +9856,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 490,
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       commander: "Tychus",
       name: "D99 Detonator",
       icon: "d99detonator",
@@ -7349,7 +9874,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Warhound Turret",
+          modifier: "values.explosion",
+          operation: "replace",
+          value: "Turrets explode on death, dealing 50 damage to nearby enemies."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 491,
@@ -7363,11 +9900,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 492,
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       commander: "Tychus",
       name: "Umojan Turret Frame",
       icon: "umojanturretframe",
@@ -7377,11 +9918,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Warhound Turret",
+          modifier: "values.frame",
+          operation: "replace",
+          value: "Warhound Turrets have 75% more life and weapon damage."
+        }
+      ],
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 493,
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       commander: "Tychus",
       name: "High Capacity Containers",
       icon: "highcapacitycontainers",
@@ -7391,11 +9944,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Oil Spill",
+          modifier: "values.radius",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 494,
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       commander: "Tychus",
       name: "Hades Oil",
       icon: "hadesoil",
@@ -7405,11 +9970,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Oil Spill",
+          modifier: "values.lightDamage",
+          operation: "add",
+          value: 25
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 495,
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       commander: "Tychus",
       name: "Wildflame Fuel Additives",
       icon: "wildflamefueladditives",
@@ -7419,11 +9996,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Oil Spill",
+          modifier: "values.spread",
+          operation: "replace",
+          value: "Enflamed enemies explode on death, spreading Enflamed to nearby enemy units."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 496,
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       commander: "Tychus",
       name: "XCMC-670 Combat Suit",
       icon: "xcmc670combatsuit",
@@ -7433,11 +10022,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 497,
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       commander: "Tychus",
       name: "X-71 Impact Boots",
       icon: "x71impactboots",
@@ -7447,11 +10040,29 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Heavy Impact",
+          modifier: "values.radius",
+          operation: "multiply",
+          value: 2
+        },
+        {
+          skill: "Heavy Impact",
+          modifier: "values.stun",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 498,
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       commander: "Tychus",
       name: "Critical Response System",
       icon: "criticalresponsesystem",
@@ -7461,11 +10072,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 499,
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       commander: "Tychus",
       name: "M.A.L.I.C.E. Ammunition",
       icon: "maliceammunition",
@@ -7475,11 +10090,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 500,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "Umojan Signal Modulator",
       icon: "umojansignalmodulator",
@@ -7489,11 +10108,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Revitalizer",
+          modifier: "values.healing",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 501,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "Moebius Aggression Blend",
       icon: "moebiusaggressionblend",
@@ -7503,11 +10134,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Deploy Revitalizer",
+          modifier: "values.attackSpeed",
+          operation: "replace",
+          value: "Units in range gain 15% attack speed."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 502,
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       commander: "Tychus",
       name: "Hammer Munitions",
       icon: "hammermunitions",
@@ -7517,7 +10160,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Attacks slow enemies and deal 50% damage to ground enemies in a circle of radius 2 around the target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 503,
@@ -7531,7 +10178,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Dominate",
+          modifier: "values.restoration",
+          operation: "replace",
+          value: "Fully restores the target's life, shields, and energy, and grants 75% increased attack speed."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 504,
@@ -7545,7 +10204,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Dominate",
+          modifier: "values.confusion",
+          operation: "replace",
+          value: "Confuses enemies near the target, forcing them to attack each other for 10 seconds."
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 505,
@@ -7559,7 +10230,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 506,
@@ -7573,7 +10248,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Dominate",
+          modifier: "values.duration",
+          operation: "multiply",
+          value: 3
+        }
+      ],
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 507,
@@ -7587,7 +10274,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Ultrasonic Pulse",
+          modifier: "values.damage",
+          operation: "multiply",
+          value: 1.5
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 508,
@@ -7601,7 +10300,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Ultrasonic Pulse",
+          modifier: "values.radius",
+          operation: "multiply",
+          value: 1.5
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 509,
@@ -7615,7 +10326,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Ultrasonic Pulse",
+          modifier: "values.duration",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 510,
@@ -7629,11 +10352,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Ultrasonic Pulse",
+          modifier: "values.network",
+          operation: "replace",
+          value: "Nearby Outlaws have their primary ability cooldowns and charge-up times reduced by 20%."
+        }
+      ],
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 511,
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       commander: "Tychus",
       name: "Umojan Repair Nanites",
       icon: "umojanrepairnanites",
@@ -7643,11 +10378,29 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Reinvigorating Burst",
+          modifier: "values.instantHealing",
+          operation: "multiply",
+          value: 2
+        },
+        {
+          skill: "Reinvigorating Burst",
+          modifier: "values.healing",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 512,
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       commander: "Tychus",
       name: "Procyon Serum",
       icon: "procyonserum",
@@ -7657,11 +10410,23 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Super Heal",
+          modifier: "values.healing",
+          operation: "multiply",
+          value: 2
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 513,
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       commander: "Tychus",
       name: "Procyon Twin Heal Beam Gauntlet",
       icon: "procyontwinhealbeamgauntlet",
@@ -7671,11 +10436,29 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Super Heal",
+          modifier: "values.targets",
+          operation: "replace",
+          value: "two targets"
+        },
+        {
+          skill: "Super Heal",
+          modifier: "values.gearNote",
+          operation: "replace",
+          value: ""
+        }
+      ],
+      cost: {
+        minerals: 600,
+        gas: 150
+      }
     },
     {
       upgradeid: 514,
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       commander: "Tychus",
       name: "XM-77 Matrix Generator",
       icon: "xm77matrixgenerator",
@@ -7685,7 +10468,11 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 1200,
+        gas: 400
+      }
     },
     {
       upgradeid: 515,
@@ -7699,7 +10486,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 516,
@@ -7713,7 +10505,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 517,
@@ -7727,7 +10524,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Blink",
+          modifier: "values.shield",
+          operation: "replace",
+          value: "Cloaks the Stalker and restores 80 shields over 5 seconds."
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 518,
@@ -7741,7 +10551,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 519,
@@ -7755,7 +10570,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 520,
@@ -7769,7 +10589,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120
     },
     {
       upgradeid: 521,
@@ -7783,7 +10608,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 522,
@@ -7797,7 +10627,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 523,
@@ -7811,7 +10646,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 524,
@@ -7825,7 +10665,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 525,
@@ -7839,7 +10684,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 526,
@@ -7853,7 +10703,20 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Stasis Ward",
+          modifier: "values.vulnerability",
+          operation: "replace",
+          value: "can be attacked"
+        }
+      ],
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 527,
@@ -7867,7 +10730,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 528,
@@ -7881,7 +10749,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90
     },
     {
       upgradeid: 529,
@@ -7895,7 +10768,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Deals 50% attack damage to enemy air units in a circle of radius 1.5 around the target upon detonation.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 530,
@@ -7913,7 +10791,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 531,
-      unit: "XelNaga Ambusher",
+      unit: "Xel'Naga Ambusher",
       commander: "Zeratul",
       name: "Predictive Blink",
       icon: "predictiveblink",
@@ -7927,7 +10805,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 532,
-      unit: "XelNaga Ambusher",
+      unit: "Xel'Naga Ambusher",
       commander: "Zeratul",
       name: "Vengeance of the Void",
       icon: "vengeanceofthevoid",
@@ -7937,11 +10815,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Predictive Blink",
+          modifier: "values.apparition",
+          operation: "replace",
+          value: "Leaves behind a Void Apparition that attacks once for 50% of the unit's weapon damage."
+        }
+      ]
     },
     {
       upgradeid: 533,
-      unit: "XelNaga Ambusher",
+      unit: "Xel'Naga Ambusher",
       commander: "Zeratul",
       name: "Phase Battery",
       icon: "phasebattery",
@@ -7951,11 +10837,19 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Predictive Blink",
+          modifier: "charges",
+          operation: "set",
+          value: 3
+        }
+      ]
     },
     {
       upgradeid: 534,
-      unit: "XelNaga Shieldguard",
+      unit: "Xel'Naga Shieldguard",
       commander: "Zeratul",
       name: "Shield Recharge",
       icon: "shieldrecharge",
@@ -7969,7 +10863,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 535,
-      unit: "XelNaga Shieldguard",
+      unit: "Xel'Naga Shieldguard",
       commander: "Zeratul",
       name: "Eclipse Protocol",
       icon: "eclipseprotocol",
@@ -7983,7 +10877,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 536,
-      unit: "XelNaga Shieldguard",
+      unit: "Xel'Naga Shieldguard",
       commander: "Zeratul",
       name: "Reflection Shield",
       icon: "reflectionshield",
@@ -8021,7 +10915,15 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Blink",
+          modifier: "values.damage",
+          operation: "replace",
+          value: "Deals 50 damage to enemy units caught in its path."
+        }
+      ]
     },
     {
       upgradeid: 539,
@@ -8039,7 +10941,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 540,
-      unit: "XelNaga Enforcer",
+      unit: "Xel'Naga Enforcer",
       commander: "Zeratul",
       name: "Barrier",
       icon: "barrier",
@@ -8053,21 +10955,22 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 541,
-      unit: "XelNaga Enforcer",
+      unit: "Xel'Naga Enforcer",
       commander: "Zeratul",
       name: "Force Cannon",
       icon: "forcecannon",
       effect: "Allows this unit's anti-air weapon to knock back enemy air units, dealing 25% of its damage to units caught in the path of the blast.",
       modifier: "aoe",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: "The anti-air attack knocks the target back and deals 25% damage to enemy air units in a rectangle 5 long and 3 wide extending behind the primary target.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air"
     },
     {
       upgradeid: 542,
-      unit: "XelNaga Enforcer",
+      unit: "Xel'Naga Enforcer",
       commander: "Zeratul",
       name: "Eternity Barrier",
       icon: "enternitybarrier",
@@ -8077,11 +10980,25 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: null,
       operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Barrier",
+          modifier: "values.absorption",
+          operation: "multiply",
+          value: 4
+        },
+        {
+          skill: "Barrier",
+          modifier: "values.repair",
+          operation: "replace",
+          value: "Fully repairs hull damage."
+        }
+      ]
     },
     {
       upgradeid: 543,
-      unit: "XelNaga Void Array",
+      unit: "Xel'Naga Void Array",
       commander: "Zeratul",
       name: "Infinite Void",
       icon: "infinitevoid",
@@ -8095,7 +11012,7 @@ Drains 0.9 energy per second.`,
     },
     {
       upgradeid: 544,
-      unit: "XelNaga Void Array",
+      unit: "Xel'Naga Void Array",
       commander: "Zeratul",
       name: "Shield Boosters",
       icon: "shieldboosters",
@@ -8115,11 +11032,17 @@ Drains 0.9 energy per second.`,
       icon: "slicingglaive",
       effect: "Primal Mutalisks deal 100% increased damage against air units.",
       modifier: "aoe",
-      modifiermode: "(Air)",
+      modifiermode: null,
       modifiertag: null,
       value: "Bounces to up to 2 additional air enemies, within radius 3 of the previous target. Base bounce damage: 9, 3; gains 1 and 0.5 per weapon upgrade.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 546,
@@ -8133,7 +11056,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Circular explosion against ground units: 100% damage within radius 1.2884, 50% from 1.2884 to 1.7040, and 25% from 1.7040 to 2.3275, accounting for unit size. Excludes structures.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
     },
     {
       upgradeid: 547,
@@ -8147,7 +11075,12 @@ Drains 0.9 energy per second.`,
       modifiertag: null,
       value: "Two sweeping beams perpendicular to the attack direction, extending 1.25 to each side of the target and hitting in circles of radius 0.15. Also leaves four burning circles of radius 0.5, centered 0.5 and 1.5 to either side of the target, dealing up to 150 damage over 5 seconds to ground enemies.",
       operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 120
     },
     {
       upgradeid: 548,
@@ -8162,6 +11095,168 @@ Drains 0.9 energy per second.`,
       value: 3,
       operation: "add",
       upgradetype: "upgrade"
+    },
+    {
+      upgradeid: 549,
+      unit: "Sovereign Battlecruiser",
+      commander: "Horner",
+      name: "Overcharged Reactor",
+      icon: "overchargedreactor",
+      effect: "Battlecruiser weapons systems are upgraded to a powerful particle cannon that deals 200 damage per attack.",
+      modifier: "weaponName",
+      modifiermode: null,
+      modifiertag: null,
+      value: "Mini Yamato Gun",
+      operation: "replace",
+      upgradetype: "preupgrade",
+      weapon: "",
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 63
+    },
+    {
+      upgradeid: 550,
+      unit: "Primal Mutalisk",
+      commander: "Dehaka",
+      name: "Slicing Glaive",
+      icon: "slicingglaive",
+      effect: "Primal Mutalisks deal 100% increased damage against air units.",
+      modifier: "weaponName",
+      modifiermode: null,
+      modifiertag: null,
+      value: "Slicing Glave",
+      operation: "replace",
+      upgradetype: "upgrade",
+      weapon: "air",
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60
+    },
+    {
+      upgradeid: 551,
+      unit: "Tesseract Cannon",
+      commander: "Zeratul",
+      name: "Tesseract Matrix",
+      icon: "tesseractmatrix",
+      effect: "Decreases the cooldown of Shade Projection by 25%. Increases the damage absorbed by Shade Barrier by 100%.",
+      modifier: null,
+      modifiermode: null,
+      modifiertag: null,
+      value: null,
+      operation: "none",
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Shade Projection",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.75
+        },
+        {
+          skill: "Shade Barrier",
+          modifier: "values.absorption",
+          operation: "multiply",
+          value: 2
+        }
+      ]
+    },
+    {
+      upgradeid: 552,
+      unit: "Tesseract Monolith",
+      commander: "Zeratul",
+      name: "Tesseract Matrix",
+      icon: "tesseractmatrix",
+      effect: "Decreases the cooldown of Shade Projection by 25%. Increases the damage absorbed by Shade Barrier by 100%.",
+      modifier: null,
+      modifiermode: null,
+      modifiertag: null,
+      value: null,
+      operation: "none",
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Shade Projection",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.75
+        },
+        {
+          skill: "Shade Barrier",
+          modifier: "values.absorption",
+          operation: "multiply",
+          value: 2
+        }
+      ]
+    },
+    {
+      upgradeid: 553,
+      unit: "Zeratul",
+      commander: "Zeratul",
+      name: "Void Blink",
+      icon: "voidblink",
+      effect: "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
+      modifier: null,
+      modifiermode: null,
+      modifiertag: null,
+      value: null,
+      operation: "none",
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Blink",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.5
+        }
+      ]
+    },
+    {
+      upgradeid: 554,
+      unit: "Void Templar",
+      commander: "Zeratul",
+      name: "Void Blink",
+      icon: "voidblink",
+      effect: "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
+      modifier: null,
+      modifiermode: null,
+      modifiertag: null,
+      value: null,
+      operation: "none",
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Blink",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.5
+        }
+      ]
+    },
+    {
+      upgradeid: 555,
+      unit: "Xel'Naga Ambusher",
+      commander: "Zeratul",
+      name: "Void Blink",
+      icon: "voidblink",
+      effect: "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
+      modifier: null,
+      modifiermode: null,
+      modifiertag: null,
+      value: null,
+      operation: "none",
+      upgradetype: "upgrade",
+      skillModifiers: [
+        {
+          skill: "Predictive Blink",
+          modifier: "cooldown",
+          operation: "multiply",
+          value: 0.5
+        }
+      ]
     }
   ];
 
@@ -8202,8 +11297,8 @@ Drains 0.9 energy per second.`,
       description: "Quickly burrow to target location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -8253,12 +11348,37 @@ Drains 0.9 energy per second.`,
       description: "Launches acid at all enemy units in the target area, reducing their attack speed by 12.5% and armor by 3. Stacks 3 times.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "45s",
-      energycost: "0",
+      cooldown: 45,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Devourer",
+      name: "Evolve to Leviathan",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+      ],
+      description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
     },
     {
       commander: "Abathur",
@@ -8301,16 +11421,129 @@ Drains 0.9 energy per second.`,
       icons: [
         "/images/commanderdata/unitskills/abathur/corrosivebile.png"
       ],
-      description: `Launch a missile at the target location, dealing 60 damage to enemy units in the area upon impact.
-Can destroy Protoss Force Fields.`,
+      description: `Launch a missile at the target location, dealing {damage} damage to enemy units in the area upon impact.
+Can destroy Protoss Force Fields.
+
+Impact radius: {radius}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 60,
+        radius: 0.5
+      }
+    },
+    {
+      commander: "Abathur",
+      unit: "Ravager",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+      ],
+      description: "Quickly burrow to the target location without requiring vision. The Deep Tunnel upgrade does not require a Hive.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: 30,
+      energycost: 0,
+      rankrequired: null,
+      mode: null,
+      prestige: "Tunneling Horror",
+      requirements: "Requires Deep Tunnel research at an Infestation Pit."
+    },
+    {
+      commander: "Abathur",
+      unit: "Ravager",
+      name: "Evolve to Brutalisk",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+      ],
+      description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
+    },
+    {
+      commander: "Abathur",
+      unit: "Roach",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+      ],
+      description: "Quickly burrow to the target location without requiring vision. The Deep Tunnel upgrade does not require a Hive.",
+      type: "active",
+      requiresupgrade: true,
+      cooldown: 30,
+      energycost: 0,
+      rankrequired: null,
+      mode: null,
+      prestige: "Tunneling Horror",
+      requirements: "Requires Deep Tunnel research at an Infestation Pit."
+    },
+    {
+      commander: "Abathur",
+      unit: "Roach",
+      name: "Morph to Ravager",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-ravager.png"
+      ],
+      description: "Transforms this Roach into a Ravager.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Lair.",
+      cost: {
+        minerals: 13,
+        gas: 38,
+        supply: 1
+      },
+      buildTime: 5
+    },
+    {
+      commander: "Abathur",
+      unit: "Roach",
+      name: "Evolve to Brutalisk",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+      ],
+      description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
     },
     {
       commander: "Abathur",
@@ -8339,8 +11572,8 @@ Can destroy Protoss Force Fields.`,
       description: "Sends Locusts to target location.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15s",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -8356,12 +11589,37 @@ Can destroy Protoss Force Fields.`,
       description: "Quickly burrow to a target visible location.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Host",
+      name: "Evolve to Brutalisk",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+      ],
+      description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
     },
     {
       commander: "Abathur",
@@ -8374,8 +11632,8 @@ Can destroy Protoss Force Fields.`,
 Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "3s",
-      energycost: "0",
+      cooldown: 3,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -8388,15 +11646,44 @@ Bonus: Zerg move faster on creep.`,
       icons: [
         "/images/commanderdata/unitskills/abathur/rapidtransfusion.png"
       ],
-      description: "Heals a biological unit or structure for 25 life over time.",
+      description: "Heals a {targets} unit or structure for {healing} life over time.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "3s",
-      energycost: "10",
+      cooldown: 3,
+      energycost: 10,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        healing: 25,
+        targets: "biological"
+      }
+    },
+    {
+      commander: "Abathur",
+      unit: "Swarm Queen",
+      name: "Evolve to Brutalisk",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+      ],
+      description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
     },
     {
       commander: "Abathur",
@@ -8405,15 +11692,21 @@ Bonus: Zerg move faster on creep.`,
       icons: [
         "/images/commanderdata/unitskills/abathur/abduct.png"
       ],
-      description: "Pulls target unit to the Viper. Enemy is stunned for 1 second.",
+      description: `Pulls target unit to the Viper. Enemy is stunned for {stun} seconds.
+
+Cast range: {range}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "25",
+      cooldown: 0,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        range: 9,
+        stun: 1
+      }
     },
     {
       commander: "Abathur",
@@ -8422,15 +11715,20 @@ Bonus: Zerg move faster on creep.`,
       icons: [
         "/images/commanderdata/unitskills/abathur/disablingcloud.png"
       ],
-      description: "Creates a cloud that slows movement speed (-50%) and prevents enemy units and structures from attacking and using energy-based abilities. Lasts for 10 seconds.",
+      description: `Creates a cloud that slows movement speed (-50%) and prevents enemy units and structures from attacking and using energy-based abilities. Lasts for 10 seconds.
+
+Cast range: {range}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "75",
+      cooldown: 0,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        range: 11
+      }
     },
     {
       commander: "Abathur",
@@ -8439,15 +11737,20 @@ Bonus: Zerg move faster on creep.`,
       icons: [
         "/images/commanderdata/unitskills/abathur/consumption.png"
       ],
-      description: "Drains up to 75 life from a friendly Zerg unit and gives the Viper 2 energy for each point of life drained.",
+      description: `Drains up to 75 life from a friendly Zerg unit and gives the Viper 2 energy for each point of life drained.
+
+Cast range: {range}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        range: 4
+      }
     },
     {
       commander: "Abathur",
@@ -8457,15 +11760,45 @@ Bonus: Zerg move faster on creep.`,
         "/images/commanderdata/unitskills/abathur/parasiticbomb.png"
       ],
       description: `Creates a parasitic cloud of radius 3 that deals 90 damage over 10 seconds to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.
-Cannot target ground units or structures.`,
+Cannot target ground units or structures.
+
+Cast range: {range}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "125",
+      cooldown: 0,
+      energycost: 125,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        range: 8
+      }
+    },
+    {
+      commander: "Abathur",
+      unit: "Viper",
+      name: "Evolve to Leviathan",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+      ],
+      description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
     },
     {
       commander: "Alarak",
@@ -8477,7 +11810,7 @@ Cannot target ground units or structures.`,
       description: "Alarak intercepts target enemy unit and strikes it for 200 damage.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -8491,15 +11824,18 @@ Cannot target ground units or structures.`,
       icons: [
         "/images/commanderdata/hero/alarak/destructionwave.png"
       ],
-      description: "Unleashes a massive wave of force in a straight line, dealing 50 damage to enemies in its path and knocking them back.",
+      description: "Unleashes a massive wave of force in a straight line, dealing 50 damage to enemies in its path and {knockback}.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "5 seconds",
+      cooldown: 5,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        knockback: "knocking them back"
+      }
     },
     {
       commander: "Alarak",
@@ -8513,7 +11849,7 @@ Biological units provide a 5% damage bonus per supply up to 100 supply, and then
 Supply count is additive, with biological units favored first. So if you have 100 supply in bio and 1 supply in mechanical units, the mechanical units will provide the reduced rate of 5%.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "240 seconds",
+      cooldown: 240,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -8544,15 +11880,24 @@ Supply count is additive, with biological units favored first. So if you have 10
       icons: [
         "/images/commanderdata/unitskills/alarak/psionicorb.png"
       ],
-      description: "Unleashes a traveling Psionic Orb that deals 10 damage per second to all enemies along its path.",
+      description: `Unleashes a traveling Psionic Orb that deals {damage} damage per second to all enemies along its path.
+
+Travel distance: {distance}.
+
+{stacks}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "2s",
-      energycost: "100",
+      cooldown: 2,
+      energycost: 100,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 10,
+        distance: 13,
+        stacks: ""
+      }
     },
     {
       commander: "Alarak",
@@ -8561,16 +11906,22 @@ Supply count is additive, with biological units favored first. So if you have 10
       icons: [
         "/images/commanderdata/unitskills/alarak/mindblast.png"
       ],
-      description: `Deals 200 damage to target enemy unit.
-Can target ground and air units.`,
+      description: `Deals {damage} damage to target enemy unit.
+Can target ground and air units.
+
+{stacks}`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "8s",
-      energycost: "100",
+      cooldown: 8,
+      energycost: 100,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 200,
+        stacks: ""
+      }
     },
     {
       commander: "Alarak",
@@ -8580,15 +11931,20 @@ Can target ground and air units.`,
         "/images/commanderdata/unitskills/alarak/sacrifice.png"
       ],
       description: `Sacrifices a Supplicant to fully restore the Ascendant's energy.
-Can only target Supplicants.`,
+Can only target Supplicants.
+
+{bonus}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        bonus: ""
+      }
     },
     {
       commander: "Alarak",
@@ -8597,15 +11953,21 @@ Can only target Supplicants.`,
       icons: [
         "/images/commanderdata/unitskills/alarak/targetlock.png"
       ],
-      description: "Increases damage dealt to target enemy unit by 15%. Effect lasts as long as the Havoc remains locked onto the target.",
+      description: `Increases damage dealt to target enemy unit by {bonus}%. Effect lasts as long as the Havoc remains locked onto the target.
+
+Cast range: {range}.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "3s",
-      energycost: "0",
+      cooldown: 3,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        bonus: 15,
+        range: 8
+      }
     },
     {
       commander: "Alarak",
@@ -8615,16 +11977,21 @@ Can only target Supplicants.`,
         "/images/commanderdata/unitskills/alarak/forcefield.png"
       ],
       description: `Creates a solid barrier that lasts for 15 seconds and impedes movement of ground units.
-Massive units shatter Force Fields on contact. (3 charges max).`,
+Massive units shatter Force Fields on contact. (3 charges max).
+
+Cast range: {range}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "15s",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null,
-      charges: 3
+      charges: 3,
+      values: {
+        range: 9
+      }
     },
     {
       commander: "Alarak",
@@ -8667,7 +12034,7 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       icons: [
         "/images/commanderdata/unitskills/alarak/squadsight.png"
       ],
-      description: "Friendly units within a radius of 4 gain 2 additional range on non-melee attacks.",
+      description: "Friendly units within a radius of {radius} gain 2 additional range on non-melee attacks.",
       type: "passive",
       requiresupgrade: false,
       cooldown: null,
@@ -8675,7 +12042,10 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        radius: 4
+      }
     },
     {
       commander: "Alarak",
@@ -8687,7 +12057,7 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       description: "Deals 20 damage to all enemies in a straight line up to 10 range away.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "1 second",
+      cooldown: 1,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -8738,8 +12108,8 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       description: "Teleports the Slayer to a nearby target location. Ability can only be used once every 8 seconds. After using Phase Blink, the Slayer's next attack within 8 seconds will deal double damage.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "8s",
-      energycost: "0",
+      cooldown: 8,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -8755,7 +12125,7 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       description: "After being attacked, becomes immune to damage for 2 seconds.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: "5 seconds",
+      cooldown: 5,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -8803,15 +12173,18 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/feedback.png"
       ],
-      description: "Drains all energy from the target. Deals 1 damage per point of energy.",
+      description: "Drains all energy from the target. Deals {damagePerEnergy} damage per point of energy.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damagePerEnergy: 1
+      }
     },
     {
       commander: "Artanis",
@@ -8820,15 +12193,25 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/psionicstorm.png"
       ],
-      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+      description: `Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.
+
+Radius: {radius}.
+
+Cast range: {range}.`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "2s",
-      energycost: "75",
+      cooldown: 2,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        radius: 1.5,
+        range: 9,
+        damage: 80,
+        shieldRestoration: 50
+      }
     },
     {
       commander: "Artanis",
@@ -8837,15 +12220,18 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/feedback.png"
       ],
-      description: "Drains all energy from the target. Deals 1 damage per point of energy.",
+      description: "Drains all energy from the target. Deals {damagePerEnergy} damage per point of energy.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damagePerEnergy: 1
+      }
     },
     {
       commander: "Artanis",
@@ -8854,15 +12240,47 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/psionicstorm.png"
       ],
-      description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+      description: `Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.
+
+Radius: {radius}.
+
+Cast range: {range}.`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "2s",
-      energycost: "75",
+      cooldown: 2,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        radius: 1.5,
+        range: 9,
+        damage: 80,
+        shieldRestoration: 50
+      }
+    },
+    {
+      commander: "Artanis",
+      unit: "High Templar",
+      name: "Archon Merge",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-protoss-archon.png"
+      ],
+      description: "Merges two High Templar into one Archon.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 12
     },
     {
       commander: "Artanis",
@@ -8871,15 +12289,18 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/barrier.png"
       ],
-      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      description: "Absorbs up to {absorption} damage. Lasts for 10 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        absorption: 100
+      }
     },
     {
       commander: "Artanis",
@@ -8923,15 +12344,20 @@ Massive units shatter Force Fields on contact. (3 charges max).`,
         "/images/commanderdata/unitskills/artanis/gravitonbeam.png"
       ],
       description: `Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.
-Massive units are immune.`,
+Massive units are immune.
+
+{targets}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        targets: ""
+      }
     },
     {
       commander: "Artanis",
@@ -8958,15 +12384,18 @@ Massive units are immune.`,
         "/images/commanderdata/unitskills/artanis/createscarab.png"
       ],
       description: `Builds Scarabs that automatically launch at the Reaver's target and explode for area damage.
-Can attack ground units. (5 max).`,
+Can attack ground units. ({capacity} max).`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "8s",
-      energycost: "0",
+      cooldown: 8,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        capacity: 5
+      }
     },
     {
       commander: "Artanis",
@@ -8975,15 +12404,18 @@ Can attack ground units. (5 max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/disintegration.png"
       ],
-      description: "Deals 500 damage over 20 seconds to target enemy unit or structure.",
+      description: "Deals {damage} damage over 20 seconds to target enemy unit or structure.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "90 seconds",
-      energycost: "0",
+      cooldown: 90,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 500
+      }
     },
     {
       commander: "Artanis",
@@ -8992,15 +12424,20 @@ Can attack ground units. (5 max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/charge.png"
       ],
-      description: "Intercepts enemy ground units and increases movement speed.",
+      description: `Intercepts enemy ground units and increases movement speed.
+
+{chargeBonus}`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        chargeBonus: ""
+      }
     },
     {
       commander: "Artanis",
@@ -9009,15 +12446,18 @@ Can attack ground units. (5 max).`,
       icons: [
         "/images/commanderdata/unitskills/artanis/whirlwind.png"
       ],
-      description: "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
+      description: "Deals {damage} damage per second to all nearby enemy units. Lasts 3 seconds.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 10
+      }
     },
     {
       commander: "Dehaka",
@@ -9027,15 +12467,18 @@ Can attack ground units. (5 max).`,
         "/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper-framed.png"
       ],
       description: `Siege unit that attacks by spawning Explosive Creepers. Creepers last 25 seconds.
-Creepers can attack ground units.`,
+Creepers can attack {targets} units.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        targets: "ground"
+      }
     },
     {
       commander: "Dehaka",
@@ -9047,7 +12490,7 @@ Creepers can attack ground units.`,
       description: "Charge to a target location knocking back units in the area and dealing 200 damage.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9081,7 +12524,7 @@ Creepers can attack ground units.`,
       description: "Dehaka leaps to the target location, dealing 145 damage to nearby enemy ground units. Each enemy hit grants Dehaka 1 armour for 2 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9099,7 +12542,7 @@ Creepers can attack ground units.`,
 Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot use abilities that cost energy.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9133,13 +12576,16 @@ Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot u
       description: "Dehaka's fiery breath scorches the earth, dealing weapon damage to all enemy units in its path. 3 charges max.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: "Requires skill points; values shown at level 3. Unavailable with Devouring One (P1).",
-      charges: 3
+      requirements: "Requires skill points; values shown at level 3.",
+      charges: 3,
+      excludedPrestiges: [
+        "Devouring One"
+      ]
     },
     {
       commander: "Dehaka",
@@ -9151,7 +12597,7 @@ Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot u
       description: "Quickly burrow to any visible location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9238,7 +12684,7 @@ Level 3 - 3 life per second.`,
       description: "Carpets the ground in fire. Enemy units in the area take 500 damage over 5 seconds. Can be set to Autocast.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "6 seconds",
+      cooldown: 6,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9255,7 +12701,7 @@ Level 3 - 3 life per second.`,
       description: "Glevig burrows to the target location and erupts, dealing damage to units in the area and knocking them back.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
+      cooldown: 0,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9272,7 +12718,7 @@ Level 3 - 3 life per second.`,
       description: "Deals 70 damage per second to the target unit for 5 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "20 seconds",
+      cooldown: 20,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9289,7 +12735,7 @@ Level 3 - 3 life per second.`,
       description: "Quickly burrow to any visible location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9323,7 +12769,7 @@ Level 3 - 3 life per second.`,
       description: "Spawns 6 Primal Locusts and 6 Explosive Creepers that fight for 25 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9340,7 +12786,7 @@ Level 3 - 3 life per second.`,
       description: "Creates a cloud that slows enemy movement speed and prevents enemy units and structures from attacking or using energy-based abilities. Lasts for 5 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "3 seconds",
+      cooldown: 3,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9357,8 +12803,8 @@ Level 3 - 3 life per second.`,
       description: "Fires an Explosive Spore at the target, causing the target and all nearby enemy ground units to take 50 damage.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9375,12 +12821,34 @@ Level 3 - 3 life per second.`,
 Primal Locusts can attack ground units.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Host",
+      name: "Primal Combat: Creeper Host",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-swarmhost.png"
+      ],
+      description: "Two Primal Hosts engage in primal combat, consuming both units to produce one Creeper Host.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 8.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 8
     },
     {
       commander: "Dehaka",
@@ -9392,7 +12860,7 @@ Primal Locusts can attack ground units.`,
       description: "Returns to life shortly after being killed.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -9409,8 +12877,8 @@ Primal Locusts can attack ground units.`,
       description: "Charge to target location knocking back units in the area and dealing 25 damage.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9432,6 +12900,28 @@ Primal Locusts can attack ground units.`,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Ultralisk",
+      name: "Primal Combat: Tyrannozor",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-collection-ultralisk-collectoredition.png"
+      ],
+      description: "Two Primal Ultralisks engage in primal combat, consuming both units to produce one Tyrannozor.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 11.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 8
     },
     {
       commander: "Dehaka",
@@ -9460,8 +12950,8 @@ Primal Locusts can attack ground units.`,
       description: "Unleash a Barrage of Spikes, dealing 100 damage to enemy ground and air units around the Tyrannozor.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9512,8 +13002,8 @@ Primal Locusts can attack ground units.`,
 Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15s",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9530,8 +13020,8 @@ Can attack ground and air units. 8 Interceptors max.`,
 Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15s",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9544,16 +13034,19 @@ Can attack ground and air units. 8 Interceptors max.`,
       icons: [
         "/images/commanderdata/unitskills/fenix/buildinterdictor-framed.png"
       ],
-      description: `Builds Interdictors that automatically bomb enemy ground units for 12 damage.
+      description: `Builds Interdictors that automatically bomb enemy ground units for {damage} damage.
 Can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "15s",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 12
+      }
     },
     {
       commander: "Fenix",
@@ -9579,15 +13072,18 @@ Can attack ground units.`,
       icons: [
         "/images/commanderdata/unitskills/fenix/protectivefield.png"
       ],
-      description: "Creates a shield that reduces all incoming attack damage to friendly units by 35%. Lasts 15 seconds.",
+      description: "Creates a shield that reduces all incoming attack damage to friendly units by 35%. Lasts {duration} seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "20 seconds",
-      energycost: "0",
+      cooldown: 20,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        duration: 15
+      }
     },
     {
       commander: "Fenix",
@@ -9596,15 +13092,20 @@ Can attack ground units.`,
       icons: [
         "/images/commanderdata/unitskills/fenix/purificationnova.png"
       ],
-      description: "Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures.",
+      description: `Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures.
+
+{echo}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "20 seconds",
-      energycost: "0",
+      cooldown: 20,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        echo: ""
+      }
     },
     {
       commander: "Fenix",
@@ -9633,8 +13134,8 @@ Can attack ground units.`,
       description: "Places enemy units in target area into stasis for 15 seconds. Units in stasis cannot move, attack, be attacked or be affected by abilities.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "50",
+      cooldown: 10,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9650,8 +13151,8 @@ Can attack ground units.`,
       description: "Enable Cloaking Field, cloaking friendly units near Fenix. Costs 5 Energy per second to maintain.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "5",
+      cooldown: 0,
+      energycost: 5,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9667,8 +13168,8 @@ Can attack ground units.`,
       description: "Teleports all friendly units in the target area to the location of the Arbiter.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "100",
+      cooldown: 0,
+      energycost: 100,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9701,8 +13202,8 @@ Can attack ground units.`,
       description: "Fenix charges at the target location, dealing 50 damage and stunning all enemies for 5 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "25",
+      cooldown: 10,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9718,8 +13219,8 @@ Can attack ground units.`,
       description: "All nearby enemies take 70 damage per second for 3 seconds. Fenix can move while Whirlwind is active.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "50",
+      cooldown: 10,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9735,8 +13236,8 @@ Can attack ground units.`,
       description: "Fully restores Fenix's shields. autocasting activates Shield Capacitor when Fenix's shields have been depleted.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "5 seconds",
-      energycost: "100",
+      cooldown: 5,
+      energycost: 100,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9752,8 +13253,8 @@ Can attack ground units.`,
       description: "Fires a piercing beam that deals 100 damage to all enemy ground units in its path.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "6 seconds",
-      energycost: "50",
+      cooldown: 6,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9769,8 +13270,8 @@ Can attack ground units.`,
       description: "Fires an air bursting flare that deals 100 damage to enemy air units.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "50",
+      cooldown: 10,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9786,8 +13287,8 @@ Can attack ground units.`,
       description: "Activating Arsenal Overcharge causes your damaging abilities to have no cooldown for 10 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "120 seconds",
-      energycost: "0",
+      cooldown: 120,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9803,8 +13304,8 @@ Can attack ground units.`,
       description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9820,8 +13321,8 @@ Can attack ground units.`,
       description: "Kaldalis intercepts the target unit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "5s",
-      energycost: "0",
+      cooldown: 5,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9837,8 +13338,8 @@ Can attack ground units.`,
       description: "Intercepts enemy ground units and increases movement speed.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9854,8 +13355,8 @@ Can attack ground units.`,
       description: "Fire a barrage of Anti-Matter Missiles, dealing 6 (12 vs Armored) area damage and stunning nearby enemy air units for 1 second.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "5s",
-      energycost: "0",
+      cooldown: 5,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9922,8 +13423,8 @@ Can attack ground units.`,
       description: "Absorbs up to 200 damage. Lasts for 10 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9936,15 +13437,21 @@ Can attack ground units.`,
       icons: [
         "/images/commanderdata/unitskills/fenix/ricochetglaive.png"
       ],
-      description: "An amplified Glaive that ricochets and hits up to 3 enemy units for 25 (35 vs Light) damage each.",
+      description: `An amplified Glaive that ricochets and hits up to {targets} enemy units for 25 (35 vs Light) damage each.
+
+{debilitation}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "5 seconds",
-      energycost: "0",
+      cooldown: 5,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        targets: 3,
+        debilitation: ""
+      }
     },
     {
       commander: "Fenix",
@@ -9956,8 +13463,8 @@ Can attack ground units.`,
       description: "Fire a devastating blast that deals 150 damage the target unit.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "5 seconds",
-      energycost: "0",
+      cooldown: 5,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -9982,6 +13489,70 @@ Can attack ground units.`,
     },
     {
       commander: "Horner",
+      unit: "Assault Galleon",
+      name: "Install Drone Hangar",
+      icons: [
+        "/images/commanderdata/unitupgrades/horner/installdronehangar-framed.png"
+      ],
+      description: "Retrofits this Assault Galleon with a Drone Hangar that automatically builds and deploys up to 6 Assault Drones. Assault Drones can attack ground and air units. Installing the hangar also enables out-of-combat regeneration.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 3.",
+      cost: {
+        minerals: 150,
+        gas: 200,
+        supply: 3
+      },
+      buildTime: 60,
+      hideWithUpgrade: "Install Drone Hangar"
+    },
+    {
+      commander: "Horner",
+      unit: "Assault Galleon",
+      requiresupgrade: false,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      showWithUpgrade: "Install Drone Hangar",
+      name: "Build Assault Drone",
+      icons: [
+        "/images/commanderdata/unitskills/horner/buildassaultdrone.png"
+      ],
+      description: "Automatically builds Assault Drones at no mineral, gas, or supply cost, up to a maximum of 6. The hangar starts with 6 drones when installed. Drones automatically attack ground and air targets.",
+      type: "autocast",
+      cooldown: 15
+    },
+    {
+      commander: "Horner",
+      unit: "Assault Galleon",
+      requiresupgrade: false,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 11.",
+      showWithUpgrade: "Install Drone Hangar",
+      name: "Endurance Training",
+      icons: [
+        "/images/commanderdata/unitskills/horner/endurancetraining.png"
+      ],
+      description: "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+      values: {
+        healing: 3.75,
+        delay: 10
+      },
+      type: "passive",
+      cooldown: null
+    },
+    {
+      commander: "Horner",
       unit: "Asteria Wraith",
       name: "Tactical Jump",
       icons: [
@@ -9990,8 +13561,8 @@ Can attack ground units.`,
       description: "Warps to the target location. Aircraft is invulnerable while warping.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10008,8 +13579,8 @@ Can attack ground units.`,
 Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10052,6 +13623,27 @@ Passive ability.`,
     },
     {
       commander: "Horner",
+      unit: "Asteria Wraith",
+      requiresupgrade: false,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 11.",
+      name: "Endurance Training",
+      icons: [
+        "/images/commanderdata/unitskills/horner/endurancetraining.png"
+      ],
+      description: "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+      values: {
+        healing: 3.75,
+        delay: 10
+      },
+      type: "passive",
+      cooldown: null
+    },
+    {
+      commander: "Horner",
       unit: "Deimos Viking",
       name: "Tactical Jump",
       icons: [
@@ -10060,8 +13652,8 @@ Passive ability.`,
       description: "Warps to the target location. Aircraft is invulnerable while warping.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10077,12 +13669,33 @@ Passive ability.`,
       description: "Launches 5 rockets at the target unit. Each rocket deals 25 (40 vs armored) damage.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "20 seconds",
-      energycost: "0",
+      cooldown: 20,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Deimos Viking",
+      requiresupgrade: false,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 11.",
+      name: "Endurance Training",
+      icons: [
+        "/images/commanderdata/unitskills/horner/endurancetraining.png"
+      ],
+      description: "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+      values: {
+        healing: 3.75,
+        delay: 10
+      },
+      type: "passive",
+      cooldown: null
     },
     {
       commander: "Horner",
@@ -10094,8 +13707,8 @@ Passive ability.`,
       description: "Launches a tar bomb that deals 20 damage to the target unit. Nearby enemies have their movement speed reduced by 75% and attack range reduced by 3 for 5 seconds.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10125,15 +13738,20 @@ Passive ability.`,
       icons: [
         "/images/commanderdata/unitskills/horner/kd8charge.png"
       ],
-      description: "Explodes after a short delay, doing 10 area damage and knocking back nearby units.",
+      description: `Explodes after a short delay, doing 10 area damage and knocking back nearby units.
+
+{death}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "20 seconds",
-      energycost: "0",
+      cooldown: 20,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        death: ""
+      }
     },
     {
       commander: "Horner",
@@ -10145,12 +13763,33 @@ Passive ability.`,
       description: "Warps to the target location. Aircraft is invulnerable while warping.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Horner",
+      unit: "Sovereign Battlecruiser",
+      requiresupgrade: false,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 11.",
+      name: "Endurance Training",
+      icons: [
+        "/images/commanderdata/unitskills/horner/endurancetraining.png"
+      ],
+      description: "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+      values: {
+        healing: 3.75,
+        delay: 10
+      },
+      type: "passive",
+      cooldown: null
     },
     {
       commander: "Horner",
@@ -10162,8 +13801,8 @@ Passive ability.`,
       description: "Warps to the target location. Aircraft is invulnerable while warping.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10176,15 +13815,20 @@ Passive ability.`,
       icons: [
         "/images/commanderdata/unitskills/horner/analyzeweakness.png"
       ],
-      description: "All Melee and Ranged attacks against Analyzed units do 3 bonus damage. Effect lasts as long as the Raven remains locked onto the target.",
+      description: `All Melee and Ranged attacks against Analyzed units do 3 bonus damage. Effect lasts as long as the Raven remains locked onto the target.
+
+Can maintain Target Lock on {targets} target(s) at once.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "3 seconds",
-      energycost: "0",
+      cooldown: 3,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        targets: 1
+      }
     },
     {
       commander: "Horner",
@@ -10221,6 +13865,27 @@ Passive ability.`,
       requirements: null
     },
     {
+      commander: "Horner",
+      unit: "Theia Raven",
+      requiresupgrade: false,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 11.",
+      name: "Endurance Training",
+      icons: [
+        "/images/commanderdata/unitskills/horner/endurancetraining.png"
+      ],
+      description: "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+      values: {
+        healing: 3.75,
+        delay: 10
+      },
+      type: "passive",
+      cooldown: null
+    },
+    {
       commander: "Karax",
       unit: "Carrier",
       name: "Build Interceptor",
@@ -10231,8 +13896,8 @@ Passive ability.`,
 Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10282,8 +13947,8 @@ Can attack ground and air units. 8 Interceptors max.`,
       description: "Friendly target gains 25% attack speed and 50% movement speed for 10 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "3",
+      cooldown: 0,
+      energycost: 3,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10299,8 +13964,8 @@ Can attack ground and air units. 8 Interceptors max.`,
       description: "Temporarily takes control of target enemy mechanical unit. Reclaimed units self-destruct after 120 seconds.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "120 seconds",
-      energycost: "50",
+      cooldown: 120,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10316,8 +13981,8 @@ Can attack ground and air units. 8 Interceptors max.`,
       description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10334,8 +13999,8 @@ Can attack ground and air units. 8 Interceptors max.`,
 Can target ground and air units.`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "45 seconds",
-      energycost: "0",
+      cooldown: 45,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10352,8 +14017,8 @@ Can target ground and air units.`,
 Massive units are immune.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10369,7 +14034,7 @@ Massive units are immune.`,
       description: "After being attacked, becomes immune to damage for 2 seconds.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: "5 seconds",
+      cooldown: 5,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -10437,8 +14102,8 @@ Massive units are immune.`,
       description: "Intercepts enemy ground units and increases movement speed.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10454,7 +14119,7 @@ Massive units are immune.`,
       description: "After fatal damage, rebuilds itself over 5 seconds, returning with full life and shields.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: "120 seconds",
+      cooldown: 120,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -10471,12 +14136,35 @@ Massive units are immune.`,
       description: "Attack speed increased by 50% for 15 seconds.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Hydralisk",
+      name: "Morph to Lurker",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-lurker.png"
+      ],
+      description: "Transforms this Hydralisk into a Lurker.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Lurker Den.",
+      cost: {
+        minerals: 50,
+        gas: 100,
+        supply: 1
+      },
+      buildTime: 15
     },
     {
       commander: "Kerrigan",
@@ -10488,12 +14176,15 @@ Massive units are immune.`,
       description: "Kerrigan leaps to her target and deals 300 damage. Can be used without a target to travel quickly.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: "Unavailable with Desolate Queen."
+      requirements: null,
+      excludedPrestiges: [
+        "Desolate Queen"
+      ]
     },
     {
       commander: "Kerrigan",
@@ -10505,12 +14196,15 @@ Massive units are immune.`,
       description: "Kerrigan dashes through enemies, dealing 100 damage to all enemies in her path.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: "Unavailable with Desolate Queen."
+      requirements: null,
+      excludedPrestiges: [
+        "Desolate Queen"
+      ]
     },
     {
       commander: "Kerrigan",
@@ -10519,15 +14213,18 @@ Massive units are immune.`,
       icons: [
         "/images/commanderdata/hero/kerrigan/assimilationaura.png"
       ],
-      description: "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
+      description: "Causes all nearby enemies to drop {resources} when killed. Effect lasts for 15 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "120 seconds",
-      energycost: "0",
+      cooldown: 120,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: "Unavailable with Desolate Queen."
+      requirements: null,
+      values: {
+        resources: "resources"
+      }
     },
     {
       commander: "Kerrigan",
@@ -10540,13 +14237,13 @@ Massive units are immune.`,
 Heroic units are slowed.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: `Coolup: 600 seconds
-Cooldown: 180 seconds`,
-      energycost: "0",
+      cooldown: 180,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: "Unavailable with Desolate Queen."
+      requirements: null,
+      initialCooldown: 600
     },
     {
       commander: "Kerrigan",
@@ -10558,8 +14255,8 @@ Cooldown: 180 seconds`,
       description: "Kerrigan deals 300 damage to target unit or structure from long range.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: "Desolate Queen",
@@ -10575,44 +14272,8 @@ Cooldown: 180 seconds`,
       description: "Enemies in target area are stunned and take 50 damage over 5 seconds. Heroic units are slowed.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "75",
-      rankrequired: null,
-      mode: null,
-      prestige: "Desolate Queen",
-      requirements: null
-    },
-    {
-      commander: "Kerrigan",
-      unit: "Kerrigan",
-      name: "Assimilation Aura",
-      icons: [
-        "/images/commanderdata/hero/kerrigan/assimilationaura.png"
-      ],
-      description: "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
-      type: "active",
-      requiresupgrade: false,
-      cooldown: "120 seconds",
-      energycost: "0",
-      rankrequired: null,
-      mode: null,
-      prestige: "Desolate Queen",
-      requirements: null
-    },
-    {
-      commander: "Kerrigan",
-      unit: "Kerrigan",
-      name: "Immobilization Wave",
-      icons: [
-        "/images/commanderdata/hero/kerrigan/immobilizationwave.png"
-      ],
-      description: `Deals 100 damage to enemies in a large area around Kerrigan and stuns them for 10 seconds.
-Heroic units are slowed.`,
-      type: "active",
-      requiresupgrade: false,
-      cooldown: `Coolup: 600 seconds
-Cooldown: 180 seconds`,
-      energycost: "0",
+      cooldown: 0,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: "Desolate Queen",
@@ -10680,8 +14341,8 @@ Cooldown: 180 seconds`,
 Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
-      energycost: "25",
+      cooldown: 15,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10697,8 +14358,8 @@ Bonus: Zerg move faster on creep.`,
       description: "Target Hatchery, Lair, or Hive spawns 4 Larvae in 40 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "25 seconds",
-      energycost: "0",
+      cooldown: 25,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10714,8 +14375,8 @@ Bonus: Zerg move faster on creep.`,
       description: "Instantly restores 125 life to target biological unit or structure.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10748,8 +14409,8 @@ Bonus: Zerg move faster on creep.`,
       description: "Ultralisk burrows and charges toward units. When the Ultralisk unburrows, all enemy units nearby are knocked back and stunned for 2 seconds.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -10782,7 +14443,7 @@ Bonus: Zerg move faster on creep.`,
       description: "On death, forms a cocoon and returns with full life after 10 seconds. Destroying the cocoon kills the Ultralisk.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -10816,7 +14477,7 @@ Bonus: Zerg move faster on creep.`,
       description: "Increases attack speed by 200% for 10 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: 3,
       mode: null,
@@ -10825,7 +14486,118 @@ Bonus: Zerg move faster on creep.`,
     },
     {
       commander: "Mengsk",
-      unit: "Emperors Shadow",
+      unit: "Dom. Assault Trooper",
+      name: "Weapon Drop",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/assaultweapon.png"
+      ],
+      description: "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      excludedPrestiges: [
+        "Merchant of Death"
+      ]
+    },
+    {
+      commander: "Mengsk",
+      unit: "Dom. Assault Trooper",
+      name: "Weapon Self-Destruct",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/assaultweapon.png"
+      ],
+      description: "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: "Merchant of Death",
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Dom. Flame Trooper",
+      name: "Weapon Drop",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/flameweapon.png"
+      ],
+      description: "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      excludedPrestiges: [
+        "Merchant of Death"
+      ]
+    },
+    {
+      commander: "Mengsk",
+      unit: "Dom. Flame Trooper",
+      name: "Weapon Self-Destruct",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/flameweapon.png"
+      ],
+      description: "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: "Merchant of Death",
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Dom. Rocket Trooper",
+      name: "Weapon Drop",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/rocketweapon.png"
+      ],
+      description: "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      excludedPrestiges: [
+        "Merchant of Death"
+      ]
+    },
+    {
+      commander: "Mengsk",
+      unit: "Dom. Rocket Trooper",
+      name: "Weapon Self-Destruct",
+      icons: [
+        "/images/commanderdata/unitskills/mengsk/rocketweapon.png"
+      ],
+      description: "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: "Merchant of Death",
+      requirements: null
+    },
+    {
+      commander: "Mengsk",
+      unit: "Emperor's Shadow",
       name: "Pyrokinetic Immolation",
       icons: [
         "/images/commanderdata/unitskills/mengsk/pyrokineticimmolation.png"
@@ -10833,7 +14605,7 @@ Bonus: Zerg move faster on creep.`,
       description: "Immolates a target Biological enemy for 20 seconds, dealing 20 damage per second to themselves and nearby Biological enemies. Can be set to Autocast. Requires 75 energy.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "5 seconds",
+      cooldown: 5,
       energycost: null,
       rankrequired: 0,
       mode: null,
@@ -10842,7 +14614,7 @@ Bonus: Zerg move faster on creep.`,
     },
     {
       commander: "Mengsk",
-      unit: "Emperors Shadow",
+      unit: "Emperor's Shadow",
       name: "EMP Blast",
       icons: [
         "/images/commanderdata/unitskills/mengsk/empblast.png"
@@ -10850,7 +14622,7 @@ Bonus: Zerg move faster on creep.`,
       description: "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for 1 second. Cloaked units are revealed for 10 seconds after being hit. Can be set to Autocast. Requires 75 energy.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "8 seconds",
+      cooldown: 8,
       energycost: null,
       rankrequired: 0,
       mode: null,
@@ -10859,7 +14631,7 @@ Bonus: Zerg move faster on creep.`,
     },
     {
       commander: "Mengsk",
-      unit: "Emperors Shadow",
+      unit: "Emperor's Shadow",
       name: "Labyrinth Cloak",
       icons: [
         "/images/commanderdata/unitskills/mengsk/labyrinthcloak.png"
@@ -10867,7 +14639,7 @@ Bonus: Zerg move faster on creep.`,
       description: "Prevents the Emperor's Shadow from taking any damage for 10 seconds after being attacked. Cannot occur more than once every 30 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: 1,
       mode: null,
@@ -10876,21 +14648,26 @@ Bonus: Zerg move faster on creep.`,
     },
     {
       commander: "Mengsk",
-      unit: "Emperors Shadow",
+      unit: "Emperor's Shadow",
       name: "Tactical Missile Strike",
       icons: [
         "/images/commanderdata/unitskills/mengsk/tacticalmissilestrike.png"
       ],
       description: `Calls down a Tactical Missile Strike at a target location. Tactical Missiles take 4 seconds to land, but they deal up to 150 (+100 vs. structures) damage to enemies in a small radius. (100% damage within 1.5 range of the hit, 50% from 1.5 to 2.0 range)
-Cooldown is time to build one missile.`,
+Cooldown is time to build one missile.
+
+{channel}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "90 seconds",
+      cooldown: 90,
       energycost: null,
       rankrequired: 0,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        channel: ""
+      }
     },
     {
       commander: "Mengsk",
@@ -10917,15 +14694,20 @@ Cooldown is time to build one missile.`,
         "/images/commanderdata/unitskills/mengsk/heal.png"
       ],
       description: `Heals a friendly biological target.
-Heals 9 life per 3 energy.`,
+Heals 9 life per 3 energy.
+
+{targets}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "0 seconds",
+      cooldown: 0,
       energycost: null,
       rankrequired: 0,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        targets: ""
+      }
     },
     {
       commander: "Mengsk",
@@ -10937,7 +14719,7 @@ Heals 9 life per 3 energy.`,
       description: "Increases this unit's movement speed by 70% for 8 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: 0,
       mode: null,
@@ -10988,7 +14770,7 @@ Heals 9 life per 3 energy.`,
       description: "Blasts a target with a devastating plasma cannon, causing 300 damage.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "120 seconds",
+      cooldown: 120,
       energycost: null,
       rankrequired: 0,
       mode: null,
@@ -11005,7 +14787,7 @@ Heals 9 life per 3 energy.`,
       description: "Warps to the target location. Battlecruiser is invulnerable while warping.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: 0,
       mode: null,
@@ -11022,8 +14804,8 @@ Heals 9 life per 3 energy.`,
       description: "Deals 75 damage to enemy ground units in the target area.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "15 seconds",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11056,8 +14838,8 @@ Heals 9 life per 3 energy.`,
       description: "Heals the Elite Marine for 2 life per second and increases its attack speed by 50% and movement speed by 50% for 15 seconds.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "15 seconds",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11073,8 +14855,8 @@ Heals 9 life per 3 energy.`,
       description: "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy detectors. (Costs 50 minerals).",
       type: "active",
       requiresupgrade: true,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11090,8 +14872,8 @@ Heals 9 life per 3 energy.`,
       description: "Launches the Hellbat Ranger toward nearby enemy ground units. Briefly stuns enemy units on impact and gains +4 armor.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "5 seconds",
-      energycost: "0",
+      cooldown: 5,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11107,8 +14889,8 @@ Heals 9 life per 3 energy.`,
       description: "Deals 90 damage to target enemy unit.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11139,15 +14921,20 @@ Heals 9 life per 3 energy.`,
         "/images/commanderdata/hero/nova/snipe.png"
       ],
       description: `Deals 200 damage to target enemy ground or air unit from long range (10).
-Can target biological and mechanical units.`,
+Can target biological and mechanical units.
+
+{refund}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: "Stealth Mode",
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        refund: ""
+      }
     },
     {
       commander: "Nova",
@@ -11156,15 +14943,20 @@ Can target biological and mechanical units.`,
       icons: [
         "/images/commanderdata/hero/nova/sabotagedrone-framed.png"
       ],
-      description: "Deploys an undetectable explosive drone that deals 200 damage (400 vs Structure) to enemy ground units in the target area.",
+      description: "Deploys an undetectable explosive drone that deals {damage} damage ({structureDamage} vs. Structures) to enemy ground units within radius {radius}, accounting for unit size.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "45 seconds",
-      energycost: "100",
+      cooldown: 45,
+      energycost: 100,
       rankrequired: null,
       mode: "Stealth Mode",
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 200,
+        structureDamage: 400,
+        radius: 4
+      }
     },
     {
       commander: "Nova",
@@ -11173,16 +14965,21 @@ Can target biological and mechanical units.`,
       icons: [
         "/images/commanderdata/hero/nova/tacnukestrike.png"
       ],
-      description: "Calls down a Nuclear Strike at the target location, dealing 600 damage in a large radius after 5 seconds.",
+      description: "Calls down a Nuclear Strike at the target location, dealing {damage} damage to enemies within radius {radius} after {delay} seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: `Coolup: 600 seconds
-Cooldown: 420 seconds`,
-      energycost: "0",
+      cooldown: 420,
+      energycost: 0,
       rankrequired: null,
       mode: "Stealth Mode",
       prestige: null,
-      requirements: null
+      requirements: null,
+      initialCooldown: 600,
+      values: {
+        damage: 600,
+        radius: 8,
+        delay: 5
+      }
     },
     {
       commander: "Nova",
@@ -11192,15 +14989,23 @@ Cooldown: 420 seconds`,
         "/images/commanderdata/hero/nova/penetratingblast.png"
       ],
       description: `Deals 50 (100 vs Light) damage to enemy ground units in a wide arc.
-Does not damage friendly units.`,
+Does not damage friendly units.
+
+Range: {range}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: "Assault Mode",
       prestige: null,
-      requirements: null
+      requirements: null,
+      excludedPrestiges: [
+        "Infiltration Specialist"
+      ],
+      values: {
+        range: 7
+      }
     },
     {
       commander: "Nova",
@@ -11213,13 +15018,16 @@ Does not damage friendly units.`,
 Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "8 seconds",
-      energycost: "0",
+      cooldown: 8,
+      energycost: 0,
       rankrequired: null,
       mode: "Assault Mode",
       prestige: null,
       requirements: null,
-      charges: 3
+      charges: 3,
+      excludedPrestiges: [
+        "Infiltration Specialist"
+      ]
     },
     {
       commander: "Nova",
@@ -11231,13 +15039,16 @@ Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
       description: "Deploys a holographic duplicate of Nova that automatically attacks enemy units. The holo decoy lasts for 60 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: `Coolup: 600 seconds
-Cooldown: 420 seconds`,
-      energycost: "0",
+      cooldown: 420,
+      energycost: 0,
       rankrequired: null,
       mode: "Assault Mode",
       prestige: null,
-      requirements: null
+      requirements: null,
+      excludedPrestiges: [
+        "Infiltration Specialist"
+      ],
+      initialCooldown: 600
     },
     {
       commander: "Nova",
@@ -11258,7 +15069,44 @@ Cooldown: 420 seconds`,
     },
     {
       commander: "Nova",
-      unit: "Raven Type II",
+      unit: "Nova",
+      name: "Permanently Cloaked",
+      icons: [
+        "/images/commanderdata/hero/nova/stancedanceswitch.png"
+      ],
+      description: "Nova is permanently cloaked in Stealth Mode. Detectors and revealing effects can expose her.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: null,
+      requirements: null,
+      excludedPrestiges: [
+        "Infiltration Specialist"
+      ]
+    },
+    {
+      commander: "Nova",
+      unit: "Nova",
+      name: "Super Cloak",
+      icons: [
+        "/images/commanderdata/hero/nova/stancedanceswitch.png"
+      ],
+      description: "Nova is cloaked and cannot be detected or targeted. Attacking or using Snipe disables Super Cloak for 4 seconds.",
+      type: "passive",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: "Stealth Mode",
+      prestige: "Infiltration Specialist",
+      requirements: null
+    },
+    {
+      commander: "Nova",
+      unit: "Raven Type-II",
       name: "Build Railgun Turret",
       icons: [
         "/images/commanderdata/unitskills/nova/buildrailgunturret-framed.png"
@@ -11267,8 +15115,8 @@ Cooldown: 420 seconds`,
 Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11276,24 +15124,32 @@ Can attack ground units.`,
     },
     {
       commander: "Nova",
-      unit: "Raven Type II",
+      unit: "Raven Type-II",
       name: "Deploy Bio-Mechanical Repair Drone",
       icons: [
         "/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone-framed.png"
       ],
-      description: "Heals nearby biological and mechanical units. Lasts for 30 seconds.",
+      description: `Heals nearby biological and mechanical units. Lasts for 30 seconds.
+
+Restores {healing} life per second to each target.
+
+{cloak}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        healing: 14,
+        cloak: ""
+      }
     },
     {
       commander: "Nova",
-      unit: "Raven Type II",
+      unit: "Raven Type-II",
       name: "Predator Missile",
       icons: [
         "/images/commanderdata/unitskills/nova/predatormissile.png"
@@ -11301,8 +15157,8 @@ Can attack ground units.`,
       description: "Deploys a missile that pursues target enemy unit, dealing 100 (+35 vs. shields) damage in a wide radius upon contact.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "45 seconds",
-      energycost: "0",
+      cooldown: 45,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11310,7 +15166,7 @@ Can attack ground units.`,
     },
     {
       commander: "Nova",
-      unit: "Raven Type II",
+      unit: "Raven Type-II",
       name: "Detector",
       icons: [
         "/images/commanderdata/unitskills/common/detector.png"
@@ -11333,15 +15189,20 @@ Can attack ground units.`,
         "/images/commanderdata/unitskills/nova/snipe.png"
       ],
       description: `Deals 170 damage to target enemy biological unit.
-Mechanical units are immune.`,
+Mechanical units are immune.
+
+{shots}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        shots: ""
+      }
     },
     {
       commander: "Nova",
@@ -11353,8 +15214,8 @@ Mechanical units are immune.`,
       description: "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Cloaked units are revealed for 10 seconds after being hit.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "45 seconds",
-      energycost: "0",
+      cooldown: 45,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11388,8 +15249,8 @@ Mechanical units are immune.`,
 Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11405,8 +15266,8 @@ Drains 0.9 energy per second.`,
       description: "Increases this unit's movement speed by 100% for 8 seconds.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11422,8 +15283,8 @@ Drains 0.9 energy per second.`,
       description: "Blasts a target with a devastating plasma cannon, causing 300 damage.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11439,8 +15300,8 @@ Drains 0.9 energy per second.`,
       description: "Warps to the target location. Battlecruiser is invulnerable while warping.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11456,8 +15317,8 @@ Drains 0.9 energy per second.`,
       description: "Increases this unit's movement speed by 100% for 8 seconds.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11473,8 +15334,8 @@ Drains 0.9 energy per second.`,
       description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11490,7 +15351,7 @@ Drains 0.9 energy per second.`,
       description: "Hyperjump to the targeted location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -11507,7 +15368,7 @@ Drains 0.9 energy per second.`,
       description: "Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -11527,7 +15388,7 @@ Times out after 180 seconds.
 Each shot consumes 10 energy. (4 charges max)`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "5 seconds",
+      cooldown: 5,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -11545,8 +15406,8 @@ Each shot consumes 10 energy. (4 charges max)`,
       description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11562,8 +15423,8 @@ Each shot consumes 10 energy. (4 charges max)`,
       description: "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the unit's life.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11576,16 +15437,23 @@ Each shot consumes 10 energy. (4 charges max)`,
       icons: [
         "/images/commanderdata/unitskills/raynor/heal.png"
       ],
-      description: `Heals a friendly biological target.
-Heals 9 life per 3 energy per second.`,
+      description: `Heals a friendly {targets} target.
+Heals {healing} life per 3 energy per second.
+
+{protection}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        targets: "biological",
+        healing: 9,
+        protection: ""
+      }
     },
     {
       commander: "Raynor",
@@ -11614,8 +15482,8 @@ Heals 9 life per 3 energy per second.`,
       description: "Increases this unit's movement speed by 100% for 8 seconds.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11631,8 +15499,8 @@ Heals 9 life per 3 energy per second.`,
       description: "Increases this unit's movement speed by 100% for 8 seconds.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11645,16 +15513,21 @@ Heals 9 life per 3 energy per second.`,
       icons: [
         "/images/commanderdata/unitskills/raynor/deployspidermine.png"
       ],
-      description: "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy Detectors. (3 charges max).",
+      description: `Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy Detectors. (3 charges max).
+
+{radius}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null,
-      charges: 3
+      charges: 3,
+      values: {
+        radius: ""
+      }
     },
     {
       commander: "Raynor",
@@ -11667,8 +15540,8 @@ Heals 9 life per 3 energy per second.`,
 A Vulture can only carry 3 Spider Mines at a time.`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "6 seconds",
-      energycost: "0",
+      cooldown: 6,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11684,8 +15557,8 @@ A Vulture can only carry 3 Spider Mines at a time.`,
       description: "Increases this unit's movement speed by 100% for 8 seconds.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11701,7 +15574,7 @@ A Vulture can only carry 3 Spider Mines at a time.`,
       description: "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -11724,7 +15597,7 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
 (The Stetellite is overcharged for 30 seconds but grants a 45-second buff.)`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "45 seconds",
+      cooldown: 45,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -11741,12 +15614,37 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
       description: "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
       type: "active",
       requiresupgrade: false,
-      cooldown: "180 seconds",
+      cooldown: 180,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Gary",
+      name: "Super Gary Transformation Sequence",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-stetmann-supergary.png"
+      ],
+      description: "Transforms this Gary into a Super Gary.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 5 and Mecha Hive.",
+      cost: {
+        minerals: 450,
+        gas: 300
+      },
+      buildTime: 15,
+      excludedPrestiges: [
+        "Signal Savant"
+      ]
     },
     {
       commander: "Stetmann",
@@ -11758,8 +15656,8 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
       description: "Increases the movement speed of this unit by 15% and allows it to leap onto enemy units.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "5 seconds",
-      energycost: "1",
+      cooldown: 5,
+      energycost: 1,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11775,8 +15673,8 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
       description: "Builds Mecha Broodlings that can attack ground units.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "3 seconds",
-      energycost: "5",
+      cooldown: 3,
+      energycost: 5,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11793,8 +15691,8 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
 Can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "20 seconds",
-      energycost: "50",
+      cooldown: 20,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11810,8 +15708,8 @@ Can attack ground units.`,
       description: "Blasts a target with a devastating plasma cannon causing 300 damage and delusions of grandeur.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "0 seconds",
-      energycost: "100",
+      cooldown: 0,
+      energycost: 100,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11824,15 +15722,20 @@ Can attack ground units.`,
       icons: [
         "/images/commanderdata/unitskills/stetmann/clusterbusters.png"
       ],
-      description: "Fires a barrage of missiles dealing 50 (+30 vs. light) damage to enemy air units in a target area.",
+      description: `Fires a barrage of missiles dealing 50 (+30 vs. light) damage to enemy air units in a target area.
+
+Splash radius: {radius}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "100",
+      cooldown: 10,
+      energycost: 100,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        radius: 1.5
+      }
     },
     {
       commander: "Stetmann",
@@ -11845,12 +15748,35 @@ Can attack ground units.`,
 Channeled ability. Can target enemy ground units and structures.`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "20 seconds",
-      energycost: "75",
+      cooldown: 20,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Corruptor",
+      name: "Morph to Mecha Battlecarrier Lord",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-broodlord-mecha.png"
+      ],
+      description: "Transforms this Mecha Corruptor into a Mecha Battlecarrier Lord.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Mecha Greater Spire.",
+      cost: {
+        minerals: 300,
+        gas: 250,
+        supply: 6
+      },
+      buildTime: 34
     },
     {
       commander: "Stetmann",
@@ -11859,15 +15785,20 @@ Channeled ability. Can target enemy ground units and structures.`,
       icons: [
         "/images/commanderdata/unitskills/stetmann/roachesaway.png"
       ],
-      description: "Spawn 2 Mecha Roaches. Spawned units last 45 seconds.",
+      description: `Spawn 2 Mecha Roaches. Spawned units last 45 seconds.
+
+{ravager}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "250",
+      cooldown: 0,
+      energycost: 250,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        ravager: ""
+      }
     },
     {
       commander: "Stetmann",
@@ -11879,8 +15810,8 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "The Mecha Infestor launches a mechanical nerve cord at a friendly unit, restoring 150 life, 50 Egonergy, and 50 energy instantly. An additional 600 life, 200 Egonergy, and 200 energy regenerates over 20 seconds. The unit's ability cooldown rate is increased by 25%",
       type: "active",
       requiresupgrade: true,
-      cooldown: "5 seconds",
-      energycost: "75",
+      cooldown: 5,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11893,15 +15824,20 @@ Channeled ability. Can target enemy ground units and structures.`,
       icons: [
         "/images/commanderdata/unitskills/stetmann/deconstructiveroachnites.png"
       ],
-      description: "Infests target enemy structure, dealing 500 damage over 10 seconds and disabling it for the duration of the effect. If the structure is destroyed while under the effects of Deconstructive Roach-nites, it will spawn 2 Mecha Roaches.",
+      description: `Infests target enemy structure, dealing 500 damage over 10 seconds and disabling it for the duration of the effect. If the structure is destroyed while under the effects of Deconstructive Roach-nites, it will spawn 2 Mecha Roaches.
+
+{ravager}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "75",
+      cooldown: 0,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        ravager: ""
+      }
     },
     {
       commander: "Stetmann",
@@ -11910,15 +15846,20 @@ Channeled ability. Can target enemy ground units and structures.`,
       icons: [
         "/images/commanderdata/unitskills/stetmann/tunnelofterroralgorithm.png"
       ],
-      description: "Tunnels to a nearby target location, dealing 60 damage to enemies along the way.",
+      description: `Tunnels to a nearby target location, dealing 60 damage to enemies along the way.
+
+Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "8 seconds",
-      energycost: "75",
+      cooldown: 8,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        range: 9
+      }
     },
     {
       commander: "Stetmann",
@@ -11930,8 +15871,8 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "The Mecha Lurker concentrates its fire on a target unit, dealing 50 damage to a small area around that unit for 10 seconds or until the unit is destroyed.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "0 seconds",
-      energycost: "75",
+      cooldown: 0,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -11978,15 +15919,20 @@ Channeled ability. Can target enemy ground units and structures.`,
       icons: [
         "/images/commanderdata/unitskills/stetmann/vectoredburrowcharge.png"
       ],
-      description: "Burrow and charge towards a unit. Upon unburrowing, all enemy units in the vicinity are knocked back and dealt 50 damage.",
+      description: `Burrow and charge towards a unit. Upon unburrowing, all enemy units in the vicinity are knocked back and dealt 50 damage.
+
+{stun}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "5 seconds",
-      energycost: "75",
+      cooldown: 5,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        stun: ""
+      }
     },
     {
       commander: "Stetmann",
@@ -11998,8 +15944,8 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Absorbs 25 health from a nearby enemy or friendly mechanical unit, healing for that amount.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "2 seconds",
-      energycost: "5",
+      cooldown: 2,
+      energycost: 5,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12032,7 +15978,7 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12055,7 +16001,7 @@ Channeled ability. Can target enemy ground units and structures.`,
 - J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "45 seconds",
+      cooldown: 45,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12073,7 +16019,7 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
       type: "active",
       requiresupgrade: false,
-      cooldown: "180 seconds",
+      cooldown: 180,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12093,7 +16039,7 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Generates a Stetzone around Super Gary for 30 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "120 seconds",
+      cooldown: 120,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12161,7 +16107,7 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Burrow and charge at the target location dealing 150 damage and stunning non-heroic enemies for 5 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12195,8 +16141,8 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Increases a friendly unit's sight range by 5 and grants it the ability to detect cloaked and burrowed units for 180 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "25",
+      cooldown: 0,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12212,8 +16158,8 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Deals 300 damage to a target enemy unit. When the unit dies, it will spawn 2 Broodlings from its corpse.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "100",
+      cooldown: 0,
+      energycost: 100,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12229,8 +16175,8 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Immobilizes enemy units and deals 80 damage over 4 seconds. Reveals cloaked and burrowed units.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "0 seconds",
-      energycost: "75",
+      cooldown: 0,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12247,8 +16193,8 @@ Channeled ability. Can target enemy ground units and structures.`,
 Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12264,8 +16210,8 @@ Drains 0.9 energy per second.`,
       description: "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12290,6 +16236,57 @@ Drains 0.9 energy per second.`,
     },
     {
       commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Load",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/load.png"
+      ],
+      description: "Loads up to 16 nearby Infested infantry. Their timed life is paused while loaded.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: 0,
+      rankrequired: null,
+      mode: null,
+      prestige: "Plague Warden",
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Unload All",
+      icons: [
+        "/images/commanderdata/unitskills/stukov/unloadall.png"
+      ],
+      description: "Unloads all carried Infested infantry at the target location.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: 0,
+      rankrequired: null,
+      mode: null,
+      prestige: "Plague Warden",
+      requirements: null
+    },
+    {
+      commander: "Stukov",
+      unit: "Infested Banshee",
+      name: "Remote Deployment",
+      icons: [
+        "/images/commanderdata/unitupgrades/stukov/anaerobicenhancement.png"
+      ],
+      description: "Launches carried Infested infantry to a ground location within range 10. Each impact deals 20 damage to enemy ground units within radius 1.25.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: 0,
+      rankrequired: null,
+      mode: null,
+      prestige: "Plague Warden",
+      requirements: null
+    },
+    {
+      commander: "Stukov",
       unit: "Infested Bunker",
       name: "Spawning Chamber",
       icons: [
@@ -12298,7 +16295,7 @@ Drains 0.9 energy per second.`,
       description: "While rooted, regenerates life and creates an Infested Trooper every 30 seconds. Troopers fill empty cargo slots; once full, new Troopers deploy outside. Deployed Troopers have a 30-second lifetime.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: "Rooted",
@@ -12315,8 +16312,8 @@ Drains 0.9 energy per second.`,
       description: "Brings a target enemy air unit to the ground, allowing units to attack it as if it were a ground unit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "45 seconds",
-      energycost: "0",
+      cooldown: 45,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12366,8 +16363,8 @@ Drains 0.9 energy per second.`,
       description: "Can travel quickly to any visible location with creep.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12383,7 +16380,7 @@ Drains 0.9 energy per second.`,
       description: "Consumes a nearby Infested Civilian or Infested Trooper to restore 20 life and gain one round of ammunition. Stores up to 8 rounds.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: "2.5 seconds",
+      cooldown: 2.5,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12400,7 +16397,7 @@ Drains 0.9 energy per second.`,
       description: "Automatically generates one round of Volatile Biomass every 30 seconds, up to a maximum of 8 stored rounds.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12431,15 +16428,21 @@ Drains 0.9 energy per second.`,
       icons: [
         "/images/commanderdata/unitskills/swann/lockon.png"
       ],
-      description: "Locks the Cyclone's weapons on the target unit, dealing 500 damage over 20 seconds. Can move while firing. Cancels if target moves out of range.",
+      description: `Locks the Cyclone's weapons on the target unit, dealing {damage} damage over 20 seconds. Can move while firing. Cancels if target moves out of range.
+
+Cast range: {range}.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "6 seconds",
-      energycost: "0",
+      cooldown: 6,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 500,
+        range: 8
+      }
     },
     {
       commander: "Swann",
@@ -12451,8 +16454,8 @@ Drains 0.9 energy per second.`,
       description: "Warps to the target location. Hercules is invulnerable while warping.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12466,15 +16469,18 @@ Drains 0.9 energy per second.`,
         "/images/commanderdata/unitskills/swann/nanorepair.png"
       ],
       description: `Heals a friendly mechanical unit.
-Heals 3 life per 1 energy.`,
+Heals 3 life per {energy} energy.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        energy: 1
+      }
     },
     {
       commander: "Swann",
@@ -12486,8 +16492,8 @@ Heals 3 life per 1 energy.`,
       description: "Damages an enemy biological unit and adjacent enemy biological units, dealing 250 damage over 25 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "25",
+      cooldown: 0,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12503,8 +16509,8 @@ Heals 3 life per 1 energy.`,
       description: "Surrounds the target with a shield that can absorb up to 200 damage. Effect lasts for 20 seconds.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "20 seconds",
-      energycost: "50",
+      cooldown: 20,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12526,6 +16532,23 @@ Heals 3 life per 1 energy.`,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Swann",
+      unit: "Science Vessel",
+      name: "Tactical Jump",
+      icons: [
+        "/images/commanderdata/unitskills/swann/tacticaljump.png"
+      ],
+      description: "Warps to the target location without requiring vision. The Science Vessel is invulnerable while warping.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: 30,
+      energycost: 0,
+      rankrequired: null,
+      mode: null,
+      prestige: "Payload Director",
+      requirements: "Requires Science Vessel Energy Manipulation (Swann level 6)."
     },
     {
       commander: "Swann",
@@ -12554,8 +16577,8 @@ Heals 3 life per 1 energy.`,
       description: "Stuns all enemies in a small area. Deals 500 damage over 3 seconds in a larger area.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12569,19 +16592,24 @@ Heals 3 life per 1 energy.`,
         "/images/commanderdata/unitskills/swann/cloak.png"
       ],
       description: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.
-Drains 0.9 energy per second.`,
+Drains 0.9 energy per second.
+
+{evasion}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        evasion: ""
+      }
     },
     {
       commander: "Tychus",
-      unit: "AutoTurret",
+      unit: "Auto-Turret",
       name: "Detector",
       icons: [
         "/images/commanderdata/unitskills/common/detector.png"
@@ -12603,66 +16631,95 @@ Drains 0.9 energy per second.`,
       icons: [
         "/images/commanderdata/abilities/tychus/demolitioncharge.png"
       ],
-      description: "Marks a target unit, dealing 500 damage after 5 seconds. Holds up to 3 charges.",
+      description: `Marks a target unit, dealing {damage} damage after 5 seconds. Holds up to 3 charges.
+
+{restraint}
+
+{recharge}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null,
-      charges: 3
+      charges: 3,
+      values: {
+        damage: 500,
+        restraint: "",
+        recharge: ""
+      }
     },
     {
       commander: "Tychus",
-      unit: "James Sirius Sykes",
+      unit: 'James "Sirius" Sykes',
       name: "Deploy Warhound Turret",
       icons: [
         "/images/commanderdata/abilities/tychus/deploywarhoundturret-framed.png"
       ],
       description: `Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.
-Can attack ground and air units.`,
+Can attack ground and air units.
+
+{frame}
+
+{missiles}
+
+{fear}
+
+{explosion}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null,
-      charges: 5
+      charges: 5,
+      values: {
+        frame: "",
+        missiles: "",
+        fear: "",
+        explosion: ""
+      }
     },
     {
       commander: "Tychus",
-      unit: "Kev Rattlesnake West",
+      unit: 'Kev "Rattlesnake" West',
       name: "Deploy Revitalizer",
       icons: [
         "/images/commanderdata/abilities/tychus/deployrevitalizer.png"
       ],
-      description: "Places a structure on the ground that heals all friendly units in an area around the structure for 2% of their life every second. 3 charges max.",
+      description: `Places a structure on the ground that heals all friendly units in an area around the structure for {healing}% of their life every second. 3 charges max.
+
+{attackSpeed}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null,
-      charges: 3
+      charges: 3,
+      values: {
+        healing: 2,
+        attackSpeed: ""
+      }
     },
     {
       commander: "Tychus",
-      unit: "Lt Layna Nikara",
-      name: "Reinvigorating Burst",
+      unit: 'Kev "Rattlesnake" West',
+      name: "Secret Stash Stimpack",
       icons: [
-        "/images/commanderdata/abilities/tychus/reinvigoratingburst.png"
+        "/images/commanderdata/unitupgrades/tychus/secretstashstimpack.png"
       ],
-      description: "Instantly heals friendly units in an area around Lt. Nikara for 200 life and grants them 25% increased attack and ability damage. Regenerates an additional 10 life per second over 10 seconds.",
-      type: "active",
-      requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: null,
+      description: "Heals Rattlesnake for 2 life per second and increases his attack and movement speed by 50% for 15 seconds.",
+      type: "autocast",
+      requiresupgrade: true,
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12670,7 +16727,28 @@ Can attack ground and air units.`,
     },
     {
       commander: "Tychus",
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
+      name: "Reinvigorating Burst",
+      icons: [
+        "/images/commanderdata/abilities/tychus/reinvigoratingburst.png"
+      ],
+      description: "Instantly heals friendly units in an area around Lt. Nikara for {instantHealing} life and grants them 25% increased attack and ability damage. Regenerates an additional {healing} life per second over 10 seconds.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: 30,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: null,
+      values: {
+        instantHealing: 200,
+        healing: 10
+      }
+    },
+    {
+      commander: "Tychus",
+      unit: "Lt. Layna Nikara",
       name: "Detector",
       icons: [
         "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
@@ -12687,24 +16765,29 @@ Can attack ground and air units.`,
     },
     {
       commander: "Tychus",
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       name: "Super Heal",
       icons: [
         "/images/commanderdata/unitskills/tychus/superheal.png"
       ],
-      description: "Restores 30 life per second to a friendly biological or mechanical unit. Can heal one target at a time before gear upgrades.",
+      description: "Restores {healing} life per second to a friendly biological or mechanical unit. Can heal {targets} at a time{gearNote}.",
       type: "autocast",
       requiresupgrade: false,
       cooldown: null,
-      energycost: "0",
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        healing: 30,
+        targets: "one target",
+        gearNote: " before gear upgrades"
+      }
     },
     {
       commander: "Tychus",
-      unit: "Lt Layna Nikara",
+      unit: "Lt. Layna Nikara",
       name: "XM-77 Matrix Generator",
       icons: [
         "/images/commanderdata/unitupgrades/tychus/xm77matrixgenerator.png"
@@ -12712,29 +16795,41 @@ Can attack ground and air units.`,
       description: "Grants a friendly unit a barrier that absorbs up to 400 damage for 20 seconds.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "15 seconds",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: "Requires purchase of XM-77 Matrix Generator gear."
+      requirements: "Requires purchase of XM-77 Matrix Generator gear.",
+      excludedPrestiges: [
+        "Lone Wolf"
+      ]
     },
     {
       commander: "Tychus",
-      unit: "Miles Blaze Lewis",
+      unit: 'Miles "Blaze" Lewis',
       name: "Oil Spill",
       icons: [
         "/images/commanderdata/abilities/tychus/oilspill.png"
       ],
-      description: "Douses enemy ground units in oil, reducing attack and movement speed by 75% and preventing them from cloaking. When a unit under the effect of Oil Spill is hit by a fire attack, it takes 5 (5 vs Light) damage per second over 10 seconds.",
+      description: `Douses enemy ground units in oil, reducing attack and movement speed by 75% and preventing them from cloaking. When a unit under the effect of Oil Spill is hit by a fire attack, it takes 5 ({lightDamage} vs Light) damage per second over 10 seconds.
+
+Radius: {radius}.
+
+{spread}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        lightDamage: 5,
+        radius: 2.5,
+        spread: ""
+      }
     },
     {
       commander: "Tychus",
@@ -12743,16 +16838,26 @@ Can attack ground and air units.`,
       icons: [
         "/images/commanderdata/abilities/tychus/ultrasonicpulse.png"
       ],
-      description: "Fires pulses of ultrasonic energy that lasts 6 seconds, causing 20 damage per second to enemy units in the target area. Does not damage friendly units. Holds up to 3 charges.",
+      description: `Fires pulses of ultrasonic energy that lasts {duration} seconds, causing {damage} damage per second to enemy units in the target area. Does not damage friendly units. Holds up to 3 charges.
+
+Radius: {radius}.
+
+{network}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null,
-      charges: 3
+      charges: 3,
+      values: {
+        duration: 6,
+        damage: 20,
+        radius: 2,
+        network: ""
+      }
     },
     {
       commander: "Tychus",
@@ -12786,7 +16891,10 @@ Can attack ground and air units.`,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      excludedPrestiges: [
+        "Dutiful Dogwalker"
+      ]
     },
     {
       commander: "Tychus",
@@ -12803,7 +16911,10 @@ Can attack ground and air units.`,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      excludedPrestiges: [
+        "Dutiful Dogwalker"
+      ]
     },
     {
       commander: "Tychus",
@@ -12824,24 +16935,32 @@ Can attack ground and air units.`,
     },
     {
       commander: "Tychus",
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       name: "Heavy Impact",
       icons: [
         "/images/commanderdata/abilities/tychus/heavyimpact.png"
       ],
-      description: "Cannonball pulls himself to the target location, dealing 20 damage and stunning enemy units on impact.",
+      description: `Cannonball pulls himself to the target location, dealing 20 damage and stunning enemy units on impact.
+
+Impact radius: {radius}.
+
+Stun duration: {stun} seconds.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        radius: 1.5,
+        stun: 1.5
+      }
     },
     {
       commander: "Tychus",
-      unit: "Rob Cannonball Boswell",
+      unit: 'Rob "Cannonball" Boswell',
       name: "Critical Response System",
       icons: [
         "/images/commanderdata/unitupgrades/tychus/criticalresponsesystem.png"
@@ -12849,7 +16968,7 @@ Can attack ground and air units.`,
       description: "When taking fatal damage, restores all life and becomes immune to damage for 5 seconds.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -12863,15 +16982,21 @@ Can attack ground and air units.`,
       icons: [
         "/images/commanderdata/abilities/tychus/shreddergrenade.png"
       ],
-      description: "Deals 75 damage to enemy units in the target area.",
+      description: `Deals {damage} damage to enemy units in the target area.
+
+{implosion}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "20 seconds",
+      cooldown: 20,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 75,
+        implosion: ""
+      }
     },
     {
       commander: "Tychus",
@@ -12880,16 +17005,25 @@ Can attack ground and air units.`,
       icons: [
         "/images/commanderdata/abilities/tychus/dominate.png"
       ],
-      description: "Temporarily take control of target enemy unit and increases its damage by 50%. Dominated units self-destruct after 240 seconds. Holds up to 3 charges.",
+      description: `Temporarily take control of target enemy unit and increases its damage by 50%. Dominated units self-destruct after {duration} seconds. Holds up to 3 charges.
+
+{restoration}
+
+{confusion}`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
+      cooldown: 30,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: null,
-      charges: 3
+      charges: 3,
+      values: {
+        duration: 240,
+        restoration: "",
+        confusion: ""
+      }
     },
     {
       commander: "Tychus",
@@ -12936,8 +17070,8 @@ Can attack ground and air units.`,
 Briefly cloaks the Centurion and allows it to move through other units.`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12954,8 +17088,8 @@ Briefly cloaks the Centurion and allows it to move through other units.`,
 Massive units are slowed.`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -12971,8 +17105,8 @@ Massive units are slowed.`,
       description: "Creates a web of energy on the ground that prevents enemy structures and ground units from attacking for 10 seconds.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "30 seconds",
-      energycost: "0",
+      cooldown: 30,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13006,8 +17140,8 @@ Massive units are slowed.`,
 Heroic units are immune.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "8 seconds",
-      energycost: "50",
+      cooldown: 8,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13024,8 +17158,8 @@ Heroic units are immune.`,
 Heroic units are immune.`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "30 seconds",
-      energycost: "150",
+      cooldown: 30,
+      energycost: 150,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13041,12 +17175,15 @@ Heroic units are immune.`,
       description: "Teleports all friendly units in the target area to the location of the Dark Pylon.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      excludedPrestiges: [
+        "Spirit of Respite"
+      ]
     },
     {
       commander: "Vorazun",
@@ -13058,8 +17195,8 @@ Heroic units are immune.`,
       description: "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times. Invulnerable for the entire duration.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "15 seconds",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13075,8 +17212,8 @@ Heroic units are immune.`,
       description: "Teleport to a nearby target location.",
       type: "active",
       requiresupgrade: true,
-      cooldown: "10 seconds",
-      energycost: "0",
+      cooldown: 10,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13093,8 +17230,8 @@ Heroic units are immune.`,
 Can target structures or ground units.`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "15 seconds",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13128,8 +17265,8 @@ Can target structures or ground units.`,
 Drains 1.4 energy per second.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "4 seconds",
-      energycost: "0",
+      cooldown: 4,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13142,15 +17279,18 @@ Drains 1.4 energy per second.`,
       icons: [
         "/images/commanderdata/unitskills/vorazun/stasisward.png"
       ],
-      description: "Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for 15 seconds. Trapped units cannot be attacked or affected by abilities.",
+      description: "Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for 15 seconds. Trapped units {vulnerability}.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        vulnerability: "cannot be attacked or affected by abilities"
+      }
     },
     {
       commander: "Vorazun",
@@ -13213,7 +17353,7 @@ Drains 1.4 energy per second.`,
       description: "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13230,7 +17370,7 @@ Drains 1.4 energy per second.`,
       description: "Teleport to a nearby target location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13248,7 +17388,7 @@ Drains 1.4 energy per second.`,
 Can target structures or ground units.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15 seconds",
+      cooldown: 15,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13279,15 +17419,20 @@ Can target structures or ground units.`,
       icons: [
         "/images/commanderdata/unitskills/vorazun/blink.png"
       ],
-      description: "Teleports the Stalker to a nearby target location. Ability can only be used once every 8 seconds.",
+      description: `Teleports the Stalker to a nearby target location. Ability can only be used once every 8 seconds.
+
+{shield}`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "8 seconds",
-      energycost: "0",
+      cooldown: 8,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        shield: ""
+      }
     },
     {
       commander: "Zagara",
@@ -13347,15 +17492,23 @@ Can target structures or ground units.`,
       icons: [
         "/images/commanderdata/unitskills/zagara/bombardment.png"
       ],
-      description: "Constantly blasts a target area, repeatedly dealing 75 damage to enemy ground and air units.",
+      description: `Constantly blasts a target area, repeatedly dealing 75 damage to enemy ground and air units.
+
+Range: {range}.
+
+Fires every {interval} seconds.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        range: 15,
+        interval: 7
+      }
     },
     {
       commander: "Zagara",
@@ -13367,8 +17520,8 @@ Can target structures or ground units.`,
       description: "Covers the target enemy unit in Zerg slime, increasing the damage taken by 35% for 30 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
-      energycost: "0",
+      cooldown: 15,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13419,8 +17572,8 @@ Can target structures or ground units.`,
 Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "15 seconds",
-      energycost: "25",
+      cooldown: 15,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13436,8 +17589,8 @@ Bonus: Zerg move faster on creep.`,
       description: "Target Hatchery, Lair, or Hive spawns 8 Larvae in 40 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "25 seconds",
-      energycost: "0",
+      cooldown: 25,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13453,8 +17606,8 @@ Bonus: Zerg move faster on creep.`,
       description: "Instantly restores 125 life to target biological unit or structure.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds",
-      energycost: "50",
+      cooldown: 0,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13487,8 +17640,8 @@ Bonus: Zerg move faster on creep.`,
       description: "Launches 6 Banelings towards the target point. Each Baneling explodes for 40 damage (80 vs structures).",
       type: "active",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "25",
+      cooldown: 10,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13504,8 +17657,8 @@ Bonus: Zerg move faster on creep.`,
       description: "Spawns 6 Hunter Killers at the target point that last 20 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "30 seconds",
-      energycost: "30",
+      cooldown: 30,
+      energycost: 30,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13518,15 +17671,18 @@ Bonus: Zerg move faster on creep.`,
       icons: [
         "/images/commanderdata/hero/zagara/massfrenzy.png"
       ],
-      description: "Grants all friendly units on the map 25% attack speed and 25% movement speed for 15 seconds.",
+      description: "Grants {targets} 25% attack speed and 25% movement speed for 15 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "90 seconds",
-      energycost: "25",
+      cooldown: 90,
+      energycost: 25,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        targets: "all friendly units on the map"
+      }
     },
     {
       commander: "Zagara",
@@ -13538,12 +17694,29 @@ Bonus: Zerg move faster on creep.`,
       description: "Calls down 10 drop-pods onto the target area, dealing 50 damage with each drop-pod and spawning a total of 20 Roaches that last 30 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: `Coolup: 600 seconds
-Cooldown: 180 seconds`,
-      energycost: "0",
+      cooldown: 180,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
+      requirements: null,
+      initialCooldown: 600
+    },
+    {
+      commander: "Zagara",
+      unit: "Zagara",
+      name: "Deep Tunnel",
+      icons: [
+        "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+      ],
+      description: "Quickly burrow to the target location. Does not require vision or explored terrain.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: 20,
+      energycost: 0,
+      rankrequired: null,
+      mode: null,
+      prestige: "Apex Predator",
       requirements: null
     },
     {
@@ -13556,7 +17729,7 @@ Cooldown: 180 seconds`,
       description: "Transforms all enemy units in a large area around the Avatar of Essence into a lower evolutionary form.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "20 seconds",
+      cooldown: 20,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13574,7 +17747,7 @@ Cooldown: 180 seconds`,
 Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each attack, dealing 40 damage to all enemy units in a small area over 4 seconds.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "25 seconds",
+      cooldown: 25,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13591,7 +17764,7 @@ Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each a
       description: "Creates a storm of psionic energy that lasts 4 seconds, dealing 160 damage to all enemy units in a large target area. Does not damage friendly units.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13608,7 +17781,7 @@ Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each a
       description: "Charges up, dealing 500 damage to a target unit after 3 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13626,8 +17799,8 @@ Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each a
 Heroic units are immune.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15 seconds",
-      energycost: "150",
+      cooldown: 15,
+      energycost: 150,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13644,8 +17817,8 @@ Heroic units are immune.`,
 Temporarily stuns enemy units and structures in an area of effect for 3 seconds.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15 seconds",
-      energycost: "50",
+      cooldown: 15,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13662,8 +17835,8 @@ Temporarily stuns enemy units and structures in an area of effect for 3 seconds.
 Heroic units are immune.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15 seconds",
-      energycost: "150",
+      cooldown: 15,
+      energycost: 150,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13680,8 +17853,8 @@ Heroic units are immune.`,
 Temporarily stuns enemy units in an area of effect for 3 seconds.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "15 seconds",
-      energycost: "50",
+      cooldown: 15,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13697,8 +17870,8 @@ Temporarily stuns enemy units in an area of effect for 3 seconds.`,
       description: "Creates a storm of psionic energy that lasts 4 seconds, causing up to 112 damage to all enemy units and restoring 112 shields to all friendly units in a large target area.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "2.5 seconds",
-      energycost: "75",
+      cooldown: 2.5,
+      energycost: 75,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13715,12 +17888,51 @@ Temporarily stuns enemy units in an area of effect for 3 seconds.`,
 Drains all energy from the target. Deals 1 damage per point of energy.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds",
-      energycost: "50",
+      cooldown: 10,
+      energycost: 50,
       rankrequired: null,
       mode: null,
       prestige: null,
       requirements: "3rd Xel'Naga Artifact."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Cannon",
+      name: "Shade Projection",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/shadeprojection.png"
+      ],
+      description: `Requirements: Core Forge and 2nd Xel'Naga Artifact Fragment
+Projects the Tesseract Cannon to a target location for 60 seconds, transferring all of its shields and its weapon. The Tesseract Cannon is deactivated while this ability is active.`,
+      type: "active",
+      requiresupgrade: false,
+      cooldown: 120,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Core Forge and 2nd Xel'Naga Artifact Fragment"
+    },
+    {
+      commander: "Zeratul",
+      unit: "Tesseract Cannon",
+      name: "Shade Barrier",
+      icons: [
+        "/images/commanderdata/abilities/zeratul/shadebarrier.png"
+      ],
+      description: `Requirements: Core Forge and 3rd Xel'Naga Artifact Fragment
+Allows the Tesseract Cannon to absorb up to {absorption} damage. Lasts for 10 seconds.`,
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: 60,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Core Forge and 3rd Xel'Naga Artifact Fragment",
+      values: {
+        absorption: 100
+      }
     },
     {
       commander: "Zeratul",
@@ -13750,7 +17962,7 @@ Drains all energy from the target. Deals 1 damage per point of energy.`,
 Projects the Tesseract Monolith to a target location for 60 seconds, transferring all of its shields and its weapon. The Tesseract Monolith is deactivated while this ability is active.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: "120 seconds",
+      cooldown: 120,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13765,15 +17977,18 @@ Projects the Tesseract Monolith to a target location for 60 seconds, transferrin
         "/images/commanderdata/abilities/zeratul/shadebarrier.png"
       ],
       description: `Requirements: Core Forge and 3rd Xel'Naga Artifact Fragment
-Absorbs up to 100 damage. Lasts for 10 seconds.`,
+Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "60 seconds",
+      cooldown: 60,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: "Core Forge and 3rd Xel'Naga Artifact Fragment"
+      requirements: "Core Forge and 3rd Xel'Naga Artifact Fragment",
+      values: {
+        absorption: 100
+      }
     },
     {
       commander: "Zeratul",
@@ -13799,15 +18014,20 @@ Absorbs up to 100 damage. Lasts for 10 seconds.`,
       icons: [
         "/images/commanderdata/unitskills/zeratul/dtblink.png"
       ],
-      description: "Allows the Void Templar to teleport to a nearby target location.",
+      description: `Allows the Void Templar to teleport to a nearby target location.
+
+{damage}`,
       type: "active",
       requiresupgrade: true,
-      cooldown: "8 seconds",
-      energycost: "0",
+      cooldown: 8,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: ""
+      }
     },
     {
       commander: "Zeratul",
@@ -13836,7 +18056,7 @@ Absorbs up to 100 damage. Lasts for 10 seconds.`,
       description: "On taking fatal damage, retreats into the Void and restores its life and shields over 10 seconds.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: "180 seconds",
+      cooldown: 180,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13845,58 +18065,74 @@ Absorbs up to 100 damage. Lasts for 10 seconds.`,
     },
     {
       commander: "Zeratul",
-      unit: "XelNaga Abrogator",
+      unit: "Xel'Naga Abrogator",
       name: "Purification Nova",
       icons: [
         "/images/commanderdata/unitskills/zeratul/purificationnova.png"
       ],
-      description: "Shoots out a ball of energy that detonates 3 seconds or on contact with an enemy unit, dealing 100 splash damage to nearby ground units and structures. The Xel'Naga Abrogator is immobile while this is active.",
+      description: `Shoots out a ball of energy that detonates 3 seconds or on contact with an enemy unit, dealing 100 splash damage to nearby ground units and structures. The Xel'Naga Abrogator is immobile while this is active.
+
+{cluster}`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "12 seconds",
-      energycost: "0",
+      cooldown: 12,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        cluster: ""
+      }
     },
     {
       commander: "Zeratul",
-      unit: "XelNaga Ambusher",
+      unit: "Xel'Naga Ambusher",
       name: "Predictive Blink",
       icons: [
         "/images/commanderdata/unitskills/zeratul/predictiveblink.png"
       ],
-      description: "Teleports this unit to a nearby target location.",
+      description: `Teleports this unit to a nearby target location.
+
+{apparition}`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 8,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        apparition: ""
+      }
     },
     {
       commander: "Zeratul",
-      unit: "XelNaga Enforcer",
+      unit: "Xel'Naga Enforcer",
       name: "Barrier",
       icons: [
         "/images/commanderdata/unitskills/zeratul/barrier.png"
       ],
-      description: "Absorbs up to 100 damage. Lasts for 10 seconds.",
+      description: `Absorbs up to {absorption} damage. Lasts for 10 seconds.
+
+{repair}`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "60 seconds",
-      energycost: "0",
+      cooldown: 60,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        absorption: 100,
+        repair: ""
+      }
     },
     {
       commander: "Zeratul",
-      unit: "XelNaga Shieldguard",
+      unit: "Xel'Naga Shieldguard",
       name: "Shield Recharge",
       icons: [
         "/images/commanderdata/unitskills/zeratul/shieldrecharge.png"
@@ -13905,8 +18141,8 @@ Absorbs up to 100 damage. Lasts for 10 seconds.`,
 Restores 4 shields per 1 energy.`,
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "0 seconds",
-      energycost: "0",
+      cooldown: 0,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13914,7 +18150,7 @@ Restores 4 shields per 1 energy.`,
     },
     {
       commander: "Zeratul",
-      unit: "XelNaga Shieldguard",
+      unit: "Xel'Naga Shieldguard",
       name: "Reflection Shield",
       icons: [
         "/images/commanderdata/unitskills/zeratul/reflectionshield.png"
@@ -13922,8 +18158,8 @@ Restores 4 shields per 1 energy.`,
       description: "Creates an aura that reflects 50% of all projectiles back to enemy attackers. Lasts 15 seconds. Can be set to Autocast.",
       type: "autocast",
       requiresupgrade: true,
-      cooldown: "180 seconds",
-      energycost: "0",
+      cooldown: 180,
+      energycost: 0,
       rankrequired: null,
       mode: null,
       prestige: null,
@@ -13931,7 +18167,7 @@ Restores 4 shields per 1 energy.`,
     },
     {
       commander: "Zeratul",
-      unit: "XelNaga Watcher",
+      unit: "Xel'Naga Watcher",
       name: "Permanently Cloaked",
       icons: [
         "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
@@ -13948,7 +18184,7 @@ Restores 4 shields per 1 energy.`,
     },
     {
       commander: "Zeratul",
-      unit: "XelNaga Watcher",
+      unit: "Xel'Naga Watcher",
       name: "Detector",
       icons: [
         "/images/commanderdata/unitskills/common/detector.png"
@@ -13974,7 +18210,7 @@ Restores 4 shields per 1 energy.`,
 Intercepts enemy ground units and increases movement speed.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -13991,7 +18227,7 @@ Intercepts enemy ground units and increases movement speed.`,
       description: "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds",
+      cooldown: 10,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -14008,12 +18244,13 @@ Intercepts enemy ground units and increases movement speed.`,
       description: "Teleports Zeratul to a nearby location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "8 seconds",
+      cooldown: 8,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      charges: 1
     },
     {
       commander: "Zeratul",
@@ -14025,7 +18262,7 @@ Intercepts enemy ground units and increases movement speed.`,
       description: "Transports Zeratul to a target location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "120 seconds",
+      cooldown: 120,
       energycost: null,
       rankrequired: null,
       mode: null,
@@ -14039,15 +18276,19 @@ Intercepts enemy ground units and increases movement speed.`,
       icons: [
         "/images/commanderdata/hero/zeratul/shadowcleave.png"
       ],
-      description: "Deals 100 damage to nearby enemies.",
+      description: "Deals {damage} damage to nearby enemies.{tornado}",
       type: "active",
       requiresupgrade: false,
-      cooldown: "12 seconds",
+      cooldown: 12,
       energycost: null,
       rankrequired: null,
       mode: null,
       prestige: null,
-      requirements: null
+      requirements: null,
+      values: {
+        damage: 100,
+        tornado: ""
+      }
     },
     {
       commander: "Zeratul",
@@ -14083,17 +18324,498 @@ Remaining seconds until next Fragment spawns if found.`,
       mode: null,
       prestige: null,
       requirements: null
+    },
+    {
+      commander: "Abathur",
+      unit: "Mutalisk",
+      name: "Morph to Guardian",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-primalguardian.png"
+      ],
+      description: "Transforms this Mutalisk into a Guardian.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Greater Spire.",
+      cost: {
+        minerals: 25,
+        gas: 50
+      },
+      buildTime: 8
+    },
+    {
+      commander: "Abathur",
+      unit: "Mutalisk",
+      name: "Morph to Devourer",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-devourerex3.png"
+      ],
+      description: "Transforms this Mutalisk into a Devourer.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Greater Spire.",
+      cost: {
+        minerals: 75,
+        gas: 25
+      },
+      buildTime: 8
+    },
+    {
+      commander: "Abathur",
+      unit: "Mutalisk",
+      name: "Evolve to Leviathan",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+      ],
+      description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
+    },
+    {
+      commander: "Abathur",
+      unit: "Guardian",
+      name: "Evolve to Leviathan",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+      ],
+      description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+      type: "autocast",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 5,
+      excludedPrestiges: [
+        "Essence Hoarder"
+      ]
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Zergling",
+      name: "Primal Combat: Ravasaur",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-ravasaur.png"
+      ],
+      description: "Two Primal Zerglings engage in primal combat, consuming both units to produce one Ravasaur.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 8
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Roach",
+      name: "Primal Combat: Primal Igniter",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-primalroach.png"
+      ],
+      description: "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Igniter.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 2.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 8
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Roach",
+      name: "Primal Combat: Primal Guardian",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-guardian.png"
+      ],
+      description: "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Guardian.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 6. Requires Murvar's Den.",
+      cost: {
+        minerals: 0,
+        gas: 100
+      },
+      buildTime: 8
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Hydralisk",
+      name: "Primal Combat: Primal Mutalisk",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-primalmutalisk.png"
+      ],
+      description: "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Primal Mutalisk.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 6. Requires Murvar's Den.",
+      cost: {
+        minerals: 0,
+        gas: 25
+      },
+      buildTime: 8
+    },
+    {
+      commander: "Dehaka",
+      unit: "Primal Hydralisk",
+      name: "Primal Combat: Impaler",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-lurker.png"
+      ],
+      description: "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Impaler.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires commander level 8.",
+      cost: {
+        minerals: 0,
+        gas: 0
+      },
+      buildTime: 8
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Mutalisk",
+      name: "Morph to Brood Lord",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-broodlord.png"
+      ],
+      description: "Transforms this Mutalisk into a Brood Lord.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Greater Spire.",
+      cost: {
+        minerals: 150,
+        gas: 150,
+        supply: 2
+      },
+      buildTime: 15
+    },
+    {
+      commander: "Zagara",
+      unit: "Zergling",
+      name: "Morph to Baneling",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-baneling.png"
+      ],
+      description: "Transforms this Zergling into a Baneling.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Baneling Nest.",
+      cost: {
+        minerals: 22,
+        gas: 14
+      },
+      buildTime: 10
+    },
+    {
+      commander: "Abathur",
+      unit: "Overlord",
+      name: "Morph to Overseer",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+      ],
+      description: "Transforms this Overlord into an Overseer.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Lair.",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      buildTime: 17
+    },
+    {
+      commander: "Kerrigan",
+      unit: "Overlord",
+      name: "Morph to Overseer",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+      ],
+      description: "Transforms this Overlord into an Overseer.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Lair.",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      buildTime: 17
+    },
+    {
+      commander: "Stukov",
+      unit: "Overlord",
+      name: "Morph to Overseer",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+      ],
+      description: "Transforms this Overlord into an Overseer.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Infested Factory.",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      buildTime: 17
+    },
+    {
+      commander: "Zagara",
+      unit: "Overlord",
+      name: "Morph to Overseer",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+      ],
+      description: "Transforms this Overlord into an Overseer.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Lair.",
+      cost: {
+        minerals: 45,
+        gas: 44
+      },
+      buildTime: 17
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Zergling",
+      name: "Morph to Mecha Baneling",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-collection-baneling-mecha.png"
+      ],
+      description: "Transforms this Mecha Zergling into a Mecha Baneling.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Mecha Baneling Nest.",
+      cost: {
+        minerals: 25,
+        gas: 15
+      },
+      buildTime: 12
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Hydralisk",
+      name: "Morph to Mecha Lurker",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-collection-lurker-mecha.png"
+      ],
+      description: "Transforms this Mecha Hydralisk into a Mecha Lurker.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Mecha Lurker Den.",
+      cost: {
+        minerals: 50,
+        gas: 100,
+        supply: 1
+      },
+      buildTime: 25
+    },
+    {
+      commander: "Stetmann",
+      unit: "Mecha Overlord",
+      name: "Morph to Mecha Overseer",
+      icons: [
+        "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer-mecha.png"
+      ],
+      description: "Transforms this Mecha Overlord into a Mecha Overseer.",
+      type: "active",
+      requiresupgrade: false,
+      cooldown: null,
+      energycost: null,
+      rankrequired: null,
+      mode: null,
+      prestige: null,
+      requirements: "Requires Mecha Lair.",
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      buildTime: 17
     }
   ];
+
+  // html/scripts/skill-values.ts
+  function customSkillValue(skill, name) {
+    if (!skill.values || !Object.hasOwn(skill.values, name)) {
+      throw new Error(`Unknown skill value ${skill.commander}/${skill.unit}/${skill.name}.values.${name}.`);
+    }
+    return skill.values[name];
+  }
+  function skillDescription(skill) {
+    return skillDescriptionParts(skill, skill).map((part) => part.text).join("");
+  }
+  function skillDescriptionParts(skill, base) {
+    const parts = [];
+    let offset = 0;
+    let changedStart = 0;
+    while (changedStart < skill.description.length && skill.description[changedStart] === base.description[changedStart])
+      changedStart++;
+    let changedEnd = skill.description.length;
+    let baseEnd = base.description.length;
+    while (changedEnd > changedStart && baseEnd > changedStart && skill.description[changedEnd - 1] === base.description[baseEnd - 1]) {
+      changedEnd--;
+      baseEnd--;
+    }
+    const literal = (start, end) => {
+      for (const [from, to, modified] of [
+        [start, Math.min(end, changedStart), false],
+        [Math.max(start, changedStart), Math.min(end, changedEnd), true],
+        [Math.max(start, changedEnd), end, false]
+      ]) {
+        if (to > from)
+          parts.push({ text: skill.description.slice(from, to), modified });
+      }
+    };
+    for (const match of skill.description.matchAll(/\{([^{}]+)\}/g)) {
+      literal(offset, match.index);
+      const name = match[1];
+      const value = customSkillValue(skill, name);
+      parts.push({
+        text: typeof value === "number" ? String(Number(value.toFixed(2))) : value,
+        modified: match.index < changedEnd && match.index + match[0].length > changedStart || value !== base.values?.[name]
+      });
+      offset = match.index + match[0].length;
+    }
+    literal(offset, skill.description.length);
+    const nonempty = [];
+    for (const part of parts) {
+      if (!part.text)
+        continue;
+      const previous = nonempty[nonempty.length - 1];
+      if (previous && previous.modified === part.modified)
+        previous.text += part.text;
+      else
+        nonempty.push(part);
+    }
+    for (const part of nonempty)
+      part.text = part.text.replace(/\n{3,}/g, `
+
+`);
+    while (nonempty.length && !nonempty[nonempty.length - 1].text.trim())
+      nonempty.pop();
+    if (nonempty.length)
+      nonempty[nonempty.length - 1].text = nonempty[nonempty.length - 1].text.trimEnd();
+    return nonempty;
+  }
 
   // html/scripts/unit-skills.ts
   function skillKey(skill) {
     return "skills/" + [skill.commander, skill.unit, skill.name, skill.mode ?? "", skill.prestige ?? ""].map((part) => encodeURIComponent(part)).join("/");
   }
   var unitSkills = new Map(unitskills_default.map((skill) => [skillKey(skill), skill]));
+  var skillValueFields = ["cooldown", "initialCooldown", "energycost", "cost", "buildTime", "charges", "description", "requirements", "values", "descriptionParts", "modifiedFields"];
+  function skillFromTooltip(key, values) {
+    const base = unitSkills.get(key);
+    if (!base)
+      return;
+    const ordinary = { ...base, description: skillDescription(base), descriptionParts: skillDescriptionParts(base, base), modifiedFields: [] };
+    if (!values)
+      return ordinary;
+    const patch = JSON.parse(values);
+    return { ...ordinary, ...Object.fromEntries(skillValueFields.filter((field) => (field in patch)).map((field) => [field, patch[field]])) };
+  }
   function skillCooldown(skill) {
     if (!skill.cooldown)
       return null;
+    if (typeof skill.cooldown === "number")
+      return formatSkillNumber(skill.cooldown);
     const cooldown = skill.cooldown.match(/Cooldown:\s*([^\n]+)/i)?.[1] ?? skill.cooldown;
     const seconds = cooldown.match(/^(\d+(?:\.\d+)?)\s*(?:seconds?|s)(.*)$/s);
     if (!seconds)
@@ -14102,20 +18824,43 @@ Remaining seconds until next Fragment spawns if found.`,
       return null;
     return seconds[1] + (seconds[2]?.trim() ? "*" : "");
   }
+  function formatSkillNumber(value) {
+    return String(Number(value.toFixed(2)));
+  }
   function skillCosts(skill, race) {
     const costs = [];
-    if (skill.energycost !== null && Number(skill.energycost) > 0) {
-      costs.push({ icon: "/images/commanderdata/unitupgrades/iconenergy.png", label: "Energy:", value: skill.energycost });
+    for (const [resource, label, icon] of [
+      ["minerals", "Minerals:", "iconmineral"],
+      ["gas", "Gas:", `icongas_${race}`],
+      ["supply", "Supply:", `iconsupply_${race}`]
+    ]) {
+      if (skill.cost?.[resource])
+        costs.push({ field: "cost", icon: `/images/commanderdata/unitupgrades/${icon}.png`, label, value: formatSkillNumber(skill.cost[resource]) });
+    }
+    if (skill.buildTime)
+      costs.push({ field: "buildTime", icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: "Build time:", value: formatSkillNumber(skill.buildTime) });
+    if (skill.energycost !== null && skill.energycost !== 0 && skill.energycost !== "") {
+      costs.push({
+        field: "energycost",
+        icon: "/images/commanderdata/unitupgrades/iconenergy.png",
+        label: "Energy:",
+        value: typeof skill.energycost === "number" ? formatSkillNumber(skill.energycost) : skill.energycost
+      });
     }
     const cooldown = skillCooldown(skill);
     if (cooldown !== null) {
-      costs.push({ icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: "Cooldown (seconds):", value: cooldown });
+      costs.push({ field: "cooldown", icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: "Cooldown (seconds):", value: cooldown });
     }
     return costs;
   }
   function skillDetails(skill) {
     const details = [skill.description];
-    if (skill.cooldown && !/^\d+(?:\.\d+)?\s*(?:seconds?|s)$/.test(skill.cooldown)) {
+    if (skill.initialCooldown !== undefined) {
+      const initial = typeof skill.initialCooldown === "number" ? `${formatSkillNumber(skill.initialCooldown)} seconds` : skill.initialCooldown;
+      const repeat = typeof skill.cooldown === "number" ? `${formatSkillNumber(skill.cooldown)} seconds` : skill.cooldown;
+      details.push(`Coolup: ${initial}${repeat !== null ? `
+Cooldown: ${repeat}` : ""}`);
+    } else if (typeof skill.cooldown === "string" && skill.cooldown && !/^\d+(?:\.\d+)?\s*(?:seconds?|s)$/.test(skill.cooldown)) {
       details.push(/\bCool(?:down|up):/i.test(skill.cooldown) ? skill.cooldown : `Cooldown: ${skill.cooldown}`);
     }
     if (skill.requiresupgrade)
@@ -14126,9 +18871,25 @@ Remaining seconds until next Fragment spawns if found.`,
       details.push(`Mode: ${skill.mode}`);
     if (skill.prestige)
       details.push(`Prestige: ${skill.prestige}`);
+    if (skill.excludedPrestiges?.length)
+      details.push(`Unavailable with ${skill.excludedPrestiges.join(", ")}.`);
     if (skill.requirements)
       details.push(skill.requirements);
     return details;
+  }
+
+  // html/scripts/upgrade-costs.ts
+  function upgradeCosts(upgrade, race) {
+    const costs = [];
+    if (upgrade.cost?.minerals)
+      costs.push({ icon: "/images/commanderdata/unitupgrades/iconmineral.png", label: "Minerals:", value: upgrade.cost.minerals });
+    if (upgrade.cost?.gas)
+      costs.push({ icon: `/images/commanderdata/unitupgrades/icongas_${race}.png`, label: "Gas:", value: upgrade.cost.gas });
+    if (upgrade.cost?.supply)
+      costs.push({ icon: `/images/commanderdata/unitupgrades/iconsupply_${race}.png`, label: "Supply:", value: upgrade.cost.supply });
+    if (upgrade.researchTime)
+      costs.push({ icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: "Research time:", value: upgrade.researchTime });
+    return costs;
   }
 
   // html/scripts/tooltips.ts
@@ -14143,15 +18904,15 @@ Remaining seconds until next Fragment spawns if found.`,
       return "dominionrockettrooper";
     if (name === "Tychus Findlay")
       return "tychus";
-    if (name === "James Sirius Sykes")
+    if (name === 'James "Sirius" Sykes' || name === "James Sirius Sykes")
       return "sirius";
-    if (name === "Miles Blaze Lewis")
+    if (name === 'Miles "Blaze" Lewis' || name === "Miles Blaze Lewis")
       return "blaze";
-    if (name === "Rob Cannonball Boswell")
+    if (name === 'Rob "Cannonball" Boswell' || name === "Rob Cannonball Boswell")
       return "cannonball";
-    if (name === "Lt Layna Nikara")
+    if (name === "Lt. Layna Nikara" || name === "Lt Layna Nikara")
       return "nikara";
-    if (name === "Kev Rattlesnake West")
+    if (name === 'Kev "Rattlesnake" West' || name === "Kev Rattlesnake West")
       return "rattlesnake";
     return name.toLowerCase().replace(/[^a-z0-9]+/g, "");
   }
@@ -14249,13 +19010,25 @@ Remaining seconds until next Fragment spawns if found.`,
     text.style.marginLeft = "55px";
     const name = document.createElement("b");
     name.textContent = upgrade.name;
-    text.replaceChildren(name, document.createElement("br"), upgrade.effect);
+    text.append(name);
+    for (const cost of upgradeCosts(upgrade, target.dataset.race ?? "terran")) {
+      const value = document.createElement("span");
+      value.style.whiteSpace = "nowrap";
+      const icon = document.createElement("img");
+      icon.src = cost.icon;
+      icon.alt = cost.label;
+      icon.width = 16;
+      icon.height = 16;
+      value.append(icon, " ", String(cost.value));
+      text.append(" ", value);
+    }
+    text.append(document.createElement("br"), upgrade.effect);
     tooltip.replaceChildren(icon, text);
     activeTooltipTarget = target;
     setTooltipPosition(target);
   }
   function showSkillTooltip(target) {
-    const skill = unitSkills.get(target.dataset.tooltip ?? "");
+    const skill = skillFromTooltip(target.dataset.tooltip ?? "", target.dataset.skillValues);
     if (!skill)
       return;
     const tooltip = prepareTooltip();
@@ -14279,8 +19052,15 @@ Remaining seconds until next Fragment spawns if found.`,
     const name = document.createElement("b");
     name.textContent = skill.name;
     heading.append(name);
+    const markedText = (text, modified) => {
+      const span = document.createElement("span");
+      span.textContent = text;
+      if (modified)
+        span.className = "units-modified";
+      return span;
+    };
     if (skill.charges)
-      heading.append(` (${skill.charges} charges)`);
+      heading.append(" (", markedText(String(skill.charges), !!skill.modifiedFields?.includes("charges")), skill.charges === 1 ? " charge)" : " charges)");
     for (const cost of skillCosts(skill, target.dataset.race ?? "terran")) {
       const value = document.createElement("span");
       value.style.whiteSpace = "nowrap";
@@ -14289,14 +19069,29 @@ Remaining seconds until next Fragment spawns if found.`,
       icon.alt = cost.label;
       icon.width = 16;
       icon.height = 16;
-      value.append(icon, ` ${cost.value}`);
+      value.append(icon, " ", markedText(cost.value, !!skill.modifiedFields?.includes(cost.field)));
       heading.append(" ", value);
     }
     if (skill.type !== "active")
       heading.append(` (${skill.type})`);
     text.append(heading);
-    for (const detail of skillDetails(skill)) {
-      text.append(document.createElement("br"), detail);
+    for (const [index, detail] of skillDetails(skill).entries()) {
+      text.append(document.createElement("br"));
+      if (index === 0 && skill.descriptionParts) {
+        for (const part of skill.descriptionParts)
+          text.append(markedText(part.text, part.modified));
+      } else if (index === 1 && skill.initialCooldown !== undefined) {
+        for (const [lineIndex, line] of detail.split(`
+`).entries()) {
+          if (lineIndex)
+            text.append(`
+`);
+          const colon = line.indexOf(":") + 1;
+          text.append(line.slice(0, colon), markedText(line.slice(colon), !!skill.modifiedFields?.includes(lineIndex ? "cooldown" : "initialCooldown")));
+        }
+      } else {
+        text.append(markedText(detail, detail === skill.requirements && !!skill.modifiedFields?.includes("requirements")));
+      }
     }
     tooltip.replaceChildren(icons, text);
     activeTooltipTarget = target;
@@ -14346,5 +19141,5 @@ Remaining seconds until next Fragment spawns if found.`,
   });
 })();
 
-//# debugId=E748F84A28959A8364756E2164756E21
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidW5pdC1yYW5rcy50cyIsICJ1bml0LXNraWxscy50cyIsICJ0b29sdGlwcy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsKICAgICJpbXBvcnQgcGxheWVyVXBncmFkZXMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVwZ3JhZGVzLmpzb25cIjtcbmltcG9ydCB0eXBlIHsgUGxheWVyVXBncmFkZSB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5cbnR5cGUgUmFua1VwZ3JhZGUgPSBQaWNrPFBsYXllclVwZ3JhZGUsICdjb21tYW5kZXInIHwgJ3VuaXQnIHwgJ25hbWUnIHwgJ2ljb24nIHwgJ2VmZmVjdCc+O1xuXG4vKiogVW5pdC1zcGVjaWZpYyBrZXlzIHByZXZlbnQgZGlmZmVyZW50IFZldGVyYW5jeSBlZmZlY3RzIHNoYXJpbmcgb25lIHRvb2x0aXAuICovXG5leHBvcnQgY29uc3QgcmFua1VwZ3JhZGVzID0gbmV3IE1hcDxzdHJpbmcsIFJhbmtVcGdyYWRlPigpO1xuY29uc3QgZWZmZWN0cyA9IG5ldyBNYXA8c3RyaW5nLCBTZXQ8c3RyaW5nPj4oKTtcblxuZm9yIChjb25zdCB1cGdyYWRlIG9mIHBsYXllclVwZ3JhZGVzIGFzIFBsYXllclVwZ3JhZGVbXSkge1xuICAgIGlmICh1cGdyYWRlLmNvbW1hbmRlciAhPT0gJ01lbmdzaycpIGNvbnRpbnVlO1xuICAgIGNvbnN0IHJhbmsgPSB1cGdyYWRlLnJhbmsgPz8gKC9eWzEyM10kLy50ZXN0KHVwZ3JhZGUubmFtZSkgPyBOdW1iZXIodXBncmFkZS5uYW1lKSA6IG51bGwpO1xuICAgIGlmIChyYW5rID09PSBudWxsKSBjb250aW51ZTtcbiAgICBjb25zdCB1bml0ID0gdXBncmFkZS51bml0LnRvTG93ZXJDYXNlKCkucmVwbGFjZSgvW15hLXowLTldKy9nLCAnJyk7XG4gICAgY29uc3Qga2V5ID0gYHJhbmtzL21lbmdzay8ke3VuaXR9LyR7cmFua31gO1xuICAgIGNvbnN0IHJhbmtFZmZlY3RzID0gZWZmZWN0cy5nZXQoa2V5KSA/PyBuZXcgU2V0PHN0cmluZz4oKTtcbiAgICByYW5rRWZmZWN0cy5hZGQodXBncmFkZS5lZmZlY3QpO1xuICAgIGVmZmVjdHMuc2V0KGtleSwgcmFua0VmZmVjdHMpO1xuICAgIGNvbnN0IHByZXZpb3VzID0gcmFua1VwZ3JhZGVzLmdldChrZXkpO1xuICAgIHJhbmtVcGdyYWRlcy5zZXQoa2V5LCB7XG4gICAgICAgIGNvbW1hbmRlcjogdXBncmFkZS5jb21tYW5kZXIsXG4gICAgICAgIHVuaXQ6IHVwZ3JhZGUudW5pdCxcbiAgICAgICAgbmFtZTogdXBncmFkZS5yYW5rID8gYFJhbmsgJHtyYW5rfTogJHt1cGdyYWRlLm5hbWV9YCA6IHByZXZpb3VzPy5uYW1lID8/IGBSYW5rICR7cmFua31gLFxuICAgICAgICBpY29uOiB1cGdyYWRlLnJhbmsgPyB1cGdyYWRlLmljb24gOiBwcmV2aW91cz8uaWNvbiA/PyAndmV0ZXJhbmN5JyxcbiAgICAgICAgZWZmZWN0OiBbLi4ucmFua0VmZmVjdHNdLmpvaW4oJ1xcbicpLFxuICAgIH0pO1xufVxuIiwKICAgICJpbXBvcnQgc2tpbGxzSlNPTiBmcm9tIFwiLi4vLi4vc291cmNlLWRhdGEvdW5pdHNraWxscy5qc29uXCI7XG5pbXBvcnQgdHlwZSB7IFVuaXRTa2lsbCB9IGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9kYXRhLXR5cGVzXCI7XG5cbmV4cG9ydCBmdW5jdGlvbiBza2lsbEtleShza2lsbDogVW5pdFNraWxsKTogc3RyaW5nIHtcbiAgICByZXR1cm4gJ3NraWxscy8nICsgW3NraWxsLmNvbW1hbmRlciwgc2tpbGwudW5pdCwgc2tpbGwubmFtZSwgc2tpbGwubW9kZSA/PyAnJywgc2tpbGwucHJlc3RpZ2UgPz8gJyddXG4gICAgICAgIC5tYXAocGFydCA9PiBlbmNvZGVVUklDb21wb25lbnQocGFydCkpLmpvaW4oJy8nKTtcbn1cblxuZXhwb3J0IGNvbnN0IHVuaXRTa2lsbHMgPSBuZXcgTWFwKChza2lsbHNKU09OIGFzIFVuaXRTa2lsbFtdKS5tYXAoc2tpbGwgPT4gW3NraWxsS2V5KHNraWxsKSwgc2tpbGxdKSk7XG5cbmV4cG9ydCBmdW5jdGlvbiBza2lsbENvb2xkb3duKHNraWxsOiBVbml0U2tpbGwpOiBzdHJpbmcgfCBudWxsIHtcbiAgICBpZiAoIXNraWxsLmNvb2xkb3duKSByZXR1cm4gbnVsbDtcbiAgICAvLyBJbml0aWFsIGNvb2xkb3ducyBhcmUga2VwdCBpbiB0aGUgdG9vbHRpcDsgdGhlIHJvdyBzaG93cyB0aGUgcmVwZWF0IGNvb2xkb3duLlxuICAgIGNvbnN0IGNvb2xkb3duID0gc2tpbGwuY29vbGRvd24ubWF0Y2goL0Nvb2xkb3duOlxccyooW15cXG5dKykvaSk/LlsxXSA/PyBza2lsbC5jb29sZG93bjtcbiAgICBjb25zdCBzZWNvbmRzID0gY29vbGRvd24ubWF0Y2goL14oXFxkKyg/OlxcLlxcZCspPylcXHMqKD86c2Vjb25kcz98cykoLiopJC9zKTtcbiAgICBpZiAoIXNlY29uZHMpIHJldHVybiAnPyc7XG4gICAgaWYgKE51bWJlcihzZWNvbmRzWzFdKSA9PT0gMCkgcmV0dXJuIG51bGw7XG4gICAgcmV0dXJuIHNlY29uZHNbMV0hICsgKHNlY29uZHNbMl0/LnRyaW0oKSA/ICcqJyA6ICcnKTtcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIHNraWxsQ29zdHMoc2tpbGw6IFVuaXRTa2lsbCwgcmFjZTogc3RyaW5nKTogeyBpY29uOiBzdHJpbmcsIGxhYmVsOiBzdHJpbmcsIHZhbHVlOiBzdHJpbmcgfVtdIHtcbiAgICBjb25zdCBjb3N0cyA9IFtdO1xuICAgIGlmIChza2lsbC5lbmVyZ3ljb3N0ICE9PSBudWxsICYmIE51bWJlcihza2lsbC5lbmVyZ3ljb3N0KSA+IDApIHtcbiAgICAgICAgY29zdHMucHVzaCh7IGljb246ICcvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvdW5pdHVwZ3JhZGVzL2ljb25lbmVyZ3kucG5nJywgbGFiZWw6ICdFbmVyZ3k6JywgdmFsdWU6IHNraWxsLmVuZXJneWNvc3QgfSk7XG4gICAgfVxuICAgIGNvbnN0IGNvb2xkb3duID0gc2tpbGxDb29sZG93bihza2lsbCk7XG4gICAgaWYgKGNvb2xkb3duICE9PSBudWxsKSB7XG4gICAgICAgIGNvc3RzLnB1c2goeyBpY29uOiBgL2ltYWdlcy9jb21tYW5kZXJkYXRhL3VuaXR1cGdyYWRlcy9pY29udGltZV8ke3JhY2V9LnBuZ2AsIGxhYmVsOiAnQ29vbGRvd24gKHNlY29uZHMpOicsIHZhbHVlOiBjb29sZG93biB9KTtcbiAgICB9XG4gICAgcmV0dXJuIGNvc3RzO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gc2tpbGxEZXRhaWxzKHNraWxsOiBVbml0U2tpbGwpOiBzdHJpbmdbXSB7XG4gICAgY29uc3QgZGV0YWlscyA9IFtza2lsbC5kZXNjcmlwdGlvbl07XG4gICAgLy8gT3JkaW5hcnkgY29zdHMgYXJlIGluIHRoZSBoZWFkaW5nOyByZXRhaW4gaW5pdGlhbCBhbmQgY29uZGl0aW9uYWwgdGltaW5ncyBoZXJlLlxuICAgIGlmIChza2lsbC5jb29sZG93biAmJiAhL15cXGQrKD86XFwuXFxkKyk/XFxzKig/OnNlY29uZHM/fHMpJC8udGVzdChza2lsbC5jb29sZG93bikpIHtcbiAgICAgICAgZGV0YWlscy5wdXNoKC9cXGJDb29sKD86ZG93bnx1cCk6L2kudGVzdChza2lsbC5jb29sZG93bikgPyBza2lsbC5jb29sZG93biA6IGBDb29sZG93bjogJHtza2lsbC5jb29sZG93bn1gKTtcbiAgICB9XG4gICAgaWYgKHNraWxsLnJlcXVpcmVzdXBncmFkZSkgZGV0YWlscy5wdXNoKCdSZXF1aXJlcyBhbiB1cGdyYWRlLicpO1xuICAgIGlmIChza2lsbC5yYW5rcmVxdWlyZWQgIT09IG51bGwpIGRldGFpbHMucHVzaChgUmVxdWlyZXMgcmFuayAke3NraWxsLnJhbmtyZXF1aXJlZH0uYCk7XG4gICAgaWYgKHNraWxsLm1vZGUpIGRldGFpbHMucHVzaChgTW9kZTogJHtza2lsbC5tb2RlfWApO1xuICAgIGlmIChza2lsbC5wcmVzdGlnZSkgZGV0YWlscy5wdXNoKGBQcmVzdGlnZTogJHtza2lsbC5wcmVzdGlnZX1gKTtcbiAgICBpZiAoc2tpbGwucmVxdWlyZW1lbnRzKSBkZXRhaWxzLnB1c2goc2tpbGwucmVxdWlyZW1lbnRzKTtcbiAgICByZXR1cm4gZGV0YWlscztcbn1cbiIsCiAgICAiaW1wb3J0IG11dGF0b3JzIGZyb20gXCIuLi8uLi9zb3VyY2UtZGF0YS9tdXRhdG9ycy5qc29uXCI7XG5pbXBvcnQgcGxheWVyVXBncmFkZXMgZnJvbSBcIi4uLy4uL3NvdXJjZS1kYXRhL3BsYXllcnVwZ3JhZGVzLmpzb25cIjtcbmltcG9ydCB7IHJhbmtVcGdyYWRlcyB9IGZyb20gXCIuL3VuaXQtcmFua3NcIjtcbmltcG9ydCB7IHNraWxsQ29zdHMsIHNraWxsRGV0YWlscywgdW5pdFNraWxscyB9IGZyb20gXCIuL3VuaXQtc2tpbGxzXCI7XG5cbmZ1bmN0aW9uIHRva2VuKG5hbWU6IHN0cmluZyk6IHN0cmluZyB7XG4gICAgaWYgKG5hbWUgPT09IFwiRG9tLiBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb250cm9vcGVyJztcbiAgICBpZiAobmFtZSA9PT0gXCJEb20uIEFzc2F1bHQgVHJvb3BlclwiKSByZXR1cm4gJ2RvbWluaW9uYXNzYXVsdHRyb29wZXInO1xuICAgIGlmIChuYW1lID09PSBcIkRvbS4gRmxhbWUgVHJvb3BlclwiKSByZXR1cm4gJ2RvbWluaW9uZmxhbWV0cm9vcGVyJztcbiAgICBpZiAobmFtZSA9PT0gXCJEb20uIFJvY2tldCBUcm9vcGVyXCIpIHJldHVybiAnZG9taW5pb25yb2NrZXR0cm9vcGVyJztcbiAgICBpZiAobmFtZSA9PT0gXCJUeWNodXMgRmluZGxheVwiKSByZXR1cm4gJ3R5Y2h1cyc7XG4gICAgaWYgKG5hbWUgPT09IFwiSmFtZXMgU2lyaXVzIFN5a2VzXCIpIHJldHVybiAnc2lyaXVzJztcbiAgICBpZiAobmFtZSA9PT0gXCJNaWxlcyBCbGF6ZSBMZXdpc1wiKSByZXR1cm4gJ2JsYXplJztcbiAgICBpZiAobmFtZSA9PT0gXCJSb2IgQ2Fubm9uYmFsbCBCb3N3ZWxsXCIpIHJldHVybiAnY2Fubm9uYmFsbCc7XG4gICAgaWYgKG5hbWUgPT09IFwiTHQgTGF5bmEgTmlrYXJhXCIpIHJldHVybiAnbmlrYXJhJztcbiAgICBpZiAobmFtZSA9PT0gXCJLZXYgUmF0dGxlc25ha2UgV2VzdFwiKSByZXR1cm4gJ3JhdHRsZXNuYWtlJztcblxuICAgIHJldHVybiBuYW1lLnRvTG93ZXJDYXNlKCkucmVwbGFjZSgvW15hLXowLTldKy9nLCBcIlwiKTtcbn1cblxuY29uc3QgbXV0YXRvckRhdGEgPSBuZXcgTWFwKG11dGF0b3JzLm1hcChtdXRhdG9yID0+IFttdXRhdG9yLm11dGF0b3JpZCwgbXV0YXRvcl0pKTtcbmNvbnN0IHVwZ3JhZGVEYXRhID0gbmV3IE1hcChwbGF5ZXJVcGdyYWRlcy5tYXAodXBncmFkZSA9PiBbYHVwZ3JhZGVzLyR7dG9rZW4odXBncmFkZS5jb21tYW5kZXIpfS8ke3VwZ3JhZGUuaWNvbn1gLCB1cGdyYWRlXSkpO1xubGV0IGFjdGl2ZVRvb2x0aXBUYXJnZXQ6IEhUTUxFbGVtZW50IHwgbnVsbCA9IG51bGw7XG5cbmZ1bmN0aW9uIHRvb2x0aXBFbGVtZW50KCk6IEhUTUxFbGVtZW50IHtcbiAgICBsZXQgdG9vbHRpcCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwidG9vbHRpcFwiKTtcbiAgICBpZiAoIXRvb2x0aXApIHtcbiAgICAgICAgdG9vbHRpcCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgICAgIHRvb2x0aXAuaWQgPSBcInRvb2x0aXBcIjtcbiAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmQodG9vbHRpcCk7XG4gICAgfVxuICAgIHJldHVybiB0b29sdGlwO1xufVxuXG5mdW5jdGlvbiBtdXRhdG9yU2x1ZyhsaW5rOiBIVE1MQW5jaG9yRWxlbWVudCk6IHN0cmluZyB8IG51bGwge1xuICAgIGNvbnN0IHVybCA9IG5ldyBVUkwobGluay5ocmVmLCB3aW5kb3cubG9jYXRpb24uaHJlZik7XG4gICAgaWYgKHVybC5vcmlnaW4gIT09IHdpbmRvdy5sb2NhdGlvbi5vcmlnaW4pIHJldHVybiBudWxsO1xuICAgIGNvbnN0IG1hdGNoID0gdXJsLnBhdGhuYW1lLm1hdGNoKC9eXFwvbXV0YXRvcnNcXC8oW2EtejAtOS1dKylcXC8/JC8pO1xuICAgIHJldHVybiBtYXRjaD8uWzFdID8/IG51bGw7XG59XG5cbmZ1bmN0aW9uIHNldFRvb2x0aXBQb3NpdGlvbih0YXJnZXQ6IEhUTUxFbGVtZW50KTogdm9pZCB7XG4gICAgY29uc3QgdG9vbHRpcCA9IHRvb2x0aXBFbGVtZW50KCk7XG4gICAgY29uc3QgcmVjdCA9IHRhcmdldC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcbiAgICBjb25zdCBnYXAgPSA4O1xuICAgIGNvbnN0IHZpZXdwb3J0V2lkdGggPSBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuY2xpZW50V2lkdGg7XG4gICAgY29uc3QgdG9vbHRpcFdpZHRoID0gdG9vbHRpcC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS53aWR0aDtcbiAgICBpZiAodmlld3BvcnRXaWR0aCAtIHRvb2x0aXBXaWR0aCAtIGdhcCA8IHJlY3QubGVmdCkge1xuICAgICAgICB0b29sdGlwLnN0eWxlLmxlZnQgPSBcImF1dG9cIjtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5yaWdodCA9IGAke2dhcH1weGA7XG4gICAgfSBlbHNlIHtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5sZWZ0ID0gYCR7cmVjdC5sZWZ0fXB4YDtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5yaWdodCA9IFwiYXV0b1wiO1xuICAgIH1cblxuICAgIGlmIChyZWN0LnRvcCA8IDIwMCkge1xuICAgICAgICB0b29sdGlwLnN0eWxlLnRvcCA9IGAke3JlY3QuYm90dG9tICsgZ2FwfXB4YDtcbiAgICAgICAgdG9vbHRpcC5zdHlsZS5ib3R0b20gPSBcImF1dG9cIjtcbiAgICB9IGVsc2Uge1xuICAgICAgICB0b29sdGlwLnN0eWxlLnRvcCA9IFwiYXV0b1wiO1xuICAgICAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IGAke3dpbmRvdy5pbm5lckhlaWdodCAtIHJlY3QudG9wICsgZ2FwfXB4YDtcbiAgICB9XG4gICAgLy8gTG9uZyBza2lsbCBkZXNjcmlwdGlvbnMgY2FuIG5lZWQgbW9yZSByb29tIHRoYW4gdGhlIHNwYWNlIGFib3ZlIHRoZSByb3cuXG4gICAgY29uc3QgYm91bmRzID0gdG9vbHRpcC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcbiAgICBpZiAoYm91bmRzLnRvcCA8IGdhcCB8fCBib3VuZHMuYm90dG9tID4gd2luZG93LmlubmVySGVpZ2h0IC0gZ2FwKSB7XG4gICAgICAgIHRvb2x0aXAuc3R5bGUudG9wID0gYCR7TWF0aC5tYXgoZ2FwLCBNYXRoLm1pbihib3VuZHMudG9wLCB3aW5kb3cuaW5uZXJIZWlnaHQgLSBib3VuZHMuaGVpZ2h0IC0gZ2FwKSl9cHhgO1xuICAgICAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IFwiYXV0b1wiO1xuICAgIH1cbiAgICB0b29sdGlwLnN0eWxlLnZpc2liaWxpdHkgPSBcInZpc2libGVcIjtcbn1cblxuZnVuY3Rpb24gcHJlcGFyZVRvb2x0aXAoKTogSFRNTEVsZW1lbnQge1xuICAgIGNvbnN0IHRvb2x0aXAgPSB0b29sdGlwRWxlbWVudCgpO1xuICAgIHRvb2x0aXAuc3R5bGUuZGlzcGxheSA9IFwiYmxvY2tcIjtcbiAgICB0b29sdGlwLnN0eWxlLnZpc2liaWxpdHkgPSBcImhpZGRlblwiO1xuICAgIHRvb2x0aXAuc3R5bGUucG9zaXRpb24gPSBcImZpeGVkXCI7XG4gICAgdG9vbHRpcC5zdHlsZS50b3AgPSBcIjBcIjtcbiAgICB0b29sdGlwLnN0eWxlLmxlZnQgPSBcIjBcIjtcbiAgICB0b29sdGlwLnN0eWxlLmJvdHRvbSA9IFwiYXV0b1wiO1xuICAgIHRvb2x0aXAuc3R5bGUucmlnaHQgPSBcImF1dG9cIjtcbiAgICB0b29sdGlwLnN0eWxlLndpZHRoID0gXCJtYXgtY29udGVudFwiO1xuICAgIHRvb2x0aXAuc3R5bGUuYm94U2l6aW5nID0gXCJib3JkZXItYm94XCI7XG4gICAgdG9vbHRpcC5zdHlsZS5tYXhXaWR0aCA9IGAke01hdGgubWluKDQwMCwgZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LmNsaWVudFdpZHRoKX1weGA7XG4gICAgcmV0dXJuIHRvb2x0aXA7XG59XG5cbmZ1bmN0aW9uIHNob3dNdXRhdG9yVG9vbHRpcChsaW5rOiBIVE1MQW5jaG9yRWxlbWVudCk6IHZvaWQge1xuICAgIGNvbnN0IHNsdWcgPSBtdXRhdG9yU2x1ZyhsaW5rKTtcbiAgICBpZiAoIXNsdWcpIHJldHVybjtcbiAgICBjb25zdCBtdXRhdG9yID0gbXV0YXRvckRhdGEuZ2V0KHNsdWcpO1xuICAgIGlmICghbXV0YXRvcikgcmV0dXJuO1xuXG4gICAgY29uc3QgdG9vbHRpcCA9IHByZXBhcmVUb29sdGlwKCk7XG4gICAgY29uc3QgbmFtZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiXCIpO1xuICAgIG5hbWUudGV4dENvbnRlbnQgPSBtdXRhdG9yLm11dGF0b3JuYW1lO1xuICAgIHRvb2x0aXAucmVwbGFjZUNoaWxkcmVuKG5hbWUsIGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiclwiKSwgbXV0YXRvci5tdXRhdG9yZGVzY3JpcHRpb24pO1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSBsaW5rO1xuICAgIHNldFRvb2x0aXBQb3NpdGlvbihsaW5rKTtcbn1cblxuZnVuY3Rpb24gc2hvd1VwZ3JhZGVUb29sdGlwKHRhcmdldDogSFRNTEVsZW1lbnQpOiB2b2lkIHtcbiAgICBjb25zdCBrZXkgPSB0YXJnZXQuZGF0YXNldC50b29sdGlwO1xuICAgIGlmICgha2V5KSByZXR1cm47XG4gICAgY29uc3QgdXBncmFkZSA9IHJhbmtVcGdyYWRlcy5nZXQoa2V5KSA/PyB1cGdyYWRlRGF0YS5nZXQoa2V5KTtcbiAgICBpZiAoIXVwZ3JhZGUpIHJldHVybjtcblxuICAgIGNvbnN0IHRvb2x0aXAgPSBwcmVwYXJlVG9vbHRpcCgpO1xuICAgIGNvbnN0IGljb24gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiaW1nXCIpO1xuICAgIGNvbnN0IGlzSGVybyA9IHRva2VuKHVwZ3JhZGUudW5pdCkgPT09IHRva2VuKHVwZ3JhZGUuY29tbWFuZGVyKSB8fCAodXBncmFkZS5jb21tYW5kZXIgPT09ICdGZW5peCcgJiYgdXBncmFkZS51bml0LnN0YXJ0c1dpdGgoJ0Zlbml4ICcpKTtcbiAgICBjb25zdCBkaXIgPSB0b2tlbih1cGdyYWRlLmNvbW1hbmRlcikgIT09ICd0eWNodXMnICYmIGlzSGVybyA/IFwiaGVyb1wiIDogXCJ1bml0dXBncmFkZXNcIjtcbiAgICBpY29uLnNyYyA9IGAvaW1hZ2VzL2NvbW1hbmRlcmRhdGEvJHtkaXJ9LyR7dG9rZW4odXBncmFkZS5jb21tYW5kZXIpfS8ke3VwZ3JhZGUuaWNvbn0ucG5nYDtcbiAgICBpY29uLmFsdCA9IFwiXCI7XG4gICAgaWNvbi53aWR0aCA9IDUwO1xuICAgIGljb24uaGVpZ2h0ID0gNTA7XG4gICAgaWNvbi5zdHlsZS5mbG9hdCA9IFwibGVmdFwiO1xuICAgIGNvbnN0IHRleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpO1xuICAgIHRleHQuc3R5bGUubWFyZ2luTGVmdCA9IFwiNTVweFwiO1xuICAgIGNvbnN0IG5hbWUgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiYlwiKTtcbiAgICBuYW1lLnRleHRDb250ZW50ID0gdXBncmFkZS5uYW1lO1xuICAgIHRleHQucmVwbGFjZUNoaWxkcmVuKG5hbWUsIGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJiclwiKSwgdXBncmFkZS5lZmZlY3QpO1xuICAgIHRvb2x0aXAucmVwbGFjZUNoaWxkcmVuKGljb24sIHRleHQpO1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSB0YXJnZXQ7XG4gICAgc2V0VG9vbHRpcFBvc2l0aW9uKHRhcmdldCk7XG59XG5cbmZ1bmN0aW9uIHNob3dTa2lsbFRvb2x0aXAodGFyZ2V0OiBIVE1MRWxlbWVudCk6IHZvaWQge1xuICAgIGNvbnN0IHNraWxsID0gdW5pdFNraWxscy5nZXQodGFyZ2V0LmRhdGFzZXQudG9vbHRpcCA/PyAnJyk7XG4gICAgaWYgKCFza2lsbCkgcmV0dXJuO1xuXG4gICAgY29uc3QgdG9vbHRpcCA9IHByZXBhcmVUb29sdGlwKCk7XG4gICAgY29uc3QgaWNvbnMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICBpY29ucy5zdHlsZS5jc3NUZXh0ID0gJ2Zsb2F0OiBsZWZ0OyBkaXNwbGF5OiBncmlkOyBnYXA6IDNweCc7XG4gICAgZm9yIChjb25zdCBzcmMgb2Ygc2tpbGwuaWNvbnMpIHtcbiAgICAgICAgY29uc3QgaWNvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2ltZycpO1xuICAgICAgICBpY29uLnNyYyA9IHNyYztcbiAgICAgICAgaWNvbi5hbHQgPSAnJztcbiAgICAgICAgaWNvbi53aWR0aCA9IDUwO1xuICAgICAgICBpY29uLmhlaWdodCA9IDUwO1xuICAgICAgICBpY29ucy5hcHBlbmQoaWNvbik7XG4gICAgfVxuICAgIGNvbnN0IHRleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcbiAgICBpZiAoc2tpbGwuaWNvbnMubGVuZ3RoKSB0ZXh0LnN0eWxlLm1hcmdpbkxlZnQgPSAnNTVweCc7XG4gICAgdGV4dC5zdHlsZS53aGl0ZVNwYWNlID0gJ3ByZS1saW5lJztcbiAgICBjb25zdCBoZWFkaW5nID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc3BhbicpO1xuICAgIGhlYWRpbmcuY2xhc3NOYW1lID0gJ3NraWxsLXRvb2x0aXAtaGVhZGluZyc7XG4gICAgaGVhZGluZy5zdHlsZS5mb250V2VpZ2h0ID0gJ25vcm1hbCc7XG4gICAgY29uc3QgbmFtZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2InKTtcbiAgICBuYW1lLnRleHRDb250ZW50ID0gc2tpbGwubmFtZTtcbiAgICBoZWFkaW5nLmFwcGVuZChuYW1lKTtcbiAgICBpZiAoc2tpbGwuY2hhcmdlcykgaGVhZGluZy5hcHBlbmQoYCAoJHtza2lsbC5jaGFyZ2VzfSBjaGFyZ2VzKWApO1xuICAgIGZvciAoY29uc3QgY29zdCBvZiBza2lsbENvc3RzKHNraWxsLCB0YXJnZXQuZGF0YXNldC5yYWNlID8/ICd0ZXJyYW4nKSkge1xuICAgICAgICBjb25zdCB2YWx1ZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NwYW4nKTtcbiAgICAgICAgdmFsdWUuc3R5bGUud2hpdGVTcGFjZSA9ICdub3dyYXAnO1xuICAgICAgICBjb25zdCBpY29uID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnaW1nJyk7XG4gICAgICAgIGljb24uc3JjID0gY29zdC5pY29uO1xuICAgICAgICBpY29uLmFsdCA9IGNvc3QubGFiZWw7XG4gICAgICAgIGljb24ud2lkdGggPSAxNjtcbiAgICAgICAgaWNvbi5oZWlnaHQgPSAxNjtcbiAgICAgICAgdmFsdWUuYXBwZW5kKGljb24sIGAgJHtjb3N0LnZhbHVlfWApO1xuICAgICAgICBoZWFkaW5nLmFwcGVuZCgnICcsIHZhbHVlKTtcbiAgICB9XG4gICAgaWYgKHNraWxsLnR5cGUgIT09ICdhY3RpdmUnKSBoZWFkaW5nLmFwcGVuZChgICgke3NraWxsLnR5cGV9KWApO1xuICAgIHRleHQuYXBwZW5kKGhlYWRpbmcpO1xuICAgIGZvciAoY29uc3QgZGV0YWlsIG9mIHNraWxsRGV0YWlscyhza2lsbCkpIHtcbiAgICAgICAgdGV4dC5hcHBlbmQoZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYnInKSwgZGV0YWlsKTtcbiAgICB9XG4gICAgdG9vbHRpcC5yZXBsYWNlQ2hpbGRyZW4oaWNvbnMsIHRleHQpO1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSB0YXJnZXQ7XG4gICAgc2V0VG9vbHRpcFBvc2l0aW9uKHRhcmdldCk7XG59XG5cbmZ1bmN0aW9uIGhpZGVUb29sdGlwKCk6IHZvaWQge1xuICAgIGFjdGl2ZVRvb2x0aXBUYXJnZXQgPSBudWxsO1xuICAgIHRvb2x0aXBFbGVtZW50KCkuc3R5bGUuZGlzcGxheSA9IFwibm9uZVwiO1xufVxuXG5mdW5jdGlvbiBjbG9zZXN0VG9vbHRpcFRhcmdldCh0YXJnZXQ6IEV2ZW50VGFyZ2V0IHwgbnVsbCk6IEhUTUxFbGVtZW50IHwgbnVsbCB7XG4gICAgaWYgKCEodGFyZ2V0IGluc3RhbmNlb2YgRWxlbWVudCkpIHJldHVybiBudWxsO1xuICAgIHJldHVybiB0YXJnZXQuY2xvc2VzdDxIVE1MRWxlbWVudD4oXCJbZGF0YS10b29sdGlwXSwgYVtocmVmXTpub3QoW2RhdGEtbm8tdG9vbHRpcF0pXCIpO1xufVxuXG5mdW5jdGlvbiBzaG93VG9vbHRpcCh0YXJnZXQ6IEhUTUxFbGVtZW50KTogdm9pZCB7XG4gICAgaWYgKHRhcmdldC5kYXRhc2V0LnRvb2x0aXA/LnN0YXJ0c1dpdGgoJ3NraWxscy8nKSkge1xuICAgICAgICBzaG93U2tpbGxUb29sdGlwKHRhcmdldCk7XG4gICAgfSBlbHNlIGlmICh0YXJnZXQuZGF0YXNldC50b29sdGlwKSB7XG4gICAgICAgIHNob3dVcGdyYWRlVG9vbHRpcCh0YXJnZXQpO1xuICAgIH0gZWxzZSBpZiAodGFyZ2V0IGluc3RhbmNlb2YgSFRNTEFuY2hvckVsZW1lbnQpIHtcbiAgICAgICAgc2hvd011dGF0b3JUb29sdGlwKHRhcmdldCk7XG4gICAgfVxufVxuXG5kb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKFwibW91c2VvdmVyXCIsIGV2ZW50ID0+IHtcbiAgICBjb25zdCB0YXJnZXQgPSBjbG9zZXN0VG9vbHRpcFRhcmdldChldmVudC50YXJnZXQpO1xuICAgIGlmICh0YXJnZXQpIHNob3dUb29sdGlwKHRhcmdldCk7XG59KTtcblxuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcihcIm1vdXNlb3V0XCIsIGV2ZW50ID0+IHtcbiAgICBpZiAoIWFjdGl2ZVRvb2x0aXBUYXJnZXQpIHJldHVybjtcbiAgICBpZiAoZXZlbnQucmVsYXRlZFRhcmdldCAmJiBhY3RpdmVUb29sdGlwVGFyZ2V0LmNvbnRhaW5zKGV2ZW50LnJlbGF0ZWRUYXJnZXQgYXMgTm9kZSkpIHJldHVybjtcbiAgICBoaWRlVG9vbHRpcCgpO1xufSk7XG5cbmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoXCJmb2N1c2luXCIsIGV2ZW50ID0+IHtcbiAgICBjb25zdCB0YXJnZXQgPSBjbG9zZXN0VG9vbHRpcFRhcmdldChldmVudC50YXJnZXQpO1xuICAgIGlmICh0YXJnZXQpIHNob3dUb29sdGlwKHRhcmdldCk7XG59KTtcblxuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcihcImZvY3Vzb3V0XCIsIGV2ZW50ID0+IHtcbiAgICBpZiAoIWFjdGl2ZVRvb2x0aXBUYXJnZXQpIHJldHVybjtcbiAgICBpZiAoZXZlbnQucmVsYXRlZFRhcmdldCAmJiBhY3RpdmVUb29sdGlwVGFyZ2V0LmNvbnRhaW5zKGV2ZW50LnJlbGF0ZWRUYXJnZXQgYXMgTm9kZSkpIHJldHVybjtcbiAgICBoaWRlVG9vbHRpcCgpO1xufSk7XG4iCiAgXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztFQU1PLElBQU0sZUFBZSxJQUFJO0FBQUEsRUFDaEMsSUFBTSxVQUFVLElBQUk7QUFBQSxFQUVwQixXQUFXLFdBQVcsd0JBQW1DO0FBQUEsSUFDckQsSUFBSSxRQUFRLGNBQWM7QUFBQSxNQUFVO0FBQUEsSUFDcEMsTUFBTSxPQUFPLFFBQVEsU0FBUyxVQUFVLEtBQUssUUFBUSxJQUFJLElBQUksT0FBTyxRQUFRLElBQUksSUFBSTtBQUFBLElBQ3BGLElBQUksU0FBUztBQUFBLE1BQU07QUFBQSxJQUNuQixNQUFNLE9BQU8sUUFBUSxLQUFLLFlBQVksRUFBRSxRQUFRLGVBQWUsRUFBRTtBQUFBLElBQ2pFLE1BQU0sTUFBTSxnQkFBZ0IsUUFBUTtBQUFBLElBQ3BDLE1BQU0sY0FBYyxRQUFRLElBQUksR0FBRyxLQUFLLElBQUk7QUFBQSxJQUM1QyxZQUFZLElBQUksUUFBUSxNQUFNO0FBQUEsSUFDOUIsUUFBUSxJQUFJLEtBQUssV0FBVztBQUFBLElBQzVCLE1BQU0sV0FBVyxhQUFhLElBQUksR0FBRztBQUFBLElBQ3JDLGFBQWEsSUFBSSxLQUFLO0FBQUEsTUFDbEIsV0FBVyxRQUFRO0FBQUEsTUFDbkIsTUFBTSxRQUFRO0FBQUEsTUFDZCxNQUFNLFFBQVEsT0FBTyxRQUFRLFNBQVMsUUFBUSxTQUFTLFVBQVUsUUFBUSxRQUFRO0FBQUEsTUFDakYsTUFBTSxRQUFRLE9BQU8sUUFBUSxPQUFPLFVBQVUsUUFBUTtBQUFBLE1BQ3RELFFBQVEsQ0FBQyxHQUFHLFdBQVcsRUFBRSxLQUFLO0FBQUEsQ0FBSTtBQUFBLElBQ3RDLENBQUM7QUFBQSxFQUNMOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0VDdkJPLFNBQVMsUUFBUSxDQUFDLE9BQTBCO0FBQUEsSUFDL0MsT0FBTyxZQUFZLENBQUMsTUFBTSxXQUFXLE1BQU0sTUFBTSxNQUFNLE1BQU0sTUFBTSxRQUFRLElBQUksTUFBTSxZQUFZLEVBQUUsRUFDOUYsSUFBSSxVQUFRLG1CQUFtQixJQUFJLENBQUMsRUFBRSxLQUFLLEdBQUc7QUFBQTtBQUFBLEVBR2hELElBQU0sYUFBYSxJQUFJLElBQUssbUJBQTJCLElBQUksV0FBUyxDQUFDLFNBQVMsS0FBSyxHQUFHLEtBQUssQ0FBQyxDQUFDO0FBQUEsRUFFN0YsU0FBUyxhQUFhLENBQUMsT0FBaUM7QUFBQSxJQUMzRCxJQUFJLENBQUMsTUFBTTtBQUFBLE1BQVUsT0FBTztBQUFBLElBRTVCLE1BQU0sV0FBVyxNQUFNLFNBQVMsTUFBTSx1QkFBdUIsSUFBSSxNQUFNLE1BQU07QUFBQSxJQUM3RSxNQUFNLFVBQVUsU0FBUyxNQUFNLHlDQUF5QztBQUFBLElBQ3hFLElBQUksQ0FBQztBQUFBLE1BQVMsT0FBTztBQUFBLElBQ3JCLElBQUksT0FBTyxRQUFRLEVBQUUsTUFBTTtBQUFBLE1BQUcsT0FBTztBQUFBLElBQ3JDLE9BQU8sUUFBUSxNQUFPLFFBQVEsSUFBSSxLQUFLLElBQUksTUFBTTtBQUFBO0FBQUEsRUFHOUMsU0FBUyxVQUFVLENBQUMsT0FBa0IsTUFBZ0U7QUFBQSxJQUN6RyxNQUFNLFFBQVEsQ0FBQztBQUFBLElBQ2YsSUFBSSxNQUFNLGVBQWUsUUFBUSxPQUFPLE1BQU0sVUFBVSxJQUFJLEdBQUc7QUFBQSxNQUMzRCxNQUFNLEtBQUssRUFBRSxNQUFNLHFEQUFxRCxPQUFPLFdBQVcsT0FBTyxNQUFNLFdBQVcsQ0FBQztBQUFBLElBQ3ZIO0FBQUEsSUFDQSxNQUFNLFdBQVcsY0FBYyxLQUFLO0FBQUEsSUFDcEMsSUFBSSxhQUFhLE1BQU07QUFBQSxNQUNuQixNQUFNLEtBQUssRUFBRSxNQUFNLCtDQUErQyxZQUFZLE9BQU8sdUJBQXVCLE9BQU8sU0FBUyxDQUFDO0FBQUEsSUFDakk7QUFBQSxJQUNBLE9BQU87QUFBQTtBQUFBLEVBR0osU0FBUyxZQUFZLENBQUMsT0FBNEI7QUFBQSxJQUNyRCxNQUFNLFVBQVUsQ0FBQyxNQUFNLFdBQVc7QUFBQSxJQUVsQyxJQUFJLE1BQU0sWUFBWSxDQUFDLG1DQUFtQyxLQUFLLE1BQU0sUUFBUSxHQUFHO0FBQUEsTUFDNUUsUUFBUSxLQUFLLHNCQUFzQixLQUFLLE1BQU0sUUFBUSxJQUFJLE1BQU0sV0FBVyxhQUFhLE1BQU0sVUFBVTtBQUFBLElBQzVHO0FBQUEsSUFDQSxJQUFJLE1BQU07QUFBQSxNQUFpQixRQUFRLEtBQUssc0JBQXNCO0FBQUEsSUFDOUQsSUFBSSxNQUFNLGlCQUFpQjtBQUFBLE1BQU0sUUFBUSxLQUFLLGlCQUFpQixNQUFNLGVBQWU7QUFBQSxJQUNwRixJQUFJLE1BQU07QUFBQSxNQUFNLFFBQVEsS0FBSyxTQUFTLE1BQU0sTUFBTTtBQUFBLElBQ2xELElBQUksTUFBTTtBQUFBLE1BQVUsUUFBUSxLQUFLLGFBQWEsTUFBTSxVQUFVO0FBQUEsSUFDOUQsSUFBSSxNQUFNO0FBQUEsTUFBYyxRQUFRLEtBQUssTUFBTSxZQUFZO0FBQUEsSUFDdkQsT0FBTztBQUFBOzs7RUN0Q1gsU0FBUyxLQUFLLENBQUMsTUFBc0I7QUFBQSxJQUNqQyxJQUFJLFNBQVM7QUFBQSxNQUFnQixPQUFPO0FBQUEsSUFDcEMsSUFBSSxTQUFTO0FBQUEsTUFBd0IsT0FBTztBQUFBLElBQzVDLElBQUksU0FBUztBQUFBLE1BQXNCLE9BQU87QUFBQSxJQUMxQyxJQUFJLFNBQVM7QUFBQSxNQUF1QixPQUFPO0FBQUEsSUFDM0MsSUFBSSxTQUFTO0FBQUEsTUFBa0IsT0FBTztBQUFBLElBQ3RDLElBQUksU0FBUztBQUFBLE1BQXNCLE9BQU87QUFBQSxJQUMxQyxJQUFJLFNBQVM7QUFBQSxNQUFxQixPQUFPO0FBQUEsSUFDekMsSUFBSSxTQUFTO0FBQUEsTUFBMEIsT0FBTztBQUFBLElBQzlDLElBQUksU0FBUztBQUFBLE1BQW1CLE9BQU87QUFBQSxJQUN2QyxJQUFJLFNBQVM7QUFBQSxNQUF3QixPQUFPO0FBQUEsSUFFNUMsT0FBTyxLQUFLLFlBQVksRUFBRSxRQUFRLGVBQWUsRUFBRTtBQUFBO0FBQUEsRUFHdkQsSUFBTSxjQUFjLElBQUksSUFBSSxpQkFBUyxJQUFJLGFBQVcsQ0FBQyxRQUFRLFdBQVcsT0FBTyxDQUFDLENBQUM7QUFBQSxFQUNqRixJQUFNLGNBQWMsSUFBSSxJQUFJLHVCQUFlLElBQUksYUFBVyxDQUFDLFlBQVksTUFBTSxRQUFRLFNBQVMsS0FBSyxRQUFRLFFBQVEsT0FBTyxDQUFDLENBQUM7QUFBQSxFQUM1SCxJQUFJLHNCQUEwQztBQUFBLEVBRTlDLFNBQVMsY0FBYyxHQUFnQjtBQUFBLElBQ25DLElBQUksVUFBVSxTQUFTLGVBQWUsU0FBUztBQUFBLElBQy9DLElBQUksQ0FBQyxTQUFTO0FBQUEsTUFDVixVQUFVLFNBQVMsY0FBYyxLQUFLO0FBQUEsTUFDdEMsUUFBUSxLQUFLO0FBQUEsTUFDYixTQUFTLEtBQUssT0FBTyxPQUFPO0FBQUEsSUFDaEM7QUFBQSxJQUNBLE9BQU87QUFBQTtBQUFBLEVBR1gsU0FBUyxXQUFXLENBQUMsTUFBd0M7QUFBQSxJQUN6RCxNQUFNLE1BQU0sSUFBSSxJQUFJLEtBQUssTUFBTSxPQUFPLFNBQVMsSUFBSTtBQUFBLElBQ25ELElBQUksSUFBSSxXQUFXLE9BQU8sU0FBUztBQUFBLE1BQVEsT0FBTztBQUFBLElBQ2xELE1BQU0sUUFBUSxJQUFJLFNBQVMsTUFBTSwrQkFBK0I7QUFBQSxJQUNoRSxPQUFPLFFBQVEsTUFBTTtBQUFBO0FBQUEsRUFHekIsU0FBUyxrQkFBa0IsQ0FBQyxRQUEyQjtBQUFBLElBQ25ELE1BQU0sVUFBVSxlQUFlO0FBQUEsSUFDL0IsTUFBTSxPQUFPLE9BQU8sc0JBQXNCO0FBQUEsSUFDMUMsTUFBTSxNQUFNO0FBQUEsSUFDWixNQUFNLGdCQUFnQixTQUFTLGdCQUFnQjtBQUFBLElBQy9DLE1BQU0sZUFBZSxRQUFRLHNCQUFzQixFQUFFO0FBQUEsSUFDckQsSUFBSSxnQkFBZ0IsZUFBZSxNQUFNLEtBQUssTUFBTTtBQUFBLE1BQ2hELFFBQVEsTUFBTSxPQUFPO0FBQUEsTUFDckIsUUFBUSxNQUFNLFFBQVEsR0FBRztBQUFBLElBQzdCLEVBQUUsS0FBSztBQUFBLE1BQ0gsUUFBUSxNQUFNLE9BQU8sR0FBRyxLQUFLO0FBQUEsTUFDN0IsUUFBUSxNQUFNLFFBQVE7QUFBQTtBQUFBLElBRzFCLElBQUksS0FBSyxNQUFNLEtBQUs7QUFBQSxNQUNoQixRQUFRLE1BQU0sTUFBTSxHQUFHLEtBQUssU0FBUztBQUFBLE1BQ3JDLFFBQVEsTUFBTSxTQUFTO0FBQUEsSUFDM0IsRUFBRSxLQUFLO0FBQUEsTUFDSCxRQUFRLE1BQU0sTUFBTTtBQUFBLE1BQ3BCLFFBQVEsTUFBTSxTQUFTLEdBQUcsT0FBTyxjQUFjLEtBQUssTUFBTTtBQUFBO0FBQUEsSUFHOUQsTUFBTSxTQUFTLFFBQVEsc0JBQXNCO0FBQUEsSUFDN0MsSUFBSSxPQUFPLE1BQU0sT0FBTyxPQUFPLFNBQVMsT0FBTyxjQUFjLEtBQUs7QUFBQSxNQUM5RCxRQUFRLE1BQU0sTUFBTSxHQUFHLEtBQUssSUFBSSxLQUFLLEtBQUssSUFBSSxPQUFPLEtBQUssT0FBTyxjQUFjLE9BQU8sU0FBUyxHQUFHLENBQUM7QUFBQSxNQUNuRyxRQUFRLE1BQU0sU0FBUztBQUFBLElBQzNCO0FBQUEsSUFDQSxRQUFRLE1BQU0sYUFBYTtBQUFBO0FBQUEsRUFHL0IsU0FBUyxjQUFjLEdBQWdCO0FBQUEsSUFDbkMsTUFBTSxVQUFVLGVBQWU7QUFBQSxJQUMvQixRQUFRLE1BQU0sVUFBVTtBQUFBLElBQ3hCLFFBQVEsTUFBTSxhQUFhO0FBQUEsSUFDM0IsUUFBUSxNQUFNLFdBQVc7QUFBQSxJQUN6QixRQUFRLE1BQU0sTUFBTTtBQUFBLElBQ3BCLFFBQVEsTUFBTSxPQUFPO0FBQUEsSUFDckIsUUFBUSxNQUFNLFNBQVM7QUFBQSxJQUN2QixRQUFRLE1BQU0sUUFBUTtBQUFBLElBQ3RCLFFBQVEsTUFBTSxRQUFRO0FBQUEsSUFDdEIsUUFBUSxNQUFNLFlBQVk7QUFBQSxJQUMxQixRQUFRLE1BQU0sV0FBVyxHQUFHLEtBQUssSUFBSSxLQUFLLFNBQVMsZ0JBQWdCLFdBQVc7QUFBQSxJQUM5RSxPQUFPO0FBQUE7QUFBQSxFQUdYLFNBQVMsa0JBQWtCLENBQUMsTUFBK0I7QUFBQSxJQUN2RCxNQUFNLE9BQU8sWUFBWSxJQUFJO0FBQUEsSUFDN0IsSUFBSSxDQUFDO0FBQUEsTUFBTTtBQUFBLElBQ1gsTUFBTSxVQUFVLFlBQVksSUFBSSxJQUFJO0FBQUEsSUFDcEMsSUFBSSxDQUFDO0FBQUEsTUFBUztBQUFBLElBRWQsTUFBTSxVQUFVLGVBQWU7QUFBQSxJQUMvQixNQUFNLE9BQU8sU0FBUyxjQUFjLEdBQUc7QUFBQSxJQUN2QyxLQUFLLGNBQWMsUUFBUTtBQUFBLElBQzNCLFFBQVEsZ0JBQWdCLE1BQU0sU0FBUyxjQUFjLElBQUksR0FBRyxRQUFRLGtCQUFrQjtBQUFBLElBQ3RGLHNCQUFzQjtBQUFBLElBQ3RCLG1CQUFtQixJQUFJO0FBQUE7QUFBQSxFQUczQixTQUFTLGtCQUFrQixDQUFDLFFBQTJCO0FBQUEsSUFDbkQsTUFBTSxNQUFNLE9BQU8sUUFBUTtBQUFBLElBQzNCLElBQUksQ0FBQztBQUFBLE1BQUs7QUFBQSxJQUNWLE1BQU0sVUFBVSxhQUFhLElBQUksR0FBRyxLQUFLLFlBQVksSUFBSSxHQUFHO0FBQUEsSUFDNUQsSUFBSSxDQUFDO0FBQUEsTUFBUztBQUFBLElBRWQsTUFBTSxVQUFVLGVBQWU7QUFBQSxJQUMvQixNQUFNLE9BQU8sU0FBUyxjQUFjLEtBQUs7QUFBQSxJQUN6QyxNQUFNLFNBQVMsTUFBTSxRQUFRLElBQUksTUFBTSxNQUFNLFFBQVEsU0FBUyxLQUFNLFFBQVEsY0FBYyxXQUFXLFFBQVEsS0FBSyxXQUFXLFFBQVE7QUFBQSxJQUNySSxNQUFNLE1BQU0sTUFBTSxRQUFRLFNBQVMsTUFBTSxZQUFZLFNBQVMsU0FBUztBQUFBLElBQ3ZFLEtBQUssTUFBTSx5QkFBeUIsT0FBTyxNQUFNLFFBQVEsU0FBUyxLQUFLLFFBQVE7QUFBQSxJQUMvRSxLQUFLLE1BQU07QUFBQSxJQUNYLEtBQUssUUFBUTtBQUFBLElBQ2IsS0FBSyxTQUFTO0FBQUEsSUFDZCxLQUFLLE1BQU0sUUFBUTtBQUFBLElBQ25CLE1BQU0sT0FBTyxTQUFTLGNBQWMsS0FBSztBQUFBLElBQ3pDLEtBQUssTUFBTSxhQUFhO0FBQUEsSUFDeEIsTUFBTSxPQUFPLFNBQVMsY0FBYyxHQUFHO0FBQUEsSUFDdkMsS0FBSyxjQUFjLFFBQVE7QUFBQSxJQUMzQixLQUFLLGdCQUFnQixNQUFNLFNBQVMsY0FBYyxJQUFJLEdBQUcsUUFBUSxNQUFNO0FBQUEsSUFDdkUsUUFBUSxnQkFBZ0IsTUFBTSxJQUFJO0FBQUEsSUFDbEMsc0JBQXNCO0FBQUEsSUFDdEIsbUJBQW1CLE1BQU07QUFBQTtBQUFBLEVBRzdCLFNBQVMsZ0JBQWdCLENBQUMsUUFBMkI7QUFBQSxJQUNqRCxNQUFNLFFBQVEsV0FBVyxJQUFJLE9BQU8sUUFBUSxXQUFXLEVBQUU7QUFBQSxJQUN6RCxJQUFJLENBQUM7QUFBQSxNQUFPO0FBQUEsSUFFWixNQUFNLFVBQVUsZUFBZTtBQUFBLElBQy9CLE1BQU0sUUFBUSxTQUFTLGNBQWMsS0FBSztBQUFBLElBQzFDLE1BQU0sTUFBTSxVQUFVO0FBQUEsSUFDdEIsV0FBVyxPQUFPLE1BQU0sT0FBTztBQUFBLE1BQzNCLE1BQU0sT0FBTyxTQUFTLGNBQWMsS0FBSztBQUFBLE1BQ3pDLEtBQUssTUFBTTtBQUFBLE1BQ1gsS0FBSyxNQUFNO0FBQUEsTUFDWCxLQUFLLFFBQVE7QUFBQSxNQUNiLEtBQUssU0FBUztBQUFBLE1BQ2QsTUFBTSxPQUFPLElBQUk7QUFBQSxJQUNyQjtBQUFBLElBQ0EsTUFBTSxPQUFPLFNBQVMsY0FBYyxLQUFLO0FBQUEsSUFDekMsSUFBSSxNQUFNLE1BQU07QUFBQSxNQUFRLEtBQUssTUFBTSxhQUFhO0FBQUEsSUFDaEQsS0FBSyxNQUFNLGFBQWE7QUFBQSxJQUN4QixNQUFNLFVBQVUsU0FBUyxjQUFjLE1BQU07QUFBQSxJQUM3QyxRQUFRLFlBQVk7QUFBQSxJQUNwQixRQUFRLE1BQU0sYUFBYTtBQUFBLElBQzNCLE1BQU0sT0FBTyxTQUFTLGNBQWMsR0FBRztBQUFBLElBQ3ZDLEtBQUssY0FBYyxNQUFNO0FBQUEsSUFDekIsUUFBUSxPQUFPLElBQUk7QUFBQSxJQUNuQixJQUFJLE1BQU07QUFBQSxNQUFTLFFBQVEsT0FBTyxLQUFLLE1BQU0sa0JBQWtCO0FBQUEsSUFDL0QsV0FBVyxRQUFRLFdBQVcsT0FBTyxPQUFPLFFBQVEsUUFBUSxRQUFRLEdBQUc7QUFBQSxNQUNuRSxNQUFNLFFBQVEsU0FBUyxjQUFjLE1BQU07QUFBQSxNQUMzQyxNQUFNLE1BQU0sYUFBYTtBQUFBLE1BQ3pCLE1BQU0sT0FBTyxTQUFTLGNBQWMsS0FBSztBQUFBLE1BQ3pDLEtBQUssTUFBTSxLQUFLO0FBQUEsTUFDaEIsS0FBSyxNQUFNLEtBQUs7QUFBQSxNQUNoQixLQUFLLFFBQVE7QUFBQSxNQUNiLEtBQUssU0FBUztBQUFBLE1BQ2QsTUFBTSxPQUFPLE1BQU0sSUFBSSxLQUFLLE9BQU87QUFBQSxNQUNuQyxRQUFRLE9BQU8sS0FBSyxLQUFLO0FBQUEsSUFDN0I7QUFBQSxJQUNBLElBQUksTUFBTSxTQUFTO0FBQUEsTUFBVSxRQUFRLE9BQU8sS0FBSyxNQUFNLE9BQU87QUFBQSxJQUM5RCxLQUFLLE9BQU8sT0FBTztBQUFBLElBQ25CLFdBQVcsVUFBVSxhQUFhLEtBQUssR0FBRztBQUFBLE1BQ3RDLEtBQUssT0FBTyxTQUFTLGNBQWMsSUFBSSxHQUFHLE1BQU07QUFBQSxJQUNwRDtBQUFBLElBQ0EsUUFBUSxnQkFBZ0IsT0FBTyxJQUFJO0FBQUEsSUFDbkMsc0JBQXNCO0FBQUEsSUFDdEIsbUJBQW1CLE1BQU07QUFBQTtBQUFBLEVBRzdCLFNBQVMsV0FBVyxHQUFTO0FBQUEsSUFDekIsc0JBQXNCO0FBQUEsSUFDdEIsZUFBZSxFQUFFLE1BQU0sVUFBVTtBQUFBO0FBQUEsRUFHckMsU0FBUyxvQkFBb0IsQ0FBQyxRQUFnRDtBQUFBLElBQzFFLElBQUksRUFBRSxrQkFBa0I7QUFBQSxNQUFVLE9BQU87QUFBQSxJQUN6QyxPQUFPLE9BQU8sUUFBcUIsZ0RBQWdEO0FBQUE7QUFBQSxFQUd2RixTQUFTLFdBQVcsQ0FBQyxRQUEyQjtBQUFBLElBQzVDLElBQUksT0FBTyxRQUFRLFNBQVMsV0FBVyxTQUFTLEdBQUc7QUFBQSxNQUMvQyxpQkFBaUIsTUFBTTtBQUFBLElBQzNCLEVBQUUsS0FBSyxJQUFJLE9BQU8sUUFBUSxTQUFTO0FBQUEsTUFDL0IsbUJBQW1CLE1BQU07QUFBQSxJQUM3QixFQUFFLEtBQUssSUFBSSxrQkFBa0IsbUJBQW1CO0FBQUEsTUFDNUMsbUJBQW1CLE1BQU07QUFBQSxJQUM3QjtBQUFBO0FBQUEsRUFHSixTQUFTLGlCQUFpQixhQUFhLFdBQVM7QUFBQSxJQUM1QyxNQUFNLFNBQVMscUJBQXFCLE1BQU0sTUFBTTtBQUFBLElBQ2hELElBQUk7QUFBQSxNQUFRLFlBQVksTUFBTTtBQUFBLEdBQ2pDO0FBQUEsRUFFRCxTQUFTLGlCQUFpQixZQUFZLFdBQVM7QUFBQSxJQUMzQyxJQUFJLENBQUM7QUFBQSxNQUFxQjtBQUFBLElBQzFCLElBQUksTUFBTSxpQkFBaUIsb0JBQW9CLFNBQVMsTUFBTSxhQUFxQjtBQUFBLE1BQUc7QUFBQSxJQUN0RixZQUFZO0FBQUEsR0FDZjtBQUFBLEVBRUQsU0FBUyxpQkFBaUIsV0FBVyxXQUFTO0FBQUEsSUFDMUMsTUFBTSxTQUFTLHFCQUFxQixNQUFNLE1BQU07QUFBQSxJQUNoRCxJQUFJO0FBQUEsTUFBUSxZQUFZLE1BQU07QUFBQSxHQUNqQztBQUFBLEVBRUQsU0FBUyxpQkFBaUIsWUFBWSxXQUFTO0FBQUEsSUFDM0MsSUFBSSxDQUFDO0FBQUEsTUFBcUI7QUFBQSxJQUMxQixJQUFJLE1BQU0saUJBQWlCLG9CQUFvQixTQUFTLE1BQU0sYUFBcUI7QUFBQSxNQUFHO0FBQUEsSUFDdEYsWUFBWTtBQUFBLEdBQ2Y7IiwKICAiZGVidWdJZCI6ICJFNzQ4Rjg0QTI4OTU5QTgzNjQ3NTZFMjE2NDc1NkUyMSIsCiAgIm5hbWVzIjogW10KfQ==
+//# debugId=15BC41989537CF6B64756E2164756E21
+//# sourceMappingURL=tooltips.js.map

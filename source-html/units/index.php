@@ -150,7 +150,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             height: 100px;
         }
         .units-modified {
-            color: yellow;
+            color: #ffbf00;
         }
         .units-modifiers {
             margin: 20px -5px 0;
@@ -160,6 +160,28 @@ require_once __DIR__ . '/../../includes/wrapper.php';
         .units-head {
             color: #bcc0e8;
             margin-bottom: 5px;
+        }
+        .units-mode-name {
+            color: #bcc0e8;
+            font-weight: bold;
+        }
+        .units-weapon-name {
+            color: #bcc0e8;
+            font-weight: normal;
+        }
+        .units-weapon-target {
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .units-targetability {
+            font-size: 14px;
+        }
+        .units-commander-selector > .units-head,
+        .units-unit-selector > .units-head {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
         .units-commander-selector > .units-head:first-child,
         .units-unit-selector > .units-head:first-child {
@@ -260,6 +282,9 @@ require_once __DIR__ . '/../../includes/wrapper.php';
             margin-bottom: 3px;
             padding: 2px 2px 4px;
             color: #a2a5d4;
+        }
+        .units-unit fieldset p {
+            margin: 3px 4px;
         }
         .units-upgrade-levels {
             white-space: nowrap;
@@ -368,12 +393,12 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 
     <h3>Notes about the data</h3>
     <ul>
-        <li>Skill tooltips show base descriptions, costs, and cooldowns. These do not change with selected upgrades, masteries, or prestiges.</li>
-        <li>All evolutions (e.g. Abathur's Devourer, Dehaka's Primal Combat units) build times only includes the evolution time, and not the build time of the parent units.</li>
+        <li>Modified skill values are highlighted in yellow-orange. Skills remain listed when their required research has not been selected.</li>
+        <li>A + before build time means additional morph, merge, or installation time; it excludes the parent units' build time.</li>
         <li>Any units with charge-based production (e.g. Artanis) uses the charge cooldown time as the build time. For Stukov, the unit's build time is displayed, and not the charge time.</li>
         <li>For multiple-spawned units (e.g. Zerglings), resource costs are divided by the number of units spawned.</li>
         <li>Biomass uses the selected amount. Other buffs with multiple stacks use their maximum value.</li>
-        <li>Upgrades that do not change the displayed unit stats are listed without a checkbox.</li>
+        <li>Upgrades that do not change the displayed unit stats or skills are listed without a checkbox.</li>
         <li>Since numbers are calculated, there may be small rounding errors.</li>
     </ul>
     <p>

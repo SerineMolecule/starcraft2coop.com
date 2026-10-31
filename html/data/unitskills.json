@@ -9,8 +9,8 @@
         "description": "Quickly burrow to target location.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -60,12 +60,37 @@
         "description": "Launches acid at all enemy units in the target area, reducing their attack speed by 12.5% and armor by 3. Stacks 3 times.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "45s",
-        "energycost": "0",
+        "cooldown": 45,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Devourer",
+        "name": "Evolve to Leviathan",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+        ],
+        "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
     },
     {
         "commander": "Abathur",
@@ -108,15 +133,126 @@
         "icons": [
             "/images/commanderdata/unitskills/abathur/corrosivebile.png"
         ],
-        "description": "Launch a missile at the target location, dealing 60 damage to enemy units in the area upon impact.\nCan destroy Protoss Force Fields.",
+        "description": "Launch a missile at the target location, dealing {damage} damage to enemy units in the area upon impact.\nCan destroy Protoss Force Fields.\n\nImpact radius: {radius}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 60,
+            "radius": 0.5
+        }
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Ravager",
+        "name": "Deep Tunnel",
+        "icons": [
+            "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+        ],
+        "description": "Quickly burrow to the target location without requiring vision. The Deep Tunnel upgrade does not require a Hive.",
+        "type": "active",
+        "requiresupgrade": true,
+        "cooldown": 30,
+        "energycost": 0,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Tunneling Horror",
+        "requirements": "Requires Deep Tunnel research at an Infestation Pit."
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Ravager",
+        "name": "Evolve to Brutalisk",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+        ],
+        "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Roach",
+        "name": "Deep Tunnel",
+        "icons": [
+            "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+        ],
+        "description": "Quickly burrow to the target location without requiring vision. The Deep Tunnel upgrade does not require a Hive.",
+        "type": "active",
+        "requiresupgrade": true,
+        "cooldown": 30,
+        "energycost": 0,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Tunneling Horror",
+        "requirements": "Requires Deep Tunnel research at an Infestation Pit."
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Roach",
+        "name": "Morph to Ravager",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-ravager.png"
+        ],
+        "description": "Transforms this Roach into a Ravager.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Lair.",
+        "cost": {
+            "minerals": 13,
+            "gas": 38,
+            "supply": 1
+        },
+        "buildTime": 5
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Roach",
+        "name": "Evolve to Brutalisk",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+        ],
+        "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
     },
     {
         "commander": "Abathur",
@@ -145,8 +281,8 @@
         "description": "Sends Locusts to target location.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15s",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -162,12 +298,37 @@
         "description": "Quickly burrow to a target visible location.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Swarm Host",
+        "name": "Evolve to Brutalisk",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+        ],
+        "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
     },
     {
         "commander": "Abathur",
@@ -179,8 +340,8 @@
         "description": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.\nBonus: Zerg move faster on creep.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "3s",
-        "energycost": "0",
+        "cooldown": 3,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -193,15 +354,44 @@
         "icons": [
             "/images/commanderdata/unitskills/abathur/rapidtransfusion.png"
         ],
-        "description": "Heals a biological unit or structure for 25 life over time.",
+        "description": "Heals a {targets} unit or structure for {healing} life over time.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "3s",
-        "energycost": "10",
+        "cooldown": 3,
+        "energycost": 10,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "healing": 25,
+            "targets": "biological"
+        }
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Swarm Queen",
+        "name": "Evolve to Brutalisk",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-brutalisk.png"
+        ],
+        "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
     },
     {
         "commander": "Abathur",
@@ -210,15 +400,19 @@
         "icons": [
             "/images/commanderdata/unitskills/abathur/abduct.png"
         ],
-        "description": "Pulls target unit to the Viper. Enemy is stunned for 1 second.",
+        "description": "Pulls target unit to the Viper. Enemy is stunned for {stun} seconds.\n\nCast range: {range}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "25",
+        "cooldown": 0,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "range": 9,
+            "stun": 1
+        }
     },
     {
         "commander": "Abathur",
@@ -227,15 +421,18 @@
         "icons": [
             "/images/commanderdata/unitskills/abathur/disablingcloud.png"
         ],
-        "description": "Creates a cloud that slows movement speed (-50%) and prevents enemy units and structures from attacking and using energy-based abilities. Lasts for 10 seconds.",
+        "description": "Creates a cloud that slows movement speed (-50%) and prevents enemy units and structures from attacking and using energy-based abilities. Lasts for 10 seconds.\n\nCast range: {range}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "75",
+        "cooldown": 0,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "range": 11
+        }
     },
     {
         "commander": "Abathur",
@@ -244,15 +441,18 @@
         "icons": [
             "/images/commanderdata/unitskills/abathur/consumption.png"
         ],
-        "description": "Drains up to 75 life from a friendly Zerg unit and gives the Viper 2 energy for each point of life drained.",
+        "description": "Drains up to 75 life from a friendly Zerg unit and gives the Viper 2 energy for each point of life drained.\n\nCast range: {range}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "range": 4
+        }
     },
     {
         "commander": "Abathur",
@@ -261,15 +461,43 @@
         "icons": [
             "/images/commanderdata/unitskills/abathur/parasiticbomb.png"
         ],
-        "description": "Creates a parasitic cloud of radius 3 that deals 90 damage over 10 seconds to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.\nCannot target ground units or structures.",
+        "description": "Creates a parasitic cloud of radius 3 that deals 90 damage over 10 seconds to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.\nCannot target ground units or structures.\n\nCast range: {range}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "125",
+        "cooldown": 0,
+        "energycost": 125,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "range": 8
+        }
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Viper",
+        "name": "Evolve to Leviathan",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+        ],
+        "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
     },
     {
         "commander": "Alarak",
@@ -281,7 +509,7 @@
         "description": "Alarak intercepts target enemy unit and strikes it for 200 damage.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -295,15 +523,18 @@
         "icons": [
             "/images/commanderdata/hero/alarak/destructionwave.png"
         ],
-        "description": "Unleashes a massive wave of force in a straight line, dealing 50 damage to enemies in its path and knocking them back.",
+        "description": "Unleashes a massive wave of force in a straight line, dealing 50 damage to enemies in its path and {knockback}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "5 seconds",
+        "cooldown": 5,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "knockback": "knocking them back"
+        }
     },
     {
         "commander": "Alarak",
@@ -315,7 +546,7 @@
         "description": "Alarak's attacks and abilities deal increased damage for each allied unit nearby. Mechanical units grant him double the power. Resets the cooldown of Deadly Charge and Destruction Wave.\nBiological units provide a 5% damage bonus per supply up to 100 supply, and then provide 2.5% per supply onwards. Mechanical units provide 10% damage bonus per supply up to 100 supply, and then provide 5% per supply onwards.\nSupply count is additive, with biological units favored first. So if you have 100 supply in bio and 1 supply in mechanical units, the mechanical units will provide the reduced rate of 5%.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "240 seconds",
+        "cooldown": 240,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -346,15 +577,20 @@
         "icons": [
             "/images/commanderdata/unitskills/alarak/psionicorb.png"
         ],
-        "description": "Unleashes a traveling Psionic Orb that deals 10 damage per second to all enemies along its path.",
+        "description": "Unleashes a traveling Psionic Orb that deals {damage} damage per second to all enemies along its path.\n\nTravel distance: {distance}.\n\n{stacks}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "2s",
-        "energycost": "100",
+        "cooldown": 2,
+        "energycost": 100,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 10,
+            "distance": 13,
+            "stacks": ""
+        }
     },
     {
         "commander": "Alarak",
@@ -363,15 +599,19 @@
         "icons": [
             "/images/commanderdata/unitskills/alarak/mindblast.png"
         ],
-        "description": "Deals 200 damage to target enemy unit.\nCan target ground and air units.",
+        "description": "Deals {damage} damage to target enemy unit.\nCan target ground and air units.\n\n{stacks}",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "8s",
-        "energycost": "100",
+        "cooldown": 8,
+        "energycost": 100,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 200,
+            "stacks": ""
+        }
     },
     {
         "commander": "Alarak",
@@ -380,15 +620,18 @@
         "icons": [
             "/images/commanderdata/unitskills/alarak/sacrifice.png"
         ],
-        "description": "Sacrifices a Supplicant to fully restore the Ascendant's energy.\nCan only target Supplicants.",
+        "description": "Sacrifices a Supplicant to fully restore the Ascendant's energy.\nCan only target Supplicants.\n\n{bonus}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "bonus": ""
+        }
     },
     {
         "commander": "Alarak",
@@ -397,15 +640,19 @@
         "icons": [
             "/images/commanderdata/unitskills/alarak/targetlock.png"
         ],
-        "description": "Increases damage dealt to target enemy unit by 15%. Effect lasts as long as the Havoc remains locked onto the target.",
+        "description": "Increases damage dealt to target enemy unit by {bonus}%. Effect lasts as long as the Havoc remains locked onto the target.\n\nCast range: {range}.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "3s",
-        "energycost": "0",
+        "cooldown": 3,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "bonus": 15,
+            "range": 8
+        }
     },
     {
         "commander": "Alarak",
@@ -414,16 +661,19 @@
         "icons": [
             "/images/commanderdata/unitskills/alarak/forcefield.png"
         ],
-        "description": "Creates a solid barrier that lasts for 15 seconds and impedes movement of ground units.\nMassive units shatter Force Fields on contact. (3 charges max).",
+        "description": "Creates a solid barrier that lasts for 15 seconds and impedes movement of ground units.\nMassive units shatter Force Fields on contact. (3 charges max).\n\nCast range: {range}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15s",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null,
-        "charges": 3
+        "charges": 3,
+        "values": {
+            "range": 9
+        }
     },
     {
         "commander": "Alarak",
@@ -466,7 +716,7 @@
         "icons": [
             "/images/commanderdata/unitskills/alarak/squadsight.png"
         ],
-        "description": "Friendly units within a radius of 4 gain 2 additional range on non-melee attacks.",
+        "description": "Friendly units within a radius of {radius} gain 2 additional range on non-melee attacks.",
         "type": "passive",
         "requiresupgrade": false,
         "cooldown": null,
@@ -474,7 +724,10 @@
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "radius": 4
+        }
     },
     {
         "commander": "Alarak",
@@ -486,7 +739,7 @@
         "description": "Deals 20 damage to all enemies in a straight line up to 10 range away.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "1 second",
+        "cooldown": 1,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -537,8 +790,8 @@
         "description": "Teleports the Slayer to a nearby target location. Ability can only be used once every 8 seconds. After using Phase Blink, the Slayer's next attack within 8 seconds will deal double damage.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "8s",
-        "energycost": "0",
+        "cooldown": 8,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -554,7 +807,7 @@
         "description": "After being attacked, becomes immune to damage for 2 seconds.",
         "type": "passive",
         "requiresupgrade": true,
-        "cooldown": "5 seconds",
+        "cooldown": 5,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -602,15 +855,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/feedback.png"
         ],
-        "description": "Drains all energy from the target. Deals 1 damage per point of energy.",
+        "description": "Drains all energy from the target. Deals {damagePerEnergy} damage per point of energy.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damagePerEnergy": 1
+        }
     },
     {
         "commander": "Artanis",
@@ -619,15 +875,21 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/psionicstorm.png"
         ],
-        "description": "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+        "description": "Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.\n\nRadius: {radius}.\n\nCast range: {range}.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "2s",
-        "energycost": "75",
+        "cooldown": 2,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "radius": 1.5,
+            "range": 9,
+            "damage": 80,
+            "shieldRestoration": 50
+        }
     },
     {
         "commander": "Artanis",
@@ -636,15 +898,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/feedback.png"
         ],
-        "description": "Drains all energy from the target. Deals 1 damage per point of energy.",
+        "description": "Drains all energy from the target. Deals {damagePerEnergy} damage per point of energy.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damagePerEnergy": 1
+        }
     },
     {
         "commander": "Artanis",
@@ -653,15 +918,43 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/psionicstorm.png"
         ],
-        "description": "Creates a storm of psionic energy that lasts 4 seconds, causing up to 80 damage to all enemy units in the target area. Does not damage friendly units.",
+        "description": "Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.\n\nRadius: {radius}.\n\nCast range: {range}.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "2s",
-        "energycost": "75",
+        "cooldown": 2,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "radius": 1.5,
+            "range": 9,
+            "damage": 80,
+            "shieldRestoration": 50
+        }
+    },
+    {
+        "commander": "Artanis",
+        "unit": "High Templar",
+        "name": "Archon Merge",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-protoss-archon.png"
+        ],
+        "description": "Merges two High Templar into one Archon.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": null,
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 12
     },
     {
         "commander": "Artanis",
@@ -670,15 +963,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/barrier.png"
         ],
-        "description": "Absorbs up to 100 damage. Lasts for 10 seconds.",
+        "description": "Absorbs up to {absorption} damage. Lasts for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "absorption": 100
+        }
     },
     {
         "commander": "Artanis",
@@ -721,15 +1017,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/gravitonbeam.png"
         ],
-        "description": "Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.\nMassive units are immune.",
+        "description": "Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.\nMassive units are immune.\n\n{targets}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "targets": ""
+        }
     },
     {
         "commander": "Artanis",
@@ -755,15 +1054,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/createscarab.png"
         ],
-        "description": "Builds Scarabs that automatically launch at the Reaver's target and explode for area damage.\nCan attack ground units. (5 max).",
+        "description": "Builds Scarabs that automatically launch at the Reaver's target and explode for area damage.\nCan attack ground units. ({capacity} max).",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "8s",
-        "energycost": "0",
+        "cooldown": 8,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "capacity": 5
+        }
     },
     {
         "commander": "Artanis",
@@ -772,15 +1074,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/disintegration.png"
         ],
-        "description": "Deals 500 damage over 20 seconds to target enemy unit or structure.",
+        "description": "Deals {damage} damage over 20 seconds to target enemy unit or structure.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "90 seconds",
-        "energycost": "0",
+        "cooldown": 90,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 500
+        }
     },
     {
         "commander": "Artanis",
@@ -789,15 +1094,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/charge.png"
         ],
-        "description": "Intercepts enemy ground units and increases movement speed.",
+        "description": "Intercepts enemy ground units and increases movement speed.\n\n{chargeBonus}",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "chargeBonus": ""
+        }
     },
     {
         "commander": "Artanis",
@@ -806,15 +1114,18 @@
         "icons": [
             "/images/commanderdata/unitskills/artanis/whirlwind.png"
         ],
-        "description": "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
+        "description": "Deals {damage} damage per second to all nearby enemy units. Lasts 3 seconds.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 10
+        }
     },
     {
         "commander": "Dehaka",
@@ -823,15 +1134,18 @@
         "icons": [
             "/images/commanderdata/unitskills/dehaka/spawnexplosivecreeper-framed.png"
         ],
-        "description": "Siege unit that attacks by spawning Explosive Creepers. Creepers last 25 seconds.\nCreepers can attack ground units.",
+        "description": "Siege unit that attacks by spawning Explosive Creepers. Creepers last 25 seconds.\nCreepers can attack {targets} units.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "targets": "ground"
+        }
     },
     {
         "commander": "Dehaka",
@@ -843,7 +1157,7 @@
         "description": "Charge to a target location knocking back units in the area and dealing 200 damage.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -877,7 +1191,7 @@
         "description": "Dehaka leaps to the target location, dealing 145 damage to nearby enemy ground units. Each enemy hit grants Dehaka 1 armour for 2 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -894,7 +1208,7 @@
         "description": "Dehaka terrifies nearby enemies, reducing their movement speed by 75% and attack speed by 25% for 15 seconds.\nEnemies affected by Intimidating Roar have their armor reduced by 2 and cannot use abilities that cost energy.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -928,13 +1242,16 @@
         "description": "Dehaka's fiery breath scorches the earth, dealing weapon damage to all enemy units in its path. 3 charges max.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": "Requires skill points; values shown at level 3. Unavailable with Devouring One (P1).",
-        "charges": 3
+        "requirements": "Requires skill points; values shown at level 3.",
+        "charges": 3,
+        "excludedPrestiges": [
+            "Devouring One"
+        ]
     },
     {
         "commander": "Dehaka",
@@ -946,7 +1263,7 @@
         "description": "Quickly burrow to any visible location.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1031,7 +1348,7 @@
         "description": "Carpets the ground in fire. Enemy units in the area take 500 damage over 5 seconds. Can be set to Autocast.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "6 seconds",
+        "cooldown": 6,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1048,7 +1365,7 @@
         "description": "Glevig burrows to the target location and erupts, dealing damage to units in the area and knocking them back.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
+        "cooldown": 0,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1065,7 +1382,7 @@
         "description": "Deals 70 damage per second to the target unit for 5 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "20 seconds",
+        "cooldown": 20,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1082,7 +1399,7 @@
         "description": "Quickly burrow to any visible location.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1116,7 +1433,7 @@
         "description": "Spawns 6 Primal Locusts and 6 Explosive Creepers that fight for 25 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1133,7 +1450,7 @@
         "description": "Creates a cloud that slows enemy movement speed and prevents enemy units and structures from attacking or using energy-based abilities. Lasts for 5 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "3 seconds",
+        "cooldown": 3,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1150,8 +1467,8 @@
         "description": "Fires an Explosive Spore at the target, causing the target and all nearby enemy ground units to take 50 damage.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1167,12 +1484,34 @@
         "description": "Siege unit that attacks by spawning Primal Locusts. Primal Locusts last 25 seconds.\nPrimal Locusts can attack ground units.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Dehaka",
+        "unit": "Primal Host",
+        "name": "Primal Combat: Creeper Host",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-swarmhost.png"
+        ],
+        "description": "Two Primal Hosts engage in primal combat, consuming both units to produce one Creeper Host.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 8.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 8
     },
     {
         "commander": "Dehaka",
@@ -1184,7 +1523,7 @@
         "description": "Returns to life shortly after being killed.",
         "type": "passive",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -1201,8 +1540,8 @@
         "description": "Charge to target location knocking back units in the area and dealing 25 damage.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1224,6 +1563,28 @@
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Dehaka",
+        "unit": "Primal Ultralisk",
+        "name": "Primal Combat: Tyrannozor",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-collection-ultralisk-collectoredition.png"
+        ],
+        "description": "Two Primal Ultralisks engage in primal combat, consuming both units to produce one Tyrannozor.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 11.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 8
     },
     {
         "commander": "Dehaka",
@@ -1252,8 +1613,8 @@
         "description": "Unleash a Barrage of Spikes, dealing 100 damage to enemy ground and air units around the Tyrannozor.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1303,8 +1664,8 @@
         "description": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.\nCan attack ground and air units. 8 Interceptors max.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15s",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1320,8 +1681,8 @@
         "description": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.\nCan attack ground and air units. 8 Interceptors max.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15s",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1334,15 +1695,18 @@
         "icons": [
             "/images/commanderdata/unitskills/fenix/buildinterdictor-framed.png"
         ],
-        "description": "Builds Interdictors that automatically bomb enemy ground units for 12 damage.\nCan attack ground units.",
+        "description": "Builds Interdictors that automatically bomb enemy ground units for {damage} damage.\nCan attack ground units.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "15s",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 12
+        }
     },
     {
         "commander": "Fenix",
@@ -1368,15 +1732,18 @@
         "icons": [
             "/images/commanderdata/unitskills/fenix/protectivefield.png"
         ],
-        "description": "Creates a shield that reduces all incoming attack damage to friendly units by 35%. Lasts 15 seconds.",
+        "description": "Creates a shield that reduces all incoming attack damage to friendly units by 35%. Lasts {duration} seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "20 seconds",
-        "energycost": "0",
+        "cooldown": 20,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "duration": 15
+        }
     },
     {
         "commander": "Fenix",
@@ -1385,15 +1752,18 @@
         "icons": [
             "/images/commanderdata/unitskills/fenix/purificationnova.png"
         ],
-        "description": "Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures.",
+        "description": "Shoots out a ball of energy that emits a powerful nova dealing 150 splash damage and an additional 50 shield damage to nearby ground units and structures.\n\n{echo}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "20 seconds",
-        "energycost": "0",
+        "cooldown": 20,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "echo": ""
+        }
     },
     {
         "commander": "Fenix",
@@ -1422,8 +1792,8 @@
         "description": "Places enemy units in target area into stasis for 15 seconds. Units in stasis cannot move, attack, be attacked or be affected by abilities.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "50",
+        "cooldown": 10,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1439,8 +1809,8 @@
         "description": "Enable Cloaking Field, cloaking friendly units near Fenix. Costs 5 Energy per second to maintain.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "5",
+        "cooldown": 0,
+        "energycost": 5,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1456,8 +1826,8 @@
         "description": "Teleports all friendly units in the target area to the location of the Arbiter.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "100",
+        "cooldown": 0,
+        "energycost": 100,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1490,8 +1860,8 @@
         "description": "Fenix charges at the target location, dealing 50 damage and stunning all enemies for 5 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "25",
+        "cooldown": 10,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1507,8 +1877,8 @@
         "description": "All nearby enemies take 70 damage per second for 3 seconds. Fenix can move while Whirlwind is active.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "50",
+        "cooldown": 10,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1524,8 +1894,8 @@
         "description": "Fully restores Fenix's shields. autocasting activates Shield Capacitor when Fenix's shields have been depleted.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "5 seconds",
-        "energycost": "100",
+        "cooldown": 5,
+        "energycost": 100,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1541,8 +1911,8 @@
         "description": "Fires a piercing beam that deals 100 damage to all enemy ground units in its path.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "6 seconds",
-        "energycost": "50",
+        "cooldown": 6,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1558,8 +1928,8 @@
         "description": "Fires an air bursting flare that deals 100 damage to enemy air units.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "50",
+        "cooldown": 10,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1575,8 +1945,8 @@
         "description": "Activating Arsenal Overcharge causes your damaging abilities to have no cooldown for 10 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "120 seconds",
-        "energycost": "0",
+        "cooldown": 120,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1592,8 +1962,8 @@
         "description": "Absorbs up to 100 damage. Lasts for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1609,8 +1979,8 @@
         "description": "Kaldalis intercepts the target unit.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "5s",
-        "energycost": "0",
+        "cooldown": 5,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1626,8 +1996,8 @@
         "description": "Intercepts enemy ground units and increases movement speed.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1643,8 +2013,8 @@
         "description": "Fire a barrage of Anti-Matter Missiles, dealing 6 (12 vs Armored) area damage and stunning nearby enemy air units for 1 second.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "5s",
-        "energycost": "0",
+        "cooldown": 5,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1711,8 +2081,8 @@
         "description": "Absorbs up to 200 damage. Lasts for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1725,15 +2095,19 @@
         "icons": [
             "/images/commanderdata/unitskills/fenix/ricochetglaive.png"
         ],
-        "description": "An amplified Glaive that ricochets and hits up to 3 enemy units for 25 (35 vs Light) damage each.",
+        "description": "An amplified Glaive that ricochets and hits up to {targets} enemy units for 25 (35 vs Light) damage each.\n\n{debilitation}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "5 seconds",
-        "energycost": "0",
+        "cooldown": 5,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "targets": 3,
+            "debilitation": ""
+        }
     },
     {
         "commander": "Fenix",
@@ -1745,8 +2119,8 @@
         "description": "Fire a devastating blast that deals 150 damage the target unit.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "5 seconds",
-        "energycost": "0",
+        "cooldown": 5,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1771,6 +2145,70 @@
     },
     {
         "commander": "Horner",
+        "unit": "Assault Galleon",
+        "name": "Install Drone Hangar",
+        "icons": [
+            "/images/commanderdata/unitupgrades/horner/installdronehangar-framed.png"
+        ],
+        "description": "Retrofits this Assault Galleon with a Drone Hangar that automatically builds and deploys up to 6 Assault Drones. Assault Drones can attack ground and air units. Installing the hangar also enables out-of-combat regeneration.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 3.",
+        "cost": {
+            "minerals": 150,
+            "gas": 200,
+            "supply": 3
+        },
+        "buildTime": 60,
+        "hideWithUpgrade": "Install Drone Hangar"
+    },
+    {
+        "commander": "Horner",
+        "unit": "Assault Galleon",
+        "requiresupgrade": false,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": null,
+        "showWithUpgrade": "Install Drone Hangar",
+        "name": "Build Assault Drone",
+        "icons": [
+            "/images/commanderdata/unitskills/horner/buildassaultdrone.png"
+        ],
+        "description": "Automatically builds Assault Drones at no mineral, gas, or supply cost, up to a maximum of 6. The hangar starts with 6 drones when installed. Drones automatically attack ground and air targets.",
+        "type": "autocast",
+        "cooldown": 15
+    },
+    {
+        "commander": "Horner",
+        "unit": "Assault Galleon",
+        "requiresupgrade": false,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 11.",
+        "showWithUpgrade": "Install Drone Hangar",
+        "name": "Endurance Training",
+        "icons": [
+            "/images/commanderdata/unitskills/horner/endurancetraining.png"
+        ],
+        "description": "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+        "values": {
+            "healing": 3.75,
+            "delay": 10
+        },
+        "type": "passive",
+        "cooldown": null
+    },
+    {
+        "commander": "Horner",
         "unit": "Asteria Wraith",
         "name": "Tactical Jump",
         "icons": [
@@ -1779,8 +2217,8 @@
         "description": "Warps to the target location. Aircraft is invulnerable while warping.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1796,8 +2234,8 @@
         "description": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.\nDrains 0.9 energy per second.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1839,6 +2277,27 @@
     },
     {
         "commander": "Horner",
+        "unit": "Asteria Wraith",
+        "requiresupgrade": false,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 11.",
+        "name": "Endurance Training",
+        "icons": [
+            "/images/commanderdata/unitskills/horner/endurancetraining.png"
+        ],
+        "description": "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+        "values": {
+            "healing": 3.75,
+            "delay": 10
+        },
+        "type": "passive",
+        "cooldown": null
+    },
+    {
+        "commander": "Horner",
         "unit": "Deimos Viking",
         "name": "Tactical Jump",
         "icons": [
@@ -1847,8 +2306,8 @@
         "description": "Warps to the target location. Aircraft is invulnerable while warping.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1864,12 +2323,33 @@
         "description": "Launches 5 rockets at the target unit. Each rocket deals 25 (40 vs armored) damage.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "20 seconds",
-        "energycost": "0",
+        "cooldown": 20,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Horner",
+        "unit": "Deimos Viking",
+        "requiresupgrade": false,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 11.",
+        "name": "Endurance Training",
+        "icons": [
+            "/images/commanderdata/unitskills/horner/endurancetraining.png"
+        ],
+        "description": "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+        "values": {
+            "healing": 3.75,
+            "delay": 10
+        },
+        "type": "passive",
+        "cooldown": null
     },
     {
         "commander": "Horner",
@@ -1881,8 +2361,8 @@
         "description": "Launches a tar bomb that deals 20 damage to the target unit. Nearby enemies have their movement speed reduced by 75% and attack range reduced by 3 for 5 seconds.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1912,15 +2392,18 @@
         "icons": [
             "/images/commanderdata/unitskills/horner/kd8charge.png"
         ],
-        "description": "Explodes after a short delay, doing 10 area damage and knocking back nearby units.",
+        "description": "Explodes after a short delay, doing 10 area damage and knocking back nearby units.\n\n{death}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "20 seconds",
-        "energycost": "0",
+        "cooldown": 20,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "death": ""
+        }
     },
     {
         "commander": "Horner",
@@ -1932,12 +2415,33 @@
         "description": "Warps to the target location. Aircraft is invulnerable while warping.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Horner",
+        "unit": "Sovereign Battlecruiser",
+        "requiresupgrade": false,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 11.",
+        "name": "Endurance Training",
+        "icons": [
+            "/images/commanderdata/unitskills/horner/endurancetraining.png"
+        ],
+        "description": "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+        "values": {
+            "healing": 3.75,
+            "delay": 10
+        },
+        "type": "passive",
+        "cooldown": null
     },
     {
         "commander": "Horner",
@@ -1949,8 +2453,8 @@
         "description": "Warps to the target location. Aircraft is invulnerable while warping.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -1963,15 +2467,18 @@
         "icons": [
             "/images/commanderdata/unitskills/horner/analyzeweakness.png"
         ],
-        "description": "All Melee and Ranged attacks against Analyzed units do 3 bonus damage. Effect lasts as long as the Raven remains locked onto the target.",
+        "description": "All Melee and Ranged attacks against Analyzed units do 3 bonus damage. Effect lasts as long as the Raven remains locked onto the target.\n\nCan maintain Target Lock on {targets} target(s) at once.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "3 seconds",
-        "energycost": "0",
+        "cooldown": 3,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "targets": 1
+        }
     },
     {
         "commander": "Horner",
@@ -2008,6 +2515,27 @@
         "requirements": null
     },
     {
+        "commander": "Horner",
+        "unit": "Theia Raven",
+        "requiresupgrade": false,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 11.",
+        "name": "Endurance Training",
+        "icons": [
+            "/images/commanderdata/unitskills/horner/endurancetraining.png"
+        ],
+        "description": "Regenerates {healing} life per second after taking no damage for {delay} seconds.",
+        "values": {
+            "healing": 3.75,
+            "delay": 10
+        },
+        "type": "passive",
+        "cooldown": null
+    },
+    {
         "commander": "Karax",
         "unit": "Carrier",
         "name": "Build Interceptor",
@@ -2017,8 +2545,8 @@
         "description": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.\nCan attack ground and air units. 8 Interceptors max.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2068,8 +2596,8 @@
         "description": "Friendly target gains 25% attack speed and 50% movement speed for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "3",
+        "cooldown": 0,
+        "energycost": 3,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2085,8 +2613,8 @@
         "description": "Temporarily takes control of target enemy mechanical unit. Reclaimed units self-destruct after 120 seconds.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "120 seconds",
-        "energycost": "50",
+        "cooldown": 120,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2102,8 +2630,8 @@
         "description": "Absorbs up to 100 damage. Lasts for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2119,8 +2647,8 @@
         "description": "Deal 320 damage to target unit or structure.\nCan target ground and air units.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "45 seconds",
-        "energycost": "0",
+        "cooldown": 45,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2136,8 +2664,8 @@
         "description": "Makes the target unit float in the air, disabling its abilities. Effect lasts up to 10 seconds.\nMassive units are immune.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2153,7 +2681,7 @@
         "description": "After being attacked, becomes immune to damage for 2 seconds.",
         "type": "passive",
         "requiresupgrade": true,
-        "cooldown": "5 seconds",
+        "cooldown": 5,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -2221,8 +2749,8 @@
         "description": "Intercepts enemy ground units and increases movement speed.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2238,7 +2766,7 @@
         "description": "After fatal damage, rebuilds itself over 5 seconds, returning with full life and shields.",
         "type": "passive",
         "requiresupgrade": true,
-        "cooldown": "120 seconds",
+        "cooldown": 120,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -2255,12 +2783,35 @@
         "description": "Attack speed increased by 50% for 15 seconds.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Kerrigan",
+        "unit": "Hydralisk",
+        "name": "Morph to Lurker",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-lurker.png"
+        ],
+        "description": "Transforms this Hydralisk into a Lurker.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Lurker Den.",
+        "cost": {
+            "minerals": 50,
+            "gas": 100,
+            "supply": 1
+        },
+        "buildTime": 15
     },
     {
         "commander": "Kerrigan",
@@ -2272,12 +2823,15 @@
         "description": "Kerrigan leaps to her target and deals 300 damage. Can be used without a target to travel quickly.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": "Unavailable with Desolate Queen."
+        "requirements": null,
+        "excludedPrestiges": [
+            "Desolate Queen"
+        ]
     },
     {
         "commander": "Kerrigan",
@@ -2289,12 +2843,15 @@
         "description": "Kerrigan dashes through enemies, dealing 100 damage to all enemies in her path.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": "Unavailable with Desolate Queen."
+        "requirements": null,
+        "excludedPrestiges": [
+            "Desolate Queen"
+        ]
     },
     {
         "commander": "Kerrigan",
@@ -2303,15 +2860,18 @@
         "icons": [
             "/images/commanderdata/hero/kerrigan/assimilationaura.png"
         ],
-        "description": "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
+        "description": "Causes all nearby enemies to drop {resources} when killed. Effect lasts for 15 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "120 seconds",
-        "energycost": "0",
+        "cooldown": 120,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": "Unavailable with Desolate Queen."
+        "requirements": null,
+        "values": {
+            "resources": "resources"
+        }
     },
     {
         "commander": "Kerrigan",
@@ -2323,12 +2883,13 @@
         "description": "Deals 100 damage to enemies in a large area around Kerrigan (27 range) and stuns them for 10 seconds.\nHeroic units are slowed.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "Coolup: 600 seconds\nCooldown: 180 seconds",
-        "energycost": "0",
+        "cooldown": 180,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": "Unavailable with Desolate Queen."
+        "requirements": null,
+        "initialCooldown": 600
     },
     {
         "commander": "Kerrigan",
@@ -2340,8 +2901,8 @@
         "description": "Kerrigan deals 300 damage to target unit or structure from long range.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": "Desolate Queen",
@@ -2357,42 +2918,8 @@
         "description": "Enemies in target area are stunned and take 50 damage over 5 seconds. Heroic units are slowed.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "75",
-        "rankrequired": null,
-        "mode": null,
-        "prestige": "Desolate Queen",
-        "requirements": null
-    },
-    {
-        "commander": "Kerrigan",
-        "unit": "Kerrigan",
-        "name": "Assimilation Aura",
-        "icons": [
-            "/images/commanderdata/hero/kerrigan/assimilationaura.png"
-        ],
-        "description": "Causes all nearby enemies to drop resources when killed. Effect lasts for 15 seconds.",
-        "type": "active",
-        "requiresupgrade": false,
-        "cooldown": "120 seconds",
-        "energycost": "0",
-        "rankrequired": null,
-        "mode": null,
-        "prestige": "Desolate Queen",
-        "requirements": null
-    },
-    {
-        "commander": "Kerrigan",
-        "unit": "Kerrigan",
-        "name": "Immobilization Wave",
-        "icons": [
-            "/images/commanderdata/hero/kerrigan/immobilizationwave.png"
-        ],
-        "description": "Deals 100 damage to enemies in a large area around Kerrigan and stuns them for 10 seconds.\nHeroic units are slowed.",
-        "type": "active",
-        "requiresupgrade": false,
-        "cooldown": "Coolup: 600 seconds\nCooldown: 180 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": "Desolate Queen",
@@ -2459,8 +2986,8 @@
         "description": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.\nBonus: Zerg move faster on creep.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
-        "energycost": "25",
+        "cooldown": 15,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2476,8 +3003,8 @@
         "description": "Target Hatchery, Lair, or Hive spawns 4 Larvae in 40 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "25 seconds",
-        "energycost": "0",
+        "cooldown": 25,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2493,8 +3020,8 @@
         "description": "Instantly restores 125 life to target biological unit or structure.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2527,8 +3054,8 @@
         "description": "Ultralisk burrows and charges toward units. When the Ultralisk unburrows, all enemy units nearby are knocked back and stunned for 2 seconds.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2561,7 +3088,7 @@
         "description": "On death, forms a cocoon and returns with full life after 10 seconds. Destroying the cocoon kills the Ultralisk.",
         "type": "passive",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -2595,7 +3122,7 @@
         "description": "Increases attack speed by 200% for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": 3,
         "mode": null,
@@ -2604,7 +3131,118 @@
     },
     {
         "commander": "Mengsk",
-        "unit": "Emperors Shadow",
+        "unit": "Dom. Assault Trooper",
+        "name": "Weapon Drop",
+        "icons": [
+            "/images/commanderdata/unitskills/mengsk/assaultweapon.png"
+        ],
+        "description": "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": null,
+        "excludedPrestiges": [
+            "Merchant of Death"
+        ]
+    },
+    {
+        "commander": "Mengsk",
+        "unit": "Dom. Assault Trooper",
+        "name": "Weapon Self-Destruct",
+        "icons": [
+            "/images/commanderdata/unitskills/mengsk/assaultweapon.png"
+        ],
+        "description": "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Merchant of Death",
+        "requirements": null
+    },
+    {
+        "commander": "Mengsk",
+        "unit": "Dom. Flame Trooper",
+        "name": "Weapon Drop",
+        "icons": [
+            "/images/commanderdata/unitskills/mengsk/flameweapon.png"
+        ],
+        "description": "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": null,
+        "excludedPrestiges": [
+            "Merchant of Death"
+        ]
+    },
+    {
+        "commander": "Mengsk",
+        "unit": "Dom. Flame Trooper",
+        "name": "Weapon Self-Destruct",
+        "icons": [
+            "/images/commanderdata/unitskills/mengsk/flameweapon.png"
+        ],
+        "description": "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Merchant of Death",
+        "requirements": null
+    },
+    {
+        "commander": "Mengsk",
+        "unit": "Dom. Rocket Trooper",
+        "name": "Weapon Drop",
+        "icons": [
+            "/images/commanderdata/unitskills/mengsk/rocketweapon.png"
+        ],
+        "description": "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": null,
+        "excludedPrestiges": [
+            "Merchant of Death"
+        ]
+    },
+    {
+        "commander": "Mengsk",
+        "unit": "Dom. Rocket Trooper",
+        "name": "Weapon Self-Destruct",
+        "icons": [
+            "/images/commanderdata/unitskills/mengsk/rocketweapon.png"
+        ],
+        "description": "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Merchant of Death",
+        "requirements": null
+    },
+    {
+        "commander": "Mengsk",
+        "unit": "Emperor's Shadow",
         "name": "Pyrokinetic Immolation",
         "icons": [
             "/images/commanderdata/unitskills/mengsk/pyrokineticimmolation.png"
@@ -2612,7 +3250,7 @@
         "description": "Immolates a target Biological enemy for 20 seconds, dealing 20 damage per second to themselves and nearby Biological enemies. Can be set to Autocast. Requires 75 energy.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "5 seconds",
+        "cooldown": 5,
         "energycost": null,
         "rankrequired": 0,
         "mode": null,
@@ -2621,7 +3259,7 @@
     },
     {
         "commander": "Mengsk",
-        "unit": "Emperors Shadow",
+        "unit": "Emperor's Shadow",
         "name": "EMP Blast",
         "icons": [
             "/images/commanderdata/unitskills/mengsk/empblast.png"
@@ -2629,7 +3267,7 @@
         "description": "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for 1 second. Cloaked units are revealed for 10 seconds after being hit. Can be set to Autocast. Requires 75 energy.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "8 seconds",
+        "cooldown": 8,
         "energycost": null,
         "rankrequired": 0,
         "mode": null,
@@ -2638,7 +3276,7 @@
     },
     {
         "commander": "Mengsk",
-        "unit": "Emperors Shadow",
+        "unit": "Emperor's Shadow",
         "name": "Labyrinth Cloak",
         "icons": [
             "/images/commanderdata/unitskills/mengsk/labyrinthcloak.png"
@@ -2646,7 +3284,7 @@
         "description": "Prevents the Emperor's Shadow from taking any damage for 10 seconds after being attacked. Cannot occur more than once every 30 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": 1,
         "mode": null,
@@ -2655,20 +3293,23 @@
     },
     {
         "commander": "Mengsk",
-        "unit": "Emperors Shadow",
+        "unit": "Emperor's Shadow",
         "name": "Tactical Missile Strike",
         "icons": [
             "/images/commanderdata/unitskills/mengsk/tacticalmissilestrike.png"
         ],
-        "description": "Calls down a Tactical Missile Strike at a target location. Tactical Missiles take 4 seconds to land, but they deal up to 150 (+100 vs. structures) damage to enemies in a small radius. (100% damage within 1.5 range of the hit, 50% from 1.5 to 2.0 range)\nCooldown is time to build one missile.",
+        "description": "Calls down a Tactical Missile Strike at a target location. Tactical Missiles take 4 seconds to land, but they deal up to 150 (+100 vs. structures) damage to enemies in a small radius. (100% damage within 1.5 range of the hit, 50% from 1.5 to 2.0 range)\nCooldown is time to build one missile.\n\n{channel}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "90 seconds",
+        "cooldown": 90,
         "energycost": null,
         "rankrequired": 0,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "channel": ""
+        }
     },
     {
         "commander": "Mengsk",
@@ -2694,15 +3335,18 @@
         "icons": [
             "/images/commanderdata/unitskills/mengsk/heal.png"
         ],
-        "description": "Heals a friendly biological target.\nHeals 9 life per 3 energy.",
+        "description": "Heals a friendly biological target.\nHeals 9 life per 3 energy.\n\n{targets}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
+        "cooldown": 0,
         "energycost": null,
         "rankrequired": 0,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "targets": ""
+        }
     },
     {
         "commander": "Mengsk",
@@ -2714,7 +3358,7 @@
         "description": "Increases this unit's movement speed by 70% for 8 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": 0,
         "mode": null,
@@ -2765,7 +3409,7 @@
         "description": "Blasts a target with a devastating plasma cannon, causing 300 damage.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "120 seconds",
+        "cooldown": 120,
         "energycost": null,
         "rankrequired": 0,
         "mode": null,
@@ -2782,7 +3426,7 @@
         "description": "Warps to the target location. Battlecruiser is invulnerable while warping.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": 0,
         "mode": null,
@@ -2799,8 +3443,8 @@
         "description": "Deals 75 damage to enemy ground units in the target area.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "15 seconds",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2833,8 +3477,8 @@
         "description": "Heals the Elite Marine for 2 life per second and increases its attack speed by 50% and movement speed by 50% for 15 seconds.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "15 seconds",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2850,8 +3494,8 @@
         "description": "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy detectors. (Costs 50 minerals).",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2867,8 +3511,8 @@
         "description": "Launches the Hellbat Ranger toward nearby enemy ground units. Briefly stuns enemy units on impact and gains +4 armor.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "5 seconds",
-        "energycost": "0",
+        "cooldown": 5,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2884,8 +3528,8 @@
         "description": "Deals 90 damage to target enemy unit.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -2915,15 +3559,18 @@
         "icons": [
             "/images/commanderdata/hero/nova/snipe.png"
         ],
-        "description": "Deals 200 damage to target enemy ground or air unit from long range (10).\nCan target biological and mechanical units.",
+        "description": "Deals 200 damage to target enemy ground or air unit from long range (10).\nCan target biological and mechanical units.\n\n{refund}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": "Stealth Mode",
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "refund": ""
+        }
     },
     {
         "commander": "Nova",
@@ -2932,15 +3579,20 @@
         "icons": [
             "/images/commanderdata/hero/nova/sabotagedrone-framed.png"
         ],
-        "description": "Deploys an undetectable explosive drone that deals 200 damage (400 vs Structure) to enemy ground units in the target area.",
+        "description": "Deploys an undetectable explosive drone that deals {damage} damage ({structureDamage} vs. Structures) to enemy ground units within radius {radius}, accounting for unit size.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "45 seconds",
-        "energycost": "100",
+        "cooldown": 45,
+        "energycost": 100,
         "rankrequired": null,
         "mode": "Stealth Mode",
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 200,
+            "structureDamage": 400,
+            "radius": 4
+        }
     },
     {
         "commander": "Nova",
@@ -2949,15 +3601,21 @@
         "icons": [
             "/images/commanderdata/hero/nova/tacnukestrike.png"
         ],
-        "description": "Calls down a Nuclear Strike at the target location, dealing 600 damage in a large radius after 5 seconds.",
+        "description": "Calls down a Nuclear Strike at the target location, dealing {damage} damage to enemies within radius {radius} after {delay} seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "Coolup: 600 seconds\nCooldown: 420 seconds",
-        "energycost": "0",
+        "cooldown": 420,
+        "energycost": 0,
         "rankrequired": null,
         "mode": "Stealth Mode",
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "initialCooldown": 600,
+        "values": {
+            "damage": 600,
+            "radius": 8,
+            "delay": 5
+        }
     },
     {
         "commander": "Nova",
@@ -2966,15 +3624,21 @@
         "icons": [
             "/images/commanderdata/hero/nova/penetratingblast.png"
         ],
-        "description": "Deals 50 (100 vs Light) damage to enemy ground units in a wide arc.\nDoes not damage friendly units.",
+        "description": "Deals 50 (100 vs Light) damage to enemy ground units in a wide arc.\nDoes not damage friendly units.\n\nRange: {range}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": "Assault Mode",
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "excludedPrestiges": [
+            "Infiltration Specialist"
+        ],
+        "values": {
+            "range": 7
+        }
     },
     {
         "commander": "Nova",
@@ -2986,13 +3650,16 @@
         "description": "Teleports Nova to a nearby location. Nova gains a temporary shield that absorbs up to 200 damage for 8 seconds.\nAbility regains a charge every 8 seconds. Can store a maximum of 3 charges.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "8 seconds",
-        "energycost": "0",
+        "cooldown": 8,
+        "energycost": 0,
         "rankrequired": null,
         "mode": "Assault Mode",
         "prestige": null,
         "requirements": null,
-        "charges": 3
+        "charges": 3,
+        "excludedPrestiges": [
+            "Infiltration Specialist"
+        ]
     },
     {
         "commander": "Nova",
@@ -3004,12 +3671,16 @@
         "description": "Deploys a holographic duplicate of Nova that automatically attacks enemy units. The holo decoy lasts for 60 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "Coolup: 600 seconds\nCooldown: 420 seconds",
-        "energycost": "0",
+        "cooldown": 420,
+        "energycost": 0,
         "rankrequired": null,
         "mode": "Assault Mode",
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "excludedPrestiges": [
+            "Infiltration Specialist"
+        ],
+        "initialCooldown": 600
     },
     {
         "commander": "Nova",
@@ -3030,7 +3701,44 @@
     },
     {
         "commander": "Nova",
-        "unit": "Raven Type II",
+        "unit": "Nova",
+        "name": "Permanently Cloaked",
+        "icons": [
+            "/images/commanderdata/hero/nova/stancedanceswitch.png"
+        ],
+        "description": "Nova is permanently cloaked in Stealth Mode. Detectors and revealing effects can expose her.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": "Stealth Mode",
+        "prestige": null,
+        "requirements": null,
+        "excludedPrestiges": [
+            "Infiltration Specialist"
+        ]
+    },
+    {
+        "commander": "Nova",
+        "unit": "Nova",
+        "name": "Super Cloak",
+        "icons": [
+            "/images/commanderdata/hero/nova/stancedanceswitch.png"
+        ],
+        "description": "Nova is cloaked and cannot be detected or targeted. Attacking or using Snipe disables Super Cloak for 4 seconds.",
+        "type": "passive",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": "Stealth Mode",
+        "prestige": "Infiltration Specialist",
+        "requirements": null
+    },
+    {
+        "commander": "Nova",
+        "unit": "Raven Type-II",
         "name": "Build Railgun Turret",
         "icons": [
             "/images/commanderdata/unitskills/nova/buildrailgunturret-framed.png"
@@ -3038,8 +3746,8 @@
         "description": "Automated defensive turret. Damages all enemy ground units in a straight line. Lasts for 60 seconds.\nCan attack ground units.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3047,24 +3755,28 @@
     },
     {
         "commander": "Nova",
-        "unit": "Raven Type II",
+        "unit": "Raven Type-II",
         "name": "Deploy Bio-Mechanical Repair Drone",
         "icons": [
             "/images/commanderdata/unitskills/nova/deploybiomechanicalrepairdrone-framed.png"
         ],
-        "description": "Heals nearby biological and mechanical units. Lasts for 30 seconds.",
+        "description": "Heals nearby biological and mechanical units. Lasts for 30 seconds.\n\nRestores {healing} life per second to each target.\n\n{cloak}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "healing": 14,
+            "cloak": ""
+        }
     },
     {
         "commander": "Nova",
-        "unit": "Raven Type II",
+        "unit": "Raven Type-II",
         "name": "Predator Missile",
         "icons": [
             "/images/commanderdata/unitskills/nova/predatormissile.png"
@@ -3072,8 +3784,8 @@
         "description": "Deploys a missile that pursues target enemy unit, dealing 100 (+35 vs. shields) damage in a wide radius upon contact.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "45 seconds",
-        "energycost": "0",
+        "cooldown": 45,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3081,7 +3793,7 @@
     },
     {
         "commander": "Nova",
-        "unit": "Raven Type II",
+        "unit": "Raven Type-II",
         "name": "Detector",
         "icons": [
             "/images/commanderdata/unitskills/common/detector.png"
@@ -3103,15 +3815,18 @@
         "icons": [
             "/images/commanderdata/unitskills/nova/snipe.png"
         ],
-        "description": "Deals 170 damage to target enemy biological unit.\nMechanical units are immune.",
+        "description": "Deals 170 damage to target enemy biological unit.\nMechanical units are immune.\n\n{shots}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "shots": ""
+        }
     },
     {
         "commander": "Nova",
@@ -3123,8 +3838,8 @@
         "description": "Deals 100 damage to shields and depletes the energy of enemy units in the target area. Cloaked units are revealed for 10 seconds after being hit.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "45 seconds",
-        "energycost": "0",
+        "cooldown": 45,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3157,8 +3872,8 @@
         "description": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Banshees also have their range increased by 2.\nDrains 0.9 energy per second.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3174,8 +3889,8 @@
         "description": "Increases this unit's movement speed by 100% for 8 seconds.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3191,8 +3906,8 @@
         "description": "Blasts a target with a devastating plasma cannon, causing 300 damage.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3208,8 +3923,8 @@
         "description": "Warps to the target location. Battlecruiser is invulnerable while warping.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3225,8 +3940,8 @@
         "description": "Increases this unit's movement speed by 100% for 8 seconds.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3242,8 +3957,8 @@
         "description": "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3259,7 +3974,7 @@
         "description": "Hyperjump to the targeted location.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3276,7 +3991,7 @@
         "description": "Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3293,7 +4008,7 @@
         "description": "Uses a laser to shoot down enemy missiles.\nCannot target special attacks.\nTimes out after 180 seconds.\nEach shot consumes 10 energy. (4 charges max)",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "5 seconds",
+        "cooldown": 5,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3311,8 +4026,8 @@
         "description": "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 10 of the unit's life.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3328,8 +4043,8 @@
         "description": "Injects the unit with powerful stimulants that greatly increase attack speed (by 75%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the unit's life.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3342,15 +4057,20 @@
         "icons": [
             "/images/commanderdata/unitskills/raynor/heal.png"
         ],
-        "description": "Heals a friendly biological target.\nHeals 9 life per 3 energy per second.",
+        "description": "Heals a friendly {targets} target.\nHeals {healing} life per 3 energy per second.\n\n{protection}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "targets": "biological",
+            "healing": 9,
+            "protection": ""
+        }
     },
     {
         "commander": "Raynor",
@@ -3379,8 +4099,8 @@
         "description": "Increases this unit's movement speed by 100% for 8 seconds.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3396,8 +4116,8 @@
         "description": "Increases this unit's movement speed by 100% for 8 seconds.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3410,16 +4130,19 @@
         "icons": [
             "/images/commanderdata/unitskills/raynor/deployspidermine.png"
         ],
-        "description": "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy Detectors. (3 charges max).",
+        "description": "Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy Detectors. (3 charges max).\n\n{radius}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null,
-        "charges": 3
+        "charges": 3,
+        "values": {
+            "radius": ""
+        }
     },
     {
         "commander": "Raynor",
@@ -3431,8 +4154,8 @@
         "description": "Constructs a new Spider Mine to replace those used at a cost of 15 minerals each.\nA Vulture can only carry 3 Spider Mines at a time.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "6 seconds",
-        "energycost": "0",
+        "cooldown": 6,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3448,8 +4171,8 @@
         "description": "Increases this unit's movement speed by 100% for 8 seconds.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3465,7 +4188,7 @@
         "description": "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3484,7 +4207,7 @@
         "description": "Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds, and a Stetellite is invulnerable while overcharged.\nF.A.S.T. Overload grants 20% increased attack speed for 45 seconds.\nH.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.\nJ.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.\n(The Stetellite is overcharged for 30 seconds but grants a 45-second buff.)",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "45 seconds",
+        "cooldown": 45,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3501,12 +4224,37 @@
         "description": "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "180 seconds",
+        "cooldown": 180,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Stetmann",
+        "unit": "Gary",
+        "name": "Super Gary Transformation Sequence",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-stetmann-supergary.png"
+        ],
+        "description": "Transforms this Gary into a Super Gary.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 5 and Mecha Hive.",
+        "cost": {
+            "minerals": 450,
+            "gas": 300
+        },
+        "buildTime": 15,
+        "excludedPrestiges": [
+            "Signal Savant"
+        ]
     },
     {
         "commander": "Stetmann",
@@ -3518,8 +4266,8 @@
         "description": "Increases the movement speed of this unit by 15% and allows it to leap onto enemy units.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "5 seconds",
-        "energycost": "1",
+        "cooldown": 5,
+        "energycost": 1,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3535,8 +4283,8 @@
         "description": "Builds Mecha Broodlings that can attack ground units.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "3 seconds",
-        "energycost": "5",
+        "cooldown": 3,
+        "energycost": 5,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3552,8 +4300,8 @@
         "description": "Builds Mecha Locusceptors that automatically attack the Mecha Battlecarrier Lord's target.\nCan attack ground units.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "20 seconds",
-        "energycost": "50",
+        "cooldown": 20,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3569,8 +4317,8 @@
         "description": "Blasts a target with a devastating plasma cannon causing 300 damage and delusions of grandeur.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "0 seconds",
-        "energycost": "100",
+        "cooldown": 0,
+        "energycost": 100,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3583,15 +4331,18 @@
         "icons": [
             "/images/commanderdata/unitskills/stetmann/clusterbusters.png"
         ],
-        "description": "Fires a barrage of missiles dealing 50 (+30 vs. light) damage to enemy air units in a target area.",
+        "description": "Fires a barrage of missiles dealing 50 (+30 vs. light) damage to enemy air units in a target area.\n\nSplash radius: {radius}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "100",
+        "cooldown": 10,
+        "energycost": 100,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "radius": 1.5
+        }
     },
     {
         "commander": "Stetmann",
@@ -3603,12 +4354,35 @@
         "description": "Emits a solvent stream that deals 10 damage per second for 3 seconds, then increases to 50 damage per second.\nChanneled ability. Can target enemy ground units and structures.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "20 seconds",
-        "energycost": "75",
+        "cooldown": 20,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Stetmann",
+        "unit": "Mecha Corruptor",
+        "name": "Morph to Mecha Battlecarrier Lord",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-broodlord-mecha.png"
+        ],
+        "description": "Transforms this Mecha Corruptor into a Mecha Battlecarrier Lord.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Mecha Greater Spire.",
+        "cost": {
+            "minerals": 300,
+            "gas": 250,
+            "supply": 6
+        },
+        "buildTime": 34
     },
     {
         "commander": "Stetmann",
@@ -3617,15 +4391,18 @@
         "icons": [
             "/images/commanderdata/unitskills/stetmann/roachesaway.png"
         ],
-        "description": "Spawn 2 Mecha Roaches. Spawned units last 45 seconds.",
+        "description": "Spawn 2 Mecha Roaches. Spawned units last 45 seconds.\n\n{ravager}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "250",
+        "cooldown": 0,
+        "energycost": 250,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "ravager": ""
+        }
     },
     {
         "commander": "Stetmann",
@@ -3637,8 +4414,8 @@
         "description": "The Mecha Infestor launches a mechanical nerve cord at a friendly unit, restoring 150 life, 50 Egonergy, and 50 energy instantly. An additional 600 life, 200 Egonergy, and 200 energy regenerates over 20 seconds. The unit's ability cooldown rate is increased by 25%",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "5 seconds",
-        "energycost": "75",
+        "cooldown": 5,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3651,15 +4428,18 @@
         "icons": [
             "/images/commanderdata/unitskills/stetmann/deconstructiveroachnites.png"
         ],
-        "description": "Infests target enemy structure, dealing 500 damage over 10 seconds and disabling it for the duration of the effect. If the structure is destroyed while under the effects of Deconstructive Roach-nites, it will spawn 2 Mecha Roaches.",
+        "description": "Infests target enemy structure, dealing 500 damage over 10 seconds and disabling it for the duration of the effect. If the structure is destroyed while under the effects of Deconstructive Roach-nites, it will spawn 2 Mecha Roaches.\n\n{ravager}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "75",
+        "cooldown": 0,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "ravager": ""
+        }
     },
     {
         "commander": "Stetmann",
@@ -3668,15 +4448,18 @@
         "icons": [
             "/images/commanderdata/unitskills/stetmann/tunnelofterroralgorithm.png"
         ],
-        "description": "Tunnels to a nearby target location, dealing 60 damage to enemies along the way.",
+        "description": "Tunnels to a nearby target location, dealing 60 damage to enemies along the way.\n\nMaximum travel distance: {range}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "8 seconds",
-        "energycost": "75",
+        "cooldown": 8,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "range": 9
+        }
     },
     {
         "commander": "Stetmann",
@@ -3688,8 +4471,8 @@
         "description": "The Mecha Lurker concentrates its fire on a target unit, dealing 50 damage to a small area around that unit for 10 seconds or until the unit is destroyed.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "0 seconds",
-        "energycost": "75",
+        "cooldown": 0,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3736,15 +4519,18 @@
         "icons": [
             "/images/commanderdata/unitskills/stetmann/vectoredburrowcharge.png"
         ],
-        "description": "Burrow and charge towards a unit. Upon unburrowing, all enemy units in the vicinity are knocked back and dealt 50 damage.",
+        "description": "Burrow and charge towards a unit. Upon unburrowing, all enemy units in the vicinity are knocked back and dealt 50 damage.\n\n{stun}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "5 seconds",
-        "energycost": "75",
+        "cooldown": 5,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "stun": ""
+        }
     },
     {
         "commander": "Stetmann",
@@ -3756,8 +4542,8 @@
         "description": "Absorbs 25 health from a nearby enemy or friendly mechanical unit, healing for that amount.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "2 seconds",
-        "energycost": "5",
+        "cooldown": 2,
+        "energycost": 5,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3790,7 +4576,7 @@
         "description": "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3810,7 +4596,7 @@
         "description": "Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds.\n- F.A.S.T. Overload grants 20% increased attack speed for 45 seconds.\n- H.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.\n- J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "45 seconds",
+        "cooldown": 45,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3828,7 +4614,7 @@
         "description": "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "180 seconds",
+        "cooldown": 180,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3848,7 +4634,7 @@
         "description": "Generates a Stetzone around Super Gary for 30 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "120 seconds",
+        "cooldown": 120,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3916,7 +4702,7 @@
         "description": "Burrow and charge at the target location dealing 150 damage and stunning non-heroic enemies for 5 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -3950,8 +4736,8 @@
         "description": "Increases a friendly unit's sight range by 5 and grants it the ability to detect cloaked and burrowed units for 180 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "25",
+        "cooldown": 0,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3967,8 +4753,8 @@
         "description": "Deals 300 damage to a target enemy unit. When the unit dies, it will spawn 2 Broodlings from its corpse.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "100",
+        "cooldown": 0,
+        "energycost": 100,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -3984,8 +4770,8 @@
         "description": "Immobilizes enemy units and deals 80 damage over 4 seconds. Reveals cloaked and burrowed units.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "0 seconds",
-        "energycost": "75",
+        "cooldown": 0,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4001,8 +4787,8 @@
         "description": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Infested Banshees also have their range increased by 2.\nDrains 0.9 energy per second.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4018,8 +4804,8 @@
         "description": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4044,6 +4830,57 @@
     },
     {
         "commander": "Stukov",
+        "unit": "Infested Banshee",
+        "name": "Load",
+        "icons": [
+            "/images/commanderdata/unitskills/stukov/load.png"
+        ],
+        "description": "Loads up to 16 nearby Infested infantry. Their timed life is paused while loaded.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": 0,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Plague Warden",
+        "requirements": null
+    },
+    {
+        "commander": "Stukov",
+        "unit": "Infested Banshee",
+        "name": "Unload All",
+        "icons": [
+            "/images/commanderdata/unitskills/stukov/unloadall.png"
+        ],
+        "description": "Unloads all carried Infested infantry at the target location.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": 0,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Plague Warden",
+        "requirements": null
+    },
+    {
+        "commander": "Stukov",
+        "unit": "Infested Banshee",
+        "name": "Remote Deployment",
+        "icons": [
+            "/images/commanderdata/unitupgrades/stukov/anaerobicenhancement.png"
+        ],
+        "description": "Launches carried Infested infantry to a ground location within range 10. Each impact deals 20 damage to enemy ground units within radius 1.25.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": 0,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Plague Warden",
+        "requirements": null
+    },
+    {
+        "commander": "Stukov",
         "unit": "Infested Bunker",
         "name": "Spawning Chamber",
         "icons": [
@@ -4052,7 +4889,7 @@
         "description": "While rooted, regenerates life and creates an Infested Trooper every 30 seconds. Troopers fill empty cargo slots; once full, new Troopers deploy outside. Deployed Troopers have a 30-second lifetime.",
         "type": "passive",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": "Rooted",
@@ -4069,8 +4906,8 @@
         "description": "Brings a target enemy air unit to the ground, allowing units to attack it as if it were a ground unit.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "45 seconds",
-        "energycost": "0",
+        "cooldown": 45,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4120,8 +4957,8 @@
         "description": "Can travel quickly to any visible location with creep.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4137,7 +4974,7 @@
         "description": "Consumes a nearby Infested Civilian or Infested Trooper to restore 20 life and gain one round of ammunition. Stores up to 8 rounds.",
         "type": "passive",
         "requiresupgrade": false,
-        "cooldown": "2.5 seconds",
+        "cooldown": 2.5,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -4154,7 +4991,7 @@
         "description": "Automatically generates one round of Volatile Biomass every 30 seconds, up to a maximum of 8 stored rounds.",
         "type": "passive",
         "requiresupgrade": true,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -4185,15 +5022,19 @@
         "icons": [
             "/images/commanderdata/unitskills/swann/lockon.png"
         ],
-        "description": "Locks the Cyclone's weapons on the target unit, dealing 500 damage over 20 seconds. Can move while firing. Cancels if target moves out of range.",
+        "description": "Locks the Cyclone's weapons on the target unit, dealing {damage} damage over 20 seconds. Can move while firing. Cancels if target moves out of range.\n\nCast range: {range}.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "6 seconds",
-        "energycost": "0",
+        "cooldown": 6,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 500,
+            "range": 8
+        }
     },
     {
         "commander": "Swann",
@@ -4205,8 +5046,8 @@
         "description": "Warps to the target location. Hercules is invulnerable while warping.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4219,15 +5060,18 @@
         "icons": [
             "/images/commanderdata/unitskills/swann/nanorepair.png"
         ],
-        "description": "Heals a friendly mechanical unit.\nHeals 3 life per 1 energy.",
+        "description": "Heals a friendly mechanical unit.\nHeals 3 life per {energy} energy.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "energy": 1
+        }
     },
     {
         "commander": "Swann",
@@ -4239,8 +5083,8 @@
         "description": "Damages an enemy biological unit and adjacent enemy biological units, dealing 250 damage over 25 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "25",
+        "cooldown": 0,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4256,8 +5100,8 @@
         "description": "Surrounds the target with a shield that can absorb up to 200 damage. Effect lasts for 20 seconds.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "20 seconds",
-        "energycost": "50",
+        "cooldown": 20,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4279,6 +5123,23 @@
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Swann",
+        "unit": "Science Vessel",
+        "name": "Tactical Jump",
+        "icons": [
+            "/images/commanderdata/unitskills/swann/tacticaljump.png"
+        ],
+        "description": "Warps to the target location without requiring vision. The Science Vessel is invulnerable while warping.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": 30,
+        "energycost": 0,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Payload Director",
+        "requirements": "Requires Science Vessel Energy Manipulation (Swann level 6)."
     },
     {
         "commander": "Swann",
@@ -4307,8 +5168,8 @@
         "description": "Stuns all enemies in a small area. Deals 500 damage over 3 seconds in a larger area.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4321,19 +5182,22 @@
         "icons": [
             "/images/commanderdata/unitskills/swann/cloak.png"
         ],
-        "description": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.\nDrains 0.9 energy per second.",
+        "description": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.\nDrains 0.9 energy per second.\n\n{evasion}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "evasion": ""
+        }
     },
     {
         "commander": "Tychus",
-        "unit": "AutoTurret",
+        "unit": "Auto-Turret",
         "name": "Detector",
         "icons": [
             "/images/commanderdata/unitskills/common/detector.png"
@@ -4355,65 +5219,80 @@
         "icons": [
             "/images/commanderdata/abilities/tychus/demolitioncharge.png"
         ],
-        "description": "Marks a target unit, dealing 500 damage after 5 seconds. Holds up to 3 charges.",
+        "description": "Marks a target unit, dealing {damage} damage after 5 seconds. Holds up to 3 charges.\n\n{restraint}\n\n{recharge}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null,
-        "charges": 3
+        "charges": 3,
+        "values": {
+            "damage": 500,
+            "restraint": "",
+            "recharge": ""
+        }
     },
     {
         "commander": "Tychus",
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "name": "Deploy Warhound Turret",
         "icons": [
             "/images/commanderdata/abilities/tychus/deploywarhoundturret-framed.png"
         ],
-        "description": "Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.\nCan attack ground and air units.",
+        "description": "Deploy an automated defensive turret. Turrets gain the same gear bonuses as Sirius himself. Times out after 60 seconds. Holds up to 5 charges.\nCan attack ground and air units.\n\n{frame}\n\n{missiles}\n\n{fear}\n\n{explosion}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null,
-        "charges": 5
+        "charges": 5,
+        "values": {
+            "frame": "",
+            "missiles": "",
+            "fear": "",
+            "explosion": ""
+        }
     },
     {
         "commander": "Tychus",
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "name": "Deploy Revitalizer",
         "icons": [
             "/images/commanderdata/abilities/tychus/deployrevitalizer.png"
         ],
-        "description": "Places a structure on the ground that heals all friendly units in an area around the structure for 2% of their life every second. 3 charges max.",
+        "description": "Places a structure on the ground that heals all friendly units in an area around the structure for {healing}% of their life every second. 3 charges max.\n\n{attackSpeed}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null,
-        "charges": 3
+        "charges": 3,
+        "values": {
+            "healing": 2,
+            "attackSpeed": ""
+        }
     },
     {
         "commander": "Tychus",
-        "unit": "Lt Layna Nikara",
-        "name": "Reinvigorating Burst",
+        "unit": "Kev \"Rattlesnake\" West",
+        "name": "Secret Stash Stimpack",
         "icons": [
-            "/images/commanderdata/abilities/tychus/reinvigoratingburst.png"
+            "/images/commanderdata/unitupgrades/tychus/secretstashstimpack.png"
         ],
-        "description": "Instantly heals friendly units in an area around Lt. Nikara for 200 life and grants them 25% increased attack and ability damage. Regenerates an additional 10 life per second over 10 seconds.",
-        "type": "active",
-        "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": null,
+        "description": "Heals Rattlesnake for 2 life per second and increases his attack and movement speed by 50% for 15 seconds.",
+        "type": "autocast",
+        "requiresupgrade": true,
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4421,7 +5300,28 @@
     },
     {
         "commander": "Tychus",
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
+        "name": "Reinvigorating Burst",
+        "icons": [
+            "/images/commanderdata/abilities/tychus/reinvigoratingburst.png"
+        ],
+        "description": "Instantly heals friendly units in an area around Lt. Nikara for {instantHealing} life and grants them 25% increased attack and ability damage. Regenerates an additional {healing} life per second over 10 seconds.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": 30,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": null,
+        "values": {
+            "instantHealing": 200,
+            "healing": 10
+        }
+    },
+    {
+        "commander": "Tychus",
+        "unit": "Lt. Layna Nikara",
         "name": "Detector",
         "icons": [
             "/images/commanderdata/unitupgrades/tychus/flashforcegdmvisor.png"
@@ -4438,24 +5338,29 @@
     },
     {
         "commander": "Tychus",
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "name": "Super Heal",
         "icons": [
             "/images/commanderdata/unitskills/tychus/superheal.png"
         ],
-        "description": "Restores 30 life per second to a friendly biological or mechanical unit. Can heal one target at a time before gear upgrades.",
+        "description": "Restores {healing} life per second to a friendly biological or mechanical unit. Can heal {targets} at a time{gearNote}.",
         "type": "autocast",
         "requiresupgrade": false,
         "cooldown": null,
-        "energycost": "0",
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "healing": 30,
+            "targets": "one target",
+            "gearNote": " before gear upgrades"
+        }
     },
     {
         "commander": "Tychus",
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "name": "XM-77 Matrix Generator",
         "icons": [
             "/images/commanderdata/unitupgrades/tychus/xm77matrixgenerator.png"
@@ -4463,29 +5368,37 @@
         "description": "Grants a friendly unit a barrier that absorbs up to 400 damage for 20 seconds.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "15 seconds",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": "Requires purchase of XM-77 Matrix Generator gear."
+        "requirements": "Requires purchase of XM-77 Matrix Generator gear.",
+        "excludedPrestiges": [
+            "Lone Wolf"
+        ]
     },
     {
         "commander": "Tychus",
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "name": "Oil Spill",
         "icons": [
             "/images/commanderdata/abilities/tychus/oilspill.png"
         ],
-        "description": "Douses enemy ground units in oil, reducing attack and movement speed by 75% and preventing them from cloaking. When a unit under the effect of Oil Spill is hit by a fire attack, it takes 5 (5 vs Light) damage per second over 10 seconds.",
+        "description": "Douses enemy ground units in oil, reducing attack and movement speed by 75% and preventing them from cloaking. When a unit under the effect of Oil Spill is hit by a fire attack, it takes 5 ({lightDamage} vs Light) damage per second over 10 seconds.\n\nRadius: {radius}.\n\n{spread}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "lightDamage": 5,
+            "radius": 2.5,
+            "spread": ""
+        }
     },
     {
         "commander": "Tychus",
@@ -4494,16 +5407,22 @@
         "icons": [
             "/images/commanderdata/abilities/tychus/ultrasonicpulse.png"
         ],
-        "description": "Fires pulses of ultrasonic energy that lasts 6 seconds, causing 20 damage per second to enemy units in the target area. Does not damage friendly units. Holds up to 3 charges.",
+        "description": "Fires pulses of ultrasonic energy that lasts {duration} seconds, causing {damage} damage per second to enemy units in the target area. Does not damage friendly units. Holds up to 3 charges.\n\nRadius: {radius}.\n\n{network}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null,
-        "charges": 3
+        "charges": 3,
+        "values": {
+            "duration": 6,
+            "damage": 20,
+            "radius": 2,
+            "network": ""
+        }
     },
     {
         "commander": "Tychus",
@@ -4537,7 +5456,10 @@
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "excludedPrestiges": [
+            "Dutiful Dogwalker"
+        ]
     },
     {
         "commander": "Tychus",
@@ -4554,7 +5476,10 @@
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "excludedPrestiges": [
+            "Dutiful Dogwalker"
+        ]
     },
     {
         "commander": "Tychus",
@@ -4575,24 +5500,28 @@
     },
     {
         "commander": "Tychus",
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "name": "Heavy Impact",
         "icons": [
             "/images/commanderdata/abilities/tychus/heavyimpact.png"
         ],
-        "description": "Cannonball pulls himself to the target location, dealing 20 damage and stunning enemy units on impact.",
+        "description": "Cannonball pulls himself to the target location, dealing 20 damage and stunning enemy units on impact.\n\nImpact radius: {radius}.\n\nStun duration: {stun} seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "radius": 1.5,
+            "stun": 1.5
+        }
     },
     {
         "commander": "Tychus",
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "name": "Critical Response System",
         "icons": [
             "/images/commanderdata/unitupgrades/tychus/criticalresponsesystem.png"
@@ -4600,7 +5529,7 @@
         "description": "When taking fatal damage, restores all life and becomes immune to damage for 5 seconds.",
         "type": "passive",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -4614,15 +5543,19 @@
         "icons": [
             "/images/commanderdata/abilities/tychus/shreddergrenade.png"
         ],
-        "description": "Deals 75 damage to enemy units in the target area.",
+        "description": "Deals {damage} damage to enemy units in the target area.\n\n{implosion}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "20 seconds",
+        "cooldown": 20,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 75,
+            "implosion": ""
+        }
     },
     {
         "commander": "Tychus",
@@ -4631,16 +5564,21 @@
         "icons": [
             "/images/commanderdata/abilities/tychus/dominate.png"
         ],
-        "description": "Temporarily take control of target enemy unit and increases its damage by 50%. Dominated units self-destruct after 240 seconds. Holds up to 3 charges.",
+        "description": "Temporarily take control of target enemy unit and increases its damage by 50%. Dominated units self-destruct after {duration} seconds. Holds up to 3 charges.\n\n{restoration}\n\n{confusion}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
+        "cooldown": 30,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": null,
-        "charges": 3
+        "charges": 3,
+        "values": {
+            "duration": 240,
+            "restoration": "",
+            "confusion": ""
+        }
     },
     {
         "commander": "Tychus",
@@ -4686,8 +5624,8 @@
         "description": "Intercepts nearby enemies and increases the Centurion's movement speed. Ability can only be used once every 10 seconds.\nBriefly cloaks the Centurion and allows it to move through other units.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4703,8 +5641,8 @@
         "description": "Stuns nearby enemy ground units for 2.5 seconds. Also temporarily grants the Centurion 100 additional shields for 2 seconds.\nMassive units are slowed.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4720,8 +5658,8 @@
         "description": "Creates a web of energy on the ground that prevents enemy structures and ground units from attacking for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "30 seconds",
-        "energycost": "0",
+        "cooldown": 30,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4754,8 +5692,8 @@
         "description": "Forces enemy units in the target area to attack each other for 10 seconds.\nHeroic units are immune.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "8 seconds",
-        "energycost": "50",
+        "cooldown": 8,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4771,8 +5709,8 @@
         "description": "Permanently takes control of a target enemy unit.\nHeroic units are immune.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "30 seconds",
-        "energycost": "150",
+        "cooldown": 30,
+        "energycost": 150,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4788,12 +5726,15 @@
         "description": "Teleports all friendly units in the target area to the location of the Dark Pylon.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "excludedPrestiges": [
+            "Spirit of Respite"
+        ]
     },
     {
         "commander": "Vorazun",
@@ -4805,8 +5746,8 @@
         "description": "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times. Invulnerable for the entire duration.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "15 seconds",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4822,8 +5763,8 @@
         "description": "Teleport to a nearby target location.",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "10 seconds",
-        "energycost": "0",
+        "cooldown": 10,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4839,8 +5780,8 @@
         "description": "Places target unit or structure in stasis for 10 seconds, disabling the unit for the duration of the effect. Units and structures in stasis cannot be attacked or affected by abilities.\nCan target structures or ground units.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "15 seconds",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4873,8 +5814,8 @@
         "description": "Charges the Oracle's Pulsar Beam and allows it to attack enemy ground units.\nDrains 1.4 energy per second.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "4 seconds",
-        "energycost": "0",
+        "cooldown": 4,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -4887,15 +5828,18 @@
         "icons": [
             "/images/commanderdata/unitskills/vorazun/stasisward.png"
         ],
-        "description": "Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for 15 seconds. Trapped units cannot be attacked or affected by abilities.",
+        "description": "Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for 15 seconds. Trapped units {vulnerability}.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "vulnerability": "cannot be attacked or affected by abilities"
+        }
     },
     {
         "commander": "Vorazun",
@@ -4958,7 +5902,7 @@
         "description": "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -4975,7 +5919,7 @@
         "description": "Teleport to a nearby target location.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -4992,7 +5936,7 @@
         "description": "Places target unit or structure in stasis for 10 seconds, disabling the unit for the duration of the effect. Units and structures in stasis cannot be attacked or affected by abilities.\nCan target structures or ground units.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
+        "cooldown": 15,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5023,15 +5967,18 @@
         "icons": [
             "/images/commanderdata/unitskills/vorazun/blink.png"
         ],
-        "description": "Teleports the Stalker to a nearby target location. Ability can only be used once every 8 seconds.",
+        "description": "Teleports the Stalker to a nearby target location. Ability can only be used once every 8 seconds.\n\n{shield}",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "8 seconds",
-        "energycost": "0",
+        "cooldown": 8,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "shield": ""
+        }
     },
     {
         "commander": "Zagara",
@@ -5091,15 +6038,19 @@
         "icons": [
             "/images/commanderdata/unitskills/zagara/bombardment.png"
         ],
-        "description": "Constantly blasts a target area, repeatedly dealing 75 damage to enemy ground and air units.",
+        "description": "Constantly blasts a target area, repeatedly dealing 75 damage to enemy ground and air units.\n\nRange: {range}.\n\nFires every {interval} seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "range": 15,
+            "interval": 7
+        }
     },
     {
         "commander": "Zagara",
@@ -5111,8 +6062,8 @@
         "description": "Covers the target enemy unit in Zerg slime, increasing the damage taken by 35% for 30 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
-        "energycost": "0",
+        "cooldown": 15,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5162,8 +6113,8 @@
         "description": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn additional Creep Tumors.\nBonus: Zerg move faster on creep.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
-        "energycost": "25",
+        "cooldown": 15,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5179,8 +6130,8 @@
         "description": "Target Hatchery, Lair, or Hive spawns 8 Larvae in 40 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "25 seconds",
-        "energycost": "0",
+        "cooldown": 25,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5196,8 +6147,8 @@
         "description": "Instantly restores 125 life to target biological unit or structure.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "0 seconds",
-        "energycost": "50",
+        "cooldown": 0,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5230,8 +6181,8 @@
         "description": "Launches 6 Banelings towards the target point. Each Baneling explodes for 40 damage (80 vs structures).",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "25",
+        "cooldown": 10,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5247,8 +6198,8 @@
         "description": "Spawns 6 Hunter Killers at the target point that last 20 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "30 seconds",
-        "energycost": "30",
+        "cooldown": 30,
+        "energycost": 30,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5261,15 +6212,18 @@
         "icons": [
             "/images/commanderdata/hero/zagara/massfrenzy.png"
         ],
-        "description": "Grants all friendly units on the map 25% attack speed and 25% movement speed for 15 seconds.",
+        "description": "Grants {targets} 25% attack speed and 25% movement speed for 15 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "90 seconds",
-        "energycost": "25",
+        "cooldown": 90,
+        "energycost": 25,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "targets": "all friendly units on the map"
+        }
     },
     {
         "commander": "Zagara",
@@ -5281,11 +6235,29 @@
         "description": "Calls down 10 drop-pods onto the target area, dealing 50 damage with each drop-pod and spawning a total of 20 Roaches that last 30 seconds.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "Coolup: 600 seconds\nCooldown: 180 seconds",
-        "energycost": "0",
+        "cooldown": 180,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
+        "requirements": null,
+        "initialCooldown": 600
+    },
+    {
+        "commander": "Zagara",
+        "unit": "Zagara",
+        "name": "Deep Tunnel",
+        "icons": [
+            "/images/commanderdata/unitskills/abathur/deeptunnel.png"
+        ],
+        "description": "Quickly burrow to the target location. Does not require vision or explored terrain.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": 20,
+        "energycost": 0,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": "Apex Predator",
         "requirements": null
     },
     {
@@ -5298,7 +6270,7 @@
         "description": "Transforms all enemy units in a large area around the Avatar of Essence into a lower evolutionary form.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "20 seconds",
+        "cooldown": 20,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5315,7 +6287,7 @@
         "description": "Marks a target area on the ground. After 2 seconds, the Avatar of Form deals 100 damage and summons 10 Xel'Naga Charged Crystals at the target location.\nCharged Crystals have a 10% chance to cast a miniature Psionic Storm with each attack, dealing 40 damage to all enemy units in a small area over 4 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "25 seconds",
+        "cooldown": 25,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5332,7 +6304,7 @@
         "description": "Creates a storm of psionic energy that lasts 4 seconds, dealing 160 damage to all enemy units in a large target area. Does not damage friendly units.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5349,7 +6321,7 @@
         "description": "Charges up, dealing 500 damage to a target unit after 3 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5366,8 +6338,8 @@
         "description": "Temporarily grants Zeratul control of a target enemy unit. Controlled units self-destruct after 120 seconds.\nHeroic units are immune.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
-        "energycost": "150",
+        "cooldown": 15,
+        "energycost": 150,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5383,8 +6355,8 @@
         "description": "Requirements: 3rd Xel'Naga Artifact.\nTemporarily stuns enemy units and structures in an area of effect for 3 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
-        "energycost": "50",
+        "cooldown": 15,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5400,8 +6372,8 @@
         "description": "Temporarily grants Zeratul control of a target enemy unit. Controlled units self-destruct after 120 seconds.\nHeroic units are immune.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
-        "energycost": "150",
+        "cooldown": 15,
+        "energycost": 150,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5417,8 +6389,8 @@
         "description": "Requirements: 3rd Xel'Naga Artifact.\nTemporarily stuns enemy units in an area of effect for 3 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "15 seconds",
-        "energycost": "50",
+        "cooldown": 15,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5434,8 +6406,8 @@
         "description": "Creates a storm of psionic energy that lasts 4 seconds, causing up to 112 damage to all enemy units and restoring 112 shields to all friendly units in a large target area.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "2.5 seconds",
-        "energycost": "75",
+        "cooldown": 2.5,
+        "energycost": 75,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5451,12 +6423,49 @@
         "description": "Requirements: 3rd Xel'Naga Artifact.\nDrains all energy from the target. Deals 1 damage per point of energy.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
-        "energycost": "50",
+        "cooldown": 10,
+        "energycost": 50,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
         "requirements": "3rd Xel'Naga Artifact."
+    },
+    {
+        "commander": "Zeratul",
+        "unit": "Tesseract Cannon",
+        "name": "Shade Projection",
+        "icons": [
+            "/images/commanderdata/abilities/zeratul/shadeprojection.png"
+        ],
+        "description": "Requirements: Core Forge and 2nd Xel'Naga Artifact Fragment\nProjects the Tesseract Cannon to a target location for 60 seconds, transferring all of its shields and its weapon. The Tesseract Cannon is deactivated while this ability is active.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": 120,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Core Forge and 2nd Xel'Naga Artifact Fragment"
+    },
+    {
+        "commander": "Zeratul",
+        "unit": "Tesseract Cannon",
+        "name": "Shade Barrier",
+        "icons": [
+            "/images/commanderdata/abilities/zeratul/shadebarrier.png"
+        ],
+        "description": "Requirements: Core Forge and 3rd Xel'Naga Artifact Fragment\nAllows the Tesseract Cannon to absorb up to {absorption} damage. Lasts for 10 seconds.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": 60,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Core Forge and 3rd Xel'Naga Artifact Fragment",
+        "values": {
+            "absorption": 100
+        }
     },
     {
         "commander": "Zeratul",
@@ -5485,7 +6494,7 @@
         "description": "Requirements: Core Forge and 2nd Xel'Naga Artifact Fragment\nProjects the Tesseract Monolith to a target location for 60 seconds, transferring all of its shields and its weapon. The Tesseract Monolith is deactivated while this ability is active.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "120 seconds",
+        "cooldown": 120,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5499,15 +6508,18 @@
         "icons": [
             "/images/commanderdata/abilities/zeratul/shadebarrier.png"
         ],
-        "description": "Requirements: Core Forge and 3rd Xel'Naga Artifact Fragment\nAbsorbs up to 100 damage. Lasts for 10 seconds.",
+        "description": "Requirements: Core Forge and 3rd Xel'Naga Artifact Fragment\nAbsorbs up to {absorption} damage. Lasts for 10 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "60 seconds",
+        "cooldown": 60,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": "Core Forge and 3rd Xel'Naga Artifact Fragment"
+        "requirements": "Core Forge and 3rd Xel'Naga Artifact Fragment",
+        "values": {
+            "absorption": 100
+        }
     },
     {
         "commander": "Zeratul",
@@ -5533,15 +6545,18 @@
         "icons": [
             "/images/commanderdata/unitskills/zeratul/dtblink.png"
         ],
-        "description": "Allows the Void Templar to teleport to a nearby target location.",
+        "description": "Allows the Void Templar to teleport to a nearby target location.\n\n{damage}",
         "type": "active",
         "requiresupgrade": true,
-        "cooldown": "8 seconds",
-        "energycost": "0",
+        "cooldown": 8,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": ""
+        }
     },
     {
         "commander": "Zeratul",
@@ -5570,7 +6585,7 @@
         "description": "On taking fatal damage, retreats into the Void and restores its life and shields over 10 seconds.",
         "type": "passive",
         "requiresupgrade": true,
-        "cooldown": "180 seconds",
+        "cooldown": 180,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5579,58 +6594,68 @@
     },
     {
         "commander": "Zeratul",
-        "unit": "XelNaga Abrogator",
+        "unit": "Xel'Naga Abrogator",
         "name": "Purification Nova",
         "icons": [
             "/images/commanderdata/unitskills/zeratul/purificationnova.png"
         ],
-        "description": "Shoots out a ball of energy that detonates 3 seconds or on contact with an enemy unit, dealing 100 splash damage to nearby ground units and structures. The Xel'Naga Abrogator is immobile while this is active.",
+        "description": "Shoots out a ball of energy that detonates 3 seconds or on contact with an enemy unit, dealing 100 splash damage to nearby ground units and structures. The Xel'Naga Abrogator is immobile while this is active.\n\n{cluster}",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "12 seconds",
-        "energycost": "0",
+        "cooldown": 12,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "cluster": ""
+        }
     },
     {
         "commander": "Zeratul",
-        "unit": "XelNaga Ambusher",
+        "unit": "Xel'Naga Ambusher",
         "name": "Predictive Blink",
         "icons": [
             "/images/commanderdata/unitskills/zeratul/predictiveblink.png"
         ],
-        "description": "Teleports this unit to a nearby target location.",
+        "description": "Teleports this unit to a nearby target location.\n\n{apparition}",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 8,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "apparition": ""
+        }
     },
     {
         "commander": "Zeratul",
-        "unit": "XelNaga Enforcer",
+        "unit": "Xel'Naga Enforcer",
         "name": "Barrier",
         "icons": [
             "/images/commanderdata/unitskills/zeratul/barrier.png"
         ],
-        "description": "Absorbs up to 100 damage. Lasts for 10 seconds.",
+        "description": "Absorbs up to {absorption} damage. Lasts for 10 seconds.\n\n{repair}",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "60 seconds",
-        "energycost": "0",
+        "cooldown": 60,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "absorption": 100,
+            "repair": ""
+        }
     },
     {
         "commander": "Zeratul",
-        "unit": "XelNaga Shieldguard",
+        "unit": "Xel'Naga Shieldguard",
         "name": "Shield Recharge",
         "icons": [
             "/images/commanderdata/unitskills/zeratul/shieldrecharge.png"
@@ -5638,8 +6663,8 @@
         "description": "Recharges the shields of a friendly Protoss unit.\nRestores 4 shields per 1 energy.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "0 seconds",
-        "energycost": "0",
+        "cooldown": 0,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5647,7 +6672,7 @@
     },
     {
         "commander": "Zeratul",
-        "unit": "XelNaga Shieldguard",
+        "unit": "Xel'Naga Shieldguard",
         "name": "Reflection Shield",
         "icons": [
             "/images/commanderdata/unitskills/zeratul/reflectionshield.png"
@@ -5655,8 +6680,8 @@
         "description": "Creates an aura that reflects 50% of all projectiles back to enemy attackers. Lasts 15 seconds. Can be set to Autocast.",
         "type": "autocast",
         "requiresupgrade": true,
-        "cooldown": "180 seconds",
-        "energycost": "0",
+        "cooldown": 180,
+        "energycost": 0,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
@@ -5664,7 +6689,7 @@
     },
     {
         "commander": "Zeratul",
-        "unit": "XelNaga Watcher",
+        "unit": "Xel'Naga Watcher",
         "name": "Permanently Cloaked",
         "icons": [
             "/images/commanderdata/unitskills/common/permanentlycloakedobserver.png"
@@ -5681,7 +6706,7 @@
     },
     {
         "commander": "Zeratul",
-        "unit": "XelNaga Watcher",
+        "unit": "Xel'Naga Watcher",
         "name": "Detector",
         "icons": [
             "/images/commanderdata/unitskills/common/detector.png"
@@ -5706,7 +6731,7 @@
         "description": "Requirements: 3rd Xel'Naga Artifact.\nIntercepts enemy ground units and increases movement speed.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5723,7 +6748,7 @@
         "description": "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
         "type": "autocast",
         "requiresupgrade": false,
-        "cooldown": "10 seconds",
+        "cooldown": 10,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5740,12 +6765,13 @@
         "description": "Teleports Zeratul to a nearby location.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "8 seconds",
+        "cooldown": 8,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "charges": 1
     },
     {
         "commander": "Zeratul",
@@ -5757,7 +6783,7 @@
         "description": "Transports Zeratul to a target location.",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "120 seconds",
+        "cooldown": 120,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
@@ -5771,15 +6797,19 @@
         "icons": [
             "/images/commanderdata/hero/zeratul/shadowcleave.png"
         ],
-        "description": "Deals 100 damage to nearby enemies.",
+        "description": "Deals {damage} damage to nearby enemies.{tornado}",
         "type": "active",
         "requiresupgrade": false,
-        "cooldown": "12 seconds",
+        "cooldown": 12,
         "energycost": null,
         "rankrequired": null,
         "mode": null,
         "prestige": null,
-        "requirements": null
+        "requirements": null,
+        "values": {
+            "damage": 100,
+            "tornado": ""
+        }
     },
     {
         "commander": "Zeratul",
@@ -5814,5 +6844,409 @@
         "mode": null,
         "prestige": null,
         "requirements": null
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Mutalisk",
+        "name": "Morph to Guardian",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-primalguardian.png"
+        ],
+        "description": "Transforms this Mutalisk into a Guardian.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Greater Spire.",
+        "cost": {
+            "minerals": 25,
+            "gas": 50
+        },
+        "buildTime": 8
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Mutalisk",
+        "name": "Morph to Devourer",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-devourerex3.png"
+        ],
+        "description": "Transforms this Mutalisk into a Devourer.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Greater Spire.",
+        "cost": {
+            "minerals": 75,
+            "gas": 25
+        },
+        "buildTime": 8
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Mutalisk",
+        "name": "Evolve to Leviathan",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+        ],
+        "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Guardian",
+        "name": "Evolve to Leviathan",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-leviathan.png"
+        ],
+        "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
+        "type": "autocast",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 5,
+        "excludedPrestiges": [
+            "Essence Hoarder"
+        ]
+    },
+    {
+        "commander": "Dehaka",
+        "unit": "Primal Zergling",
+        "name": "Primal Combat: Ravasaur",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-ravasaur.png"
+        ],
+        "description": "Two Primal Zerglings engage in primal combat, consuming both units to produce one Ravasaur.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 8
+    },
+    {
+        "commander": "Dehaka",
+        "unit": "Primal Roach",
+        "name": "Primal Combat: Primal Igniter",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-primalroach.png"
+        ],
+        "description": "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Igniter.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 2.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 8
+    },
+    {
+        "commander": "Dehaka",
+        "unit": "Primal Roach",
+        "name": "Primal Combat: Primal Guardian",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-guardian.png"
+        ],
+        "description": "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Guardian.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 6. Requires Murvar's Den.",
+        "cost": {
+            "minerals": 0,
+            "gas": 100
+        },
+        "buildTime": 8
+    },
+    {
+        "commander": "Dehaka",
+        "unit": "Primal Hydralisk",
+        "name": "Primal Combat: Primal Mutalisk",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-primalmutalisk.png"
+        ],
+        "description": "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Primal Mutalisk.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 6. Requires Murvar's Den.",
+        "cost": {
+            "minerals": 0,
+            "gas": 25
+        },
+        "buildTime": 8
+    },
+    {
+        "commander": "Dehaka",
+        "unit": "Primal Hydralisk",
+        "name": "Primal Combat: Impaler",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-collection-primal-lurker.png"
+        ],
+        "description": "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Impaler.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires commander level 8.",
+        "cost": {
+            "minerals": 0,
+            "gas": 0
+        },
+        "buildTime": 8
+    },
+    {
+        "commander": "Kerrigan",
+        "unit": "Mutalisk",
+        "name": "Morph to Brood Lord",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-broodlord.png"
+        ],
+        "description": "Transforms this Mutalisk into a Brood Lord.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Greater Spire.",
+        "cost": {
+            "minerals": 150,
+            "gas": 150,
+            "supply": 2
+        },
+        "buildTime": 15
+    },
+    {
+        "commander": "Zagara",
+        "unit": "Zergling",
+        "name": "Morph to Baneling",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-baneling.png"
+        ],
+        "description": "Transforms this Zergling into a Baneling.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Baneling Nest.",
+        "cost": {
+            "minerals": 22,
+            "gas": 14
+        },
+        "buildTime": 10
+    },
+    {
+        "commander": "Abathur",
+        "unit": "Overlord",
+        "name": "Morph to Overseer",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+        ],
+        "description": "Transforms this Overlord into an Overseer.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Lair.",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "buildTime": 17
+    },
+    {
+        "commander": "Kerrigan",
+        "unit": "Overlord",
+        "name": "Morph to Overseer",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+        ],
+        "description": "Transforms this Overlord into an Overseer.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Lair.",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "buildTime": 17
+    },
+    {
+        "commander": "Stukov",
+        "unit": "Overlord",
+        "name": "Morph to Overseer",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+        ],
+        "description": "Transforms this Overlord into an Overseer.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Infested Factory.",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "buildTime": 17
+    },
+    {
+        "commander": "Zagara",
+        "unit": "Overlord",
+        "name": "Morph to Overseer",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer.png"
+        ],
+        "description": "Transforms this Overlord into an Overseer.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Lair.",
+        "cost": {
+            "minerals": 45,
+            "gas": 44
+        },
+        "buildTime": 17
+    },
+    {
+        "commander": "Stetmann",
+        "unit": "Mecha Zergling",
+        "name": "Morph to Mecha Baneling",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-collection-baneling-mecha.png"
+        ],
+        "description": "Transforms this Mecha Zergling into a Mecha Baneling.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Mecha Baneling Nest.",
+        "cost": {
+            "minerals": 25,
+            "gas": 15
+        },
+        "buildTime": 12
+    },
+    {
+        "commander": "Stetmann",
+        "unit": "Mecha Hydralisk",
+        "name": "Morph to Mecha Lurker",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-collection-lurker-mecha.png"
+        ],
+        "description": "Transforms this Mecha Hydralisk into a Mecha Lurker.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Mecha Lurker Den.",
+        "cost": {
+            "minerals": 50,
+            "gas": 100,
+            "supply": 1
+        },
+        "buildTime": 25
+    },
+    {
+        "commander": "Stetmann",
+        "unit": "Mecha Overlord",
+        "name": "Morph to Mecha Overseer",
+        "icons": [
+            "/images/commanderdata/unitskills/morphs/btn-unit-zerg-overseer-mecha.png"
+        ],
+        "description": "Transforms this Mecha Overlord into a Mecha Overseer.",
+        "type": "active",
+        "requiresupgrade": false,
+        "cooldown": null,
+        "energycost": null,
+        "rankrequired": null,
+        "mode": null,
+        "prestige": null,
+        "requirements": "Requires Mecha Lair.",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "buildTime": 17
     }
 ]

@@ -31,7 +31,7 @@ function resolveSearchPath(document: SearchDocument): string {
         return document.commander ? `/units/#${token(document.commander)}/${unitTokenFromSubtitle(document.subtitle)}` : '/units';
     }
     if (path.startsWith('prestiges/')) {
-        return document.commander ? `/commanders/${token(document.commander)}#prestiges` : '/';
+        return `/commanders/${path.split('/')[1]}#prestiges`;
     }
     return `/${path}`;
 }
@@ -42,11 +42,11 @@ function token(text: string): string {
     if (text === 'Dom. Flame Trooper') return 'dominionflametrooper';
     if (text === 'Dom. Rocket Trooper') return 'dominionrockettrooper';
     if (text === 'Tychus Findlay') return 'tychus';
-    if (text === 'James Sirius Sykes') return 'sirius';
-    if (text === 'Miles Blaze Lewis') return 'blaze';
-    if (text === 'Rob Cannonball Boswell') return 'cannonball';
-    if (text === 'Lt Layna Nikara') return 'nikara';
-    if (text === 'Kev Rattlesnake West') return 'rattlesnake';
+    if (text === "James \"Sirius\" Sykes" || text === "James Sirius Sykes") return 'sirius';
+    if (text === "Miles \"Blaze\" Lewis" || text === "Miles Blaze Lewis") return 'blaze';
+    if (text === "Rob \"Cannonball\" Boswell" || text === "Rob Cannonball Boswell") return 'cannonball';
+    if (text === "Lt. Layna Nikara" || text === "Lt Layna Nikara") return 'nikara';
+    if (text === "Kev \"Rattlesnake\" West" || text === "Kev Rattlesnake West") return 'rattlesnake';
 
     return text.toLowerCase().replace(/[^a-z0-9]+/g, '');
 }

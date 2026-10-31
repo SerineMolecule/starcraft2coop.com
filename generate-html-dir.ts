@@ -34,7 +34,7 @@ for (const entrypoint of [
         entrypoints: [entrypoint],
         outdir: './html/scripts',
         format: 'iife',
-        sourcemap: 'inline',
+        sourcemap: 'linked',
     });
 }
 

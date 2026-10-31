@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 import tsj from "ts-json-schema-generator";
-import type { BrutalPlusList, CommanderList, Mission, MutationCycleList, MutationCycleWithScore, MutatorWithStats } from "./data-types";
+import type { AmonUnitList, PlayerUnitList, PlayerUpgradeList, BrutalPlusList, CommanderList, Mission, MutationCycleList, MutationCycleWithScore, MutatorWithStats } from "./data-types";
+import { legacyAmonUnits, legacyPlayerUnits, legacyPlayerUpgrades } from './unit-data';
 
 const files: [`${string}.json`, string][] = [
     ['brutalplus.json', 'BrutalPlusList'],
@@ -100,6 +101,13 @@ for (const [file, type] of files) {
 }
 
 console.log(`Writing to html/data/brutalplus/`);
+const playerUnits: PlayerUnitList = await Bun.file('source-data/playerunits.json').json();
+const amonUnits: AmonUnitList = await Bun.file('source-data/amonunits.json').json();
+const playerUpgrades: PlayerUpgradeList = await Bun.file('source-data/playerupgrades.json').json();
+await Bun.write('html/data/legacy/playerunits.json', JSON.stringify(legacyPlayerUnits(playerUnits, playerUpgrades), null, 4) + '\n');
+await Bun.write('html/data/legacy/amonunits.json', JSON.stringify(legacyAmonUnits(amonUnits), null, 4) + '\n');
+await Bun.write('html/data/legacy/playerupgrades.json', JSON.stringify(legacyPlayerUpgrades(playerUpgrades, playerUnits), null, 4) + '\n');
+
 for (const brutalPlus of brutalPluses) {
     Bun.write(`html/data/brutalplus/${brutalPlus.difficulty}.json`, JSON.stringify(brutalPlus, null, 4) + '\n');
 }

@@ -104,6 +104,9 @@ Redirect 302 /mutators/voidrifts /mutators/void-rifts
 Redirect 302 /mutators/walkinginfested /mutators/walking-infested
 Redirect 302 /mutators/wemoveunseen /mutators/we-move-unseen
 
+# 01-Nov-2026 fix typo
+Redirect 302 /commanders/hanhorner /commanders/horner
+
 # we probably don't need hotlink protection; server can handle hotlinking
 
 # RewriteCond %{HTTP_REFERER} !^$

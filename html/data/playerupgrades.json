@@ -11,7 +11,12 @@
         "modifiertag": null,
         "value": 0.75,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 110
     },
     {
         "upgradeid": 2,
@@ -25,7 +30,12 @@
         "modifiertag": "Light",
         "value": 8,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 110
     },
     {
         "upgradeid": 3,
@@ -39,7 +49,12 @@
         "modifiertag": "Armored",
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 4,
@@ -53,7 +68,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 5,
@@ -67,7 +87,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 6,
@@ -81,7 +106,12 @@
         "modifiertag": null,
         "value": 25,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 7,
@@ -95,7 +125,12 @@
         "modifiertag": "Armored",
         "value": 7,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 8,
@@ -109,7 +144,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 9,
@@ -123,7 +163,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 10,
@@ -137,7 +182,12 @@
         "modifiertag": null,
         "value": 20,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 11,
@@ -151,7 +201,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 12,
@@ -165,7 +220,12 @@
         "modifiertag": "Armored",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 13,
@@ -179,7 +239,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 14,
@@ -193,7 +258,12 @@
         "modifiertag": null,
         "value": 0.7,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 15,
@@ -207,7 +277,12 @@
         "modifiertag": null,
         "value": 0.55,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 16,
@@ -221,7 +296,12 @@
         "modifiertag": "Light",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 17,
@@ -235,7 +315,12 @@
         "modifiertag": null,
         "value": 0.56,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 18,
@@ -249,7 +334,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 19,
@@ -263,7 +353,12 @@
         "modifiertag": null,
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 20,
@@ -277,7 +372,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 21,
@@ -287,11 +387,17 @@
         "icon": "combatsensorarray",
         "effect": "Scouts gain +3 air attack range and +1 ground attack range.",
         "modifier": "Range",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 22,
@@ -301,11 +407,17 @@
         "icon": "combatsensorarray",
         "effect": "Scouts gain +3 air attack range and +1 ground attack range.",
         "modifier": "Range",
-        "modifiermode": "(Ground)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "ground",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 23,
@@ -315,11 +427,17 @@
         "icon": "combatsensorarray",
         "effect": "Scouts gain +3 air attack range and +1 ground attack range.",
         "modifier": "Range",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 24,
@@ -329,11 +447,17 @@
         "icon": "combatsensorarray",
         "effect": "Scouts gain +3 air attack range and +1 ground attack range.",
         "modifier": "Range",
-        "modifiermode": "(Ground)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "ground",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 25,
@@ -347,7 +471,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 26,
@@ -362,7 +491,12 @@
         "modifiertag": null,
         "value": 1.55,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 29,
@@ -376,7 +510,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 30,
@@ -390,7 +529,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 31,
@@ -404,7 +548,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 32,
@@ -418,7 +567,12 @@
         "modifiertag": null,
         "value": 200,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 33,
@@ -432,7 +586,12 @@
         "modifiertag": null,
         "value": 1.6,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 34,
@@ -446,7 +605,12 @@
         "modifiertag": null,
         "value": 10,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 35,
@@ -460,7 +624,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 36,
@@ -474,7 +643,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 37,
@@ -488,7 +662,12 @@
         "modifiertag": null,
         "value": 20,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 38,
@@ -502,7 +681,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 39,
@@ -516,7 +700,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 40,
@@ -530,7 +719,12 @@
         "modifiertag": null,
         "value": 1.75,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 41,
@@ -544,7 +738,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 42,
@@ -558,7 +757,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 43,
@@ -573,7 +777,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 44,
@@ -588,7 +797,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 45,
@@ -602,7 +816,12 @@
         "modifiertag": "Light",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 46,
@@ -616,7 +835,12 @@
         "modifiertag": "Light",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 47,
@@ -626,11 +850,17 @@
         "icon": "aresclasstargetingsystem",
         "effect": "Increases the Strike Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
         "modifier": "Range",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 48,
@@ -640,11 +870,17 @@
         "icon": "aresclasstargetingsystem",
         "effect": "Increases the Strike Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
         "modifier": "Range",
-        "modifiermode": "(Ground)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "ground",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 49,
@@ -688,7 +924,12 @@
         "modifiertag": null,
         "value": 10,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 52,
@@ -762,7 +1003,12 @@
         "modifiertag": null,
         "value": 100,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 57,
@@ -776,7 +1022,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 58,
@@ -790,7 +1041,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 59,
@@ -805,7 +1061,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 60,
@@ -819,7 +1080,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 61,
@@ -834,7 +1100,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 62,
@@ -844,11 +1115,17 @@
         "icon": "phobosweaponssystem",
         "effect": "Viking weapons system upgrade. Increases air attack range by 2 and ground attack range by 1.",
         "modifier": "Range",
-        "modifiermode": "(Assault Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "assault-mode",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 63,
@@ -858,11 +1135,17 @@
         "icon": "phobosweaponssystem",
         "effect": "Viking weapons system upgrade. Increases air attack range by 2 and ground attack range by 1.",
         "modifier": "Range",
-        "modifiermode": "(Fighter Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "fighter-mode",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 64,
@@ -876,7 +1159,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 65,
@@ -891,7 +1179,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 66,
@@ -905,7 +1198,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 67,
@@ -920,7 +1218,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 68,
@@ -934,7 +1237,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 69,
@@ -949,7 +1257,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 70,
@@ -964,7 +1277,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 71,
@@ -974,11 +1292,17 @@
         "icon": "graduatingrange",
         "effect": "Increases the Heavy Siege Tanks attack range by 1 every 3 seconds while in Siege Mode, up to a maximum of 5 additional range.",
         "modifier": "Range",
-        "modifiermode": "(Siege Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 5,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "siege-mode",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 72,
@@ -992,7 +1316,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 73,
@@ -1006,7 +1335,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 74,
@@ -1020,7 +1354,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 75,
@@ -1034,7 +1373,12 @@
         "modifiertag": "Armored",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 76,
@@ -1048,7 +1392,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 77,
@@ -1062,7 +1411,12 @@
         "modifiertag": null,
         "value": 100,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 78,
@@ -1076,7 +1430,12 @@
         "modifiertag": "Light",
         "value": 10,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 79,
@@ -1090,7 +1449,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 80,
@@ -1104,7 +1468,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 81,
@@ -1114,11 +1483,17 @@
         "icon": "aresclasstargetingsystem",
         "effect": "Increases the Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
         "modifier": "Range",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 82,
@@ -1128,11 +1503,17 @@
         "icon": "aresclasstargetingsystem",
         "effect": "Increases the Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
         "modifier": "Range",
-        "modifiermode": "(Ground)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "ground",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 83,
@@ -1146,7 +1527,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 84,
@@ -1156,11 +1542,17 @@
         "icon": "maelstromrounds",
         "effect": "Siege Tanks gain +40 attack damage while in Siege Mode. Splash damage remains the same.",
         "modifier": "damage",
-        "modifiermode": "(Siege Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 40,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "siege-mode",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 85,
@@ -1174,7 +1566,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 86,
@@ -1188,7 +1585,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 87,
@@ -1202,7 +1604,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 88,
@@ -1212,11 +1619,17 @@
         "icon": "pulseamplifier",
         "effect": "Increases the damage of Gemini Missiles by 100% and Burst Lasers by 300% while the Wraith is moving.",
         "modifier": "damage",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 89,
@@ -1226,11 +1639,17 @@
         "icon": "pulseamplifier",
         "effect": "Increases the damage of Gemini Missiles by 100% and Burst Lasers by 300% while the Wraith is moving.",
         "modifier": "damage",
-        "modifiermode": "(Ground)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 4,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "ground",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 90,
@@ -1244,7 +1663,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 91,
@@ -1258,7 +1682,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 92,
@@ -1272,11 +1701,16 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 93,
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "commander": "Tychus",
         "name": "ITCE Triggers",
         "icon": "itcetriggers",
@@ -1286,11 +1720,16 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 94,
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "commander": "Tychus",
         "name": "Endurance Supplements",
         "icon": "endurancesupplements",
@@ -1300,11 +1739,16 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 95,
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "commander": "Tychus",
         "name": "Endurance Supplements",
         "icon": "endurancesupplements",
@@ -1314,11 +1758,16 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 96,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "Endurance Supplements",
         "icon": "endurancesupplements",
@@ -1328,7 +1777,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 97,
@@ -1342,7 +1796,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 98,
@@ -1356,7 +1815,12 @@
         "modifiertag": null,
         "value": 200,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 99,
@@ -1370,7 +1834,12 @@
         "modifiertag": null,
         "value": 1.6,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 100,
@@ -1384,7 +1853,12 @@
         "modifiertag": null,
         "value": 10,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 101,
@@ -1398,7 +1872,12 @@
         "modifiertag": null,
         "value": 1.4,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 102,
@@ -1412,7 +1891,12 @@
         "modifiertag": null,
         "value": 1.4,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 103,
@@ -1426,7 +1910,12 @@
         "modifiertag": null,
         "value": 0.45,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 104,
@@ -1440,7 +1929,12 @@
         "modifiertag": null,
         "value": 0.45,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 105,
@@ -1454,7 +1948,12 @@
         "modifiertag": null,
         "value": 40,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 106,
@@ -1468,7 +1967,12 @@
         "modifiertag": null,
         "value": 5,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 107,
@@ -1482,11 +1986,16 @@
         "modifiertag": null,
         "value": -25,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 108,
-        "unit": "XelNaga Abrogator",
+        "unit": "Xel'Naga Abrogator",
         "commander": "Zeratul",
         "name": "Nova Battery",
         "icon": "novabattery",
@@ -1496,15 +2005,23 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Purification Nova",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.5
+            }
+        ]
     },
     {
         "upgradeid": 109,
-        "unit": "XelNaga Watcher",
+        "unit": "Xel'Naga Watcher",
         "commander": "Zeratul",
         "name": "Gravitic Boosters",
         "icon": "graviticboosters",
-        "effect": "Increases the movement speed of XelNaga Watchers by 50%.",
+        "effect": "Increases the movement speed of Xel'Naga Watchers by 50%.",
         "modifier": "Move_Speed",
         "modifiermode": null,
         "modifiertag": null,
@@ -1514,11 +2031,11 @@
     },
     {
         "upgradeid": 110,
-        "unit": "XelNaga Watcher",
+        "unit": "Xel'Naga Watcher",
         "commander": "Zeratul",
         "name": "Sensor Array",
         "icon": "sensorarray",
-        "effect": "Increases the sight radius of XelNaga Watchers by 50%.",
+        "effect": "Increases the sight radius of Xel'Naga Watchers by 50%.",
         "modifier": "Vision",
         "modifiermode": null,
         "modifiertag": null,
@@ -1538,7 +2055,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 112,
@@ -1552,7 +2074,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 113,
@@ -1566,7 +2093,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 114,
@@ -1580,7 +2112,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 115,
@@ -1594,7 +2131,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 116,
@@ -1608,7 +2150,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 117,
@@ -1622,7 +2169,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 118,
@@ -1636,7 +2188,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 119,
@@ -1650,7 +2207,12 @@
         "modifiertag": "Light",
         "value": 10,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 120,
@@ -1664,7 +2226,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 121,
@@ -1678,7 +2245,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 122,
@@ -1692,7 +2264,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 123,
@@ -1706,7 +2283,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 124,
@@ -1720,7 +2302,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 125,
@@ -1734,7 +2321,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 126,
@@ -1748,7 +2340,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 127,
@@ -1762,7 +2359,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 128,
@@ -1776,7 +2378,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 129,
@@ -1790,7 +2397,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 130,
@@ -1804,7 +2416,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 131,
@@ -1818,7 +2435,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 132,
@@ -1832,7 +2454,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 133,
@@ -1846,7 +2473,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 134,
@@ -1860,7 +2492,12 @@
         "modifiertag": null,
         "value": 1.25,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 135,
@@ -1874,7 +2511,11 @@
         "modifiertag": null,
         "value": 113,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 136,
@@ -1888,7 +2529,11 @@
         "modifiertag": null,
         "value": 14,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 137,
@@ -1902,7 +2547,12 @@
         "modifiertag": "Structure",
         "value": 40,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 138,
@@ -1916,7 +2566,12 @@
         "modifiertag": "Structure",
         "value": 5,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 139,
@@ -1930,7 +2585,20 @@
         "modifiertag": null,
         "value": 10,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Bombardment",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 10
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 140,
@@ -1944,7 +2612,20 @@
         "modifiertag": null,
         "value": 5,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Bombardment",
+                "modifier": "values.interval",
+                "operation": "set",
+                "value": 5
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 141,
@@ -1958,7 +2639,12 @@
         "modifiertag": "Armored",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 142,
@@ -1972,7 +2658,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 143,
@@ -1986,7 +2677,12 @@
         "modifiertag": null,
         "value": 0,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 144,
@@ -2000,7 +2696,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 145,
@@ -2030,7 +2731,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 147,
@@ -2044,7 +2750,12 @@
         "modifiertag": null,
         "value": 1.6,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 148,
@@ -2058,7 +2769,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 149,
@@ -2072,7 +2788,12 @@
         "modifiertag": null,
         "value": 1.15,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 150,
@@ -2086,7 +2807,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 151,
@@ -2096,11 +2822,17 @@
         "icon": "tyrclasstargetingsystem",
         "effect": "Increases the Mecha Hydralisks anti-air weapon range by 3.",
         "modifier": "Range",
-        "modifiermode": "(Erudition Missiles)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "erudition-missiles",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 152,
@@ -2114,7 +2846,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 153,
@@ -2129,7 +2866,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 154,
@@ -2155,11 +2897,12 @@
         "icon": "veterancy",
         "effect": "Increases vision and attack range by 2 in Siege Mode.",
         "modifier": "Range",
-        "modifiermode": "(Siege Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "siege-mode"
     },
     {
         "upgradeid": 156,
@@ -2169,11 +2912,12 @@
         "icon": "veterancy",
         "effect": "Increases the range of Overwatch Mode by 2.",
         "modifier": "Range",
-        "modifiermode": "(Overwatch Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "overwatch-mode"
     },
     {
         "upgradeid": 157,
@@ -2183,11 +2927,12 @@
         "icon": "veterancy",
         "effect": "Increases attack speed in Overwatch Mode by 33%.",
         "modifier": "Attack_Speed",
-        "modifiermode": "(Overwatch Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 1.33,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "overwatch-mode"
     },
     {
         "upgradeid": 158,
@@ -2201,7 +2946,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 159,
@@ -2230,7 +2980,12 @@
         "modifiertag": null,
         "value": 200,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 161,
@@ -2244,7 +2999,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 162,
@@ -2258,7 +3018,12 @@
         "modifiertag": null,
         "value": 200,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 163,
@@ -2272,7 +3037,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 164,
@@ -2286,7 +3056,12 @@
         "modifiertag": null,
         "value": 25,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 165,
@@ -2300,7 +3075,12 @@
         "modifiertag": null,
         "value": 100,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 166,
@@ -2314,7 +3094,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 167,
@@ -2328,7 +3113,12 @@
         "modifiertag": null,
         "value": 3.38,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 168,
@@ -2342,7 +3132,12 @@
         "modifiertag": null,
         "value": 100,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 169,
@@ -2356,7 +3151,12 @@
         "modifiertag": null,
         "value": 1.2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 170,
@@ -2370,7 +3170,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 42
     },
     {
         "upgradeid": 171,
@@ -2384,7 +3189,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 172,
@@ -2398,7 +3208,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 173,
@@ -2412,11 +3227,16 @@
         "modifiertag": null,
         "value": 5,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 175,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "Secret Stash Stimpack",
         "icon": "secretstashstimpack",
@@ -2427,11 +3247,15 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 176,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "Secret Stash Stimpack",
         "icon": "secretstashstimpack",
@@ -2442,7 +3266,11 @@
         "modifiertag": null,
         "value": 1.47,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 178,
@@ -2456,7 +3284,12 @@
         "modifiertag": null,
         "value": 0.75,
         "operation": "add",
-        "upgradetype": "preupgrade"
+        "upgradetype": "preupgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 179,
@@ -2470,7 +3303,12 @@
         "modifiertag": null,
         "value": 0.25,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 180,
@@ -2484,7 +3322,12 @@
         "modifiertag": null,
         "value": 0.25,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 181,
@@ -2498,7 +3341,12 @@
         "modifiertag": null,
         "value": 0.25,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 182,
@@ -2512,7 +3360,12 @@
         "modifiertag": null,
         "value": 0.25,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 183,
@@ -2526,7 +3379,12 @@
         "modifiertag": null,
         "value": 2.25,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 184,
@@ -2536,11 +3394,17 @@
         "icon": "slicingglaive",
         "effect": "Primal Mutalisks deal 100% increased damage against air units.",
         "modifier": "damage",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 186,
@@ -2554,7 +3418,12 @@
         "modifiertag": null,
         "value": 200,
         "operation": "set",
-        "upgradetype": "preupgrade"
+        "upgradetype": "preupgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 187,
@@ -2568,7 +3437,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "set",
-        "upgradetype": "preupgrade"
+        "upgradetype": "preupgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 188,
@@ -2582,7 +3456,12 @@
         "modifiertag": null,
         "value": 20,
         "operation": "set",
-        "upgradetype": "preupgrade"
+        "upgradetype": "preupgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 189,
@@ -2592,11 +3471,17 @@
         "icon": "aerialburstsacs",
         "effect": "Allows the Creeper Hosts Creepers to target air units and increases their movement speed.",
         "modifier": "damage",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 110,
         "operation": "set",
-        "upgradetype": "preupgrade"
+        "upgradetype": "preupgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 192,
@@ -2606,11 +3491,17 @@
         "icon": "aerialburstsacs",
         "effect": "Allows the Creeper Hosts Creepers to target air units and increases their movement speed.",
         "modifier": "attackbonus",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 5,
         "operation": "set",
-        "upgradetype": "preupgrade"
+        "upgradetype": "preupgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 193,
@@ -2624,7 +3515,12 @@
         "modifiertag": "Structure",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 194,
@@ -2634,11 +3530,17 @@
         "icon": "acidicenzymes",
         "effect": "Infested Siege Tanks deal an additional +15 damage to armored units and structures in both modes.",
         "modifier": "damage",
-        "modifiermode": "(Rooted)",
+        "modifiermode": null,
         "modifiertag": "Structure",
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "rooted",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 195,
@@ -2666,7 +3568,20 @@
         "modifiertag": null,
         "value": 1.2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Cloak",
+                "modifier": "values.evasion",
+                "operation": "replace",
+                "value": "While cloaked, moves 20% faster and evades 20% of incoming attacks."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 197,
@@ -2680,7 +3595,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 198,
@@ -2695,7 +3615,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 199,
@@ -2710,7 +3635,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 200,
@@ -2725,7 +3655,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 201,
@@ -2740,7 +3675,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 202,
@@ -2755,7 +3695,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 203,
@@ -3219,7 +4164,12 @@
         "modifiertag": null,
         "value": 1.5,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 236,
@@ -3432,7 +4382,7 @@
     },
     {
         "upgradeid": 251,
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "commander": "Tychus",
         "name": "Redline Power Cells",
         "icon": "redlinepowercells",
@@ -3443,7 +4393,11 @@
         "modifiertag": null,
         "value": 1.8,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 253,
@@ -3457,7 +4411,11 @@
         "modifiertag": null,
         "value": 1.8,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 254,
@@ -3471,7 +4429,12 @@
         "modifiertag": null,
         "value": 3,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 255,
@@ -3500,7 +4463,12 @@
         "modifiertag": null,
         "value": 6,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 110
     },
     {
         "upgradeid": 257,
@@ -3530,7 +4498,44 @@
         "modifiertag": null,
         "value": 1000,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Psionic Orb",
+                "modifier": "values.damage",
+                "operation": "multiply",
+                "value": 3.5
+            },
+            {
+                "skill": "Psionic Orb",
+                "modifier": "values.stacks",
+                "operation": "replace",
+                "value": "Damage shown at 10 Sacrifice stacks."
+            },
+            {
+                "skill": "Mind Blast",
+                "modifier": "values.damage",
+                "operation": "multiply",
+                "value": 3.5
+            },
+            {
+                "skill": "Mind Blast",
+                "modifier": "values.stacks",
+                "operation": "replace",
+                "value": "Damage shown at 10 Sacrifice stacks."
+            },
+            {
+                "skill": "Sacrifice",
+                "modifier": "values.bonus",
+                "operation": "replace",
+                "value": "Each sacrifice permanently grants +25% ability damage and +100 shields, stacking up to 10 times."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 259,
@@ -3544,11 +4549,16 @@
         "modifiertag": null,
         "value": 0,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 260,
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "commander": "Tychus",
         "name": "Flashforce GDM Visor",
         "icon": "flashforcegdmvisor",
@@ -3558,7 +4568,12 @@
         "modifiertag": null,
         "value": 0,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 261,
@@ -3572,7 +4587,12 @@
         "modifiertag": null,
         "value": 0,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 262,
@@ -3582,11 +4602,17 @@
         "icon": "armamentstabilizers",
         "effect": "Allows Shock Divisions in Siege Mode to fire at air units at a reduced rate while being carried by an Imperial Intercessor.",
         "modifier": "Attack_Speed",
-        "modifiermode": "(Siege Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 0.67,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "siege-mode",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 263,
@@ -3688,7 +4714,7 @@
     },
     {
         "upgradeid": 270,
-        "unit": "Raven Type II",
+        "unit": "Raven Type-II",
         "commander": "Nova",
         "name": "Soldier of Fortune",
         "icon": "soldieroffortune",
@@ -3758,7 +4784,7 @@
     },
     {
         "upgradeid": 275,
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3772,7 +4798,7 @@
     },
     {
         "upgradeid": 276,
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3786,7 +4812,7 @@
     },
     {
         "upgradeid": 277,
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3800,7 +4826,7 @@
     },
     {
         "upgradeid": 278,
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3814,7 +4840,7 @@
     },
     {
         "upgradeid": 279,
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3828,7 +4854,7 @@
     },
     {
         "upgradeid": 280,
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3898,7 +4924,7 @@
     },
     {
         "upgradeid": 285,
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3912,7 +4938,7 @@
     },
     {
         "upgradeid": 286,
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3926,7 +4952,7 @@
     },
     {
         "upgradeid": 287,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -3940,7 +4966,7 @@
     },
     {
         "upgradeid": 288,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "First Ones on the House",
         "icon": "firstonesonthehouse",
@@ -4022,7 +5048,12 @@
         "modifiertag": null,
         "value": 1,
         "operation": "set",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 294,
@@ -4037,7 +5068,12 @@
         "modifiertag": null,
         "value": 4,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 295,
@@ -4061,11 +5097,20 @@
         "icon": "tacticaldataweb",
         "effect": "Interdictor damage is increased by 3 for each networked Carrier (up to 10 damage).",
         "modifier": "damage",
-        "modifiermode": "(Interdictor)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": 10,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "interdictor",
+        "skillModifiers": [
+            {
+                "skill": "Build Interdictor",
+                "modifier": "values.damage",
+                "operation": "add",
+                "value": 10
+            }
+        ]
     },
     {
         "upgradeid": 298,
@@ -4079,7 +5124,12 @@
         "modifiertag": null,
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 299,
@@ -4093,7 +5143,12 @@
         "modifiertag": null,
         "value": 15,
         "operation": "add",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 300,
@@ -4108,7 +5163,12 @@
         "modifiertag": null,
         "value": 2,
         "operation": "multiply",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 301,
@@ -4122,7 +5182,12 @@
         "modifiertag": null,
         "value": "Circular splash within radius 3.3. Corrosive Acid only increases damage to the primary target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 302,
@@ -4136,7 +5201,12 @@
         "modifiertag": null,
         "value": "Circular splash within radius 3.3 of the Baneling Spawn on detonation. Corrosive Acid only increases damage to the primary target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 303,
@@ -4150,7 +5220,12 @@
         "modifiertag": null,
         "value": "Fires at up to three additional enemies. With a primary target less than 3 away, searches a 90-degree cone of radius 5 in front of Zagara; otherwise, searches a circle of radius 3 around the primary target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 304,
@@ -4164,7 +5239,12 @@
         "modifiertag": null,
         "value": "Scarab explosion: full damage to the primary target; circular splash deals 80% within radius 0.5, 60% from 0.5 to 1, 50% from 1 to 1.5, and 25% from 1.5 to 2.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 305,
@@ -4178,7 +5258,12 @@
         "modifiertag": null,
         "value": "Four projectiles land in a cross, 0.75 from the target. Each hits twice with circular splash of radius 1.8.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 306,
@@ -4192,7 +5277,12 @@
         "modifiertag": null,
         "value": "Flames hit a line 1.68 wide in front of the Firebat. Ground enemies within weapon range (base 4, accounting for unit size) take full damage.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 307,
@@ -4216,11 +5306,12 @@
         "icon": "veterancy",
         "effect": "Increases the splash radius of attacks in Siege Mode by 40%.",
         "modifier": "aoe",
-        "modifiermode": "(Siege Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": "Circular splash: 100% damage within radius 0.66, 50% from 0.66 to 1.09, and 25% from 1.09 to 1.75.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "siege-mode"
     },
     {
         "upgradeid": 309,
@@ -4230,15 +5321,16 @@
         "icon": "veterancy",
         "effect": "Increases the splash radius of Overwatch Mode by 50%.",
         "modifier": "aoe",
-        "modifiermode": "(Overwatch Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": "Circular splash to air units within radius 0.75 of the target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "overwatch-mode"
     },
     {
         "upgradeid": 310,
-        "unit": "XelNaga Abrogator",
+        "unit": "Xel'Naga Abrogator",
         "commander": "Zeratul",
         "name": "Cluster Nova",
         "icon": "clusternova",
@@ -4248,7 +5340,15 @@
         "modifiertag": null,
         "value": "Purification Nova deals full damage to ground enemies in a circle of radius 1.5, then releases three smaller novas. Each small nova deals 50 damage to ground enemies it contacts.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Purification Nova",
+                "modifier": "values.cluster",
+                "operation": "replace",
+                "value": "Releases three smaller novas on detonation, each dealing 50 damage to ground enemies it contacts."
+            }
+        ]
     },
     {
         "upgradeid": 311,
@@ -4262,7 +5362,12 @@
         "modifiertag": null,
         "value": "While the Liberator attacks in cloud form, its target deals damage over time to enemy air units in a circle of radius 1.5 around it as it moves. Viral Contamination only increases damage to the primary target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 312,
@@ -4276,7 +5381,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 110
     },
     {
         "upgradeid": 313,
@@ -4290,7 +5400,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Corrosive Bile",
+                "modifier": "values.radius",
+                "operation": "set",
+                "value": 1.5
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 314,
@@ -4304,7 +5427,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Corrosive Bile",
+                "modifier": "values.damage",
+                "operation": "add",
+                "value": 40
+            }
+        ],
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 315,
@@ -4318,7 +5454,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 316,
@@ -4332,7 +5473,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 317,
@@ -4346,7 +5492,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 318,
@@ -4360,7 +5511,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 319,
@@ -4374,7 +5530,12 @@
         "modifiertag": null,
         "value": "Bounces to up to 5 additional enemies, within radius 4 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 320,
@@ -4388,7 +5549,12 @@
         "modifiertag": null,
         "value": "Circular splash around the target: full damage to air enemies within radius 1.5.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 321,
@@ -4402,7 +5568,38 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Abduct",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 4
+            },
+            {
+                "skill": "Consumption",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 4
+            },
+            {
+                "skill": "Disabling Cloud",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 4
+            },
+            {
+                "skill": "Parasitic Bomb",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 4
+            }
+        ],
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 322,
@@ -4416,7 +5613,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Abduct",
+                "modifier": "values.stun",
+                "operation": "add",
+                "value": 5
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 323,
@@ -4430,7 +5640,26 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Rapid Transfusion",
+                "modifier": "values.healing",
+                "operation": "add",
+                "value": 10
+            },
+            {
+                "skill": "Rapid Transfusion",
+                "modifier": "values.targets",
+                "operation": "replace",
+                "value": "biological or mechanical"
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 324,
@@ -4444,7 +5673,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 325,
@@ -4458,7 +5692,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 326,
@@ -4472,7 +5711,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Destruction Wave",
+                "modifier": "values.knockback",
+                "operation": "replace",
+                "value": "knocking them back twice as far"
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 327,
@@ -4486,7 +5738,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 328,
@@ -4500,7 +5757,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 329,
@@ -4514,7 +5776,32 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Target Lock",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 3
+            },
+            {
+                "skill": "Force Field",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 3
+            },
+            {
+                "skill": "Squad Sight",
+                "modifier": "values.radius",
+                "operation": "add",
+                "value": 3
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 330,
@@ -4528,7 +5815,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Target Lock",
+                "modifier": "values.bonus",
+                "operation": "add",
+                "value": 15
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 331,
@@ -4542,7 +5842,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 332,
@@ -4556,7 +5861,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Psionic Orb",
+                "modifier": "values.distance",
+                "operation": "multiply",
+                "value": 1.25
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 333,
@@ -4570,7 +5888,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 334,
@@ -4584,7 +5907,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 335,
@@ -4598,7 +5926,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 336,
@@ -4612,7 +5945,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 337,
@@ -4626,7 +5964,32 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Psionic Storm",
+                "modifier": "values.radius",
+                "operation": "add",
+                "value": 0.8
+            },
+            {
+                "skill": "Psionic Storm",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 2
+            },
+            {
+                "skill": "Psionic Storm",
+                "modifier": "description",
+                "operation": "replace",
+                "value": "Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.\n\nRadius: {radius}.\n\nCast range: {range}.\n\nRestores {shieldRestoration} shields to friendly units in the target area."
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 338,
@@ -4640,7 +6003,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 339,
@@ -4654,7 +6022,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 340,
@@ -4668,7 +6041,32 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Psionic Storm",
+                "modifier": "values.radius",
+                "operation": "add",
+                "value": 0.8
+            },
+            {
+                "skill": "Psionic Storm",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 2
+            },
+            {
+                "skill": "Psionic Storm",
+                "modifier": "description",
+                "operation": "replace",
+                "value": "Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.\n\nRadius: {radius}.\n\nCast range: {range}.\n\nRestores {shieldRestoration} shields to friendly units in the target area."
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 341,
@@ -4682,7 +6080,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Barrier",
+                "modifier": "values.absorption",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 342,
@@ -4696,7 +6107,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Create Scarab",
+                "modifier": "values.capacity",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 343,
@@ -4710,7 +6134,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Graviton Beam",
+                "modifier": "values.targets",
+                "operation": "replace",
+                "value": "Can lift two enemies at once."
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 344,
@@ -4724,7 +6161,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 345,
@@ -4738,7 +6180,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 346,
@@ -4752,7 +6199,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 347,
@@ -4766,7 +6218,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 348,
@@ -4780,7 +6237,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 349,
@@ -4794,7 +6256,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Spawn Explosive Creeper",
+                "modifier": "values.targets",
+                "operation": "replace",
+                "value": "ground and air"
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 350,
@@ -4808,7 +6283,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 351,
@@ -4822,7 +6302,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 352,
@@ -4836,7 +6321,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 353,
@@ -4850,7 +6340,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 354,
@@ -4864,7 +6359,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 355,
@@ -4878,7 +6378,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 356,
@@ -4892,7 +6397,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 357,
@@ -4906,7 +6416,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 358,
@@ -4920,7 +6435,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 13,
+            "gas": 13
+        },
+        "researchTime": 10
     },
     {
         "upgradeid": 359,
@@ -4934,7 +6454,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 13,
+            "gas": 13
+        },
+        "researchTime": 10
     },
     {
         "upgradeid": 360,
@@ -4948,7 +6473,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 13,
+            "gas": 13
+        },
+        "researchTime": 10
     },
     {
         "upgradeid": 361,
@@ -4962,7 +6492,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 362,
@@ -4976,7 +6511,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Protective Field",
+                "modifier": "values.duration",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 363,
@@ -4990,7 +6538,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 364,
@@ -5004,7 +6557,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Purification Nova",
+                "modifier": "values.echo",
+                "operation": "replace",
+                "value": "Explodes again after 2 seconds, dealing 75 damage in a larger area."
+            }
+        ],
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 365,
@@ -5018,7 +6584,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 80
     },
     {
         "upgradeid": 366,
@@ -5032,7 +6603,12 @@
         "modifiertag": null,
         "value": "Adds cleave in a 180-degree arc of radius 1.25 at the primary target. Cleave deals 9 base damage per hit, plus 1 per weapon upgrade; Tactical Data Web also increases cleave damage.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 367,
@@ -5046,7 +6622,26 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Ricochet Glaive",
+                "modifier": "values.targets",
+                "operation": "add",
+                "value": 5
+            },
+            {
+                "skill": "Ricochet Glaive",
+                "modifier": "values.debilitation",
+                "operation": "replace",
+                "value": "Targets hit take 5 additional damage for 5 seconds."
+            }
+        ],
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 368,
@@ -5060,7 +6655,12 @@
         "modifiertag": null,
         "value": "Attacks store 25% of their damage on the target. When it dies, it releases that damage in a circular explosion with base radius 1, extended to account for unit size.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 369,
@@ -5074,7 +6674,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 370,
@@ -5083,11 +6688,43 @@
         "name": "Install Drone Hangar",
         "icon": "installdronehangar-framed",
         "effect": "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
-        "modifier": null,
+        "modifier": "supply",
         "modifiermode": null,
         "modifiertag": null,
-        "value": null,
-        "operation": "none",
+        "value": 3,
+        "operation": "add",
+        "upgradetype": "upgrade",
+        "unlocksModes": [
+            "assault-drones"
+        ],
+        "buildTimeIsAdditional": true
+    },
+    {
+        "upgradeid": 556,
+        "unit": "Assault Galleon",
+        "commander": "Horner",
+        "name": "Install Drone Hangar",
+        "icon": "installdronehangar-framed",
+        "effect": "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
+        "modifier": "mineralCost",
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": 150,
+        "operation": "add",
+        "upgradetype": "upgrade"
+    },
+    {
+        "upgradeid": 557,
+        "unit": "Assault Galleon",
+        "commander": "Horner",
+        "name": "Install Drone Hangar",
+        "icon": "installdronehangar-framed",
+        "effect": "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
+        "modifier": "vespeneCost",
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": 200,
+        "operation": "add",
         "upgradetype": "upgrade"
     },
     {
@@ -5102,7 +6739,26 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "KD8 Charge",
+                "modifier": "cooldown",
+                "operation": "add",
+                "value": -10
+            },
+            {
+                "skill": "KD8 Charge",
+                "modifier": "values.death",
+                "operation": "replace",
+                "value": "When killed, the Reaper throws multiple grenades toward its killer."
+            }
+        ],
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 42
     },
     {
         "upgradeid": 372,
@@ -5111,12 +6767,18 @@
         "name": "Executioner Missiles",
         "icon": "executionermissiles",
         "effect": "Reduces the Widow Mine's Sentinel Missile cooldown by 20 seconds. When Widow Mines are killed, they launch 5 Sentinel Missiles at random nearby targets that deal 10 (+10 vs. shields) damage within radius 2.625 of each impact.",
-        "modifier": null,
+        "modifier": "Attack_Speed",
         "modifiermode": null,
         "modifiertag": null,
-        "value": null,
-        "operation": "none",
-        "upgradetype": "upgrade"
+        "value": -20,
+        "operation": "add",
+        "upgradetype": "upgrade",
+        "weapon": "",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 42
     },
     {
         "upgradeid": 373,
@@ -5125,12 +6787,18 @@
         "name": "Black Market Launchers",
         "icon": "blackmarketlaunchers",
         "effect": "Widow Mines range is increased by 50%, and can burrow and unburrow much faster (almost instantly).",
-        "modifier": null,
+        "modifier": "Range",
         "modifiermode": null,
         "modifiertag": null,
-        "value": null,
-        "operation": "none",
-        "upgradetype": "upgrade"
+        "value": 2.5,
+        "operation": "add",
+        "upgradetype": "upgrade",
+        "weapon": "",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 374,
@@ -5144,7 +6812,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 42
     },
     {
         "upgradeid": 375,
@@ -5158,7 +6831,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 376,
@@ -5172,7 +6850,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 42
     },
     {
         "upgradeid": 377,
@@ -5186,7 +6869,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 378,
@@ -5200,7 +6888,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 379,
@@ -5214,7 +6907,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 380,
@@ -5228,7 +6926,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 381,
@@ -5238,11 +6941,17 @@
         "icon": "shredderrounds",
         "effect": "Attacks from Vikings in Assault Mode pierce, dealing damage to enemy units behind the target. Viking transform time reduced by 75%.",
         "modifier": "aoe",
-        "modifiermode": "(Assault)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": "Piercing attacks deal full damage to ground enemies in a rectangle 7 long and 1.5 wide along the attack direction, including enemies behind the primary target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "assault",
+        "cost": {
+            "minerals": 200,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 382,
@@ -5256,7 +6965,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 383,
@@ -5270,7 +6984,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Analyze Weakness",
+                "modifier": "values.targets",
+                "operation": "set",
+                "value": 4
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 384,
@@ -5284,7 +7011,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 63
     },
     {
         "upgradeid": 385,
@@ -5298,7 +7030,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 386,
@@ -5312,7 +7049,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 387,
@@ -5326,7 +7068,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 388,
@@ -5340,7 +7087,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 389,
@@ -5354,7 +7106,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 390,
@@ -5368,7 +7125,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 391,
@@ -5382,7 +7144,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 392,
@@ -5396,7 +7163,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 393,
@@ -5410,7 +7182,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 394,
@@ -5424,7 +7201,12 @@
         "modifiertag": null,
         "value": "Attacks bounce to up to 4 additional enemies, dealing 10 damage to each. Each jump searches within radius 4 of the previous target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 395,
@@ -5438,7 +7220,50 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Leaping Strike",
+                "modifier": "energycost",
+                "operation": "multiply",
+                "value": 0.8
+            },
+            {
+                "skill": "Psionic Shift",
+                "modifier": "energycost",
+                "operation": "multiply",
+                "value": 0.8
+            },
+            {
+                "skill": "Kinetic Blast",
+                "modifier": "energycost",
+                "operation": "multiply",
+                "value": 0.8
+            },
+            {
+                "skill": "Crushing Grip",
+                "modifier": "energycost",
+                "operation": "multiply",
+                "value": 0.8
+            },
+            {
+                "skill": "Assimilation Aura",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.8
+            },
+            {
+                "skill": "Immobilization Wave",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.8
+            }
+        ],
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 396,
@@ -5452,7 +7277,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 397,
@@ -5466,7 +7296,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 398,
@@ -5480,7 +7315,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 399,
@@ -5494,7 +7334,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 400,
@@ -5508,7 +7353,12 @@
         "modifiertag": null,
         "value": "Bounces to up to 5 additional enemies, within radius 6 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 401,
@@ -5522,7 +7372,12 @@
         "modifiertag": null,
         "value": "Bounces to up to 2 additional enemies, within radius 3 of the previous target. Base bounce damage: 9, 9; gains 0.333 and 0.111 per weapon upgrade.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 402,
@@ -5536,11 +7391,16 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 403,
-        "unit": "Emperors Shadow",
+        "unit": "Emperor's Shadow",
         "commander": "Mengsk",
         "name": "Sovereign Tactical Missiles",
         "icon": "sovereigntacticalmissiles",
@@ -5550,7 +7410,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Tactical Missile Strike",
+                "modifier": "values.channel",
+                "operation": "replace",
+                "value": "Does not require channeling."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 404,
@@ -5564,7 +7437,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 405,
@@ -5578,7 +7456,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 406,
@@ -5592,7 +7475,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 407,
@@ -5606,7 +7494,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 408,
@@ -5620,7 +7513,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Heal",
+                "modifier": "values.targets",
+                "operation": "replace",
+                "value": "Can heal two targets at the same time."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 409,
@@ -5634,7 +7540,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 410,
@@ -5648,7 +7559,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 411,
@@ -5662,7 +7578,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 412,
@@ -5676,7 +7597,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 413,
@@ -5690,7 +7616,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Snipe",
+                "modifier": "values.refund",
+                "operation": "replace",
+                "value": "Refunds 50% of its energy cost when Snipe kills its target."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 414,
@@ -5704,7 +7643,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Penetrating Blast",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 415,
@@ -5718,7 +7670,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 416,
@@ -5732,7 +7689,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 417,
@@ -5746,7 +7708,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 418,
@@ -5760,7 +7727,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Snipe",
+                "modifier": "values.shots",
+                "operation": "replace",
+                "value": "Fires 2 additional shots, each dealing 85 damage."
+            }
+        ],
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 419,
@@ -5774,7 +7754,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 420,
@@ -5788,7 +7773,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 421,
@@ -5802,7 +7792,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 422,
@@ -5816,7 +7811,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 423,
@@ -5830,11 +7830,16 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 30
     },
     {
         "upgradeid": 424,
-        "unit": "Raven Type II",
+        "unit": "Raven Type-II",
         "commander": "Nova",
         "name": "Covert Triage",
         "icon": "coverttriage",
@@ -5844,11 +7849,30 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Bio-Mechanical Repair Drone",
+                "modifier": "values.healing",
+                "operation": "multiply",
+                "value": 1.25
+            },
+            {
+                "skill": "Deploy Bio-Mechanical Repair Drone",
+                "modifier": "values.cloak",
+                "operation": "replace",
+                "value": "Cloaks units while healing them."
+            }
+        ],
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 425,
-        "unit": "Raven Type II",
+        "unit": "Raven Type-II",
         "commander": "Nova",
         "name": "Enhanced Manufacturing",
         "icon": "enhancedmanufacturing",
@@ -5858,7 +7882,32 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Build Railgun Turret",
+                "modifier": "charges",
+                "operation": "set",
+                "value": 3
+            },
+            {
+                "skill": "Deploy Bio-Mechanical Repair Drone",
+                "modifier": "charges",
+                "operation": "set",
+                "value": 3
+            },
+            {
+                "skill": "Predator Missile",
+                "modifier": "charges",
+                "operation": "set",
+                "value": 3
+            }
+        ],
+        "cost": {
+            "minerals": 75,
+            "gas": 75
+        },
+        "researchTime": 45
     },
     {
         "upgradeid": 426,
@@ -5872,7 +7921,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 427,
@@ -5886,7 +7940,32 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Heal",
+                "modifier": "values.targets",
+                "operation": "replace",
+                "value": "biological or mechanical"
+            },
+            {
+                "skill": "Heal",
+                "modifier": "values.healing",
+                "operation": "set",
+                "value": 12
+            },
+            {
+                "skill": "Heal",
+                "modifier": "values.protection",
+                "operation": "replace",
+                "value": "Units being healed take 25% less damage."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 428,
@@ -5900,7 +7979,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 50,
+            "gas": 50
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 429,
@@ -5914,7 +7998,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Spider Mine",
+                "modifier": "values.radius",
+                "operation": "replace",
+                "value": "Blast and trigger radii are increased by 33%."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 430,
@@ -5924,11 +8021,17 @@
         "icon": "ripwavemissiles",
         "effect": "Upgrades the Viking's missiles to deal area damage.",
         "modifier": "aoe",
-        "modifiermode": "(Fighter Mode)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": "Circular splash damage to air enemies around the target: 100% within radius 0.3, 50% from 0.3 to 0.6, and 25% from 0.6 to 1.2.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "fighter-mode",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 431,
@@ -5942,7 +8045,12 @@
         "modifiertag": null,
         "value": "Missile bursts damage enemies along a line extending 2 beyond the primary target, hitting units within 0.5 of the line.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 432,
@@ -5956,7 +8064,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 433,
@@ -5970,7 +8083,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 434,
@@ -5984,7 +8102,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 435,
@@ -5998,7 +8121,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 436,
@@ -6012,7 +8140,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 437,
@@ -6026,7 +8159,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Tunnel of TERROR Algorithm",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 6
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 438,
@@ -6040,7 +8186,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 439,
@@ -6054,7 +8205,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Cluster Busters",
+                "modifier": "values.radius",
+                "operation": "set",
+                "value": 3
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 440,
@@ -6068,7 +8232,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 441,
@@ -6082,7 +8251,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 442,
@@ -6096,7 +8270,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 443,
@@ -6110,7 +8289,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 444,
@@ -6124,7 +8308,26 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Roaches Away!",
+                "modifier": "values.ravager",
+                "operation": "replace",
+                "value": "Also spawns one Mecha Ravager."
+            },
+            {
+                "skill": "Deconstructive Roach-nites",
+                "modifier": "values.ravager",
+                "operation": "replace",
+                "value": "Also spawns one Mecha Ravager."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 445,
@@ -6138,7 +8341,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Vectored Burrow Charge",
+                "modifier": "values.stun",
+                "operation": "replace",
+                "value": "Stuns enemy mechanical ground units in a large area."
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 446,
@@ -6152,7 +8368,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 447,
@@ -6166,7 +8387,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 448,
@@ -6180,7 +8406,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 449,
@@ -6194,7 +8425,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 450,
@@ -6208,7 +8444,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 451,
@@ -6222,7 +8463,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 452,
@@ -6236,7 +8482,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 453,
@@ -6250,7 +8501,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 454,
@@ -6264,7 +8520,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 455,
@@ -6278,7 +8539,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Fungal Snare",
+                "modifier": "cooldown",
+                "operation": "add",
+                "value": -15
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 456,
@@ -6292,7 +8566,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 457,
@@ -6306,7 +8585,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 458,
@@ -6320,7 +8604,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 459,
@@ -6334,7 +8623,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 460,
@@ -6348,7 +8642,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 461,
@@ -6362,7 +8661,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 462,
@@ -6376,7 +8680,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 463,
@@ -6390,7 +8699,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 464,
@@ -6404,7 +8718,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 465,
@@ -6418,7 +8737,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 466,
@@ -6432,7 +8756,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Lock On",
+                "modifier": "values.range",
+                "operation": "add",
+                "value": 3
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 467,
@@ -6446,7 +8783,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Lock On",
+                "modifier": "values.damage",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 468,
@@ -6460,7 +8810,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 469,
@@ -6474,7 +8829,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 470,
@@ -6488,7 +8848,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 471,
@@ -6502,7 +8867,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 472,
@@ -6516,7 +8886,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 473,
@@ -6530,7 +8905,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Nano-Repair",
+                "modifier": "values.energy",
+                "operation": "set",
+                "value": 0
+            }
+        ],
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 474,
@@ -6544,7 +8932,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 475,
@@ -6558,7 +8951,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 476,
@@ -6572,7 +8970,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 477,
@@ -6586,7 +8989,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 478,
@@ -6600,7 +9008,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 479,
@@ -6614,7 +9027,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Shredder Grenade",
+                "modifier": "values.implosion",
+                "operation": "replace",
+                "value": "Pulls affected units to the center and stuns them for 2 seconds."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 480,
@@ -6628,7 +9053,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Shredder Grenade",
+                "modifier": "values.damage",
+                "operation": "add",
+                "value": 50
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 481,
@@ -6642,7 +9079,11 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 482,
@@ -6656,7 +9097,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Demolition Charge",
+                "modifier": "values.damage",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 483,
@@ -6670,7 +9123,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Demolition Charge",
+                "modifier": "values.restraint",
+                "operation": "replace",
+                "value": "Stuns the target and disables its detection until the charge explodes."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 484,
@@ -6684,7 +9149,11 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 485,
@@ -6698,11 +9167,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Demolition Charge",
+                "modifier": "values.recharge",
+                "operation": "replace",
+                "value": "Each attack reduces the remaining charge-up time by 3 seconds."
+            }
+        ],
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 486,
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "commander": "Tychus",
         "name": "SA-55 Thunderbolt Missiles",
         "icon": "sa55thunderboltmissiles",
@@ -6712,7 +9193,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Warhound Turret",
+                "modifier": "values.missiles",
+                "operation": "replace",
+                "value": "Turrets fire missiles at up to 2 air targets, dealing 100 damage to each."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 487,
@@ -6726,11 +9219,15 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 488,
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "commander": "Tychus",
         "name": "Moebius M34 Terror Rounds",
         "icon": "moebiusm34terrorrounds",
@@ -6740,7 +9237,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Warhound Turret",
+                "modifier": "values.fear",
+                "operation": "replace",
+                "value": "Turret attacks have a 3% chance to cause Fear in a small area for 3 seconds."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 489,
@@ -6754,11 +9263,15 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 490,
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "commander": "Tychus",
         "name": "D99 Detonator",
         "icon": "d99detonator",
@@ -6768,7 +9281,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Warhound Turret",
+                "modifier": "values.explosion",
+                "operation": "replace",
+                "value": "Turrets explode on death, dealing 50 damage to nearby enemies."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 491,
@@ -6782,11 +9307,15 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 492,
-        "unit": "James Sirius Sykes",
+        "unit": "James \"Sirius\" Sykes",
         "commander": "Tychus",
         "name": "Umojan Turret Frame",
         "icon": "umojanturretframe",
@@ -6796,11 +9325,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Warhound Turret",
+                "modifier": "values.frame",
+                "operation": "replace",
+                "value": "Warhound Turrets have 75% more life and weapon damage."
+            }
+        ],
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 493,
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "commander": "Tychus",
         "name": "High Capacity Containers",
         "icon": "highcapacitycontainers",
@@ -6810,11 +9351,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Oil Spill",
+                "modifier": "values.radius",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 494,
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "commander": "Tychus",
         "name": "Hades Oil",
         "icon": "hadesoil",
@@ -6824,11 +9377,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Oil Spill",
+                "modifier": "values.lightDamage",
+                "operation": "add",
+                "value": 25
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 495,
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "commander": "Tychus",
         "name": "Wildflame Fuel Additives",
         "icon": "wildflamefueladditives",
@@ -6838,11 +9403,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Oil Spill",
+                "modifier": "values.spread",
+                "operation": "replace",
+                "value": "Enflamed enemies explode on death, spreading Enflamed to nearby enemy units."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 496,
-        "unit": "Miles Blaze Lewis",
+        "unit": "Miles \"Blaze\" Lewis",
         "commander": "Tychus",
         "name": "XCMC-670 Combat Suit",
         "icon": "xcmc670combatsuit",
@@ -6852,11 +9429,15 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 497,
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "commander": "Tychus",
         "name": "X-71 Impact Boots",
         "icon": "x71impactboots",
@@ -6866,11 +9447,29 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Heavy Impact",
+                "modifier": "values.radius",
+                "operation": "multiply",
+                "value": 2
+            },
+            {
+                "skill": "Heavy Impact",
+                "modifier": "values.stun",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 498,
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "commander": "Tychus",
         "name": "Critical Response System",
         "icon": "criticalresponsesystem",
@@ -6880,11 +9479,15 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 499,
-        "unit": "Rob Cannonball Boswell",
+        "unit": "Rob \"Cannonball\" Boswell",
         "commander": "Tychus",
         "name": "M.A.L.I.C.E. Ammunition",
         "icon": "maliceammunition",
@@ -6894,11 +9497,15 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 500,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "Umojan Signal Modulator",
         "icon": "umojansignalmodulator",
@@ -6908,11 +9515,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Revitalizer",
+                "modifier": "values.healing",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 501,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "Moebius Aggression Blend",
         "icon": "moebiusaggressionblend",
@@ -6922,11 +9541,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Deploy Revitalizer",
+                "modifier": "values.attackSpeed",
+                "operation": "replace",
+                "value": "Units in range gain 15% attack speed."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 502,
-        "unit": "Kev Rattlesnake West",
+        "unit": "Kev \"Rattlesnake\" West",
         "commander": "Tychus",
         "name": "Hammer Munitions",
         "icon": "hammermunitions",
@@ -6936,7 +9567,11 @@
         "modifiertag": null,
         "value": "Attacks slow enemies and deal 50% damage to ground enemies in a circle of radius 2 around the target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 503,
@@ -6950,7 +9585,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Dominate",
+                "modifier": "values.restoration",
+                "operation": "replace",
+                "value": "Fully restores the target's life, shields, and energy, and grants 75% increased attack speed."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 504,
@@ -6964,7 +9611,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Dominate",
+                "modifier": "values.confusion",
+                "operation": "replace",
+                "value": "Confuses enemies near the target, forcing them to attack each other for 10 seconds."
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 505,
@@ -6978,7 +9637,11 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 506,
@@ -6992,7 +9655,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Dominate",
+                "modifier": "values.duration",
+                "operation": "multiply",
+                "value": 3
+            }
+        ],
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 507,
@@ -7006,7 +9681,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Ultrasonic Pulse",
+                "modifier": "values.damage",
+                "operation": "multiply",
+                "value": 1.5
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 508,
@@ -7020,7 +9707,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Ultrasonic Pulse",
+                "modifier": "values.radius",
+                "operation": "multiply",
+                "value": 1.5
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 509,
@@ -7034,7 +9733,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Ultrasonic Pulse",
+                "modifier": "values.duration",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 510,
@@ -7048,11 +9759,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Ultrasonic Pulse",
+                "modifier": "values.network",
+                "operation": "replace",
+                "value": "Nearby Outlaws have their primary ability cooldowns and charge-up times reduced by 20%."
+            }
+        ],
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 511,
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "commander": "Tychus",
         "name": "Umojan Repair Nanites",
         "icon": "umojanrepairnanites",
@@ -7062,11 +9785,29 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Reinvigorating Burst",
+                "modifier": "values.instantHealing",
+                "operation": "multiply",
+                "value": 2
+            },
+            {
+                "skill": "Reinvigorating Burst",
+                "modifier": "values.healing",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 512,
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "commander": "Tychus",
         "name": "Procyon Serum",
         "icon": "procyonserum",
@@ -7076,11 +9817,23 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Super Heal",
+                "modifier": "values.healing",
+                "operation": "multiply",
+                "value": 2
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 513,
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "commander": "Tychus",
         "name": "Procyon Twin Heal Beam Gauntlet",
         "icon": "procyontwinhealbeamgauntlet",
@@ -7090,11 +9843,29 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Super Heal",
+                "modifier": "values.targets",
+                "operation": "replace",
+                "value": "two targets"
+            },
+            {
+                "skill": "Super Heal",
+                "modifier": "values.gearNote",
+                "operation": "replace",
+                "value": ""
+            }
+        ],
+        "cost": {
+            "minerals": 600,
+            "gas": 150
+        }
     },
     {
         "upgradeid": 514,
-        "unit": "Lt Layna Nikara",
+        "unit": "Lt. Layna Nikara",
         "commander": "Tychus",
         "name": "XM-77 Matrix Generator",
         "icon": "xm77matrixgenerator",
@@ -7104,7 +9875,11 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 1200,
+            "gas": 400
+        }
     },
     {
         "upgradeid": 515,
@@ -7118,7 +9893,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 516,
@@ -7132,7 +9912,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 517,
@@ -7146,7 +9931,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Blink",
+                "modifier": "values.shield",
+                "operation": "replace",
+                "value": "Cloaks the Stalker and restores 80 shields over 5 seconds."
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 518,
@@ -7160,7 +9958,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 519,
@@ -7174,7 +9977,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 520,
@@ -7188,7 +9996,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 200,
+            "gas": 200
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 521,
@@ -7202,7 +10015,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 522,
@@ -7216,7 +10034,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 523,
@@ -7230,7 +10053,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 524,
@@ -7244,7 +10072,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 525,
@@ -7258,7 +10091,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 526,
@@ -7272,7 +10110,20 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Stasis Ward",
+                "modifier": "values.vulnerability",
+                "operation": "replace",
+                "value": "can be attacked"
+            }
+        ],
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 527,
@@ -7286,7 +10137,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 528,
@@ -7300,7 +10156,12 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 90
     },
     {
         "upgradeid": 529,
@@ -7314,7 +10175,12 @@
         "modifiertag": null,
         "value": "Deals 50% attack damage to enemy air units in a circle of radius 1.5 around the target upon detonation.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 530,
@@ -7332,7 +10198,7 @@
     },
     {
         "upgradeid": 531,
-        "unit": "XelNaga Ambusher",
+        "unit": "Xel'Naga Ambusher",
         "commander": "Zeratul",
         "name": "Predictive Blink",
         "icon": "predictiveblink",
@@ -7346,7 +10212,7 @@
     },
     {
         "upgradeid": 532,
-        "unit": "XelNaga Ambusher",
+        "unit": "Xel'Naga Ambusher",
         "commander": "Zeratul",
         "name": "Vengeance of the Void",
         "icon": "vengeanceofthevoid",
@@ -7356,11 +10222,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Predictive Blink",
+                "modifier": "values.apparition",
+                "operation": "replace",
+                "value": "Leaves behind a Void Apparition that attacks once for 50% of the unit's weapon damage."
+            }
+        ]
     },
     {
         "upgradeid": 533,
-        "unit": "XelNaga Ambusher",
+        "unit": "Xel'Naga Ambusher",
         "commander": "Zeratul",
         "name": "Phase Battery",
         "icon": "phasebattery",
@@ -7370,11 +10244,19 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Predictive Blink",
+                "modifier": "charges",
+                "operation": "set",
+                "value": 3
+            }
+        ]
     },
     {
         "upgradeid": 534,
-        "unit": "XelNaga Shieldguard",
+        "unit": "Xel'Naga Shieldguard",
         "commander": "Zeratul",
         "name": "Shield Recharge",
         "icon": "shieldrecharge",
@@ -7388,7 +10270,7 @@
     },
     {
         "upgradeid": 535,
-        "unit": "XelNaga Shieldguard",
+        "unit": "Xel'Naga Shieldguard",
         "commander": "Zeratul",
         "name": "Eclipse Protocol",
         "icon": "eclipseprotocol",
@@ -7402,7 +10284,7 @@
     },
     {
         "upgradeid": 536,
-        "unit": "XelNaga Shieldguard",
+        "unit": "Xel'Naga Shieldguard",
         "commander": "Zeratul",
         "name": "Reflection Shield",
         "icon": "reflectionshield",
@@ -7440,7 +10322,15 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Blink",
+                "modifier": "values.damage",
+                "operation": "replace",
+                "value": "Deals 50 damage to enemy units caught in its path."
+            }
+        ]
     },
     {
         "upgradeid": 539,
@@ -7458,7 +10348,7 @@
     },
     {
         "upgradeid": 540,
-        "unit": "XelNaga Enforcer",
+        "unit": "Xel'Naga Enforcer",
         "commander": "Zeratul",
         "name": "Barrier",
         "icon": "barrier",
@@ -7472,21 +10362,22 @@
     },
     {
         "upgradeid": 541,
-        "unit": "XelNaga Enforcer",
+        "unit": "Xel'Naga Enforcer",
         "commander": "Zeratul",
         "name": "Force Cannon",
         "icon": "forcecannon",
         "effect": "Allows this unit's anti-air weapon to knock back enemy air units, dealing 25% of its damage to units caught in the path of the blast.",
         "modifier": "aoe",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": "The anti-air attack knocks the target back and deals 25% damage to enemy air units in a rectangle 5 long and 3 wide extending behind the primary target.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air"
     },
     {
         "upgradeid": 542,
-        "unit": "XelNaga Enforcer",
+        "unit": "Xel'Naga Enforcer",
         "commander": "Zeratul",
         "name": "Eternity Barrier",
         "icon": "enternitybarrier",
@@ -7496,11 +10387,25 @@
         "modifiertag": null,
         "value": null,
         "operation": "none",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Barrier",
+                "modifier": "values.absorption",
+                "operation": "multiply",
+                "value": 4
+            },
+            {
+                "skill": "Barrier",
+                "modifier": "values.repair",
+                "operation": "replace",
+                "value": "Fully repairs hull damage."
+            }
+        ]
     },
     {
         "upgradeid": 543,
-        "unit": "XelNaga Void Array",
+        "unit": "Xel'Naga Void Array",
         "commander": "Zeratul",
         "name": "Infinite Void",
         "icon": "infinitevoid",
@@ -7514,7 +10419,7 @@
     },
     {
         "upgradeid": 544,
-        "unit": "XelNaga Void Array",
+        "unit": "Xel'Naga Void Array",
         "commander": "Zeratul",
         "name": "Shield Boosters",
         "icon": "shieldboosters",
@@ -7534,11 +10439,17 @@
         "icon": "slicingglaive",
         "effect": "Primal Mutalisks deal 100% increased damage against air units.",
         "modifier": "aoe",
-        "modifiermode": "(Air)",
+        "modifiermode": null,
         "modifiertag": null,
         "value": "Bounces to up to 2 additional air enemies, within radius 3 of the previous target. Base bounce damage: 9, 3; gains 1 and 0.5 per weapon upgrade.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 546,
@@ -7552,7 +10463,12 @@
         "modifiertag": null,
         "value": "Circular explosion against ground units: 100% damage within radius 1.2884, 50% from 1.2884 to 1.7040, and 25% from 1.7040 to 2.3275, accounting for unit size. Excludes structures.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
     },
     {
         "upgradeid": 547,
@@ -7566,7 +10482,12 @@
         "modifiertag": null,
         "value": "Two sweeping beams perpendicular to the attack direction, extending 1.25 to each side of the target and hitting in circles of radius 0.15. Also leaves four burning circles of radius 0.5, centered 0.5 and 1.5 to either side of the target, dealing up to 150 damage over 5 seconds to ground enemies.",
         "operation": "replace",
-        "upgradetype": "upgrade"
+        "upgradetype": "upgrade",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 120
     },
     {
         "upgradeid": 548,
@@ -7581,5 +10502,167 @@
         "value": 3,
         "operation": "add",
         "upgradetype": "upgrade"
+    },
+    {
+        "upgradeid": 549,
+        "unit": "Sovereign Battlecruiser",
+        "commander": "Horner",
+        "name": "Overcharged Reactor",
+        "icon": "overchargedreactor",
+        "effect": "Battlecruiser weapons systems are upgraded to a powerful particle cannon that deals 200 damage per attack.",
+        "modifier": "weaponName",
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": "Mini Yamato Gun",
+        "operation": "replace",
+        "upgradetype": "preupgrade",
+        "weapon": "",
+        "cost": {
+            "minerals": 150,
+            "gas": 150
+        },
+        "researchTime": 63
+    },
+    {
+        "upgradeid": 550,
+        "unit": "Primal Mutalisk",
+        "commander": "Dehaka",
+        "name": "Slicing Glaive",
+        "icon": "slicingglaive",
+        "effect": "Primal Mutalisks deal 100% increased damage against air units.",
+        "modifier": "weaponName",
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": "Slicing Glave",
+        "operation": "replace",
+        "upgradetype": "upgrade",
+        "weapon": "air",
+        "cost": {
+            "minerals": 100,
+            "gas": 100
+        },
+        "researchTime": 60
+    },
+    {
+        "upgradeid": 551,
+        "unit": "Tesseract Cannon",
+        "commander": "Zeratul",
+        "name": "Tesseract Matrix",
+        "icon": "tesseractmatrix",
+        "effect": "Decreases the cooldown of Shade Projection by 25%. Increases the damage absorbed by Shade Barrier by 100%.",
+        "modifier": null,
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": null,
+        "operation": "none",
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Shade Projection",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.75
+            },
+            {
+                "skill": "Shade Barrier",
+                "modifier": "values.absorption",
+                "operation": "multiply",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "upgradeid": 552,
+        "unit": "Tesseract Monolith",
+        "commander": "Zeratul",
+        "name": "Tesseract Matrix",
+        "icon": "tesseractmatrix",
+        "effect": "Decreases the cooldown of Shade Projection by 25%. Increases the damage absorbed by Shade Barrier by 100%.",
+        "modifier": null,
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": null,
+        "operation": "none",
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Shade Projection",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.75
+            },
+            {
+                "skill": "Shade Barrier",
+                "modifier": "values.absorption",
+                "operation": "multiply",
+                "value": 2
+            }
+        ]
+    },
+    {
+        "upgradeid": 553,
+        "unit": "Zeratul",
+        "commander": "Zeratul",
+        "name": "Void Blink",
+        "icon": "voidblink",
+        "effect": "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
+        "modifier": null,
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": null,
+        "operation": "none",
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Blink",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.5
+            }
+        ]
+    },
+    {
+        "upgradeid": 554,
+        "unit": "Void Templar",
+        "commander": "Zeratul",
+        "name": "Void Blink",
+        "icon": "voidblink",
+        "effect": "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
+        "modifier": null,
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": null,
+        "operation": "none",
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Blink",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.5
+            }
+        ]
+    },
+    {
+        "upgradeid": 555,
+        "unit": "Xel'Naga Ambusher",
+        "commander": "Zeratul",
+        "name": "Void Blink",
+        "icon": "voidblink",
+        "effect": "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
+        "modifier": null,
+        "modifiermode": null,
+        "modifiertag": null,
+        "value": null,
+        "operation": "none",
+        "upgradetype": "upgrade",
+        "skillModifiers": [
+            {
+                "skill": "Predictive Blink",
+                "modifier": "cooldown",
+                "operation": "multiply",
+                "value": 0.5
+            }
+        ]
     }
 ]

@@ -93,4 +93,22 @@ expectCalculatorResult(
     'Informational upgrades do not modify stats',
 );
 
-echo "24 PHP calculator checks passed\n";
+$punctuatedUnits = [
+    ['Tychus',  'Auto-Turret'],
+    ['Tychus',  'Rob "Cannonball" Boswell'],
+    ['Zeratul', "Xel'Naga Ambusher"],
+    ['Mengsk',  "Emperor's Shadow"],
+    ['Nova',    'Raven Type-II'],
+    ['Swann',   'A.R.E.S.'],
+];
+foreach ($punctuatedUnits as [$commander, $unit]) {
+    expectCalculatorResult(checkVariable($unit, 'text'), true, 'Punctuation accepted: ' . $unit);
+    expectCalculatorResult(count(getUnitStats($commander, $unit)) > 0, true, 'Punctuated unit lookup: ' . $unit);
+}
+expectCalculatorResult(
+    str_contains(getUnitUpgradesOutput('Mengsk', "Emperor's Shadow"), 'Rank:'),
+    true,
+    "Emperor's Shadow retains Royal Guard rank controls",
+);
+
+echo "37 PHP calculator checks passed\n";

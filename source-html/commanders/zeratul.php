@@ -1214,7 +1214,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
                         <td><img src="/images/commanderdata/unitskills/zeratul/predictiveblink.png" alt="Predictive Blink"></td>
                         <td>Predictive Blink</td>
                         <td>Teleports this unit to a nearby target location.</td>
-                        <td>0 seconds</td>
+                        <td>8 seconds</td>
                         <td>0</td>
                     </tr>
                 </tbody>

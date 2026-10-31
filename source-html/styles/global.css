@@ -114,6 +114,10 @@ summary {
     position: absolute;
     max-width: 380px;
 }
+#tooltip .units-modified {
+    color: #997400;
+    font-weight: bold;
+}
 
 #topmenu {
     display: flex;

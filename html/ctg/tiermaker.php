@@ -373,6 +373,6 @@
             JSON_HEX_TAG | JSON_THROW_ON_ERROR,
         ) ?>;
     </script>
-    <script src="/scripts/tiermaker.js?v=f1a706" defer></script>
+    <script src="/scripts/tiermaker.js?v=56e4d4" defer></script>
 </body>
 </html>

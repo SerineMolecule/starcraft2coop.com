@@ -1,7 +1,8 @@
 import mutators from "../../source-data/mutators.json";
 import playerUpgrades from "../../source-data/playerupgrades.json";
 import { rankUpgrades } from "./unit-ranks";
-import { skillCosts, skillDetails, unitSkills } from "./unit-skills";
+import { skillCosts, skillDetails, skillFromTooltip } from "./unit-skills";
+import { upgradeCosts } from "./upgrade-costs";
 
 function token(name: string): string {
     if (name === "Dom. Trooper") return 'dominiontrooper';
@@ -9,11 +10,11 @@ function token(name: string): string {
     if (name === "Dom. Flame Trooper") return 'dominionflametrooper';
     if (name === "Dom. Rocket Trooper") return 'dominionrockettrooper';
     if (name === "Tychus Findlay") return 'tychus';
-    if (name === "James Sirius Sykes") return 'sirius';
-    if (name === "Miles Blaze Lewis") return 'blaze';
-    if (name === "Rob Cannonball Boswell") return 'cannonball';
-    if (name === "Lt Layna Nikara") return 'nikara';
-    if (name === "Kev Rattlesnake West") return 'rattlesnake';
+    if (name === "James \"Sirius\" Sykes" || name === "James Sirius Sykes") return 'sirius';
+    if (name === "Miles \"Blaze\" Lewis" || name === "Miles Blaze Lewis") return 'blaze';
+    if (name === "Rob \"Cannonball\" Boswell" || name === "Rob Cannonball Boswell") return 'cannonball';
+    if (name === "Lt. Layna Nikara" || name === "Lt Layna Nikara") return 'nikara';
+    if (name === "Kev \"Rattlesnake\" West" || name === "Kev Rattlesnake West") return 'rattlesnake';
 
     return name.toLowerCase().replace(/[^a-z0-9]+/g, "");
 }
@@ -117,14 +118,26 @@ function showUpgradeTooltip(target: HTMLElement): void {
     text.style.marginLeft = "55px";
     const name = document.createElement("b");
     name.textContent = upgrade.name;
-    text.replaceChildren(name, document.createElement("br"), upgrade.effect);
+    text.append(name);
+    for (const cost of upgradeCosts(upgrade, target.dataset.race ?? 'terran')) {
+        const value = document.createElement('span');
+        value.style.whiteSpace = 'nowrap';
+        const icon = document.createElement('img');
+        icon.src = cost.icon;
+        icon.alt = cost.label;
+        icon.width = 16;
+        icon.height = 16;
+        value.append(icon, ' ', String(cost.value));
+        text.append(' ', value);
+    }
+    text.append(document.createElement('br'), upgrade.effect);
     tooltip.replaceChildren(icon, text);
     activeTooltipTarget = target;
     setTooltipPosition(target);
 }
 
 function showSkillTooltip(target: HTMLElement): void {
-    const skill = unitSkills.get(target.dataset.tooltip ?? '');
+    const skill = skillFromTooltip(target.dataset.tooltip ?? '', target.dataset.skillValues);
     if (!skill) return;
 
     const tooltip = prepareTooltip();
@@ -147,7 +160,13 @@ function showSkillTooltip(target: HTMLElement): void {
     const name = document.createElement('b');
     name.textContent = skill.name;
     heading.append(name);
-    if (skill.charges) heading.append(` (${skill.charges} charges)`);
+    const markedText = (text: string, modified: boolean) => {
+        const span = document.createElement('span');
+        span.textContent = text;
+        if (modified) span.className = 'units-modified';
+        return span;
+    };
+    if (skill.charges) heading.append(' (', markedText(String(skill.charges), !!skill.modifiedFields?.includes('charges')), skill.charges === 1 ? ' charge)' : ' charges)');
     for (const cost of skillCosts(skill, target.dataset.race ?? 'terran')) {
         const value = document.createElement('span');
         value.style.whiteSpace = 'nowrap';
@@ -156,13 +175,24 @@ function showSkillTooltip(target: HTMLElement): void {
         icon.alt = cost.label;
         icon.width = 16;
         icon.height = 16;
-        value.append(icon, ` ${cost.value}`);
+        value.append(icon, ' ', markedText(cost.value, !!skill.modifiedFields?.includes(cost.field)));
         heading.append(' ', value);
     }
     if (skill.type !== 'active') heading.append(` (${skill.type})`);
     text.append(heading);
-    for (const detail of skillDetails(skill)) {
-        text.append(document.createElement('br'), detail);
+    for (const [index, detail] of skillDetails(skill).entries()) {
+        text.append(document.createElement('br'));
+        if (index === 0 && skill.descriptionParts) {
+            for (const part of skill.descriptionParts) text.append(markedText(part.text, part.modified));
+        } else if (index === 1 && skill.initialCooldown !== undefined) {
+            for (const [lineIndex, line] of detail.split('\n').entries()) {
+                if (lineIndex) text.append('\n');
+                const colon = line.indexOf(':') + 1;
+                text.append(line.slice(0, colon), markedText(line.slice(colon), !!skill.modifiedFields?.includes(lineIndex ? 'cooldown' : 'initialCooldown')));
+            }
+        } else {
+            text.append(markedText(detail, detail === skill.requirements && !!skill.modifiedFields?.includes('requirements')));
+        }
     }
     tooltip.replaceChildren(icons, text);
     activeTooltipTarget = target;

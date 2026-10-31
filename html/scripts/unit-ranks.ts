@@ -1,7 +1,7 @@
 import playerUpgrades from "../../source-data/playerupgrades.json";
 import type { PlayerUpgrade } from "../../source-data/data-types";
 
-type RankUpgrade = Pick<PlayerUpgrade, 'commander' | 'unit' | 'name' | 'icon' | 'effect'>;
+type RankUpgrade = Pick<PlayerUpgrade, 'commander' | 'unit' | 'name' | 'icon' | 'effect' | 'cost' | 'researchTime'>;
 
 /** Unit-specific keys prevent different Veterancy effects sharing one tooltip. */
 export const rankUpgrades = new Map<string, RankUpgrade>();

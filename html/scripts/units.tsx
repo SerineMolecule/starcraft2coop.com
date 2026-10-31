@@ -1,14 +1,20 @@
 /** @jsxImportSource preact */
 import * as preact from "preact";
 
-import playerUnits from "../../source-data/playerunits.json";
-import amonUnits from "../../source-data/amonunits.json";
+import playerUnitsJSON from "../../source-data/playerunits.json";
+import amonUnitsJSON from "../../source-data/amonunits.json";
 import commandersummaries from "../../source-data/commandersummaries.json";
 import playerTalents from "../../source-data/playertalents.json";
 import playerUpgrades from "../../source-data/playerupgrades.json";
-import type { PlayerTalent, PlayerUnit, PlayerUpgrade } from "../../source-data/data-types";
+import type { AmonUnit, PlayerTalent, PlayerUnit, PlayerUpgrade, TargetDamage, UnitModeData } from "../../source-data/data-types";
+import { hasAttack, playerUnitViews } from "../../source-data/unit-data";
+
 import { rankUpgrades } from "./unit-ranks";
-import { skillCosts, unitSkills } from "./unit-skills";
+import { resolveSkill } from "./skill-modifiers";
+import { skillCosts, skillTooltipValues, skillVisible, unitSkills } from "./unit-skills";
+
+const playerUnits = playerUnitsJSON as PlayerUnit[];
+const amonUnits = amonUnitsJSON as AmonUnit[];
 
 const AMON_UNIT_TYPES = [
     "Protoss",
@@ -26,11 +32,11 @@ function token(text: string): Token {
     if (text === "Dom. Flame Trooper") return 'dominionflametrooper';
     if (text === "Dom. Rocket Trooper") return 'dominionrockettrooper';
     if (text === "Tychus Findlay") return 'tychus';
-    if (text === "James Sirius Sykes") return 'sirius';
-    if (text === "Miles Blaze Lewis") return 'blaze';
-    if (text === "Rob Cannonball Boswell") return 'cannonball';
-    if (text === "Lt Layna Nikara") return 'nikara';
-    if (text === "Kev Rattlesnake West") return 'rattlesnake';
+    if (text === "James \"Sirius\" Sykes" || text === "James Sirius Sykes") return 'sirius';
+    if (text === "Miles \"Blaze\" Lewis" || text === "Miles Blaze Lewis") return 'blaze';
+    if (text === "Rob \"Cannonball\" Boswell" || text === "Rob Cannonball Boswell") return 'cannonball';
+    if (text === "Lt. Layna Nikara" || text === "Lt Layna Nikara") return 'nikara';
+    if (text === "Kev \"Rattlesnake\" West" || text === "Kev Rattlesnake West") return 'rattlesnake';
 
     return text.toLowerCase().replace(/[^a-z0-9]+/g, "") as Token;
 }
@@ -86,15 +92,16 @@ export function applyUnitSettings(modifiers: UnitModifiers, settings: Partial<Un
     for (const name of Object.keys(next.upgrades)) {
         if (/^[123]$/.test(name)) continue; // Royal Guard ranks are handled with upgrade levels.
         const entries = upgrades.filter(u => u.name === name);
-        if (!entries.some(u => u.operation !== 'none')) continue;
+        if (!entries.some(u => u.operation !== 'none' || u.skillModifiers?.length || u.unlocksModes?.length)) continue;
         const enabled = entries.some(u => u.temporary) ? settings.maxTemporaryStatuses : settings.maxUpgrades;
         if (enabled !== undefined) next.upgrades[name] = enabled;
     }
     if (settings.maxUpgradeLevels !== undefined) {
         for (const kind of Object.keys(next.upgradeLevels) as (keyof UnitModifiers['upgradeLevels'])[]) {
-            const max = kind === 'hero' ? UnitStats.heroLevelLimit(next) : kind === 'biomass' ? UnitStats.biomassLimit(next) :
+            const max = kind === 'hero' ? UnitStats.heroLevelLimit(next) : kind === 'biomass' ? UnitStats.biomassLimit(next) : kind === 'artifacts' ? UnitStats.artifactLimit(next) :
                 next.commander === 'tychus' && (kind === 'weapon' || kind === 'armor') ? 5 : 3;
-            next.upgradeLevels[kind] = settings.maxUpgradeLevels ? max : kind === 'hero' ? 1 : 0;
+            const amon = AMON_UNIT_TYPES.some(race => token(race) === next.commander);
+            next.upgradeLevels[kind] = settings.maxUpgradeLevels ? max : kind === 'hero' || amon ? 1 : 0;
         }
         if ('rank' in next.upgradeLevels) {
             for (const rank of ['1', '2', '3']) {
@@ -213,7 +220,7 @@ class CommanderSelector extends preact.Component<{ commander: string | null }> {
     override render() {
         return (
             <td class="units-commander-selector">
-                <p class="units-head"><em>Commanders</em></p>
+                <p class="units-head">Commanders</p>
                 <ul class="units-nav">
                     {commandersummaries.map((commander) => (
                         <li><a href={`#${token(commander.commander)}`} aria-selected={this.isSelected(commander.commander)}>
@@ -222,7 +229,7 @@ class CommanderSelector extends preact.Component<{ commander: string | null }> {
                         </a></li>
                     ))}
                 </ul>
-                <p class="units-head"><em>Amon</em></p>
+                <p class="units-head">Amon</p>
                 <ul class="units-nav">
                     {AMON_UNIT_TYPES.map((type) => (
                         <li><a href={`#${token(type)}`} aria-selected={this.isSelected(type)}>{type}</a></li>
@@ -233,7 +240,7 @@ class CommanderSelector extends preact.Component<{ commander: string | null }> {
     }
 }
 
-class UnitSelector extends preact.Component<{ commander: Token | null, unit: Token | null, onClickUnit: (event: MouseEvent) => void }> {
+export class UnitSelector extends preact.Component<{ commander: Token | null, unit: Token | null, onClickUnit: (event: MouseEvent) => void }> {
     isSelected(name: string): boolean | undefined {
         return this.props.unit === token(name) ? true : undefined;
     }
@@ -256,20 +263,21 @@ class UnitSelector extends preact.Component<{ commander: Token | null, unit: Tok
 
         const usedUnits = new Set<string>();
         for (const playerUnit of playerUnits.filter((unit) => token(unit.commander) === this.props.commander)) {
-            if (usedUnits.has(playerUnit.basename)) continue;
-            usedUnits.add(playerUnit.basename);
+            if ('hideFromUnitList' in playerUnit && playerUnit.hideFromUnitList) continue;
+            if (usedUnits.has(playerUnit.name)) continue;
+            usedUnits.add(playerUnit.name);
             if (playerUnit.tags.includes("Structure")) {
-                structures.push(playerUnit.basename)
+                structures.push(playerUnit.name)
             } else if (playerUnit.tags.includes("Heroic")) {
-                heroes.push(playerUnit.basename)
+                heroes.push(playerUnit.name)
             } else {
-                normalUnits.push(playerUnit.basename)
+                normalUnits.push(playerUnit.name)
             }
         }
         for (const amonUnit of amonUnits.filter((unit) => token(unit.race) === this.props.commander)) {
-            if (amonUnit.structure) {
+            if (amonUnit.tags.includes('Structure')) {
                 structures.push(amonUnit.name)
-            } else if (amonUnit.heroic) {
+            } else if (amonUnit.tags.includes('Heroic')) {
                 heroes.push(amonUnit.name)
             } else {
                 normalUnits.push(amonUnit.name)
@@ -277,15 +285,15 @@ class UnitSelector extends preact.Component<{ commander: Token | null, unit: Tok
         }
         return (
             <td class="units-unit-selector">
-                {!!normalUnits.length && <p class="units-head"><em>Units</em></p>}
+                {!!normalUnits.length && <p class="units-head">Units</p>}
                 {!!normalUnits.length && <ul class="units-nav">
                     {normalUnits.map(unit => this.renderLink(unit))}
                 </ul>}
-                {!!heroes.length && <p class="units-head"><em>Heroes</em></p>}
+                {!!heroes.length && <p class="units-head">Heroes</p>}
                 {!!heroes.length && <ul class="units-nav">
                     {heroes.map(hero => this.renderLink(hero))}
                 </ul>}
-                {!!structures.length && <p class="units-head"><em>Structures</em></p>}
+                {!!structures.length && <p class="units-head">Structures</p>}
                 {!!structures.length && <ul class="units-nav">
                     {structures.map(structure => this.renderLink(structure))}
                 </ul>}
@@ -302,6 +310,7 @@ interface Unit {
     vcost: number;
     supply: number;
     buildtime: number;
+    buildTimeIsAdditional?: boolean;
     hp: number;
     readonly baseHp: number;
     shields: number;
@@ -309,6 +318,8 @@ interface Unit {
     shieldarmor: number;
     energy: number;
     movementspeed: number;
+    movement?: PlayerUnit['movement'];
+    targetable?: PlayerUnit['targetable'];
     sightrange: number;
     tags: string[];
 
@@ -321,21 +332,32 @@ interface Unit {
 /** partial of PlayerUnit */
 interface UnitMode {
     modeName: string | null;
+    notes?: string;
+    weaponId?: string;
+    weaponName?: string;
+    targets?: UnitModeData['targets'];
+    targetFilters?: string;
+    kind?: UnitModeData['kind'];
 
     // defensive
     armor?: number;
     shieldarmor?: number;
     movementspeed?: number;
+    movement?: UnitModeData['movement'];
+    targetable?: UnitModeData['targetable'];
     sightrange?: number;
     tags?: string;
 
     // offensive
-    atkrange?: number;
-    attackspeed?: number;
-    attacks?: number;
+    range?: number;
+    minimumRange?: number;
+    ignoresArmor?: boolean;
+    shieldDamage?: number;
+    cooldown?: number;
+    hits?: number;
     aoe?: string;
     /** Tags that this unit deals damage to */
-    attributedamage?: { [tag: string]: { damage: number, bonus: number } };
+    damage?: Record<string, TargetDamage>;
 }
 
 /** Keep long cards readable in either scroll direction, using the page's scrollbar. */
@@ -403,89 +425,167 @@ export class UnitStats extends preact.Component<{
         masteryInputs?: Record<string, string> | null;
         levelInputs?: Record<string, string> | null;
     } = {};
+    renderActions(): preact.ComponentChildren {
+        return <div class={`units-actions${this.props.onClickCompare ? " units-actions-compare" : ""}`}>
+            {this.props.onClickClose && <button type="button" onClick={this.props.onClickClose} aria-label="Close comparison">&times;</button>}
+            {this.props.onClickCompare && <button type="button" onClick={this.props.onClickCompare}>Compare →</button>}
+        </div>;
+    }
     renderAmonUnit(): preact.ComponentChildren {
-        const amonUnit = amonUnits.find(unit => token(unit.name) === this.props.modifiers!.unit);
+        const amonUnit = amonUnits.find(unit => token(unit.race) === this.props.modifiers!.commander && token(unit.name) === this.props.modifiers!.unit);
         if (!amonUnit) {
             return (
                 <td>Unit not found</td>
             );
         }
-        const tags = [
-            amonUnit.light ? "Light" : null,
-            amonUnit.armored ? "Armored" : null,
-            amonUnit.biological ? "Biological" : null,
-            amonUnit.mechanical ? "Mechanical" : null,
-            amonUnit.psionic ? "Psionic" : null,
-            amonUnit.heroic ? "Heroic" : null,
-            amonUnit.massive ? "Massive" : null,
-            amonUnit.structure ? "Structure" : null,
-            // amonUnit.flyer ? "Flyer" : null,
-        ].filter(Boolean);
+        const tags = amonUnit.tags;
+        const levels = this.props.modifiers!.upgradeLevels;
+        const armor = amonUnit.armor + ((levels.armor ?? 1) - 1) * (amonUnit.armorbonus ?? 0);
+        const shieldarmor = amonUnit.shieldarmor + ((levels.shields ?? 1) - 1) * (amonUnit.shieldbonus ?? 0);
         return (
             <td class="units-unit">
                 <UnitContent selection={`${this.props.modifiers!.commander}/${this.props.modifiers!.unit}`}>
+                {this.renderActions()}
                 <h2 class="units-name">{amonUnit.name}</h2>
                 <div class="units-identity">
                     {amonUnit.image && <div class="units-art"><img key={amonUnit.image} src={amonUnit.image} alt="" class="units-portrait" /></div>}
                     <div class="units-identity-text">
+                        <p class="units-costs">(Amon unit)</p>
                         <p class="units-tags">{tags.join(" · ") || "(No tags)"}</p>
                     </div>
                 </div>
-                <p>
-                    (Amon unit)
-                </p>
                 <ul class="units-stats">
-                    <li class="units-hp"><span class="unbold">HP:</span> {amonUnit.hp} {!!amonUnit.armor && <><span class="unbold">| Armor: </span>{amonUnit.armor}</>}</li>
-                    {!!amonUnit.shields && <li class="units-shields"><span class="unbold">Shields:</span> {amonUnit.shields} {!!amonUnit.shieldarmor && <><span class="unbold">| Shield Armor: </span>{amonUnit.shieldarmor}</>}</li>}
+                    <li class="units-hp"><span class="unbold">HP:</span> {amonUnit.hp} {!!(armor || amonUnit.armorbonus) && <><span class="unbold">| Armor: </span>{this.renderValue(armor, amonUnit.armor)}</>}</li>
+                    {!!amonUnit.shields && <li class="units-shields"><span class="unbold">Shields:</span> {amonUnit.shields} {!!(shieldarmor || amonUnit.shieldbonus) && <><span class="unbold">| Shield Armor: </span>{this.renderValue(shieldarmor, amonUnit.shieldarmor)}</>}</li>}
+                    <li>{this.renderMovement(Number(amonUnit.movementspeed.toFixed(2)), Number(amonUnit.movementspeed.toFixed(2)), amonUnit.movement, amonUnit.targetable)}</li>
+                    <li><span class="unbold">Vision:</span> {Number(amonUnit.sightrange.toFixed(2))}</li>
                 </ul>
+                {this.renderAmonModes(amonUnit)}
+                {this.renderAmonUpgrades(amonUnit)}
                 </UnitContent>
             </td>
         );
     }
+    static amonUpgradeLevels(unit: AmonUnit): UnitModifiers['upgradeLevels'] {
+        const levels: UnitModifiers['upgradeLevels'] = {};
+        if (Object.values(unit.modes).some(mode => Object.values(mode.damage ?? {}).some(target => target.damagePerUpgrade))) levels.weapon = 1;
+        if (unit.armorbonus) levels.armor = 1;
+        if (unit.shieldbonus) levels.shields = 1;
+        return levels;
+    }
+    renderAmonUpgrades(unit: AmonUnit): preact.ComponentChildren {
+        const available = UnitStats.amonUpgradeLevels(unit);
+        const options = ([['weapon', 'Weapons'], ['armor', 'Armor'], ['shields', 'Shields']] as const)
+            .filter(([kind]) => kind in available);
+        if (!options.length) return null;
+        return <form class="units-modifiers">
+            <fieldset>
+                <legend>Upgrades</legend>
+                {options.map(([kind, title]) => <div key={kind}>
+                    <div class="units-upgrade-levels" role="radiogroup" aria-label={title}>
+                        <span class="units-upgrade-level-name">{title}</span>
+                        <span class="units-level-options">{[1, 2, 3].map(level => <label key={level}>
+                            <input type="radio" name={`${kind}-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={(this.props.modifiers!.upgradeLevels[kind] ?? 1) === level} /><span>{level}</span>
+                        </label>)}</span>
+                    </div>
+                    {!(kind === 'armor' && 'shields' in available) && <p class="unbold">+1 at start · +2 ≈{kind === 'weapon' ? '10:00' : '15:00'} · +3 ≈{kind === 'armor' && unit.armorupgrade === 'TerranInfantryArmorsLevel1' ? '30:00' : '20:00'}</p>}
+                </div>)}
+                <p class="unbold">Approximate <a href="/guides/enemycomps#upgrades">Brutal timings</a>.</p>
+            </fieldset>
+        </form>;
+    }
+    renderAmonModes(unit: AmonUnit): preact.ComponentChildren {
+        return <>
+            {Object.entries(unit.modes).map(([id, mode]) => this.renderAmonMode(unit, id, mode))}
+            {this.renderNotes(unit.notes)}
+        </>;
+    }
+    renderAmonMode(unit: AmonUnit, id: string, weapon: UnitModeData): preact.ComponentChildren {
+        if (!hasAttack(weapon) && !weapon.name) return <><p class="unbold">(No weapon)</p>{this.renderNotes(weapon.notes)}</>;
+        const upgradable = Object.values(weapon.damage ?? {}).some(target => target.damagePerUpgrade !== 0);
+        const level = upgradable ? this.props.modifiers?.upgradeLevels.weapon ?? weapon.upgradeLevel ?? 0 : 0;
+        const baseLevel = upgradable ? weapon.upgradeLevel ?? 1 : 0;
+        const damage = weapon.damage?.[''] && weapon.damage[''].damage + weapon.damage[''].damagePerUpgrade * level;
+        const baseDamage = weapon.damage?.[''] && weapon.damage[''].damage + weapon.damage[''].damagePerUpgrade * baseLevel;
+        const armed = hasAttack(weapon);
+        const overrides = {
+            movementspeed: weapon.movementspeed !== undefined && weapon.movementspeed !== unit.movementspeed ||
+                weapon.movement !== undefined && weapon.movement !== unit.movement ||
+                weapon.targetable !== undefined && weapon.targetable !== unit.targetable ? weapon.movementspeed ?? unit.movementspeed : undefined,
+            movement: weapon.movement,
+            targetable: weapon.targetable,
+            sightrange: weapon.sightrange !== unit.sightrange ? weapon.sightrange : undefined,
+        };
+        const format = (value: number) => Number(value.toFixed(2));
+        // These weapons destroy their attacker; their catalog period is not a repeatable cooldown.
+        const singleUse = ['HotSBanelingExplode', 'ScourgeMPWeapon', 'VultureSpiderMines'].includes(weapon.source?.weapon ?? '');
+        const showDps = !singleUse && !weapon.tickInterval && !weapon.kind &&
+            (weapon.hits ?? 0) > 0 && (weapon.cooldown ?? 0) > 0;
+        const damageText = (amount: number, baseAmount: number) => <>
+            {this.renderValue(format(amount), format(baseAmount))}{showDps && <> ({this.renderValue(
+                format(UnitStats.calculateDps(amount, weapon.hits!, weapon.cooldown!)),
+                format(UnitStats.calculateDps(baseAmount, weapon.hits!, weapon.cooldown!)),
+            )} DPS)</>}
+        </>;
+        return <div key={id}>
+            {this.renderModeHeading(weapon.weaponName, weapon.name ? `(${weapon.name})` : null, weapon.targets, weapon.targetFilters)}
+            <ul class="units-mode-stats">
+                {!armed && <li class="unbold">(No weapon)</li>}
+                {armed && <li><span class="unbold">{weapon.tickInterval ? 'Damage per tick:' : 'Damage:'}</span> {damage === undefined ? '—' : damageText(damage, baseDamage!)}</li>}
+                {damage !== undefined && Object.entries(weapon.damage ?? {}).filter(([attribute]) => attribute !== '').map(([attribute, target]) => <li key={attribute}>
+                    <span class="unbold">vs. {attribute}:</span> {damageText(target.damage + target.damagePerUpgrade * level, target.damage + target.damagePerUpgrade * baseLevel)}
+                </li>)}
+                {weapon.shieldDamage !== undefined && <li><span class="unbold">Additional damage vs. shields:</span> {format(weapon.shieldDamage)}</li>}
+                {(weapon.hits ?? 0) > 1 && <li><span class="unbold">Hits:</span> {weapon.hits}</li>}
+                {weapon.tickInterval !== undefined && <li><span class="unbold">Tick interval:</span> {format(weapon.tickInterval)}</li>}
+                {!singleUse && weapon.cooldown !== undefined && <li><span class="unbold">Cooldown:</span> {format(weapon.cooldown)}</li>}
+                {weapon.range !== undefined && <li><span class="unbold">Range:</span> {weapon.range === 0 ? '(Melee)' : format(weapon.range)}</li>}
+                {weapon.minimumRange !== undefined && <li><span class="unbold">Minimum range:</span> {format(weapon.minimumRange)}</li>}
+                {weapon.ignoresArmor && <li class="unbold">Ignores armor</li>}
+                {weapon.aoe && <li><span class="unbold">AoE:</span> {weapon.aoe}</li>}
+                {this.renderModeStatOverrides(overrides, overrides, unit)}
+                {weapon.notes && <li><span class="unbold">Notes:</span> {weapon.notes}</li>}
+            </ul>
+        </div>;
+    }
     static getUnit(modifiers: UnitModifiers): Unit | null {
-        const selectedUnits = playerUnits.filter((unit) => token(unit.commander) === modifiers.commander && token(unit.basename) === modifiers.unit) as PlayerUnit[];
-        const selectedUnit = selectedUnits[0];
-        if (!selectedUnit) {
-            return null;
-        }
+        const selectedUnit = playerUnits.find(unit => token(unit.commander) === modifiers.commander && token(unit.name) === modifiers.unit);
+        if (!selectedUnit) return null;
         const modes: Record<string, UnitMode> = {};
-        for (const selected of selectedUnits) {
-            const mode = selected.name.replace(selected.basename, '').trim() || "";
-            if (modes[mode]) {
-                if (!selected.attribute) throw new Error(`duplicate entry ${selected.name}`);
-                modes[mode].attributedamage ||= {};
-                modes[mode].attributedamage[selected.attribute] = {
-                    damage: selected.damage, bonus: selected.attackbonus,
-                };
-            } else {
-                if (selected.attribute) throw new Error(`first ${selected.name} must not have attribute`);
-
-                const unitMode: UnitMode = modes[mode] = {
-                    modeName: mode || null,
-                };
-                if (selected.armor !== selectedUnit.armor) unitMode.armor = selected.armor;
-                if (selected.shieldarmor !== selectedUnit.shieldarmor) unitMode.shieldarmor = selected.shieldarmor;
-                if (selected.movementspeed !== selectedUnit.movementspeed) unitMode.movementspeed = selected.movementspeed;
-                if (selected.sightrange !== selectedUnit.sightrange) unitMode.sightrange = selected.sightrange;
-                if (selected.tags !== selectedUnit.tags) unitMode.tags = selected.tags;
-                unitMode.atkrange = selected.atkrange;
-                if (selected.attackspeed) unitMode.attackspeed = selected.attackspeed;
-                if (selected.attacks) unitMode.attacks = selected.attacks;
-                if (selected.aoe) unitMode.aoe = selected.aoe;
-                if (selected.damage) {
-                    unitMode.attributedamage = {
-                        '': { damage: selected.damage, bonus: selected.attackbonus },
-                    };
-                }
+        for (const { id, label, stats, weapon } of playerUnitViews(selectedUnit)) {
+            const mode = label ? `(${label})` : '';
+            const unitMode: UnitMode = modes[id] = { modeName: mode || null, ...(weapon ? { weaponId: id } : {}) };
+            if (selectedUnit.modes[id]?.notes) unitMode.notes = selectedUnit.modes[id]!.notes;
+            if (weapon?.weaponName) unitMode.weaponName = weapon.weaponName;
+            if (weapon?.targets) unitMode.targets = weapon.targets;
+            if (weapon?.targetFilters) unitMode.targetFilters = weapon.targetFilters;
+            if (weapon?.kind) unitMode.kind = weapon.kind;
+            if (stats.armor !== selectedUnit.armor) unitMode.armor = stats.armor;
+            if (stats.shieldarmor !== selectedUnit.shieldarmor) unitMode.shieldarmor = stats.shieldarmor;
+            if (stats.movementspeed !== selectedUnit.movementspeed || stats.movement !== selectedUnit.movement || stats.targetable !== selectedUnit.targetable) {
+                unitMode.movementspeed = stats.movementspeed;
+                unitMode.movement = stats.movement;
+                unitMode.targetable = stats.targetable;
             }
+            if (stats.sightrange !== selectedUnit.sightrange) unitMode.sightrange = stats.sightrange;
+            if (stats.tags.join(',') !== selectedUnit.tags.join(',')) unitMode.tags = stats.tags.join(',');
+            unitMode.range = weapon?.range ?? 0;
+            if (weapon?.minimumRange !== undefined) unitMode.minimumRange = weapon.minimumRange;
+            if (weapon?.ignoresArmor) unitMode.ignoresArmor = true;
+            if (weapon?.shieldDamage !== undefined) unitMode.shieldDamage = weapon.shieldDamage;
+            if (weapon?.cooldown) unitMode.cooldown = weapon.cooldown;
+            if (weapon?.hits) unitMode.hits = weapon.hits;
+            if (weapon?.aoe) unitMode.aoe = weapon.aoe;
+            if (weapon?.damage && weapon.kind !== 'spawn') unitMode.damage = structuredClone(weapon.damage);
         }
         const unit: Unit = {
-            name: selectedUnit.basename,
+            name: selectedUnit.name,
             commander: selectedUnit.commander,
             race: selectedUnit.race,
             mcost: selectedUnit.mcost,
             vcost: selectedUnit.vcost,
             buildtime: selectedUnit.buildtime,
+            buildTimeIsAdditional: selectedUnit.buildTimeIsAdditional,
             supply: selectedUnit.supply,
             hp: selectedUnit.hp,
             baseHp: selectedUnit.hp,
@@ -494,8 +594,10 @@ export class UnitStats extends preact.Component<{
             shieldarmor: selectedUnit.shieldarmor,
             energy: selectedUnit.energy,
             movementspeed: selectedUnit.movementspeed,
+            movement: selectedUnit.movement,
+            targetable: selectedUnit.targetable,
             sightrange: selectedUnit.sightrange,
-            tags: selectedUnit.tags.split(','),
+            tags: [...selectedUnit.tags],
             modes,
             hpbonus: selectedUnit.hpbonus,
             armorbonus: selectedUnit.armorbonus,
@@ -509,11 +611,13 @@ export class UnitStats extends preact.Component<{
             modifier: string, operation: 'add' | 'set' | 'multiply', value: number,
             operationtype?: string | null,
             modifiermode?: string | null,
+            weapon?: string,
             modifiertag?: string | null,
             extra?: string | null,
         } | {
-            modifier: 'aoe', operation: 'replace', value: string,
+            modifier: 'aoe' | 'weaponName', operation: 'replace', value: string,
             modifiermode?: string | null,
+            weapon?: string,
         } | {
             modifier: null, operation: 'none', value: null,
         },
@@ -521,10 +625,12 @@ export class UnitStats extends preact.Component<{
         level?: number,
     ) {
         if (upgrade.operation === 'none') return;
+        const matchesWeapon = (mode: UnitMode) => mode.weaponId !== undefined && (upgrade.weapon !== undefined ? mode.weaponId === upgrade.weapon :
+            !upgrade.modifiermode || mode.modeName === upgrade.modifiermode);
         if (upgrade.operation === 'replace') {
             for (const mode of Object.values(unit.modes)) {
-                if (!upgrade.modifiermode || mode.modeName === upgrade.modifiermode) {
-                    mode.aoe = upgrade.value;
+                if (matchesWeapon(mode)) {
+                    mode[upgrade.modifier] = upgrade.value;
                 }
             }
             return;
@@ -594,14 +700,14 @@ export class UnitStats extends preact.Component<{
                 break;
             case 'damage':
                 for (const mode of Object.values(unit.modes)) {
-                    if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
+                    if (matchesWeapon(mode)) {
                         if (upgrade.modifiertag) {
-                            mode.attributedamage![upgrade.modifiertag] ||= {
-                                ...mode.attributedamage!['']!,
+                            mode.damage![upgrade.modifiertag] ||= {
+                                ...mode.damage!['']!,
                             };
-                            mode.attributedamage![upgrade.modifiertag]!.damage = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.damage, upgrade, level);
+                            mode.damage![upgrade.modifiertag]!.damage = this.applyModifier(mode.damage![upgrade.modifiertag]!.damage, upgrade, level);
                         } else {
-                            for (const damage of Object.values(mode.attributedamage ||= { '': { damage: 0, bonus: 0 } })) {
+                            for (const damage of Object.values(mode.damage ||= { '': { damage: 0, damagePerUpgrade: 0 } })) {
                                 damage.damage = this.applyModifier(damage.damage, upgrade, level);
                             }
                         }
@@ -610,15 +716,15 @@ export class UnitStats extends preact.Component<{
                 break;
             case 'attackbonus':
                 for (const mode of Object.values(unit.modes)) {
-                    if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
+                    if (matchesWeapon(mode)) {
                         if (upgrade.modifiertag) {
-                            mode.attributedamage![upgrade.modifiertag] ||= {
-                                ...mode.attributedamage!['']!,
+                            mode.damage![upgrade.modifiertag] ||= {
+                                ...mode.damage!['']!,
                             };
-                            mode.attributedamage![upgrade.modifiertag]!.bonus = this.applyModifier(mode.attributedamage![upgrade.modifiertag]!.bonus, upgrade, level);
+                            mode.damage![upgrade.modifiertag]!.damagePerUpgrade = this.applyModifier(mode.damage![upgrade.modifiertag]!.damagePerUpgrade, upgrade, level);
                         } else {
-                            for (const damage of Object.values(mode.attributedamage ||= { '': { damage: 0, bonus: 0 } })) {
-                                damage.bonus = this.applyModifier(damage.bonus, upgrade, level);
+                            for (const damage of Object.values(mode.damage ||= { '': { damage: 0, damagePerUpgrade: 0 } })) {
+                                damage.damagePerUpgrade = this.applyModifier(damage.damagePerUpgrade, upgrade, level);
                             }
                         }
                     }
@@ -626,22 +732,22 @@ export class UnitStats extends preact.Component<{
                 break;
             case 'Hits':
                 for (const mode of Object.values(unit.modes)) {
-                    if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
-                        mode.attacks = this.applyModifier(mode.attacks!, upgrade, level);
+                    if (matchesWeapon(mode)) {
+                        mode.hits = this.applyModifier(mode.hits!, upgrade, level);
                     }
                 }
                 break;
             case 'Attack_Speed':
                 for (const mode of Object.values(unit.modes)) {
-                    if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
-                        mode.attackspeed = this.applyModifier(mode.attackspeed!, upgrade, level);
+                    if (matchesWeapon(mode)) {
+                        mode.cooldown = this.applyModifier(mode.cooldown!, upgrade, level);
                     }
                 }
                 break;
             case 'Range':
                 for (const mode of Object.values(unit.modes)) {
-                    if (upgrade.modifiermode ? mode.modeName === upgrade.modifiermode : true) {
-                        mode.atkrange = this.applyModifier(mode.atkrange!, upgrade, level);
+                    if (matchesWeapon(mode)) {
+                        mode.range = this.applyModifier(mode.range!, upgrade, level);
                     }
                 }
                 break;
@@ -649,10 +755,14 @@ export class UnitStats extends preact.Component<{
     }
     static getUpgradedUnit(unit: Unit, modifiers: UnitModifiers) {
         const upgradedUnit = JSON.parse(JSON.stringify(unit)) as Unit;
+        for (const upgrade of playerUpgrades as PlayerUpgrade[]) {
+            if (token(upgrade.commander) !== modifiers.commander || token(upgrade.unit) !== modifiers.unit || modifiers.upgrades[upgrade.name]) continue;
+            for (const mode of upgrade.unlocksModes ?? []) delete upgradedUnit.modes[mode];
+        }
 
         if (modifiers.commander === 'dehaka' && modifiers.unit === 'dehaka') {
             const level = Math.max(1, Math.min(UnitStats.heroLevelLimit(modifiers), Math.trunc(modifiers.upgradeLevels.hero ?? 1)));
-            upgradedUnit.modes['']!.attributedamage!['']!.damage = (level + 1) * 10;
+            upgradedUnit.modes['']!.damage!['']!.damage = (level + 1) * 10;
             // Each level requires 15 more Essence than the previous one:
             // 15 + 30 + ... + 15 * (level - 1). Use that minimum for the HP estimate.
             const minimumEssence = 15 * level * (level - 1) / 2;
@@ -661,11 +771,11 @@ export class UnitStats extends preact.Component<{
 
         // preupgrade -> mastery -> prestige -> generic upgrade -> upgrade -> post-prestige
 
-        const metaUpgrades: { [upgrade: string]: [PlayerTalent, level: number | null][] } = {};
+        const metaUpgrades: { [upgrade: string]: [Exclude<PlayerTalent, { operation: 'replace' }>, level: number | null][] } = {};
 
         if (unit.name === 'Sky Fury' && (modifiers.upgradeLevels.rank ?? 0) >= 1) {
-            delete upgradedUnit.modes['(Fighter Mode)']!.attributedamage!['Armored'];
-            upgradedUnit.modes['(Fighter Mode)']!.attributedamage!['']!.damage = 21;
+            delete upgradedUnit.modes['fighter-mode']!.damage!['Armored'];
+            upgradedUnit.modes['fighter-mode']!.damage!['']!.damage = 21;
         }
         for (const upgrade of playerUpgrades as PlayerUpgrade[]) {
             if (!modifiers.upgrades[upgrade.name]) continue;
@@ -676,6 +786,7 @@ export class UnitStats extends preact.Component<{
             this.applyUpgrade(upgrade, upgradedUnit);
         }
         for (const talent of playerTalents as PlayerTalent[]) {
+            if (talent.target === 'skill') continue;
             if (talent.talenttype !== 'mastery') continue;
             if (modifiers.unit !== token(talent.unit)) continue;
             if (modifiers.commander !== token(talent.commander)) continue;
@@ -690,6 +801,7 @@ export class UnitStats extends preact.Component<{
             this.applyUpgrade(talent, upgradedUnit, level);
         }
         for (const talent of playerTalents as PlayerTalent[]) {
+            if (talent.target === 'skill') continue;
             if (talent.talenttype !== 'prestige') continue;
             if (!modifiers.prestiges[talent.name]) continue;
             if (modifiers.unit !== token(talent.unit)) continue;
@@ -707,9 +819,9 @@ export class UnitStats extends preact.Component<{
         const weaponUpgrades = levels.weapon ?? levels.rank ?? levels.artifacts;
         if (weaponUpgrades) {
             for (const mode of Object.values(upgradedUnit.modes)) {
-                for (const attack of Object.values(mode.attributedamage || {})) {
-                    if (levels.rank) attack.bonus ||= attack.damage * 0.25;
-                    attack.damage += weaponUpgrades * attack.bonus;
+                for (const attack of Object.values(mode.damage || {})) {
+                    if (levels.rank) attack.damagePerUpgrade ||= attack.damage * 0.25;
+                    attack.damage += weaponUpgrades * attack.damagePerUpgrade;
                 }
             }
         }
@@ -767,8 +879,10 @@ export class UnitStats extends preact.Component<{
                 }
             }
             this.applyUpgrade(upgrade, upgradedUnit);
+            if (upgrade.buildTimeIsAdditional) upgradedUnit.buildTimeIsAdditional = true;
         }
         for (const talent of playerTalents as PlayerTalent[]) {
+            if (talent.target === 'skill') continue;
             if (talent.talenttype !== 'post') continue;
             if (!modifiers.prestiges[talent.name]) continue;
             if (modifiers.unit !== token(talent.unit)) continue;
@@ -778,7 +892,7 @@ export class UnitStats extends preact.Component<{
             this.applyUpgrade(talent, upgradedUnit);
         }
         if (modifiers.upgrades['Redline Power Cells']) {
-            upgradedUnit.modes['']!.attributedamage!['']!.damage += 60;
+            upgradedUnit.modes['']!.damage!['']!.damage += 60;
         }
         if (modifiers.unit === 'mutalisk' && ['abathur', 'kerrigan'].includes(modifiers.commander) &&
             (levels.weapon || modifiers.upgrades['Vicious Glave'] || modifiers.upgrades['Severing Glave'] || modifiers.upgrades['Sundering Glave'])) {
@@ -802,12 +916,14 @@ export class UnitStats extends preact.Component<{
         return upgradedUnit;
     }
     static modifiers(commander: Token, selectedUnit: Token): UnitModifiers {
+        const amonUnit = amonUnits.find(unit => token(unit.race) === commander && token(unit.name) === selectedUnit);
+        if (amonUnit) return { commander, unit: selectedUnit, upgrades: {}, masteries: {}, prestiges: {}, upgradeLevels: this.amonUpgradeLevels(amonUnit) };
         const upgradesList = playerUpgrades.filter((u) => token(u.commander) === commander && token(u.unit) === selectedUnit);
         const talentsList = playerTalents.filter((u) => token(u.commander) === commander && token(u.unit) === selectedUnit);
 
         const upgrades: UnitModifiers['upgrades'] = {};
         const masteries: UnitModifiers['masteries'] = {};
-        const prestiges: UnitModifiers['prestiges'] = {};
+        const supportedPrestiges = new Set<string>();
         let upgradeLevels: UnitModifiers['upgradeLevels'] = {};
         for (const upgrade of upgradesList) {
             upgrades[upgrade.name] = false;
@@ -816,22 +932,25 @@ export class UnitStats extends preact.Component<{
             if (talent.talenttype === 'mastery') {
                 masteries[talent.name] = 0;
             } else {
-                prestiges[talent.name] = false;
+                supportedPrestiges.add(talent.name);
             }
         }
 
-        const unit = playerUnits.find((u) => token(u.commander) === commander && token(u.basename) === selectedUnit);
+        const unit = playerUnits.find((u) => token(u.commander) === commander && token(u.name) === selectedUnit);
         if (unit?.armorbonus || unit?.hpbonus) {
             upgradeLevels.armor = 0;
         }
         if (unit?.shieldbonus) {
             upgradeLevels.shields = 0;
         }
-        if (unit?.attackbonus) {
+        if (unit && Object.values(unit.modes).some(mode => Object.values(mode.damage ?? {}).some(target => target.damagePerUpgrade))) {
             upgradeLevels.weapon = 0;
         }
         if (commander === 'zeratul') {
-            if (Object.keys(upgradeLevels).length) upgradeLevels = { artifacts: 0 };
+            if (Object.keys(upgradeLevels).length) {
+                upgradeLevels = { artifacts: 0 };
+                supportedPrestiges.add('Herald of the Void');
+            }
         }
         if (commander === 'mengsk') {
             const RG = ['aegisguard', 'blackhammer', 'emperorsshadow', 'prideofaugustgrad', 'shockdivision', 'skyfury'];
@@ -843,12 +962,26 @@ export class UnitStats extends preact.Component<{
         if (commander === 'abathur' && 'Maximum Biomass' in upgrades) {
             delete upgrades['Maximum Biomass'];
             upgradeLevels.biomass = 0;
-            prestiges['The Limitless'] = false;
+            supportedPrestiges.add('The Limitless');
         }
+        for (const skill of unitSkills.values()) {
+            if (token(skill.commander) !== commander || token(skill.unit) !== selectedUnit) continue;
+            if (skill.prestige) supportedPrestiges.add(skill.prestige);
+            for (const prestige of skill.excludedPrestiges ?? []) supportedPrestiges.add(prestige);
+        }
+        // Both stats and skills contribute options; use the numbered source-data order.
+        const summary = commandersummaries.find(summary => summary.commander === commander);
+        const prestiges = Object.fromEntries([summary?.prestige1, summary?.prestige2, summary?.prestige3]
+            .map(name => name?.trim())
+            .filter((name): name is string => !!name && supportedPrestiges.has(name))
+            .map(name => [name, false]));
         return { commander, unit: selectedUnit, upgrades, upgradeLevels, masteries, prestiges };
     }
     static heroLevelLimit(modifiers: UnitModifiers): number {
         return modifiers.prestiges['Devouring One'] ? 11 : 15;
+    }
+    static artifactLimit(modifiers: UnitModifiers): number {
+        return modifiers.prestiges['Herald of the Void'] ? 2 : 3;
     }
     static biomassLimit(modifiers: UnitModifiers): number {
         return modifiers.prestiges['The Limitless'] ? 200 : modifiers.prestiges['Essence Hoarder'] ? 125 : 100;
@@ -865,33 +998,38 @@ export class UnitStats extends preact.Component<{
         </fieldset>;
     }
     renderSkills(): preact.ComponentChildren {
-        const { commander, unit } = this.props.modifiers!;
-        const skills = [...unitSkills].filter(([, skill]) => token(skill.commander) === commander && token(skill.unit) === unit);
+        const { commander, unit, prestiges, upgrades } = this.props.modifiers!;
+        const skills = [...unitSkills].filter(([, skill]) => token(skill.commander) === commander && token(skill.unit) === unit && skillVisible(skill, prestiges, upgrades));
         if (!skills.length) return null;
         const race = token(UnitStats.getUnit(this.props.modifiers!)!.race);
+        const activeSkills = skills.filter(([, skill]) => skill.type !== 'passive');
         const groups = [
-            { title: 'Skills', skills: skills.filter(([, skill]) => skill.type !== 'passive') },
+            ...(commander === 'nova' && unit === 'nova' ? [
+                { title: 'Skills (Stealth Mode)', skills: activeSkills.filter(([, skill]) => skill.mode === 'Stealth Mode') },
+                { title: 'Skills (Assault Mode)', skills: activeSkills.filter(([, skill]) => skill.mode === 'Assault Mode') },
+            ] : [{ title: 'Skills', skills: activeSkills }]),
             { title: 'Passives', skills: skills.filter(([, skill]) => skill.type === 'passive') },
         ].filter(group => group.skills.length);
         return groups.map(group => <preact.Fragment key={group.title}>
             <p class="units-head">{group.title}</p>
             <ul class="units-mode-stats units-skills">
-                {group.skills.map(([key, skill]) => {
+                {group.skills.map(([key, baseSkill]) => {
+                    const skill = resolveSkill(baseSkill, this.props.modifiers!);
                     const costs = skillCosts(skill, race);
                     return <li key={key}>
-                        <span class="units-skill" data-tooltip={key} data-race={race} tabIndex={0}>
+                        <span class="units-skill" data-tooltip={key} data-skill-values={skillTooltipValues(baseSkill, skill)} data-race={race} tabIndex={0}>
                             <span class="units-skill-label">
                                 {skill.icons.map(icon => <img key={icon} src={icon} alt="" width={20} height={20} />)}{' '}
+                                {skill.requiresupgrade && <><img src="/images/commanderdata/unitupgrades/iconlock.png" alt="Requires an upgrade:" width={20} height={20} />{' '}</>}
                                 {skill.name}<span class="unbold">
-                                    {skill.prestige && <> ({skill.prestige})</>}
-                                    {!!skill.charges && <> <span class="units-skill-cost units-annotation">({skill.charges} charges)</span></>}
+                                    {!!skill.charges && <> <span class={`units-skill-cost units-annotation${skill.modifiedFields?.includes('charges') ? ' units-modified' : ''}`}>({skill.charges} {skill.charges === 1 ? 'charge' : 'charges'})</span></>}
                                     {skill.type === 'autocast' && <span class="units-annotation"> (autocast)</span>}
                                 </span>
                             </span>
                             {!!costs.length && <> <span class="units-skill-costs unbold">
                                 {costs.map((cost, index) => <preact.Fragment key={cost.label}>
                                     {index > 0 && ' '}<span class="units-skill-cost">
-                                        <img src={cost.icon} alt={cost.label} width={20} height={20} /> {cost.value}
+                                        <img src={cost.icon} alt={cost.label} width={20} height={20} /> <span class={skill.modifiedFields?.includes(cost.field) ? 'units-modified' : undefined}>{cost.value}</span>
                                     </span>
                                 </preact.Fragment>)}
                             </span></>}
@@ -903,6 +1041,7 @@ export class UnitStats extends preact.Component<{
     }
     renderUpgrades(): preact.ComponentChildren {
         const modifiers = this.props.modifiers!;
+        const race = token(UnitStats.getUnit(modifiers)!.race);
         // filter out Mengsk Royal Guard rank upgrades
         const upgrades = Object.keys(modifiers.upgrades).filter(upgrade => !/^[123]$/.test(upgrade));
         const masteries = Object.keys(modifiers.masteries);
@@ -919,7 +1058,7 @@ export class UnitStats extends preact.Component<{
                 .map((u) => [u.name, { tooltip: `upgrades/${token(u.commander)}/${u.icon}`, icon: u.icon, unit: u.unit }])
         );
         const selectableUpgrades = new Set(
-            unitUpgrades.filter((u) => u.operation !== 'none')
+            unitUpgrades.filter((u) => u.operation !== 'none' || u.skillModifiers?.length || u.unlocksModes?.length)
                 .map((u) => u.name)
         );
         const temporaryUpgrades = new Set(unitUpgrades.filter(u => u.temporary).map(u => u.name));
@@ -944,7 +1083,7 @@ export class UnitStats extends preact.Component<{
                         const selectable = selectableUpgrades.has(upgrade);
                         const UpgradeLabel = selectable ? 'label' : 'span';
                         const iconSrc = upgradeIcon(upgrade);
-                        return <div><UpgradeLabel class={selectable ? undefined : "units-upgrade-passive"} data-tooltip={upgradeData.get(upgrade)?.tooltip}>
+                        return <div><UpgradeLabel class={selectable ? undefined : "units-upgrade-passive"} data-tooltip={upgradeData.get(upgrade)?.tooltip} data-race={race}>
                             <span class="units-upgrade-marker">{selectable ? <input type="checkbox" value={upgrade} onChange={this.onCheckUpgrade} checked={modifiers.upgrades[upgrade]} /> : <span class="unbold" aria-hidden="true">•</span>}</span>{' '}
                             <img key={iconSrc} src={iconSrc} alt="" width={20} height={20} /> {upgrade}{temporaryUpgrades.has(upgrade) && <span class="unbold units-annotation"> (temporary)</span>}
                         </UpgradeLabel></div>;
@@ -968,7 +1107,7 @@ export class UnitStats extends preact.Component<{
                 </fieldset>)}
                 {'artifacts' in modifiers.upgradeLevels && (<fieldset>
                     <legend>Artifact fragments collected</legend>
-                    {upgradeLevels.map(level => <label><input type="radio" name={`artifacts-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.artifacts === level} /> {level}</label>)}
+                    {upgradeLevels.filter(level => level <= UnitStats.artifactLimit(modifiers)).map(level => <label><input type="radio" name={`artifacts-${this.props.formKey}`} value={level} onChange={this.onCheckUpgradeLevel} checked={modifiers.upgradeLevels.artifacts === level} /> {level}</label>)}
                 </fieldset>)}
                 {!!masteries.length && (<fieldset class="units-masteries">
                     <legend>Masteries</legend>
@@ -1025,6 +1164,9 @@ export class UnitStats extends preact.Component<{
         const newPrestiges = Object.fromEntries(Object.keys(modifiers.prestiges).map((prestige) => [prestige, false]));
         const prestiges = { ...newPrestiges, [target.value]: target.checked };
         const upgradeLevels = { ...modifiers.upgradeLevels };
+        if (upgradeLevels.artifacts !== undefined) {
+            upgradeLevels.artifacts = Math.min(upgradeLevels.artifacts, UnitStats.artifactLimit({ ...modifiers, prestiges }));
+        }
         if (upgradeLevels.hero !== undefined) {
             upgradeLevels.hero = Math.min(upgradeLevels.hero, UnitStats.heroLevelLimit({ ...modifiers, prestiges }));
             this.setState({ levelInputs: null });
@@ -1089,33 +1231,81 @@ export class UnitStats extends preact.Component<{
         if (value !== baseValue) return <strong class="units-modified">{Number(value.toFixed(2))}</strong>
         return value;
     }
-    static calculateDps(damage: number, attacks: number, attackspeed: number): number {
-        return damage * attacks / attackspeed;
+    static calculateDps(damage: number, hits: number, cooldown: number): number {
+        return damage * hits / cooldown;
+    }
+    renderModeHeading(weaponName: string | undefined, modeName: string | null, targets?: UnitModeData['targets'], targetFilters?: string) {
+        const label = modeName?.replace(/^\((.*)\)$/, '$1') ?? '';
+        const labelTarget = label.match(/(?:^| )(Air|Ground|Structure)$/)?.[1];
+        const form = labelTarget ? label.slice(0, -labelTarget.length).trim() : label;
+        const showForm = form && form !== weaponName && form !== 'Weapon';
+        const [required, excluded] = (targetFilters ?? '').split(';').map(filters => filters.split(','));
+        const structuresOnly = labelTarget === 'Structure' || required?.includes('Structure');
+        const target = structuresOnly ? 'Structures' : targets?.replace(',', ', ') ?? labelTarget;
+        const restriction = !structuresOnly && excluded?.includes('Structure') ? ', non-structures' : '';
+        return <p class="units-head">
+            {weaponName ? <>
+                {showForm && <><strong class="units-mode-name">{form}:</strong>{' '}</>}
+                <span class="units-weapon-name">{weaponName}</span>
+            </> : <strong class="units-mode-name">{label || "Weapon"}</strong>}
+            {target && <span class="units-weapon-target unbold"> ({target}{restriction})</span>}
+        </p>;
+    }
+    renderNotes(notes?: string) {
+        if (!notes) return null;
+        return <p><span class="unbold">Notes:</span>{notes.split('<br>').map(note => <><br />{note}</>)}</p>;
+    }
+    renderMovement(speed: number, baseSpeed: number, movement: PlayerUnit['movement'], targetable?: PlayerUnit['targetable']) {
+        const planes = targetable ?? movement ?? 'Ground';
+        const qualifier = planes === 'Ground,Air' ? 'ground and air targetable' : speed === 0 && planes === 'Air' ? 'air targetable' : null;
+        return <>
+            {speed === 0 ? <span class="unbold">Immobile</span> : <>
+                <span class="unbold">{movement === 'Air' ? 'Air Speed:' : 'Move Speed:'}</span>{' '}{this.renderValue(speed, baseSpeed)}
+            </>}
+            {qualifier && <span class="units-targetability unbold"> ({qualifier})</span>}
+        </>;
+    }
+    renderModeStatOverrides(
+        mode: Pick<UnitMode, 'armor' | 'movementspeed' | 'sightrange' | 'movement' | 'targetable'>,
+        baseMode: Pick<UnitMode, 'armor' | 'movementspeed' | 'sightrange' | 'movement' | 'targetable'>,
+        baseUnit: Pick<Unit, 'armor' | 'movementspeed' | 'sightrange' | 'movement' | 'targetable'>,
+    ) {
+        return <>
+            {mode.armor !== undefined && <li><span class="unbold">Armor:</span> {this.renderValue(mode.armor, baseMode.armor ?? baseUnit.armor)}</li>}
+            {mode.movementspeed !== undefined && <li>{this.renderMovement(mode.movementspeed, baseMode.movementspeed ?? baseUnit.movementspeed, mode.movement ?? baseUnit.movement, mode.targetable ?? baseUnit.targetable)}</li>}
+            {mode.sightrange !== undefined && <li><span class="unbold">Vision:</span> {this.renderValue(mode.sightrange, baseMode.sightrange ?? baseUnit.sightrange)}</li>}
+        </>;
     }
     renderMode(mode: UnitMode, baseMode: UnitMode, baseUnit: Unit) {
+        if (mode.weaponId === undefined && !mode.modeName && !mode.damage) return <><p class="unbold">(No weapon)</p>{this.renderNotes(mode.notes)}</>;
         return <>
-            <p class="units-head">{mode.modeName || "Weapon"}</p>
+            {this.renderModeHeading(mode.weaponName, mode.modeName, mode.targets, mode.targetFilters)}
             <ul class="units-mode-stats">
-                {!mode.attributedamage && <li class="unbold">(No weapon)</li>}
-                {!!mode.attributedamage && <>
-                    {Object.entries(mode.attributedamage || {}).map(([attribute, damage]) => {
-                        const dps = UnitStats.calculateDps(damage.damage, mode.attacks!, mode.attackspeed!);
-                        const baseDamage = baseMode.attributedamage?.[attribute]?.damage ?? baseMode.attributedamage?.['']?.damage ?? 0;
-                        const baseDps = UnitStats.calculateDps(baseDamage, baseMode.attacks!, baseMode.attackspeed!);
+                {!mode.damage && <li>
+                    {mode.kind === 'spawn' ? <span class="unbold">(Spawns units)</span> :
+                        mode.weaponId !== undefined ? <><span class="unbold">Damage:</span> —</> : <span class="unbold">(No weapon)</span>}
+                </li>}
+                {!!mode.damage && <>
+                    {Object.entries(mode.damage || {}).map(([attribute, damage]) => {
+                        const dps = UnitStats.calculateDps(damage.damage, mode.hits!, mode.cooldown!);
+                        const baseDamage = baseMode.damage?.[attribute]?.damage ?? baseMode.damage?.['']?.damage ?? 0;
+                        const baseDps = UnitStats.calculateDps(baseDamage, baseMode.hits!, baseMode.cooldown!);
                         const noDps = ['Baneling', 'Baneling Spawn', 'Scourge', 'Volatile Infested', 'Spider Mine', 'Explosive Creeper'];
-                        const dpsMessage = (!noDps.includes(baseUnit.name)) ? <> ({this.renderValue(+dps.toFixed(2), +baseDps.toFixed(2))} DPS)</> : '';
+                        const dpsMessage = (!mode.kind && !noDps.includes(baseUnit.name)) ? <> ({this.renderValue(+dps.toFixed(2), +baseDps.toFixed(2))} DPS)</> : '';
                         return <li>
                             <span class="unbold">{attribute ? `vs. ${attribute}:` : 'Damage:'}</span> {this.renderValue(damage.damage, baseDamage)}{dpsMessage}
                         </li>;
                     })}
-                    {(mode.attacks! > 1 || baseMode.attacks! > 1) && <li><span class="unbold">Hits:</span> {this.renderValue(mode.attacks!, baseMode.attacks!)}</li>}
-                    <li><span class="unbold">Cooldown:</span> {this.renderValue(mode.attackspeed!, baseMode.attackspeed!)}</li>
-                    <li><span class="unbold">Range:</span> {mode.atkrange === 0 ? "(Melee)" : this.renderValue(mode.atkrange!, baseMode.atkrange!)}</li>
+                    {mode.shieldDamage !== undefined && <li><span class="unbold">Additional damage vs. shields:</span> {this.renderValue(mode.shieldDamage, baseMode.shieldDamage ?? 0)}</li>}
+                    {(mode.hits! > 1 || baseMode.hits! > 1) && <li><span class="unbold">Hits:</span> {this.renderValue(mode.hits!, baseMode.hits!)}</li>}
+                    <li><span class="unbold">Cooldown:</span> {this.renderValue(mode.cooldown!, baseMode.cooldown!)}</li>
+                    <li><span class="unbold">Range:</span> {mode.range === 0 ? "(Melee)" : this.renderValue(mode.range!, baseMode.range!)}</li>
                 </>}
+                {mode.minimumRange !== undefined && <li><span class="unbold">Minimum range:</span> {Number(mode.minimumRange.toFixed(2))}</li>}
+                {mode.ignoresArmor && <li class="unbold">Ignores armor</li>}
                 {mode.aoe && <li><span class="unbold">AoE:</span> {mode.aoe !== baseMode.aoe ? <strong class="units-modified">{mode.aoe}</strong> : mode.aoe}</li>}
-                {mode.armor !== undefined && <li><span class="unbold">Armor:</span> {this.renderValue(mode.armor, baseMode.armor ?? baseUnit.armor)}</li>}
-                {mode.movementspeed !== undefined && <li><span class="unbold">Move speed:</span> {this.renderValue(mode.movementspeed, baseMode.movementspeed ?? baseUnit.movementspeed)}</li>}
-                {mode.sightrange !== undefined && <li><span class="unbold">Vision:</span> {this.renderValue(mode.sightrange, baseMode.sightrange ?? baseUnit.sightrange)}</li>}
+                {this.renderModeStatOverrides(mode, baseMode, baseUnit)}
+                {mode.notes && <li><span class="unbold">Notes:</span> {mode.notes}</li>}
             </ul>
         </>;
     }
@@ -1178,10 +1368,7 @@ export class UnitStats extends preact.Component<{
         return (
             <td class="units-unit">
                 <UnitContent selection={`${modifiers.commander}/${modifiers.unit}`}>
-                <div class={`units-actions${this.props.onClickCompare ? " units-actions-compare" : ""}`}>
-                    {this.props.onClickClose && <button type="button" onClick={this.props.onClickClose} aria-label="Close comparison">&times;</button>}
-                    {this.props.onClickCompare && <button type="button" onClick={this.props.onClickCompare}>Compare →</button>}
-                </div>
+                {this.renderActions()}
                 <h2 class="units-name">{unit.name}</h2>
                 <div class="units-identity">
                     {imageSrc && <div class="units-art"><img key={imageSrc} src={imageSrc} alt="" class="units-portrait" /></div>}
@@ -1189,7 +1376,7 @@ export class UnitStats extends preact.Component<{
                         {(unit.mcost || unit.vcost || unit.buildtime || unit.supply) ? <p class="units-costs">
                             <span><img src="/images/commanderdata/unitupgrades/iconmineral.png" alt="Minerals:" /> {this.renderValue(unit.mcost, baseUnit.mcost)}</span>
                             <span><img src={`/images/commanderdata/unitupgrades/icongas_${race}.png`} alt="Gas:" /> {this.renderValue(unit.vcost, baseUnit.vcost)}</span>
-                            <span><img src={`/images/commanderdata/unitupgrades/icontime_${race}.png`} alt="Build Time:" /> {this.renderValue(unit.buildtime, baseUnit.buildtime)}</span>
+                            <span title={unit.buildTimeIsAdditional ? 'Additional morph or installation time after the parent unit is built' : undefined}><img src={`/images/commanderdata/unitupgrades/icontime_${race}.png`} alt={unit.buildTimeIsAdditional ? 'Additional Build Time:' : 'Build Time:'} /> {unit.buildTimeIsAdditional && '+'}{this.renderValue(unit.buildtime, baseUnit.buildtime)}</span>
                             <span><img src={`/images/commanderdata/unitupgrades/iconsupply_${race}.png`} alt="Supply:" /> {this.renderValue(unit.supply, baseUnit.supply)}</span>
                         </p> : <p class="units-costs">
                             (No cost)
@@ -1207,12 +1394,14 @@ export class UnitStats extends preact.Component<{
                         {!!unit.shieldarmor && <> <span class="unbold">| Shield Armor:</span> {this.renderValue(unit.shieldarmor, baseUnit.shieldarmor)}</>}
                     </li>}
                     {!!unit.energy && <li class="units-energy"><span class="unbold">Energy:</span> {this.renderValue(unit.energy, baseUnit.energy)}</li>}
-                    <li><span class="unbold">Move speed:</span> {this.renderValue(unit.movementspeed, baseUnit.movementspeed)}</li>
+                    <li>{this.renderMovement(unit.movementspeed, baseUnit.movementspeed, unit.movement, unit.targetable)}</li>
                     <li><span class="unbold">Vision:</span> {this.renderValue(unit.sightrange, baseUnit.sightrange)}</li>
                 </ul>
-                {Object.values(unit.modes).map((mode) => this.renderMode(mode, baseUnit.modes[mode.modeName || '']!, baseUnit))}
+                {Object.entries(unit.modes)
+                    .filter(([id]) => !(modifiers.commander === 'nova' && modifiers.unit === 'nova' && modifiers.prestiges['Infiltration Specialist'] && id === 'assault-mode'))
+                    .map(([id, mode]) => this.renderMode(mode, baseUnit.modes[id]!, baseUnit))}
                 {this.renderSkills()}
-                {unit.notes && <p><span class="unbold">Notes:</span><br />{unit.notes.split("<br>").map((note) => <div>{note}</div>)}</p>}
+                {this.renderNotes(unit.notes)}
                 {this.renderUpgrades()}
                 </UnitContent>
             </td>

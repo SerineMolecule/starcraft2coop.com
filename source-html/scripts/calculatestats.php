@@ -13,7 +13,7 @@ if (!isset($_GET['mode'])) {
 //Globals here
 $round2 = ['Attack_Speed', 'damage', 'Move_Speed', 'Range', 'Vision'];
 $legionUnits = ['Zealot', 'Void Ray', 'Dark Archon'];
-$royalGuard = ['Aegis Guard', 'Blackhammer', 'Emperors Shadow', 'Pride of Augustgrad', 'Shock Division', 'Sky Fury'];
+$royalGuard = ['Aegis Guard', 'Blackhammer', "Emperor's Shadow", 'Pride of Augustgrad', 'Shock Division', 'Sky Fury'];
 $shieldCommanders = ['Alarak', 'Artanis', 'Fenix', 'Karax', 'Vorazun', 'Zeratul'];
 
 //Passed data will be received in one of  three forms:
@@ -963,7 +963,7 @@ function checkVariable($var, $checktype)
         die();
     }
     if ($checktype == 'text') {
-        if (ctype_alnum(str_replace([' ', '.'], '', $var)) === false) {
+        if (ctype_alnum(str_replace([' ', '.', '-', "'", '"'], '', $var)) === false) {
             echo 'Error!';
             die();
         }
