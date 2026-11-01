@@ -28,6 +28,7 @@ for (const entrypoint of [
     './html/scripts/search-results.tsx',
     './html/scripts/tooltips.ts',
     './html/scripts/units.tsx',
+    './html/scripts/units-loader.tsx',
     './html/scripts/tiermaker.tsx',
 ]) {
     await Bun.build({

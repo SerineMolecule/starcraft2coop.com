@@ -57,8 +57,7 @@
                 "cooldown": {
                     "type": [
                         "number",
-                        "string",
-                        "null"
+                        "string"
                     ],
                     "description": "Repeat cooldown in game seconds, or text for a conditional timing. Numeric modifiers must reject text."
                 },
@@ -80,37 +79,23 @@
                 "energycost": {
                     "type": [
                         "number",
-                        "string",
-                        "null"
+                        "string"
                     ],
-                    "description": "Energy cost, or text for a conditional cost. Null means unspecified; 0 means explicitly free."
+                    "description": "Energy cost, or text for a conditional cost. Omitted means unspecified; 0 means explicitly free."
                 },
                 "charges": {
                     "$ref": "#/definitions/PositiveInteger",
                     "description": "Maximum stored charges, when the skill can store more than one use."
                 },
                 "rankrequired": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/NonNegativeInteger"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ]
+                    "$ref": "#/definitions/NonNegativeInteger"
                 },
                 "mode": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "prestige": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "Only show this variant when the named prestige is selected; null is unrestricted."
+                    "type": "string",
+                    "description": "Only show this variant when the named prestige is selected; omitted is unrestricted."
                 },
                 "excludedPrestiges": {
                     "type": "array",
@@ -128,10 +113,7 @@
                     "description": "Hide this skill once the named per-unit upgrade is selected (e.g. a completed installation command)."
                 },
                 "requirements": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
+                    "type": "string",
                     "description": "Other stated prerequisites, such as artifacts or skill points, and exclusions."
                 }
             },
@@ -142,13 +124,7 @@
                 "icons",
                 "description",
                 "type",
-                "requiresupgrade",
-                "cooldown",
-                "energycost",
-                "rankrequired",
-                "mode",
-                "prestige",
-                "requirements"
+                "requiresupgrade"
             ],
             "additionalProperties": false,
             "description": "Skills transcribed from the commander overviews, including hero and summoned-unit skills."

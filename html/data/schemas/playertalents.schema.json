@@ -14,64 +14,79 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "modifier": {
-                            "type": "string"
-                        },
-                        "modifierupgrade": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "description": "which upgrade needs to be enabled for this to have an effect?"
-                        },
-                        "extra": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "value": {
-                            "type": "number"
-                        },
-                        "operation": {
-                            "type": "string",
-                            "enum": [
-                                "add",
-                                "set",
-                                "multiply"
-                            ]
-                        },
-                        "operationtype": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "increase",
-                                "decrease",
-                                null
-                            ]
-                        },
                         "talenttype": {
                             "type": "string",
-                            "enum": [
-                                "mastery",
-                                "prestige",
-                                "post"
-                            ]
+                            "const": "mastery"
                         },
-                        "target": {
-                            "type": "string",
-                            "enum": [
-                                "unit",
-                                "upgrade"
-                            ]
+                        "changes": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "properties": {
+                                            "modifier": {
+                                                "type": "string"
+                                            },
+                                            "modifierupgrade": {
+                                                "type": "string",
+                                                "description": "Which upgrade needs to be enabled for this change to have an effect?"
+                                            },
+                                            "extra": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "number"
+                                            },
+                                            "operation": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "add",
+                                                    "set",
+                                                    "multiply"
+                                                ]
+                                            },
+                                            "operationtype": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "increase",
+                                                    "decrease"
+                                                ]
+                                            },
+                                            "target": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "unit",
+                                                    "upgrade"
+                                                ]
+                                            }
+                                        },
+                                        "required": [
+                                            "modifier",
+                                            "value",
+                                            "operation",
+                                            "target"
+                                        ],
+                                        "additionalProperties": false
+                                    },
+                                    {
+                                        "$ref": "#/definitions/PlayerSkillTalentChange"
+                                    }
+                                ]
+                            },
+                            "minItems": 1
                         },
                         "talentid": {
                             "$ref": "#/definitions/PositiveInteger"
                         },
-                        "unit": {
-                            "type": "string"
+                        "units": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Units receiving this exact definition, in this commander.",
+                            "minItems": 1,
+                            "uniqueItems": true
                         },
                         "commander": {
                             "type": "string"
@@ -88,53 +103,19 @@
                         }
                     },
                     "required": [
+                        "changes",
                         "commander",
-                        "extra",
-                        "modifier",
-                        "modifierupgrade",
                         "name",
                         "nameid",
-                        "operation",
-                        "operationtype",
                         "talentid",
                         "talenttype",
-                        "target",
-                        "unit",
-                        "value"
+                        "units"
                     ]
                 },
                 {
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "modifier": {
-                            "type": "string",
-                            "enum": [
-                                "aoe",
-                                "weaponName"
-                            ]
-                        },
-                        "operation": {
-                            "type": "string",
-                            "const": "replace",
-                            "description": "Replaces the entire weapon description when the prestige is selected."
-                        },
-                        "value": {
-                            "type": "string"
-                        },
-                        "weapon": {
-                            "type": "string",
-                            "description": "Mode/attack key; omitted applies to all attacks."
-                        },
-                        "modifierupgrade": {
-                            "type": "null"
-                        },
-                        "extra": {
-                            "type": "null"
-                        },
-                        "operationtype": {
-                            "type": "null"
-                        },
                         "talenttype": {
                             "type": "string",
                             "enum": [
@@ -142,15 +123,24 @@
                                 "post"
                             ]
                         },
-                        "target": {
-                            "type": "string",
-                            "const": "unit"
+                        "changes": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/PlayerTalentChange"
+                            },
+                            "minItems": 1
                         },
                         "talentid": {
                             "$ref": "#/definitions/PositiveInteger"
                         },
-                        "unit": {
-                            "type": "string"
+                        "units": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Units receiving this exact definition, in this commander.",
+                            "minItems": 1,
+                            "uniqueItems": true
                         },
                         "commander": {
                             "type": "string"
@@ -167,31 +157,19 @@
                         }
                     },
                     "required": [
+                        "changes",
                         "commander",
-                        "extra",
-                        "modifier",
-                        "modifierupgrade",
                         "name",
                         "nameid",
-                        "operation",
-                        "operationtype",
                         "talentid",
                         "talenttype",
-                        "target",
-                        "unit",
-                        "value"
+                        "units"
                     ]
-                },
-                {
-                    "$ref": "#/definitions/PlayerSkillTalent"
                 }
-            ]
+            ],
+            "description": "A named talent shared by one commander's units. Omitted selectors impose no restriction. operationtype is required for mastery multipliers; ordinary multipliers omit it. Changes are applied in array order within the existing mastery/prestige/post phase; unit, upgrade, and skill changes may coexist. Definitions may differ between units. html/data/legacy/playertalents.json expands these for the legacy PHP calculator."
         },
-        "PositiveInteger": {
-            "type": "integer",
-            "minimum": 1
-        },
-        "PlayerSkillTalent": {
+        "PlayerSkillTalentChange": {
             "anyOf": [
                 {
                     "type": "object",
@@ -208,29 +186,11 @@
                             "type": "string",
                             "description": "Restrict to a named skill mode; omitted applies to every matching mode."
                         },
-                        "modifierupgrade": {
-                            "type": "null"
-                        },
-                        "extra": {
-                            "type": "null"
-                        },
                         "operationtype": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "increase",
-                                "decrease",
-                                null
-                            ]
-                        },
-                        "talenttype": {
                             "type": "string",
                             "enum": [
-                                "mastery",
-                                "prestige",
-                                "post"
+                                "increase",
+                                "decrease"
                             ]
                         },
                         "modifier": {
@@ -247,41 +207,13 @@
                         },
                         "value": {
                             "type": "number"
-                        },
-                        "talentid": {
-                            "$ref": "#/definitions/PositiveInteger"
-                        },
-                        "unit": {
-                            "type": "string"
-                        },
-                        "commander": {
-                            "type": "string"
-                        },
-                        "name": {
-                            "type": "string"
-                        },
-                        "nameid": {
-                            "type": "string"
-                        },
-                        "temporary": {
-                            "type": "boolean",
-                            "description": "Directly applies a temporary effect. Omitted means false."
                         }
                     },
                     "required": [
-                        "commander",
-                        "extra",
                         "modifier",
-                        "modifierupgrade",
-                        "name",
-                        "nameid",
                         "operation",
-                        "operationtype",
                         "skill",
-                        "talentid",
-                        "talenttype",
                         "target",
-                        "unit",
                         "value"
                     ]
                 },
@@ -300,29 +232,11 @@
                             "type": "string",
                             "description": "Restrict to a named skill mode; omitted applies to every matching mode."
                         },
-                        "modifierupgrade": {
-                            "type": "null"
-                        },
-                        "extra": {
-                            "type": "null"
-                        },
                         "operationtype": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "increase",
-                                "decrease",
-                                null
-                            ]
-                        },
-                        "talenttype": {
                             "type": "string",
                             "enum": [
-                                "mastery",
-                                "prestige",
-                                "post"
+                                "increase",
+                                "decrease"
                             ]
                         },
                         "modifier": {
@@ -335,46 +249,117 @@
                         },
                         "value": {
                             "type": "string"
-                        },
-                        "talentid": {
-                            "$ref": "#/definitions/PositiveInteger"
-                        },
-                        "unit": {
-                            "type": "string"
-                        },
-                        "commander": {
-                            "type": "string"
-                        },
-                        "name": {
-                            "type": "string"
-                        },
-                        "nameid": {
-                            "type": "string"
-                        },
-                        "temporary": {
-                            "type": "boolean",
-                            "description": "Directly applies a temporary effect. Omitted means false."
                         }
                     },
                     "required": [
-                        "commander",
-                        "extra",
                         "modifier",
-                        "modifierupgrade",
-                        "name",
-                        "nameid",
                         "operation",
-                        "operationtype",
                         "skill",
-                        "talentid",
-                        "talenttype",
                         "target",
-                        "unit",
                         "value"
                     ]
                 }
             ],
-            "description": "Skill field changes live with the other talents, rather than duplicating the skill. Add/multiply require a numeric current value; set and replace explicitly overwrite it. Text replacements replace the whole field. Skill availability stays in UnitSkill."
+            "description": "Add/multiply require a numeric current value; set and replace overwrite it. Text replacements replace the whole field. Skill availability stays in UnitSkill."
+        },
+        "PositiveInteger": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "PlayerTalentChange": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/PlayerUnitTalentChange"
+                },
+                {
+                    "$ref": "#/definitions/PlayerSkillTalentChange"
+                }
+            ]
+        },
+        "PlayerUnitTalentChange": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "modifier": {
+                            "type": "string"
+                        },
+                        "modifierupgrade": {
+                            "type": "string",
+                            "description": "Which upgrade needs to be enabled for this change to have an effect?"
+                        },
+                        "extra": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "number"
+                        },
+                        "operation": {
+                            "type": "string",
+                            "enum": [
+                                "add",
+                                "set",
+                                "multiply"
+                            ]
+                        },
+                        "operationtype": {
+                            "type": "string",
+                            "enum": [
+                                "increase",
+                                "decrease"
+                            ]
+                        },
+                        "target": {
+                            "type": "string",
+                            "enum": [
+                                "unit",
+                                "upgrade"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "modifier",
+                        "value",
+                        "operation",
+                        "target"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "modifier": {
+                            "type": "string",
+                            "enum": [
+                                "aoe",
+                                "weaponName"
+                            ]
+                        },
+                        "operation": {
+                            "type": "string",
+                            "const": "replace"
+                        },
+                        "value": {
+                            "type": "string"
+                        },
+                        "weapon": {
+                            "type": "string",
+                            "description": "Mode/attack key; omitted applies to all attacks."
+                        },
+                        "target": {
+                            "type": "string",
+                            "const": "unit"
+                        }
+                    },
+                    "required": [
+                        "modifier",
+                        "operation",
+                        "value",
+                        "target"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
         }
     }
 }

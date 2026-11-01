@@ -104,10 +104,8 @@
                     "$ref": "#/definitions/NonNegativeInteger"
                 },
                 "shieldbonus": {
-                    "type": [
-                        "number",
-                        "null"
-                    ]
+                    "type": "number",
+                    "description": "Shield armor gained per upgrade level. Omitted means no shield armor upgrades."
                 },
                 "notes": {
                     "type": "string",
@@ -135,7 +133,6 @@
                 "modes",
                 "hpbonus",
                 "armorbonus",
-                "shieldbonus",
                 "notes"
             ],
             "additionalProperties": false

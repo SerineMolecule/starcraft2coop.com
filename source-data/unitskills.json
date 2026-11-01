@@ -10,11 +10,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Abathur",
@@ -25,13 +21,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Abathur",
@@ -43,11 +33,6 @@
     "description": "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
   },
   {
@@ -61,11 +46,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 45,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Abathur",
@@ -77,11 +58,6 @@
     "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -102,11 +78,6 @@
     "description": "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
   },
   {
@@ -118,13 +89,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Abathur",
@@ -138,10 +103,6 @@
     "requiresupgrade": false,
     "cooldown": 10,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 60,
       "radius": 0.5
@@ -159,8 +120,6 @@
     "requiresupgrade": true,
     "cooldown": 30,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
     "prestige": "Tunneling Horror",
     "requirements": "Requires Deep Tunnel research at an Infestation Pit."
   },
@@ -174,11 +133,6 @@
     "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -201,8 +155,6 @@
     "requiresupgrade": true,
     "cooldown": 30,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
     "prestige": "Tunneling Horror",
     "requirements": "Requires Deep Tunnel research at an Infestation Pit."
   },
@@ -216,11 +168,6 @@
     "description": "Transforms this Roach into a Ravager.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Lair.",
     "cost": {
       "minerals": 13,
@@ -239,11 +186,6 @@
     "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -264,12 +206,7 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": "Rooted",
-    "prestige": null,
-    "requirements": null
+    "mode": "Rooted"
   },
   {
     "commander": "Abathur",
@@ -282,11 +219,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Abathur",
@@ -299,11 +232,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Abathur",
@@ -315,11 +244,6 @@
     "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -341,11 +265,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 3,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Abathur",
@@ -359,10 +279,6 @@
     "requiresupgrade": false,
     "cooldown": 3,
     "energycost": 10,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "healing": 25,
       "targets": "biological"
@@ -378,11 +294,6 @@
     "description": "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -405,10 +316,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "range": 9,
       "stun": 1
@@ -426,10 +333,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "range": 11
     }
@@ -446,10 +349,6 @@
     "requiresupgrade": false,
     "cooldown": 10,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "range": 4
     }
@@ -466,10 +365,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 125,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "range": 8
     }
@@ -484,11 +379,6 @@
     "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -509,12 +399,7 @@
     "description": "Alarak intercepts target enemy unit and strikes it for 200 damage.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Alarak",
@@ -527,11 +412,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 5,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "knockback": "knocking them back"
     }
@@ -546,12 +426,7 @@
     "description": "Alarak's attacks and abilities deal increased damage for each allied unit nearby. Mechanical units grant him double the power. Resets the cooldown of Deadly Charge and Destruction Wave.\nBiological units provide a 5% damage bonus per supply up to 100 supply, and then provide 2.5% per supply onwards. Mechanical units provide 10% damage bonus per supply up to 100 supply, and then provide 5% per supply onwards.\nSupply count is additive, with biological units favored first. So if you have 100 supply in bio and 1 supply in mechanical units, the mechanical units will provide the reduced rate of 5%.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 240,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 240
   },
   {
     "commander": "Alarak",
@@ -562,13 +437,7 @@
     ],
     "description": "Nearby enemy deaths restore 20 life and shields per supply of the slain unit. When near death, sacrifices nearby units you control to heal himself; Supplicants are consumed first. Sacrificing allies has no cooldown.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Alarak",
@@ -582,10 +451,6 @@
     "requiresupgrade": false,
     "cooldown": 2,
     "energycost": 100,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 10,
       "distance": 13,
@@ -604,10 +469,6 @@
     "requiresupgrade": true,
     "cooldown": 8,
     "energycost": 100,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 200,
       "stacks": ""
@@ -625,10 +486,6 @@
     "requiresupgrade": false,
     "cooldown": 60,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "bonus": ""
     }
@@ -645,10 +502,6 @@
     "requiresupgrade": false,
     "cooldown": 3,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "bonus": 15,
       "range": 8
@@ -666,10 +519,6 @@
     "requiresupgrade": false,
     "cooldown": 15,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 3,
     "values": {
       "range": 9
@@ -685,11 +534,6 @@
     "description": "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Cloaking Module research at the Cybernetics Core."
   },
   {
@@ -701,13 +545,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Alarak",
@@ -719,12 +557,6 @@
     "description": "Friendly units within a radius of {radius} gain 2 additional range on non-melee attacks.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "radius": 4
     }
@@ -739,12 +571,7 @@
     "description": "Deals 20 damage to all enemies in a straight line up to 10 range away.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 1,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 1
   },
   {
     "commander": "Alarak",
@@ -756,12 +583,7 @@
     "description": "Teleports the Mothership and all nearby units you control to target friendly unit or structure's location.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": "0 seconds*",
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": "0 seconds*"
   },
   {
     "commander": "Alarak",
@@ -772,13 +594,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Alarak",
@@ -791,11 +607,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 8,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Alarak",
@@ -808,10 +620,6 @@
     "type": "passive",
     "requiresupgrade": true,
     "cooldown": 5,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Alarak level 4 and Phasing Armor research at the Death Council."
   },
   {
@@ -823,13 +631,7 @@
     ],
     "description": "Alarak sacrifices Supplicants before other nearby units to heal himself when near death.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Alarak",
@@ -840,13 +642,7 @@
     ],
     "description": "Can walk up and down cliffs.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Artanis",
@@ -860,10 +656,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damagePerEnergy": 1
     }
@@ -880,10 +672,6 @@
     "requiresupgrade": true,
     "cooldown": 2,
     "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "radius": 1.5,
       "range": 9,
@@ -903,10 +691,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damagePerEnergy": 1
     }
@@ -923,10 +707,6 @@
     "requiresupgrade": true,
     "cooldown": 2,
     "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "radius": 1.5,
       "range": 9,
@@ -944,12 +724,6 @@
     "description": "Merges two High Templar into one Archon.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "cost": {
       "minerals": 0,
       "gas": 0
@@ -968,10 +742,6 @@
     "requiresupgrade": false,
     "cooldown": 60,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "absorption": 100
     }
@@ -985,13 +755,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Artanis",
@@ -1002,13 +766,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Artanis",
@@ -1022,10 +780,6 @@
     "requiresupgrade": false,
     "cooldown": 30,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "targets": ""
     }
@@ -1039,13 +793,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Artanis",
@@ -1059,10 +807,6 @@
     "requiresupgrade": false,
     "cooldown": 8,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "capacity": 5
     }
@@ -1079,10 +823,6 @@
     "requiresupgrade": true,
     "cooldown": 90,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 500
     }
@@ -1099,10 +839,6 @@
     "requiresupgrade": true,
     "cooldown": 10,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "chargeBonus": ""
     }
@@ -1119,10 +855,6 @@
     "requiresupgrade": true,
     "cooldown": 10,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 10
     }
@@ -1139,10 +871,6 @@
     "requiresupgrade": false,
     "cooldown": 30,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "targets": "ground"
     }
@@ -1157,12 +885,7 @@
     "description": "Charge to a target location knocking back units in the area and dealing 200 damage.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Dehaka",
@@ -1174,11 +897,6 @@
     "description": "When damaged, fires a spine at the attacker that deals 20 damage.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Dehaka level 10."
   },
   {
@@ -1192,10 +910,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points; values shown at level 3."
   },
   {
@@ -1209,10 +923,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points; values shown at level 3."
   },
   {
@@ -1226,10 +936,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": "~ seconds",
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points; values shown at level 3. With Devouring One (P1), Devour also grants its benefits to friendly units within range 10."
   },
   {
@@ -1243,10 +949,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points; values shown at level 3.",
     "charges": 3,
     "excludedPrestiges": [
@@ -1263,12 +965,7 @@
     "description": "Quickly burrow to any visible location.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 60
   },
   {
     "commander": "Dehaka",
@@ -1280,11 +977,6 @@
     "description": "Dehaka passively heals all allied units nearby.\nLevel 2 - 2 life per second.\nLevel 3 - 3 life per second.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points."
   },
   {
@@ -1297,11 +989,6 @@
     "description": "Allows Dehaka to detect cloaked, burrowed, and hallucinated units.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points."
   },
   {
@@ -1314,11 +1001,6 @@
     "description": "Increases Dehaka's armor by 3.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points."
   },
   {
@@ -1331,11 +1013,6 @@
     "description": "Allows Dehaka to attack air units.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires skill points."
   },
   {
@@ -1348,12 +1025,7 @@
     "description": "Carpets the ground in fire. Enemy units in the area take 500 damage over 5 seconds. Can be set to Autocast.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 6,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 6
   },
   {
     "commander": "Dehaka",
@@ -1365,12 +1037,7 @@
     "description": "Glevig burrows to the target location and erupts, dealing damage to units in the area and knocking them back.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 0,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 0
   },
   {
     "commander": "Dehaka",
@@ -1382,12 +1049,7 @@
     "description": "Deals 70 damage per second to the target unit for 5 seconds.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 20,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 20
   },
   {
     "commander": "Dehaka",
@@ -1399,12 +1061,7 @@
     "description": "Quickly burrow to any visible location.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 60
   },
   {
     "commander": "Dehaka",
@@ -1415,13 +1072,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Dehaka",
@@ -1433,12 +1084,7 @@
     "description": "Spawns 6 Primal Locusts and 6 Explosive Creepers that fight for 25 seconds.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Dehaka",
@@ -1450,12 +1096,7 @@
     "description": "Creates a cloud that slows enemy movement speed and prevents enemy units and structures from attacking or using energy-based abilities. Lasts for 5 seconds.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 3,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 3
   },
   {
     "commander": "Dehaka",
@@ -1468,11 +1109,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Dehaka",
@@ -1485,11 +1122,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Dehaka",
@@ -1501,11 +1134,6 @@
     "description": "Two Primal Hosts engage in primal combat, consuming both units to produce one Creeper Host.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 8.",
     "cost": {
       "minerals": 0,
@@ -1524,10 +1152,6 @@
     "type": "passive",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Dehaka level 7 and Primal Reconstitution research at Murvar's Den."
   },
   {
@@ -1541,11 +1165,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Dehaka",
@@ -1556,13 +1176,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Dehaka",
@@ -1574,11 +1188,6 @@
     "description": "Two Primal Ultralisks engage in primal combat, consuming both units to produce one Tyrannozor.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 11.",
     "cost": {
       "minerals": 0,
@@ -1595,13 +1204,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Dehaka",
@@ -1614,11 +1217,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Dehaka",
@@ -1629,13 +1228,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Dehaka",
@@ -1647,11 +1240,6 @@
     "description": "Grants nearby friendly units 2 additional armor.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Tyrant's Protection research at Dakrun's Den."
   },
   {
@@ -1665,11 +1253,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -1682,11 +1266,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -1700,10 +1280,6 @@
     "requiresupgrade": true,
     "cooldown": 15,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 12
     }
@@ -1717,13 +1293,7 @@
     ],
     "description": "Can walk up and down cliffs.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Fenix",
@@ -1737,10 +1307,6 @@
     "requiresupgrade": false,
     "cooldown": 20,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "duration": 15
     }
@@ -1757,10 +1323,6 @@
     "requiresupgrade": false,
     "cooldown": 20,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "echo": ""
     }
@@ -1775,11 +1337,6 @@
     "description": "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Cloaking Module research at the Robotics Bay."
   },
   {
@@ -1793,11 +1350,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Fenix",
@@ -1810,11 +1363,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 5,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 5
   },
   {
     "commander": "Fenix",
@@ -1827,11 +1376,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 100,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 100
   },
   {
     "commander": "Fenix",
@@ -1843,11 +1388,6 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Fenix level 6 and Observation Protocol research at the Forge."
   },
   {
@@ -1861,11 +1401,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 25
   },
   {
     "commander": "Fenix",
@@ -1878,11 +1414,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Fenix",
@@ -1895,11 +1427,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 5,
-    "energycost": 100,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 100
   },
   {
     "commander": "Fenix",
@@ -1912,11 +1440,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 6,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Fenix",
@@ -1929,11 +1453,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Fenix",
@@ -1946,11 +1466,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 120,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -1963,11 +1479,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -1980,11 +1492,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 5,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -1997,11 +1505,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -2014,11 +1518,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 5,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -2029,13 +1529,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Fenix",
@@ -2046,13 +1540,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Fenix",
@@ -2063,13 +1551,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Fenix",
@@ -2082,11 +1564,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -2100,10 +1578,6 @@
     "requiresupgrade": false,
     "cooldown": 5,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "targets": 3,
       "debilitation": ""
@@ -2120,11 +1594,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 5,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Fenix",
@@ -2135,13 +1605,7 @@
     ],
     "description": "Can walk up and down cliffs.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Horner",
@@ -2153,11 +1617,6 @@
     "description": "Retrofits this Assault Galleon with a Drone Hangar that automatically builds and deploys up to 6 Assault Drones. Assault Drones can attack ground and air units. Installing the hangar also enables out-of-combat regeneration.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 3.",
     "cost": {
       "minerals": 150,
@@ -2171,11 +1630,6 @@
     "commander": "Horner",
     "unit": "Assault Galleon",
     "requiresupgrade": false,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "showWithUpgrade": "Install Drone Hangar",
     "name": "Build Assault Drone",
     "icons": [
@@ -2189,10 +1643,6 @@
     "commander": "Horner",
     "unit": "Assault Galleon",
     "requiresupgrade": false,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 11.",
     "showWithUpgrade": "Install Drone Hangar",
     "name": "Endurance Training",
@@ -2204,8 +1654,7 @@
       "healing": 3.75,
       "delay": 10
     },
-    "type": "passive",
-    "cooldown": null
+    "type": "passive"
   },
   {
     "commander": "Horner",
@@ -2218,11 +1667,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Horner",
@@ -2235,11 +1680,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Horner",
@@ -2250,13 +1691,7 @@
     ],
     "description": "Wraith attack speed increases by 10% with each attack, up to a maximum of 100%.\nPassive ability.",
     "type": "passive",
-    "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": true
   },
   {
     "commander": "Horner",
@@ -2268,21 +1703,12 @@
     "description": "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Unregistered Cloaking System research at the Dominion Starport Tech Lab."
   },
   {
     "commander": "Horner",
     "unit": "Asteria Wraith",
     "requiresupgrade": false,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 11.",
     "name": "Endurance Training",
     "icons": [
@@ -2293,8 +1719,7 @@
       "healing": 3.75,
       "delay": 10
     },
-    "type": "passive",
-    "cooldown": null
+    "type": "passive"
   },
   {
     "commander": "Horner",
@@ -2307,11 +1732,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Horner",
@@ -2324,20 +1745,12 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 20,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Horner",
     "unit": "Deimos Viking",
     "requiresupgrade": false,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 11.",
     "name": "Endurance Training",
     "icons": [
@@ -2348,8 +1761,7 @@
       "healing": 3.75,
       "delay": 10
     },
-    "type": "passive",
-    "cooldown": null
+    "type": "passive"
   },
   {
     "commander": "Horner",
@@ -2362,11 +1774,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Horner",
@@ -2377,13 +1785,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Horner",
@@ -2397,10 +1799,6 @@
     "requiresupgrade": false,
     "cooldown": 20,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "death": ""
     }
@@ -2416,20 +1814,12 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Horner",
     "unit": "Sovereign Battlecruiser",
     "requiresupgrade": false,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 11.",
     "name": "Endurance Training",
     "icons": [
@@ -2440,8 +1830,7 @@
       "healing": 3.75,
       "delay": 10
     },
-    "type": "passive",
-    "cooldown": null
+    "type": "passive"
   },
   {
     "commander": "Horner",
@@ -2454,11 +1843,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Horner",
@@ -2472,10 +1857,6 @@
     "requiresupgrade": false,
     "cooldown": 3,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "targets": 1
     }
@@ -2489,13 +1870,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Horner",
@@ -2506,22 +1881,12 @@
     ],
     "description": "Shows the locations of enemy units through the fog of war within a radius of 40. Radar contacts do not grant vision or detection.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Horner",
     "unit": "Theia Raven",
     "requiresupgrade": false,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 11.",
     "name": "Endurance Training",
     "icons": [
@@ -2532,8 +1897,7 @@
       "healing": 3.75,
       "delay": 10
     },
-    "type": "passive",
-    "cooldown": null
+    "type": "passive"
   },
   {
     "commander": "Karax",
@@ -2546,11 +1910,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Karax",
@@ -2562,11 +1922,6 @@
     "description": "Two repair drones automatically restore life to nearby friendly mechanical units.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Karax level 14 and Repair Drones research at the Fleet Beacon."
   },
   {
@@ -2578,13 +1933,7 @@
     ],
     "description": "Can walk up and down cliffs.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Karax",
@@ -2597,11 +1946,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 3,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 3
   },
   {
     "commander": "Karax",
@@ -2614,11 +1959,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 120,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Karax",
@@ -2631,11 +1972,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Karax",
@@ -2648,11 +1985,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 45,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Karax",
@@ -2665,11 +1998,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Karax",
@@ -2682,10 +2011,6 @@
     "type": "passive",
     "requiresupgrade": true,
     "cooldown": 5,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Karax level 14 and Phasing Armor research at the Fleet Beacon."
   },
   {
@@ -2697,13 +2022,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Karax",
@@ -2714,13 +2033,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Karax",
@@ -2731,13 +2044,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Karax",
@@ -2750,11 +2057,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Karax",
@@ -2767,10 +2070,6 @@
     "type": "passive",
     "requiresupgrade": true,
     "cooldown": 120,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Karax level 4 and Reconstruction research at the Twilight Council."
   },
   {
@@ -2784,11 +2083,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Kerrigan",
@@ -2800,11 +2095,6 @@
     "description": "Transforms this Hydralisk into a Lurker.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Lurker Den.",
     "cost": {
       "minerals": 50,
@@ -2825,10 +2115,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Desolate Queen"
     ]
@@ -2845,10 +2131,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Desolate Queen"
     ]
@@ -2865,10 +2147,6 @@
     "requiresupgrade": false,
     "cooldown": 120,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "resources": "resources"
     }
@@ -2885,10 +2163,6 @@
     "requiresupgrade": false,
     "cooldown": 180,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "initialCooldown": 600
   },
   {
@@ -2903,10 +2177,7 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Desolate Queen",
-    "requirements": null
+    "prestige": "Desolate Queen"
   },
   {
     "commander": "Kerrigan",
@@ -2920,10 +2191,7 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Desolate Queen",
-    "requirements": null
+    "prestige": "Desolate Queen"
   },
   {
     "commander": "Kerrigan",
@@ -2934,13 +2202,7 @@
     ],
     "description": "Generates temporary protective life equal to 30% of damage dealt, up to 200. This protection decays over time.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Kerrigan",
@@ -2952,11 +2214,6 @@
     "description": "Each attack increases attack speed by 10%, stacking up to five times for a 50% bonus. The bonus expires after 5 seconds without attacking.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Kerrigan level 10."
   },
   {
@@ -2968,13 +2225,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Kerrigan",
@@ -2987,11 +2238,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 25
   },
   {
     "commander": "Kerrigan",
@@ -3004,11 +2251,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 25,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Kerrigan",
@@ -3021,11 +2264,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Kerrigan",
@@ -3037,12 +2276,7 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": "Rooted",
-    "prestige": null,
-    "requirements": null
+    "mode": "Rooted"
   },
   {
     "commander": "Kerrigan",
@@ -3055,11 +2289,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Kerrigan",
@@ -3070,13 +2300,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Kerrigan",
@@ -3089,10 +2313,6 @@
     "type": "passive",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Kerrigan level 14 (Torrasque strain)."
   },
   {
@@ -3105,11 +2325,6 @@
     "description": "Restores life equal to 40% of damage dealt by its normal attacks.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Tissue Assimilation research at the Ultralisk Cavern."
   },
   {
@@ -3123,11 +2338,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": 3,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "rankrequired": 3
   },
   {
     "commander": "Mengsk",
@@ -3139,12 +2350,6 @@
     "description": "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Merchant of Death"
     ]
@@ -3159,12 +2364,7 @@
     "description": "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Merchant of Death",
-    "requirements": null
+    "prestige": "Merchant of Death"
   },
   {
     "commander": "Mengsk",
@@ -3176,12 +2376,6 @@
     "description": "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Merchant of Death"
     ]
@@ -3196,12 +2390,7 @@
     "description": "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Merchant of Death",
-    "requirements": null
+    "prestige": "Merchant of Death"
   },
   {
     "commander": "Mengsk",
@@ -3213,12 +2402,6 @@
     "description": "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Merchant of Death"
     ]
@@ -3233,12 +2416,7 @@
     "description": "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Merchant of Death",
-    "requirements": null
+    "prestige": "Merchant of Death"
   },
   {
     "commander": "Mengsk",
@@ -3251,11 +2429,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 5,
-    "energycost": null,
-    "rankrequired": 0,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "rankrequired": 0
   },
   {
     "commander": "Mengsk",
@@ -3268,11 +2442,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 8,
-    "energycost": null,
-    "rankrequired": 0,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "rankrequired": 0
   },
   {
     "commander": "Mengsk",
@@ -3285,11 +2455,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": 1,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "rankrequired": 1
   },
   {
     "commander": "Mengsk",
@@ -3302,11 +2468,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 90,
-    "energycost": null,
     "rankrequired": 0,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "channel": ""
     }
@@ -3320,13 +2482,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Mengsk",
@@ -3339,11 +2495,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": null,
     "rankrequired": 0,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "targets": ""
     }
@@ -3359,11 +2511,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": null,
-    "rankrequired": 0,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "rankrequired": 0
   },
   {
     "commander": "Mengsk",
@@ -3374,13 +2522,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Mengsk",
@@ -3391,13 +2533,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Mengsk",
@@ -3410,11 +2546,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 120,
-    "energycost": null,
-    "rankrequired": 0,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "rankrequired": 0
   },
   {
     "commander": "Mengsk",
@@ -3427,11 +2559,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": null,
-    "rankrequired": 0,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "rankrequired": 0
   },
   {
     "commander": "Nova",
@@ -3444,11 +2572,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3460,11 +2584,6 @@
     "description": "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Advanced Cloaking Field research at a Starport Tech Lab."
   },
   {
@@ -3478,11 +2597,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3495,11 +2610,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3512,11 +2623,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 5,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3529,11 +2636,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3544,13 +2647,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Nova",
@@ -3564,10 +2661,7 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
     "mode": "Stealth Mode",
-    "prestige": null,
-    "requirements": null,
     "values": {
       "refund": ""
     }
@@ -3584,10 +2678,7 @@
     "requiresupgrade": false,
     "cooldown": 45,
     "energycost": 100,
-    "rankrequired": null,
     "mode": "Stealth Mode",
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 200,
       "structureDamage": 400,
@@ -3606,10 +2697,7 @@
     "requiresupgrade": false,
     "cooldown": 420,
     "energycost": 0,
-    "rankrequired": null,
     "mode": "Stealth Mode",
-    "prestige": null,
-    "requirements": null,
     "initialCooldown": 600,
     "values": {
       "damage": 600,
@@ -3629,10 +2717,7 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
     "mode": "Assault Mode",
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Infiltration Specialist"
     ],
@@ -3652,10 +2737,7 @@
     "requiresupgrade": false,
     "cooldown": 8,
     "energycost": 0,
-    "rankrequired": null,
     "mode": "Assault Mode",
-    "prestige": null,
-    "requirements": null,
     "charges": 3,
     "excludedPrestiges": [
       "Infiltration Specialist"
@@ -3673,10 +2755,7 @@
     "requiresupgrade": false,
     "cooldown": 420,
     "energycost": 0,
-    "rankrequired": null,
     "mode": "Assault Mode",
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Infiltration Specialist"
     ],
@@ -3692,11 +2771,6 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Ghost Visor research at the Ghost Academy."
   },
   {
@@ -3709,12 +2783,7 @@
     "description": "Nova is permanently cloaked in Stealth Mode. Detectors and revealing effects can expose her.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
     "mode": "Stealth Mode",
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Infiltration Specialist"
     ]
@@ -3729,12 +2798,8 @@
     "description": "Nova is cloaked and cannot be detected or targeted. Attacking or using Snipe disables Super Cloak for 4 seconds.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
     "mode": "Stealth Mode",
-    "prestige": "Infiltration Specialist",
-    "requirements": null
+    "prestige": "Infiltration Specialist"
   },
   {
     "commander": "Nova",
@@ -3747,11 +2812,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3765,10 +2826,6 @@
     "requiresupgrade": false,
     "cooldown": 60,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "healing": 14,
       "cloak": ""
@@ -3785,11 +2842,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 45,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3800,13 +2853,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Nova",
@@ -3820,10 +2867,6 @@
     "requiresupgrade": false,
     "cooldown": 30,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "shots": ""
     }
@@ -3839,11 +2882,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 45,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Nova",
@@ -3854,13 +2893,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Raynor",
@@ -3873,11 +2906,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -3890,11 +2919,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -3907,11 +2932,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -3924,11 +2945,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -3941,11 +2958,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -3958,11 +2971,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -3974,12 +2983,7 @@
     "description": "Hyperjump to the targeted location.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 15,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 15
   },
   {
     "commander": "Raynor",
@@ -3991,12 +2995,7 @@
     "description": "Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 15,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 15
   },
   {
     "commander": "Raynor",
@@ -4009,11 +3008,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 5,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 4
   },
   {
@@ -4027,11 +3021,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -4044,11 +3034,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -4062,10 +3048,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "targets": "biological",
       "healing": 9,
@@ -4081,13 +3063,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Raynor",
@@ -4100,11 +3076,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -4117,11 +3089,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -4135,10 +3103,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 3,
     "values": {
       "radius": ""
@@ -4155,11 +3119,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 6,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Raynor",
@@ -4172,11 +3132,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Stetmann",
@@ -4188,12 +3144,7 @@
     "description": "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 30
   },
   {
     "commander": "Stetmann",
@@ -4207,12 +3158,7 @@
     "description": "Overchages a target Stetellite, allowing it to actively grant bonuses to nearby units depending on the current Stetzone configuration. Overcharge effect lasts for 30 seconds, and a Stetellite is invulnerable while overcharged.\nF.A.S.T. Overload grants 20% increased attack speed for 45 seconds.\nH.U.G.S. Overload grants a shield that absorbs 60 damage for 45 seconds.\nJ.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.\n(The Stetellite is overcharged for 30 seconds but grants a 45-second buff.)",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 45,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 45
   },
   {
     "commander": "Stetmann",
@@ -4224,12 +3170,7 @@
     "description": "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 180,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 180
   },
   {
     "commander": "Stetmann",
@@ -4241,11 +3182,6 @@
     "description": "Transforms this Gary into a Super Gary.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 5 and Mecha Hive.",
     "cost": {
       "minerals": 450,
@@ -4267,11 +3203,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 5,
-    "energycost": 1,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 1
   },
   {
     "commander": "Stetmann",
@@ -4284,11 +3216,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 3,
-    "energycost": 5,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 5
   },
   {
     "commander": "Stetmann",
@@ -4301,11 +3229,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 20,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Stetmann",
@@ -4318,11 +3242,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 0,
-    "energycost": 100,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 100
   },
   {
     "commander": "Stetmann",
@@ -4336,10 +3256,6 @@
     "requiresupgrade": false,
     "cooldown": 10,
     "energycost": 100,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "radius": 1.5
     }
@@ -4355,11 +3271,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 20,
-    "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 75
   },
   {
     "commander": "Stetmann",
@@ -4371,11 +3283,6 @@
     "description": "Transforms this Mecha Corruptor into a Mecha Battlecarrier Lord.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Mecha Greater Spire.",
     "cost": {
       "minerals": 300,
@@ -4396,10 +3303,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 250,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "ravager": ""
     }
@@ -4415,11 +3318,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 5,
-    "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 75
   },
   {
     "commander": "Stetmann",
@@ -4433,10 +3332,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "ravager": ""
     }
@@ -4453,10 +3348,6 @@
     "requiresupgrade": false,
     "cooldown": 8,
     "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "range": 9
     }
@@ -4472,11 +3363,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 0,
-    "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 75
   },
   {
     "commander": "Stetmann",
@@ -4487,13 +3374,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Stetmann",
@@ -4505,12 +3386,7 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": "Rooted",
-    "prestige": null,
-    "requirements": null
+    "mode": "Rooted"
   },
   {
     "commander": "Stetmann",
@@ -4524,10 +3400,6 @@
     "requiresupgrade": false,
     "cooldown": 5,
     "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "stun": ""
     }
@@ -4543,11 +3415,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 2,
-    "energycost": 5,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 5
   },
   {
     "commander": "Stetmann",
@@ -4558,13 +3426,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Stetmann",
@@ -4577,11 +3439,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 2
   },
   {
@@ -4597,11 +3454,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 45,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 2
   },
   {
@@ -4615,11 +3467,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 180,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 2
   },
   {
@@ -4634,12 +3481,7 @@
     "description": "Generates a Stetzone around Super Gary for 30 seconds.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 120,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 120
   },
   {
     "commander": "Stetmann",
@@ -4650,13 +3492,7 @@
     ],
     "description": "When Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. Can stack up to 20 times.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Stetmann",
@@ -4667,13 +3503,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Stukov",
@@ -4685,12 +3515,7 @@
     "description": "Fires a salvo of 5 missiles at the target enemy air unit, dealing a total 100 damage. (40 missiles max)",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": "10 seconds/5 missiles",
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": "10 seconds/5 missiles"
   },
   {
     "commander": "Stukov",
@@ -4702,12 +3527,7 @@
     "description": "Burrow and charge at the target location dealing 150 damage and stunning non-heroic enemies for 5 seconds.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Stukov",
@@ -4718,13 +3538,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Stukov",
@@ -4737,11 +3551,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 25
   },
   {
     "commander": "Stukov",
@@ -4754,11 +3564,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 100,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 100
   },
   {
     "commander": "Stukov",
@@ -4771,11 +3577,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 0,
-    "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 75
   },
   {
     "commander": "Stukov",
@@ -4788,11 +3590,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Stukov",
@@ -4805,11 +3603,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Stukov",
@@ -4821,11 +3615,7 @@
     "description": "Restores 20 life and energy per second while burrowed.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
     "mode": "Burrowed",
-    "prestige": null,
     "requirements": "Requires Rapid Hibernation research at an Infested Starport Tech Lab."
   },
   {
@@ -4838,12 +3628,8 @@
     "description": "Loads up to 16 nearby Infested infantry. Their timed life is paused while loaded.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Plague Warden",
-    "requirements": null
+    "prestige": "Plague Warden"
   },
   {
     "commander": "Stukov",
@@ -4855,12 +3641,8 @@
     "description": "Unloads all carried Infested infantry at the target location.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Plague Warden",
-    "requirements": null
+    "prestige": "Plague Warden"
   },
   {
     "commander": "Stukov",
@@ -4872,12 +3654,8 @@
     "description": "Launches carried Infested infantry to a ground location within range 10. Each impact deals 20 damage to enemy ground units within radius 1.25.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Plague Warden",
-    "requirements": null
+    "prestige": "Plague Warden"
   },
   {
     "commander": "Stukov",
@@ -4890,11 +3668,7 @@
     "type": "passive",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": "Rooted",
-    "prestige": null,
-    "requirements": null
+    "mode": "Rooted"
   },
   {
     "commander": "Stukov",
@@ -4907,11 +3681,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 45,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Stukov",
@@ -4923,11 +3693,6 @@
     "description": "Leaves an acid trail while moving, dealing 20 damage per second to enemy ground units in the trail.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Caustic Mucus research at an Infested Factory Tech Lab."
   },
   {
@@ -4940,12 +3705,7 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": "Rooted",
-    "prestige": null,
-    "requirements": null
+    "mode": "Rooted"
   },
   {
     "commander": "Stukov",
@@ -4958,11 +3718,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Stukov",
@@ -4974,12 +3730,7 @@
     "description": "Consumes a nearby Infested Civilian or Infested Trooper to restore 20 life and gain one round of ammunition. Stores up to 8 rounds.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": 2.5,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 2.5
   },
   {
     "commander": "Stukov",
@@ -4992,10 +3743,6 @@
     "type": "passive",
     "requiresupgrade": true,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Automated Mitosis research at an Infested Factory Tech Lab."
   },
   {
@@ -5007,13 +3754,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Swann",
@@ -5027,10 +3768,6 @@
     "requiresupgrade": false,
     "cooldown": 6,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 500,
       "range": 8
@@ -5047,11 +3784,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Swann",
@@ -5065,10 +3798,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "energy": 1
     }
@@ -5084,11 +3813,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 25
   },
   {
     "commander": "Swann",
@@ -5101,11 +3826,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 20,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Swann",
@@ -5116,13 +3837,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Swann",
@@ -5136,8 +3851,6 @@
     "requiresupgrade": false,
     "cooldown": 30,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
     "prestige": "Payload Director",
     "requirements": "Requires Science Vessel Energy Manipulation (Swann level 6)."
   },
@@ -5150,13 +3863,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Swann",
@@ -5169,11 +3876,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Swann",
@@ -5187,10 +3890,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "evasion": ""
     }
@@ -5204,13 +3903,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Tychus",
@@ -5223,11 +3916,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 3,
     "values": {
       "damage": 500,
@@ -5246,11 +3934,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 5,
     "values": {
       "frame": "",
@@ -5270,11 +3953,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 3,
     "values": {
       "healing": 2,
@@ -5292,11 +3970,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Tychus",
@@ -5309,11 +3983,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "instantHealing": 200,
       "healing": 10
@@ -5329,11 +3998,6 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Flashforce GDM Visor research at the Engineering Bay."
   },
   {
@@ -5346,12 +4010,7 @@
     "description": "Restores {healing} life per second to a friendly biological or mechanical unit. Can heal {targets} at a time{gearNote}.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "healing": 30,
       "targets": "one target",
@@ -5370,9 +4029,6 @@
     "requiresupgrade": true,
     "cooldown": 15,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires purchase of XM-77 Matrix Generator gear.",
     "excludedPrestiges": [
       "Lone Wolf"
@@ -5389,11 +4045,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "lightDamage": 5,
       "radius": 2.5,
@@ -5411,11 +4062,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 3,
     "values": {
       "duration": 6,
@@ -5434,11 +4080,6 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Flashforce GDM Visor research at the Engineering Bay."
   },
   {
@@ -5451,12 +4092,6 @@
     "description": "Stuns all enemies and deals 1000 damage over 5 seconds in a large area.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Dutiful Dogwalker"
     ]
@@ -5471,12 +4106,6 @@
     "description": "Calls down a Nuclear Strike at a target location. Nukes take 3 seconds to land, but they deal up to 1000 damage in a large area.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Dutiful Dogwalker"
     ]
@@ -5490,13 +4119,7 @@
     ],
     "description": "Immune to slows, snares, and stuns.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Tychus",
@@ -5509,11 +4132,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "radius": 1.5,
       "stun": 1.5
@@ -5530,10 +4148,6 @@
     "type": "passive",
     "requiresupgrade": true,
     "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires purchase of Critical Response System gear."
   },
   {
@@ -5547,11 +4161,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 20,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 75,
       "implosion": ""
@@ -5568,11 +4177,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 3,
     "values": {
       "duration": 240,
@@ -5590,11 +4194,6 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Flashforce GDM Visor research at the Engineering Bay."
   },
   {
@@ -5606,13 +4205,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Vorazun",
@@ -5625,11 +4218,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Vorazun",
@@ -5642,11 +4231,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Vorazun",
@@ -5659,11 +4244,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 30,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Vorazun",
@@ -5675,11 +4256,6 @@
     "description": "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
   },
   {
@@ -5693,11 +4269,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 8,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Vorazun",
@@ -5710,11 +4282,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 30,
-    "energycost": 150,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 150
   },
   {
     "commander": "Vorazun",
@@ -5727,11 +4295,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "excludedPrestiges": [
       "Spirit of Respite"
     ]
@@ -5747,11 +4310,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Vorazun",
@@ -5764,11 +4323,7 @@
     "type": "active",
     "requiresupgrade": true,
     "cooldown": 10,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Vorazun",
@@ -5781,11 +4336,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Vorazun",
@@ -5796,13 +4347,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Vorazun",
@@ -5815,11 +4360,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 4,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Vorazun",
@@ -5833,10 +4374,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "vulnerability": "cannot be attacked or affected by abilities"
     }
@@ -5851,11 +4388,6 @@
     "description": "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
   },
   {
@@ -5867,13 +4399,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Vorazun",
@@ -5884,13 +4410,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Vorazun",
@@ -5902,12 +4422,7 @@
     "description": "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 15,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 15
   },
   {
     "commander": "Vorazun",
@@ -5919,12 +4434,7 @@
     "description": "Teleport to a nearby target location.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Vorazun",
@@ -5936,12 +4446,7 @@
     "description": "Places target unit or structure in stasis for 10 seconds, disabling the unit for the duration of the effect. Units and structures in stasis cannot be attacked or affected by abilities.\nCan target structures or ground units.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 15,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 15
   },
   {
     "commander": "Vorazun",
@@ -5952,13 +4457,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Vorazun",
@@ -5972,10 +4471,6 @@
     "requiresupgrade": true,
     "cooldown": 8,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "shield": ""
     }
@@ -5989,13 +4484,7 @@
     ],
     "description": "Can walk over smaller ground units.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Zagara",
@@ -6007,11 +4496,6 @@
     "description": "Friendly units underneath the Aberration take 50% less damage.",
     "type": "passive",
     "requiresupgrade": true,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Zagara level 9 and Protective Cover research at the Evolution Chamber."
   },
   {
@@ -6024,11 +4508,6 @@
     "description": "Spawns two Banelings when killed.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Zagara level 8."
   },
   {
@@ -6043,10 +4522,6 @@
     "requiresupgrade": false,
     "cooldown": 0,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "range": 15,
       "interval": 7
@@ -6063,11 +4538,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Zagara",
@@ -6079,11 +4550,6 @@
     "description": "Spawns two Scourge when killed.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Zagara level 8."
   },
   {
@@ -6095,13 +4561,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Zagara",
@@ -6114,11 +4574,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 25
   },
   {
     "commander": "Zagara",
@@ -6131,11 +4587,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 25,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Zagara",
@@ -6148,11 +4600,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 0,
-    "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 50
   },
   {
     "commander": "Zagara",
@@ -6164,12 +4612,7 @@
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": "Rooted",
-    "prestige": null,
-    "requirements": null
+    "mode": "Rooted"
   },
   {
     "commander": "Zagara",
@@ -6182,11 +4625,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 25
   },
   {
     "commander": "Zagara",
@@ -6199,11 +4638,7 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 30,
-    "energycost": 30,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 30
   },
   {
     "commander": "Zagara",
@@ -6217,10 +4652,6 @@
     "requiresupgrade": false,
     "cooldown": 90,
     "energycost": 25,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "targets": "all friendly units on the map"
     }
@@ -6237,10 +4668,6 @@
     "requiresupgrade": false,
     "cooldown": 180,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "initialCooldown": 600
   },
   {
@@ -6255,10 +4682,7 @@
     "requiresupgrade": false,
     "cooldown": 20,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": "Apex Predator",
-    "requirements": null
+    "prestige": "Apex Predator"
   },
   {
     "commander": "Zeratul",
@@ -6270,12 +4694,7 @@
     "description": "Transforms all enemy units in a large area around the Avatar of Essence into a lower evolutionary form.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 20,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 20
   },
   {
     "commander": "Zeratul",
@@ -6287,12 +4706,7 @@
     "description": "Marks a target area on the ground. After 2 seconds, the Avatar of Form deals 100 damage and summons 10 Xel'Naga Charged Crystals at the target location.\nCharged Crystals have a 10% chance to cast a miniature Psionic Storm with each attack, dealing 40 damage to all enemy units in a small area over 4 seconds.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 25,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 25
   },
   {
     "commander": "Zeratul",
@@ -6304,12 +4718,7 @@
     "description": "Creates a storm of psionic energy that lasts 4 seconds, dealing 160 damage to all enemy units in a large target area. Does not damage friendly units.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Zeratul",
@@ -6321,12 +4730,7 @@
     "description": "Charges up, dealing 500 damage to a target unit after 3 seconds.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Zeratul",
@@ -6339,11 +4743,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 150,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 150
   },
   {
     "commander": "Zeratul",
@@ -6357,9 +4757,6 @@
     "requiresupgrade": false,
     "cooldown": 15,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "3rd Xel'Naga Artifact."
   },
   {
@@ -6373,11 +4770,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 15,
-    "energycost": 150,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 150
   },
   {
     "commander": "Zeratul",
@@ -6391,9 +4784,6 @@
     "requiresupgrade": false,
     "cooldown": 15,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "3rd Xel'Naga Artifact."
   },
   {
@@ -6407,11 +4797,7 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 2.5,
-    "energycost": 75,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 75
   },
   {
     "commander": "Zeratul",
@@ -6425,9 +4811,6 @@
     "requiresupgrade": false,
     "cooldown": 10,
     "energycost": 50,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "3rd Xel'Naga Artifact."
   },
   {
@@ -6441,10 +4824,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 120,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Core Forge and 2nd Xel'Naga Artifact Fragment"
   },
   {
@@ -6458,10 +4837,6 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Core Forge and 3rd Xel'Naga Artifact Fragment",
     "values": {
       "absorption": 100
@@ -6476,13 +4851,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Zeratul",
@@ -6495,10 +4864,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 120,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Core Forge and 2nd Xel'Naga Artifact Fragment"
   },
   {
@@ -6512,10 +4877,6 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 60,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Core Forge and 3rd Xel'Naga Artifact Fragment",
     "values": {
       "absorption": 100
@@ -6530,13 +4891,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Zeratul",
@@ -6550,10 +4905,6 @@
     "requiresupgrade": true,
     "cooldown": 8,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": ""
     }
@@ -6567,13 +4918,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Zeratul",
@@ -6586,10 +4931,6 @@
     "type": "passive",
     "requiresupgrade": true,
     "cooldown": 180,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Zeratul level 11, a Void Shrine, and three Artifact Fragments. Unavailable with Herald of the Void."
   },
   {
@@ -6604,10 +4945,6 @@
     "requiresupgrade": false,
     "cooldown": 12,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "cluster": ""
     }
@@ -6624,10 +4961,6 @@
     "requiresupgrade": true,
     "cooldown": 8,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "apparition": ""
     }
@@ -6644,10 +4977,6 @@
     "requiresupgrade": true,
     "cooldown": 60,
     "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "absorption": 100,
       "repair": ""
@@ -6664,11 +4993,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 0,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Zeratul",
@@ -6681,11 +5006,7 @@
     "type": "autocast",
     "requiresupgrade": true,
     "cooldown": 180,
-    "energycost": 0,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "energycost": 0
   },
   {
     "commander": "Zeratul",
@@ -6696,13 +5017,7 @@
     ],
     "description": "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Zeratul",
@@ -6713,13 +5028,7 @@
     ],
     "description": "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Zeratul",
@@ -6732,10 +5041,6 @@
     "type": "autocast",
     "requiresupgrade": false,
     "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "3rd Xel'Naga Artifact."
   },
   {
@@ -6748,12 +5053,7 @@
     "description": "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": 10,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 10
   },
   {
     "commander": "Zeratul",
@@ -6766,11 +5066,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 8,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "charges": 1
   },
   {
@@ -6783,12 +5078,7 @@
     "description": "Transports Zeratul to a target location.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": 120,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": 120
   },
   {
     "commander": "Zeratul",
@@ -6801,11 +5091,6 @@
     "type": "active",
     "requiresupgrade": false,
     "cooldown": 12,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null,
     "values": {
       "damage": 100,
       "tornado": ""
@@ -6821,12 +5106,7 @@
     "description": "Shows the location of or unearths a hidden Xel'Naga Artifact Fragment.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": "10 seconds if Fragment is not found\nRemaining seconds until next Fragment spawns if found.",
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "cooldown": "10 seconds if Fragment is not found\nRemaining seconds until next Fragment spawns if found."
   },
   {
     "commander": "Zeratul",
@@ -6837,13 +5117,7 @@
     ],
     "description": "Zeratul is permanently cloaked. He becomes immune to damage for 0.5 seconds after being attacked. Cannot occur more than once every 5 seconds.",
     "type": "passive",
-    "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
-    "requirements": null
+    "requiresupgrade": false
   },
   {
     "commander": "Abathur",
@@ -6855,11 +5129,6 @@
     "description": "Transforms this Mutalisk into a Guardian.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Greater Spire.",
     "cost": {
       "minerals": 25,
@@ -6877,11 +5146,6 @@
     "description": "Transforms this Mutalisk into a Devourer.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Greater Spire.",
     "cost": {
       "minerals": 75,
@@ -6899,11 +5163,6 @@
     "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -6924,11 +5183,6 @@
     "description": "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
     "type": "autocast",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -6949,11 +5203,6 @@
     "description": "Two Primal Zerglings engage in primal combat, consuming both units to produce one Ravasaur.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -6971,11 +5220,6 @@
     "description": "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Igniter.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 2.",
     "cost": {
       "minerals": 0,
@@ -6993,11 +5237,6 @@
     "description": "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Guardian.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 6. Requires Murvar's Den.",
     "cost": {
       "minerals": 0,
@@ -7015,11 +5254,6 @@
     "description": "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Primal Mutalisk.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 6. Requires Murvar's Den.",
     "cost": {
       "minerals": 0,
@@ -7037,11 +5271,6 @@
     "description": "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Impaler.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires commander level 8.",
     "cost": {
       "minerals": 0,
@@ -7059,11 +5288,6 @@
     "description": "Transforms this Mutalisk into a Brood Lord.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Greater Spire.",
     "cost": {
       "minerals": 150,
@@ -7082,11 +5306,6 @@
     "description": "Transforms this Zergling into a Baneling.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Baneling Nest.",
     "cost": {
       "minerals": 22,
@@ -7104,11 +5323,6 @@
     "description": "Transforms this Overlord into an Overseer.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Lair.",
     "cost": {
       "minerals": 50,
@@ -7126,11 +5340,6 @@
     "description": "Transforms this Overlord into an Overseer.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Lair.",
     "cost": {
       "minerals": 50,
@@ -7148,11 +5357,6 @@
     "description": "Transforms this Overlord into an Overseer.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Infested Factory.",
     "cost": {
       "minerals": 50,
@@ -7170,11 +5374,6 @@
     "description": "Transforms this Overlord into an Overseer.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Lair.",
     "cost": {
       "minerals": 45,
@@ -7192,11 +5391,6 @@
     "description": "Transforms this Mecha Zergling into a Mecha Baneling.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Mecha Baneling Nest.",
     "cost": {
       "minerals": 25,
@@ -7214,11 +5408,6 @@
     "description": "Transforms this Mecha Hydralisk into a Mecha Lurker.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Mecha Lurker Den.",
     "cost": {
       "minerals": 50,
@@ -7237,11 +5426,6 @@
     "description": "Transforms this Mecha Overlord into a Mecha Overseer.",
     "type": "active",
     "requiresupgrade": false,
-    "cooldown": null,
-    "energycost": null,
-    "rankrequired": null,
-    "mode": null,
-    "prestige": null,
     "requirements": "Requires Mecha Lair.",
     "cost": {
       "minerals": 50,

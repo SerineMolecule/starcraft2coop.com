@@ -1,4 +1,16 @@
-import type { AmonUnit, PlayerUnit, PlayerUpgrade, UnitModeData } from './data-types';
+import type { AmonUnit, PlayerTalent, PlayerUnit, PlayerUpgrade, UnitModeData } from './data-types';
+
+/** Expand shared ownership for consumers that need one record per unit. */
+export function perUnitEntries<T extends { units: string[] }>(entries: T[]): (Omit<T, 'units'> & { unit: string })[] {
+    return entries.flatMap(({ units, ...entry }) => units.map(unit => ({ ...entry, unit })));
+}
+
+/** The old PHP calculator consumes one row per changed field. */
+export function legacyPlayerTalents(talents: PlayerTalent[]) {
+    return perUnitEntries(talents).flatMap(({ changes, ...talent }) => changes.map(change => ({
+        modifierupgrade: null, extra: null, operationtype: null, ...talent, ...change,
+    })));
+}
 
 /** Whether a mode has an attack, including attacks whose damage is not yet known. */
 export function hasAttack(mode: UnitModeData): boolean {
@@ -31,7 +43,7 @@ export function legacyPlayerUnits(units: PlayerUnit[], upgrades: PlayerUpgrade[]
     let rowId = 0;
     // Legacy cards retain their separate upgraded-unit entries.
     units = units.map(unit => {
-        const unlocked = new Set(upgrades.filter(upgrade => upgrade.commander === unit.commander && upgrade.unit === unit.name)
+        const unlocked = new Set(upgrades.filter(upgrade => upgrade.commander === unit.commander && upgrade.units.includes(unit.name))
             .flatMap(upgrade => upgrade.unlocksModes ?? []));
         return { ...unit, modes: Object.fromEntries(Object.entries(unit.modes).filter(([id]) => !unlocked.has(id))) };
     });
@@ -40,6 +52,7 @@ export function legacyPlayerUnits(units: PlayerUnit[], upgrades: PlayerUpgrade[]
         const { modes, movement, hideFromUnitList, buildTimeIsAdditional, ...base } = stats;
         const row = {
             ...base,
+            shieldbonus: base.shieldbonus ?? null,
             unitid: ++rowId,
             basename: unit.name,
             name: unit.name + (label ? ` (${label})` : ''),
@@ -84,14 +97,21 @@ export function legacyAmonUnits(units: AmonUnit[]) {
 
 /** Resolve mode/attack keys to the label-based selectors used by old PHP. */
 export function legacyPlayerUpgrades(upgrades: PlayerUpgrade[], units: PlayerUnit[]) {
-    return upgrades.map(({ skillModifiers, unlocksModes, cost, researchTime, buildTimeIsAdditional, ...upgrade }) => {
-        const legacy = { ...upgrade, ...(upgrade.modifier === 'weaponName' ? { modifier: 'weaponname' } : {}) };
-        if (upgrade.weapon === undefined) return legacy;
-        const unit = units.find(unit => unit.commander === upgrade.commander && unit.name === upgrade.unit);
-        const view = unit && playerUnitViews(unit).find(view => view.id === upgrade.weapon);
-        if (!view?.weapon) throw new Error(`Unknown weapon ${upgrade.commander}/${upgrade.unit}/${upgrade.weapon}`);
-        const { weapon, ...rest } = legacy;
-        const label = legacyModeLabel(unit!, view.id);
-        return { ...rest, modifiermode: label ? `(${label})` : 'Weapon' };
+    return perUnitEntries(upgrades).flatMap(({ changes, unlocksModes, cost, researchTime, buildTimeIsAdditional, ...upgrade }) => {
+        const unitChanges = changes.filter(change => change.target === 'unit').map(({ target, ...change }) => change);
+        // Preserve descriptions for informational and skill-only upgrades in the old UI.
+        const rows = unitChanges.length ? unitChanges : [{
+            modifier: null, modifiermode: null, modifiertag: null, operation: 'none' as const, value: null,
+        }];
+        return rows.map(change => {
+            const legacy = { modifiermode: null, modifiertag: null, ...upgrade, ...change, ...(change.modifier === 'weaponName' ? { modifier: 'weaponname' } : {}) };
+            if (!('weapon' in legacy) || legacy.weapon === undefined) return legacy;
+            const unit = units.find(unit => unit.commander === upgrade.commander && unit.name === upgrade.unit);
+            const view = unit && playerUnitViews(unit).find(view => view.id === legacy.weapon);
+            if (!view?.weapon) throw new Error(`Unknown weapon ${upgrade.commander}/${upgrade.unit}/${legacy.weapon}`);
+            const { weapon, ...rest } = legacy;
+            const label = legacyModeLabel(unit!, view.id);
+            return { ...rest, modifiermode: label ? `(${label})` : 'Weapon' };
+        });
     });
 }

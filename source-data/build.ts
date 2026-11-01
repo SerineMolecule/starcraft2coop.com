@@ -1,7 +1,9 @@
 #!/usr/bin/env bun
 import tsj from "ts-json-schema-generator";
 import type { AmonUnitList, PlayerUnitList, PlayerUpgradeList, BrutalPlusList, CommanderList, Mission, MutationCycleList, MutationCycleWithScore, MutatorWithStats } from "./data-types";
-import { legacyAmonUnits, legacyPlayerUnits, legacyPlayerUpgrades } from './unit-data';
+import { legacyAmonUnits, legacyPlayerUnits, legacyPlayerUpgrades, legacyPlayerTalents } from './unit-data';
+import type { PlayerTalentList } from './data-types';
+import { buildUnitNavigation } from './unit-navigation';
 
 const files: [`${string}.json`, string][] = [
     ['brutalplus.json', 'BrutalPlusList'],
@@ -104,6 +106,8 @@ console.log(`Writing to html/data/brutalplus/`);
 const playerUnits: PlayerUnitList = await Bun.file('source-data/playerunits.json').json();
 const amonUnits: AmonUnitList = await Bun.file('source-data/amonunits.json').json();
 const playerUpgrades: PlayerUpgradeList = await Bun.file('source-data/playerupgrades.json').json();
+const playerTalents: PlayerTalentList = await Bun.file('source-data/playertalents.json').json();
+await Bun.write('html/data/legacy/playertalents.json', JSON.stringify(legacyPlayerTalents(playerTalents), null, 4) + '\n');
 await Bun.write('html/data/legacy/playerunits.json', JSON.stringify(legacyPlayerUnits(playerUnits, playerUpgrades), null, 4) + '\n');
 await Bun.write('html/data/legacy/amonunits.json', JSON.stringify(legacyAmonUnits(amonUnits), null, 4) + '\n');
 await Bun.write('html/data/legacy/playerupgrades.json', JSON.stringify(legacyPlayerUpgrades(playerUpgrades, playerUnits), null, 4) + '\n');
@@ -114,6 +118,7 @@ for (const brutalPlus of brutalPluses) {
 
 console.log(`Writing to html/data/commandersummaries/`);
 const commanders: CommanderList = await Bun.file('source-data/commandersummaries.json').json();
+await Bun.write('html/data/unit-navigation.json', JSON.stringify(buildUnitNavigation(commanders, playerUnits, amonUnits)) + '\n');
 for (const commander of commanders) {
     Bun.write(`html/data/commandersummaries/${commander.commander}.json`, JSON.stringify(commander, null, 4) + '\n');
 }

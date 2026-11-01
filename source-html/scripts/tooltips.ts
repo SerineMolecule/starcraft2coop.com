@@ -1,3 +1,4 @@
+import { perUnitEntries } from "../../source-data/unit-data";
 import mutators from "../../source-data/mutators.json";
 import playerUpgrades from "../../source-data/playerupgrades.json";
 import { rankUpgrades } from "./unit-ranks";
@@ -20,7 +21,7 @@ function token(name: string): string {
 }
 
 const mutatorData = new Map(mutators.map(mutator => [mutator.mutatorid, mutator]));
-const upgradeData = new Map(playerUpgrades.map(upgrade => [`upgrades/${token(upgrade.commander)}/${upgrade.icon}`, upgrade]));
+const upgradeData = new Map(perUnitEntries(playerUpgrades).map(upgrade => [`upgrades/${token(upgrade.commander)}/${upgrade.icon}`, upgrade]));
 let activeTooltipTarget: HTMLElement | null = null;
 
 function tooltipElement(): HTMLElement {

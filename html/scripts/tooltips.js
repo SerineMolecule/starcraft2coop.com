@@ -1,4 +1,9 @@
 (() => {
+  // source-data/unit-data.ts
+  function perUnitEntries(entries) {
+    return entries.flatMap(({ units, ...entry }) => units.map((unit) => ({ ...entry, unit })));
+  }
+
   // source-data/mutators.json
   var mutators_default = [
     {
@@ -574,1273 +579,1139 @@
   var playerupgrades_default = [
     {
       upgradeid: 1,
-      unit: "Roach",
+      units: [
+        "Roach"
+      ],
       commander: "Abathur",
       name: "Glial Reconstitution",
       icon: "glialreconstitution",
       effect: "Increases the movement speed of Roaches by 33%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.75,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 110
+      researchTime: 110,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.75,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 2,
-      unit: "Roach",
+      units: [
+        "Roach"
+      ],
       commander: "Abathur",
       name: "Hydriodic Bile",
       icon: "hydriodicbile",
       effect: "Roach gains +8 damage vs. light units.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Light",
-      value: 8,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 110
+      researchTime: 110,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Light",
+          value: 8,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 3,
-      unit: "Mutalisk",
+      units: [
+        "Mutalisk"
+      ],
       commander: "Abathur",
       name: "Sundering Glave",
       icon: "sunderingglave",
       effect: "Mutalisks deal 100% bonus damage vs. armored units.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Armored",
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Armored",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 4,
-      unit: "Guardian",
+      units: [
+        "Guardian"
+      ],
       commander: "Abathur",
       name: "Prolonged Dispersion",
       icon: "prolongeddispersion",
       effect: "Guardian attack range is increased by 3.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 5,
-      unit: "Supplicant",
+      units: [
+        "Supplicant"
+      ],
       commander: "Alarak",
       name: "Blood Shields",
       icon: "bloodshields",
       effect: "Reduces the damage enemies deal to the Supplicants shields. Adds 2 shield armor.",
-      modifier: "Shield_Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Shield_Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 6,
-      unit: "Supplicant",
+      units: [
+        "Supplicant"
+      ],
       commander: "Alarak",
       name: "Soul Augmentation",
       icon: "soulaugmentation",
       effect: "Supplicants gain +25 shields.",
-      modifier: "Shields",
-      modifiermode: null,
-      modifiertag: null,
-      value: 25,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Shields",
+          value: 25,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 7,
-      unit: "Vanguard",
+      units: [
+        "Vanguard"
+      ],
       commander: "Alarak",
       name: "Fusion Mortars",
       icon: "fusionmortars",
       effect: "Increases the damage Vanguards deal to armored units by 7.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Armored",
-      value: 7,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Armored",
+          value: 7,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 8,
-      unit: "Observer",
+      units: [
+        "Observer"
+      ],
       commander: "Artanis",
       name: "Gravitic Boosters",
       icon: "graviticboosters",
       effect: "Increases the movement speed of Observers by 50%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 9,
-      unit: "Dragoon",
+      units: [
+        "Dragoon"
+      ],
       commander: "Artanis",
       name: "Singularity Charge",
       icon: "singularitycharge",
       effect: "Increases the Dragoons attack range by 2.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 10,
-      unit: "Dragoon",
+      units: [
+        "Dragoon"
+      ],
       commander: "Artanis",
       name: "Trillic Compression Systems",
       icon: "trilliccompressionsystems",
       effect: "Dragoons gain +20 life and their shield regeneration rate is doubled. Also allows the Dragoon to regenerate shields in combat.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 20,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 20,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 11,
-      unit: "Phoenix",
+      units: [
+        "Phoenix"
+      ],
       commander: "Artanis",
       name: "Anion Pulse-Crystals",
       icon: "anionpulsecrystals",
       effect: "Phoenixes gain +2 range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 12,
-      unit: "Ravasaur",
+      units: [
+        "Ravasaur"
+      ],
       commander: "Dehaka",
       name: "Dissolving Acid",
       icon: "dissolvingacid",
       effect: "Ravasaurs deal +15 damage to armored targets.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Armored",
-      value: 15,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Armored",
+          value: 15,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 13,
-      unit: "Ravasaur",
+      units: [
+        "Ravasaur"
+      ],
       commander: "Dehaka",
       name: "Enlarged Parotid Glands",
       icon: "enlargedparotidglands",
       effect: "Increases movement speed and attack range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 3,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 14,
-      unit: "Primal Roach",
+      units: [
+        "Primal Roach"
+      ],
       commander: "Dehaka",
       name: "Glial Reconstitution",
       icon: "glialreconstitution",
       effect: "Increases the movement speed of Primal Roaches by 31% and Primal Igniters by 19%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.7,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.7,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 15,
-      unit: "Primal Igniter",
+      units: [
+        "Primal Igniter"
+      ],
       commander: "Dehaka",
       name: "Glial Reconstitution",
       icon: "glialreconstitution",
       effect: "Increases the movement speed of Primal Roaches by 31% and Primal Igniters by 19%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.55,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.55,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 16,
-      unit: "Primal Igniter",
+      units: [
+        "Primal Igniter"
+      ],
       commander: "Dehaka",
       name: "Concentrated Fire",
       icon: "concentratedfire",
       effect: "Increases the Primal Igniters damage against light armored enemies by 15.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Light",
-      value: 15,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Light",
+          value: 15,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 17,
-      unit: "Primal Hydralisk",
+      units: [
+        "Primal Hydralisk"
+      ],
       commander: "Dehaka",
       name: "Muscular Augments",
       icon: "muscularaugments",
       effect: "Increases Primal Hydralisk movement speed by 22% and attack range by 1.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.56,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 18,
-      unit: "Primal Hydralisk",
-      commander: "Dehaka",
-      name: "Muscular Augments",
-      icon: "muscularaugments",
-      effect: "Increases Primal Hydralisk movement speed by 22% and attack range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.56,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 19,
-      unit: "Fenix Praetor Armor",
+      units: [
+        "Fenix Praetor Armor",
+        "Fenix Cybros Arbiter",
+        "Fenix Solarite Dragoon"
+      ],
       commander: "Fenix",
       name: "Purifier Armaments",
       icon: "purifierarmaments",
       effect: "All Fenix Armor Suits gain +15 attack damage.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 15,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 15,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 20,
-      unit: "Colossus",
+      units: [
+        "Colossus"
+      ],
       commander: "Fenix",
       name: "Extended Thermal Lance",
       icon: "extendedthermallance",
       effect: "Colossi gain +3 range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 21,
-      unit: "Scout",
+      units: [
+        "Scout",
+        "Mojo"
+      ],
       commander: "Fenix",
       name: "Combat Sensor Array",
       icon: "combatsensorarray",
       effect: "Scouts gain +3 air attack range and +1 ground attack range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "air",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 22,
-      unit: "Scout",
-      commander: "Fenix",
-      name: "Combat Sensor Array",
-      icon: "combatsensorarray",
-      effect: "Scouts gain +3 air attack range and +1 ground attack range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "ground",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 23,
-      unit: "Mojo",
-      commander: "Fenix",
-      name: "Combat Sensor Array",
-      icon: "combatsensorarray",
-      effect: "Scouts gain +3 air attack range and +1 ground attack range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "air",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 24,
-      unit: "Mojo",
-      commander: "Fenix",
-      name: "Combat Sensor Array",
-      icon: "combatsensorarray",
-      effect: "Scouts gain +3 air attack range and +1 ground attack range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "ground",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add",
+          weapon: "air"
+        },
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add",
+          weapon: "ground"
+        }
+      ]
     },
     {
       upgradeid: 25,
-      unit: "Observer",
+      units: [
+        "Observer"
+      ],
       commander: "Fenix",
       name: "Gravitic Boosters",
       icon: "graviticboosters",
       effect: "Increases the movement speed of Observers by 50%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 26,
-      unit: "Reaper",
+      units: [
+        "Reaper"
+      ],
       commander: "Horner",
       name: "Jet Pack Overdrive",
       icon: "jetpackoverdrive",
       temporary: true,
       effect: "Increases the movement speed of Reapers by 1.5, and grants them the ability to fly for 10 seconds. Reapers are able to attack air units while flying.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.55,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 63
+      researchTime: 63,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.55,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 29,
-      unit: "Observer",
+      units: [
+        "Observer"
+      ],
       commander: "Karax",
       name: "Gravitic Boosters",
       icon: "graviticboosters",
       effect: "Increases the movement speed of Observers by 50%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 30,
-      unit: "Colossus",
+      units: [
+        "Colossus"
+      ],
       commander: "Karax",
       name: "Extended Thermal Lance",
       icon: "extendedthermallance",
       effect: "Colossi gain +3 range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 31,
-      unit: "Mirage",
+      units: [
+        "Mirage"
+      ],
       commander: "Karax",
       name: "Anion Pulse-Crystals",
       icon: "anionpulsecrystals",
       effect: "Mirages gain +2 range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 32,
-      unit: "Kerrigan",
+      units: [
+        "Kerrigan"
+      ],
       commander: "Kerrigan",
       name: "Heroic Fortitude",
       icon: "heroicfortitude",
       effect: `Kerrigan gains +200 maximum life.\r
 Life-regeneration rate increased by 100%.`,
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 200,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 33,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Kerrigan",
       name: "Metabolic Boost",
       icon: "metabolicboost",
       effect: "Increases the movement speed of Zerglings by 60%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.6,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.6,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 34,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Kerrigan",
       name: "Hardened Carapace",
       icon: "hardenedcarapace",
       effect: "Zerglings gain +10 maximum life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 10,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 10,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 35,
-      unit: "Hydralisk",
+      units: [
+        "Hydralisk"
+      ],
       commander: "Kerrigan",
       name: "Muscular Augments",
       icon: "muscularaugments",
       effect: "Improves Hydralisk movement speed by 25% and increases attack range by +1.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 36,
-      unit: "Hydralisk",
-      commander: "Kerrigan",
-      name: "Muscular Augments",
-      icon: "muscularaugments",
-      effect: "Improves Hydralisk movement speed by 25% and increases attack range by +1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.25,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 37,
-      unit: "Hydralisk",
+      units: [
+        "Hydralisk"
+      ],
       commander: "Kerrigan",
       name: "Ancillary Carapace",
       icon: "ancillarycarapace",
       effect: "Hydralisk gains +20 maximum life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 20,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 20,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 38,
-      unit: "Lurker",
+      units: [
+        "Lurker"
+      ],
       commander: "Kerrigan",
       name: "Seismic Spines",
       icon: "seismicspines",
       effect: "Increases the attack range of Lurkers by +3.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 39,
-      unit: "Ultralisk",
+      units: [
+        "Ultralisk"
+      ],
       commander: "Kerrigan",
       name: "Chitinous Plating",
       icon: "chitinousplating",
       effect: "Grants Ultralisks +2 armor.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 40,
-      unit: "Brood Lord",
+      units: [
+        "Brood Lord"
+      ],
       commander: "Kerrigan",
       name: "Porous Cartilage",
       icon: "porouscartilage",
       effect: "Increases Brood Lord movement speed by 75% and life by 100.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.75,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.75,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 100,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 41,
-      unit: "Elite Marine",
+      units: [
+        "Elite Marine"
+      ],
       commander: "Nova",
       name: "Laser Targeting System",
       icon: "lasertargetingsystem",
       effect: "Increases the Elite Marines vision by 2 and its weapon range by 1.",
-      modifier: "Vision",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
-    },
-    {
-      upgradeid: 42,
-      unit: "Elite Marine",
-      commander: "Nova",
-      name: "Laser Targeting System",
-      icon: "lasertargetingsystem",
-      effect: "Increases the Elite Marines vision by 2 and its weapon range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 30
+      researchTime: 30,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Vision",
+          value: 2,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 43,
-      unit: "Elite Marine",
+      units: [
+        "Elite Marine"
+      ],
       commander: "Nova",
       name: "Super Stimpack",
       icon: "superstimpack",
       temporary: true,
       effect: "Heals the 2 life per second and increases its attack and movement speeds for 15 seconds.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
-    },
-    {
-      upgradeid: 44,
-      unit: "Elite Marine",
-      commander: "Nova",
-      name: "Super Stimpack",
-      icon: "superstimpack",
-      temporary: true,
-      effect: "Heals the 2 life per second and increases its attack and movement speeds for 15 seconds.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 45
+      researchTime: 45,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 45,
-      unit: "Hellbat Ranger",
+      units: [
+        "Hellbat Ranger",
+        "Hellion Ranger"
+      ],
       commander: "Nova",
       name: "Infernal PreIgniter",
       icon: "infernalpreigniter",
       effect: "Hellbats deal +15 damage to light units in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Light",
-      value: 15,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
-    },
-    {
-      upgradeid: 46,
-      unit: "Hellion Ranger",
-      commander: "Nova",
-      name: "Infernal PreIgniter",
-      icon: "infernalpreigniter",
-      effect: "Hellbats deal +15 damage to light units in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Light",
-      value: 15,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 30
+      researchTime: 30,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Light",
+          value: 15,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 47,
-      unit: "Strike Goliath",
+      units: [
+        "Strike Goliath"
+      ],
       commander: "Nova",
       name: "Ares Class Targeting System",
       icon: "aresclasstargetingsystem",
       effect: "Increases the Strike Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "air",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
-    },
-    {
-      upgradeid: 48,
-      unit: "Strike Goliath",
-      commander: "Nova",
-      name: "Ares Class Targeting System",
-      icon: "aresclasstargetingsystem",
-      effect: "Increases the Strike Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "ground",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 30
+      researchTime: 30,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add",
+          weapon: "air"
+        },
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add",
+          weapon: "ground"
+        }
+      ]
     },
     {
       upgradeid: 49,
-      unit: "Marine",
+      units: [
+        "Marine",
+        "Marauder",
+        "Firebat"
+      ],
       commander: "Raynor",
       name: "Stimpack",
       icon: "stimpack",
       temporary: true,
       effect: "Injects the unit with powerful stimulants that greatly increase attack speed (by 43%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the units life.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 50,
-      unit: "Marine",
-      commander: "Raynor",
-      name: "Stimpack",
-      icon: "stimpack",
-      temporary: true,
-      effect: "Injects the unit with powerful stimulants that greatly increase attack speed (by 43%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the units life.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.75,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.75,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 51,
-      unit: "Marine",
+      units: [
+        "Marine"
+      ],
       commander: "Raynor",
       name: "Combat Shield",
       icon: "combatshield",
       effect: "Marines gain +10 life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 10,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 52,
-      unit: "Marauder",
-      commander: "Raynor",
-      name: "Stimpack",
-      icon: "stimpack",
-      temporary: true,
-      effect: "Injects the unit with powerful stimulants that greatly increase attack speed (by 43%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the units life.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 53,
-      unit: "Marauder",
-      commander: "Raynor",
-      name: "Stimpack",
-      icon: "stimpack",
-      temporary: true,
-      effect: "Injects the unit with powerful stimulants that greatly increase attack speed (by 43%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the units life.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.75,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 54,
-      unit: "Firebat",
-      commander: "Raynor",
-      name: "Stimpack",
-      icon: "stimpack",
-      temporary: true,
-      effect: "Injects the unit with powerful stimulants that greatly increase attack speed (by 43%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the units life.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 55,
-      unit: "Firebat",
-      commander: "Raynor",
-      name: "Stimpack",
-      icon: "stimpack",
-      temporary: true,
-      effect: "Injects the unit with powerful stimulants that greatly increase attack speed (by 43%) and movement speed (by 50%) for 10 seconds. Injures the unit for 5 of the units life.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.75,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 10,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 56,
-      unit: "Firebat",
+      units: [
+        "Firebat"
+      ],
       commander: "Raynor",
       name: "Juggernaut Plating",
       icon: "juggernautplating",
       effect: "Firebats gain +100 life and +2 armor.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 100,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 57,
-      unit: "Firebat",
-      commander: "Raynor",
-      name: "Juggernaut Plating",
-      icon: "juggernautplating",
-      effect: "Firebats gain +100 life and +2 armor.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 100,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 58,
-      unit: "Vulture",
+      units: [
+        "Vulture",
+        "Siege Tank",
+        "Viking",
+        "Banshee",
+        "Battlecruiser"
+      ],
       commander: "Raynor",
       name: "Advanced Optics",
       icon: "advancedoptics",
       effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 59,
-      unit: "Vulture",
+      units: [
+        "Vulture",
+        "Siege Tank",
+        "Viking",
+        "Banshee",
+        "Battlecruiser"
+      ],
       commander: "Raynor",
       name: "Afterburners",
       icon: "afterburners",
       temporary: true,
       effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 60,
-      unit: "Siege Tank",
-      commander: "Raynor",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 200,
-        gas: 200
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 61,
-      unit: "Siege Tank",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 2,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 62,
-      unit: "Viking",
+      units: [
+        "Viking"
+      ],
       commander: "Raynor",
       name: "Phobos Weapons System",
       icon: "phobosweaponssystem",
       effect: "Viking weapons system upgrade. Increases air attack range by 2 and ground attack range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "assault-mode",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 63,
-      unit: "Viking",
-      commander: "Raynor",
-      name: "Phobos Weapons System",
-      icon: "phobosweaponssystem",
-      effect: "Viking weapons system upgrade. Increases air attack range by 2 and ground attack range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "fighter-mode",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 64,
-      unit: "Viking",
-      commander: "Raynor",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 200,
-        gas: 200
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 65,
-      unit: "Viking",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 66,
-      unit: "Banshee",
-      commander: "Raynor",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 200,
-        gas: 200
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 67,
-      unit: "Banshee",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 68,
-      unit: "Battlecruiser",
-      commander: "Raynor",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 200,
-        gas: 200
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 69,
-      unit: "Battlecruiser",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add",
+          weapon: "assault-mode"
+        },
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add",
+          weapon: "fighter-mode"
+        }
+      ]
     },
     {
       upgradeid: 70,
-      unit: "Asteria Wraith",
+      units: [
+        "Asteria Wraith"
+      ],
       commander: "Horner",
       name: "Trigger Override",
       icon: "triggeroverride",
@@ -1848,743 +1719,666 @@ Life-regeneration rate increased by 100%.`,
       effect: `Wraith attack speed increases by 10% with each attack, up to a maximum of 100%.\r
 \r
 Passive ability.`,
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 63
+      researchTime: 63,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 71,
-      unit: "Heavy Siege Tank",
+      units: [
+        "Heavy Siege Tank"
+      ],
       commander: "Nova",
       name: "Graduating Range",
       icon: "graduatingrange",
       effect: "Increases the Heavy Siege Tanks attack range by 1 every 3 seconds while in Siege Mode, up to a maximum of 5 additional range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 5,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "siege-mode",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
+      researchTime: 45,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 5,
+          operation: "add",
+          weapon: "siege-mode"
+        }
+      ]
     },
     {
       upgradeid: 72,
-      unit: "Infested Marine",
+      units: [
+        "Infested Marine",
+        "Infested Trooper"
+      ],
       commander: "Stukov",
       name: "Retinal Augmentation",
       icon: "retinalaugmentation",
       effect: "Infested Marines and Infested Troopers gain +1 attack range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 73,
-      unit: "Infested Trooper",
-      commander: "Stukov",
-      name: "Retinal Augmentation",
-      icon: "retinalaugmentation",
-      effect: "Infested Marines and Infested Troopers gain +1 attack range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 74,
-      unit: "Infested Bunker",
+      units: [
+        "Infested Bunker"
+      ],
       commander: "Stukov",
       name: "Calcified Armor",
       icon: "calcifiedarmor",
       effect: "Infested Bunkers gain +3 armor.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 3,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 75,
-      unit: "Infested Siege Tank",
+      units: [
+        "Infested Siege Tank"
+      ],
       commander: "Stukov",
       name: "Acidic Enzymes",
       icon: "acidicenzymes",
       effect: "Infested Siege Tanks deal an additional +15 damage to armored units and structures in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Armored",
-      value: 15,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Armored",
+          value: 15,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Structure",
+          value: 15,
+          operation: "add",
+          weapon: "rooted"
+        }
+      ]
     },
     {
       upgradeid: 76,
-      unit: "Infested Liberator",
+      units: [
+        "Infested Liberator"
+      ],
       commander: "Stukov",
       name: "Viral Contamination",
       icon: "viralcontamination",
       effect: "Increases the damage Infested Liberators deal to their primary target by 100%.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 77,
-      unit: "Infested Banshee",
+      units: [
+        "Infested Banshee"
+      ],
       commander: "Stukov",
       name: "Braced Exoskeleton",
       icon: "bracedexoskeleton",
       effect: "Infested Banshees gain +100 life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 100,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 100,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 78,
-      unit: "Hellbat",
+      units: [
+        "Hellbat",
+        "Hellion"
+      ],
       commander: "Swann",
       name: "Infernal PreIgniter",
       icon: "infernalpreigniter",
       effect: "Hellbats deal +10 damage to light units in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Light",
-      value: 10,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Light",
+          value: 10,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 79,
-      unit: "Hellbat",
+      units: [
+        "Hellbat",
+        "Hellion"
+      ],
       commander: "Swann",
       name: "Infernal Plating",
       icon: "infernalplating",
       effect: "Hellions and Hellbats gain +2 armor.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 80,
-      unit: "Hellbat",
+      units: [
+        "Hellbat",
+        "Goliath",
+        "Siege Tank",
+        "Cyclone",
+        "Thor",
+        "Wraith",
+        "Hellion"
+      ],
       commander: "Swann",
       name: "Advanced Optics",
       icon: "advancedoptics",
       effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 81,
-      unit: "Goliath",
+      units: [
+        "Goliath"
+      ],
       commander: "Swann",
       name: "Ares Class Targeting System",
       icon: "aresclasstargetingsystem",
       effect: "Increases the Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "air",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 82,
-      unit: "Goliath",
-      commander: "Swann",
-      name: "Ares Class Targeting System",
-      icon: "aresclasstargetingsystem",
-      effect: "Increases the Goliaths anti-air weapon range by 3 and its ground weapon range by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "ground",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 83,
-      unit: "Goliath",
-      commander: "Swann",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 120
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add",
+          weapon: "air"
+        },
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add",
+          weapon: "ground"
+        }
+      ]
     },
     {
       upgradeid: 84,
-      unit: "Siege Tank",
+      units: [
+        "Siege Tank"
+      ],
       commander: "Swann",
       name: "Maelstrom Rounds",
       icon: "maelstromrounds",
       effect: "Siege Tanks gain +40 attack damage while in Siege Mode. Splash damage remains the same.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 40,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "siege-mode",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 85,
-      unit: "Siege Tank",
-      commander: "Swann",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 86,
-      unit: "Cyclone",
-      commander: "Swann",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 87,
-      unit: "Thor",
-      commander: "Swann",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 120
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 40,
+          operation: "add",
+          weapon: "siege-mode"
+        }
+      ]
     },
     {
       upgradeid: 88,
-      unit: "Wraith",
+      units: [
+        "Wraith"
+      ],
       commander: "Swann",
       name: "Pulse Amplifier",
       icon: "pulseamplifier",
       effect: "Increases the damage of Gemini Missiles by 100% and Burst Lasers by 300% while the Wraith is moving.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
-      weapon: "air",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 89,
-      unit: "Wraith",
-      commander: "Swann",
-      name: "Pulse Amplifier",
-      icon: "pulseamplifier",
-      effect: "Increases the damage of Gemini Missiles by 100% and Burst Lasers by 300% while the Wraith is moving.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      weapon: "ground",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 90,
-      unit: "Wraith",
-      commander: "Swann",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 120
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 2,
+          operation: "multiply",
+          weapon: "air"
+        },
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 4,
+          operation: "multiply",
+          weapon: "ground"
+        }
+      ]
     },
     {
       upgradeid: 91,
-      unit: "Tychus Findlay",
+      units: [
+        "Tychus Findlay",
+        "Crooked Sam",
+        'James "Sirius" Sykes'
+      ],
       commander: "Tychus",
       name: "ITCE Triggers",
       icon: "itcetriggers",
       effect: "Increases the attack speed of Tychus, Crooked Sam, and Sirius by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 92,
-      unit: "Crooked Sam",
-      commander: "Tychus",
-      name: "ITCE Triggers",
-      icon: "itcetriggers",
-      effect: "Increases the attack speed of Tychus, Crooked Sam, and Sirius by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 93,
-      unit: 'James "Sirius" Sykes',
-      commander: "Tychus",
-      name: "ITCE Triggers",
-      icon: "itcetriggers",
-      effect: "Increases the attack speed of Tychus, Crooked Sam, and Sirius by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.25,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 94,
-      unit: 'Miles "Blaze" Lewis',
+      units: [
+        'Miles "Blaze" Lewis',
+        'Rob "Cannonball" Boswell',
+        'Kev "Rattlesnake" West'
+      ],
       commander: "Tychus",
       name: "Endurance Supplements",
       icon: "endurancesupplements",
       effect: "Increases the life of Blaze, Cannonball, and Rattlesnake by 25%.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 95,
-      unit: 'Rob "Cannonball" Boswell',
-      commander: "Tychus",
-      name: "Endurance Supplements",
-      icon: "endurancesupplements",
-      effect: "Increases the life of Blaze, Cannonball, and Rattlesnake by 25%.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 96,
-      unit: 'Kev "Rattlesnake" West',
-      commander: "Tychus",
-      name: "Endurance Supplements",
-      icon: "endurancesupplements",
-      effect: "Increases the life of Blaze, Cannonball, and Rattlesnake by 25%.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 1.25,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 97,
-      unit: "Void Ray",
+      units: [
+        "Void Ray"
+      ],
       commander: "Vorazun",
       name: "Prismatic Range",
       icon: "prismaticrange",
       effect: "Increases the range (up to 3 increase) of the Void Ray's weapon as it continues to attack.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 98,
-      unit: "Zagara",
+      units: [
+        "Zagara"
+      ],
       commander: "Zagara",
       name: "Heroic Fortitude",
       icon: "heroicfortitude",
       effect: `Zagara gains +200 maximum life.\r
 Life-regeneration rate increased by 100%.`,
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 200,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 99,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Zagara",
       name: "Metabolic Boost",
       icon: "metabolicboost",
       effect: "Increases the movement speed of Zerglings by 60%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.6,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.6,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 100,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Zagara",
       name: "Hardened Carapace",
       icon: "hardenedcarapace",
       effect: "Zerglings gain +10 maximum life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 10,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 10,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 101,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Kerrigan",
       name: "Adrenal Overload",
       icon: "adrenaloverload",
       effect: "Increases the attack speed of Zerglings by 40%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.4,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.4,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 102,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Zagara",
       name: "Adrenal Overload",
       icon: "adrenaloverload",
       effect: "Increases the attack speed of Zerglings by 40%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.4,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.4,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 103,
-      unit: "Baneling",
+      units: [
+        "Baneling",
+        "Baneling Spawn"
+      ],
       commander: "Zagara",
       name: "Centrifugal Hooks",
       icon: "centrifugalhooks",
       effect: "Increases the movement speed of Banelings by 15%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.45,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 104,
-      unit: "Baneling Spawn",
-      commander: "Zagara",
-      name: "Centrifugal Hooks",
-      icon: "centrifugalhooks",
-      effect: "Increases the movement speed of Banelings by 15%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.45,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.45,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 105,
-      unit: "Baneling",
+      units: [
+        "Baneling"
+      ],
       commander: "Zagara",
       name: "Corrosive Acid",
       icon: "corrosiveacid",
       effect: "Increases the Banelings base attack damage against primary target by 100%. Splash damage remains the same.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 40,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 40,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Structure",
+          value: 40,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 106,
-      unit: "Baneling Spawn",
+      units: [
+        "Baneling Spawn"
+      ],
       commander: "Zagara",
       name: "Corrosive Acid",
       icon: "corrosiveacid",
       effect: "Increases the Banelings base attack damage against primary target by 100%. Splash damage remains the same.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 5,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 5,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 107,
-      unit: "Scourge",
+      units: [
+        "Scourge"
+      ],
       commander: "Zagara",
       name: "Simplified Genome",
       icon: "simplifiedgenome",
       effect: "Reduces the amount of vespene gas required to morph Scourge by 50.",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: -25,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "vespeneCost",
+          value: -25,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 108,
-      unit: "Xel'Naga Abrogator",
+      units: [
+        "Xel'Naga Abrogator"
+      ],
       commander: "Zeratul",
       name: "Nova Battery",
       icon: "novabattery",
       effect: "Reduces the cooldown of Purification Nova by 50%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        },
+        {
+          target: "skill",
           skill: "Purification Nova",
           modifier: "cooldown",
           operation: "multiply",
@@ -2594,695 +2388,561 @@ Life-regeneration rate increased by 100%.`,
     },
     {
       upgradeid: 109,
-      unit: "Xel'Naga Watcher",
+      units: [
+        "Xel'Naga Watcher"
+      ],
       commander: "Zeratul",
       name: "Gravitic Boosters",
       icon: "graviticboosters",
       effect: "Increases the movement speed of Xel'Naga Watchers by 50%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 110,
-      unit: "Xel'Naga Watcher",
+      units: [
+        "Xel'Naga Watcher"
+      ],
       commander: "Zeratul",
       name: "Sensor Array",
       icon: "sensorarray",
       effect: "Increases the sight radius of Xel'Naga Watchers by 50%.",
-      modifier: "Vision",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Vision",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 111,
-      unit: "Overlord",
+      units: [
+        "Overlord"
+      ],
       commander: "Abathur",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 112,
-      unit: "Overseer",
+      units: [
+        "Overseer"
+      ],
       commander: "Abathur",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: "(Normal)",
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          modifiermode: "(Normal)",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 113,
-      unit: "Overlord",
+      units: [
+        "Overlord"
+      ],
       commander: "Kerrigan",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 114,
-      unit: "Overseer",
+      units: [
+        "Overseer"
+      ],
       commander: "Kerrigan",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: "(Normal)",
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          modifiermode: "(Normal)",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 115,
-      unit: "Overlord",
+      units: [
+        "Overlord"
+      ],
       commander: "Stukov",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 116,
-      unit: "Overseer",
+      units: [
+        "Overseer"
+      ],
       commander: "Stukov",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: "(Normal)",
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          modifiermode: "(Normal)",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 117,
-      unit: "Overlord",
+      units: [
+        "Overlord"
+      ],
       commander: "Zagara",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 118,
-      unit: "Overseer",
+      units: [
+        "Overseer"
+      ],
       commander: "Zagara",
       name: "Pneumatized Carapace",
       icon: "pneumatizedcarapace",
       effect: "Increases the movement speed of Overlords and Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: "(Normal)",
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 119,
-      unit: "Hellion",
-      commander: "Swann",
-      name: "Infernal PreIgniter",
-      icon: "infernalpreigniter",
-      effect: "Hellbats deal +10 damage to light units in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Light",
-      value: 10,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 120,
-      unit: "Hellion",
-      commander: "Swann",
-      name: "Infernal Plating",
-      icon: "infernalplating",
-      effect: "Hellions and Hellbats gain +2 armor.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 121,
-      unit: "Hellion",
-      commander: "Swann",
-      name: "Advanced Optics",
-      icon: "advancedoptics",
-      effect: "Increases the range of all vehicle and ship weapons by 1.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 120
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          modifiermode: "(Normal)",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 122,
-      unit: "Spinning Dizzy",
+      units: [
+        "Spinning Dizzy",
+        "Flaming Betty",
+        "Blaster Billy"
+      ],
       commander: "Swann",
       name: "HiSec Auto Tracking",
       icon: "hisecautotracking",
       effect: "Adds +1 range to all Turrets.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 1,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 123,
-      unit: "Spinning Dizzy",
+      units: [
+        "Spinning Dizzy",
+        "Flaming Betty",
+        "Blaster Billy"
+      ],
       commander: "Swann",
       name: "Structure Armor",
       icon: "structurearmor",
       effect: "Upgrades the armor of structures by 2.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 124,
-      unit: "Spinning Dizzy",
+      units: [
+        "Spinning Dizzy",
+        "Flaming Betty",
+        "Blaster Billy"
+      ],
       commander: "Swann",
       name: "KMC AutoLoaders",
       icon: "kmcautoloaders",
       effect: "Increases the attack speed of all Turrets by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 125,
-      unit: "Flaming Betty",
-      commander: "Swann",
-      name: "HiSec Auto Tracking",
-      icon: "hisecautotracking",
-      effect: "Adds +1 range to all Turrets.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 126,
-      unit: "Flaming Betty",
-      commander: "Swann",
-      name: "Structure Armor",
-      icon: "structurearmor",
-      effect: "Upgrades the armor of structures by 2.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 127,
-      unit: "Flaming Betty",
-      commander: "Swann",
-      name: "KMC AutoLoaders",
-      icon: "kmcautoloaders",
-      effect: "Increases the attack speed of all Turrets by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 128,
-      unit: "Blaster Billy",
-      commander: "Swann",
-      name: "HiSec Auto Tracking",
-      icon: "hisecautotracking",
-      effect: "Adds +1 range to all Turrets.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 129,
-      unit: "Blaster Billy",
-      commander: "Swann",
-      name: "Structure Armor",
-      icon: "structurearmor",
-      effect: "Upgrades the armor of structures by 2.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 130,
-      unit: "Blaster Billy",
-      commander: "Swann",
-      name: "KMC AutoLoaders",
-      icon: "kmcautoloaders",
-      effect: "Increases the attack speed of all Turrets by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.25,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 131,
-      unit: "Photon Cannon",
+      units: [
+        "Photon Cannon",
+        "Khaydarin Monolith"
+      ],
       commander: "Karax",
       name: "Enhanced Targeting",
       icon: "enhancedtargeting",
       effect: "Photon Cannons, Khaydarin Monoliths, and Shield Batteries gain +2 range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 132,
-      unit: "Photon Cannon",
+      units: [
+        "Photon Cannon",
+        "Khaydarin Monolith"
+      ],
       commander: "Karax",
       name: "Optimized Ordnance",
       icon: "optimizedordnance",
       effect: "Increases the attack speed of Photon Cannons and Khaydarin Monoliths by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 120
-    },
-    {
-      upgradeid: 133,
-      unit: "Khaydarin Monolith",
-      commander: "Karax",
-      name: "Enhanced Targeting",
-      icon: "enhancedtargeting",
-      effect: "Photon Cannons, Khaydarin Monoliths, and Shield Batteries gain +2 range.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 134,
-      unit: "Khaydarin Monolith",
-      commander: "Karax",
-      name: "Optimized Ordnance",
-      icon: "optimizedordnance",
-      effect: "Increases the attack speed of Photon Cannons and Khaydarin Monoliths by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.25,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.25,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 135,
-      unit: "Warhound Turret",
+      units: [
+        "Warhound Turret"
+      ],
       commander: "Tychus",
       name: "Umojan Turret Frame",
       icon: "umojanturretframe",
       effect: "Increases the life and weapon damage of Warhound Turrets by 75%.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 113,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 1200,
         gas: 400
-      }
-    },
-    {
-      upgradeid: 136,
-      unit: "Warhound Turret",
-      commander: "Tychus",
-      name: "Umojan Turret Frame",
-      icon: "umojanturretframe",
-      effect: "Increases the life and weapon damage of Warhound Turrets by 75%.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 14,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 1200,
-        gas: 400
-      }
-    },
-    {
-      upgradeid: 137,
-      unit: "Baneling",
-      commander: "Zagara",
-      name: "Corrosive Acid",
-      icon: "corrosiveacid",
-      effect: "Increases the Banelings base attack damage against primary target by 100%. Splash damage remains the same.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Structure",
-      value: 40,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
       },
-      researchTime: 90
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 113,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 14,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 138,
-      unit: "Banelnig Spawn",
+      units: [
+        "Banelnig Spawn"
+      ],
       commander: "Zagara",
       name: "Corrosive Acid",
       icon: "corrosiveacid",
       effect: "Increases the Banelings base attack damage against primary target by 100%. Splash damage remains the same.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Structure",
-      value: 5,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Structure",
+          value: 5,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 139,
-      unit: "Bile Launcher",
+      units: [
+        "Bile Launcher"
+      ],
       commander: "Zagara",
       name: "Artillery Ducts",
       icon: "artilleryducts",
       effect: "Increases the range of the Bile Launchers Bombardment by 10.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 10,
-      operation: "add",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "unit",
+          modifier: "Range",
+          value: 10,
+          operation: "add"
+        },
+        {
+          target: "skill",
           skill: "Bombardment",
           modifier: "values.range",
           operation: "add",
           value: 10
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 140,
-      unit: "Bile Launcher",
+      units: [
+        "Bile Launcher"
+      ],
       commander: "Zagara",
       name: "Rapid Bombardment",
       icon: "rapidbombardment",
       effect: "Reduces the cooldown of the Bile Launchers Bombardment.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 5,
-      operation: "set",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 5,
+          operation: "set"
+        },
+        {
+          target: "skill",
           skill: "Bombardment",
           modifier: "values.interval",
           operation: "set",
           value: 5
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 141,
-      unit: "Volatile Infested",
+      units: [
+        "Volatile Infested"
+      ],
       commander: "Stukov",
       name: "Acidic Enzymes",
       icon: "acidicenzymes",
       effect: "Infested Siege Tanks deal an additional +15 damage to armored units and structures in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Armored",
-      value: 15,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 142,
-      unit: "Ravasaur",
-      commander: "Dehaka",
-      name: "Enlarged Parotid Glands",
-      icon: "enlargedparotidglands",
-      effect: "Increases movement speed and attack range.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "set",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Armored",
+          value: 15,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Structure",
+          value: 15,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 143,
-      unit: "Infested Liberator",
+      units: [
+        "Infested Liberator"
+      ],
       commander: "Stukov",
       name: "Cloud Dispersal",
       icon: "clouddispersal",
       effect: "Infested Liberators instantly transform into a cloud of microscopic organisms while attacking, reducing the damage they take by 85%.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 144,
-      unit: "Infested Liberator",
-      commander: "Stukov",
-      name: "Cloud Dispersal",
-      icon: "clouddispersal",
-      effect: "Infested Liberators instantly transform into a cloud of microscopic organisms while attacking, reducing the damage they take by 85%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "set",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 0,
+          operation: "set"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1,
+          operation: "set"
+        },
+        {
+          target: "unit",
+          modifier: "Hits",
+          value: 1,
+          operation: "set"
+        },
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "While the Liberator attacks in cloud form, its target deals damage over time to enemy air units in a circle of radius 1.5 around it as it moves. Viral Contamination only increases damage to the primary target.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 145,
-      unit: "Infested Banshee",
+      units: [
+        "Infested Banshee"
+      ],
       commander: "Stukov",
       name: "Cloak",
       icon: "cloak",
@@ -3290,16 +2950,21 @@ Life-regeneration rate increased by 100%.`,
       effect: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. Cloaked Infested Banshees also have their range increased by 2.\r
 \r
 Drains 0.9 energy per second.`,
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 146,
-      unit: "Banshee",
+      units: [
+        "Banshee"
+      ],
       commander: "Raynor",
       name: "Cloak",
       icon: "cloakingfield",
@@ -3307,2385 +2972,1569 @@ Drains 0.9 energy per second.`,
       effect: `Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.\r
 \r
 Drains 0.9 energy per second.`,
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 147,
-      unit: "Mecha Zergling",
+      units: [
+        "Mecha Zergling"
+      ],
       commander: "Stetmann",
       name: "Metal-Bolic Boost",
       icon: "metalbolicboost",
       effect: "Increases the movement speed of Mecha Zerglings by 60%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.6,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.6,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 148,
-      unit: "Mecha Zergling",
+      units: [
+        "Mecha Zergling"
+      ],
       commander: "Stetmann",
       name: "Synthetic Adrenal Pumps",
       icon: "syntheticadrenalpumps",
       effect: "Increases attack speed of Mecha Zerglings by 100%. Drains 1 Egonergy per attack.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 149,
-      unit: "Mecha Baneling",
+      units: [
+        "Mecha Baneling"
+      ],
       commander: "Stetmann",
       name: "Anti-Centripetal Rocket Servos",
       icon: "anticentripetalrocketservos",
       effect: "Increases the movement speed of Mecha Banelings by 15% and allows them to leap onto enemy units.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.15,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.15,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 150,
-      unit: "Mecha Hydralisk",
+      units: [
+        "Mecha Hydralisk"
+      ],
       commander: "Stetmann",
       name: "Hydra-lic Augments",
       icon: "hydralicaugments",
       effect: "Increases the movement speed of Mecha Hydralisks by 50%.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 151,
-      unit: "Mecha Hydralisk",
+      units: [
+        "Mecha Hydralisk"
+      ],
       commander: "Stetmann",
       name: "Tyr-Class Targeting System",
       icon: "tyrclasstargetingsystem",
       effect: "Increases the Mecha Hydralisks anti-air weapon range by 3.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "erudition-missiles",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 3,
+          operation: "add",
+          weapon: "erudition-missiles"
+        }
+      ]
     },
     {
       upgradeid: 152,
-      unit: "Bunker",
+      units: [
+        "Bunker",
+        "Missile Turret"
+      ],
       commander: "Raynor",
       name: "Structure Armor",
       icon: "structurearmor",
       effect: "Upgrades the armor of structures by 2.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 153,
-      unit: "Hydralisk",
+      units: [
+        "Hydralisk"
+      ],
       commander: "Kerrigan",
       name: "Frenzy",
       icon: "frenzy",
       temporary: true,
       effect: "Increases the attack speed of Hydralisks by 50% for 15 seconds.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 154,
-      unit: "Aegis Guard",
+      units: [
+        "Aegis Guard"
+      ],
       commander: "Mengsk",
       name: "High-Grade Stimpacks",
       icon: "highgradestimpacks",
       temporary: true,
       rank: 3,
       effect: "Increases attack speed by 200% for 10 seconds.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 3,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 155,
-      unit: "Shock Division",
+      units: [
+        "Shock Division"
+      ],
       commander: "Mengsk",
       name: "2",
       icon: "veterancy",
       effect: "Increases vision and attack range by 2 in Siege Mode.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "siege-mode"
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add",
+          weapon: "siege-mode"
+        },
+        {
+          target: "unit",
+          modifier: "Vision",
+          modifiermode: "(Siege Mode)",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 156,
-      unit: "Blackhammer",
+      units: [
+        "Blackhammer"
+      ],
       commander: "Mengsk",
       name: "2",
       icon: "veterancy",
       effect: "Increases the range of Overwatch Mode by 2.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "overwatch-mode"
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2,
+          operation: "add",
+          weapon: "overwatch-mode"
+        }
+      ]
     },
     {
       upgradeid: 157,
-      unit: "Blackhammer",
+      units: [
+        "Blackhammer"
+      ],
       commander: "Mengsk",
       name: "3",
       icon: "veterancy",
       effect: "Increases attack speed in Overwatch Mode by 33%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.33,
-      operation: "multiply",
       upgradetype: "upgrade",
-      weapon: "overwatch-mode"
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.33,
+          operation: "multiply",
+          weapon: "overwatch-mode"
+        }
+      ]
     },
     {
       upgradeid: 158,
-      unit: "Sky Fury",
+      units: [
+        "Sky Fury"
+      ],
       commander: "Mengsk",
       name: "Aesir Turbines",
       icon: "aesirturbines",
       effect: "Increases the movement speed of Sky Furies by 55%.",
-      modifier: "Move_Speed",
-      modifiermode: "(Fighter Mode)",
-      modifiertag: null,
-      value: 1.5,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          modifiermode: "(Fighter Mode)",
+          value: 1.5,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 159,
-      unit: "Imperial Intercessor",
+      units: [
+        "Imperial Intercessor"
+      ],
       commander: "Mengsk",
       name: "Ignite Afterburners",
       icon: "igniteafterburners",
       temporary: true,
       effect: "Increases this units movement speed by 70% for 8 seconds.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.7,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.7,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 160,
-      unit: "Earthsplitter Ordnance",
+      units: [
+        "Earthsplitter Ordnance",
+        "Missile Turret"
+      ],
       commander: "Mengsk",
       name: "Neosteel Fortified Armor",
       icon: "neosteelfortifiedarmor",
       effect: "Increases the life (+200HP) and armor (+2) of Supply Bunkers, Missile Turrets, and Earthsplitter Ordnance.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 161,
-      unit: "Earthsplitter Ordnance",
-      commander: "Mengsk",
-      name: "Neosteel Fortified Armor",
-      icon: "neosteelfortifiedarmor",
-      effect: "Increases the life (+200HP) and armor (+2) of Supply Bunkers, Missile Turrets, and Earthsplitter Ordnance.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 162,
-      unit: "Missile Turret",
-      commander: "Mengsk",
-      name: "Neosteel Fortified Armor",
-      icon: "neosteelfortifiedarmor",
-      effect: "Increases the life (+200HP) and armor (+2) of Supply Bunkers, Missile Turrets, and Earthsplitter Ordnance.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 163,
-      unit: "Missile Turret",
-      commander: "Mengsk",
-      name: "Neosteel Fortified Armor",
-      icon: "neosteelfortifiedarmor",
-      effect: "Increases the life (+200HP) and armor (+2) of Supply Bunkers, Missile Turrets, and Earthsplitter Ordnance.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 200,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 164,
-      unit: "Earthsplitter Ordnance",
+      units: [
+        "Earthsplitter Ordnance"
+      ],
       commander: "Mengsk",
       name: "Hemispheric Accelerants",
       icon: "hemisphericaccelerants",
       effect: "Increases the range of the Earthsplitter Ordnanace's Bombardment ability by +25.",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 25,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 25,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 165,
-      unit: "Imperial Intercessor",
+      units: [
+        "Imperial Intercessor"
+      ],
       commander: "Mengsk",
       name: "Scatter Veil",
       icon: "scatterveil",
       effect: "Allows Imperial Intercessors to permanently cloak and provides them with a shield that absorbs 100 damage.",
-      modifier: "Shields",
-      modifiermode: null,
-      modifiertag: null,
-      value: 100,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Shields",
+          value: 100,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 166,
-      unit: "Mecha Overlord",
+      units: [
+        "Mecha Overlord"
+      ],
       commander: "Stetmann",
       name: "Pneumatized Fuselage",
       icon: "pneumatizedfuselage",
       effect: "Increases the movement speed of Mecha Overlords and Mecha Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 167,
-      unit: "Mecha Overseer",
+      units: [
+        "Mecha Overseer"
+      ],
       commander: "Stetmann",
       name: "Pneumatized Fuselage",
       icon: "pneumatizedfuselage",
       effect: "Increases the movement speed of Mecha Overlords and Mecha Overseers.",
-      modifier: "Move_Speed",
-      modifiermode: "(Normal)",
-      modifiertag: null,
-      value: 3.38,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 168,
-      unit: "Brood Lord",
-      commander: "Kerrigan",
-      name: "Porous Cartilage",
-      icon: "porouscartilage",
-      effect: "Increases Brood Lord movement speed by 75% and life by 100.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 100,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          modifiermode: "(Normal)",
+          value: 3.38,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 169,
-      unit: "Wrathwalker",
+      units: [
+        "Wrathwalker"
+      ],
       commander: "Alarak",
       name: "Rapid Power Cycling",
       icon: "rapidpowercycling",
       effect: "Reduces the charging time and the weapon speed of the Wrathwalker's Charged Blast.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 170,
-      unit: "Hellbat",
+      units: [
+        "Hellbat"
+      ],
       commander: "Horner",
       name: "Wildfire Explosives",
       icon: "wildfireexplosives",
       effect: "Hellbat movement speed is increased by 50%. When Hellbats are killed, they ignite the surrounding area. Enemies in the fire run around in fear for 3 seconds.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 42
-    },
-    {
-      upgradeid: 171,
-      unit: "Missile Turret",
-      commander: "Raynor",
-      name: "Structure Armor",
-      icon: "structurearmor",
-      effect: "Upgrades the armor of structures by 2.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 42,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 172,
-      unit: "Missile Turret",
+      units: [
+        "Missile Turret",
+        "Railgun Turret"
+      ],
       commander: "Nova",
       name: "Structure Armor",
       icon: "structurearmor",
       effect: "Upgrades the armor of structures by 2.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 2,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 173,
-      unit: "Colossus",
+      units: [
+        "Colossus"
+      ],
       commander: "Karax",
       name: "Fire Beam",
       icon: "firebeam",
       effect: "Upgrades the damage dealt by Colossi and causes their attacks to set fire to the ground, dealing an additional 150 damage to enemy ground units in the area over 5 seconds.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 5,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 5,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Two sweeping beams perpendicular to the attack direction, extending 1.25 to each side of the target and hitting in circles of radius 0.15. Also leaves four burning circles of radius 0.5, centered 0.5 and 1.5 to either side of the target, dealing up to 150 damage over 5 seconds to ground enemies.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 175,
-      unit: 'Kev "Rattlesnake" West',
+      units: [
+        'Kev "Rattlesnake" West'
+      ],
       commander: "Tychus",
       name: "Secret Stash Stimpack",
       icon: "secretstashstimpack",
       temporary: true,
       effect: "Heals Rattlesnake for 2 life per second and increases his attack and movement speed for 15 seconds.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
-    },
-    {
-      upgradeid: 176,
-      unit: 'Kev "Rattlesnake" West',
-      commander: "Tychus",
-      name: "Secret Stash Stimpack",
-      icon: "secretstashstimpack",
-      temporary: true,
-      effect: "Heals Rattlesnake for 2 life per second and increases his attack and movement speed for 15 seconds.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.47,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      },
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.5,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.47,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 178,
-      unit: "Explosive Creeper",
+      units: [
+        "Explosive Creeper"
+      ],
       commander: "Dehaka",
       name: "Aerial Burst Sacs",
       icon: "aerialburstsacs",
       effect: "Allows the Creeper Hosts Creepers to target air units and increases their movement speed.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.75,
-      operation: "add",
       upgradetype: "preupgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.75,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 110,
+          operation: "set",
+          weapon: "air"
+        },
+        {
+          target: "unit",
+          modifier: "attackbonus",
+          value: 5,
+          operation: "set",
+          weapon: "air"
+        }
+      ]
     },
     {
       upgradeid: 179,
-      unit: "Zealot",
+      units: [
+        "Zealot"
+      ],
       commander: "Artanis",
       name: "Charge",
       icon: "charge",
       effect: "Allows Zealots to intercept nearby enemies. Also increases the movement speed of Zealots.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.25,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.25,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 180,
-      unit: "Centurion",
+      units: [
+        "Centurion"
+      ],
       commander: "Vorazun",
       name: "Shadow Charge",
       icon: "shadowcharge",
       effect: "Allows Centurions to intercept nearby enemies. Also increases their movement speed.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.25,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.25,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 181,
-      unit: "Sentinel",
+      units: [
+        "Sentinel"
+      ],
       commander: "Karax",
       name: "Charge",
       icon: "charge",
       effect: "Allows Sentinels to intercept nearby enemies. Also increases the movement speed of Sentinels.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.25,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.25,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 182,
-      unit: "Legionnaire",
+      units: [
+        "Legionnaire"
+      ],
       commander: "Fenix",
       name: "Charge",
       icon: "charge",
       effect: "Allows Legionnaires to intercept nearby enemies. Also increases the movement speed of Legionnaires.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.25,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 0.25,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 183,
-      unit: "Carrier",
+      units: [
+        "Carrier"
+      ],
       commander: "Karax",
       name: "Graviton Warp Catapult",
       icon: "gravitonwarpcatapult",
       effect: "Makes the Carrier launch Interceptors more quickly and increases Interceptor attack speed by 25%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2.25,
-      operation: "set",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2.25,
+          operation: "set"
+        }
+      ]
     },
     {
       upgradeid: 184,
-      unit: "Primal Mutalisk",
+      units: [
+        "Primal Mutalisk"
+      ],
       commander: "Dehaka",
       name: "Slicing Glaive",
       icon: "slicingglaive",
       effect: "Primal Mutalisks deal 100% increased damage against air units.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
-      weapon: "air",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 2,
+          operation: "multiply",
+          weapon: "air"
+        },
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Bounces to up to 2 additional air enemies, within radius 3 of the previous target. Base bounce damage: 9, 3; gains 1 and 0.5 per weapon upgrade.",
+          operation: "replace",
+          weapon: "air"
+        },
+        {
+          target: "unit",
+          modifier: "weaponName",
+          value: "Slicing Glave",
+          operation: "replace",
+          weapon: "air"
+        }
+      ]
     },
     {
       upgradeid: 186,
-      unit: "Sovereign Battlecruiser",
+      units: [
+        "Sovereign Battlecruiser"
+      ],
       commander: "Horner",
       name: "Overcharged Reactor",
       icon: "overchargedreactor",
       effect: "Battlecruiser weapons systems are upgraded to a powerful particle cannon that deals 200 damage per attack.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "set",
       upgradetype: "preupgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 63
-    },
-    {
-      upgradeid: 187,
-      unit: "Sovereign Battlecruiser",
-      commander: "Horner",
-      name: "Overcharged Reactor",
-      icon: "overchargedreactor",
-      effect: "Battlecruiser weapons systems are upgraded to a powerful particle cannon that deals 200 damage per attack.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "set",
-      upgradetype: "preupgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 63
-    },
-    {
-      upgradeid: 188,
-      unit: "Sovereign Battlecruiser",
-      commander: "Horner",
-      name: "Overcharged Reactor",
-      icon: "overchargedreactor",
-      effect: "Battlecruiser weapons systems are upgraded to a powerful particle cannon that deals 200 damage per attack.",
-      modifier: "attackbonus",
-      modifiermode: null,
-      modifiertag: null,
-      value: 20,
-      operation: "set",
-      upgradetype: "preupgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 63
-    },
-    {
-      upgradeid: 189,
-      unit: "Explosive Creeper",
-      commander: "Dehaka",
-      name: "Aerial Burst Sacs",
-      icon: "aerialburstsacs",
-      effect: "Allows the Creeper Hosts Creepers to target air units and increases their movement speed.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 110,
-      operation: "set",
-      upgradetype: "preupgrade",
-      weapon: "air",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 192,
-      unit: "Explosive Creeper",
-      commander: "Dehaka",
-      name: "Aerial Burst Sacs",
-      icon: "aerialburstsacs",
-      effect: "Allows the Creeper Hosts Creepers to target air units and increases their movement speed.",
-      modifier: "attackbonus",
-      modifiermode: null,
-      modifiertag: null,
-      value: 5,
-      operation: "set",
-      upgradetype: "preupgrade",
-      weapon: "air",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 193,
-      unit: "Volatile Infested",
-      commander: "Stukov",
-      name: "Acidic Enzymes",
-      icon: "acidicenzymes",
-      effect: "Infested Siege Tanks deal an additional +15 damage to armored units and structures in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Structure",
-      value: 15,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 194,
-      unit: "Infested Siege Tank",
-      commander: "Stukov",
-      name: "Acidic Enzymes",
-      icon: "acidicenzymes",
-      effect: "Infested Siege Tanks deal an additional +15 damage to armored units and structures in both modes.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Structure",
-      value: 15,
-      operation: "add",
-      upgradetype: "upgrade",
-      weapon: "rooted",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 63,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 200,
+          operation: "set"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "set"
+        },
+        {
+          target: "unit",
+          modifier: "attackbonus",
+          value: 20,
+          operation: "set"
+        },
+        {
+          target: "unit",
+          modifier: "weaponName",
+          value: "Mini Yamato Gun",
+          operation: "replace",
+          weapon: ""
+        }
+      ]
     },
     {
       upgradeid: 195,
-      unit: "Sky Fury",
+      units: [
+        "Sky Fury"
+      ],
       commander: "Mengsk",
       name: "1",
       icon: "veterancy",
       effect: "Deals bonus damage to Massive targets.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: "Massive",
-      value: 50,
-      operation: "add",
-      upgradetype: "preupgrade"
+      upgradetype: "preupgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          modifiertag: "Massive",
+          value: 50,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 196,
-      unit: "Wraith",
+      units: [
+        "Wraith"
+      ],
       commander: "Swann",
       name: "Displacement Field",
       icon: "displacementfield",
       effect: "Wraiths move 20% faster and evade 20% of incoming attacks while cloaked.",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 1.2,
+          operation: "multiply"
+        },
+        {
+          target: "skill",
           skill: "Cloak",
           modifier: "values.evasion",
           operation: "replace",
           value: "While cloaked, moves 20% faster and evades 20% of incoming attacks."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 197,
-      unit: "Railgun Turret",
-      commander: "Nova",
-      name: "Structure Armor",
-      icon: "structurearmor",
-      effect: "Upgrades the armor of structures by 2.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 198,
-      unit: "Vulture",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 199,
-      unit: "Siege Tank",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 200,
-      unit: "Viking",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 201,
-      unit: "Banshee",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 202,
-      unit: "Battlecruiser",
-      commander: "Raynor",
-      name: "Afterburners",
-      icon: "afterburners",
-      temporary: true,
-      effect: "Vehicles and ships gain afterburners that increase the units movement speed by 100% for 8 seconds upon activation.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 203,
-      unit: "Ravasaur",
+      units: [
+        "Ravasaur",
+        "Primal Igniter",
+        "Primal Guardian",
+        "Primal Mutalisk",
+        "Impaler",
+        "Tyrannozor"
+      ],
       commander: "Dehaka",
       name: "Gene Mutation Adrenal Glands",
       icon: "adrenalglands-framed",
       effect: "This unit attacks 20% faster.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 204,
-      unit: "Ravasaur",
+      units: [
+        "Ravasaur",
+        "Primal Igniter",
+        "Primal Guardian",
+        "Primal Mutalisk",
+        "Impaler",
+        "Tyrannozor",
+        "Creeper Host"
+      ],
       commander: "Dehaka",
       name: "Gene Mutation Carapace",
       icon: "carapace",
       effect: "This unit has 50% more life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 205,
-      unit: "Primal Igniter",
-      commander: "Dehaka",
-      name: "Gene Mutation Adrenal Glands",
-      icon: "adrenalglands-framed",
-      effect: "This unit attacks 20% faster.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 206,
-      unit: "Primal Igniter",
-      commander: "Dehaka",
-      name: "Gene Mutation Carapace",
-      icon: "carapace",
-      effect: "This unit has 50% more life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 207,
-      unit: "Primal Guardian",
-      commander: "Dehaka",
-      name: "Gene Mutation Adrenal Glands",
-      icon: "adrenalglands-framed",
-      effect: "This unit attacks 20% faster.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 208,
-      unit: "Primal Guardian",
-      commander: "Dehaka",
-      name: "Gene Mutation Carapace",
-      icon: "carapace",
-      effect: "This unit has 50% more life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 209,
-      unit: "Primal Mutalisk",
-      commander: "Dehaka",
-      name: "Gene Mutation Adrenal Glands",
-      icon: "adrenalglands-framed",
-      effect: "This unit attacks 20% faster.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 210,
-      unit: "Primal Mutalisk",
-      commander: "Dehaka",
-      name: "Gene Mutation Carapace",
-      icon: "carapace",
-      effect: "This unit has 50% more life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 211,
-      unit: "Impaler",
-      commander: "Dehaka",
-      name: "Gene Mutation Adrenal Glands",
-      icon: "adrenalglands-framed",
-      effect: "This unit attacks 20% faster.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 212,
-      unit: "Impaler",
-      commander: "Dehaka",
-      name: "Gene Mutation Carapace",
-      icon: "carapace",
-      effect: "This unit has 50% more life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 213,
-      unit: "Tyrannozor",
-      commander: "Dehaka",
-      name: "Gene Mutation Adrenal Glands",
-      icon: "adrenalglands-framed",
-      effect: "This unit attacks 20% faster.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 214,
-      unit: "Tyrannozor",
-      commander: "Dehaka",
-      name: "Gene Mutation Carapace",
-      icon: "carapace",
-      effect: "This unit has 50% more life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 215,
-      unit: "Creeper Host",
-      commander: "Dehaka",
-      name: "Gene Mutation Carapace",
-      icon: "carapace",
-      effect: "This unit has 50% more life.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 216,
-      unit: "Roach",
+      units: [
+        "Roach"
+      ],
       commander: "Abathur",
       name: "Maximum Biomass",
       icon: "biomass",
       effect: "Gets 300% Life, 100% Attack Speed, +5 Armor, 100% Biotic Leech.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 217,
-      unit: "Roach",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, +5 Armor, 100% Biotic Leech.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 218,
-      unit: "Roach",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, +5 Armor, 100% Biotic Leech.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 5,
-      operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 4,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 5,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 219,
-      unit: "Ravager",
+      units: [
+        "Ravager"
+      ],
       commander: "Abathur",
       name: "Maximum Biomass",
       icon: "biomass",
       effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech, 50% Corrosive Bile Cooldown.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 220,
-      unit: "Ravager",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech, 50% Corrosive Bile Cooldown.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 4,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 221,
-      unit: "Swarm Host",
+      units: [
+        "Swarm Host"
+      ],
       commander: "Abathur",
       name: "Maximum Biomass",
       icon: "biomass",
       effect: "Gets 300% Life, 50% Spawn Locusts Cooldown.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 4,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 222,
-      unit: "Locust",
+      units: [
+        "Locust",
+        "Mutalisk",
+        "Guardian",
+        "Devourer"
+      ],
       commander: "Abathur",
       name: "Maximum Biomass",
       icon: "biomass",
       effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 223,
-      unit: "Locust",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 224,
-      unit: "Mutalisk",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 225,
-      unit: "Mutalisk",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 226,
-      unit: "Guardian",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 227,
-      unit: "Guardian",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 228,
-      unit: "Devourer",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 229,
-      unit: "Devourer",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 4,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 230,
-      unit: "Viper",
+      units: [
+        "Viper",
+        "Swarm Queen"
+      ],
       commander: "Abathur",
       name: "Maximum Biomass",
       icon: "biomass",
       effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech, 500% Energy Regeneration.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 231,
-      unit: "Viper",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech, 500% Energy Regeneration.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 232,
-      unit: "Swarm Queen",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech, 500% Energy Regeneration.",
-      modifier: "HP",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 233,
-      unit: "Swarm Queen",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 100% Attack Speed, 100% Biotic Leech, 500% Energy Regeneration.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "HP",
+          value: 4,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 234,
-      unit: "Super Gary",
+      units: [
+        "Super Gary"
+      ],
       commander: "Stetmann",
       name: "The Best Oil",
       icon: "thebestoil",
       temporary: true,
       effect: "When Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. Can stack up to 20 times. Passive Ability.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 3,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 235,
-      unit: "Primal Guardian",
+      units: [
+        "Primal Guardian"
+      ],
       commander: "Dehaka",
       name: "Primordial Fury",
       icon: "primordialfury",
       temporary: true,
       effect: "Primal Guardian attacks temporarily increases its attack speed by 10%. Can stack up to 50% increased attack speed.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 236,
-      unit: "Kerrigan",
+      units: [
+        "Kerrigan"
+      ],
       commander: "Kerrigan",
       name: "Fury",
       icon: "fury",
       temporary: true,
       effect: "Kerrigans attack speed increases by 10% with each attack, up to a maximum of 50%.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 237,
-      unit: "Kaldalis",
+      units: [
+        "Kaldalis",
+        "Talis",
+        "Taldarin",
+        "Warbringer",
+        "Mojo",
+        "Clolarion"
+      ],
       commander: "Fenix",
       name: "Avenging Protocol",
       icon: "avengingprotocol",
       temporary: true,
       effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 238,
-      unit: "Kaldalis",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 239,
-      unit: "Talis",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 240,
-      unit: "Talis",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 241,
-      unit: "Taldarin",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 242,
-      unit: "Taldarin",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 243,
-      unit: "Warbringer",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 244,
-      unit: "Warbringer",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 245,
-      unit: "Mojo",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 246,
-      unit: "Mojo",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 247,
-      unit: "Clolarion",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 248,
-      unit: "Clolarion",
-      commander: "Fenix",
-      name: "Avenging Protocol",
-      icon: "avengingprotocol",
-      temporary: true,
-      effect: "Champions gain attack and movement speed each time a host shell of their type is destroyed, or a 50% speed increase when they transfer into new host shell. Speed increases can stack up to 200% and last for 20 seconds if not refreshed. ",
-      modifier: "Move_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 250,
-      unit: "Swarm Host",
-      commander: "Abathur",
-      name: "Maximum Biomass",
-      icon: "biomass",
-      effect: "Gets 300% Life, 50% Spawn Locusts Cooldown.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 3,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "Move_Speed",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 251,
-      unit: 'Rob "Cannonball" Boswell',
+      units: [
+        'Rob "Cannonball" Boswell'
+      ],
       commander: "Tychus",
       name: "Redline Power Cells",
       icon: "redlinepowercells",
       temporary: true,
       effect: "Increases Cannonballs attack speed by 3% with each attack, up to a maximum of 60%. Increases his attack damage by 3 with each attack, up to a maximum of 60.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.8,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 1.8,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 253,
-      unit: "Tychus Findlay",
+      units: [
+        "Tychus Findlay"
+      ],
       commander: "Tychus",
       name: "SureShot Networked Helm",
       icon: "sureshotnetworkedhelm",
       effect: "Increases Tychus weapon damage by 20% for each Outlaw in his immediate vicinity.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.8,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 1200,
         gas: 400
-      }
+      },
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 1.8,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 254,
-      unit: "Siege Tank",
+      units: [
+        "Siege Tank"
+      ],
       commander: "Raynor",
       name: "Advanced Siege Tech",
       icon: "advancedsiegetech",
       effect: "Reduces the transformation time of Siege Tanks by 50%. Siege Tanks gain +3 armor in Siege Mode.",
-      modifier: "Armor",
-      modifiermode: "(Siege Mode)",
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          modifiermode: "(Siege Mode)",
+          value: 3,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 255,
-      unit: "Nova",
+      units: [
+        "Nova"
+      ],
       commander: "Nova",
       name: "Stance Dance",
       icon: "stancedance",
       temporary: true,
       effect: "Switching to Stealth Mode grants temporary invulnerability and switching to Assault Mode grants a temporary bonus to damage dealt.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 256,
-      unit: "Roach",
+      units: [
+        "Roach"
+      ],
       commander: "Abathur",
       name: "Adaptive Plating",
       icon: "adaptiveplating",
       effect: "Roach gains +6 armor when life is under 50%.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 6,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 110
+      researchTime: 110,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 6,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 257,
-      unit: "Sky Fury",
+      units: [
+        "Sky Fury"
+      ],
       commander: "Mengsk",
       name: "Tactical Realignment",
       icon: "tacticalrealignment",
       temporary: true,
       rank: 2,
       effect: "After transforming, this unit gains 50% increased attack damage for 5 seconds. Cannot occur more than once every 15 seconds.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 1.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 258,
-      unit: "Ascendant",
+      units: [
+        "Ascendant"
+      ],
       commander: "Alarak",
       name: "Power Overwhelming",
       icon: "poweroverwhelming",
       effect: "Ascendants permanently gain +25% ability damage and +100 shields each time they use Sacrifice. This effect stacks up to a maximum of 10.",
-      modifier: "Shields",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1000,
-      operation: "add",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "unit",
+          modifier: "Shields",
+          value: 1000,
+          operation: "add"
+        },
+        {
+          target: "skill",
           skill: "Psionic Orb",
           modifier: "values.damage",
           operation: "multiply",
           value: 3.5
         },
         {
+          target: "skill",
           skill: "Psionic Orb",
           modifier: "values.stacks",
           operation: "replace",
           value: "Damage shown at 10 Sacrifice stacks."
         },
         {
+          target: "skill",
           skill: "Mind Blast",
           modifier: "values.damage",
           operation: "multiply",
           value: 3.5
         },
         {
+          target: "skill",
           skill: "Mind Blast",
           modifier: "values.stacks",
           operation: "replace",
           value: "Damage shown at 10 Sacrifice stacks."
         },
         {
+          target: "skill",
           skill: "Sacrifice",
           modifier: "values.bonus",
           operation: "replace",
           value: "Each sacrifice permanently grants +25% ability damage and +100 shields, stacking up to 10 times."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 259,
-      unit: "Nux",
+      units: [
+        "Nux",
+        "Lt. Layna Nikara",
+        "Vega"
+      ],
       commander: "Tychus",
       name: "Flashforce GDM Visor",
       icon: "flashforcegdmvisor",
       effect: "Provides Vega, Nux, and Lt. Nikara with Detection, allowing them to see cloaked and burrowed enemy units.",
-      modifier: "Vision",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 260,
-      unit: "Lt. Layna Nikara",
-      commander: "Tychus",
-      name: "Flashforce GDM Visor",
-      icon: "flashforcegdmvisor",
-      effect: "Provides Vega, Nux, and Lt. Nikara with Detection, allowing them to see cloaked and burrowed enemy units.",
-      modifier: "Vision",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 261,
-      unit: "Vega",
-      commander: "Tychus",
-      name: "Flashforce GDM Visor",
-      icon: "flashforcegdmvisor",
-      effect: "Provides Vega, Nux, and Lt. Nikara with Detection, allowing them to see cloaked and burrowed enemy units.",
-      modifier: "Vision",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Vision",
+          value: 0,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 262,
-      unit: "Shock Division",
+      units: [
+        "Shock Division"
+      ],
       commander: "Mengsk",
       name: "Armament Stabilizers",
       icon: "armamentstabilizers",
       effect: "Allows Shock Divisions in Siege Mode to fire at air units at a reduced rate while being carried by an Imperial Intercessor.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.67,
-      operation: "multiply",
       upgradetype: "upgrade",
-      weapon: "siege-mode",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: 0.67,
+          operation: "multiply",
+          weapon: "siege-mode"
+        }
+      ]
     },
     {
       upgradeid: 263,
-      unit: "Covert Banshee",
+      units: [
+        "Covert Banshee",
+        "Elite Marine",
+        "Heavy Siege Tank",
+        "Hellbat Ranger",
+        "Hellion Ranger",
+        "Marauder Commando",
+        "Raid Liberator",
+        "Raven Type-II",
+        "Spec Ops Ghost",
+        "Strike Goliath"
+      ],
       commander: "Nova",
       name: "Soldier of Fortune",
       icon: "soldieroffortune",
       effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 264,
-      unit: "Elite Marine",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 265,
-      unit: "Heavy Siege Tank",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 266,
-      unit: "Hellbat Ranger",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 267,
-      unit: "Hellion Ranger",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 268,
-      unit: "Marauder Commando",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 269,
-      unit: "Raid Liberator",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 270,
-      unit: "Raven Type-II",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 271,
-      unit: "Spec Ops Ghost",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 272,
-      unit: "Strike Goliath",
-      commander: "Nova",
-      name: "Soldier of Fortune",
-      icon: "soldieroffortune",
-      effect: "Unit charges accrue 100% faster for the first production structure built. Unit charges accrue 50% slower for the second and third production structures built.",
-      modifier: "time",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "time",
+          value: 1,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 273,
-      unit: "Crooked Sam",
+      units: [
+        "Crooked Sam",
+        'James "Sirius" Sykes',
+        'Miles "Blaze" Lewis',
+        'Rob "Cannonball" Boswell',
+        "Vega",
+        "Nux",
+        "Lt. Layna Nikara",
+        'Kev "Rattlesnake" West'
+      ],
       commander: "Tychus",
       name: "First Ones on the House",
       icon: "firstonesonthehouse",
       effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 274,
-      unit: "Crooked Sam",
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 275,
-      unit: 'James "Sirius" Sykes',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 276,
-      unit: 'James "Sirius" Sykes',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 277,
-      unit: 'Miles "Blaze" Lewis',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 278,
-      unit: 'Miles "Blaze" Lewis',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 279,
-      unit: 'Rob "Cannonball" Boswell',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 280,
-      unit: 'Rob "Cannonball" Boswell',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 281,
-      unit: "Vega",
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 282,
-      unit: "Vega",
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 283,
-      unit: "Nux",
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 284,
-      unit: "Nux",
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 285,
-      unit: "Lt. Layna Nikara",
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 286,
-      unit: "Lt. Layna Nikara",
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 287,
-      unit: 'Kev "Rattlesnake" West',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 288,
-      unit: 'Kev "Rattlesnake" West',
-      commander: "Tychus",
-      name: "First Ones on the House",
-      icon: "firstonesonthehouse",
-      effect: "Reduces the mineral and gas costs of Tychus first Outlaw by 50%. ",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 0.5,
-      operation: "multiply",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "mineralCost",
+          value: 0.5,
+          operation: "multiply"
+        },
+        {
+          target: "unit",
+          modifier: "vespeneCost",
+          value: 0.5,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 289,
-      unit: "Brutalisk",
+      units: [
+        "Brutalisk",
+        "Leviathan"
+      ],
       commander: "Abathur",
       name: "Symbiote",
       icon: "symbiote",
       effect: "Gains a Symbiote that attacks nearby enemies and provides a shell.",
-      modifier: "Shields",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 290,
-      unit: "Leviathan",
-      commander: "Abathur",
-      name: "Symbiote",
-      icon: "symbiote",
-      effect: "Gains a Symbiote that attacks nearby enemies and provides a shell.",
-      modifier: "Shields",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Shields",
+          value: 200,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 291,
-      unit: "Nova",
+      units: [
+        "Nova"
+      ],
       commander: "Nova",
       name: "Blink",
       icon: "blink",
       temporary: true,
       effect: "Teleports Nova to a nearby location. Nova gains a temporary shield that absorbs up to 200 damage for 8 seconds.",
-      modifier: "Shields",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Shields",
+          value: 200,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 292,
-      unit: "Kerrigan",
+      units: [
+        "Kerrigan"
+      ],
       commander: "Kerrigan",
       name: "Mutating Carapace",
       icon: "mutatingcarapace",
       temporary: true,
       effect: "Kerrigan gains temporary life as she deals damage.",
-      modifier: "Shields",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 293,
-      unit: "Infested Liberator",
-      commander: "Stukov",
-      name: "Cloud Dispersal",
-      icon: "clouddispersal",
-      effect: "Infested Liberators instantly transform into a cloud of microscopic organisms while attacking, reducing the damage they take by 85%.",
-      modifier: "Hits",
-      modifiermode: null,
-      modifiertag: null,
-      value: 1,
-      operation: "set",
       upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      changes: [
+        {
+          target: "unit",
+          modifier: "Shields",
+          value: 200,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 294,
-      unit: "Hellbat Ranger",
+      units: [
+        "Hellbat Ranger"
+      ],
       commander: "Nova",
       name: "Jump Jet Assault",
       icon: "jumpjetassault",
       temporary: true,
       effect: "Launches the Hellbat Ranger toward nearby enemy ground units. Briefly stuns enemy units on impact and gains +4 armor.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 4,
-      operation: "add",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
-    },
-    {
-      upgradeid: 295,
-      unit: "Shock Division",
-      commander: "Mengsk",
-      name: "2",
-      icon: "veterancy",
-      effect: "Increases vision and attack range by 2 in Siege Mode.",
-      modifier: "Vision",
-      modifiermode: "(Siege Mode)",
-      modifiertag: null,
-      value: 2,
-      operation: "add",
-      upgradetype: "upgrade"
+      researchTime: 45,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 4,
+          operation: "add"
+        }
+      ]
     },
     {
       upgradeid: 296,
-      unit: "Clolarion",
+      units: [
+        "Clolarion"
+      ],
       commander: "Fenix",
       name: "Maximum Tactical Data Web",
       icon: "tacticaldataweb",
       effect: "Interdictor damage is increased by 3 for each networked Carrier (up to 10 damage).",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 10,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "interdictor",
-      skillModifiers: [
+      changes: [
         {
+          target: "unit",
+          modifier: "damage",
+          value: 10,
+          operation: "add",
+          weapon: "interdictor"
+        },
+        {
+          target: "skill",
           skill: "Build Interdictor",
           modifier: "values.damage",
           operation: "add",
@@ -5694,236 +4543,252 @@ Drains 0.9 energy per second.`,
       ]
     },
     {
-      upgradeid: 298,
-      unit: "Fenix Cybros Arbiter",
-      commander: "Fenix",
-      name: "Purifier Armaments",
-      icon: "purifierarmaments",
-      effect: "All Fenix Armor Suits gain +15 attack damage.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 15,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 299,
-      unit: "Fenix Solarite Dragoon",
-      commander: "Fenix",
-      name: "Purifier Armaments",
-      icon: "purifierarmaments",
-      effect: "All Fenix Armor Suits gain +15 attack damage.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 15,
-      operation: "add",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 90
-    },
-    {
       upgradeid: 300,
-      unit: "Slayer",
+      units: [
+        "Slayer"
+      ],
       commander: "Alarak",
       name: "Phase Blink",
       icon: "phaseblink",
       temporary: true,
       effect: "Allows Slayers to teleport to a nearby target location. After using Phase Blink, the Slayer's next attack within 8 seconds will deal double damage.",
-      modifier: "damage",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2,
-      operation: "multiply",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "damage",
+          value: 2,
+          operation: "multiply"
+        }
+      ]
     },
     {
       upgradeid: 301,
-      unit: "Baneling",
+      units: [
+        "Baneling"
+      ],
       commander: "Zagara",
       name: "Rupture",
       icon: "rupture",
       effect: "Increases Baneling blast radius by 50%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Circular splash within radius 3.3. Corrosive Acid only increases damage to the primary target.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Circular splash within radius 3.3. Corrosive Acid only increases damage to the primary target.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 302,
-      unit: "Baneling Spawn",
+      units: [
+        "Baneling Spawn"
+      ],
       commander: "Zagara",
       name: "Rupture",
       icon: "rupture",
       effect: "Increases Baneling blast radius by 50%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Circular splash within radius 3.3 of the Baneling Spawn on detonation. Corrosive Acid only increases damage to the primary target.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Circular splash within radius 3.3 of the Baneling Spawn on detonation. Corrosive Acid only increases damage to the primary target.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 303,
-      unit: "Zagara",
+      units: [
+        "Zagara"
+      ],
       commander: "Zagara",
       name: "Medusa Blades",
       icon: "medusablades",
       effect: "Zagara's attacks fire additional projectiles at up to three nearby enemy units.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Fires at up to three additional enemies. With a primary target less than 3 away, searches a 90-degree cone of radius 5 in front of Zagara; otherwise, searches a circle of radius 3 around the primary target.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Fires at up to three additional enemies. With a primary target less than 3 away, searches a 90-degree cone of radius 5 in front of Zagara; otherwise, searches a circle of radius 3 around the primary target.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 304,
-      unit: "Reaver",
+      units: [
+        "Reaver"
+      ],
       commander: "Artanis",
       name: "Solarite Payload",
       icon: "solaritepayload",
       effect: "Increases the splash radii of scarab explosions to 0.5, 1, 1.5, and 2.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Scarab explosion: full damage to the primary target; circular splash deals 80% within radius 0.5, 60% from 0.5 to 1, 50% from 1 to 1.5, and 25% from 1.5 to 2.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Scarab explosion: full damage to the primary target; circular splash deals 80% within radius 0.5, 60% from 0.5 to 1, 50% from 1 to 1.5, and 25% from 1.5 to 2.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 305,
-      unit: "Vanguard",
+      units: [
+        "Vanguard"
+      ],
       commander: "Alarak",
       name: "Matter Dispersion",
       icon: "matterdispersion",
       effect: "Increases the splash radius of the Vanguard's attack by 50%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Four projectiles land in a cross, 0.75 from the target. Each hits twice with circular splash of radius 1.8.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Four projectiles land in a cross, 0.75 from the target. Each hits twice with circular splash of radius 1.8.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 306,
-      unit: "Firebat",
+      units: [
+        "Firebat"
+      ],
       commander: "Raynor",
       name: "Incinerator Gauntlets",
       icon: "incineratorgauntlets",
       effect: "Widens the Firebat's damage radius by 40%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Flames hit a line 1.68 wide in front of the Firebat. Ground enemies within weapon range (base 4, accounting for unit size) take full damage.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Flames hit a line 1.68 wide in front of the Firebat. Ground enemies within weapon range (base 4, accounting for unit size) take full damage.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 307,
-      unit: "Aegis Guard",
+      units: [
+        "Aegis Guard"
+      ],
       commander: "Mengsk",
       name: "2",
       icon: "veterancy",
       effect: "Attacks create a cone of shrapnel, dealing 20% damage to enemies behind the target.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "A 60-degree cone of shrapnel extending 3 behind the primary target deals 20% damage. Splash is based on the primary target's armor type and ignores secondary targets' armor.",
-      operation: "replace",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "A 60-degree cone of shrapnel extending 3 behind the primary target deals 20% damage. Splash is based on the primary target's armor type and ignores secondary targets' armor.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 308,
-      unit: "Shock Division",
+      units: [
+        "Shock Division"
+      ],
       commander: "Mengsk",
       name: "3",
       icon: "veterancy",
       effect: "Increases the splash radius of attacks in Siege Mode by 40%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Circular splash: 100% damage within radius 0.66, 50% from 0.66 to 1.09, and 25% from 1.09 to 1.75.",
-      operation: "replace",
       upgradetype: "upgrade",
-      weapon: "siege-mode"
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Circular splash: 100% damage within radius 0.66, 50% from 0.66 to 1.09, and 25% from 1.09 to 1.75.",
+          operation: "replace",
+          weapon: "siege-mode"
+        }
+      ]
     },
     {
       upgradeid: 309,
-      unit: "Blackhammer",
+      units: [
+        "Blackhammer"
+      ],
       commander: "Mengsk",
       name: "1",
       icon: "veterancy",
       effect: "Increases the splash radius of Overwatch Mode by 50%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Circular splash to air units within radius 0.75 of the target.",
-      operation: "replace",
       upgradetype: "upgrade",
-      weapon: "overwatch-mode"
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Circular splash to air units within radius 0.75 of the target.",
+          operation: "replace",
+          weapon: "overwatch-mode"
+        }
+      ]
     },
     {
       upgradeid: 310,
-      unit: "Xel'Naga Abrogator",
+      units: [
+        "Xel'Naga Abrogator"
+      ],
       commander: "Zeratul",
       name: "Cluster Nova",
       icon: "clusternova",
       effect: "When Purification Nova explodes, it generates three smaller novas that damage enemy units in their paths.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Purification Nova deals full damage to ground enemies in a circle of radius 1.5, then releases three smaller novas. Each small nova deals 50 damage to ground enemies it contacts.",
-      operation: "replace",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "unit",
+          modifier: "aoe",
+          value: "Purification Nova deals full damage to ground enemies in a circle of radius 1.5, then releases three smaller novas. Each small nova deals 50 damage to ground enemies it contacts.",
+          operation: "replace"
+        },
+        {
+          target: "skill",
           skill: "Purification Nova",
           modifier: "values.cluster",
           operation: "replace",
@@ -5932,634 +4797,577 @@ Drains 0.9 energy per second.`,
       ]
     },
     {
-      upgradeid: 311,
-      unit: "Infested Liberator",
-      commander: "Stukov",
-      name: "Cloud Dispersal",
-      icon: "clouddispersal",
-      effect: "Infested Liberators instantly transform into a cloud of microscopic organisms while attacking, reducing the damage they take by 85%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "While the Liberator attacks in cloud form, its target deals damage over time to enemy air units in a circle of radius 1.5 around it as it moves. Viral Contamination only increases damage to the primary target.",
-      operation: "replace",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
       upgradeid: 312,
-      unit: "Roach",
+      units: [
+        "Roach"
+      ],
       commander: "Abathur",
       name: "Tunneling Claws",
       icon: "tunnelingclaws",
       effect: "Enables Roaches to move while burrowed. Increases the life-regeneration rate of burrowed Roaches by 5.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 110
+      researchTime: 110,
+      changes: []
     },
     {
       upgradeid: 313,
-      unit: "Ravager",
+      units: [
+        "Ravager"
+      ],
       commander: "Abathur",
       name: "Bloated Bile Ducts",
       icon: "bloatedbileducts",
       effect: "Ravager Corrosive Bile impact size is increased by 200%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Corrosive Bile",
           modifier: "values.radius",
           operation: "set",
           value: 1.5
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 314,
-      unit: "Ravager",
+      units: [
+        "Ravager"
+      ],
       commander: "Abathur",
       name: "Potent Bile",
       icon: "potentbile",
       effect: "Ravager Corrosive Bile damage is increased by 40.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120,
+      changes: [
         {
+          target: "skill",
           skill: "Corrosive Bile",
           modifier: "values.damage",
           operation: "add",
           value: 40
         }
-      ],
-      cost: {
-        minerals: 200,
-        gas: 200
-      },
-      researchTime: 120
+      ]
     },
     {
       upgradeid: 315,
-      unit: "Swarm Host",
+      units: [
+        "Swarm Host",
+        "Locust"
+      ],
       commander: "Abathur",
       name: "Pressurized Glands",
       icon: "pressurizedglands",
       effect: "Locusts can attack both ground and air units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
-    },
-    {
-      upgradeid: 316,
-      unit: "Locust",
-      commander: "Abathur",
-      name: "Pressurized Glands",
-      icon: "pressurizedglands",
-      effect: "Locusts can attack both ground and air units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 200,
-        gas: 200
-      },
-      researchTime: 120
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 317,
-      unit: "Swarm Host",
+      units: [
+        "Swarm Host"
+      ],
       commander: "Abathur",
       name: "Deep Tunnel",
       icon: "deeptunnel",
       effect: "Allows Swarm Hosts to quickly burrow to any visible location on the map.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 318,
-      unit: "Mutalisk",
+      units: [
+        "Mutalisk"
+      ],
       commander: "Abathur",
       name: "Rapid Regeneration",
       icon: "rapidregeneration",
       effect: "Mutalisks regenerate life quickly while out of combat.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 319,
-      unit: "Mutalisk",
+      units: [
+        "Mutalisk"
+      ],
       commander: "Abathur",
       name: "Vicious Glave",
       icon: "viciousglave",
       effect: "The Mutalisk's attack bounces three additional times, hitting up to six targets. Bounces also travel farther.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Bounces to up to 5 additional enemies, within radius 4 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Bounces to up to 5 additional enemies, within radius 4 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 320,
-      unit: "Devourer",
+      units: [
+        "Devourer"
+      ],
       commander: "Abathur",
       name: "Corrosive Spray",
       icon: "corrosivespray",
       effect: "Devourer attacks will now deal area damage.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Circular splash around the target: full damage to air enemies within radius 1.5.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Circular splash around the target: full damage to air enemies within radius 1.5.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 321,
-      unit: "Viper",
+      units: [
+        "Viper"
+      ],
       commander: "Abathur",
       name: "Virulent Microbes",
       icon: "virulentmicrobes",
       effect: "All Viper abilities gain +4 cast range.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Abduct",
           modifier: "values.range",
           operation: "add",
           value: 4
         },
         {
+          target: "skill",
           skill: "Consumption",
           modifier: "values.range",
           operation: "add",
           value: 4
         },
         {
+          target: "skill",
           skill: "Disabling Cloud",
           modifier: "values.range",
           operation: "add",
           value: 4
         },
         {
+          target: "skill",
           skill: "Parasitic Bomb",
           modifier: "values.range",
           operation: "add",
           value: 4
         }
-      ],
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 322,
-      unit: "Viper",
+      units: [
+        "Viper"
+      ],
       commander: "Abathur",
       name: "Paralytic Barbs",
       icon: "paralyticbarbs",
       effect: "Viper Abduct stuns units for an additional 5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Abduct",
           modifier: "values.stun",
           operation: "add",
           value: 5
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 323,
-      unit: "Swarm Queen",
+      units: [
+        "Swarm Queen"
+      ],
       commander: "Abathur",
       name: "Bio-Mechanical Transfusion",
       icon: "biomechanicaltransfusion",
       effect: "Increases the healing of the Swarm Queen's Rapid Transfusion by 10 and allows it to heal mechanical units and structures.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Rapid Transfusion",
           modifier: "values.healing",
           operation: "add",
           value: 10
         },
         {
+          target: "skill",
           skill: "Rapid Transfusion",
           modifier: "values.targets",
           operation: "replace",
           value: "biological or mechanical"
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 324,
-      unit: "Swarm Queen",
+      units: [
+        "Swarm Queen"
+      ],
       commander: "Abathur",
       name: "Incubation Chamber",
       icon: "incubationchamber",
       effect: "Allows Hatcheries, Lairs and Hives to birth two Swarm Queens simultaneously.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 325,
-      unit: "Alarak",
+      units: [
+        "Alarak"
+      ],
       commander: "Alarak",
       name: "Imposing Presence",
       icon: "imposingpresence",
       effect: "Allows Alarak's attacks to stun enemy units for 2 seconds. Heroic units are slowed.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 326,
-      unit: "Alarak",
+      units: [
+        "Alarak"
+      ],
       commander: "Alarak",
       name: "Telekinesis",
       icon: "telekinesis",
       effect: "Increases the knockback distance of Alarak's Destruction Wave by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Destruction Wave",
           modifier: "values.knockback",
           operation: "replace",
           value: "knocking them back twice as far"
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 327,
-      unit: "Slayer",
+      units: [
+        "Slayer"
+      ],
       commander: "Alarak",
       name: "Phasing Armor",
       icon: "phasingarmor",
       effect: "Prevents Slayers from taking damage for 2 seconds after being attacked. Cannot occur more than once every 5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 328,
-      unit: "Havoc",
+      units: [
+        "Havoc"
+      ],
       commander: "Alarak",
       name: "Cloaking Module",
       icon: "cloakingmodule",
       effect: "Allows Havocs to remain permanently cloaked.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 329,
-      unit: "Havoc",
+      units: [
+        "Havoc"
+      ],
       commander: "Alarak",
       name: "Bloodshard Resonance",
       icon: "bloodshardresonance",
       effect: "Increases the radius of the Havoc's Squad Sight and the range of Target Lock and Force Field.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Target Lock",
           modifier: "values.range",
           operation: "add",
           value: 3
         },
         {
+          target: "skill",
           skill: "Force Field",
           modifier: "values.range",
           operation: "add",
           value: 3
         },
         {
+          target: "skill",
           skill: "Squad Sight",
           modifier: "values.radius",
           operation: "add",
           value: 3
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 330,
-      unit: "Havoc",
+      units: [
+        "Havoc"
+      ],
       commander: "Alarak",
       name: "Detect Weakness",
       icon: "detectweakness",
       effect: "Increases the damage bonus from the Havoc's Target Lock by an additional 15%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Target Lock",
           modifier: "values.bonus",
           operation: "add",
           value: 15
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 331,
-      unit: "Ascendant",
+      units: [
+        "Ascendant"
+      ],
       commander: "Alarak",
       name: "Mind Blast",
       icon: "mindblast",
       effect: "Allows Ascendants to use Mind Blast, which deals 200 damage to target enemy unit. Can target ground and air units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 332,
-      unit: "Ascendant",
+      units: [
+        "Ascendant"
+      ],
       commander: "Alarak",
       name: "Chaotic Attunement",
       icon: "chaoticattunement",
       effect: "Increases the travel distance of the Ascendant's Psionic Orb by 25%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Psionic Orb",
           modifier: "values.distance",
           operation: "multiply",
           value: 1.25
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 333,
-      unit: "Wrathwalker",
+      units: [
+        "Wrathwalker"
+      ],
       commander: "Alarak",
       name: "Aerial Tracking",
       icon: "aerialtracking",
       effect: "Allows Wrathwalkers to attack air units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 334,
-      unit: "Zealot",
+      units: [
+        "Zealot"
+      ],
       commander: "Artanis",
       name: "Whirlwind",
       icon: "whirlwind",
       effect: "Enables Zealots to use the Whirlwind ability. Whirlwind damages all nearby enemy units while active.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 335,
-      unit: "High Templar",
+      units: [
+        "High Templar",
+        "Archon"
+      ],
       commander: "Artanis",
       name: "Psionic Storm",
       icon: "psionicstorm",
       effect: "Allows High Templar and Archons to summon a storm of psionic energy, causing heavy damage to all enemy units in the target area.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 336,
-      unit: "High Templar",
+      units: [
+        "High Templar",
+        "Archon"
+      ],
       commander: "Artanis",
       name: "Khaydarin Amulet",
       icon: "khaydarinamulet",
       effect: "Increases the starting energy of High Templar and Archons by 150.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 337,
-      unit: "High Templar",
+      units: [
+        "High Templar",
+        "Archon"
+      ],
       commander: "Artanis",
       name: "Plasma Surge",
       icon: "plasmasurge",
       effect: "The High Templar's Psionic Storm's radius is increased by 50%, range increased by 2, and restores 50 shields to friendly units in the target area.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Psionic Storm",
           modifier: "values.radius",
           operation: "add",
           value: 0.8
         },
         {
+          target: "skill",
           skill: "Psionic Storm",
           modifier: "values.range",
           operation: "add",
           value: 2
         },
         {
+          target: "skill",
           skill: "Psionic Storm",
           modifier: "description",
           operation: "replace",
@@ -6571,4253 +5379,3472 @@ Cast range: {range}.
 
 Restores {shieldRestoration} shields to friendly units in the target area.`
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 338,
-      unit: "Archon",
-      commander: "Artanis",
-      name: "Psionic Storm",
-      icon: "psionicstorm",
-      effect: "Allows High Templar and Archons to summon a storm of psionic energy, causing heavy damage to all enemy units in the target area.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 339,
-      unit: "Archon",
-      commander: "Artanis",
-      name: "Khaydarin Amulet",
-      icon: "khaydarinamulet",
-      effect: "Increases the starting energy of High Templar and Archons by 150.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 340,
-      unit: "Archon",
-      commander: "Artanis",
-      name: "Plasma Surge",
-      icon: "plasmasurge",
-      effect: "The High Templar's Psionic Storm's radius is increased by 50%, range increased by 2, and restores 50 shields to friendly units in the target area.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      skillModifiers: [
-        {
-          skill: "Psionic Storm",
-          modifier: "values.radius",
-          operation: "add",
-          value: 0.8
-        },
-        {
-          skill: "Psionic Storm",
-          modifier: "values.range",
-          operation: "add",
-          value: 2
-        },
-        {
-          skill: "Psionic Storm",
-          modifier: "description",
-          operation: "replace",
-          value: `Creates a storm of psionic energy that lasts 4 seconds, causing up to {damage} damage to all enemy units in the target area. Does not damage friendly units.
-
-Radius: {radius}.
-
-Cast range: {range}.
-
-Restores {shieldRestoration} shields to friendly units in the target area.`
-        }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 341,
-      unit: "Immortal",
+      units: [
+        "Immortal"
+      ],
       commander: "Artanis",
       name: "Improved Barrier",
       icon: "improvedbarrier",
       effect: "Increases the amount of damage absorbed by the Immortal's Barrier by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Barrier",
           modifier: "values.absorption",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 342,
-      unit: "Reaver",
+      units: [
+        "Reaver"
+      ],
       commander: "Artanis",
       name: "Scarab Housing",
       icon: "scarabhousing",
       effect: "Doubles the maximum number of Scarabs that Reavers can hold.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Create Scarab",
           modifier: "values.capacity",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 343,
-      unit: "Phoenix",
+      units: [
+        "Phoenix"
+      ],
       commander: "Artanis",
       name: "Double Graviton Beam",
       icon: "doublegravitonbeam",
       effect: "Allows Phoenixes to cast Graviton Beam on two enemies at once.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Graviton Beam",
           modifier: "values.targets",
           operation: "replace",
           value: "Can lift two enemies at once."
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 344,
-      unit: "Tempest",
+      units: [
+        "Tempest"
+      ],
       commander: "Artanis",
       name: "Disintegration",
       icon: "disintegration",
       effect: "Enables Tempests to deal damage over time to an enemy unit or structure.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 345,
-      unit: "Primal Guardian",
+      units: [
+        "Primal Guardian"
+      ],
       commander: "Dehaka",
       name: "Explosive Spores",
       icon: "explosivespores",
       effect: "Unlocks Explosive Spores, an autocast ability that deals 50 damage to the target and nearby enemy ground units within radius 2. It has a 10-second cooldown. The regular attack remains single-target.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 346,
-      unit: "Primal Mutalisk",
+      units: [
+        "Primal Mutalisk"
+      ],
       commander: "Dehaka",
       name: "Shifting Carapace",
       icon: "shiftingcarapace",
       effect: "Primal Mutalisks take 50% less damage while moving.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 347,
-      unit: "Primal Mutalisk",
+      units: [
+        "Primal Mutalisk"
+      ],
       commander: "Dehaka",
       name: "Primal Reconstitution",
       icon: "primalreconstitution",
       effect: "Primal Mutalisks revive on death after a short time. Cannot occur more than once every 60 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 348,
-      unit: "Impaler",
+      units: [
+        "Impaler"
+      ],
       commander: "Dehaka",
       name: "Tenderize",
       icon: "tenderize",
       effect: "Units hit by Impalers become tenderized. Tenderized units take 200 damage over 10 seconds. A tenderized unit Devoured by Dehaka will invoke 25% of the normal cooldown time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 349,
-      unit: "Creeper Host",
+      units: [
+        "Creeper Host"
+      ],
       commander: "Dehaka",
       name: "Aerial Burst Sacs",
       icon: "aerialburstsacs",
       effect: "Allows the Creeper Host's Creepers to target air units and increases their movement speed.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Spawn Explosive Creeper",
           modifier: "values.targets",
           operation: "replace",
           value: "ground and air"
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 350,
-      unit: "Primal Ultralisk",
+      units: [
+        "Primal Ultralisk"
+      ],
       commander: "Dehaka",
       name: "Brutal Charge",
       icon: "brutalcharge",
       effect: "Primal Ultralisks can charge to a target location, knocking back units in the area and dealing 25 damage.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 351,
-      unit: "Primal Ultralisk",
+      units: [
+        "Primal Ultralisk",
+        "Tyrannozor"
+      ],
       commander: "Dehaka",
       name: "Healing Adaptation",
       icon: "healingadaptation",
       effect: "Primal Ultralisks and Tyrannozors regenerate life quickly when out of combat (10HP/s).",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 352,
-      unit: "Primal Ultralisk",
+      units: [
+        "Primal Ultralisk",
+        "Tyrannozor"
+      ],
       commander: "Dehaka",
       name: "Impaling Strike",
       icon: "impalingstrike",
       effect: "Primal Ultralisk and Tyrannozor melee attacks have a 20% chance to stun for 2 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 353,
-      unit: "Tyrannozor",
-      commander: "Dehaka",
-      name: "Impaling Strike",
-      icon: "impalingstrike",
-      effect: "Primal Ultralisk and Tyrannozor melee attacks have a 20% chance to stun for 2 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 354,
-      unit: "Tyrannozor",
+      units: [
+        "Tyrannozor"
+      ],
       commander: "Dehaka",
       name: "Barrage of Spikes",
       icon: "barrageofspikes",
       effect: "Tyrannozors can unleash a Barrage of Spikes, dealing 100 damage to nearby enemy ground and air units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 355,
-      unit: "Tyrannozor",
-      commander: "Dehaka",
-      name: "Healing Adaptation",
-      icon: "healingadaptation",
-      effect: "Primal Ultralisks and Tyrannozors regenerate life quickly when out of combat (10HP/s).",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 356,
-      unit: "Tyrannozor",
+      units: [
+        "Tyrannozor"
+      ],
       commander: "Dehaka",
       name: "Tyrant's Protection",
       icon: "tyrantsprotection",
       effect: "Tyrannozors grants nearby friendly units 2 armor.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 357,
-      unit: "Fenix Cybros Arbiter",
+      units: [
+        "Fenix Cybros Arbiter"
+      ],
       commander: "Fenix",
       name: "Observation Protocol",
       icon: "observationprotocol",
       effect: "Grants Fenix's Cybros Arbiter Suit detection, allowing him to detect cloaked enemies.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 358,
-      unit: "Fenix Praetor Armor",
+      units: [
+        "Fenix Praetor Armor",
+        "Fenix Solarite Dragoon",
+        "Fenix Cybros Arbiter"
+      ],
       commander: "Fenix",
       name: "A Strong Heart",
       icon: "astrongheart",
       effect: '"I no longer wish to be called by the name Fenix.". Renames "Fenix" to "Talandar". Purely aesthetic.',
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 13,
         gas: 13
       },
-      researchTime: 10
-    },
-    {
-      upgradeid: 359,
-      unit: "Fenix Solarite Dragoon",
-      commander: "Fenix",
-      name: "A Strong Heart",
-      icon: "astrongheart",
-      effect: '"I no longer wish to be called by the name Fenix.". Renames "Fenix" to "Talandar". Purely aesthetic.',
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 13,
-        gas: 13
-      },
-      researchTime: 10
-    },
-    {
-      upgradeid: 360,
-      unit: "Fenix Cybros Arbiter",
-      commander: "Fenix",
-      name: "A Strong Heart",
-      icon: "astrongheart",
-      effect: '"I no longer wish to be called by the name Fenix.". Renames "Fenix" to "Talandar". Purely aesthetic.',
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 13,
-        gas: 13
-      },
-      researchTime: 10
+      researchTime: 10,
+      changes: []
     },
     {
       upgradeid: 361,
-      unit: "Adept",
+      units: [
+        "Adept"
+      ],
       commander: "Fenix",
       name: "Psionic Projection",
       icon: "psionicprojection",
       effect: "Attacks summon an invulnerable Shade that will attack enemies for a short time for 33% damage per shot, 3 shots total.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 362,
-      unit: "Conservator",
+      units: [
+        "Conservator"
+      ],
       commander: "Fenix",
       name: "Optimized Emitters",
       icon: "optimizedemitters",
       effect: "Increases the duration of the Conservator's Protective Field by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Protective Field",
           modifier: "values.duration",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 363,
-      unit: "Disruptor",
+      units: [
+        "Disruptor"
+      ],
       commander: "Fenix",
       name: "Cloaking Module",
       icon: "cloakingmodule",
       effect: "Permanently cloaks all Disruptors.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 364,
-      unit: "Disruptor",
+      units: [
+        "Disruptor"
+      ],
       commander: "Fenix",
       name: "Purification Echo",
       icon: "purificationecho",
       effect: "The Disruptor's Purification Nova explodes again after 2 seconds, dealing 75 damage in a larger area.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Purification Nova",
           modifier: "values.echo",
           operation: "replace",
           value: "Explodes again after 2 seconds, dealing 75 damage in a larger area."
         }
-      ],
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 365,
-      unit: "Carrier",
+      units: [
+        "Carrier"
+      ],
       commander: "Fenix",
       name: "Graviton Catapult",
       icon: "gravitoncatapult",
       effect: "Makes the Carrier launch Interceptors more quickly by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 80
+      researchTime: 80,
+      changes: []
     },
     {
       upgradeid: 366,
-      unit: "Kaldalis",
+      units: [
+        "Kaldalis"
+      ],
       commander: "Fenix",
       name: "Empowered Blades",
       icon: "empoweredblades",
       effect: "Kaldalis' attacks deal area damage.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Adds cleave in a 180-degree arc of radius 1.25 at the primary target. Cleave deals 9 base damage per hit, plus 1 per weapon upgrade; Tactical Data Web also increases cleave damage.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Adds cleave in a 180-degree arc of radius 1.25 at the primary target. Cleave deals 9 base damage per hit, plus 1 per weapon upgrade; Tactical Data Web also increases cleave damage.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 367,
-      unit: "Talis",
+      units: [
+        "Talis"
+      ],
       commander: "Fenix",
       name: "Debilitation System",
       icon: "debilitationsystem",
       effect: "Talis' Ricochet Glaive bounces 5 additional times and causes every unit hit by Ricochet Glaive to take 5 additional damage for 5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Ricochet Glaive",
           modifier: "values.targets",
           operation: "add",
           value: 5
         },
         {
+          target: "skill",
           skill: "Ricochet Glaive",
           modifier: "values.debilitation",
           operation: "replace",
           value: "Targets hit take 5 additional damage for 5 seconds."
         }
-      ],
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 368,
-      unit: "Taldarin",
+      units: [
+        "Taldarin"
+      ],
       commander: "Fenix",
       name: "Gravimetric Overload",
       icon: "gravimetricoverload",
       effect: "Taldarin's attacks store 25% of the damage dealt on the target. When that unit is killed, it explodes, dealing all of the stored damage to nearby enemy units.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Attacks store 25% of their damage on the target. When it dies, it releases that damage in a circular explosion with base radius 1, extended to account for unit size.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Attacks store 25% of their damage on the target. When it dies, it releases that damage in a circular explosion with base radius 1, extended to account for unit size.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 369,
-      unit: "Clolarion",
+      units: [
+        "Clolarion"
+      ],
       commander: "Fenix",
       name: "Interdictors",
       icon: "interdictors",
       effect: "In addition to his Interceptors, Clorarion deploys 2 Interdictors that automatically bomb enemy ground units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 370,
-      unit: "Assault Galleon",
+      units: [
+        "Assault Galleon"
+      ],
       commander: "Horner",
       name: "Install Drone Hangar",
       icon: "installdronehangar-framed",
       effect: "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
-      modifier: "supply",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
       upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "supply",
+          value: 3,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "mineralCost",
+          value: 150,
+          operation: "add"
+        },
+        {
+          target: "unit",
+          modifier: "vespeneCost",
+          value: 200,
+          operation: "add"
+        }
+      ],
       unlocksModes: [
         "assault-drones"
       ],
       buildTimeIsAdditional: true
     },
     {
-      upgradeid: 556,
-      unit: "Assault Galleon",
-      commander: "Horner",
-      name: "Install Drone Hangar",
-      icon: "installdronehangar-framed",
-      effect: "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
-      modifier: "mineralCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 150,
-      operation: "add",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 557,
-      unit: "Assault Galleon",
-      commander: "Horner",
-      name: "Install Drone Hangar",
-      icon: "installdronehangar-framed",
-      effect: "Retrofits the Assault Galleon with a Drone Hangar bay that automatically builds and deploys Assault drones. Assault Drones can attack ground and air units.",
-      modifier: "vespeneCost",
-      modifiermode: null,
-      modifiertag: null,
-      value: 200,
-      operation: "add",
-      upgradetype: "upgrade"
-    },
-    {
       upgradeid: 371,
-      unit: "Reaper",
+      units: [
+        "Reaper"
+      ],
       commander: "Horner",
       name: "LE9 Cluster Charges",
       icon: "le9clustercharges",
       effect: "Reduces the cooldown of Reapers' KD8 Charge by 10 seconds. When Reapers are killed, they throw multiple grenades towards the killing unit.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 50,
+        gas: 50
+      },
+      researchTime: 42,
+      changes: [
         {
+          target: "skill",
           skill: "KD8 Charge",
           modifier: "cooldown",
           operation: "add",
           value: -10
         },
         {
+          target: "skill",
           skill: "KD8 Charge",
           modifier: "values.death",
           operation: "replace",
           value: "When killed, the Reaper throws multiple grenades toward its killer."
         }
-      ],
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 42
+      ]
     },
     {
       upgradeid: 372,
-      unit: "Widow Mine",
+      units: [
+        "Widow Mine"
+      ],
       commander: "Horner",
       name: "Executioner Missiles",
       icon: "executionermissiles",
       effect: "Reduces the Widow Mine's Sentinel Missile cooldown by 20 seconds. When Widow Mines are killed, they launch 5 Sentinel Missiles at random nearby targets that deal 10 (+10 vs. shields) damage within radius 2.625 of each impact.",
-      modifier: "Attack_Speed",
-      modifiermode: null,
-      modifiertag: null,
-      value: -20,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 42
+      researchTime: 42,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Attack_Speed",
+          value: -20,
+          operation: "add",
+          weapon: ""
+        }
+      ]
     },
     {
       upgradeid: 373,
-      unit: "Widow Mine",
+      units: [
+        "Widow Mine"
+      ],
       commander: "Horner",
       name: "Black Market Launchers",
       icon: "blackmarketlaunchers",
       effect: "Widow Mines range is increased by 50%, and can burrow and unburrow much faster (almost instantly).",
-      modifier: "Range",
-      modifiermode: null,
-      modifiertag: null,
-      value: 2.5,
-      operation: "add",
       upgradetype: "upgrade",
-      weapon: "",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 63
+      researchTime: 63,
+      changes: [
+        {
+          target: "unit",
+          modifier: "Range",
+          value: 2.5,
+          operation: "add",
+          weapon: ""
+        }
+      ]
     },
     {
       upgradeid: 374,
-      unit: "Hellion",
+      units: [
+        "Hellion",
+        "Hellbat"
+      ],
       commander: "Horner",
       name: "Aerosol Stim Emitters",
       icon: "aerosolstimemitters",
       effect: "Hellions and Hellbats transform 75% faster. When Hellions are killed, nearby allied units gain 25% movement and 15% attack speed for 15 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 42
+      researchTime: 42,
+      changes: []
     },
     {
       upgradeid: 375,
-      unit: "Hellion",
+      units: [
+        "Hellion"
+      ],
       commander: "Horner",
       name: "Tar Bombs",
       icon: "tarbombs",
       effect: "Hellions can launch a bomb that deals 20 damage to the target unit. Nearby enemies have their movement speed reduced by 75% and attack range reduced by 3 for 5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 63
-    },
-    {
-      upgradeid: 376,
-      unit: "Hellbat",
-      commander: "Horner",
-      name: "Aerosol Stim Emitters",
-      icon: "aerosolstimemitters",
-      effect: "Hellions and Hellbats transform 75% faster. When Hellions are killed, nearby allied units gain 25% movement and 15% attack speed for 15 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 50,
-        gas: 50
-      },
-      researchTime: 42
+      researchTime: 63,
+      changes: []
     },
     {
       upgradeid: 377,
-      unit: "Hellbat",
+      units: [
+        "Hellbat"
+      ],
       commander: "Horner",
       name: "Immolation Fluid",
       icon: "immolationfluid",
       effect: "Hellbat attacks cause enemies to burn for an additional 50 damage over 5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 63
+      researchTime: 63,
+      changes: []
     },
     {
       upgradeid: 378,
-      unit: "Asteria Wraith",
+      units: [
+        "Asteria Wraith"
+      ],
       commander: "Horner",
       name: "Unregistered Cloaking System",
       icon: "unregisteredcloakingsystem",
       effect: "Allows Wraiths to remain permanently cloaked.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 63
+      researchTime: 63,
+      changes: []
     },
     {
       upgradeid: 379,
-      unit: "Asteria Wraith",
+      units: [
+        "Asteria Wraith",
+        "Deimos Viking",
+        "Theia Raven"
+      ],
       commander: "Horner",
       name: "Tactical Jump",
       icon: "tacticaljump",
       effect: "Wraiths, Vikings, and Ravens can use Tactical Jump, warping them to any visible location.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 63
+      researchTime: 63,
+      changes: []
     },
     {
       upgradeid: 380,
-      unit: "Deimos Viking",
+      units: [
+        "Deimos Viking"
+      ],
       commander: "Horner",
       name: "W.I.L.D. Missiles",
       icon: "wildmissiles",
       effect: "Vikings in Fighter Mode can launch 5 rockets at an enemy. Each rocket deals 25 (40 vs armored) damage to the target unit.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 63
+      researchTime: 63,
+      changes: []
     },
     {
       upgradeid: 381,
-      unit: "Deimos Viking",
+      units: [
+        "Deimos Viking"
+      ],
       commander: "Horner",
       name: "Shredder Rounds",
       icon: "shredderrounds",
       effect: "Attacks from Vikings in Assault Mode pierce, dealing damage to enemy units behind the target. Viking transform time reduced by 75%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Piercing attacks deal full damage to ground enemies in a rectangle 7 long and 1.5 wide along the attack direction, including enemies behind the primary target.",
-      operation: "replace",
       upgradetype: "upgrade",
-      weapon: "assault",
       cost: {
         minerals: 200,
         gas: 100
       },
-      researchTime: 63
-    },
-    {
-      upgradeid: 382,
-      unit: "Deimos Viking",
-      commander: "Horner",
-      name: "Tactical Jump",
-      icon: "tacticaljump",
-      effect: "Wraiths, Vikings, and Ravens can use Tactical Jump, warping them to any visible location.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 63
+      researchTime: 63,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Piercing attacks deal full damage to ground enemies in a rectangle 7 long and 1.5 wide along the attack direction, including enemies behind the primary target.",
+          operation: "replace",
+          weapon: "assault"
+        }
+      ]
     },
     {
       upgradeid: 383,
-      unit: "Theia Raven",
+      units: [
+        "Theia Raven"
+      ],
       commander: "Horner",
       name: "Multi-Threaded Sensors",
       icon: "multithreadedsensors",
       effect: "Ravens can target up to 4 units with Target Lock.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 63,
+      changes: [
         {
+          target: "skill",
           skill: "Analyze Weakness",
           modifier: "values.targets",
           operation: "set",
           value: 4
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 63
-    },
-    {
-      upgradeid: 384,
-      unit: "Theia Raven",
-      commander: "Horner",
-      name: "Tactical Jump",
-      icon: "tacticaljump",
-      effect: "Wraiths, Vikings, and Ravens can use Tactical Jump, warping them to any visible location.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 63
+      ]
     },
     {
       upgradeid: 385,
-      unit: "Sentinel",
+      units: [
+        "Sentinel"
+      ],
       commander: "Karax",
       name: "Reconstruction",
       icon: "reconstruction",
       effect: "Sentinels are revived when killed. This effect can only occur once every 120 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 386,
-      unit: "Energizer",
+      units: [
+        "Energizer",
+        "Shield Battery"
+      ],
       commander: "Karax",
       name: "Rapid Recharging",
       icon: "rapidrecharging",
       effect: "Increases the energy regeneration rate of Energizers and Shield Batteries by 200%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 387,
-      unit: "Energizer",
+      units: [
+        "Energizer"
+      ],
       commander: "Karax",
       name: "Reclamation",
       icon: "reclamation",
       effect: "Energizers gain the ability to temporarily take control of enemy mechanical units. Reclaimed units self-destruct after 120 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 388,
-      unit: "Immortal",
+      units: [
+        "Immortal"
+      ],
       commander: "Karax",
       name: "Shadow Cannon",
       icon: "shadowcannon",
       effect: "Allows Immortals to use Shadow Cannon. Deals 320 damage to target unit or structure. Can target ground and air units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 389,
-      unit: "Mirage",
+      units: [
+        "Mirage"
+      ],
       commander: "Karax",
       name: "Phasing Armor",
       icon: "phasingarmor",
       effect: "Prevents Mirages from taking damage for 2 seconds after being attacked. Cannot occur more than once every 5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 390,
-      unit: "Carrier",
+      units: [
+        "Carrier"
+      ],
       commander: "Karax",
       name: "Repair Drones",
       icon: "repairdrones",
       effect: "Carriers gain two repair drones that automatically heal nearby friendly mechanical units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 120
-    },
-    {
-      upgradeid: 391,
-      unit: "Shield Battery",
-      commander: "Karax",
-      name: "Rapid Recharging",
-      icon: "rapidrecharging",
-      effect: "Increases the energy regeneration rate of Energizers and Shield Batteries by 200%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 90
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 392,
-      unit: "Shield Battery",
+      units: [
+        "Shield Battery"
+      ],
       commander: "Karax",
       name: "Enhanced Targeting",
       icon: "enhancedtargeting",
       effect: "Photon Cannons, Khaydarin Monoliths, and Shield Batteries gain +2 range.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 393,
-      unit: "Shield Battery",
+      units: [
+        "Shield Battery"
+      ],
       commander: "Karax",
       name: "Fortification Barrier",
       icon: "fortificationbarrier",
       effect: "Allows Shield Batteries to grant target structures a barrier that absorbs up to 100 damage for 10 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 394,
-      unit: "Kerrigan",
+      units: [
+        "Kerrigan"
+      ],
       commander: "Kerrigan",
       name: "Chain Reaction",
       icon: "chainreaction",
       effect: "Kerrigan's attacks deal normal damage to her target then jump to additional nearby enemies. Deals 10 damage to up to four additional targets.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Attacks bounce to up to 4 additional enemies, dealing 10 damage to each. Each jump searches within radius 4 of the previous target.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Attacks bounce to up to 4 additional enemies, dealing 10 damage to each. Each jump searches within radius 4 of the previous target.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 395,
-      unit: "Kerrigan",
+      units: [
+        "Kerrigan"
+      ],
       commander: "Kerrigan",
       name: "Ability Efficiency",
       icon: "abilityefficiency",
       effect: "Kerrigan's ability costs and cooldowns are reduced by 20%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 200,
+        gas: 200
+      },
+      researchTime: 120,
+      changes: [
         {
+          target: "skill",
           skill: "Leaping Strike",
           modifier: "energycost",
           operation: "multiply",
           value: 0.8
         },
         {
+          target: "skill",
           skill: "Psionic Shift",
           modifier: "energycost",
           operation: "multiply",
           value: 0.8
         },
         {
+          target: "skill",
           skill: "Kinetic Blast",
           modifier: "energycost",
           operation: "multiply",
           value: 0.8
         },
         {
+          target: "skill",
           skill: "Crushing Grip",
           modifier: "energycost",
           operation: "multiply",
           value: 0.8
         },
         {
+          target: "skill",
           skill: "Assimilation Aura",
           modifier: "cooldown",
           operation: "multiply",
           value: 0.8
         },
         {
+          target: "skill",
           skill: "Immobilization Wave",
           modifier: "cooldown",
           operation: "multiply",
           value: 0.8
         }
-      ],
-      cost: {
-        minerals: 200,
-        gas: 200
-      },
-      researchTime: 120
+      ]
     },
     {
       upgradeid: 396,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Kerrigan",
       name: "Shredding Claws",
       icon: "shreddingclaws",
       effect: "Zergling attacks reduce their target's armor to 0 for 10 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 397,
-      unit: "Ultralisk",
+      units: [
+        "Ultralisk"
+      ],
       commander: "Kerrigan",
       name: "Burrow Charge",
       icon: "burrowcharge",
       effect: "Allows Ultralisks to use the Burrow Charge ability.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 398,
-      unit: "Ultralisk",
+      units: [
+        "Ultralisk"
+      ],
       commander: "Kerrigan",
       name: "Tissue Assimilation",
       icon: "tissueassimilation",
       effect: "Grants Ultralisk's life equal to 40% of all damage dealt from normal attacks.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 399,
-      unit: "Mutalisk",
+      units: [
+        "Mutalisk"
+      ],
       commander: "Kerrigan",
       name: "Rapid Regeneration",
       icon: "rapidregeneration",
       effect: "Mutalisks regenerate life quickly while out of combat.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 400,
-      unit: "Mutalisk",
+      units: [
+        "Mutalisk"
+      ],
       commander: "Kerrigan",
       name: "Vicious Glave",
       icon: "viciousglave",
       effect: "The Mutalisk's attack bounces three additional times, hitting up to six targets. Bounces also travel farther.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Bounces to up to 5 additional enemies, within radius 6 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Bounces to up to 5 additional enemies, within radius 6 of the previous target. Base bounce damage: 5, 3, 3, 1, 1; only the first two bounces gain 0.333 and 0.111 per weapon upgrade.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 401,
-      unit: "Mutalisk",
+      units: [
+        "Mutalisk"
+      ],
       commander: "Kerrigan",
       name: "Severing Glave",
       icon: "severingglave",
       effect: "The Mutalisk's attack no longer decreases in damage with each subsequent bounce.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Bounces to up to 2 additional enemies, within radius 3 of the previous target. Base bounce damage: 9, 9; gains 0.333 and 0.111 per weapon upgrade.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Bounces to up to 2 additional enemies, within radius 3 of the previous target. Base bounce damage: 9, 9; gains 0.333 and 0.111 per weapon upgrade.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 402,
-      unit: "Aegis Guard",
+      units: [
+        "Aegis Guard"
+      ],
       commander: "Mengsk",
       name: "Incapacitator Shells",
       icon: "incapacitatorshells",
       effect: "Allows the Aegis Guard's attacks to slow enemy units (-60% movement speed for 3 seconds).",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 403,
-      unit: "Emperor's Shadow",
+      units: [
+        "Emperor's Shadow"
+      ],
       commander: "Mengsk",
       name: "Sovereign Tactical Missiles",
       icon: "sovereigntacticalmissiles",
       effect: "Emperor's Shadows no longer need to channel the Tactical Missile Strike ability.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Tactical Missile Strike",
           modifier: "values.channel",
           operation: "replace",
           value: "Does not require channeling."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 404,
-      unit: "Shock Division",
+      units: [
+        "Shock Division",
+        "Blackhammer",
+        "Sky Fury"
+      ],
       commander: "Mengsk",
       name: "Smart Servos",
       icon: "smartservos",
       effect: "Reduces the transformation time (by 66%) of Shock Divisions, Blackhammers, and Sky Furies.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 405,
-      unit: "Blackhammer",
+      units: [
+        "Blackhammer"
+      ],
       commander: "Mengsk",
       name: "Bulwark Field",
       icon: "bulwarkfield",
       effect: "Blackhammers provide nearby friendly ground units (within 5 range) +5 armor.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 406,
-      unit: "Blackhammer",
-      commander: "Mengsk",
-      name: "Smart Servos",
-      icon: "smartservos",
-      effect: "Reduces the transformation time (by 66%) of Shock Divisions, Blackhammers, and Sky Furies.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 407,
-      unit: "Sky Fury",
-      commander: "Mengsk",
-      name: "Smart Servos",
-      icon: "smartservos",
-      effect: "Reduces the transformation time (by 66%) of Shock Divisions, Blackhammers, and Sky Furies.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 408,
-      unit: "Imperial Intercessor",
+      units: [
+        "Imperial Intercessor"
+      ],
       commander: "Mengsk",
       name: "Dual Resuscitators",
       icon: "dualresuscitators",
       effect: "Allows Imperial Intercessors to heal two targets at the same time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Heal",
           modifier: "values.targets",
           operation: "replace",
           value: "Can heal two targets at the same time."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 409,
-      unit: "Imperial Witness",
+      units: [
+        "Imperial Witness"
+      ],
       commander: "Mengsk",
       name: "Amplfied Airwaves",
       icon: "amplifiedairwaves",
       effect: "Doubles the Imperial Support Laborers and Troopers provide when affected by the Imperial Witness's Indoctrinate ability.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 410,
-      unit: "Pride of Augustgrad",
+      units: [
+        "Pride of Augustgrad"
+      ],
       commander: "Mengsk",
       name: "Field-Assist Targeting System",
       icon: "fieldassisttargetingsystem",
       effect: "Allows Pride of Augustgrad to grant nearby friendly ranged ground units +1 increased range.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 411,
-      unit: "Nova",
+      units: [
+        "Nova"
+      ],
       commander: "Nova",
       name: "Ghost Visor",
       icon: "ghostvisor",
       effect: "Grants Nova detection, allowing her to see and track cloaked and burrowed enemy units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
+      researchTime: 45,
+      changes: []
     },
     {
       upgradeid: 412,
-      unit: "Nova",
+      units: [
+        "Nova"
+      ],
       commander: "Nova",
       name: "Caduceus Reactor",
       icon: "caduceusreactor",
       effect: "Increases Nova's life regeneration rate to 10.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
+      researchTime: 45,
+      changes: []
     },
     {
       upgradeid: 413,
-      unit: "Nova",
+      units: [
+        "Nova"
+      ],
       commander: "Nova",
       name: "Operational Efficiency",
       icon: "operationalefficiency",
       effect: "Refunds 50% of Snipe's energy cost when Nova uses it to kill an enemy unit.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Snipe",
           modifier: "values.refund",
           operation: "replace",
           value: "Refunds 50% of its energy cost when Snipe kills its target."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 414,
-      unit: "Nova",
+      units: [
+        "Nova"
+      ],
       commander: "Nova",
       name: "Infernal Projectiles",
       icon: "infernalprojectiles",
       effect: "Increases the range of Nova's Penetrating Blast by 2.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Penetrating Blast",
           modifier: "values.range",
           operation: "add",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 415,
-      unit: "Marauder Commando",
+      units: [
+        "Marauder Commando"
+      ],
       commander: "Nova",
       name: "Suppression Shells",
       icon: "suppressionshells",
       effect: "Units hit by the Marauder Commando have temporarily slowed attack and movement speeds (50%) for 1.5 seconds. Has a reduced effect on heroic units (20%). Massive units are immune.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
+      researchTime: 30,
+      changes: []
     },
     {
       upgradeid: 416,
-      unit: "Marauder Commando",
+      units: [
+        "Marauder Commando"
+      ],
       commander: "Nova",
       name: "Magrail Munitions",
       icon: "magrailmunitions",
       effect: "Equips Marauder Commandos with an additional weapon that deals 90 damage to their target every 30 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
+      researchTime: 45,
+      changes: []
     },
     {
       upgradeid: 417,
-      unit: "Spec Ops Ghost",
+      units: [
+        "Spec Ops Ghost"
+      ],
       commander: "Nova",
       name: "EMP Round",
       icon: "empround",
       effect: "Allows Spec Ops Ghosts to use EMP Round, which deals 100 damage to shields and depletes the energy of enemy units in the target area. Cloaked units are revealed for 10 seconds after being hit.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
+      researchTime: 30,
+      changes: []
     },
     {
       upgradeid: 418,
-      unit: "Spec Ops Ghost",
+      units: [
+        "Spec Ops Ghost"
+      ],
       commander: "Nova",
       name: "Triple Tap",
       icon: "tripletap",
       effect: "Spec Ops Ghosts fire 2 additional shots that deal 85 damage each when using Snipe.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45,
+      changes: [
         {
+          target: "skill",
           skill: "Snipe",
           modifier: "values.shots",
           operation: "replace",
           value: "Fires 2 additional shots, each dealing 85 damage."
         }
-      ],
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 45
+      ]
     },
     {
       upgradeid: 419,
-      unit: "Strike Goliath",
+      units: [
+        "Strike Goliath"
+      ],
       commander: "Nova",
       name: "Lockdown Missiles",
       icon: "lockdownmissiles",
       effect: "Stuns and disables the detection of mechanical units hit by the Strike Goliath's anti-air attacks for 3 seconds. Heroic units are immune.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
+      researchTime: 45,
+      changes: []
     },
     {
       upgradeid: 420,
-      unit: "Heavy Siege Tank",
+      units: [
+        "Heavy Siege Tank"
+      ],
       commander: "Nova",
       name: "Spider Mines",
       icon: "spidermines",
       effect: "Allows Heavy Siege Tanks to deploy Spider Mines, which pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy detectors.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
+      researchTime: 30,
+      changes: []
     },
     {
       upgradeid: 421,
-      unit: "Raid Liberator",
+      units: [
+        "Raid Liberator"
+      ],
       commander: "Nova",
       name: "Raid Artillery",
       icon: "raidartillery",
       effect: "Allows Raid Liberators to attack structures while in Defender Mode.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
+      researchTime: 30,
+      changes: []
     },
     {
       upgradeid: 422,
-      unit: "Raid Liberator",
+      units: [
+        "Raid Liberator"
+      ],
       commander: "Nova",
       name: "Smart Servos",
       icon: "smartservos",
       effect: "Allows Raid Liberators to transform between modes four times faster.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 75,
         gas: 75
       },
-      researchTime: 45
+      researchTime: 45,
+      changes: []
     },
     {
       upgradeid: 423,
-      unit: "Covert Banshee",
+      units: [
+        "Covert Banshee"
+      ],
       commander: "Nova",
       name: "Advanced Cloaking Field",
       icon: "advancedcloakingfield",
       effect: "Allows Covert Banshees to remain permanently cloaked.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 30
+      researchTime: 30,
+      changes: []
     },
     {
       upgradeid: 424,
-      unit: "Raven Type-II",
+      units: [
+        "Raven Type-II"
+      ],
       commander: "Nova",
       name: "Covert Triage",
       icon: "coverttriage",
       effect: "Increases the healing of the Raven Type-II's Bio-Mechanical Repair Drone by 25% and allows it to cloak units that it is currently healing.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45,
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Bio-Mechanical Repair Drone",
           modifier: "values.healing",
           operation: "multiply",
           value: 1.25
         },
         {
+          target: "skill",
           skill: "Deploy Bio-Mechanical Repair Drone",
           modifier: "values.cloak",
           operation: "replace",
           value: "Cloaks units while healing them."
         }
-      ],
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 45
+      ]
     },
     {
       upgradeid: 425,
-      unit: "Raven Type-II",
+      units: [
+        "Raven Type-II"
+      ],
       commander: "Nova",
       name: "Enhanced Manufacturing",
       icon: "enhancedmanufacturing",
       effect: "Allows the Raven Type-II to store up to 3 charges for each of its abilities.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 75,
+        gas: 75
+      },
+      researchTime: 45,
+      changes: [
         {
+          target: "skill",
           skill: "Build Railgun Turret",
           modifier: "charges",
           operation: "set",
           value: 3
         },
         {
+          target: "skill",
           skill: "Deploy Bio-Mechanical Repair Drone",
           modifier: "charges",
           operation: "set",
           value: 3
         },
         {
+          target: "skill",
           skill: "Predator Missile",
           modifier: "charges",
           operation: "set",
           value: 3
         }
-      ],
-      cost: {
-        minerals: 75,
-        gas: 75
-      },
-      researchTime: 45
+      ]
     },
     {
       upgradeid: 426,
-      unit: "Marauder",
+      units: [
+        "Marauder"
+      ],
       commander: "Raynor",
       name: "Concussive Shells",
       icon: "concussiveshells",
       effect: "Upgrades the Marauder weapons to slow down opponents movement speed by 50% for 1.5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 427,
-      unit: "Medic",
+      units: [
+        "Medic"
+      ],
       commander: "Raynor",
       name: "Stabilizer Medpacks",
       icon: "stabilizermedpacks",
       effect: "Increases the Medic's healing speed to 12 life per 3 energy per second and allows them to heal mechanical units. Units being healed by Medics take 25% less damage.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Heal",
           modifier: "values.targets",
           operation: "replace",
           value: "biological or mechanical"
         },
         {
+          target: "skill",
           skill: "Heal",
           modifier: "values.healing",
           operation: "set",
           value: 12
         },
         {
+          target: "skill",
           skill: "Heal",
           modifier: "values.protection",
           operation: "replace",
           value: "Units being healed take 25% less damage."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 428,
-      unit: "Vulture",
+      units: [
+        "Vulture"
+      ],
       commander: "Raynor",
       name: "Replenishable Magazine",
       icon: "replenishablemagazine",
       effect: "Allows the Vulture to build additional Spider Mines to replace those used.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 50,
         gas: 50
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 429,
-      unit: "Vulture",
+      units: [
+        "Vulture"
+      ],
       commander: "Raynor",
       name: "Cerberus Mine",
       icon: "cerberusmine",
       effect: "Increases the blast radius and trigger radius of the Vulture's Spider Mine by 33%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Spider Mine",
           modifier: "values.radius",
           operation: "replace",
           value: "Blast and trigger radii are increased by 33%."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 430,
-      unit: "Viking",
+      units: [
+        "Viking"
+      ],
       commander: "Raynor",
       name: "Ripwave Missiles",
       icon: "ripwavemissiles",
       effect: "Upgrades the Viking's missiles to deal area damage.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Circular splash damage to air enemies around the target: 100% within radius 0.3, 50% from 0.3 to 0.6, and 25% from 0.6 to 1.2.",
-      operation: "replace",
       upgradetype: "upgrade",
-      weapon: "fighter-mode",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Circular splash damage to air enemies around the target: 100% within radius 0.3, 50% from 0.3 to 0.6, and 25% from 0.6 to 1.2.",
+          operation: "replace",
+          weapon: "fighter-mode"
+        }
+      ]
     },
     {
       upgradeid: 431,
-      unit: "Banshee",
+      units: [
+        "Banshee"
+      ],
       commander: "Raynor",
       name: "Shockwave Missile Battery",
       icon: "shockwavemissilebattery",
       effect: "Upgrades the Banshee's attack to fire multiple missile bursts in a straight line. Weapon attacks all targets in a straight line (2 range length) from the Banshee's primary target, dealing 12 weapon damage to all targets within 0.5 range of the line.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Missile bursts damage enemies along a line extending 2 beyond the primary target, hitting units within 0.5 of the line.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Missile bursts damage enemies along a line extending 2 beyond the primary target, hitting units within 0.5 of the line.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 432,
-      unit: "Battlecruiser",
+      units: [
+        "Battlecruiser"
+      ],
       commander: "Raynor",
       name: "Weapon Refit",
       icon: "weaponrefit",
       effect: "Enables use of the Battlecruiser Yamato Cannon.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 433,
-      unit: "Mecha Zergling",
+      units: [
+        "Mecha Zergling"
+      ],
       commander: "Stetmann",
       name: "Hardened Egonergy Shield",
       icon: "hardenedegonergyshield",
       effect: "Allows Mecha Zerglings to reduce incoming damage to a maximum of 10. Drains 5 Egonergy per use.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 434,
-      unit: "Mecha Baneling",
+      units: [
+        "Mecha Baneling"
+      ],
       commander: "Stetmann",
       name: "Egonergy Enhanced Explosives",
       icon: "egonergyenhancedexplosives",
       effect: "Allows the Mecha Baneling to add its current Egonergy to its damage when it explodes.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 435,
-      unit: "Mecha Baneling",
+      units: [
+        "Mecha Baneling"
+      ],
       commander: "Stetmann",
       name: "Egonergy Efficient Barrier",
       icon: "egonergyefficientbarrier",
       effect: "Increases the damage absorbed by the Mecha Baneling's Egonergy Impact Barrier to 2 damage per point of Egonergy.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 436,
-      unit: "Mecha Hydralisk",
+      units: [
+        "Mecha Hydralisk"
+      ],
       commander: "Stetmann",
       name: "Erudition Missile Launchers",
       icon: "eruditionmissilelaunchers",
       effect: "Allows the Mecha Hydralisk to replace its anti-air Needle Spine weapon with a more powerful Erudition Missile armament.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 437,
-      unit: "Mecha Lurker",
+      units: [
+        "Mecha Lurker"
+      ],
       commander: "Stetmann",
       name: "Extended Tunnel of TERROR Algorithm",
       icon: "extendedtunnelofterroralgorithm",
       effect: "Increases the maximum range of the Mecha Lurker's Tunnel of TERROR Algorithm by 6.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Tunnel of TERROR Algorithm",
           modifier: "values.range",
           operation: "add",
           value: 6
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 438,
-      unit: "Mecha Lurker",
+      units: [
+        "Mecha Lurker"
+      ],
       commander: "Stetmann",
       name: "Focused Strike Algorithm",
       icon: "focusedstrikealgorithm",
       effect: "Allows the Mecha Lurker to concentrate its fire on a target unit, dealing 50 damage to a small area around that unit for 10 seconds or until the unit is destroyed.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 439,
-      unit: "Mecha Corruptor",
+      units: [
+        "Mecha Corruptor"
+      ],
       commander: "Stetmann",
       name: "Wide Area Cluster Busters",
       icon: "wideareaclusterbusters",
       effect: "Increases the splash radius of Mecha Corruptor's Cluster Busters ability from 1.5 to 3. The regular attack remains single-target.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Cluster Busters",
           modifier: "values.radius",
           operation: "set",
           value: 3
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 440,
-      unit: "Mecha Corruptor",
+      units: [
+        "Mecha Corruptor"
+      ],
       commander: "Stetmann",
       name: "Terraclean Solvent",
       icon: "terracleansolvent",
       effect: "Allows the Mecha Corruptor to emit a solvent stream that deals devastating damage to enemy ground units over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 441,
-      unit: "Mecha Battlecarrier Lord",
+      units: [
+        "Mecha Battlecarrier Lord"
+      ],
       commander: "Stetmann",
       name: "Mecha Locusceptor Bays",
       icon: "mechalocusceptorbays",
       effect: "Allows the Mecha Battlecarrier Lord to build and launch 6 Mecha Locusceptors that automatically attack enemy ground units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 442,
-      unit: "Mecha Battlecarrier Lord",
+      units: [
+        "Mecha Battlecarrier Lord"
+      ],
       commander: "Stetmann",
       name: "Stetmato Cannon",
       icon: "stetmatocannon",
       effect: "Allows the Mecha Battlecarrier Lord to blast targets with a devastating plasma cannon causing 300 damage and delusions of grandeur.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 443,
-      unit: "Mecha Infestor",
+      units: [
+        "Mecha Infestor"
+      ],
       commander: "Stetmann",
       name: "UMI-C Charging Protocol",
       icon: "umicchargingprotocol",
       effect: "Allows the Mecha Infestor to launch a mechanical nerve cord at a friendly unit, restoring 150 life, 50 Egonergy, and 50 energy instantly. An additional 600 life, 200 Egonergy, and 200 energy regenerates over 20 seconds. The unit's ability cooldown rate is increased by 25%",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 444,
-      unit: "Mecha Infestor",
+      units: [
+        "Mecha Infestor"
+      ],
       commander: "Stetmann",
       name: "BONUS Ravager!",
       icon: "bonusravager",
       effect: "Allows the Mecha Infestor's Roaches Away! and Deconstructive Roach-nites to spawn an additional Mecha Ravager.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Roaches Away!",
           modifier: "values.ravager",
           operation: "replace",
           value: "Also spawns one Mecha Ravager."
         },
         {
+          target: "skill",
           skill: "Deconstructive Roach-nites",
           modifier: "values.ravager",
           operation: "replace",
           value: "Also spawns one Mecha Ravager."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 445,
-      unit: "Mecha Ultralisk",
+      units: [
+        "Mecha Ultralisk"
+      ],
       commander: "Stetmann",
       name: "Electrostatic Surprise!",
       icon: "electrostaticsurprise",
       effect: "Allows the Mecha Ultralisk's Vectored Burrow Charge ability to stun enemy mechanical ground units in a large area.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Vectored Burrow Charge",
           modifier: "values.stun",
           operation: "replace",
           value: "Stuns enemy mechanical ground units in a large area."
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 446,
-      unit: "Mecha Ultralisk",
+      units: [
+        "Mecha Ultralisk"
+      ],
       commander: "Stetmann",
       name: "Mecha Mooch Module",
       icon: "mechamoochmodule",
       effect: "Grants the Mecha Ultralisk the ability to absorb 25 life from nearby enemy or friendly mechanical units, healing for that amount.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 447,
-      unit: "Mecha Ultralisk",
+      units: [
+        "Mecha Ultralisk"
+      ],
       commander: "Stetmann",
       name: "Chitanium Plating",
       icon: "chitaniumplating",
       effect: "Grants the Mecha Ultralisk 25% damage reduction.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 448,
-      unit: "Infested Civilian",
+      units: [
+        "Infested Civilian",
+        "Volatile Infested"
+      ],
       commander: "Stukov",
       name: "Anaerobic Enhancement",
       icon: "anaerobicenhancement",
       effect: "Allows Infested Civilians to quickly leap toward nearby enemy ground units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 449,
-      unit: "Infested Civilian",
+      units: [
+        "Infested Civilian",
+        "Volatile Infested"
+      ],
       commander: "Stukov",
       name: "Broodling Gestation",
       icon: "broodlinggestation",
       effect: "Infested Civilians spawn a Broodling when they die.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 450,
-      unit: "Volatile Infested",
-      commander: "Stukov",
-      name: "Anaerobic Enhancement",
-      icon: "anaerobicenhancement",
-      effect: "Allows Infested Civilians to quickly leap toward nearby enemy ground units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 451,
-      unit: "Volatile Infested",
-      commander: "Stukov",
-      name: "Broodling Gestation",
-      icon: "broodlinggestation",
-      effect: "Infested Civilians spawn a Broodling when they die.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 452,
-      unit: "Infested Marine",
+      units: [
+        "Infested Marine",
+        "Infested Trooper"
+      ],
       commander: "Stukov",
       name: "Plagued Munitions",
       icon: "plaguedmunitions",
       effect: "Infested Marines and Infested Troopers deal an additional 50 damage over 15 seconds to units they attack.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 453,
-      unit: "Infested Trooper",
-      commander: "Stukov",
-      name: "Plagued Munitions",
-      icon: "plaguedmunitions",
-      effect: "Infested Marines and Infested Troopers deal an additional 50 damage over 15 seconds to units they attack.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 454,
-      unit: "Infested Bunker",
+      units: [
+        "Infested Bunker"
+      ],
       commander: "Stukov",
       name: "Regenerative Plating",
       icon: "regenerativeplating",
       effect: "Infested Bunkers regenerate life twice as fast while rooted.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 455,
-      unit: "Infested Diamondback",
+      units: [
+        "Infested Diamondback"
+      ],
       commander: "Stukov",
       name: "Saturated Cultures",
       icon: "saturatedcultures",
       effect: "Reduces the cooldown of the Infested Diamondback's Fungal Snare by 15 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Fungal Snare",
           modifier: "cooldown",
           operation: "add",
           value: -15
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 456,
-      unit: "Infested Diamondback",
+      units: [
+        "Infested Diamondback"
+      ],
       commander: "Stukov",
       name: "Caustic Mucus",
       icon: "causticmucus",
       effect: "Infested Diamondbacks leave behind a trail of acid when moving that deals 20 damage per second to enemy units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 457,
-      unit: "Infested Siege Tank",
+      units: [
+        "Infested Siege Tank"
+      ],
       commander: "Stukov",
       name: "Automated Mitosis",
       icon: "automatedmitosis",
       effect: "Infested Siege Tanks automatically spawn 1 round of Volatile Biomass every 30 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 458,
-      unit: "Infested Banshee",
+      units: [
+        "Infested Banshee"
+      ],
       commander: "Stukov",
       name: "Rapid Hibernation",
       icon: "rapidhibernation",
       effect: "Allows Infested Banshees to burrow. Infested Banshees regenerate 20 life and energy per second while burrowed.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 459,
-      unit: "Brood Queen",
+      units: [
+        "Brood Queen"
+      ],
       commander: "Stukov",
       name: "Fungal Growth",
       icon: "fungalgrowth",
       effect: "Allows Brood Queens to immobilize enemy units and deal 80 damage to them over 4 seconds, and reveal them if they are cloaked or burrowed.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 460,
-      unit: "Brood Queen",
+      units: [
+        "Brood Queen"
+      ],
       commander: "Stukov",
       name: "Enhanced Mitochondria",
       icon: "enhancedmitochondria",
       effect: "Increases the Brood Queen's energy regeneration rate by 100%. Brood Queens spawn with full energy.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 461,
-      unit: "Hellbat",
+      units: [
+        "Hellbat",
+        "Hellion",
+        "Goliath",
+        "Siege Tank",
+        "Cyclone",
+        "Thor",
+        "Wraith",
+        "Hercules",
+        "Science Vessel"
+      ],
       commander: "Swann",
       name: "Regenerative Bio-Steel",
       icon: "regenerativebiosteel",
       effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 462,
-      unit: "Hellion",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 463,
-      unit: "Goliath",
+      units: [
+        "Goliath"
+      ],
       commander: "Swann",
       name: "Multi-Lock Weapons System",
       icon: "multilockweaponssystem",
       effect: "Goliaths can target and attack ground and air units simultaneously.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 464,
-      unit: "Goliath",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 465,
-      unit: "Siege Tank",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 466,
-      unit: "Cyclone",
+      units: [
+        "Cyclone"
+      ],
       commander: "Swann",
       name: "Targeting Optics",
       icon: "targetingoptics",
       effect: "Increases Cyclone Lock On range by 3.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Lock On",
           modifier: "values.range",
           operation: "add",
           value: 3
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      ]
     },
     {
       upgradeid: 467,
-      unit: "Cyclone",
+      units: [
+        "Cyclone"
+      ],
       commander: "Swann",
       name: "Mag-Field Accelerator",
       icon: "magfieldaccelerator",
       effect: "Increases Cyclone Lock On damage by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Lock On",
           modifier: "values.damage",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 468,
-      unit: "Cyclone",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 469,
-      unit: "Thor",
+      units: [
+        "Thor"
+      ],
       commander: "Swann",
       name: "330mm Barrage Cannon",
       icon: "330mmbarragecannon",
       effect: "Allows Thors to use the 330mm Barrage Cannon ability.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 470,
-      unit: "Thor",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 471,
-      unit: "Wraith",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
-    },
-    {
-      upgradeid: 472,
-      unit: "Hercules",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 473,
-      unit: "Science Vessel",
+      units: [
+        "Science Vessel"
+      ],
       commander: "Swann",
       name: "Improved Nano-Repair",
       icon: "improvednanorepair",
       effect: "Science Vessel's Nano-Repair no longer costs energy.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 100,
+        gas: 100
+      },
+      researchTime: 60,
+      changes: [
         {
+          target: "skill",
           skill: "Nano-Repair",
           modifier: "values.energy",
           operation: "set",
           value: 0
         }
-      ],
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 474,
-      unit: "Science Vessel",
-      commander: "Swann",
-      name: "Regenerative Bio-Steel",
-      icon: "regenerativebiosteel",
-      effect: "Vehicles and ships automatically heal themselves over time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 475,
-      unit: "Flaming Betty",
+      units: [
+        "Flaming Betty",
+        "Spinning Dizzy",
+        "Blaster Billy",
+        "Drakken Laser Drill"
+      ],
       commander: "Swann",
       name: "Fire Suppression Systems",
       icon: "firesuppressionsystems",
       effect: "All structure fires are automatically extinguished and all structures automatically repair themselves to 50% of their maximum life at a rate of 15HP/second.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 476,
-      unit: "Spinning Dizzy",
-      commander: "Swann",
-      name: "Fire Suppression Systems",
-      icon: "firesuppressionsystems",
-      effect: "All structure fires are automatically extinguished and all structures automatically repair themselves to 50% of their maximum life at a rate of 15HP/second.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 477,
-      unit: "Blaster Billy",
-      commander: "Swann",
-      name: "Fire Suppression Systems",
-      icon: "firesuppressionsystems",
-      effect: "All structure fires are automatically extinguished and all structures automatically repair themselves to 50% of their maximum life at a rate of 15HP/second.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 478,
-      unit: "Drakken Laser Drill",
-      commander: "Swann",
-      name: "Fire Suppression Systems",
-      icon: "firesuppressionsystems",
-      effect: "All structure fires are automatically extinguished and all structures automatically repair themselves to 50% of their maximum life at a rate of 15HP/second.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 479,
-      unit: "Tychus Findlay",
+      units: [
+        "Tychus Findlay"
+      ],
       commander: "Tychus",
       name: "KD9a Implosion Core",
       icon: "kd9aimplosioncore",
       effect: "Allows Tychus' Shredder Grenade to pull affected units to the center of its area of effect, stunning them for 2 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Shredder Grenade",
           modifier: "values.implosion",
           operation: "replace",
           value: "Pulls affected units to the center and stuns them for 2 seconds."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 480,
-      unit: "Tychus Findlay",
+      units: [
+        "Tychus Findlay"
+      ],
       commander: "Tychus",
       name: "Vanadium Shell",
       icon: "vanadiumshell",
       effect: "Increases the damage of Tychus' Shredder Grenade by 50.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Shredder Grenade",
           modifier: "values.damage",
           operation: "add",
           value: 50
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 481,
-      unit: "Tychus Findlay",
+      units: [
+        "Tychus Findlay"
+      ],
       commander: "Tychus",
       name: "Kel-Morian Ripper Rounds",
       icon: "kelmorianripperrounds",
       effect: "Tychus' attacks decrease the armor of their targets by 5 for 2 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 482,
-      unit: "Crooked Sam",
+      units: [
+        "Crooked Sam"
+      ],
       commander: "Tychus",
       name: "LarsCorp G7 Charges",
       icon: "larscorpg7charges",
       effect: "Increases the damage of Crooked Sam's Demolition Charge by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Demolition Charge",
           modifier: "values.damage",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 483,
-      unit: "Crooked Sam",
+      units: [
+        "Crooked Sam"
+      ],
       commander: "Tychus",
       name: "Moebius Restraint Matrix",
       icon: "moebiusrestraintmatrix",
       effect: "Stuns and disables the detection of units hit by Crooked Sam's Demolition Charge.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Demolition Charge",
           modifier: "values.restraint",
           operation: "replace",
           value: "Stuns the target and disables its detection until the charge explodes."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 484,
-      unit: "Crooked Sam",
+      units: [
+        "Crooked Sam"
+      ],
       commander: "Tychus",
       name: "Procyon Shade Suit",
       icon: "procyonshadesuit",
       effect: "Prevents Crooked Sam from taking any damage and increases his movement speed by 80% for 5 seconds after being attacked. Cannot occur more than once every 15 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 485,
-      unit: "Crooked Sam",
+      units: [
+        "Crooked Sam"
+      ],
       commander: "Tychus",
       name: "Enhanced Hostilities Kit",
       icon: "enhancedhostilitieskit",
       effect: "Reduces the charge-up time of Demolition Charge by 3 seconds each time Crooked Sam attacks.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 1200,
+        gas: 400
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Demolition Charge",
           modifier: "values.recharge",
           operation: "replace",
           value: "Each attack reduces the remaining charge-up time by 3 seconds."
         }
-      ],
-      cost: {
-        minerals: 1200,
-        gas: 400
-      }
+      ]
     },
     {
       upgradeid: 486,
-      unit: 'James "Sirius" Sykes',
+      units: [
+        'James "Sirius" Sykes'
+      ],
       commander: "Tychus",
       name: "SA-55 Thunderbolt Missiles",
       icon: "sa55thunderboltmissiles",
       effect: "Equips Sirius with missiles that deal 100 damage to 8 air targets. Warhound Turrets deal 100 to 2 air targets.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Warhound Turret",
           modifier: "values.missiles",
           operation: "replace",
           value: "Turrets fire missiles at up to 2 air targets, dealing 100 damage to each."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 487,
-      unit: "Warhound Turret",
+      units: [
+        "Warhound Turret"
+      ],
       commander: "Tychus",
       name: "SA-55 Thunderbolt Missiles",
       icon: "sa55thunderboltmissiles",
       effect: "Equips Sirius with missiles that deal 100 damage to 8 air targets. Warhound Turrets deal 100 to 2 air targets.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 488,
-      unit: 'James "Sirius" Sykes',
+      units: [
+        'James "Sirius" Sykes'
+      ],
       commander: "Tychus",
       name: "Moebius M34 Terror Rounds",
       icon: "moebiusm34terrorrounds",
       effect: "Provides a 30% chance for Sirius to cast Fear in a small area with each attack. Enemy units in the area will run around in fear for 3 seconds. Warhound Turrets have a 3% chance to cast Fear with each attack.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Warhound Turret",
           modifier: "values.fear",
           operation: "replace",
           value: "Turret attacks have a 3% chance to cause Fear in a small area for 3 seconds."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 489,
-      unit: "Warhound Turret",
+      units: [
+        "Warhound Turret"
+      ],
       commander: "Tychus",
       name: "Moebius M34 Terror Rounds",
       icon: "moebiusm34terrorrounds",
       effect: "Provides a 30% chance for Sirius to cast Fear in a small area with each attack. Enemy units in the area will run around in fear for 3 seconds. Warhound Turrets have a 3% chance to cast Fear with each attack.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 490,
-      unit: 'James "Sirius" Sykes',
+      units: [
+        'James "Sirius" Sykes'
+      ],
       commander: "Tychus",
       name: "D99 Detonator",
       icon: "d99detonator",
       effect: "When Sirius is defeated, he triggers an explosion, dealing 300 damage to enemy units in an area around him. Warhound Turrets deal 50 damage on death.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Warhound Turret",
           modifier: "values.explosion",
           operation: "replace",
           value: "Turrets explode on death, dealing 50 damage to nearby enemies."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 491,
-      unit: "Warhound Turret",
+      units: [
+        "Warhound Turret"
+      ],
       commander: "Tychus",
       name: "D99 Detonator",
       icon: "d99detonator",
       effect: "When Sirius is defeated, he triggers an explosion, dealing 300 damage to enemy units in an area around him. Warhound Turrets deal 50 damage on death.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 492,
-      unit: 'James "Sirius" Sykes',
+      units: [
+        'James "Sirius" Sykes'
+      ],
       commander: "Tychus",
       name: "Umojan Turret Frame",
       icon: "umojanturretframe",
       effect: "Increases the life and weapon damage of Warhound Turrets by 75%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 1200,
+        gas: 400
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Warhound Turret",
           modifier: "values.frame",
           operation: "replace",
           value: "Warhound Turrets have 75% more life and weapon damage."
         }
-      ],
-      cost: {
-        minerals: 1200,
-        gas: 400
-      }
+      ]
     },
     {
       upgradeid: 493,
-      unit: 'Miles "Blaze" Lewis',
+      units: [
+        'Miles "Blaze" Lewis'
+      ],
       commander: "Tychus",
       name: "High Capacity Containers",
       icon: "highcapacitycontainers",
       effect: "Increases the radius Blaze's of Oil Spill by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Oil Spill",
           modifier: "values.radius",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 494,
-      unit: 'Miles "Blaze" Lewis',
+      units: [
+        'Miles "Blaze" Lewis'
+      ],
       commander: "Tychus",
       name: "Hades Oil",
       icon: "hadesoil",
       effect: "Improves the damage dealt by the Enflame effect from Blaze's Oil Spill to deal +25 per second vs. light units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Oil Spill",
           modifier: "values.lightDamage",
           operation: "add",
           value: 25
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 495,
-      unit: 'Miles "Blaze" Lewis',
+      units: [
+        'Miles "Blaze" Lewis'
+      ],
       commander: "Tychus",
       name: "Wildflame Fuel Additives",
       icon: "wildflamefueladditives",
       effect: "When units Enflamed by Blaze's Oil Spill die, they explode, spreading Enflamed to enemy units in the area.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Oil Spill",
           modifier: "values.spread",
           operation: "replace",
           value: "Enflamed enemies explode on death, spreading Enflamed to nearby enemy units."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 496,
-      unit: 'Miles "Blaze" Lewis',
+      units: [
+        'Miles "Blaze" Lewis'
+      ],
       commander: "Tychus",
       name: "XCMC-670 Combat Suit",
       icon: "xcmc670combatsuit",
       effect: "Reduces all damage taken by Blaze to 30.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 1200,
         gas: 400
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 497,
-      unit: 'Rob "Cannonball" Boswell',
+      units: [
+        'Rob "Cannonball" Boswell'
+      ],
       commander: "Tychus",
       name: "X-71 Impact Boots",
       icon: "x71impactboots",
       effect: "Increases the stun duration and radius of Cannonball's Heavy Impact by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Heavy Impact",
           modifier: "values.radius",
           operation: "multiply",
           value: 2
         },
         {
+          target: "skill",
           skill: "Heavy Impact",
           modifier: "values.stun",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 498,
-      unit: 'Rob "Cannonball" Boswell',
+      units: [
+        'Rob "Cannonball" Boswell'
+      ],
       commander: "Tychus",
       name: "Critical Response System",
       icon: "criticalresponsesystem",
       effect: "Allows Cannonball to become immune to damage for 5 seconds and restores all his life when he takes fatal damage. Cannot occur more than once every 60 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 499,
-      unit: 'Rob "Cannonball" Boswell',
+      units: [
+        'Rob "Cannonball" Boswell'
+      ],
       commander: "Tychus",
       name: "M.A.L.I.C.E. Ammunition",
       icon: "maliceammunition",
       effect: "Provides a 30% chance that Cannonball will deal 4 times more damage with his attacks.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 1200,
         gas: 400
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 500,
-      unit: 'Kev "Rattlesnake" West',
+      units: [
+        'Kev "Rattlesnake" West'
+      ],
       commander: "Tychus",
       name: "Umojan Signal Modulator",
       icon: "umojansignalmodulator",
       effect: "Improves the healing rate of Rattlesnake's Revitalizers by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Revitalizer",
           modifier: "values.healing",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 501,
-      unit: 'Kev "Rattlesnake" West',
+      units: [
+        'Kev "Rattlesnake" West'
+      ],
       commander: "Tychus",
       name: "Moebius Aggression Blend",
       icon: "moebiusaggressionblend",
       effect: "Units in range of Rattlesnake's Revitalizers gain 15% additional attack speed.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Deploy Revitalizer",
           modifier: "values.attackSpeed",
           operation: "replace",
           value: "Units in range gain 15% attack speed."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 502,
-      unit: 'Kev "Rattlesnake" West',
+      units: [
+        'Kev "Rattlesnake" West'
+      ],
       commander: "Tychus",
       name: "Hammer Munitions",
       icon: "hammermunitions",
       effect: "Rattlesnake's attacks slow and deal 50% of their damage in an area of effect.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Attacks slow enemies and deal 50% damage to ground enemies in a circle of radius 2 around the target.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 1200,
         gas: 400
-      }
+      },
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Attacks slow enemies and deal 50% damage to ground enemies in a circle of radius 2 around the target.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 503,
-      unit: "Vega",
+      units: [
+        "Vega"
+      ],
       commander: "Tychus",
       name: "Moebius Psionic Motivator",
       icon: "moebiuspsionicmotivator",
       effect: "Vega's Dominate fully restores the target's life, shields, and energy and increases its attack speed by 75%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Dominate",
           modifier: "values.restoration",
           operation: "replace",
           value: "Fully restores the target's life, shields, and energy, and grants 75% increased attack speed."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 504,
-      unit: "Vega",
+      units: [
+        "Vega"
+      ],
       commander: "Tychus",
       name: "Neural Disruption Device",
       icon: "neuraldisruptiondevice",
       effect: "Vega's Dominate ability confuses enemy units in an area around the dominated unit, forcing them to attack each other for 10 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Dominate",
           modifier: "values.confusion",
           operation: "replace",
           value: "Confuses enemies near the target, forcing them to attack each other for 10 seconds."
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 505,
-      unit: "Vega",
+      units: [
+        "Vega"
+      ],
       commander: "Tychus",
       name: "Psi Projector",
       icon: "psiprojector",
       effect: "Grants Vega the ability to bring up to 5 enemy air units to the ground, allowing friendly units to attack them as if they were ground units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 600,
         gas: 150
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 506,
-      unit: "Vega",
+      units: [
+        "Vega"
+      ],
       commander: "Tychus",
       name: "Type-88 Persuader",
       icon: "type88persuader",
       effect: "Increases the duration of Vega's Dominate by 200%",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 1200,
+        gas: 400
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Dominate",
           modifier: "values.duration",
           operation: "multiply",
           value: 3
         }
-      ],
-      cost: {
-        minerals: 1200,
-        gas: 400
-      }
+      ]
     },
     {
       upgradeid: 507,
-      unit: "Nux",
+      units: [
+        "Nux"
+      ],
       commander: "Tychus",
       name: "T4 Cloudburst Shells",
       icon: "t4cloudburstshells",
       effect: "Increases the damage of Nux's Ultrasonic Pulse by 50%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Ultrasonic Pulse",
           modifier: "values.damage",
           operation: "multiply",
           value: 1.5
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 508,
-      unit: "Nux",
+      units: [
+        "Nux"
+      ],
       commander: "Tychus",
       name: "Ultrasonic Boosters",
       icon: "ultrasonicboosters",
       effect: "Increases the radius of Nux's Ultrasonic Pulse by 50%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Ultrasonic Pulse",
           modifier: "values.radius",
           operation: "multiply",
           value: 1.5
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 509,
-      unit: "Nux",
+      units: [
+        "Nux"
+      ],
       commander: "Tychus",
       name: "Crystalline Amplifiers",
       icon: "crystallineamplifiers",
       effect: "Increases the duration of Nux's Ultrasonic Pulse by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Ultrasonic Pulse",
           modifier: "values.duration",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 510,
-      unit: "Nux",
+      units: [
+        "Nux"
+      ],
       commander: "Tychus",
       name: "N3 Networking",
       icon: "n3networking",
       effect: "Grants Nux the ability to reduce the charge-up times and cooldowns of the primary abilities of all nearby Outlaws by 20%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 1200,
+        gas: 400
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Ultrasonic Pulse",
           modifier: "values.network",
           operation: "replace",
           value: "Nearby Outlaws have their primary ability cooldowns and charge-up times reduced by 20%."
         }
-      ],
-      cost: {
-        minerals: 1200,
-        gas: 400
-      }
+      ]
     },
     {
       upgradeid: 511,
-      unit: "Lt. Layna Nikara",
+      units: [
+        "Lt. Layna Nikara"
+      ],
       commander: "Tychus",
       name: "Umojan Repair Nanites",
       icon: "umojanrepairnanites",
       effect: "Increases the immediate and periodic heal of Lt. Nikara's Reinvigorating Burst by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Reinvigorating Burst",
           modifier: "values.instantHealing",
           operation: "multiply",
           value: 2
         },
         {
+          target: "skill",
           skill: "Reinvigorating Burst",
           modifier: "values.healing",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 512,
-      unit: "Lt. Layna Nikara",
+      units: [
+        "Lt. Layna Nikara"
+      ],
       commander: "Tychus",
       name: "Procyon Serum",
       icon: "procyonserum",
       effect: "Increases the healing rate of Lt. Nikara's Super Heal by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Super Heal",
           modifier: "values.healing",
           operation: "multiply",
           value: 2
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 513,
-      unit: "Lt. Layna Nikara",
+      units: [
+        "Lt. Layna Nikara"
+      ],
       commander: "Tychus",
       name: "Procyon Twin Heal Beam Gauntlet",
       icon: "procyontwinhealbeamgauntlet",
       effect: "Allows Lt. Nikara to cast Super Heal on two targets at the same time.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 600,
+        gas: 150
+      },
+      changes: [
         {
+          target: "skill",
           skill: "Super Heal",
           modifier: "values.targets",
           operation: "replace",
           value: "two targets"
         },
         {
+          target: "skill",
           skill: "Super Heal",
           modifier: "values.gearNote",
           operation: "replace",
           value: ""
         }
-      ],
-      cost: {
-        minerals: 600,
-        gas: 150
-      }
+      ]
     },
     {
       upgradeid: 514,
-      unit: "Lt. Layna Nikara",
+      units: [
+        "Lt. Layna Nikara"
+      ],
       commander: "Tychus",
       name: "XM-77 Matrix Generator",
       icon: "xm77matrixgenerator",
       effect: "Enables Lt. Nikara to surround a target friendly unit with a shield that can absorb 400 damage over 20 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 1200,
         gas: 400
-      }
+      },
+      changes: []
     },
     {
       upgradeid: 515,
-      unit: "Centurion",
+      units: [
+        "Centurion"
+      ],
       commander: "Vorazun",
       name: "Darkcoil",
       icon: "darkcoil",
       effect: "Allows Centurions to stun nearby enemy ground units and increases their shields by 100 for a short duration. Massive units are slowed.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 516,
-      unit: "Stalker",
+      units: [
+        "Stalker"
+      ],
       commander: "Vorazun",
       name: "Blink",
       icon: "blink",
       effect: "Allows Stalkers to teleport to a nearby target location.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 517,
-      unit: "Stalker",
+      units: [
+        "Stalker"
+      ],
       commander: "Vorazun",
       name: "Phase Reactor",
       icon: "phasereactor",
       effect: "Blink now cloaks the Stalker and restores 80 shields over 5 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Blink",
           modifier: "values.shield",
           operation: "replace",
           value: "Cloaks the Stalker and restores 80 shields over 5 seconds."
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 518,
-      unit: "Dark Templar",
+      units: [
+        "Dark Templar"
+      ],
       commander: "Vorazun",
       name: "Shadow Fury",
       icon: "shadowfury",
       effect: "Allows Dark Templar to jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 519,
-      unit: "Dark Templar",
+      units: [
+        "Dark Templar"
+      ],
       commander: "Vorazun",
       name: "Blink",
       icon: "dtblink",
       effect: "Enables Dark Templar to teleport to nearby locations.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 520,
-      unit: "Dark Templar",
+      units: [
+        "Dark Templar"
+      ],
       commander: "Vorazun",
       name: "Void Stasis",
       icon: "voidstasis",
       effect: "Grants Dark Templar an ability to phase a target unit or structure out of existence for 10 seconds. This disables it entirely and prevents it from being attacked by units or abilities. Can target structures or ground units.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 200,
         gas: 200
       },
-      researchTime: 120
+      researchTime: 120,
+      changes: []
     },
     {
       upgradeid: 521,
-      unit: "Dark Archon",
+      units: [
+        "Dark Archon"
+      ],
       commander: "Vorazun",
       name: "Argus Crystal",
       icon: "arguscrystal",
       effect: "Dark Archons start with full energy.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 522,
-      unit: "Dark Archon",
+      units: [
+        "Dark Archon"
+      ],
       commander: "Vorazun",
       name: "Mind Control",
       icon: "mindcontrol",
       effect: "Allows a Dark Archon to take control of a targeted unit permanently. Heroic units are immune.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 523,
-      unit: "Corsair",
+      units: [
+        "Corsair"
+      ],
       commander: "Vorazun",
       name: "Disruption Web",
       icon: "disruptionweb",
       effect: "Grants Corsairs the ability to create a web of energy on the ground that prevents enemy structures and ground units from attacking for 10 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: []
     },
     {
       upgradeid: 524,
-      unit: "Corsair",
+      units: [
+        "Corsair",
+        "Oracle"
+      ],
       commander: "Vorazun",
       name: "Stealth Drive",
       icon: "stealthdrive",
       effect: "Permanently cloaks all Corsairs and Oracles.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
-    },
-    {
-      upgradeid: 525,
-      unit: "Oracle",
-      commander: "Vorazun",
-      name: "Stealth Drive",
-      icon: "stealthdrive",
-      effect: "Permanently cloaks all Corsairs and Oracles.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 526,
-      unit: "Oracle",
+      units: [
+        "Oracle"
+      ],
       commander: "Vorazun",
       name: "Stasis Calibration",
       icon: "stasiscalibration",
       effect: "Enemies affected by the Oracle's Stasis Ward can now be attacked.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      cost: {
+        minerals: 150,
+        gas: 150
+      },
+      researchTime: 90,
+      changes: [
         {
+          target: "skill",
           skill: "Stasis Ward",
           modifier: "values.vulnerability",
           operation: "replace",
           value: "can be attacked"
         }
-      ],
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 90
+      ]
     },
     {
       upgradeid: 527,
-      unit: "Zergling",
+      units: [
+        "Zergling"
+      ],
       commander: "Zagara",
       name: "Shredding Claws",
       icon: "shreddingclaws",
       effect: "Zergling attacks reduce their target's armor to 0 for 10 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 528,
-      unit: "Aberration",
+      units: [
+        "Aberration"
+      ],
       commander: "Zagara",
       name: "Protective Cover",
       icon: "protectivecover",
       effect: "Aberrations grant 50% damage reduction to units positioned beneath them.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
       cost: {
         minerals: 150,
         gas: 150
       },
-      researchTime: 90
+      researchTime: 90,
+      changes: []
     },
     {
       upgradeid: 529,
-      unit: "Scourge",
+      units: [
+        "Scourge"
+      ],
       commander: "Zagara",
       name: "Virulent Spores",
       icon: "virulentspores",
       effect: "Scourge deal 50% of their attack damage in a small area upon death.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Deals 50% attack damage to enemy air units in a circle of radius 1.5 around the target upon detonation.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
+      researchTime: 60,
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "Deals 50% attack damage to enemy air units in a circle of radius 1.5 around the target upon detonation.",
+          operation: "replace"
+        }
+      ]
     },
     {
       upgradeid: 530,
-      unit: "Zeratul",
+      units: [
+        "Zeratul"
+      ],
       commander: "Zeratul",
       name: "Purity of Will",
       icon: "purityofwill",
       effect: "Zeratul will gain additional shields (+50), increased Shadow Cleave damage (+10), and additional charges of Blink (+1) with each Artifact Fragment he finds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 531,
-      unit: "Xel'Naga Ambusher",
+      units: [
+        "Xel'Naga Ambusher"
+      ],
       commander: "Zeratul",
       name: "Predictive Blink",
       icon: "predictiveblink",
       effect: "Allows this unit to teleport to a nearby target location. Xel'Naga Ambushers will automatically teleport to safety once their hulls have been breached.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 532,
-      unit: "Xel'Naga Ambusher",
+      units: [
+        "Xel'Naga Ambusher"
+      ],
       commander: "Zeratul",
       name: "Vengeance of the Void",
       icon: "vengeanceofthevoid",
       effect: "Blinking leaves behind a Void Apparition that attacks once for 50% of the unit's weapon damage.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "skill",
           skill: "Predictive Blink",
           modifier: "values.apparition",
           operation: "replace",
@@ -10827,19 +8854,17 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
     },
     {
       upgradeid: 533,
-      unit: "Xel'Naga Ambusher",
+      units: [
+        "Xel'Naga Ambusher"
+      ],
       commander: "Zeratul",
       name: "Phase Battery",
       icon: "phasebattery",
       effect: "This unit can now store up to 3 charges of Predictive Blink and regains a charge every 8 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "skill",
           skill: "Predictive Blink",
           modifier: "charges",
           operation: "set",
@@ -10849,75 +8874,65 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
     },
     {
       upgradeid: 534,
-      unit: "Xel'Naga Shieldguard",
+      units: [
+        "Xel'Naga Shieldguard"
+      ],
       commander: "Zeratul",
       name: "Shield Recharge",
       icon: "shieldrecharge",
       effect: "Allows this unit to recharge the shields of a friendly Protoss unit.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 535,
-      unit: "Xel'Naga Shieldguard",
+      units: [
+        "Xel'Naga Shieldguard"
+      ],
       commander: "Zeratul",
       name: "Eclipse Protocol",
       icon: "eclipseprotocol",
       effect: "Increases the energy regeneration of this unit by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 536,
-      unit: "Xel'Naga Shieldguard",
+      units: [
+        "Xel'Naga Shieldguard"
+      ],
       commander: "Zeratul",
       name: "Reflection Shield",
       icon: "reflectionshield",
       effect: "Allows this unit to create an aura that reflects 50% of all projectiles back to enemy attackers.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 537,
-      unit: "Void Templar",
+      units: [
+        "Void Templar"
+      ],
       commander: "Zeratul",
       name: "Blink",
       icon: "dtblink",
       effect: "Allows this unit to teleport to a nearby target location.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 538,
-      unit: "Void Templar",
+      units: [
+        "Void Templar"
+      ],
       commander: "Zeratul",
       name: "Void Fury",
       icon: "voidfury",
       effect: "When this unit Blinks, it will deal 50 damage to units caught in its path.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "skill",
           skill: "Blink",
           modifier: "values.damage",
           operation: "replace",
@@ -10927,68 +8942,68 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
     },
     {
       upgradeid: 539,
-      unit: "Void Templar",
+      units: [
+        "Void Templar"
+      ],
       commander: "Zeratul",
       name: "Back to the Shadows",
       icon: "backtotheshadows",
       effect: "When this unit takes fatal damage, it retreats to the Void and regenerates its health and shields over 10 seconds. Cannot occur more than once every 180 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 540,
-      unit: "Xel'Naga Enforcer",
+      units: [
+        "Xel'Naga Enforcer"
+      ],
       commander: "Zeratul",
       name: "Barrier",
       icon: "barrier",
       effect: "Allows this unit to absorb 100 damage. Lasts for 10 seconds.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 541,
-      unit: "Xel'Naga Enforcer",
+      units: [
+        "Xel'Naga Enforcer"
+      ],
       commander: "Zeratul",
       name: "Force Cannon",
       icon: "forcecannon",
       effect: "Allows this unit's anti-air weapon to knock back enemy air units, dealing 25% of its damage to units caught in the path of the blast.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "The anti-air attack knocks the target back and deals 25% damage to enemy air units in a rectangle 5 long and 3 wide extending behind the primary target.",
-      operation: "replace",
       upgradetype: "upgrade",
-      weapon: "air"
+      changes: [
+        {
+          target: "unit",
+          modifier: "aoe",
+          value: "The anti-air attack knocks the target back and deals 25% damage to enemy air units in a rectangle 5 long and 3 wide extending behind the primary target.",
+          operation: "replace",
+          weapon: "air"
+        }
+      ]
     },
     {
       upgradeid: 542,
-      unit: "Xel'Naga Enforcer",
+      units: [
+        "Xel'Naga Enforcer"
+      ],
       commander: "Zeratul",
       name: "Eternity Barrier",
       icon: "enternitybarrier",
       effect: "Increases the damage absorption of the Xel'Naga Enforcer's Barrier by 300% and fully repairs its hull damage.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "skill",
           skill: "Barrier",
           modifier: "values.absorption",
           operation: "multiply",
           value: 4
         },
         {
+          target: "skill",
           skill: "Barrier",
           modifier: "values.repair",
           operation: "replace",
@@ -10998,193 +9013,92 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
     },
     {
       upgradeid: 543,
-      unit: "Xel'Naga Void Array",
+      units: [
+        "Xel'Naga Void Array"
+      ],
       commander: "Zeratul",
       name: "Infinite Void",
       icon: "infinitevoid",
       effect: "Grants the Xel'Naga Void Array unlimited capacity.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
+      upgradetype: "upgrade",
+      changes: []
     },
     {
       upgradeid: 544,
-      unit: "Xel'Naga Void Array",
+      units: [
+        "Xel'Naga Void Array"
+      ],
       commander: "Zeratul",
       name: "Shield Boosters",
       icon: "shieldboosters",
       effect: "Nearby units regenerate an additional 2 shields per second.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 545,
-      unit: "Primal Mutalisk",
-      commander: "Dehaka",
-      name: "Slicing Glaive",
-      icon: "slicingglaive",
-      effect: "Primal Mutalisks deal 100% increased damage against air units.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Bounces to up to 2 additional air enemies, within radius 3 of the previous target. Base bounce damage: 9, 3; gains 1 and 0.5 per weapon upgrade.",
-      operation: "replace",
       upgradetype: "upgrade",
-      weapon: "air",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
+      changes: []
     },
     {
       upgradeid: 546,
-      unit: "Spider Mine",
+      units: [
+        "Spider Mine"
+      ],
       commander: "Raynor",
       name: "Cerberus Mine",
       icon: "cerberusmine",
       effect: "Increases the blast radius and trigger radius of the Vulture's Spider Mine by 33%.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Circular explosion against ground units: 100% damage within radius 1.2884, 50% from 1.2884 to 1.7040, and 25% from 1.7040 to 2.3275, accounting for unit size. Excludes structures.",
-      operation: "replace",
       upgradetype: "upgrade",
       cost: {
         minerals: 100,
         gas: 100
       },
-      researchTime: 60
-    },
-    {
-      upgradeid: 547,
-      unit: "Colossus",
-      commander: "Karax",
-      name: "Fire Beam",
-      icon: "firebeam",
-      effect: "Upgrades the damage dealt by Colossi and causes their attacks to set fire to the ground, dealing an additional 150 damage to enemy ground units in the area over 5 seconds.",
-      modifier: "aoe",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Two sweeping beams perpendicular to the attack direction, extending 1.25 to each side of the target and hitting in circles of radius 0.15. Also leaves four burning circles of radius 0.5, centered 0.5 and 1.5 to either side of the target, dealing up to 150 damage over 5 seconds to ground enemies.",
-      operation: "replace",
-      upgradetype: "upgrade",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 120
-    },
-    {
-      upgradeid: 548,
-      unit: "Dehaka",
-      commander: "Dehaka",
-      name: "Chitinous Plating",
-      icon: "chitinousplating",
-      effect: "Increases Dehaka's armor by 3. Requires a skill point and hero level 5.",
-      modifier: "Armor",
-      modifiermode: null,
-      modifiertag: null,
-      value: 3,
-      operation: "add",
-      upgradetype: "upgrade"
-    },
-    {
-      upgradeid: 549,
-      unit: "Sovereign Battlecruiser",
-      commander: "Horner",
-      name: "Overcharged Reactor",
-      icon: "overchargedreactor",
-      effect: "Battlecruiser weapons systems are upgraded to a powerful particle cannon that deals 200 damage per attack.",
-      modifier: "weaponName",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Mini Yamato Gun",
-      operation: "replace",
-      upgradetype: "preupgrade",
-      weapon: "",
-      cost: {
-        minerals: 150,
-        gas: 150
-      },
-      researchTime: 63
-    },
-    {
-      upgradeid: 550,
-      unit: "Primal Mutalisk",
-      commander: "Dehaka",
-      name: "Slicing Glaive",
-      icon: "slicingglaive",
-      effect: "Primal Mutalisks deal 100% increased damage against air units.",
-      modifier: "weaponName",
-      modifiermode: null,
-      modifiertag: null,
-      value: "Slicing Glave",
-      operation: "replace",
-      upgradetype: "upgrade",
-      weapon: "air",
-      cost: {
-        minerals: 100,
-        gas: 100
-      },
-      researchTime: 60
-    },
-    {
-      upgradeid: 551,
-      unit: "Tesseract Cannon",
-      commander: "Zeratul",
-      name: "Tesseract Matrix",
-      icon: "tesseractmatrix",
-      effect: "Decreases the cooldown of Shade Projection by 25%. Increases the damage absorbed by Shade Barrier by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      skillModifiers: [
+      researchTime: 60,
+      changes: [
         {
-          skill: "Shade Projection",
-          modifier: "cooldown",
-          operation: "multiply",
-          value: 0.75
-        },
-        {
-          skill: "Shade Barrier",
-          modifier: "values.absorption",
-          operation: "multiply",
-          value: 2
+          target: "unit",
+          modifier: "aoe",
+          value: "Circular explosion against ground units: 100% damage within radius 1.2884, 50% from 1.2884 to 1.7040, and 25% from 1.7040 to 2.3275, accounting for unit size. Excludes structures.",
+          operation: "replace"
         }
       ]
     },
     {
-      upgradeid: 552,
-      unit: "Tesseract Monolith",
+      upgradeid: 548,
+      units: [
+        "Dehaka"
+      ],
+      commander: "Dehaka",
+      name: "Chitinous Plating",
+      icon: "chitinousplating",
+      effect: "Increases Dehaka's armor by 3. Requires a skill point and hero level 5.",
+      upgradetype: "upgrade",
+      changes: [
+        {
+          target: "unit",
+          modifier: "Armor",
+          value: 3,
+          operation: "add"
+        }
+      ]
+    },
+    {
+      upgradeid: 551,
+      units: [
+        "Tesseract Cannon",
+        "Tesseract Monolith"
+      ],
       commander: "Zeratul",
       name: "Tesseract Matrix",
       icon: "tesseractmatrix",
       effect: "Decreases the cooldown of Shade Projection by 25%. Increases the damage absorbed by Shade Barrier by 100%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "skill",
           skill: "Shade Projection",
           modifier: "cooldown",
           operation: "multiply",
           value: 0.75
         },
         {
+          target: "skill",
           skill: "Shade Barrier",
           modifier: "values.absorption",
           operation: "multiply",
@@ -11194,41 +9108,18 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
     },
     {
       upgradeid: 553,
-      unit: "Zeratul",
+      units: [
+        "Zeratul",
+        "Void Templar"
+      ],
       commander: "Zeratul",
       name: "Void Blink",
       icon: "voidblink",
       effect: "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
-          skill: "Blink",
-          modifier: "cooldown",
-          operation: "multiply",
-          value: 0.5
-        }
-      ]
-    },
-    {
-      upgradeid: 554,
-      unit: "Void Templar",
-      commander: "Zeratul",
-      name: "Void Blink",
-      icon: "voidblink",
-      effect: "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
-      upgradetype: "upgrade",
-      skillModifiers: [
-        {
+          target: "skill",
           skill: "Blink",
           modifier: "cooldown",
           operation: "multiply",
@@ -11238,19 +9129,17 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
     },
     {
       upgradeid: 555,
-      unit: "Xel'Naga Ambusher",
+      units: [
+        "Xel'Naga Ambusher"
+      ],
       commander: "Zeratul",
       name: "Void Blink",
       icon: "voidblink",
       effect: "Reduces the cooldown of Zeratul and his units' Blink abilities by 50%.",
-      modifier: null,
-      modifiermode: null,
-      modifiertag: null,
-      value: null,
-      operation: "none",
       upgradetype: "upgrade",
-      skillModifiers: [
+      changes: [
         {
+          target: "skill",
           skill: "Predictive Blink",
           modifier: "cooldown",
           operation: "multiply",
@@ -11263,7 +9152,7 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
   // html/scripts/unit-ranks.ts
   var rankUpgrades = new Map;
   var effects = new Map;
-  for (const upgrade of playerupgrades_default) {
+  for (const upgrade of perUnitEntries(playerupgrades_default)) {
     if (upgrade.commander !== "Mengsk")
       continue;
     const rank = upgrade.rank ?? (/^[123]$/.test(upgrade.name) ? Number(upgrade.name) : null);
@@ -11298,11 +9187,7 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
       type: "active",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Abathur",
@@ -11313,13 +9198,7 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Abathur",
@@ -11331,11 +9210,6 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
       description: "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
     },
     {
@@ -11349,11 +9223,7 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
       type: "autocast",
       requiresupgrade: false,
       cooldown: 45,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Abathur",
@@ -11365,11 +9235,6 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
       description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -11390,11 +9255,6 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
       description: "Carries a Symbiote that attacks nearby enemies for 20 damage every second. It also gives its host a 200-damage shield lasting 8 seconds, with a 20-second cooldown.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Abathur level 10. Values are before Symbiote mastery bonuses."
     },
     {
@@ -11406,13 +9266,7 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Abathur",
@@ -11429,10 +9283,6 @@ Impact radius: {radius}.`,
       requiresupgrade: false,
       cooldown: 10,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 60,
         radius: 0.5
@@ -11450,8 +9300,6 @@ Impact radius: {radius}.`,
       requiresupgrade: true,
       cooldown: 30,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
       prestige: "Tunneling Horror",
       requirements: "Requires Deep Tunnel research at an Infestation Pit."
     },
@@ -11465,11 +9313,6 @@ Impact radius: {radius}.`,
       description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -11492,8 +9335,6 @@ Impact radius: {radius}.`,
       requiresupgrade: true,
       cooldown: 30,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
       prestige: "Tunneling Horror",
       requirements: "Requires Deep Tunnel research at an Infestation Pit."
     },
@@ -11507,11 +9348,6 @@ Impact radius: {radius}.`,
       description: "Transforms this Roach into a Ravager.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Lair.",
       cost: {
         minerals: 13,
@@ -11530,11 +9366,6 @@ Impact radius: {radius}.`,
       description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -11555,12 +9386,7 @@ Impact radius: {radius}.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: "Rooted",
-      prestige: null,
-      requirements: null
+      mode: "Rooted"
     },
     {
       commander: "Abathur",
@@ -11573,11 +9399,7 @@ Impact radius: {radius}.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Abathur",
@@ -11590,11 +9412,7 @@ Impact radius: {radius}.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Abathur",
@@ -11606,11 +9424,6 @@ Impact radius: {radius}.`,
       description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -11633,11 +9446,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 3,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Abathur",
@@ -11651,10 +9460,6 @@ Bonus: Zerg move faster on creep.`,
       requiresupgrade: false,
       cooldown: 3,
       energycost: 10,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         healing: 25,
         targets: "biological"
@@ -11670,11 +9475,6 @@ Bonus: Zerg move faster on creep.`,
       description: "Evolves this unit into a Brutalisk at 100 biomass. Limited to 3 Brutalisks at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -11699,10 +9499,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         range: 9,
         stun: 1
@@ -11722,10 +9518,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         range: 11
       }
@@ -11744,10 +9536,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 10,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         range: 4
       }
@@ -11767,10 +9555,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 125,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         range: 8
       }
@@ -11785,11 +9569,6 @@ Cast range: {range}.`,
       description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -11810,12 +9589,7 @@ Cast range: {range}.`,
       description: "Alarak intercepts target enemy unit and strikes it for 200 damage.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Alarak",
@@ -11828,11 +9602,6 @@ Cast range: {range}.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 5,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         knockback: "knocking them back"
       }
@@ -11849,12 +9618,7 @@ Biological units provide a 5% damage bonus per supply up to 100 supply, and then
 Supply count is additive, with biological units favored first. So if you have 100 supply in bio and 1 supply in mechanical units, the mechanical units will provide the reduced rate of 5%.`,
       type: "active",
       requiresupgrade: false,
-      cooldown: 240,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 240
     },
     {
       commander: "Alarak",
@@ -11865,13 +9629,7 @@ Supply count is additive, with biological units favored first. So if you have 10
       ],
       description: "Nearby enemy deaths restore 20 life and shields per supply of the slain unit. When near death, sacrifices nearby units you control to heal himself; Supplicants are consumed first. Sacrificing allies has no cooldown.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Alarak",
@@ -11889,10 +9647,6 @@ Travel distance: {distance}.
       requiresupgrade: false,
       cooldown: 2,
       energycost: 100,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 10,
         distance: 13,
@@ -11914,10 +9668,6 @@ Can target ground and air units.
       requiresupgrade: true,
       cooldown: 8,
       energycost: 100,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 200,
         stacks: ""
@@ -11938,10 +9688,6 @@ Can only target Supplicants.
       requiresupgrade: false,
       cooldown: 60,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         bonus: ""
       }
@@ -11960,10 +9706,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 3,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         bonus: 15,
         range: 8
@@ -11984,10 +9726,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 15,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 3,
       values: {
         range: 9
@@ -12003,11 +9741,6 @@ Cast range: {range}.`,
       description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Cloaking Module research at the Cybernetics Core."
     },
     {
@@ -12019,13 +9752,7 @@ Cast range: {range}.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Alarak",
@@ -12037,12 +9764,6 @@ Cast range: {range}.`,
       description: "Friendly units within a radius of {radius} gain 2 additional range on non-melee attacks.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         radius: 4
       }
@@ -12057,12 +9778,7 @@ Cast range: {range}.`,
       description: "Deals 20 damage to all enemies in a straight line up to 10 range away.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 1,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 1
     },
     {
       commander: "Alarak",
@@ -12074,12 +9790,7 @@ Cast range: {range}.`,
       description: "Teleports the Mothership and all nearby units you control to target friendly unit or structure's location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: "0 seconds*",
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: "0 seconds*"
     },
     {
       commander: "Alarak",
@@ -12090,13 +9801,7 @@ Cast range: {range}.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Alarak",
@@ -12109,11 +9814,7 @@ Cast range: {range}.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 8,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Alarak",
@@ -12126,10 +9827,6 @@ Cast range: {range}.`,
       type: "passive",
       requiresupgrade: true,
       cooldown: 5,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Alarak level 4 and Phasing Armor research at the Death Council."
     },
     {
@@ -12141,13 +9838,7 @@ Cast range: {range}.`,
       ],
       description: "Alarak sacrifices Supplicants before other nearby units to heal himself when near death.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Alarak",
@@ -12158,13 +9849,7 @@ Cast range: {range}.`,
       ],
       description: "Can walk up and down cliffs.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Artanis",
@@ -12178,10 +9863,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damagePerEnergy: 1
       }
@@ -12202,10 +9883,6 @@ Cast range: {range}.`,
       requiresupgrade: true,
       cooldown: 2,
       energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         radius: 1.5,
         range: 9,
@@ -12225,10 +9902,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damagePerEnergy: 1
       }
@@ -12249,10 +9922,6 @@ Cast range: {range}.`,
       requiresupgrade: true,
       cooldown: 2,
       energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         radius: 1.5,
         range: 9,
@@ -12270,12 +9939,6 @@ Cast range: {range}.`,
       description: "Merges two High Templar into one Archon.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       cost: {
         minerals: 0,
         gas: 0
@@ -12294,10 +9957,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 60,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         absorption: 100
       }
@@ -12311,13 +9970,7 @@ Cast range: {range}.`,
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Artanis",
@@ -12328,13 +9981,7 @@ Cast range: {range}.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Artanis",
@@ -12351,10 +9998,6 @@ Massive units are immune.
       requiresupgrade: false,
       cooldown: 30,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         targets: ""
       }
@@ -12368,13 +10011,7 @@ Massive units are immune.
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Artanis",
@@ -12389,10 +10026,6 @@ Can attack ground units. ({capacity} max).`,
       requiresupgrade: false,
       cooldown: 8,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         capacity: 5
       }
@@ -12409,10 +10042,6 @@ Can attack ground units. ({capacity} max).`,
       requiresupgrade: true,
       cooldown: 90,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 500
       }
@@ -12431,10 +10060,6 @@ Can attack ground units. ({capacity} max).`,
       requiresupgrade: true,
       cooldown: 10,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         chargeBonus: ""
       }
@@ -12451,10 +10076,6 @@ Can attack ground units. ({capacity} max).`,
       requiresupgrade: true,
       cooldown: 10,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 10
       }
@@ -12472,10 +10093,6 @@ Creepers can attack {targets} units.`,
       requiresupgrade: false,
       cooldown: 30,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         targets: "ground"
       }
@@ -12490,12 +10107,7 @@ Creepers can attack {targets} units.`,
       description: "Charge to a target location knocking back units in the area and dealing 200 damage.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Dehaka",
@@ -12507,11 +10119,6 @@ Creepers can attack {targets} units.`,
       description: "When damaged, fires a spine at the attacker that deals 20 damage.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Dehaka level 10."
     },
     {
@@ -12525,10 +10132,6 @@ Creepers can attack {targets} units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points; values shown at level 3."
     },
     {
@@ -12543,10 +10146,6 @@ Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot u
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points; values shown at level 3."
     },
     {
@@ -12560,10 +10159,6 @@ Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot u
       type: "active",
       requiresupgrade: false,
       cooldown: "~ seconds",
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points; values shown at level 3. With Devouring One (P1), Devour also grants its benefits to friendly units within range 10."
     },
     {
@@ -12577,10 +10172,6 @@ Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot u
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points; values shown at level 3.",
       charges: 3,
       excludedPrestiges: [
@@ -12597,12 +10188,7 @@ Enemies affected by Intimidating Roar have their armor reduced by 2 and cannot u
       description: "Quickly burrow to any visible location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 60
     },
     {
       commander: "Dehaka",
@@ -12616,11 +10202,6 @@ Level 2 - 2 life per second.
 Level 3 - 3 life per second.`,
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points."
     },
     {
@@ -12633,11 +10214,6 @@ Level 3 - 3 life per second.`,
       description: "Allows Dehaka to detect cloaked, burrowed, and hallucinated units.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points."
     },
     {
@@ -12650,11 +10226,6 @@ Level 3 - 3 life per second.`,
       description: "Increases Dehaka's armor by 3.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points."
     },
     {
@@ -12667,11 +10238,6 @@ Level 3 - 3 life per second.`,
       description: "Allows Dehaka to attack air units.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires skill points."
     },
     {
@@ -12684,12 +10250,7 @@ Level 3 - 3 life per second.`,
       description: "Carpets the ground in fire. Enemy units in the area take 500 damage over 5 seconds. Can be set to Autocast.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 6,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 6
     },
     {
       commander: "Dehaka",
@@ -12701,12 +10262,7 @@ Level 3 - 3 life per second.`,
       description: "Glevig burrows to the target location and erupts, dealing damage to units in the area and knocking them back.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 0,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 0
     },
     {
       commander: "Dehaka",
@@ -12718,12 +10274,7 @@ Level 3 - 3 life per second.`,
       description: "Deals 70 damage per second to the target unit for 5 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 20,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 20
     },
     {
       commander: "Dehaka",
@@ -12735,12 +10286,7 @@ Level 3 - 3 life per second.`,
       description: "Quickly burrow to any visible location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 60
     },
     {
       commander: "Dehaka",
@@ -12751,13 +10297,7 @@ Level 3 - 3 life per second.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Dehaka",
@@ -12769,12 +10309,7 @@ Level 3 - 3 life per second.`,
       description: "Spawns 6 Primal Locusts and 6 Explosive Creepers that fight for 25 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Dehaka",
@@ -12786,12 +10321,7 @@ Level 3 - 3 life per second.`,
       description: "Creates a cloud that slows enemy movement speed and prevents enemy units and structures from attacking or using energy-based abilities. Lasts for 5 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 3,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 3
     },
     {
       commander: "Dehaka",
@@ -12804,11 +10334,7 @@ Level 3 - 3 life per second.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Dehaka",
@@ -12822,11 +10348,7 @@ Primal Locusts can attack ground units.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Dehaka",
@@ -12838,11 +10360,6 @@ Primal Locusts can attack ground units.`,
       description: "Two Primal Hosts engage in primal combat, consuming both units to produce one Creeper Host.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 8.",
       cost: {
         minerals: 0,
@@ -12861,10 +10378,6 @@ Primal Locusts can attack ground units.`,
       type: "passive",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Dehaka level 7 and Primal Reconstitution research at Murvar's Den."
     },
     {
@@ -12878,11 +10391,7 @@ Primal Locusts can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Dehaka",
@@ -12893,13 +10402,7 @@ Primal Locusts can attack ground units.`,
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Dehaka",
@@ -12911,11 +10414,6 @@ Primal Locusts can attack ground units.`,
       description: "Two Primal Ultralisks engage in primal combat, consuming both units to produce one Tyrannozor.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 11.",
       cost: {
         minerals: 0,
@@ -12932,13 +10430,7 @@ Primal Locusts can attack ground units.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Dehaka",
@@ -12951,11 +10443,7 @@ Primal Locusts can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Dehaka",
@@ -12966,13 +10454,7 @@ Primal Locusts can attack ground units.`,
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Dehaka",
@@ -12984,11 +10466,6 @@ Primal Locusts can attack ground units.`,
       description: "Grants nearby friendly units 2 additional armor.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Tyrant's Protection research at Dakrun's Den."
     },
     {
@@ -13003,11 +10480,7 @@ Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13021,11 +10494,7 @@ Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13040,10 +10509,6 @@ Can attack ground units.`,
       requiresupgrade: true,
       cooldown: 15,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 12
       }
@@ -13057,13 +10522,7 @@ Can attack ground units.`,
       ],
       description: "Can walk up and down cliffs.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Fenix",
@@ -13077,10 +10536,6 @@ Can attack ground units.`,
       requiresupgrade: false,
       cooldown: 20,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         duration: 15
       }
@@ -13099,10 +10554,6 @@ Can attack ground units.`,
       requiresupgrade: false,
       cooldown: 20,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         echo: ""
       }
@@ -13117,11 +10568,6 @@ Can attack ground units.`,
       description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Cloaking Module research at the Robotics Bay."
     },
     {
@@ -13135,11 +10581,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Fenix",
@@ -13152,11 +10594,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 5,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 5
     },
     {
       commander: "Fenix",
@@ -13169,11 +10607,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 100,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 100
     },
     {
       commander: "Fenix",
@@ -13185,11 +10619,6 @@ Can attack ground units.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Fenix level 6 and Observation Protocol research at the Forge."
     },
     {
@@ -13203,11 +10632,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 25
     },
     {
       commander: "Fenix",
@@ -13220,11 +10645,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Fenix",
@@ -13237,11 +10658,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 5,
-      energycost: 100,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 100
     },
     {
       commander: "Fenix",
@@ -13254,11 +10671,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 6,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Fenix",
@@ -13271,11 +10684,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Fenix",
@@ -13288,11 +10697,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 120,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13305,11 +10710,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13322,11 +10723,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 5,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13339,11 +10736,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13356,11 +10749,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 5,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13371,13 +10760,7 @@ Can attack ground units.`,
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Fenix",
@@ -13388,13 +10771,7 @@ Can attack ground units.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Fenix",
@@ -13405,13 +10782,7 @@ Can attack ground units.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Fenix",
@@ -13424,11 +10795,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13444,10 +10811,6 @@ Can attack ground units.`,
       requiresupgrade: false,
       cooldown: 5,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         targets: 3,
         debilitation: ""
@@ -13464,11 +10827,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 5,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Fenix",
@@ -13479,13 +10838,7 @@ Can attack ground units.`,
       ],
       description: "Can walk up and down cliffs.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Horner",
@@ -13497,11 +10850,6 @@ Can attack ground units.`,
       description: "Retrofits this Assault Galleon with a Drone Hangar that automatically builds and deploys up to 6 Assault Drones. Assault Drones can attack ground and air units. Installing the hangar also enables out-of-combat regeneration.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 3.",
       cost: {
         minerals: 150,
@@ -13515,11 +10863,6 @@ Can attack ground units.`,
       commander: "Horner",
       unit: "Assault Galleon",
       requiresupgrade: false,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       showWithUpgrade: "Install Drone Hangar",
       name: "Build Assault Drone",
       icons: [
@@ -13533,10 +10876,6 @@ Can attack ground units.`,
       commander: "Horner",
       unit: "Assault Galleon",
       requiresupgrade: false,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 11.",
       showWithUpgrade: "Install Drone Hangar",
       name: "Endurance Training",
@@ -13548,8 +10887,7 @@ Can attack ground units.`,
         healing: 3.75,
         delay: 10
       },
-      type: "passive",
-      cooldown: null
+      type: "passive"
     },
     {
       commander: "Horner",
@@ -13562,11 +10900,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Horner",
@@ -13580,11 +10914,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Horner",
@@ -13596,13 +10926,7 @@ Drains 0.9 energy per second.`,
       description: `Wraith attack speed increases by 10% with each attack, up to a maximum of 100%.
 Passive ability.`,
       type: "passive",
-      requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: true
     },
     {
       commander: "Horner",
@@ -13614,21 +10938,12 @@ Passive ability.`,
       description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Unregistered Cloaking System research at the Dominion Starport Tech Lab."
     },
     {
       commander: "Horner",
       unit: "Asteria Wraith",
       requiresupgrade: false,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 11.",
       name: "Endurance Training",
       icons: [
@@ -13639,8 +10954,7 @@ Passive ability.`,
         healing: 3.75,
         delay: 10
       },
-      type: "passive",
-      cooldown: null
+      type: "passive"
     },
     {
       commander: "Horner",
@@ -13653,11 +10967,7 @@ Passive ability.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Horner",
@@ -13670,20 +10980,12 @@ Passive ability.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 20,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Horner",
       unit: "Deimos Viking",
       requiresupgrade: false,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 11.",
       name: "Endurance Training",
       icons: [
@@ -13694,8 +10996,7 @@ Passive ability.`,
         healing: 3.75,
         delay: 10
       },
-      type: "passive",
-      cooldown: null
+      type: "passive"
     },
     {
       commander: "Horner",
@@ -13708,11 +11009,7 @@ Passive ability.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Horner",
@@ -13723,13 +11020,7 @@ Passive ability.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Horner",
@@ -13745,10 +11036,6 @@ Passive ability.`,
       requiresupgrade: false,
       cooldown: 20,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         death: ""
       }
@@ -13764,20 +11051,12 @@ Passive ability.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Horner",
       unit: "Sovereign Battlecruiser",
       requiresupgrade: false,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 11.",
       name: "Endurance Training",
       icons: [
@@ -13788,8 +11067,7 @@ Passive ability.`,
         healing: 3.75,
         delay: 10
       },
-      type: "passive",
-      cooldown: null
+      type: "passive"
     },
     {
       commander: "Horner",
@@ -13802,11 +11080,7 @@ Passive ability.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Horner",
@@ -13822,10 +11096,6 @@ Can maintain Target Lock on {targets} target(s) at once.`,
       requiresupgrade: false,
       cooldown: 3,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         targets: 1
       }
@@ -13839,13 +11109,7 @@ Can maintain Target Lock on {targets} target(s) at once.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Horner",
@@ -13856,22 +11120,12 @@ Can maintain Target Lock on {targets} target(s) at once.`,
       ],
       description: "Shows the locations of enemy units through the fog of war within a radius of 40. Radar contacts do not grant vision or detection.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Horner",
       unit: "Theia Raven",
       requiresupgrade: false,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 11.",
       name: "Endurance Training",
       icons: [
@@ -13882,8 +11136,7 @@ Can maintain Target Lock on {targets} target(s) at once.`,
         healing: 3.75,
         delay: 10
       },
-      type: "passive",
-      cooldown: null
+      type: "passive"
     },
     {
       commander: "Karax",
@@ -13897,11 +11150,7 @@ Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Karax",
@@ -13913,11 +11162,6 @@ Can attack ground and air units. 8 Interceptors max.`,
       description: "Two repair drones automatically restore life to nearby friendly mechanical units.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Karax level 14 and Repair Drones research at the Fleet Beacon."
     },
     {
@@ -13929,13 +11173,7 @@ Can attack ground and air units. 8 Interceptors max.`,
       ],
       description: "Can walk up and down cliffs.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Karax",
@@ -13948,11 +11186,7 @@ Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 3,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 3
     },
     {
       commander: "Karax",
@@ -13965,11 +11199,7 @@ Can attack ground and air units. 8 Interceptors max.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 120,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Karax",
@@ -13982,11 +11212,7 @@ Can attack ground and air units. 8 Interceptors max.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Karax",
@@ -14000,11 +11226,7 @@ Can target ground and air units.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 45,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Karax",
@@ -14018,11 +11240,7 @@ Massive units are immune.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Karax",
@@ -14035,10 +11253,6 @@ Massive units are immune.`,
       type: "passive",
       requiresupgrade: true,
       cooldown: 5,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Karax level 14 and Phasing Armor research at the Fleet Beacon."
     },
     {
@@ -14050,13 +11264,7 @@ Massive units are immune.`,
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Karax",
@@ -14067,13 +11275,7 @@ Massive units are immune.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Karax",
@@ -14084,13 +11286,7 @@ Massive units are immune.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Karax",
@@ -14103,11 +11299,7 @@ Massive units are immune.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Karax",
@@ -14120,10 +11312,6 @@ Massive units are immune.`,
       type: "passive",
       requiresupgrade: true,
       cooldown: 120,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Karax level 4 and Reconstruction research at the Twilight Council."
     },
     {
@@ -14137,11 +11325,7 @@ Massive units are immune.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Kerrigan",
@@ -14153,11 +11337,6 @@ Massive units are immune.`,
       description: "Transforms this Hydralisk into a Lurker.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Lurker Den.",
       cost: {
         minerals: 50,
@@ -14178,10 +11357,6 @@ Massive units are immune.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Desolate Queen"
       ]
@@ -14198,10 +11373,6 @@ Massive units are immune.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Desolate Queen"
       ]
@@ -14218,10 +11389,6 @@ Massive units are immune.`,
       requiresupgrade: false,
       cooldown: 120,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         resources: "resources"
       }
@@ -14239,10 +11406,6 @@ Heroic units are slowed.`,
       requiresupgrade: false,
       cooldown: 180,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       initialCooldown: 600
     },
     {
@@ -14257,10 +11420,7 @@ Heroic units are slowed.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: "Desolate Queen",
-      requirements: null
+      prestige: "Desolate Queen"
     },
     {
       commander: "Kerrigan",
@@ -14274,10 +11434,7 @@ Heroic units are slowed.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: "Desolate Queen",
-      requirements: null
+      prestige: "Desolate Queen"
     },
     {
       commander: "Kerrigan",
@@ -14288,13 +11445,7 @@ Heroic units are slowed.`,
       ],
       description: "Generates temporary protective life equal to 30% of damage dealt, up to 200. This protection decays over time.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Kerrigan",
@@ -14306,11 +11457,6 @@ Heroic units are slowed.`,
       description: "Each attack increases attack speed by 10%, stacking up to five times for a 50% bonus. The bonus expires after 5 seconds without attacking.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Kerrigan level 10."
     },
     {
@@ -14322,13 +11468,7 @@ Heroic units are slowed.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Kerrigan",
@@ -14342,11 +11482,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 25
     },
     {
       commander: "Kerrigan",
@@ -14359,11 +11495,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 25,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Kerrigan",
@@ -14376,11 +11508,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Kerrigan",
@@ -14392,12 +11520,7 @@ Bonus: Zerg move faster on creep.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: "Rooted",
-      prestige: null,
-      requirements: null
+      mode: "Rooted"
     },
     {
       commander: "Kerrigan",
@@ -14410,11 +11533,7 @@ Bonus: Zerg move faster on creep.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Kerrigan",
@@ -14425,13 +11544,7 @@ Bonus: Zerg move faster on creep.`,
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Kerrigan",
@@ -14444,10 +11557,6 @@ Bonus: Zerg move faster on creep.`,
       type: "passive",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Kerrigan level 14 (Torrasque strain)."
     },
     {
@@ -14460,11 +11569,6 @@ Bonus: Zerg move faster on creep.`,
       description: "Restores life equal to 40% of damage dealt by its normal attacks.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Tissue Assimilation research at the Ultralisk Cavern."
     },
     {
@@ -14478,11 +11582,7 @@ Bonus: Zerg move faster on creep.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: 3,
-      mode: null,
-      prestige: null,
-      requirements: null
+      rankrequired: 3
     },
     {
       commander: "Mengsk",
@@ -14494,12 +11594,6 @@ Bonus: Zerg move faster on creep.`,
       description: "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Merchant of Death"
       ]
@@ -14514,12 +11608,7 @@ Bonus: Zerg move faster on creep.`,
       description: "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: "Merchant of Death",
-      requirements: null
+      prestige: "Merchant of Death"
     },
     {
       commander: "Mengsk",
@@ -14531,12 +11620,6 @@ Bonus: Zerg move faster on creep.`,
       description: "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Merchant of Death"
       ]
@@ -14551,12 +11634,7 @@ Bonus: Zerg move faster on creep.`,
       description: "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: "Merchant of Death",
-      requirements: null
+      prestige: "Merchant of Death"
     },
     {
       commander: "Mengsk",
@@ -14568,12 +11646,6 @@ Bonus: Zerg move faster on creep.`,
       description: "Drops its equipped weapon on death, allowing another Dominion Trooper to pick it up.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Merchant of Death"
       ]
@@ -14588,12 +11660,7 @@ Bonus: Zerg move faster on creep.`,
       description: "On death, the equipped weapon seeks a visible enemy within range 12 and explodes on contact, or after 2 seconds. Deals 150 damage (250 vs. Structures) within radius 1.5, and half damage from radius 1.5 to 2, to enemy ground and air units.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: "Merchant of Death",
-      requirements: null
+      prestige: "Merchant of Death"
     },
     {
       commander: "Mengsk",
@@ -14606,11 +11673,7 @@ Bonus: Zerg move faster on creep.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 5,
-      energycost: null,
-      rankrequired: 0,
-      mode: null,
-      prestige: null,
-      requirements: null
+      rankrequired: 0
     },
     {
       commander: "Mengsk",
@@ -14623,11 +11686,7 @@ Bonus: Zerg move faster on creep.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 8,
-      energycost: null,
-      rankrequired: 0,
-      mode: null,
-      prestige: null,
-      requirements: null
+      rankrequired: 0
     },
     {
       commander: "Mengsk",
@@ -14640,11 +11699,7 @@ Bonus: Zerg move faster on creep.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: 1,
-      mode: null,
-      prestige: null,
-      requirements: null
+      rankrequired: 1
     },
     {
       commander: "Mengsk",
@@ -14660,11 +11715,7 @@ Cooldown is time to build one missile.
       type: "active",
       requiresupgrade: false,
       cooldown: 90,
-      energycost: null,
       rankrequired: 0,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         channel: ""
       }
@@ -14678,13 +11729,7 @@ Cooldown is time to build one missile.
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Mengsk",
@@ -14700,11 +11745,7 @@ Heals 9 life per 3 energy.
       type: "autocast",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: null,
       rankrequired: 0,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         targets: ""
       }
@@ -14720,11 +11761,7 @@ Heals 9 life per 3 energy.
       type: "active",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: null,
-      rankrequired: 0,
-      mode: null,
-      prestige: null,
-      requirements: null
+      rankrequired: 0
     },
     {
       commander: "Mengsk",
@@ -14735,13 +11772,7 @@ Heals 9 life per 3 energy.
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Mengsk",
@@ -14752,13 +11783,7 @@ Heals 9 life per 3 energy.
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Mengsk",
@@ -14771,11 +11796,7 @@ Heals 9 life per 3 energy.
       type: "active",
       requiresupgrade: false,
       cooldown: 120,
-      energycost: null,
-      rankrequired: 0,
-      mode: null,
-      prestige: null,
-      requirements: null
+      rankrequired: 0
     },
     {
       commander: "Mengsk",
@@ -14788,11 +11809,7 @@ Heals 9 life per 3 energy.
       type: "active",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: null,
-      rankrequired: 0,
-      mode: null,
-      prestige: null,
-      requirements: null
+      rankrequired: 0
     },
     {
       commander: "Nova",
@@ -14805,11 +11822,7 @@ Heals 9 life per 3 energy.
       type: "autocast",
       requiresupgrade: true,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -14821,11 +11834,6 @@ Heals 9 life per 3 energy.
       description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Advanced Cloaking Field research at a Starport Tech Lab."
     },
     {
@@ -14839,11 +11847,7 @@ Heals 9 life per 3 energy.
       type: "autocast",
       requiresupgrade: true,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -14856,11 +11860,7 @@ Heals 9 life per 3 energy.
       type: "active",
       requiresupgrade: true,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -14873,11 +11873,7 @@ Heals 9 life per 3 energy.
       type: "autocast",
       requiresupgrade: true,
       cooldown: 5,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -14890,11 +11886,7 @@ Heals 9 life per 3 energy.
       type: "autocast",
       requiresupgrade: true,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -14905,13 +11897,7 @@ Heals 9 life per 3 energy.
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Nova",
@@ -14928,10 +11914,7 @@ Can target biological and mechanical units.
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
       mode: "Stealth Mode",
-      prestige: null,
-      requirements: null,
       values: {
         refund: ""
       }
@@ -14948,10 +11931,7 @@ Can target biological and mechanical units.
       requiresupgrade: false,
       cooldown: 45,
       energycost: 100,
-      rankrequired: null,
       mode: "Stealth Mode",
-      prestige: null,
-      requirements: null,
       values: {
         damage: 200,
         structureDamage: 400,
@@ -14970,10 +11950,7 @@ Can target biological and mechanical units.
       requiresupgrade: false,
       cooldown: 420,
       energycost: 0,
-      rankrequired: null,
       mode: "Stealth Mode",
-      prestige: null,
-      requirements: null,
       initialCooldown: 600,
       values: {
         damage: 600,
@@ -14996,10 +11973,7 @@ Range: {range}.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
       mode: "Assault Mode",
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Infiltration Specialist"
       ],
@@ -15020,10 +11994,7 @@ Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
       requiresupgrade: false,
       cooldown: 8,
       energycost: 0,
-      rankrequired: null,
       mode: "Assault Mode",
-      prestige: null,
-      requirements: null,
       charges: 3,
       excludedPrestiges: [
         "Infiltration Specialist"
@@ -15041,10 +12012,7 @@ Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
       requiresupgrade: false,
       cooldown: 420,
       energycost: 0,
-      rankrequired: null,
       mode: "Assault Mode",
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Infiltration Specialist"
       ],
@@ -15060,11 +12028,6 @@ Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Ghost Visor research at the Ghost Academy."
     },
     {
@@ -15077,12 +12040,7 @@ Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
       description: "Nova is permanently cloaked in Stealth Mode. Detectors and revealing effects can expose her.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
       mode: "Stealth Mode",
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Infiltration Specialist"
       ]
@@ -15097,12 +12055,8 @@ Ability regains a charge every 8 seconds. Can store a maximum of 3 charges.`,
       description: "Nova is cloaked and cannot be detected or targeted. Attacking or using Snipe disables Super Cloak for 4 seconds.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
       mode: "Stealth Mode",
-      prestige: "Infiltration Specialist",
-      requirements: null
+      prestige: "Infiltration Specialist"
     },
     {
       commander: "Nova",
@@ -15116,11 +12070,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -15138,10 +12088,6 @@ Restores {healing} life per second to each target.
       requiresupgrade: false,
       cooldown: 60,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         healing: 14,
         cloak: ""
@@ -15158,11 +12104,7 @@ Restores {healing} life per second to each target.
       type: "active",
       requiresupgrade: false,
       cooldown: 45,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -15173,13 +12115,7 @@ Restores {healing} life per second to each target.
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Nova",
@@ -15196,10 +12132,6 @@ Mechanical units are immune.
       requiresupgrade: false,
       cooldown: 30,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         shots: ""
       }
@@ -15215,11 +12147,7 @@ Mechanical units are immune.
       type: "active",
       requiresupgrade: true,
       cooldown: 45,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Nova",
@@ -15230,13 +12158,7 @@ Mechanical units are immune.
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Raynor",
@@ -15250,11 +12172,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15267,11 +12185,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15284,11 +12198,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15301,11 +12211,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15318,11 +12224,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15335,11 +12237,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15351,12 +12249,7 @@ Drains 0.9 energy per second.`,
       description: "Hyperjump to the targeted location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 15,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 15
     },
     {
       commander: "Raynor",
@@ -15368,12 +12261,7 @@ Drains 0.9 energy per second.`,
       description: "Blasts a unit with a devastating plasma cannon, dealing 600 damage to it and nearby enemies.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 15,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 15
     },
     {
       commander: "Raynor",
@@ -15389,11 +12277,6 @@ Each shot consumes 10 energy. (4 charges max)`,
       type: "active",
       requiresupgrade: false,
       cooldown: 5,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 4
     },
     {
@@ -15407,11 +12290,7 @@ Each shot consumes 10 energy. (4 charges max)`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15424,11 +12303,7 @@ Each shot consumes 10 energy. (4 charges max)`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15445,10 +12320,6 @@ Heals {healing} life per 3 energy per second.
       requiresupgrade: false,
       cooldown: 0,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         targets: "biological",
         healing: 9,
@@ -15464,13 +12335,7 @@ Heals {healing} life per 3 energy per second.
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Raynor",
@@ -15483,11 +12348,7 @@ Heals {healing} life per 3 energy per second.
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15500,11 +12361,7 @@ Heals {healing} life per 3 energy per second.
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15520,10 +12377,6 @@ Heals {healing} life per 3 energy per second.
       requiresupgrade: false,
       cooldown: 0,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 3,
       values: {
         radius: ""
@@ -15541,11 +12394,7 @@ A Vulture can only carry 3 Spider Mines at a time.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 6,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Raynor",
@@ -15558,11 +12407,7 @@ A Vulture can only carry 3 Spider Mines at a time.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Stetmann",
@@ -15574,12 +12419,7 @@ A Vulture can only carry 3 Spider Mines at a time.`,
       description: "Unleashes a traveling electrical orb that deals 50 damage per second to all enemies along its path. If Gary is in a Stetzone, he unleashes three orbs instead.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 30
     },
     {
       commander: "Stetmann",
@@ -15597,12 +12437,7 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
 (The Stetellite is overcharged for 30 seconds but grants a 45-second buff.)`,
       type: "active",
       requiresupgrade: false,
-      cooldown: 45,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 45
     },
     {
       commander: "Stetmann",
@@ -15614,12 +12449,7 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
       description: "Teleports Gary and all nearby units you control to a target Stetellite's location. (Does not affect ally units)",
       type: "active",
       requiresupgrade: false,
-      cooldown: 180,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 180
     },
     {
       commander: "Stetmann",
@@ -15631,11 +12461,6 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
       description: "Transforms this Gary into a Super Gary.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 5 and Mecha Hive.",
       cost: {
         minerals: 450,
@@ -15657,11 +12482,7 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
       type: "autocast",
       requiresupgrade: true,
       cooldown: 5,
-      energycost: 1,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 1
     },
     {
       commander: "Stetmann",
@@ -15674,11 +12495,7 @@ J.U.I.C.E. Overload regenerates 60 Egonergy and energy over 45 seconds.
       type: "autocast",
       requiresupgrade: false,
       cooldown: 3,
-      energycost: 5,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 5
     },
     {
       commander: "Stetmann",
@@ -15692,11 +12509,7 @@ Can attack ground units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 20,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Stetmann",
@@ -15709,11 +12522,7 @@ Can attack ground units.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 0,
-      energycost: 100,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 100
     },
     {
       commander: "Stetmann",
@@ -15729,10 +12538,6 @@ Splash radius: {radius}.`,
       requiresupgrade: false,
       cooldown: 10,
       energycost: 100,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         radius: 1.5
       }
@@ -15749,11 +12554,7 @@ Channeled ability. Can target enemy ground units and structures.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 20,
-      energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 75
     },
     {
       commander: "Stetmann",
@@ -15765,11 +12566,6 @@ Channeled ability. Can target enemy ground units and structures.`,
       description: "Transforms this Mecha Corruptor into a Mecha Battlecarrier Lord.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Mecha Greater Spire.",
       cost: {
         minerals: 300,
@@ -15792,10 +12588,6 @@ Channeled ability. Can target enemy ground units and structures.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 250,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         ravager: ""
       }
@@ -15811,11 +12603,7 @@ Channeled ability. Can target enemy ground units and structures.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 5,
-      energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 75
     },
     {
       commander: "Stetmann",
@@ -15831,10 +12619,6 @@ Channeled ability. Can target enemy ground units and structures.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         ravager: ""
       }
@@ -15853,10 +12637,6 @@ Maximum travel distance: {range}.`,
       requiresupgrade: false,
       cooldown: 8,
       energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         range: 9
       }
@@ -15872,11 +12652,7 @@ Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 0,
-      energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 75
     },
     {
       commander: "Stetmann",
@@ -15887,13 +12663,7 @@ Maximum travel distance: {range}.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Stetmann",
@@ -15905,12 +12675,7 @@ Maximum travel distance: {range}.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: "Rooted",
-      prestige: null,
-      requirements: null
+      mode: "Rooted"
     },
     {
       commander: "Stetmann",
@@ -15926,10 +12691,6 @@ Maximum travel distance: {range}.`,
       requiresupgrade: false,
       cooldown: 5,
       energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         stun: ""
       }
@@ -15945,11 +12706,7 @@ Maximum travel distance: {range}.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 2,
-      energycost: 5,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 5
     },
     {
       commander: "Stetmann",
@@ -15960,13 +12717,7 @@ Maximum travel distance: {range}.`,
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Stetmann",
@@ -15979,11 +12730,6 @@ Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 2
     },
     {
@@ -16002,11 +12748,6 @@ Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 45,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 2
     },
     {
@@ -16020,11 +12761,6 @@ Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 180,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 2
     },
     {
@@ -16039,12 +12775,7 @@ Maximum travel distance: {range}.`,
       description: "Generates a Stetzone around Super Gary for 30 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 120,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 120
     },
     {
       commander: "Stetmann",
@@ -16055,13 +12786,7 @@ Maximum travel distance: {range}.`,
       ],
       description: "When Super Gary absorbs a Mecha Remnant, he gains 10% increased attack speed and regenerates an additional 1 life per second for 30 seconds. Can stack up to 20 times.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Stetmann",
@@ -16072,13 +12797,7 @@ Maximum travel distance: {range}.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Stukov",
@@ -16090,12 +12809,7 @@ Maximum travel distance: {range}.`,
       description: "Fires a salvo of 5 missiles at the target enemy air unit, dealing a total 100 damage. (40 missiles max)",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: "10 seconds/5 missiles",
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: "10 seconds/5 missiles"
     },
     {
       commander: "Stukov",
@@ -16107,12 +12821,7 @@ Maximum travel distance: {range}.`,
       description: "Burrow and charge at the target location dealing 150 damage and stunning non-heroic enemies for 5 seconds.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Stukov",
@@ -16123,13 +12832,7 @@ Maximum travel distance: {range}.`,
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Stukov",
@@ -16142,11 +12845,7 @@ Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 25
     },
     {
       commander: "Stukov",
@@ -16159,11 +12858,7 @@ Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 100,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 100
     },
     {
       commander: "Stukov",
@@ -16176,11 +12871,7 @@ Maximum travel distance: {range}.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 0,
-      energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 75
     },
     {
       commander: "Stukov",
@@ -16194,11 +12885,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Stukov",
@@ -16211,11 +12898,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Stukov",
@@ -16227,11 +12910,7 @@ Drains 0.9 energy per second.`,
       description: "Restores 20 life and energy per second while burrowed.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
       mode: "Burrowed",
-      prestige: null,
       requirements: "Requires Rapid Hibernation research at an Infested Starport Tech Lab."
     },
     {
@@ -16244,12 +12923,8 @@ Drains 0.9 energy per second.`,
       description: "Loads up to 16 nearby Infested infantry. Their timed life is paused while loaded.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: "Plague Warden",
-      requirements: null
+      prestige: "Plague Warden"
     },
     {
       commander: "Stukov",
@@ -16261,12 +12936,8 @@ Drains 0.9 energy per second.`,
       description: "Unloads all carried Infested infantry at the target location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: "Plague Warden",
-      requirements: null
+      prestige: "Plague Warden"
     },
     {
       commander: "Stukov",
@@ -16278,12 +12949,8 @@ Drains 0.9 energy per second.`,
       description: "Launches carried Infested infantry to a ground location within range 10. Each impact deals 20 damage to enemy ground units within radius 1.25.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: "Plague Warden",
-      requirements: null
+      prestige: "Plague Warden"
     },
     {
       commander: "Stukov",
@@ -16296,11 +12963,7 @@ Drains 0.9 energy per second.`,
       type: "passive",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: "Rooted",
-      prestige: null,
-      requirements: null
+      mode: "Rooted"
     },
     {
       commander: "Stukov",
@@ -16313,11 +12976,7 @@ Drains 0.9 energy per second.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 45,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Stukov",
@@ -16329,11 +12988,6 @@ Drains 0.9 energy per second.`,
       description: "Leaves an acid trail while moving, dealing 20 damage per second to enemy ground units in the trail.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Caustic Mucus research at an Infested Factory Tech Lab."
     },
     {
@@ -16346,12 +13000,7 @@ Drains 0.9 energy per second.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: "Rooted",
-      prestige: null,
-      requirements: null
+      mode: "Rooted"
     },
     {
       commander: "Stukov",
@@ -16364,11 +13013,7 @@ Drains 0.9 energy per second.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Stukov",
@@ -16380,12 +13025,7 @@ Drains 0.9 energy per second.`,
       description: "Consumes a nearby Infested Civilian or Infested Trooper to restore 20 life and gain one round of ammunition. Stores up to 8 rounds.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: 2.5,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 2.5
     },
     {
       commander: "Stukov",
@@ -16398,10 +13038,6 @@ Drains 0.9 energy per second.`,
       type: "passive",
       requiresupgrade: true,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Automated Mitosis research at an Infested Factory Tech Lab."
     },
     {
@@ -16413,13 +13049,7 @@ Drains 0.9 energy per second.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Swann",
@@ -16435,10 +13065,6 @@ Cast range: {range}.`,
       requiresupgrade: false,
       cooldown: 6,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 500,
         range: 8
@@ -16455,11 +13081,7 @@ Cast range: {range}.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Swann",
@@ -16474,10 +13096,6 @@ Heals 3 life per {energy} energy.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         energy: 1
       }
@@ -16493,11 +13111,7 @@ Heals 3 life per {energy} energy.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 25
     },
     {
       commander: "Swann",
@@ -16510,11 +13124,7 @@ Heals 3 life per {energy} energy.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 20,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Swann",
@@ -16525,13 +13135,7 @@ Heals 3 life per {energy} energy.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Swann",
@@ -16545,8 +13149,6 @@ Heals 3 life per {energy} energy.`,
       requiresupgrade: false,
       cooldown: 30,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
       prestige: "Payload Director",
       requirements: "Requires Science Vessel Energy Manipulation (Swann level 6)."
     },
@@ -16559,13 +13161,7 @@ Heals 3 life per {energy} energy.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Swann",
@@ -16578,11 +13174,7 @@ Heals 3 life per {energy} energy.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Swann",
@@ -16599,10 +13191,6 @@ Drains 0.9 energy per second.
       requiresupgrade: false,
       cooldown: 0,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         evasion: ""
       }
@@ -16616,13 +13204,7 @@ Drains 0.9 energy per second.
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Tychus",
@@ -16639,11 +13221,6 @@ Drains 0.9 energy per second.
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 3,
       values: {
         damage: 500,
@@ -16671,11 +13248,6 @@ Can attack ground and air units.
       type: "active",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 5,
       values: {
         frame: "",
@@ -16697,11 +13269,6 @@ Can attack ground and air units.
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 3,
       values: {
         healing: 2,
@@ -16719,11 +13286,7 @@ Can attack ground and air units.
       type: "autocast",
       requiresupgrade: true,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Tychus",
@@ -16736,11 +13299,6 @@ Can attack ground and air units.
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         instantHealing: 200,
         healing: 10
@@ -16756,11 +13314,6 @@ Can attack ground and air units.
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
     },
     {
@@ -16773,12 +13326,7 @@ Can attack ground and air units.
       description: "Restores {healing} life per second to a friendly biological or mechanical unit. Can heal {targets} at a time{gearNote}.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         healing: 30,
         targets: "one target",
@@ -16797,9 +13345,6 @@ Can attack ground and air units.
       requiresupgrade: true,
       cooldown: 15,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires purchase of XM-77 Matrix Generator gear.",
       excludedPrestiges: [
         "Lone Wolf"
@@ -16820,11 +13365,6 @@ Radius: {radius}.
       type: "active",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         lightDamage: 5,
         radius: 2.5,
@@ -16846,11 +13386,6 @@ Radius: {radius}.
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 3,
       values: {
         duration: 6,
@@ -16869,11 +13404,6 @@ Radius: {radius}.
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
     },
     {
@@ -16886,12 +13416,6 @@ Radius: {radius}.
       description: "Stuns all enemies and deals 1000 damage over 5 seconds in a large area.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Dutiful Dogwalker"
       ]
@@ -16906,12 +13430,6 @@ Radius: {radius}.
       description: "Calls down a Nuclear Strike at a target location. Nukes take 3 seconds to land, but they deal up to 1000 damage in a large area.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Dutiful Dogwalker"
       ]
@@ -16925,13 +13443,7 @@ Radius: {radius}.
       ],
       description: "Immune to slows, snares, and stuns.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Tychus",
@@ -16948,11 +13460,6 @@ Stun duration: {stun} seconds.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         radius: 1.5,
         stun: 1.5
@@ -16969,10 +13476,6 @@ Stun duration: {stun} seconds.`,
       type: "passive",
       requiresupgrade: true,
       cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires purchase of Critical Response System gear."
     },
     {
@@ -16988,11 +13491,6 @@ Stun duration: {stun} seconds.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 20,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 75,
         implosion: ""
@@ -17013,11 +13511,6 @@ Stun duration: {stun} seconds.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 3,
       values: {
         duration: 240,
@@ -17035,11 +13528,6 @@ Stun duration: {stun} seconds.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Flashforce GDM Visor research at the Engineering Bay."
     },
     {
@@ -17051,13 +13539,7 @@ Stun duration: {stun} seconds.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Vorazun",
@@ -17071,11 +13553,7 @@ Briefly cloaks the Centurion and allows it to move through other units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Vorazun",
@@ -17089,11 +13567,7 @@ Massive units are slowed.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Vorazun",
@@ -17106,11 +13580,7 @@ Massive units are slowed.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 30,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Vorazun",
@@ -17122,11 +13592,6 @@ Massive units are slowed.`,
       description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
     },
     {
@@ -17141,11 +13606,7 @@ Heroic units are immune.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 8,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Vorazun",
@@ -17159,11 +13620,7 @@ Heroic units are immune.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 30,
-      energycost: 150,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 150
     },
     {
       commander: "Vorazun",
@@ -17176,11 +13633,6 @@ Heroic units are immune.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       excludedPrestiges: [
         "Spirit of Respite"
       ]
@@ -17196,11 +13648,7 @@ Heroic units are immune.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Vorazun",
@@ -17213,11 +13661,7 @@ Heroic units are immune.`,
       type: "active",
       requiresupgrade: true,
       cooldown: 10,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Vorazun",
@@ -17231,11 +13675,7 @@ Can target structures or ground units.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Vorazun",
@@ -17246,13 +13686,7 @@ Can target structures or ground units.`,
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Vorazun",
@@ -17266,11 +13700,7 @@ Drains 1.4 energy per second.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 4,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Vorazun",
@@ -17284,10 +13714,6 @@ Drains 1.4 energy per second.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         vulnerability: "cannot be attacked or affected by abilities"
       }
@@ -17302,11 +13728,6 @@ Drains 1.4 energy per second.`,
       description: "Permanently cloaks this unit without an energy cost. Enemies need detection to see or directly target it.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Vorazun level 12 and Stealth Drive research at the Fleet Beacon."
     },
     {
@@ -17318,13 +13739,7 @@ Drains 1.4 energy per second.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Vorazun",
@@ -17335,13 +13750,7 @@ Drains 1.4 energy per second.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Vorazun",
@@ -17353,12 +13762,7 @@ Drains 1.4 energy per second.`,
       description: "Jump from target to target, dealing 20 (+15 vs. Light) damage with each jump. Hits 5 times.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 15,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 15
     },
     {
       commander: "Vorazun",
@@ -17370,12 +13774,7 @@ Drains 1.4 energy per second.`,
       description: "Teleport to a nearby target location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Vorazun",
@@ -17388,12 +13787,7 @@ Drains 1.4 energy per second.`,
 Can target structures or ground units.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 15,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 15
     },
     {
       commander: "Vorazun",
@@ -17404,13 +13798,7 @@ Can target structures or ground units.`,
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Vorazun",
@@ -17426,10 +13814,6 @@ Can target structures or ground units.`,
       requiresupgrade: true,
       cooldown: 8,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         shield: ""
       }
@@ -17443,13 +13827,7 @@ Can target structures or ground units.`,
       ],
       description: "Can walk over smaller ground units.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Zagara",
@@ -17461,11 +13839,6 @@ Can target structures or ground units.`,
       description: "Friendly units underneath the Aberration take 50% less damage.",
       type: "passive",
       requiresupgrade: true,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Zagara level 9 and Protective Cover research at the Evolution Chamber."
     },
     {
@@ -17478,11 +13851,6 @@ Can target structures or ground units.`,
       description: "Spawns two Banelings when killed.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Zagara level 8."
     },
     {
@@ -17501,10 +13869,6 @@ Fires every {interval} seconds.`,
       requiresupgrade: false,
       cooldown: 0,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         range: 15,
         interval: 7
@@ -17521,11 +13885,7 @@ Fires every {interval} seconds.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Zagara",
@@ -17537,11 +13897,6 @@ Fires every {interval} seconds.`,
       description: "Spawns two Scourge when killed.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Zagara level 8."
     },
     {
@@ -17553,13 +13908,7 @@ Fires every {interval} seconds.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Zagara",
@@ -17573,11 +13922,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 25
     },
     {
       commander: "Zagara",
@@ -17590,11 +13935,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 25,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Zagara",
@@ -17607,11 +13948,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 0,
-      energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 50
     },
     {
       commander: "Zagara",
@@ -17623,12 +13960,7 @@ Bonus: Zerg move faster on creep.`,
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: "Rooted",
-      prestige: null,
-      requirements: null
+      mode: "Rooted"
     },
     {
       commander: "Zagara",
@@ -17641,11 +13973,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 25
     },
     {
       commander: "Zagara",
@@ -17658,11 +13986,7 @@ Bonus: Zerg move faster on creep.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 30,
-      energycost: 30,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 30
     },
     {
       commander: "Zagara",
@@ -17676,10 +14000,6 @@ Bonus: Zerg move faster on creep.`,
       requiresupgrade: false,
       cooldown: 90,
       energycost: 25,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         targets: "all friendly units on the map"
       }
@@ -17696,10 +14016,6 @@ Bonus: Zerg move faster on creep.`,
       requiresupgrade: false,
       cooldown: 180,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       initialCooldown: 600
     },
     {
@@ -17714,10 +14030,7 @@ Bonus: Zerg move faster on creep.`,
       requiresupgrade: false,
       cooldown: 20,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: "Apex Predator",
-      requirements: null
+      prestige: "Apex Predator"
     },
     {
       commander: "Zeratul",
@@ -17729,12 +14042,7 @@ Bonus: Zerg move faster on creep.`,
       description: "Transforms all enemy units in a large area around the Avatar of Essence into a lower evolutionary form.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 20,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 20
     },
     {
       commander: "Zeratul",
@@ -17747,12 +14055,7 @@ Bonus: Zerg move faster on creep.`,
 Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each attack, dealing 40 damage to all enemy units in a small area over 4 seconds.`,
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 25,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 25
     },
     {
       commander: "Zeratul",
@@ -17764,12 +14067,7 @@ Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each a
       description: "Creates a storm of psionic energy that lasts 4 seconds, dealing 160 damage to all enemy units in a large target area. Does not damage friendly units.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Zeratul",
@@ -17781,12 +14079,7 @@ Charged Crystals have a 10% chance to cast a miniature Psionic Storm with each a
       description: "Charges up, dealing 500 damage to a target unit after 3 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Zeratul",
@@ -17800,11 +14093,7 @@ Heroic units are immune.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 150,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 150
     },
     {
       commander: "Zeratul",
@@ -17819,9 +14108,6 @@ Temporarily stuns enemy units and structures in an area of effect for 3 seconds.
       requiresupgrade: false,
       cooldown: 15,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "3rd Xel'Naga Artifact."
     },
     {
@@ -17836,11 +14122,7 @@ Heroic units are immune.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 15,
-      energycost: 150,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 150
     },
     {
       commander: "Zeratul",
@@ -17855,9 +14137,6 @@ Temporarily stuns enemy units in an area of effect for 3 seconds.`,
       requiresupgrade: false,
       cooldown: 15,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "3rd Xel'Naga Artifact."
     },
     {
@@ -17871,11 +14150,7 @@ Temporarily stuns enemy units in an area of effect for 3 seconds.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 2.5,
-      energycost: 75,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 75
     },
     {
       commander: "Zeratul",
@@ -17890,9 +14165,6 @@ Drains all energy from the target. Deals 1 damage per point of energy.`,
       requiresupgrade: false,
       cooldown: 10,
       energycost: 50,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "3rd Xel'Naga Artifact."
     },
     {
@@ -17907,10 +14179,6 @@ Projects the Tesseract Cannon to a target location for 60 seconds, transferring 
       type: "active",
       requiresupgrade: false,
       cooldown: 120,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Core Forge and 2nd Xel'Naga Artifact Fragment"
     },
     {
@@ -17925,10 +14193,6 @@ Allows the Tesseract Cannon to absorb up to {absorption} damage. Lasts for 10 se
       type: "autocast",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Core Forge and 3rd Xel'Naga Artifact Fragment",
       values: {
         absorption: 100
@@ -17943,13 +14207,7 @@ Allows the Tesseract Cannon to absorb up to {absorption} damage. Lasts for 10 se
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Zeratul",
@@ -17963,10 +14221,6 @@ Projects the Tesseract Monolith to a target location for 60 seconds, transferrin
       type: "active",
       requiresupgrade: false,
       cooldown: 120,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Core Forge and 2nd Xel'Naga Artifact Fragment"
     },
     {
@@ -17981,10 +14235,6 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 60,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Core Forge and 3rd Xel'Naga Artifact Fragment",
       values: {
         absorption: 100
@@ -17999,13 +14249,7 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Zeratul",
@@ -18021,10 +14265,6 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       requiresupgrade: true,
       cooldown: 8,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: ""
       }
@@ -18038,13 +14278,7 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Zeratul",
@@ -18057,10 +14291,6 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       type: "passive",
       requiresupgrade: true,
       cooldown: 180,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Zeratul level 11, a Void Shrine, and three Artifact Fragments. Unavailable with Herald of the Void."
     },
     {
@@ -18077,10 +14307,6 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       requiresupgrade: false,
       cooldown: 12,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         cluster: ""
       }
@@ -18099,10 +14325,6 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       requiresupgrade: true,
       cooldown: 8,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         apparition: ""
       }
@@ -18121,10 +14343,6 @@ Absorbs up to {absorption} damage. Lasts for 10 seconds.`,
       requiresupgrade: true,
       cooldown: 60,
       energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         absorption: 100,
         repair: ""
@@ -18142,11 +14360,7 @@ Restores 4 shields per 1 energy.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 0,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Zeratul",
@@ -18159,11 +14373,7 @@ Restores 4 shields per 1 energy.`,
       type: "autocast",
       requiresupgrade: true,
       cooldown: 180,
-      energycost: 0,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      energycost: 0
     },
     {
       commander: "Zeratul",
@@ -18174,13 +14384,7 @@ Restores 4 shields per 1 energy.`,
       ],
       description: "Remains cloaked at all times. Enemies need detection to see or directly target this unit.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Zeratul",
@@ -18191,13 +14395,7 @@ Restores 4 shields per 1 energy.`,
       ],
       description: "Reveals nearby cloaked and burrowed enemies and identifies hallucinations.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Zeratul",
@@ -18211,10 +14409,6 @@ Intercepts enemy ground units and increases movement speed.`,
       type: "autocast",
       requiresupgrade: false,
       cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "3rd Xel'Naga Artifact."
     },
     {
@@ -18227,12 +14421,7 @@ Intercepts enemy ground units and increases movement speed.`,
       description: "Deals 10 damage per second to all nearby enemy units. Lasts 3 seconds.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: 10,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 10
     },
     {
       commander: "Zeratul",
@@ -18245,11 +14434,6 @@ Intercepts enemy ground units and increases movement speed.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 8,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       charges: 1
     },
     {
@@ -18262,12 +14446,7 @@ Intercepts enemy ground units and increases movement speed.`,
       description: "Transports Zeratul to a target location.",
       type: "active",
       requiresupgrade: false,
-      cooldown: 120,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      cooldown: 120
     },
     {
       commander: "Zeratul",
@@ -18280,11 +14459,6 @@ Intercepts enemy ground units and increases movement speed.`,
       type: "active",
       requiresupgrade: false,
       cooldown: 12,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null,
       values: {
         damage: 100,
         tornado: ""
@@ -18301,12 +14475,7 @@ Intercepts enemy ground units and increases movement speed.`,
       type: "active",
       requiresupgrade: false,
       cooldown: `10 seconds if Fragment is not found
-Remaining seconds until next Fragment spawns if found.`,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+Remaining seconds until next Fragment spawns if found.`
     },
     {
       commander: "Zeratul",
@@ -18317,13 +14486,7 @@ Remaining seconds until next Fragment spawns if found.`,
       ],
       description: "Zeratul is permanently cloaked. He becomes immune to damage for 0.5 seconds after being attacked. Cannot occur more than once every 5 seconds.",
       type: "passive",
-      requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
-      requirements: null
+      requiresupgrade: false
     },
     {
       commander: "Abathur",
@@ -18335,11 +14498,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Mutalisk into a Guardian.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Greater Spire.",
       cost: {
         minerals: 25,
@@ -18357,11 +14515,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Mutalisk into a Devourer.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Greater Spire.",
       cost: {
         minerals: 75,
@@ -18379,11 +14532,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -18404,11 +14552,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Evolves this unit into a Leviathan at 100 biomass. Limited to 3 Leviathans at a time. The Limitless increases the requirement to 200 biomass and removes the limit.",
       type: "autocast",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -18429,11 +14572,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Two Primal Zerglings engage in primal combat, consuming both units to produce one Ravasaur.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -18451,11 +14589,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Igniter.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 2.",
       cost: {
         minerals: 0,
@@ -18473,11 +14606,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Two Primal Roachs engage in primal combat, consuming both units to produce one Primal Guardian.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 6. Requires Murvar's Den.",
       cost: {
         minerals: 0,
@@ -18495,11 +14623,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Primal Mutalisk.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 6. Requires Murvar's Den.",
       cost: {
         minerals: 0,
@@ -18517,11 +14640,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Two Primal Hydralisks engage in primal combat, consuming both units to produce one Impaler.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires commander level 8.",
       cost: {
         minerals: 0,
@@ -18539,11 +14657,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Mutalisk into a Brood Lord.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Greater Spire.",
       cost: {
         minerals: 150,
@@ -18562,11 +14675,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Zergling into a Baneling.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Baneling Nest.",
       cost: {
         minerals: 22,
@@ -18584,11 +14692,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Overlord into an Overseer.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Lair.",
       cost: {
         minerals: 50,
@@ -18606,11 +14709,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Overlord into an Overseer.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Lair.",
       cost: {
         minerals: 50,
@@ -18628,11 +14726,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Overlord into an Overseer.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Infested Factory.",
       cost: {
         minerals: 50,
@@ -18650,11 +14743,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Overlord into an Overseer.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Lair.",
       cost: {
         minerals: 45,
@@ -18672,11 +14760,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Mecha Zergling into a Mecha Baneling.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Mecha Baneling Nest.",
       cost: {
         minerals: 25,
@@ -18694,11 +14777,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Mecha Hydralisk into a Mecha Lurker.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Mecha Lurker Den.",
       cost: {
         minerals: 50,
@@ -18717,11 +14795,6 @@ Remaining seconds until next Fragment spawns if found.`,
       description: "Transforms this Mecha Overlord into a Mecha Overseer.",
       type: "active",
       requiresupgrade: false,
-      cooldown: null,
-      energycost: null,
-      rankrequired: null,
-      mode: null,
-      prestige: null,
       requirements: "Requires Mecha Lair.",
       cost: {
         minerals: 50,
@@ -18839,7 +14912,7 @@ Remaining seconds until next Fragment spawns if found.`,
     }
     if (skill.buildTime)
       costs.push({ field: "buildTime", icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: "Build time:", value: formatSkillNumber(skill.buildTime) });
-    if (skill.energycost !== null && skill.energycost !== 0 && skill.energycost !== "") {
+    if (skill.energycost !== undefined && skill.energycost !== 0 && skill.energycost !== "") {
       costs.push({
         field: "energycost",
         icon: "/images/commanderdata/unitupgrades/iconenergy.png",
@@ -18858,14 +14931,14 @@ Remaining seconds until next Fragment spawns if found.`,
     if (skill.initialCooldown !== undefined) {
       const initial = typeof skill.initialCooldown === "number" ? `${formatSkillNumber(skill.initialCooldown)} seconds` : skill.initialCooldown;
       const repeat = typeof skill.cooldown === "number" ? `${formatSkillNumber(skill.cooldown)} seconds` : skill.cooldown;
-      details.push(`Coolup: ${initial}${repeat !== null ? `
+      details.push(`Coolup: ${initial}${repeat !== undefined ? `
 Cooldown: ${repeat}` : ""}`);
     } else if (typeof skill.cooldown === "string" && skill.cooldown && !/^\d+(?:\.\d+)?\s*(?:seconds?|s)$/.test(skill.cooldown)) {
       details.push(/\bCool(?:down|up):/i.test(skill.cooldown) ? skill.cooldown : `Cooldown: ${skill.cooldown}`);
     }
     if (skill.requiresupgrade)
       details.push("Requires an upgrade.");
-    if (skill.rankrequired !== null)
+    if (skill.rankrequired !== undefined)
       details.push(`Requires rank ${skill.rankrequired}.`);
     if (skill.mode)
       details.push(`Mode: ${skill.mode}`);
@@ -18917,7 +14990,7 @@ Cooldown: ${repeat}` : ""}`);
     return name.toLowerCase().replace(/[^a-z0-9]+/g, "");
   }
   var mutatorData = new Map(mutators_default.map((mutator) => [mutator.mutatorid, mutator]));
-  var upgradeData = new Map(playerupgrades_default.map((upgrade) => [`upgrades/${token(upgrade.commander)}/${upgrade.icon}`, upgrade]));
+  var upgradeData = new Map(perUnitEntries(playerupgrades_default).map((upgrade) => [`upgrades/${token(upgrade.commander)}/${upgrade.icon}`, upgrade]));
   var activeTooltipTarget = null;
   function tooltipElement() {
     let tooltip = document.getElementById("tooltip");
@@ -19141,5 +15214,5 @@ Cooldown: ${repeat}` : ""}`);
   });
 })();
 
-//# debugId=15BC41989537CF6B64756E2164756E21
+//# debugId=697786D44E00382764756E2164756E21
 //# sourceMappingURL=tooltips.js.map

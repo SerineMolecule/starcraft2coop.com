@@ -6,7 +6,7 @@ import { upgradeCosts } from './upgrade-costs';
 
 const upgrades = upgradesJSON as PlayerUpgrade[];
 const find = (commander: string, unit: string, name: string) =>
-    upgrades.find(upgrade => upgrade.commander === commander && upgrade.unit === unit && upgrade.name === name)!;
+    upgrades.find(upgrade => upgrade.commander === commander && upgrade.units.includes(unit) && upgrade.name === name)!;
 
 test('Upgrade purchase data distinguishes research, instant gear, and free unlocks', () => {
     const shells = find('Raynor', 'Marauder', 'Concussive Shells');

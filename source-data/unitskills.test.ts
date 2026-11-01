@@ -1,3 +1,4 @@
+import { perUnitEntries } from './unit-data';
 import { expect, test } from 'bun:test';
 import { Glob } from 'bun';
 import Ajv from 'ajv';
@@ -148,7 +149,7 @@ test('Hero modes, rank requirements, and unspecified costs remain distinct', () 
     expect(nova.find(skill => skill.name === 'Penetrating Blast')!.mode).toBe('Assault Mode');
     expect(skills.find(skill => skill.name === 'Kinetic Blast')!.prestige).toBe('Desolate Queen');
     expect(skills.find(skill => skill.name === 'High-Grade Stimpacks')!.rankrequired).toBe(3);
-    expect(skills.find(skill => skill.name === 'High-Grade Stimpacks')!.energycost).toBeNull();
+    expect(skills.find(skill => skill.name === 'High-Grade Stimpacks')!.energycost).toBeUndefined();
     expect(skills.find(skill => skill.commander === 'Artanis' && skill.name === 'Whirlwind')!.energycost).toBe(0);
     expect(skills.find(skill => skill.unit === 'Dehaka' && skill.name === 'Leap')).toBeDefined();
     expect(skills.find(skill => skill.unit === 'Dark Pylon' && skill.name === 'Recall')).toBeDefined();
@@ -156,14 +157,16 @@ test('Hero modes, rank requirements, and unspecified costs remain distinct', () 
 });
 
 test('Skill talent fields target existing skills and numeric values for arithmetic', () => {
-    for (const talent of talentsJSON as PlayerTalent[]) {
-        if (talent.target !== 'skill') continue;
-        const targets = skills.filter(skill => skill.commander === talent.commander && skill.unit === talent.unit &&
-            skill.name === talent.skill && (talent.skillMode === undefined || skill.mode === talent.skillMode));
-        expect(targets.length, `Talent ${talent.talentid}`).toBeGreaterThan(0);
-        for (const skill of targets) {
-            const value = skillModifierValue(skill, talent.modifier);
-            if (talent.operation === 'add' || talent.operation === 'multiply') expect(typeof value).toBe('number');
+    for (const talent of perUnitEntries(talentsJSON as PlayerTalent[])) {
+        for (const change of talent.changes) {
+            if (change.target !== 'skill') continue;
+            const targets = skills.filter(skill => skill.commander === talent.commander && skill.unit === talent.unit &&
+                skill.name === change.skill && (change.skillMode === undefined || skill.mode === change.skillMode));
+            expect(targets.length, `Talent ${talent.talentid}`).toBeGreaterThan(0);
+            for (const skill of targets) {
+                const value = skillModifierValue(skill, change.modifier);
+                if (change.operation === 'add' || change.operation === 'multiply') expect(typeof value).toBe('number');
+            }
         }
     }
 });
@@ -176,14 +179,15 @@ test('Skill upgrade visibility conditions reference upgrades on the same unit', 
     for (const skill of skills) {
         expect(!skill.showWithUpgrade || skill.showWithUpgrade !== skill.hideWithUpgrade).toBe(true);
         for (const name of [skill.showWithUpgrade, skill.hideWithUpgrade].filter(Boolean)) {
-            expect(upgradesJSON.some(upgrade => upgrade.commander === skill.commander && upgrade.unit === skill.unit && upgrade.name === name), `${skill.unit}/${skill.name}: ${name}`).toBe(true);
+            expect(upgradesJSON.some(upgrade => upgrade.commander === skill.commander && upgrade.units.includes(skill.unit) && upgrade.name === name), `${skill.unit}/${skill.name}: ${name}`).toBe(true);
         }
     }
 });
 
 test('Regular upgrade skill modifiers target existing skills and valid fields', () => {
-    for (const upgrade of upgradesJSON as PlayerUpgrade[]) {
-        for (const effect of upgrade.skillModifiers ?? []) {
+    for (const upgrade of perUnitEntries(upgradesJSON as PlayerUpgrade[])) {
+        for (const effect of upgrade.changes) {
+            if (effect.target !== 'skill') continue;
             const targets = skills.filter(skill => skill.commander === upgrade.commander && skill.unit === upgrade.unit &&
                 skill.name === effect.skill && (effect.skillMode === undefined || skill.mode === effect.skillMode));
             expect(targets.length, `${upgrade.commander}/${upgrade.unit}/${upgrade.name}/${effect.skill}`).toBeGreaterThan(0);
@@ -197,14 +201,20 @@ test('Regular upgrade skill modifiers target existing skills and valid fields', 
 
 test('Skill modifier schema accepts custom keys without accepting arbitrary fields or wrong value types', () => {
     const validate = new Ajv({ allowUnionTypes: true }).compile(talentSchema);
-    const talent = (talentsJSON as PlayerTalent[]).find(talent => talent.target === 'skill')!;
-    expect(validate([{ ...talent, modifier: 'values.radius', operation: 'multiply', value: 1.5 }])).toBe(true);
-    expect(validate([{ ...talent, modifier: 'values.targets', operation: 'replace', value: 'summoned units' }])).toBe(true);
+    const talent = (talentsJSON as PlayerTalent[]).find(talent => talent.changes.some(change => change.target === 'skill'))!;
+    const change = talent.changes.find(change => change.target === 'skill')!;
+    const validateChange = (patch: Record<string, unknown>) => validate([{ ...talent, changes: [{ ...change, ...patch }] }]);
+    expect(validateChange({ modifier: 'values.radius', operation: 'multiply', value: 1.5 })).toBe(true);
+    expect(validateChange({ modifier: 'values.targets', operation: 'replace', value: 'summoned units' })).toBe(true);
     for (const modifier of ['raduis', 'values.', 'description']) {
-        expect(validate([{ ...talent, modifier, operation: 'multiply', value: 1.5 }])).toBe(false);
+        expect(validateChange({ modifier, operation: 'multiply', value: 1.5 })).toBe(false);
     }
-    expect(validate([{ ...talent, modifier: 'values.radius', operation: 'multiply', value: '1.5' }])).toBe(false);
-    expect(validate([{ ...talent, modifier: 'charges', operation: 'replace', value: 'two' }])).toBe(false);
+    expect(validateChange({ modifier: 'values.radius', operation: 'multiply', value: '1.5' })).toBe(false);
+    expect(validateChange({ modifier: 'charges', operation: 'replace', value: 'two' })).toBe(false);
+    expect(validate([{ ...talent, changes: [] }])).toBe(false);
+    expect(validate([{ ...talent, units: [] }])).toBe(false);
+    expect(validate([{ ...talent, units: [talent.units[0], talent.units[0]] }])).toBe(false);
+    expect(validate([{ ...talent, unit: talent.units[0] }])).toBe(false);
 });
 
 test('Stored charges match the overview descriptions and Super Gary upgrade', () => {
@@ -229,7 +239,7 @@ test('Morph commands live on their parents and charge only the additional resour
     const lurker = find('Kerrigan', 'Hydralisk', 'Morph to Lurker');
     expect(lurker.cost).toEqual({ minerals: 50, gas: 100, supply: 1 });
     expect(lurker.buildTime).toBe(15);
-    expect(lurker.cooldown).toBeNull();
+    expect(lurker.cooldown).toBeUndefined();
     expect(find('Artanis', 'High Templar', 'Archon Merge').cost).toEqual({ minerals: 0, gas: 0 });
     expect(find('Dehaka', 'Primal Roach', 'Primal Combat: Primal Guardian').cost).toEqual({ minerals: 0, gas: 100 });
     expect(find('Stetmann', 'Gary', 'Super Gary Transformation Sequence').excludedPrestiges).toEqual(['Signal Savant']);

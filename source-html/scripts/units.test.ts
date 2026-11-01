@@ -1,3 +1,4 @@
+import { perUnitEntries } from "../../source-data/unit-data";
 import { expect, test } from "bun:test";
 import { existsSync } from "node:fs";
 import playerUnits from "../../source-data/playerunits.json";
@@ -67,7 +68,7 @@ test('Install Drone Hangar adds an upgraded drone attack alongside the Galleon t
     const skill = skillFromTooltip(row.props['data-tooltip'], row.props['data-skill-values'])!;
     expect(skill.cost).toEqual({ minerals: 150, gas: 200, supply: 3 });
     expect(skill.buildTime).toBe(60);
-    expect(skill.cooldown).toBeNull();
+    expect(skill.cooldown).toBeUndefined();
 });
 
 test('Herald of the Void caps artifact controls and max-upgrade settings at two', () => {
@@ -147,7 +148,7 @@ test("Punctuated game names retain unit links, images, skills, and upgrade match
         expect(link.props.href).toBe(`#${commander}/${id}`);
         const card = new UnitStats({ modifiers, formKey: '1', onSetModifiers: () => {} });
         expect(card.renderSkills()).not.toBeNull();
-        for (const upgrade of playerUpgrades.filter(upgrade => upgrade.unit === name && upgrade.commander.toLowerCase() === commander)) {
+        for (const upgrade of playerUpgrades.filter(upgrade => upgrade.units.includes(name) && upgrade.commander.toLowerCase() === commander)) {
             expect(upgrade.name in modifiers.upgrades).toBe(true);
         }
     }
@@ -697,18 +698,21 @@ test("Oil Baron is marked temporary only when the control applies its attack-spe
     }
 });
 
-test("Temporary upgrade metadata is optional, boolean, and consistent across a control's modifiers", () => {
+test("Upgrades have unique identities and shared optional boolean temporary metadata", () => {
     const validate = new Ajv().compile(upgradeSchema);
     const upgrade = playerUpgrades[0]!;
     expect(validate([upgrade])).toBe(true);
     expect(validate([{ ...upgrade, temporary: true }])).toBe(true);
     expect(validate([{ ...upgrade, temporary: false }])).toBe(true);
     expect(validate([{ ...upgrade, temporary: 'true' }])).toBe(false);
+    expect(validate([{ ...upgrade, units: [] }])).toBe(false);
+    expect(validate([{ ...upgrade, units: ['Marine', 'Marine'] }])).toBe(false);
+    expect(validate([{ ...upgrade, unit: 'Marine' }])).toBe(false);
 
     const flags = new Map<string, boolean>();
-    for (const entry of playerUpgrades as PlayerUpgrade[]) {
+    for (const entry of perUnitEntries(playerUpgrades as PlayerUpgrade[])) {
         const key = JSON.stringify([entry.commander, entry.unit, entry.name]);
-        if (flags.has(key)) expect(entry.temporary ?? false, key).toBe(flags.get(key)!);
+        expect(flags.has(key), key).toBe(false);
         flags.set(key, entry.temporary ?? false);
     }
     for (const name of ['Stimpack', 'Frenzy', 'Avenging Protocol', 'High-Grade Stimpacks']) {
@@ -980,9 +984,21 @@ test("Cooldown summaries retain fractions and flag conditional values while pres
     expect(skillDetails(wave)).toContain('Coolup: 600 seconds\nCooldown: 180 seconds');
 });
 
+test("Omitted skill metadata produces no costs or prerequisites, including initial-only cooldowns", () => {
+    const skill = {
+        commander: 'Raynor', unit: 'Marine', name: 'Test skill', icons: [],
+        description: 'Details.', type: 'active' as const, requiresupgrade: false,
+    };
+    expect(skillCosts(skill, 'terran')).toEqual([]);
+    expect(skillDetails(skill)).toEqual(['Details.']);
+    expect(skillCooldown(skill)).toBeNull();
+    expect(skillDetails({ ...skill, initialCooldown: 60 })).toEqual(['Details.', 'Coolup: 60 seconds']);
+    expect(skillCosts({ ...skill, energycost: 0 }, 'terran')).toEqual([]);
+});
+
 test("Skill arithmetic rejects string values without coercion and explicit replacements remain possible", () => {
     const base = [...unitSkills.values()].find(skill => skill.commander === 'Nova' && skill.name === 'Sabotage Drone')!;
-    for (const value of ['45', '45 seconds', 'Varies with target health', null]) {
+    for (const value of ['45', '45 seconds', 'Varies with target health', undefined]) {
         for (const operation of ['add', 'multiply'] as const) {
             const skill = { ...base, cooldown: value };
             expect(() => applySkillModification(skill, { modifier: 'cooldown', operation, value: 0.5 }))
@@ -1048,10 +1064,9 @@ test("Skill tooltip details preserve prerequisites and complex timing without re
 
 test("Informational upgrades keep their label, icon, and tooltip without a checkbox or stat effect", () => {
     const informational: PlayerUpgrade = {
-        upgradeid: 9999, commander: "Raynor", unit: "Marine",
+        upgradeid: 9999, commander: "Raynor", units: ["Marine"],
         name: "Test informational upgrade", icon: "combatshield", effect: "Description only.",
-        modifier: null, modifiermode: null, modifiertag: null,
-        operation: "none", value: null, upgradetype: "upgrade",
+        changes: [], upgradetype: "upgrade",
     };
     const validate = new Ajv().compile(upgradeSchema);
     expect(validate([informational])).toBe(true);
@@ -1077,10 +1092,10 @@ test("Informational upgrades keep their label, icon, and tooltip without a check
         modifiers.upgrades[informational.name] = true;
         expect(UnitStats.getUpgradedUnit(base, modifiers)).toEqual(base);
 
-        // A descriptive row sharing a name with a numeric effect must retain its checkbox.
-        upgrades.push({ ...informational, name: "Combat Shield" });
+        // Adding a calculable change makes the same upgrade selectable.
+        informational.changes.push({ target: 'unit', modifier: 'HP', operation: 'add', value: 10 });
         const mixedLabel = renderedElements(component.renderUpgrades()).find(node =>
-            node.type === "label" && toChildArray(node.props.children).includes("Combat Shield"))!;
+            node.type === "label" && toChildArray(node.props.children).includes(informational.name))!;
         expect(renderedElements(mixedLabel).some(node => node.type === "input")).toBe(true);
     } finally {
         upgrades.splice(originalLength);
@@ -1237,7 +1252,7 @@ test("Biomass scales bonuses by the selected amount and prestige", () => {
     expect(upgradedUnit('abathur', 'swarmhost', { upgradeLevels: { biomass: 50 } }).modes['']!.cooldown).toBe(10);
 });
 
-test("Biomass replaces its checkbox and clamps when changing prestige", () => {
+test("Biomass stays maxed when changing prestige, while lower values are preserved or clamped", () => {
     let modifiers = UnitStats.modifiers('abathur', 'roach');
     expect(modifiers.upgrades).not.toHaveProperty('Maximum Biomass');
     expect(modifiers.upgradeLevels.biomass).toBe(0);
@@ -1249,12 +1264,25 @@ test("Biomass replaces its checkbox and clamps when changing prestige", () => {
         },
     });
     component.onCheckPrestige({ target: { value: 'The Limitless', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(0);
     component.onChangeUnitLevel({ target: { name: 'biomass', type: 'range', value: '200' } } as unknown as Event);
     expect(modifiers.upgradeLevels.biomass).toBe(200);
     component.onCheckPrestige({ target: { value: 'Essence Hoarder', checked: true } } as unknown as Event);
     expect(modifiers.upgradeLevels.biomass).toBe(125);
     component.onCheckPrestige({ target: { value: 'Essence Hoarder', checked: false } } as unknown as Event);
     expect(modifiers.upgradeLevels.biomass).toBe(100);
+    component.onCheckPrestige({ target: { value: 'Essence Hoarder', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(125);
+    component.onCheckPrestige({ target: { value: 'The Limitless', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(200);
+    component.onChangeUnitLevel({ target: { name: 'biomass', type: 'range', value: '75' } } as unknown as Event);
+    component.onCheckPrestige({ target: { value: 'Essence Hoarder', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(75);
+    component.onCheckPrestige({ target: { value: 'The Limitless', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(75);
+    component.onChangeUnitLevel({ target: { name: 'biomass', type: 'range', value: '150' } } as unknown as Event);
+    component.onCheckPrestige({ target: { value: 'Essence Hoarder', checked: true } } as unknown as Event);
+    expect(modifiers.upgradeLevels.biomass).toBe(125);
     expect(UnitStats.modifiers('abathur', 'brutalisk').upgradeLevels).not.toHaveProperty('biomass');
 });
 
@@ -1265,7 +1293,7 @@ test("HP percentage bonuses stack on base HP after other HP changes", () => {
     expect(unit.hp).toBe(1450);
 
     UnitStats.applyUpgrade({
-        modifier: "HP", operation: "multiply", value: 0.005, operationtype: "increase", extra: null,
+        modifier: "HP", operation: "multiply", value: 0.005, operationtype: "increase",
     }, unit, 30);
     expect(unit.hp).toBeCloseTo(1600);
 });
@@ -1353,7 +1381,7 @@ test("Rupture changes AoE without changing damage or the base unit", () => {
 test("Medusa Blades adds an AoE description only while enabled", () => {
     expect(upgradedUnit("zagara", "zagara").modes[""]!.aoe).toBeUndefined();
     const zagara = upgradedUnit("zagara", "zagara", { upgrades: { "Medusa Blades": true } });
-    expect(zagara.modes[""]!.aoe).toBe(playerUpgrades.find(upgrade => upgrade.name === "Medusa Blades")!.value);
+    expect(zagara.modes[""]!.aoe).toBe(playerUpgrades.find(upgrade => upgrade.name === "Medusa Blades")!.changes.find(change => change.modifier === "aoe")!.value);
 });
 
 test("Text replacement respects the selected weapon mode", () => {

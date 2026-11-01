@@ -142,11 +142,11 @@ function addUpgrades(documents: SearchDocument[], upgrades: PlayerUpgradeList): 
         addDocument(documents, {
             type: 'upgrade',
             title: upgrade.name,
-            subtitle: `${upgrade.commander} ${upgrade.unit} upgrade`,
+            subtitle: `${upgrade.commander} ${upgrade.units.join(', ')} upgrade`,
             commander: upgrade.commander,
             path: `upgrades/${token(upgrade.commander)}/${upgrade.icon}`,
             text: upgrade.effect,
-            tokens: [upgrade.unit, upgrade.upgradetype, upgrade.modifier || '', upgrade.modifiermode || '', upgrade.modifiertag || ''],
+            tokens: [...upgrade.units, upgrade.upgradetype, ...upgrade.changes.flatMap(change => [change.modifier, change.target === 'unit' ? change.modifiertag || '' : change.skill])],
         });
     }
 }
@@ -157,11 +157,11 @@ function addTalents(documents: SearchDocument[], talents: PlayerTalentList): voi
         addDocument(documents, {
             type: 'talent',
             title: talent.name,
-            subtitle: `${talent.commander} ${talent.unit} ${talent.talenttype}`,
+            subtitle: `${talent.commander} ${talent.units.join(', ')} ${talent.talenttype}`,
             commander: talent.commander,
             path: `talents/${talent.talentid}-${token(talent.commander)}-${talent.nameid}`,
-            text: [talent.modifier, talent.modifierupgrade, talent.extra, talent.target].filter(Boolean).join(' '),
-            tokens: [talent.unit, talent.talenttype, talent.operation, talent.operationtype || ''],
+            text: talent.changes.flatMap(change => [change.modifier, change.modifierupgrade, change.extra, change.target]).filter(Boolean).join(' '),
+            tokens: [...talent.units, talent.talenttype, ...talent.changes.flatMap(change => [change.operation, change.operationtype || ''])],
         });
     }
 }

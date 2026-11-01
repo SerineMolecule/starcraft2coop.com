@@ -22,7 +22,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -63,7 +62,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -106,7 +104,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -149,7 +146,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -191,7 +187,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -235,7 +230,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -279,7 +273,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -327,7 +320,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -374,7 +366,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -437,7 +428,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -497,7 +487,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -1391,7 +1380,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Primal Contender stat changes only apply to those spawned by Glevig",
     "modes": {
       "": {
@@ -1433,7 +1421,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -1476,7 +1463,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Primal Contender stat changes only apply to those spawned by Glevig",
     "modes": {
       "": {
@@ -1518,7 +1504,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -1562,7 +1547,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -1605,7 +1589,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Primal Contender stat changes only apply to those spawned by Glevig",
     "modes": {
       "": {
@@ -1647,7 +1630,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -1707,7 +1689,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -1754,7 +1735,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -1790,7 +1770,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Primal Contender stat changes only apply to those spawned by Murvar",
     "modes": {
       "": {
@@ -1832,7 +1811,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -1869,7 +1847,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Primal Contender stat changes only apply to those spawned by Murvar",
     "modes": {
       "ground": {
@@ -1933,7 +1910,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -1977,7 +1953,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -2036,7 +2011,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -2080,7 +2054,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -2125,7 +2098,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -2169,7 +2141,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3083,7 +3054,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3144,7 +3114,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "assault-drones": {
@@ -3190,7 +3159,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -3247,7 +3215,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3299,7 +3266,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3346,7 +3312,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3393,7 +3358,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3435,7 +3399,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "fighter": {
@@ -3499,7 +3462,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3542,7 +3504,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -3839,7 +3800,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -3900,7 +3860,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3942,7 +3901,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -3984,7 +3942,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4033,7 +3990,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4076,7 +4032,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4120,7 +4075,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4164,7 +4118,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4207,7 +4160,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Spawns at 4:00. Respawns in 1:00.",
     "modes": {
       "": {
@@ -4249,7 +4201,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4291,7 +4242,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4337,7 +4287,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4384,7 +4333,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4431,7 +4379,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4478,7 +4425,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -4539,7 +4485,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "tank-mode": {
@@ -4607,7 +4552,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "fighter-mode": {
@@ -4667,7 +4611,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4710,7 +4653,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -4741,7 +4683,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Spawns at 4:00. Respawns in 1:30; Instant Regeneration can revive her immediately for minerals.",
     "modes": {
       "stealth-mode": {
@@ -4804,7 +4745,6 @@
     ],
     "hpbonus": 4.5,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4846,7 +4786,6 @@
     ],
     "hpbonus": 12.5,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4892,7 +4831,6 @@
     ],
     "hpbonus": 10.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -4939,7 +4877,6 @@
     ],
     "hpbonus": 6.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -4969,7 +4906,6 @@
     ],
     "hpbonus": 7.5,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5015,7 +4951,6 @@
     ],
     "hpbonus": 16.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "tank-mode": {
@@ -5083,7 +5018,6 @@
     ],
     "hpbonus": 12.5,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "fighter-mode": {
@@ -5146,7 +5080,6 @@
     ],
     "hpbonus": 14.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5189,7 +5122,6 @@
     ],
     "hpbonus": 55.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -5248,7 +5180,6 @@
     ],
     "hpbonus": 200.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -5308,7 +5239,6 @@
     ],
     "hpbonus": 17.5,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5351,7 +5281,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5393,7 +5322,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5435,7 +5363,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5477,7 +5404,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Volatile Infested benefit from the Infested Siege Tank Acidic Enzymes upgrade and from infantry upgrades, not vehicle upgrades. This applies whether they are launched by an Infested Siege Tank or spawned by the Volatile Infested Spawn Chance mastery.",
     "modes": {
       "": {
@@ -5526,7 +5452,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5570,7 +5495,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5617,7 +5541,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "uprooted-tentacles": {
@@ -5708,7 +5631,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5752,7 +5674,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5794,7 +5715,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5843,7 +5763,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5889,7 +5808,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -5947,7 +5865,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -5994,7 +5911,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -6055,7 +5971,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "tank-mode": {
@@ -6123,7 +6038,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -6166,7 +6080,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -6228,7 +6141,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -6275,7 +6187,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -6337,7 +6248,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -6368,7 +6278,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -6398,7 +6307,6 @@
     ],
     "hpbonus": 60.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Spawns at 3:00. Revived at Joeyray's Bar in 0:25 for 250 minerals. Calling down the Odin also revives Tychus, except with Dutiful Dogwalker (P3).",
     "modes": {
       "": {
@@ -6441,7 +6349,6 @@
     ],
     "hpbonus": 37.5,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {
@@ -6484,7 +6391,6 @@
     ],
     "hpbonus": 65.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {
@@ -6527,7 +6433,6 @@
     ],
     "hpbonus": 100.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {
@@ -6574,7 +6479,6 @@
     ],
     "hpbonus": 100.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {
@@ -6617,7 +6521,6 @@
     ],
     "hpbonus": 50.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {
@@ -6664,7 +6567,6 @@
     ],
     "hpbonus": 50.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {
@@ -6707,7 +6609,6 @@
     ],
     "hpbonus": 45.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {}
@@ -7098,7 +6999,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7141,7 +7041,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -7202,7 +7101,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7243,7 +7141,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7290,7 +7187,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7338,7 +7234,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7384,7 +7279,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7426,7 +7320,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7473,7 +7366,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Spawns at 4:00. Respawns in 1:00.",
     "modes": {
       "": {
@@ -7516,7 +7408,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -7559,7 +7450,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -8204,7 +8094,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -8290,7 +8179,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -8342,7 +8230,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -8390,7 +8277,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -8562,7 +8448,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -8614,7 +8499,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -8662,7 +8546,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -8706,7 +8589,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -8860,7 +8742,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -8904,7 +8785,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -8953,7 +8833,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -9001,7 +8880,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "attack-1": {
@@ -9060,7 +8938,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -9150,7 +9027,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -9202,7 +9078,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -9250,7 +9125,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -9372,7 +9246,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -9402,7 +9275,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "normal": {
@@ -9440,7 +9312,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -9470,7 +9341,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "normal": {
@@ -9508,7 +9378,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -9538,7 +9407,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "normal": {
@@ -9576,7 +9444,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -9606,7 +9473,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "normal": {
@@ -9689,7 +9555,6 @@
     ],
     "hpbonus": 62.5,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "Recruited at Joeyray's Bar when an outlaw slot is available. Revived at the Bar in 0:25 for 250 minerals.",
     "modes": {
       "": {
@@ -9865,7 +9730,6 @@
     ],
     "hpbonus": 300.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -9960,7 +9824,6 @@
     ],
     "hpbonus": 15.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10003,7 +9866,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10088,7 +9950,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10130,7 +9991,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10172,7 +10032,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10215,7 +10074,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10258,7 +10116,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10300,7 +10157,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10341,7 +10197,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10389,7 +10244,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "normal-attack": {
@@ -10450,7 +10304,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10498,7 +10351,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10541,7 +10393,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "mecha-locusceptor": {
@@ -10600,7 +10451,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10643,7 +10493,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "unburrowed": {
@@ -10679,7 +10528,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10724,7 +10572,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10767,7 +10614,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -10811,7 +10657,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Spawns at 4:00. Respawns in 1:00.",
     "modes": {
       "": {
@@ -10854,7 +10699,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Gary spawns at 4:00 and must be upgraded to Super Gary. Respawns in 1:00.",
     "modes": {
       "": {
@@ -10898,7 +10742,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -10950,7 +10793,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "rooted": {
@@ -10999,7 +10841,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "level-0": {
@@ -11074,7 +10915,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Gives +1 range to units inside.",
     "modes": {
       "": {
@@ -11117,7 +10957,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11162,7 +11001,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Dropped in sets of three.",
     "modes": {
       "": {
@@ -11206,7 +11044,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11248,7 +11085,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11290,7 +11126,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11337,7 +11172,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "air": {
@@ -11398,7 +11232,6 @@
     ],
     "hpbonus": 75.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11444,7 +11277,6 @@
     ],
     "hpbonus": 50.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11490,7 +11322,6 @@
     ],
     "hpbonus": 90.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "tank-mode": {
@@ -11559,7 +11390,6 @@
     ],
     "hpbonus": 150.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "walker-mode-air": {
@@ -11636,7 +11466,6 @@
     ],
     "hpbonus": 70.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "fighter-mode": {
@@ -11699,7 +11528,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "This unit has no rank.",
     "modes": {
       "": {
@@ -11734,7 +11562,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "This unit has no rank.",
     "modes": {
       "": {}
@@ -11765,7 +11592,6 @@
     ],
     "hpbonus": 200.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "ground": {
@@ -11823,7 +11649,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11866,7 +11691,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "Up to 4 Conscripts can be loaded into the structure, each increasing the number of volleys in 30 seconds by 1.",
     "modes": {
       "": {
@@ -11910,7 +11734,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11952,7 +11775,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -11994,7 +11816,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -12038,7 +11859,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {
@@ -12081,7 +11901,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "": {}
@@ -12112,7 +11931,6 @@
     ],
     "hpbonus": 0.0,
     "armorbonus": 1,
-    "shieldbonus": null,
     "notes": "",
     "modes": {
       "normal": {
@@ -12283,7 +12101,6 @@
     ],
     "hpbonus": 0,
     "armorbonus": 0,
-    "shieldbonus": null,
     "notes": "HP scales with essence, even past level cap (HP shown is the minimum for the level). Spawns at 1:00. Respawns in 1:30; consuming Primal Drones shortens the respawn timer.",
     "modes": {
       "": {

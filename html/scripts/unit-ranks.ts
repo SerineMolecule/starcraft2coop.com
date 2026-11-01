@@ -1,13 +1,14 @@
+import { perUnitEntries } from "../../source-data/unit-data";
 import playerUpgrades from "../../source-data/playerupgrades.json";
 import type { PlayerUpgrade } from "../../source-data/data-types";
 
-type RankUpgrade = Pick<PlayerUpgrade, 'commander' | 'unit' | 'name' | 'icon' | 'effect' | 'cost' | 'researchTime'>;
+type RankUpgrade = Pick<PlayerUpgrade, 'commander' | 'name' | 'icon' | 'effect' | 'cost' | 'researchTime'> & { unit: string };
 
 /** Unit-specific keys prevent different Veterancy effects sharing one tooltip. */
 export const rankUpgrades = new Map<string, RankUpgrade>();
 const effects = new Map<string, Set<string>>();
 
-for (const upgrade of playerUpgrades as PlayerUpgrade[]) {
+for (const upgrade of perUnitEntries(playerUpgrades as PlayerUpgrade[])) {
     if (upgrade.commander !== 'Mengsk') continue;
     const rank = upgrade.rank ?? (/^[123]$/.test(upgrade.name) ? Number(upgrade.name) : null);
     if (rank === null) continue;

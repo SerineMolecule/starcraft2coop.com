@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+import { perUnitEntries } from './unit-data';
 import Ajv from 'ajv';
 import type {
     MutationCycleList,
@@ -8,6 +9,7 @@ import type {
     MutatorList,
     PlayerUnitList,
     PlayerUpgradeList,
+    PlayerTalentList,
     AmonUnitList,
     WeeklyMutationList,
 } from './data-types';
@@ -151,15 +153,22 @@ for (const unit of [...playerunits, ...amonunits]) {
 }
 
 const playerupgrades: PlayerUpgradeList = await Bun.file('source-data/playerupgrades.json').json();
-for (const upgrade of playerupgrades) {
+const playertalents: PlayerTalentList = await Bun.file('source-data/playertalents.json').json();
+unique(playerupgrades.map(upgrade => upgrade.upgradeid), 'playerupgrades.upgradeid');
+unique(playertalents.map(talent => talent.talentid), 'playertalents.talentid');
+unique(perUnitEntries(playerupgrades).map(upgrade => JSON.stringify([upgrade.commander, upgrade.unit, upgrade.name])), 'playerupgrades');
+unique(perUnitEntries(playertalents).map(talent => JSON.stringify([talent.commander, talent.unit, talent.name, talent.talenttype])), 'playertalents');
+for (const upgrade of perUnitEntries(playerupgrades)) {
     for (const mode of upgrade.unlocksModes ?? []) {
         const unit = playerunits.find(unit => unit.commander === upgrade.commander && unit.name === upgrade.unit);
         if (!unit || !Object.hasOwn(unit.modes, mode)) throw new Error(`${upgrade.commander}/${upgrade.unit}/${upgrade.name}: unknown unlocked mode ${mode}`);
     }
-    if (upgrade.weapon === undefined) continue;
-    const unit = playerunits.find(unit => unit.commander === upgrade.commander && unit.name === upgrade.unit);
-    if ((!unit || !Object.hasOwn(unit.modes, upgrade.weapon)) || upgrade.modifiermode) {
-        throw new Error(`${upgrade.commander}/${upgrade.unit}/${upgrade.name}: invalid or ambiguous weapon selector`);
+    for (const change of upgrade.changes) {
+        if (change.target !== 'unit' || change.weapon === undefined) continue;
+        const unit = playerunits.find(unit => unit.commander === upgrade.commander && unit.name === upgrade.unit);
+        if ((!unit || !Object.hasOwn(unit.modes, change.weapon)) || change.modifiermode) {
+            throw new Error(`${upgrade.commander}/${upgrade.unit}/${upgrade.name}: invalid or ambiguous weapon selector`);
+        }
     }
 }
 

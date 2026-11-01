@@ -57,7 +57,7 @@ export function skillCosts(skill: UnitSkill, race: string): { field: 'energycost
         if (skill.cost?.[resource]) costs.push({ field: 'cost', icon: `/images/commanderdata/unitupgrades/${icon}.png`, label, value: formatSkillNumber(skill.cost[resource]!) });
     }
     if (skill.buildTime) costs.push({ field: 'buildTime', icon: `/images/commanderdata/unitupgrades/icontime_${race}.png`, label: 'Build time:', value: formatSkillNumber(skill.buildTime) });
-    if (skill.energycost !== null && skill.energycost !== 0 && skill.energycost !== '') {
+    if (skill.energycost !== undefined && skill.energycost !== 0 && skill.energycost !== '') {
         costs.push({ field: 'energycost' as const, icon: '/images/commanderdata/unitupgrades/iconenergy.png', label: 'Energy:',
             value: typeof skill.energycost === 'number' ? formatSkillNumber(skill.energycost) : skill.energycost });
     }
@@ -74,12 +74,12 @@ export function skillDetails(skill: UnitSkill): string[] {
     if (skill.initialCooldown !== undefined) {
         const initial = typeof skill.initialCooldown === 'number' ? `${formatSkillNumber(skill.initialCooldown)} seconds` : skill.initialCooldown;
         const repeat = typeof skill.cooldown === 'number' ? `${formatSkillNumber(skill.cooldown)} seconds` : skill.cooldown;
-        details.push(`Coolup: ${initial}${repeat !== null ? `\nCooldown: ${repeat}` : ''}`);
+        details.push(`Coolup: ${initial}${repeat !== undefined ? `\nCooldown: ${repeat}` : ''}`);
     } else if (typeof skill.cooldown === 'string' && skill.cooldown && !/^\d+(?:\.\d+)?\s*(?:seconds?|s)$/.test(skill.cooldown)) {
         details.push(/\bCool(?:down|up):/i.test(skill.cooldown) ? skill.cooldown : `Cooldown: ${skill.cooldown}`);
     }
     if (skill.requiresupgrade) details.push('Requires an upgrade.');
-    if (skill.rankrequired !== null) details.push(`Requires rank ${skill.rankrequired}.`);
+    if (skill.rankrequired !== undefined) details.push(`Requires rank ${skill.rankrequired}.`);
     if (skill.mode) details.push(`Mode: ${skill.mode}`);
     if (skill.prestige) details.push(`Prestige: ${skill.prestige}`);
     if (skill.excludedPrestiges?.length) details.push(`Unavailable with ${skill.excludedPrestiges.join(', ')}.`);

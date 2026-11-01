@@ -1,10 +1,10 @@
 import talentsJSON from "../../source-data/playertalents.json";
 import upgradesJSON from "../../source-data/playerupgrades.json";
-import type { PlayerTalent, PlayerSkillTalent, PlayerUpgrade, SkillModification, UnitSkill } from "../../source-data/data-types";
+import type { PlayerTalent, PlayerUpgrade, SkillModification, UnitSkill } from "../../source-data/data-types";
 import { skillDescriptionParts, skillModifierValue } from "./skill-values";
 import type { ResolvedSkill } from "./skill-values";
 
-const skillTalents = (talentsJSON as PlayerTalent[]).filter((talent): talent is PlayerSkillTalent => talent.target === 'skill');
+const skillTalents = (talentsJSON as PlayerTalent[]).filter(talent => talent.changes.some(change => change.target === 'skill'));
 
 export function applySkillModification(skill: UnitSkill, effect: SkillModification): void {
     // Read even for set/replace, so misspelled custom keys cannot create unused values.
@@ -45,26 +45,29 @@ export function resolveSkill(skill: UnitSkill, modifiers: {
     for (const phase of ['preupgrade', 'mastery', 'prestige', 'upgrade', 'post']) {
         if (phase === 'preupgrade' || phase === 'upgrade') {
             for (const upgrade of upgradesJSON as PlayerUpgrade[]) {
-                if (upgrade.upgradetype !== phase || upgrade.commander !== skill.commander || upgrade.unit !== skill.unit || !modifiers.upgrades?.[upgrade.name]) continue;
-                for (const effect of upgrade.skillModifiers ?? []) {
-                    if (effect.skill !== skill.name || (effect.skillMode !== undefined && effect.skillMode !== skill.mode)) continue;
+                if (upgrade.upgradetype !== phase || upgrade.commander !== skill.commander || !upgrade.units.includes(skill.unit) || !modifiers.upgrades?.[upgrade.name]) continue;
+                for (const effect of upgrade.changes) {
+                    if (effect.target !== 'skill' || effect.skill !== skill.name || (effect.skillMode !== undefined && effect.skillMode !== skill.mode)) continue;
                     applySkillModification(resolved, effect);
                 }
             }
             continue;
         }
         for (const talent of skillTalents) {
-            if (talent.talenttype !== phase || talent.commander !== skill.commander || talent.unit !== skill.unit || talent.skill !== skill.name) continue;
-            if (talent.skillMode !== undefined && talent.skillMode !== skill.mode) continue;
+            if (talent.talenttype !== phase || talent.commander !== skill.commander || !talent.units.includes(skill.unit)) continue;
             const level = phase === 'mastery' ? modifiers.masteries[talent.name] : undefined;
             if (phase === 'mastery' ? !level : !modifiers.prestiges[talent.name]) continue;
-            if (level !== undefined && talent.operation === 'add') {
-                applySkillModification(resolved, { ...talent, value: talent.value * level });
-            } else if (level !== undefined && talent.operation === 'multiply' && talent.operationtype) {
-                const sign = talent.operationtype === 'decrease' ? -1 : 1;
-                applySkillModification(resolved, { ...talent, value: 1 + sign * talent.value * level });
-            } else {
-                applySkillModification(resolved, talent);
+            for (const change of talent.changes) {
+                if (change.target !== 'skill' || change.skill !== skill.name) continue;
+                if (change.skillMode !== undefined && change.skillMode !== skill.mode) continue;
+                if (level !== undefined && change.operation === 'add') {
+                    applySkillModification(resolved, { ...change, value: change.value * level });
+                } else if (level !== undefined && change.operation === 'multiply' && change.operationtype) {
+                    const sign = change.operationtype === 'decrease' ? -1 : 1;
+                    applySkillModification(resolved, { ...change, value: 1 + sign * change.value * level });
+                } else {
+                    applySkillModification(resolved, change);
+                }
             }
         }
     }

@@ -278,7 +278,8 @@ export interface PlayerUnit {
     modes: Record<string, UnitModeData>;
     hpbonus: number;
     armorbonus: NonNegativeInteger;
-    shieldbonus: number | null;
+    /** Shield armor gained per upgrade level. Omitted means no shield armor upgrades. */
+    shieldbonus?: number;
     /** Unit-wide mechanics; attack-specific details belong in modes. */
     notes: string;
 }
@@ -299,6 +300,22 @@ export interface UnitStatSource {
 }
 
 export type PlayerUnitList = PlayerUnit[];
+
+/** Compact, generated navigation data in html/data/unit-navigation.json.
+ * Contains only labels, URL tokens, and list categories so navigation can load before unit stats.
+ * Hidden entries remain addressable through existing direct links.
+ */
+export interface UnitNavigationGroup {
+    id: string;
+    name: string;
+    amon: boolean;
+    units: {
+        id: string;
+        name: string;
+        category: 'Units' | 'Heroes' | 'Structures';
+        hidden?: boolean;
+    }[];
+}
 
 export interface ResourceCost {
     minerals: NonNegativeInteger;
@@ -325,7 +342,7 @@ export interface UnitSkill {
     /** The overview marks this skill as requiring an upgrade (unlockable). */
     requiresupgrade: boolean;
     /** Repeat cooldown in game seconds, or text for a conditional timing. Numeric modifiers must reject text. */
-    cooldown: number | string | null;
+    cooldown?: number | string;
     /** Initial cooldown in game seconds, independent of the repeat cooldown. Omitted means unspecified. */
     initialCooldown?: number | string;
     /** Resources consumed by a construction, morph, installation, or other paid command.
@@ -334,14 +351,14 @@ export interface UnitSkill {
     cost?: ResourceCost;
     /** Time to finish construction, morphing, or installation, in game seconds; excludes parent production and repeat cooldown. */
     buildTime?: NonNegativeInteger;
-    /** Energy cost, or text for a conditional cost. Null means unspecified; 0 means explicitly free. */
-    energycost: number | string | null;
+    /** Energy cost, or text for a conditional cost. Omitted means unspecified; 0 means explicitly free. */
+    energycost?: number | string;
     /** Maximum stored charges, when the skill can store more than one use. */
     charges?: PositiveInteger;
-    rankrequired: NonNegativeInteger | null;
-    mode: string | null;
-    /** Only show this variant when the named prestige is selected; null is unrestricted. */
-    prestige: string | null;
+    rankrequired?: NonNegativeInteger;
+    mode?: string;
+    /** Only show this variant when the named prestige is selected; omitted is unrestricted. */
+    prestige?: string;
     /** Hide this skill when any of these prestiges is selected. */
     excludedPrestiges?: string[];
     /** Only show this skill while the named per-unit upgrade is selected. Unlike requiresupgrade, this controls visibility. */
@@ -349,7 +366,7 @@ export interface UnitSkill {
     /** Hide this skill once the named per-unit upgrade is selected (e.g. a completed installation command). */
     hideWithUpgrade?: string;
     /** Other stated prerequisites, such as artifacts or skill points, and exclusions. */
-    requirements: string | null;
+    requirements?: string;
 }
 
 export type UnitSkillList = UnitSkill[];
@@ -368,7 +385,11 @@ export type SkillModification = {
 
 export interface PlayerTalentBase {
     talentid: PositiveInteger;
-    unit: string;
+    /** Units receiving this exact definition, in this commander.
+     * @minItems 1
+     * @uniqueItems true
+     */
+    units: string[];
     commander: string;
     name: string;
     nameid: string;
@@ -376,50 +397,67 @@ export interface PlayerTalentBase {
     temporary?: boolean;
 }
 
+/** A named talent shared by one commander's units. Omitted selectors impose no restriction.
+ * operationtype is required for mastery multipliers; ordinary multipliers omit it.
+ * Changes are applied in array order within the existing mastery/prestige/post phase;
+ * unit, upgrade, and skill changes may coexist. Definitions may differ between units.
+ * html/data/legacy/playertalents.json expands these for the legacy PHP calculator.
+ */
 export type PlayerTalent = PlayerTalentBase & ({
+    talenttype: 'mastery';
+    /** @minItems 1 */
+    changes: Exclude<PlayerTalentChange, { target: 'unit', operation: 'replace' }>[];
+} | {
+    talenttype: 'prestige' | 'post';
+    /** @minItems 1 */
+    changes: PlayerTalentChange[];
+});
+
+export type PlayerTalentChange = PlayerUnitTalentChange | PlayerSkillTalentChange;
+
+export type PlayerUnitTalentChange = {
     modifier: string;
-    /** which upgrade needs to be enabled for this to have an effect? */
-    modifierupgrade: string | null;
-    extra: string | null;
+    /** Which upgrade needs to be enabled for this change to have an effect? */
+    modifierupgrade?: string;
+    extra?: string;
     value: number;
     operation: 'add' | 'set' | 'multiply';
-    operationtype: 'increase' | 'decrease' | null;
-    talenttype: 'mastery' | 'prestige' | 'post';
+    operationtype?: 'increase' | 'decrease';
     target: 'unit' | 'upgrade';
 } | {
     modifier: 'aoe' | 'weaponName';
-    /** Replaces the entire weapon description when the prestige is selected. */
     operation: 'replace';
     value: string;
     /** Mode/attack key; omitted applies to all attacks. */
     weapon?: string;
-    modifierupgrade: null;
-    extra: null;
-    operationtype: null;
-    talenttype: 'prestige' | 'post';
+    modifierupgrade?: never;
+    extra?: never;
+    operationtype?: never;
     target: 'unit';
-}) | PlayerSkillTalent;
+};
 
-/** Skill field changes live with the other talents, rather than duplicating the skill.
- * Add/multiply require a numeric current value; set and replace explicitly overwrite it.
+/** Add/multiply require a numeric current value; set and replace overwrite it.
  * Text replacements replace the whole field. Skill availability stays in UnitSkill.
  */
-export type PlayerSkillTalent = PlayerTalentBase & SkillModification & {
+export type PlayerSkillTalentChange = SkillModification & {
     target: 'skill';
     skill: string;
     /** Restrict to a named skill mode; omitted applies to every matching mode. */
     skillMode?: string;
-    modifierupgrade: null;
-    extra: null;
-    operationtype: 'increase' | 'decrease' | null;
-    talenttype: 'mastery' | 'prestige' | 'post';
+    modifierupgrade?: never;
+    extra?: never;
+    operationtype?: 'increase' | 'decrease';
 };
 
 export type PlayerTalentList = PlayerTalent[];
 
 export interface PlayerUpgradeBase {
     upgradeid: PositiveInteger;
-    unit: string;
+    /** Units receiving this exact definition, in this commander.
+     * @minItems 1
+     * @uniqueItems true
+     */
+    units: string[];
     commander: string;
     name: string;
     icon: string;
@@ -434,38 +472,47 @@ export interface PlayerUpgradeBase {
     /** Royal Guard rank that unlocks this named ability. */
     rank?: 1 | 2 | 3;
     effect: string;
-    /** Changes to this unit's skills, applied by the same upgrade checkbox as its unit-stat effect.
-     * Unlock-only research stays informational: skills remain listed with their prerequisites.
-     */
-    skillModifiers?: (SkillModification & { skill: string; skillMode?: string })[];
     /** Mode/attack keys on this unit enabled by selecting this upgrade in the new Units UI. */
     unlocksModes?: string[];
-    /** Mode/attack key for an upgrade affecting one entry; an empty string selects the default. Omitted applies to all eligible attacks. */
-    weapon?: string;
-    /** Mode label for form-specific unit stat changes (e.g. Siege Mode). */
-    modifiermode: string | null;
     upgradetype: 'preupgrade' | 'upgrade';
 }
 
-export type PlayerUpgrade = PlayerUpgradeBase & ({
+/** One named upgrade shared by a commander's units, with shared purchase and tooltip metadata.
+ * Omitted mode/tag selectors impose no restriction. Changes run in array order within
+ * the upgrade's phase. An empty array is informational unless unlocksModes provides
+ * an effect. Definitions may differ between units. The legacy export expands unit changes into rows.
+ */
+export interface PlayerUpgrade extends PlayerUpgradeBase {
+    changes: PlayerUpgradeChange[];
+}
+
+export type PlayerUpgradeChange = PlayerUnitUpgradeChange | PlayerSkillUpgradeChange;
+
+export type PlayerUnitUpgradeChange = {
+    target: 'unit';
+    /** Mode/attack key; empty selects the default. Omitted applies to all eligible attacks. */
+    weapon?: string;
+    /** Mode label for form-specific unit stat changes (e.g. Siege Mode). */
+    modifiermode?: string;
+} & ({
     modifier: string;
-    /** which target tag does it apply to? (e.g. vs. Armored) */
-    modifiertag: string | null;
+    /** Which target tag does it apply to? (e.g. vs. Armored) */
+    modifiertag?: string;
     value: number;
     operation: 'add' | 'set' | 'multiply';
 } | {
     modifier: 'aoe' | 'weaponName';
-    modifiertag: null;
+    modifiertag?: never;
     /** Replaces the entire plain-text description, rather than matching a substring. */
     value: string;
     operation: 'replace';
-} | {
-    modifier: null;
-    modifiertag: null;
-    value: null;
-    /** No direct unit-stat effect. Informational unless skillModifiers or unlocksModes supplies an effect. */
-    operation: 'none';
 });
+
+export type PlayerSkillUpgradeChange = SkillModification & {
+    target: 'skill';
+    skill: string;
+    skillMode?: string;
+};
 
 export type PlayerUpgradeList = PlayerUpgrade[];
 

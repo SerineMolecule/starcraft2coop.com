@@ -2,7 +2,9 @@ import { expect, test } from 'bun:test';
 import playerJSON from './playerunits.json';
 import amonJSON from './amonunits.json';
 import type { AmonUnit, PlayerUnit } from './data-types';
-import { legacyAmonUnits, legacyPlayerUnits, legacyPlayerUpgrades, playerUnitViews } from './unit-data';
+import { perUnitEntries, legacyAmonUnits, legacyPlayerUnits, legacyPlayerUpgrades, legacyPlayerTalents, playerUnitViews } from './unit-data';
+import talentsJSON from './playertalents.json';
+import type { PlayerTalent } from './data-types';
 import upgradesJSON from './playerupgrades.json';
 import type { PlayerUpgrade } from './data-types';
 import Ajv from 'ajv';
@@ -20,6 +22,28 @@ test('Legacy Galleon data retains its separate Hangar Bay entry without duplicat
 const players = playerJSON as PlayerUnit[];
 const enemies = amonJSON as AmonUnit[];
 const player = (commander: string, name: string) => players.find(unit => unit.commander === commander && unit.name === name)!;
+
+test('Named talents are grouped once and legacy rows retain per-change targets and upgrade requirements', () => {
+    const talents = talentsJSON as PlayerTalent[];
+    const identities = perUnitEntries(talents).map(talent => JSON.stringify([talent.commander, talent.unit, talent.name, talent.talenttype]));
+    expect(new Set(identities).size).toBe(identities.length);
+    const roughRider = talents.find(talent => talent.commander === 'Raynor' && talent.units.includes('Siege Tank') && talent.name === 'Rough Rider')!;
+    const rows = legacyPlayerTalents([roughRider]).filter(row => row.unit === 'Siege Tank');
+    expect(rows.map(row => [row.target, row.modifier, row.modifierupgrade])).toEqual([
+        ['upgrade', 'Attack_Speed', 'Afterburners'],
+        ['upgrade', 'Move_Speed', 'Afterburners'],
+        ['unit', 'vespeneCost', null],
+    ]);
+    for (const row of rows) {
+        expect(row.commander).toBe('Raynor');
+        expect(row.unit).toBe('Siege Tank');
+        expect(row.nameid).toBe('roughrider');
+        expect(row.talenttype).toBe('prestige');
+        expect(row).not.toHaveProperty('changes');
+    }
+    const inspirator = talents.find(talent => talent.commander === 'Artanis' && talent.units.includes('High Templar') && talent.name === 'Valorous Inspirator')!;
+    expect(inspirator.changes.map(change => change.target)).toEqual(['unit', 'unit', 'skill', 'skill', 'skill']);
+});
 
 test('Movement and incoming target planes remain separate and inherit through modes', () => {
     expect(players.every(unit => unit.movement === 'Ground' || unit.movement === 'Air')).toBe(true);
@@ -122,8 +146,8 @@ test('Legacy grouping and upgrade selectors distinguish attacks with the same mo
     const tank = player('Stukov', 'Infested Siege Tank');
     const rows = legacyPlayerUnits([tank]);
     expect(new Set(rows.map(row => row.name)).size).toBe(3);
-    const upgrade = (upgradesJSON as PlayerUpgrade[]).find(upgrade => upgrade.commander === 'Stukov' && upgrade.unit === tank.name && upgrade.weapon === 'rooted')!;
-    const selector = legacyPlayerUpgrades([upgrade], [tank])[0]!.modifiermode;
+    const upgrade = (upgradesJSON as PlayerUpgrade[]).find(upgrade => upgrade.commander === 'Stukov' && upgrade.units.includes(tank.name) && upgrade.changes.some(change => change.target === 'unit' && change.weapon === 'rooted'))!;
+    const selector = legacyPlayerUpgrades([{ ...upgrade, changes: upgrade.changes.filter(change => change.target === 'unit' && change.weapon === 'rooted') }], [tank])[0]!.modifiermode;
     const selectedRows = rows.filter(row => row.name === `${tank.name} ${selector}`);
     expect(selectedRows.map(row => row.attribute)).toEqual([null, 'Structure']);
     expect(selectedRows[0]!.damage).toBe(tank.modes.rooted!.damage![''].damage);
@@ -163,13 +187,13 @@ test('Mode schemas require default damage and reject obsolete or misspelled atta
 });
 
 test('Legacy upgrades resolve weapon IDs to the existing calculator selectors', () => {
-    const upgrade = (upgradesJSON as PlayerUpgrade[]).find(upgrade => upgrade.commander === 'Swann' && upgrade.unit === 'Goliath' && upgrade.weapon === 'air')!;
+    const upgrade = (upgradesJSON as PlayerUpgrade[]).find(upgrade => upgrade.commander === 'Swann' && upgrade.units.includes('Goliath') && upgrade.changes.some(change => change.target === 'unit' && change.weapon === 'air'))!;
     expect(upgrade).toBeDefined();
-    expect(upgrade.modifiermode).toBeNull();
-    expect(legacyPlayerUpgrades([upgrade], players)[0]!.modifiermode).toBe('(Air)');
-    expect(() => legacyPlayerUpgrades([{ ...upgrade, weapon: 'missing' }], players)).toThrow('Unknown weapon');
-    const defaultUpgrade = (upgradesJSON as PlayerUpgrade[]).find(upgrade => upgrade.weapon === '')!;
-    expect(legacyPlayerUpgrades([defaultUpgrade], players)[0]!.modifiermode).toBe('Weapon');
+    expect(upgrade.changes.find(change => change.target === 'unit' && change.weapon === 'air')).not.toHaveProperty('modifiermode');
+    expect(legacyPlayerUpgrades([upgrade], players).some(row => row.modifiermode === '(Air)')).toBe(true);
+    expect(() => legacyPlayerUpgrades([{ ...upgrade, changes: upgrade.changes.map(change => change.target === 'unit' ? { ...change, weapon: 'missing' } : change) }], players)).toThrow('Unknown weapon');
+    const defaultUpgrade = (upgradesJSON as PlayerUpgrade[]).find(upgrade => upgrade.changes.some(change => change.target === 'unit' && change.weapon === ''))!;
+    expect(legacyPlayerUpgrades([defaultUpgrade], players).some(row => row.modifiermode === 'Weapon')).toBe(true);
 });
 
 

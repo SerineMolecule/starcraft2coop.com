@@ -1,3 +1,4 @@
+import { perUnitEntries } from "../../source-data/unit-data";
 import { expect, test } from "bun:test";
 import type { UnitSkill } from "../../source-data/data-types";
 import type { PlayerUpgrade } from "../../source-data/data-types";
@@ -222,8 +223,9 @@ test('Research works with prestige changes and preserves initial cooldowns', () 
 
 test('Every regular skill upgrade resolves alone and combined without mutating source data', () => {
     const source = JSON.stringify([...unitSkills.values()]);
-    for (const upgrade of upgradesJSON as PlayerUpgrade[]) {
-        for (const effect of upgrade.skillModifiers ?? []) {
+    for (const upgrade of perUnitEntries(upgradesJSON as PlayerUpgrade[])) {
+        for (const effect of upgrade.changes) {
+            if (effect.target !== 'skill') continue;
             const one = researched(upgrade.commander, upgrade.unit, effect.skill, [upgrade.name]);
             expect(one.descriptionParts!.some(part => part.modified) || one.modifiedFields!.length > 0, `${upgrade.commander}/${upgrade.name}`).toBe(true);
             const base = [...unitSkills.values()].find(skill => skill.commander === upgrade.commander && skill.unit === upgrade.unit && skill.name === effect.skill)!;
@@ -231,7 +233,7 @@ test('Every regular skill upgrade resolves alone and combined without mutating s
         }
     }
     for (const skill of unitSkills.values()) {
-        const upgrades = upgradesJSON.filter(upgrade => upgrade.commander === skill.commander && upgrade.unit === skill.unit).map(upgrade => upgrade.name);
+        const upgrades = upgradesJSON.filter(upgrade => upgrade.commander === skill.commander && upgrade.units.includes(skill.unit)).map(upgrade => upgrade.name);
         expect(() => researched(skill.commander, skill.unit, skill.name, upgrades)).not.toThrow();
     }
     expect(JSON.stringify([...unitSkills.values()])).toBe(source);
