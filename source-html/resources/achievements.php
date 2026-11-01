@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Achievements</title>
+  <title>Achievements - SC2 Co-op</title>
   <meta name="description" content="A list of achievements in Starcraft II's Co-op game mode, with descriptions and images, along with unlock criteria.">
   <meta name="keywords" content="Starcraft co-op guides achievements">
   <link rel="canonical" href="https://starcraft2coop.com/resources/achievements">

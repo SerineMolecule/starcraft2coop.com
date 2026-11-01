@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Build Order Theory</title>
+  <title>Build Order Theory - SC2 Co-op</title>
   <meta name="description" content="Learn how to make your own Co-op build orders and adapt your build to face challenges like mutators and weekly mutations.">
   <meta name="keywords" content="Starcraft co-op guides build order theory">
   <link rel="canonical" href="https://starcraft2coop.com/guides/buildordertheory">

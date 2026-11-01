@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - AI Logic</title>
+  <title>AI Logic - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op AI logic. Learn about how the different abilities are used by spellcasters and when they use them.">
   <meta name="keywords" content="Starcraft co-op guides AI logic abilities skills">
   <link rel="canonical" href="https://starcraft2coop.com/guides/ailogic">

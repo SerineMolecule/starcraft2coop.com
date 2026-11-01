@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Levels</title>
+  <title>Levels - SC2 Co-op</title>
   <meta name="description" content="A list of experience brackets in Starcraft II Co-op, as well as a few calculators to show you how far you are through Ascension levels.">
   <meta name="keywords" content="Starcraft co-op guides levels">
   <link rel="canonical" href="https://starcraft2coop.com/resources/levels">

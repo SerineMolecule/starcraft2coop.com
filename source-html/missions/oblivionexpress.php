@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mission Guide - Oblivion Express</title>
+  <title>Oblivion Express (Mission) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Oblivion Express">
   <meta name="keywords" content="Starcraft co-op guides oblivion express mission">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/missionstyle.css?v=1.00">

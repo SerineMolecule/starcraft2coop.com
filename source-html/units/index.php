@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op - Unit Stats</title>
+    <title>Units - SC2 Co-op</title>
     <meta name="description" content="A calculator to provide you with unit stats before and after upgrades for every unit in Co-op. Also includes data on Amon's units.">
     <meta name="keywords" content="Starcraft co-op unit stats">
     <link rel="canonical" href="https://starcraft2coop.com/units/">

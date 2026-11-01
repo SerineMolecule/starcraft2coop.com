@@ -40,7 +40,7 @@ for (const mutator of mutators) {
 require_once __DIR__ . "/../../includes/wrapper.php";
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op - Mutator - ${mutator.mutatorname}</title>
+    <title>${mutator.mutatorname} (Mutator) - SC2 Co-op</title>
     <link rel="canonical" href="https://starcraft2coop.com/mutators/${url}">
 <?= startContent() ?>
     <h1><span class="unbold">Mutator:</span> ${mutator.mutatorname}</h1>

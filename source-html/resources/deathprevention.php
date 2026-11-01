@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Order of Death Prevention Effects</title>
+  <title>Order of Death Prevention Effects - SC2 Co-op</title>
   <meta name="description" content="Order of Death Prevention Effect Triggers in Starcraft 2 Co-op">
   <meta name="keywords" content="Starcraft co-op guides death prevention effect order">
   <link rel="canonical" href="https://starcraft2coop.com/resources/deathprevention">

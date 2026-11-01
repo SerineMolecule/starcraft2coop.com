@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mythbusters</title>
+  <title>Mythbusters - SC2 Co-op</title>
   <meta name="description" content="This is the page which lists all the episodes of Mythbusters.">
   <meta name="keywords" content="Starcraft co-op mythbusters community tests myths">
   <link rel="canonical" href="https://starcraft2coop.com/community/mythbusters">

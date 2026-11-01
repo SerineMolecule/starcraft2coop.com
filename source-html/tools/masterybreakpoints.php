@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mastery Breakpoints Calculator</title>
+  <title>Mastery Breakpoints Calculator - SC2 Co-op</title>
   <meta name="description" content="Figure out how many mastery points you need to reach certain breakpoints with this calculator.">
   <meta name="keywords" content="Starcraft co-op mastery breakpoints calculator damage units">
   <link rel="canonical" href="https://starcraft2coop.com/tools/masterybreakpoints">

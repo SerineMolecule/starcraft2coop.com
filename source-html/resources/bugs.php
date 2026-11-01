@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Bugs List</title>
+  <title>Bugs List - SC2 Co-op</title>
   <meta name="description" content="A list of bugs that are present in the current Starcraft II Co-op Patch">
   <meta name="keywords" content="Starcraft co-op bugs glitches">
   <link rel="canonical" href="https://starcraft2coop.com/resources/bugs">

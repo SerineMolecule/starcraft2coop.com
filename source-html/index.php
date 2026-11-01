@@ -51,7 +51,7 @@ $thirdNextWeekIndex = ($currentWeekIndex + 3) % count($cycleList);
 $thirdNextWeekStart = $currentWeekStart + (3 * 7 * 24 * 60 * 60);
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op - Commander Guides, Mission Data and more!</title>
+    <title>SC2 Co-op: Commander Guides, Mission Data and more!</title>
     <meta name="description" content="Your #1 Source for Starcraft 2 Co-op Information. Commander Guides, Mission Data, Unit Stats, Mutation Information and more!">
     <meta name="keywords" content="Starcraft co-op guides">
     <link rel="canonical" href="https://starcraft2coop.com">

@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mutator List</title>
+  <title>Mutator List - SC2 Co-op</title>
   <meta name="description" content="A list of all mutators in Starcraft II Co-op, along with detailed descriptions of their mechanics and commander-specific tips.">
   <meta name="keywords" content="Starcraft co-op guides mutators">
   <link rel="canonical" href="https://starcraft2coop.com/mutators/old">

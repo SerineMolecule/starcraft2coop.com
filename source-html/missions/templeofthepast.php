@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mission Guide - Temple of the Past</title>
+  <title>Temple of the Past (Mission) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Temple of the Past">
   <meta name="keywords" content="Starcraft co-op guides temple past mission">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/missionstyle.css?v=1.00">

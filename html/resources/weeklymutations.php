@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op - Weekly Mutations</title>
+    <title>Weekly Mutations - SC2 Co-op</title>
     <meta name="description" content="Starcraft 2 Co-op Weekly Mutations">
     <meta name="keywords" content="Starcraft co-op guides weekly mutations">
     <link rel="canonical" href="https://starcraft2coop.com/resources/weeklymutations">

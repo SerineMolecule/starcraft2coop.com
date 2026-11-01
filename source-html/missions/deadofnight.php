@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mission Guide - Dead of Night</title>
+  <title>Dead of Night (Mission) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Dead of Night">
   <meta name="keywords" content="Starcraft co-op guides dead night mission">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/missionstyle.css?v=1.00">

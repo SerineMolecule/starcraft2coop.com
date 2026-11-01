@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Brutal+ Difficulty</title>
+  <title>Brutal+ Difficulty - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Brutal+ Difficulty Mutators">
   <meta name="keywords" content="Starcraft co-op brutal difficulty mutators">
   <link rel="canonical" href="https://starcraft2coop.com/resources/brutal">

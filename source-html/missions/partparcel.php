@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mission Guide - Part and Parcel</title>
+  <title>Part and Parcel (Mission) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Part and Parcel">
   <meta name="keywords" content="Starcraft co-op guides part parcel mission">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/missionstyle.css?v=1.00">

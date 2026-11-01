@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Rockslapping Champions</title>
+  <title>Rockslapping Champions - SC2 Co-op</title>
   <meta name="description" content="Rockslapping Champions is starcraft2coop.com's flagship series, which is very similar to Bronze League Heroes.">
   <meta name="keywords" content="Starcraft co-op rockslapping champions">
   <link rel="canonical" href="https://starcraft2coop.com/community/rockslappingchampions">

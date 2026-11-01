@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - YouTube</title>
+  <title>YouTube - SC2 Co-op</title>
 <?= startContent() ?>
     <h1>YouTube</h1>
     <p>We have several guides on YouTube:</p>

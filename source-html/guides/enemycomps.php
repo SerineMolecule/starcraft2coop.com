@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Enemy Compositions</title>
+  <title>Enemy Compositions - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Enemy Compositions. Learn about Hybrids and the different units in Amon's attack waves.">
   <meta name="keywords" content="Starcraft co-op guides enemy compositions">
   <link rel="canonical" href="https://starcraft2coop.com/guides/enemycomps">

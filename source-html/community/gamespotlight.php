@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Game Spotlight</title>
+  <title>Game Spotlight - SC2 Co-op</title>
   <meta name="description" content="This is the submission page to get games that feature a high skill level casted.">
   <meta name="keywords" content="Starcraft co-op special games casts spotlight">
   <link rel="canonical" href="https://starcraft2coop.com/community/gamespotlight">

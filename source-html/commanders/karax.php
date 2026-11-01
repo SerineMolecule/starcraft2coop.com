@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Commander Guide - Karax</title>
+  <title>Karax (Commander) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Karax">
   <meta name="keywords" content="Starcraft co-op guides karax commander mastery prestige build">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">

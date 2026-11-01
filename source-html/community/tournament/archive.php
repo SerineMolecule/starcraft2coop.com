@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op Tournament Archives</title>
+    <title>Tournament Archives - SC2 Co-op</title>
     <meta name="description" content="Starcraft 2 Co-op Tournament Archives. Browse past Co-op Tournament summaries and watch VoD's.">
     <meta name="keywords" content="Starcraft co-op tournament past archives">
     <link rel="canonical" href="https://starcraft2coop.com/community/tournament/archive">

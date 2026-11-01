@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
     <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
-    <title>Starcraft 2 Co-op - CtG's Commander Tier Maker</title>
+    <title>CtG's Commander Tier Maker - SC2 Co-op</title>
     <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@348&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap">
     <style>

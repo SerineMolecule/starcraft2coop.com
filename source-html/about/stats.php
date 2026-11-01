@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Statistics</title>
+  <title>Statistics - SC2 Co-op</title>
   <meta name="description" content="Various statistics related to starcraft2coop.com and Starcraft II content, such as mutator frequency counts in Weekly Mutations.">
   <meta name="keywords" content="Starcraft co-op stats">
   <link rel="canonical" href="https://starcraft2coop.com/resources/stats">

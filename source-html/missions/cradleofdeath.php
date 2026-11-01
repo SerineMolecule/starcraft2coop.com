@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../includes/wrapper.php';
 require_once '../../includes/switchergenerator.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Mission Guide - Cradle of Death</title>
+  <title>Cradle of Death (Mission) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Mission Guide Cradle of Death">
   <meta name="keywords" content="Starcraft co-op guides chain cradle death mission">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/missionstyle.css?v=1.00">

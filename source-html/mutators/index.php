@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op - Mutators</title>
+    <title>Mutators - SC2 Co-op</title>
     <link rel="canonical" href="https://starcraft2coop.com/mutators/">
     <style>
         .mutatortiles {

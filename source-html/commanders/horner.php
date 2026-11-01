@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Commander Guide - Han & Horner</title>
+  <title>Han & Horner (Commander) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Han Horner">
   <meta name="keywords" content="Starcraft co-op guides han horner commander mastery prestige build">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">

@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Links</title>
+  <title>Links - SC2 Co-op</title>
   <meta name="description" content="Links to other Starcraft II Co-op community content such as speedrun replay files and records, Discord Servers and Youtube channels.">
   <meta name="keywords" content="Starcraft co-op links">
   <link rel="canonical" href="https://starcraft2coop.com/about/links">

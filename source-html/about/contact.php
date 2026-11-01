@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Contact</title>
+  <title>Contact - SC2 Co-op</title>
 <?= startContent() ?>
     <h1>Contact</h1>
     <p>The site is being developed in <a href="https://github.com/SerineMolecule/starcraft2coop.com">the starcraft2coop.com GitHub repository</a> right now.</p>

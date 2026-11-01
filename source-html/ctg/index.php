@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
     <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>Starcraft 2 Co-op - CtG's Mutation Commander List</title>
+    <title>CtG's Mutation Commander List - SC2 Co-op</title>
     <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@348&display=swap" rel="stylesheet">
     <style>
         body{

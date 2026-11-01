@@ -49266,6 +49266,12 @@ Remaining seconds until next Fragment spawns if found.`,
     updateStateFromHash() {
       const hash = window.location.hash.slice(1);
       const [commander, unit] = hash.split("/");
+      const commanderName = commandersummaries_default.find((entry) => token(entry.commander) === commander)?.fullname;
+      const amonType = AMON_UNIT_TYPES.find((type) => token(type) === commander);
+      const groupName = commanderName ?? (amonType ? `Amon ${amonType}` : undefined);
+      const unitName = commanderName ? playerUnits.find((entry) => token(entry.commander) === commander && token(entry.name) === unit)?.name : amonType ? amonUnits.find((entry) => token(entry.race) === commander && token(entry.name) === unit)?.name : undefined;
+      const selection = unitName ? `${unitName} (${groupName})` : groupName;
+      document.title = `${selection ? `${selection} - ` : ""}Units - SC2 Co-op`;
       this.setState({ commander: commander || null, unit: unit || null });
       if (commander && unit) {
         this.setState({ modifiers: applyUnitSettings(UnitStats.modifiers(commander, unit), this.state.settings) }, () => {
@@ -51453,5 +51459,5 @@ Remaining seconds until next Fragment spawns if found.`,
   }
 })();
 
-//# debugId=A26BFF8C32F2AAE964756E2164756E21
+//# debugId=3EEA964D8BCDE22564756E2164756E21
 //# sourceMappingURL=units.js.map

@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op - Tournament</title>
+    <title>Tournament - SC2 Co-op</title>
     <meta name="description" content="Information on the one-of-a-kind Co-op Tournament, which features two teams of two battling it out in mutliple-round mutation games.">
     <meta name="keywords" content="Starcraft co-op tournament">
     <link rel="canonical" href="https://starcraft2coop.com/community/tournament/">

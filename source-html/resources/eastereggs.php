@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Easter Eggs</title>
+  <title>Easter Eggs - SC2 Co-op</title>
   <meta name="description" content="Easter Eggs are a staple in most video games and Co-op is no different. This page lists out all the Easter Eggs found in Co-op.">
   <meta name="keywords" content="Starcraft co-op easter eggs">
   <link rel="canonical" href="https://starcraft2coop.com/resources/eastereggs">

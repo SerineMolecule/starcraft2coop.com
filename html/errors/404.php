@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Coop - Page Not Found!</title>
+    <title>Page Not Found! - SC2 Co-op</title>
     <meta name="description" content="Starcraft 2 Co-op Error">
     <meta name="keywords" content="Starcraft co-op error">
     <style>

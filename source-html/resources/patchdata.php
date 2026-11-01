@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Patch Data</title>
+  <title>Patch Data - SC2 Co-op</title>
   <meta name="description" content="Data-mined patch data for the latest Starcraft II Co-op Patch. This page contains both, official and hidden patch changes.">
   <meta name="keywords" content="Starcraft co-op patch data">
   <link rel="canonical" href="https://starcraft2coop.com/resources/patchdata">

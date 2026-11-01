@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Downloads</title>
+  <title>Downloads - SC2 Co-op</title>
   <meta name="description" content="A list of free tools and software for community use. Some programming experience will be required in order to utilize the code provided.">
   <meta name="keywords" content="Starcraft co-op downloads">
   <link rel="canonical" href="https://starcraft2coop.com/tools/downloads">

@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - General Tips for Co-op Players</title>
+  <title>General Tips for Co-op Players - SC2 Co-op</title>
   <meta name="description" content="Improve your Co-op gameplay with these simple tips, made for players of all skill levels. Beginners and Veterans can all benefit.">
   <meta name="keywords" content="Starcraft Co-op General Tips ">
   <link rel="canonical" href="https://starcraft2coop.com/guides/generaltips">

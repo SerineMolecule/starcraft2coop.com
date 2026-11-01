@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Commander Selection Guide</title>
+  <title>Commander Selection Guide - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Selection Guide for new players, providing information on strengths and weaknesses of commanders.">
   <meta name="keywords" content="Starcraft co-op guides commander selection">
   <link rel="canonical" href="https://starcraft2coop.com/guides/newplayer">

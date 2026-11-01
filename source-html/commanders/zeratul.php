@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-  <title>Starcraft 2 Co-op - Commander Guide - Zeratul</title>
+  <title>Zeratul (Commander) - SC2 Co-op</title>
   <meta name="description" content="Starcraft 2 Co-op Commander Guide Zeratul">
   <meta name="keywords" content="Starcraft co-op guides zeratul commander mastery prestige build">
   <link rel="stylesheet"  media="all" type="text/css" href="/styles/commanderstyle.css?v=2">

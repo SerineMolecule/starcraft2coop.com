@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../includes/wrapper.php';
 ?>
 <?= startHead() ?>
-    <title>Starcraft 2 Co-op - Privacy policy</title>
+    <title>Privacy policy - SC2 Co-op</title>
     <link rel="canonical" href="https://starcraft2coop.com/privacy">
 <?= startContent() ?>
     <h1>Privacy Policy</h1>
