@@ -1122,7 +1122,7 @@ function upgradedUnit(
     return UnitStats.getUpgradedUnit(baseUnit, modifiers);
 }
 
-test("Dehaka hero level updates damage and estimates HP from minimum Essence", () => {
+test("Dehaka hero level updates damage, minimum HP, and air targetability at level 10", () => {
     let modifiers = UnitStats.modifiers('dehaka', 'dehaka');
     expect(modifiers.upgradeLevels).toEqual({ hero: 1 });
     const base = UnitStats.getUnit(modifiers)!;
@@ -1133,12 +1133,14 @@ test("Dehaka hero level updates damage and estimates HP from minimum Essence", (
             component.props = { ...component.props, modifiers };
         },
     });
-    for (const [input, level, damage, hp] of [['2', 2, 30, 611.25], ['8', 8, 90, 915], ['15', 15, 160, 1781.25], ['0', 1, 20, 600], ['99', 15, 160, 1781.25], ['', 1, 20, 600]] as const) {
+    for (const [input, level, damage, hp] of [['2', 2, 30, 611.25], ['8', 8, 90, 915], ['9', 9, 100, 1005], ['10', 10, 110, 1106.25], ['15', 15, 160, 1781.25], ['0', 1, 20, 600], ['99', 15, 160, 1781.25], ['', 1, 20, 600]] as const) {
         component.onChangeUnitLevel({ target: { name: 'hero', type: 'range', value: input } } as unknown as Event);
         expect(modifiers.upgradeLevels.hero).toBe(level);
         const unit = UnitStats.getUpgradedUnit(base, modifiers);
         expect(unit.modes['']!.damage!['']!.damage).toBe(damage);
         expect(unit.hp).toBe(hp);
+        expect(unit.targetable ?? unit.movement).toBe(level >= 10 ? 'Ground,Air' : 'Ground');
+        expect(renderedText(component.render()).includes('(ground and air targetable)')).toBe(level >= 10);
     }
     expect(base.modes['']!.damage!['']!.damage).toBe(20);
     expect(base.hp).toBe(600);

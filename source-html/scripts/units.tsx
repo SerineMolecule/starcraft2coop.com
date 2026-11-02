@@ -11,6 +11,7 @@ import { hasAttack, playerUnitViews } from "../../source-data/unit-data";
 
 import { rankUpgrades } from "./unit-ranks";
 import { resolveSkill } from "./skill-modifiers";
+import { biomassFraction, biomassLimit } from "./unit-biomass";
 import { skillCosts, skillTooltipValues, skillVisible, unitSkills } from "./unit-skills";
 
 import { AMON_UNIT_TYPES } from "../../source-data/unit-navigation";
@@ -656,6 +657,7 @@ export class UnitStats extends preact.Component<{
 
         if (modifiers.commander === 'dehaka' && modifiers.unit === 'dehaka') {
             const level = Math.max(1, Math.min(UnitStats.heroLevelLimit(modifiers), Math.trunc(modifiers.upgradeLevels.hero ?? 1)));
+            if (level >= 10) upgradedUnit.targetable = 'Ground,Air';
             upgradedUnit.modes['']!.damage!['']!.damage = (level + 1) * 10;
             // Each level requires 15 more Essence than the previous one:
             // 15 + 30 + ... + 15 * (level - 1). Use that minimum for the HP estimate.
@@ -763,8 +765,7 @@ export class UnitStats extends preact.Component<{
                 if (original.target !== 'unit') continue;
                 let change = original;
                 if (biomassUpgrade && (change.operation === 'multiply' || change.operation === 'add')) {
-                    const biomass = Math.max(0, Math.min(UnitStats.biomassLimit(modifiers), levels.biomass!));
-                    const fraction = biomass / (modifiers.prestiges['The Limitless'] ? 200 : 100);
+                    const fraction = biomassFraction(modifiers);
                     // Scale each bonus, not the entire multiplier; P1 raises capacity rather than strength.
                     const value = change.operation === 'multiply' ? 1 + (change.value - 1) * fraction : change.value * fraction;
                     this.applyUpgrade({ ...change, value }, upgradedUnit);
@@ -885,7 +886,7 @@ export class UnitStats extends preact.Component<{
         return modifiers.prestiges['Herald of the Void'] ? 2 : 3;
     }
     static biomassLimit(modifiers: UnitModifiers): number {
-        return modifiers.prestiges['The Limitless'] ? 200 : modifiers.prestiges['Essence Hoarder'] ? 125 : 100;
+        return biomassLimit(modifiers);
     }
     renderLevelSlider(kind: 'hero' | 'biomass', label: string, min: number, max: number): preact.ComponentChildren {
         const modifiers = this.props.modifiers!;

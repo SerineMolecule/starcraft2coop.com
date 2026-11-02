@@ -9852,6 +9852,17 @@ Cast range: {range}.`,
       requiresupgrade: false
     },
     {
+      commander: "Alarak",
+      unit: "Destroyer",
+      name: "Destruction Beam",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/destructionbeam.png"
+      ],
+      description: "The beam splits to hit 1, 2, or 3 additional enemies within radius 5 of the primary target as it charges. Secondary beams deal 1 damage, with +0, +1, or +2 vs. Armored at the corresponding charge stage. Primary-target damage does not increase with charge. Charge is retained for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
       commander: "Artanis",
       unit: "Archon",
       name: "Feedback",
@@ -13819,6 +13830,28 @@ Can target structures or ground units.`,
       }
     },
     {
+      commander: "Vorazun",
+      unit: "Void Ray",
+      name: "Prismatic Alignment",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/prismaticalignment.png"
+      ],
+      description: "The beam charges up while attacking, gaining +3 damage vs. Armored at the second stage and +6 at full charge. Charge is retained for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
+      commander: "Vorazun",
+      unit: "Void Ray",
+      name: "Prismatic Range",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/prismaticrange.png"
+      ],
+      description: "Increases weapon range by 1.5 at the second charge stage and by 3 at full charge. The range bonus lasts for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: true
+    },
+    {
       commander: "Zagara",
       unit: "Aberration",
       name: "Towering",
@@ -14487,6 +14520,52 @@ Remaining seconds until next Fragment spawns if found.`
       description: "Zeratul is permanently cloaked. He becomes immune to damage for 0.5 seconds after being attacked. Cannot occur more than once every 5 seconds.",
       type: "passive",
       requiresupgrade: false
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Ray",
+      name: "Prismatic Alignment",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/prismaticalignment.png"
+      ],
+      description: "The beam charges up while attacking, gaining +3 damage vs. Armored at the second stage and +6 at full charge. Charge is retained for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Ray",
+      name: "Prismatic Range",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/prismaticrange.png"
+      ],
+      description: "Increases weapon range by 1.5 at the second charge stage and by 3 at full charge. The range bonus lasts for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false,
+      requirements: "Unlocked at Zeratul commander level 8."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zoraya",
+      name: "Prismatic Beam",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/prismaticbeam.png"
+      ],
+      description: "The beam charges up while attacking, adding 9 damage (+6 vs. Armored) at the second stage and 27 damage (+18 vs. Armored) at full charge. Charge is retained for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zoraya",
+      name: "Prismatic Range",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/prismaticrange.png"
+      ],
+      description: "Increases weapon range by 1.5 at the second charge stage and by 3 at full charge. The range bonus lasts for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false,
+      requirements: "Unlocked at Zeratul commander level 8."
     },
     {
       commander: "Abathur",
@@ -15214,5 +15293,5 @@ Cooldown: ${repeat}` : ""}`);
   });
 })();
 
-//# debugId=697786D44E00382764756E2164756E21
+//# debugId=E69C2852BC5B236664756E2164756E21
 //# sourceMappingURL=tooltips.js.map

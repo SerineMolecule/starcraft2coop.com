@@ -3,6 +3,7 @@ import upgradesJSON from "../../source-data/playerupgrades.json";
 import type { PlayerTalent, PlayerUpgrade, SkillModification, UnitSkill } from "../../source-data/data-types";
 import { skillDescriptionParts, skillModifierValue } from "./skill-values";
 import type { ResolvedSkill } from "./skill-values";
+import { biomassFraction } from "./unit-biomass";
 
 const skillTalents = (talentsJSON as PlayerTalent[]).filter(talent => talent.changes.some(change => change.target === 'skill'));
 
@@ -28,7 +29,7 @@ export function applySkillModification(skill: UnitSkill, effect: SkillModificati
 export function resolveSkill(skill: UnitSkill, modifiers: {
     masteries: Record<string, number>, prestiges: Record<string, boolean>,
     upgrades?: Record<string, boolean>,
-    upgradeLevels?: { artifacts?: number },
+    upgradeLevels?: { artifacts?: number, biomass?: number },
 }): ResolvedSkill {
     const resolved: ResolvedSkill = { ...skill };
     if (skill.values) resolved.values = { ...skill.values };
@@ -70,6 +71,14 @@ export function resolveSkill(skill: UnitSkill, modifiers: {
                 }
             }
         }
+    }
+    if (skill.commander === 'Abathur' && (
+        (skill.unit === 'Ravager' && skill.name === 'Corrosive Bile') ||
+        (skill.unit === 'Swarm Host' && skill.name === 'Spawn Locusts')
+    )) {
+        // LibCOMI's RavagerSpellCooldown and SwarmHostLocustLaunchCast triggers
+        // scale these cooldowns by weapon speed, rather than subtracting a fixed time per stack.
+        applySkillModification(resolved, { modifier: 'cooldown', operation: 'multiply', value: 1 / (1 + biomassFraction(modifiers)) });
     }
     resolved.descriptionParts = skillDescriptionParts(resolved, skill);
     resolved.description = resolved.descriptionParts.map(part => part.text).join('');

@@ -600,12 +600,12 @@
     const loadingView = M();
     let tooltipsLoading;
     const load = async () => {
-      tooltipsLoading ??= loadUnitsScript("/scripts/tooltips.js?v=215ce6").catch((error) => {
+      tooltipsLoading ??= loadUnitsScript("/scripts/tooltips.js?v=cb9439").catch((error) => {
         tooltipsLoading = undefined;
         throw error;
       });
       await Promise.all([
-        window.mountUnits ? Promise.resolve() : loadUnitsScript("/scripts/units.js?v=4dedf6"),
+        window.mountUnits ? Promise.resolve() : loadUnitsScript("/scripts/units.js?v=f8cef5"),
         tooltipsLoading
       ]);
       const mount = window.mountUnits;

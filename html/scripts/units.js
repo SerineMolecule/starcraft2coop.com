@@ -33859,6 +33859,15 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
     return nonempty;
   }
 
+  // html/scripts/unit-biomass.ts
+  function biomassLimit({ prestiges }) {
+    return prestiges["The Limitless"] ? 200 : prestiges["Essence Hoarder"] ? 125 : 100;
+  }
+  function biomassFraction(modifiers) {
+    const biomass = Math.max(0, Math.min(biomassLimit(modifiers), modifiers.upgradeLevels?.biomass ?? 0));
+    return biomass / (modifiers.prestiges["The Limitless"] ? 200 : 100);
+  }
+
   // html/scripts/skill-modifiers.ts
   var skillTalents = playertalents_default.filter((talent) => talent.changes.some((change) => change.target === "skill"));
   function applySkillModification(skill, effect) {
@@ -33927,6 +33936,9 @@ Restores {shieldRestoration} shields to friendly units in the target area.`
           }
         }
       }
+    }
+    if (skill.commander === "Abathur" && (skill.unit === "Ravager" && skill.name === "Corrosive Bile" || skill.unit === "Swarm Host" && skill.name === "Spawn Locusts")) {
+      applySkillModification(resolved, { modifier: "cooldown", operation: "multiply", value: 1 / (1 + biomassFraction(modifiers)) });
     }
     resolved.descriptionParts = skillDescriptionParts(resolved, skill);
     resolved.description = resolved.descriptionParts.map((part) => part.text).join("");
@@ -34608,6 +34620,17 @@ Cast range: {range}.`,
         "/images/commanderdata/unitskills/common/cliffwalk.png"
       ],
       description: "Can walk up and down cliffs.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
+      commander: "Alarak",
+      unit: "Destroyer",
+      name: "Destruction Beam",
+      icons: [
+        "/images/commanderdata/unitskills/alarak/destructionbeam.png"
+      ],
+      description: "The beam splits to hit 1, 2, or 3 additional enemies within radius 5 of the primary target as it charges. Secondary beams deal 1 damage, with +0, +1, or +2 vs. Armored at the corresponding charge stage. Primary-target damage does not increase with charge. Charge is retained for 5 seconds after attacking stops.",
       type: "passive",
       requiresupgrade: false
     },
@@ -38579,6 +38602,28 @@ Can target structures or ground units.`,
       }
     },
     {
+      commander: "Vorazun",
+      unit: "Void Ray",
+      name: "Prismatic Alignment",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/prismaticalignment.png"
+      ],
+      description: "The beam charges up while attacking, gaining +3 damage vs. Armored at the second stage and +6 at full charge. Charge is retained for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
+      commander: "Vorazun",
+      unit: "Void Ray",
+      name: "Prismatic Range",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/prismaticrange.png"
+      ],
+      description: "Increases weapon range by 1.5 at the second charge stage and by 3 at full charge. The range bonus lasts for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: true
+    },
+    {
       commander: "Zagara",
       unit: "Aberration",
       name: "Towering",
@@ -39247,6 +39292,52 @@ Remaining seconds until next Fragment spawns if found.`
       description: "Zeratul is permanently cloaked. He becomes immune to damage for 0.5 seconds after being attacked. Cannot occur more than once every 5 seconds.",
       type: "passive",
       requiresupgrade: false
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Ray",
+      name: "Prismatic Alignment",
+      icons: [
+        "/images/commanderdata/unitskills/vorazun/prismaticalignment.png"
+      ],
+      description: "The beam charges up while attacking, gaining +3 damage vs. Armored at the second stage and +6 at full charge. Charge is retained for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
+      commander: "Zeratul",
+      unit: "Void Ray",
+      name: "Prismatic Range",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/prismaticrange.png"
+      ],
+      description: "Increases weapon range by 1.5 at the second charge stage and by 3 at full charge. The range bonus lasts for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false,
+      requirements: "Unlocked at Zeratul commander level 8."
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zoraya",
+      name: "Prismatic Beam",
+      icons: [
+        "/images/commanderdata/unitskills/zeratul/prismaticbeam.png"
+      ],
+      description: "The beam charges up while attacking, adding 9 damage (+6 vs. Armored) at the second stage and 27 damage (+18 vs. Armored) at full charge. Charge is retained for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false
+    },
+    {
+      commander: "Zeratul",
+      unit: "Zoraya",
+      name: "Prismatic Range",
+      icons: [
+        "/images/commanderdata/unitupgrades/vorazun/prismaticrange.png"
+      ],
+      description: "Increases weapon range by 1.5 at the second charge stage and by 3 at full charge. The range bonus lasts for 5 seconds after attacking stops.",
+      type: "passive",
+      requiresupgrade: false,
+      requirements: "Unlocked at Zeratul commander level 8."
     },
     {
       commander: "Abathur",
@@ -40601,6 +40692,8 @@ Remaining seconds until next Fragment spawns if found.`
       }
       if (modifiers.commander === "dehaka" && modifiers.unit === "dehaka") {
         const level = Math.max(1, Math.min(UnitStats.heroLevelLimit(modifiers), Math.trunc(modifiers.upgradeLevels.hero ?? 1)));
+        if (level >= 10)
+          upgradedUnit.targetable = "Ground,Air";
         upgradedUnit.modes[""].damage[""].damage = (level + 1) * 10;
         const minimumEssence = 15 * level * (level - 1) / 2;
         upgradedUnit.hp += minimumEssence * 0.75;
@@ -40722,8 +40815,7 @@ Remaining seconds until next Fragment spawns if found.`
             continue;
           let change = original;
           if (biomassUpgrade && (change.operation === "multiply" || change.operation === "add")) {
-            const biomass = Math.max(0, Math.min(UnitStats.biomassLimit(modifiers), levels.biomass));
-            const fraction = biomass / (modifiers.prestiges["The Limitless"] ? 200 : 100);
+            const fraction = biomassFraction(modifiers);
             const value = change.operation === "multiply" ? 1 + (change.value - 1) * fraction : change.value * fraction;
             this.applyUpgrade({ ...change, value }, upgradedUnit);
             continue;
@@ -40844,7 +40936,7 @@ Remaining seconds until next Fragment spawns if found.`
       return modifiers.prestiges["Herald of the Void"] ? 2 : 3;
     }
     static biomassLimit(modifiers) {
-      return modifiers.prestiges["The Limitless"] ? 200 : modifiers.prestiges["Essence Hoarder"] ? 125 : 100;
+      return biomassLimit(modifiers);
     }
     renderLevelSlider(kind, label, min, max) {
       const modifiers = this.props.modifiers;
@@ -41899,5 +41991,5 @@ Remaining seconds until next Fragment spawns if found.`
   }
 })();
 
-//# debugId=32122B16F6B716DC64756E2164756E21
+//# debugId=3D455D3EB6C7576464756E2164756E21
 //# sourceMappingURL=units.js.map

@@ -9,6 +9,32 @@ import { skillFromTooltip, skillKey, skillTooltipValues, unitSkills } from "./un
 
 const drone = [...unitSkills.values()].find(skill => skill.commander === 'Nova' && skill.name === 'Sabotage Drone')!;
 
+test('Abathur biomass scales Bile and Locust cooldowns through attack speed, including prestige caps', () => {
+    for (const [unit, name, cooldown] of [['Ravager', 'Corrosive Bile', 10], ['Swarm Host', 'Spawn Locusts', 15]] as const) {
+        const skill = [...unitSkills.values()].find(skill => skill.commander === 'Abathur' && skill.unit === unit && skill.name === name)!;
+        for (const [biomass, prestige, divisor] of [
+            [0, '', 1], [50, '', 1.5], [100, '', 2], [-1, '', 1], [125, '', 2],
+            [100, 'Essence Hoarder', 2], [125, 'Essence Hoarder', 2.25], [200, 'Essence Hoarder', 2.25],
+            [100, 'The Limitless', 1.5], [200, 'The Limitless', 2], [300, 'The Limitless', 2],
+            [100, 'Tunneling Horror', 2],
+        ] as const) {
+            const modifiers = { masteries: {}, prestiges: prestige ? { [prestige]: true } : {},
+                upgradeLevels: { biomass }, upgrades: { 'Potent Bile': true, 'Bloated Bile Ducts': true } };
+            const resolved = resolveSkill(skill, modifiers);
+            expect(resolved.cooldown).toBeCloseTo(cooldown / divisor);
+            expect(resolved.modifiedFields!.includes('cooldown')).toBe(divisor !== 1);
+            expect(skillFromTooltip(skillKey(skill), skillTooltipValues(skill, resolved))).toEqual(resolved);
+            if (unit === 'Ravager') {
+                expect(resolved.values!.damage).toBe(100);
+                expect(resolved.values!.radius).toBe(1.5);
+            }
+        }
+        expect(skill.cooldown).toBe(cooldown);
+    }
+    const tunnel = [...unitSkills.values()].find(skill => skill.commander === 'Abathur' && skill.unit === 'Swarm Host' && skill.name === 'Deep Tunnel')!;
+    expect(resolveSkill(tunnel, { masteries: {}, prestiges: {}, upgradeLevels: { biomass: 100 } }).cooldown).toBe(30);
+});
+
 test('Zeratul Blink gains a charge per artifact, respects P3, and combines with Void Blink', () => {
     const blink = [...unitSkills.values()].find(skill => skill.commander === 'Zeratul' && skill.unit === 'Zeratul' && skill.name === 'Blink')!;
     for (const herald of [false, true]) {
